@@ -72,6 +72,8 @@ The methodology spec is the toolkit's concise governing prose. Target ~250-350 l
 | Schema versioning | Per-class semantic versioning + forward-only | 10-15 |
 | MVR / Exit Signal convergence | Maximum Viable Refinement (per-round) + Exit Signal (project-terminal) | 15-20 |
 | Auth method | Plan vs API key per use case + credential disciplines | 15-20 |
+| MCP server tool surface | 4 tools (vsdd.methodology.lookup + 3 substrate-doc searches) + cache strategy + cooperation with crosslink knowledge | 15-20 |
+| CHANGELOG discipline | Keep-a-Changelog 1.0.0 + canonical categories + crosslink-cooperation + 10-rule consolidated hook | 15-20 |
 | Domain change authority | Single SO; "Raise to SO" routing discipline | 10-15 |
 | Closing + cross-references | Pointer to DESIGN docs + whitepaper + crosslink | 10-15 |
 

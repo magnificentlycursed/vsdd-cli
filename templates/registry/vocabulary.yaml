@@ -82,6 +82,110 @@ terms:
     deprecated_aliases: []
     abbreviation: ""
     domain_scope: [methodology]
+
+  # === Domain abbreviations (added per comm-f2 / Phase 4 routing 2026-05-28) ===
+  - term: Solution Owner
+    definition: Domain holding spec-contract authority + project scope + Raise-to-SO routing discipline
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: SO
+    domain_scope: [solution-owner]
+  - term: Solution Architect
+    definition: Domain holding architectural decomposition + cross-layer seams + purity-boundary discipline
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: SA
+    domain_scope: [solution-architect]
+  - term: Software Engineer
+    definition: Domain holding implementation correctness against the spec's behavioral contracts
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: SE
+    domain_scope: [software-engineer]
+  - term: Quality Engineer
+    definition: Domain holding test-suite falsifiability + acceptance-criteria coverage + Phase 5 surfaces (mutation + fuzz)
+    first_introduced_in: 0.1.0
+    deprecated_aliases: ["QA"]
+    abbreviation: QE
+    domain_scope: [quality-engineer]
+  - term: Technical Writer
+    definition: Domain holding operator-facing prose currency + vocabulary registry conformance + first-use expansion discipline
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: TW
+    domain_scope: [technical-writer]
+  - term: Documentation Reviewer
+    definition: Domain holding cold-reader pass on operator-facing prose; validator-pair with Technical Writer
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: DR
+    domain_scope: [documentation-reviewer]
+  - term: User Experience
+    definition: Domain holding operator-task discoverability + error-message specificity + affordance ergonomics
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: UX
+    domain_scope: [ux]
+  - term: Platform Engineer
+    definition: Domain holding reproducible builds + dependency-approval + CI/CD discipline + supply-chain attestation
+    first_introduced_in: 0.1.0
+    deprecated_aliases: ["DevOps", "SRE"]
+    abbreviation: PE
+    domain_scope: [platform-engineer]
+  - term: Performance Engineer
+    definition: Domain holding performance-characteristic declaration + workload characterization + scaling boundaries
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: PerfE
+    domain_scope: [performance-engineer]
+  - term: Data Engineer
+    definition: Domain holding schema discipline + migration path completeness + persistence patterns + append-only event log semantics
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: DE
+    domain_scope: [data-engineer]
+  - term: AI Engineer
+    definition: Domain holding AI-runtime cost discipline + capture-source provenance + prompt-cache + model-tier right-sizing
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: AIE
+    domain_scope: [ai-engineer]
+  - term: Iterative Adversarial Refinement
+    definition: The Phase 3 cycle pattern of cold-session multi-domain reviewer dispatch + classification + Phase 4 routing
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: IAR
+    domain_scope: [phase-3, methodology]
+  - term: OpenTelemetry
+    definition: The observability primitive vsdd composes against; signals are metrics + log events + traces
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: OTel
+    domain_scope: [observability]
+  - term: OpenTelemetry Protocol
+    definition: The wire protocol for OTel signal export (HTTP or gRPC); vsdd uses OTLP/HTTP at port 4318 by default
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: OTLP
+    domain_scope: [observability]
+  - term: Model Context Protocol
+    definition: The protocol vsdd uses to expose tools (vsdd.methodology.lookup, claude_code.docs.search, etc.) to Claude Code sessions
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: MCP
+    domain_scope: [ai-engineer, observability]
+  - term: Static Analysis Results Interchange Format
+    definition: Machine-readable CI output format; vsdd verify check --format sarif emits this for GitHub Code Scanning
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: SARIF
+    domain_scope: [platform-engineer, verification]
+  - term: Language Server Protocol
+    definition: IDE integration protocol; vsdd-cli ships LSP integration in v1+ for authoring-time frontmatter validation
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: LSP
+    domain_scope: [verification]
 # === End vsdd managed ===
 
 # Operator extensions land below this marker.

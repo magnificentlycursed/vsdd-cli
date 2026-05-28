@@ -32,6 +32,8 @@ This spec is **load-bearing prose** for both human operators and AI agents. Ever
 
 The spec is **not** the implementation runbook. Per-operator runbooks live in DESIGN docs + per-phase primers. The spec captures the methodology disciplines that adopting projects honor regardless of toolkit version.
 
+**Conventions used in this spec.** Domain abbreviations: SO (Solution Owner), SA (Solution Architect), SE (Software Engineer), QE (Quality Engineer), TW (Technical Writer), DR (Documentation Reviewer), UX (User Experience), PE (Platform Engineer), PerfE (Performance Engineer), DE (Data Engineer), AIE (AI Engineer). Substrate abbreviations: OTel (OpenTelemetry), OTLP (OpenTelemetry Protocol), MCP (Model Context Protocol), SDK (Software Development Kit), SARIF (Static Analysis Results Interchange Format), LSP (Language Server Protocol). Methodology terms: IAR (Iterative Adversarial Refinement; the Phase 3 cycle pattern), MVR (Maximum Viable Refinement; per-round closure signal), VSDD (Verified Spec-Driven Development; this methodology). The canonical extended registry lives at `.vsdd/registry/vocabulary.yaml` (deployed by `vsdd init`); the `check-naming-discipline.py` hook validates first-use expansion against the registry.
+
 ---
 
 ```yaml
@@ -298,6 +300,18 @@ phases_referenced: []
 
 All event-variant schemas exclude credential-shaped fields structurally; OTel collector redacts credential-shaped values before forwarding to any external backend.
 
+**Capture-source provenance enum** (per cost-relevant event):
+
+- `otel-metric` — Agent SDK OTel metric (tokens, cost, sessions, tool decisions)
+- `otel-log-event` — Agent SDK OTel log event (prompts, API requests, errors, tool results)
+- `otel-trace-attribute` — Agent SDK OTel span attribute
+- `vsdd-custom-event` — methodology-specific event variant emitted by vsdd
+- `sdk-result-message` — SDK's per-query `total_cost_usd` + `modelUsage` + cumulative usage data
+- `usage-api-reconciled` — Anthropic Usage and Cost API authoritative reconciliation (v1+ scope)
+- `unmeasurable` — explicitly absent (rare; rationale + closure ETA required when used)
+
+`vsdd observe` reports surface the capture-source per-field so cost data carries provenance into reports. Operator-paste of `/cost` is not a load-bearing pattern; OTel + SDK message stream are the canonical capture pattern.
+
 ---
 
 ```yaml
@@ -368,6 +382,62 @@ auth_method:
 **CI context:** API key (Anthropic's recommended automation auth) is the only valid option. Plan auth is **structurally rejected** by the schema validator (`VSDD-E0021: auth-method-plan-incompatible-with-ci`) — Plan requires operator-interactive session that CI runners cannot provide.
 
 **Security disciplines:** `.vsdd/config.yaml` carries credential-source-reference only (env-var name); NEVER credential value. Schema validator rejects credential-shaped fields. Anonymization hook detects API-key formats (`sk-ant-api03-...`, generic Bearer headers). All event-variant schemas structurally exclude credential-shaped fields. OTel collector redacts credential-shaped values at the forwarding boundary. Backend bearer tokens (Honeycomb, Datadog, Grafana, Langfuse, etc.) follow the same env-var-only discipline.
+
+---
+
+```yaml
+---
+section_name: mcp-server-tool-surface
+required: true
+target_lines: 18
+event_variants_referenced: []
+domains_referenced: [ai-engineer]
+phases_referenced: []
+---
+```
+
+## MCP server tool surface
+
+A single MCP server (`vsdd mcp-serve` subcommand) exposes 4 tools to agents in every Claude Code session that registers the server via `.claude/mcp.json` (deployed by `vsdd init`):
+
+| Tool | Scope | Per-query cost band |
+|---|---|---|
+| `vsdd.methodology.lookup(query, scope?)` | Methodology spec + DESIGN docs + supplements + domain prompts (own repo content) | 1-5k tokens (small) |
+| `claude_code.docs.search(query, page?)` | Claude Code documentation at code.claude.com/docs | 5-20k tokens (WebFetch + extract) |
+| `crosslink.docs.search(query, page?)` | Crosslink documentation | 5-20k tokens |
+| `anthropic.api.docs.search(query)` | Anthropic API documentation at platform.claude.com/docs | v1: <1k tokens (stub return); v1+: full content |
+
+**Cache discipline:** methodology lookup uses file-mtime-aware invalidation (source can change mid-session); external-substrate-doc caches use 24-hour TTL with async-refresh on stale-cache fetch. Cache at `.vsdd/mcp-cache/` (gitignored).
+
+**Cooperation with crosslink knowledge:** `vsdd.methodology.lookup` first queries `crosslink knowledge` (registered pages); falls back to direct file read if knowledge not registered. No duplicate-storage.
+
+---
+
+```yaml
+---
+section_name: changelog-discipline
+required: true
+target_lines: 18
+event_variants_referenced: []
+domains_referenced: [technical-writer]
+phases_referenced: []
+---
+```
+
+## CHANGELOG discipline
+
+CHANGELOG.md is the 13th artifact class (structural validation, not frontmatter-based) and follows [Keep a Changelog 1.0.0](https://keepachangelog.com/en/1.0.0/):
+
+- `[Unreleased]` section at top; accumulates between releases
+- Per-release section: `## [N.M.P] - YYYY-MM-DD`
+- Canonical categories: Added / Changed / Deprecated / Removed / Fixed / Security (Keep-a-Changelog order)
+- Entries reference issues/PRs in brackets: `([#443])`, `([GH-650])`, `([XL-N])`
+
+When `crosslink` is the project's issue tracker, `crosslink close` auto-manages CHANGELOG.md (creates template if absent; categorizes entries by issue label; appends to `[Unreleased]`). The toolkit's `check-changelog-discipline.py` hook (consolidated 10-rule multi-dispatch) detects entries already added by crosslink + passes validation; never duplicate-writes.
+
+For projects not using crosslink: `vsdd verify changelog --create` (v1+ candidate subcommand) replicates the auto-create behavior; until then a side-by-side `CHANGELOG.md.vsdd-template` deploys at `vsdd init` time.
+
+The 10-rule hook fires: `VSDD-W0190` (entry-missing), `W0191` (structure-malformed), `W0194` (version-section-missing-date), `W0195` (non-canonical-category), `E0240` (changelog-deleted) — Accepted; `W0192` / `W0193` / `W0196` / `W0197` / `L0050` — Candidate pending recurrence evidence.
 
 ---
 
