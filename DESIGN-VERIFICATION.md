@@ -676,7 +676,7 @@ The toolkit's own `Cargo.toml` at v1.0 ships with the minimum-viable dependency 
 
 ## Pre-commit framework integration
 
-`vsdd init` runs `pre-commit install` automatically (per Tier A shift-left discipline). Deploys `.pre-commit-config.yaml` with managed-section markers:
+`vsdd init` runs `pre-commit install` automatically (per shift-left discipline). Deploys `.pre-commit-config.yaml` with managed-section markers:
 
 ```yaml
 # .pre-commit-config.yaml (excerpt; managed section)
@@ -869,7 +869,7 @@ Fallback: `cargo install vsdd --locked` (slower but always-fresh).
 | 5h — Implement check-anonymization.sh extension (API-key detection patterns) | Cross-cutting |
 | 5i — Implement consolidated check-naming-discipline hook (4-rule dispatch) | Cross-cutting |
 | 5j — Implement consolidated check-changelog-discipline hook (10-rule dispatch) | Yes |
-| 5k — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton) | No (Tier A/B shift-left) |
+| 5k — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton) | No (shift-left) |
 | 5l — Implement bypass-marker enforcement (pre-commit + CI label gate) | Cross-cutting |
 | 5m — Pre-commit framework integration (`vsdd init` auto-runs `pre-commit install`) | Yes |
 | 5n — Pre-built binary release pipeline (GitHub Releases; per-platform builds) | Yes (Goal 4 CI optimization) |

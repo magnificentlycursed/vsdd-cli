@@ -215,7 +215,7 @@ Phase-domain matrix extends to commit-level. Each phase's composed-domains attri
 
 Hook dispatch: for each touched file in commit, identify phase from `.vsdd/config.yaml` + active-cycle state, look up composed_domains, validate trailers present. Missing trailers fire `VSDD-W0180: prose-surface-commit-without-tw-dr-composition` warning OR bypass-marker required with rationale.
 
-**Manual-test checklist (Pattern B auto-generation).** `vsdd observe pr-body --layer N` reads `manual-tests/layer-N.md` + embeds checkbox items into PR description. Single source of truth; no copy-paste drift. Operator marks items checked in PR UI as they execute manual testing. `check-pr-manual-test-completion.py` validates all items checked or deferred-with-rationale per primer 1c discipline; fires `VSDD-E0090: pr-manual-tests-incomplete` if violated.
+**Manual-test checklist (auto-generation).** `vsdd observe pr-body --layer N` reads `manual-tests/layer-N.md` + embeds checkbox items into PR description. Single source of truth; no copy-paste drift. Operator marks items checked in PR UI as they execute manual testing. `check-pr-manual-test-completion.py` validates all items checked or deferred-with-rationale per primer 1c discipline; fires `VSDD-E0090: pr-manual-tests-incomplete` if violated.
 
 **PR-lifecycle events:** `DraftPROpened` (Phase 2a boundary) → `PRReadyForReview` (layer-gate close; manual tests complete) → `PRMerged` (final). Two new hooks: `check-draft-pr-presence.py` + `check-pr-template-conformance.py`.
 
@@ -848,11 +848,11 @@ Each rebuild deliverable carries explicit "done means X" criteria.
 ### `vsdd init` (subcommand)
 
 - Fresh-environment install verification: `cargo install vsdd && vsdd init` in a clean repo produces all expected files in expected locations
-- `vsdd init --check` pre-flight validates substrate prerequisites before deployment (Tier A shift-left)
+- `vsdd init --check` pre-flight validates substrate prerequisites before deployment (shift-left)
 - Interactive prompts: per-feature axes + auth method
-- Runs `pre-commit install` automatically (Tier A shift-left)
+- Runs `pre-commit install` automatically (shift-left)
 - Creates `.vsdd/` directory with `events.jsonl` (empty) + `config.yaml` (axes + auth_method declared) + `otel-collector.yaml` (default config) + `mcp-cache/` (pre-warmed) + `registry/` (vocabulary + canonical-patterns + anonymization-patterns)
-- Deploys `DESIGN.md.template` (Tier B shift-left)
+- Deploys `DESIGN.md.template` (shift-left)
 - Deploys `.github/PULL_REQUEST_TEMPLATE.md` + `.github/CODEOWNERS` + CI workflow templates
 - Registers methodology + substrate-docs MCP server in `.claude/mcp.json`
 - Deploys 10 phase-primer skills + 16 per-domain skills + 2 meta-skills as `.claude/commands/vsdd-*.md`
@@ -884,11 +884,11 @@ Each rebuild deliverable carries explicit "done means X" criteria.
 - `vsdd init --ci-mode` is the CI bootstrap invocation (deploys the same artifacts as operator-local + sets up CI-runtime SARIF output mode)
 - `manual-tests/vsdd-verify.md` documents per-hook run-through
 
-### Post-DESIGN.md auto-scaffolding (Tier A + B shift-left)
+### Post-DESIGN.md auto-scaffolding (shift-left)
 
 The `post-design-md-modification` hook fires when DESIGN.md is committed/modified. Auto-scaffolds:
-- `manual-tests/layer-N.md` skeleton with checkable items derived from each behavioral contract declared for Layer N (Tier A — closes bookmark-cli-manual SO R1 F1 + DR R1 F3 recurrence)
-- Phase 2a Red Gate test stubs (failing-by-default) for each behavioral contract (Tier B — closes QE R8 F1-F3 falsifiability gap pattern)
+- `manual-tests/layer-N.md` skeleton with checkable items derived from each behavioral contract declared for Layer N (shift-left — closes bookmark-cli-manual SO R1 F1 + DR R1 F3 recurrence)
+- Phase 2a Red Gate test stubs (failing-by-default) for each behavioral contract (shift-left — closes QE R8 F1-F3 falsifiability gap pattern)
 - Emits `ArtifactScaffolded` event (generic variant covering manual-tests + Red Gate skeleton + future scaffolding outputs; resists per-outcome variant proliferation per the methodology's naming + coinage governance)
 
 Operator fills in test bodies + manual-test expected outcomes; doesn't author skeletons from scratch.
@@ -938,8 +938,8 @@ When an adversarial reviewer runs Phase 3 against the `vsdd-cli` repository and 
 | 2e — Author 14 supplements (with cuts) | No |
 | 2f — Author methodology spec | No |
 | 2k — Implement error catalog (~25 accepted + ~15 candidate codes per status-tier discipline) + validator falsifiability fixtures + `vsdd verify explain` | Yes (Goal 2 operationalization) |
-| 2l — Author DESIGN.md template + vocabulary registry + canonical-patterns registry + anonymization-patterns registry | No (Tier A + B shift-left) |
-| 2m — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton) | No (Tier B shift-left) |
+| 2l — Author DESIGN.md template + vocabulary registry + canonical-patterns registry + anonymization-patterns registry | No (shift-left) |
+| 2m — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton) | No (shift-left) |
 | 2n — Author 13 artifact-class JSON Schemas (DESIGN-SCHEMA dependency) | Foundational |
 | 2g — Author CI workflow templates | Goal-4 specific |
 | 2h — Implement methodology + substrate-docs MCP server (full v1 deliverable) | No (but agents leverage MCP across all phases) |

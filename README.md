@@ -313,9 +313,9 @@ The Claude Agent SDK emits three independent OTel signals (metrics, log events, 
 
 `vsdd init` deploys a default OTel collector configuration (`.vsdd/otel-collector.yaml`). Default sinks: `.vsdd/events.jsonl` (suite-side audit trail) + crosslink hub (when crosslink in use). External-backend endpoints declared as commented examples; operator-extensible via single-config-edit.
 
-### Three pillars
+### Observability signal surfaces (logs / metrics / traces)
 
-| Pillar | Source | Sink (v1) | Sink (absorption path) |
+| Signal | Source | Sink (v1) | Sink (absorption path) |
 |---|---|---|---|
 | **Logs (events)** | Agent SDK OTel log events + 18 methodology-specific event variants | `.vsdd/events.jsonl` per project | Pitched as new event variants in crosslink's `events.rs`; emits compatible records into crosslink hub |
 | **Metrics** | Agent SDK OTel metrics + derived from event log at query time | `vsdd observe` subcommand | Pitched as `crosslink metrics` command extension |
@@ -865,8 +865,8 @@ Author-introduced cognitive scaffolding terms (terms invented for organizational
 | 2i — Deploy default OTel collector config + sink wiring | Yes |
 | 2j — Auth-method declaration UX + event variants + anonymization hook API-key detection | Cross-cutting |
 | 2k — Implement error catalog (~30 codes) + validator falsifiability fixtures + `vsdd verify explain` | Yes (Goal 2 operationalization) |
-| 2l — Author DESIGN.md template + vocabulary registry + canonical-patterns registry + anonymization-patterns registry (Tier A + B shift-left) | No |
-| 2m — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton; Tier B shift-left) | No |
+| 2l — Author DESIGN.md template + vocabulary registry + canonical-patterns registry + anonymization-patterns registry (shift-left) | No |
+| 2m — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton; shift-left) | No |
 | 2n — Author 13 artifact-class JSON Schemas | Foundational |
 | 2o — Implement PR template + CODEOWNERS deployment + PR-discipline hooks (draft-pr-presence + pr-template-conformance + pr-manual-tests-completion) | Cross-cutting |
 | 3 — Goal 4 end-to-end demonstration via rebuild's own CI | Goal-4 specific |

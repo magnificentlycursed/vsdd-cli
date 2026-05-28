@@ -37,13 +37,17 @@ letter_label_anti_patterns:
     description: "Form <letter> organizational scaffolding"
     corrective_pattern: "Use descriptive name (e.g., 'HTML-comment form' not 'Form A')"
 
+  - pattern: "\\bPattern [A-Z]\\b"
+    description: "Pattern <letter> organizational scaffolding (added per Adversarial-cluster F4 finding 2026-05-27)"
+    corrective_pattern: "Use descriptive name (e.g., 'PR-body-auto-generation pattern' not 'Pattern B')"
+
   - pattern: "\\bTier [A-Z]\\b"
     description: "Tier <letter> classification scaffolding"
     corrective_pattern: "Use descriptive name (e.g., 'shift-left tier' not 'Tier A')"
 
-  - pattern: "\\bPillar \\d\\b"
-    description: "Pillar <number> organizing structure"
-    corrective_pattern: "Use descriptive name for the pillar's concept"
+  - pattern: "\\bPillar \\d\\b|\\bThree pillars\\b|\\bpillar(s)?\\b(?! is a structural-pattern reference)"
+    description: "Pillar (numeric or bare) organizational scaffolding (operator-directive 2026-05-27: 'I don't know what you mean by Pillar' — the term carries no meaning at point-of-use)"
+    corrective_pattern: "Use the concrete signal names (logs / metrics / traces) OR 'observability signal surfaces' as the umbrella descriptive"
 
 acceptable_letter_patterns:
   # These patterns have the concept-word in the identifier — acceptable.

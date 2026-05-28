@@ -1,6 +1,6 @@
 # DESIGN-OBSERVABILITY.md
 
-Design document for the observability subsystem of the `vsdd` toolkit. Defines the OTel collector design, sink wiring, 18 methodology event variant payloads + capture-source provenance, three-pillars + dashboard ladder + FinOps surfaces, the MCP server architecture, and the `vsdd observe` CLI surface.
+Design document for the observability subsystem of the `vsdd` toolkit. Defines the OTel collector design, sink wiring, 18 methodology event variant payloads + capture-source provenance, observability signal surfaces (logs / metrics / traces) + dashboard ladder + FinOps surfaces, the MCP server architecture, and the `vsdd observe` CLI surface.
 
 ```yaml
 # Pre-authoring composition declaration
@@ -27,7 +27,7 @@ DESIGN-OBSERVABILITY owns:
 - OTel collector design + default config + sink wiring
 - 18 methodology event variant payload mapping to OTel signals
 - Capture-source provenance discipline
-- Three pillars (logs / metrics / traces) — sources + sinks + query mechanisms
+- Observability signal surfaces — logs (events) / metrics / traces — sources + sinks + query mechanisms per signal
 - FinOps applied to IAR cycles
 - Dashboard ladder (v1 CLI / v2 HTML / v3 Grafana absorption-pitch)
 - MCP server (`vsdd mcp-serve`) — tool dispatch + cache + fetch primitive
@@ -306,9 +306,9 @@ capture_source values:
 
 ---
 
-## Three pillars
+## Observability signal surfaces (logs / metrics / traces)
 
-| Pillar | Source | Sink (v1) | Query mechanism |
+| Signal | Source | Sink (v1) | Query mechanism |
 |---|---|---|---|
 | **Logs (events)** | Agent SDK OTel log events + 18 methodology custom events | `.vsdd/events.jsonl` + crosslink hub | `vsdd observe` reads file; SQL via jq pipelines OR via crosslink hub's queryable endpoint |
 | **Metrics** | Agent SDK OTel metrics + derived from event log at query time | `vsdd observe` Rust aggregator | Pulled at command time; no time-series database in v1 |
@@ -489,7 +489,7 @@ vsdd mcp-serve                         # top-level subcommand for MCP server (lo
 - **`--format compact`** — terse single-line for high-density scenarios
 - **`--html`** (cycle / layer / project only) — emits HTML report next to event log
 
-### Auto-generated PR body (Pattern B)
+### Auto-generated PR body
 
 `vsdd observe pr-body --layer <N>` reads `manual-tests/layer-N.md` + project state + emits PR description:
 
@@ -607,7 +607,7 @@ Tracks 4a-4d + 4g are v1 deliverables; 4e + 4f + 4h + 4i are v1+ scope.
 
 ## Closing
 
-DESIGN-OBSERVABILITY operationalizes Goal 3 (observability as first-class) + Goal 4 (CI/CD shift-left observability surfaces). The architecture composes against the Agent SDK + OTel as primitive — augmentation rather than reinvention. 18 methodology event variants surface methodology-lifecycle telemetry alongside the SDK's built-in signals. Three pillars + dashboard ladder + FinOps applied to IAR. MCP server brings substrate-doc + methodology lookup into every Claude Code session.
+DESIGN-OBSERVABILITY operationalizes Goal 3 (observability as first-class) + Goal 4 (CI/CD shift-left observability surfaces). The architecture composes against the Agent SDK + OTel as primitive — augmentation rather than reinvention. 18 methodology event variants surface methodology-lifecycle telemetry alongside the SDK's built-in signals. Logs + metrics + traces signal surfaces, dashboard ladder, FinOps applied to IAR. MCP server brings substrate-doc + methodology lookup into every Claude Code session.
 
 The flagship status holds: every artifact born observable; every action emits; default-on, not opt-in. The collector + redaction processor make credential-exclusion structural rather than aspirational.
 
