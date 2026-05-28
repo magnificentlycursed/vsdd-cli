@@ -120,7 +120,7 @@ Strict whitepaper-canonical 10 sub-phases:
 | 5 | Formal Hardening | `vsdd-phase-5` |
 | 6 | Convergence (The Exit Signal) | `vsdd-phase-6` |
 
-Phase 5 + Phase 6 are first-class methodology phases per the whitepaper; projects choose whether to execute them.
+Phase 5 + Phase 6 are mandatory methodology phases per the whitepaper (Core Principle 7, Four-Dimensional Convergence). Projects that opt out are running partial VSDD per the upstream's prototyping allowance and do not reach the Exit Signal.
 
 ---
 
@@ -385,8 +385,6 @@ Projects declare axes in `.vsdd/config.yaml`. Each axis activates one downstream
 | `network-exposed: yes` | Red Team + Security (extended) | Scale up |
 | `persists-managed-schema-data: yes` | Data Engineer | Scale up slightly |
 | `handles-user-data: yes` | Privacy | Scale up slightly |
-| `safety-critical: yes` | Phase 5 Mutation Testing + Purity Boundary Audit recommended | Scale up substantially (Phase 5 expands) |
-| `formal-verification-candidates: yes` | Phase 5 Proof Execution recommended | Scale up further (Phase 5 expands more) |
 | `ui-surface: yes` | UX + Accessibility | Scale up slightly |
 | `localized: yes` | Localization | Baseline |
 | `ai-runtime-cost-relevant: yes` | AI Engineer | Baseline |
@@ -459,7 +457,7 @@ Base bands per cycle phase. These are first-pass estimates; refined per evidence
 | 2c | Small (skill mode) | Minor | Refactor; SE + SA |
 | 3 | Substantial per round (4-cluster cold-session) | Per-feature axes scale | Compounding-cost cycle; pre-cycle declaration required |
 | 4 | Small (operator-orchestrated routing) | Minor | Routing |
-| 5 | Substantial per round (cold-session + tool runs) | Scale per safety-critical / formal-verification axes | Mutation + fuzz + proof-execution tool runs measured separately |
+| 5 | Substantial per round (cold-session + tool runs) | All 5 surfaces run; scale per per-surface tooling complexity | Proof Execution + Fuzz + Security Hardening + Mutation + Purity Boundary Audit tool runs measured separately |
 | 6 | Small (operator-orchestrated attestation) | Minor | Single-author attestation |
 
 Specific token-count thresholds are intentionally absent until the toolkit's own observability subsystem produces cycle telemetry from real data. Pre-cycle declaration discipline (per primer 3) names the cycle's expected shape; after-action cost report closes the loop.
@@ -506,7 +504,7 @@ The meta-domain renamed from VDD-IAR Alignment. Validates semantic coherence of 
 
 1. **Spec-vs-implementation semantic alignment** — does the implementation faithfully match DESIGN.md's spec contracts? Not just code-correctness; semantic-coherence. Catches drift between what the spec asserts + what the implementation does.
 
-2. **Methodology-spirit adherence** — does the cycle's discipline-application match the methodology's intent? Catches cycles that follow the letter of the methodology (right hook count, right phase sequencing) but violate the spirit (sycophantic reviews, performative pre-cycle declarations).
+2. **Methodology-spirit adherence** — does the cycle's discipline-application match the methodology's spirit? Catches cycles that follow the letter of the methodology (right hook count, right phase sequencing) but violate the spirit (sycophantic reviews, performative pre-cycle declarations).
 
 3. **Cross-session semantic continuity** — does this cycle's terminology, classification, and routing match prior cycles' conventions? Catches naming drift, classification universe extensions, routing target divergence across cycles.
 

@@ -372,7 +372,7 @@ Operator-paste of `/cost` is not a load-bearing pattern. Capture is automated vi
 
 ### FinOps applied to AI-driven IAR
 
-Standard FinOps disciplines applied: cost-per-finding × per-domain × per-cycle × per-layer × per-project (aggregable bottom-up); budget-vs-actual per intent-axis; anomaly detection; right-sizing recommendations (model-tier mix vs. defect density); showback (per-domain cost breakdown); unit economics (cost-per-Exit-Signal-attestation).
+Standard FinOps disciplines applied: cost-per-finding × per-domain × per-cycle × per-layer × per-project (aggregable bottom-up); budget-vs-actual per per-feature axis; anomaly detection; right-sizing recommendations (model-tier mix vs. defect density); showback (per-domain cost breakdown); unit economics (cost-per-Exit-Signal-attestation).
 
 ---
 
@@ -620,11 +620,11 @@ Skill-mode is conversational-only by design. Phase 3 review-entries must come fr
 
 Strict whitepaper-canonical 10 sub-phases:
 
-1a Behavioral Spec → 1b Verification Architecture → 1c Spec Review Gate → 2a Test Suite Generation → 2b Minimal Implementation → 2c Refactor → 3 Adversarial Refinement (The VDD Roast) → 4 Feedback Integration Loop → 5 Formal Hardening (Mutation Testing / Fuzz Testing / Purity Boundary Audit / Proof Execution) → 6 Convergence (The Exit Signal)
+1a Behavioral Spec → 1b Verification Architecture → 1c Spec Review Gate → 2a Test Suite Generation → 2b Minimal Implementation → 2c Refactor → 3 Adversarial Refinement (The VDD Roast) → 4 Feedback Integration Loop → 5 Formal Hardening (Proof Execution / Fuzz Testing / Security Hardening / Mutation Testing / Purity Boundary Audit) → 6 Convergence (The Exit Signal)
 
 Operators can author Phase 1a and 1b in a single session if they choose; the methodology spec lists them as distinct phases per the whitepaper.
 
-Phase 5 + Phase 6 are first-class methodology phases; projects choose whether to execute them. The methodology spec describes when each surface is useful + what each looks like.
+Phase 5 + Phase 6 are mandatory methodology phases per the upstream whitepaper (Core Principle 7, Four-Dimensional Convergence). The methodology spec describes each Phase 5 surface + what Phase 6 attestation requires.
 
 ---
 
@@ -670,17 +670,15 @@ Three new methodology event variants track the PR lifecycle: `DraftPROpened` (Ph
 
 ---
 
-## Intent calibration via per-feature axes
+## Composition calibration via per-feature axes
 
-Per-feature axes in `.vsdd/config.yaml` per project. Each axis drives one downstream calibration.
+Per-feature axes in `.vsdd/config.yaml` per project. Each axis drives one downstream calibration (domain activation, Phase 5 surface selection, or cold-session budget multiplier).
 
 ```yaml
 ships-to-users-other-than-developer: yes
 network-exposed: yes
 persists-managed-schema-data: yes
 handles-user-data: yes
-safety-critical: no
-formal-verification-candidates: no
 ui-surface: no
 localized: no
 ai-runtime-cost-relevant: no
@@ -692,8 +690,6 @@ ai-runtime-cost-relevant: no
 | `network-exposed: yes` | Red Team + Security (extended) |
 | `persists-managed-schema-data: yes` | Data Engineer |
 | `handles-user-data: yes` | Privacy |
-| `safety-critical: yes` | Phase 5 Mutation Testing + Purity Boundary Audit recommended |
-| `formal-verification-candidates: yes` | Phase 5 Proof Execution recommended |
 | `ui-surface: yes` | UX (default if not already activated) + Accessibility |
 | `localized: yes` | Localization |
 | `ai-runtime-cost-relevant: yes` | AI Engineer |

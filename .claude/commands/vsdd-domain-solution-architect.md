@@ -28,7 +28,7 @@ Domain purpose: ensure the architectural decomposition + cross-layer seams + pur
 5. **Hard-to-undo decisions named.** Database schema, file format, network protocol, public API surface — each is named in DESIGN.md as hard-to-undo, with migration discipline if change is required. Reversibility-assumed-when-irreversible is the failure mode.
 6. **Cross-cutting concerns.** Logging, error handling, authentication, observability — applied uniformly across layers OR explicitly scoped per layer. Inconsistent application across layers is a Phase 3 finding.
 7. **Abstraction altitude.** Each layer's abstractions are at the right altitude for the work — neither too low (caller needs to know internals) nor too high (caller does work the layer should encapsulate). The "rule of three" applies: three repetitions justify abstraction; two don't.
-8. **Formal-proof candidate identification.** For projects with `formal-verification-candidates: yes` axis, SA names which pure functions are Phase 5 Proof Execution candidates + states the properties to prove.
+8. **Formal-proof candidate identification.** SA names which pure functions are Phase 5 Proof Execution targets + states the properties to prove. Phase 5 Proof Execution is mandatory for VSDD per upstream; projects without candidates declare that explicitly in DESIGN.md § Verification architecture so Phase 1b authoring surfaces the gap.
 
 ## Validator pair operationalization
 

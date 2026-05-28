@@ -22,7 +22,7 @@ Domain purpose: ensure the project's localized strings, locale-aware formatting,
 ## Standard Evaluation Dimensions
 
 1. **String extraction completeness.** Every operator-visible string is in the localization catalog. Hardcoded strings in implementation paths fire findings; date/time/number/currency literals fail differently per locale.
-2. **Translation coverage per declared locale.** Each locale declared in DESIGN.md § Project intent has translated strings for every catalog entry. Partial translations show fallbacks ungracefully + expose declaration-vs-delivery gap.
+2. **Translation coverage per declared locale.** Each locale declared in DESIGN.md has translated strings for every catalog entry. Partial translations show fallbacks ungracefully + expose declaration-vs-delivery gap.
 3. **Pluralization correctness.** Plural rules per locale (English: 1 vs N; Polish: 1, few, many, other; Arabic: zero, one, two, few, many, other). Use ICU MessageFormat or equivalent; hardcoded "X items" is the failure mode.
 4. **Locale-aware formatting.** Dates / times / numbers / currencies / phone numbers / addresses use locale-aware libraries. Hardcoded format strings fail at first non-EN-US operator.
 5. **Text-expansion tolerance.** UI layouts tolerate +50% text-length expansion (rule of thumb: German, Russian, Finnish); CLI output handles wide-character locales (CJK).

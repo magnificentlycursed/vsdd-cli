@@ -22,7 +22,7 @@ Per-domain extensions for Rust projects. Loads alongside the domain prompts in s
 - **`proptest` / `quickcheck` for property-based testing.** Phase 5 surface A. Properties express DESIGN.md invariants; default 1000-case budget.
 - **`cargo-mutants` for Mutation Testing.** Phase 5 surface B. Per-mutant disposition required for accepted-code paths.
 - **`cargo-fuzz` for Fuzz Testing.** Phase 5 surface C. Requires nightly toolchain; libFuzzer-based.
-- **`kani` for Proof Execution.** Phase 5 surface D (optional; capstone+ intent only). Bounded model checking; verifies properties for all inputs up to configured bound.
+- **`kani` for Proof Execution.** Phase 5 Proof Execution surface for Rust projects. Bounded model checking; verifies properties for all inputs up to configured bound.
 - **`criterion` for performance regression testing.** Per-benchmark history tracked; regression-against-baseline blocks merge above declared threshold.
 
 ## Platform Engineer extensions

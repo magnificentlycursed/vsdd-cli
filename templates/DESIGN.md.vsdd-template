@@ -19,15 +19,17 @@ schemas (DESIGN doc class). Sections marked REQUIRED below must be non-empty bef
 spec-gate close criterion at Phase 1c is satisfied.
 -->
 
-## Project intent (REQUIRED)
-
-**Intent calibration:** <one of: learning-exercise | portfolio | capstone | production>
-
-**Phase 5 strategy:** <one of: `not applicable — <rationale>` | `planned — <named tooling and scope>`>
-
-**Phase 6 strategy:** <one of: `not applicable — <rationale>` | `planned`>
+## Project description (REQUIRED)
 
 [One-paragraph project description.]
+
+## Phase 5 + Phase 6 strategy (REQUIRED)
+
+Phase 5 + Phase 6 are mandatory for VSDD per the upstream whitepaper. Declare scope + tooling here; opt-out implies the project is running partial VSDD (per the upstream's prototyping allowance — "use the parts that make sense") and does not reach the Exit Signal.
+
+**Phase 5 strategy:** `planned — <per-surface tooling and scope for all 5 surfaces: Proof Execution, Fuzz Testing, Security Hardening, Mutation Testing, Purity Boundary Audit>`
+
+**Phase 6 strategy:** `planned`
 
 ## Per-feature axes (REQUIRED)
 
@@ -37,8 +39,6 @@ Declare each axis in `.vsdd/config.yaml`. Active axes drive domain activation + 
 - `network-exposed`: <yes | no>
 - `persists-managed-schema-data`: <yes | no>
 - `handles-user-data`: <yes | no>
-- `safety-critical`: <yes | no>
-- `formal-verification-candidates`: <yes | no>
 - `ui-surface`: <yes | no>
 - `localized`: <yes | no>
 - `ai-runtime-cost-relevant`: <yes | no>

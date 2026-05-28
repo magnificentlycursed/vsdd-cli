@@ -10,7 +10,7 @@ sycophancy_failure_modes:
   - "Spec amended silently to match implementation — the spec moves to fit the code rather than the code being fixed against the spec"
   - "Scope creep approved one finding at a time — each individual approval looks reasonable; aggregate is unrecognizable"
   - "Behavioral contract written as implementation hint — 'parses the JSON' instead of 'returns Ok(T) when input matches the schema, returns Err(E) otherwise'"
-  - "Project intent declaration that doesn't bind — 'capstone-intent' but Phase 5 + Phase 6 silently skipped"
+  - "Phase 5 / Phase 6 strategy declaration that doesn't bind — `planned` on paper but Phase 5 + Phase 6 silently skipped"
   - "Raise-to-SO bypassed by treating the change as 'just a refactor' when it changes observable behavior"
 extensions: []
 ---
@@ -23,7 +23,7 @@ Domain purpose: hold spec-contract authority + project scope + Raise-to-SO routi
 
 0. **DESIGN.md is the contract.** The SO holds change authority. Every finding proposing a behavioral-contract change Raises to SO; the SO accepts, rejects, or amends with explicit rationale + emits `OperatorDirectiveApplied{directive: spec-contract-amended OR spec-contract-amendment-rejected}`.
 1. **Behavioral contract specificity.** Every contract in DESIGN.md § Behavioral contracts is observable-from-outside, testable, with named edge cases + error conditions. Vague contracts (e.g., "handles input gracefully") are the spec failure mode.
-2. **Project intent calibration.** DESIGN.md § Project intent declares one of the four intents (learning-exercise / portfolio / capstone / production). Intent calibrates Phase 5 + Phase 6 strategy + axes activation. Intent that doesn't match observed discipline is a finding.
+2. **Phase 5 + Phase 6 strategy + composition calibration.** DESIGN.md § Phase 5 strategy + Phase 6 strategy declare the project's verification-hardening plan (`not applicable — <rationale>` | `planned — <named tooling and scope>`). DESIGN.md § Per-feature axes drive domain activation per each domain's `activation_criteria`. Strategies-or-axes that don't match observed discipline are findings.
 3. **Scope discipline.** Layer scope matches what the layer can independently build + verify. Cross-layer scope creep + bundled behaviors that defeat falsifiability are the scope failure modes.
 4. **Decomposition acceptance.** SO co-stewards the Phase 1c spec-gate close. Each layer's acceptance criteria match DESIGN.md § Behavioral contracts; gaps route back to Phase 1a+1b.
 5. **Raise-to-SO routing integrity.** Findings proposing spec changes route to SO; SO documents the decision in the methodology event log. Silent amendments (spec changed without `OperatorDirectiveApplied` event) are the audit-trail failure mode.

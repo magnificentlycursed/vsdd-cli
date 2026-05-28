@@ -774,7 +774,7 @@ version = "0.1.0"
 edition = "2021"
 rust-version = "1.80"
 license = "MIT"
-authors = ["magnificentlycursed"]
+authors = ["magnificentlycursed <magnificentlycursed@users.noreply.github.com>"]
 repository = "https://github.com/magnificentlycursed/vsdd-cli"
 ```
 

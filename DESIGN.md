@@ -16,15 +16,15 @@ This document is authored Phase 1a (Behavioral Spec) + Phase 1b (Verification Ar
 
 ---
 
-## Project intent (REQUIRED)
+vsdd-cli is **one collaborator's interpretation + operationalization** of [@dollspace.gay](https://bsky.app/profile/dollspace.gay)'s [VSDD methodology](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) as a Rust CLI. It is **not** the methodology itself; the methodology is authored by dollspace. The toolkit's purpose: provide adoption-ready mechanical enforcement + observability + verification for projects following VSDD.
 
-**Intent calibration:** **capstone** at v0.x; promotes to **production** at v1.0 release + first downstream adoption.
+---
 
-**Phase 5 strategy:** planned — Purity Boundary Audit + Property-based testing (proptest against the pure-core in `vsdd-core`) + Mutation Testing (cargo-mutants against the Rust mirror) + Fuzz Testing (cargo-fuzz against the schema validator + YAML parser + bypass-marker parser); Proof Execution not applicable at v1 (no formal-proof candidates declared in this project's verification architecture; revisit at v1+ if cryptographic surfaces emerge).
+## Phase 5 + Phase 6 strategy (REQUIRED)
+
+**Phase 5 strategy:** planned — Proof Execution (kani-based bounded model checking on the schema-validator's accept/reject decision over bounded input space + YAML round-trip purity verification on the parser core) + Fuzz Testing (cargo-fuzz against the schema validator + YAML parser + bypass-marker parser) + Security Hardening (cargo-audit + cargo-deny on dependencies; Semgrep on Rust source; Wycheproof not applicable in initial scope — no cryptographic surfaces) + Mutation Testing (cargo-mutants against the Rust mirror) + Purity Boundary Audit (final check that the pure-core in `vsdd-core` has no I/O dependencies). Property-based testing (proptest) lives in Phase 2a Test Suite Generation, not Phase 5.
 
 **Phase 6 strategy:** planned — project-terminal four-dimensional convergence attestation when the toolkit reaches Exit Signal (no real findings across active domains in Phase 3 IAR final round; Phase 5 surfaces complete; cross-dimension consistency held).
-
-vsdd-cli is **one collaborator's interpretation + operationalization** of [@dollspace.gay](https://bsky.app/profile/dollspace.gay)'s [VSDD methodology](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) as a Rust CLI. It is **not** the methodology itself; the methodology is authored by dollspace. The toolkit's purpose: provide adoption-ready mechanical enforcement + observability + verification for projects following VSDD.
 
 ---
 
@@ -38,9 +38,7 @@ per_feature_axes:
   network-exposed: no                       # toolkit is local CLI; per the operator-directive 2026-05-27, Security + Red Team still activate on credential-handling + supply-chain grounds
   persists-managed-schema-data: yes         # .vsdd/events.jsonl (append-only event log), .vsdd/config.yaml, 3 registry YAML files all carry schema discipline; operator-directive 2026-05-28 activated Data Engineer
   handles-user-data: no                     # no user PII; toolkit handles methodology-relevant project metadata + operator-attribution + git commit data
-  safety-critical: no                       # methodology toolkit; not safety-critical control surface
-  formal-verification-candidates: no        # v1 ships without formal-proof harnesses; could promote to yes at v1+ if schema validator core warrants proof
-  ui-surface: no                            # CLI only; treating per methodology framing as not-GUI; v1+ if dashboard ladder reaches v3
+  ui-surface: no                            # CLI only; treating per methodology framing as not-GUI
   localized: no                             # English-only at v1
   ai-runtime-cost-relevant: yes             # the toolkit IS about AI-runtime cost observability; AI Engineer composes with every Phase 5 + Phase 3 round
 ```
@@ -63,7 +61,7 @@ auth_method:
 auth_attribution_pattern: per-operator
 ```
 
-Operator-local runs use Claude Plan auth (Max/Pro tier; magnificentlycursed identity). CI runs use API key via GitHub Secrets. Plan auth structurally rejected for CI per the cross-field validation (per methodology.md § Auth method).
+Operator-local runs use Claude Plan auth (Max/Pro tier). CI runs use API key via GitHub Secrets. Operator identity is the `git config user.name` value (per-operator attribution pattern). Plan auth structurally rejected for CI per the cross-field validation (per methodology.md § Auth method).
 
 ---
 

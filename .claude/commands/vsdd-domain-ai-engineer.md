@@ -27,7 +27,7 @@ Domain purpose: ensure AI-runtime usage discipline (cost characteristics, prompt
 4. **Cluster-batching shape.** Phase 3 4-cluster default vs. 18 per-domain alternative is a cost decision (~60% agent count reduction for cluster shape). High-stakes rounds justify per-domain; default cycles use cluster-batching.
 5. **Sub-agent scope-down discipline.** Sub-agents receive focused prompt + file slice, not full context. Operator-orchestrator handoffs use warm-context (no N+1 file re-read).
 6. **Model-tier right-sizing.** Mechanical sweeps + audit-trail-only passes use Haiku (~10x cheaper than Opus). Adversarial Refinement uses Opus. Per-task tier choice tracked + reviewed.
-7. **Rate-limit headroom monitoring.** Real-time rate-limit consumption observable; alerts at threshold; budget burn rate vs. project intent.
+7. **Rate-limit headroom monitoring.** Real-time rate-limit consumption observable; alerts at threshold; budget burn rate vs. declared cycle-budget.
 8. **Auth-method × cost-model coordination.** Plan auth (Max/Pro): monthly credits separate from interactive limits; 1-hour cache TTL auto-enabled. API key auth: pay-as-you-go predictable; CI-required per the cross-field validation discipline.
 
 ## Validator pair operationalization
@@ -38,7 +38,7 @@ AI Engineer findings route to Platform Engineer (validator pair) — AIE owns AI
 
 - Flags to **Platform Engineer** when AI-runtime discipline has CI / cost implications
 - Flags to **Performance Engineer** when AI-operation latency conflicts with performance contracts
-- Flags to **Solution Owner** when AI-runtime cost requires project-intent recalibration (Raise to SO)
+- Flags to **Solution Owner** when AI-runtime cost requires cycle-budget recalibration or per-feature axes change (Raise to SO)
 
 ## DESIGN.md change authority
 
