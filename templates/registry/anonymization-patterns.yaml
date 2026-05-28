@@ -69,6 +69,31 @@ operator_identity_patterns:
   - pattern_kind: "git-user-email"
     description: git config user.email
     redaction: "[REDACTED-GIT-USER-EMAIL]"
+
+  # Added 2026-05-28 per operator-directive identity-leak remediation (the crosslink/hub
+  # branch published `crosslink-agent:inhz@<machine-hostname>` SSH key comment publicly;
+  # the legacy check-anonymization hook did not cover hostname patterns).
+  - pattern_kind: "machine-hostname"
+    description: Operator's machine hostname; macOS default of `<FirstName>s-MacBook-Pro.local` leaks first name; Linux/Windows hostnames may leak hostname-as-identifier
+    pattern: '\b[A-Za-z][A-Za-z0-9-]*-MacBook(-Pro|-Air)?(\.local)?\b'
+    redaction: "[REDACTED-MACHINE]"
+    note: "Operator may extend per-OS hostname patterns in the operator_extensions section below; the methodology canonical pattern catches macOS Apple-default hostname form only at v1"
+
+  - pattern_kind: "ssh-key-comment-with-host"
+    description: SSH public key comment containing host info (e.g., `crosslink-agent:<id>@<host>` form crosslink generates by default)
+    pattern: '\b(crosslink-agent|ssh|user|key):[A-Za-z0-9_-]+@[A-Za-z][A-Za-z0-9-]*(\.[A-Za-z]+)*\b'
+    redaction: "[REDACTED-AGENT-HOST]"
+
+  - pattern_kind: "user-path-absolute"
+    description: Absolute filesystem path containing $HOME-component (catches `/Users/<username>/...` and `/home/<username>/...` forms even when $HOME env var is not exported in the hook context)
+    pattern: '(/Users/|/home/)[A-Za-z][A-Za-z0-9._-]+/'
+    redaction: "<user-home>/"
+
+  - pattern_kind: "crosslink-tracker-remote-warn"
+    description: "If a `WARN no tracker_remote configured` message appears in operator-facing surfaces, this is the signal that crosslink is defaulting to `origin` and auto-pushing the hub branch publicly. Operator-directive 2026-05-28: dismissing this WARN class is itself a discipline failure (the WARN was the signal of the public-push that caused the leak)."
+    pattern: 'WARN no tracker_remote configured'
+    redaction: ""
+    note: "Pattern detection here is for operator-runbook checklists; the actual mitigation is `crosslink config set tracker_remote local-only` (or equivalent disable-push setting)"
 # === End vsdd managed ===
 
 # Operator extensions land below this marker.
