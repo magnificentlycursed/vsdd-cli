@@ -162,6 +162,39 @@ excluded_fields:
 - TW for prose-surface paths (`README.md`, `DESIGN-*.md`, `PROCESS.md`, `CHANGELOG.md`, `manual-tests/`)
 - DR for PR description review (cold-reader pass)
 
+**Commit-level domain co-authorship (parallel to PR co-authorship).** Same discipline extends to commit-level via git `Co-authored-by:` trailers. Convention:
+
+```
+# Prose-surface commit message:
+<subject>
+
+<body>
+
+Composed-domains: <comma-separated domain slugs for the phase>
+
+Co-authored-by: Technical Writer <tw@vsdd-domains>
+Co-authored-by: Documentation Reviewer <dr@vsdd-domains>
+[other domain co-authors per phase composition]
+```
+
+Synthetic `@vsdd-domains` email signals domain-lens attribution (not a real person). The `check-prose-surface-tw-dr-composition.py` hook validates either form (`Composed-domains:` trailer OR `Co-authored-by:` trailers); the `Co-authored-by:` form is preferred — richer audit trail (surfaces in `git log` / `git shortlog` / `git blame`); discoverable via standard git tooling; aligns with the existing AI-co-authorship convention (`Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>`).
+
+Phase-domain matrix extends to commit-level. Each phase's composed-domains attribute to commits in that phase via Co-authored-by trailers:
+
+| Phase | Co-authorship trailers required for commits touching prose/code |
+|---|---|
+| 1a / 1b spec authoring | SO (primary) + TW + DR (prose surfaces) + axes-activated domains |
+| 1c decomposition | SA + SO + DR (cold-reader spec-gate) |
+| 2a Red Gate | QE |
+| 2b implementation | SE + TW + DR (prose-surface updates) + QE + axes-activated |
+| 2c refactor | SE + SA |
+| 3 adversarial refinement | (cold-session reviewer dispatch; not commit-time authorship) |
+| 4 routing | operator-orchestrated (no domain co-authors) |
+| 5 formal hardening | QE + Security + SA |
+| 6 convergence | operator-single-author (no domain co-authors; attestation is operator-attributed only) |
+
+Hook dispatch: for each touched file in commit, identify phase from `.vsdd/config.yaml` + active-cycle state, look up composed_domains, validate trailers present. Missing trailers fire `VSDD-W0180: prose-surface-commit-without-tw-dr-composition` warning OR bypass-marker required with rationale.
+
 **Manual-test checklist (Pattern B auto-generation).** `vsdd observe pr-body --layer N` reads `manual-tests/layer-N.md` + embeds checkbox items into PR description. Single source of truth; no copy-paste drift. Operator marks items checked in PR UI as they execute manual testing. `check-pr-manual-test-completion.py` validates all items checked or deferred-with-rationale per primer 1c discipline; fires `VSDD-E0090: pr-manual-tests-incomplete` if violated.
 
 **PR-lifecycle events:** `DraftPROpened` (Phase 2a boundary) → `PRReadyForReview` (layer-gate close; manual tests complete) → `PRMerged` (final). Two new hooks: `check-draft-pr-presence.py` + `check-pr-template-conformance.py`.
