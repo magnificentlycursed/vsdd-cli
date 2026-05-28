@@ -1,6 +1,6 @@
 # DESIGN-VERIFICATION.md
 
-Design document for the verification subsystem of the `vsdd` toolkit. Defines the validator architecture (dual-mode: frontmatter + structural), the per-hook deployment matrix (~18 methodology hooks), the Rust mirror for CI, CI workflow templates with auth-method-conditional steps, bypass-marker enforcement, error catalog implementation, per-error-code falsifiability fixtures, and the `vsdd verify` CLI subcommand surface.
+Design document for the verification subsystem of the `vsdd` toolkit. Defines the validator architecture (dual-mode: frontmatter + structural), the per-hook deployment matrix (~19 methodology hooks), the Rust mirror for CI, CI workflow templates with auth-method-conditional steps, bypass-marker enforcement, error catalog implementation, per-error-code falsifiability fixtures, and the `vsdd verify` CLI subcommand surface.
 
 ```yaml
 # Pre-authoring composition declaration
@@ -26,7 +26,7 @@ For positioning: see [`README.md`](./README.md). For methodology: [`DESIGN-METHO
 DESIGN-VERIFICATION owns:
 
 - Validator architecture (dual-mode dispatch: frontmatter + structural)
-- ~18 methodology hooks (Python operator-side; Rust mirror CI-side)
+- ~19 methodology hooks (Python operator-side; Rust mirror CI-side)
 - Per-hook deployment matrix (which hooks run at commit-time / CI-time / both)
 - CI workflow templates (`.github/workflows/vsdd-*.yml`)
 - Auth-method-conditional CI steps (Plan-auth vs API-key-auth)
@@ -65,7 +65,7 @@ The validator **only consumes schemas from the committed-canonical tree** (`vsdd
 
 ## Validator architecture (dual-mode dispatch)
 
-Per DESIGN-METHODOLOGY's reconciled dual-mode declaration: 14 frontmatter-based classes + 1 structural class (CHANGELOG).
+Per DESIGN-METHODOLOGY's reconciled dual-mode declaration: 12 frontmatter-based classes + 1 structural class (CHANGELOG) = 13 artifact classes total.
 
 ### Layered architecture
 
@@ -167,7 +167,7 @@ Results stream to:
 
 ---
 
-## Per-hook deployment matrix (~18 hooks)
+## Per-hook deployment matrix (~19 hooks)
 
 Each hook is a thin Python entry point at `.claude/hooks/vsdd-<hook-id>.py` (~5-15 lines) that invokes shared logic via `vsdd-core` (when Rust binary available) OR pure-Python validation logic.
 
@@ -178,12 +178,12 @@ Each hook is a thin Python entry point at `.claude/hooks/vsdd-<hook-id>.py` (~5-
 | 1 | check-frontmatter-schema | Pre-commit on `*.md` with frontmatter; pre-merge in CI | Per-class JSON Schema validation | VSDD-E0001-E0099 range (per class) | Both |
 | 2 | check-cite-resolution | Pre-commit on `*.md`; pre-merge CI | Citation regex match → audit-trail finding-id registry | VSDD-E0010, VSDD-E0011 (candidate) | Both |
 | 3 | check-classification-universe | Pre-commit on Finding entries | Classification ∈ domain's classification_universe | VSDD-E0017 (candidate) | Both |
-| 4 | check-naming-discipline (consolidated) | Pre-commit on `*.md` | Letter-label anti-pattern + vocabulary registry compliance + suite-internal terminology + first-use expansion | VSDD-E0160, VSDD-W0001, VSDD-W0140 | Both |
+| 4 | check-naming-discipline (consolidated) | Pre-commit on `*.md` | Letter-label anti-pattern + vocabulary registry compliance + suite-internal terminology + first-use expansion | VSDD-E0160 (letter-label), VSDD-W0001 (vestigial / deprecated-alias / suite-internal-terminology / missing-first-use-expansion — multi-rule shared) | Both |
 | 5 | check-anonymization | Pre-commit on all committed text files | $HOME / git user.name / git user.email / API-key formats (`sk-ant-api03-`, `Bearer <token>`, etc.) | VSDD-E0220 (existing-file-malformed-refuse-to-overwrite), redaction patterns | Both |
 | 6 | check-identity-correlation | Pre-commit on external-author review-log files | Handle-slug consistency across declared platforms | VSDD-E0019 (candidate) | Both |
 | 7 | check-document-staleness | Pre-commit on prose surfaces; cron weekly sweep | Cross-doc reference resolution + last-modified-vs-related-modified drift | VSDD-W0030 | Both |
-| 8 | check-phase-transitions (consolidated 9-transition matrix) | Phase-boundary commits | Per-R95-F3 9-transition provability matrix | VSDD-E0050 + phase-specific codes | Both |
-| 9 | check-phase-composition | Phase-boundary commits | Composed-domains declaration matches phase-domain composition matrix | VSDD-E0050 | Both |
+| 8 | check-phase-transitions (consolidated 9-transition matrix) | Phase-boundary commits | Per-R95-F3 9-transition provability matrix | VSDD-E0051 (phase-transition-not-attested) + phase-specific codes | Both |
+| 9 | check-phase-composition | Phase-boundary commits | Composed-domains declaration matches phase-domain composition matrix | VSDD-E0050 (phase-composition-not-declared) | Both |
 | 10 | check-draft-pr-presence | Phase 2a commits | Draft PR exists for the layer | VSDD-E0070 | CI only |
 | 11 | check-pr-template-conformance | PR creation / update | PR description matches PR template artifact class schema | VSDD-E0080 | CI only |
 | 12 | check-pr-manual-test-completion | PR merge-gate | Manual-test checklist all checked OR deferred-with-rationale | VSDD-E0090 | CI only |
@@ -192,6 +192,8 @@ Each hook is a thin Python entry point at `.claude/hooks/vsdd-<hook-id>.py` (~5-
 | 15 | check-prose-surface-tw-dr-composition | Pre-commit on prose-surface files | Composed-domains trailer OR Co-authored-by trailers for TW + DR present | VSDD-W0180 | Both |
 | 16 | check-changelog-discipline (consolidated 10-rule) | Pre-commit on CHANGELOG.md; pre-merge CI | Keep-a-Changelog structural compliance + entry presence + version-date + canonical categories + file integrity + 5 candidate rules | VSDD-W0190, W0191, W0194, W0195, E0240 (accepted); W0192, W0193, W0196, W0197, L0050 (candidate) | Both |
 | 17 | check-bypass-marker | Pre-commit on all files | Bypass-marker rationale non-empty + hook-id namespaced + PR-approval-label at CI | VSDD-E0016, VSDD-W0070, VSDD-E0030 | Both |
+| 18 | check-dependency-approval | Pre-commit + Pre-merge on dependency-manifest changes (`Cargo.toml` / `package.json` / `pyproject.toml` / `requirements.txt`) | New entries require SO + PE + Security investigation section in PR body + `docs/dependencies/<crate>.md` investigation record + co-authorship trailers | VSDD-E0100 (dependency-approval-missing) | Both |
+| 19 | check-methodology-version-drift | Pre-commit on `methodology.md` + `vsdd verify check` aggregator | Project `methodology.md` frontmatter `methodology_version` compared against toolkit's bundled canonical version; warn if drift | VSDD-W0200 (methodology-version-drift) | Both |
 
 ### Consolidation patterns
 
@@ -220,6 +222,8 @@ This keeps the operator-facing hook count manageable while preserving per-rule c
 | check-prose-surface-tw-dr-composition | Pre-commit on prose surfaces | Both |
 | check-changelog-discipline | Pre-commit on CHANGELOG.md + Pre-merge | Both |
 | check-bypass-marker | Pre-commit | Both |
+| check-dependency-approval | Pre-commit + Pre-merge on dependency-manifest changes | Both |
+| check-methodology-version-drift | Pre-commit on `methodology.md` + aggregator | Both |
 
 CI bootstrap: `vsdd init --ci-mode` runs first; deploys hooks + Rust mirror artifacts. All hooks except auto-scaffolding (post-commit hook) run in both contexts.
 
@@ -690,7 +694,7 @@ repos:
         entry: .claude/hooks/vsdd-cite-resolution.py
         language: python
         files: '\.md$'
-      # ... (18 hooks total)
+      # ... (19 hooks total)
 # === End vsdd managed ===
 ```
 
@@ -714,7 +718,7 @@ vsdd-cli/
 │   │   ├── schemas/                    # Rust types (source-of-truth)
 │   │   │   ├── review_entry.rs
 │   │   │   ├── finding.rs
-│   │   │   ├── ...                     # 14 frontmatter classes
+│   │   │   ├── ...                     # 12 frontmatter classes
 │   │   ├── events/                     # 18 event variant types
 │   │   ├── anchor.rs                   # anchor-ID derivation utility
 │   │   ├── bypass.rs                   # bypass-marker parsing
@@ -738,7 +742,7 @@ vsdd-cli/
 │       └── mcp_serve/                  # vsdd mcp-serve implementation
 ├── .claude/                            # Claude Code substrate (deployed by vsdd init when this is a vsdd-using project)
 │   ├── hooks/
-│   │   └── vsdd-*.py                   # 18 methodology hooks (Python thin wrappers)
+│   │   └── vsdd-*.py                   # 19 methodology hooks (Python thin wrappers)
 │   ├── commands/
 │   │   └── vsdd-*.md                   # 10 phase primers + 16 domain skills + 2 meta
 │   └── mcp.json                        # MCP server registration
@@ -829,7 +833,7 @@ Fallback: `cargo install vsdd --locked` (slower but always-fresh).
 
 | Source | Consumed |
 |---|---|
-| **DESIGN-SCHEMA** | 14 frontmatter JSON Schemas + 1 structural rule file + error catalog file format + anchor-ID derivation conventions + bypass-marker schema |
+| **DESIGN-SCHEMA** | 12 frontmatter JSON Schemas + 1 structural rule file + error catalog file format + anchor-ID derivation conventions + bypass-marker schema |
 | **DESIGN-OBSERVABILITY** | OTel emission convention for `HookFired` + `ValidationPassed` / `ValidationFailed` events; collector + sink wiring + redaction processor |
 | **DESIGN-METHODOLOGY** | Phase-domain composition matrix (informs hook dispatch); Layer-cycle PR discipline (informs CI workflow templates); CHANGELOG cooperation pattern |
 
@@ -892,7 +896,7 @@ Tracks 5a-5n are v1 deliverables. 5o-5q are v1+.
 
 ## Closing
 
-DESIGN-VERIFICATION operationalizes the mechanical-enforcement layer of Goal 2 (machine-enforceable) + Goal 4 (CI/CD shift-left). 18 methodology hooks composing with crosslink's 5 = ~23 hooks total deployed in a VSDD project. Per-hook deployment matrix declares operator-local vs CI scope. Rust mirror at CI-side preserves "one source; two enforcement surfaces" — operator-local + CI cannot drift in what they enforce.
+DESIGN-VERIFICATION operationalizes the mechanical-enforcement layer of Goal 2 (machine-enforceable) + Goal 4 (CI/CD shift-left). 19 methodology hooks composing with crosslink's 5 = ~24 hooks total deployed in a VSDD project. Per-hook deployment matrix declares operator-local vs CI scope. Rust mirror at CI-side preserves "one source; two enforcement surfaces" — operator-local + CI cannot drift in what they enforce.
 
 Bypass-marker enforcement is the operator-escape-valve; PR-approval label is the CI-side teeth. Error catalog with per-code documentation + SARIF emission + fixture-based falsifiability — the Rust-compiler-for-documents discipline made operational.
 

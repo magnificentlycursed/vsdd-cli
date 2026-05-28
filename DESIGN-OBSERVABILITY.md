@@ -233,7 +233,7 @@ Per DESIGN-SCHEMA's variant payload table, each emitted as OTel custom log event
 |---|---|---|
 | `ExitSignaled` | Phase 6 attestation committed; per-dimension status + signature recorded | vsdd-custom-event |
 
-### Discipline-enforcement variants (3)
+### Discipline-enforcement variants (4)
 
 | Variant | When emitted | Capture-source |
 |---|---|---|

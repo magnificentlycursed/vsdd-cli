@@ -114,7 +114,7 @@ The rebuild's product is:
 
 1. **The methodology spec** — concise governing prose (~250-350 lines) at `methodology.md` (project root for vsdd-using-projects; `vsdd-cli` repo root for the toolkit's own spec) that captures the load-bearing disciplines.
 2. **The observability subsystem** — flagship. OTel collector + sink wiring + 18 methodology-specific event variants + `vsdd observe` subcommand + FinOps-applied-to-IAR dashboards. Standalone-valuable; crosslink-compatible event schema; designed for absorption.
-3. **The verification subsystem** — ~18 methodology hooks composing with crosslink's 5 enforcement hooks (~23 total in a VSDD project).
+3. **The verification subsystem** — ~19 methodology hooks composing with crosslink's 5 enforcement hooks (~24 total in a VSDD project).
 4. **The schema enforcement layer** — YAML frontmatter + per-artifact-class JSON Schema with semantic versioning.
 5. **The domain prompt set** — 16 role-domain prompts + 2 meta-domain prompts (VSDD Methodology + Sanity Check).
 6. **The phase primers** — 10 phase primers per whitepaper-canonical taxonomy.
@@ -135,6 +135,10 @@ crosslink init                  # crosslink's own setup
 vsdd init                       # deploys toolkit assets
 ```
 
+**Init order is required, not advisory.** `crosslink init` deploys substrate (hooks, MCP servers, rules) that `vsdd init` composes against. Running `vsdd init` first fires `VSDD-E0220: existing-file-malformed-refuse-to-overwrite` on the missing crosslink artifacts during the pre-flight check (`vsdd init --check` detects crosslink-init-manifest absent and refuses deployment). The reverse order is not order-independent by construction; if attempted, `vsdd init` halts with explicit operator-facing error directing the operator to run `crosslink init` first.
+
+**Platform requirement: v1 is GitHub-only.** The methodology's CI-side teeth — bypass-approval label gate, CODEOWNERS auto-routing, SARIF emission, CHANGELOG cooperation, dependency-approval PR-description structure — are GitHub-API-specific. `vsdd init --check` detects non-GitHub remotes and refuses deployment. No commitment to support GitLab / Bitbucket / Forgejo / Codeberg / self-hosted Gitea / sourcehut in v1 or v1+; revisit only with adoption evidence + operator-directive.
+
 `vsdd init` (subcommand of the single `vsdd` Rust binary distributed via `cargo install vsdd`). The shift-left discipline: every defect class preventable at adoption-time gets caught at adoption-time, not at first commit or first cycle.
 
 **Pre-flight validation (`vsdd init --check`):** runs before deployment — validates git repo present + claude-code installed (substrate version pinned) + crosslink installed (if axis declared) + cargo toolchain + Python version. Reports OK/missing before any artifacts deploy. Prevents mid-init inconsistent state.
@@ -142,7 +146,7 @@ vsdd init                       # deploys toolkit assets
 **Deployment steps:**
 
 1. Deploys 10 phase-primer skills + 16 per-domain skills + VSDD Methodology + Sanity Check meta-skills as `.claude/commands/vsdd-*.md` files (VSDD-prefix discipline so they cluster in `/help` and don't collide with crosslink's 14 skills). Per-domain skills (`vsdd-domain-<slug>`) are operator-interactive entry points; phase-primer skills compose against per-domain skills per the phase-domain composition matrix
-2. Deploys ~18 methodology hooks (Python — matches Claude Code's hook convention + crosslink's existing 5 hooks) alongside crosslink's 5 (extends `.claude/settings.json`; composes, doesn't replace) + runs `pre-commit install` automatically so the first commit lands under hook enforcement (closes first-commit-without-hook-enforcement defect class)
+2. Deploys ~19 methodology hooks (Python — matches Claude Code's hook convention + crosslink's existing 5 hooks) alongside crosslink's 5 (extends `.claude/settings.json`; composes, doesn't replace) + runs `pre-commit install` automatically so the first commit lands under hook enforcement (closes first-commit-without-hook-enforcement defect class)
 3. Registers the 16 role-domain prompts + VSDD Methodology + Sanity Check meta as `vsdd-domain` knowledge pages via `crosslink knowledge import`
 4. Registers all 14 supplements as `vsdd-supplement` knowledge pages
 5. **Interactive per-feature axes prompt** — asks operator to confirm each axis (`ships-to-users-other-than-developer?`, `network-exposed?`, etc.); writes `.vsdd/config.yaml` with declared axes; emits `ProjectAxesDeclared` event (closes axes-undeclared-drift defect class)
@@ -241,7 +245,7 @@ The rebuild explicitly leverages these features rather than treating the substra
 | **OpenTelemetry export** (`CLAUDE_CODE_ENABLE_TELEMETRY=1` + exporter env vars) | Metrics (tokens, cost, sessions, tool decisions); log events (prompts, API requests, errors); traces (interactions, llm_requests, tools, hooks) → vsdd-deployed OTel collector → `.vsdd/events.jsonl` + crosslink hub |
 | **SDK message stream cost data** (`message.usage`, `modelUsage`, `total_cost_usd`) | Per-step + per-model + cumulative SDK estimate; consumed by `vsdd observe` for in-cycle reports (caveat: client-side estimate, not authoritative) |
 | **W3C trace context propagation** | SDK auto-injects TRACEPARENT into CLI subprocess + Bash/PowerShell tool calls; full delegation chain visible in single trace |
-| `.claude/hooks/*.py` | ~18 methodology hooks deployed by `vsdd init` |
+| `.claude/hooks/*.py` | ~19 methodology hooks deployed by `vsdd init` |
 | `.claude/commands/*.md` | 10 phase-primer + 16 per-domain + 2 meta skills |
 | `.claude/agents/*.md` | Per-domain cold-session reviewer agents pre-configured |
 | `.claude/mcp.json` | Methodology + substrate-docs MCP server (`vsdd mcp-serve`) |
@@ -258,12 +262,20 @@ The rebuild explicitly leverages these features rather than treating the substra
 
 ## Auth method + Security disciplines
 
-Auth method declared explicitly in `.vsdd/config.yaml` per project; no implicit default. Operator declares at `vsdd init` time + may change per `AuthMethodChanged` event (rotation, scale-shift, plan-credit-exhaustion fallback).
+Auth method declared explicitly in `.vsdd/config.yaml` per project; **separate fields for operator-local and CI contexts** (per Phase 5 round 1 Security F4 — Plan auth structurally permits CI declaration but operationally fails at runtime; cross-field validation now rejects). Operator declares at `vsdd init` time + may change per `AuthMethodChanged` event (rotation, scale-shift, plan-credit-exhaustion fallback).
 
-| Auth method | Default for | Cost model |
+```yaml
+auth_method:
+  operator_local: plan | api_key
+  operator_local_credential_source: "plan-auth-no-key" | "env:<VAR_NAME>"
+  ci: api_key | "none"        # "none" allowed when no CI workflows deployed; "plan" rejected by schema validator
+  ci_credential_source: "env:<VAR_NAME>" | null
+```
+
+| Auth method | Context | Cost model |
 |---|---|---|
-| **Plan (Max/Pro) + Agent SDK** | Operator-local Phase 1a-2c skill mode + small Phase 3 cycles | Monthly Agent SDK credits ($20-$200 by tier); separate from interactive limits; 1-hour prompt-cache TTL auto-enabled |
-| **API key + Agent SDK** | Goal 4 CI/CD + Phase 5 hardening tool runs + scheduled cron sweeps | Pay-as-you-go per-token; predictable for automation per Anthropic's own guidance; 1-hour cache TTL opt-in |
+| **Plan (Max/Pro) + Agent SDK** | Operator-local Phase 1a-2c skill mode + small Phase 3 cycles (operator-interactive session required — NOT CI) | Monthly Agent SDK credits ($20-$200 by tier); separate from interactive limits; 1-hour prompt-cache TTL auto-enabled |
+| **API key + Agent SDK** | Operator-local OR Goal 4 CI/CD + Phase 5 hardening tool runs + scheduled cron sweeps | Pay-as-you-go per-token; predictable for automation per Anthropic's own guidance; 1-hour cache TTL opt-in |
 
 **Security disciplines:**
 
@@ -373,9 +385,9 @@ Detailed design in [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md). Pre-com
 | Hook layer | Count | Owner | Discipline |
 |---|---|---|---|
 | Crosslink enforcement hooks | 5 | crosslink upstream | Tracking discipline (session-start, prompt-guard, work-check, post-edit-check, pre-web-check + heartbeat) |
-| Suite methodology hooks | ~18 | suite-repo | Frontmatter schema validation, citation resolution, classification universe, naming-discipline (incl. letter-label anti-pattern + suite-internal terminology), anonymization (incl. API-key detection), identity-correlation, document staleness, phase-transition provability (consolidated 9-transition matrix), phase-domain composition, draft-PR presence, PR-template conformance, PR-manual-tests-completion, DESIGN.md template conformance, post-DESIGN.md auto-scaffolding (manual-tests + Phase 2a Red Gate skeleton), prose-surface TW + DR composition, CHANGELOG-discipline (consolidated: entry-presence + Keep-a-Changelog structure + version-date + canonical-categories + file-integrity + 5 candidate rules), dependency approval (SO + PE supply-chain + Security investigation for new dependencies) |
+| Suite methodology hooks | ~19 | suite-repo | Frontmatter schema validation, citation resolution, classification universe, naming-discipline (incl. letter-label anti-pattern + suite-internal terminology), anonymization (incl. API-key detection), identity-correlation, document staleness, phase-transition provability (consolidated 9-transition matrix), phase-domain composition, draft-PR presence, PR-template conformance, PR-manual-tests-completion, DESIGN.md template conformance, post-DESIGN.md auto-scaffolding (manual-tests + Phase 2a Red Gate skeleton), prose-surface TW + DR composition, CHANGELOG-discipline (consolidated: entry-presence + Keep-a-Changelog structure + version-date + canonical-categories + file-integrity + 5 candidate rules), dependency approval (SO + PE supply-chain + Security investigation for new dependencies), methodology-version-drift (project methodology.md vs toolkit-canonical drift detection) |
 
-Total deployed in a VSDD project: ~23 hooks. Hook count growth governed by earned-by-recurrence trigger; new hooks require 2+ documented drift cases or explicit operator-directive. Hooks are consolidated where logic overlaps (e.g., `check-changelog-discipline.py` covers 10 rules in one hook with multi-rule dispatch). The dependency-approval hook is operator-directive triggered (2026-05-27 directive: any new crate / npm package / pip package requires SO approval + PE supply-chain investigation + Security CVE / threat-model review; living investigation record at `docs/dependencies/<crate>.md`).
+Total deployed in a VSDD project: ~24 hooks. Hook count growth governed by earned-by-recurrence trigger; new hooks require 2+ documented drift cases or explicit operator-directive. Hooks are consolidated where logic overlaps (e.g., `check-changelog-discipline.py` covers 10 rules in one hook with multi-rule dispatch). The dependency-approval hook is operator-directive triggered (2026-05-27 directive: any new crate / npm package / pip package requires SO approval + PE supply-chain investigation + Security CVE / threat-model review; living investigation record at `docs/dependencies/<crate>.md`). The methodology-version-drift hook is operator-directive triggered (2026-05-27 directive following Phase 5 round 1 Security F6: project `methodology.md` `methodology_version` is compared against installed toolkit's bundled version; drift fires `VSDD-W0200` warning; refresh via `vsdd init --update-methodology`).
 
 ### Hook architecture
 
@@ -487,6 +499,8 @@ Catches drift patterns documented in existing-suite + bookmark-cli-manual review
 | CHANGELOG discipline (operator-directive — adopt crosslink's Keep-a-Changelog pattern) | `VSDD-W0190: changelog-entry-missing` · `VSDD-W0191: changelog-structure-malformed` · `VSDD-W0194: changelog-version-section-missing-date` · `VSDD-W0195: changelog-non-canonical-category` · `VSDD-E0240: changelog-deleted` (all cooperate with `crosslink close` auto-management) |
 | PR-discipline (operator-directive) | `VSDD-E0070: draft-pr-missing`, `VSDD-E0080: pr-template-malformed`, `VSDD-W0041: pr-co-authorship-missing`, `VSDD-E0090: pr-manual-tests-incomplete` |
 | Dependency approval (operator-directive 2026-05-27) | `VSDD-E0100: dependency-approval-missing` (new entry in `Cargo.toml` / `package.json` / `pyproject.toml` / `requirements.txt` without SO + PE + Security investigation in PR description and corresponding `docs/dependencies/<crate>.md` investigation entry) |
+| Auth × CI cross-field validation (Phase 5 round 1 Security F4) | `VSDD-E0021: auth-method-plan-incompatible-with-ci` (Plan auth declared for CI; structurally invalid — Plan requires operator-interactive session CI cannot provide), `VSDD-W0022: ci-workflows-present-without-ci-auth-declared` (CI workflow files exist without `auth_method.ci` declared) |
+| Methodology version pin (Phase 5 round 1 Security F6) | `VSDD-W0200: methodology-version-drift` (project `methodology.md` `methodology_version` < installed toolkit's bundled version; refresh via `vsdd init --update-methodology`) |
 
 **Candidate (single-recurrence; promote on second case):**
 
@@ -684,6 +698,8 @@ ai-runtime-cost-relevant: no
 | `ai-runtime-cost-relevant: yes` | AI Engineer |
 
 Each axis is independent. No tier vocabulary. Cold-session budget bands per axis-combination land in [`DESIGN-METHODOLOGY.md`](./DESIGN-METHODOLOGY.md).
+
+**Always-on domain baseline (additive over axes):** SE + QE + SA + SO activate regardless of axes. PE + PerfE activate when the project ships code (any source file in `src/` / `lib/` / equivalent). The axes matrix above extends from this baseline — a zero-axes project that ships code still has 6 composed domains (not zero). See [`DESIGN-METHODOLOGY.md` § Always-on domain baseline](./DESIGN-METHODOLOGY.md#always-on-domain-baseline).
 
 ---
 

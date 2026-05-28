@@ -34,6 +34,12 @@ The methodology subsystem does NOT own:
 - CI workflow templates + GitHub Secrets pattern + Rust hook-runner mirror (DESIGN-VERIFICATION)
 - Anthropic Usage and Cost API integration (DESIGN-OBSERVABILITY; deferred to v1+)
 
+### Platform requirement (v1 scope)
+
+v1 is **GitHub-only**. The methodology's CI-side teeth — bypass-approval label gate (`DESIGN-VERIFICATION § Bypass-marker enforcement`), CODEOWNERS auto-routing for TW + DR composition, SARIF emission for GitHub Code Scanning, CHANGELOG cooperation with `crosslink close`, the dependency-approval discipline's PR-description structure — are all GitHub-API-specific. Adopting projects must be GitHub-hosted to receive the full methodology surface.
+
+Non-GitHub platforms (GitLab, Bitbucket, Forgejo, Codeberg, self-hosted Gitea, sourcehut) are **not supported at v1** and **no commitment is made to support them in v1+**. Future platform support is contingent on adoption evidence and operator-directive. The methodology's `vsdd init --check` pre-flight detects non-GitHub remotes and refuses deployment with explicit operator-facing error.
+
 ---
 
 ## Cross-DESIGN-doc authoring order + change authority
@@ -70,6 +76,20 @@ The methodology spec is the toolkit's concise governing prose. Target ~250-350 l
 | Closing + cross-references | Pointer to DESIGN docs + whitepaper + crosslink | 10-15 |
 
 Total: ~285-380 lines. Target achievable.
+
+### Methodology version pin discipline
+
+The methodology spec carries a top-level `methodology_version: <semver>` frontmatter field (independent of per-section frontmatter declared by the Methodology spec section artifact class). Per Phase 5 round 1 finding routing (Security F6): the canonical toolkit copy and the per-project deployed copy can drift after toolkit upgrades; without version-pinning the project's audit trail loses the methodology snapshot it was authored under.
+
+**Version-pin mechanism:**
+
+- vsdd-cli's own `methodology.md` declares `methodology_version: <semver>` matching the toolkit semver
+- `vsdd init` deploys the toolkit-canonical `methodology.md` to adopting projects with the version stamped in frontmatter
+- `vsdd verify check` includes the `check-methodology-version-drift` hook (DESIGN-VERIFICATION § Per-hook deployment matrix) which compares project `methodology_version` against the installed toolkit's bundled version
+- Drift fires `VSDD-W0200: methodology-version-drift` (warning; allows commit but surfaces in CI as PR comment)
+- `vsdd init --update-methodology` subcommand refreshes the project's `methodology.md` to the toolkit-canonical version + emits `OperatorDirectiveApplied{directive: methodology-version-updated, from: <semver>, to: <semver>}` event
+
+**Why warning not error:** projects may legitimately stay pinned to an older methodology version for stability reasons (mid-cycle upgrade is disruptive; project may prefer to upgrade between cycles). The warning surfaces the drift for operator awareness without blocking commit.
 
 **Acceptance criterion for "methodology spec is complete":**
 - Every section in the list has a non-empty body
@@ -317,9 +337,31 @@ The methodology spec surfaces this auth-method × caching-behavior delta. Operat
 
 ---
 
+## Always-on domain baseline
+
+The methodology declares an explicit always-on domain set independent of per-feature axes. Per Phase 5 round 1 finding routing (Security F1 + QE F4): a project that declares all 9 axes as `no` must still have non-empty composed domains for every phase the project executes; the axis matrix is additive over the baseline rather than replacing it.
+
+**Always-on for every project:**
+
+- Software Engineer (SE)
+- Quality Engineer (QE)
+- Solution Architect (SA)
+- Solution Owner (SO)
+
+**Always-on when the project ships code (any source file in `src/`, `lib/`, or equivalent language-conventional directory):**
+
+- Platform Engineer (PE)
+- Performance Engineer (PerfE)
+
+**Activation rule for Phase 3 (cold-session reviewer mode):** baseline domains + axis-activated domains, deduplicated. A zero-axes project that ships code activates 6 domains (SE + QE + SA + SO + PE + PerfE); cluster-batching collapses the 6 into 2 clusters (Implementation: SE+QE+PerfE; Architecture: SA+SO+PE) or runs per-domain at high-stakes rounds. The methodology never permits Phase 3 with zero composed domains.
+
+**Rationale:** the per-feature axes matrix encodes incremental specialty activation (Privacy, Accessibility, Localization, etc.); the baseline encodes the load-bearing methodology floor any non-trivial software project requires. Separating the two clarifies what's always-on vs. axis-driven and closes the zero-axes degenerate state surfaced by Phase 5.
+
+---
+
 ## Per-feature axes → domain activation matrix
 
-Projects declare axes in `.vsdd/config.yaml`. Each axis activates one downstream calibration.
+Projects declare axes in `.vsdd/config.yaml`. Each axis activates one downstream calibration **additive over the always-on baseline** (see preceding section).
 
 | Axis | Activates | Cold-session budget impact |
 |---|---|---|
@@ -814,7 +856,7 @@ Each rebuild deliverable carries explicit "done means X" criteria.
 - Deploys `.github/PULL_REQUEST_TEMPLATE.md` + `.github/CODEOWNERS` + CI workflow templates
 - Registers methodology + substrate-docs MCP server in `.claude/mcp.json`
 - Deploys 10 phase-primer skills + 16 per-domain skills + 2 meta-skills as `.claude/commands/vsdd-*.md`
-- Deploys ~18 methodology hooks in `.claude/hooks/`
+- Deploys ~19 methodology hooks in `.claude/hooks/`
 - Sets `CLAUDE_CODE_ENABLE_TELEMETRY=1` + OTLP exporter env vars in `.vsdd/env-vars`
 - Emits `ProjectInitialized` event with full deployment manifest (auth_method + axes_declared + vsdd_suite_version + deployed_artifacts as event fields; consolidates the previously-separate ProjectAxesDeclared + AuthMethodDeclared events into one project-init event)
 - `manual-tests/vsdd-init.md` documents the run-through
@@ -919,7 +961,7 @@ What this doc produces that sibling DESIGN docs consume:
 |---|---|
 | DESIGN-SCHEMA | Artifact class list (review entry, finding, phase primer, domain prompt, supplement, methodology event variants, `.vsdd/config.yaml`); per-class frontmatter field names; per-domain sycophancy_failure_modes structure; auth_method declaration schema (NO key-material fields); credential-exclusion structural property for all event-variant schemas |
 | DESIGN-OBSERVABILITY | 18 methodology event variants list (incl. PhaseCompositionDeclared + AuthMethodDeclared + ProjectInitialized + ArtifactScaffolded + 3 PR-lifecycle variants); per-feature-axes activation as observability event; cluster-batching shape as event metadata; OTel collector config + sink wiring (`.vsdd/otel-collector.yaml` with redaction processor); capture-source provenance discipline (otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled-v1+ / unmeasurable); credential-redaction in collector forwarding; MCP server tool-handler design + cache strategy + 4-tool surface |
-| DESIGN-VERIFICATION | check-phase-composition.py hook spec; the 4 enforcement mechanisms; per-hook deployment matrix (~18 hooks incl. dependency-approval); CI bootstrap pattern (`vsdd init --ci-mode`); CI workflow templates with GitHub Secrets pattern + SARIF emission for GitHub Code Scanning; check-anonymization.sh API-key detection patterns; Rust hook-runner mirror; per-hook test pattern; post-DESIGN.md auto-scaffolding hook design; pre-commit framework auto-install integration; error catalog implementation (~25 accepted + ~15 candidate codes per status-tier discipline) incl. VSDD-E0100 dependency-approval-missing; validator falsifiability fixtures at `manual-tests/error-catalog/<code>/{should-fire,should-not-fire}/`; consolidated hooks (check-naming-discipline 4-rule; check-changelog-discipline 10-rule); bypass-marker enforcement (operator-local rationale + CI PR-approval-label gate) |
+| DESIGN-VERIFICATION | check-phase-composition.py hook spec; the 4 enforcement mechanisms; per-hook deployment matrix (~19 hooks incl. dependency-approval + methodology-version-drift); CI bootstrap pattern (`vsdd init --ci-mode`); CI workflow templates with GitHub Secrets pattern + SARIF emission for GitHub Code Scanning; check-anonymization.sh API-key detection patterns; Rust hook-runner mirror; per-hook test pattern; post-DESIGN.md auto-scaffolding hook design; pre-commit framework auto-install integration; error catalog implementation (~25 accepted + ~15 candidate codes per status-tier discipline) incl. VSDD-E0100 dependency-approval-missing + VSDD-W0200 methodology-version-drift + VSDD-E0021 auth-method-plan-incompatible-with-ci + VSDD-W0022 ci-workflows-present-without-ci-auth-declared; validator falsifiability fixtures at `manual-tests/error-catalog/<code>/{should-fire,should-not-fire}/`; consolidated hooks (check-naming-discipline 4-rule; check-changelog-discipline 10-rule); bypass-marker enforcement (operator-local rationale + CI PR-approval-label gate) |
 
 What this doc consumes from sibling DESIGN docs (forward-references):
 
@@ -954,6 +996,7 @@ What this doc consumes from sibling DESIGN docs (forward-references):
 | Phase 5 surface tooling refresh discipline (tool lists rot) | DESIGN-METHODOLOGY (future iteration) |
 | Per-domain prompt rewrite per cross-domain vestigial-pattern cuts | DESIGN-METHODOLOGY (during 4d implementation) |
 | Sycophancy-compensation per-review preamble vs end-of-review self-audit | DESIGN-METHODOLOGY (future iteration) |
+| Multi-machine operator identity continuity (per-operator attribution across laptop / desktop / work / personal — SSH key fingerprints + git user.email may differ per machine) | Deferred to v1+ pending earned-by-recurrence evidence (Phase 5 round 1 Security F5; single-operator-single-machine projects do not hit this case in v1 evaluation cycles) |
 
 ---
 

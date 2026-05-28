@@ -372,21 +372,29 @@ slo_declarations: [<SLO declaration>...]
 signing_config:
   signing_key_fingerprint: <string>
   trust_model_ref: <string>
-auth_method: <AuthMethod enum>             # plan | api_key
-auth_method_credential_source: <string>    # "plan-auth-no-key" | "env:<VAR_NAME>"
+auth_method:
+  operator_local: <AuthMethod enum>             # plan | api_key
+  operator_local_credential_source: <string>    # "plan-auth-no-key" | "env:<VAR_NAME>"
+  ci: <AuthMethod enum | "none">                # api_key (typical for CI) | "none" (no CI workflows deployed)
+  ci_credential_source: <string | null>         # "env:<VAR_NAME>" — env-var name only; null when ci: "none"
 auth_attribution_pattern: <AttributionPattern enum>   # per-operator | shared-organizational
 ```
 
-**Cross-field validation (load-bearing — closes the credential-leakage-via-config attack surface):**
+**Cross-field validation (load-bearing — closes the credential-leakage-via-config attack surface + auth × CI operational impossibility):**
 
-- If `auth_method: api_key`, then `auth_method_credential_source` MUST match pattern `env:[A-Z][A-Z0-9_]*` (env-var name only; NEVER the credential value)
+- If `auth_method.operator_local: api_key`, then `auth_method.operator_local_credential_source` MUST match pattern `env:[A-Z][A-Z0-9_]*` (env-var name only; NEVER the credential value)
+- If `auth_method.ci: api_key`, then `auth_method.ci_credential_source` MUST match the same env-var-name pattern
+- If `auth_method.operator_local: plan`, then `auth_method.operator_local_credential_source` MUST be `plan-auth-no-key`
+- The schema validator **rejects `auth_method.ci: plan`** — Plan auth requires operator-interactive session that CI runners cannot provide; declaring plan-auth for CI is structurally invalid (fires `VSDD-E0021: auth-method-plan-incompatible-with-ci`)
+- If any `.github/workflows/vsdd-*.yml` exists in the repo + `auth_method.ci: "none"`, fires `VSDD-W0022: ci-workflows-present-without-ci-auth-declared`
 - The schema validator **rejects any field matching credential-shaped patterns** (regex against `sk-ant-api03-`, generic Bearer tokens, `sk-[A-Za-z0-9]+`, etc.)
-- If `auth_method: plan`, then `auth_method_credential_source` MUST be `plan-auth-no-key`
 
 **Drift patterns caught:**
 
 - Auth-method declaration shape violation
 - Credential-shaped value in config rejected; fires `VSDD-E0020: invalid-auth_method_credential_source`
+- Plan auth declared for CI rejected; fires `VSDD-E0021: auth-method-plan-incompatible-with-ci`
+- CI workflows present without CI auth declared; fires `VSDD-W0022: ci-workflows-present-without-ci-auth-declared`
 
 **Semantic version baseline:** 1.0.0.
 
@@ -638,10 +646,10 @@ Anchor IDs are derived deterministically from frontmatter — no hand-authored `
 | Methodology spec section | `section-{section_name}` (kebab-cased) |
 | Manual-test | `manual-test-{test_class}-{layer | target_artifact}` |
 | Exit Signal record | `exit-signal-{project}-{attestation_commit-short-sha}` |
-| Pre-phase declaration | `phase-comp-{phase}-{declared_at-date}` |
 | PR template | `pr-template-{pr_template_version}` |
-| MCP tool I/O | `mcp-tool-{tool_name-kebab}` |
 | CHANGELOG | (structural; no anchor-ID — whole-file artifact) |
+
+Pre-phase composition declarations: no standalone anchor-ID; the `PhaseCompositionDeclared` event variant payload IS the declaration; events are addressed by `(agent_id, agent_seq)` not anchor-IDs. MCP tool I/O: no anchor-ID; tools are addressed by MCP protocol tool name in the tool registry.
 
 **Validation:** `check-anchor-id-derivation.py` validates anchor-IDs in cross-references match the deterministic pattern. Hand-authored anchors fire `VSDD-W0080: anchor-rename-stale-references` if they drift.
 
