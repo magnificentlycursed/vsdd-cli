@@ -651,7 +651,7 @@ Anchor IDs are derived deterministically from frontmatter — no hand-authored `
 
 Pre-phase composition declarations: no standalone anchor-ID; the `PhaseCompositionDeclared` event variant payload IS the declaration; events are addressed by `(agent_id, agent_seq)` not anchor-IDs. MCP tool I/O: no anchor-ID; tools are addressed by MCP protocol tool name in the tool registry.
 
-**Validation:** `check-anchor-id-derivation.py` validates anchor-IDs in cross-references match the deterministic pattern. Hand-authored anchors fire `VSDD-W0081: anchor-rename-stale-references` if they drift. (Moved from W0080 in commit-id-pending — W0080 collision resolution; per-code-one-source contract.)
+**Validation:** `check-anchor-id-derivation.py` validates anchor-IDs in cross-references match the deterministic pattern. Hand-authored anchors fire `VSDD-W0081: anchor-rename-stale-references` if they drift.
 
 ---
 

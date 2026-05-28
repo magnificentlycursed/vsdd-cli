@@ -126,7 +126,7 @@ Phase 5 + Phase 6 are first-class methodology phases per the whitepaper; project
 
 ## Phase-domain composition matrix (detailed)
 
-Each phase composes with its relevant domains. The matrix is load-bearing methodology, enforced at four layers.
+Each phase composes with its relevant domains. The matrix is load-bearing methodology, enforced at five layers (the fifth — prior-phase exit-signal enforcement — added 2026-05-28 per process-gap 6 routing; see § Prior-phase exit-signal enforcement below).
 
 | Phase | Composed domains (skill mode unless noted) | Composition rationale |
 |---|---|---|
@@ -157,6 +157,20 @@ declared_at: <iso-timestamp>
 ```
 
 Declaration emits a `PhaseCompositionDeclared` observability event. Absent declaration at a phase-boundary commit is itself a finding for the VSDD Methodology meta-domain.
+
+### Prior-phase exit-signal enforcement
+
+**The fifth enforcement mechanism, added 2026-05-28 per process-gap 6 routing.** The phase-domain composition matrix requires Phase N to compose its domains; it did NOT previously require Phase N-1 to have closed before Phase N entry. An agent (or operator) was able to skip from Phase 1a (Behavioral Spec authoring) directly toward Phase 2b (Minimal Implementation) without passing through Phase 1c (Spec Review Gate) or Phase 2a (Test Suite Generation / Red Gate). This is the Phase-2b-collapse anti-pattern primer 4 warns about — but at the dispatch layer rather than the routing layer.
+
+**The discipline:** every phase-entry commit MUST cite a prior-phase exit signal in its commit message OR pre-phase composition declaration. Acceptable forms:
+
+- Direct prior-phase exit: `PhaseExited{phase: phase-N-minus-1, exit_status: complete, ...}` event emitted in `.vsdd/events.jsonl` at a prior commit (referenced by commit-sha or event-id)
+- Explicit operator-directive override: `OperatorDirectiveApplied{directive: phase-skip-authorized, from_phase: <id>, to_phase: <id>, rationale: <text>}` event emitted at this commit (operator accepts the methodology-spirit deviation explicitly)
+- Spec-stage phase-order adaptation: `OperatorDirectiveApplied{directive: spec-stage-phase-order-adaptation, rationale: <text>}` event (when implementation surface doesn't exist yet; canonical phase order resumes when implementation lands)
+
+**Mechanical enforcement:** the candidate `check-prior-phase-exit-signal.py` hook (added to the per-hook deployment matrix in DESIGN-VERIFICATION as a v0.1+ candidate; not v1 ship-blocker) reads the current commit's pre-phase composition declaration, identifies the declared `phase:`, walks `.vsdd/events.jsonl` for a prior-phase exit-signal OR scans the current commit message for an explicit operator-directive event, and fires `VSDD-W0210: prior-phase-exit-signal-missing` if neither is present. Status: candidate; earned-by-recurrence-trigger satisfied by process-gap 6 (operator-caught agent about to skip from Phase 1a to Phase 2b) + Adversarial cluster Finding 14 (Phase 5 ran before Phase 3 on spec artifacts — inverts methodology phase order). Two documented recurrences; eligible for promotion to accepted at the next pass.
+
+**Pre-stability operator-directive form:** during spec authoring (pre-v1.0; methodology itself in flux), the operator may emit `OperatorDirectiveApplied{directive: spec-stage-phase-order-adaptation}` once at session start covering an entire spec-authoring sprint; per-commit operator-directive emission is optional within that window. Post-stability: every phase-entry commit emits its own.
 
 ### Layer-cycle PR discipline (operationalization)
 

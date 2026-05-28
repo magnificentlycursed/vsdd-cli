@@ -194,6 +194,7 @@ Each hook is a thin Python entry point at `.claude/hooks/vsdd-<hook-id>.py` (~5-
 | 17 | check-bypass-marker | Pre-commit on all files | Bypass-marker rationale non-empty + hook-id namespaced + PR-approval-label at CI | VSDD-E0016, VSDD-W0070, VSDD-E0030 | Both |
 | 18 | check-dependency-approval | Pre-commit + Pre-merge on dependency-manifest changes (`Cargo.toml` / `package.json` / `pyproject.toml` / `requirements.txt`) | New entries require SO + PE + Security investigation section in PR body + `docs/dependencies/<crate>.md` investigation record + co-authorship trailers | VSDD-E0100 (dependency-approval-missing) | Both |
 | 19 | check-methodology-version-drift | Pre-commit on `methodology.md` + `vsdd verify check` aggregator | Project `methodology.md` frontmatter `methodology_version` compared against toolkit's bundled canonical version; warn if drift | VSDD-W0200 (methodology-version-drift) | Both |
+| 20 | check-prior-phase-exit-signal (candidate; v0.1+; not v1 ship-blocker) | Pre-commit on phase-entry commits | Walk `.vsdd/events.jsonl` for prior-phase `PhaseExited` event OR scan commit message for `OperatorDirectiveApplied{directive: phase-skip-authorized OR spec-stage-phase-order-adaptation}`; warn if neither present | VSDD-W0210 (prior-phase-exit-signal-missing) | Both |
 
 ### Consolidation patterns
 

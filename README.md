@@ -500,14 +500,14 @@ Catches drift patterns documented in existing-suite + bookmark-cli-manual review
 | PR-discipline (operator-directive) | `VSDD-E0070: draft-pr-missing`, `VSDD-E0080: pr-template-malformed`, `VSDD-W0041: pr-co-authorship-missing`, `VSDD-E0090: pr-manual-tests-incomplete` |
 | Dependency approval (operator-directive 2026-05-27) | `VSDD-E0100: dependency-approval-missing` (new entry in `Cargo.toml` / `package.json` / `pyproject.toml` / `requirements.txt` without SO + PE + Security investigation in PR description and corresponding `docs/dependencies/<crate>.md` investigation entry) |
 | Auth × CI cross-field validation (Phase 5 Round 1 Security F4) | `VSDD-E0021: auth-method-plan-incompatible-with-ci` (Plan auth declared for CI; structurally invalid — Plan requires operator-interactive session CI cannot provide), `VSDD-W0022: ci-workflows-present-without-ci-auth-declared` (CI workflow files exist without `auth_method.ci` declared) |
-| Anonymization (Phase 4 routing of impl-f2 2026-05-28) | `VSDD-E0110: credential-shaped-value-detected-in-committed-text` (check-anonymization hook fires when API-key / Bearer / env-var-credential patterns appear in committed text; previously this hook's row cited E0220 by error — corrected per per-code-one-source contract) |
+| Anonymization | `VSDD-E0110: credential-shaped-value-detected-in-committed-text` (check-anonymization hook fires when API-key / Bearer / env-var-credential patterns appear in committed text) |
 | Methodology version pin (Phase 5 round 1 Security F6) | `VSDD-W0200: methodology-version-drift` (project `methodology.md` `methodology_version` < installed toolkit's bundled version; refresh via `vsdd init --update-methodology`) |
 
 **Candidate (single-recurrence; promote on second case):**
 
 | Pattern category | Codes |
 |---|---|
-| Audit-trail integrity (single-recurrence) | `VSDD-E0011: unverified-citation`, `VSDD-E0012: missing-source-attribution`, `VSDD-E0013: validator-pair-mismatch`, `VSDD-E0023: findings-registry-orphan-row` (moved from E0021 in commit-id-pending — E0021 collision resolution; per-code-one-source contract) |
+| Audit-trail integrity (single-recurrence) | `VSDD-E0011: unverified-citation`, `VSDD-E0012: missing-source-attribution`, `VSDD-E0013: validator-pair-mismatch`, `VSDD-E0023: findings-registry-orphan-row` |
 | Cycle discipline (single-recurrence) | `VSDD-E0014: round-scope-not-reduced`, `VSDD-E0015: phase-2a-evidence-shape-missing`, `VSDD-E0017: classification-not-in-universe`, `VSDD-W0060: routing-target-ambiguous` |
 | External-review handle | `VSDD-E0019: external-review-handle-inconsistent` |
 | Director-raised capture | `VSDD-W0100: director-raised-finding-not-captured` |
