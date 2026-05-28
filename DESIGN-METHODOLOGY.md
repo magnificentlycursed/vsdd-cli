@@ -564,7 +564,7 @@ Total domain prompt content: ~1,500-2,000 lines across 18 domains.
 
 The schema/hook/error-catalog system is **Goal 2's primary operationalization**: auditable + machine-enforceable + dual-audience-readable. Treats document artifacts the way Rust treats source code — schema validation at commit-time (hooks); PR-time (CI Rust mirror); authoring-time (LSP — v1+).
 
-### 15 artifact classes with schema discipline
+### 13 artifact classes with schema discipline
 
 | Class | Drift patterns caught |
 |---|---|
@@ -579,12 +579,12 @@ The schema/hook/error-catalog system is **Goal 2's primary operationalization**:
 | **Methodology spec section** | Section non-empty body, cross-references resolve, architectural-decisions reflected |
 | **Manual-test** | Preamble completeness (R74), test-class declaration, falsifiability check |
 | **Exit Signal record** | Attestation completeness, per-dimension status, signature presence |
-| **Pre-phase composition declaration** | Required field presence, composition_mode validity |
 | **PR template** | Required fields present, credential-shaped fields excluded, manual_tests_section auto-generated |
-| **MCP tool I/O** | Tool signature stability, output schema declared |
 | **CHANGELOG** (structural; not frontmatter-based) | Keep-a-Changelog structural compliance (header + disclaimer + format-ref + `[Unreleased]`), canonical categories (Added/Changed/Deprecated/Removed/Fixed/Security), entry presence for substantive commits, version-section date format, file integrity, candidate rules (category-label alignment, issue-reference presence, unreleased overflow, breaking-vs-semver, entry format consistency) |
 
-CI workflow template meta-schema class reserved as `candidate`; promotion to `accepted` requires a second recurrence case beyond the single PE-F1 evidence. v1 ships without it; CI workflow YAML validates against GitHub's own schema only.
+Pre-phase composition declaration folds into the `PhaseCompositionDeclared` event variant payload (event-variant schema validates the declaration shape at phase-boundary commit time). MCP tool I/O is validated by the MCP protocol natively (each tool registration carries input + output JSON Schemas as part of the protocol contract); cost characteristics live in DESIGN-OBSERVABILITY.
+
+CI workflow template meta-schema class reserved as `candidate`; promotion to `accepted` requires a second recurrence case beyond the single existing-suite evidence case. v1 ships without it; CI workflow YAML validates against GitHub's own schema only.
 
 ### Error catalog (~25 accepted + ~15 candidate at v1)
 
@@ -814,7 +814,7 @@ Each rebuild deliverable carries explicit "done means X" criteria.
 - Deploys `.github/PULL_REQUEST_TEMPLATE.md` + `.github/CODEOWNERS` + CI workflow templates
 - Registers methodology + substrate-docs MCP server in `.claude/mcp.json`
 - Deploys 10 phase-primer skills + 16 per-domain skills + 2 meta-skills as `.claude/commands/vsdd-*.md`
-- Deploys ~17 methodology hooks in `.claude/hooks/`
+- Deploys ~18 methodology hooks in `.claude/hooks/`
 - Sets `CLAUDE_CODE_ENABLE_TELEMETRY=1` + OTLP exporter env vars in `.vsdd/env-vars`
 - Emits `ProjectInitialized` event with full deployment manifest (auth_method + axes_declared + vsdd_suite_version + deployed_artifacts as event fields; consolidates the previously-separate ProjectAxesDeclared + AuthMethodDeclared events into one project-init event)
 - `manual-tests/vsdd-init.md` documents the run-through
@@ -898,7 +898,7 @@ When an adversarial reviewer runs Phase 3 against the `vsdd-cli` repository and 
 | 2k — Implement error catalog (~25 accepted + ~15 candidate codes per status-tier discipline) + validator falsifiability fixtures + `vsdd verify explain` | Yes (Goal 2 operationalization) |
 | 2l — Author DESIGN.md template + vocabulary registry + canonical-patterns registry + anonymization-patterns registry | No (Tier A + B shift-left) |
 | 2m — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton) | No (Tier B shift-left) |
-| 2n — Author 15 artifact-class JSON Schemas (DESIGN-SCHEMA dependency) | Foundational |
+| 2n — Author 13 artifact-class JSON Schemas (DESIGN-SCHEMA dependency) | Foundational |
 | 2g — Author CI workflow templates | Goal-4 specific |
 | 2h — Implement methodology + substrate-docs MCP server (full v1 deliverable) | No (but agents leverage MCP across all phases) |
 | 2i — Deploy default OTel collector config + sink wiring | Yes (Goal 3 flagship) |
@@ -919,7 +919,7 @@ What this doc produces that sibling DESIGN docs consume:
 |---|---|
 | DESIGN-SCHEMA | Artifact class list (review entry, finding, phase primer, domain prompt, supplement, methodology event variants, `.vsdd/config.yaml`); per-class frontmatter field names; per-domain sycophancy_failure_modes structure; auth_method declaration schema (NO key-material fields); credential-exclusion structural property for all event-variant schemas |
 | DESIGN-OBSERVABILITY | 18 methodology event variants list (incl. PhaseCompositionDeclared + AuthMethodDeclared + ProjectInitialized + ArtifactScaffolded + 3 PR-lifecycle variants); per-feature-axes activation as observability event; cluster-batching shape as event metadata; OTel collector config + sink wiring (`.vsdd/otel-collector.yaml` with redaction processor); capture-source provenance discipline (otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled-v1+ / unmeasurable); credential-redaction in collector forwarding; MCP server tool-handler design + cache strategy + 4-tool surface |
-| DESIGN-VERIFICATION | check-phase-composition.py hook spec; the 4 enforcement mechanisms; per-hook deployment matrix (~17 hooks); CI bootstrap pattern (`vsdd init --ci-mode`); CI workflow templates with GitHub Secrets pattern + SARIF emission for GitHub Code Scanning; check-anonymization.sh API-key detection patterns; Rust hook-runner mirror; per-hook test pattern; post-DESIGN.md auto-scaffolding hook design; pre-commit framework auto-install integration; error catalog implementation (~25 accepted + ~15 candidate codes per status-tier discipline); validator falsifiability fixtures at `manual-tests/error-catalog/<code>/{should-fire,should-not-fire}/`; consolidated hooks (check-naming-discipline 4-rule; check-changelog-discipline 10-rule); bypass-marker enforcement (operator-local rationale + CI PR-approval-label gate) |
+| DESIGN-VERIFICATION | check-phase-composition.py hook spec; the 4 enforcement mechanisms; per-hook deployment matrix (~18 hooks incl. dependency-approval); CI bootstrap pattern (`vsdd init --ci-mode`); CI workflow templates with GitHub Secrets pattern + SARIF emission for GitHub Code Scanning; check-anonymization.sh API-key detection patterns; Rust hook-runner mirror; per-hook test pattern; post-DESIGN.md auto-scaffolding hook design; pre-commit framework auto-install integration; error catalog implementation (~25 accepted + ~15 candidate codes per status-tier discipline) incl. VSDD-E0100 dependency-approval-missing; validator falsifiability fixtures at `manual-tests/error-catalog/<code>/{should-fire,should-not-fire}/`; consolidated hooks (check-naming-discipline 4-rule; check-changelog-discipline 10-rule); bypass-marker enforcement (operator-local rationale + CI PR-approval-label gate) |
 
 What this doc consumes from sibling DESIGN docs (forward-references):
 

@@ -10,7 +10,7 @@ A Rust toolkit that interprets + implements [Verified Spec-Driven Development (V
 
 **This is not my methodology.** VSDD is dollspace's. This repo is one collaborator's *interpretation and implementation* of that methodology as a Rust toolkit. The toolkit:
 - adds an observability subsystem (OTel + FinOps surfaces) on top of the methodology
-- adds a verification subsystem (~17 methodology hooks + 15 schema-validated artifact classes + Rust-like error catalog)
+- adds a verification subsystem (~18 methodology hooks + 13 schema-validated artifact classes + Rust-like error catalog)
 - ships standalone via `cargo install vsdd`
 - is designed for clean absorption back into crosslink at the upstream maintainer's discretion
 
@@ -114,7 +114,7 @@ The rebuild's product is:
 
 1. **The methodology spec** — concise governing prose (~250-350 lines) at `methodology.md` (project root for vsdd-using-projects; `vsdd-cli` repo root for the toolkit's own spec) that captures the load-bearing disciplines.
 2. **The observability subsystem** — flagship. OTel collector + sink wiring + 18 methodology-specific event variants + `vsdd observe` subcommand + FinOps-applied-to-IAR dashboards. Standalone-valuable; crosslink-compatible event schema; designed for absorption.
-3. **The verification subsystem** — ~17 methodology hooks composing with crosslink's 5 enforcement hooks (~22 total in a VSDD project).
+3. **The verification subsystem** — ~18 methodology hooks composing with crosslink's 5 enforcement hooks (~23 total in a VSDD project).
 4. **The schema enforcement layer** — YAML frontmatter + per-artifact-class JSON Schema with semantic versioning.
 5. **The domain prompt set** — 16 role-domain prompts + 2 meta-domain prompts (VSDD Methodology + Sanity Check).
 6. **The phase primers** — 10 phase primers per whitepaper-canonical taxonomy.
@@ -142,7 +142,7 @@ vsdd init                       # deploys toolkit assets
 **Deployment steps:**
 
 1. Deploys 10 phase-primer skills + 16 per-domain skills + VSDD Methodology + Sanity Check meta-skills as `.claude/commands/vsdd-*.md` files (VSDD-prefix discipline so they cluster in `/help` and don't collide with crosslink's 14 skills). Per-domain skills (`vsdd-domain-<slug>`) are operator-interactive entry points; phase-primer skills compose against per-domain skills per the phase-domain composition matrix
-2. Deploys ~17 methodology hooks (Python — matches Claude Code's hook convention + crosslink's existing 5 hooks) alongside crosslink's 5 (extends `.claude/settings.json`; composes, doesn't replace) + runs `pre-commit install` automatically so the first commit lands under hook enforcement (closes first-commit-without-hook-enforcement defect class)
+2. Deploys ~18 methodology hooks (Python — matches Claude Code's hook convention + crosslink's existing 5 hooks) alongside crosslink's 5 (extends `.claude/settings.json`; composes, doesn't replace) + runs `pre-commit install` automatically so the first commit lands under hook enforcement (closes first-commit-without-hook-enforcement defect class)
 3. Registers the 16 role-domain prompts + VSDD Methodology + Sanity Check meta as `vsdd-domain` knowledge pages via `crosslink knowledge import`
 4. Registers all 14 supplements as `vsdd-supplement` knowledge pages
 5. **Interactive per-feature axes prompt** — asks operator to confirm each axis (`ships-to-users-other-than-developer?`, `network-exposed?`, etc.); writes `.vsdd/config.yaml` with declared axes; emits `ProjectAxesDeclared` event (closes axes-undeclared-drift defect class)
@@ -241,7 +241,7 @@ The rebuild explicitly leverages these features rather than treating the substra
 | **OpenTelemetry export** (`CLAUDE_CODE_ENABLE_TELEMETRY=1` + exporter env vars) | Metrics (tokens, cost, sessions, tool decisions); log events (prompts, API requests, errors); traces (interactions, llm_requests, tools, hooks) → vsdd-deployed OTel collector → `.vsdd/events.jsonl` + crosslink hub |
 | **SDK message stream cost data** (`message.usage`, `modelUsage`, `total_cost_usd`) | Per-step + per-model + cumulative SDK estimate; consumed by `vsdd observe` for in-cycle reports (caveat: client-side estimate, not authoritative) |
 | **W3C trace context propagation** | SDK auto-injects TRACEPARENT into CLI subprocess + Bash/PowerShell tool calls; full delegation chain visible in single trace |
-| `.claude/hooks/*.py` | ~17 methodology hooks deployed by `vsdd init` |
+| `.claude/hooks/*.py` | ~18 methodology hooks deployed by `vsdd init` |
 | `.claude/commands/*.md` | 10 phase-primer + 16 per-domain + 2 meta skills |
 | `.claude/agents/*.md` | Per-domain cold-session reviewer agents pre-configured |
 | `.claude/mcp.json` | Methodology + substrate-docs MCP server (`vsdd mcp-serve`) |
@@ -269,7 +269,7 @@ Auth method declared explicitly in `.vsdd/config.yaml` per project; no implicit 
 
 - **Credential storage:** `.vsdd/config.yaml` carries auth-method-name + credential-source-reference only; NEVER credential value. Schema validator rejects credential-shaped fields
 - **Anonymization hook:** detects API-key formats (`sk-ant-api03-...`, generic Bearer headers, env-var-assignment-with-credential-shaped-value)
-- **Event-variant credential exclusion:** all 16 methodology event variants exclude credential-shaped fields structurally; `OTEL_LOG_RAW_API_BODIES` stays default-off; OTel collector config redacts credential-shaped values before forwarding to external backends
+- **Event-variant credential exclusion:** all 18 methodology event variants exclude credential-shaped fields structurally; `OTEL_LOG_RAW_API_BODIES` stays default-off; OTel collector config redacts credential-shaped values before forwarding to external backends
 - **Audit trail:** AuthMethodDeclared / AuthMethodChanged / AuthFailureObserved event variants provide forensic record
 - **CI integration:** GitHub Secrets pattern (or equivalent); key rotation procedure documented (monthly cadence recommended; ad-hoc on compromise)
 - **Per-operator vs shared-organizational keys:** per-operator default (clear attribution); shared-organizational extension activated by `auth_attribution_pattern: shared-organizational` in config
@@ -305,7 +305,7 @@ The Claude Agent SDK emits three independent OTel signals (metrics, log events, 
 
 | Pillar | Source | Sink (v1) | Sink (absorption path) |
 |---|---|---|---|
-| **Logs (events)** | Agent SDK OTel log events + 16 methodology-specific event variants | `.vsdd/events.jsonl` per project | Pitched as new event variants in crosslink's `events.rs`; emits compatible records into crosslink hub |
+| **Logs (events)** | Agent SDK OTel log events + 18 methodology-specific event variants | `.vsdd/events.jsonl` per project | Pitched as new event variants in crosslink's `events.rs`; emits compatible records into crosslink hub |
 | **Metrics** | Agent SDK OTel metrics + derived from event log at query time | `vsdd observe` subcommand | Pitched as `crosslink metrics` command extension |
 | **Traces** | Agent SDK OTel traces (`claude_code.interaction`, `.llm_request`, `.tool`, `.hook` spans) + finding-lifecycle as span tree (raised → classified → routed → resolved → validated) | Query-time derivation from event log | Pitched as `crosslink trace` command extension |
 
@@ -373,9 +373,9 @@ Detailed design in [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md). Pre-com
 | Hook layer | Count | Owner | Discipline |
 |---|---|---|---|
 | Crosslink enforcement hooks | 5 | crosslink upstream | Tracking discipline (session-start, prompt-guard, work-check, post-edit-check, pre-web-check + heartbeat) |
-| Suite methodology hooks | ~17 | suite-repo | Frontmatter schema validation, citation resolution, classification universe, naming-discipline (incl. letter-label anti-pattern + suite-internal terminology), anonymization (incl. API-key detection), identity-correlation, document staleness, phase-transition provability (consolidated 9-transition matrix), phase-domain composition, draft-PR presence, PR-template conformance, PR-manual-tests-completion, DESIGN.md template conformance, post-DESIGN.md auto-scaffolding (manual-tests + Phase 2a Red Gate skeleton), prose-surface TW + DR composition, CHANGELOG-discipline (consolidated: entry-presence + Keep-a-Changelog structure + version-date + canonical-categories + file-integrity + 5 candidate rules) |
+| Suite methodology hooks | ~18 | suite-repo | Frontmatter schema validation, citation resolution, classification universe, naming-discipline (incl. letter-label anti-pattern + suite-internal terminology), anonymization (incl. API-key detection), identity-correlation, document staleness, phase-transition provability (consolidated 9-transition matrix), phase-domain composition, draft-PR presence, PR-template conformance, PR-manual-tests-completion, DESIGN.md template conformance, post-DESIGN.md auto-scaffolding (manual-tests + Phase 2a Red Gate skeleton), prose-surface TW + DR composition, CHANGELOG-discipline (consolidated: entry-presence + Keep-a-Changelog structure + version-date + canonical-categories + file-integrity + 5 candidate rules), dependency approval (SO + PE supply-chain + Security investigation for new dependencies) |
 
-Total deployed in a VSDD project: ~22 hooks. Hook count growth governed by earned-by-recurrence trigger; new hooks require 2+ documented drift cases or explicit operator-directive. Hooks are consolidated where logic overlaps (e.g., `check-changelog-discipline.py` covers 10 rules in one hook with multi-rule dispatch).
+Total deployed in a VSDD project: ~23 hooks. Hook count growth governed by earned-by-recurrence trigger; new hooks require 2+ documented drift cases or explicit operator-directive. Hooks are consolidated where logic overlaps (e.g., `check-changelog-discipline.py` covers 10 rules in one hook with multi-rule dispatch). The dependency-approval hook is operator-directive triggered (2026-05-27 directive: any new crate / npm package / pip package requires SO approval + PE supply-chain investigation + Security CVE / threat-model review; living investigation record at `docs/dependencies/<crate>.md`).
 
 ### Hook architecture
 
@@ -393,9 +393,9 @@ CI bootstrap: every CI job starts with `vsdd init --ci-mode` to deploy verificat
 
 ## Schema enforcement
 
-Detailed design in [`DESIGN-SCHEMA.md`](./DESIGN-SCHEMA.md). YAML frontmatter + per-artifact-class JSON Schema with **semantic versioning per class**. **15 artifact classes** carry the schema discipline; each has structural compliance + cross-reference + credential-exclusion properties mechanically enforced. Most are frontmatter-based; CHANGELOG is structural (whole-file pattern validation).
+Detailed design in [`DESIGN-SCHEMA.md`](./DESIGN-SCHEMA.md). YAML frontmatter + per-artifact-class JSON Schema with **semantic versioning per class**. **13 artifact classes** carry the schema discipline; each has structural compliance + cross-reference + credential-exclusion properties mechanically enforced. Most are frontmatter-based; CHANGELOG is structural (whole-file pattern validation).
 
-### Artifact classes (15)
+### Artifact classes (13)
 
 | Class | Frontmatter fields |
 |---|---|
@@ -410,12 +410,12 @@ Detailed design in [`DESIGN-SCHEMA.md`](./DESIGN-SCHEMA.md). YAML frontmatter + 
 | **Methodology spec section** | section_name, required (bool), target_lines, event_variants_referenced, domains_referenced, phases_referenced |
 | **Manual-test** | test_class (install-verification/binary/mcp-tool/integration-cycle), layer, target_artifact, tested_against, prerequisites, expected_outcomes, falsifiability_check |
 | **Exit Signal record** | attestation_class (exit-signal), project, attestation_commit, attested_by, signature, per_dimension (status, evidence_pointer), cross_dimension_consistency_check, install_verification |
-| **Pre-phase composition declaration** | phase, composed_domains, composition_mode, operator_confirmation, memory_isolation, declared_at |
 | **PR template** | pr_template_version, required_fields (scope, phase_coverage, composed_domains, co_authors, manual_tests_section, exit_signal_pointer?), excluded_fields (credential-shaped patterns) |
-| **MCP tool I/O** | tool_name, input_schema, output_schema, cache_ttl, cost_characteristic |
 | **CHANGELOG** (structural; not frontmatter-based) | required_top_structure (header + disclaimer + Keep-a-Changelog link), required_sections (`[Unreleased]` + per-release pattern), canonical_categories enum, entry_pattern, sub_section_grouping_allowed |
 
-CI workflow template meta-schema class reserved as a candidate; promotion to accepted requires a second recurrence case beyond the single PE-F1 evidence. v1 ships without it; CI workflow YAML validates against GitHub's own schema only.
+Pre-phase composition declaration folds into the `PhaseCompositionDeclared` event variant payload (event-variant schema validates the declaration at phase-boundary commit). MCP tool I/O is validated by the MCP protocol natively (each tool registration carries input + output JSON Schemas in the protocol contract); a separate artifact-class validator added redundancy without proportional safety.
+
+CI workflow template meta-schema class reserved as a candidate; promotion to accepted requires a second recurrence case beyond the single existing-suite evidence case. v1 ships without it; CI workflow YAML validates against GitHub's own schema only.
 
 ### Anchor IDs derived from frontmatter
 
@@ -486,6 +486,7 @@ Catches drift patterns documented in existing-suite + bookmark-cli-manual review
 | Prose-surface composition | `VSDD-W0180: prose-surface-commit-without-tw-dr-composition` (TW Layer-2→Layer-3 recurrence) |
 | CHANGELOG discipline (operator-directive — adopt crosslink's Keep-a-Changelog pattern) | `VSDD-W0190: changelog-entry-missing` · `VSDD-W0191: changelog-structure-malformed` · `VSDD-W0194: changelog-version-section-missing-date` · `VSDD-W0195: changelog-non-canonical-category` · `VSDD-E0240: changelog-deleted` (all cooperate with `crosslink close` auto-management) |
 | PR-discipline (operator-directive) | `VSDD-E0070: draft-pr-missing`, `VSDD-E0080: pr-template-malformed`, `VSDD-W0041: pr-co-authorship-missing`, `VSDD-E0090: pr-manual-tests-incomplete` |
+| Dependency approval (operator-directive 2026-05-27) | `VSDD-E0100: dependency-approval-missing` (new entry in `Cargo.toml` / `package.json` / `pyproject.toml` / `requirements.txt` without SO + PE + Security investigation in PR description and corresponding `docs/dependencies/<crate>.md` investigation entry) |
 
 **Candidate (single-recurrence; promote on second case):**
 
@@ -850,7 +851,7 @@ Author-introduced cognitive scaffolding terms (terms invented for organizational
 | 2k — Implement error catalog (~30 codes) + validator falsifiability fixtures + `vsdd verify explain` | Yes (Goal 2 operationalization) |
 | 2l — Author DESIGN.md template + vocabulary registry + canonical-patterns registry + anonymization-patterns registry (Tier A + B shift-left) | No |
 | 2m — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton; Tier B shift-left) | No |
-| 2n — Author 15 artifact-class JSON Schemas | Foundational |
+| 2n — Author 13 artifact-class JSON Schemas | Foundational |
 | 2o — Implement PR template + CODEOWNERS deployment + PR-discipline hooks (draft-pr-presence + pr-template-conformance + pr-manual-tests-completion) | Cross-cutting |
 | 3 — Goal 4 end-to-end demonstration via rebuild's own CI | Goal-4 specific |
 

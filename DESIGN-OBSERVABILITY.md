@@ -32,8 +32,8 @@ DESIGN-OBSERVABILITY owns:
 - Dashboard ladder (v1 CLI / v2 HTML / v3 Grafana absorption-pitch)
 - MCP server (`vsdd mcp-serve`) — tool dispatch + cache + fetch primitive
 - `vsdd observe` CLI subcommand surface
-- Credential redaction at collector forwarding boundary (per SEC-F3 + SEC-F8)
-- Cost-relevant signal capture-source assignment (per A13 retirement of cost-tally tier)
+- Credential redaction at collector forwarding boundary
+- Cost-relevant signal capture-source assignment (replaces the retired cost-tally tier discipline)
 - Usage and Cost API extensibility (v1+; not v1 deliverable)
 
 DESIGN-OBSERVABILITY does NOT own:
@@ -87,15 +87,13 @@ receivers:
 processors:
   batch:
     timeout: 5s
-  # Credential redaction (SEC-F3 + SEC-F8) — runs before any export
+  # Credential redaction — MUST run before any exporter in every pipeline (processor ordering invariant)
+  # Patterns sourced from .vsdd/registry/anonymization-patterns.yaml (operator-extensible per-project)
   redaction:
-    block_attributes:
-      - pattern: "sk-ant-api03-.*"
-      - pattern: "Bearer [A-Za-z0-9_\\-\\.]+"
-      - pattern: "ghp_[A-Za-z0-9]+"
-      - attribute_name: "auth_method_credential_value"
-      - attribute_name: "api_key"
-      - attribute_name: "bearer_token"
+    config_source: .vsdd/registry/anonymization-patterns.yaml
+    # The registry file declares api_key_patterns + bearer_token_patterns + credential_attribute_names
+    # Operator extends by editing the registry file; collector reloads on next cycle start
+    # See DESIGN-VERIFICATION § check-anonymization scope for the canonical pattern catalog
 
 exporters:
   # Default: write to .vsdd/events.jsonl (suite-side audit trail)
@@ -145,11 +143,13 @@ service:
 
 **Operator extension:** uncomment external-backend entries + set credential env vars. The collector config itself is operator-editable; vsdd-init never overwrites operator changes via the managed-section pattern.
 
+**External-backend operator-confirmation:** adding a new external backend endpoint to the collector config is a substantive change — event-log forwarding to a new external destination is a data-exfiltration attack surface if the endpoint is malicious. `vsdd observe collect start` detects new external-backend endpoints (vs. last-known-good state via init-manifest SHA) and prompts operator-confirmation before forwarding begins. Confirmation emits `OperatorDirectiveApplied{directive: external-backend-added, endpoint: <hostname-only>, rationale: <text>}` event (hostname only — never the auth token). Operator can pre-confirm via `vsdd observe collect start --confirm-external-backends` flag for non-interactive contexts (CI).
+
 ### Sink wiring
 
 Default sinks (always-on):
 
-- **`.vsdd/events.jsonl`** — local NDJSON append-only file; git-tracked per cycle; disaster recovery via `git checkout` (per A9). Schema-validated by event-variant payload schemas (DESIGN-SCHEMA).
+- **`.vsdd/events.jsonl`** — local NDJSON append-only file; git-tracked per cycle; disaster recovery via `git checkout`. Schema-validated by event-variant payload schemas (DESIGN-SCHEMA).
 - **crosslink hub** — when crosslink is in use; HTTP OTLP endpoint at crosslink's hub URL. Crosslink's `seam.rs` consumes; events.rs schema-compatible.
 
 Operator-extensible sinks:
@@ -167,18 +167,27 @@ The redaction processor (per Security composition) runs **before any export**. E
 
 Matches are redacted to `[REDACTED-VALUE-MATCHING-CREDENTIAL-PATTERN]` placeholder.
 
-**`OTEL_LOG_RAW_API_BODIES` stays default-off** per SEC-F3. Operator can enable for debugging in private contexts but the methodology recommends keeping it off.
+**`OTEL_LOG_RAW_API_BODIES` stays default-off** — enabling it would route full API request bodies (including credential-shaped values in headers) through the OTel pipeline, undermining the redaction discipline. Operator can enable for debugging in private contexts but the methodology recommends keeping it off.
 
-### Collector lifecycle
+### Collector lifecycle (on-demand)
 
-The collector is a long-running process — started by operator OR managed by `vsdd init` (deploying a systemd / launchd / similar wrapper depending on platform).
+The collector is **not** a persistent daemon. Spawned on-demand per cycle or per `vsdd observe` invocation. Avoids platform-specific systemd/launchd wrapper complexity at single-operator scale.
 
 | Phase | Lifecycle action |
 |---|---|
-| `vsdd init` | Deploy config + env vars + optional systemd/launchd wrapper |
-| Operator-local cycle | Collector runs as background process; SDK emits to localhost:4318 |
-| CI cycle | Collector spawned per-job OR endpoints point directly to crosslink hub (collector-less mode) |
-| Cycle close | Operator commits `.vsdd/events.jsonl` (per A9) |
+| `vsdd init` | Deploy config + env vars to `.vsdd/env-vars` for operator to source |
+| Operator-local cycle start | `vsdd observe collect start` spawns collector subprocess; SDK emits to localhost:4318; collector PID tracked at `.vsdd/.cache/collector.pid` |
+| Operator-local cycle close | `vsdd observe collect stop` (or auto-stop on `vsdd verify check` cycle-close detection); collector flushes pending events + exits cleanly |
+| CI cycle | Collector spawned per-job OR endpoints point directly to crosslink hub (collector-less mode); per-job lifecycle bounded |
+| Cycle commit | Operator commits `.vsdd/events.jsonl` |
+
+**On-demand pattern wins for single-operator scale.** Persistent-daemon pattern revisits if multi-operator concurrent sessions or always-on dashboard rendering surfaces evidence-of-need.
+
+### Processor ordering invariant
+
+The redaction processor **must** run before any exporter in every pipeline. The collector config snippet's `processors: [redaction, batch]` declares this ordering; validation hook (deferred to v1+ per the candidate-track discipline) confirms no pipeline exists with batch-before-redaction.
+
+This is a structural invariant — events containing credential-shaped values never reach a sink without passing through redaction first.
 
 ### Cost characteristics
 
@@ -255,9 +264,30 @@ Per DESIGN-SCHEMA's variant payload table, each emitted as OTel custom log event
 
 Total: 18 variants. Each carries the common envelope (`agent_id`, `agent_seq`, `timestamp`, `signed_by`, `signature`, `capture_source`) + per-variant payload (defined in DESIGN-SCHEMA).
 
+### Per-variant cardinality classification
+
+For external-backend cost-at-scale planning, each payload field is classified as:
+
+- **dimension** — low-cardinality; safe to use as a backend tag/label; permanent in time-series indexes
+- **metric** — high-cardinality OR continuous value; emitted as numeric measurement, not as label
+- **attribute** — variable-cardinality; available for query but not pre-indexed; per-record only
+
+Cardinality classification per variant (excerpt — full table lives in `vsdd-core/schemas/<variant>.json` schema metadata):
+
+| Variant | Dimension fields (low cardinality; safe to index) | Metric fields | Attribute fields (variable cardinality; per-event only) |
+|---|---|---|---|
+| `PhaseEntered` | `phase`, `layer` | `started_at` (timestamp) | `composed_domains` (array; cardinality bounded by 18-domain enum) |
+| `FindingRaised` | `domain`, `dim` | (none) | `finding_id` (high cardinality per project) |
+| `FindingClassified` | `classification`, `domain` | (none) | `finding_id`, `dismissal_rationale` (free text) |
+| `ExitSignaled` | `project` | `attested_at` (timestamp) | `attestation_commit` (high cardinality), `dimension_status_map` (object) |
+| `AuthMethodDeclared` | `auth_method` | (none) | `auth_method_credential_source` (env-var name; bounded but project-variable) |
+| `ProjectInitialized` | `vsdd_toolkit_version`, `auth_method` | (none) | `deployed_artifacts_manifest` (object; high cardinality) |
+
+External-backend operator chooses which fields to index (incur per-cardinality storage cost) vs query-time-only (attribute fields). Per-variant schemas declare the classification; collector tags signals appropriately for downstream backend consumption.
+
 ---
 
-## Capture-source provenance (per A13 — cost-tally tier retired)
+## Capture-source provenance (replaces retired cost-tally tier discipline)
 
 Every cost-relevant event carries `capture_source` enum. The cost-tally tier discipline (`agent_self_verifiable` / `operator_verifiable` / `operator_confirmable` / `derived`) retires. Replaced by:
 
@@ -385,7 +415,7 @@ Standard FinOps disciplines applied to AI-driven cycles:
 
 ## MCP server (`vsdd mcp-serve`)
 
-Per A17 + DESIGN-METHODOLOGY's MCP server section. Single server; 4 tools. Implemented as `vsdd-observe`-binary subcommand (preserves single-crate-single-binary workspace).
+Per DESIGN-METHODOLOGY's MCP server section. Single server; 4 tools. Implemented as `vsdd mcp-serve` subcommand (preserves single-crate-single-binary workspace).
 
 ### Tool surface (4 tools)
 
@@ -410,16 +440,18 @@ Three layers:
 
 | Cache type | TTL | Refresh trigger |
 |---|---|---|
-| Methodology lookup (own repo content) | 5 minutes | File modification detected |
-| Claude Code docs | 24 hours | Operator runs `vsdd observe mcp-cache refresh` |
-| Crosslink docs | 24 hours | Same |
-| Anthropic API docs | 24 hours (v1+) | Same |
+| Methodology lookup (own repo content) | File-mtime-aware (no TTL) | Cache invalidated when source markdown's mtime changes; revalidation per-query against filesystem; methodology spec changes propagate immediately |
+| Claude Code docs (external) | 24 hours | Operator runs `vsdd observe mcp-cache refresh` OR scheduled cron task |
+| Crosslink docs (external) | 24 hours | Same |
+| Anthropic API docs (external) | 24 hours (v1+) | Same |
 
-Stale-cache fetch triggers async refresh; serves stale during refresh.
+Methodology lookup uses file-mtime-aware invalidation rather than TTL because the source can change mid-session — operator edits methodology.md or DESIGN docs; cache must reflect immediately. External-substrate-doc caches use TTL because their source changes infrequently + WebFetch is the costly path.
+
+Stale-cache fetch (TTL-expired) triggers async refresh; serves stale during refresh. Stale-cache served logged via `MCPCacheStaleServed` (proposed candidate event; deferred under variant-proliferation governance until recurrence evidence).
 
 ### Cooperation with crosslink knowledge subsystem
 
-Per DR-F2 + AIE-F2 (the substrate-docs catalog discipline): the MCP server cooperates with `crosslink knowledge`:
+Per the substrate-docs cataloging discipline (cooperate with existing substrate affordances rather than parallel-reinvent): the MCP server cooperates with `crosslink knowledge`:
 
 - Crosslink knowledge pages registered for vsdd-domain + vsdd-supplement at `vsdd init`
 - MCP `vsdd.methodology.lookup` first queries crosslink knowledge (registered pages); falls back to direct file read if knowledge not registered
@@ -512,7 +544,7 @@ Routing: this is `vsdd verify` subcommand surface (lives in DESIGN-VERIFICATION)
 
 ## Usage and Cost API extensibility (v1+ scope)
 
-Per A12. SDK's `total_cost_usd` is client-side estimate from bundled price table — not authoritative.
+SDK's `total_cost_usd` is client-side estimate from bundled price table — not authoritative.
 
 For per-cycle reports in v1: SDK estimate is used. `vsdd observe` reports surface the caveat: "client-side estimate; not authoritative billing."
 

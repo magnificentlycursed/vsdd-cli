@@ -1,6 +1,6 @@
 # DESIGN-VERIFICATION.md
 
-Design document for the verification subsystem of the `vsdd` toolkit. Defines the validator architecture (dual-mode: frontmatter + structural), the per-hook deployment matrix (~17 methodology hooks), the Rust mirror for CI, CI workflow templates with auth-method-conditional steps, bypass-marker enforcement, error catalog implementation, per-error-code falsifiability fixtures, and the `vsdd verify` CLI subcommand surface.
+Design document for the verification subsystem of the `vsdd` toolkit. Defines the validator architecture (dual-mode: frontmatter + structural), the per-hook deployment matrix (~18 methodology hooks), the Rust mirror for CI, CI workflow templates with auth-method-conditional steps, bypass-marker enforcement, error catalog implementation, per-error-code falsifiability fixtures, and the `vsdd verify` CLI subcommand surface.
 
 ```yaml
 # Pre-authoring composition declaration
@@ -26,7 +26,7 @@ For positioning: see [`README.md`](./README.md). For methodology: [`DESIGN-METHO
 DESIGN-VERIFICATION owns:
 
 - Validator architecture (dual-mode dispatch: frontmatter + structural)
-- ~17 methodology hooks (Python operator-side; Rust mirror CI-side)
+- ~18 methodology hooks (Python operator-side; Rust mirror CI-side)
 - Per-hook deployment matrix (which hooks run at commit-time / CI-time / both)
 - CI workflow templates (`.github/workflows/vsdd-*.yml`)
 - Auth-method-conditional CI steps (Plan-auth vs API-key-auth)
@@ -48,6 +48,18 @@ DESIGN-VERIFICATION does NOT own:
 - Methodology spec content (DESIGN-METHODOLOGY)
 - Per-domain prompt content (DESIGN-METHODOLOGY)
 - Phase primer body content (DESIGN-METHODOLOGY)
+
+---
+
+## Canonical-schema-path discipline
+
+The validator **only consumes schemas from the committed-canonical tree** (`vsdd-core/schemas/` within the toolkit's own crate; deployed via `vsdd init` to `.vsdd/schemas/` in adopting projects). PR-submitted schema files (e.g., a malicious PR adding `vsdd-core/schemas/<class>.json` with attacker-controlled content) are NOT consumed at validation time:
+
+- Operator-local validator reads schemas embedded in the installed `vsdd` binary (from `vsdd-core` crate's schemas directory at build time)
+- CI validator reads schemas from the binary downloaded via canonical-release-pipeline (cargo install OR pre-built GitHub Release artifact)
+- The schemas are NEVER hot-loaded from PR-modifiable paths
+
+**Closes the schema-injection attack surface.** PRs cannot reshape validation rules by modifying schemas files; only canonical-toolkit-releases ship schemas. Operator-extension paths (`.vsdd/registry/`) exist for operator-configurable patterns (anonymization patterns; canonical-vocabulary registry); schemas themselves are not operator-extensible.
 
 ---
 
@@ -81,9 +93,26 @@ Per DESIGN-METHODOLOGY's reconciled dual-mode declaration: 14 frontmatter-based 
 └─────────────────────────────────────────────────────┘
 ```
 
-### One source; two enforcement surfaces
+### One source; two enforcement surfaces (Python subprocess to Rust binary)
 
-Per A2 (hook architecture decision). Python hooks at `.claude/hooks/vsdd-*.py` cover operator-local; Rust mirror at `vsdd verify hook <hook-id>` covers CI execution. Both consume the same JSON Schemas (frontmatter) + the same YAML structural rule file (CHANGELOG). Operator-local + CI cannot drift in what they enforce.
+Python hooks at `.claude/hooks/vsdd-*.py` are thin wrappers (~10-15 lines) that **subprocess to the Rust binary** rather than reimplementing validation logic in Python. This prevents drift between operator-local + CI enforcement by construction — Rust binary is the canonical implementation; Python provides the substrate-conventional `.claude/hooks/` entry point.
+
+```python
+# .claude/hooks/vsdd-frontmatter-schema.py (sketch — ~10 lines)
+#!/usr/bin/env python3
+import subprocess, sys
+result = subprocess.run(
+    ["vsdd", "verify", "hook", "frontmatter-schema", "--files", *sys.argv[1:]],
+    capture_output=True, text=True,
+)
+print(result.stdout, end="")
+print(result.stderr, end="", file=sys.stderr)
+sys.exit(result.returncode)
+```
+
+CI uses `vsdd verify hook <hook-id>` directly (no Python intermediate). Operator-local uses Python wrappers per Claude Code substrate convention. **Both paths converge at the Rust binary** — drift between operator-local and CI is structurally impossible.
+
+Operator-local subprocess overhead: ~50ms per hook firing (negligible at typical commit-touches-3-files scale).
 
 ### Code generation pipeline
 
@@ -138,7 +167,7 @@ Results stream to:
 
 ---
 
-## Per-hook deployment matrix (~17 hooks)
+## Per-hook deployment matrix (~18 hooks)
 
 Each hook is a thin Python entry point at `.claude/hooks/vsdd-<hook-id>.py` (~5-15 lines) that invokes shared logic via `vsdd-core` (when Rust binary available) OR pure-Python validation logic.
 
@@ -273,7 +302,7 @@ jobs:
 
 ### Auth-method-conditional steps
 
-Per A11: CI uses API key (predictable pay-as-you-go billing per Anthropic's automation guidance). Templates assume API key via GitHub Secrets:
+CI uses API key (predictable pay-as-you-go billing per Anthropic's automation guidance). Templates assume API key via GitHub Secrets:
 
 ```yaml
 env:
@@ -295,7 +324,7 @@ SARIF rule definitions live at `vsdd-core/sarif-rules.json` (generated from erro
 
 ### check-anonymization.sh API-key detection patterns extension
 
-The existing `check-anonymization.sh` from crosslink/existing-suite covers $HOME + git user.name + git user.email patterns. The toolkit extends with API-key patterns per SEC-F2:
+The existing `check-anonymization.sh` from crosslink/existing-suite covers $HOME + git user.name + git user.email patterns. The toolkit extends with API-key patterns:
 
 ```bash
 # Additional patterns (deployed to .vsdd/registry/anonymization-patterns.yaml)
@@ -331,7 +360,7 @@ Rules:
 
 ### CI-side merge gate
 
-PR with bypass-marker active requires explicit operator approval via GitHub label (configurable; default: `bypass-approved`):
+PR with bypass-marker active requires explicit operator approval via GitHub label (configurable; default: `bypass-approved`). **Label-applier must differ from PR-author** — self-applied-label-circumvention is the attack surface; requiring a second human (a maintainer ≠ the PR-author) for the label-application closes it.
 
 ```yaml
 # .github/workflows/vsdd-verify.yml (excerpt)
@@ -340,17 +369,29 @@ PR with bypass-marker active requires explicit operator approval via GitHub labe
   uses: actions/github-script@v7
   with:
     script: |
-      const labels = await github.rest.issues.listLabelsOnIssue({
+      const pr = await github.rest.pulls.get({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        pull_number: context.issue.number,
+      });
+      const prAuthor = pr.data.user.login;
+      // Fetch label-application events; verify applier ≠ PR author
+      const events = await github.rest.issues.listEvents({
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: context.issue.number,
       });
-      if (!labels.data.some(l => l.name === 'bypass-approved')) {
+      const approvalEvent = events.data.find(e =>
+        e.event === 'labeled' && e.label.name === 'bypass-approved'
+      );
+      if (!approvalEvent) {
         core.setFailed('PR contains bypass-marker without bypass-approved label. Add label after operator-review confirms the bypass rationale.');
+      } else if (approvalEvent.actor.login === prAuthor) {
+        core.setFailed(`bypass-approved label was self-applied by PR author (${prAuthor}). The label-applier must differ from the PR-author — have a separate maintainer apply the label.`);
       }
 ```
 
-Operator review → add `bypass-approved` label → merge gate passes. Without label: CI fails → merge blocked.
+Operator review by a maintainer ≠ PR author → maintainer adds `bypass-approved` label → merge gate passes. Self-applied label fails CI. Closes the bypass-label-circumvention attack surface.
 
 ### Frontmatter form (for typed artifacts)
 
@@ -480,6 +521,20 @@ Running 47 error-code fixture pairs...
 
 Candidate codes can ship without fixtures (warning only); accepted codes MUST have fixtures (regression suite blocks promotion to accepted otherwise).
 
+### Test-suite failure blocks toolkit release
+
+`vsdd verify test-error-catalog` runs as part of the CI release pipeline. Failure of any accepted-code fixture (positive doesn't fire OR negative does fire) **blocks the toolkit release**. Per the toolkit's own Phase 5 mutation-testing discipline applied to validators: validator test-suite is itself the toolkit's Red Gate for the verification subsystem.
+
+GitHub Releases pipeline:
+1. Tag a new version
+2. CI runs `vsdd verify test-error-catalog`
+3. CI runs `cargo test` (unit + integration tests)
+4. CI runs `cargo clippy --deny warnings`
+5. **All three pass → release pipeline proceeds to build per-platform binaries**
+6. Any failure → release blocked; operator-pull-back required
+
+Candidate-code fixture failures emit warnings but don't block (candidate codes are still maturing).
+
 ---
 
 ## `vsdd verify` CLI subcommand surface
@@ -557,6 +612,64 @@ Deferred to v1+. Substantial implementation cost; revisit when v1 ships + operat
 
 ---
 
+## Dependency approval discipline (per operator directive 2026-05-27)
+
+Any commit that **adds** a dependency to `Cargo.toml` (or `package.json` / `pyproject.toml` / `requirements.txt` / equivalent manifest) requires SO approval + PE supply-chain investigation + Security CVE + threat-model review. Per SO dim 3 (technology compliance) + PE dim 13 (supply chain integrity) + Security dim 3 (dependency security).
+
+### Trigger
+
+`check-dependency-approval.py` hook fires when a commit modifies a dependency manifest with NEW entries (additions; upgrades-within-semver-range; major-version-bumps).
+
+### Required investigation surface
+
+PR description (per the PR template artifact class extension) carries a "Dependency approval" section when dependencies are added:
+
+```markdown
+## Dependency approval
+
+### <crate-name> v<version-pin>
+
+- **Why this dependency** — what gap it fills; alternatives considered
+- **PE supply-chain notes** — version pin discipline; signed releases (cosign / sigstore / GPG); maintainer trust assessment; transitive-dep audit via `cargo audit` (or `pip-audit` / `npm audit`); commit-pin OR semver-range justification
+- **Security notes** — CVE history; license (MIT / Apache-2 / etc. — must be vsdd-MIT-compatible); threat model considerations
+- **SO approval** — operator-attribution: SO confirms scope justifies the addition
+
+Co-authored-by: Solution Owner <so@vsdd-domains>
+Co-authored-by: Platform Engineer <pe@vsdd-domains>
+Co-authored-by: Security <security@vsdd-domains>
+```
+
+### Trigger granularity
+
+| Operation | Discipline required |
+|---|---|
+| **Dependency addition** (new entry in `[dependencies]`) | Full investigation: SO + PE + Security |
+| **Dependency removal** | SO awareness only (no full investigation; removal is always permissible) |
+| **Upgrade within semver-range** (patch/minor) | PE + Security spot-check; SO awareness; investigation entry references prior approval |
+| **Major-version-bump** (breaking change) | Full investigation (treated as new dependency) |
+| **Transitive-dep changes** (Cargo.lock churn from existing direct-dep upgrade) | No investigation required (transitive-deps inherit direct-dep approval) |
+
+### Hook implementation
+
+`check-dependency-approval.py` (~18th methodology hook; brings total to ~18):
+
+- Detects `Cargo.toml` / `package.json` / `pyproject.toml` / `requirements.txt` modifications
+- Diffs added vs removed entries
+- For NEW entries: validates PR description carries "Dependency approval" section + SO + PE + Security co-authorship trailers
+- Missing investigation OR co-authorship: fires `VSDD-E0100: dependency-approval-missing` ERROR
+- For UPGRADES: validates spot-check declared in PR description (lighter discipline; warning if absent)
+- For REMOVALS: passes (no investigation needed)
+
+### Event variant emission
+
+Approval emits `OperatorDirectiveApplied{directive: dependency-approved, crate: <name>, version: <pin>, investigation_ref: <PR-URL>}` event (uses existing variant per variant-proliferation governance; no new variant).
+
+### Initial baseline at toolkit-v1.0 release
+
+The toolkit's own `Cargo.toml` at v1.0 ships with the minimum-viable dependency set. Per the discipline applied retroactively to toolkit-self: every dependency in v1.0 `Cargo.toml` gets a `dependencies/<crate>.md` investigation entry at `docs/dependencies/` (one file per dep; living investigation record per crate). Subsequent dep additions follow the per-PR discipline above.
+
+---
+
 ## Pre-commit framework integration
 
 `vsdd init` runs `pre-commit install` automatically (per Tier A shift-left discipline). Deploys `.pre-commit-config.yaml` with managed-section markers:
@@ -577,7 +690,7 @@ repos:
         entry: .claude/hooks/vsdd-cite-resolution.py
         language: python
         files: '\.md$'
-      # ... (17 hooks total)
+      # ... (18 hooks total)
 # === End vsdd managed ===
 ```
 
@@ -587,7 +700,7 @@ Idempotent re-init: managed section replaced in place; operator-added hooks outs
 
 ## Rust crate workspace structure
 
-Per A1 + A14: single `vsdd` crate; single `vsdd` binary with subcommand dispatch.
+Single-crate workspace with subcommand dispatch: one `vsdd` crate, one `vsdd` binary, multiple subcommands (`init`, `verify`, `observe`, `mcp-serve`). Matches cargo / rustup / git ecosystem convention.
 
 ### Workspace layout
 
@@ -625,7 +738,7 @@ vsdd-cli/
 │       └── mcp_serve/                  # vsdd mcp-serve implementation
 ├── .claude/                            # Claude Code substrate (deployed by vsdd init when this is a vsdd-using project)
 │   ├── hooks/
-│   │   └── vsdd-*.py                   # 17 methodology hooks (Python thin wrappers)
+│   │   └── vsdd-*.py                   # 18 methodology hooks (Python thin wrappers)
 │   ├── commands/
 │   │   └── vsdd-*.md                   # 10 phase primers + 16 domain skills + 2 meta
 │   └── mcp.json                        # MCP server registration
@@ -677,11 +790,18 @@ path = "src/main.rs"
 
 ### crates.io publication
 
-`cargo publish` from `vsdd/` (vsdd-cli is the GitHub repo name; `vsdd` is the crate name on crates.io). Per A11: `vsdd` reserved on crates.io.
+`cargo publish` from `vsdd/` (vsdd-cli is the GitHub repo name; `vsdd` is the crate name on crates.io; the crate name is reserved on crates.io for this implementation).
 
-### Pre-built binaries (v1+ optimization)
+### Pre-built binaries (v1.0 deliverable)
 
-For CI environments where `cargo install` from source is too slow (~60s compile), pre-built binaries via GitHub Releases:
+CI environments where `cargo install` from source is too slow (~60s compile) consume pre-built binaries via GitHub Releases. Track 5n is a **v1.0 ship-blocker** (promoted from v1+): the supply-chain attack surface (curl-pipe-tar-pipe-bin against attacker-controlled release infrastructure) plus the CI ergonomics gap (~60s compile in every CI job) jointly justify v1.0 inclusion rather than v1+ deferral:
+
+- **Per-platform builds** at GitHub Release time (Linux x86_64, Linux aarch64, macOS x86_64, macOS aarch64)
+- **Cosign / sigstore signing** — each release binary signed; signature published alongside binary artifact
+- **Reproducible builds** — `Cargo.lock` committed; build environment pinned (rust-toolchain.toml); GitHub Actions runner versions pinned
+- **Supply-chain attestation** — SLSA provenance generated per build; published as release asset alongside binary
+
+Without these: curl-pipe-tar-pipe-bin pattern downloads attacker-controlled bytes if release infrastructure compromised. With cosign verification, operator validates the binary's provenance before extraction.
 
 ```
 vsdd-0.1.0-x86_64-unknown-linux-gnu.tar.gz
@@ -772,7 +892,7 @@ Tracks 5a-5n are v1 deliverables. 5o-5q are v1+.
 
 ## Closing
 
-DESIGN-VERIFICATION operationalizes the mechanical-enforcement layer of Goal 2 (machine-enforceable) + Goal 4 (CI/CD shift-left). 17 methodology hooks composing with crosslink's 5 = ~22 hooks total deployed in a VSDD project. Per-hook deployment matrix declares operator-local vs CI scope. Rust mirror at CI-side preserves "one source; two enforcement surfaces" — operator-local + CI cannot drift in what they enforce.
+DESIGN-VERIFICATION operationalizes the mechanical-enforcement layer of Goal 2 (machine-enforceable) + Goal 4 (CI/CD shift-left). 18 methodology hooks composing with crosslink's 5 = ~23 hooks total deployed in a VSDD project. Per-hook deployment matrix declares operator-local vs CI scope. Rust mirror at CI-side preserves "one source; two enforcement surfaces" — operator-local + CI cannot drift in what they enforce.
 
 Bypass-marker enforcement is the operator-escape-valve; PR-approval label is the CI-side teeth. Error catalog with per-code documentation + SARIF emission + fixture-based falsifiability — the Rust-compiler-for-documents discipline made operational.
 

@@ -23,7 +23,7 @@ For positioning: see [`README.md`](./README.md). For methodology subsystem desig
 
 DESIGN-SCHEMA owns:
 
-- Per-artifact-class JSON Schemas + structural-pattern schemas (15 classes)
+- Per-artifact-class JSON Schemas + structural-pattern schemas (13 classes)
 - Schema source format + file conventions + code generation pipeline
 - Auth_method declaration schema with explicit NO-key-material structural property
 - Credential-exclusion structural property for event-variant schemas
@@ -48,7 +48,7 @@ DESIGN-SCHEMA does NOT own:
 
 Per-artifact-class schemas live at `vsdd-core/schemas/<class>.{json,yaml}`. The file format depends on validation mode:
 
-- **Frontmatter-based** (14 classes): JSON Schema files at `vsdd-core/schemas/<class>.json` validate YAML frontmatter at top of markdown files. JSON Schema draft 2020-12.
+- **Frontmatter-based** (12 classes): JSON Schema files at `vsdd-core/schemas/<class>.json` validate YAML frontmatter at top of markdown files. JSON Schema draft 2020-12.
 - **Structural** (CHANGELOG class): YAML rule file at `vsdd-core/schemas/changelog.yaml` declares structural rules (top-structure patterns, section-structure regexes, canonical-category enums, entry-pattern regex). Validator dispatches per-rule.
 
 Schemas carry their own metadata frontmatter (yes, schemas-about-schemas):
@@ -91,7 +91,7 @@ For the structural CHANGELOG class: rules are hand-authored in YAML (no Rust-typ
 
 | Mode | Classes | Source format | Validator dispatch |
 |---|---|---|---|
-| **Frontmatter-based** | Review entry, Finding, Phase primer, Domain prompt, Supplement, Methodology event variants, `.vsdd/config.yaml`, DESIGN doc, Methodology spec section, Manual-test, Exit Signal record, Pre-phase composition declaration, PR template, MCP tool I/O | JSON Schema draft 2020-12 | Parse frontmatter → validate against schema |
+| **Frontmatter-based** | Review entry, Finding, Phase primer, Domain prompt, Supplement, Methodology event variants, `.vsdd/config.yaml`, DESIGN doc, Methodology spec section, Manual-test, Exit Signal record, PR template | JSON Schema draft 2020-12 | Parse frontmatter → validate against schema |
 | **Structural** | CHANGELOG | Hand-authored YAML rule file | Apply rule-set; emit per-rule errors |
 
 Both modes share the error-catalog + Mentor-voice output + observability emission (`HookFired` + `ValidationPassed` / `ValidationFailed` events).
@@ -100,7 +100,12 @@ Both modes share the error-catalog + Mentor-voice output + observability emissio
 
 ## Per-artifact-class schemas
 
-15 classes. For each: purpose, validation mode, frontmatter shape (frontmatter classes) or structural rules (CHANGELOG), required + optional fields, enum constraints, cross-field validation, drift patterns caught, error codes that fire, semantic version baseline.
+**13 classes** (revised down from 15 by Phase 3 multi-domain review — two classes consolidated away):
+
+- MCP tool I/O class **dropped** — MCP protocol natively validates tool schemas; vsdd's 4 tools are documented in DESIGN-OBSERVABILITY § MCP server tool surface + the methodology spec; the schemas live as Rust code in `vsdd/src/mcp_serve/` without needing a separate artifact-class validation layer.
+- Pre-phase composition declaration class **dropped** — folded into the `PhaseCompositionDeclared` methodology event variant's payload schema. The declaration IS the event payload; the standalone class was redundant. Phase-boundary commits emit the event; the event itself is the declaration; the event-variant schema validates.
+
+For each remaining class: purpose, validation mode, frontmatter shape (frontmatter classes) or structural rules (CHANGELOG), required + optional fields, enum constraints, cross-field validation, drift patterns caught, error codes that fire, semantic version baseline.
 
 ### Review entry
 
@@ -317,7 +322,7 @@ payload: { ... }                 # per-variant payload (typed)
 - `PRReadyForReview { pr_number, layer, gate_criteria_met }`
 - `PRMerged { pr_number, layer, merged_at, exit_signal_pointer? }`
 
-**Credential-exclusion structural property (per SEC-F1 + SEC-F3):**
+**Credential-exclusion structural property:**
 
 Every variant's payload schema declares:
 
@@ -372,7 +377,7 @@ auth_method_credential_source: <string>    # "plan-auth-no-key" | "env:<VAR_NAME
 auth_attribution_pattern: <AttributionPattern enum>   # per-operator | shared-organizational
 ```
 
-**Cross-field validation (load-bearing per SEC-F1):**
+**Cross-field validation (load-bearing — closes the credential-leakage-via-config attack surface):**
 
 - If `auth_method: api_key`, then `auth_method_credential_source` MUST match pattern `env:[A-Z][A-Z0-9_]*` (env-var name only; NEVER the credential value)
 - The schema validator **rejects any field matching credential-shaped patterns** (regex against `sk-ant-api03-`, generic Bearer tokens, `sk-[A-Za-z0-9]+`, etc.)
@@ -381,7 +386,7 @@ auth_attribution_pattern: <AttributionPattern enum>   # per-operator | shared-or
 **Drift patterns caught:**
 
 - Auth-method declaration shape violation
-- Credential-shaped value in config (SEC-F1 — rejected; fires `VSDD-E0020: invalid-auth_method_credential_source`)
+- Credential-shaped value in config rejected; fires `VSDD-E0020: invalid-auth_method_credential_source`
 
 **Semantic version baseline:** 1.0.0.
 
@@ -517,35 +522,11 @@ retrospective_note: <string | null>
 
 **Semantic version baseline:** 1.0.0.
 
-### Pre-phase composition declaration
+### Pre-phase composition declaration — DROPPED as standalone class
 
-**Purpose:** Per-phase composition declaration emitted at phase boundary.
+Per Phase 3 multi-domain review consolidation: the pre-phase composition declaration's structure folds into the `PhaseCompositionDeclared` methodology event variant payload (defined under § Methodology event variants above). The standalone class was redundant — phase-boundary commits emit the event; the event payload IS the declaration; the event-variant schema validates.
 
-**Validation mode:** Frontmatter-based.
-
-**Shape:**
-
-```yaml
-phase: <Phase enum>
-composed_domains: [<domain-slug>...]
-composition_mode: <CompositionMode enum>    # skill-interactive | reviewer-cold-session
-operator_confirmation: <string>             # "confirmed" | "operator-directive {ref}"
-memory_isolation: <MemoryIsolation enum>    # worktree-no-memory | container-isolated
-declared_at: <ISO 8601 timestamp>
-```
-
-**Cross-field validation:**
-
-- `composed_domains` MUST match phase-domain composition matrix entry for the declared phase (with axis-activated extensions accepted)
-- `composition_mode: reviewer-cold-session` only valid for `phase: phase-3`
-
-**Drift patterns caught:**
-
-- Required field presence
-- Composition_mode validity
-- `VSDD-E0050: phase-composition-not-declared` (when absent at phase-boundary commit)
-
-**Semantic version baseline:** 1.0.0.
+Cross-field validation (composed_domains matches phase-domain composition matrix; composition_mode: reviewer-cold-session only valid for phase-3) carries forward as event-variant payload schema constraints. Error code `VSDD-E0050: phase-composition-not-declared` continues to fire when no `PhaseCompositionDeclared` event exists at phase-boundary commit.
 
 ### PR template
 
@@ -565,7 +546,7 @@ required_fields:
   - manual_tests_section           # auto-generated by `vsdd observe pr-body --layer N`
   - exit_signal_pointer            # required when layer closes
 excluded_fields:
-  - credential-shaped-patterns     # per SEC-F8; no auth_token / api_key / bearer fields allowed
+  - credential-shaped-patterns     # no auth_token / api_key / bearer fields allowed
 ```
 
 **Cross-field validation:**
@@ -581,36 +562,11 @@ excluded_fields:
 
 **Semantic version baseline:** 1.0.0.
 
-### MCP tool I/O
+### MCP tool I/O — DROPPED as standalone class
 
-**Purpose:** Schema for the methodology + substrate-docs MCP server's 4 tools.
+Per Phase 3 multi-domain review consolidation: MCP protocol natively validates tool schemas (each tool registration carries input + output JSON Schemas as part of the MCP protocol contract). vsdd's 4 tools are defined as Rust code in `vsdd/src/mcp_serve/` with derive-macro-generated schemas; cost characteristics are documented in DESIGN-OBSERVABILITY § MCP server tool surface. Layering a vsdd artifact-class validator on top of MCP's native validation added redundancy without proportional safety.
 
-**Validation mode:** Frontmatter-based (each tool definition has a schema; MCP protocol uses JSON Schema natively).
-
-**Shape (per tool):**
-
-```yaml
-tool_name: <string>                # e.g., "vsdd.methodology.lookup"
-input_schema: <JSON Schema>        # MCP input shape
-output_schema: <JSON Schema>       # MCP output shape
-cache_ttl: <duration>              # default 1h
-cost_characteristic:               # per-tool cost expectation
-  expected_tokens_per_query: <u32>
-  expected_latency_ms: <u32>
-  cache_hit_savings: <ratio>
-```
-
-**Cross-field validation:**
-
-- `tool_name` MUST be one of the 4 declared MCP tools
-- `input_schema` + `output_schema` MUST be valid JSON Schema
-
-**Drift patterns caught:**
-
-- Tool signature stability (breaking changes to schemas without semver bump)
-- Output schema declared
-
-**Semantic version baseline:** 1.0.0.
+The 4 tool definitions stay; the standalone class drops. Schema validation of MCP tool signatures happens via the MCP protocol itself + `cargo build` of the Rust implementation. Tool signature stability tracked via standard Rust public-API discipline (breaking-change requires semver-major bump).
 
 ### CHANGELOG (structural — not frontmatter)
 
@@ -841,7 +797,7 @@ The error catalog (`vsdd-core/error-catalog.yaml`) versions independently. Catal
 
 | Track | Goal-4 surface? |
 |---|---|
-| 3a — Author 14 per-class JSON Schemas as Rust types via `schemars` (Review entry, Finding, Phase primer, Domain prompt, Supplement, Methodology event variants, `.vsdd/config.yaml`, DESIGN doc, Methodology spec section, Manual-test, Exit Signal record, Pre-phase composition declaration, PR template, MCP tool I/O) | Foundational |
+| 3a — Author 12 per-class JSON Schemas as Rust types via `schemars` (Review entry, Finding, Phase primer, Domain prompt, Supplement, Methodology event variants, `.vsdd/config.yaml`, DESIGN doc, Methodology spec section, Manual-test, Exit Signal record, PR template) | Foundational |
 | 3b — Author CHANGELOG structural rule file (`vsdd-core/schemas/changelog.yaml`) | Foundational |
 | 3c — Author error catalog v1.0.0 (~30 codes) at `vsdd-core/error-catalog.yaml` with `status` tier discipline | Foundational |
 | 3d — Code-generation pipeline: `cargo build` → `schemars` → emit `vsdd-core/schemas/<class>.json` | Foundational |
@@ -871,8 +827,8 @@ Time estimates intentionally absent per the toolkit's operator-time-binding-with
 
 ## Closing
 
-DESIGN-SCHEMA defines the type system the rest of the toolkit's discipline rests on. 15 artifact classes with frontmatter-based + structural validation modes. Error catalog with status-tier discipline. Anchor-ID derivation conventions. Bypass-marker schema. Schema versioning + migration. Credential-exclusion structural property.
+DESIGN-SCHEMA defines the type system the rest of the toolkit's discipline rests on. 13 artifact classes with frontmatter-based + structural validation modes. Error catalog with status-tier discipline. Anchor-ID derivation conventions. Bypass-marker schema. Schema versioning + migration. Credential-exclusion structural property.
 
-The schema layer is small in surface area (~14 JSON Schemas + 1 structural rule file + 1 error catalog file + 4 utility modules) but high in leverage — every downstream validator, every hook, every observability event, every methodology amendment validates against this layer.
+The schema layer is small in surface area (~12 JSON Schemas + 1 structural rule file + 1 error catalog file + 4 utility modules) but high in leverage — every downstream validator, every hook, every observability event, every methodology amendment validates against this layer.
 
 **Next:** Author DESIGN-OBSERVABILITY.md + DESIGN-VERIFICATION.md in parallel (both consume from this doc). Then DESIGN-METHODOLOGY revalidates against the trio at the cross-DESIGN-doc closure boundary.
