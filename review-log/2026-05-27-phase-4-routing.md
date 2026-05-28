@@ -56,59 +56,59 @@ All 58 findings filed at crosslink issue IDs #69-126 (some duplicates from earli
 - Communication: #95-106 (with comm-f11 deferred-open) — `--label domain:technical-writer` / `--label domain:security`
 - Adversarial: #107-126 (with adv-f18 Resolved-closed) — `--label domain:documentation-reviewer` / `--label domain:vsdd-methodology` / `--label domain:red-team`
 
-## Coordination clusters (Phase 1a work that benefits from coherent bundling)
+## Coordination bundles (Phase 1a work that benefits from coherent bundling)
 
-Per primer 4 § Multi-phase routes + the Architecture cluster's coordination notes:
+Per primer 4 § Multi-phase routes + the Architecture cluster's coordination notes. Each bundle is identified by its descriptive scope; no letter-label per the naming + coinage governance (the prior draft of this section used Roman-numeral letter-labels which violated the discipline; corrective edit applied retroactively per the pre-stability narrative-preservation window).
 
-### Cluster I — Error catalog cleanup (single Phase 1a commit)
+### Error catalog cleanup (single Phase 1a commit)
 - impl-f1 (VSDD-E0021 collision) + adv-f6 (same) + adv-f19 (VSDD-W0080 collision) + impl-f2 (VSDD-E0220 conflicting semantics)
 - One commit fixes 4 findings via the per-code-one-source contract restored.
 
-### Cluster II — Naming-discipline sweep retro (single Phase 1a commit)
+### Naming-discipline sweep retro (single Phase 1a commit)
 - adv-f2 (Tier A/B) + adv-f3 (Surface A/B/C/D in Phase 5 primer + QE prompt) + adv-f4 (Pattern A/B + Pillar N) + adv-f5 (Goal 1/2/3/4 — rationale-required)
-- One commit fixes ~30+ sites; also re-validates the canonical-patterns.yaml registry against current state.
+- One commit fixes ~30+ sites; also re-validates the canonical-patterns.yaml registry against current state. Note: this very file's prior draft itself contained letter-coded bundle labels (Roman-numeral suffixes attached to the word "Cluster") surfaced by operator-directive; the retro-edit IS recursive self-application of the same discipline.
 
-### Cluster III — Toolkit's own DESIGN.md + Cargo.toml + docs/dependencies/ bootstrap (single Phase 1a + 1c + 2a coordinated commit)
+### Toolkit's own DESIGN.md + Cargo.toml + docs/dependencies/ bootstrap (single Phase 1a + 1c + 2a coordinated commit)
 - arch-f9 (toolkit's own DESIGN.md missing) + adv-f7 (docs/dependencies/ doesn't exist) + arch-f11 (vsdd-core vs vsdd crate split framing)
 - This is the "vsdd-cli dogfoods its own methodology" inflection — author the toolkit's DESIGN.md with proper Project intent + axes + behavioral contracts; then track 2a (Rust crate) becomes properly-scoped.
 
-### Cluster IV — methodology.md content additions (single Phase 1a commit)
+### methodology.md content additions (single Phase 1a commit)
 - comm-f1 (first-use expansion) + comm-f2 (vocab registry domain abbreviations) + comm-f4 (CHANGELOG discipline) + comm-f5 (MCP server) + comm-f6 (capture-source enumeration)
 - methodology.md grows from 415 lines to ~500-550 lines covering the cited gaps.
 
-### Cluster V — Threat model + Security operational runbooks (operator-directive coordination)
+### Threat model + Security operational runbooks (operator-directive coordination)
 - comm-f7 (threat model) + adv-f17 (threat model never authored) + comm-f8 (credential-rotation runbook missing) + comm-f10 (OTEL_LOG_RAW_API_BODIES enforcement gap) + arch-f12 (anonymization-patterns trust-boundary inversion) + adv-f9 (bypass-marker single-maintainer degradation) + adv-f16 (vsdd-domains email registration)
 - Substantial security-discipline authoring; could land as standalone THREAT-MODEL.md + runbooks/ directory.
 
-### Cluster VI — Methodology amendments (single methodology-amendment commit)
+### Methodology amendments (single methodology-amendment commit)
 - adv-f12 (earned-by-recurrence trigger violations) + adv-f11 (methodology_version cadence) + adv-f13 (Composed-domains trailer semantics) + adv-f14 (Phase 5 before Phase 3 — composes with pg-6 loophole) + impl-f12 (cluster-batching for low-axis) + comm-f9 (cluster-shape divergence between primer + dispatcher) + arch-f9 (toolkit's own DESIGN.md / DE composition) + arch-f8 (track 3h vs vsdd verify migrate v1+ scope)
 - Substantial methodology amendments; could ship as v0.2.0 methodology-version bump.
 
-### Cluster VII — CI workflow + supply-chain hardening (single Phase 1a + 2a commit)
+### CI workflow + supply-chain hardening (single Phase 1a + 2a commit)
 - arch-f5 (cargo install bypasses pre-built-binary attestation) + arch-f6 (GitHub Actions tag-pinning vs SHA) + arch-f10 (Python hook subprocess cumulative cost) + arch-f7 (events.jsonl durability) + impl-f4 (subprocess ~950ms cost) + impl-f3 (validator wall-clock budget undeclared) + impl-f11 (dependency-approval PR-edit bypass)
 - CI workflow templates rewrite + per-PR cost measurement; needs PE + Security composition.
 
-### Cluster VIII — Hook + validator implementation prep (Phase 1c → 2a → 2b)
+### Hook + validator implementation prep (Phase 1c → 2a → 2b)
 - impl-f5 (Manual-test falsifiability_check schema) + impl-f6 (consolidated hooks fixture per-rule) + impl-f7 (purity boundary uncatalogued) + impl-f8 (vsdd verify exit codes) + impl-f10 (unknown hook-id handling) + adv-f10 (anonymization fixture; Phase 2a route)
 - These are the implementation prerequisites; Phase 1c decomposes the hook implementation layer; Phase 2a authors fixtures; Phase 2b implements.
 
 ## Sequencing recommendation (per the operator's prior directive "proper Phase 1c → 2a → 2b for hooks")
 
-1. **Cluster II (naming-discipline retro)** — small, mechanical, blocking nothing; can land any time. Recommend first because it cleans the canonical artifacts the next clusters will reference.
-2. **Cluster I (error catalog cleanup)** — small, mechanical; restores the per-code-one-source contract before Phase 2a fixtures land.
-3. **Cluster IV (methodology.md content additions)** — methodology spec gaps; bounded scope.
-4. **Cluster VI (methodology amendments)** — substantive; needs SO disposition + earned-by-recurrence-evidence trail for each amendment. May warrant a fresh Phase 3 round before locking.
-5. **Cluster III (toolkit DESIGN.md + Cargo.toml bootstrap)** — opens Phase 1c proper for hook implementation.
-6. **Cluster VIII (hook + validator implementation prep)** — Phase 1c → 2a → 2b sequence per primer 4 § After Phase 4.
-7. **Cluster V (threat model + runbooks)** — can run parallel with Cluster VIII (independent concerns).
-8. **Cluster VII (CI workflow hardening)** — can run after Cluster III (which establishes Cargo.toml).
+1. **Naming-discipline sweep retro** — small, mechanical, blocking nothing; can land any time. Recommend first because it cleans the canonical artifacts the next bundles will reference. Also closes the meta-recursion: this routing log itself violated the discipline.
+2. **Error catalog cleanup** — small, mechanical; restores the per-code-one-source contract before Phase 2a fixtures land.
+3. **methodology.md content additions** — methodology spec gaps; bounded scope.
+4. **Methodology amendments** — substantive; needs SO disposition + earned-by-recurrence-evidence trail for each amendment. May warrant a fresh Phase 3 round before locking.
+5. **Toolkit DESIGN.md + Cargo.toml bootstrap** — opens Phase 1c proper for hook implementation.
+6. **Hook + validator implementation prep** — Phase 1c → 2a → 2b sequence per primer 4 § After Phase 4.
+7. **Threat model + runbooks** — can run parallel with Hook implementation prep (independent concerns).
+8. **CI workflow hardening** — can run after Toolkit DESIGN.md bootstrap (which establishes Cargo.toml).
 
 ## Composes-with (cross-finding coordination)
 
-- Cluster I (error catalog cleanup) composes with Cluster II (naming sweep) — both touch DESIGN-VERIFICATION
-- Cluster VI (methodology amendments) composes with pg-6 (phase-skip loophole already filed as critical-priority process-gap)
-- Cluster III (DESIGN.md + Cargo.toml bootstrap) composes with pg-4 (DE composition missing from prior DESIGN docs)
-- Cluster VIII (hook implementation prep) composes with pg-5 (leanness — domain prompts need expansion) AND pg-6 (the phase-skip loophole prevention)
+- Error catalog cleanup composes with Naming-discipline sweep — both touch DESIGN-VERIFICATION
+- Methodology amendments compose with pg-6 (phase-skip loophole already filed as critical-priority process-gap)
+- Toolkit DESIGN.md + Cargo.toml bootstrap composes with pg-4 (DE composition missing from prior DESIGN docs)
+- Hook implementation prep composes with pg-5 (leanness — domain prompts need expansion) AND pg-6 (the phase-skip loophole prevention)
 
 ## Completion criteria check (per primer 4 § Completion criteria)
 
@@ -122,7 +122,7 @@ Phase 4 routing exit signal: **PhaseExited{phase: phase-4, exit_status: complete
 
 ## After Phase 4 (per primer 4 § After Phase 4)
 
-The next pass begins. Per the sequencing recommendation above, the recommended next entry is **Phase 1a primer** for Cluster II (naming-discipline retro) — smallest unblock-everything-else surface. The operator-directed alternative is **Phase 1c primer** for hook implementation layer decomposition (Cluster III + Cluster VIII).
+The next pass begins. Per the sequencing recommendation above, the recommended next entry is **Phase 1a primer** for the naming-discipline sweep retro — smallest unblock-everything-else surface. The operator-directed alternative is **Phase 1c primer** for hook implementation layer decomposition (the Toolkit DESIGN.md + Cargo.toml bootstrap + Hook implementation prep bundles together).
 
 ## Coordination
 
