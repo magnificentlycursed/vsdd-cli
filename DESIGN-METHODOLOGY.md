@@ -307,13 +307,13 @@ The methodology spec surfaces this auth-method × caching-behavior delta. Operat
 
 - **`.vsdd/config.yaml`** carries auth-method-name + credential-source-reference only (e.g., `auth_method_credential_source: env:ANTHROPIC_API_KEY`); NEVER credential value. Schema validator rejects credential-shaped fields.
 - **Anonymization hook** (`check-anonymization.sh`) detects API-key formats: `sk-ant-api03-...`, generic `Bearer <token>` headers, env-var-assignment-with-credential-shaped-value. Pattern table maintained in DESIGN-VERIFICATION.
-- **Event-variant credential exclusion:** all 16 methodology event variants exclude credential-shaped fields structurally. The schema validator rejects any event-emission attempt that includes API key material.
+- **Event-variant credential exclusion:** all 18 methodology event variants exclude credential-shaped fields structurally. The schema validator rejects any event-emission attempt that includes API key material.
 - **`OTEL_LOG_RAW_API_BODIES`** opt-in env var (which would include API request bodies in OTel exports) stays default-off; the methodology recommends this stays off + names it as security-relevant in operator-facing docs.
 - **OTel collector forwarding to external backends** (Honeycomb, Datadog, Grafana, Langfuse, etc.): collector config explicitly redacts credential-shaped values before forwarding. Each backend's bearer token follows the same env-var-only storage discipline as the primary API key.
-- **Audit-trail discipline:** three auth event variants (AuthMethodDeclared / AuthMethodChanged / AuthFailureObserved) provide forensic record.
+- **Audit-trail discipline:** `AuthMethodDeclared` event variant carries auth_method + credential_source (env-var name; never value) at init. `AuthMethodChanged` + `AuthFailureObserved` retired/consolidated per the variant-proliferation governance audit; rate-limit + invalid-credential events covered by Agent SDK OTel signals natively (no methodology-specific variant needed). Auth-rotation events route through `OperatorDirectiveApplied{directive: auth-method-rotation}` consolidated variant.
 - **CI integration:** GitHub Secrets pattern (or equivalent CI platform); never echo key value in logs.
 - **Per-operator vs shared-organizational keys:** per-operator default (clear attribution); shared-organizational extension activated by `auth_attribution_pattern: shared-organizational` in config.
-- **Compromised credential procedure:** documented in operational runbook (revoke → audit event log → emit AuthFailureObserved → reissue → anonymization regression-check).
+- **Compromised credential procedure:** documented in operational runbook (revoke at credential issuer → audit event log via Agent SDK OTel signals for cycle activity post-compromise + pre-revocation → emit `OperatorDirectiveApplied{directive: credential-rotation, rationale: <text>}` → reissue + update `.vsdd/config.yaml` env-var-name reference → anonymization regression-check ensures compromised credential not latent in repo history).
 
 ---
 
@@ -895,7 +895,7 @@ When an adversarial reviewer runs Phase 3 against the `vsdd-cli` repository and 
 | 2d — Author 18 domain prompts (with vestigial-pattern cuts) | No |
 | 2e — Author 14 supplements (with cuts) | No |
 | 2f — Author methodology spec | No |
-| 2k — Implement error catalog (~30 codes) + validator falsifiability fixtures + `vsdd verify explain` | Yes (Goal 2 operationalization) |
+| 2k — Implement error catalog (~25 accepted + ~15 candidate codes per status-tier discipline) + validator falsifiability fixtures + `vsdd verify explain` | Yes (Goal 2 operationalization) |
 | 2l — Author DESIGN.md template + vocabulary registry + canonical-patterns registry + anonymization-patterns registry | No (Tier A + B shift-left) |
 | 2m — Implement post-DESIGN.md auto-scaffolding hook (manual-tests + Phase 2a Red Gate skeleton) | No (Tier B shift-left) |
 | 2n — Author 15 artifact-class JSON Schemas (DESIGN-SCHEMA dependency) | Foundational |
@@ -918,8 +918,8 @@ What this doc produces that sibling DESIGN docs consume:
 | Sibling DESIGN doc | Consumes from this doc |
 |---|---|
 | DESIGN-SCHEMA | Artifact class list (review entry, finding, phase primer, domain prompt, supplement, methodology event variants, `.vsdd/config.yaml`); per-class frontmatter field names; per-domain sycophancy_failure_modes structure; auth_method declaration schema (NO key-material fields); credential-exclusion structural property for all event-variant schemas |
-| DESIGN-OBSERVABILITY | 16 methodology event variants list (incl. PhaseCompositionDeclared + 3 auth-event variants); per-feature-axes activation as observability event; cluster-batching shape as event metadata; OTel collector config + sink wiring; capture-source provenance discipline; credential-redaction in collector forwarding; MCP server tool-handler design + cache strategy |
-| DESIGN-VERIFICATION | check-phase-composition.py hook spec; the 4 enforcement mechanisms; per-hook deployment matrix; CI bootstrap pattern (`vsdd init --ci-mode`); CI workflow templates with GitHub Secrets pattern; check-anonymization.sh API-key detection patterns; Rust hook-runner mirror; per-hook test pattern; post-DESIGN.md auto-scaffolding hook design; pre-commit install integration; error catalog implementation (~30 codes); validator falsifiability fixtures at `manual-tests/error-catalog/` |
+| DESIGN-OBSERVABILITY | 18 methodology event variants list (incl. PhaseCompositionDeclared + AuthMethodDeclared + ProjectInitialized + ArtifactScaffolded + 3 PR-lifecycle variants); per-feature-axes activation as observability event; cluster-batching shape as event metadata; OTel collector config + sink wiring (`.vsdd/otel-collector.yaml` with redaction processor); capture-source provenance discipline (otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled-v1+ / unmeasurable); credential-redaction in collector forwarding; MCP server tool-handler design + cache strategy + 4-tool surface |
+| DESIGN-VERIFICATION | check-phase-composition.py hook spec; the 4 enforcement mechanisms; per-hook deployment matrix (~17 hooks); CI bootstrap pattern (`vsdd init --ci-mode`); CI workflow templates with GitHub Secrets pattern + SARIF emission for GitHub Code Scanning; check-anonymization.sh API-key detection patterns; Rust hook-runner mirror; per-hook test pattern; post-DESIGN.md auto-scaffolding hook design; pre-commit framework auto-install integration; error catalog implementation (~25 accepted + ~15 candidate codes per status-tier discipline); validator falsifiability fixtures at `manual-tests/error-catalog/<code>/{should-fire,should-not-fire}/`; consolidated hooks (check-naming-discipline 4-rule; check-changelog-discipline 10-rule); bypass-marker enforcement (operator-local rationale + CI PR-approval-label gate) |
 
 What this doc consumes from sibling DESIGN docs (forward-references):
 
