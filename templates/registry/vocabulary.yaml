@@ -1,0 +1,89 @@
+# Canonical methodology vocabulary registry.
+# Deployed by `vsdd init` to adopting projects at .vsdd/registry/vocabulary.yaml.
+# Operator extensions land at the end of this file; toolkit-canonical entries are managed.
+#
+# Per methodology.md § Naming + coinage governance + DESIGN-VERIFICATION § check-naming-discipline.py.
+# The hook fires VSDD-W0001 (vestigial-pattern-detected) on deprecated_aliases usage.
+
+---
+schema_class: vocabulary-registry
+schema_version: 1.0.0
+registry_version: 0.1.0
+---
+
+# === vsdd managed ===
+terms:
+  - term: VSDD
+    definition: Verified Spec-Driven Development; the methodology this toolkit implements
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: VSDD
+    domain_scope: [methodology]
+
+  - term: MVR
+    definition: Maximum Viable Refinement; the per-round closure signal when all active domains produce only Hallucinated findings
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: MVR
+    domain_scope: [methodology, phase-3]
+
+  - term: Exit Signal
+    definition: Project-terminal four-dimensional convergence attestation (Phase 6)
+    first_introduced_in: 0.1.0
+    deprecated_aliases: ["four-dimensional convergence"]
+    abbreviation: ""
+    domain_scope: [methodology, phase-6]
+
+  - term: Exacting Mentor
+    definition: The adversarial reviewer stance; experienced reviewer who has seen this defect class before; holds work to the standard it can meet
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology, phase-3]
+
+  - term: IAR
+    definition: Iterative Adversarial Refinement; the Phase 3 cycle pattern
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: IAR
+    domain_scope: [phase-3]
+
+  - term: Red Gate
+    definition: The Phase 2a committed test suite that fails by default; what Phase 2b implementation turns green
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [phase-2a, phase-2b, quality-engineer]
+
+  - term: capture-source
+    definition: Provenance enum on cost-relevant events; one of otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled / unmeasurable
+    first_introduced_in: 0.1.0
+    deprecated_aliases: ["cost-tally tier"]
+    abbreviation: ""
+    domain_scope: [observability, ai-engineer]
+
+  - term: Raise to SO
+    definition: Routing discipline for findings proposing spec-contract changes; routes to Solution Owner for accept/reject/amend disposition
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology, solution-owner]
+
+  - term: phase-domain composition
+    definition: The matrix declaring which domains compose with each phase; enforced at four layers (matrix + per-primer + pre-phase declaration + check-phase-composition hook)
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology]
+
+  - term: always-on baseline
+    definition: SE + QE + SA + SO activate regardless of axes; PE + PerfE activate when project ships code. Per-feature axes additive over this baseline.
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology]
+# === End vsdd managed ===
+
+# Operator extensions land below this marker.
+operator_extensions:
+  - {}

@@ -1,0 +1,53 @@
+# vsdd-observe-pr-body.yml — deployed by `vsdd init` to adopting projects at .github/workflows/vsdd-observe-pr-body.yml
+# Auto-generates PR description with manual-test checklist when DESIGN.md or manual-tests/ commits land.
+#
+# Per DESIGN-VERIFICATION § CI workflow templates + the Layer-cycle PR discipline.
+
+name: vsdd observe pr-body
+
+on:
+  pull_request:
+    paths:
+      - 'DESIGN.md'
+      - 'manual-tests/**'
+
+concurrency:
+  group: vsdd-observe-pr-body-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  generate-pr-body:
+    runs-on: ubuntu-22.04
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install vsdd
+        run: cargo install vsdd --locked
+      - name: Bootstrap
+        run: vsdd init --ci-mode
+      - name: Generate PR body
+        id: prbody
+        run: |
+          BODY=$(vsdd observe pr-body --layer $(vsdd observe metrics --current-layer))
+          {
+            echo "body<<EOF"
+            echo "$BODY"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+      - name: Update PR description
+        uses: actions/github-script@v7
+        env:
+          PR_BODY: ${{ steps.prbody.outputs.body }}
+        with:
+          script: |
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              body: process.env.PR_BODY
+            });

@@ -1,0 +1,78 @@
+# Anonymization patterns registry.
+# Deployed by `vsdd init` to adopting projects at .vsdd/registry/anonymization-patterns.yaml.
+# OTel collector reads this file for redaction-processor configuration.
+# Operator extends with project-specific patterns at the end of the file.
+#
+# Per DESIGN-OBSERVABILITY § Credential redaction at forwarding boundary
+# + DESIGN-VERIFICATION § check-anonymization.sh API-key detection patterns extension.
+
+---
+schema_class: anonymization-patterns-registry
+schema_version: 1.0.0
+registry_version: 0.1.0
+---
+
+# === vsdd managed ===
+api_key_patterns:
+  - pattern: "sk-ant-api03-[A-Za-z0-9_\\-]+"
+    description: Anthropic API key
+    redaction: "[REDACTED-ANTHROPIC-API-KEY]"
+
+  - pattern: "sk-[A-Za-z0-9]{32,}"
+    description: OpenAI / generic sk-prefix API key
+    redaction: "[REDACTED-API-KEY]"
+
+  - pattern: "Bearer [A-Za-z0-9_\\-\\.=]+"
+    description: HTTP Authorization Bearer header
+    redaction: "Bearer [REDACTED-TOKEN]"
+
+  - pattern: "ghp_[A-Za-z0-9]{36}"
+    description: GitHub Personal Access Token (classic)
+    redaction: "[REDACTED-GITHUB-PAT]"
+
+  - pattern: "github_pat_[A-Za-z0-9_]+"
+    description: GitHub fine-grained PAT
+    redaction: "[REDACTED-GITHUB-PAT]"
+
+env_var_assignment_patterns:
+  - pattern: "[a-zA-Z_]*_?TOKEN=[A-Za-z0-9_\\-\\.=]+"
+    description: env-var-assignment with credential-shaped value (TOKEN)
+    redaction: "TOKEN=[REDACTED]"
+
+  - pattern: "[a-zA-Z_]*_?KEY=[A-Za-z0-9_\\-\\.=]+"
+    description: env-var-assignment KEY
+    redaction: "KEY=[REDACTED]"
+
+  - pattern: "[a-zA-Z_]*_?SECRET=[A-Za-z0-9_\\-\\.=]+"
+    description: env-var-assignment SECRET
+    redaction: "SECRET=[REDACTED]"
+
+credential_attribute_names:
+  # Fields that the schema validator rejects entirely from event payloads + config
+  - auth_method_credential_value
+  - api_key
+  - bearer_token
+  - secret
+  - password
+  - token
+
+operator_identity_patterns:
+  # Inherited from crosslink's existing check-anonymization.sh
+  - pattern_kind: "$HOME-path"
+    description: Operator's home directory path (leaks local username)
+    redaction: "$HOME"
+
+  - pattern_kind: "git-user-name"
+    description: git config user.name
+    redaction: "[REDACTED-GIT-USER-NAME]"
+
+  - pattern_kind: "git-user-email"
+    description: git config user.email
+    redaction: "[REDACTED-GIT-USER-EMAIL]"
+# === End vsdd managed ===
+
+# Operator extensions land below this marker.
+operator_extensions:
+  api_key_patterns: []
+  env_var_assignment_patterns: []
+  credential_attribute_names: []

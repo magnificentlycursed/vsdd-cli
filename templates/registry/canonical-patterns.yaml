@@ -1,0 +1,81 @@
+# Canonical patterns registry.
+# Deployed by `vsdd init` to adopting projects at .vsdd/registry/canonical-patterns.yaml.
+# Drives the check-naming-discipline.py hook's letter-label + organizational-scaffolding detection.
+#
+# Per methodology.md § Naming + coinage governance
+# + DESIGN-VERIFICATION § check-naming-discipline hook.
+
+---
+schema_class: canonical-patterns-registry
+schema_version: 1.0.0
+registry_version: 0.1.0
+---
+
+# === vsdd managed ===
+
+# Letter-label anti-pattern enforcement (fires VSDD-E0160).
+# Per the multi-recurrence evidence in the existing-suite (R78 F4 + R94 + PR #38/44/52)
+# + the Phase 4 routing of letter-label citations in vsdd-cli's own docs (commit a0a4987).
+letter_label_anti_patterns:
+  - pattern: "\\bSurface [A-Z](\\.\\d)?\\b"
+    description: "Surface <letter> organizational scaffolding"
+    corrective_pattern: "Use descriptive name (e.g., 'mutation-testing surface' not 'Surface B')"
+
+  - pattern: "\\bCluster [A-Z]\\b"
+    description: "Cluster <letter> organizational scaffolding"
+    corrective_pattern: "Use descriptive name (e.g., 'Implementation cluster' not 'Cluster A')"
+
+  - pattern: "\\bMode [A-Z]\\b"
+    description: "Mode <letter> organizational scaffolding"
+    corrective_pattern: "Use descriptive name (e.g., 'skill-interactive mode' not 'Mode A')"
+
+  - pattern: "\\bPath [A-Z]\\b"
+    description: "Path <letter> organizational scaffolding"
+    corrective_pattern: "Use descriptive name (e.g., 'crosslink path' not 'Path A')"
+
+  - pattern: "\\bForm [A-Z]\\b"
+    description: "Form <letter> organizational scaffolding"
+    corrective_pattern: "Use descriptive name (e.g., 'HTML-comment form' not 'Form A')"
+
+  - pattern: "\\bTier [A-Z]\\b"
+    description: "Tier <letter> classification scaffolding"
+    corrective_pattern: "Use descriptive name (e.g., 'shift-left tier' not 'Tier A')"
+
+  - pattern: "\\bPillar \\d\\b"
+    description: "Pillar <number> organizing structure"
+    corrective_pattern: "Use descriptive name for the pillar's concept"
+
+acceptable_letter_patterns:
+  # These patterns have the concept-word in the identifier — acceptable.
+  - "\\bDim \\d+\\b"
+  - "\\bLayer \\d+\\b"
+  - "\\bRound \\d+\\b"
+  - "\\bFinding \\d+\\b"
+  - "\\bPhase \\d+[a-z]?\\b"
+
+# Synthesis-review citation anti-pattern enforcement (fires VSDD-E0160 candidate).
+# Per the Phase 4 routing of "per SA-#", "per AIE-#", "per RT-#" citations
+# in vsdd-cli's own docs that were stripped in commit a0a4987.
+synthesis_review_citation_anti_patterns:
+  - pattern: "per (SA|SO|TW|DR|AIE|PE|SEC|QE|RT|UX)-?F?\\d+\\b"
+    description: "Synthesis-review finding citation in canonical prose"
+    corrective_pattern: "Replace with descriptive rationale at point-of-use"
+
+  - pattern: "per A\\d+\\b"
+    description: "Architectural-call letter-label citation"
+    corrective_pattern: "Replace with the architectural decision's descriptive name"
+
+# Existing-suite R## F## evidence references ARE acceptable (declared in README conventions).
+acceptable_evidence_references:
+  - "\\bR\\d+ F\\d+\\b"      # Review N Finding M in existing-suite
+  - "\\bG-\\d+\\b"           # Existing-suite governing findings
+  - "\\bPR #\\d+\\b"         # Existing-suite pull requests
+  - "\\b(TW|DR|SE|QE|SA|SO|UX|PE|PerfE|DE|Security) R\\d+ F\\d+\\b"  # bookmark-cli-manual per-domain references
+# === End vsdd managed ===
+
+# Operator extensions land below this marker.
+operator_extensions:
+  letter_label_anti_patterns: []
+  acceptable_letter_patterns: []
+  synthesis_review_citation_anti_patterns: []
+  acceptable_evidence_references: []

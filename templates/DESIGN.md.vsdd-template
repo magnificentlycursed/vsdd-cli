@@ -1,0 +1,122 @@
+---
+schema_class: design-doc
+schema_version: 1.0.0
+doc_class: design
+version: 0.1.0
+consumes_from: []
+produces_for: []
+last_revision_trigger: "Phase 1a — initial DESIGN.md authoring"
+---
+
+# DESIGN.md — <Project Name>
+
+<!--
+This is the vsdd-cli DESIGN.md template. `vsdd init` deploys this to adopting projects
+that don't already have a DESIGN.md. Operators populate the per-section content.
+
+Per DESIGN-METHODOLOGY § Methodology spec section list + DESIGN-SCHEMA § Per-artifact-class
+schemas (DESIGN doc class). Sections marked REQUIRED below must be non-empty before the
+spec-gate close criterion at Phase 1c is satisfied.
+-->
+
+## Project intent (REQUIRED)
+
+**Intent calibration:** <one of: learning-exercise | portfolio | capstone | production>
+
+**Phase 5 strategy:** <one of: `not applicable — <rationale>` | `planned — <named tooling and scope>`>
+
+**Phase 6 strategy:** <one of: `not applicable — <rationale>` | `planned`>
+
+[One-paragraph project description.]
+
+## Per-feature axes (REQUIRED)
+
+Declare each axis in `.vsdd/config.yaml`. Active axes drive domain activation + Phase 5 scope:
+
+- `ships-to-users-other-than-developer`: <yes | no>
+- `network-exposed`: <yes | no>
+- `persists-managed-schema-data`: <yes | no>
+- `handles-user-data`: <yes | no>
+- `safety-critical`: <yes | no>
+- `formal-verification-candidates`: <yes | no>
+- `ui-surface`: <yes | no>
+- `localized`: <yes | no>
+- `ai-runtime-cost-relevant`: <yes | no>
+
+## Behavioral contracts (REQUIRED — Phase 1a authors this section)
+
+[Per-behavior contracts. Each behavior:
+- Specific, observable-from-outside, testable.
+- Edge cases enumerated (empty / null / max-size / unicode / concurrent / partial-failure).
+- Error conditions named with stated handling.
+- Invariants with named falsification paths.
+]
+
+### Behavior: <name>
+
+**Contract:** [precise statement of input → output transition + error conditions + invariants]
+
+**Edge cases:**
+- <case-1>
+- <case-2>
+
+**Error handling:** [per-error-class operator-recovery path]
+
+## Verification architecture (REQUIRED — Phase 1b authors this section)
+
+[Per DESIGN-METHODOLOGY § Phase 1b primer:
+1. Which functions are pure?
+2. Which behaviors are automatable vs manual-test-only?
+3. Which behaviors are Phase 5 candidates (mutation / fuzz / proof)?
+4. Where are the trust boundaries?
+]
+
+### Purity boundary
+
+[Named pure functions; what makes them pure.]
+
+### Automation classification
+
+[Per-behavior: automatable (Phase 2a Red Gate) vs manual-test (manual-tests/layer-N.md).]
+
+### Phase 5 scope
+
+[Per-surface: mutation-testing scope, fuzz-testing scope, proof-execution candidates.]
+
+### Trust boundaries
+
+[Where input enters from outside the trust boundary; per-boundary input validation discipline.]
+
+## Decomposition (REQUIRED — Phase 1c authors this section)
+
+[Per DESIGN-METHODOLOGY § Phase 1c primer: layer N decomposition.]
+
+### Layer 1: <name>
+
+**Scope:** <one-sentence layer scope>
+
+**Acceptance criteria:**
+- <criterion-1> (maps to Behavior X above)
+- <criterion-2> (maps to Behavior Y above)
+
+**Dependencies:** [earlier layers; cross-layer dependencies on stated behaviors only, not internals]
+
+**Manual-tests:** `manual-tests/layer-1.md` (auto-scaffolded by post-design-md-modification.py)
+
+## Out of scope
+
+[Explicit non-goals. Bounded scope.]
+
+## Open decisions deferred
+
+[Per-decision routing:]
+
+| Decision | Routing | Trigger to revisit |
+|---|---|---|
+
+## Cross-references
+
+- [`methodology.md`](./methodology.md) — VSDD methodology spec (deployed by `vsdd init`)
+- [`README.md`](./README.md) — project positioning
+- [`manual-tests/`](./manual-tests/) — per-layer manual-test checklists
+- [`CHANGELOG.md`](./CHANGELOG.md) — per-release entries per Keep a Changelog 1.0.0
