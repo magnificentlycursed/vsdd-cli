@@ -115,9 +115,9 @@ Strict whitepaper-canonical 10 sub-phases. Each phase has a primer at `.claude/c
 
 | Phase | Name | One-line summary |
 |---|---|---|
-| 1a | Behavioral Specification | Author DESIGN.md's behavioral contracts for the layer; spec-authority lens |
+| 1a | Behavioral Specification | Author DESIGN.md's behavioral contracts for the milestone; spec-authority lens |
 | 1b | Verification Architecture | Author DESIGN.md's verification architecture; test strategy + purity boundary |
-| 1c | Spec Review Gate (Decomposition) | Decompose spec into layers; spec-gate close validates layer entry |
+| 1c | Spec Review Gate (Decomposition) | Decompose spec into milestones; spec-gate close validates milestone entry |
 | 2a | Test Suite Generation (Red Gate) | Author failing tests against the spec; QE-primary; falsifiability check |
 | 2b | Minimal Implementation | Implement minimal code to turn the Red Gate green; SE-primary |
 | 2c | Refactor | Re-shape implementation with tests staying green; SA + SE |
@@ -192,7 +192,7 @@ The adversarial reviewer adopts an **Exacting Mentor** stance — sustainable, m
 4. **Maintainability** — "Will future-developer understand and modify this?"
 5. **Consistency** — "Does this match the spec? Does the doc match the code?"
 
-**Tone-flex policy:** Mentor voice is default; Formal voice is the exception for legally-record-style attestations + schema declarations. Mentor for per-finding bodies, round-close summaries, hook output messages on failure, sycophancy-check failure-mode descriptions. Formal for Phase 6 Exit Signal records, methodology amendments, schema definitions.
+**Tone-flex policy:** Mentor voice is default; Formal voice is the exception for legally-record-style attestations + schema declarations. Mentor for per-issue bodies, swarm-invocation-close summaries, hook output messages on failure, sycophancy-check failure-mode descriptions. Formal for Phase 6 Exit Signal records, methodology amendments, schema definitions.
 
 **Sycophancy compensation discipline:** when the reviewer authored the artifact under review, the review entry's frontmatter declares `sycophancy_compensation: <text>` naming what the author resisted. Mechanical via `check-sycophancy-compensation.py` hook firing on identity overlap between commit-author and review-authoring identity.
 
@@ -267,7 +267,7 @@ phases_referenced: []
 
 ## Forward-only disciplines
 
-**Event-log append-only (data discipline).** Structural property of the event log. Records are append-only; no in-place updates. `.vsdd/events.jsonl` is committed to git per cycle; `git checkout` recovers from prior commit.
+**Event-log append-only (data discipline).** Structural property of the event log. Records are append-only; no in-place updates. `.vsdd/events.jsonl` is committed to git per crosslink session; `git checkout` recovers from prior commit.
 
 **Documentation narrative-preservation (prose discipline).** Authoring discipline for the methodology spec + primers + domain prompts + supplements. The forward-only restriction applies AFTER a stability commitment fires — one of: v1.0 release; first push to a public remote; first downstream adoption; operator-declared methodology-stabilization milestone via `OperatorDirectiveApplied{directive: methodology-stabilization}`. Before any trigger fires, history is malleable (rebase, amend, drop commits; dated entries can be re-authored as discipline evolves). After the trigger: append-only forward-only applies; redactions only via append-only mechanisms; retroactive edits to dated entries become findings for the VSDD Methodology meta-domain.
 
@@ -329,7 +329,7 @@ phases_referenced: []
 
 ## Two cooperating audit-trail layers
 
-**Suite-side event log:** `.vsdd/events.jsonl` — NDJSON append-only file, git-tracked per cycle, schema-validated by event-variant payload schemas. 18 methodology event variants flow here (phase lifecycle, finding lifecycle, cycle convergence, discipline-enforcement, auth + identity, project lifecycle, PR lifecycle) alongside hook + validation events.
+**Suite-side event log:** `.vsdd/events.jsonl` — NDJSON append-only file, git-tracked per crosslink session, schema-validated by event-variant payload schemas. 18 methodology event variants flow here (phase lifecycle, finding lifecycle, MVR + Exit Signal convergence, discipline-enforcement, auth + identity, project lifecycle, PR lifecycle) alongside hook + validation events.
 
 **Crosslink-side audit trail (when crosslink is in use):** crosslink hub HTTP OTLP endpoint; event-schema-compatible records flow into crosslink's `events.rs` consumer. Both layers carry the same `EventEnvelope` shape (`agent_id`, `agent_seq`, `timestamp`, `signed_by`, `signature`, `capture_source`). Total ordering preserved. Crosslink-compatible by construction.
 
@@ -369,9 +369,9 @@ phases_referenced: [phase-3, phase-5, phase-6]
 
 ## MVR and Exit Signal convergence
 
-**Maximum Viable Refinement (MVR)** is the per-round closure signal: an IAR cycle (Phase 3) reaches implementation-MVR when all active domains produced only Hallucinated findings (or no findings) on the final round. Per-domain MVR feeds the layer-MVR signal which gates layer-close.
+**Maximum Viable Refinement (MVR)** is the per-swarm-invocation closure signal: a Phase 3 session reaches implementation-MVR when all active domains produced only Hallucinated findings (or no findings) on the final swarm invocation. Per-domain MVR feeds the milestone-MVR signal which gates milestone-close.
 
-**Exit Signal** is the project-terminal four-dimensional convergence (Phase 6): Spec MVR (cold SO review across final layers produced no Phase 1a/1b-routed findings); Test MVR (Phase 5 Mutation Testing per layer with per-mutant disposition); Implementation MVR (Phase 3 final round per active domain produced only Hallucinated findings); Formal-verification MVR (Phase 5 Proof Execution harnesses each have recorded outcomes).
+**Exit Signal** is the project-terminal four-dimensional convergence (Phase 6): Spec MVR (cold SO review across final milestones produced no Phase 1a/1b-routed findings); Test MVR (Phase 5 Mutation Testing per milestone with per-mutant disposition); Implementation MVR (Phase 3 final swarm invocation per active domain produced only Hallucinated findings); Formal-verification MVR (Phase 5 Proof Execution harnesses each have recorded outcomes).
 
 The cross-dimension consistency check asks whether spec + tests + implementation + formal verification agree about what the system does. Convergence record is signed (attested_by + signature over canonical attestation bytes; anonymized-project posture uses commit-sha-signed-by-anonymous-pre-commit-discipline). Closes the project at the Exit Signal.
 
