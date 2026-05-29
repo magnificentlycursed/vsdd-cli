@@ -61,6 +61,45 @@ Every subsystem the toolkit ships serves all four goals; every artifact demonstr
 
 ```yaml
 ---
+section_name: conventions
+required: true
+target_lines: 60
+event_variants_referenced: []
+domains_referenced: []
+phases_referenced: []
+---
+```
+
+## Conventions
+
+This section is the spec's vocabulary anchor. Methodology terms are sourced from the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) (authoritative) and from [crosslink](https://github.com/forecast-bio/crosslink) (substrate) wherever a structured unit maps to a crosslink primitive. New terms are not introduced casually — methodology amendments adding terms require the earned-by-recurrence trigger per § Forward-only disciplines.
+
+### Methodology vocabulary
+
+| Term | Refers to | Source |
+|---|---|---|
+| Phase 1a / 1b / 1c / 2a / 2b / 2c / 3 / 4 / 5 / 6 | Pipeline stages | [VSDD whitepaper § II Pipeline](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) |
+| Phase 5 surface | One of: Proof Execution, Fuzz Testing, Security Hardening, Mutation Testing, Purity Boundary Audit | [VSDD whitepaper § II Phase 5](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) |
+| Maximum viable refinement (MVR) | Per-dimension closure signal — adversary surfaces only Hallucinated findings | [VSDD whitepaper § II Phase 6](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) |
+| Exit Signal | Project-terminal four-dimensional convergence (Spec / Tests / Implementation / Verification each independently at MVR; cross-dimension consistency check) | [VSDD whitepaper § IV Core Principle 7](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) |
+| Hallucinated finding | The adversary surfaces a concern that does not apply; pushback documented in the audit trail. Convergence MVR signal when an entire round produces only Hallucinated findings. | [VSDD whitepaper § II Phase 3 + § II Phase 6](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) |
+| cold session | An AI chat session opened with no prior context, no operator-feedback memory, and no prior conversation carry-over. Used for adversarial Phase 3 review. | [VSDD whitepaper § II Phase 3 "Context Reset"](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00); operationally: Claude Code `/clear` or equivalent |
+| evaluation Dimension N (abbreviated **Dim N**) | The Nth numbered evaluation criterion in a loaded domain prompt (e.g., `Dim 7` of the AI Engineer domain prompt is the 7th evaluation criterion in that prompt). | Etymology: extends [VSDD whitepaper § II Phase 6 "all four dimensions"](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) to per-domain per-criterion granularity. Per-domain criteria live in `.claude/commands/vsdd-domain-<slug>.md`. |
+| swarm invocation N | A single cold-context multi-agent adversarial pass for a milestone's review work. May produce findings classified Resolved, Deferred, Dismissed, Hallucinated, or Accepted. | `crosslink swarm review --agents N` |
+| crosslink session | An operator-bounded work context with explicit start and close notes; may contain multiple swarm invocations across a milestone's lifespan. | `crosslink session start` / `session end --notes` |
+| crosslink milestone N | A project decomposition unit — groups crosslink issues, carries scope + acceptance criteria. The unit of Phase 1c decomposition output. | `crosslink milestone create / close` |
+| crosslink issue | The structured tracking unit for any finding, task, or deferred work. Findings surfaced by a swarm invocation are filed as crosslink issues with the `review-finding` label plus a `classification:<status>` label. Cross-references in audit-trail prose use the issue ID (e.g., `#127`). | crosslink issue + label primitives |
+| finding (colloquial) | The English word stays in prose ("the adversary's findings"; "Hallucinated findings"). The structured form is a crosslink issue. | Whitepaper colloquial usage |
+| per-feature axis | A per-project capability declaration (e.g., `network-exposed`, `handles-user-data`) that activates domains and calibrates cold-session budget. Declared in `.vsdd/config.yaml`. | See § Per-feature axes below. |
+
+### Acceptable abbreviations
+
+`Dim N`, `Phase N` (and `Phase 1a` / `Phase 2c` sub-phases), domain slugs (`solution-owner`, `quality-engineer`, etc.). The concept-word is in each form. New abbreviations require methodology amendment per § Forward-only disciplines.
+
+---
+
+```yaml
+---
 section_name: phase-taxonomy
 required: true
 target_lines: 30
