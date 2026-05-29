@@ -84,10 +84,10 @@ Strict whitepaper-canonical 10 sub-phases. Each phase has a primer at `.claude/c
 | 2c | Refactor | Re-shape implementation with tests staying green; SA + SE |
 | 3 | Adversarial Refinement (The VDD Roast) | Cold-session multi-domain reviewer pass; classification + routing |
 | 4 | Feedback Integration Loop | Route Phase 3 findings to the earliest phase that fixes them correctly |
-| 5 | Formal Hardening | Property tests + Mutation Testing + Fuzz Testing + Proof Execution per project intent |
+| 5 | Formal Hardening | Proof Execution + Fuzz Testing + Security Hardening + Mutation Testing + Purity Boundary Audit |
 | 6 | Convergence (The Exit Signal) | Project-terminal four-dimensional convergence attestation |
 
-Operators may author Phase 1a + 1b in a single session. Phase 5 + Phase 6 are first-class but optional per project intent (declared in DESIGN.md `Phase 5 strategy:` + `Phase 6 strategy:` lines).
+Operators may author Phase 1a + 1b in a single session. Phase 5 and Phase 6 strategies are declared in DESIGN.md `Phase 5 strategy:` and `Phase 6 strategy:` lines.
 
 ---
 
@@ -207,8 +207,6 @@ Projects declare axes in `.vsdd/config.yaml` at `vsdd init` time. Each axis acti
 | `network-exposed: yes` | Red Team + Security |
 | `persists-managed-schema-data: yes` | Data Engineer |
 | `handles-user-data: yes` | Privacy |
-| `safety-critical: yes` | Phase 5 Mutation Testing + Purity Boundary Audit recommended |
-| `formal-verification-candidates: yes` | Phase 5 Proof Execution recommended |
 | `ui-surface: yes` | UX + Accessibility |
 | `localized: yes` | Localization |
 | `ai-runtime-cost-relevant: yes` | AI Engineer |
@@ -334,7 +332,7 @@ phases_referenced: [phase-3, phase-5, phase-6]
 
 **Maximum Viable Refinement (MVR)** is the per-round closure signal: an IAR cycle (Phase 3) reaches implementation-MVR when all active domains produced only Hallucinated findings (or no findings) on the final round. Per-domain MVR feeds the layer-MVR signal which gates layer-close.
 
-**Exit Signal** is the project-terminal four-dimensional convergence (Phase 6): Spec MVR (cold SO review across final layers produced no Phase 1a/1b-routed findings); Test MVR (Phase 5 Mutation Testing per layer with per-mutant disposition); Implementation MVR (Phase 3 final round per active domain produced only Hallucinated findings); Formal-verification MVR (Phase 5 Proof Execution harnesses each have recorded outcomes OR explicitly declared not-applicable with rationale).
+**Exit Signal** is the project-terminal four-dimensional convergence (Phase 6): Spec MVR (cold SO review across final layers produced no Phase 1a/1b-routed findings); Test MVR (Phase 5 Mutation Testing per layer with per-mutant disposition); Implementation MVR (Phase 3 final round per active domain produced only Hallucinated findings); Formal-verification MVR (Phase 5 Proof Execution harnesses each have recorded outcomes).
 
 The cross-dimension consistency check asks whether spec + tests + implementation + formal verification agree about what the system does. Convergence record is signed (attested_by + signature over canonical attestation bytes; anonymized-project posture uses commit-sha-signed-by-anonymous-pre-commit-discipline). Closes the project at the Exit Signal.
 

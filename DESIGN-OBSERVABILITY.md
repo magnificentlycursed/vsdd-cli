@@ -394,7 +394,7 @@ Per-cycle metrics exported to Prometheus-compatible format; Grafana dashboards r
 Standard FinOps disciplines applied to AI-driven cycles:
 
 - **Cost-per-finding** × per-domain × per-cycle × per-layer × per-project (aggregable bottom-up)
-- **Budget-vs-actual** per intent-axis (per-feature axes activate domain set + cold-session budget multiplier)
+- **Budget-vs-actual** per per-feature axis (axes activate domain set + cold-session budget multiplier)
 - **Anomaly detection** — 3σ above rolling median per metric; alerts via `PushNotification`
 - **Right-sizing recommendations** — model-tier mix vs. defect density; per AI Engineer tuning-lever catalog
 - **Showback** — per-domain cost breakdown surfaced in cycle reports
