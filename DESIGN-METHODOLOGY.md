@@ -70,7 +70,7 @@ The methodology spec is the toolkit's concise governing prose. Target ~250-350 l
 | Two-audience principle | Humans + agents; structural properties | 15-20 |
 | Two cooperating audit-trail layers | Suite-side event log + crosslink-side audit trail | 15-20 |
 | Schema versioning | Per-class semantic versioning + forward-only | 10-15 |
-| MVR / Exit Signal convergence | Maximum Viable Refinement (per-round) + Exit Signal (project-terminal) | 15-20 |
+| MVR / Exit Signal convergence | Maximum Viable Refinement (per-swarm-invocation) + Exit Signal (project-terminal) | 15-20 |
 | Auth method | Plan vs API key per use case + credential disciplines | 15-20 |
 | Domain change authority | Single SO; "Raise to SO" routing discipline | 10-15 |
 | Closing + cross-references | Pointer to DESIGN docs + whitepaper + crosslink | 10-15 |
@@ -79,7 +79,7 @@ Total: ~285-380 lines. Target achievable.
 
 ### Methodology version pin discipline
 
-The methodology spec carries a top-level `methodology_version: <semver>` frontmatter field (independent of per-section frontmatter declared by the Methodology spec section artifact class). Per Phase 5 round 1 finding routing (Security F6): the canonical toolkit copy and the per-project deployed copy can drift after toolkit upgrades; without version-pinning the project's audit trail loses the methodology snapshot it was authored under.
+The methodology spec carries a top-level `methodology_version: <semver>` frontmatter field (independent of per-section frontmatter declared by the Methodology spec section artifact class). Per Phase 5 swarm invocation 1 finding routing (Security F6): the canonical toolkit copy and the per-project deployed copy can drift after toolkit upgrades; without version-pinning the project's audit trail loses the methodology snapshot it was authored under.
 
 **Version-pin mechanism:**
 
@@ -89,7 +89,7 @@ The methodology spec carries a top-level `methodology_version: <semver>` frontma
 - Drift fires `VSDD-W0200: methodology-version-drift` (warning; allows commit but surfaces in CI as PR comment)
 - `vsdd init --update-methodology` subcommand refreshes the project's `methodology.md` to the toolkit-canonical version + emits `OperatorDirectiveApplied{directive: methodology-version-updated, from: <semver>, to: <semver>}` event
 
-**Why warning not error:** projects may legitimately stay pinned to an older methodology version for stability reasons (mid-cycle upgrade is disruptive; project may prefer to upgrade between cycles). The warning surfaces the drift for operator awareness without blocking commit.
+**Why warning not error:** projects may legitimately stay pinned to an older methodology version for stability reasons (mid-session upgrade is disruptive; project may prefer to upgrade between sessions). The warning surfaces the drift for operator awareness without blocking commit.
 
 **Acceptance criterion for "methodology spec is complete":**
 - Every section in the list has a non-empty body
@@ -154,11 +154,11 @@ declared_at: <iso-timestamp>
 
 Declaration emits a `PhaseCompositionDeclared` observability event. Absent declaration at a phase-boundary commit is itself a finding for the VSDD Methodology meta-domain.
 
-### Layer-cycle PR discipline (operationalization)
+### Per-milestone PR discipline (operationalization)
 
-Each layer's work lands in a single PR opened early + accumulated incrementally. Closes the existing-suite Layer 1 anti-pattern (CI/CD work concentrated at layer-close).
+Each milestone's work lands in a single PR opened early + accumulated incrementally. Closes the existing-suite milestone 1 anti-pattern (CI/CD work concentrated at milestone-close).
 
-**Draft PR opens at Phase 2a commit.** The PR accumulates the layer's commits + receives early review feedback; closes when layer-gate criteria are met. Hook `check-draft-pr-presence.py` fires at Phase 2a commits + emits `VSDD-E0070: draft-pr-missing` if no draft PR exists for the layer.
+**Draft PR opens at Phase 2a commit.** The PR accumulates the milestone's commits + receives early review feedback; closes when milestone-gate criteria are met. Hook `check-draft-pr-presence.py` fires at Phase 2a commits + emits `VSDD-E0070: draft-pr-missing` if no draft PR exists for the milestone.
 
 **PE composes with Phase 2b.** When Phase 2b adds a dependency, the corresponding PE artifact (lockfile, audit gate, env pin) lands in the same commit. Phase-domain composition matrix entry for Phase 2b includes PE explicitly.
 
@@ -166,12 +166,12 @@ Each layer's work lands in a single PR opened early + accumulated incrementally.
 
 ```yaml
 required_fields:
-  - layer_scope                      # one-sentence scope statement
+  - milestone_scope                  # one-sentence scope statement
   - phase_coverage_checklist         # phases this PR closes
   - composed_domains_per_phase       # phase-domain composition declarations
   - co_authors                       # TW + DR trailers for prose surfaces
-  - manual_tests_section             # auto-generated by `vsdd observe pr-body --layer N`
-  - exit_signal_pointer              # required when layer closes; pointer to ExitSignaled event
+  - manual_tests_section             # auto-generated by `vsdd observe pr-body --milestone N`
+  - exit_signal_pointer              # required when milestone closes; pointer to ExitSignaled event
 excluded_fields:
   - credential-shaped patterns       # per Security disciplines; mechanically enforced
 ```
@@ -211,11 +211,11 @@ Phase-domain matrix extends to commit-level. Each phase's composed-domains attri
 | 5 formal hardening | QE + Security + SA |
 | 6 convergence | operator-single-author (no domain co-authors; attestation is operator-attributed only) |
 
-Hook dispatch: for each touched file in commit, identify phase from `.vsdd/config.yaml` + active-cycle state, look up composed_domains, validate trailers present. Missing trailers fire `VSDD-W0180: prose-surface-commit-without-tw-dr-composition` warning OR bypass-marker required with rationale.
+Hook dispatch: for each touched file in commit, identify phase from `.vsdd/config.yaml` + active-session state, look up composed_domains, validate trailers present. Missing trailers fire `VSDD-W0180: prose-surface-commit-without-tw-dr-composition` warning OR bypass-marker required with rationale.
 
-**Manual-test checklist (Pattern B auto-generation).** `vsdd observe pr-body --layer N` reads `manual-tests/layer-N.md` + embeds checkbox items into PR description. Single source of truth; no copy-paste drift. Operator marks items checked in PR UI as they execute manual testing. `check-pr-manual-test-completion.py` validates all items checked or deferred-with-rationale per primer 1c discipline; fires `VSDD-E0090: pr-manual-tests-incomplete` if violated.
+**Manual-test checklist (Pattern B auto-generation).** `vsdd observe pr-body --milestone N` reads `manual-tests/milestone-N.md` + embeds checkbox items into PR description. Single source of truth; no copy-paste drift. Operator marks items checked in PR UI as they execute manual testing. `check-pr-manual-test-completion.py` validates all items checked or deferred-with-rationale per primer 1c discipline; fires `VSDD-E0090: pr-manual-tests-incomplete` if violated.
 
-**PR-lifecycle events:** `DraftPROpened` (Phase 2a boundary) → `PRReadyForReview` (layer-gate close; manual tests complete) → `PRMerged` (final). Two new hooks: `check-draft-pr-presence.py` + `check-pr-template-conformance.py`.
+**PR-lifecycle events:** `DraftPROpened` (Phase 2a boundary) → `PRReadyForReview` (milestone-gate close; manual tests complete) → `PRMerged` (final). Two new hooks: `check-draft-pr-presence.py` + `check-pr-template-conformance.py`.
 
 ---
 
@@ -240,8 +240,8 @@ failure mode.
 
 [5 lenses elaborated: attacker, edge cases, usability, maintainability, consistency]
 
-[Phase 3-specific sycophancy guards: cold-context discipline; no prior-cycle memory;
- structured-finding output; per-cycle pre-declaration check]
+[Phase 3-specific sycophancy guards: cold-context discipline; no prior-session memory;
+ structured-finding output; per-session pre-declaration check]
 
 [Cluster-batching shape: 4-cluster default; adversarial-pair-separation invariant
  (Security ↔ Red Team on different agents; TW ↔ DR on different agents)]
@@ -274,8 +274,8 @@ Per-domain elaborations across 18 domains (~3-5 failure modes each = ~60-90 entr
 | Surface | Tone | Owner |
 |---|---|---|
 | Per-finding bodies | Mentor | Reviewer (cold-session sub-agent or operator-skill-mode) |
-| Phase 3 Round close summaries | Mentor | Reviewer |
-| Layer-gate close narratives | Mentor | Operator + Reviewer |
+| Phase 3 swarm-invocation close summaries | Mentor | Reviewer |
+| Milestone-gate close narratives | Mentor | Operator + Reviewer |
 | Sycophancy-check failure modes | Mentor | Domain-prompt author |
 | Hook output messages on failure | Mentor | DESIGN-VERIFICATION (hook authors) |
 | Phase 6 Exit Signal record | Formal (signed attestation) + optional Mentor retrospective | Operator |
@@ -297,7 +297,7 @@ The rebuild composes against the Claude Agent SDK as the primary integration sub
 
 **Cost-tally tier discipline retired; replaced with capture-source provenance.** Every cost-relevant event carries `capture_source` (otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled / unmeasurable). Operator-paste of `/cost` is not load-bearing once Agent SDK OTel export is the canonical capture pattern.
 
-**Authoritative billing via Anthropic Usage and Cost API is deferred to v1+.** SDK's `total_cost_usd` (client-side estimate from bundled price table) drives in-cycle decisions in v1. Per-project reconciliation against the Usage API is a v1+ scope-expansion that builds on the data-source abstraction in DESIGN-OBSERVABILITY.
+**Authoritative billing via Anthropic Usage and Cost API is deferred to v1+.** SDK's `total_cost_usd` (client-side estimate from bundled price table) drives in-session decisions in v1. Per-project reconciliation against the Usage API is a v1+ scope-expansion that builds on the data-source abstraction in DESIGN-OBSERVABILITY.
 
 ---
 
@@ -311,13 +311,13 @@ Auth method declared explicitly in `.vsdd/config.yaml` per project; no implicit 
 |---|---|---|
 | Operator-local exploration + Phase 1a-2c primer skill mode | Plan (Max/Pro) + Agent SDK | Agent SDK credits don't consume interactive limits; 1h prompt-cache TTL auto-enabled; appropriate for individual operator pace |
 | **Goal 4 CI/CD pipeline + Phase 5 hardening tool runs + scheduled cron sweeps** | **API key + Agent SDK** | Predictable pay-as-you-go billing per Anthropic's own recommendation for automation; full per-token visibility; no plan-credit boundary risk |
-| Phase 3 swarm reviews (operator-orchestrated, multi-agent compounding cost) | API key OR Plan based on operator preference + cycle scale | Small cycles can fit Plan; large cycles (10+ parallel agents) likely overflow into API |
+| Phase 3 swarm reviews (operator-orchestrated, multi-agent compounding cost) | API key OR Plan based on operator preference + session scale | Small sessions can fit Plan; large sessions (10+ parallel agents) likely overflow into API |
 | Methodology drift sweeps (scheduled via CronCreate) | API key + Agent SDK | Automated; no operator-in-loop; API-direct fits the automation pattern |
 
 ### Prompt-cache TTL behavior
 
 - **Plan auth (Max/Pro):** Anthropic automatically grants 1-hour prompt cache TTL. Operator-local cycles with sub-1-hour-gap multi-session work benefit from cache reuse without configuration.
-- **API key auth:** default 5-minute prompt cache TTL. Operator opts into 1-hour TTL via `ENABLE_PROMPT_CACHING_1H=1` env var when cycle-shape benefits from longer TTL. 1h TTL writes cost more per write but enable longer cache reuse — favorable for multi-cycle / multi-session work.
+- **API key auth:** default 5-minute prompt cache TTL. Operator opts into 1-hour TTL via `ENABLE_PROMPT_CACHING_1H=1` env var when session-shape benefits from longer TTL. 1h TTL writes cost more per write but enable longer cache reuse — favorable for multi-session work.
 
 The methodology spec surfaces this auth-method × caching-behavior delta. Operators choose auth method per use case with caching implications named explicitly.
 
@@ -331,13 +331,13 @@ The methodology spec surfaces this auth-method × caching-behavior delta. Operat
 - **Audit-trail discipline:** `AuthMethodDeclared` event variant carries auth_method + credential_source (env-var name; never value) at init. `AuthMethodChanged` + `AuthFailureObserved` retired/consolidated per the variant-proliferation governance audit; rate-limit + invalid-credential events covered by Agent SDK OTel signals natively (no methodology-specific variant needed). Auth-rotation events route through `OperatorDirectiveApplied{directive: auth-method-rotation}` consolidated variant.
 - **CI integration:** GitHub Secrets pattern (or equivalent CI platform); never echo key value in logs.
 - **Per-operator vs shared-organizational keys:** per-operator default (clear attribution); shared-organizational extension activated by `auth_attribution_pattern: shared-organizational` in config.
-- **Compromised credential procedure:** documented in operational runbook (revoke at credential issuer → audit event log via Agent SDK OTel signals for cycle activity post-compromise + pre-revocation → emit `OperatorDirectiveApplied{directive: credential-rotation, rationale: <text>}` → reissue + update `.vsdd/config.yaml` env-var-name reference → anonymization regression-check ensures compromised credential not latent in repo history).
+- **Compromised credential procedure:** documented in operational runbook (revoke at credential issuer → audit event log via Agent SDK OTel signals for session activity post-compromise + pre-revocation → emit `OperatorDirectiveApplied{directive: credential-rotation, rationale: <text>}` → reissue + update `.vsdd/config.yaml` env-var-name reference → anonymization regression-check ensures compromised credential not latent in repo history).
 
 ---
 
 ## Always-on domain baseline
 
-The methodology declares an explicit always-on domain set independent of per-feature axes. Per Phase 5 round 1 finding routing (Security F1 + QE F4): a project that declares all 9 axes as `no` must still have non-empty composed domains for every phase the project executes; the axis matrix is additive over the baseline rather than replacing it.
+The methodology declares an explicit always-on domain set independent of per-feature axes. Per Phase 5 swarm invocation 1 finding routing (Security F1 + QE F4): a project that declares all 9 axes as `no` must still have non-empty composed domains for every phase the project executes; the axis matrix is additive over the baseline rather than replacing it.
 
 **Always-on for every project:**
 
@@ -388,7 +388,7 @@ Combined budgets scale per axis combination. The methodology spec declares the m
 
 Per-cluster agent receives: primer 3 + the cluster's domain prompts + relevant supplements + the project under review.
 
-**Per-domain spawn alternative** (high-stakes rounds): 18 agents, one per domain. Used at layer-close OR MVR-approach rounds where marginal finding matters most.
+**Per-domain spawn alternative** (high-stakes swarm invocations): 18 agents, one per domain. Used at milestone-close OR MVR-approach swarm invocations where marginal finding matters most.
 
 **Cluster naming:** descriptive (Implementation / Architecture / Communication / Adversarial), not letter-coded. Avoids the letter-cluster anti-pattern where the reader has to look up what each letter means.
 
@@ -429,20 +429,20 @@ Memory-isolation choice declared in the pre-phase composition declaration.
 
 ## Cold-session budget per per-feature-axis combination
 
-Base bands per cycle phase. These are first-pass estimates; refined per evidence as the toolkit's own development cycles produce actual data (the toolkit dogfoods on itself; no separate reference example).
+Base bands per phase. These are first-pass estimates; refined per evidence as the toolkit's own development sessions produce actual data (the toolkit dogfoods on itself; no separate reference example).
 
-| Phase | Per-round budget (base) | Per-axis multiplier | Notes |
+| Phase | Per-swarm-invocation budget (base) | Per-axis multiplier | Notes |
 |---|---|---|---|
 | 1a / 1b / 1c | Small (skill mode; operator-interactive) | Minor | Spec authoring; not compounding-cost |
 | 2a | Small (skill mode + QE composition) | Minor | Red Gate; QE-primary |
 | 2b | Moderate (skill mode + multi-domain composition) | Per-feature axes scale | Implementation + TW + DR + QE all in skill mode |
 | 2c | Small (skill mode) | Minor | Refactor; SE + SA |
-| 3 | Substantial per round (4-cluster cold-session) | Per-feature axes scale | Compounding-cost cycle; pre-cycle declaration required |
+| 3 | Substantial per swarm invocation (4-cluster cold-session) | Per-feature axes scale | Compounding-cost session; pre-session declaration required |
 | 4 | Small (operator-orchestrated routing) | Minor | Routing |
-| 5 | Substantial per round (cold-session + tool runs) | Scale per declared Phase 5 strategy scope | Proof Execution + Fuzz + Security Hardening + Mutation + Purity Boundary Audit tool runs measured separately |
+| 5 | Substantial per swarm invocation (cold-session + tool runs) | Scale per declared Phase 5 strategy scope | Proof Execution + Fuzz + Security Hardening + Mutation + Purity Boundary Audit tool runs measured separately |
 | 6 | Small (operator-orchestrated attestation) | Minor | Single-author attestation |
 
-Specific token-count thresholds are intentionally absent until the toolkit's own observability subsystem produces cycle telemetry from real data. Pre-cycle declaration discipline (per primer 3) names the cycle's expected shape; after-action cost report closes the loop.
+Specific token-count thresholds are intentionally absent until the toolkit's own observability subsystem produces session telemetry from real data. Pre-session declaration discipline (per primer 3) names the session's expected shape; after-action cost report closes the loop.
 
 ---
 
@@ -486,9 +486,9 @@ The meta-domain renamed from VDD-IAR Alignment. Validates semantic coherence of 
 
 1. **Spec-vs-implementation semantic alignment** — does the implementation faithfully match DESIGN.md's spec contracts? Not just code-correctness; semantic-coherence. Catches drift between what the spec asserts + what the implementation does.
 
-2. **Methodology-spirit adherence** — does the cycle's discipline-application match the methodology's spirit? Catches cycles that follow the letter of the methodology (right hook count, right phase sequencing) but violate the spirit (sycophantic reviews, performative pre-cycle declarations).
+2. **Methodology-spirit adherence** — does the session's discipline-application match the methodology's spirit? Catches sessions that follow the letter of the methodology (right hook count, right phase sequencing) but violate the spirit (sycophantic reviews, performative pre-session declarations).
 
-3. **Cross-session semantic continuity** — does this cycle's terminology, classification, and routing match prior cycles' conventions? Catches naming drift, classification universe extensions, routing target divergence across cycles.
+3. **Cross-session semantic continuity** — does this session's terminology, classification, and routing match prior sessions' conventions? Catches naming drift, classification universe extensions, routing target divergence across sessions.
 
 4. **Methodology-evolution coherence** — does the toolkit's own methodology change cohere with prior versions? Catches methodology amendments that break narrative-preservation or contradict prior decisions without explicit acknowledgement.
 
@@ -499,8 +499,8 @@ The meta-domain renamed from VDD-IAR Alignment. Validates semantic coherence of 
 **Sycophancy_failure_modes** (Mentor voice):
 - Methodology violations rationalized as "methodology evolution"
 - Classification-universe drift accepted without explicit operator-policy decision
-- Pre-cycle declarations that performatively check boxes without actual cycle-shape commitment
-- Cross-cycle inconsistency dismissed as "this cycle's specific context"
+- Pre-session declarations that performatively check boxes without actual session-shape commitment
+- Cross-session inconsistency dismissed as "this session's specific context"
 
 ---
 
@@ -527,7 +527,7 @@ Each phase primer is a `.claude/commands/vsdd-phase-<id>.md` file deployed by `v
 primer_id: vsdd-phase-<id>
 phase: <phase-id>
 version: <semver>
-frequency: <per-layer | per-project | etc.>
+frequency: <per-milestone | per-project | etc.>
 governing_skill: true
 relevant_domains: [<domain-slug>, ...]
 supplements_in_scope: [<supplement-slug>, ...]
@@ -666,7 +666,7 @@ Code-range conventions:
 
 **Schema ↔ Hooks:** schemas are the rules (type system); hooks are the executors. Hooks emit `HookFired` events at every invocation; validation failures additionally emit `ValidationFailed{error_code, location, summary, detail, help}`.
 
-**Schema ↔ Reviews:** schemas catch mechanical drift at commit-time; reviews catch judgment-bearing concerns at cycle-time. Phase 3 reviewers operate on artifacts where schema-validation has already passed — attention shifts from mechanical-defect-finding to semantic-coherence + sycophancy + threat-modeling. Review-log entries are themselves schema-validated.
+**Schema ↔ Reviews:** schemas catch mechanical drift at commit-time; reviews catch judgment-bearing concerns at session-time. Phase 3 reviewers operate on artifacts where schema-validation has already passed — attention shifts from mechanical-defect-finding to semantic-coherence + sycophancy + threat-modeling. Review-log entries are themselves schema-validated.
 
 **Schema ↔ Goal 2:** the three-mechanism enforcement triad (schema validator OR hook OR crosslink workflow check) converges at the user-facing error catalog. Operator sees `VSDD-E0040` regardless of which mechanism caught the rule. Auditable (every validation emits events); machine-enforceable (rule → mechanical enforcement); dual-audience-readable (humans see Mentor-voice errors + `vsdd verify explain <code>` extended docs; agents consume structured frontmatter + SARIF + events).
 
@@ -791,7 +791,7 @@ Files needing operator-merging (the `*.vsdd-template` side-by-side files) listed
 
 ## Naming + coinage governance
 
-The methodology applies disciplines to its own evolution. New terms, event variants, error codes, hooks, and artifact classes do not enter the methodology speculatively. Drawn from recurrence evidence (R78 F4 Surface-lettering + R94 cluster-lettering + multi-cycle vocabulary drift + cycle-by-cycle proliferation patterns documented in existing-suite and bookmark-cli-manual reviews).
+The methodology applies disciplines to its own evolution. New terms, event variants, error codes, hooks, and artifact classes do not enter the methodology speculatively. Drawn from recurrence evidence (R78 F4 Surface-lettering + R94 cluster-lettering + multi-session vocabulary drift + session-by-session proliferation patterns documented in existing-suite and bookmark-cli-manual reviews).
 
 ### Earned-by-recurrence trigger
 
@@ -801,7 +801,7 @@ Methodology amendments require **2+ documented drift recurrences** OR explicit o
 
 Canonical methodology terms live at `.vsdd/registry/vocabulary.yaml` (deployed by `vsdd init`). Each term carries: definition, first-introduced version, deprecated_aliases (for migration pointers), abbreviation (if any), domain_scope. The `check-naming-discipline.py` hook (consolidated; covers letter-labels + suite-internal-terminology + vocabulary-registry conformance) scans documents for deprecated aliases (fires `VSDD-W0001`) + novel-term-without-registry-entry (single-recurrence: candidate code).
 
-TW co-authors term-introducing commits (per the Layer-cycle PR discipline cross-phase composition). DR cold-reader review asks "is this term necessary?" before merge. VSDD Methodology meta-domain reviews term-introductions for methodology-spirit coherence at cycle-close.
+TW co-authors term-introducing commits (per the Per-milestone PR discipline cross-phase composition). DR cold-reader review asks "is this term necessary?" before merge. VSDD Methodology meta-domain reviews term-introductions for methodology-spirit coherence at session-close.
 
 ### Letter-label anti-pattern enforcement (R78 F4 + R94 multi-recurrence)
 
@@ -809,7 +809,7 @@ TW co-authors term-introducing commits (per the Layer-cycle PR discipline cross-
 - `Surface [A-Z]`, `Cluster [A-Z]`, `Mode [A-Z]`, `Path [A-Z]`, `Form [A-Z]`
 - `Tier [A-Z]`, `Pillar [N]` (organizational scaffolding patterns)
 
-**Acceptable** (concept-word in the identifier): `Dim N`, `Layer N`, `Round N`, `Finding N`, `Phase Na`.
+**Acceptable** (concept-word in the identifier): `Dim N`, `Phase Na`. (`Layer N`, `Round N`, `Finding N` retired per `methodology.md` § Conventions — substituted by `crosslink milestone N`, `swarm invocation N`, `crosslink issue` respectively.)
 
 Closes the load-bearing R78 F4 + R94 recurrence class structurally. 4 cycles of human-authored drift before mechanical enforcement caught the pattern in the existing suite; the toolkit enforces from commit-1.
 
@@ -943,7 +943,7 @@ When an adversarial reviewer runs Phase 3 against the `vsdd-cli` repository and 
 | 2j — Auth-method declaration UX + auth event variants + anonymization hook API-key detection | Cross-cutting |
 | 3 — Goal 4 end-to-end demonstration via rebuild's own CI | Goal-4 specific |
 
-Time estimates intentionally absent. Sequencing + scope-discipline are the calibration until the toolkit's own observability subsystem produces cycle telemetry that derives future-cycle estimates from real data.
+Time estimates intentionally absent. Sequencing + scope-discipline are the calibration until the toolkit's own observability subsystem produces session telemetry that derives future-session estimates from real data.
 
 Upstream coordination activity (filing bugs upstream; pitching absorption candidates) is operator-activity outside the toolkit's scope.
 
@@ -992,7 +992,7 @@ What this doc consumes from sibling DESIGN docs (forward-references):
 | Phase 5 surface tooling refresh discipline (tool lists rot) | DESIGN-METHODOLOGY (future iteration) |
 | Per-domain prompt rewrite per cross-domain vestigial-pattern cuts | DESIGN-METHODOLOGY (during 4d implementation) |
 | Sycophancy-compensation per-review preamble vs end-of-review self-audit | DESIGN-METHODOLOGY (future iteration) |
-| Multi-machine operator identity continuity (per-operator attribution across laptop / desktop / work / personal — SSH key fingerprints + git user.email may differ per machine) | Deferred to v1+ pending earned-by-recurrence evidence (Phase 5 round 1 Security F5; single-operator-single-machine projects do not hit this case in v1 evaluation cycles) |
+| Multi-machine operator identity continuity (per-operator attribution across laptop / desktop / work / personal — SSH key fingerprints + git user.email may differ per machine) | Deferred to v1+ pending earned-by-recurrence evidence (Phase 5 swarm invocation 1 Security F5; single-operator-single-machine projects do not hit this case in v1 evaluation sessions) |
 
 ---
 
