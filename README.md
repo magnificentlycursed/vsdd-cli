@@ -98,7 +98,7 @@ Methodology violations caught in CI/CD before merge cost ~minutes of CI runtime;
 The rebuild explicitly does NOT:
 
 - **Maintain backwards compatibility with the existing suite.** No artifact migrates by copy. The existing suite continues to exist as a sibling project; the toolkit starts fresh.
-- **Ship orchestration tooling.** Crosslink owns dispatch (`swarm review`, `swarm gate`, `swarm fix`), session lifecycle, milestones-as-layers, issues-as-findings, knowledge management. Claude Code owns in-session experience (skills, subagents, hooks). The suite composes against both; does not compete.
+- **Ship orchestration tooling.** Crosslink owns dispatch (`swarm review`, `swarm gate`, `swarm fix`), session lifecycle, milestones, issues, knowledge management. Claude Code owns in-session experience (skills, subagents, hooks). The suite composes against both; does not compete.
 - **Support a manual operational mode at first-class parity.** Crosslink-primary mode only.
 - **Build a parallel observability system to crosslink's.** Crosslink has events + tui + serve + token_usage + context measure + intervene + heartbeats — the bones. The suite contributes the FinOps + Observability-Engineering surface on top via crosslink-compatible event schema. Absorption is upstream's call.
 - **Contribute to claude-code upstream.** The rebuild is not absorbable into claude-code; will not file upstream there.
@@ -139,7 +139,7 @@ vsdd init                       # deploys toolkit assets
 
 **Platform requirement: v1 is GitHub-only.** The methodology's CI-side teeth — bypass-approval label gate, CODEOWNERS auto-routing, SARIF emission, CHANGELOG cooperation, dependency-approval PR-description structure — are GitHub-API-specific. `vsdd init --check` detects non-GitHub remotes and refuses deployment. No commitment to support GitLab / Bitbucket / Forgejo / Codeberg / self-hosted Gitea / sourcehut in v1 or v1+; revisit only with adoption evidence + operator-directive.
 
-`vsdd init` (subcommand of the single `vsdd` Rust binary distributed via `cargo install vsdd`). The shift-left discipline: every defect class preventable at adoption-time gets caught at adoption-time, not at first commit or first cycle.
+`vsdd init` (subcommand of the single `vsdd` Rust binary distributed via `cargo install vsdd`). The shift-left discipline: every defect class preventable at adoption-time gets caught at adoption-time, not at first commit or first session.
 
 **Pre-flight validation (`vsdd init --check`):** runs before deployment — validates git repo present + claude-code installed (substrate version pinned) + crosslink installed (if axis declared) + cargo toolchain + Python version. Reports OK/missing before any artifacts deploy. Prevents mid-init inconsistent state.
 
@@ -162,7 +162,7 @@ vsdd init                       # deploys toolkit assets
 
 Single command; operator's adoption cost is the interactive prompts (axes + auth) — typically ~2 minutes.
 
-**Phase 1a/1b-time auto-scaffolding (post-DESIGN.md commit hook):** when DESIGN.md commits to a Layer N's behavioral contracts, the `post-design-md-modification` hook auto-scaffolds:
+**Phase 1a/1b-time auto-scaffolding (post-DESIGN.md commit hook):** when DESIGN.md commits to a milestone N's behavioral contracts, the `post-design-md-modification` hook auto-scaffolds:
 - `manual-tests/layer-N.md` skeleton with checkable items derived from each behavioral contract — closes the bookmark-cli-manual SO R1 F1 + DR R1 F3 promised-artifact-missing recurrence
 - Phase 2a Red Gate test stubs (failing-by-default) for each behavioral contract — closes the QE R8 F1-F3 falsifiability gap pattern (every contract starts with at least one test)
 - Emits `ArtifactScaffolded` event with layer + contract count
@@ -243,14 +243,14 @@ The rebuild explicitly leverages these features rather than treating the substra
 |---|---|
 | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/observability)** | Primary integration substrate; runs claude-code CLI as subprocess; emits OTel telemetry + SDK message stream cost data |
 | **OpenTelemetry export** (`CLAUDE_CODE_ENABLE_TELEMETRY=1` + exporter env vars) | Metrics (tokens, cost, sessions, tool decisions); log events (prompts, API requests, errors); traces (interactions, llm_requests, tools, hooks) → vsdd-deployed OTel collector → `.vsdd/events.jsonl` + crosslink hub |
-| **SDK message stream cost data** (`message.usage`, `modelUsage`, `total_cost_usd`) | Per-step + per-model + cumulative SDK estimate; consumed by `vsdd observe` for in-cycle reports (caveat: client-side estimate, not authoritative) |
+| **SDK message stream cost data** (`message.usage`, `modelUsage`, `total_cost_usd`) | Per-step + per-model + cumulative SDK estimate; consumed by `vsdd observe` for in-session reports (caveat: client-side estimate, not authoritative) |
 | **W3C trace context propagation** | SDK auto-injects TRACEPARENT into CLI subprocess + Bash/PowerShell tool calls; full delegation chain visible in single trace |
 | `.claude/hooks/*.py` | ~19 methodology hooks deployed by `vsdd init` |
 | `.claude/commands/*.md` | 10 phase-primer + 16 per-domain + 2 meta skills |
 | `.claude/agents/*.md` | Per-domain cold-session reviewer agents pre-configured |
 | `.claude/mcp.json` | Methodology + substrate-docs MCP server (`vsdd mcp-serve`) |
-| Cron triggers (`CronCreate`) | Scheduled drift sweeps + cycle-close reminders + methodology-staleness checks |
-| Notifications (`PushNotification`, `RemoteTrigger`) | Operator alerts: budget breach, rate-limit headroom, scheduled-cycle reminders |
+| Cron triggers (`CronCreate`) | Scheduled drift sweeps + session-close reminders + methodology-staleness checks |
+| Notifications (`PushNotification`, `RemoteTrigger`) | Operator alerts: budget breach, rate-limit headroom, scheduled-session reminders |
 | LSP integration | Real-time frontmatter validation during methodology + project authoring |
 | Background tasks (`Bash run_in_background`) | CI-side compositions; long-running aggregations; cold-session dispatch primitives |
 | Plan mode | Substantive methodology-spec change discipline |
@@ -262,7 +262,7 @@ The rebuild explicitly leverages these features rather than treating the substra
 
 ## Auth method + Security disciplines
 
-Auth method declared explicitly in `.vsdd/config.yaml` per project; **separate fields for operator-local and CI contexts** (per Phase 5 round 1 Security F4 — Plan auth structurally permits CI declaration but operationally fails at runtime; cross-field validation now rejects). Operator declares at `vsdd init` time + may change per `AuthMethodChanged` event (rotation, scale-shift, plan-credit-exhaustion fallback).
+Auth method declared explicitly in `.vsdd/config.yaml` per project; **separate fields for operator-local and CI contexts** (per Phase 5 swarm invocation 1 Security F4 — Plan auth structurally permits CI declaration but operationally fails at runtime; cross-field validation now rejects). Operator declares at `vsdd init` time + may change per `AuthMethodChanged` event (rotation, scale-shift, plan-credit-exhaustion fallback).
 
 ```yaml
 auth_method:
@@ -274,7 +274,7 @@ auth_method:
 
 | Auth method | Context | Cost model |
 |---|---|---|
-| **Plan (Max/Pro) + Agent SDK** | Operator-local Phase 1a-2c skill mode + small Phase 3 cycles (operator-interactive session required — NOT CI) | Monthly Agent SDK credits ($20-$200 by tier); separate from interactive limits; 1-hour prompt-cache TTL auto-enabled |
+| **Plan (Max/Pro) + Agent SDK** | Operator-local Phase 1a-2c skill mode + small Phase 3 sessions (operator-interactive session required — NOT CI) | Monthly Agent SDK credits ($20-$200 by tier); separate from interactive limits; 1-hour prompt-cache TTL auto-enabled |
 | **API key + Agent SDK** | Operator-local OR Goal 4 CI/CD + Phase 5 hardening tool runs + scheduled cron sweeps | Pay-as-you-go per-token; predictable for automation per Anthropic's own guidance; 1-hour cache TTL opt-in |
 
 **Security disciplines:**
@@ -372,7 +372,7 @@ Operator-paste of `/cost` is not a load-bearing pattern. Capture is automated vi
 
 ### FinOps applied to AI-driven IAR
 
-Standard FinOps disciplines applied: cost-per-finding × per-domain × per-cycle × per-layer × per-project (aggregable bottom-up); budget-vs-actual per per-feature axis; anomaly detection; right-sizing recommendations (model-tier mix vs. defect density); showback (per-domain cost breakdown); unit economics (cost-per-Exit-Signal-attestation).
+Standard FinOps disciplines applied: cost-per-finding × per-domain × per-session × per-milestone × per-project (aggregable bottom-up); budget-vs-actual per per-feature axis; anomaly detection; right-sizing recommendations (model-tier mix vs. defect density); showback (per-domain cost breakdown); unit economics (cost-per-Exit-Signal-attestation).
 
 ---
 
@@ -387,7 +387,7 @@ Detailed design in [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md). Pre-com
 | Crosslink enforcement hooks | 5 | crosslink upstream | Tracking discipline (session-start, prompt-guard, work-check, post-edit-check, pre-web-check + heartbeat) |
 | Suite methodology hooks | ~19 | suite-repo | Frontmatter schema validation, citation resolution, classification universe, naming-discipline (incl. letter-label anti-pattern + suite-internal terminology), anonymization (incl. API-key detection), identity-correlation, document staleness, phase-transition provability (consolidated 9-transition matrix), phase-domain composition, draft-PR presence, PR-template conformance, PR-manual-tests-completion, DESIGN.md template conformance, post-DESIGN.md auto-scaffolding (manual-tests + Phase 2a Red Gate skeleton), prose-surface TW + DR composition, CHANGELOG-discipline (consolidated: entry-presence + Keep-a-Changelog structure + version-date + canonical-categories + file-integrity + 5 candidate rules), dependency approval (SO + PE supply-chain + Security investigation for new dependencies), methodology-version-drift (project methodology.md vs toolkit-canonical drift detection) |
 
-Total deployed in a VSDD project: ~24 hooks. Hook count growth governed by earned-by-recurrence trigger; new hooks require 2+ documented drift cases or explicit operator-directive. Hooks are consolidated where logic overlaps (e.g., `check-changelog-discipline.py` covers 10 rules in one hook with multi-rule dispatch). The dependency-approval hook is operator-directive triggered (2026-05-27 directive: any new crate / npm package / pip package requires SO approval + PE supply-chain investigation + Security CVE / threat-model review; living investigation record at `docs/dependencies/<crate>.md`). The methodology-version-drift hook is operator-directive triggered (2026-05-27 directive following Phase 5 round 1 Security F6: project `methodology.md` `methodology_version` is compared against installed toolkit's bundled version; drift fires `VSDD-W0200` warning; refresh via `vsdd init --update-methodology`).
+Total deployed in a VSDD project: ~24 hooks. Hook count growth governed by earned-by-recurrence trigger; new hooks require 2+ documented drift cases or explicit operator-directive. Hooks are consolidated where logic overlaps (e.g., `check-changelog-discipline.py` covers 10 rules in one hook with multi-rule dispatch). The dependency-approval hook is operator-directive triggered (2026-05-27 directive: any new crate / npm package / pip package requires SO approval + PE supply-chain investigation + Security CVE / threat-model review; living investigation record at `docs/dependencies/<crate>.md`). The methodology-version-drift hook is operator-directive triggered (2026-05-27 directive following Phase 5 swarm invocation 1 Security F6: project `methodology.md` `methodology_version` is compared against installed toolkit's bundled version; drift fires `VSDD-W0200` warning; refresh via `vsdd init --update-methodology`).
 
 ### Hook architecture
 
@@ -464,7 +464,7 @@ Error code namespacing convention:
 
 **Candidate vs accepted status:** error codes start as `candidate` and graduate to `accepted` when 2+ documented drift recurrences ground the trigger. Candidate codes are authored + tested (validators exist; fixtures present) but emit warnings rather than blocking commits. Accepted codes block per their declared severity. Forward-only governance: codes never reused once retired; deprecated codes carry migration pointers to replacements.
 
-**Strict earned-by-recurrence:** new codes added via methodology amendment citing 2+ recurrence cases. Single-recurrence codes ship as candidate-status pending second-case evidence. Operator-directive-triggered codes (e.g., the PR-discipline codes from the Layer-cycle PR amendment) ship as accepted if the operator directive cites multiple defect cases.
+**Strict earned-by-recurrence:** new codes added via methodology amendment citing 2+ recurrence cases. Single-recurrence codes ship as candidate-status pending second-case evidence. Operator-directive-triggered codes (e.g., the PR-discipline codes from the per-milestone PR amendment) ship as accepted if the operator directive cites multiple defect cases.
 
 ### Output formats
 
@@ -486,28 +486,28 @@ Catches drift patterns documented in existing-suite + bookmark-cli-manual review
 | Pattern category | Codes |
 |---|---|
 | Cross-doc reference resolution | `VSDD-E0010: unresolved cross-reference` |
-| Promised artifact missing | `VSDD-E0040: promised-artifact-missing` (TW Layer-2→Layer-3 recurrence) |
+| Promised artifact missing | `VSDD-E0040: promised-artifact-missing` (TW milestone-2→milestone-3 recurrence) |
 | Phase-composition not declared | `VSDD-E0050: phase-composition-not-declared` (bookmark-cli-manual recurrence) |
-| Vestigial pattern detection | `VSDD-W0001: vestigial-pattern-detected` (R88 F3 + multiple cycles) |
+| Vestigial pattern detection | `VSDD-W0001: vestigial-pattern-detected` (R88 F3 + multiple sessions) |
 | Stale-claim suspicion (quantitative) | `VSDD-W0030: stale-claim suspicion` |
-| Sycophancy discipline | `VSDD-W0010: sycophancy-compensation-absent` (R83 + multiple cycles) |
+| Sycophancy discipline | `VSDD-W0010: sycophancy-compensation-absent` (R83 + multiple sessions) |
 | Wall-clock fabrication | `VSDD-W0040: fabricated-time-estimate` (R91 incident — 16x discrepancy) |
 | Hook bypass discipline | `VSDD-E0016: bypass-rationale-missing`, `VSDD-W0070: bypass-marker-scope-mismatch` (PR #44 + bookmark-cli-manual recurrence) |
 | Manual-test discipline | `VSDD-E0018: manual-test-preamble-incomplete` (R74), `VSDD-W0080: manual-test-checkbox-without-specificity` (G-132) |
 | Letter-label anti-pattern | `VSDD-E0160: letter-label-anti-pattern` (R78 F4 + R94 + PR #38/44/52 — 4 recurrences) |
-| Prose-surface composition | `VSDD-W0180: prose-surface-commit-without-tw-dr-composition` (TW Layer-2→Layer-3 recurrence) |
+| Prose-surface composition | `VSDD-W0180: prose-surface-commit-without-tw-dr-composition` (TW milestone-2→milestone-3 recurrence) |
 | CHANGELOG discipline (operator-directive — adopt crosslink's Keep-a-Changelog pattern) | `VSDD-W0190: changelog-entry-missing` · `VSDD-W0191: changelog-structure-malformed` · `VSDD-W0194: changelog-version-section-missing-date` · `VSDD-W0195: changelog-non-canonical-category` · `VSDD-E0240: changelog-deleted` (all cooperate with `crosslink close` auto-management) |
 | PR-discipline (operator-directive) | `VSDD-E0070: draft-pr-missing`, `VSDD-E0080: pr-template-malformed`, `VSDD-W0041: pr-co-authorship-missing`, `VSDD-E0090: pr-manual-tests-incomplete` |
 | Dependency approval (operator-directive 2026-05-27) | `VSDD-E0100: dependency-approval-missing` (new entry in `Cargo.toml` / `package.json` / `pyproject.toml` / `requirements.txt` without SO + PE + Security investigation in PR description and corresponding `docs/dependencies/<crate>.md` investigation entry) |
-| Auth × CI cross-field validation (Phase 5 round 1 Security F4) | `VSDD-E0021: auth-method-plan-incompatible-with-ci` (Plan auth declared for CI; structurally invalid — Plan requires operator-interactive session CI cannot provide), `VSDD-W0022: ci-workflows-present-without-ci-auth-declared` (CI workflow files exist without `auth_method.ci` declared) |
-| Methodology version pin (Phase 5 round 1 Security F6) | `VSDD-W0200: methodology-version-drift` (project `methodology.md` `methodology_version` < installed toolkit's bundled version; refresh via `vsdd init --update-methodology`) |
+| Auth × CI cross-field validation (Phase 5 swarm invocation 1 Security F4) | `VSDD-E0021: auth-method-plan-incompatible-with-ci` (Plan auth declared for CI; structurally invalid — Plan requires operator-interactive session CI cannot provide), `VSDD-W0022: ci-workflows-present-without-ci-auth-declared` (CI workflow files exist without `auth_method.ci` declared) |
+| Methodology version pin (Phase 5 swarm invocation 1 Security F6) | `VSDD-W0200: methodology-version-drift` (project `methodology.md` `methodology_version` < installed toolkit's bundled version; refresh via `vsdd init --update-methodology`) |
 
 **Candidate (single-recurrence; promote on second case):**
 
 | Pattern category | Codes |
 |---|---|
 | Audit-trail integrity (single-recurrence) | `VSDD-E0011: unverified-citation`, `VSDD-E0012: missing-source-attribution`, `VSDD-E0013: validator-pair-mismatch`, `VSDD-E0021: findings-registry-orphan-row` |
-| Cycle discipline (single-recurrence) | `VSDD-E0014: round-scope-not-reduced`, `VSDD-E0015: phase-2a-evidence-shape-missing`, `VSDD-E0017: classification-not-in-universe`, `VSDD-W0060: routing-target-ambiguous` |
+| Session discipline (single-recurrence) | `VSDD-E0014: round-scope-not-reduced`, `VSDD-E0015: phase-2a-evidence-shape-missing`, `VSDD-E0017: classification-not-in-universe`, `VSDD-W0060: routing-target-ambiguous` |
 | External-review handle | `VSDD-E0019: external-review-handle-inconsistent` |
 | Director-raised capture | `VSDD-W0100: director-raised-finding-not-captured` |
 | CHANGELOG candidate rules | `VSDD-W0192: changelog-category-label-mismatch` · `VSDD-W0193: changelog-entry-without-issue-reference` · `VSDD-W0196: changelog-unreleased-overflow` · `VSDD-W0197: changelog-breaking-without-semver-major` · `VSDD-L0050: changelog-entry-format-inconsistent` |
@@ -522,13 +522,13 @@ Each error code has test fixtures at `manual-tests/error-catalog/<code>/{should-
 
 **Schema ↔ Hooks:** schemas are rules (the type system); hooks are executors. One JSON Schema; two enforcement surfaces (Python hook operator-side + Rust mirror CI-side). All validation outcomes emit `HookFired` + `ValidationFailed`/`ValidationPassed` events to the OTel collector + `.vsdd/events.jsonl`.
 
-**Schema ↔ Reviews:** schemas catch mechanical drift at commit-time; reviews catch judgment-bearing concerns at cycle-time. Phase 3 reviewers operate on artifacts where schema-validation has already passed — reviewer attention shifts from mechanical-defect-finding to semantic-coherence + sycophancy + threat-modeling judgment. Review-log entries are themselves schema-validated (Review entry artifact class); reviewer output mechanically structured.
+**Schema ↔ Reviews:** schemas catch mechanical drift at commit-time; reviews catch judgment-bearing concerns at session-time. Phase 3 reviewers operate on artifacts where schema-validation has already passed — reviewer attention shifts from mechanical-defect-finding to semantic-coherence + sycophancy + threat-modeling judgment. Review-log entries are themselves schema-validated (Review entry artifact class); reviewer output mechanically structured.
 
 **Schema ↔ Goal 2:** the triad of enforcement mechanisms (schema validator OR hook OR crosslink workflow check per Goal 2) converges at the user-facing error catalog. Operator sees `VSDD-E0040` regardless of which mechanism caught the rule. Auditable (every validation emits events), machine-enforceable (rule → mechanical enforcement), dual-audience-readable (humans see Mentor-voice errors + explain pages; agents consume structured frontmatter + SARIF + events).
 
 ---
 
-## Finding management
+## Issue management
 
 Crosslink issues + typed labels (when crosslink is in use). The suite's `domain:/layer:/round:/finding:/classification:/source:` label schema is implementation-shape-pitched upstream as `crosslink label declare --namespace <ns>` + AND-filter `issue list -l a -l b`.
 
@@ -554,7 +554,7 @@ Platform Engineer, Data Engineer, Red Team, Performance Engineer, Technical Writ
 
 **VSDD Methodology** — semantic-coherence reviewer of methodology application. Surviving dimensions: spec-vs-implementation semantic alignment; methodology-spirit adherence; cross-session semantic continuity; methodology-evolution coherence. Activation: on-demand (not gate-criterion).
 
-**Sanity Check** — validator-of-last-resort + rubber-ducking surface. Activates automatically via hook when `validator: sanity-check` declared in a finding's frontmatter.
+**Sanity Check** — validator-of-last-resort + rubber-ducking surface. Activates automatically via hook when `validator: sanity-check` declared in an issue's frontmatter.
 
 ### Per-domain prompt shape
 
@@ -588,9 +588,9 @@ Mentor voice is the default across operator-facing surfaces. Formal voice is the
 
 | Surface | Tone |
 |---|---|
-| Per-finding bodies | Mentor (direct + specific + growth-framed) |
-| Phase 3 Round close (per-domain) | Mentor |
-| Layer-gate close summary | Mentor |
+| Per-issue bodies | Mentor (direct + specific + growth-framed) |
+| Phase 3 swarm-invocation close (per-domain) | Mentor |
+| Milestone-gate close summary | Mentor |
 | Sycophancy-check failure-mode descriptions | Mentor (naming the class as a growth opportunity) |
 | Hook output messages on failure | Mentor (name the violation + the corrective pattern) |
 | Phase 6 Exit Signal record | Formal (signed attestation with timestamp + table-structured per-dimension status); Mentor-voice retrospective paragraph optional |
@@ -608,7 +608,7 @@ Domain prompts compose with the Exacting Mentor stance in two invocation modes. 
 | Session context | Operator-interactive; prior context present | Cold; worktree-isolated; no prior context |
 | Output shape | Free-form conversational; Mentor voice | Structured review-entry per primer 3 schema |
 | Cardinality | One domain at a time (operator-driven) | Multi-domain parallel cluster with adversarial-pair separation |
-| Use cases | Rubber-ducking with a lens; pre-Phase-3 self-review; design-question lens; per-phase composition (Phase 1a-2c, 5) | Phase 3 Adversarial Refinement round (canonical multi-domain pass) |
+| Use cases | Rubber-ducking with a lens; pre-Phase-3 self-review; design-question lens; per-phase composition (Phase 1a-2c, 5) | Phase 3 Adversarial Refinement swarm invocation (canonical multi-domain pass) |
 | Output destination | Operator's terminal (not persisted unless captured) | Review-log markdown + crosslink issues + events.jsonl |
 
 Skill-mode is conversational-only by design. Phase 3 review-entries must come from cold-session reviewer dispatch to preserve audit-trail integrity.
@@ -650,22 +650,22 @@ Phase 3 is the only phase where domains compose as reviewers (cold-session sub-a
 
 1. **Matrix declaration** — load-bearing methodology section. Operators see the composition as structural.
 2. **Per-primer composition instruction** — each non-Phase-3 primer's opening prose explicitly instructs domain-as-skill loading. Primer frontmatter carries `relevant_domains: [<list>]` as a machine-readable declaration.
-3. **Pre-phase composition declaration** — symmetric with primer 3's pre-cycle methodology check. Emits a `PhaseCompositionDeclared` observability event. Absent declaration is itself a finding.
+3. **Pre-phase composition declaration** — symmetric with primer 3's pre-session methodology check. Emits a `PhaseCompositionDeclared` observability event. Absent declaration is itself a finding.
 4. **`check-phase-composition.py` hook** — fires at phase-boundary commits. Missing declaration requires bypass-marker with rationale.
 
-### Layer-cycle PR discipline
+### Per-milestone PR discipline
 
-Each layer's work lands in a single PR opened early + accumulated incrementally. Closes the existing-suite Layer 1 anti-pattern (CI/CD work concentrated at layer-close generating a cluster of late-cycle PE findings).
+Each milestone's work lands in a single PR opened early + accumulated incrementally. Closes the existing-suite milestone 1 anti-pattern (CI/CD work concentrated at milestone-close generating a cluster of late-session PE findings).
 
-- **Draft PR opens at Phase 2a commit.** The PR accumulates the layer's commits + receives early review feedback; closes when layer-gate criteria are met.
-- **PE tooling lands incrementally.** When Phase 2b adds a dependency, the corresponding PE artifact (lockfile, audit gate, env pin) lands in the same commit — not deferred to layer-close. Phase-domain composition matrix accordingly adds **PE** to Phase 2b composed-domains (incremental tooling).
-- **PR description follows the templated structure** (PR template artifact class). Required fields: layer scope, phase coverage checklist, composed-domains declaration per phase, TW + DR co-authorship trailers, manual-test checklist section (auto-generated by `vsdd observe pr-body --layer N`), Exit Signal pointer (when layer closes).
+- **Draft PR opens at Phase 2a commit.** The PR accumulates the milestone's commits + receives early review feedback; closes when milestone-gate criteria are met.
+- **PE tooling lands incrementally.** When Phase 2b adds a dependency, the corresponding PE artifact (lockfile, audit gate, env pin) lands in the same commit — not deferred to milestone-close. Phase-domain composition matrix accordingly adds **PE** to Phase 2b composed-domains (incremental tooling).
+- **PR description follows the templated structure** (PR template artifact class). Required fields: milestone scope, phase coverage checklist, composed-domains declaration per phase, TW + DR co-authorship trailers, manual-test checklist section (auto-generated by `vsdd observe pr-body --layer N`), Exit Signal pointer (when milestone closes).
 - **TW + DR compose with PR-description authoring** (cross-phase composition). TW for prose-surface updates (README, DESIGN, PROCESS, CHANGELOG, `manual-tests/layer-N.md`); DR for cold-reader review of the PR description itself.
 - **Commit-level domain co-authorship.** Same TW + DR discipline applies at commit-level via git `Co-authored-by:` trailers. Identifier convention: `Co-authored-by: Technical Writer <tw@vsdd-domains>` + `Co-authored-by: Documentation Reviewer <dr@vsdd-domains>`. The synthetic `@vsdd-domains` email signals domain-lens attribution (not a real person); standard `git log` / `git shortlog` / `git blame` tooling surfaces the lens composition. The `check-prose-surface-tw-dr-composition.py` hook validates either `Composed-domains:` trailer OR `Co-authored-by:` trailers (the latter preferred — richer audit trail; standard git tooling integration). Other phases extend the convention via the phase-domain composition matrix: Phase 2b commits add SE + QE co-authorship; Phase 2a commits add QE; Phase 1c commits add SA + SO.
 - **Manual-test checklist** items embedded in PR description as GitHub markdown task list. Operator checks items as they execute manual testing. PR merge gate (`VSDD-E0090: pr-manual-tests-incomplete`) validates all items checked or deferred-with-rationale per primer 1c discipline.
-- **PR ready-for-review when layer-gate criteria met.** Phase 3 multi-domain review runs against the PR.
+- **PR ready-for-review when milestone-gate criteria met.** Phase 3 multi-domain review runs against the PR.
 
-Three new methodology event variants track the PR lifecycle: `DraftPROpened` (Phase 2a boundary) → `PRReadyForReview` (layer-gate close) → `PRMerged` (final). Two new hooks enforce: `check-draft-pr-presence.py` + `check-pr-template-conformance.py`.
+Three new methodology event variants track the PR lifecycle: `DraftPROpened` (Phase 2a boundary) → `PRReadyForReview` (milestone-gate close) → `PRMerged` (final). Two new hooks enforce: `check-draft-pr-presence.py` + `check-pr-template-conformance.py`.
 
 ---
 
@@ -703,7 +703,7 @@ Each axis is independent. No tier vocabulary. Cold-session budget bands per axis
 
 Two distinct names; two distinct disciplines:
 
-**Event-log append-only (data discipline).** Structural property of the event log. Records are append-only; no in-place updates. Rides crosslink's existing append-only NDJSON pattern + the suite's own `.vsdd/events.jsonl` v1 sink. Disaster recovery: `.vsdd/events.jsonl` committed to git per cycle; `git checkout` recovers from prior commit.
+**Event-log append-only (data discipline).** Structural property of the event log. Records are append-only; no in-place updates. Rides crosslink's existing append-only NDJSON pattern + the suite's own `.vsdd/events.jsonl` v1 sink. Disaster recovery: `.vsdd/events.jsonl` committed to git per session; `git checkout` recovers from prior commit.
 
 **Documentation narrative-preservation (prose discipline).** Authoring discipline for the methodology spec + primers + domain prompts + supplements. Pre-rebuild artifacts in the existing suite stay as authored per the original semantics.
 
@@ -812,7 +812,7 @@ Canonical methodology terms live at `.vsdd/registry/vocabulary.yaml` (deployed b
 
 ### Letter-label anti-pattern enforcement
 
-Per multi-recurrence evidence (R78 F4 Surface A/B/C/D + R94 + PR #38/44/52 cluster-letter recurrences), `check-naming-discipline.py` fires `VSDD-E0160: letter-label-anti-pattern` for label patterns like `Surface [A-Z]`, `Cluster [A-Z]`, `Mode [A-Z]`, `Path [A-Z]`, `Tier [A-Z]`, `Pillar [N]`. Acceptable: `Dim N`, `Layer N`, `Round N`, `Finding N`, `Phase Na` — the concept-word is in the identifier.
+Per multi-recurrence evidence (R78 F4 Surface A/B/C/D + R94 + PR #38/44/52 cluster-letter recurrences), `check-naming-discipline.py` fires `VSDD-E0160: letter-label-anti-pattern` for label patterns like `Surface [A-Z]`, `Cluster [A-Z]`, `Mode [A-Z]`, `Path [A-Z]`, `Tier [A-Z]`, `Pillar [N]`. Acceptable: `Dim N`, `Phase N` (and `Phase 1a` / `Phase 2c` sub-phases), domain slugs (`solution-owner`, `quality-engineer`, etc.) — the concept-word is in the identifier. See `methodology.md` § Conventions § Acceptable abbreviations for the canonical list.
 
 ### Coinage discipline
 
@@ -831,7 +831,7 @@ Author-introduced cognitive scaffolding terms (terms invented for organizational
 **Sibling, not successor.** The existing suite at [`guild-projects/guild-portfolio/vsdd-suite/`](https://github.com/magnificentlycursed/guild-portfolio/tree/main/vsdd-suite) continues to exist as a record of methodology evolution. The toolkit starts fresh; no artifact migrates by copy.
 
 - Operators of the existing suite are not auto-migrated. The rebuild's adoption is a new-project decision.
-- The existing `bookmark-cli-manual` reference example stays where it is; no parallel `bookmark-cli-v2` is committed (the toolkit's own development cycles serve as canonical dogfood).
+- The existing `bookmark-cli-manual` reference example stays where it is; no parallel `bookmark-cli-v2` is committed (the toolkit's own development sessions serve as canonical dogfood).
 - The existing suite's forward-only narrative-preservation discipline continues to apply to its own history (passed stability commitment long ago). The toolkit's documentation-narrative-preservation discipline applies forward-only AFTER stability commitment (v1.0 release / first public push / first downstream adoption / operator-declared methodology-stabilization directive); pre-stability history is malleable. See [Forward-only disciplines](#forward-only-disciplines).
 
 ---
@@ -867,7 +867,7 @@ Author-introduced cognitive scaffolding terms (terms invented for organizational
 | 2o — Implement PR template + CODEOWNERS deployment + PR-discipline hooks (draft-pr-presence + pr-template-conformance + pr-manual-tests-completion) | Cross-cutting |
 | 3 — Goal 4 end-to-end demonstration via rebuild's own CI | Goal-4 specific |
 
-Time estimates intentionally absent. The operator-time constraint is binding regardless of whether it's quantified; sequencing + scope-discipline are the calibration until the toolkit's own observability subsystem produces cycle telemetry that derives future-cycle estimates from real data.
+Time estimates intentionally absent. The operator-time constraint is binding regardless of whether it's quantified; sequencing + scope-discipline are the calibration until the toolkit's own observability subsystem produces session telemetry that derives future-session estimates from real data.
 
 This is the high-level implementation order; methodology-subsystem-specific tracks (per-domain prompt authoring; per-class JSON Schema authoring; methodology spec section drafting) live in [`DESIGN-METHODOLOGY.md` § Implementation order](./DESIGN-METHODOLOGY.md#implementation-order) and resolve as DESIGN-METHODOLOGY is revalidated against DESIGN-SCHEMA + DESIGN-OBSERVABILITY + DESIGN-VERIFICATION.
 
