@@ -30,6 +30,6 @@ Per-domain extensions for projects that integrate with the [Claude Code CLI](htt
 - **Auth method per context.** Plan (Max/Pro) for operator-local skill mode; API key for CI/automation per Anthropic's guidance. Per the methodology's `auth_method.operator_local` + `auth_method.ci` separation.
 - **`.claude/settings.json` discipline.** UNION-merge for `allowedTools`; managed-section pattern for hooks. vsdd init composes with crosslink's existing entries.
 - **Plan auth × CI rejection.** Per the methodology's cross-field validation, `auth_method.ci: plan` is structurally rejected (Plan requires operator-interactive session CI cannot provide).
-- **Cron triggers + Notifications.** `CronCreate` for scheduled drift sweeps + cycle-close reminders; `PushNotification` + `RemoteTrigger` for budget breach + rate-limit headroom alerts.
+- **Cron triggers + Notifications.** `CronCreate` for scheduled drift sweeps + session-close reminders; `PushNotification` + `RemoteTrigger` for budget breach + rate-limit headroom alerts.
 - **Background tasks via `Bash run_in_background`.** CI-side compositions + long-running aggregations + cold-session dispatch primitives.
 - **Permission modes.** Hook-bypass-marker enforcement at PR-time via Claude Code's permission modes.
