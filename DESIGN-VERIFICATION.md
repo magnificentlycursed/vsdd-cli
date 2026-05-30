@@ -176,15 +176,15 @@ Each hook is a thin Python entry point at `.claude/hooks/vsdd-<hook-id>.py` (~5-
 | # | Hook | Trigger | Rule(s) | Error code(s) | Mode |
 |---|---|---|---|---|---|
 | 1 | check-frontmatter-schema | Pre-commit on `*.md` with frontmatter; pre-merge in CI | Per-class JSON Schema validation | VSDD-E0001-E0099 range (per class) | Both |
-| 2 | check-cite-resolution | Pre-commit on `*.md`; pre-merge CI | Citation regex match → audit-trail finding-id registry | VSDD-E0010, VSDD-E0011 (candidate) | Both |
-| 3 | check-classification-universe | Pre-commit on Finding entries | Classification ∈ domain's classification_universe | VSDD-E0017 (candidate) | Both |
+| 2 | check-cite-resolution | Pre-commit on `*.md`; pre-merge CI | Citation regex match → audit-trail crosslink-issue-ID registry | VSDD-E0010, VSDD-E0011 (candidate) | Both |
+| 3 | check-classification-universe | Pre-commit on issue entries | Classification ∈ domain's classification_universe | VSDD-E0017 (candidate) | Both |
 | 4 | check-naming-discipline (consolidated) | Pre-commit on `*.md` | Letter-label anti-pattern + vocabulary registry compliance + suite-internal terminology + first-use expansion | VSDD-E0160 (letter-label), VSDD-W0001 (vestigial / deprecated-alias / suite-internal-terminology / missing-first-use-expansion — multi-rule shared) | Both |
 | 5 | check-anonymization | Pre-commit on all committed text files | $HOME / git user.name / git user.email / API-key formats (`sk-ant-api03-`, `Bearer <token>`, etc.) | VSDD-E0220 (existing-file-malformed-refuse-to-overwrite), redaction patterns | Both |
 | 6 | check-identity-correlation | Pre-commit on external-author review-log files | Handle-slug consistency across declared platforms | VSDD-E0019 (candidate) | Both |
 | 7 | check-document-staleness | Pre-commit on prose surfaces; cron weekly sweep | Cross-doc reference resolution + last-modified-vs-related-modified drift | VSDD-W0030 | Both |
 | 8 | check-phase-transitions (consolidated 9-transition matrix) | Phase-boundary commits | Per-R95-F3 9-transition provability matrix | VSDD-E0051 (phase-transition-not-attested) + phase-specific codes | Both |
 | 9 | check-phase-composition | Phase-boundary commits | Composed-domains declaration matches phase-domain composition matrix | VSDD-E0050 (phase-composition-not-declared) | Both |
-| 10 | check-draft-pr-presence | Phase 2a commits | Draft PR exists for the layer | VSDD-E0070 | CI only |
+| 10 | check-draft-pr-presence | Phase 2a commits | Draft PR exists for the milestone | VSDD-E0070 | CI only |
 | 11 | check-pr-template-conformance | PR creation / update | PR description matches PR template artifact class schema | VSDD-E0080 | CI only |
 | 12 | check-pr-manual-test-completion | PR merge-gate | Manual-test checklist all checked OR deferred-with-rationale | VSDD-E0090 | CI only |
 | 13 | check-design-md-template-conformance | Commits to DESIGN.md | DESIGN.md frontmatter + required sections present | VSDD-E0001 range | Both |
@@ -263,7 +263,7 @@ jobs:
           sarif_file: vsdd-verify.sarif
 ```
 
-**`.github/workflows/vsdd-observe-pr-body.yml`** — auto-generates PR body when DESIGN.md commits modify layer behavioral contracts:
+**`.github/workflows/vsdd-observe-pr-body.yml`** — auto-generates PR body when DESIGN.md commits modify milestone behavioral contracts:
 
 ```yaml
 name: vsdd observe pr-body
@@ -448,7 +448,7 @@ OR annotate deferral in TODO.md:
 ```yaml
 deferred_artifacts:
   - path: manual-tests/layer-3.md
-    deferred_to: <phase | layer>
+    deferred_to: <phase | milestone>
     rationale: <non-empty>
 ```
 
@@ -604,7 +604,7 @@ error[VSDD-E0010]: unresolved cross-reference [×42 in this commit; first 3 show
   - Auto-add Composed-domains trailer to commit message
   - Auto-insert first-use expansion for abbreviations
 - **Go-to-definition** for cross-references (click `[VSDD-E0040]` → opens docs page)
-- **Find-references** for finding-IDs + domain-slugs + phase-IDs
+- **Find-references** for crosslink-issue-IDs + domain-slugs + phase-IDs
 
 ### IDE integrations
 
@@ -835,7 +835,7 @@ Fallback: `cargo install vsdd --locked` (slower but always-fresh).
 |---|---|
 | **DESIGN-SCHEMA** | 12 frontmatter JSON Schemas + 1 structural rule file + error catalog file format + anchor-ID derivation conventions + bypass-marker schema |
 | **DESIGN-OBSERVABILITY** | OTel emission convention for `HookFired` + `ValidationPassed` / `ValidationFailed` events; collector + sink wiring + redaction processor |
-| **DESIGN-METHODOLOGY** | Phase-domain composition matrix (informs hook dispatch); Layer-cycle PR discipline (informs CI workflow templates); CHANGELOG cooperation pattern |
+| **DESIGN-METHODOLOGY** | Phase-domain composition matrix (informs hook dispatch); Per-milestone PR discipline (informs CI workflow templates); CHANGELOG cooperation pattern |
 
 ### What this doc produces
 
@@ -887,7 +887,7 @@ Tracks 5a-5n are v1 deliverables. 5o-5q are v1+.
 |---|---|
 | Python hook dispatch (subprocess to vsdd-core Rust binary vs pure-Python validation) | Implementer's call during 5d; recommend pure-Python for simplicity + Rust mirror as the CI-side optimization path |
 | LSP server protocol details (which capabilities to implement; quick-fix action surface) | v1+ scope |
-| `vsdd verify migrate` mechanism (auto-fix patterns vs operator-prompted) | v1+ scope; needs evidence from first major-version-bump cycle |
+| `vsdd verify migrate` mechanism (auto-fix patterns vs operator-prompted) | v1+ scope; needs evidence from the first major-version bump |
 | Pre-built binary signing (cosign / sigstore / GPG) | DESIGN-VERIFICATION v1+ iteration |
 | Operator-extension hook authoring guidance (when does a project add a custom hook to its own .vsdd/registry/?) | DESIGN-METHODOLOGY (operator-runbook scope) |
 | Cross-language hook execution (Python hooks reading non-Python sources; Rust hooks generic over language) | Implementation detail; standard cross-language pattern |
