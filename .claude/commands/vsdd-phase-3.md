@@ -2,7 +2,7 @@
 primer_id: vsdd-phase-3
 phase: phase-3
 version: 0.1.0
-frequency: per-layer (one or more IAR rounds until layer-MVR)
+frequency: per-milestone (one or more IAR swarm invocations until milestone-MVR)
 governing_skill: true
 relevant_domains: [all-active-domains]
 supplements_in_scope: []
@@ -19,7 +19,7 @@ You are entering Phase 3 (Adversarial Refinement / The VDD Roast). **This is the
 - **Communication cluster** — Security + TW + Accessibility + Privacy + Localization (when active)
 - **Adversarial cluster** — Red Team + DR + UX + AI Engineer + Solution Owner + VSDD Methodology + Sanity Check
 
-Adversarial-pair separation invariant: Security ↔ Red Team on different clusters; TW ↔ DR on different clusters. Per-domain spawn (18 agents, one per domain) is the high-stakes alternative for layer-close or MVR-approach rounds.
+Adversarial-pair separation invariant: Security ↔ Red Team on different clusters; TW ↔ DR on different clusters. Per-domain spawn (18 agents, one per domain) is the high-stakes alternative for milestone-close or MVR-approach swarm invocations.
 
 ## The Exacting Mentor stance
 
@@ -34,16 +34,16 @@ You are an experienced reviewer who has seen this defect class before. You hold 
 
 ## Phase-specific discipline
 
-**Cold-session reviewer discipline:** each cluster's agent receives the primer + the cluster's domain prompts + relevant supplements + the project under review. No prior-cycle memory. No operator-feedback memory poisoning (worktree-isolated with `--no-memory` flag; container-isolated for high-stakes rounds).
+**Cold-session reviewer discipline:** each cluster's agent receives the primer + the cluster's domain prompts + relevant supplements + the project under review. No prior-session memory. No operator-feedback memory poisoning (worktree-isolated with `--no-memory` flag; container-isolated for high-stakes swarm invocations).
 
-**Pre-cycle methodology check:** every Phase 3 cycle declares its shape before execution begins:
+**Pre-session methodology check:** every Phase 3 session declares its shape before execution begins:
 - Cluster shape (4-cluster default; per-domain alternative for high-stakes)
 - Memory isolation mode (worktree-no-memory; container-isolated)
 - Active domain set (always-on baseline + axes-activated)
-- Cost budget (per-round token band; per-cycle wall-clock budget)
+- Cost budget (per-swarm-invocation token band; per-session wall-clock budget)
 - Sycophancy compensation (when reviewer overlaps with author identity)
 
-**Per-finding structure:** each finding declares finding_id, domain, dim, classification (resolved / deferred / dismissed / hallucinated / accepted), source, routing target, dismissal_rationale (when applicable). Finding entries go to `review-log/<date>-<domain-slug>.md` with frontmatter per the Review entry artifact class.
+**Per-issue structure:** each issue declares finding_id, domain, dim, classification (resolved / deferred / dismissed / hallucinated / accepted), source, routing target, dismissal_rationale (when applicable). Issue entries go to `review-log/<date>-<domain-slug>.md` with frontmatter per the Review entry artifact class.
 
 **Source field discipline:** every Review entry declares `source` per the 5-element enum (domain-raised / director-raised / regression-replay / external-feedback / mixed). Defaulting silently fires `VSDD-W0010`.
 
@@ -61,13 +61,13 @@ declared_at: <ISO 8601 timestamp>
 
 ## Phase-completion criteria
 
-Phase 3 reaches **implementation-MVR for the layer** when the final round produces only Hallucinated findings (or no findings) across all active domains, with cold-session isolation preserved. Per-round dispositions are recorded; MVR is the round-level signal that no more cold-batch findings surface.
+Phase 3 reaches **implementation-MVR for the milestone** when the final swarm invocation produces only Hallucinated findings (or no findings) across all active domains, with cold-session isolation preserved. Per-swarm-invocation dispositions are recorded; MVR is the swarm-invocation-level signal that no more cold-batch findings surface.
 
-Round triggers:
+Swarm-invocation triggers:
 - **Continue if:** any active domain produced real findings (Resolved-pending / Deferred / Accepted with remediation)
-- **Stop if:** all active domains produced only Hallucinated findings on the round AND no domain raised "out of cycle" concerns AND cold-session-isolation discipline held throughout
+- **Stop if:** all active domains produced only Hallucinated findings on the swarm invocation AND no domain raised "out of session" concerns AND cold-session-isolation discipline held throughout
 
-Emit `PhaseExited{phase: phase-3, exit_status: implementation-mvr-reached, layer: <N>, round_count: <N>}` at the closing round commit. Opens Phase 4 routing (or directly Phase 5 if no findings to route + project intent declares Phase 5).
+Emit `PhaseExited{phase: phase-3, exit_status: implementation-mvr-reached, layer: <N>, round_count: <N>}` at the closing swarm-invocation commit. Opens Phase 4 routing (or directly Phase 5 if no findings to route + project intent declares Phase 5).
 
 ## Cross-references
 

@@ -2,7 +2,7 @@
 primer_id: vsdd-phase-1a
 phase: phase-1a
 version: 0.1.0
-frequency: per-layer
+frequency: per-milestone
 governing_skill: true
 relevant_domains: [solution-owner, ux, accessibility, privacy, localization]
 supplements_in_scope: []

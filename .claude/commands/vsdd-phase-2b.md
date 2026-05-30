@@ -2,7 +2,7 @@
 primer_id: vsdd-phase-2b
 phase: phase-2b
 version: 0.1.0
-frequency: per-layer
+frequency: per-milestone
 governing_skill: true
 relevant_domains: [software-engineer, quality-engineer, technical-writer, documentation-reviewer, platform-engineer]
 supplements_in_scope: []
@@ -62,4 +62,4 @@ Emit `PhaseExited{phase: phase-2b, exit_status: complete, layer: <N>}` at the cl
 - [Phase 2c primer](./vsdd-phase-2c.md) — Refactor (next)
 - [Software Engineer domain](./vsdd-domain-software-engineer.md)
 - [Platform Engineer domain](./vsdd-domain-platform-engineer.md) — dependency approval discipline
-- [README § Layer-cycle PR discipline](../../README.md#layer-cycle-pr-discipline) — PR accumulates Phase 2b commits
+- [README § Per-milestone PR discipline](../../README.md#per-milestone-pr-discipline) — PR accumulates Phase 2b commits

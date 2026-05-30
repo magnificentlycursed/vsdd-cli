@@ -2,7 +2,7 @@
 primer_id: vsdd-phase-1b
 phase: phase-1b
 version: 0.1.0
-frequency: per-layer
+frequency: per-milestone
 governing_skill: true
 relevant_domains: [solution-owner, solution-architect, quality-engineer]
 supplements_in_scope: []

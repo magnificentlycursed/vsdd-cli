@@ -2,7 +2,7 @@
 primer_id: vsdd-phase-2c
 phase: phase-2c
 version: 0.1.0
-frequency: per-layer (optional — runs when Phase 2b surfaced refactor opportunities)
+frequency: per-milestone (optional — runs when Phase 2b surfaced refactor opportunities)
 governing_skill: true
 relevant_domains: [software-engineer, solution-architect]
 supplements_in_scope: []
@@ -50,7 +50,7 @@ Phase 2c closes when:
 - No externally-observable behavior changed (any behavior change routes to Phase 1a via Phase 4)
 - The refactor's stated goal is met (extract-method / naming / dep-reduction / etc.) or explicitly skipped
 
-Emit `PhaseExited{phase: phase-2c, exit_status: complete | skipped-no-refactor-surface, layer: <N>}` at the closing commit. The layer reaches **implementation-MVR-ready** — the layer's Phase 3 cycle opens.
+Emit `PhaseExited{phase: phase-2c, exit_status: complete | skipped-no-refactor-surface, layer: <N>}` at the closing commit. The milestone reaches **implementation-MVR-ready** — the milestone's Phase 3 session opens.
 
 ## Cross-references
 

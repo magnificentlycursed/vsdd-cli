@@ -18,31 +18,31 @@ Always-on baseline applies for coordination but no domain owns Phase 6 work itse
 
 ## Phase-specific discipline
 
-Phase 6 evaluates **four independent MVR signals** and the **cross-dimension consistency check**. Phase 6 is not a build phase — nothing is implemented in Phase 6; the project-level record demonstrates that the four dimensions converged. Phase 6 sits AFTER every layer's Phase 5 closes (or declares not-applicable per project intent).
+Phase 6 evaluates **four independent MVR signals** and the **cross-dimension consistency check**. Phase 6 is not a build phase — nothing is implemented in Phase 6; the project-level record demonstrates that the four dimensions converged. Phase 6 sits AFTER every milestone's Phase 5 closes (or declares not-applicable per project intent).
 
 ### Dimension 1: Spec MVR
 
-**Established by:** Solution Owner cold-batch reviews across final 2+ layers produced only Hallucinated findings, AND Phase 4 routing across final 2+ layers produced no `route:phase-1a+1b` destinations.
+**Established by:** Solution Owner cold-batch reviews across final 2+ milestones produced only Hallucinated findings, AND Phase 4 routing across final 2+ milestones produced no `route:phase-1a+1b` destinations.
 
-**Anti-signal:** SO final-layer review closed cleanly but earlier rounds surfaced spec gaps that were Resolved by silent DESIGN.md amendments (no subsequent SO re-pass verified the amendment).
+**Anti-signal:** SO final-milestone review closed cleanly but earlier swarm invocations surfaced spec gaps that were Resolved by silent DESIGN.md amendments (no subsequent SO re-pass verified the amendment).
 
 ### Dimension 2: Test MVR
 
-**Established by:** Phase 5 Mutation Testing produced per-layer kill rates with **every surviving mutant having a recorded disposition** in the QE log's per-layer Mutation Testing round.
+**Established by:** Phase 5 Mutation Testing produced per-milestone kill rates with **every surviving mutant having a recorded disposition** in the QE log's per-milestone Mutation Testing swarm invocation.
 
-**Verification step (required):** open each cited Mutation Testing round + confirm a per-mutant disposition table exists (rows: mutant location, mutation kind, disposition, rationale). Aggregate-only kill rate fails Dimension 2 regardless of the rate.
+**Verification step (required):** open each cited Mutation Testing swarm invocation + confirm a per-mutant disposition table exists (rows: mutant location, mutation kind, disposition, rationale). Aggregate-only kill rate fails Dimension 2 regardless of the rate.
 
-**Not-applicable alternative:** when DESIGN.md declares `**Phase 5 strategy:** not applicable — <rationale>`, Dimension 2's signal is QE's final-round attestation against Dim 2 (test falsifiability) without mutation-tool evidence — explicitly weaker; named in the convergence record as such.
+**Not-applicable alternative:** when DESIGN.md declares `**Phase 5 strategy:** not applicable — <rationale>`, Dimension 2's signal is QE's final-swarm-invocation attestation against Dim 2 (test falsifiability) without mutation-tool evidence — explicitly weaker; named in the convergence record as such.
 
 ### Dimension 3: Implementation MVR
 
-**Established by:** Phase 3 final-round summaries per active domain across the final 2+ layers all read "only Hallucinated findings" or "no findings" — and cold-session-isolation discipline was preserved across the active domain set.
+**Established by:** Phase 3 final-swarm-invocation summaries per active domain across the final 2+ milestones all read "only Hallucinated findings" or "no findings" — and cold-session-isolation discipline was preserved across the active domain set.
 
-**Anti-signal:** Round closed with "no findings" but cold-session isolation relaxed (one fresh chat reused for multiple domains; context bleed).
+**Anti-signal:** Swarm invocation closed with "no findings" but cold-session isolation relaxed (one fresh chat reused for multiple domains; context bleed).
 
 ### Dimension 4: Formal-verification MVR
 
-**Established by:** Phase 5 Proof Execution harnesses each have recorded outcomes in the SA log's per-layer Proof Execution round.
+**Established by:** Phase 5 Proof Execution harnesses each have recorded outcomes in the SA log's per-milestone Proof Execution swarm invocation.
 
 **Not-applicable alternative:** `**Phase 5 strategy:** Proof Execution not applicable — <rationale>` — convergence closes on three of four dimensions; formal-verification dimension explicitly out of scope; named in convergence record.
 
@@ -75,7 +75,7 @@ declared_at: <ISO 8601 timestamp>
 
 Phase 6 closes when:
 
-1. New round titled `Phase 6 four-dimensional convergence (project-terminal)` exists in `vsdd-suite/review-log/<close-date>-vdd-iar-alignment.md` with all four dimensions populated (or three populated + the fourth explicitly declared out of scope)
+1. New swarm invocation titled `Phase 6 four-dimensional convergence (project-terminal)` exists in `vsdd-suite/review-log/<close-date>-vdd-iar-alignment.md` with all four dimensions populated (or three populated + the fourth explicitly declared out of scope)
 2. Cross-dimension consistency check table has zero inconsistent rows
 3. Every inconsistency surfaced during the check has been routed via Phase 4 + the routed work has landed
 4. Convergence attestation is signed and dated in the round's closing block (anonymized-project posture uses commit-sha as the signature)
