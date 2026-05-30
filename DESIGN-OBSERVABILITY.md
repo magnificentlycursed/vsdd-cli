@@ -1,6 +1,6 @@
 # DESIGN-OBSERVABILITY.md
 
-Design document for the observability subsystem of the `vsdd` toolkit. Defines the OTel collector design, sink wiring, 18 methodology event variant payloads + capture-source provenance, three-pillars + dashboard ladder + FinOps surfaces, the MCP server architecture, and the `vsdd observe` CLI surface.
+Design document for the observability subsystem of the `vsdd` toolkit. Defines the OTel collector design, sink wiring, 18 methodology event variant payloads + capture-source provenance, three-pillars + dashboard ladder + cost-observability surfaces, the MCP server architecture, and the `vsdd observe` CLI surface.
 
 ```yaml
 # Pre-authoring composition declaration
@@ -28,7 +28,7 @@ DESIGN-OBSERVABILITY owns:
 - 18 methodology event variant payload mapping to OTel signals
 - Capture-source provenance discipline
 - Three pillars (logs / metrics / traces) — sources + sinks + query mechanisms
-- FinOps applied to IAR cycles
+- Cost observability for AI-driven IAR
 - Dashboard ladder (v1 CLI / v2 HTML / v3 Grafana absorption-pitch)
 - MCP server (`vsdd mcp-serve`) — tool dispatch + cache + fetch primitive
 - `vsdd observe` CLI subcommand surface
@@ -92,7 +92,7 @@ processors:
   redaction:
     config_source: .vsdd/registry/anonymization-patterns.yaml
     # The registry file declares api_key_patterns + bearer_token_patterns + credential_attribute_names
-    # Operator extends by editing the registry file; collector reloads on next cycle start
+    # Operator extends by editing the registry file; collector reloads on next session start
     # See DESIGN-VERIFICATION § check-anonymization scope for the canonical pattern catalog
 
 exporters:
@@ -149,7 +149,7 @@ service:
 
 Default sinks (always-on):
 
-- **`.vsdd/events.jsonl`** — local NDJSON append-only file; git-tracked per cycle; disaster recovery via `git checkout`. Schema-validated by event-variant payload schemas (DESIGN-SCHEMA).
+- **`.vsdd/events.jsonl`** — local NDJSON append-only file; git-tracked per session; disaster recovery via `git checkout`. Schema-validated by event-variant payload schemas (DESIGN-SCHEMA).
 - **crosslink hub** — when crosslink is in use; HTTP OTLP endpoint at crosslink's hub URL. Crosslink's `seam.rs` consumes; events.rs schema-compatible.
 
 Operator-extensible sinks:
@@ -171,15 +171,15 @@ Matches are redacted to `[REDACTED-VALUE-MATCHING-CREDENTIAL-PATTERN]` placehold
 
 ### Collector lifecycle (on-demand)
 
-The collector is **not** a persistent daemon. Spawned on-demand per cycle or per `vsdd observe` invocation. Avoids platform-specific systemd/launchd wrapper complexity at single-operator scale.
+The collector is **not** a persistent daemon. Spawned on-demand per session or per `vsdd observe` invocation. Avoids platform-specific systemd/launchd wrapper complexity at single-operator scale.
 
 | Phase | Lifecycle action |
 |---|---|
 | `vsdd init` | Deploy config + env vars to `.vsdd/env-vars` for operator to source |
-| Operator-local cycle start | `vsdd observe collect start` spawns collector subprocess; SDK emits to localhost:4318; collector PID tracked at `.vsdd/.cache/collector.pid` |
-| Operator-local cycle close | `vsdd observe collect stop` (or auto-stop on `vsdd verify check` cycle-close detection); collector flushes pending events + exits cleanly |
-| CI cycle | Collector spawned per-job OR endpoints point directly to crosslink hub (collector-less mode); per-job lifecycle bounded |
-| Cycle commit | Operator commits `.vsdd/events.jsonl` |
+| Operator-local session start | `vsdd observe collect start` spawns collector subprocess; SDK emits to localhost:4318; collector PID tracked at `.vsdd/.cache/collector.pid` |
+| Operator-local session close | `vsdd observe collect stop` (or auto-stop on `vsdd verify check` session-close detection); collector flushes pending events + exits cleanly |
+| CI session | Collector spawned per-job OR endpoints point directly to crosslink hub (collector-less mode); per-job lifecycle bounded |
+| Session commit | Operator commits `.vsdd/events.jsonl` |
 
 **On-demand pattern wins for single-operator scale.** Persistent-daemon pattern revisits if multi-operator concurrent sessions or always-on dashboard rendering surfaces evidence-of-need.
 
@@ -201,7 +201,7 @@ Per AI Engineer dim 9 (validator wall-clock budget):
 | Batch export to file sink | <10ms per batch |
 | Batch export to crosslink hub | <100ms per batch (network-bound) |
 
-Cumulative collector overhead < 1% of cycle wall-clock at typical event volumes (~1000 events/cycle).
+Cumulative collector overhead < 1% of session wall-clock at typical event volumes (~1000 events/session).
 
 ---
 
@@ -227,7 +227,7 @@ Per DESIGN-SCHEMA's variant payload table, each emitted as OTel custom log event
 | `FindingClassified` | Finding's `classification` field set/changed | vsdd-custom-event |
 | `FindingRouted` | Finding's `routing` field populated | vsdd-custom-event |
 
-### Cycle convergence variants (1)
+### MVR + Exit Signal convergence variants (1)
 
 | Variant | When emitted | Capture-source |
 |---|---|---|
@@ -240,7 +240,7 @@ Per DESIGN-SCHEMA's variant payload table, each emitted as OTel custom log event
 | `SycophancySelfAudit` | Review-log entry with `sycophancy_compensation` field declared | vsdd-custom-event |
 | `OperatorDirectiveApplied` | Operator-directive recorded in event log (methodology amendments, scope decisions, methodology-stabilization milestone, etc.) | vsdd-custom-event |
 | `ProtectiveDisciplineEnforced` | Anonymization / identity-correlation / permission-policy hook fires + redacts | vsdd-custom-event |
-| `VerificationMiniCycleSpawned` | Round 3+ verification mini-cycle triggered | vsdd-custom-event |
+| `VerificationMiniCycleSpawned` | Swarm invocation 3+ verification mini-session triggered | vsdd-custom-event |
 
 ### Auth + identity variants (1)
 
@@ -259,7 +259,7 @@ Per DESIGN-SCHEMA's variant payload table, each emitted as OTel custom log event
 | Variant | When emitted | Capture-source |
 |---|---|---|
 | `DraftPROpened` | check-draft-pr-presence.py detects new draft PR at Phase 2a | vsdd-custom-event |
-| `PRReadyForReview` | PR transitions from draft to ready; layer-gate criteria met | vsdd-custom-event |
+| `PRReadyForReview` | PR transitions from draft to ready; milestone-gate criteria met | vsdd-custom-event |
 | `PRMerged` | PR merge detected; Exit Signal pointer captured if applicable | vsdd-custom-event |
 
 Total: 18 variants. Each carries the common envelope (`agent_id`, `agent_seq`, `timestamp`, `signed_by`, `signature`, `capture_source`) + per-variant payload (defined in DESIGN-SCHEMA).
@@ -319,10 +319,10 @@ capture_source values:
 Methodology-relevant metrics derived at query time from event log:
 
 - **Cost-per-finding** — sum tokens emitted between `FindingRaised` and `FindingClassified` events; divide by classified-non-hallucinated count
-- **Cost-per-Exit-Signal-attestation** — total tokens emitted in cycle / 1 (per project)
+- **Cost-per-Exit-Signal-attestation** — total tokens emitted across the project / 1 (per project)
 - **Per-domain cost breakdown** — sum tokens within `PhaseEntered{phase:3}` / `PhaseExited{phase:3}` spans, group by cluster-membership
-- **Per-cycle agent count** — count distinct `agent_id` in events between PhaseEntered + PhaseExited for phase-3
-- **Per-cycle wall-clock** — first event timestamp to last event timestamp
+- **Per-session agent count** — count distinct `agent_id` in events between PhaseEntered + PhaseExited for phase-3
+- **Per-session wall-clock** — first event timestamp to last event timestamp
 - **Hook fire counts** — count `HookFired` events from DESIGN-VERIFICATION emission
 - **Validation failure rate per error code** — `ValidationFailed` events grouped by error code
 
@@ -381,24 +381,26 @@ ValidationFailed: 0
 
 ### v2 HTML output
 
-Same data as v1 but rendered as standalone HTML with embedded charts. `--html` flag emits `cycle-report.html` next to the event log.
+Same data as v1 but rendered as standalone HTML with embedded charts. `--html` flag emits `session-report.html` next to the event log.
 
 ### v3 Grafana absorption-pitch
 
-Per-cycle metrics exported to Prometheus-compatible format; Grafana dashboards rendered from declarative JSON. v3 lands when absorption-pitch material requires it.
+Per-session metrics exported to Prometheus-compatible format; Grafana dashboards rendered from declarative JSON. v3 lands when absorption-pitch material requires it.
 
 ---
 
-## FinOps applied to IAR cycles
+## Cost observability for AI-driven IAR
 
-Standard FinOps disciplines applied to AI-driven cycles:
+The toolkit tracks Agent SDK OTel signals + SDK message-stream metrics — tokens (input / output / cache), computed dollar cost, wall-clock duration, rate-limit-window utilization — across the methodology cost hierarchy (per-call → per-swarm-invocation → per-session → per-milestone → per-project; per-domain breakdown). Disciplines applied:
 
-- **Cost-per-finding** × per-domain × per-cycle × per-layer × per-project (aggregable bottom-up)
+- **Cost-per-finding** × per-domain × per-session × per-milestone × per-project (aggregable bottom-up)
 - **Budget-vs-actual** per per-feature axis (axes activate domain set + cold-session budget multiplier)
 - **Anomaly detection** — 3σ above rolling median per metric; alerts via `PushNotification`
 - **Right-sizing recommendations** — model-tier mix vs. defect density; per AI Engineer tuning-lever catalog
-- **Showback** — per-domain cost breakdown surfaced in cycle reports
-- **Unit economics** — cost-per-Exit-Signal-attestation tracked per project; allows cross-project comparison
+- **Showback** — per-domain cost breakdown surfaced in session reports
+- **Unit economics** — cost-per-finding and cost-per-Exit-Signal-attestation tracked per project; allows cross-project comparison
+
+**Future-state design discipline.** Capability names follow [FinOps Framework](https://www.finops.org/framework/) Capabilities (Anomaly Management, Budget vs Actual, Showback, Unit Economics, Workload Right-Sizing). Cost-event flow is designed so a future FOCUS-conformant exporter can map vsdd-emitted cost events onto the [FinOps Open Cost and Usage Specification](https://focus.finops.org/) schema as a clean adapter; the methodology hierarchy (per-call → per-swarm-invocation → per-session → per-milestone → per-project; per-domain breakdown) maps to FOCUS dimensions and resource tags.
 
 ### Tuning levers (carried forward from AI Engineer methodology amendments)
 
@@ -468,11 +470,11 @@ The doc-search-via-MCP pattern is a Tier 2 cold-pitch candidate for crosslink ab
 ### Subcommand list
 
 ```
-vsdd observe cycle              # cycle-level report
+vsdd observe cycle              # session-level report (CLI subcommand name retained pending structural sweep)
 vsdd observe layer              # layer-level report
 vsdd observe project            # project-level report
 vsdd observe metrics            # event-log + OTel aggregation
-vsdd observe metrics --auto     # auto-detect cycle from active state
+vsdd observe metrics --auto     # auto-detect session from active state
 vsdd observe trace --finding-id <id>   # finding-lifecycle span tree
 vsdd observe pr-body --layer <N>       # auto-generate PR description with manual-test checklist
 vsdd observe mcp-cache refresh         # refresh substrate doc cache
@@ -527,7 +529,7 @@ Layer 3: bm export + bm import (round-trip workflow)
 - [ ] ... (per-AC checkbox list)
 
 ## Exit Signal pointer
-[populated when layer closes; references ExitSignaled event]
+[populated when milestone closes; references ExitSignaled event]
 ```
 
 ---
@@ -546,9 +548,9 @@ Routing: this is `vsdd verify` subcommand surface (lives in DESIGN-VERIFICATION)
 
 SDK's `total_cost_usd` is client-side estimate from bundled price table — not authoritative.
 
-For per-cycle reports in v1: SDK estimate is used. `vsdd observe` reports surface the caveat: "client-side estimate; not authoritative billing."
+For per-session reports in v1: SDK estimate is used. `vsdd observe` reports surface the caveat: "client-side estimate; not authoritative billing."
 
-For v1+: `vsdd observe metrics --reconcile-usage-api` calls Anthropic's [Usage and Cost API](https://platform.claude.com/docs/en/build-with-claude/usage-cost-api) + reconciles. Authoritative cost per cycle / per month / per project. Capture-source `usage-api-reconciled`.
+For v1+: `vsdd observe metrics --reconcile-usage-api` calls Anthropic's [Usage and Cost API](https://platform.claude.com/docs/en/build-with-claude/usage-cost-api) + reconciles. Authoritative cost per session / per month / per project. Capture-source `usage-api-reconciled`.
 
 **Architecture extensibility for v1+:** the metric derivation layer already takes `capture_source` as a discriminator. Adding `usage-api-reconciled` as a source is additive — no breaking changes to existing event-log consumers.
 
@@ -579,9 +581,9 @@ For v1+: `vsdd observe metrics --reconcile-usage-api` calls Anthropic's [Usage a
 | Track | Goal-4 surface? |
 |---|---|
 | 4a — Author `.vsdd/otel-collector.yaml` template + redaction processor config | Yes (Goal 3 flagship; required for cost/usage capture) |
-| 4b — Implement `vsdd observe` CLI subcommands (`cycle`, `layer`, `project`, `metrics`, `trace`, `pr-body`) | Yes (FinOps reports; PR body auto-generation) |
+| 4b — Implement `vsdd observe` CLI subcommands (`cycle`, `layer`, `project`, `metrics`, `trace`, `pr-body`) | Yes (cost-observability reports; PR body auto-generation) |
 | 4c — Implement `vsdd mcp-serve` (4 tools; cache layer; fetch primitive) | No (but agents leverage in all phases) |
-| 4d — Implement per-cycle metric derivation pipeline (event-log → metrics) | Yes |
+| 4d — Implement per-session metric derivation pipeline (event-log → metrics) | Yes |
 | 4e — Implement HTML report renderer (v2 dashboard ladder) | No (v1 ships TTY; HTML in v1+ if operator-experience tests reveal demand) |
 | 4f — Implement W3C trace context propagation handling for finding-lifecycle spans | No |
 | 4g — Implement collector lifecycle wrapper (systemd/launchd OR operator-managed) | Yes (Goal 4 CI needs collector startup) |
@@ -607,7 +609,7 @@ Tracks 4a-4d + 4g are v1 deliverables; 4e + 4f + 4h + 4i are v1+ scope.
 
 ## Closing
 
-DESIGN-OBSERVABILITY operationalizes Goal 3 (observability as first-class) + Goal 4 (CI/CD shift-left observability surfaces). The architecture composes against the Agent SDK + OTel as primitive — augmentation rather than reinvention. 18 methodology event variants surface methodology-lifecycle telemetry alongside the SDK's built-in signals. Three pillars + dashboard ladder + FinOps applied to IAR. MCP server brings substrate-doc + methodology lookup into every Claude Code session.
+DESIGN-OBSERVABILITY operationalizes Goal 3 (observability as first-class) + Goal 4 (CI/CD shift-left observability surfaces). The architecture composes against the Agent SDK + OTel as primitive — augmentation rather than reinvention. 18 methodology event variants surface methodology-lifecycle telemetry alongside the SDK's built-in signals. Three pillars + dashboard ladder + cost observability for AI-driven IAR. MCP server brings substrate-doc + methodology lookup into every Claude Code session.
 
 The flagship status holds: every artifact born observable; every action emits; default-on, not opt-in. The collector + redaction processor make credential-exclusion structural rather than aspirational.
 
