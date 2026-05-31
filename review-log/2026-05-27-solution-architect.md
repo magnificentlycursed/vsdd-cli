@@ -7,7 +7,7 @@ phase: phase-5
 scope: Purity Boundary Audit — DESIGN-doc scope-boundary verification across the 5 canonical artifacts (README + DESIGN-METHODOLOGY + DESIGN-SCHEMA + DESIGN-OBSERVABILITY + DESIGN-VERIFICATION)
 lens: spec-stage Phase 5 Purity Boundary Audit (adapted from canonical primer 5 — pure-function purity claim verification → DESIGN-doc scope-boundary verification; no implementation surface exists yet)
 source: domain-raised
-session_note: cold-context — first Phase 5 round on vsdd-cli; baseline establishment against the trio + README post Phase 4 routing of 13 prior findings + naming-discipline sweep (commit a0a4987)
+session_note: cold-context — first Phase 5 swarm invocation on vsdd-cli; baseline establishment against the trio + README post Phase 4 routing of 13 prior findings + naming-discipline sweep (commit a0a4987)
 model: claude-opus-4-7
 execution_method: inline main session (cluster-batched with QE + Security per operator directive 2026-05-27)
 sycophancy_compensation: I authored the 5 canonical docs under review; the bias is toward declaring the scope boundaries clean. The audit pressure is to find at least one boundary leak per doc OR cite the specific table row that confirmed the boundary held — silent pass without evidence is the failure mode.
@@ -15,7 +15,7 @@ sycophancy_compensation: I authored the 5 canonical docs under review; the bias 
 
 # Solution Architect Review 1 — 2026-05-27
 
-**Phase 5 surface:** A.0 — Purity Boundary Audit (DESIGN-doc scope-boundary verification adaptation)
+**Phase 5 surface:** Purity Boundary Audit (DESIGN-doc scope-boundary verification adaptation)
 **Cold-session shape:** N/A — inline-run from the main session. Trade-off declared per the bounded-judgment-surface rubric: spec-stage purity-boundary audit is mechanical scope-leak detection against declared "owns / does not own" tables in each DESIGN doc. Cold-session cluster spawn would be over-investment per the queued AI-Engineer-domain cost concern (token-expensive at 10-agent scale, low marginal value over inline for first-run-against-fresh-author).
 
 ## Scope
@@ -69,6 +69,6 @@ The Phase 4 commit (a0a4987) was claimed clean against project-wide grep for `15
 
 ## Coordination
 
-- Finding 1 + Finding 2 route to Phase 1a (DESIGN-doc spec revision). Suggest bundling in a single Phase 4 → Phase 1a commit alongside the rest of this Phase 5 round's findings.
+- Finding 1 + Finding 2 route to Phase 1a (DESIGN-doc spec revision). Suggest bundling in a single Phase 4 → Phase 1a commit alongside the rest of this Phase 5 swarm invocation's findings.
 - Finding 3 informs future cross-DESIGN-doc-boundary decisions; no current action required.
-- Cross-domain: QE's invariant-property-check (this round) and Security's adversarial-input-fuzz (this round) may surface additional sites that compound with Finding 1's count-drift class.
+- Cross-domain: QE's invariant-property-check (this swarm invocation) and Security's adversarial-input-fuzz (this swarm invocation) may surface additional sites that compound with Finding 1's count-drift class.

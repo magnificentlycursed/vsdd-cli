@@ -5,9 +5,9 @@ review_number: 1
 date: 2026-05-27
 phase: phase-5
 scope: Invariant-Property Check — cross-DESIGN-doc consistency invariants across the 5 canonical artifacts (error code declarations, event variant declarations + counts, hook-to-error-code mappings, axis → activation completeness)
-lens: spec-stage Phase 5 surface B (Mutation Testing analog) — applied to the spec rather than to a test suite. The invariant-property checks ARE the spec's mutation-test surface: each invariant is a property the spec asserts that should hold structurally across docs; counterexamples are mutation-testing-equivalent test-gap signals.
+lens: spec-stage Phase 5 Mutation Testing surface — applied to the spec rather than to a test suite. The invariant-property checks ARE the spec's mutation-test surface: each invariant is a property the spec asserts that should hold structurally across docs; counterexamples are mutation-testing-equivalent test-gap signals.
 source: domain-raised
-session_note: cold-context — first Phase 5 round on vsdd-cli; inline-clustered with SA + Security per operator directive 2026-05-27
+session_note: cold-context — first Phase 5 swarm invocation on vsdd-cli; inline-clustered with SA + Security per operator directive 2026-05-27
 model: claude-opus-4-7
 execution_method: inline main session (cluster-batched with SA + Security)
 sycophancy_compensation: I authored the 5 canonical docs under review; the bias is to declare invariants hold trivially. The audit pressure is to name a specific table row that violates each invariant OR cite the structural reason the invariant cannot fail (the property test must fail against a stub of the spec, not pass against an empty cross-doc table).
@@ -15,7 +15,7 @@ sycophancy_compensation: I authored the 5 canonical docs under review; the bias 
 
 # Quality Engineer Review 1 — 2026-05-27
 
-**Phase 5 surface:** B — Invariant Property Check (Mutation Testing analog adapted to spec-stage: each invariant is a property the spec asserts that should hold structurally across docs; the test is whether the spec's cross-doc tables would catch a mutation)
+**Phase 5 surface:** Mutation Testing — Invariant Property Check (adapted to spec-stage: each invariant is a property the spec asserts that should hold structurally across docs; the test is whether the spec's cross-doc tables would catch a mutation)
 **Cold-session shape:** N/A — inline-run from the main session. Trade-off declared per the bounded-judgment-surface rubric: cross-doc consistency invariants are mechanical/empirical checks against the 5 canonical docs (grep + count + cross-reference). Cold-session cluster spawn would be over-investment.
 
 ## Scope
@@ -116,4 +116,4 @@ Per primer 5 anti-pattern "writing a property whose only assertion is doesn't pa
 
 - Findings 1-3, 5 route to Phase 1a (DESIGN-doc spec revision); all are bounded-disposition spec-coordinate edits. Bundle with SA's Findings 1-2 for a single Phase 4 → Phase 1a commit.
 - Finding 4 (implicit always-on baseline) requires an **operator-directive decision** — picking (a)/(b)/(c) is a methodology-amendment-class decision, not a mechanical fix. Route to operator.
-- Cross-domain: Security's adversarial-input-fuzz round may surface adjacent zero-axes / methodology-assumption findings that compound with Finding 4.
+- Cross-domain: Security's adversarial-input-fuzz swarm invocation may surface adjacent zero-axes / methodology-assumption findings that compound with Finding 4.
