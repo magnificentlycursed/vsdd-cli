@@ -24,10 +24,10 @@ Domain purpose: ensure AI-runtime usage discipline (cost characteristics, prompt
 1. **Capture-source provenance.** Every cost-relevant event carries `capture_source` (otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled / unmeasurable). Operator-paste of `/cost` is not a load-bearing pattern; the Agent SDK's OTel signals + SDK message stream are.
 2. **Cost-band cataloging per operation.** Each toolkit-internal operation (MCP tool query, hook validation, sub-agent spawn) has a declared cost band (e.g., 1-5k tokens for small; 5-20k for medium; 20k+ for large). Operations exceeding their band route to Phase 4.
 3. **Prompt-cache discipline.** 5-minute default TTL; 1-hour opt-in via `ENABLE_PROMPT_CACHING_1H=1`. Sub-agent batches within 5-minute window for cache-hit benefits; longer-gap sub-agent dispatch loses cache value.
-4. **Cluster-batching shape.** Phase 3 4-cluster default vs. 18 per-domain alternative is a cost decision (~60% agent count reduction for cluster shape). High-stakes rounds justify per-domain; default cycles use cluster-batching.
+4. **Cluster-batching shape.** Phase 3 4-cluster default vs. 18 per-domain alternative is a cost decision (~60% agent count reduction for cluster shape). High-stakes swarm invocations justify per-domain; default sessions use cluster-batching.
 5. **Sub-agent scope-down discipline.** Sub-agents receive focused prompt + file slice, not full context. Operator-orchestrator handoffs use warm-context (no N+1 file re-read).
 6. **Model-tier right-sizing.** Mechanical sweeps + audit-trail-only passes use Haiku (~10x cheaper than Opus). Adversarial Refinement uses Opus. Per-task tier choice tracked + reviewed.
-7. **Rate-limit headroom monitoring.** Real-time rate-limit consumption observable; alerts at threshold; burn rate vs. per-cycle budget.
+7. **Rate-limit headroom monitoring.** Real-time rate-limit consumption observable; alerts at threshold; burn rate vs. per-session budget.
 8. **Auth-method × cost-model coordination.** Plan auth (Max/Pro): monthly credits separate from interactive limits; 1-hour cache TTL auto-enabled. API key auth: pay-as-you-go predictable; CI-required per the cross-field validation discipline.
 
 ## Validator pair operationalization

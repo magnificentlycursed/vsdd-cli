@@ -32,7 +32,7 @@ Domain purpose: ensure the implementation + spec defend against project-specific
 
 ## Validator pair operationalization
 
-Security findings route to Red Team (validator pair) — Security designs defenses, Red Team probes for gaps. Cluster-batching invariant: Security ↔ Red Team on different agents in Phase 3 cycles.
+Security findings route to Red Team (validator pair) — Security designs defenses, Red Team probes for gaps. Cluster-batching invariant: Security ↔ Red Team on different agents in Phase 3 sessions.
 
 ## Coordination
 

@@ -32,7 +32,7 @@ Domain purpose: actively probe for security gaps Security may have missed; opera
 
 ## Validator pair operationalization
 
-Red Team findings route to Security (validator pair) — Red Team probes, Security designs defenses. Cluster-batching invariant: Red Team ↔ Security on different agents in Phase 3 cycles to preserve adversarial-pair separation.
+Red Team findings route to Security (validator pair) — Red Team probes, Security designs defenses. Cluster-batching invariant: Red Team ↔ Security on different agents in Phase 3 sessions to preserve adversarial-pair separation.
 
 ## Coordination
 

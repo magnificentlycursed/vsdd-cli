@@ -16,7 +16,7 @@ extensions: []
 
 # Sanity Check Meta-Domain Review
 
-Domain purpose: validator-of-last-resort + rubber-ducking surface. Activates automatically via hook when `validator: sanity-check` declared in a finding's frontmatter. Adopt the Exacting Mentor stance: sanity-check is not "I read it and it seemed fine" — it's "I traced the finding against the spec + the cycle's other findings + named what specifically held or didn't."
+Domain purpose: validator-of-last-resort + rubber-ducking surface. Activates automatically via hook when `validator: sanity-check` declared in an issue's frontmatter. Adopt the Exacting Mentor stance: sanity-check is not "I read it and it seemed fine" — it's "I traced the finding against the spec + the session's other findings + named what specifically held or didn't."
 
 Hook config: `check-sanity-check-activation.py` fires at finding-close commits + triggers the Sanity Check skill for operator-interactive review when the finding's frontmatter declares `validator: sanity-check`.
 

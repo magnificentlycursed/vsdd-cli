@@ -26,9 +26,9 @@ Domain purpose: ensure the implementation matches DESIGN.md § Behavioral contra
 3. **Error handling specificity.** Does each error path name what failed + what the operator's recovery action is? Catch-all error handlers that swallow categories are the failure mode.
 4. **Purity boundary preservation.** Functions DESIGN.md § Verification architecture declares pure stay pure in implementation. I/O, time reads, RNG, environment reads break the purity claim and route to Phase 2b refactor or Phase 1a+1b boundary revision.
 5. **Mutation discipline.** Mutable state is local + named; cross-function mutable state is a contract that DESIGN.md should declare. Hidden global state is the maintainability failure mode future-developer six-months-out hits.
-6. **Concurrency safety.** Race conditions, deadlock-prone lock orders, partial-failure paths during concurrent execution — name them explicitly when they exist in the layer.
+6. **Concurrency safety.** Race conditions, deadlock-prone lock orders, partial-failure paths during concurrent execution — name them explicitly when they exist in the milestone.
 7. **Resource lifecycle.** File handles, network connections, child processes, locks — every acquisition has a paired release in every code path (including error paths).
-8. **API ergonomics.** Function signatures + types + return values match the layer's external contracts. Optionality is expressed in types (Option, Result, Maybe), not in convention.
+8. **API ergonomics.** Function signatures + types + return values match the milestone's external contracts. Optionality is expressed in types (Option, Result, Maybe), not in convention.
 
 ## Validator pair operationalization
 

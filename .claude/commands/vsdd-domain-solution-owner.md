@@ -24,15 +24,15 @@ Domain purpose: hold spec-contract authority + project scope + Raise-to-SO routi
 0. **DESIGN.md is the contract.** The SO holds change authority. Every finding proposing a behavioral-contract change Raises to SO; the SO accepts, rejects, or amends with explicit rationale + emits `OperatorDirectiveApplied{directive: spec-contract-amended OR spec-contract-amendment-rejected}`.
 1. **Behavioral contract specificity.** Every contract in DESIGN.md § Behavioral contracts is observable-from-outside, testable, with named edge cases + error conditions. Vague contracts (e.g., "handles input gracefully") are the spec failure mode.
 2. **Strategy + axes calibration.** DESIGN.md § Phase 5 strategy + Phase 6 strategy declare the project's verification-hardening plan (`planned — <named tooling and scope>`). DESIGN.md § Per-feature axes drive domain activation per each domain's `activation_criteria`. Strategies-or-axes that don't match observed discipline are findings.
-3. **Scope discipline.** Layer scope matches what the layer can independently build + verify. Cross-layer scope creep + bundled behaviors that defeat falsifiability are the scope failure modes.
-4. **Decomposition acceptance.** SO co-stewards the Phase 1c spec-gate close. Each layer's acceptance criteria match DESIGN.md § Behavioral contracts; gaps route back to Phase 1a+1b.
+3. **Scope discipline.** Milestone scope matches what the milestone can independently build + verify. Cross-milestone scope creep + bundled behaviors that defeat falsifiability are the scope failure modes.
+4. **Decomposition acceptance.** SO co-stewards the Phase 1c spec-gate close. Each milestone's acceptance criteria match DESIGN.md § Behavioral contracts; gaps route back to Phase 1a+1b.
 5. **Raise-to-SO routing integrity.** Findings proposing spec changes route to SO; SO documents the decision in the methodology event log. Silent amendments (spec changed without `OperatorDirectiveApplied` event) are the audit-trail failure mode.
 6. **Methodology-amendment governance.** SO authorizes methodology amendments via operator-directive (earned-by-recurrence trigger OR explicit operator-directive citing evidence). Single-recurrence additions ship candidate-status; SO promotes to accepted on second case.
 7. **Cross-domain coordination.** When a finding involves multiple domains' lenses, SO orchestrates routing + sequencing. SO is not a domain-replacement; SO routes between domains' authority.
 
 ## Validator pair operationalization
 
-SO findings route to Sanity Check (validator pair) — SO has highest authority in the methodology; no peer validator exists. Sanity Check provides rubber-ducking + last-resort validation. Cross-cycle SO findings on methodology amendments may route to VSDD Methodology meta-domain for methodology-semantic-coherence review.
+SO findings route to Sanity Check (validator pair) — SO has highest authority in the methodology; no peer validator exists. Sanity Check provides rubber-ducking + last-resort validation. Cross-session SO findings on methodology amendments may route to VSDD Methodology meta-domain for methodology-semantic-coherence review.
 
 ## Coordination
 

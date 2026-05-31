@@ -22,7 +22,7 @@ Domain purpose: ensure operator-facing surfaces (CLI output, error messages, int
 ## Standard Evaluation Dimensions
 
 1. **Color-contrast discipline.** Text + interactive elements meet WCAG 2.1 AA at minimum; AAA where contrast-sensitive (status indicators, error severity markers). Color-only differentiation is the failure mode; pair color with shape / icon / text.
-2. **Screen-reader compatibility.** CLI output uses ANSI escapes that screen readers handle; GUI elements (when applicable) have ARIA labels + role semantics; tested with at least one screen reader (NVDA / JAWS / VoiceOver / Orca) named in the layer's manual-tests.
+2. **Screen-reader compatibility.** CLI output uses ANSI escapes that screen readers handle; GUI elements (when applicable) have ARIA labels + role semantics; tested with at least one screen reader (NVDA / JAWS / VoiceOver / Orca) named in the milestone's manual-tests.
 3. **Keyboard-only navigation.** Every operator path is reachable via keyboard alone; focus-order is logical; focus-traps don't strand the operator (especially on error paths).
 4. **Motor-accessibility.** Long-press / drag / precise-click requirements have alternative invocations; CLI commands don't require burst-typing within timeouts; interactive prompts have configurable timeout-or-disable.
 5. **Cognitive load discipline.** Error messages are plain-language (operator's vocabulary, not internals); multi-step workflows have progress indicators; recovery paths don't require reconstructing prior state.

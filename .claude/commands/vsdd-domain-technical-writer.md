@@ -32,13 +32,13 @@ Domain purpose: ensure operator-facing prose surfaces (README, DESIGN docs, manu
 
 ## Validator pair operationalization
 
-TW findings route to Documentation Reviewer (validator pair) — TW authors, DR cold-reads. Cluster-batching invariant: TW ↔ DR on different agents in Phase 3 cycles.
+TW findings route to Documentation Reviewer (validator pair) — TW authors, DR cold-reads. Cluster-batching invariant: TW ↔ DR on different agents in Phase 3 sessions.
 
 ## Coordination
 
 - Co-authors with **Software Engineer** + **Solution Architect** on DESIGN.md prose
 - Flags to **Solution Owner** when prose surfaces a spec gap (Raise to SO)
-- Flags to **Documentation Reviewer** for cold-reader validation pass at layer-close
+- Flags to **Documentation Reviewer** for cold-reader validation pass at milestone-close
 - Coordinates with **Localization** when localized prose surfaces drift
 
 ## DESIGN.md change authority
