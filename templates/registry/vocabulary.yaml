@@ -21,7 +21,7 @@ terms:
     domain_scope: [methodology]
 
   - term: MVR
-    definition: Maximum Viable Refinement; the per-round closure signal when all active domains produce only Hallucinated findings
+    definition: Maximum Viable Refinement; the per-swarm-invocation closure signal when all active domains produce only Hallucinated findings
     first_introduced_in: 0.1.0
     deprecated_aliases: []
     abbreviation: MVR
@@ -42,7 +42,7 @@ terms:
     domain_scope: [methodology, phase-3]
 
   - term: IAR
-    definition: Iterative Adversarial Refinement; the Phase 3 cycle pattern
+    definition: Iterative Adversarial Refinement; the Phase 3 session pattern
     first_introduced_in: 0.1.0
     deprecated_aliases: []
     abbreviation: IAR

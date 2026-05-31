@@ -89,17 +89,17 @@ Declare each axis in `.vsdd/config.yaml`. Active axes drive domain activation + 
 
 ## Decomposition (REQUIRED — Phase 1c authors this section)
 
-[Per DESIGN-METHODOLOGY § Phase 1c primer: layer N decomposition.]
+[Per DESIGN-METHODOLOGY § Phase 1c primer: milestone N decomposition.]
 
-### Layer 1: <name>
+### Milestone 1: <name>
 
-**Scope:** <one-sentence layer scope>
+**Scope:** <one-sentence milestone scope>
 
 **Acceptance criteria:**
 - <criterion-1> (maps to Behavior X above)
 - <criterion-2> (maps to Behavior Y above)
 
-**Dependencies:** [earlier layers; cross-layer dependencies on stated behaviors only, not internals]
+**Dependencies:** [earlier milestones; cross-milestone dependencies on stated behaviors only, not internals]
 
 **Manual-tests:** `manual-tests/layer-1.md` (auto-scaffolded by post-design-md-modification.py)
 
@@ -118,5 +118,5 @@ Declare each axis in `.vsdd/config.yaml`. Active axes drive domain activation + 
 
 - [`methodology.md`](./methodology.md) — VSDD methodology spec (deployed by `vsdd init`)
 - [`README.md`](./README.md) — project positioning
-- [`manual-tests/`](./manual-tests/) — per-layer manual-test checklists
+- [`manual-tests/`](./manual-tests/) — per-milestone manual-test checklists
 - [`CHANGELOG.md`](./CHANGELOG.md) — per-release entries per Keep a Changelog 1.0.0
