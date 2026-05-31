@@ -113,7 +113,7 @@ The rebuild explicitly does NOT:
 The rebuild's product is:
 
 1. **The methodology spec** — concise governing prose (~250-350 lines) at `methodology.md` (project root for vsdd-using-projects; `vsdd-cli` repo root for the toolkit's own spec) that captures the load-bearing disciplines.
-2. **The observability subsystem** — flagship. OTel collector + sink wiring + 18 methodology-specific event variants + `vsdd observe` subcommand + FinOps-applied-to-IAR dashboards. Standalone-valuable; crosslink-compatible event schema; designed for absorption.
+2. **The observability subsystem** — flagship. OTel collector + sink wiring + 18 methodology-specific event variants + `vsdd observe` subcommand + FinOps-applied-to-Adversarial-Refinement dashboards. Standalone-valuable; crosslink-compatible event schema; designed for absorption.
 3. **The verification subsystem** — ~19 methodology hooks composing with crosslink's 5 enforcement hooks (~24 total in a VSDD project).
 4. **The schema enforcement layer** — YAML frontmatter + per-artifact-class JSON Schema with semantic versioning.
 5. **The domain prompt set** — 16 role-domain prompts + 2 meta-domain prompts (VSDD Methodology + Sanity Check).
@@ -370,7 +370,7 @@ Operator-paste of `/cost` is not a load-bearing pattern. Capture is automated vi
 | **v2** | HTML output (`vsdd observe cycle --html`) |
 | **v3** | Grafana dashboard JSON + Prometheus rules YAML if absorption justifies |
 
-### FinOps applied to AI-driven IAR
+### FinOps applied to AI-driven Adversarial Refinement
 
 Standard FinOps disciplines applied: cost-per-finding × per-domain × per-session × per-milestone × per-project (aggregable bottom-up); budget-vs-actual per per-feature axis; anomaly detection; right-sizing recommendations (model-tier mix vs. defect density); showback (per-domain cost breakdown); unit economics (cost-per-Exit-Signal-attestation).
 

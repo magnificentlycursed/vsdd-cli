@@ -480,7 +480,7 @@ Each tool needs falsifiable tests:
 
 ## VSDD Methodology meta-domain
 
-The meta-domain renamed from VDD-IAR Alignment. Validates semantic coherence of methodology application.
+Validates semantic coherence of methodology application.
 
 **4 surviving dimensions:**
 

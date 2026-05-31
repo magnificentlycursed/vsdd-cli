@@ -28,7 +28,7 @@ DESIGN-OBSERVABILITY owns:
 - 18 methodology event variant payload mapping to OTel signals
 - Capture-source provenance discipline
 - Three pillars (logs / metrics / traces) — sources + sinks + query mechanisms
-- Cost observability for AI-driven IAR
+- Cost observability for AI-driven Adversarial Refinement
 - Dashboard ladder (v1 CLI / v2 HTML / v3 Grafana absorption-pitch)
 - MCP server (`vsdd mcp-serve`) — tool dispatch + cache + fetch primitive
 - `vsdd observe` CLI subcommand surface
@@ -389,7 +389,7 @@ Per-session metrics exported to Prometheus-compatible format; Grafana dashboards
 
 ---
 
-## Cost observability for AI-driven IAR
+## Cost observability for AI-driven Adversarial Refinement
 
 The toolkit tracks Agent SDK OTel signals + SDK message-stream metrics — tokens (input / output / cache), computed dollar cost, wall-clock duration, rate-limit-window utilization — across the methodology cost hierarchy (per-call → per-swarm-invocation → per-session → per-milestone → per-project; per-domain breakdown). Disciplines applied:
 
@@ -609,7 +609,7 @@ Tracks 4a-4d + 4g are v1 deliverables; 4e + 4f + 4h + 4i are v1+ scope.
 
 ## Closing
 
-DESIGN-OBSERVABILITY operationalizes Goal 3 (observability as first-class) + Goal 4 (CI/CD shift-left observability surfaces). The architecture composes against the Agent SDK + OTel as primitive — augmentation rather than reinvention. 18 methodology event variants surface methodology-lifecycle telemetry alongside the SDK's built-in signals. Three pillars + dashboard ladder + cost observability for AI-driven IAR. MCP server brings substrate-doc + methodology lookup into every Claude Code session.
+DESIGN-OBSERVABILITY operationalizes Goal 3 (observability as first-class) + Goal 4 (CI/CD shift-left observability surfaces). The architecture composes against the Agent SDK + OTel as primitive — augmentation rather than reinvention. 18 methodology event variants surface methodology-lifecycle telemetry alongside the SDK's built-in signals. Three pillars + dashboard ladder + cost observability for AI-driven Adversarial Refinement. MCP server brings substrate-doc + methodology lookup into every Claude Code session.
 
 The flagship status holds: every artifact born observable; every action emits; default-on, not opt-in. The collector + redaction processor make credential-exclusion structural rather than aspirational.
 
