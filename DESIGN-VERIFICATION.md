@@ -1,3 +1,19 @@
+---
+schema_class: design-doc
+schema_version: 1.0.0
+doc_class: design
+version: 0.1.0
+consumes_from:
+  - vsdd-cli/DESIGN-METHODOLOGY
+  - vsdd-cli/DESIGN-SCHEMA
+  - vsdd-cli/DESIGN-OBSERVABILITY
+  - mdatron://DESIGN-MDATRON
+produces_for:
+  - vsdd-cli/DESIGN-METHODOLOGY
+  - vsdd-cli/DESIGN-OBSERVABILITY
+last_revision_trigger: Step 0.5 mirror commit per mdatron BOUNDARY-PREAMBLE § 8 co-evolution (2026-06-01)
+---
+
 # DESIGN-VERIFICATION.md
 
 Design document for the verification subsystem of the `vsdd` toolkit. Defines the validator architecture (dual-mode: frontmatter + structural), the per-hook deployment matrix (~19 methodology hooks), the Rust mirror for CI, CI workflow templates with auth-method-conditional steps, bypass-marker enforcement, error catalog implementation, per-error-code falsifiability fixtures, and the `vsdd verify` CLI subcommand surface.
@@ -55,9 +71,10 @@ DESIGN-VERIFICATION does NOT own:
 
 The validator **only consumes schemas from the committed-canonical tree** (`vsdd-core/schemas/` within the toolkit's own crate; deployed via `vsdd init` to `.vsdd/schemas/` in adopting projects). PR-submitted schema files (e.g., a malicious PR adding `vsdd-core/schemas/<class>.json` with attacker-controlled content) are NOT consumed at validation time:
 
-- Operator-local validator reads schemas embedded in the installed `vsdd` binary (from `vsdd-core` crate's schemas directory at build time)
-- CI validator reads schemas from the binary downloaded via canonical-release-pipeline (cargo install OR pre-built GitHub Release artifact)
+- Operator-local validator reads schemas embedded in the installed `mdatron` binary (the engine; per [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 2); vsdd-cli's deployed schemas at `.vsdd/schemas/` are loaded into mdatron's canonical-schema path at `vsdd init`-time
+- CI validator reads schemas from the mdatron binary downloaded via mdatron's canonical-release-pipeline (cargo install mdatron OR pre-built GitHub Release artifact); vsdd-cli's CI workflow installs both binaries (mdatron + vsdd) per the install-order discipline (BOUNDARY-PREAMBLE § 6)
 - The schemas are NEVER hot-loaded from PR-modifiable paths
+- mdatron's own path-confinement discipline (BOUNDARY-PREAMBLE § 7 — `MDATRON-E0010`/`E0011`/`E0012`/`E0013` codes; `MDATRON-W0030` delegate-trust warning) extends to vsdd-cli's `key()` source references in patterns + delegate registrations
 
 **Closes the schema-injection attack surface.** PRs cannot reshape validation rules by modifying schemas files; only canonical-toolkit-releases ship schemas. Operator-extension paths (`.vsdd/registry/`) exist for operator-configurable patterns (anonymization patterns; canonical-vocabulary registry); schemas themselves are not operator-extensible.
 
@@ -95,14 +112,14 @@ Per DESIGN-METHODOLOGY's reconciled dual-mode declaration: 12 frontmatter-based 
 
 ### One source; two enforcement surfaces (Python subprocess to Rust binary)
 
-Python hooks at `.claude/hooks/vsdd-*.py` are thin wrappers (~10-15 lines) that **subprocess to the Rust binary** rather than reimplementing validation logic in Python. This prevents drift between operator-local + CI enforcement by construction — Rust binary is the canonical implementation; Python provides the substrate-conventional `.claude/hooks/` entry point.
+Python hooks at `.claude/hooks/vsdd-*.py` are thin wrappers (~10-15 lines) that **subprocess to mdatron's Rust binary** rather than reimplementing validation logic in Python. The Rust binary is `mdatron` (the validator engine; per [`mdatron DESIGN-MDATRON.md`](../mdatron/DESIGN-MDATRON.md)), not `vsdd`. This prevents drift between operator-local + CI enforcement by construction — mdatron is the canonical implementation; Python provides the substrate-conventional `.claude/hooks/` entry point.
 
 ```python
 # .claude/hooks/vsdd-frontmatter-schema.py (sketch — ~10 lines)
 #!/usr/bin/env python3
 import subprocess, sys
 result = subprocess.run(
-    ["vsdd", "verify", "hook", "frontmatter-schema", "--files", *sys.argv[1:]],
+    ["mdatron", "verify", "hook", "frontmatter-schema", "--files", *sys.argv[1:]],
     capture_output=True, text=True,
 )
 print(result.stdout, end="")
@@ -110,9 +127,16 @@ print(result.stderr, end="", file=sys.stderr)
 sys.exit(result.returncode)
 ```
 
-CI uses `vsdd verify hook <hook-id>` directly (no Python intermediate). Operator-local uses Python wrappers per Claude Code substrate convention. **Both paths converge at the Rust binary** — drift between operator-local and CI is structurally impossible.
+CI uses `mdatron verify hook <hook-id>` directly (no Python intermediate). Operator-local uses Python wrappers per Claude Code substrate convention. **Both paths converge at mdatron** — drift between operator-local and CI is structurally impossible.
 
 Operator-local subprocess overhead: ~50ms per hook firing (negligible at typical commit-touches-3-files scale).
+
+**Hook implementation categorization** (per [mdatron STEP-2-SCOPE.md](../mdatron/STEP-2-SCOPE.md) sub-step 2.2 must-have): each hook's implementation moves from vsdd-cli's own Rust mirror to one of two paths:
+
+- **mdatron declarative pattern** (~14 of 19 hooks) — the hook's rule is expressed in mdatron's DSL (per DESIGN-MDATRON § DSL specification) as a pattern file at `.vsdd/patterns/<hook-id>.yaml`. `mdatron verify hook <hook-id>` evaluates the pattern directly.
+- **mdatron delegate** (~5 of 19 hooks) — the hook's logic is imperative (git-author lookup, GitHub API calls, complex stateful checks) and registers as a delegate per DESIGN-MDATRON § DSL specification § Delegated checks. `mdatron verify hook <hook-id>` shells out to the delegate command (e.g., `vsdd verify hook <hook-id>` which retains vsdd-cli-specific imperative logic).
+
+The per-hook table below shows the trigger + rule + error codes; the declarative-vs-delegate categorization per hook lands in a Step 2.3 nice-to-have revision (per STEP-2-SCOPE § DESIGN-VERIFICATION nice-to-have).
 
 ### Code generation pipeline
 
@@ -227,6 +251,15 @@ This keeps the operator-facing hook count manageable while preserving per-rule c
 
 CI bootstrap: `vsdd init --ci-mode` runs first; deploys hooks + Rust mirror artifacts. All hooks except auto-scaffolding (post-commit hook) run in both contexts.
 
+### Step 2 queued additions (Step 0.5 mirror commit)
+
+Two additions queued for Step 2 (vsdd-cli scope-adjust) per mdatron's [`BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 8 co-evolution discipline:
+
+- **`VSDD-W0200` extension** (`check-methodology-version-drift`): extend the hook to also check **mdatron-version-drift** — vsdd-cli's pinned mdatron version (`mdatron_pinned_version` field in `.vsdd/config.yaml`; emitted by `MdatronVersionPinned` event) compared against the installed mdatron's actual version; warn if drift. Same severity + dispatch shape as the methodology-version-drift case. Status: candidate; promotes to accepted on second-recurrence (likely the first vsdd-cli release that lands during a v1.1-mdatron release cycle).
+- **Companion event variant**: `MdatronVersionPinned` — see [DESIGN-OBSERVABILITY § Candidate event variants reserved for Step 2](./DESIGN-OBSERVABILITY.md). vsdd-cli reads its `.vsdd/config.yaml` for the pinned mdatron version; emits the event at first `vsdd init` OR when operator updates the pin via `vsdd init --update-mdatron`.
+
+The two land as a coordinated Step-2 deliverable; not implemented at the v1.0 ship state.
+
 ---
 
 ## CI workflow templates
@@ -235,7 +268,7 @@ CI bootstrap: `vsdd init --ci-mode` runs first; deploys hooks + Rust mirror arti
 
 ### Default templates
 
-**`.github/workflows/vsdd-verify.yml`** — runs all methodology hooks via Rust mirror:
+**`.github/workflows/vsdd-verify.yml`** — runs all methodology hooks via mdatron (the engine; per [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 6 install order):
 
 ```yaml
 name: vsdd verify
@@ -250,12 +283,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install vsdd
+      - name: Install mdatron (validator engine; must precede vsdd per install-order discipline)
+        run: cargo install mdatron --locked
+      - name: Install vsdd (methodology toolkit; composes against mdatron)
         run: cargo install vsdd --locked
-      - name: Bootstrap toolkit artifacts
+      - name: Bootstrap toolkit artifacts (vsdd init pre-flights for mdatron presence)
         run: vsdd init --ci-mode
-      - name: Run methodology hooks
-        run: vsdd verify check --format sarif > vsdd-verify.sarif
+      - name: Run methodology hooks (delegates to mdatron verify under the hood)
+        run: mdatron verify --phase strict --format sarif > vsdd-verify.sarif
       - name: Upload SARIF for code scanning
         uses: github/codeql-action/upload-sarif@v3
         if: always()

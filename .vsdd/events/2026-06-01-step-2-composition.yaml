@@ -1,0 +1,82 @@
+# Manual PhaseCompositionDeclared event payloads for vsdd-cli Step 2.2/2.3.
+#
+# Per BOOTSTRAP-MITIGATION § Mitigation 3 (bootstrap-period audit-trail markers).
+# Two events: Phase 4 routing (the BOUNDARY-PREAMBLE findings + mdatron's design
+# routes to vsdd-cli spec revision) and Phase 1a revision (the actual edits).
+#
+# Schema reference: vsdd-cli/DESIGN-SCHEMA.md § Methodology event variants
+# Routing references: mdatron/STEP-2-SCOPE.md, mdatron/BOUNDARY-PREAMBLE.md
+
+---
+event_type: PhaseCompositionDeclared
+agent_id: bootstrap-manual
+agent_seq: 1
+timestamp: 2026-06-01T00:00:00Z
+signed_by: null
+signature: null
+capture_source: vsdd-custom-event
+
+payload:
+  phase: phase-4
+  composed_domains: []            # Phase 4 is operator-orchestrated per primer; no domain ownership
+  composition_mode: operator-orchestrated
+  memory_isolation: none
+  operator_confirmation: confirmed
+
+bootstrap_period_only:
+  artifact_under_authoring: |
+    Step 2.2 routing pass — taking mdatron's STEP-2-SCOPE.md must-haves and routing each
+    to its owning vsdd-cli artifact:
+    - 4 DESIGN-SCHEMA changes → DESIGN-SCHEMA.md (Phase 1a)
+    - 4 DESIGN-VERIFICATION changes → DESIGN-VERIFICATION.md (Phase 1a)
+    - 2 DESIGN-METHODOLOGY changes → DESIGN-METHODOLOGY.md (Phase 1a)
+    - 3 README changes → README.md (Phase 1a)
+    - M1 amendment with cost-rubric → DESIGN-METHODOLOGY.md (Step 2.3 priority per AIE-MITIG-F6)
+  routing_target: phase-1a (single chain; all routes converge)
+
+---
+event_type: PhaseCompositionDeclared
+agent_id: bootstrap-manual
+agent_seq: 2
+timestamp: 2026-06-01T00:00:00Z
+signed_by: null
+signature: null
+capture_source: vsdd-custom-event
+
+payload:
+  phase: phase-1a
+  composed_domains:
+    - solution-architect     # primary — architectural revisions across 4 docs
+    - solution-owner         # scope decisions (install order; class-split)
+    - platform-engineer      # CI templates; install order; binary surface
+    - technical-writer       # prose-surface consistency (Mentor voice; cross-doc coordination)
+    - documentation-reviewer # cold-reader pass on prose-surface revisions
+    - ai-engineer            # M1 amendment cost-rubric (load-bearing per AIE-MITIG-F6)
+    - vsdd-methodology       # M1 amendment review (meta-domain)
+    - software-engineer      # always-on baseline
+    - quality-engineer       # always-on baseline
+    - performance-engineer   # always-on baseline (project ships code)
+    - ux                     # axes-activated (ui-surface=yes)
+    - accessibility          # axes-activated (ui-surface=yes)
+  composition_mode: inline-multi-domain
+  memory_isolation: none
+  operator_confirmation: confirmed
+
+bootstrap_period_only:
+  artifact_under_authoring: |
+    Step 2.2 must-haves (13 surgical edits across DESIGN-SCHEMA / DESIGN-VERIFICATION /
+    DESIGN-METHODOLOGY / README) + Step 2.3 priority M1 amendment with cost-rubric.
+  methodology_deviation_summary: |
+    M1 recurrence #8 — inline-multi-domain composition vs. cluster-batched cold-session.
+    This composition formally activates the M1 amendment authoring (per AIE-MITIG-F6
+    load-bearing). The amendment text itself is the deliverable that will resolve
+    M1's recurrence pattern.
+  sycophancy_compensation_summary: |
+    Inline-running author of mdatron's design (BOUNDARY-PREAMBLE, V1-SHIP-CRITERIA,
+    DESIGN-MDATRON, STEP-2-SCOPE) is now editing vsdd-cli's docs to mirror that design.
+    Bias: declare "the inversion is correct and vsdd-cli should just accept it."
+    Compensation: each edit cites a specific BOUNDARY-PREAMBLE declaration or STEP-2-
+    SCOPE entry as authority; bootstrap-validator.py must pass on vsdd-cli after edits;
+    the README "14 frontmatter-based classes" drift surfaced earlier is the test
+    case — if my edits don't address it, the drift confirms my bias.
+  full_narrative_in: commit message of closing commit (vsdd-cli Step 2.2 + M1 amendment)

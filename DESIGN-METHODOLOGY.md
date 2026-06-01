@@ -291,6 +291,8 @@ The rebuild composes against the Claude Agent SDK as the primary integration sub
 
 **v1 scope: Claude Code CLI (via Agent SDK).** Direct Anthropic Messages API integration (bypassing the CLI) is out of scope for v1. Both Plan auth and API-key auth work through the Agent-SDK-runs-CLI path. The architecture is designed extensibly so Messages-API-direct can be added in v1+ if operator-time permits without redesign.
 
+**Validator engine: mdatron.** Per [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md), mdatron is the typed-markdown validation engine the vsdd toolkit composes against. Install order is `crosslink` → `mdatron` → `vsdd` (BOUNDARY-PREAMBLE § 6). `vsdd init --check` pre-flights for mdatron's presence; missing-mdatron fires `VSDD-E0221: mdatron-not-installed` with the corrective `cargo install mdatron --locked` instruction. mdatron is independently published to crates.io + has its own release pipeline; vsdd-cli depends on `mdatron-core` as a Rust library (per SO-F3 build-in-mdatron-shape decision; see DESIGN-VERIFICATION § Canonical-schema-path discipline for the schema-loading discipline that extends mdatron's path-confinement to vsdd-cli's schemas).
+
 **Agent SDK + OpenTelemetry as observability primitive.** Methodology-specific event variants augment the SDK's built-in OTel signals; the toolkit does not reinvent token/cost/cache/tool/hook capture. This closes the "substrate observability gap" framing that prior pre-design iterations carried — when OTel export is enabled, full observability is built in.
 
 **OTel collector deployment is a core rebuild feature.** `vsdd init` deploys a default OTel collector configuration (`.vsdd/otel-collector.yaml`). Default sinks: `.vsdd/events.jsonl` (suite-side audit trail) + crosslink hub (when crosslink in use). External-backend endpoints declared as commented examples; operator-extensible via single-config-edit. Goal 3's flagship status depends on bundled observability being default-on.
@@ -391,6 +393,78 @@ Per-cluster agent receives: primer 3 + the cluster's domain prompts + relevant s
 **Per-domain spawn alternative** (high-stakes swarm invocations): 18 agents, one per domain. Used at milestone-close OR MVR-approach swarm invocations where marginal finding matters most.
 
 **Cluster naming:** descriptive (Implementation / Architecture / Communication / Adversarial), not letter-coded. Avoids the letter-cluster anti-pattern where the reader has to look up what each letter means.
+
+---
+
+## Methodology amendment: InlineMultiDomain composition shape (M1)
+
+**Status:** Proposed amendment. Triggered by M1 recurrence pattern (8+ instances across 2026-05-27 + 2026-06-01 review + 2026-06-01 mdatron remediation work — earned-by-recurrence threshold met). Required cost-rubric authoring per AIE-MITIG-F6 (load-bearing).
+
+### What the amendment declares
+
+`InlineMultiDomain` composition shape is **first-class** alongside the canonical 4-cluster cold-session and per-domain cold-session shapes. The Phase 3 default remains cluster-batched cold-session per the existing § Cluster-batching shape; `InlineMultiDomain` is an explicit alternative with declared applicability.
+
+### Cost rubric (per AIE-MITIG-F6 + AIE Dim 4 cluster-batching shape)
+
+| Composition shape | Cost vs. inline single-domain | When appropriate |
+|---|---|---|
+| Inline single-domain | 1× (baseline) | Operator-interactive consultation; bounded scope; evidence-grounded findings; one domain's lens |
+| **Inline multi-domain (this amendment)** | **1.2–1.5× (slight)** | **Bounded multi-domain pass; evidence-grounded findings (line numbers, citations); judgment-only findings raised to higher domain rather than self-validated; sycophancy_compensation declared explicitly when author identity overlaps with reviewer identity** |
+| Cluster-batched cold-session (4-cluster default) | 4× | Phase 3 default per existing § Cluster-batching shape; open-ended scope; adversarial-judgment surface; per-domain isolation valuable |
+| Per-domain cold-session (18-agent) | 18× | High-stakes spec validation; per-domain isolation load-bearing; cluster shape insufficient |
+
+### Applicability rules for InlineMultiDomain
+
+`InlineMultiDomain` may be chosen when ALL of:
+
+1. **Scope is bounded.** Finite enumerable surface (e.g., 13 artifact classes; 8 BOUNDARY-PREAMBLE declarations; 19 hook list). NOT for open-ended "review everything."
+2. **Findings are evidence-grounded.** Each finding cites a line number, count, named precedent, or specific BOUNDARY-PREAMBLE declaration. Judgment-only findings either (a) raise to a higher domain (e.g., AIE → PE → SO), or (b) the inline composition explicitly documents the judgment chain.
+3. **Sycophancy_compensation is declared explicitly** when reviewer-author identity overlap exists. Bias toward over-raising rather than self-validating.
+4. **Operator-directive authorization** (not just operator-default). Inline-multi-domain is the cost-saver; the operator should make the cost-trade decision consciously, not by inertia.
+
+When ANY of these fail, fall back to cluster-batched cold-session (Phase 3 default) or per-domain cold-session (high-stakes).
+
+### Per-finding annotation
+
+Findings emitted under `InlineMultiDomain` composition should carry the shape annotation in their classification routing:
+
+```yaml
+composition_shape: inline-multi-domain
+sycophancy_compensation_in: <frontmatter field path OR commit message anchor>
+applicability_rule_satisfied: [bounded-scope, evidence-grounded, sycophancy-comp-declared, operator-directive]
+```
+
+Future Phase 4 routing inspects this annotation; if `InlineMultiDomain` findings consistently produce defect classes that cluster-cold-session would have caught (per Phase 5 audits), the methodology's applicability rules tighten.
+
+### Coordination with existing § Cluster-batching shape
+
+The existing § Cluster-batching shape § "Per-domain spawn alternative" paragraph already names the 4-cluster vs 18-agent choice. This amendment extends that choice-set to a third option (`InlineMultiDomain` at 1.2–1.5× cost). The selection decision tree:
+
+```
+Phase 3 cycle starts
+   │
+   ├─ scope bounded + findings evidence-grounded + operator directive for inline?
+   │      └─ YES → InlineMultiDomain (1.2–1.5×)
+   │      └─ NO  → continue below
+   │
+   ├─ high-stakes (MVR-approach OR milestone-close OR external swarm)?
+   │      └─ YES → Per-domain cold-session (18×)
+   │      └─ NO  → 4-cluster cold-session (4×; Phase 3 default)
+```
+
+### What this amendment does NOT change
+
+- The 4-cluster shape remains Phase 3 default
+- Per-domain cold-session remains the high-stakes default
+- Adversarial-pair separation invariant still holds across all three shapes
+- Sycophancy-compensation discipline applies across all three (just more visible in InlineMultiDomain)
+
+### What surfaces this amendment resolves
+
+- M1 recurrence pattern (formerly "deviation per instance"; now first-class shape with rules)
+- AIE-MITIG-F6 cost-rubric requirement (above)
+- AIE-MITIG-F3 cost-aware remediation rubric (decision tree above)
+- Implicit cost decisions made by intuition (now explicit via the rubric)
 
 ---
 

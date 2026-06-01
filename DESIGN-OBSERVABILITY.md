@@ -1,3 +1,18 @@
+---
+schema_class: design-doc
+schema_version: 1.0.0
+doc_class: design
+version: 0.1.0
+consumes_from:
+  - vsdd-cli/DESIGN-METHODOLOGY
+  - vsdd-cli/DESIGN-SCHEMA
+  - mdatron://DESIGN-MDATRON
+produces_for:
+  - vsdd-cli/DESIGN-METHODOLOGY
+  - vsdd-cli/DESIGN-VERIFICATION
+last_revision_trigger: Step 0.5 mirror commit per mdatron BOUNDARY-PREAMBLE § 8 co-evolution (2026-06-01)
+---
+
 # DESIGN-OBSERVABILITY.md
 
 Design document for the observability subsystem of the `vsdd` toolkit. Defines the OTel collector design, sink wiring, 18 methodology event variant payloads + capture-source provenance, three-pillars + dashboard ladder + cost-observability surfaces, the MCP server architecture, and the `vsdd observe` CLI surface.
@@ -263,6 +278,20 @@ Per DESIGN-SCHEMA's variant payload table, each emitted as OTel custom log event
 | `PRMerged` | PR merge detected; Exit Signal pointer captured if applicable | vsdd-custom-event |
 
 Total: 18 variants. Each carries the common envelope (`agent_id`, `agent_seq`, `timestamp`, `signed_by`, `signature`, `capture_source`) + per-variant payload (defined in DESIGN-SCHEMA).
+
+### Candidate event variants reserved for Step 2 (Step 0.5 mirror commit)
+
+Three candidate variants reserved per mdatron's [`BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 8 co-evolution discipline + [`BOOTSTRAP-MITIGATION.md`](../mdatron/BOOTSTRAP-MITIGATION.md) § Mitigation 3. Declared here; not implemented at toolkit v1.0 ship state. Promotion to accepted occurs on second-recurrence evidence.
+
+| Variant | When emitted | Capture-source | Payload |
+|---|---|---|---|
+| `MdatronVersionPinned` | At `vsdd init` OR when operator updates pin via `vsdd init --update-mdatron` | vsdd-custom-event | `mdatron_pinned_version`, `vsdd_toolkit_version`, `pinned_at` |
+| `BootstrapPeriodEntered` | At the first Step-1 commit of mdatron's bootstrap period (mdatron repo) | vsdd-custom-event | `reason`, `expected_exit_criteria` (array), `validator_coverage_gap` (description), `entered_at` |
+| `BootstrapPeriodExited` | When all bootstrap-period exit criteria met per BOOTSTRAP-MITIGATION § Exit criteria | vsdd-custom-event | `exit_criteria_met` (array), `mdatron_version_first_used`, `bootstrap_validator_removed` (bool), `retroactive_vocabulary_merge_pr` (URL), `exited_at` |
+
+`BootstrapPeriodEntered` / `BootstrapPeriodExited` are scoped to mdatron-style bootstrap intervals. They fire once per project per bootstrap (current expectation: only the mdatron toolkit itself qualifies in this generation). `MdatronVersionPinned` fires once per `vsdd init` OR per pin-update; cardinality bounded by project count × pin-update frequency.
+
+These variants do NOT count toward the canonical 18-variant total above. They graduate to canonical only on second-recurrence evidence (likely the v1.1-mdatron release cycle for `MdatronVersionPinned`; the bootstrap markers may stay candidate indefinitely if no second mdatron-like substrate emerges).
 
 ### Per-variant cardinality classification
 

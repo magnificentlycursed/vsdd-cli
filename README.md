@@ -115,7 +115,7 @@ The rebuild's product is:
 1. **The methodology spec** — concise governing prose (~250-350 lines) at `methodology.md` (project root for vsdd-using-projects; `vsdd-cli` repo root for the toolkit's own spec) that captures the load-bearing disciplines.
 2. **The observability subsystem** — flagship. OTel collector + sink wiring + 18 methodology-specific event variants + `vsdd observe` subcommand + FinOps-applied-to-Adversarial-Refinement dashboards. Standalone-valuable; crosslink-compatible event schema; designed for absorption.
 3. **The verification subsystem** — ~19 methodology hooks composing with crosslink's 5 enforcement hooks (~24 total in a VSDD project).
-4. **The schema enforcement layer** — YAML frontmatter + per-artifact-class JSON Schema with semantic versioning.
+4. **The schema enforcement layer** — VSDD-specific JSON Schemas (12 frontmatter classes + 1 structural CHANGELOG class) shipping against [`mdatron`](../mdatron/DESIGN-MDATRON.md) as the validator engine. mdatron owns the two-layer architecture (JSON Schema structural + Schematron-derived DSL semantic); vsdd-cli's schemas + patterns are the VSDD-specific content mdatron consumes.
 5. **The domain prompt set** — 16 role-domain prompts + 2 meta-domain prompts (VSDD Methodology + Sanity Check).
 6. **The phase primers** — 10 phase primers per whitepaper-canonical taxonomy.
 7. **The language and interface supplements** — 14 supplements with vestigial-pattern cuts applied.
@@ -129,13 +129,15 @@ The rebuild's product is:
 A project adopts the suite via:
 
 ```sh
-cargo install vsdd              # one-time: install the toolkit
+cargo install crosslink         # substrate (issue tracker + session management)
+cargo install mdatron           # validator engine (typed-markdown; Schematron-derived)
+cargo install vsdd              # methodology toolkit (composes against mdatron)
 cd <project-root>
 crosslink init                  # crosslink's own setup
-vsdd init                       # deploys toolkit assets
+vsdd init                       # deploys toolkit assets (pre-flights for mdatron presence)
 ```
 
-**Init order is required, not advisory.** `crosslink init` deploys substrate (hooks, MCP servers, rules) that `vsdd init` composes against. Running `vsdd init` first fires `VSDD-E0220: existing-file-malformed-refuse-to-overwrite` on the missing crosslink artifacts during the pre-flight check (`vsdd init --check` detects crosslink-init-manifest absent and refuses deployment). The reverse order is not order-independent by construction; if attempted, `vsdd init` halts with explicit operator-facing error directing the operator to run `crosslink init` first.
+**Init order is required, not advisory.** `crosslink init` deploys substrate (hooks, MCP servers, rules) that `vsdd init` composes against. `mdatron` must be installed before `vsdd init` runs — vsdd-cli's validator hooks subprocess to `mdatron verify hook <id>` per the canonical-engine discipline (see [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md) § One source; two enforcement surfaces). Running `vsdd init` first (without crosslink) fires `VSDD-E0220: existing-file-malformed-refuse-to-overwrite` on missing crosslink artifacts; running `vsdd init` without mdatron fires `VSDD-E0221: mdatron-not-installed` with the corrective `cargo install mdatron --locked` instruction (per [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 6). The reverse orders are not order-independent by construction.
 
 **Platform requirement: v1 is GitHub-only.** The methodology's CI-side teeth — bypass-approval label gate, CODEOWNERS auto-routing, SARIF emission, CHANGELOG cooperation, dependency-approval PR-description structure — are GitHub-API-specific. `vsdd init --check` detects non-GitHub remotes and refuses deployment. No commitment to support GitLab / Bitbucket / Forgejo / Codeberg / self-hosted Gitea / sourcehut in v1 or v1+; revisit only with adoption evidence + operator-directive.
 
@@ -208,18 +210,19 @@ vsdd init plays nicely with existing projects. Patterns inherited from crosslink
 
 ### Binary surface
 
-**Principle: any CLI the suite ships is Rust.** Single `vsdd` crate with a single `vsdd` binary that dispatches subcommands (matching cargo / rustup / git ecosystem convention). Library modules shared internally; single version number; one release artifact.
+**Principle: any CLI the suite ships is Rust.** vsdd-cli's own surface is the single `vsdd` crate + single `vsdd` binary that dispatches subcommands (matching cargo / rustup / git ecosystem convention). The validator engine is a separate Rust binary (`mdatron`) that vsdd-cli composes against — both are independently published to crates.io with independent release pipelines (see [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 2 for the crate workspace shape).
 
 | Component | Language | Why |
 |---|---|---|
-| `vsdd` Rust binary (subcommands: `init`, `verify <check\|explain\|test-error-catalog\|hook>`, `observe <cycle\|layer\|project\|metrics\|pr-body>`, `mcp-serve`) | Rust | Matches crosslink's toolchain; `cargo install vsdd` distribution; type safety; single-binary CI bootstrap; matches cargo / git / rustup ecosystem convention |
-| Deployed `.claude/hooks/*.py` | Python | Claude Code's hook convention; matches crosslink's existing 5 hooks; substrate match wins for the deployed-into-projects layer |
+| `mdatron` Rust binary (validator engine; subcommands: `verify`, `explain`, `registry`, `init`, `skill-preamble`, `verify hook`, ...) — **separately shipped via `cargo install mdatron`** | Rust | Methodology-agnostic typed-markdown validator; consumed by `vsdd` + adoptable by other methodologies (per BOUNDARY-PREAMBLE § 1) |
+| `vsdd` Rust binary (methodology toolkit; subcommands: `init`, `verify <check\|explain\|test-error-catalog\|hook>`, `observe <cycle\|layer\|project\|metrics\|pr-body>`, `mcp-serve`) | Rust | Matches crosslink's toolchain; `cargo install vsdd` distribution; composes against `mdatron` as a Rust library (`mdatron-core`) + as a CLI delegate target |
+| Deployed `.claude/hooks/*.py` | Python | Claude Code's hook convention; matches crosslink's existing 5 hooks; **subprocesses to `mdatron verify hook <id>`** rather than reimplementing validation logic |
 | Deployed `.claude/commands/vsdd-*.md` | Markdown | Claude Code convention |
-| Schemas (`schemas/*.json`) | JSON | Cross-language; generated from Rust types via [`schemars`](https://github.com/GREsau/schemars) or equivalent |
+| Schemas (`schemas/*.json`) | JSON | Cross-language; generated from Rust types via [`schemars`](https://github.com/GREsau/schemars) — vsdd-cli authors them; **mdatron consumes them** as adopter-supplied schemas |
 | Methodology spec, primers, domain prompts, supplements | Markdown + YAML frontmatter | Cross-language |
 | `.vsdd/otel-collector.yaml` | YAML | OpenTelemetry collector standard |
 
-The hook architecture: pure-Python hooks operator-side; the same enforcement logic exists as Rust binary (`vsdd verify hook <hook-id>`) for CI execution. Two surfaces; one JSON Schema source.
+The hook architecture: pure-Python hooks operator-side; the same enforcement logic exists as the mdatron Rust binary (`mdatron verify hook <hook-id>`) for CI execution. Two surfaces; one engine (mdatron); one JSON Schema source.
 
 **Subcommand surface:**
 
@@ -738,7 +741,7 @@ The toolkit adopts crosslink's CHANGELOG management pattern verbatim. CHANGELOG.
 
 ### CHANGELOG is a first-class artifact class
 
-CHANGELOG.md joins the 14 frontmatter-based classes as the 15th class with a **structural schema** (whole-file pattern validation rather than frontmatter parsing). The `check-changelog-discipline.py` hook is consolidated multi-rule:
+CHANGELOG.md joins the 12 frontmatter-based classes as the 13th class with a **structural schema** (whole-file pattern validation rather than frontmatter parsing). The `check-changelog-discipline.py` hook is consolidated multi-rule:
 
 | Rule | Error code | Status | What it catches |
 |---|---|---|---|

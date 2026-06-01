@@ -1,3 +1,18 @@
+---
+schema_class: design-doc
+schema_version: 1.0.0
+doc_class: design
+version: 0.1.0
+consumes_from:
+  - vsdd-cli/DESIGN-METHODOLOGY
+  - mdatron://DESIGN-MDATRON
+produces_for:
+  - vsdd-cli/DESIGN-VERIFICATION
+  - vsdd-cli/DESIGN-OBSERVABILITY
+  - vsdd-cli/DESIGN-METHODOLOGY
+last_revision_trigger: Step 0.5 mirror commit per mdatron BOUNDARY-PREAMBLE § 8 co-evolution (2026-06-01)
+---
+
 # DESIGN-SCHEMA.md
 
 Design document for the schema enforcement subsystem of the `vsdd` toolkit. Defines per-artifact-class schemas, the type-system source-of-truth, the dual validation modes (frontmatter + structural), the auth_method credential-exclusion structural property, the anchor-ID generation conventions, the error catalog structure, schema versioning, and cross-DESIGN-doc coordination.
@@ -43,6 +58,8 @@ DESIGN-SCHEMA does NOT own:
 ---
 
 ## Schema source + tooling
+
+**Engine composition (per [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 2 + § 8):** the validation engine is `mdatron-core`, not vsdd-cli's own. vsdd-cli ships JSON Schema files that `mdatron-core` consumes; the schema format conventions + the two-layer architecture (JSON Schema structural + Schematron-derived DSL semantic) are specified in [`mdatron DESIGN-MDATRON.md`](../mdatron/DESIGN-MDATRON.md) § Two-layer architecture. This section documents vsdd-cli's VSDD-specific schema content; the engine semantics live in DESIGN-MDATRON.
 
 ### Schema file conventions
 
@@ -95,6 +112,8 @@ For the structural CHANGELOG class: rules are hand-authored in YAML (no Rust-typ
 | **Structural** | CHANGELOG | Hand-authored YAML rule file | Apply rule-set; emit per-rule errors |
 
 Both modes share the error-catalog + Mentor-voice output + observability emission (`HookFired` + `ValidationPassed` / `ValidationFailed` events).
+
+**mdatron's two layers correspond directly:** Layer 1 (JSON Schema structural) handles the 12 frontmatter classes via `mdatron-core`'s `jsonschema` dispatch; Layer 2 (Schematron-derived DSL) handles cross-field, cross-file, and cross-document constraints that JSON Schema cannot express (classification universe membership, validator-pair match, anchor-ID resolution). The structural CHANGELOG class uses mdatron's structural-rule mode (DESIGN-MDATRON § Built-in patterns includes `cross-doc-count-consistency` which generalizes some of CHANGELOG's structural rules).
 
 ---
 
@@ -651,7 +670,7 @@ Anchor IDs are derived deterministically from frontmatter — no hand-authored `
 
 Pre-phase composition declarations: no standalone anchor-ID; the `PhaseCompositionDeclared` event variant payload IS the declaration; events are addressed by `(agent_id, agent_seq)` not anchor-IDs. MCP tool I/O: no anchor-ID; tools are addressed by MCP protocol tool name in the tool registry.
 
-**Validation:** `check-anchor-id-derivation.py` validates anchor-IDs in cross-references match the deterministic pattern. Hand-authored anchors fire `VSDD-W0080: anchor-rename-stale-references` if they drift.
+**Validation:** `check-anchor-id-derivation.py` validates anchor-IDs in cross-references match the deterministic pattern. Hand-authored anchors fire `VSDD-W0080: anchor-rename-stale-references` if they drift. The anchor-derivation utility lives in `mdatron-core` (per [`mdatron DESIGN-MDATRON.md`](../mdatron/DESIGN-MDATRON.md) § Scope + boundary); vsdd-cli's hook composes against it as a Rust library function.
 
 ---
 
@@ -685,6 +704,8 @@ bypass:
 ---
 
 ## Error catalog structure
+
+**Catalog format owned by mdatron (per [`mdatron DESIGN-MDATRON.md`](../mdatron/DESIGN-MDATRON.md) § Error catalog).** vsdd-cli registers `VSDD-E####` / `W####` / `L####` codes in mdatron's catalog YAML format; mdatron's own engine-level `MDATRON-E####` / `W####` / `L####` codes coexist in the loaded catalog set (multi-catalog merge per DESIGN-MDATRON § Error catalog § Loading multiple catalogs). Status-tier discipline (candidate / accepted / deprecated) + forward-only governance are mdatron-defined conventions; vsdd-cli's codes follow them.
 
 ### Catalog file format
 
