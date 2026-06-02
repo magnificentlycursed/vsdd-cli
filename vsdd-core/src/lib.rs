@@ -23,3 +23,11 @@ pub mod schemas {
     /// JSON Schema for review-entry frontmatter (review-log/<date>-<slug>.md files).
     pub const REVIEW_ENTRY: &str = include_str!("../schemas/review-entry.json");
 }
+
+pub mod patterns {
+    //! Bundled VSDD mdatron-DSL patterns. Embedded at compile time via `include_str!`.
+
+    /// Cross-file referential integrity rules across phase primers, domain prompts,
+    /// supplements, and review entries.
+    pub const CROSS_REFERENCES: &str = include_str!("../patterns/cross-references.yaml");
+}
