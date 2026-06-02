@@ -21,6 +21,13 @@ composition_mode: skill-interactive
 supplements_loaded: [json, rust]
 operator_confirmation: confirmed
 declared_at: 2026-06-02T19:35:00Z
+
+phase: phase-1c
+composed_domains: [solution-architect, solution-owner, documentation-reviewer, sanity-check]
+composition_mode: skill-interactive
+supplements_loaded: [json, rust]
+operator_confirmation: confirmed
+declared_at: 2026-06-02T19:55:00Z
 ```
 
 ## Project intent
@@ -396,6 +403,123 @@ Concrete should-fire fixtures candidates:
 - vsdd emitting a literal `MDATRON-` code prefix in its own diagnostic surface
 - mdatron emitting a literal `VSDD-` code prefix anywhere
 
+## Decomposition (Phase 1c)
+
+The wire-format contract decomposes into three milestones with sequential
+dependencies. Each is independently buildable + verifiable.
+
+### Milestone M1 — Envelope shape
+
+**Closes:** BC-1 (envelope schema/version field), BC-2 (envelope top-level
+shape), BC-3 (Finding shape).
+
+**Acceptance criteria:**
+
+- `mdatron verify --json` emits a single JSON object on stdout per
+  invocation, structurally conformant to BC-2's schema
+- Every emitted Finding conforms to BC-3 (code-prefix-vs-severity alignment
+  enforced)
+- `mdatron_wire_version` is present and parseable per BC-1
+- JSON Schema for the envelope exists at `<repo>/docs/refactor/phase-0-wire-format/wire-envelope.schema.json` (built in Phase 2b; referenced from this DESIGN)
+
+**Phase 2a Red Gate seed:**
+- Envelope-missing-version-field fixture
+- Envelope-with-extra-top-level-field fixture
+- Finding-with-mismatched-code-prefix-and-severity fixture
+
+**Dependencies:** none (foundational).
+
+**Exit Signal pointer:** `ExitSignaled{milestone: m1-envelope-shape}` emitted
+on the closing commit.
+
+### Milestone M2 — Process behavior
+
+**Closes:** BC-4 (exit codes), BC-5 (stream contract), BC-6 (global flag
+vocabulary).
+
+**Acceptance criteria:**
+
+- Exit-code matrix: clean run = 0, errors-exist = 1, pipeline-failed = 2;
+  warning-only run = 0
+- stdout under `--json` contains only the envelope (no diagnostic text)
+- stderr always carries the human-readable rustc-shaped output unless
+  `--quiet`
+- All 5 global flags (`--quiet` / `--json` / `--log-level` / `--log-format`
+  / `--dry-run`) parse + apply per BC-6 table
+- Unknown-flag rejection with descriptive stderr message
+
+**Phase 2a Red Gate seed:**
+- Warning-only-exits-1 regression fixture (must exit 0)
+- Pipeline-failure-without-envelope-in-stderr fixture
+- Unknown-flag-silent-success fixture (must error)
+- `--quiet --json` smoke fixture (asserts envelope on stdout, silence on stderr)
+
+**Dependencies:** M1 (process behavior is observed by inspecting the envelope).
+
+**Exit Signal pointer:** `ExitSignaled{milestone: m2-process-behavior}`.
+
+### Milestone M3 — Contract discipline
+
+**Closes:** BC-7 (namespace separation), BC-8 (wire-version compatibility).
+
+**Acceptance criteria:**
+
+- Static lint over both repos asserts that `MDATRON-Exxxx` string literals
+  appear only in mdatron's source; `VSDD-Exxxx` literals only in vsdd's
+  source. Lint exit-code-fails the CI on violation.
+- Wire-version compatibility:
+  - vsdd's compile-time constant declares the highest mdatron wire version it
+    supports
+  - vsdd refuses to parse an envelope with `mdatron_wire_version` higher
+    than that constant; emits `VSDD-Exxxx` wire-too-new error
+  - vsdd accepts an envelope with `mdatron_wire_version` equal to the
+    constant
+  - Older-than-window handling deferred to v0.2 (no compatibility window in
+    v0.1.0; mdatron == vsdd's pinned version)
+
+**Phase 2a Red Gate seed:**
+- VSDD-source-emits-MDATRON-prefix fixture (lint fires)
+- MDATRON-source-emits-VSDD-prefix fixture (lint fires)
+- Envelope-with-wire-version-999 fixture (vsdd refuses to parse)
+- Envelope-with-pinned-wire-version fixture (vsdd parses successfully)
+
+**Dependencies:** M1 (envelope must exist for the version check; namespace
+lint is repo-static).
+
+**Exit Signal pointer:** `ExitSignaled{milestone: m3-contract-discipline}`.
+
+### Decomposition rationale
+
+Three milestones rather than one or eight because:
+
+- **One milestone** would bundle BC-7's lint surface (purely static) with
+  BC-1's parser surface (dynamic JSON construction), making the Red Gate
+  hard to falsify in aggregate (any-one-test-passing masks failures in
+  others). Phase-1c primer flags this as the "milestone whose acceptance
+  criteria don't cover the behaviors it claims to close" failure mode.
+- **Eight milestones (one per BC)** would force artificial sequential
+  dependencies (BC-1 standing alone is meaningless without BC-2; BC-4
+  without BC-5 is unobservable). Phase-1c primer flags this as the
+  "milestone that bundles too many behaviors / not enough cohesion" failure
+  mode.
+- **Three milestones** (envelope shape / process behavior / contract
+  discipline) correspond to three distinct verification mechanisms (schema
+  validation / subprocess integration / static lint + boundary fixtures),
+  each independently runnable in CI.
+
+### manual-tests/layer-phase-0.md note
+
+The wire contract is operator-invisible; no manual-test checklist applies
+to this layer. The Phase 1b verification architecture explicitly declared
+zero manual-test surface. `manual-tests/layer-phase-0.md` would be a stub
+file with "no manual tests apply at this layer — wire contract is
+machine-only" and no checkbox items.
+
+Per the post-design-md-modification hook design (DESIGN-METHODOLOGY.md
+§ Post-DESIGN.md auto-scaffolding), the hook would still emit the stub
+file for symmetry; the `falsifiability_check` field carries the
+no-manual-tests rationale.
+
 ## Open questions (Raise-to-SO)
 
 1. **Should `mdatron_wire_version` use semver or simple integer?**
@@ -455,6 +579,32 @@ exit_status: complete
 layer: phase-0-wire-format
 declared_at: 2026-06-02T19:30:00Z
 next_phase: phase-1b
+```
+
+## Phase 1c exit signal
+
+Phase 1c closes when:
+
+- ✅ DESIGN.md § Decomposition lists all milestones M1..M3 with acceptance criteria per milestone
+- ✅ Each milestone's acceptance criteria are a non-empty subset of DESIGN.md § Behavioral contracts (M1→BC-1/2/3; M2→BC-4/5/6; M3→BC-7/8)
+- ⚠️ DR's cold-reader pass — applied inline as DR lens during authorship;
+  formal cold-session DR pass arrives at Phase 3
+- ⚠️ SO sign-off on the spec-gate close — the three Raise-to-SO open
+  questions above are the outstanding spec-gate items; SO disposition
+  required before Phase 2a opens
+- ⚠️ `manual-tests/layer-phase-0.md` stub authored — pending Phase 2a or
+  Phase 2c; this DESIGN section names the rationale
+
+Emit on Phase 1c closing commit:
+
+```yaml
+event: PhaseExited
+phase: phase-1c
+exit_status: complete-pending-so-disposition
+layer: phase-0-wire-format
+declared_at: 2026-06-02T20:05:00Z
+next_phase: phase-2a
+milestones_opened: [m1-envelope-shape, m2-process-behavior, m3-contract-discipline]
 ```
 
 ## Phase 1b exit signal
