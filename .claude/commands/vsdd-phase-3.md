@@ -5,7 +5,25 @@ phase: phase-3
 version: 0.1.0
 frequency: per-milestone (one or more IAR swarm invocations until milestone-MVR)
 governing_skill: true
-relevant_domains: [all-active-domains]
+relevant_domains:
+  - accessibility
+  - ai-engineer
+  - data-engineer
+  - documentation-reviewer
+  - localization
+  - performance-engineer
+  - platform-engineer
+  - privacy
+  - quality-engineer
+  - red-team
+  - sanity-check
+  - security
+  - software-engineer
+  - solution-architect
+  - solution-owner
+  - technical-writer
+  - ux
+  - vsdd-methodology
 supplements_in_scope: []
 ---
 

@@ -1,0 +1,68 @@
+mdatron_dsl_version: 1
+pattern:
+  id: vsdd-cross-references
+  description: >-
+    Cross-file referential integrity across phase primers, domain prompts,
+    and supplements. Slugs declared on one artifact must resolve to a real
+    artifact of the appropriate kind.
+  keys:
+    - name: domains
+      source: .claude/commands/vsdd-domain-*.md
+      select: $.frontmatter
+      indexed_by: $.domain_slug
+    - name: supplements
+      source: supplements/*.md
+      select: $.frontmatter
+      indexed_by: $.supplement_slug
+    - name: phases
+      source: .claude/commands/vsdd-phase-*.md
+      select: $.frontmatter
+      indexed_by: $.phase
+  rules:
+    - id: domain-validator-pair-resolves
+      context: domain-prompt
+      assert: $self.validator_pair == "sanity-check" or defined(key("domains", $self.validator_pair))
+      code: VSDD-E0201
+      message: >-
+        domain {{$self.domain_slug}}: validator_pair '{{$self.validator_pair}}'
+        does not resolve to a known domain (nor is it the literal "sanity-check")
+
+    - id: domain-supplements-applied-resolve
+      context: domain-prompt
+      assert: every(s in $self.supplements_applied, defined(key("supplements", s)))
+      code: VSDD-E0202
+      message: >-
+        domain {{$self.domain_slug}}: one or more slugs in supplements_applied
+        do not resolve to a known supplement
+
+    - id: supplement-domains-in-scope-resolve
+      context: supplement
+      assert: every(d in $self.domains_in_scope, defined(key("domains", d)))
+      code: VSDD-E0203
+      message: >-
+        supplement {{$self.supplement_slug}}: one or more slugs in
+        domains_in_scope do not resolve to a known domain
+
+    - id: phase-relevant-domains-resolve
+      context: phase-primer
+      assert: every(d in $self.relevant_domains, defined(key("domains", d)))
+      code: VSDD-E0204
+      message: >-
+        phase primer {{$self.primer_id}}: one or more slugs in relevant_domains
+        do not resolve to a known domain
+
+    - id: phase-supplements-in-scope-resolve
+      context: phase-primer
+      assert: every(s in $self.supplements_in_scope, defined(key("supplements", s)))
+      code: VSDD-E0205
+      message: >-
+        phase primer {{$self.primer_id}}: one or more slugs in supplements_in_scope
+        do not resolve to a known supplement
+
+    - id: review-phase-has-primer
+      context: review-entry
+      assert: defined(key("phases", $self.phase))
+      code: VSDD-E0206
+      message: >-
+        review entry: phase '{{$self.phase}}' does not have a corresponding
+        phase primer in .claude/commands/vsdd-phase-*.md
