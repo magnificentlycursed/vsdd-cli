@@ -32,8 +32,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install vsdd
         run: cargo install vsdd --locked
+      # mdatron is the typed-markdown validator engine vsdd uses for
+      # primer/domain/supplement/review-entry structural + cross-file checks.
+      # Until mdatron is published to crates.io, install from the git source.
+      - name: Install mdatron
+        run: cargo install --git https://github.com/magnificentlycursed/mdatron-cli mdatron --locked
       - name: Bootstrap toolkit artifacts
         run: vsdd init --ci-mode
+      - name: Run mdatron verify
+        run: mdatron verify --project-root .
       - name: Run methodology hooks
         run: vsdd verify check --format sarif > vsdd-verify.sarif
       - name: Upload SARIF for code scanning

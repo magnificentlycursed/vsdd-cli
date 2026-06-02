@@ -1,0 +1,48 @@
+name: mdatron verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: mdatron-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout vsdd-cli
+        uses: actions/checkout@v4
+        with:
+          path: vsdd-cli
+
+      # mdatron isn't published to crates.io yet; check out the sibling repo
+      # so the path dependency `../mdatron/mdatron-core` in vsdd-cli's
+      # Cargo.toml resolves the same way it does locally.
+      - name: Checkout mdatron
+        uses: actions/checkout@v4
+        with:
+          repository: magnificentlycursed/mdatron-cli
+          path: mdatron
+
+      - name: Install Rust toolchain
+        run: rustup show
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            mdatron/target
+          key: cargo-${{ runner.os }}-${{ hashFiles('mdatron/Cargo.lock') }}
+
+      - name: Install mdatron CLI
+        working-directory: mdatron
+        run: cargo install --path mdatron-cli --locked
+
+      - name: Run mdatron verify
+        working-directory: vsdd-cli
+        run: mdatron verify --project-root .
