@@ -4,6 +4,13 @@
 **Scope:** both `mdatron` and `vsdd` repositories.
 **Phase:** 1c (acceptance criteria settled); 2a Red Gate pending per phase.
 
+## Local install status
+
+As of 2026-06-02, `mdatron` is installed at `~/.cargo/bin/mdatron` via
+`cargo install --path ../mdatron/mdatron-cli --locked`. The pre-commit
+hook at `.githooks/pre-commit` is active and runs `mdatron verify` on
+every commit that stages markdown / schema / pattern changes.
+
 ## Provenance
 
 This plan synthesizes 24 cold-session domain reviews + inline lens-applications
