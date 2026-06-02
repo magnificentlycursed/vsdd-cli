@@ -28,6 +28,36 @@ composition_mode: skill-interactive
 supplements_loaded: [json, rust]
 operator_confirmation: confirmed
 declared_at: 2026-06-02T19:55:00Z
+
+phase: phase-2a
+composed_domains: [quality-engineer, sanity-check]
+composition_mode: skill-test-author
+supplements_loaded: [json, rust]
+operator_confirmation: confirmed
+declared_at: 2026-06-02T20:20:00Z
+
+phase: phase-2b
+composed_domains: [software-engineer, quality-engineer, technical-writer, documentation-reviewer, platform-engineer, sanity-check]
+composition_mode: skill-implementer
+supplements_loaded: [json, rust]
+operator_confirmation: confirmed
+declared_at: 2026-06-02T20:30:00Z
+
+phase: phase-2c
+composed_domains: [software-engineer, solution-architect, documentation-reviewer, sanity-check]
+composition_mode: skill-interactive
+supplements_loaded: [json, rust]
+operator_confirmation: confirmed
+declared_at: 2026-06-02T20:50:00Z
+exit_status: complete
+rationale: |
+  Initially declared skipped-no-refactor-surface. Operator finding 2026-06-02
+  surfaced a real vocabulary polish: "BC-N" anchor codes had leaked from the
+  DESIGN doc (where they're defined) into operator-facing test assertion
+  text where they read as opaque jargon. DR-F4 vocabulary discipline applied
+  in mdatron-cli/tests/wire_format.rs across ~12 assertion strings. Tests
+  remain green (10/10). Phase 2c is now genuinely complete (the polish
+  surface existed; was just initially under-noticed).
 ```
 
 ## Project intent
