@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/domain-prompt.json",
+  "title": "VSDD Domain Prompt frontmatter",
+  "description": "Frontmatter contract for vsdd-domain-*.md prompt files deployed at .claude/commands/.",
+  "type": "object",
+  "required": [
+    "domain_slug",
+    "role_titles",
+    "tier",
+    "classification_universe",
+    "validator_pair"
+  ],
+  "properties": {
+    "domain_slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "role_titles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["core", "extended", "meta"]
+    },
+    "activation_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "classification_universe": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["resolved", "deferred", "dismissed", "hallucinated", "accepted"]
+      },
+      "minItems": 1
+    },
+    "validator_pair": {
+      "type": "string",
+      "description": "Domain slug or 'sanity-check' for the validator-pair routing convention."
+    },
+    "supplements_applied": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "sycophancy_failure_modes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "extensions": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false
+}

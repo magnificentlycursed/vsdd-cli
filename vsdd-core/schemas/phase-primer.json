@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/phase-primer.json",
+  "title": "VSDD Phase Primer frontmatter",
+  "description": "Frontmatter contract for vsdd-phase-*.md primer files deployed at .claude/commands/.",
+  "type": "object",
+  "required": [
+    "primer_id",
+    "phase",
+    "version",
+    "frequency",
+    "governing_skill",
+    "relevant_domains"
+  ],
+  "properties": {
+    "primer_id": {
+      "type": "string",
+      "pattern": "^vsdd-phase-[a-z0-9-]+$",
+      "description": "Stable identifier; matches the file name minus the .md extension."
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "phase-0",
+        "phase-1a",
+        "phase-1b",
+        "phase-1c",
+        "phase-2a",
+        "phase-2b",
+        "phase-2c",
+        "phase-3",
+        "phase-4",
+        "phase-5",
+        "phase-6"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "frequency": {
+      "type": "string",
+      "description": "When this primer should be loaded (e.g. per-milestone, per-cycle, on-demand)."
+    },
+    "governing_skill": {
+      "type": "boolean",
+      "const": true
+    },
+    "relevant_domains": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "description": "Domain slugs whose primers should be loaded alongside this phase primer."
+    },
+    "supplements_in_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    }
+  },
+  "additionalProperties": false
+}

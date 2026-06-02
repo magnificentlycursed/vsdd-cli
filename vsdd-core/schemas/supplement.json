@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/supplement.json",
+  "title": "VSDD Supplement frontmatter",
+  "description": "Frontmatter contract for vsdd-cli/supplements/*.md supplement files.",
+  "type": "object",
+  "required": [
+    "supplement_slug",
+    "languages_or_interfaces",
+    "domains_in_scope"
+  ],
+  "properties": {
+    "supplement_slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "languages_or_interfaces": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "domains_in_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "minItems": 1
+    },
+    "extensions": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false
+}

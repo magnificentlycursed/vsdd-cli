@@ -1,0 +1,19 @@
+[package]
+name = "vsdd"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "VSDD methodology toolkit Rust CLI; composes against crosslink + mdatron"
+
+[[bin]]
+name = "vsdd"
+path = "src/main.rs"
+
+[dependencies]
+vsdd-core = { path = "../vsdd-core" }
+mdatron-core = { workspace = true }
+clap = { workspace = true }
+serde_yaml = { workspace = true }

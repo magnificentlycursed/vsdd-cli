@@ -1,0 +1,19 @@
+[workspace]
+members = ["vsdd-core", "vsdd"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.88"
+license = "MIT"
+authors = ["magnificentlycursed"]
+repository = "https://github.com/magnificentlycursed/vsdd-cli"
+
+[workspace.dependencies]
+mdatron-core = { path = "../mdatron/mdatron-core" }
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+serde_json = "1"
+thiserror = "1"
+clap = { version = "4.5", features = ["derive"] }
