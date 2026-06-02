@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: browser-app
 languages_or_interfaces: [browser-frontend, SPA, PWA, MPA]
 domains_in_scope: [ux, accessibility, security, performance-engineer, software-engineer]

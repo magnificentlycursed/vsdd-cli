@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: technical-writer
 role_titles: [Technical Writer, TW, Documentation Engineer, Content Designer]
 tier: extended

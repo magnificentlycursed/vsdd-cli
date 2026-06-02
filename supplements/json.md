@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: json
 languages_or_interfaces: [JSON, JSON Schema]
 domains_in_scope: [software-engineer, platform-engineer, security]

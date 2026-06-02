@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: accessibility
 role_titles: [Accessibility, A11y, Accessibility Engineer, Inclusive Design Specialist]
 tier: extended

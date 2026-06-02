@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: privacy
 role_titles: [Privacy, Privacy Engineer, Data Protection Specialist, Compliance Engineer]
 tier: extended

@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: javascript-typescript
 languages_or_interfaces: [JavaScript, TypeScript]
 domains_in_scope: [software-engineer, quality-engineer, platform-engineer, performance-engineer, security, solution-architect]

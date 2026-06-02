@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: security
 role_titles: [Security, Security Engineer, AppSec Engineer, Information Security Analyst]
 tier: core

@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: localization
 role_titles: [Localization, L10n, Internationalization Specialist, i18n Engineer]
 tier: extended

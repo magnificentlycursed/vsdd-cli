@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: performance-engineer
 role_titles: [Performance Engineer, PerfE, Performance Analyst, Optimization Engineer]
 tier: extended

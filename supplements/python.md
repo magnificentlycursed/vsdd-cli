@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: python
 languages_or_interfaces: [Python]
 domains_in_scope: [software-engineer, quality-engineer, platform-engineer, performance-engineer, security, solution-architect]

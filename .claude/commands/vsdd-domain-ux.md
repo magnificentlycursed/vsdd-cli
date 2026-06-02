@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: ux
 role_titles: [User Experience, UX, Interaction Designer, Product Designer, Usability Engineer]
 tier: core

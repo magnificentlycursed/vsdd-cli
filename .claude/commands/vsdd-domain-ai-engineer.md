@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: ai-engineer
 role_titles: [AI Engineer, AIE, ML Engineer, Applied AI Specialist, Agent Engineer]
 tier: extended

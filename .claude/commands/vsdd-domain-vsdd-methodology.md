@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: vsdd-methodology
 role_titles: [VSDD Methodology, Methodology Meta-Reviewer, Methodology-Semantic-Coherence Auditor]
 tier: meta

@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: html
 languages_or_interfaces: [HTML, HTML5]
 domains_in_scope: [ux, accessibility, localization, security]

@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: toml
 languages_or_interfaces: [TOML]
 domains_in_scope: [software-engineer, platform-engineer]

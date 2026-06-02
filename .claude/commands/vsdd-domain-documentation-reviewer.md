@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: documentation-reviewer
 role_titles: [Documentation Reviewer, DR, Doc Reviewer, Cold Reader, Editor]
 tier: extended

@@ -5,7 +5,11 @@ review_number: 1
 date: 2026-05-27
 phase: phase-5
 scope: Invariant-Property Check — cross-DESIGN-doc consistency invariants across the 5 canonical artifacts (error code declarations, event variant declarations + counts, hook-to-error-code mappings, axis → activation completeness)
-lens: spec-stage Phase 5 Mutation Testing surface — applied to the spec rather than to a test suite. The invariant-property checks ARE the spec's mutation-test surface: each invariant is a property the spec asserts that should hold structurally across docs; counterexamples are mutation-testing-equivalent test-gap signals.
+lens: >-
+  spec-stage Phase 5 Mutation Testing surface — applied to the spec rather than to a test
+  suite. The invariant-property checks ARE the spec's mutation-test surface: each invariant
+  is a property the spec asserts that should hold structurally across docs; counterexamples
+  are mutation-testing-equivalent test-gap signals.
 source: domain-raised
 session_note: cold-context — first Phase 5 swarm invocation on vsdd-cli; inline-clustered with SA + Security per operator directive 2026-05-27
 model: claude-opus-4-7

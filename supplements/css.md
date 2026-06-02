@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: css
 languages_or_interfaces: [CSS, Sass, SCSS, Tailwind]
 domains_in_scope: [ux, accessibility, performance-engineer]

@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: claude-code-cli
 languages_or_interfaces: [Claude Code CLI, Claude Agent SDK]
 domains_in_scope: [ai-engineer, software-engineer, platform-engineer]

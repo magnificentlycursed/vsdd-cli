@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: quality-engineer
 role_titles: [Quality Engineer, QE, Test Engineer, SDET, Quality Assurance Engineer]
 tier: core

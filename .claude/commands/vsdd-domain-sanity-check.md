@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: sanity-check
 role_titles: [Sanity Check, Rubber-Duck Reviewer, Validator-of-Last-Resort]
 tier: meta

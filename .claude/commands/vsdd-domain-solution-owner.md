@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: solution-owner
 role_titles: [Solution Owner, SO, Product Owner, Engineering Manager, Technical Lead]
 tier: core

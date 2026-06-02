@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: github-actions
 languages_or_interfaces: [GitHub Actions, GitHub workflows, GitHub CI]
 domains_in_scope: [platform-engineer, security, ai-engineer]

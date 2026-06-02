@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: yaml
 languages_or_interfaces: [YAML]
 domains_in_scope: [software-engineer, platform-engineer, security]

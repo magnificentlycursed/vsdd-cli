@@ -1,4 +1,5 @@
 ---
+schema_class: phase-primer
 primer_id: vsdd-phase-1b
 phase: phase-1b
 version: 0.1.0

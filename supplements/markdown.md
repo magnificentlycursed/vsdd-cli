@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: markdown
 languages_or_interfaces: [Markdown, CommonMark, GitHub-Flavored Markdown]
 domains_in_scope: [technical-writer, documentation-reviewer]

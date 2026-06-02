@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: software-engineer
 role_titles: [Software Engineer, SE, Backend Engineer, Application Developer, Systems Programmer]
 tier: core

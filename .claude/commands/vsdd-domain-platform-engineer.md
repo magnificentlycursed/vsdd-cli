@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: platform-engineer
 role_titles: [Platform Engineer, PE, DevOps Engineer, Site Reliability Engineer, Build Engineer]
 tier: extended

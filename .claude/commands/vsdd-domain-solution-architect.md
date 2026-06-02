@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: solution-architect
 role_titles: [Solution Architect, SA, Software Architect, Systems Architect, Technical Architect]
 tier: core

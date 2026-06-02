@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: cli
 languages_or_interfaces: [CLI, command-line interface, terminal]
 domains_in_scope: [ux, software-engineer, quality-engineer, accessibility]

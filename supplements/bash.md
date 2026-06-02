@@ -1,4 +1,5 @@
 ---
+schema_class: supplement
 supplement_slug: bash
 languages_or_interfaces: [Bash, sh, POSIX shell]
 domains_in_scope: [software-engineer, quality-engineer, security, platform-engineer]

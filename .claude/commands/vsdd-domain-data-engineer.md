@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: data-engineer
 role_titles: [Data Engineer, DE, Data Platform Engineer, ETL Engineer]
 tier: extended

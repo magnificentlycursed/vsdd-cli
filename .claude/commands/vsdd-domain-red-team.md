@@ -1,4 +1,5 @@
 ---
+schema_class: domain-prompt
 domain_slug: red-team
 role_titles: [Red Team, Offensive Security, Adversarial Researcher, Pen Tester]
 tier: extended
