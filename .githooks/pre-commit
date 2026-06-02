@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Runs `mdatron verify` when any markdown / schema / pattern file is staged.
+# Enable per-clone with:  git config core.hooksPath .githooks
+set -euo pipefail
+
+if ! command -v mdatron >/dev/null 2>&1; then
+  echo "pre-commit: mdatron not on PATH — skipping" >&2
+  echo "pre-commit: install with  cargo install --path ../mdatron/mdatron-cli" >&2
+  exit 0
+fi
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+if ! printf '%s\n' "$staged" | grep -qE '(\.md$|^\.mdatron/|^vsdd-core/(schemas|patterns)/)'; then
+  exit 0
+fi
+
+echo "pre-commit: running mdatron verify…" >&2
+exec mdatron verify --project-root .
