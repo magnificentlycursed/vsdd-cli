@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/review-entry.json",
+  "title": "VSDD Review Entry frontmatter",
+  "description": "Frontmatter contract for review-log/<date>-<domain-slug>.md entries.",
+  "type": "object",
+  "required": [
+    "schema_class",
+    "schema_version",
+    "review_number",
+    "date",
+    "phase",
+    "scope",
+    "lens",
+    "source",
+    "session_note",
+    "model",
+    "execution_method"
+  ],
+  "properties": {
+    "schema_class": {
+      "type": "string",
+      "const": "review-entry"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "review_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "phase-0",
+        "phase-1a",
+        "phase-1b",
+        "phase-1c",
+        "phase-2a",
+        "phase-2b",
+        "phase-2c",
+        "phase-3",
+        "phase-4",
+        "phase-5",
+        "phase-6"
+      ]
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lens": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "domain-raised",
+        "director-raised",
+        "operator-directive",
+        "regression-replay",
+        "external-feedback",
+        "mixed"
+      ]
+    },
+    "session_note": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "execution_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sycophancy_compensation": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ]
+    },
+    "filename_note": {
+      "type": "string"
+    },
+    "supplements_loaded": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    }
+  },
+  "additionalProperties": true
+}

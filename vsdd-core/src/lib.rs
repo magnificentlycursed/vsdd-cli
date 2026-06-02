@@ -19,4 +19,7 @@ pub mod schemas {
 
     /// JSON Schema for supplement frontmatter (vsdd-cli/supplements/*.md files).
     pub const SUPPLEMENT: &str = include_str!("../schemas/supplement.json");
+
+    /// JSON Schema for review-entry frontmatter (review-log/<date>-<slug>.md files).
+    pub const REVIEW_ENTRY: &str = include_str!("../schemas/review-entry.json");
 }

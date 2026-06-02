@@ -94,6 +94,41 @@ fn supplement_schema_validates_json() {
 }
 
 #[test]
+fn review_entry_schema_validates_recent_ai_engineer_review() {
+    let schema = load_schema(vsdd_core::schemas::REVIEW_ENTRY);
+    let entry = frontmatter_of("review-log/2026-06-01-ai-engineer-naming.md");
+    let errors = schema.validate(&entry);
+    assert!(
+        errors.is_empty(),
+        "ai-engineer-naming review failed validation: {errors:?}"
+    );
+}
+
+#[test]
+fn review_entry_schema_rejects_invalid_source_enum() {
+    let schema = load_schema(vsdd_core::schemas::REVIEW_ENTRY);
+    let bad: serde_yaml::Value = serde_yaml::from_str(
+        "schema_class: review-entry\n\
+         schema_version: 1.0.0\n\
+         review_number: 1\n\
+         date: 2026-06-01\n\
+         phase: phase-3\n\
+         scope: x\n\
+         lens: y\n\
+         source: invented-source-not-in-enum\n\
+         session_note: ''\n\
+         model: claude-opus\n\
+         execution_method: ''\n",
+    )
+    .unwrap();
+    let errors = schema.validate(&bad);
+    assert!(
+        !errors.is_empty(),
+        "invalid source enum should produce errors"
+    );
+}
+
+#[test]
 fn phase_primer_schema_rejects_missing_required_field() {
     let schema = load_schema(vsdd_core::schemas::PHASE_PRIMER);
     let bad: serde_yaml::Value = serde_yaml::from_str(

@@ -4,12 +4,12 @@ schema_version: 1.0.0
 review_number: 1
 date: 2026-06-01
 phase: phase-3
-scope: AIE domain review of the recurring naming/sequencing-vocabulary problem and effective mitigations. Subject: three parallel sequencing vocabularies that accumulated in this conversation (VSDD's canonical 10 phases + invented "Phase A-F" + invented "Step 0.5/2.1/2.2/2.3" overlay on operator's 5-step bootstrap plan) and the cost the multiplication has imposed on this and prior conversations.
-lens: AIE Dimensions 1-8 weighted on Dim 3 (prompt-cache discipline) + Dim 5 (sub-agent scope-down) + Dim 6 (model-tier right-sizing) + Dim 1 (capture-source provenance). Supplement applied: claude-code-cli.md.
+scope: "AIE domain review of the recurring naming/sequencing-vocabulary problem and effective mitigations. Subject - three parallel sequencing vocabularies that accumulated in this conversation (VSDD's canonical 10 phases + invented Phase A-F + invented Step 0.5/2.1/2.2/2.3 overlay on operator's 5-step bootstrap plan) and the cost the multiplication has imposed on this and prior conversations."
+lens: "AIE Dimensions 1-8 weighted on Dim 3 (prompt-cache discipline) + Dim 5 (sub-agent scope-down) + Dim 6 (model-tier right-sizing) + Dim 1 (capture-source provenance). Supplement applied - claude-code-cli.md."
 source: operator-directive
-session_note: Inline single-domain AIE consultation per operator directive ("AI Engineer review using the claude code supplement about the recurring naming problems and effective mitigations"). InlineMultiDomain composition shape (per the just-landed M1 amendment) — single-domain variant.
+session_note: 'Inline single-domain AIE consultation per operator directive ("AI Engineer review using the claude code supplement about the recurring naming problems and effective mitigations"). InlineMultiDomain composition shape (per the just-landed M1 amendment) — single-domain variant.'
 model: claude-opus-4-7
-execution_method: inline main session; AIE primer + claude-code-cli supplement both loaded; vsdd-cli/supplements/claude-code-cli.md AI Engineer extensions in scope
+execution_method: "inline main session; AIE primer + claude-code-cli supplement both loaded; vsdd-cli/supplements/claude-code-cli.md AI Engineer extensions in scope"
 sycophancy_compensation: |
   I authored every instance of the recurring naming problem under review (the "Phase A-F"
   invention in V1-SHIP-CRITERIA; the "Step 0.5" + sub-step layering; the 5-step plan ←→ VSDD
