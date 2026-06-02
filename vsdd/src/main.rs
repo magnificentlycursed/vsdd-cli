@@ -1,12 +1,13 @@
 //! vsdd CLI binary.
 //!
-//! v0.1.0 ships `init` as a stub. Phase 2b implementation lands in subsequent
-//! iterations: pre-flight checks (git repo + crosslink + mdatron + cargo toolchain),
-//! file deployment with collision handling, `ProjectInitialized` event emission.
+//! `vsdd init --check` runs the pre-flight environment probe. Substantive deployment
+//! (file emission, ProjectInitialized event) lands in subsequent Phase 2b iterations.
 
 use std::process::ExitCode;
 
 use clap::{Parser, Subcommand};
+
+mod preflight;
 
 #[derive(Parser, Debug)]
 #[command(name = "vsdd", about, version, long_about = None)]
@@ -39,11 +40,34 @@ fn main() -> ExitCode {
     }
 }
 
-fn cmd_init(_args: InitArgs) -> ExitCode {
+fn cmd_init(args: InitArgs) -> ExitCode {
+    let cwd = match std::env::current_dir() {
+        Ok(p) => p,
+        Err(e) => {
+            eprintln!("vsdd init: cannot read current directory: {e}");
+            return ExitCode::from(2);
+        }
+    };
+
+    let report = preflight::check_environment(&cwd);
+    print!("{}", report.render());
+
+    if !report.all_pass() {
+        return ExitCode::from(1);
+    }
+
+    if args.check {
+        // Dry-run: pre-flight passed; no deployment.
+        return ExitCode::SUCCESS;
+    }
+
+    // Substantive deployment lands in subsequent Phase 2b iterations.
     eprintln!(
-        "vsdd init: implementation pending; see vsdd-cli crosslink issues for the planned \
-         pre-flight + deployment + emission flow."
+        "vsdd init: pre-flight passed; substantive deployment (file emission + \
+         ProjectInitialized event) is pending implementation. Re-run with --check to confirm \
+         environment readiness."
     );
+    let _ = args.ci_mode; // currently unused; routes will diverge in next iteration
     ExitCode::from(2)
 }
 
