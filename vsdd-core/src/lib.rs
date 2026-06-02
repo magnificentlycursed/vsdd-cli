@@ -35,73 +35,65 @@ pub mod patterns {
 pub mod artifacts {
     //! Bundled deployable markdown artifacts (phase primers, domain prompts, supplements).
     //!
-    //! Phase 2a Red Gate state: arrays are empty stubs. Phase 2b populates them with
-    //! `include_str!` entries per artifact.
+    //! Each constant is a `&[(filename, content)]` slice. `vsdd_core::init` deploys each
+    //! entry to its conventional location:
+    //!   PHASE_PRIMERS  -> `<project>/.claude/commands/<filename>`
+    //!   DOMAIN_PROMPTS -> `<project>/.claude/commands/<filename>`
+    //!   SUPPLEMENTS    -> `<project>/supplements/<filename>`
 
-    /// Phase primer markdown files. Entries are `(filename, content)`; deployed by
-    /// `vsdd_core::init` to `<project>/.claude/commands/<filename>`.
-    pub const PHASE_PRIMERS: &[(&str, &str)] = &[];
+    /// Phase primer markdown files (10 entries).
+    pub const PHASE_PRIMERS: &[(&str, &str)] = &[
+        ("vsdd-phase-1a.md", include_str!("../../.claude/commands/vsdd-phase-1a.md")),
+        ("vsdd-phase-1b.md", include_str!("../../.claude/commands/vsdd-phase-1b.md")),
+        ("vsdd-phase-1c.md", include_str!("../../.claude/commands/vsdd-phase-1c.md")),
+        ("vsdd-phase-2a.md", include_str!("../../.claude/commands/vsdd-phase-2a.md")),
+        ("vsdd-phase-2b.md", include_str!("../../.claude/commands/vsdd-phase-2b.md")),
+        ("vsdd-phase-2c.md", include_str!("../../.claude/commands/vsdd-phase-2c.md")),
+        ("vsdd-phase-3.md", include_str!("../../.claude/commands/vsdd-phase-3.md")),
+        ("vsdd-phase-4.md", include_str!("../../.claude/commands/vsdd-phase-4.md")),
+        ("vsdd-phase-5.md", include_str!("../../.claude/commands/vsdd-phase-5.md")),
+        ("vsdd-phase-6.md", include_str!("../../.claude/commands/vsdd-phase-6.md")),
+    ];
 
-    /// Domain prompt markdown files. Deployed to `<project>/.claude/commands/<filename>`.
-    pub const DOMAIN_PROMPTS: &[(&str, &str)] = &[];
+    /// Domain prompt markdown files (18 entries).
+    pub const DOMAIN_PROMPTS: &[(&str, &str)] = &[
+        ("vsdd-domain-accessibility.md", include_str!("../../.claude/commands/vsdd-domain-accessibility.md")),
+        ("vsdd-domain-ai-engineer.md", include_str!("../../.claude/commands/vsdd-domain-ai-engineer.md")),
+        ("vsdd-domain-data-engineer.md", include_str!("../../.claude/commands/vsdd-domain-data-engineer.md")),
+        ("vsdd-domain-documentation-reviewer.md", include_str!("../../.claude/commands/vsdd-domain-documentation-reviewer.md")),
+        ("vsdd-domain-localization.md", include_str!("../../.claude/commands/vsdd-domain-localization.md")),
+        ("vsdd-domain-performance-engineer.md", include_str!("../../.claude/commands/vsdd-domain-performance-engineer.md")),
+        ("vsdd-domain-platform-engineer.md", include_str!("../../.claude/commands/vsdd-domain-platform-engineer.md")),
+        ("vsdd-domain-privacy.md", include_str!("../../.claude/commands/vsdd-domain-privacy.md")),
+        ("vsdd-domain-quality-engineer.md", include_str!("../../.claude/commands/vsdd-domain-quality-engineer.md")),
+        ("vsdd-domain-red-team.md", include_str!("../../.claude/commands/vsdd-domain-red-team.md")),
+        ("vsdd-domain-sanity-check.md", include_str!("../../.claude/commands/vsdd-domain-sanity-check.md")),
+        ("vsdd-domain-security.md", include_str!("../../.claude/commands/vsdd-domain-security.md")),
+        ("vsdd-domain-software-engineer.md", include_str!("../../.claude/commands/vsdd-domain-software-engineer.md")),
+        ("vsdd-domain-solution-architect.md", include_str!("../../.claude/commands/vsdd-domain-solution-architect.md")),
+        ("vsdd-domain-solution-owner.md", include_str!("../../.claude/commands/vsdd-domain-solution-owner.md")),
+        ("vsdd-domain-technical-writer.md", include_str!("../../.claude/commands/vsdd-domain-technical-writer.md")),
+        ("vsdd-domain-ux.md", include_str!("../../.claude/commands/vsdd-domain-ux.md")),
+        ("vsdd-domain-vsdd-methodology.md", include_str!("../../.claude/commands/vsdd-domain-vsdd-methodology.md")),
+    ];
 
-    /// Supplement markdown files. Deployed to `<project>/supplements/<filename>`.
-    pub const SUPPLEMENTS: &[(&str, &str)] = &[];
+    /// Supplement markdown files (14 entries).
+    pub const SUPPLEMENTS: &[(&str, &str)] = &[
+        ("bash.md", include_str!("../../supplements/bash.md")),
+        ("browser-app.md", include_str!("../../supplements/browser-app.md")),
+        ("claude-code-cli.md", include_str!("../../supplements/claude-code-cli.md")),
+        ("cli.md", include_str!("../../supplements/cli.md")),
+        ("css.md", include_str!("../../supplements/css.md")),
+        ("github-actions.md", include_str!("../../supplements/github-actions.md")),
+        ("html.md", include_str!("../../supplements/html.md")),
+        ("javascript-typescript.md", include_str!("../../supplements/javascript-typescript.md")),
+        ("json.md", include_str!("../../supplements/json.md")),
+        ("markdown.md", include_str!("../../supplements/markdown.md")),
+        ("python.md", include_str!("../../supplements/python.md")),
+        ("rust.md", include_str!("../../supplements/rust.md")),
+        ("toml.md", include_str!("../../supplements/toml.md")),
+        ("yaml.md", include_str!("../../supplements/yaml.md")),
+    ];
 }
 
-pub mod init {
-    //! Project bootstrap: file emission + manifest + idempotent re-init.
-    //!
-    //! Phase 2a Red Gate state: `init` is a `todo!()` stub. Phase 2b implements the
-    //! 9-step v0.1 scope agreed in the multi-domain review (SA + SO + SE + PE + QE + DR).
-
-    use std::path::{Path, PathBuf};
-
-    use thiserror::Error;
-
-    /// Caller-provided knobs for the deployment.
-    #[derive(Debug, Default)]
-    pub struct InitOptions {
-        /// CI bootstrap mode: skip operator prompts; use defaults; produce
-        /// CI-runtime-shaped outputs.
-        pub ci_mode: bool,
-    }
-
-    /// Per-run deployment outcome.
-    #[derive(Debug)]
-    pub struct InitReport {
-        /// Files written (or rewritten) on this invocation.
-        pub deployed: Vec<PathBuf>,
-        /// Files left untouched because their manifest hash already matched.
-        pub skipped: Vec<PathBuf>,
-        /// Path to the canonical `<project>/.vsdd/init-manifest.json`.
-        pub manifest_path: PathBuf,
-    }
-
-    /// Errors arising during init orchestration. Distinct from per-file IO errors,
-    /// which are wrapped in [`InitError::Io`].
-    #[derive(Debug, Error)]
-    pub enum InitError {
-        #[error("substrate is not a git repository: {path}; run `git init` first")]
-        SubstrateNotGit { path: PathBuf },
-
-        #[error(
-            "managed file drifted at {path}; resolve with --keep-operator-edits or \
-             --accept-managed-defaults (expected sha256 {expected_sha256}, got {actual_sha256})"
-        )]
-        ManagedFileDrifted {
-            path: PathBuf,
-            expected_sha256: String,
-            actual_sha256: String,
-        },
-
-        #[error("io error at '{path}': {error}")]
-        Io { path: PathBuf, error: String },
-    }
-
-    /// Run the init pipeline against `project_root`. Returns a [`InitReport`] on
-    /// success.
-    pub fn init(_project_root: &Path, _options: &InitOptions) -> Result<InitReport, InitError> {
-        todo!("Phase 2b: implement the 9-step v0.1 init scope")
-    }
-}
+pub mod init;

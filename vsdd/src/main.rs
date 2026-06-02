@@ -61,14 +61,24 @@ fn cmd_init(args: InitArgs) -> ExitCode {
         return ExitCode::SUCCESS;
     }
 
-    // Substantive deployment lands in subsequent Phase 2b iterations.
-    eprintln!(
-        "vsdd init: pre-flight passed; substantive deployment (file emission + \
-         ProjectInitialized event) is pending implementation. Re-run with --check to confirm \
-         environment readiness."
-    );
-    let _ = args.ci_mode; // currently unused; routes will diverge in next iteration
-    ExitCode::from(2)
+    let options = vsdd_core::init::InitOptions {
+        ci_mode: args.ci_mode,
+    };
+    match vsdd_core::init::init(&cwd, &options) {
+        Ok(report) => {
+            println!(
+                "vsdd init: deployed {} file(s); skipped {} unchanged file(s); manifest at {}",
+                report.deployed.len(),
+                report.skipped.len(),
+                report.manifest_path.display()
+            );
+            ExitCode::SUCCESS
+        }
+        Err(e) => {
+            eprintln!("error[VSDD-E0230]: init failed\n   = note: {e}");
+            ExitCode::from(2)
+        }
+    }
 }
 
 #[cfg(test)]
