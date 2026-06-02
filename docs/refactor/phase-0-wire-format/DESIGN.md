@@ -62,9 +62,12 @@ field.
 **Observable assertions:**
 
 - Field present on every successful invocation.
-- Value is a string matching `^[1-9][0-9]*$` (positive integer; not semver).
-- Version bumps follow: additive optional fields → no version bump; required
-  field added or field-shape changed → version bump.
+- Value is a string matching `^\d+\.\d+\.\d+$` (semver per SO disposition 2026-06-02).
+- Version bumps follow semver-for-wire-formats: additive optional fields → minor
+  bump (e.g., 1.0.0 → 1.1.0); required field added, field-shape changed, or
+  field semantics changed → major bump (1.x → 2.0.0); fix-without-shape-change
+  → patch (1.0.0 → 1.0.1). Consumer compatibility matches on major; minor +
+  patch are transparent to a consumer pinned at major M.
 
 **Falsification path:** consumer can construct an envelope missing
 `mdatron_wire_version` and assert mdatron's parser rejects it; or construct an
@@ -165,7 +168,12 @@ and assert validation rejects it.
 | `0` | Pipeline ran to completion; no error-severity findings (warnings or lints may exist) | Envelope present, `pipeline_status: "ok"`, `summary.error_count == 0` |
 | `1` | Pipeline ran to completion; at least one error-severity finding | Envelope present, `pipeline_status: "ok"`, `summary.error_count >= 1` |
 | `2` | Pipeline did not run to completion (configuration error, IO failure, malformed pattern file, etc.) | Envelope MAY be present with `pipeline_status: "failed"`; MAY be absent if failure occurred before envelope construction (e.g., CLI parse error) |
-| `>2` | Reserved for unanticipated failure modes (panic = 134 from SIGABRT, etc.) | Envelope absent |
+| `101+` | Unanticipated failure (Rust panic = `101`; SIGTERM-style = signal number plus `128`) | Envelope absent |
+
+The scheme matches the **rustc / clippy / cargo-check convention** per SO
+disposition 2026-06-02 (Raise-to-SO #3). `3` is not reserved; vsdd's
+"couldn't spawn mdatron" state is vsdd-internal and does not appear in
+mdatron's contract.
 
 **Observable assertions:**
 
@@ -528,18 +536,21 @@ no-manual-tests rationale.
    - SO disposition needed.
 
 2. **Should `mdatron explain CODE` ship in v0.1.0?**
-   - Strip `= explain:` line (DR-F2 lean): defers explain to v0.2.
-   - Implement explain (more work): preserves the catalog discipline.
-   - SO disposition needed for v0.1.0 ship scope.
+   - SO disposition 2026-06-02: implement explain for v0.1.0.
+   - DR-F2 finding ("strip the dead `= explain:` line") is reversed — the
+     line is retained because the surface it promises is built.
+   - Implementation belongs to crosslink #13 (Phase 2 of binary-first
+     plan), not this Phase 0 issue. The wire envelope's `explain_ref`
+     field now points to a real catalog rather than a stubbed surface.
+   - Catalog scope: one paragraph of explanation prose per emitted code
+     (MDATRON-E0001/E0002/E0070/E0080 at v0.1.0 baseline; grows with
+     each emitted code thereafter).
 
 3. **Reserved exit codes above 2:**
-   - 3 = "binary unavailable / version mismatch" was proposed (vsdd's reading
-     when subprocess fails to spawn).
-   - But: this exit code is set by *vsdd*, not by mdatron (mdatron can never
-     fail-to-spawn from its own perspective).
-   - Disposition: drop `3` from mdatron's contract; vsdd uses `3` for its
-     own "couldn't invoke mdatron" state internally without it appearing in
-     mdatron's envelope/exit.
+   - SO disposition 2026-06-02: match rustc/clippy convention: `{0, 1, 2}`
+     with `101+` for unanticipated failures (panic). No `3` reserved.
+   - vsdd's "couldn't spawn mdatron" state is vsdd-internal; does not
+     appear in mdatron's contract.
 
 ## Cross-references
 
@@ -600,10 +611,14 @@ Emit on Phase 1c closing commit:
 ```yaml
 event: PhaseExited
 phase: phase-1c
-exit_status: complete-pending-so-disposition
+exit_status: complete
 layer: phase-0-wire-format
-declared_at: 2026-06-02T20:05:00Z
+declared_at: 2026-06-02T20:15:00Z
 next_phase: phase-2a
+so_dispositions:
+  - so-q1-wire-version: semver
+  - so-q2-explain-v010: ship in v0.1.0
+  - so-q3-exit-codes: rustc-style {0,1,2}+101+
 milestones_opened: [m1-envelope-shape, m2-process-behavior, m3-contract-discipline]
 ```
 
