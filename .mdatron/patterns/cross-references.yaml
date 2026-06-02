@@ -66,3 +66,20 @@ pattern:
       message: >-
         review entry: phase '{{$self.phase}}' does not have a corresponding
         phase primer in .claude/commands/vsdd-phase-*.md
+
+    - id: phase-primer-id-matches-phase
+      context: phase-primer
+      assert: $self.primer_id == concat("vsdd-", $self.phase)
+      code: VSDD-E0207
+      message: >-
+        phase primer file declares primer_id '{{$self.primer_id}}' but phase
+        '{{$self.phase}}' -- they must agree (primer_id should equal
+        concat("vsdd-", phase), e.g. primer_id 'vsdd-phase-2a' for phase 'phase-2a')
+
+    - id: domain-validator-pair-not-self
+      context: domain-prompt
+      assert: $self.validator_pair != $self.domain_slug
+      code: VSDD-E0208
+      message: >-
+        domain {{$self.domain_slug}}: validator_pair refers to itself --
+        a domain cannot be its own validator pair

@@ -166,8 +166,8 @@ fn e0207_silent_when_primer_id_matches_phase() {
 #[test]
 fn e0208_fires_when_validator_pair_is_self() {
     let proj = TempProject::new("e0208-self");
-    // Provide a real "sanity-check" so E0201 doesn't fire (we want to isolate E0208).
-    proj.write_minimal_domains(&["sanity-check"]);
+    // The fixture pairs with itself; the literal "sanity-check" satisfies E0201
+    // without needing a real sanity-check domain in the index.
     proj.write(
         ".claude/commands/vsdd-domain-software-engineer.md",
         "---\n\
@@ -192,7 +192,8 @@ fn e0208_fires_when_validator_pair_is_self() {
 #[test]
 fn e0208_silent_when_validator_pair_differs_from_self() {
     let proj = TempProject::new("e0208-distinct");
-    proj.write_minimal_domains(&["sanity-check", "solution-architect"]);
+    // Only solution-architect is needed in the index; the fixture pairs with it.
+    proj.write_minimal_domains(&["solution-architect"]);
     proj.write(
         ".claude/commands/vsdd-domain-software-engineer.md",
         "---\n\
