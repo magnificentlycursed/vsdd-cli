@@ -42,9 +42,9 @@ retrospect (M5 F3+F9 audit-trail discipline).
 | Subcommand layout | `src/main.rs` dispatches to `src/commands/<verb>/mod.rs` (crosslink-cued) |
 | Error paradigm | `anyhow` at the binary edges (main.rs); typed-variant errors at module boundaries |
 | Embedded resources | `include_str!` constants in dedicated `src/artifacts.rs` (vsdd) / `src/embedded.rs` (mdatron) |
-| Cross-process seam | `vsdd` spawns `mdatron verify --json` as subprocess; parses versioned JSON envelope on stdout; human-readable diagnostics on stderr |
+| Cross-process seam | `vsdd` spawns `mdatron verify --json` as subprocess; parses versioned JSON output object on stdout; human-readable diagnostics on stderr |
 | Error codes | `MDATRON-Exxxx` and `VSDD-Exxxx` namespaces strictly separate; no proxy/intercept across the seam |
-| Wire-format versioning | Envelope carries `mdatron_wire_version` field; vsdd asserts compatibility |
+| Output-format versioning | Output carries `mdatron_output_version` field; vsdd asserts compatibility |
 | Drift discipline | Three-way classification (manifest_hash, current_hash, new_template_hash → UpdateAction enum) per crosslink; same flag surface on both `mdatron init` and `vsdd init` |
 | Config files | `.mdatron/config.yaml` + `.vsdd/config.yaml`; managed-section markers per crosslink discipline |
 
@@ -81,20 +81,20 @@ All in-flight items from this session, dispositioned:
 Ordered by hard-to-undo dependency. Each phase has its own VSDD 2a→2b→3 cycle
 unless noted.
 
-### Phase 0 — Wire-format contract design + freeze
+### Phase 0 — Output-format contract design + freeze
 
 **v0.1.0 blocker.** Must land + freeze before any other phase's implementation
 work touches the seam.
 
 **Scope:**
-- JSON envelope shape for `mdatron verify --json` (top-level: `mdatron_wire_version`, `findings: [Finding]`, `summary: {error_count, warning_count, ...}`, `pipeline_status`)
+- JSON output object shape for `mdatron verify --json` (top-level: `mdatron_output_version`, `findings: [Finding]`, `summary: {error_count, warning_count, ...}`, `pipeline_status`)
 - Exit-code semantics (SE's three-state model): `0` = pipeline OK + findings may exist; `1` = pipeline OK + at least one error-severity finding; `2` = pipeline failed (configuration / IO / parse); `3` = binary unavailable / version mismatch
 - Global flag wiring: `--quiet`, `--json`, `--log-level`, `--log-format`, `--dry-run` (where applicable)
 - Namespace-separation rule for `MDATRON-Exxxx` ↔ `VSDD-Exxxx`
 - Methodology amendment: Phase 3 cluster-batched cold-session as the default; inline requires explicit operator-directive event
 
 **Acceptance criteria:**
-- Wire envelope JSON schema documented in DESIGN-MDATRON.md
+- Output object JSON schema documented in DESIGN-MDATRON.md
 - Exit-code semantics documented; lint-checked
 - methodology.md amended with Phase 3 default-shape rule
 
@@ -121,15 +121,15 @@ work touches the seam.
 **v0.1.0 blocker.**
 
 **Scope:**
-- Implement `mdatron verify --json`: emit Phase 0 wire envelope on stdout
+- Implement `mdatron verify --json`: emit Phase 0 output object on stdout
 - Keep stderr emission as rustc-shaped diagnostics (operator-readable when --json absent)
 - Strip the dead `= explain:` line from diagnostic format (or implement `mdatron explain CODE` — operator-decision pending; my lean: strip for v0.1.0)
 - Author `mdatron` README per DR-F1 (install + first run + schema/pattern example + relationship to vsdd)
 - Add `tests/cli_integration.rs` per SE's earlier finding
-- Add `--quiet` / `--json` / `--log-level` global args wired through clap
+- Add `--quiet` / `--json` / `--log-level` global args connected through clap
 
 **Acceptance criteria:**
-- `mdatron verify --json` emits parseable envelope
+- `mdatron verify --json` emits parseable output object
 - README covers the three audiences (VSDD user, mdatron-only adopter, tool-author composer)
 - CLI integration tests cover: clean run, finding emission, pipeline failure, missing schema directory
 
@@ -138,7 +138,7 @@ work touches the seam.
 **v0.1.0 blocker.**
 
 **Scope:**
-- Add `src/mdatron.rs` (or `src/commands/verify/subprocess.rs`) to vsdd: subprocess invocation wrapper for `mdatron verify --json` + envelope parsing + exit-code mapping
+- Add `src/mdatron.rs` (or `src/commands/verify/subprocess.rs`) to vsdd: subprocess invocation wrapper for `mdatron verify --json` + output object parsing + exit-code mapping
 - Remove `mdatron-core = { path = ... }` from `vsdd-core/Cargo.toml`
 - Migrate `vsdd-core/tests/init.rs` + `tests/cross_references.rs`: integration tests now spawn `mdatron` binary against fixture projects rather than calling library APIs
 - Migrate `vsdd init` from two-way (manifest vs current) to three-way (manifest vs current vs new_template) classification per crosslink/src/commands/init/manifest.rs:classify_update
