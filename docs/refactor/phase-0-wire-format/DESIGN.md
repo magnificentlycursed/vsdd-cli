@@ -4,7 +4,7 @@
 **Issue:** crosslink #11.
 **Phase:** 1a — Behavioral Specification.
 
-## Pre-phase composition declaration
+## Pre-phase composition declarations
 
 ```yaml
 phase: phase-1a
@@ -14,7 +14,18 @@ supplements_loaded: [json, rust]
 operator_confirmation: confirmed
 declared_at: 2026-06-02T19:16:40Z
 context: wire-format contract for mdatron verify --json cross-process IPC
+
+phase: phase-1b
+composed_domains: [solution-owner, solution-architect, quality-engineer, sanity-check]
+composition_mode: skill-interactive
+supplements_loaded: [json, rust]
+operator_confirmation: confirmed
+declared_at: 2026-06-02T19:35:00Z
 ```
+
+## Project intent
+
+**Phase 5 strategy:** property-based testing on envelope round-trip invariants + fuzz testing on the consumer-side envelope parser. Mutation testing not applicable to a wire contract whose enforcement is structural (strict JSON Schema rejection at construction); the mutation surface lives in the implementation (Phase 5 of mdatron-implementation, not of this contract spec).
 
 ## Scope
 
@@ -286,6 +297,88 @@ and assert vsdd's handling matches the documented matrix.
 | `findings` array entries' `code` prefixes match `severity` field | Per-Finding validation |
 | `mdatron_wire_version` is monotonically non-decreasing across releases | CHANGELOG audit |
 
+## Verification architecture
+
+### Pure functions
+
+Functions on this contract that are deterministic + side-effect-free are
+candidates for Phase 5 property-based testing:
+
+| Function | Inputs | Output | Purity grounds |
+|---|---|---|---|
+| `build_envelope(findings, files_checked, mdatron_version)` | array of Finding + non-negative integer + semver string | envelope object | Pure construction from inputs; no I/O |
+| `compute_summary(findings)` | array of Finding | summary object with the four counts | Pure reduction; deterministic counts |
+| `derive_exit_code(pipeline_status, error_count)` | enum + non-negative integer | exit code integer | Pure function of two inputs per BC-4 table |
+| `parse_envelope(json_bytes)` | bytes | Result<Envelope, ParseError> | Pure given strict JSON parser (no environment lookup) |
+| `validate_finding(finding)` | Finding | Result<(), ValidationError> | Pure; checks code-prefix-vs-severity alignment + location bounds |
+| `code_in_namespace(code, expected_prefix)` | string + string | bool | Pure prefix match |
+| `compare_wire_versions(emitted, supported_window)` | integer + range | enum (Supported / Too-New / Too-Old / In-Window-Old) | Pure comparison |
+
+These seven functions form the purity boundary for the wire contract. Phase 5
+property tests target this list.
+
+### Automatable vs manual classification
+
+All 8 behavioral contracts (BC-1 through BC-8) are **automatable**. The
+wire contract is operator-invisible (no UI; no human-readable artifact
+under inspection); there is no `manual-tests/wire-format.md` checklist.
+
+| BC | Test surface | Automation tool |
+|---|---|---|
+| BC-1 (envelope schema/version field) | JSON Schema validation + Rust struct deserialization round-trip | `jsonschema` crate + `serde_json` |
+| BC-2 (envelope top-level shape) | Integration test against `mdatron verify --json` output | subprocess spawn + JSON parse + struct assert |
+| BC-3 (Finding shape) | Per-Finding property test | `proptest`: generate Finding tuples; assert validate_finding succeeds for well-formed; fails for code-severity mismatch |
+| BC-4 (exit codes) | Integration matrix: 6 fixture scenarios × asserted exit code | subprocess spawn + exit-code assertion |
+| BC-5 (stream contract) | Integration test capturing stdout + stderr separately | subprocess capture |
+| BC-6 (global flags) | Integration test per flag combination | clap + subprocess; assert unknown-flag rejection |
+| BC-7 (namespace separation) | Static lint (compile-time) over both repos | custom proc-macro or grep-based lint in CI |
+| BC-8 (wire-version compatibility) | Property test on `compare_wire_versions` + integration test on boundary envelopes | `proptest` + fixtures with synthetic wire versions |
+
+### Phase 5 candidates
+
+Per the **Phase 5 strategy** declared above:
+
+**Property-based testing (the dominant Phase 5 surface here):**
+
+| Property | Function under test | Falsifying generator |
+|---|---|---|
+| Envelope round-trip: `parse(serialize(envelope)) == envelope` | `build_envelope` + `parse_envelope` | `proptest` Arbitrary impl over Envelope |
+| Summary correctness: `compute_summary(findings).error_count == findings.iter().filter(\|f\| f.severity == "error").count()` | `compute_summary` | Arbitrary Vec<Finding> |
+| Exit-code monotone: `error_count == 0 → exit_code in {0}`; `error_count >= 1 → exit_code in {1}`; `pipeline_status == failed → exit_code in {2,…}` | `derive_exit_code` | Arbitrary `(pipeline_status, error_count)` tuples |
+| Finding code-severity alignment: validate succeeds iff first letter of code matches severity letter | `validate_finding` | Arbitrary code + severity, biased toward mismatches |
+| Wire-version comparison transitivity: standard total-order properties | `compare_wire_versions` | Arbitrary triples |
+
+**Fuzz testing surface:**
+
+| Target | Tool | Corpus seed |
+|---|---|---|
+| `parse_envelope(arbitrary_bytes)` | `cargo-fuzz` (libFuzzer) | One real-mdatron envelope + 1KB of structured-but-invalid JSON |
+
+Fuzz target asserts: no panic; either Ok(Envelope) or Err(ParseError); never UB.
+
+**Out-of-scope for Phase 5:**
+
+- Mutation testing on contract enforcement code: the contract is structural;
+  mutation kills are captured by the property-test surface above.
+- Symbolic execution / Proof Execution: the contract's invariants are
+  small-scale and propable; formal verification is excessive for v0.1.0.
+
+### Trust boundaries
+
+Input data crossing process boundaries — these are the fuzz-test targets
+and security-review surface:
+
+| Boundary | Direction | Trust posture | Hardening |
+|---|---|---|---|
+| `mdatron verify --json` stdout (bytes) → vsdd parser | Untrusted (subprocess could be old version, attacker-controlled binary, etc.) | Strict JSON parsing + schema validation + version check before structural use | Fuzz target on `parse_envelope`; wire version asserted first |
+| CLI argument parsing | Untrusted (operator may pass malformed flags) | Clap derives + strict unknown-flag rejection | Standard clap discipline |
+| Schema/pattern file content on disk → mdatron evaluator | Untrusted (operator-supplied) | Strict JSON Schema parsing; refuse-malformed | Existing mdatron discipline (out of wire-contract scope) |
+| Environment variable resolution (RUST_LOG, MDATRON_*) | Semi-trusted (operator-set) | Bounded enum parsing; log-level enum is closed | Strict enum parse; default on invalid |
+
+The cross-process boundary between vsdd → mdatron stdout is the **load-bearing
+trust boundary** for this contract. All others are pre-existing surfaces from
+prior phases.
+
 ## Falsification surface (Phase 1c will operationalize)
 
 Each contract above contains a "falsification path" naming how it can be
@@ -351,7 +444,9 @@ Phase 1a closes when:
 - ⚠️ Cold reviewer (DR) iteration pending — Phase 3 will adversarially
   refine the contracts
 
-Emit on Phase 1a closing commit:
+Emit on Phase 1a closing commit (deferred to Phase 1b joint close per Phase 1a
+primer's "Operators may author Phase 1a and Phase 1b in a single session"
+allowance):
 
 ```yaml
 event: PhaseExited
@@ -360,4 +455,27 @@ exit_status: complete
 layer: phase-0-wire-format
 declared_at: 2026-06-02T19:30:00Z
 next_phase: phase-1b
+```
+
+## Phase 1b exit signal
+
+Phase 1b closes when:
+
+- ✅ Pure functions listed (7 candidates)
+- ✅ Automatable-vs-manual classification per behavior (8 BCs automatable; 0 manual)
+- ✅ Phase 5 strategy committed (property-based testing + fuzz; see § Project intent)
+- ✅ Trust boundaries named (4 listed; vsdd→mdatron stdout is the load-bearing one)
+- ⚠️ SA + QE concurrence on the purity-boundary list — recorded inline as
+  both lenses participated in skill-mode authorship; cold-session cross-check
+  arrives at Phase 3
+
+Emit on Phase 1b closing commit:
+
+```yaml
+event: PhaseExited
+phase: phase-1b
+exit_status: complete
+layer: phase-0-wire-format
+declared_at: 2026-06-02T19:50:00Z
+next_phase: phase-1c
 ```
