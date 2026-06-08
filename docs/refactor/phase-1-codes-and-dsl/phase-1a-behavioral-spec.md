@@ -37,6 +37,15 @@ except that some emitted codes change number.
 
 ### Reserved-code drift fix
 
+**Why this matters:** mdatron emits codes adopters use as stable diagnostic
+anchors — they appear in commit comments, CI logs, agent-loop reasoning,
+and operator muscle memory. Drift between the table-of-record (DESIGN-
+MDATRON.md § Reserved mdatron codes) and the actual emission sites is a
+silent contract break. Pre-1.0 the cost is documentation re-issuance + an
+adopter-facing migration note; post-1.0 the cost is a semver-major bump
+per Rust's E0000-series convention. Per crosslink #12 TW/F3 (add "Why this
+matters" symmetry across the three sub-sections).
+
 **Current emissions vs spec mapping:**
 
 | Code emitted | Currently emitted for | Per spec range | Disposition |
@@ -85,10 +94,12 @@ schema-tightening (mark it required-but-empty-allowed) to avoid pattern
 crashes. After this change, patterns can naturally reference an optional
 field; a missing field flows as `Null` through `defined()` / equality / etc.
 
-**Side effect:** Two earlier reactive schema-tightenings can be reverted —
-`supplements_in_scope` in `phase-primer.json` and `supplements_applied` in
-`domain-prompt.json` were promoted to required because the previous DSL
-behavior crashed when they were absent. Revertable after this fix.
+**Side effect:** Two earlier schema-tightenings can be reverted —
+`supplements_in_scope` in `vsdd-cli/vsdd-core/schemas/phase-primer.json` and
+`supplements_applied` in `vsdd-cli/vsdd-core/schemas/domain-prompt.json`
+were promoted to required because the previous DSL behavior crashed when
+they were absent. Revertable after this fix. (Per crosslink #12 PE/F4: cite
+explicit file paths for the revert targets, not just field names.)
 
 **Observable assertions:**
 
