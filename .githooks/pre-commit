@@ -9,6 +9,20 @@ if ! command -v mdatron >/dev/null 2>&1; then
   exit 0
 fi
 
+# Minimum-version sanity check (per crosslink #12 PE/F2). Bootstrap-period
+# requirement: mdatron must be 0.1.x. Stale binaries from before the
+# crosslink #12 reserved-code amendment / Phase 2 explain catalog would
+# emit wrong codes or miss surfaces; warn early rather than discover later.
+MIN_VERSION="0.1.0"
+mdatron_version=$(mdatron --version 2>/dev/null | awk '{print $2}' || true)
+if [ -z "$mdatron_version" ]; then
+  echo "pre-commit: could not determine mdatron version (got empty output) — proceeding" >&2
+elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.1\.[0-9]+'; then
+  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.1.x bootstrap window" >&2
+  echo "pre-commit:   reinstall with  cargo install --path ../mdatron/mdatron-cli --locked --force" >&2
+  echo "pre-commit:   minimum required for vsdd-cli compatibility: ${MIN_VERSION}" >&2
+fi
+
 staged=$(git diff --cached --name-only --diff-filter=ACMR)
 if ! printf '%s\n' "$staged" | grep -qE '(\.md$|^\.mdatron/|^vsdd-core/(schemas|patterns)/)'; then
   exit 0
