@@ -6,19 +6,20 @@
 
 ## Aggregate stats
 
+Counts updated 2026-06-08 after Phase 4-take-2 closure pass + crosslink-
+issue filing.
+
 | Metric | Count |
 |---|---|
 | Reviews | 18 |
-| Total findings | ~137 |
-| Resolved-pending (closing-commit work) | 5 |
-| Accepted-with-remediation | ~46 |
-| Deferred (Raise-to-SO / v0.1.x) | 6 |
-| Dismissed | ~77 |
-| Domain-wide honest dismissals | 4 (Accessibility, Localization, Privacy, PerfE-mostly) |
-| Hallucinated findings | 0 |
+| Total findings | 129 (one issue per finding, filed as subissues of `#13`) |
+| Resolved (closed in code) | 11 in initial pass + 24 in Phase 4-take-2 = 35 |
+| Accepted (open orphans) | 35 → 13 after Phase 4-take-2 |
+| Deferred (with block-by routing) | 8 → blocked-by future phases / umbrellas |
+| Dismissed | 75 |
+| Hallucinated | 0 |
 
-The 137-finding total exceeds crosslink #12's ~50 — the Phase 2 scope
-(four operator-facing surfaces with substantial prose) surfaces more
+The 129-finding total (not 137; prior counting error) reflects more
 per-domain lensing opportunities than Phase 1's pure-Rust internals.
 
 ## Cross-cutting convergences
@@ -212,6 +213,43 @@ captured durably in:
 - The Phase 2 closing commit message body (where the durable event-log
   record lives until `events.jsonl` ships in v0.1.x)
 
+## Phase 4-take-2 (2026-06-08 follow-up)
+
+The original Phase 4 (above) routed findings via prose only. Per the
+operator-directive 2026-06-07 ("the point of VSDD is findings get routed
+AND addressed"), Phase 4-take-2 operationalizes the dispositions:
+
+1. **Filed all 129 #13 findings as crosslink subissues of `#13`** with
+   `review-finding` + `classification:<status>` + `domain:<slug>` +
+   `cycle:crosslink-13` labels. Same backfill applied to the 86 #12
+   findings under `#12` (correcting the original Phase 4's prose-only
+   record).
+
+2. **Closed 31 issues in Waves 1-3** via three commits at
+   `mdatron@883eaaf`, `mdatron@ba61527`, `mdatron@422c2dc`:
+   - Wave 1: 8 convergent fixes (argv validation, CARGO_BIN_EXE,
+     format_tty + safe_display, doc-comment hygiene)
+   - Wave 2: 15 README + explain-page polish (first-run sample output,
+     install precision, opener differentiation, anchor links, $schema)
+   - Wave 3: 6 code quality + test tightening (codes.rs slice path,
+     FieldNotFound removal, print_pipeline_error consolidation, README
+     test heading-line match)
+
+3. **Filed 4 umbrella issues** for legitimate cross-phase deferrals:
+   - **L1** — Methodology Phase 5 (formal hardening surface)
+   - **L2** — events.jsonl writer + OperatorDirective event emission
+   - **L3** — vsdd-cli overlay (domain-routing hints + compact catalog)
+   - **L4** — Raise-to-SO pending operator dispositions
+
+4. **Set block-by relationships** from 22 deferred orphans to umbrella
+   issues + binary-first phase issues (`#15` Phase 4 collapse, `#17`
+   Phase 6 publish).
+
+5. **Created relate-links** across 8 cross-cycle convergence clusters
+   (audit-trail discipline; schema-revert provenance; DESIGN doc
+   hygiene; code rename operator bridge; catalog completeness;
+   methodology meta-findings; CI/pre-commit hardening; test discipline).
+
 ## Phase 4 exit signal
 
 ```yaml
@@ -220,12 +258,15 @@ phase: phase-4
 exit_status: complete
 layer: phase-2-mdatron-json
 declared_at: 2026-06-07T00:30:00Z
-findings_total: 137
-findings_resolved_in_closing_commit: 8
-findings_deferred_to_v010x: 24
-findings_deferred_to_phase_6: 2
-findings_dismissed: 77
+findings_total: 129
+findings_filed_as_crosslink_issues: 129
+findings_closed_in_take_2: 31
+findings_blocked_by_future_phase: 22
+findings_open_address_now: 13
+findings_dismissed: 75
 findings_hallucinated: 0
 domain_wide_dismissals: [accessibility, localization, privacy, performance-engineer]
+umbrella_issues_filed: [L1, L2, L3, L4]
+relate_clusters: [audit-trail, schema-revert-provenance, design-doc-hygiene, code-rename-operator-bridge, catalog-completeness, methodology-meta, ci-pre-commit-hardening, test-discipline]
 next_phase: phase-2-closing-commit-work
 ```
