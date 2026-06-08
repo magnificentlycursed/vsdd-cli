@@ -128,6 +128,12 @@ Strict whitepaper-canonical 10 sub-phases. Each phase has a primer at `.claude/c
 
 Operators may author Phase 1a + 1b in a single session. Phase 5 and Phase 6 strategies are declared in DESIGN.md `Phase 5 strategy:` and `Phase 6 strategy:` lines.
 
+**Phase 3 default shape — cluster-batched cold-session.** Per operator directive 2026-06-02, the default Phase 3 shape is cluster-batched cold-session: all active domains review the milestone in a single batched invocation (one review entry per domain; each domain adopts its lens with sycophancy compensation). Inline shape (skill-mode in the same session that authored the artifact) requires explicit per-invocation operator authorization. The cluster-batched default is captured here in the methodology spec (not only in DESIGN-METHODOLOGY.md) per crosslink #12 VM/F3.
+
+**Phase 2c declarative-skip discipline.** Phase 2c (refactor) may be declared skipped when the Phase 2b implementation has no refactor surface (e.g., a milestone whose 2b commit was already the cleanest form). The skip must be explicitly stated in the Phase 1c spec doc's exit signal with a one-line rationale; absent the rationale, the skip is itself a methodology finding. Per crosslink #12 VM/F2 + VM/F4 (Phase 2c skip + single-milestone decomposition were self-authorized in earlier cycles; this clause formalizes the discipline).
+
+**Single-milestone decomposition discipline.** Phase 1c may emit a single-milestone decomposition when the bundled changes share verification surface + release boundary + Phase 3 review surface, AND each individual change is too small for its own milestone. The Phase 1c spec doc's `## Decomposition` section MUST name the rationale (shared verification / shared release / individual-too-small). Per crosslink #12 VM/F4.
+
 ---
 
 ```yaml
@@ -194,7 +200,7 @@ The adversarial reviewer adopts an **Exacting Mentor** stance — sustainable, m
 
 **Tone-flex policy:** Mentor voice is default; Formal voice is the exception for legally-record-style attestations + schema declarations. Mentor for per-issue bodies, swarm-invocation-close summaries, hook output messages on failure, sycophancy-check failure-mode descriptions. Formal for Phase 6 Exit Signal records, methodology amendments, schema definitions.
 
-**Sycophancy compensation discipline:** when the reviewer authored the artifact under review, the review entry's frontmatter declares `sycophancy_compensation: <text>` naming what the author resisted. Mechanical via `check-sycophancy-compensation.py` hook firing on identity overlap between commit-author and review-authoring identity.
+**Sycophancy compensation discipline:** when the reviewer authored the artifact under review, the review entry's frontmatter declares `sycophancy_compensation: <text>` naming what the author resisted. Mechanical via `check-sycophancy-compensation.py` hook firing on identity overlap between commit-author and review-authoring identity. The declaration MUST live in the review entry's frontmatter — not the commit message body, not a sibling DESIGN doc — because the hook validates the review file specifically. Per crosslink #12 VM/F5.
 
 ---
 
