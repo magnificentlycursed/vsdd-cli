@@ -14,8 +14,13 @@ every commit that stages markdown / schema / pattern changes.
 ## Provenance
 
 This plan synthesizes 24 cold-session domain reviews + inline lens-applications
-filed under `review-log/2026-06-02-*.md` between 2026-06-01 and 2026-06-02.
-Each disposition below cites the review entries that informed it.
+authored between 2026-06-01 and 2026-06-02. The 18 cluster-batched Phase 3
+reviews for crosslink #12 (`*-phase-1-bundle.md`) live at
+`mdatron/review-log/` (per the routing correction made during crosslink #13
+Phase 4); the cross-repo planning reviews (`*-binary-first-refactor.md`,
+`*-init-drift.md`, `*-mdatron-consistency.md`) remain under
+`vsdd-cli/review-log/` as cross-cutting design artifacts. Each disposition
+below cites the review entries that informed it.
 
 ## Operator directives recorded
 
@@ -75,7 +80,17 @@ All in-flight items from this session, dispositioned:
 | 11 | DSL style cleanups (M7 F7-F10) | Accepted as v0.1 | v0.1.x drive-by with #9 |
 | 12 | Author `mdatron` README | Resolved | Phase 2 |
 | 13 | `--quiet` / `--json` / `--log-level` global flags | Resolved | Phase 0 |
-| 14 | Strip `= explain:` diagnostic line | Strip | Phase 2 |
+| 14 | Implement `mdatron explain CODE` + retain `= explain:` diagnostic line [^so-2026-06-02] | Implement explain catalog + retain line | Phase 2 |
+
+[^so-2026-06-02]: Row 14 originally read "Strip `= explain:` diagnostic line".
+Reversed per the SO disposition recorded 2026-06-02 at
+[`phase-0-output-format/DESIGN.md:566-575`](./phase-0-output-format/DESIGN.md):
+"implement explain for v0.1.0; the line is retained because the surface it
+promises is built." Amendment applied during crosslink #13 Phase 4 routing
+per the M5 F3+F9 audit-trail-on-act discipline; honest record of the
+disposition chain preserved in
+[`phase-2-mdatron-json/phase-4-routing.md`](./phase-2-mdatron-json/phase-4-routing.md)
+§ Operator-directive housekeeping.
 | 15 | `mdatron-cli/tests/cli_integration.rs` (now `tests/cli_integration.rs` post-collapse) | Resolved | Phase 2 |
 | 16 | anyhow paradigm scope | At binary edges only | Phase 4 |
 | 17 | `mdatron init` v0.1 scope | B.2+B.3 (empty skeleton + config.yaml stub) | Phase 5 |

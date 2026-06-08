@@ -22,7 +22,9 @@ self-authorization findings).
   schema-tightening reverted)
 - Phase 2c polish: skipped (no refactor surface)
 - Phase 3 cluster-batched cold-session: 18 domain reviews filed under
-  `review-log/2026-06-02-*-phase-1-bundle.md`
+  `mdatron/review-log/2026-06-02-*-phase-1-bundle.md` (moved here during
+  crosslink #13 Phase 4 routing correction; originally landed at
+  `vsdd-cli/review-log/`)
 - Phase 4 dispositions: amended DESIGN-MDATRON.md (`mdatron@1d81c4e`);
   rewrote circular probe test + added nested-Field test (`mdatron@8dc0392`);
   extended workspace-walk lint to non-`.rs` carriers (`mdatron@bc83588`);

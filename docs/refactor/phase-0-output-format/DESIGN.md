@@ -571,8 +571,13 @@ no-manual-tests rationale.
      plan), not this Phase 0 issue. The output object's `explain_ref`
      field now points to a real catalog rather than a stubbed surface.
    - Catalog scope: one paragraph of explanation prose per emitted code
-     (MDATRON-E0001/E0002/E0070/E0080 at v0.1.0 baseline; grows with
-     each emitted code thereafter).
+     (MDATRON-E0001/E0002/E0050/E0070/E0080 at v0.1.0 baseline; grows
+     with each emitted code thereafter).
+   - **Amendment 2026-06-07 (crosslink #13 SO review F3):** the original
+     disposition listed four codes; mdatron-core/src/verify.rs:273
+     emits E0050 (frontmatter-schema-violation) as a load-bearing Layer
+     1 code. The v0.1.0 catalog ships five pages; this open question is
+     amended forward to match. Disposition intent unchanged.
 
 3. **Reserved exit codes above 2:**
    - SO disposition 2026-06-02: match rustc/clippy convention: `{0, 1, 2}`
