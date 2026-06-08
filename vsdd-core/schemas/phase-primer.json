@@ -11,7 +11,8 @@
     "version",
     "frequency",
     "governing_skill",
-    "relevant_domains"
+    "relevant_domains",
+    "supplements_in_scope"
   ],
   "properties": {
     "schema_class": {

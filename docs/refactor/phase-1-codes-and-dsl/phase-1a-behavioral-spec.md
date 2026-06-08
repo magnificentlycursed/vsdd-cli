@@ -35,16 +35,11 @@ except that some emitted codes change number.
 
 ## Behavioral contracts
 
-### Reserved-code drift fix
+All three sub-sections below follow the canonical template per crosslink
+#12 DR/F4: **Current / Change / Why this matters / Side effects /
+Observable assertions / Falsifiability path**.
 
-**Why this matters:** mdatron emits codes adopters use as stable diagnostic
-anchors — they appear in commit comments, CI logs, agent-loop reasoning,
-and operator muscle memory. Drift between the table-of-record (DESIGN-
-MDATRON.md § Reserved mdatron codes) and the actual emission sites is a
-silent contract break. Pre-1.0 the cost is documentation re-issuance + an
-adopter-facing migration note; post-1.0 the cost is a semver-major bump
-per Rust's E0000-series convention. Per crosslink #12 TW/F3 (add "Why this
-matters" symmetry across the three sub-sections).
+### Reserved-code drift fix
 
 **Current emissions vs spec mapping:**
 
@@ -55,19 +50,39 @@ matters" symmetry across the three sub-sections).
 | `MDATRON-E0070` | `io: cannot resolve project root` (main.rs) | Unspecified | Reserve new range E0070-E0079 = IO failures |
 | `MDATRON-E0080` | `verify pipeline failed` (main.rs) | Unspecified | Reserve new range E0080-E0089 = Pipeline orchestration failures |
 
-**Spec amendments needed in DESIGN-MDATRON.md:506-514** — three new rows for
-the new ranges + two "Reserved for future use" placeholder rows for the
-explicit gaps.
+**Change:** Rename emissions per the table above. Amend DESIGN-MDATRON.md
+§ Reserved mdatron codes table with three new range rows + two "Reserved
+for future use" placeholder rows for the explicit gaps (E0060-E0069 +
+E0090-E0099).
+
+**Why this matters:** mdatron emits codes adopters use as stable diagnostic
+anchors — they appear in commit comments, CI logs, agent-loop reasoning,
+and operator muscle memory. Drift between the table-of-record (DESIGN-
+MDATRON.md § Reserved mdatron codes) and the actual emission sites is a
+silent contract break. Pre-1.0 the cost is documentation re-issuance + an
+adopter-facing migration note; post-1.0 the cost is a semver-major bump
+per Rust's E0000-series convention.
+
+**Side effects:** Existing adopter runbooks / logs that reference E0001
+as schema-violation become stale. The `mdatron explain` migration-note
+table (introduced in Phase 4-take-2 Wave 6) surfaces the rename at the
+diagnostic site; runbook updates are adopter-side follow-up.
 
 **Observable assertions:**
 
 - Every emission in the workspace maps to a reserved range per the amended
   table
-- Code-allocation lint enforces: any literal code in `.rs`/`.yaml`/`.json`/
+- Reserved-range enforcement check (formerly "code-allocation lint" — see
+  crosslink #12 TW/F4) enforces: any literal code in `.rs`/`.yaml`/`.json`/
   `.toml` carriers must match a reserved range
-- No behavior change for adopters of the output-format envelope beyond the
+- No behavior change for adopters of the output-format object beyond the
   numeric values of the codes emitted (the `mdatron_output_version` field is
   unchanged because adding a new code within a reserved range is additive)
+
+**Falsifiability path:** the reserved-range enforcement check at
+`mdatron-core/tests/phase_1_contracts.rs::all_emitted_codes_are_reserved`
+walks the workspace + fails the build if any literal MDATRON-E#### code
+falls outside the amended table.
 
 ### DSL `Field`-access symmetry
 
@@ -111,6 +126,11 @@ explicit file paths for the revert targets, not just field names.)
 - vsdd's pattern files containing `every(s in $self.optional_field, ...)`
   evaluate without error when `$self.optional_field` is absent
 
+**Falsifiability path:** unit tests at
+`mdatron-core/tests/phase_1_contracts.rs::field_on_object_missing_key_returns_null`
++ `field_on_nested_missing_returns_null` + `every_over_missing_optional_field_does_not_panic`
+exercise the symmetry directly.
+
 ### `defined()` empty-string carve-out drop
 
 **Current implementation** (`mdatron-core/src/dsl/expr.rs:322-330`):
@@ -137,10 +157,17 @@ not-`Null`:
 }
 ```
 
-**Why:** Asymmetry today — `defined([])` returns `true` while `defined("")`
-returns `false`. Adopters using `defined()` import XPath / JSON Schema / Jsonnet
-mental models where `defined` means "not Null." For the genuinely-want-non-empty
-case, `$self.field != ""` is one extra character.
+**Why this matters:** Asymmetry today — `defined([])` returns `true` while
+`defined("")` returns `false`. Adopters using `defined()` import XPath /
+JSON Schema / Jsonnet mental models where `defined` means "not Null." For
+the genuinely-want-non-empty case, `$self.field != ""` is one extra
+character.
+
+**Side effects:** None observable on the existing corpus (audit confirmed
+via grep over `vsdd-core/patterns/`). Future patterns that conflated
+defined-with-non-empty get a silent semantic shift; the methodology-spirit
+defense is that adopters reading the corrected DESIGN spec form a correct
+mental model.
 
 **Observable assertions:**
 
@@ -148,7 +175,11 @@ case, `$self.field != ""` is one extra character.
 - `defined(Value::Null)` returns `false` (unchanged)
 - `defined(Value::Array([]))` returns `true` (unchanged)
 - No corpus pattern depends on the carve-out (audited prior; confirmed
-  via grep over vsdd-core/patterns/)
+  via grep over `vsdd-core/patterns/`)
+
+**Falsifiability path:** unit tests at
+`mdatron-core/tests/phase_1_contracts.rs::defined_empty_string_returns_true`
++ regression checks `defined_null_returns_false` + `defined_empty_array_remains_true`.
 
 ## Phase 1a exit signal
 

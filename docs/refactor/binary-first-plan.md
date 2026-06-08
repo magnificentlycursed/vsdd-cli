@@ -127,7 +127,7 @@ work touches the seam.
 **Scope:**
 - Rename `MDATRON-E0001` / `E0002` per spec (currently swapped); reserve E0070, E0080
 - Amend `DESIGN-MDATRON.md:116-117` + `:506-514` reserved-codes table
-- Add code-allocation lint (compile-time check or test that every emission site emits a reserved code)
+- Add reserved-range enforcement check (workspace-walk test asserting every emission site emits a reserved code; per crosslink #12 TW/F4 the term "lint" is reserved for the MDATRON-L#### runtime adopter-facing class, not this build-time check)
 - Fix `Field`-on-Object-missing-key to return `Null` (symmetric with existing `Field`-on-Null behavior at `mdatron-core/src/dsl/expr.rs:224`)
 - Revert the schema-tightening on `supplements_in_scope` / `supplements_applied`. These fields were originally optional in the schemas. They were promoted to required-but-empty-allowed as a workaround for the pre-Phase-1 DSL behavior (Field-on-missing-key raised FieldNotFound, which crashed any pattern referencing the optional field). After the Phase 1 DSL change makes Field-on-Object-missing-key return `Null`, that workaround is unnecessary; revert to the original optional shape. Per crosslink #12 TW/F2 (the term "reactive fix" was undefined shorthand).
 - Drop `defined()` empty-string carve-out (`mdatron-core/src/dsl/expr.rs:322-330`)

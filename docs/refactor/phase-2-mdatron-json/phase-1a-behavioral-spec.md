@@ -107,7 +107,7 @@ catalog. Catalog scope per Phase 0 DESIGN open question #2 SO
 disposition: one paragraph of prose per emitted code at v0.1.0 baseline
 (`MDATRON-E0001`, `E0002`, `E0050`, `E0070`, `E0080`). Catalog grows by
 one entry per newly-emitted code thereafter; emission without a catalog
-entry is a code-allocation lint failure (Phase 5 candidate; not v0.1.0
+entry is a reserved-range enforcement check failure (Phase 5 candidate; not v0.1.0
 blocking).
 
 Embedded as `include_str!` constants in `src/embedded.rs` (the

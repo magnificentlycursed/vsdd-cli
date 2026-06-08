@@ -341,6 +341,8 @@ phases_referenced: []
 
 All event-variant schemas exclude credential-shaped fields structurally; OTel collector redacts credential-shaped values before forwarding to any external backend.
 
+**OperatorDirectiveApplied / OperatorDirectiveRevoked text placement.** During the v0.1.x interim (before the events.jsonl writer ships), the directive text lives in the emitting commit's message body — or in the originating PR description when the directive surfaces during a crosslink-mediated review. The `events.jsonl` record (when it lands) references the commit SHA + the directive name; the text remains in the commit body as the durable narrative anchor. Per crosslink #12 TW/F5 (cold operator inspecting events.jsonl needs to know where directive text lives).
+
 ---
 
 ```yaml

@@ -10,7 +10,8 @@
     "role_titles",
     "tier",
     "classification_universe",
-    "validator_pair"
+    "validator_pair",
+    "supplements_applied"
   ],
   "properties": {
     "schema_class": {
