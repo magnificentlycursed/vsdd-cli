@@ -225,15 +225,36 @@ AND addressed"), Phase 4-take-2 operationalizes the dispositions:
    findings under `#12` (correcting the original Phase 4's prose-only
    record).
 
-2. **Closed 31 issues in Waves 1-3** via three commits at
-   `mdatron@883eaaf`, `mdatron@ba61527`, `mdatron@422c2dc`:
-   - Wave 1: 8 convergent fixes (argv validation, CARGO_BIN_EXE,
-     format_tty + safe_display, doc-comment hygiene)
-   - Wave 2: 15 README + explain-page polish (first-run sample output,
-     install precision, opener differentiation, anchor links, $schema)
-   - Wave 3: 6 code quality + test tightening (codes.rs slice path,
-     FieldNotFound removal, print_pipeline_error consolidation, README
-     test heading-line match)
+2. **Closed 83 of 215 issues across 9 waves** via 12 commits:
+   - Wave 1 `mdatron@883eaaf` — 8 convergent fixes (argv validation,
+     CARGO_BIN_EXE, format_tty + safe_display, doc-comment hygiene)
+   - Wave 2 `mdatron@ba61527` — 15 README + explain-page polish
+     (first-run sample output, install precision, opener
+     differentiation, anchor links, $schema)
+   - Wave 3 `mdatron@422c2dc` — 6 code quality + test tightening
+     (codes.rs slice path, FieldNotFound removal, print_pipeline_error
+     consolidation, README test heading-line match)
+   - `vsdd-cli@91689e5` — routing-doc updates (initial)
+   - Wave 4 `mdatron@f45200b` — 3 mdatron explain --json + structured
+     ExplainPage (DE/F1 + AIE/F7 + QE/F5)
+   - Wave 5 `mdatron@28e9794` + `vsdd-cli@fc98fa4` — 3 lint hardening
+     (is_reserved_mdatron_code unstable doc, pre-commit version sanity,
+     mdatron-test CI workflow)
+   - Wave 6 `mdatron@6a0fe22` + `vsdd-cli@3aad175` — 6 DESIGN.md
+     hygiene + planning-doc clarity + migration note for code rename
+   - Wave 7 `vsdd-cli@5d02683` — 4 methodology.md amendments (cluster-
+     batched default, Phase 2c skip discipline, single-milestone
+     decomposition discipline, sycophancy-compensation placement)
+   - Wave 8 `mdatron@f59c9f4` — 3 every/some over Null + README
+     round-trip markers
+   - Wave 9 `mdatron@cea00ab` — 1 compact-form explain catalog (AIE/F2)
+
+   Plus an additional 22 closures (issues addressed by existing
+   infrastructure: vsdd-cli's mdatron-verify.yml CI workflow + the
+   verify_tty_does_not_render_explain_line_when_explain_ref_is_none
+   test that pre-existed Wave 1) + 29 closures of `classification:
+   resolved` issues already addressed by the original Phase 2 cycle's
+   implementation commits.
 
 3. **Filed 4 umbrella issues** for legitimate cross-phase deferrals:
    - **L1** — Methodology Phase 5 (formal hardening surface)
@@ -258,15 +279,19 @@ phase: phase-4
 exit_status: complete
 layer: phase-2-mdatron-json
 declared_at: 2026-06-07T00:30:00Z
-findings_total: 129
-findings_filed_as_crosslink_issues: 129
-findings_closed_in_take_2: 31
-findings_blocked_by_future_phase: 22
-findings_open_address_now: 13
-findings_dismissed: 75
-findings_hallucinated: 0
+findings_total: 215  # 86 crosslink #12 + 129 crosslink #13
+findings_filed_as_crosslink_issues: 215
+findings_closed: 83  # 52 accepted-now-closed + 29 resolved-already + 2 deferred-now-closed
+findings_blocked_by_future_phase: 18  # deferred, gated on a named future-phase issue
+findings_accepted_pending_operator_disposition: 10  # blocked-by L4 Raise-to-SO mostly
+findings_dismissed: 96  # methodology-correct audit records
+findings_hallucinated: 8  # methodology-correct audit records
+findings_open_address_now: 0
 domain_wide_dismissals: [accessibility, localization, privacy, performance-engineer]
 umbrella_issues_filed: [L1, L2, L3, L4]
 relate_clusters: [audit-trail, schema-revert-provenance, design-doc-hygiene, code-rename-operator-bridge, catalog-completeness, methodology-meta, ci-pre-commit-hardening, test-discipline]
-next_phase: phase-2-closing-commit-work
+phase_4_take_2_commits:
+  mdatron: [883eaaf, ba61527, 422c2dc, f45200b, 28e9794, 6a0fe22, f59c9f4, cea00ab]
+  vsdd-cli: [91689e5, fc98fa4, 3aad175, 5d02683]
+next_phase: crosslink-13-close  # the #13 issue itself can now close once an operator-disposition pass completes the 10 L4 Raise-to-SO items
 ```
