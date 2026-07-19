@@ -189,6 +189,8 @@ Each criterion is referenced by its leading name; the parenthetical names what i
 
 vsdd-core: state schema, composition function with calibration data, context generator, gate commands. vsdd (binary): init, status, gate entrypoints, cost queries. mdatron: the new check families behind its existing verify pipeline, with no methodology knowledge — vsdd supplies schemas and patterns, mdatron executes them, per the boundary preamble. Hooks: thin Python wrappers invoking mdatron and vsdd, installed by init into `.claude/` and `.crosslink/` per chassis conventions; enforcement logic lives in mdatron pattern and registry data rather than in the scripts. Events: `.vsdd/events.jsonl` records phase transitions, gate results, and dispatch manifests — the audit record behind the gates.
 
+Engineering conventions: crosslink and Thermite are the default reference for routine choices — tooling, CLI shape (uniform global flags, subcommand conventions), configuration (layered loading and config surfaces), CI shape, toolchain pinning. Divergence from an upstream convention carries a stated reason (operator ruling 2026-07-19; applies to this toolkit and mdatron alike).
+
 Workspace shape: both repos keep their current two-crate workspaces. The binary-first plan's single-crate collapse (tracker issue #15) is superseded for vsdd — the cost crate requires a workspace — and deferred to Phase 1c for mdatron as an optional simplification (operator decision 2026-07-18).
 
 ## References and name map
