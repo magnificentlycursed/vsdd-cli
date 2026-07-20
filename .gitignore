@@ -30,6 +30,8 @@ archive/
 # .claude/ — crosslink-managed content is auto-generated (not project source);
 # vsdd-cli's OWN vsdd-prefixed artifacts ARE source-of-truth and tracked
 # (they're what `vsdd init` deploys to adopting projects).
+# Deliberate divergence from the canonical block, restored after the
+# 2026-07-20 init --update clobber (operator ruling on vsdd-cli #597).
 .claude/hooks/*
 !.claude/hooks/vsdd-*
 !.claude/hooks/vsdd-*.py
@@ -44,3 +46,13 @@ archive/
 #   .claude/settings.json         — Claude Code project settings
 #   .claude/settings.local.json is per-developer, ignore separately if needed
 # === End crosslink managed ===
+
+# Rust build artifacts
+/target/
+
+# Chassis machine-local state crosslink 0.8.0 writes but its managed block
+# does not yet ignore (upstream finding filed on this tracker; these entries
+# move into the managed block when upstream absorbs them)
+.crosslink/.last-hydrated-ref
+.crosslink/.promoted-uuids
+.crosslink/promotion-log.json
