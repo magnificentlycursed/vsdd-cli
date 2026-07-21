@@ -15,9 +15,12 @@
 //! - `schemas::DOMAIN_PROMPT` — JSON Schema for vsdd-domain-*.md frontmatter
 //! - `schemas::SUPPLEMENT` — JSON Schema for vsdd-cli/supplements/*.md frontmatter
 
+pub(crate) mod bounded_read;
 pub mod diagnostics;
 pub mod registry;
 pub mod state;
+
+pub use bounded_read::MAX_ARTIFACT_BYTES;
 
 pub mod schemas {
     //! Bundled VSDD JSON Schemas. Embedded at compile time via `include_str!`.

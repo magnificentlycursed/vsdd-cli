@@ -33,9 +33,12 @@ pub struct GateData {
     pub schema_version: String,
     pub status: String,
     pub failure_kinds: Vec<FailureKind>,
+    /// Deepens at Layer 6 (the gate commands' consumer).
     pub pin_kind_declaration: Value,
     pub flake_policy: FlakePolicy,
+    /// Deepens at Layer 6 (the gate commands' consumer).
     pub cannot_run_predicate: Value,
+    /// Deepens at Layer 6 (the gate commands' consumer).
     pub mapping_schema: Value,
 }
 
@@ -189,6 +192,8 @@ pub struct EconomicsData {
     pub schema_class: String,
     pub schema_version: String,
     pub status: String,
+    /// Deepens at Layer 9 (the cost crate's consumer), as do the four
+    /// Value payloads below.
     pub effort_signals: Value,
     pub tier_effort_defaults: Vec<Value>,
     pub mutation_floor: Value,
@@ -204,6 +209,9 @@ pub struct DispatchData {
     pub schema_class: String,
     pub schema_version: String,
     pub status: String,
+    /// Deepens at Layer 8 (recorded dispatch), as do the preflight and
+    /// manifest payloads below; the branch grammar's refs query joins at
+    /// Layer 2.
     pub branch_grammar: Value,
     pub preflight_members: Vec<Value>,
     pub preflight_semantics: Value,
@@ -241,6 +249,8 @@ pub struct SnapshotSchemaSet {
     pub schema_class: String,
     pub schema_version: String,
     pub status: String,
+    /// Deepens at Layer 2 (the snapshot acquisition's consumer).
     pub snapshot_fields: Vec<Value>,
+    /// Deepens at Layer 2.
     pub audit: Value,
 }

@@ -16,7 +16,6 @@
 pub mod frontmatter;
 pub mod sets;
 
-use std::fs;
 use std::path::{Path, PathBuf};
 
 use mdatron_core::Schema;
@@ -30,6 +29,22 @@ use sets::{
 
 /// The registered recovery member this loader mirrors (vsdd-cli #724).
 pub(crate) const REGISTRY_REPAIR_ACTION: &str = "repair-registry-artifact";
+
+enum BoundedTextError {
+    Io(std::io::Error),
+    Oversize,
+    NotUtf8(std::string::FromUtf8Error),
+}
+
+/// The loader's text reads ride the bounded reader (the #726 ruling's
+/// capped reader, landed per vsdd-cli #732).
+fn read_bounded_utf8(path: &Path) -> Result<String, BoundedTextError> {
+    let bounded = crate::bounded_read::read_bounded(path).map_err(BoundedTextError::Io)?;
+    if bounded.oversize {
+        return Err(BoundedTextError::Oversize);
+    }
+    String::from_utf8(bounded.bytes).map_err(BoundedTextError::NotUtf8)
+}
 
 /// All nine sets, loaded and validated.
 #[derive(Debug)]
@@ -98,29 +113,54 @@ pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T,
             .chars()
             .all(|c| c.is_ascii_lowercase() || c.is_ascii_digit() || c == '-')
     {
-        return Err(artifact_diagnostic(
-            repo_root.join("templates/registry"),
-            "invalid-class",
-            format!("registry class `{class}` is not a single lowercase path segment"),
-            None,
-        ));
+        // A caller fault, not the adopter's artifact: the empty recovery
+        // action is the explicit no-adopter-act signal (the #723 pattern;
+        // vsdd-cli #734).
+        return Err(Box::new(Diagnostic {
+            file: repo_root.join("templates/registry"),
+            kind: "invalid-class".to_string(),
+            machine_token: "invalid-class".to_string(),
+            location: None,
+            message: format!(
+                "registry class `{class}` is not a single lowercase path segment — a toolkit or caller defect, not an artifact defect"
+            ),
+            recovery_action: String::new(),
+            recovery_text: String::new(),
+        }));
     }
 
     let path = repo_root
         .join("templates/registry")
         .join(format!("{class}.md"));
-    let text = fs::read_to_string(&path).map_err(|e| {
-        let kind = if e.kind() == std::io::ErrorKind::NotFound {
-            "absent"
-        } else {
-            "permission-or-io"
-        };
-        artifact_diagnostic(
+    let text = read_bounded_utf8(&path).map_err(|e| match e {
+        BoundedTextError::Io(e) => {
+            let kind = if e.kind() == std::io::ErrorKind::NotFound {
+                "absent"
+            } else {
+                "permission-or-io"
+            };
+            artifact_diagnostic(
+                path.clone(),
+                kind,
+                format!("cannot read the registry artifact: {e}"),
+                None,
+            )
+        }
+        BoundedTextError::Oversize => artifact_diagnostic(
             path.clone(),
-            kind,
-            format!("cannot read the registry artifact: {e}"),
+            "malformed",
+            format!(
+                "the artifact exceeds the reader's {} byte limit and was not parsed",
+                crate::bounded_read::MAX_ARTIFACT_BYTES
+            ),
             None,
-        )
+        ),
+        BoundedTextError::NotUtf8(e) => artifact_diagnostic(
+            path.clone(),
+            "malformed",
+            format!("the artifact is not valid UTF-8: {e}"),
+            None,
+        ),
     })?;
 
     let (fm, _body) = frontmatter::split_frontmatter(&text).map_err(|e| {
@@ -167,13 +207,22 @@ pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T,
     let schema_path = repo_root
         .join(".mdatron/schemas")
         .join(format!("{class}.json"));
-    let schema_text = fs::read_to_string(&schema_path).map_err(|e| {
-        schema_pair_diagnostic(
-            schema_path.clone(),
-            "absent",
-            format!("cannot read the schema pair: {e}"),
-            None,
-        )
+    let schema_text = read_bounded_utf8(&schema_path).map_err(|e| {
+        let (kind, detail) = match e {
+            BoundedTextError::Io(e) => ("absent", format!("cannot read the schema pair: {e}")),
+            BoundedTextError::Oversize => (
+                "malformed",
+                format!(
+                    "the schema pair exceeds the reader's {} byte limit",
+                    crate::bounded_read::MAX_ARTIFACT_BYTES
+                ),
+            ),
+            BoundedTextError::NotUtf8(e) => (
+                "malformed",
+                format!("the schema pair is not valid UTF-8: {e}"),
+            ),
+        };
+        schema_pair_diagnostic(schema_path.clone(), kind, detail, None)
     })?;
     let schema_json: serde_json::Value = serde_json::from_str(&schema_text).map_err(|e| {
         schema_pair_diagnostic(

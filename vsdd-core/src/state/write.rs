@@ -94,8 +94,23 @@ pub fn write_state(
         ));
     }
 
-    let prior_bytes = match std::fs::read(path) {
-        Ok(bytes) => Some(bytes),
+    let prior_bytes = match crate::bounded_read::read_bounded(path) {
+        Ok(bounded) if bounded.oversize => {
+            // Like the malformed-prior carve-out: an oversize prior is a
+            // read failure of the state artifact, and restore-from-boundary
+            // is its recovery whichever API found it.
+            return Err(Box::new(Diagnostic::state_read_failure(
+                crate::diagnostics::StateReadKind::Malformed,
+                path.to_path_buf(),
+                format!(
+                    "the prior state file exceeds the reader's {} byte limit and was not parsed",
+                    crate::bounded_read::MAX_ARTIFACT_BYTES
+                ),
+                None,
+                vocabulary,
+            )));
+        }
+        Ok(bounded) => Some(bounded.bytes),
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => None,
         Err(e) => {
             return Err(refusal(

@@ -446,3 +446,24 @@ fn write_refusal_token_resolves_in_the_action_vocabulary() {
     assert_eq!(member.family, "recovery");
     assert_eq!(diag.recovery_text, member.human);
 }
+
+#[test]
+fn oversize_state_file_is_refused_before_parsing() {
+    // The capped reader per the #726 ruling, landed at #732: the flat
+    // pre-parse materialization is bounded and oversize fails loud.
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.yaml");
+    let mut body = String::from("schema_version: \"0.1.0\"\n");
+    while (body.len() as u64) <= vsdd_core::MAX_ARTIFACT_BYTES {
+        body.push_str("# padding far past the documented limit\n");
+    }
+    fs::write(&path, body).unwrap();
+
+    let diag = read_state(&path, &vocabulary()).expect_err("an oversize state file is refused");
+    assert_eq!(diag.kind, "malformed");
+    assert!(
+        diag.message
+            .contains(&vsdd_core::MAX_ARTIFACT_BYTES.to_string()),
+        "the diagnostic names the documented limit"
+    );
+}

@@ -355,6 +355,10 @@ fn registry_repair_token_is_the_registered_member() {
         .find(|a| a.id == diag.recovery_action)
         .expect("the loader's mirrored token resolves to a registered member");
     assert_eq!(member.family, "recovery");
+    assert_eq!(
+        diag.recovery_text, member.human,
+        "the mirrored recovery text stays pinned to the registered member's human text"
+    );
 }
 
 #[test]
@@ -427,4 +431,43 @@ fn bom_before_the_fence_still_splits() {
         loaded.is_ok(),
         "a leading byte-order mark does not defeat the fence"
     );
+}
+
+#[test]
+fn oversize_artifact_is_refused_before_parsing() {
+    // The capped reader at the loader's sites (vsdd-cli #732).
+    let dir = tempfile::tempdir().unwrap();
+    let reg_dir = dir.path().join("templates/registry");
+    fs::create_dir_all(&reg_dir).unwrap();
+    fs::create_dir_all(dir.path().join(".mdatron/schemas")).unwrap();
+    let mut body = String::from("---\nschema_class: gate-data\n---\n");
+    while (body.len() as u64) <= vsdd_core::MAX_ARTIFACT_BYTES {
+        body.push_str("padding far past the documented limit\n");
+    }
+    fs::write(reg_dir.join("gate-data.md"), body).unwrap();
+
+    let diag = registry::load_set::<GateData>(dir.path(), "gate-data")
+        .expect_err("an oversize artifact is refused");
+    assert_eq!(diag.kind, "malformed");
+    assert!(
+        diag.message
+            .contains(&vsdd_core::MAX_ARTIFACT_BYTES.to_string()),
+        "the diagnostic names the documented limit"
+    );
+}
+
+#[test]
+fn bare_fence_inside_a_block_scalar_truncates_the_split() {
+    // The pin the doc promised (vsdd-cli #733): the closing fence is the
+    // first bare `---` line, YAML context notwithstanding — the
+    // documented authoring rule for the registry artifacts.
+    use vsdd_core::registry::frontmatter::split_frontmatter;
+    let doc = "---\nschema_class: gate-data\nnote: |\n  text before the fence\n---\n  text after the fence\nbody\n";
+    let (fm, body) = split_frontmatter(doc).expect("splits at the first bare fence line");
+    assert!(fm.contains("text before the fence"));
+    assert!(
+        !fm.contains("text after the fence"),
+        "the block scalar is truncated at the bare fence — the documented limitation"
+    );
+    assert!(body.contains("text after the fence"));
 }

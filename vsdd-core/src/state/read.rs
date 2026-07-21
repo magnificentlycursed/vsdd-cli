@@ -18,8 +18,8 @@ use super::schema::{State, SUPPORTED_STATE_SCHEMA_VERSION};
 /// permission-or-io. A schema_version this crate does not support is
 /// refused as malformed content naming the version seen and supported.
 pub fn read_state(path: &Path, vocabulary: &StatuslineData) -> Result<State, Box<Diagnostic>> {
-    let bytes = match std::fs::read(path) {
-        Ok(bytes) => bytes,
+    let bounded = match crate::bounded_read::read_bounded(path) {
+        Ok(bounded) => bounded,
         Err(e) => {
             let kind = if e.kind() == std::io::ErrorKind::NotFound {
                 StateReadKind::Absent
@@ -35,7 +35,18 @@ pub fn read_state(path: &Path, vocabulary: &StatuslineData) -> Result<State, Box
             )));
         }
     };
-    validate_state_bytes(&bytes, path, vocabulary)
+    if bounded.oversize {
+        return Err(malformed(
+            path,
+            format!(
+                "the state file exceeds the reader's {} byte limit and was not parsed",
+                crate::bounded_read::MAX_ARTIFACT_BYTES
+            ),
+            None,
+            vocabulary,
+        ));
+    }
+    validate_state_bytes(&bounded.bytes, path, vocabulary)
 }
 
 fn malformed(
