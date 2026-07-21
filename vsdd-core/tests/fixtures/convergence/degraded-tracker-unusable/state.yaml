@@ -1,0 +1,10 @@
+schema_version: "0.1.0"
+current_phase: phase-2a
+current_layer: 2
+open_findings_pointer:
+  milestone: "layer 2: snapshot acquisition, phase answer, and corroboration"
+active_composition:
+  scope: phase-2a
+  domains: [quality-engineer]
+  mode: skill-interactive
+  config_inputs_hash: "sha256:convergence-fixture"

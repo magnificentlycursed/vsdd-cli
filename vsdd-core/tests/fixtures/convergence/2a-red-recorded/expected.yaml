@@ -1,0 +1,5 @@
+phase: phase-2a
+layer: 2
+next_action: close-phase
+degraded: null
+integrity_findings: []

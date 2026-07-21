@@ -1,0 +1,5 @@
+phase: phase-2b
+layer: 2
+next_action: 2b-implement-to-green
+degraded: null
+integrity_findings: []

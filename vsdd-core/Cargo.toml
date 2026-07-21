@@ -17,6 +17,9 @@ serde_yaml_ng = "0.10"
 serde_json = { workspace = true }
 thiserror = { workspace = true }
 sha2 = "0.10"
+# The branch grammar's registered patterns are regex strings in versioned
+# data; the refs query consumes them as declared (PE note on #738).
+regex = "1"
 # Promoted from dev-dependency: the state write's unique-temp-plus-rename
 # rides NamedTempFile for RAII cleanup on every failure ordering
 # (vsdd-cli #721, #726; PE note on the #720 fix-pass record).

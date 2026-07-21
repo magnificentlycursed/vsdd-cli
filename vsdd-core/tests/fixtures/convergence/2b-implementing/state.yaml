@@ -1,0 +1,17 @@
+schema_version: "0.1.0"
+current_phase: phase-2b
+current_layer: 2
+open_findings_pointer:
+  milestone: "layer 2: snapshot acquisition, phase answer, and corroboration"
+last_gate_result:
+  gate: red-gate
+  phase: phase-2a
+  layer: 2
+  result: fail
+  evidence: "vsdd-cli #738 fixture"
+  recorded: "2026-07-21T00:00:00Z"
+active_composition:
+  scope: phase-2b
+  domains: [quality-engineer]
+  mode: skill-interactive
+  config_inputs_hash: "sha256:convergence-fixture"

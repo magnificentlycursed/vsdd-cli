@@ -1,0 +1,6 @@
+phase: phase-2a
+layer: 2
+next_action: 2a-author-red-gate-tests
+degraded: null
+integrity_findings:
+  - phase-pointer-against-milestone-state

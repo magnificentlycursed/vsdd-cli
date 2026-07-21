@@ -616,6 +616,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_yaml_ng",
+ "sha2",
  "thiserror 1.0.69",
 ]
 
@@ -1209,6 +1210,7 @@ name = "vsdd-core"
 version = "0.1.0"
 dependencies = [
  "mdatron-core",
+ "regex",
  "serde",
  "serde_json",
  "serde_yaml_ng",

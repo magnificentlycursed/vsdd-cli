@@ -1,0 +1,5 @@
+phase: phase-2a
+layer: 2
+next_action: 2a-author-red-gate-tests
+degraded: tracker-unusable
+integrity_findings: []

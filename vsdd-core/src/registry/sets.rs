@@ -205,14 +205,29 @@ pub struct EconomicsData {
 // --- dispatch-data -----------------------------------------------------------
 
 #[derive(Debug, Clone, Deserialize)]
+pub struct BranchForm {
+    pub id: String,
+    pub pattern: String,
+    pub meaning: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct BranchGrammar {
+    pub forms: Vec<BranchForm>,
+    /// The #688-adopted exemption set as structured data (vsdd-cli #738).
+    pub exempt_refs: Vec<String>,
+    pub rules: Vec<String>,
+}
+
+#[derive(Debug, Clone, Deserialize)]
 pub struct DispatchData {
     pub schema_class: String,
     pub schema_version: String,
     pub status: String,
-    /// Deepens at Layer 8 (recorded dispatch), as do the preflight and
-    /// manifest payloads below; the branch grammar's refs query joins at
-    /// Layer 2.
-    pub branch_grammar: Value,
+    /// Typed at Layer 2, its refs-query consumer.
+    pub branch_grammar: BranchGrammar,
+    /// Deepens at Layer 8 (recorded dispatch), as do the semantics and
+    /// manifest payloads below.
     pub preflight_members: Vec<Value>,
     pub preflight_semantics: Value,
     pub fencing_rule: String,

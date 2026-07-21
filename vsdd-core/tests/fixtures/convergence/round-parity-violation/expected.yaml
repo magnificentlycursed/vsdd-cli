@@ -1,0 +1,6 @@
+phase: phase-3
+layer: 2
+next_action: 3-dispatch-review-round
+degraded: null
+integrity_findings:
+  - round-parity

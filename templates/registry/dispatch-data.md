@@ -1,6 +1,6 @@
 ---
 schema_class: dispatch-data
-schema_version: 0.1.0
+schema_version: 0.2.0
 status: draft-proposal
 branch_grammar:
   forms:
@@ -15,7 +15,12 @@ branch_grammar:
     - "the refs query runs over this clone's own branches — local refs and their remote-tracking counterparts; other actors' refs are their own repos' concern"
     - "the pre-push hook checks the same membership and warns toward the currently-preferred form; it never blocks a registered form, never forces a retroactive rename"
     - "preferred form: display-form once the repo's hub sync has assigned display IDs, session-form before that"
-    - "exempt refs: main, the chassis's own branches (crosslink/hub, crosslink/knowledge, wip-archive and other operator-created archive refs recorded on the tracker)"
+    - "exempt refs: main, the chassis's own branches (crosslink/hub, crosslink/knowledge, wip-archive and other operator-created archive refs recorded on the tracker) — the set below is the same adoption as structured data (vsdd-cli #688 addendum; promoted for the Layer 2 consumer, #738)"
+  exempt_refs:
+    - main
+    - crosslink/hub
+    - crosslink/knowledge
+    - wip-archive
 preflight_members:
   - id: container-runtime
     observation_binding: "the configured container runtime's daemon answers a status probe (docker info or podman info) within 10 seconds; command absent is fail; unresponsive or ambiguous output is inconclusive"

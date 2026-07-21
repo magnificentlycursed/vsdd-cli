@@ -2,16 +2,42 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vsdd.local/schemas/dispatch-data.json",
   "title": "Dispatch data set frontmatter",
-  "description": "Frontmatter contract for the dispatch data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: branch form ids unique and patterns valid regexes; preflight member ids unique and exactly the contract's five; manifest field names unique.",
+  "description": "Frontmatter contract for the dispatch data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: branch form ids unique and patterns valid regexes; preflight member ids unique and exactly the contract's five; manifest field names unique; exempt_refs is the #688-adopted exemption set as structured data, promoted from rules prose for the Layer 2 refs-query consumer (vsdd-cli #738).",
   "type": "object",
-  "required": ["schema_class", "schema_version", "status", "branch_grammar", "preflight_members", "preflight_semantics", "fencing_rule", "manifest_fields"],
+  "required": [
+    "schema_class",
+    "schema_version",
+    "status",
+    "branch_grammar",
+    "preflight_members",
+    "preflight_semantics",
+    "fencing_rule",
+    "manifest_fields"
+  ],
   "properties": {
-    "schema_class": {"type": "string", "const": "dispatch-data"},
-    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
-    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "schema_class": {
+      "type": "string",
+      "const": "dispatch-data"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft-proposal",
+        "adopted",
+        "established"
+      ]
+    },
     "branch_grammar": {
       "type": "object",
-      "required": ["forms", "rules"],
+      "required": [
+        "forms",
+        "exempt_refs",
+        "rules"
+      ],
       "properties": {
         "forms": {
           "type": "array",
@@ -19,16 +45,47 @@
           "maxItems": 2,
           "items": {
             "type": "object",
-            "required": ["id", "pattern", "meaning"],
+            "required": [
+              "id",
+              "pattern",
+              "meaning"
+            ],
             "properties": {
-              "id": {"type": "string", "enum": ["session-form", "display-form"]},
-              "pattern": {"type": "string", "minLength": 1},
-              "meaning": {"type": "string", "minLength": 1}
+              "id": {
+                "type": "string",
+                "enum": [
+                  "session-form",
+                  "display-form"
+                ]
+              },
+              "pattern": {
+                "type": "string",
+                "minLength": 1
+              },
+              "meaning": {
+                "type": "string",
+                "minLength": 1
+              }
             },
             "additionalProperties": false
           }
         },
-        "rules": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "exempt_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
       },
       "additionalProperties": false
     },
@@ -38,35 +95,86 @@
       "maxItems": 5,
       "items": {
         "type": "object",
-        "required": ["id", "observation_binding"],
+        "required": [
+          "id",
+          "observation_binding"
+        ],
         "properties": {
-          "id": {"type": "string", "enum": ["container-runtime", "consent-state", "identity-approval", "model-credentials", "project-server-trust-and-load"]},
-          "observation_binding": {"type": "string", "minLength": 1},
-          "note": {"type": "string"}
+          "id": {
+            "type": "string",
+            "enum": [
+              "container-runtime",
+              "consent-state",
+              "identity-approval",
+              "model-credentials",
+              "project-server-trust-and-load"
+            ]
+          },
+          "observation_binding": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
         },
         "additionalProperties": false
       }
     },
     "preflight_semantics": {
       "type": "object",
-      "required": ["result_values", "rule", "bootstrap"],
+      "required": [
+        "result_values",
+        "rule",
+        "bootstrap"
+      ],
       "properties": {
-        "result_values": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "enum": ["pass", "fail", "inconclusive"]}},
-        "rule": {"type": "string", "minLength": 1},
-        "bootstrap": {"type": "string", "minLength": 1}
+        "result_values": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "inconclusive"
+            ]
+          }
+        },
+        "rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bootstrap": {
+          "type": "string",
+          "minLength": 1
+        }
       },
       "additionalProperties": false
     },
-    "fencing_rule": {"type": "string", "minLength": 1},
+    "fencing_rule": {
+      "type": "string",
+      "minLength": 1
+    },
     "manifest_fields": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["field", "meaning"],
+        "required": [
+          "field",
+          "meaning"
+        ],
         "properties": {
-          "field": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
-          "meaning": {"type": "string", "minLength": 1}
+          "field": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "additionalProperties": false
       }
