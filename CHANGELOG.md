@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Phase 2b execution, Layer 1: implement to green against the red gate (#718)
 - Phase 2a execution, Layer 1: red-gate test suite for the state artifact and versioned data (#716)
 - Phase 1b: verification architecture (respec cycle) (L2)
 
@@ -14,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Phase 2c execution, Layer 1: refactor under the green suite (#719)
 - cold-pass nit collector: three items; sign-off recommended ready as-is (#715)
 - Phase 1c execution: decomposition and data authoring (#597)
 - data-sets review: documentation-reviewer cold pass — the external cold reader's slot (#714)
