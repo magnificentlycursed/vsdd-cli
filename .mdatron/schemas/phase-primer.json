@@ -27,7 +27,6 @@
     "phase": {
       "type": "string",
       "enum": [
-        "phase-0",
         "phase-1a",
         "phase-1b",
         "phase-1c",

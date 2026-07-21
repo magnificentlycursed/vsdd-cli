@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/state-schema.json",
+  "title": "State schema frontmatter",
+  "description": "Frontmatter contract for the state-schema registry artifact (the .vsdd/state.yaml contents enumeration). Declared cross-field constraints: state_fields names unique; declared_constraints entries unique. The instance-level schema for adopter state files is generated from this data at Layer 1; this schema validates the registry artifact itself.",
+  "type": "object",
+  "required": ["schema_class", "schema_version", "status", "state_fields", "declared_constraints"],
+  "properties": {
+    "schema_class": {"type": "string", "const": "state-schema"},
+    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "state_fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "required", "semantics"],
+        "properties": {
+          "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+          "type": {"type": "string"},
+          "required": {"type": "boolean"},
+          "semantics": {"type": "string", "minLength": 1},
+          "decision_note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "declared_constraints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["entry", "rule"],
+        "properties": {
+          "entry": {"type": "string", "minLength": 1},
+          "rule": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
