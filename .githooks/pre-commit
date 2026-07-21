@@ -4,9 +4,13 @@
 set -euo pipefail
 
 if ! command -v mdatron >/dev/null 2>&1; then
-  echo "pre-commit: mdatron not on PATH — skipping" >&2
+  # Fail-closed (operator ruling 2026-07-20, vsdd-cli #658): a missing
+  # conformance checker blocks the commit rather than silently skipping —
+  # a guarded no-op hides the absence until something depends on it.
+  echo "pre-commit: mdatron not on PATH — commit blocked (fail-closed)" >&2
   echo "pre-commit: install with  cargo install --path ../mdatron/mdatron-cli" >&2
-  exit 0
+  echo "pre-commit: (bypass for a genuine emergency: git commit --no-verify — the deviation is yours to record)" >&2
+  exit 2
 fi
 
 # Minimum-version sanity check (per crosslink #12 PE/F2). Bootstrap-period

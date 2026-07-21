@@ -9,7 +9,7 @@
       {
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/post-edit-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else exit 0; fi",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/post-edit-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
             "timeout": 5,
             "type": "command"
           }
@@ -19,7 +19,7 @@
       {
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/heartbeat.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else exit 0; fi",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/heartbeat.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
             "timeout": 3,
             "type": "command"
           }
@@ -30,7 +30,7 @@
       {
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/pre-web-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else exit 0; fi",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/pre-web-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
             "timeout": 5,
             "type": "command"
           }
@@ -40,7 +40,7 @@
       {
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/work-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else exit 0; fi",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/work-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
             "timeout": 3,
             "type": "command"
           }
@@ -52,7 +52,7 @@
       {
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/session-start.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else exit 0; fi",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/session-start.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
             "timeout": 10,
             "type": "command"
           }
@@ -64,7 +64,7 @@
       {
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/prompt-guard.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else exit 0; fi",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/prompt-guard.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
             "timeout": 5,
             "type": "command"
           }

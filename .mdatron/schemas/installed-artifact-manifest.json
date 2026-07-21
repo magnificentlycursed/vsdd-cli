@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/installed-artifact-manifest.json",
+  "title": "Installed-artifact manifest frontmatter",
+  "description": "Frontmatter contract for the installed-artifact manifest (Conformance at action time, chassis-affordance closure). Declared cross-field constraints, executed by the session-substrate check at read (and by mdatron's cross-file family when it lands): every id in an entry's pairs_with resolves to an entry id in this manifest; every id in an entry's referenced_by resolves to a reference_surfaces id; entry ids are unique.",
+  "type": "object",
+  "required": [
+    "schema_class",
+    "schema_version",
+    "status",
+    "reference_surfaces",
+    "entries"
+  ],
+  "properties": {
+    "schema_class": {
+      "type": "string",
+      "const": "installed-artifact-manifest"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft-proposal", "adopted", "established"]
+    },
+    "reference_surfaces": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "scope"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+          "path": {"type": "string"},
+          "scope": {"type": "string", "enum": ["repo", "host", "per-clone", "repo-or-host"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "class", "source", "lifetime", "referenced_by", "pairs_with", "resolution", "fail_mode"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+          "path": {"type": "string"},
+          "class": {
+            "type": "string",
+            "enum": ["hook-wiring", "hook-payload", "hook-support", "server-wiring", "server-payload", "server-enablement", "command-listing", "rules", "chassis-config", "git-hook-wiring", "git-hook-payload", "identity-state", "statusline-wiring"]
+          },
+          "source": {
+            "type": "string",
+            "enum": ["crosslink-init", "vsdd-source", "operator", "chassis-runtime"]
+          },
+          "lifetime": {
+            "type": "string",
+            "enum": ["tracked-wiring", "tracked-payload", "per-clone-wiring", "per-clone-payload"]
+          },
+          "referenced_by": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"}
+          },
+          "pairs_with": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"}
+          },
+          "resolution": {
+            "type": "string",
+            "enum": ["exists", "exists-and-referenced", "worded-absence"]
+          },
+          "fail_mode": {
+            "type": "string",
+            "enum": ["fail-closed", "fail-open-guarded", "undefined"]
+          },
+          "note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -10,6 +10,18 @@
 - Operator or relay phrasing is NOT registration. A word someone used casually
   does not become a standing term. Term registration is an operator act under
   the contract's maturity lifecycle — propose, never self-serve.
+- No variants of existing phrases either: quote a governing document's exact
+  phrasing when citing it, or describe plainly — never mutate a sanctioned
+  phrase into a new compound (the contract says "hollow shell"; "hollow
+  install" was a caught variant coinage). Adopter-facing text (error
+  messages, diagnostics, published issues) uses plain description only,
+  never estate shorthand.
+- Concrete referents over abstraction words (operator ruling 2026-07-20):
+  say "crosslink" when you mean crosslink, "Claude Code" when you mean
+  Claude Code, "any AI coding assistant" when you mean the class — not
+  "substrate" or similar layer-words. Exact names of contract constructs
+  (e.g. the session-substrate check) are citations and keep their names
+  until an amendment rewords them.
 
 ## Crosslink at 0.8.0 — the upgrade hold and known defects
 - HARD CONSTRAINT: the host binary stays at crosslink 0.8.0. Never upgrade to
