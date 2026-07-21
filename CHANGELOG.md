@@ -12,6 +12,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 ### Changed
+- data-sets review: terminal verify round, second execution (#712)
+- terminal nit SO: Revision header omits the round-2 amendment batch (#711)
+- terminal minor DR: standard preset's six-domain set resolves nowhere; verification claim not performable (#710)
+- terminal minor SA: statusline-wiring entry not re-swept against the new host-wiring axis value (#709)
+- data-sets review round 2: verification round over the fixed data and amended contract (#699)
+- r2 minor SO: the loop definition omits the terminal verify round the #687 amendment says it names (#706)
 - r2 nit collector: three low-severity items (#707)
 - r2 minor DR: 'the tier field's own count' is a dangling reference the #684 fix introduced (#705)
 - r2 minor SA: recovery-family gloss excludes reconcile-toward-artifact (#704)
