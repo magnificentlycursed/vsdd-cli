@@ -16,6 +16,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- c2 nit collector: four items (#734)
+- c2 minor QE+DE convergent: the fence-limitation doc claims a test pin that does not exist (#733)
+- c2 minor security: the byte-cap decline contradicted the standing #726 ruling — land the capped reader (#732)
 - c1 minor collector: suite hardening (#728)
 - c1 minor collector: loader and diagnostic conduct (#727)
 - c1 minor collector: write-path hygiene and durability scope (#726)
