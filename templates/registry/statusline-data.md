@@ -1,6 +1,6 @@
 ---
 schema_class: statusline-data
-schema_version: 0.1.0
+schema_version: 0.2.0
 status: draft-proposal
 read_failure_kinds:
   - kind: absent
@@ -11,20 +11,20 @@ read_failure_kinds:
   - kind: malformed
     machine_token: state-malformed
     recovery_action: fix-state-content
-    human_diagnostic: "state file malformed: parse failure at the reported location"
-    human_recovery: "repair the malformed state file to match the last boundary commit, then re-run vsdd status"
+    human_diagnostic: "state file malformed: <the parser's reported location and message>"
+    human_recovery: "restore the state file's content to the last boundary commit's version, then re-run vsdd status"
   - kind: permission-or-io
     machine_token: state-unreadable-io
     recovery_action: fix-state-permissions
-    human_diagnostic: "state file unreadable: permission or IO failure"
-    human_recovery: "fix file permissions on the state artifact, then re-run vsdd status"
+    human_diagnostic: "state file unreadable: permission or input/output failure"
+    human_recovery: "clear the fault the diagnostic names — file permissions on the state artifact, or the disk or mount failure — then re-run vsdd status"
 degraded_kinds:
   - kind: tracker-absent
-    marker_word: offline
+    marker_word: tracker offline
     benign: true
-    next_step_text: "offline mode — tracker corroboration unavailable; the phase answer is computed from the state artifact alone, which is the contracted normal offline behavior; corroboration resumes when the tracker is reachable"
+    next_step_text: "tracker offline — corroboration unavailable; the phase answer is computed from the state artifact alone, which is the contracted normal offline behavior; corroboration resumes when the tracker is reachable"
   - kind: tracker-unusable
-    marker_word: degraded
+    marker_word: tracker degraded
     benign: false
     next_step_text: "tracker data unusable — the phase answer is computed from the state artifact alone; run crosslink integrity to diagnose the tracker store"
 wiring_outcomes:
@@ -37,10 +37,11 @@ wiring_outcomes:
 display_fields:
   - {field: repo-name, width_budget_chars: 16, absence_text: ""}
   - {field: phase-answer, width_budget_chars: 20, absence_text: "not entered"}
-  - {field: session, width_budget_chars: 10, absence_text: "no session"}
   - {field: work-item, width_budget_chars: 24, absence_text: "no work item"}
-  - {field: milestone-with-count, width_budget_chars: 24, absence_text: "no milestone"}
+  - {field: milestone-with-count, width_budget_chars: 34, absence_text: "no milestone"}
 truncation_mark: "(cut)"
+truncation_rule: "the mark is set off from the truncated value by a space, never glued; milestone-with-count truncates the name before the count — the open-finding count always survives truncation (operator ruling 2026-07-21, vsdd-cli #680)"
+substrate_findings_visibility: "the glance segment does not carry substrate findings; the machine and human forms carry them (operator ruling 2026-07-21, vsdd-cli #690)"
 broken_state_mark: "state unreadable — vsdd status"
 wall_clock_budget_ms: 250
 timing_check:
@@ -62,23 +63,44 @@ The words, numbers, and enumerations the three status renderings consume
 (contract: the Status requirement; Verification architecture — the budgets
 are versioned data beside the enumerations). Every number and copy string
 here is a proposal until operator adoption is recorded (vsdd-cli #667).
+Round-1 rulings folded in 2026-07-21: vsdd-cli #679, #680, #681, #690.
 
 `read_failure_kinds` maps one-to-one into the action vocabulary's recovery
-family (composition-scope-and-actions, round 2) — the machine form emits
+family (composition-scope-and-actions) — the machine form emits
 the kind's machine token, the recovery action id, and the diagnostic
 payload; the human form renders the diagnostic and recovery text; the
 segment renders the broken-state mark. The never-silent principle covers
-absence, degradation, truncation, and unreadable state alike.
+absence, degradation, truncation, and unreadable state alike. The
+permission-or-io recovery text branches both of the kind's causes; its
+action id stays `fix-state-permissions`, the registered vocabulary
+member (vsdd-cli #681).
 
 `degraded_kinds`: the tracker-absent kind is the contracted normal offline
-mode and its text says so rather than raising a false alarm; markers are
-plain words, never glyphs alone, and the information survives color
-stripping.
+mode and its text says so rather than raising a false alarm; the marker
+words carry their own scope — `tracker offline`, never a bare word a
+glance could read network-wide — and are plain words, never glyphs alone,
+so the information survives color stripping.
 
 `display_fields` absences render as words, never empty slots; the
-truncation mark is a word, not a glyph, per the same discipline. The
-wiring-outcome members are the Install requirement's fixed six —
-success affirmative, deliberate skips and failures distinct.
+truncation mark is a word, not a glyph, and `truncation_rule` states the
+order: the count outlives the name. The session identifier is not a
+glance segment — the operator is in the session; it renders in the human
+form, one `crosslink session status` away (operator ruling 2026-07-21,
+vsdd-cli #679), and its freed width moved to milestone-with-count.
+repo-name's empty absence text is deliberate: the renderer runs
+repo-rooted and the repo-set config enumerates repos by path, so the
+field is structurally present (vsdd-cli #697). The wiring-outcome
+members are the Install requirement's fixed six — success affirmative,
+deliberate skips and failures distinct. The interactive offer's prompt
+copy is implementation text (Layer 4), deliberately outside this set:
+outcomes, not prompts, are the versioned enumeration (vsdd-cli #697).
+
+Correspondence to the snapshot schema's display fields (vsdd-cli #695):
+repo-name is display_repo_name, work-item is display_work_item,
+milestone-with-count is display_active_milestone (count precomputed
+there); phase-answer is derived by the pure derivation, never
+materialized; display_session serves the human form now that the glance
+segment omits the session.
 
 `repo_set_config` resolves the routed items of "phase-1c work item:
 statusline wiring script shape" (#362): explicit adopter-owned repo set

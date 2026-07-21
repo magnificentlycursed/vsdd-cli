@@ -22,18 +22,18 @@ state_fields:
   - name: last_gate_result
     type: object
     required: false
-    semantics: "the most recent gate run: {gate: <gate kind>, phase: <scope-member-id>, layer: <integer>, result: pass|fail, evidence: <commit sha or tracker handle>, recorded: <ISO 8601>}; absent until the first gate runs"
+    semantics: "the most recent gate run: {gate: red-gate|green-gate|fix-scale-gate|phase-exit-gate, phase: <scope-member-id>, layer: <integer>, result: pass|fail, evidence: <commit sha or tracker handle>, recorded: <ISO 8601>}; absent until the first gate runs; the gate kinds are the closed enumeration (vsdd-cli #694)"
   - name: active_composition
     type: object
     required: true
-    semantics: "the computed domain set in force: {scope: <scope-member-id>, domains: [<domain slugs>], mode: skill-interactive|cold-dispatch, config_inputs_hash: <hash over the DESIGN.md surfaces and review config the composition was computed from>} — the hash makes a stale composition mechanically detectable: state hash vs recomputed hash (operator ruling 2026-07-20, vsdd-cli #665)"
+    semantics: "the computed domain set in force: {scope: <scope-member-id>, domains: [<domain slugs>], mode: skill-interactive|cold-dispatch, config_inputs_hash: <hash over the DESIGN.md surfaces and review config the composition was computed from>} — the mode values are the attended and autonomous sides of the contract's dispatch split, respectively (vsdd-cli #697); the hash makes a stale composition mechanically detectable: state hash vs recomputed hash (operator ruling 2026-07-20, vsdd-cli #665)"
   - name: published
     type: object
     required: false
     semantics: "the published marker — absent before first publish; written once by the promotion act: {at: <ISO 8601 date>, version: <semver>, act: <tracker handle>}; the machine-readable publish-state the fix-lane falsifiers consult; immutable once present (forward-only)"
 declared_constraints:
   - entry: phase-gate consistency
-    rule: a state whose current_phase is phase-2b or later within a layer requires a last_gate_result carrying that layer's red-gate fail record; executed by mdatron's state-consistency family (Layer 7), by vsdd bootstrap self-validation until it lands
+    rule: "a state entering phase-2b within a layer requires a last_gate_result carrying that layer's red-gate fail record at the entry — the single slot answers exactly that; the historical sweep over later states belongs to mdatron's state-consistency family reading tracker and git history, not to this field (operator ruling 2026-07-21, vsdd-cli #683); executed by that family (Layer 7), by vsdd bootstrap self-validation until it lands"
   - entry: published immutability
     rule: once published is present its fields never change; a diff touching it after first write fails the check
   - entry: scope-member validity
@@ -53,15 +53,17 @@ first-publish promotion act writes it.
 
 The state advances only at phase boundaries, by the agent, in the same
 commit as the boundary evidence. Read failures take the enumerated
-discipline (malformed, absent, permission-or-IO — the kinds and their
-recovery actions are the statusline data set's members, round 3, drawing
+discipline (malformed, absent, permission-or-io — the kinds and their
+recovery actions are the statusline data set's members, drawing
 on the action vocabulary's recovery family). Layer 1 implements read and
 write against this enumeration; mdatron validates instances once its
 state-consistency family lands, vsdd self-validating at read until then.
 
-Three OPEN decision notes above await the operator's walk-through; the
-seeded initial form `vsdd init` deploys (Layer 4) follows directly from
-the pre-entry representation decision.
+The three decision notes this section once held are resolved — the
+operator's walk-through ruled all three on vsdd-cli #665 (2026-07-20),
+and the fields above carry the rulings inline; the seeded initial form
+`vsdd init` deploys (Layer 4) follows directly from the pre-entry
+representation decision.
 
 Authored under phase-1c data authoring (vsdd-cli #598, set issue #665).
 Draft vocabulary under the maturity lifecycle until first publish.

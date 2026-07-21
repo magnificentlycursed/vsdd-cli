@@ -37,8 +37,8 @@ action_vocabulary:
   - {id: resolve-blocker, family: await, phase: "", human: resolve the recorded blocker}
   - {id: await-operator, family: await, phase: "", human: "awaiting an operator act (ratification, adoption, sign-off)"}
   - {id: restore-state-file, family: recovery, phase: "", human: restore .vsdd/state.yaml from the last boundary commit}
-  - {id: fix-state-content, family: recovery, phase: "", human: repair the malformed state file to match the last boundary commit}
-  - {id: fix-state-permissions, family: recovery, phase: "", human: fix file permissions on the state artifact}
+  - {id: fix-state-content, family: recovery, phase: "", human: restore the state file's content to the last boundary commit's version}
+  - {id: fix-state-permissions, family: recovery, phase: "", human: clear the permission or input/output fault on the state artifact}
   - {id: reconcile-toward-artifact, family: recovery, phase: "", human: resolve the tracker disagreement toward the state artifact}
 ---
 
@@ -58,12 +58,23 @@ means a whitepaper phase and nothing else; the lane member carries
 phase-answer derivation outputs a member, the convergence test compares
 members by exact match, and the Status machine form's per-kind recovery
 actions are the `recovery` family (the statusline data set's kind-to-action
-mapping selects from it — authored at round 3 against these ids). Families:
+mapping selects from it, authored against these ids). Families:
 `advance` (the work the phase position calls for), `await` (blocked on an
 operator act or recorded blocker), `recovery` (the state artifact itself
 needs repair). Convergence reference answers are written in these tokens
 and are operator-adopted oracles; membership here is a proposal until that
 adoption.
+
+Two scoping notes from round 1. The fix-lane members
+(`file-fix-finding`, `run-fix-gate`) are fix-lane workflow tokens, not
+derivation outputs: the derivation's declared inputs — state artifact
+and snapshot — materialize no fix progress, so its output domain
+excludes them and the fix lane's own conduct selects between them
+(operator ruling 2026-07-21, vsdd-cli #689). And
+`reconcile-toward-artifact` is reserved: its intended emitter is the
+corroboration-disagreement surface, which no current consumer computes;
+the token stays registered so the emitter lands against a stable id,
+and its reserved status is this stated fact (vsdd-cli #697).
 
 Authored under phase-1c data authoring (vsdd-cli #598, set issue #666).
 Draft vocabulary under the maturity lifecycle until first publish.

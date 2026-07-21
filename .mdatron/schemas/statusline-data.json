@@ -2,26 +2,80 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vsdd.local/schemas/statusline-data.json",
   "title": "Statusline data set frontmatter",
-  "description": "Frontmatter contract for the statusline data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: read_failure_kinds covers exactly the kinds absent, malformed, permission-or-io; each recovery_action resolves to a recovery-family member of composition-scope-and-actions; degraded_kinds covers exactly tracker-absent and tracker-unusable; wiring_outcomes carries exactly the Install requirement's six members; display_fields field names unique.",
+  "description": "Frontmatter contract for the statusline data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: read_failure_kinds covers exactly the kinds absent, malformed, permission-or-io; each recovery_action resolves to a recovery-family member of composition-scope-and-actions; degraded_kinds covers exactly tracker-absent and tracker-unusable; wiring_outcomes carries exactly the Install requirement's six members; display_fields field names unique and the session identifier is not among them (operator ruling vsdd-cli #679).",
   "type": "object",
-  "required": ["schema_class", "schema_version", "status", "read_failure_kinds", "degraded_kinds", "wiring_outcomes", "display_fields", "truncation_mark", "broken_state_mark", "wall_clock_budget_ms", "timing_check", "repo_set_config", "composition_instruction_conduct"],
+  "required": [
+    "schema_class",
+    "schema_version",
+    "status",
+    "read_failure_kinds",
+    "degraded_kinds",
+    "wiring_outcomes",
+    "display_fields",
+    "truncation_mark",
+    "truncation_rule",
+    "substrate_findings_visibility",
+    "broken_state_mark",
+    "wall_clock_budget_ms",
+    "timing_check",
+    "repo_set_config",
+    "composition_instruction_conduct"
+  ],
   "properties": {
-    "schema_class": {"type": "string", "const": "statusline-data"},
-    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
-    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "schema_class": {
+      "type": "string",
+      "const": "statusline-data"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft-proposal",
+        "adopted",
+        "established"
+      ]
+    },
     "read_failure_kinds": {
       "type": "array",
       "minItems": 3,
       "maxItems": 3,
       "items": {
         "type": "object",
-        "required": ["kind", "machine_token", "recovery_action", "human_diagnostic", "human_recovery"],
+        "required": [
+          "kind",
+          "machine_token",
+          "recovery_action",
+          "human_diagnostic",
+          "human_recovery"
+        ],
         "properties": {
-          "kind": {"type": "string", "enum": ["absent", "malformed", "permission-or-io"]},
-          "machine_token": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
-          "recovery_action": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
-          "human_diagnostic": {"type": "string", "minLength": 1},
-          "human_recovery": {"type": "string", "minLength": 1}
+          "kind": {
+            "type": "string",
+            "enum": [
+              "absent",
+              "malformed",
+              "permission-or-io"
+            ]
+          },
+          "machine_token": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "recovery_action": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "human_diagnostic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "human_recovery": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "additionalProperties": false
       }
@@ -32,12 +86,31 @@
       "maxItems": 2,
       "items": {
         "type": "object",
-        "required": ["kind", "marker_word", "benign", "next_step_text"],
+        "required": [
+          "kind",
+          "marker_word",
+          "benign",
+          "next_step_text"
+        ],
         "properties": {
-          "kind": {"type": "string", "enum": ["tracker-absent", "tracker-unusable"]},
-          "marker_word": {"type": "string", "pattern": "^[a-z][a-z-]*$"},
-          "benign": {"type": "boolean"},
-          "next_step_text": {"type": "string", "minLength": 1}
+          "kind": {
+            "type": "string",
+            "enum": [
+              "tracker-absent",
+              "tracker-unusable"
+            ]
+          },
+          "marker_word": {
+            "type": "string",
+            "pattern": "^[a-z][a-z -]*$"
+          },
+          "benign": {
+            "type": "boolean"
+          },
+          "next_step_text": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "additionalProperties": false
       }
@@ -48,54 +121,140 @@
       "maxItems": 6,
       "items": {
         "type": "object",
-        "required": ["id", "meaning"],
+        "required": [
+          "id",
+          "meaning"
+        ],
         "properties": {
-          "id": {"type": "string", "enum": ["installed", "refused-existing-entry", "declined", "not-offered-non-interactive", "withdrawn-read-failure", "failed-write"]},
-          "meaning": {"type": "string", "minLength": 1}
+          "id": {
+            "type": "string",
+            "enum": [
+              "installed",
+              "refused-existing-entry",
+              "declined",
+              "not-offered-non-interactive",
+              "withdrawn-read-failure",
+              "failed-write"
+            ]
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "additionalProperties": false
       }
     },
     "display_fields": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 4,
       "items": {
         "type": "object",
-        "required": ["field", "width_budget_chars", "absence_text"],
+        "required": [
+          "field",
+          "width_budget_chars",
+          "absence_text"
+        ],
         "properties": {
-          "field": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
-          "width_budget_chars": {"type": "integer", "minimum": 1},
-          "absence_text": {"type": "string"}
+          "field": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "width_budget_chars": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "absence_text": {
+            "type": "string"
+          }
         },
         "additionalProperties": false
-      }
+      },
+      "maxItems": 4
     },
-    "truncation_mark": {"type": "string", "minLength": 1},
-    "broken_state_mark": {"type": "string", "minLength": 1},
-    "wall_clock_budget_ms": {"type": "integer", "minimum": 1},
+    "truncation_mark": {
+      "type": "string",
+      "minLength": 1
+    },
+    "broken_state_mark": {
+      "type": "string",
+      "minLength": 1
+    },
+    "wall_clock_budget_ms": {
+      "type": "integer",
+      "minimum": 1
+    },
     "timing_check": {
       "type": "object",
-      "required": ["runs", "rule", "ceiling_rule", "scope"],
+      "required": [
+        "runs",
+        "rule",
+        "ceiling_rule",
+        "scope"
+      ],
       "properties": {
-        "runs": {"type": "integer", "minimum": 1},
-        "rule": {"type": "string", "minLength": 1},
-        "ceiling_rule": {"type": "string", "minLength": 1},
-        "scope": {"type": "string", "minLength": 1}
+        "runs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ceiling_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        }
       },
       "additionalProperties": false
     },
     "repo_set_config": {
       "type": "object",
-      "required": ["location", "ownership", "fields", "aggregate_cost_rule"],
+      "required": [
+        "location",
+        "ownership",
+        "fields",
+        "aggregate_cost_rule"
+      ],
       "properties": {
-        "location": {"type": "string", "minLength": 1},
-        "ownership": {"type": "string", "enum": ["adopter-owned", "managed"]},
-        "fields": {"type": "string", "minLength": 1},
-        "aggregate_cost_rule": {"type": "string", "minLength": 1}
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ownership": {
+          "type": "string",
+          "enum": [
+            "adopter-owned",
+            "managed"
+          ]
+        },
+        "fields": {
+          "type": "string",
+          "minLength": 1
+        },
+        "aggregate_cost_rule": {
+          "type": "string",
+          "minLength": 1
+        }
       },
       "additionalProperties": false
     },
-    "composition_instruction_conduct": {"type": "string", "minLength": 1}
+    "composition_instruction_conduct": {
+      "type": "string",
+      "minLength": 1
+    },
+    "truncation_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "substrate_findings_visibility": {
+      "type": "string",
+      "minLength": 1
+    }
   },
   "additionalProperties": false
 }

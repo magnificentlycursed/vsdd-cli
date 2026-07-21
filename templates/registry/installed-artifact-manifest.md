@@ -1,11 +1,12 @@
 ---
 schema_class: installed-artifact-manifest
-schema_version: 0.1.0
+schema_version: 0.2.0
 status: draft-proposal
 reference_surfaces:
   - {id: project-settings, path: .claude/settings.json, scope: repo}
   - {id: project-settings-local, path: .claude/settings.local.json, scope: repo}
   - {id: user-settings, path: ~/.claude/settings.json, scope: host}
+  - {id: plugin-listing, path: "the settings enabledPlugins map plus the user plugin install directory (~/.claude/plugins)", scope: repo-or-host}
   - {id: project-server-config, path: .mcp.json, scope: repo}
   - {id: user-server-config, path: ~/.claude.json mcp section, scope: host}
   - {id: command-listing, path: .claude/commands/, scope: repo}
@@ -71,6 +72,16 @@ entries:
     resolution: exists
     fail_mode: undefined
     note: "crosslink-deployed members: audit check commit crosslink-guide design dev-release featree feature kickoff maintain preflight qa review workflow"
+  - id: plugin-set
+    path: "user settings enabledPlugins — rust-analyzer-lsp@claude-plugins-official 1.0.0, user scope"
+    class: plugin-listing
+    source: operator
+    lifetime: per-clone-wiring
+    referenced_by: [plugin-listing]
+    pairs_with: []
+    resolution: exists
+    fail_mode: undefined
+    note: "the wired plugin set the session-substrate check verifies present — a wired-but-absent plugin is exactly this entry's catch (vsdd-cli #686); enablement lives at user scope, so a fresh host diverges silently and the check is the compensating control"
   - id: commands-vsdd
     path: .claude/commands/vsdd-*.md
     class: command-listing
@@ -80,7 +91,7 @@ entries:
     pairs_with: []
     resolution: exists
     fail_mode: undefined
-    note: this repo is the source of these artifacts — tracked by the .gitignore carve-outs (operator ruling 2026-07-20); 27 members, 17 domain prompts + 10 phase primers
+    note: "this repo is the source of these artifacts — tracked by the .gitignore carve-outs (operator ruling 2026-07-20); 28 members, 18 domain prompts + 10 phase primers (counts verified against disk 2026-07-21, vsdd-cli #684)"
   - {id: chassis-hook-config, path: .crosslink/hook-config.json, class: chassis-config, source: crosslink-init, lifetime: tracked-wiring, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: fail-closed}
   - {id: chassis-rules, path: .crosslink/rules/, class: rules, source: crosslink-init, lifetime: tracked-payload, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: undefined}
   - id: project-rules
@@ -151,12 +162,22 @@ entries:
 The installed environment is a closed world (contract: Conformance at action
 time, the chassis-affordance closure, ratified 2026-07-20). The frontmatter
 above is the versioned data: every artifact the environment expects, each
-with its source, its lifetime half — tracked wiring or per-clone payload,
-the two install lifetimes whose divergence produced the estate's 2026-07-20
-incident (the audit on the trail of "Spec amendment: the dispatch posture
-split (attended/autonomous), from mdatron's kickoff live fire", vsdd-cli
+with its source, its lifetime — the tracked-or-per-clone axis crossed
+with wiring-or-payload, four values, and it is the tracked/per-clone
+divergence that produced the estate's 2026-07-20 incident (the audit on
+the trail of "Spec amendment: the dispatch posture split
+(attended/autonomous), from mdatron's kickoff live fire", vsdd-cli
 #622) — its pairing, and its observed fail mode. Git hooks carry the
 inverted pairing: per-clone wiring in git config over a tracked payload.
+
+The user-settings surface carries no local overlay by design of the
+vehicle: Claude Code defines settings local overlays at project scope
+only (.claude/settings.local.json), so the contract's settings-with-
+their-local-overlays expectation is satisfied by project-settings-local
+alone — the omission is this stated fact, not an oversight (vsdd-cli
+#686). The plugin-listing surface and the plugin-set entry land with the
+same ruling: the enabled-plugin map is a reference surface like any
+other, and the one enabled plugin is manifest-listed.
 
 The session-substrate check consumes these entries (three-valued,
 fail-closed; surfaced in Status per the contract). mdatron validates this

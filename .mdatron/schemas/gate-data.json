@@ -2,26 +2,44 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vsdd.local/schemas/gate-data.json",
   "title": "Gate data set frontmatter",
-  "description": "Frontmatter contract for the gate data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: failure kind ids unique; exactly one kind carries conditional red validity (compile-failure, the declared-compile-defect fork); mapping rules non-empty.",
+  "description": "Frontmatter contract for the gate data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: failure kind ids unique; exactly one kind carries conditional red validity (compile-failure, the declared-compile-defect fork — encoded below via contains); whole-suite kinds route to the cannot-run family; mapping rules non-empty.",
   "type": "object",
-  "required": ["schema_class", "schema_version", "status", "failure_kinds", "flake_policy", "cannot_run_predicate", "mapping_schema"],
+  "required": ["schema_class", "schema_version", "status", "failure_kinds", "pin_kind_declaration", "flake_policy", "cannot_run_predicate", "mapping_schema"],
   "properties": {
     "schema_class": {"type": "string", "const": "gate-data"},
     "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
     "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
     "failure_kinds": {
       "type": "array",
-      "minItems": 10,
+      "minItems": 12,
       "items": {
         "type": "object",
-        "required": ["kind", "red_validity", "meaning"],
+        "required": ["kind", "red_validity", "scope", "meaning"],
         "properties": {
           "kind": {"type": "string", "pattern": "^[a-z][a-z-]*$"},
           "red_validity": {"type": "string", "enum": ["valid-red", "conditional", "neither"]},
+          "scope": {"type": "string", "enum": ["per-test", "whole-suite"]},
           "meaning": {"type": "string", "minLength": 1}
         },
         "additionalProperties": false
-      }
+      },
+      "contains": {
+        "type": "object",
+        "required": ["red_validity"],
+        "properties": {"red_validity": {"const": "conditional"}}
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "pin_kind_declaration": {
+      "type": "object",
+      "required": ["declared_shape", "red_rule", "delta_rule"],
+      "properties": {
+        "declared_shape": {"type": "string", "minLength": 1},
+        "red_rule": {"type": "string", "minLength": 1},
+        "delta_rule": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
     },
     "flake_policy": {
       "type": "object",
@@ -35,9 +53,10 @@
     },
     "cannot_run_predicate": {
       "type": "object",
-      "required": ["command_binding", "cannot_run_when", "is_not_cannot_run", "timeout_seconds", "timeout_semantics"],
+      "required": ["command_binding", "report_binding", "cannot_run_when", "is_not_cannot_run", "timeout_seconds", "timeout_semantics"],
       "properties": {
         "command_binding": {"type": "string", "minLength": 1},
+        "report_binding": {"type": "string", "minLength": 1},
         "cannot_run_when": {"type": "string", "minLength": 1},
         "is_not_cannot_run": {"type": "string", "minLength": 1},
         "timeout_seconds": {"type": "integer", "minimum": 1},

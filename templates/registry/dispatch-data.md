@@ -6,7 +6,7 @@ branch_grammar:
   forms:
     - id: session-form
       pattern: "^feature/[a-z0-9][a-z0-9._-]*$"
-      meaning: "the vehicle's session-scoped form — crosslink kickoff creates feature/<slug> (create_worktree, launch.rs:345); valid before and after hub sync, perpetually"
+      meaning: "the vehicle's session-scoped form — crosslink kickoff creates feature/<slug> (create_worktree, crosslink 0.8.0 launch.rs:345, the installed and held version; vsdd-cli #694); valid before and after hub sync, perpetually"
     - id: display-form
       pattern: "^issue/[0-9]+(-[a-z0-9][a-z0-9-]*)?$"
       meaning: "the display-ID form once hub sync has assigned one — issue/<display-id> with an optional plain slug; provisional local IDs never enter branch names"
@@ -19,7 +19,7 @@ branch_grammar:
 preflight_members:
   - id: container-runtime
     observation_binding: "the configured container runtime's daemon answers a status probe (docker info or podman info) within 10 seconds; command absent is fail; unresponsive or ambiguous output is inconclusive"
-    note: "estate note 2026-07-20: even with the runtime passing, released crosslink versions cannot complete Rust fix-lane verification in-container (dollspace-gay/crosslink#9, #10); working postures are attended tmux kickoff and host-side driver-lane verification — recorded on vsdd-cli #597"
+    note: "recorded 2026-07-20: even with the runtime passing, released crosslink versions cannot complete Rust fix-lane verification in-container (dollspace-gay/crosslink#9, #10); the working postures are attended tmux kickoff, with gate verification run host-side by the attended session — recorded on vsdd-cli #597"
   - id: consent-state
     observation_binding: "the launch mode's consent grants are recorded in Claude Code's config surfaces for the exact target path — project trust for the vehicle's worktree path (path-scoped, so fresh worktrees re-raise it) and the bypass-permissions acceptance where the mode requires it; unreadable config is inconclusive"
   - id: identity-approval
@@ -41,8 +41,8 @@ manifest_fields:
   - {field: domains, meaning: "the domain prompts sent, per the computed composition"}
   - {field: inputs, meaning: "what was sent, by content hash per input artifact"}
   - {field: composition_ref, meaning: "the composition in force, with its config_inputs_hash"}
-  - {field: model_tier, meaning: "the model tier the dispatch ran at"}
-  - {field: effort_level, meaning: "the effort level; until the dispatch-parameter seam lands, a cold dispatch records the vehicle's session-level setting, marked as such"}
+  - {field: model_tier, meaning: "the model tier — the value chosen explicitly at dispatch and the value observed in telemetry after the run, both recorded, never assumed (the round-1 correction on vsdd-cli #673)"}
+  - {field: effort_level, meaning: "the effort level, chosen explicitly at dispatch — the Workflow orchestration surface exposes it per agent (operator-adopted 2026-07-21, vsdd-cli #597) — and confirmed post-hoc where telemetry exposes it; never inherited silently"}
   - {field: expected_cost_band, meaning: "the calibration band declared before the spend"}
   - {field: preflight_record, meaning: "the member-by-member preflight results for autonomous dispatches"}
   - {field: returned, meaning: "what came back — result reference or the dispatch-failed classification"}
@@ -54,9 +54,9 @@ manifest_fields:
 # Dispatch data set
 
 The recorded-dispatch machinery's data (contract: Recorded review
-dispatch; Conformance at action time's branch-grammar seam; items 8-10
-of the phase-1c data authoring). Proposals until operator adoption is
-recorded (vsdd-cli #669).
+dispatch; Conformance at action time's branch-grammar seam; part of the
+phase-1c data-authoring package, vsdd-cli #598). Proposals until
+operator adoption is recorded (vsdd-cli #669).
 
 `branch_grammar`: registered data, not archaeology — the session form is
 verified against the vehicle's own source. Both forms perpetually valid;
