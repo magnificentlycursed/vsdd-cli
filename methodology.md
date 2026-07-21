@@ -3,7 +3,7 @@ schema_class: methodology-spec
 methodology_version: 0.1.0
 methodology_anchors: [README.md, DESIGN-METHODOLOGY.md, DESIGN-SCHEMA.md, DESIGN-OBSERVABILITY.md, DESIGN-VERIFICATION.md]
 whitepaper_url: https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00
-substrate_anchors: [https://github.com/forecast-bio/crosslink, https://code.claude.com/docs/en/agent-sdk/overview]
+substrate_anchors: [https://github.com/dollspace-gay/crosslink, https://code.claude.com/docs/en/agent-sdk/overview]
 last_revision_trigger: "Phase 1a spec authoring per DESIGN-METHODOLOGY § Methodology spec section list"
 ---
 
@@ -49,7 +49,7 @@ phases_referenced: []
 
 Every subsystem the toolkit ships serves all four goals; every artifact demonstrably advances at least one.
 
-**Goal 1 — Absorbability-ready patterns.** Every enhancement is designed in shapes that absorb cleanly into [crosslink](https://github.com/forecast-bio/crosslink) if upstream chooses. Absorbability is a quality property of the design — not a strategic dependency. Patterns ship standalone; absorption proposals follow when each is mature.
+**Goal 1 — Absorbability-ready patterns.** Every enhancement is designed in shapes that absorb cleanly into [crosslink](https://github.com/dollspace-gay/crosslink) if upstream chooses. Absorbability is a quality property of the design — not a strategic dependency. Patterns ship standalone; absorption proposals follow when each is mature.
 
 **Goal 2 — Auditable + machine-enforceable + dual-audience.** Every artifact serves humans and agents with three structural properties: structured audit-trail evidence emits on every action (auditable); every methodology rule has a hook OR schema validator OR crosslink workflow check (machine-enforceable); narrative prose + structured frontmatter coexist in every artifact (dual-audience-readable).
 
@@ -72,7 +72,7 @@ phases_referenced: []
 
 ## Conventions
 
-This section is the spec's vocabulary anchor. Methodology terms are sourced from the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) (authoritative) and from [crosslink](https://github.com/forecast-bio/crosslink) (substrate) wherever a structured unit maps to a crosslink primitive. New terms are not introduced casually — methodology amendments adding terms require the earned-by-recurrence trigger per § Forward-only disciplines.
+This section is the spec's vocabulary anchor. Methodology terms are sourced from the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) (authoritative) and from [crosslink](https://github.com/dollspace-gay/crosslink) (substrate) wherever a structured unit maps to a crosslink primitive. New terms are not introduced casually — methodology amendments adding terms require the earned-by-recurrence trigger per § Forward-only disciplines.
 
 ### Methodology vocabulary
 
@@ -448,7 +448,7 @@ phases_referenced: []
 
 ## Closing + cross-references
 
-**Methodology authorship is dollspace's.** The canonical methodology lives in the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) + its predecessor [VDD whitepaper](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) + the [crosslink repo](https://github.com/forecast-bio/crosslink). This spec is one collaborator's interpretation + mechanical operationalization.
+**Methodology authorship is dollspace's.** The canonical methodology lives in the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) + its predecessor [VDD whitepaper](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) + the [crosslink repo](https://github.com/dollspace-gay/crosslink). This spec is one collaborator's interpretation + mechanical operationalization.
 
 **Cross-references:**
 - [`README.md`](./README.md) — toolkit positioning + adoption flow + four governing design goals + observability subsystem overview + verification subsystem overview + schema enforcement overview + error catalog
@@ -457,4 +457,4 @@ phases_referenced: []
 - [`DESIGN-OBSERVABILITY.md`](./DESIGN-OBSERVABILITY.md) — OTel collector design + 18 methodology event variant payloads + capture-source provenance + three pillars + dashboard ladder + FinOps + MCP server architecture
 - [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md) — validator architecture + ~19 methodology hooks + CI workflow templates + bypass-marker enforcement + error catalog implementation + per-error-code falsifiability fixtures + dependency approval discipline + methodology version pin discipline
 - [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) — the observability + execution substrate the toolkit composes against
-- [`crosslink`](https://github.com/forecast-bio/crosslink) — the operational substrate authored by dollspace + the absorption target for toolkit patterns
+- [`crosslink`](https://github.com/dollspace-gay/crosslink) — the operational substrate authored by dollspace + the absorption target for toolkit patterns

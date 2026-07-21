@@ -1,11 +1,11 @@
 # vsdd
 
-A Rust toolkit that interprets + implements [Verified Spec-Driven Development (VSDD)](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) — a software methodology authored by **[@dollspace.gay](https://bsky.app/profile/dollspace.gay)** ([GitHub](https://github.com/dollspace-gay)) and operationalized in **[crosslink](https://github.com/forecast-bio/crosslink)** (also by dollspace).
+A Rust toolkit that interprets + implements [Verified Spec-Driven Development (VSDD)](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) — a software methodology authored by **[@dollspace.gay](https://bsky.app/profile/dollspace.gay)** ([GitHub](https://github.com/dollspace-gay)) and operationalized in **[crosslink](https://github.com/dollspace-gay/crosslink)** (also by dollspace).
 
 **Credits + sources:**
 - [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) — the methodology this toolkit implements
 - [VDD whitepaper](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) — predecessor; introduces the hyper-critical-adversary discipline
-- [crosslink](https://github.com/forecast-bio/crosslink) — the canonical operational substrate this toolkit composes against
+- [crosslink](https://github.com/dollspace-gay/crosslink) — the canonical operational substrate this toolkit composes against
 - [@dollspace.gay](https://bsky.app/profile/dollspace.gay) on Bsky + [dollspace-gay](https://github.com/dollspace-gay) on GitHub — methodology + substrate author
 
 **This is not my methodology.** VSDD is dollspace's. This repo is one collaborator's *interpretation and implementation* of that methodology as a Rust toolkit. The toolkit:
@@ -22,11 +22,11 @@ This document is the positioning. Per-subsystem design docs ([`DESIGN-METHODOLOG
 
 ## Project identity
 
-The `vsdd` toolkit is an **independent implementation** of [@dollspace.gay](https://bsky.app/profile/dollspace.gay)'s VSDD methodology — one collaborator's interpretation and operationalization of the methodology as a Rust CLI + observability subsystem + verification subsystem. It extends and enhances both the methodology and the [crosslink](https://github.com/forecast-bio/crosslink) tool that operationalizes it.
+The `vsdd` toolkit is an **independent implementation** of [@dollspace.gay](https://bsky.app/profile/dollspace.gay)'s VSDD methodology — one collaborator's interpretation and operationalization of the methodology as a Rust CLI + observability subsystem + verification subsystem. It extends and enhances both the methodology and the [crosslink](https://github.com/dollspace-gay/crosslink) tool that operationalizes it.
 
 The relationship to the methodology + upstream:
 
-- **Methodology authorship is dollspace's.** This toolkit implements + interprets the methodology; it does not author it. The canonical methodology lives in the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) + its predecessor [VDD whitepaper](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) + the [crosslink](https://github.com/forecast-bio/crosslink) repo.
+- **Methodology authorship is dollspace's.** This toolkit implements + interprets the methodology; it does not author it. The canonical methodology lives in the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) + its predecessor [VDD whitepaper](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) + the [crosslink](https://github.com/dollspace-gay/crosslink) repo.
 - **Designed for clean absorption** if upstream wants it. Patterns ship in shapes that minimize integration friction.
 - **Stands on its own merits.** The observability + verification surfaces deliver value as a standalone toolkit independent of any absorption decision.
 - **Absorption is upstream's discretion.** dollspace decides whether to absorb each pattern. The toolkit proposes when each pattern is mature enough to demonstrate; the toolkit doesn't pre-suppose absorption.
