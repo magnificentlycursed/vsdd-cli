@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/gate-data.json",
+  "title": "Gate data set frontmatter",
+  "description": "Frontmatter contract for the gate data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: failure kind ids unique; exactly one kind carries conditional red validity (compile-failure, the declared-compile-defect fork); mapping rules non-empty.",
+  "type": "object",
+  "required": ["schema_class", "schema_version", "status", "failure_kinds", "flake_policy", "cannot_run_predicate", "mapping_schema"],
+  "properties": {
+    "schema_class": {"type": "string", "const": "gate-data"},
+    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "failure_kinds": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["kind", "red_validity", "meaning"],
+        "properties": {
+          "kind": {"type": "string", "pattern": "^[a-z][a-z-]*$"},
+          "red_validity": {"type": "string", "enum": ["valid-red", "conditional", "neither"]},
+          "meaning": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "flake_policy": {
+      "type": "object",
+      "required": ["runs_per_gate_execution", "per_test_aggregation", "scope"],
+      "properties": {
+        "runs_per_gate_execution": {"type": "integer", "minimum": 1},
+        "per_test_aggregation": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "cannot_run_predicate": {
+      "type": "object",
+      "required": ["command_binding", "cannot_run_when", "is_not_cannot_run", "timeout_seconds", "timeout_semantics"],
+      "properties": {
+        "command_binding": {"type": "string", "minLength": 1},
+        "cannot_run_when": {"type": "string", "minLength": 1},
+        "is_not_cannot_run": {"type": "string", "minLength": 1},
+        "timeout_seconds": {"type": "integer", "minimum": 1},
+        "timeout_semantics": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "mapping_schema": {
+      "type": "object",
+      "required": ["report_set_default", "entry_fields", "rules"],
+      "properties": {
+        "report_set_default": {"type": "string", "enum": ["confirmed", "overridden-to-source-set"]},
+        "entry_fields": {"type": "string", "minLength": 1},
+        "rules": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
