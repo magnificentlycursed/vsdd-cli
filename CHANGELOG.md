@@ -12,6 +12,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 ### Changed
+- r2 nit collector: three low-severity items (#707)
+- r2 minor DR: 'the tier field's own count' is a dangling reference the #684 fix introduced (#705)
+- r2 minor SA: recovery-family gloss excludes reconcile-toward-artifact (#704)
+- r2 minor SA: plugin-set lifetime per-clone-wiring mislabels a host-scoped enablement (#703)
+- r2 minor UX: fix-state-permissions human text diverges between statusline set and action vocabulary (#702)
+- r2 minor QE: flake aggregation leaves a stable neither-kind outcome unclassified (#701)
+- r2 minor QE: pin_kind_declaration rules are per-test-framed while declared_shape admits the whole-suite compile-failure member (#700)
+- round-1 amendment window: seven contract touches from triage rulings (#698)
 - DE/F5: manifest parser missing from the read-time-diagnostic and fuzz surfaces — Raise to SO (#663)
 - r1 minor SA: domain-lens entries stretch the affordance map beyond chassis-affordance scope — confirm the home (#691)
 - r1 minor SO: terminal-verify-round expands the review loop's named stage set — confirm or fold (#687)
