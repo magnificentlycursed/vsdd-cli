@@ -11,12 +11,12 @@ description = "Library for the VSDD methodology toolkit (VSDD-specific schemas, 
 [dependencies]
 mdatron-core = { workspace = true }
 serde = { workspace = true }
-serde_yaml = { workspace = true }
+# Pinned to the YAML type mdatron-core's public API consumes (vsdd-cli #717;
+# promoted from dev-dependency for the registry loaders, vsdd-cli #718).
+serde_yaml_ng = "0.10"
 serde_json = { workspace = true }
 thiserror = { workspace = true }
 sha2 = "0.10"
 
 [dev-dependencies]
 tempfile = "3"
-# Pinned to the YAML type mdatron-core's public API consumes (vsdd-cli #717).
-serde_yaml_ng = "0.10"

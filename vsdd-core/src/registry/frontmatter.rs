@@ -20,6 +20,37 @@ pub struct FrontmatterError {
 /// parse boundary. An input with no opening fence, an unterminated
 /// fence, or an empty frontmatter block is an error with its location.
 pub fn split_frontmatter(input: &str) -> Result<(&str, &str), FrontmatterError> {
-    let _ = input;
-    todo!("2b: fence scan with location capture")
+    let rest = input
+        .strip_prefix("---\n")
+        .or_else(|| input.strip_prefix("---\r\n"))
+        .ok_or_else(|| FrontmatterError {
+            line: 1,
+            column: 1,
+            message: "no opening frontmatter fence (`---`) on line 1".to_string(),
+        })?;
+
+    let mut offset = 0usize;
+    let mut line_no = 2usize; // `rest` begins on line 2 of the input.
+    for line in rest.split_inclusive('\n') {
+        if line.trim_end_matches(['\n', '\r']) == "---" {
+            let frontmatter = &rest[..offset];
+            let body = &rest[offset + line.len()..];
+            if frontmatter.trim().is_empty() {
+                return Err(FrontmatterError {
+                    line: line_no,
+                    column: 1,
+                    message: "empty frontmatter block between the fences".to_string(),
+                });
+            }
+            return Ok((frontmatter, body));
+        }
+        offset += line.len();
+        line_no += 1;
+    }
+
+    Err(FrontmatterError {
+        line: line_no,
+        column: 1,
+        message: "unterminated frontmatter: no closing `---` fence found".to_string(),
+    })
 }

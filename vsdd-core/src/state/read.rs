@@ -6,10 +6,10 @@
 
 use std::path::Path;
 
-use crate::diagnostics::Diagnostic;
+use crate::diagnostics::{Diagnostic, StateReadKind};
 use crate::registry::sets::StatuslineData;
 
-use super::schema::State;
+use super::schema::{State, SUPPORTED_STATE_SCHEMA_VERSION};
 
 /// Read and validate the state artifact.
 ///
@@ -18,8 +18,39 @@ use super::schema::State;
 /// permission-or-io. A schema_version this crate does not support is
 /// refused as malformed content naming the version seen and supported.
 pub fn read_state(path: &Path, vocabulary: &StatuslineData) -> Result<State, Box<Diagnostic>> {
-    let _ = (path, vocabulary);
-    todo!("2b: effectful read over the pure validator")
+    let bytes = match std::fs::read(path) {
+        Ok(bytes) => bytes,
+        Err(e) => {
+            let kind = if e.kind() == std::io::ErrorKind::NotFound {
+                StateReadKind::Absent
+            } else {
+                StateReadKind::PermissionOrIo
+            };
+            return Err(Box::new(Diagnostic::state_read_failure(
+                kind,
+                path.to_path_buf(),
+                format!("cannot read the state file: {e}"),
+                None,
+                vocabulary,
+            )));
+        }
+    };
+    validate_state_bytes(&bytes, path, vocabulary)
+}
+
+fn malformed(
+    path: &Path,
+    detail: String,
+    location: Option<(usize, usize)>,
+    vocabulary: &StatuslineData,
+) -> Box<Diagnostic> {
+    Box::new(Diagnostic::state_read_failure(
+        StateReadKind::Malformed,
+        path.to_path_buf(),
+        detail,
+        location,
+        vocabulary,
+    ))
 }
 
 /// The pure core: validate raw bytes into a `State`.
@@ -30,6 +61,52 @@ pub fn validate_state_bytes(
     path: &Path,
     vocabulary: &StatuslineData,
 ) -> Result<State, Box<Diagnostic>> {
-    let _ = (bytes, path, vocabulary);
-    todo!("2b: pure validation with location capture")
+    let text = std::str::from_utf8(bytes).map_err(|e| {
+        malformed(
+            path,
+            format!("the state file is not valid UTF-8: {e}"),
+            None,
+            vocabulary,
+        )
+    })?;
+
+    let value: serde_yaml_ng::Value = serde_yaml_ng::from_str(text).map_err(|e| {
+        let location = e.location().map(|l| (l.line(), l.column()));
+        malformed(path, format!("parse failure: {e}"), location, vocabulary)
+    })?;
+    if !value.is_mapping() {
+        return Err(malformed(
+            path,
+            "the state file is empty or not a mapping".to_string(),
+            None,
+            vocabulary,
+        ));
+    }
+
+    // Bootstrap self-validation: the version gate fires before any
+    // further reading of the contents.
+    let version = value
+        .get("schema_version")
+        .and_then(|v| v.as_str())
+        .unwrap_or("");
+    if version != SUPPORTED_STATE_SCHEMA_VERSION {
+        return Err(malformed(
+            path,
+            format!(
+                "state schema_version `{version}` is not supported; this reader supports `{SUPPORTED_STATE_SCHEMA_VERSION}`"
+            ),
+            None,
+            vocabulary,
+        ));
+    }
+
+    serde_yaml_ng::from_str::<State>(text).map_err(|e| {
+        let location = e.location().map(|l| (l.line(), l.column()));
+        malformed(
+            path,
+            format!("state content failure: {e}"),
+            location,
+            vocabulary,
+        )
+    })
 }

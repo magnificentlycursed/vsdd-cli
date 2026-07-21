@@ -55,19 +55,64 @@ impl Diagnostic {
         location: Option<(usize, usize)>,
         vocabulary: &StatuslineData,
     ) -> Self {
-        let _ = (kind, file, detail, location, vocabulary);
-        todo!("2b: construct from the loaded kind-to-action mapping")
+        let entry = vocabulary
+            .read_failure_kinds
+            .iter()
+            .find(|k| k.kind == kind.kind_id());
+        match entry {
+            Some(member) => Diagnostic {
+                file,
+                kind: member.kind.clone(),
+                machine_token: member.machine_token.clone(),
+                location,
+                message: detail,
+                recovery_action: member.recovery_action.clone(),
+                recovery_text: member.human_recovery.clone(),
+            },
+            // The schema pair pins the set to exactly the three kinds, so
+            // this arm is unreachable against a validated vocabulary; it
+            // stays total rather than panicking at a trust boundary.
+            None => Diagnostic {
+                file,
+                kind: kind.kind_id().to_string(),
+                machine_token: kind.kind_id().to_string(),
+                location,
+                message: format!(
+                    "{detail} (the loaded statusline set does not enumerate the `{}` kind)",
+                    kind.kind_id()
+                ),
+                recovery_action: String::new(),
+                recovery_text: String::new(),
+            },
+        }
     }
 
     /// The human form: rustc-shaped, complete sentences, information
     /// carried by text alone (the color-channel conduct).
     pub fn render_human(&self) -> String {
-        todo!("2b: rustc-shaped rendering")
+        let mut out = format!("error: {}\n", self.message);
+        out.push_str(&format!("  --> {}", self.file.display()));
+        if let Some((line, column)) = self.location {
+            out.push_str(&format!(":{line}:{column}"));
+        }
+        out.push('\n');
+        if !self.recovery_text.is_empty() {
+            out.push_str(&format!("  = recovery: {}\n", self.recovery_text));
+        }
+        out
     }
 
     /// The machine form: structured JSON carrying kind, machine token,
     /// diagnostic payload, and recovery action for mechanical branching.
     pub fn render_machine(&self) -> serde_json::Value {
-        todo!("2b: structured rendering")
+        serde_json::json!({
+            "kind": self.kind,
+            "machine_token": self.machine_token,
+            "file": self.file.display().to_string(),
+            "location": self.location.map(|(l, c)| serde_json::json!([l, c])),
+            "message": self.message,
+            "recovery_action": self.recovery_action,
+            "recovery_text": self.recovery_text,
+        })
     }
 }

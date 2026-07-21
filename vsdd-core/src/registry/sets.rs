@@ -5,7 +5,7 @@
 //! remain the authority either way.
 
 use serde::Deserialize;
-use serde_yaml::Value;
+use serde_yaml_ng::Value;
 
 // --- gate-data -----------------------------------------------------------
 
