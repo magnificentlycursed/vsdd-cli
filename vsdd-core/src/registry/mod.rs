@@ -239,15 +239,15 @@ pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T,
 /// artifact — a bulk defect (an editor re-encoding, a wrong repo root)
 /// reports all its casualties at once rather than one per re-run
 /// (vsdd-cli #727).
-pub fn load_all(repo_root: &Path) -> Result<Registry, Vec<Box<Diagnostic>>> {
+pub fn load_all(repo_root: &Path) -> Result<Registry, Vec<Diagnostic>> {
     fn keep<T>(
         slot: &mut Option<T>,
         result: Result<T, Box<Diagnostic>>,
-        errors: &mut Vec<Box<Diagnostic>>,
+        errors: &mut Vec<Diagnostic>,
     ) {
         match result {
             Ok(v) => *slot = Some(v),
-            Err(e) => errors.push(e),
+            Err(e) => errors.push(*e),
         }
     }
 
