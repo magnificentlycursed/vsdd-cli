@@ -162,15 +162,24 @@ entries:
 The installed environment is a closed world (contract: Conformance at action
 time, the chassis-affordance closure, ratified 2026-07-20). The frontmatter
 above is the versioned data: every artifact the environment expects, each
-with its source, its lifetime — the tracked-or-per-clone axis crossed
-with wiring-or-payload, four values, plus host-wiring for wiring living
-in host-scoped config that every clone on the host inherits (added for
-the plugin surface, vsdd-cli #703) — and it is the tracked/per-clone
-divergence that produced the estate's 2026-07-20 incident (the audit on
-the trail of "Spec amendment: the dispatch posture split
-(attended/autonomous), from mdatron's kickoff live fire", vsdd-cli
-#622) — its pairing, and its observed fail mode. Git hooks carry the
-inverted pairing: per-clone wiring in git config over a tracked payload.
+with its source, its lifetime, its pairing, and its observed fail mode.
+The lifetime axis is tracked-or-per-clone crossed with wiring-or-payload
+— four values, plus host-wiring for wiring living in host-scoped config
+that every clone on the host inherits (added for the plugin surface,
+vsdd-cli #703). It is the tracked/per-clone divergence that produced the
+estate's 2026-07-20 incident (the audit on the trail of "Spec amendment:
+the dispatch posture split (attended/autonomous), from mdatron's kickoff
+live fire", vsdd-cli #622). Git hooks carry the inverted pairing:
+per-clone wiring in git config over a tracked payload.
+
+Vocabulary gloss (vsdd-cli #715): `resolution` states what the
+substrate check verifies for the entry — `exists` (the artifact is
+present), `exists-and-referenced` (present and named by its reference
+surface), `worded-absence` (a deliberate absence recorded in words and
+checked as such). `fail_mode` records observed failure behavior:
+`fail-closed` (absence blocks loudly), `fail-open-guarded` (absence
+degrades to a no-op with a named compensating control), and `undefined`
+(not yet characterized — a fact about the record, not a safety claim).
 
 The user-settings surface carries no local overlay by design of the
 vehicle: Claude Code defines settings local overlays at project scope
