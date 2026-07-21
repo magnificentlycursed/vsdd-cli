@@ -1,0 +1,17 @@
+schema_version: "0.1.0"
+current_phase: phase-2a
+current_layer: 1
+open_findings_pointer:
+  milestone: "layer 1: state artifact and versioned data"
+last_gate_result:
+  gate: red-gate
+  phase: phase-2a
+  layer: 1
+  result: fail
+  evidence: "vsdd-cli #716"
+  recorded: "2026-07-21T00:00:00Z"
+active_composition:
+  scope: phase-2a
+  domains: [quality-engineer]
+  mode: skill-interactive
+  config_inputs_hash: "sha256:fixture-seed"

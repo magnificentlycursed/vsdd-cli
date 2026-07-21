@@ -8,6 +8,10 @@
 //! - `schemas::DOMAIN_PROMPT` — JSON Schema for vsdd-domain-*.md frontmatter
 //! - `schemas::SUPPLEMENT` — JSON Schema for vsdd-cli/supplements/*.md frontmatter
 
+pub mod diagnostics;
+pub mod registry;
+pub mod state;
+
 pub mod schemas {
     //! Bundled VSDD JSON Schemas. Embedded at compile time via `include_str!`.
 
@@ -43,50 +47,146 @@ pub mod artifacts {
 
     /// Phase primer markdown files (10 entries).
     pub const PHASE_PRIMERS: &[(&str, &str)] = &[
-        ("vsdd-phase-1a.md", include_str!("../../.claude/commands/vsdd-phase-1a.md")),
-        ("vsdd-phase-1b.md", include_str!("../../.claude/commands/vsdd-phase-1b.md")),
-        ("vsdd-phase-1c.md", include_str!("../../.claude/commands/vsdd-phase-1c.md")),
-        ("vsdd-phase-2a.md", include_str!("../../.claude/commands/vsdd-phase-2a.md")),
-        ("vsdd-phase-2b.md", include_str!("../../.claude/commands/vsdd-phase-2b.md")),
-        ("vsdd-phase-2c.md", include_str!("../../.claude/commands/vsdd-phase-2c.md")),
-        ("vsdd-phase-3.md", include_str!("../../.claude/commands/vsdd-phase-3.md")),
-        ("vsdd-phase-4.md", include_str!("../../.claude/commands/vsdd-phase-4.md")),
-        ("vsdd-phase-5.md", include_str!("../../.claude/commands/vsdd-phase-5.md")),
-        ("vsdd-phase-6.md", include_str!("../../.claude/commands/vsdd-phase-6.md")),
+        (
+            "vsdd-phase-1a.md",
+            include_str!("../../.claude/commands/vsdd-phase-1a.md"),
+        ),
+        (
+            "vsdd-phase-1b.md",
+            include_str!("../../.claude/commands/vsdd-phase-1b.md"),
+        ),
+        (
+            "vsdd-phase-1c.md",
+            include_str!("../../.claude/commands/vsdd-phase-1c.md"),
+        ),
+        (
+            "vsdd-phase-2a.md",
+            include_str!("../../.claude/commands/vsdd-phase-2a.md"),
+        ),
+        (
+            "vsdd-phase-2b.md",
+            include_str!("../../.claude/commands/vsdd-phase-2b.md"),
+        ),
+        (
+            "vsdd-phase-2c.md",
+            include_str!("../../.claude/commands/vsdd-phase-2c.md"),
+        ),
+        (
+            "vsdd-phase-3.md",
+            include_str!("../../.claude/commands/vsdd-phase-3.md"),
+        ),
+        (
+            "vsdd-phase-4.md",
+            include_str!("../../.claude/commands/vsdd-phase-4.md"),
+        ),
+        (
+            "vsdd-phase-5.md",
+            include_str!("../../.claude/commands/vsdd-phase-5.md"),
+        ),
+        (
+            "vsdd-phase-6.md",
+            include_str!("../../.claude/commands/vsdd-phase-6.md"),
+        ),
     ];
 
     /// Domain prompt markdown files (18 entries).
     pub const DOMAIN_PROMPTS: &[(&str, &str)] = &[
-        ("vsdd-domain-accessibility.md", include_str!("../../.claude/commands/vsdd-domain-accessibility.md")),
-        ("vsdd-domain-ai-engineer.md", include_str!("../../.claude/commands/vsdd-domain-ai-engineer.md")),
-        ("vsdd-domain-data-engineer.md", include_str!("../../.claude/commands/vsdd-domain-data-engineer.md")),
-        ("vsdd-domain-documentation-reviewer.md", include_str!("../../.claude/commands/vsdd-domain-documentation-reviewer.md")),
-        ("vsdd-domain-localization.md", include_str!("../../.claude/commands/vsdd-domain-localization.md")),
-        ("vsdd-domain-performance-engineer.md", include_str!("../../.claude/commands/vsdd-domain-performance-engineer.md")),
-        ("vsdd-domain-platform-engineer.md", include_str!("../../.claude/commands/vsdd-domain-platform-engineer.md")),
-        ("vsdd-domain-privacy.md", include_str!("../../.claude/commands/vsdd-domain-privacy.md")),
-        ("vsdd-domain-quality-engineer.md", include_str!("../../.claude/commands/vsdd-domain-quality-engineer.md")),
-        ("vsdd-domain-red-team.md", include_str!("../../.claude/commands/vsdd-domain-red-team.md")),
-        ("vsdd-domain-sanity-check.md", include_str!("../../.claude/commands/vsdd-domain-sanity-check.md")),
-        ("vsdd-domain-security.md", include_str!("../../.claude/commands/vsdd-domain-security.md")),
-        ("vsdd-domain-software-engineer.md", include_str!("../../.claude/commands/vsdd-domain-software-engineer.md")),
-        ("vsdd-domain-solution-architect.md", include_str!("../../.claude/commands/vsdd-domain-solution-architect.md")),
-        ("vsdd-domain-solution-owner.md", include_str!("../../.claude/commands/vsdd-domain-solution-owner.md")),
-        ("vsdd-domain-technical-writer.md", include_str!("../../.claude/commands/vsdd-domain-technical-writer.md")),
-        ("vsdd-domain-ux.md", include_str!("../../.claude/commands/vsdd-domain-ux.md")),
-        ("vsdd-domain-vsdd-methodology.md", include_str!("../../.claude/commands/vsdd-domain-vsdd-methodology.md")),
+        (
+            "vsdd-domain-accessibility.md",
+            include_str!("../../.claude/commands/vsdd-domain-accessibility.md"),
+        ),
+        (
+            "vsdd-domain-ai-engineer.md",
+            include_str!("../../.claude/commands/vsdd-domain-ai-engineer.md"),
+        ),
+        (
+            "vsdd-domain-data-engineer.md",
+            include_str!("../../.claude/commands/vsdd-domain-data-engineer.md"),
+        ),
+        (
+            "vsdd-domain-documentation-reviewer.md",
+            include_str!("../../.claude/commands/vsdd-domain-documentation-reviewer.md"),
+        ),
+        (
+            "vsdd-domain-localization.md",
+            include_str!("../../.claude/commands/vsdd-domain-localization.md"),
+        ),
+        (
+            "vsdd-domain-performance-engineer.md",
+            include_str!("../../.claude/commands/vsdd-domain-performance-engineer.md"),
+        ),
+        (
+            "vsdd-domain-platform-engineer.md",
+            include_str!("../../.claude/commands/vsdd-domain-platform-engineer.md"),
+        ),
+        (
+            "vsdd-domain-privacy.md",
+            include_str!("../../.claude/commands/vsdd-domain-privacy.md"),
+        ),
+        (
+            "vsdd-domain-quality-engineer.md",
+            include_str!("../../.claude/commands/vsdd-domain-quality-engineer.md"),
+        ),
+        (
+            "vsdd-domain-red-team.md",
+            include_str!("../../.claude/commands/vsdd-domain-red-team.md"),
+        ),
+        (
+            "vsdd-domain-sanity-check.md",
+            include_str!("../../.claude/commands/vsdd-domain-sanity-check.md"),
+        ),
+        (
+            "vsdd-domain-security.md",
+            include_str!("../../.claude/commands/vsdd-domain-security.md"),
+        ),
+        (
+            "vsdd-domain-software-engineer.md",
+            include_str!("../../.claude/commands/vsdd-domain-software-engineer.md"),
+        ),
+        (
+            "vsdd-domain-solution-architect.md",
+            include_str!("../../.claude/commands/vsdd-domain-solution-architect.md"),
+        ),
+        (
+            "vsdd-domain-solution-owner.md",
+            include_str!("../../.claude/commands/vsdd-domain-solution-owner.md"),
+        ),
+        (
+            "vsdd-domain-technical-writer.md",
+            include_str!("../../.claude/commands/vsdd-domain-technical-writer.md"),
+        ),
+        (
+            "vsdd-domain-ux.md",
+            include_str!("../../.claude/commands/vsdd-domain-ux.md"),
+        ),
+        (
+            "vsdd-domain-vsdd-methodology.md",
+            include_str!("../../.claude/commands/vsdd-domain-vsdd-methodology.md"),
+        ),
     ];
 
     /// Supplement markdown files (14 entries).
     pub const SUPPLEMENTS: &[(&str, &str)] = &[
         ("bash.md", include_str!("../../supplements/bash.md")),
-        ("browser-app.md", include_str!("../../supplements/browser-app.md")),
-        ("claude-code-cli.md", include_str!("../../supplements/claude-code-cli.md")),
+        (
+            "browser-app.md",
+            include_str!("../../supplements/browser-app.md"),
+        ),
+        (
+            "claude-code-cli.md",
+            include_str!("../../supplements/claude-code-cli.md"),
+        ),
         ("cli.md", include_str!("../../supplements/cli.md")),
         ("css.md", include_str!("../../supplements/css.md")),
-        ("github-actions.md", include_str!("../../supplements/github-actions.md")),
+        (
+            "github-actions.md",
+            include_str!("../../supplements/github-actions.md"),
+        ),
         ("html.md", include_str!("../../supplements/html.md")),
-        ("javascript-typescript.md", include_str!("../../supplements/javascript-typescript.md")),
+        (
+            "javascript-typescript.md",
+            include_str!("../../supplements/javascript-typescript.md"),
+        ),
         ("json.md", include_str!("../../supplements/json.md")),
         ("markdown.md", include_str!("../../supplements/markdown.md")),
         ("python.md", include_str!("../../supplements/python.md")),

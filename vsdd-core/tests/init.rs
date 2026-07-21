@@ -108,11 +108,19 @@ fn init_deploys_all_expected_artifacts() {
 
     for (name, _content) in vsdd_core::artifacts::PHASE_PRIMERS {
         let p = proj.path().join(".claude/commands").join(name);
-        assert!(p.exists(), "phase primer {} should be deployed", p.display());
+        assert!(
+            p.exists(),
+            "phase primer {} should be deployed",
+            p.display()
+        );
     }
     for (name, _content) in vsdd_core::artifacts::DOMAIN_PROMPTS {
         let p = proj.path().join(".claude/commands").join(name);
-        assert!(p.exists(), "domain prompt {} should be deployed", p.display());
+        assert!(
+            p.exists(),
+            "domain prompt {} should be deployed",
+            p.display()
+        );
     }
     for (name, _content) in vsdd_core::artifacts::SUPPLEMENTS {
         let p = proj.path().join("supplements").join(name);
@@ -194,8 +202,8 @@ fn init_emits_project_initialized_event() {
     let proj = TempProject::with_git("event");
     init(proj.path(), &InitOptions::default()).expect("init succeeds");
 
-    let log = fs::read_to_string(proj.path().join(".vsdd/events.jsonl"))
-        .expect("events.jsonl readable");
+    let log =
+        fs::read_to_string(proj.path().join(".vsdd/events.jsonl")).expect("events.jsonl readable");
     let lines: Vec<&str> = log.lines().filter(|l| !l.is_empty()).collect();
     assert_eq!(
         lines.len(),
@@ -238,8 +246,8 @@ fn init_is_idempotent_on_unchanged_state() {
     );
 
     // Event log should not grow on the idempotent re-run.
-    let log = fs::read_to_string(proj.path().join(".vsdd/events.jsonl"))
-        .expect("events.jsonl readable");
+    let log =
+        fs::read_to_string(proj.path().join(".vsdd/events.jsonl")).expect("events.jsonl readable");
     let lines: Vec<&str> = log.lines().filter(|l| !l.is_empty()).collect();
     assert_eq!(
         lines.len(),
@@ -269,11 +277,14 @@ fn init_refuses_drifted_managed_file_with_clear_error() {
                 path.ends_with("vsdd-phase-2a.md"),
                 "error should name the drifted file; got {path:?}"
             );
-            let display = format!("{}", InitError::ManagedFileDrifted {
-                path: path.clone(),
-                expected_sha256: "abc".into(),
-                actual_sha256: "def".into(),
-            });
+            let display = format!(
+                "{}",
+                InitError::ManagedFileDrifted {
+                    path: path.clone(),
+                    expected_sha256: "abc".into(),
+                    actual_sha256: "def".into(),
+                }
+            );
             // DR caveat: the error must surface resolution flags so the operator
             // knows how to proceed without losing work.
             assert!(

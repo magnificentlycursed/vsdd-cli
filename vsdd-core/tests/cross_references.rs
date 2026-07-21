@@ -20,11 +20,7 @@ struct TempProject {
 
 impl TempProject {
     fn new(name: &str) -> Self {
-        let root = std::env::temp_dir().join(format!(
-            "vsdd-xref-{}-{}",
-            name,
-            std::process::id(),
-        ));
+        let root = std::env::temp_dir().join(format!("vsdd-xref-{}-{}", name, std::process::id(),));
         let _ = fs::remove_dir_all(&root);
         fs::create_dir_all(&root).unwrap();
         let proj = Self { root };

@@ -1,0 +1,213 @@
+//! One typed struct per registry schema class; field names mirror the
+//! artifacts verbatim (`templates/registry/*.md`). Fields the Layer 1
+//! tests assert are fully typed; deeper payloads ride as YAML values and
+//! deepen with their consuming layers — the artifact and its schema pair
+//! remain the authority either way.
+
+use serde::Deserialize;
+use serde_yaml::Value;
+
+// --- gate-data -----------------------------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct FailureKind {
+    pub kind: String,
+    pub red_validity: String,
+    pub scope: String,
+    pub meaning: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct FlakePolicy {
+    pub runs_per_gate_execution: u32,
+    pub per_test_aggregation: String,
+    pub scope: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct GateData {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub failure_kinds: Vec<FailureKind>,
+    pub pin_kind_declaration: Value,
+    pub flake_policy: FlakePolicy,
+    pub cannot_run_predicate: Value,
+    pub mapping_schema: Value,
+}
+
+// --- statusline-data -----------------------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct ReadFailureKind {
+    pub kind: String,
+    pub machine_token: String,
+    pub recovery_action: String,
+    pub human_diagnostic: String,
+    pub human_recovery: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct DisplayField {
+    pub field: String,
+    pub width_budget_chars: u32,
+    pub absence_text: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct StatuslineData {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub read_failure_kinds: Vec<ReadFailureKind>,
+    pub degraded_kinds: Value,
+    pub wiring_outcomes: Value,
+    pub display_fields: Vec<DisplayField>,
+    pub truncation_mark: String,
+    pub truncation_rule: String,
+    pub substrate_findings_visibility: String,
+    pub broken_state_mark: String,
+    pub wall_clock_budget_ms: u64,
+    pub timing_check: Value,
+    pub repo_set_config: Value,
+    pub composition_instruction_conduct: String,
+}
+
+// --- installed-artifact-manifest ------------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct ManifestEntry {
+    pub id: String,
+    pub path: String,
+    pub class: String,
+    pub source: String,
+    pub lifetime: String,
+    pub referenced_by: Vec<String>,
+    pub pairs_with: Vec<String>,
+    pub resolution: String,
+    pub fail_mode: String,
+    #[serde(default)]
+    pub note: Option<String>,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct ReferenceSurface {
+    pub id: String,
+    pub path: String,
+    pub scope: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct InstalledArtifactManifest {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub reference_surfaces: Vec<ReferenceSurface>,
+    pub entries: Vec<ManifestEntry>,
+}
+
+// --- composition-scope-and-actions ----------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct ScopeMember {
+    pub id: String,
+    pub kind: String,
+    pub whitepaper_name: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct ActionToken {
+    pub id: String,
+    pub family: String,
+    pub phase: String,
+    pub human: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct CompositionScopeAndActions {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub scope_members: Vec<ScopeMember>,
+    pub action_vocabulary: Vec<ActionToken>,
+}
+
+// --- act-to-affordance-map -------------------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct MapEntry {
+    pub act: String,
+    pub affordance: String,
+    pub kind: String,
+    pub condition: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct ActToAffordanceMap {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub entries: Vec<MapEntry>,
+    pub rules: Vec<String>,
+}
+
+// --- economics-data ---------------------------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct Preset {
+    pub id: String,
+    pub active_domains: String,
+    pub round_budget: u32,
+    pub stop_sensitivity: String,
+    pub mutation_floor_declared: bool,
+    pub note: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct EconomicsData {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub effort_signals: Value,
+    pub tier_effort_defaults: Vec<Value>,
+    pub mutation_floor: Value,
+    pub token_budgets: Vec<Value>,
+    pub calibration_bands: Vec<Value>,
+    pub presets: Vec<Preset>,
+}
+
+// --- dispatch-data -----------------------------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct DispatchData {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub branch_grammar: Value,
+    pub preflight_members: Vec<Value>,
+    pub preflight_semantics: Value,
+    pub fencing_rule: String,
+    pub manifest_fields: Vec<Value>,
+}
+
+// --- state-schema (the data set describing the state artifact) ---------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct StateSchemaSet {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub state_fields: Vec<Value>,
+    pub declared_constraints: Vec<Value>,
+}
+
+// --- snapshot-schema ----------------------------------------------------------
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct SnapshotSchemaSet {
+    pub schema_class: String,
+    pub schema_version: String,
+    pub status: String,
+    pub snapshot_fields: Vec<Value>,
+    pub audit: Value,
+}
