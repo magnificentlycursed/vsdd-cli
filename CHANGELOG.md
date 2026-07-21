@@ -13,9 +13,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Phase 1b: verification architecture (respec cycle) (L2)
 
 ### Fixed
+- render_machine emits user-absolute paths — nonconforming against the ratified #730 clause (#737)
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Amendment candidate: promote the machine-identifying-content guard into Trust boundaries (#730)
 - c3 residue collector: three self-graded nits, recorded not gating (#736)
 - Phase 3 execution, Layer 1: round 3 — verify the round-2 fixes, re-decide the stop (#735)
 - c2 nit collector: four items (#734)
