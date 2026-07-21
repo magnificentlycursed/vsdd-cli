@@ -46,3 +46,8 @@ delivery paths are the closure.
 
 Authored under phase-1c data authoring (vsdd-cli #598, set issue #670).
 Draft vocabulary under the maturity lifecycle until first publish.
+
+Member adoptions recorded on the set issue do not advance this
+artifact's status: the status field advances by the phase-exit
+adoption act, then first publish (vsdd-cli #715, executing the #697
+item-5 standing disposition at the cold pass's finding).

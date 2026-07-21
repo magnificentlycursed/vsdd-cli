@@ -199,3 +199,8 @@ unlisted and flagged; an entry whose artifact is absent is flagged.
 Authored under phase-1c data authoring (vsdd-cli #598, set issue #658;
 format ruling: markdown-with-frontmatter, operator-adopted 2026-07-20 on
 #660). Draft vocabulary under the maturity lifecycle until first publish.
+
+Member adoptions recorded on the set issue do not advance this
+artifact's status: the status field advances by the phase-exit
+adoption act, then first publish (vsdd-cli #715, executing the #697
+item-5 standing disposition at the cold pass's finding).
