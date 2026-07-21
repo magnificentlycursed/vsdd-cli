@@ -15,3 +15,8 @@ serde_yaml = { workspace = true }
 serde_json = { workspace = true }
 thiserror = { workspace = true }
 sha2 = "0.10"
+
+[dev-dependencies]
+tempfile = "3"
+# Pinned to the YAML type mdatron-core's public API consumes (vsdd-cli #717).
+serde_yaml_ng = "0.10"

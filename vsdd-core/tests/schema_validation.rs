@@ -9,21 +9,17 @@ use std::path::Path;
 use mdatron_core::{frontmatter, Schema};
 
 fn load_schema(json_str: &str) -> Schema {
-    let json: serde_json::Value =
-        serde_json::from_str(json_str).expect("schema is valid JSON");
+    let json: serde_json::Value = serde_json::from_str(json_str).expect("schema is valid JSON");
     Schema::compile(&json).expect("schema compiles")
 }
 
-fn frontmatter_of(path: &str) -> serde_yaml::Value {
-    let full = Path::new(env!("CARGO_MANIFEST_DIR"))
-        .join("..")
-        .join(path);
-    let content = std::fs::read_to_string(&full)
-        .unwrap_or_else(|e| panic!("read {}: {e}", full.display()));
+fn frontmatter_of(path: &str) -> serde_yaml_ng::Value {
+    let full = Path::new(env!("CARGO_MANIFEST_DIR")).join("..").join(path);
+    let content =
+        std::fs::read_to_string(&full).unwrap_or_else(|e| panic!("read {}: {e}", full.display()));
     let parsed = frontmatter::parse(&content)
         .unwrap_or_else(|e| panic!("parse frontmatter at {}: {e}", full.display()));
-    let (fm, _body) =
-        parsed.unwrap_or_else(|| panic!("no frontmatter at {}", full.display()));
+    let (fm, _body) = parsed.unwrap_or_else(|| panic!("no frontmatter at {}", full.display()));
     fm
 }
 
@@ -107,7 +103,7 @@ fn review_entry_schema_validates_recent_ai_engineer_review() {
 #[test]
 fn review_entry_schema_rejects_invalid_source_enum() {
     let schema = load_schema(vsdd_core::schemas::REVIEW_ENTRY);
-    let bad: serde_yaml::Value = serde_yaml::from_str(
+    let bad: serde_yaml_ng::Value = serde_yaml_ng::from_str(
         "schema_class: review-entry\n\
          schema_version: 1.0.0\n\
          review_number: 1\n\
@@ -131,10 +127,9 @@ fn review_entry_schema_rejects_invalid_source_enum() {
 #[test]
 fn phase_primer_schema_rejects_missing_required_field() {
     let schema = load_schema(vsdd_core::schemas::PHASE_PRIMER);
-    let bad: serde_yaml::Value = serde_yaml::from_str(
-        "primer_id: vsdd-phase-2a\nphase: phase-2a\nversion: 0.1.0\n",
-    )
-    .unwrap();
+    let bad: serde_yaml_ng::Value =
+        serde_yaml_ng::from_str("primer_id: vsdd-phase-2a\nphase: phase-2a\nversion: 0.1.0\n")
+            .unwrap();
     let errors = schema.validate(&bad);
     assert!(
         !errors.is_empty(),
