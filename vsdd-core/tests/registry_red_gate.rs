@@ -91,6 +91,17 @@ fn statusline_data_carries_the_glance_and_recovery_rulings() {
     for kind in &sl.read_failure_kinds {
         assert!(!kind.machine_token.is_empty() && !kind.human_recovery.is_empty());
     }
+    let markers: Vec<&str> = sl
+        .degraded_kinds
+        .iter()
+        .map(|d| d.marker_word.as_str())
+        .collect();
+    assert_eq!(markers, ["tracker offline", "tracker degraded"]);
+    assert_eq!(
+        sl.wiring_outcomes.len(),
+        6,
+        "the Install requirement's fixed six"
+    );
 }
 
 #[test]
@@ -200,9 +211,16 @@ fn snapshot_schema_pins_the_four_renderer_fields() {
     let s: SnapshotSchemaSet =
         registry::load_set(&repo_root(), "snapshot-schema").expect("snapshot schema loads");
     assert!(s.snapshot_fields.len() >= 4);
-    // The audit block's renderer_display_fields are pinned at exactly four
-    // by the schema pair; loading validates against it.
-    assert!(s.audit.get("renderer_display_fields").is_some());
+    let renderer_fields = s
+        .audit
+        .get("renderer_display_fields")
+        .and_then(|v| v.as_sequence())
+        .map(|v| v.len());
+    assert_eq!(
+        renderer_fields,
+        Some(4),
+        "exactly four renderer display fields"
+    );
 }
 
 #[test]
@@ -214,17 +232,21 @@ fn corrupted_frontmatter_yields_a_located_diagnostic() {
     fs::create_dir_all(&schema_dir).unwrap();
     for entry in fs::read_dir(repo_root().join("templates/registry")).unwrap() {
         let p = entry.unwrap().path();
-        fs::copy(&p, reg_dir.join(p.file_name().unwrap())).unwrap();
+        if p.is_file() {
+            fs::copy(&p, reg_dir.join(p.file_name().unwrap())).unwrap();
+        }
     }
     for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
         let p = entry.unwrap().path();
-        fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
+        if p.is_file() {
+            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
+        }
     }
     // Break the gate-data frontmatter mid-block.
     let target = reg_dir.join("gate-data.md");
-    let corrupted = fs::read_to_string(&target)
-        .unwrap()
-        .replace("flake_policy:", "flake_policy: [unclosed");
+    let original = fs::read_to_string(&target).unwrap();
+    let corrupted = original.replace("flake_policy:", "flake_policy: [unclosed");
+    assert_ne!(original, corrupted, "the corruption must have taken");
     fs::write(&target, corrupted).unwrap();
 
     let diag = registry::load_set::<GateData>(dir.path(), "gate-data")
@@ -248,7 +270,9 @@ fn schema_class_mismatch_yields_a_diagnostic() {
     fs::create_dir_all(&schema_dir).unwrap();
     for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
         let p = entry.unwrap().path();
-        fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
+        if p.is_file() {
+            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
+        }
     }
     // A statusline artifact filed under the gate-data name.
     fs::copy(
@@ -262,5 +286,145 @@ fn schema_class_mismatch_yields_a_diagnostic() {
     assert!(
         diag.message.contains("gate-data") && diag.message.contains("statusline-data"),
         "the diagnostic names expected and found classes"
+    );
+}
+
+// ── Round-1 fix-pass additions (vsdd-cli #723, #724, #725, #727, #728) ────────
+
+#[test]
+fn state_schema_set_mirrors_the_state_struct() {
+    // The one-for-one mirror pin (vsdd-cli #725): the artifact's
+    // enumeration against State's serde surface — names in order,
+    // presence-required flags matching Option-ness (nullable fields stay
+    // presence-required; last_gate_result and published are the two
+    // absent-until-written members).
+    let s: StateSchemaSet =
+        registry::load_set(&repo_root(), "state-schema").expect("state-schema set loads");
+    let declared: Vec<(&str, bool)> = s
+        .state_fields
+        .iter()
+        .map(|f| (f.name.as_str(), f.required))
+        .collect();
+    assert_eq!(
+        declared,
+        vec![
+            ("schema_version", true),
+            ("current_phase", true),
+            ("current_layer", true),
+            ("open_findings_pointer", true),
+            ("last_gate_result", false),
+            ("active_composition", true),
+            ("published", false),
+        ],
+        "state-schema's enumeration matches vsdd_core::state::State (schema.rs) one-for-one"
+    );
+}
+
+#[test]
+fn dispatch_data_pins_its_adopted_values() {
+    // Value pins for the set that had only liveness coverage (vsdd-cli #728).
+    let d: DispatchData =
+        registry::load_set(&repo_root(), "dispatch-data").expect("dispatch data loads");
+    assert_eq!(d.preflight_members.len(), 5, "the five preflight members");
+    assert_eq!(d.manifest_fields.len(), 15, "the fifteen manifest fields");
+    assert!(!d.fencing_rule.is_empty());
+    let result_values = d
+        .preflight_semantics
+        .get("result_values")
+        .and_then(|v| v.as_sequence())
+        .map(|v| v.len());
+    assert_eq!(result_values, Some(3), "pass, fail, inconclusive");
+}
+
+#[test]
+fn registry_repair_token_is_the_registered_member() {
+    // The loader's bootstrap mirror (vsdd-cli #724): it cannot load the
+    // vocabulary before loading, so its constant mirrors the registered
+    // member — and this test is the pin that keeps the two equal.
+    let c: CompositionScopeAndActions =
+        registry::load_set(&repo_root(), "composition-scope-and-actions")
+            .expect("composition set loads");
+    let dir = tempfile::tempdir().unwrap();
+    fs::create_dir_all(dir.path().join("templates/registry")).unwrap();
+    fs::create_dir_all(dir.path().join(".mdatron/schemas")).unwrap();
+    let diag = registry::load_set::<GateData>(dir.path(), "gate-data")
+        .expect_err("an absent artifact is a diagnostic");
+    let member = c
+        .action_vocabulary
+        .iter()
+        .find(|a| a.id == diag.recovery_action)
+        .expect("the loader's mirrored token resolves to a registered member");
+    assert_eq!(member.family, "recovery");
+}
+
+#[test]
+fn invalid_class_is_rejected_before_any_path_join() {
+    // The traversal guard (vsdd-cli #727): a class that is not one safe
+    // lowercase segment never reaches the filesystem.
+    for bad in ["../escape", "/etc/shadow", "UPPER", "a b", ""] {
+        let diag = registry::load_set::<GateData>(&repo_root(), bad)
+            .expect_err("an unsafe class is refused");
+        assert_eq!(diag.kind, "invalid-class", "class `{bad}`");
+    }
+}
+
+#[test]
+fn load_all_names_every_failing_artifact_in_one_pass() {
+    // Bulk corruption reports all casualties at once (vsdd-cli #727).
+    let dir = tempfile::tempdir().unwrap();
+    let reg_dir = dir.path().join("templates/registry");
+    fs::create_dir_all(&reg_dir).unwrap();
+    let schema_dir = dir.path().join(".mdatron/schemas");
+    fs::create_dir_all(&schema_dir).unwrap();
+    for entry in fs::read_dir(repo_root().join("templates/registry")).unwrap() {
+        let p = entry.unwrap().path();
+        if p.is_file() {
+            fs::copy(&p, reg_dir.join(p.file_name().unwrap())).unwrap();
+        }
+    }
+    for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
+        let p = entry.unwrap().path();
+        if p.is_file() {
+            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
+        }
+    }
+    for victim in ["gate-data.md", "statusline-data.md"] {
+        let target = reg_dir.join(victim);
+        let original = fs::read_to_string(&target).unwrap();
+        let corrupted = format!("broken, not frontmatter\n{original}");
+        fs::write(&target, corrupted).unwrap();
+    }
+
+    let errors = registry::load_all(dir.path()).expect_err("two broken artifacts fail the load");
+    assert_eq!(errors.len(), 2, "one pass names every failing artifact");
+    let named: Vec<String> = errors
+        .iter()
+        .map(|d| d.file.file_name().unwrap().to_string_lossy().into_owned())
+        .collect();
+    assert!(named.contains(&"gate-data.md".to_string()));
+    assert!(named.contains(&"statusline-data.md".to_string()));
+}
+
+#[test]
+fn bom_before_the_fence_still_splits() {
+    // Windows-editor provenance (vsdd-cli #727).
+    let dir = tempfile::tempdir().unwrap();
+    let reg_dir = dir.path().join("templates/registry");
+    fs::create_dir_all(&reg_dir).unwrap();
+    let schema_dir = dir.path().join(".mdatron/schemas");
+    fs::create_dir_all(&schema_dir).unwrap();
+    for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
+        let p = entry.unwrap().path();
+        if p.is_file() {
+            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
+        }
+    }
+    let original = fs::read_to_string(repo_root().join("templates/registry/gate-data.md")).unwrap();
+    fs::write(reg_dir.join("gate-data.md"), format!("\u{feff}{original}")).unwrap();
+
+    let loaded: Result<GateData, _> = registry::load_set(dir.path(), "gate-data");
+    assert!(
+        loaded.is_ok(),
+        "a leading byte-order mark does not defeat the fence"
     );
 }

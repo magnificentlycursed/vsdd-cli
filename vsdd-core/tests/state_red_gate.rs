@@ -10,7 +10,7 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use vsdd_core::registry::{self, sets::StatuslineData};
+use vsdd_core::registry::{self, sets::CompositionScopeAndActions, sets::StatuslineData};
 use vsdd_core::state::{
     read_state, write_state, BoundaryEvidence, CompositionMode, GateKind, GateOutcome, State,
     SUPPORTED_STATE_SCHEMA_VERSION,
@@ -33,6 +33,13 @@ fn fixture(name: &str) -> PathBuf {
 /// kind-to-action mapping is versioned data, never a hardcoded copy.
 fn vocabulary() -> StatuslineData {
     registry::load_set(&repo_root(), "statusline-data").expect("statusline data set loads")
+}
+
+/// The action vocabulary the write path draws its refusal token from
+/// (registered per vsdd-cli #724).
+fn actions() -> CompositionScopeAndActions {
+    registry::load_set(&repo_root(), "composition-scope-and-actions")
+        .expect("composition set loads")
 }
 
 #[test]
@@ -108,6 +115,12 @@ fn permission_failure_yields_the_io_kind() {
     let path = dir.path().join("state.yaml");
     fs::copy(fixture("valid.yaml"), &path).unwrap();
     fs::set_permissions(&path, fs::Permissions::from_mode(0o000)).unwrap();
+    if fs::read(&path).is_ok() {
+        eprintln!(
+            "skipping: this environment ignores mode bits (euid 0), so it cannot express the case"
+        );
+        return;
+    }
 
     let diag = read_state(&path, &vocabulary()).expect_err("unreadable file is a diagnostic");
     assert_eq!(diag.kind, "permission-or-io");
@@ -137,7 +150,7 @@ fn unicode_milestone_survives_a_write_read_roundtrip() {
     let mut state = read_state(&fixture("valid.yaml"), &vocab).expect("valid state reads");
     state.open_findings_pointer.milestone = "layer 1: état — 状態 artifact ✓".to_string();
 
-    write_state(&path, &state, &evidence(), &vocab).expect("write succeeds");
+    write_state(&path, &state, &evidence(), &vocab, &actions()).expect("write succeeds");
     let reread = read_state(&path, &vocab).expect("reread succeeds");
     assert_eq!(
         reread.open_findings_pointer.milestone,
@@ -153,11 +166,17 @@ fn failed_write_leaves_no_partial_file() {
     let locked = dir.path().join("locked");
     fs::create_dir(&locked).unwrap();
     fs::set_permissions(&locked, fs::Permissions::from_mode(0o555)).unwrap();
+    if fs::write(locked.join(".probe"), b"x").is_ok() {
+        eprintln!(
+            "skipping: this environment ignores mode bits (euid 0), so it cannot express the case"
+        );
+        return;
+    }
     let target = locked.join("state.yaml");
 
     let vocab = vocabulary();
     let state = read_state(&fixture("valid.yaml"), &vocab).expect("valid state reads");
-    let result = write_state(&target, &state, &evidence(), &vocab);
+    let result = write_state(&target, &state, &evidence(), &vocab, &actions());
 
     assert!(
         result.is_err(),
@@ -182,11 +201,11 @@ fn published_marker_is_forward_only() {
         version: "1.0.0".into(),
         act: "vsdd-cli #716".into(),
     });
-    write_state(&path, &state, &evidence(), &vocab).expect("first publish writes");
+    write_state(&path, &state, &evidence(), &vocab, &actions()).expect("first publish writes");
 
     let mut tampered = state.clone();
     tampered.published.as_mut().unwrap().version = "1.0.1".into();
-    let diag = write_state(&path, &tampered, &evidence(), &vocab)
+    let diag = write_state(&path, &tampered, &evidence(), &vocab, &actions())
         .expect_err("a write touching a written published block is refused");
     assert!(
         diag.message.contains("published"),
@@ -216,6 +235,7 @@ fn write_requires_boundary_evidence() {
             commit: String::new(),
         },
         &vocab,
+        &actions(),
     )
     .expect_err("empty boundary evidence is refused");
     assert!(
@@ -287,4 +307,142 @@ fn state_type_supports_comparison_and_clone() {
     let state = read_state(&fixture("valid.yaml"), &vocab).expect("valid state reads");
     let cloned: State = state.clone();
     assert_eq!(state, cloned);
+}
+
+// ── Round-1 fix-pass additions (vsdd-cli #722, #724, #728) ────────────────────
+
+#[test]
+fn entering_2b_without_the_red_record_is_refused() {
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.yaml");
+    let vocab = vocabulary();
+    let acts = actions();
+    let mut state = read_state(&fixture("valid.yaml"), &vocab).expect("valid state reads");
+    write_state(&path, &state, &evidence(), &vocab, &acts).expect("seed state writes");
+
+    state.current_phase = Some("phase-2b".to_string());
+    state.last_gate_result = None;
+    let diag = write_state(&path, &state, &evidence(), &vocab, &acts)
+        .expect_err("a 2b entry without the red record is refused");
+    assert!(diag.message.contains("phase-gate consistency"));
+    let survivor = read_state(&path, &vocab).expect("file still reads");
+    assert_eq!(
+        survivor.current_phase.as_deref(),
+        Some("phase-2a"),
+        "the prior file survives the refusal unchanged"
+    );
+}
+
+#[test]
+fn each_gate_conjunct_mismatch_is_refused() {
+    // One conjunct wrong at a time — wrong layer, result pass, wrong gate
+    // kind — so deleting or inverting any single conjunct turns a test red
+    // (the mutant-killing shape vsdd-cli #722 names).
+    let vocab = vocabulary();
+    let acts = actions();
+    let base = read_state(&fixture("valid.yaml"), &vocab).expect("valid state reads");
+
+    let mut wrong_layer = base.clone();
+    wrong_layer.current_phase = Some("phase-2b".to_string());
+    wrong_layer.last_gate_result.as_mut().unwrap().layer = 7;
+
+    let mut result_pass = base.clone();
+    result_pass.current_phase = Some("phase-2b".to_string());
+    result_pass.last_gate_result.as_mut().unwrap().result = GateOutcome::Pass;
+
+    let mut wrong_gate = base.clone();
+    wrong_gate.current_phase = Some("phase-2b".to_string());
+    wrong_gate.last_gate_result.as_mut().unwrap().gate = GateKind::GreenGate;
+
+    for (name, state) in [
+        ("wrong layer", wrong_layer),
+        ("result pass", result_pass),
+        ("wrong gate kind", wrong_gate),
+    ] {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.yaml");
+        let result = write_state(&path, &state, &evidence(), &vocab, &acts);
+        let diag = result.expect_err("a mismatched conjunct must refuse");
+        assert!(
+            diag.message.contains("phase-gate consistency"),
+            "{name}: the refusal names the constraint"
+        );
+        assert!(!path.exists(), "{name}: nothing written on refusal");
+    }
+}
+
+#[test]
+fn entering_2b_with_the_layer_red_fail_record_writes() {
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.yaml");
+    let vocab = vocabulary();
+    let acts = actions();
+    let mut state = read_state(&fixture("valid.yaml"), &vocab).expect("valid state reads");
+    // valid.yaml carries the layer's red-gate fail record at layer 1.
+    state.current_phase = Some("phase-2b".to_string());
+    write_state(&path, &state, &evidence(), &vocab, &acts).expect("the compliant record writes");
+    let reread = read_state(&path, &vocab).expect("reread succeeds");
+    assert_eq!(reread.current_phase.as_deref(), Some("phase-2b"));
+}
+
+#[test]
+fn unknown_field_yields_malformed_with_location() {
+    // The likeliest real-world corruption of an adopter-edited file: a
+    // typo'd key under deny_unknown_fields (vsdd-cli #728).
+    let diag = read_state(&fixture("unknown-field.yaml"), &vocabulary())
+        .expect_err("an unknown field is a diagnostic");
+    assert_eq!(diag.kind, "malformed");
+    assert_eq!(diag.machine_token, "state-malformed");
+    assert!(
+        diag.location.is_some(),
+        "the decode failure carries its location"
+    );
+}
+
+#[test]
+fn wrong_typed_field_yields_malformed() {
+    let diag = read_state(&fixture("wrong-type.yaml"), &vocabulary())
+        .expect_err("a wrong-typed field is a diagnostic");
+    assert_eq!(diag.kind, "malformed");
+    assert_eq!(diag.recovery_action, "fix-state-content");
+}
+
+#[test]
+fn directory_as_state_path_yields_the_io_kind_on_every_platform() {
+    // The cross-platform companion to the unix-only mode-bit tests
+    // (vsdd-cli #728): reading a directory fails with a non-NotFound IO
+    // error everywhere.
+    let dir = tempfile::tempdir().unwrap();
+    let diag = read_state(dir.path(), &vocabulary()).expect_err("a directory is not a state file");
+    assert_eq!(diag.kind, "permission-or-io");
+    assert_eq!(diag.machine_token, "state-unreadable-io");
+}
+
+#[test]
+fn write_refusal_token_resolves_in_the_action_vocabulary() {
+    // The write-side fidelity discipline (vsdd-cli #724): the refusal's
+    // recovery members are the registered correct-the-write member's,
+    // loaded, never a constant's copy.
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.yaml");
+    let vocab = vocabulary();
+    let acts = actions();
+    let state = read_state(&fixture("valid.yaml"), &vocab).expect("valid state reads");
+    let diag = write_state(
+        &path,
+        &state,
+        &BoundaryEvidence {
+            commit: String::new(),
+        },
+        &vocab,
+        &acts,
+    )
+    .expect_err("empty evidence is refused");
+    let member = acts
+        .action_vocabulary
+        .iter()
+        .find(|a| a.id == diag.recovery_action)
+        .expect("the refusal's recovery action resolves to a registered member");
+    assert_eq!(member.family, "recovery");
+    assert_eq!(diag.recovery_text, member.human);
 }

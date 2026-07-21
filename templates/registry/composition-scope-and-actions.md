@@ -40,6 +40,8 @@ action_vocabulary:
   - {id: fix-state-content, family: recovery, phase: "", human: restore the state file's content to the last boundary commit's version}
   - {id: fix-state-permissions, family: recovery, phase: "", human: "clear the fault the diagnostic names — file permissions on the state artifact, or the disk or mount failure"}
   - {id: reconcile-toward-artifact, family: recovery, phase: "", human: resolve the tracker disagreement toward the state artifact}
+  - {id: correct-the-write, family: recovery, phase: "", human: "correct the refused write's input and retry; the prior file is untouched"}
+  - {id: repair-registry-artifact, family: recovery, phase: "", human: "repair the registry artifact to match its schema pair, then re-run"}
 ---
 
 # Composition scope + action vocabulary
@@ -67,6 +69,14 @@ toward the artifact's authority; vsdd-cli #704). Convergence reference
 answers are written in these tokens
 and are operator-adopted oracles; membership here is a proposal until that
 adoption.
+
+The write and registry surfaces' recovery members — `correct-the-write`
+and `repair-registry-artifact` — are operator-registered (2026-07-21,
+vsdd-cli #724, from the Layer 1 code round): the state write path loads
+its token like the read path does, and the registry loader carries a
+declared bootstrap mirror of its member — the loader cannot load the
+vocabulary before loading, the permanent exception, pinned by a
+fidelity test rather than a runtime load.
 
 Two scoping notes from round 1. The fix-lane members
 (`file-fix-finding`, `run-fix-gate`) are fix-lane workflow tokens, not

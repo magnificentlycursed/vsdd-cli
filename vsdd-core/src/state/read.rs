@@ -88,20 +88,42 @@ pub fn validate_state_bytes(
     }
 
     // Bootstrap self-validation: the version gate fires before any
-    // further reading of the contents.
-    let version = value
-        .get("schema_version")
-        .and_then(|v| v.as_str())
-        .unwrap_or("");
-    if version != SUPPORTED_STATE_SCHEMA_VERSION {
-        return Err(malformed(
-            path,
-            format!(
-                "state schema_version `{version}` is not supported; this reader supports `{SUPPORTED_STATE_SCHEMA_VERSION}`"
-            ),
-            None,
-            vocabulary,
-        ));
+    // further reading of the contents, and its message distinguishes
+    // missing, non-string, and unsupported (vsdd-cli #727).
+    match value.get("schema_version") {
+        None => {
+            return Err(malformed(
+                path,
+                format!(
+                    "the state file has no schema_version key; this reader supports `{SUPPORTED_STATE_SCHEMA_VERSION}`"
+                ),
+                None,
+                vocabulary,
+            ));
+        }
+        Some(v) => match v.as_str() {
+            None => {
+                return Err(malformed(
+                    path,
+                    format!(
+                        "schema_version is not a string (quote it, e.g. \"0.1.0\"); this reader supports `{SUPPORTED_STATE_SCHEMA_VERSION}`"
+                    ),
+                    None,
+                    vocabulary,
+                ));
+            }
+            Some(version) if version != SUPPORTED_STATE_SCHEMA_VERSION => {
+                return Err(malformed(
+                    path,
+                    format!(
+                        "state schema_version `{version}` is not supported; this reader supports `{SUPPORTED_STATE_SCHEMA_VERSION}`"
+                    ),
+                    None,
+                    vocabulary,
+                ));
+            }
+            Some(_) => {}
+        },
     }
 
     serde_yaml_ng::from_str::<State>(text).map_err(|e| {

@@ -19,7 +19,16 @@ pub struct FrontmatterError {
 /// Pure; deterministic; the property-test target for the registry's
 /// parse boundary. An input with no opening fence, an unterminated
 /// fence, or an empty frontmatter block is an error with its location.
+/// A leading UTF-8 byte-order mark is tolerated before the fence
+/// (Windows-editor provenance; vsdd-cli #727).
+///
+/// Known limitation, pinned by test (vsdd-cli #727): the closing fence
+/// is the first line whose trimmed form is `---`, with no YAML context
+/// awareness — a bare `---` line inside a frontmatter block scalar
+/// truncates the block. The authoring rule for the registry artifacts:
+/// no bare `---` line inside frontmatter strings.
 pub fn split_frontmatter(input: &str) -> Result<(&str, &str), FrontmatterError> {
+    let input = input.strip_prefix('\u{feff}').unwrap_or(input);
     let rest = input
         .strip_prefix("---\n")
         .or_else(|| input.strip_prefix("---\r\n"))

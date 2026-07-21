@@ -128,3 +128,14 @@ impl Diagnostic {
         })
     }
 }
+
+impl std::fmt::Display for Diagnostic {
+    /// The human rendering, trimmed — so `?` interop, `{}` printing, and
+    /// error-chain composition all speak the same rustc-shaped text
+    /// (the init.rs thiserror idiom, extended; vsdd-cli #727).
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(self.render_human().trim_end())
+    }
+}
+
+impl std::error::Error for Diagnostic {}

@@ -19,7 +19,10 @@ pub struct FailureKind {
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct FlakePolicy {
-    pub runs_per_gate_execution: u32,
+    // u64, not u32: numeric widths align with the schema pairs' unbounded
+    // integers so a pair-valid value cannot fail the typed decode
+    // (vsdd-cli #723's drift example).
+    pub runs_per_gate_execution: u64,
     pub per_test_aggregation: String,
     pub scope: String,
 }
@@ -50,8 +53,22 @@ pub struct ReadFailureKind {
 #[derive(Debug, Clone, Deserialize)]
 pub struct DisplayField {
     pub field: String,
-    pub width_budget_chars: u32,
+    pub width_budget_chars: u64,
     pub absence_text: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct DegradedKind {
+    pub kind: String,
+    pub marker_word: String,
+    pub benign: bool,
+    pub next_step_text: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct WiringOutcome {
+    pub id: String,
+    pub meaning: String,
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -60,15 +77,19 @@ pub struct StatuslineData {
     pub schema_version: String,
     pub status: String,
     pub read_failure_kinds: Vec<ReadFailureKind>,
-    pub degraded_kinds: Value,
-    pub wiring_outcomes: Value,
+    // Typed because their pair shapes are final (vsdd-cli #728): the
+    // statusline renderer (Layer 3) consumes these like read_failure_kinds.
+    pub degraded_kinds: Vec<DegradedKind>,
+    pub wiring_outcomes: Vec<WiringOutcome>,
     pub display_fields: Vec<DisplayField>,
     pub truncation_mark: String,
     pub truncation_rule: String,
     pub substrate_findings_visibility: String,
     pub broken_state_mark: String,
     pub wall_clock_budget_ms: u64,
+    /// Deepens at Layer 3 (the timing check's consumer).
     pub timing_check: Value,
+    /// Deepens at Layer 3 (the wiring script's consumer).
     pub repo_set_config: Value,
     pub composition_instruction_conduct: String,
 }
@@ -157,7 +178,7 @@ pub struct ActToAffordanceMap {
 pub struct Preset {
     pub id: String,
     pub active_domains: String,
-    pub round_budget: u32,
+    pub round_budget: u64,
     pub stop_sensitivity: String,
     pub mutation_floor_declared: bool,
     pub note: String,
@@ -193,11 +214,23 @@ pub struct DispatchData {
 // --- state-schema (the data set describing the state artifact) ---------------
 
 #[derive(Debug, Clone, Deserialize)]
+pub struct StateFieldDecl {
+    pub name: String,
+    #[serde(rename = "type")]
+    pub type_name: String,
+    pub required: bool,
+    pub semantics: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
 pub struct StateSchemaSet {
     pub schema_class: String,
     pub schema_version: String,
     pub status: String,
-    pub state_fields: Vec<Value>,
+    // Typed so the State struct's claimed mirror is testable one-for-one
+    // (vsdd-cli #725).
+    pub state_fields: Vec<StateFieldDecl>,
+    /// Deepens at Layer 7 (mdatron's state-consistency family).
     pub declared_constraints: Vec<Value>,
 }
 
