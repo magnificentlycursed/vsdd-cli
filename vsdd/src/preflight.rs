@@ -163,7 +163,10 @@ mod tests {
         let result = check_git_repo(temp.path());
         assert!(matches!(result, CheckResult::NotFound(_)));
         if let CheckResult::NotFound(reason) = result {
-            assert!(reason.contains("git init"), "reason should name corrective action; got: {reason}");
+            assert!(
+                reason.contains("git init"),
+                "reason should name corrective action; got: {reason}"
+            );
         }
     }
 
@@ -171,7 +174,10 @@ mod tests {
     fn tool_check_finds_cargo() {
         // The test suite runs under cargo so cargo must be on PATH for the test to even start.
         let result = check_tool("cargo");
-        assert!(matches!(result, CheckResult::Found(_)), "cargo should be found; got: {result:?}");
+        assert!(
+            matches!(result, CheckResult::Found(_)),
+            "cargo should be found; got: {result:?}"
+        );
     }
 
     #[test]
