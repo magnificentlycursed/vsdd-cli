@@ -38,7 +38,7 @@ presets:
     mutation_floor_declared: true
     note: "this project's declared preset — the toolkit governs other projects, so its defects propagate"
   - id: standard
-    active_domains: "the six core role domains plus sanity-check (count verified against the installed prompts 2026-07-21, vsdd-cli #684; reference resolved per #705)"
+    active_domains: "the six core role domains — software-engineer, security, ux, quality-engineer, solution-owner, solution-architect — plus sanity-check (membership and count are the tier-marked core prompts on disk, verifiable against the installed prompts; enumerated inline per vsdd-cli #710)"
     round_budget: 5
     stop_sensitivity: "stop on a fully hallucinated round"
     mutation_floor_declared: false

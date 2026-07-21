@@ -149,12 +149,12 @@ entries:
     path: no project-level statusLine entry
     class: statusline-wiring
     source: operator
-    lifetime: per-clone-wiring
+    lifetime: host-wiring
     referenced_by: [statusline-command-path]
     pairs_with: []
     resolution: worded-absence
     fail_mode: undefined
-    note: wiring lives at user level today; a project-level entry arrives with the Install requirement's offer (Layer 4)
+    note: "wiring lives at user level today — host-wiring, reclassified in the #703 axis sweep this entry originally escaped (vsdd-cli #709): every clone on this host inherits it, a fresh host loses it silently; a project-level entry arrives with the Install requirement's offer (Layer 4)"
 ---
 
 # Installed-artifact manifest — vsdd-cli instance
