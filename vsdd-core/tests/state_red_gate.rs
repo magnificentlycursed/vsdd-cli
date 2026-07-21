@@ -268,7 +268,7 @@ fn human_render_is_rustc_shaped_and_complete() {
 fn machine_render_carries_the_loaded_tokens() {
     let diag = read_state(&fixture("does-not-exist.yaml"), &vocabulary())
         .expect_err("absent file is a diagnostic");
-    let machine = diag.render_machine();
+    let machine = diag.render_machine(&repo_root());
     assert_eq!(machine["kind"], "absent");
     assert_eq!(machine["machine_token"], "state-absent");
     assert_eq!(machine["recovery_action"], "restore-state-file");
@@ -465,5 +465,23 @@ fn oversize_state_file_is_refused_before_parsing() {
         diag.message
             .contains(&vsdd_core::MAX_ARTIFACT_BYTES.to_string()),
         "the diagnostic names the documented limit"
+    );
+}
+
+#[test]
+fn machine_render_paths_are_repo_relative() {
+    // The #730 clause's pin (vsdd-cli #737): a record-destined machine
+    // form carries no user-absolute path for an in-repo artifact.
+    let diag = read_state(&fixture("does-not-exist.yaml"), &vocabulary())
+        .expect_err("absent file is a diagnostic");
+    let machine = diag.render_machine(&repo_root());
+    let file = machine["file"].as_str().expect("file field present");
+    assert!(
+        !file.starts_with('/'),
+        "no user-absolute path in the machine form: {file}"
+    );
+    assert!(
+        file.starts_with("vsdd-core/"),
+        "repo-relative rendering: {file}"
     );
 }

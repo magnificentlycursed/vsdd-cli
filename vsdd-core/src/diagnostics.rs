@@ -116,11 +116,18 @@ impl Diagnostic {
 
     /// The machine form: structured JSON carrying kind, machine token,
     /// diagnostic payload, and recovery action for mechanical branching.
-    pub fn render_machine(&self) -> serde_json::Value {
+    ///
+    /// Record-destined, so paths render repo-relative for in-repo
+    /// artifacts (the Trust-boundaries clause, operator-ratified
+    /// 2026-07-21, vsdd-cli #730/#737); an out-of-repo path passes
+    /// through unchanged — the clause governs the records' artifacts,
+    /// and record writers relativize what a repo root can claim.
+    pub fn render_machine(&self, repo_root: &std::path::Path) -> serde_json::Value {
+        let file = self.file.strip_prefix(repo_root).unwrap_or(&self.file);
         serde_json::json!({
             "kind": self.kind,
             "machine_token": self.machine_token,
-            "file": self.file.display().to_string(),
+            "file": file.display().to_string(),
             "location": self.location.map(|(l, c)| serde_json::json!([l, c])),
             "message": self.message,
             "recovery_action": self.recovery_action,
