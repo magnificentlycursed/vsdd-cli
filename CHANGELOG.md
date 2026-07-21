@@ -16,6 +16,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- c1 minor collector: suite hardening (#728)
+- c1 minor collector: loader and diagnostic conduct (#727)
+- c1 minor collector: write-path hygiene and durability scope (#726)
+- c1 major DE: the State struct's claimed verbatim mirror of state-schema is enforced by nothing (#725)
+- c1 major DE+QE convergent: emitted recovery tokens exist nowhere in the versioned vocabulary (#724)
+- c1 major DE: typed decode after a passing schema pair misdirects — the drift class has no home (#723)
+- c1 major QE: the 2b-entry gate-consistency refusal needs its pin — three tests named (#722)
+- c1 major SE+security convergent: write_state is check-then-act — the exists()/read window skips the forward-only published check (#721)
 - Phase 2c execution, Layer 1: refactor under the green suite (#719)
 - cold-pass nit collector: three items; sign-off recommended ready as-is (#715)
 - Phase 1c execution: decomposition and data authoring (#597)
