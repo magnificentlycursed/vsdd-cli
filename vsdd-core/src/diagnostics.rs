@@ -10,6 +10,18 @@ use std::path::PathBuf;
 
 use crate::registry::sets::StatuslineData;
 
+/// Map a YAML parse error to a 1-indexed (line, column), shifting by
+/// `line_offset` when the parsed slice does not begin at the file's
+/// first line (frontmatter begins on line 2).
+pub(crate) fn yaml_location(
+    error: &serde_yaml_ng::Error,
+    line_offset: usize,
+) -> Option<(usize, usize)> {
+    error
+        .location()
+        .map(|l| (l.line() + line_offset, l.column()))
+}
+
 /// The three state read-failure kinds, mirroring the statusline data
 /// set's `read_failure_kinds` enumeration exactly.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

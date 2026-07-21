@@ -6,7 +6,7 @@
 
 use std::path::Path;
 
-use crate::diagnostics::{Diagnostic, StateReadKind};
+use crate::diagnostics::{yaml_location, Diagnostic, StateReadKind};
 use crate::registry::sets::StatuslineData;
 
 use super::schema::{State, SUPPORTED_STATE_SCHEMA_VERSION};
@@ -71,8 +71,12 @@ pub fn validate_state_bytes(
     })?;
 
     let value: serde_yaml_ng::Value = serde_yaml_ng::from_str(text).map_err(|e| {
-        let location = e.location().map(|l| (l.line(), l.column()));
-        malformed(path, format!("parse failure: {e}"), location, vocabulary)
+        malformed(
+            path,
+            format!("parse failure: {e}"),
+            yaml_location(&e, 0),
+            vocabulary,
+        )
     })?;
     if !value.is_mapping() {
         return Err(malformed(
@@ -101,11 +105,10 @@ pub fn validate_state_bytes(
     }
 
     serde_yaml_ng::from_str::<State>(text).map_err(|e| {
-        let location = e.location().map(|l| (l.line(), l.column()));
         malformed(
             path,
             format!("state content failure: {e}"),
-            location,
+            yaml_location(&e, 0),
             vocabulary,
         )
     })

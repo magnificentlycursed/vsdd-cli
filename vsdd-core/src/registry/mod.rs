@@ -19,7 +19,7 @@ use std::path::{Path, PathBuf};
 use mdatron_core::Schema;
 use serde::de::DeserializeOwned;
 
-use crate::diagnostics::Diagnostic;
+use crate::diagnostics::{yaml_location, Diagnostic};
 use sets::{
     ActToAffordanceMap, CompositionScopeAndActions, DispatchData, EconomicsData, GateData,
     InstalledArtifactManifest, SnapshotSchemaSet, StateSchemaSet, StatuslineData,
@@ -87,17 +87,14 @@ pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T,
             Some((e.line, e.column)),
         )
     })?;
-    // Frontmatter begins on line 2 of the file; parser locations are
-    // relative to the frontmatter slice.
-    let fm_line = |line: usize| line + 1;
-
+    // Frontmatter begins on line 2 of the file, hence the offset of 1
+    // on parser locations relative to the frontmatter slice.
     let value: serde_yaml_ng::Value = serde_yaml_ng::from_str(fm).map_err(|e| {
-        let location = e.location().map(|l| (fm_line(l.line()), l.column()));
         artifact_diagnostic(
             path.clone(),
             "malformed",
             format!("frontmatter parse failure: {e}"),
-            location,
+            yaml_location(&e, 1),
         )
     })?;
 
@@ -152,12 +149,11 @@ pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T,
     }
 
     serde_yaml_ng::from_str::<T>(fm).map_err(|e| {
-        let location = e.location().map(|l| (fm_line(l.line()), l.column()));
         artifact_diagnostic(
             path,
             "malformed",
             format!("typed decode failure: {e}"),
-            location,
+            yaml_location(&e, 1),
         )
     })
 }

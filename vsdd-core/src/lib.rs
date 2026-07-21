@@ -4,6 +4,13 @@
 //! Validation is performed by `mdatron-core` consuming this crate's data.
 //!
 //! Currently provides:
+//! - `state` — the `.vsdd/state.yaml` artifact: schema, read with the
+//!   enumerated failure discipline, atomic boundary-evidenced write
+//!   (Layer 1 of the decomposition)
+//! - `registry` — the nine versioned data sets as loadable, typed,
+//!   schema-pair-validated artifacts (Layer 1)
+//! - `diagnostics` — the rustc-shaped diagnostic whose state-surface
+//!   tokens load from the statusline data set
 //! - `schemas::PHASE_PRIMER` — JSON Schema for vsdd-phase-*.md frontmatter
 //! - `schemas::DOMAIN_PROMPT` — JSON Schema for vsdd-domain-*.md frontmatter
 //! - `schemas::SUPPLEMENT` — JSON Schema for vsdd-cli/supplements/*.md frontmatter
