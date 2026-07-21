@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Phase 2a execution, Layer 1: red-gate test suite for the state artifact and versioned data (#716)
 - Phase 1b: verification architecture (respec cycle) (L2)
 
 ### Fixed
