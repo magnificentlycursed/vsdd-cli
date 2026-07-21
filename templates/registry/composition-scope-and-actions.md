@@ -1,6 +1,6 @@
 ---
 schema_class: composition-scope-and-actions
-schema_version: 0.1.0
+schema_version: 0.2.0
 status: draft-proposal
 scope_members:
   - {id: phase-1a, kind: phase, whitepaper_name: Behavioral Specification}

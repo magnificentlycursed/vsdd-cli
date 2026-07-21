@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vsdd.local/schemas/statusline-data.json",
   "title": "Statusline data set frontmatter",
-  "description": "Frontmatter contract for the statusline data set. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: read_failure_kinds covers exactly the kinds absent, malformed, permission-or-io; each recovery_action resolves to a recovery-family member of composition-scope-and-actions; degraded_kinds covers exactly tracker-absent and tracker-unusable; wiring_outcomes carries exactly the Install requirement's six members; display_fields field names unique and the session identifier is not among them (operator ruling vsdd-cli #679).",
+  "description": "Frontmatter contract for the statusline data set. Declared cross-field constraints, wired and declared as follows — each recovery_action resolves to a recovery-family member of composition-scope-and-actions (VSDD-E0212) — WIRED via .mdatron/patterns/registry-integrity.yaml (vsdd-cli #729); executed by consumers at read: read_failure_kinds covers exactly the kinds absent, malformed, permission-or-io; degraded_kinds covers exactly tracker-absent and tracker-unusable; wiring_outcomes carries exactly the Install requirement's six members; display_fields field names unique and the session identifier is not among them (operator ruling vsdd-cli #679).",
   "type": "object",
   "required": [
     "schema_class",

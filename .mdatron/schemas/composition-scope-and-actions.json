@@ -2,23 +2,57 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vsdd.local/schemas/composition-scope-and-actions.json",
   "title": "Composition scope + action vocabulary frontmatter",
-  "description": "Frontmatter contract for the composition-scope domain and action vocabulary. Declared cross-field constraints, executed by consumers at read and mdatron's cross-file family when it lands: member ids unique within each list; every action_vocabulary phase value is empty or a scope_members id; exactly one scope member carries kind lane; a member whose phase is a phase-kind scope member has an id leading with that phase's stage designator (phase-1a -> '1a-'), and members with an empty or lane phase carry no stage prefix (operator naming ruling 2026-07-20, vsdd-cli #666).",
+  "description": "Frontmatter contract for the composition-scope domain and action vocabulary. The stage-prefix rule is ENCODED below via per-phase if/then (mdatron #73's Layer-1 advice; vsdd-cli #729): a member whose phase is a phase-kind scope member has an id leading with that phase's stage designator (phase-1a -> '1a-'), and members with an empty or lane phase carry no numeric stage prefix (operator naming ruling 2026-07-20, vsdd-cli #666). Still declared, executed by consumers at read pending mdatron capability: member ids unique within each list; every action_vocabulary phase value is empty or a scope_members id; exactly one scope member carries kind lane.",
   "type": "object",
-  "required": ["schema_class", "schema_version", "status", "scope_members", "action_vocabulary"],
+  "required": [
+    "schema_class",
+    "schema_version",
+    "status",
+    "scope_members",
+    "action_vocabulary"
+  ],
   "properties": {
-    "schema_class": {"type": "string", "const": "composition-scope-and-actions"},
-    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
-    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "schema_class": {
+      "type": "string",
+      "const": "composition-scope-and-actions"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft-proposal",
+        "adopted",
+        "established"
+      ]
+    },
     "scope_members": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "kind", "whitepaper_name"],
+        "required": [
+          "id",
+          "kind",
+          "whitepaper_name"
+        ],
         "properties": {
-          "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
-          "kind": {"type": "string", "enum": ["phase", "lane"]},
-          "whitepaper_name": {"type": "string"}
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "phase",
+              "lane"
+            ]
+          },
+          "whitepaper_name": {
+            "type": "string"
+          }
         },
         "additionalProperties": false
       }
@@ -28,14 +62,248 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "family", "phase", "human"],
+        "required": [
+          "id",
+          "family",
+          "phase",
+          "human"
+        ],
         "properties": {
-          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
-          "family": {"type": "string", "enum": ["advance", "await", "recovery"]},
-          "phase": {"type": "string"},
-          "human": {"type": "string", "minLength": 1}
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "family": {
+            "type": "string",
+            "enum": [
+              "advance",
+              "await",
+              "recovery"
+            ]
+          },
+          "phase": {
+            "type": "string"
+          },
+          "human": {
+            "type": "string",
+            "minLength": 1
+          }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-1a"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^1a-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-1b"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^1b-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-1c"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^1c-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-2a"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^2a-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-2b"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^2b-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-2c"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^2c-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-3"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^3-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-4"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^4-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-5"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^5-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "const": "phase-6"
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^6-"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "phase": {
+                  "enum": [
+                    "",
+                    "fix-lane"
+                  ]
+                }
+              },
+              "required": [
+                "phase"
+              ]
+            },
+            "then": {
+              "properties": {
+                "id": {
+                  "pattern": "^[a-z]"
+                }
+              }
+            }
+          }
+        ]
       }
     }
   },

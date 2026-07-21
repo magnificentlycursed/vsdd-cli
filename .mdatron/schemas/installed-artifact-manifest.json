@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vsdd.local/schemas/installed-artifact-manifest.json",
   "title": "Installed-artifact manifest frontmatter",
-  "description": "Frontmatter contract for the installed-artifact manifest (Conformance at action time, chassis-affordance closure). Declared cross-field constraints, executed by the session-substrate check at read (and by mdatron's cross-file family when it lands): every id in an entry's pairs_with resolves to an entry id in this manifest; every id in an entry's referenced_by resolves to a reference_surfaces id; entry ids are unique.",
+  "description": "Frontmatter contract for the installed-artifact manifest (Conformance at action time, chassis-affordance closure). Cross-field constraints: every id in an entry's pairs_with resolves to an entry id in this manifest (VSDD-E0210) and every id in an entry's referenced_by resolves to a reference_surfaces id (VSDD-E0211) — WIRED into mdatron's cross-file family via .mdatron/patterns/registry-integrity.yaml (vsdd-cli #729); entry ids are unique (declared, executed by the session-substrate check at read, pending mdatron's uniqueness primitive).",
   "type": "object",
   "required": [
     "schema_class",

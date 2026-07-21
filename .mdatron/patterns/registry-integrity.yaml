@@ -1,0 +1,39 @@
+mdatron_dsl_version: 1
+pattern:
+  id: vsdd-registry-integrity
+  description: >-
+    The registry data sets' declared cross-field constraints, wired per
+    mdatron's assessment of the executable subset (vsdd-cli #729;
+    mdatron #73): referential integrity runs here at action time; the
+    stage-prefix rule lives in the composition schema pair's if/then;
+    uniqueness and regex-validity stay declared pending mdatron
+    capability.
+  keys:
+    - name: composition
+      source: templates/registry/composition-scope-and-actions.md
+      select: $.frontmatter
+      indexed_by: $.schema_class
+  rules:
+    - id: manifest-pairs-with-resolve
+      context: installed-artifact-manifest
+      assert: every(e in $self.entries, every(p in e.pairs_with, some(e2 in $self.entries, e2.id == p)))
+      code: VSDD-E0210
+      message: >-
+        installed-artifact manifest: an entry's pairs_with names an id
+        that resolves to no entry in this manifest
+
+    - id: manifest-referenced-by-resolve
+      context: installed-artifact-manifest
+      assert: every(e in $self.entries, every(r in e.referenced_by, some(s in $self.reference_surfaces, s.id == r)))
+      code: VSDD-E0211
+      message: >-
+        installed-artifact manifest: an entry's referenced_by names an id
+        that resolves to no reference surface in this manifest
+
+    - id: statusline-recovery-actions-registered
+      context: statusline-data
+      assert: every(k in $self.read_failure_kinds, some(a in key("composition", "composition-scope-and-actions").action_vocabulary, a.family == "recovery" and a.id == k.recovery_action))
+      code: VSDD-E0212
+      message: >-
+        statusline data: a read-failure kind's recovery_action does not
+        resolve to a recovery-family member of the action vocabulary

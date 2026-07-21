@@ -41,6 +41,12 @@ pub mod patterns {
     /// Cross-file referential integrity rules across phase primers, domain prompts,
     /// supplements, and review entries.
     pub const CROSS_REFERENCES: &str = include_str!("../patterns/cross-references.yaml");
+
+    /// The registry data sets' wired cross-field constraints: manifest
+    /// pairs_with/referenced_by resolution and statusline recovery-action
+    /// registration (the executable subset per mdatron's assessment;
+    /// vsdd-cli #729).
+    pub const REGISTRY_INTEGRITY: &str = include_str!("../patterns/registry-integrity.yaml");
 }
 
 pub mod artifacts {
