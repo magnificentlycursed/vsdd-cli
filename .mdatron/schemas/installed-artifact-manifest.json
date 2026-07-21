@@ -117,7 +117,8 @@
               "tracked-wiring",
               "tracked-payload",
               "per-clone-wiring",
-              "per-clone-payload"
+              "per-clone-payload",
+              "host-wiring"
             ]
           },
           "referenced_by": {

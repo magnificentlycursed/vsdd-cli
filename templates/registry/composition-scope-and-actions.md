@@ -38,7 +38,7 @@ action_vocabulary:
   - {id: await-operator, family: await, phase: "", human: "awaiting an operator act (ratification, adoption, sign-off)"}
   - {id: restore-state-file, family: recovery, phase: "", human: restore .vsdd/state.yaml from the last boundary commit}
   - {id: fix-state-content, family: recovery, phase: "", human: restore the state file's content to the last boundary commit's version}
-  - {id: fix-state-permissions, family: recovery, phase: "", human: clear the permission or input/output fault on the state artifact}
+  - {id: fix-state-permissions, family: recovery, phase: "", human: "clear the fault the diagnostic names — file permissions on the state artifact, or the disk or mount failure"}
   - {id: reconcile-toward-artifact, family: recovery, phase: "", human: resolve the tracker disagreement toward the state artifact}
 ---
 
@@ -60,8 +60,11 @@ members by exact match, and the Status machine form's per-kind recovery
 actions are the `recovery` family (the statusline data set's kind-to-action
 mapping selects from it, authored against these ids). Families:
 `advance` (the work the phase position calls for), `await` (blocked on an
-operator act or recorded blocker), `recovery` (the state artifact itself
-needs repair). Convergence reference answers are written in these tokens
+operator act or recorded blocker), `recovery` (the state artifact needs
+repair, or its corroboration needs reconciling toward it — three members
+repair the artifact, and reconcile-toward-artifact repairs the tracker
+toward the artifact's authority; vsdd-cli #704). Convergence reference
+answers are written in these tokens
 and are operator-adopted oracles; membership here is a proposal until that
 adoption.
 

@@ -1,6 +1,6 @@
 ---
 schema_class: installed-artifact-manifest
-schema_version: 0.2.0
+schema_version: 0.3.0
 status: draft-proposal
 reference_surfaces:
   - {id: project-settings, path: .claude/settings.json, scope: repo}
@@ -76,12 +76,12 @@ entries:
     path: "user settings enabledPlugins — rust-analyzer-lsp@claude-plugins-official 1.0.0, user scope"
     class: plugin-listing
     source: operator
-    lifetime: per-clone-wiring
+    lifetime: host-wiring
     referenced_by: [plugin-listing]
     pairs_with: []
     resolution: exists
     fail_mode: undefined
-    note: "the wired plugin set the session-substrate check verifies present — a wired-but-absent plugin is exactly this entry's catch (vsdd-cli #686); enablement lives at user scope, so a fresh host diverges silently and the check is the compensating control"
+    note: "the wired plugin set the session-substrate check verifies present — a wired-but-absent plugin is exactly this entry's catch (vsdd-cli #686); enablement lives at user scope — host-wiring, the axis value added for it (vsdd-cli #703): every clone on this host inherits it, a fresh host diverges silently, and the check is the compensating control"
   - id: commands-vsdd
     path: .claude/commands/vsdd-*.md
     class: command-listing
@@ -163,7 +163,9 @@ The installed environment is a closed world (contract: Conformance at action
 time, the chassis-affordance closure, ratified 2026-07-20). The frontmatter
 above is the versioned data: every artifact the environment expects, each
 with its source, its lifetime — the tracked-or-per-clone axis crossed
-with wiring-or-payload, four values, and it is the tracked/per-clone
+with wiring-or-payload, four values, plus host-wiring for wiring living
+in host-scoped config that every clone on the host inherits (added for
+the plugin surface, vsdd-cli #703) — and it is the tracked/per-clone
 divergence that produced the estate's 2026-07-20 incident (the audit on
 the trail of "Spec amendment: the dispatch posture split
 (attended/autonomous), from mdatron's kickoff live fire", vsdd-cli

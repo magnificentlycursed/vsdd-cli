@@ -26,7 +26,7 @@ degraded_kinds:
   - kind: tracker-unusable
     marker_word: tracker degraded
     benign: false
-    next_step_text: "tracker data unusable — the phase answer is computed from the state artifact alone; run crosslink integrity to diagnose the tracker store"
+    next_step_text: "tracker degraded — tracker data unusable; the phase answer is computed from the state artifact alone; run crosslink integrity to diagnose the tracker store"
 wiring_outcomes:
   - {id: installed, meaning: the default wiring was written on confirmation or accept flag}
   - {id: refused-existing-entry, meaning: "a statusLine entry already exists; init refused and printed the composition instruction"}

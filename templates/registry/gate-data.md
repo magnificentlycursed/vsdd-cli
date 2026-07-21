@@ -1,6 +1,6 @@
 ---
 schema_class: gate-data
-schema_version: 0.2.0
+schema_version: 0.3.0
 status: draft-proposal
 failure_kinds:
   - {kind: assertion-failure, red_validity: valid-red, scope: per-test, meaning: "an executed test's assertion failed"}
@@ -18,10 +18,11 @@ failure_kinds:
 pin_kind_declaration:
   declared_shape: "the finding issue declares expected_kinds — a non-empty set drawn from the valid-red kinds, or compile-failure under its approved compile-defect declaration"
   red_rule: "valid red: the named test fails in every run with each run's observed kind a member of the declared set; an observed kind outside the set is wrong-reason, decided by set membership with no approval lane (operator ruling 2026-07-21, vsdd-cli #675)"
+  whole_suite_rule: "a declared set containing compile-failure validates its red at the whole-suite grain: every run's build fails under the approved compile-defect declaration — no named test exists, so the per-test rules do not apply and the aggregation unit is the run (vsdd-cli #700)"
   delta_rule: "the standing-suite delta fails closed: a baseline-passing test that aggregates flaky at HEAD fails the delta (same ruling)"
 flake_policy:
   runs_per_gate_execution: 3
-  per_test_aggregation: "red only if the named test fails in all runs with every observed kind a member of the finding's declared expected set; green only if it passes in all runs; any mixed outcome is the flaky recorded state, which satisfies neither half and is reported with its per-run kinds"
+  per_test_aggregation: "red only if the named test fails in all runs with every observed kind a member of the finding's declared expected set; green only if it passes in all runs; a consistent neither-kind outcome across all runs aggregates to that recorded neither state, not flaky (vsdd-cli #701); any genuinely mixed outcome is the flaky recorded state, which satisfies neither half and is reported with its per-run kinds"
   scope: "covers the pin runs and the standing-suite delta alike; the suite delta compares per-test aggregated outcomes at baseline and HEAD, and flaky-at-HEAD fails the delta for a baseline-passing test (fail-closed, operator ruling 2026-07-21, vsdd-cli #675)"
 cannot_run_predicate:
   command_binding: "the repo's declared test command at workspace scope — the same command the chassis's gate resolves (crosslink hook-config agent_test_commands at this estate; the adopter's declared equivalent elsewhere)"
@@ -53,9 +54,10 @@ vsdd-cli #675, #676, #677, #678.
 
 `failure_kinds`: red and green are recorded with test identity and failure
 kind, making wrong-reason a mechanical comparison. The `red_validity`
-column carries the pin doctrine: six executed-failure kinds are valid
-reds (doctest compile failure among them — the runner reports it against
-the named doctest); compile-failure is conditional on the
+column carries the pin doctrine: six per-test kinds are valid reds
+(doctest compile failure the compile-time exception among five run-time
+failures — the runner reports it against the named doctest);
+compile-failure is conditional on the
 validator-approved compile-defect declaration; the five remaining kinds
 are the neither-red-nor-green recorded states. The `scope` column
 separates per-test kinds from whole-suite ones — a whole-suite kind
