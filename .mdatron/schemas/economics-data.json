@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/economics-data.json",
+  "title": "Economics data set frontmatter",
+  "description": "Frontmatter contract for the economics data set. Declared cross-field constraints: signal ids unique across both signal lists; stage names unique; artifact classes unique; preset ids unique; every band carries provenance text.",
+  "type": "object",
+  "required": ["schema_class", "schema_version", "status", "effort_signals", "tier_effort_defaults", "mutation_floor", "token_budgets", "calibration_bands", "presets"],
+  "properties": {
+    "schema_class": {"type": "string", "const": "economics-data"},
+    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "effort_signals": {
+      "type": "object",
+      "required": ["up_signals", "down_signals", "attribution_grain"],
+      "properties": {
+        "up_signals": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/signal"}},
+        "down_signals": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/signal"}},
+        "attribution_grain": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "tier_effort_defaults": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["stage", "tier", "effort", "note"],
+        "properties": {
+          "stage": {"type": "string", "pattern": "^[a-z][a-z-]*$"},
+          "tier": {"type": "string", "minLength": 1},
+          "effort": {"type": "string", "minLength": 1},
+          "note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "mutation_floor": {
+      "type": "object",
+      "required": ["kill_ratio_percent", "scope"],
+      "properties": {
+        "kill_ratio_percent": {"type": "integer", "minimum": 1, "maximum": 100},
+        "scope": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "token_budgets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["artifact_class", "budget_tokens"],
+        "properties": {
+          "artifact_class": {"type": "string", "pattern": "^[a-z][a-z-]*$"},
+          "budget_tokens": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "calibration_bands": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["operation", "band", "provenance"],
+        "properties": {
+          "operation": {"type": "string", "pattern": "^[a-z][a-z-]*$"},
+          "band": {"type": "string", "minLength": 1},
+          "provenance": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "presets": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "active_domains", "round_budget", "stop_sensitivity", "mutation_floor_declared", "note"],
+        "properties": {
+          "id": {"type": "string", "enum": ["thorough", "standard", "minimal"]},
+          "active_domains": {"type": "string", "minLength": 1},
+          "round_budget": {"type": "integer", "minimum": 1},
+          "stop_sensitivity": {"type": "string", "minLength": 1},
+          "mutation_floor_declared": {"type": "boolean"},
+          "note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "signal": {
+      "type": "object",
+      "required": ["id", "computed_from", "computation"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z-]*$"},
+        "computed_from": {"type": "string", "minLength": 1},
+        "computation": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
