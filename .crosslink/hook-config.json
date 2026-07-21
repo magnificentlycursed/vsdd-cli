@@ -5,7 +5,7 @@
       "cargo fmt --check"
     ],
     "agent_test_commands": [
-      "cargo test"
+      "cargo test --workspace"
     ],
     "blocked_git_commands": [
       "git push --force",
