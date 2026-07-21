@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/snapshot-schema.json",
+  "title": "Snapshot schema frontmatter",
+  "description": "Frontmatter contract for the snapshot schema and its audit. Declared cross-field constraints: snapshot field names unique; every snapshot-scoped check's consumes text names snapshot fields; every renderer display field appears in snapshot_fields; every audit row carries materialized true or a shell-side home.",
+  "type": "object",
+  "required": ["schema_class", "schema_version", "status", "snapshot_fields", "audit"],
+  "properties": {
+    "schema_class": {"type": "string", "const": "snapshot-schema"},
+    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "snapshot_fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["field", "contents"],
+        "properties": {
+          "field": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+          "contents": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "audit": {
+      "type": "object",
+      "required": ["snapshot_scoped_checks", "shell_side_checks", "renderer_display_fields"],
+      "properties": {
+        "snapshot_scoped_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["check", "consumes", "materialized"],
+            "properties": {
+              "check": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+              "consumes": {"type": "string", "minLength": 1},
+              "materialized": {"type": "boolean", "const": true}
+            },
+            "additionalProperties": false
+          }
+        },
+        "shell_side_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["check", "home"],
+            "properties": {
+              "check": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+              "home": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "renderer_display_fields": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["field", "materialized"],
+            "properties": {
+              "field": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+              "materialized": {"type": "boolean", "const": true}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
