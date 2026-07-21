@@ -12,6 +12,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 
 ### Changed
+- cold-pass nit collector: three items; sign-off recommended ready as-is (#715)
+- Phase 1c execution: decomposition and data authoring (#597)
+- data-sets review: documentation-reviewer cold pass — the external cold reader's slot (#714)
 - data-sets review: terminal verify round, second execution (#712)
 - terminal nit SO: Revision header omits the round-2 amendment batch (#711)
 - terminal minor DR: standard preset's six-domain set resolves nowhere; verification claim not performable (#710)
