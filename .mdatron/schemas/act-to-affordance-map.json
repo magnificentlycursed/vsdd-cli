@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vsdd.local/schemas/act-to-affordance-map.json",
+  "title": "Act-to-affordance map frontmatter",
+  "description": "Frontmatter contract for the act-to-affordance map. Declared cross-field constraints: act names unique; conditional bindings carry non-empty condition text naming their evidence handle.",
+  "type": "object",
+  "required": ["schema_class", "schema_version", "status", "entries", "rules"],
+  "properties": {
+    "schema_class": {"type": "string", "const": "act-to-affordance-map"},
+    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "status": {"type": "string", "enum": ["draft-proposal", "adopted", "established"]},
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["act", "affordance", "kind", "condition"],
+        "properties": {
+          "act": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+          "affordance": {"type": "string", "minLength": 1},
+          "kind": {"type": "string", "enum": ["chassis-workflow", "skill", "domain-lens"]},
+          "condition": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "rules": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}
