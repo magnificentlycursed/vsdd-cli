@@ -13,15 +13,22 @@ use std::fs;
 use std::path::PathBuf;
 
 struct TempProject {
+    /// Owns the unpredictable, exclusively-created directory; dropping
+    /// it cleans up. The hand-rolled pid-named path this replaces had
+    /// a delete-then-create race at a predictable shared-temp location
+    /// (vsdd-cli #769) — tempfile is the sibling suite's pattern.
+    _dir: tempfile::TempDir,
     root: PathBuf,
 }
 
 impl TempProject {
     fn new(name: &str) -> Self {
-        let root = std::env::temp_dir().join(format!("vsdd-xref-{}-{}", name, std::process::id(),));
-        let _ = fs::remove_dir_all(&root);
-        fs::create_dir_all(&root).unwrap();
-        let proj = Self { root };
+        let dir = tempfile::Builder::new()
+            .prefix(&format!("vsdd-xref-{name}-"))
+            .tempdir()
+            .unwrap();
+        let root = dir.path().to_path_buf();
+        let proj = Self { _dir: dir, root };
         proj.seed_schemas_and_patterns();
         proj
     }
@@ -107,12 +114,6 @@ impl TempProject {
                     .to_string()
             })
             .collect()
-    }
-}
-
-impl Drop for TempProject {
-    fn drop(&mut self) {
-        let _ = fs::remove_dir_all(&self.root);
     }
 }
 

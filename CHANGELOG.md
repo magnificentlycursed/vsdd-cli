@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Phase 1b: verification architecture (respec cycle) (L2)
 
 ### Fixed
+- Layer 2 round-3 fix pass: the #763 gauge-conflation declaration implemented for real with its record corrected, the degenerate-HOME fold rule, stderr holdout never fails a clean run, conformance temp trees ride tempfile (#766, #767, #768, #769)
 - Layer 2 round-2 fix pass: whole-run subprocess deadline with loud read failures, sanitize-then-truncate git diagnostics with canonical and home forms, full-refname local listing, two-directional substrate pin, stale-gate falsifiers and clean-negative fixtures for the corpus, unit pins for the parse and glob halves, empty-HOME guard, declared gauge conflation, manifest gloss honesty (#756, #757, #758, #759, #760, #761, #762, #763)
 - Layer 2 round-1 fix pass: bounded subprocess runs with honest spawn classification, fail-loud milestone parse, two-query ref listing with a pure normalizer, substrate resolution honesty, the uniform gate-record conjunct, four corpus additions as draft oracles, and the substrate/chassis vocabulary sweep (#746, #747, #748, #749, #750, #751, #752, #753, #754)
 - render_machine emits user-absolute paths — nonconforming against the ratified #730 clause (#737)

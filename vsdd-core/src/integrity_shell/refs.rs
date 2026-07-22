@@ -145,8 +145,15 @@ fn sanitize(text: &str, repo_root: &Path) -> String {
     if let Ok(canonical) = repo_root.canonicalize() {
         out = out.replace(&canonical.display().to_string(), ".");
     }
-    if let Some(home) = std::env::var_os("HOME").filter(|h| !h.is_empty()) {
-        out = out.replace(&PathBuf::from(home).display().to_string(), "~");
+    if let Some(home) = std::env::var_os("HOME") {
+        let home = PathBuf::from(home).display().to_string();
+        // Degenerate spellings — empty, whitespace, a bare separator —
+        // would fold ordinary text into tildes; the trimmed-non-empty
+        // unset rule (vsdd-cli #762) applies here too, plus a floor of
+        // two characters (vsdd-cli #767).
+        if home.trim().len() > 1 {
+            out = out.replace(&home, "~");
+        }
     }
     out
 }

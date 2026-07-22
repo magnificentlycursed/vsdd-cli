@@ -134,14 +134,12 @@ pub(crate) fn run_bounded(program: &str, args: &[&str], cwd: &Path) -> Subproces
             )
         }
     };
+    // Stderr is garnish, never data (the module doc's posture): a
+    // descendant holding only the stderr write-end past a clean exit
+    // must not convert an acquired run into a timeout (vsdd-cli #768)
+    // — on breach or loss the diagnostic just goes without it.
     let remaining = deadline.saturating_duration_since(Instant::now());
-    let stderr_buf = match stderr_rx.recv_timeout(remaining) {
-        Ok(buf) => buf,
-        Err(mpsc::RecvTimeoutError::Timeout) => return Subprocess::TimedOut,
-        // Best-effort: lost stderr degrades a diagnostic's garnish,
-        // never the run's data.
-        Err(mpsc::RecvTimeoutError::Disconnected) => Vec::new(),
-    };
+    let stderr_buf = stderr_rx.recv_timeout(remaining).unwrap_or_default();
 
     if oversize {
         return Subprocess::Oversize;

@@ -21,7 +21,13 @@
 //! (vsdd-cli #748). DECLARED CONFLATION (vsdd-cli #753): the session
 //! status surface cannot distinguish no-active-session from a refusal
 //! at bootstrap — a refused session query renders the worded absence;
-//! the distinction lands when crosslink exposes it.
+//! the distinction lands when crosslink exposes it. DECLARED
+//! CONFLATION (vsdd-cli #763, implemented per #766): the
+//! active-milestone gauge renders the milestone's open-ISSUE count —
+//! at bootstrap that count stands in for the open-finding count the
+//! snapshot schema names, until the tracker join (Layer 6) can tell
+//! findings from other issues; the schema's own quantity takes over
+//! there.
 
 use std::path::Path;
 
@@ -68,8 +74,10 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
         .rev()
         .find(|p| p.state.is_active)
         .map(|p| match p.counts {
-            // The schema's precomputed gauge: the open-finding count
-            // scoped to the active milestone (vsdd-cli #748).
+            // The gauge slot the schema precomputes; at bootstrap the
+            // value is the open-ISSUE count standing in for the
+            // open-finding count — the declared conflation in the
+            // module doc (vsdd-cli #763, #766).
             Some((closed, total)) => {
                 format!("{} ({} open)", p.state.name, total.saturating_sub(closed))
             }
