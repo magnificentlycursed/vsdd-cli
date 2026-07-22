@@ -1,5 +1,5 @@
 {
-  "next_display_id": 771,
+  "next_display_id": 772,
   "next_comment_id": 1009,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -643,6 +643,7 @@
     "d3868580-526b-43ce-8e63-41c7b0372542": 758,
     "d3ad54d7-b083-4b22-9c7f-a665964f4b38": 755,
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": 24,
+    "d4e2836b-aa4a-4599-a0b0-84509a848b26": 771,
     "d4ec7994-809e-4d32-9016-cb544ea6028a": 213,
     "d500ac17-43c6-45cc-b13d-03ad666b8f5e": 719,
     "d5c8df6b-b485-46bd-827c-5d4b675ae2a4": 722,
@@ -18296,6 +18297,16 @@
         }
       }
     },
+    "d4e2836b-aa4a-4599-a0b0-84509a848b26": {
+      "uuid": "d4e2836b-aa4a-4599-a0b0-84509a848b26",
+      "display_id": 771,
+      "title": "Layer 2 round 4 residue collector: the byte-length home-fold floor and the init suite's temp pattern — recorded and routed, not gating",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T19:17:33.835619Z",
+      "updated_at": "2026-07-22T19:17:33.835619Z"
+    },
     "d4ec7994-809e-4d32-9016-cb544ea6028a": {
       "uuid": "d4ec7994-809e-4d32-9016-cb544ea6028a",
       "display_id": 213,
@@ -22649,11 +22660,16 @@
       "agent_id": "xqjG",
       "agent_seq": 285,
       "timestamp": "2026-07-22T19:17:20.263626Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 286,
+      "timestamp": "2026-07-22T19:17:33.835619Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:17:20.263626Z",
+    "timestamp": "2026-07-22T19:17:33.835619Z",
     "agent_id": "xqjG",
-    "agent_seq": 285
+    "agent_seq": 286
   }
 }
