@@ -900,11 +900,12 @@
       "uuid": "00617bc6-93c1-431e-9d4c-9c126740035c",
       "display_id": 762,
       "title": "Layer 2 round 2 minor collector QE+security: untested pure halves and the env guard — milestone parse and count-strip, the glob length guard, empty-string HOME",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-22T18:00:49.691266Z",
-      "updated_at": "2026-07-22T18:47:04.035976Z",
+      "updated_at": "2026-07-22T18:47:09.840813Z",
+      "closed_at": "2026-07-22T18:47:09.840805Z",
       "comments": {
         "12eca479-7c1b-4b5a-915a-f9927a47b708": {
           "display_id": 995,
@@ -22252,11 +22253,16 @@
       "agent_id": "xqjG",
       "agent_seq": 246,
       "timestamp": "2026-07-22T18:47:04.035976Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 247,
+      "timestamp": "2026-07-22T18:47:09.840813Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:47:04.035976Z",
+    "timestamp": "2026-07-22T18:47:09.840813Z",
     "agent_id": "xqjG",
-    "agent_seq": 246
+    "agent_seq": 247
   }
 }
