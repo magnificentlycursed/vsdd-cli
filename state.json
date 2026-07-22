@@ -1,6 +1,6 @@
 {
   "next_display_id": 765,
-  "next_comment_id": 989,
+  "next_comment_id": 990,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4665,7 +4665,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:59:10.825291Z",
-      "updated_at": "2026-07-22T17:59:10.825291Z"
+      "updated_at": "2026-07-22T18:44:57.419895Z",
+      "comments": {
+        "4124539c-2857-4888-8980-c4f95f4fc6dc": {
+          "display_id": 989,
+          "author": "xqjG",
+          "content": "Fixed in a49206fe: reader results return over mpsc channels and the parent collects with recv_timeout against the REMAINING deadline budget — a descendant holding the inherited pipe write-ends past the child's exit is TimedOut with the detached readers abandoned, never an unbounded join. The try_wait error arm now kills and reaps before reporting (mirroring the timeout arm). A stdout read failure or reader disappearance under a clean exit maps to SpawnBroken, never a silently truncated Completed; stderr capture stays best-effort since it garnishes diagnostics and never carries data.",
+          "created_at": "2026-07-22T18:44:57.403148Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAAaoFoovU3zn7g+Io6KGEgZ3lqd9a/mG0xAMfN5pu1pr6IYgbTTjAp1N27rDuPWd7/zhjxgA+zj/haJeswYEoAQ=="
+        }
+      }
     },
     "2ed1a8b3-523f-4030-9005-f4fb6a363b8a": {
       "uuid": "2ed1a8b3-523f-4030-9005-f4fb6a363b8a",
@@ -22098,11 +22109,16 @@
       "agent_id": "xqjG",
       "agent_seq": 227,
       "timestamp": "2026-07-22T18:36:18.047584Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 228,
+      "timestamp": "2026-07-22T18:44:57.419895Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:36:18.047584Z",
+    "timestamp": "2026-07-22T18:44:57.419895Z",
     "agent_id": "xqjG",
-    "agent_seq": 227
+    "agent_seq": 228
   }
 }
