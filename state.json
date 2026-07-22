@@ -1,6 +1,6 @@
 {
   "next_display_id": 771,
-  "next_comment_id": 1008,
+  "next_comment_id": 1009,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18820,7 +18820,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:09:38.141191Z",
-      "updated_at": "2026-07-22T19:10:08.319136Z",
+      "updated_at": "2026-07-22T19:17:20.263626Z",
       "comments": {
         "7ec8404a-2d20-4928-8135-b07e1c5b2b86": {
           "display_id": 1007,
@@ -18830,6 +18830,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAErergR2B5/TWxZzQZjlEmjut9meDt9TMNxoiqvyYA7GtBGi30SAW8axxGrsFsYTQlwBBgHYoie8xg2YpEE1JAQ=="
+        },
+        "e0ea5452-31f8-49e0-ba74-370f6b8ed2f2": {
+          "display_id": 1008,
+          "author": "xqjG",
+          "content": "ROUND 4 RETURNED — THE STOP HOLDS, 2/2. All four round-3 fix claims held under adversarial verification: #766 confirmed present at HEAD with the pre-fix absence proven from the parent commit, the declaration's accuracy checked against crosslink's own milestone output and the gauge arithmetic, and the edit confirmed comment-only (no code drift rode along — the round-2 silent no-op did not recur); #767's floor empirically rejects empty, space, tab, and bare-slash homes while folding real short homes; #768 is behaviorally identical on loss and strictly more truthful on breach, with TimedOut reachable exactly at the two data-bearing waits; #769 fully on tempfile with panic-safe cleanup and no remnants. The regression sweep found no drift and the suite still falsifies what it claims (equality pin, exact-20 corpus, unit pins all re-confirmed). RESIDUE, two items, both lenses agree neither forces another round — routed via the residue collector filed next: (1) minor: the two-character home-fold floor counts BYTES, so an all-separator '//' and a single multibyte character pass it — the defect-fix lane's shape, with the fix sketch recorded (require a non-separator character and count chars, not bytes); (2) nit: tests/init.rs still carries the delete-then-create shared-temp pattern #769 removed from its sibling — prior-layer surface, consistency stray for the queue. TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 both lenses; effort chosen=observed high both; cost band DECLARED 100k-220k, OBSERVED 108,004 with 41 tool invocations — IN BAND, the first verify declaration to price correctly (the narrowed-scope calibration worked). PHASE-3 STOP DECIDED: four rounds (discovery, two full verifies, one narrowed stop-decider), 26 findings consolidated and fixed across three fix passes plus the forced core-removal migration, every fix claim independently verified, the last round finding only carried-tier residue. Layer 2's code rounds close; phase 4 routes the residue; the operator batch comes due at the boundary.",
+          "created_at": "2026-07-22T19:17:20.248603Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsE3iuVc6lJSEQN6siBEizJXeWpoSPxz8H5Tj+KJBmOwnkBY/evfVF8CJOFFRCawFyuJBH6PACGrgptWgwg/eAw=="
         }
       }
     },
@@ -22635,11 +22644,16 @@
       "agent_id": "xqjG",
       "agent_seq": 284,
       "timestamp": "2026-07-22T19:10:08.319136Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 285,
+      "timestamp": "2026-07-22T19:17:20.263626Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:10:08.319136Z",
+    "timestamp": "2026-07-22T19:17:20.263626Z",
     "agent_id": "xqjG",
-    "agent_seq": 284
+    "agent_seq": 285
   }
 }
