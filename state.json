@@ -1,6 +1,6 @@
 {
   "next_display_id": 746,
-  "next_comment_id": 971,
+  "next_comment_id": 972,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13745,11 +13745,22 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T16:49:20.000430Z",
-      "updated_at": "2026-07-22T16:49:44.186518Z",
+      "updated_at": "2026-07-22T16:50:42.522834Z",
       "labels": [
         "review"
       ],
-      "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b"
+      "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
+      "comments": {
+        "24769a6a-5aa3-47da-ad1f-feb285ea05e2": {
+          "display_id": 971,
+          "author": "xqjG",
+          "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, attended side. domains, computed from the layer's surfaces (a pure derivation over adopted oracles; a subprocess-driven acquisition; filesystem and git shell checks; the convergence suite): software-engineer (primary, the derivation and integrity logic), security (the subprocess acquisition, the substrate check's filesystem semantics, the refs shell), quality-engineer (suite falsifiability, the corpus runner), data-engineer (the snapshot mirror of snapshot-schema, the acquisition's bootstrap honesty, the vocabulary consumption). coverage: fourteen domains, no matching surface, declared. MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH (round-1 discovery posture on the deepest surfaces, the established catch record), quality-engineer and data-engineer MEDIUM. expected_cost_band: the seeded cold-code band (5-30 findings pre-dedup, 120k-300k tokens); Layer 1's round 1 ran 187k at the same shape. inputs: the Layer 2 tree at 4572c951 (the 2a-2c arc on the #738/#741/#744 trails). returned + telemetry recorded here after.",
+          "created_at": "2026-07-22T16:50:42.501470Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA74Jgp+mw+MOve8PxNplmAv1OENkpU5tc2iIQTLLsVdyWhprQSyqE/5sYnBwNu7cawIq1Q7PDM0SKG7XucMjABA=="
+        }
+      }
     },
     "a657d2cb-e2e4-4795-b727-2fa7e009cb0b": {
       "uuid": "a657d2cb-e2e4-4795-b727-2fa7e009cb0b",
@@ -21151,11 +21162,16 @@
       "agent_id": "xqjG",
       "agent_seq": 135,
       "timestamp": "2026-07-22T16:49:44.186518Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 136,
+      "timestamp": "2026-07-22T16:50:42.522834Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:49:44.186518Z",
+    "timestamp": "2026-07-22T16:50:42.522834Z",
     "agent_id": "xqjG",
-    "agent_seq": 135
+    "agent_seq": 136
   }
 }
