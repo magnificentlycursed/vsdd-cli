@@ -1,5 +1,5 @@
 {
-  "next_display_id": 758,
+  "next_display_id": 759,
   "next_comment_id": 988,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -632,6 +632,7 @@
     "d2cbf9af-6fee-489a-ac35-3e157850cdeb": 472,
     "d2dd58da-91d5-4bb3-9ea9-6677e8e567d7": 578,
     "d3120875-0c00-44ec-85fe-c61660674198": 606,
+    "d3868580-526b-43ce-8e63-41c7b0372542": 758,
     "d3ad54d7-b083-4b22-9c7f-a665964f4b38": 755,
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": 24,
     "d4ec7994-809e-4d32-9016-cb544ea6028a": 213,
@@ -17967,6 +17968,16 @@
         }
       }
     },
+    "d3868580-526b-43ce-8e63-41c7b0372542": {
+      "uuid": "d3868580-526b-43ce-8e63-41c7b0372542",
+      "display_id": 758,
+      "title": "Layer 2 round 2 major QE: the #738 uniform gate conjunct has no falsifier — dropping the phase or layer match leaves all 90 tests green",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:59:40.146027Z",
+      "updated_at": "2026-07-22T17:59:40.146027Z"
+    },
     "d3ad54d7-b083-4b22-9c7f-a665964f4b38": {
       "uuid": "d3ad54d7-b083-4b22-9c7f-a665964f4b38",
       "display_id": 755,
@@ -21909,11 +21920,16 @@
       "agent_id": "xqjG",
       "agent_seq": 212,
       "timestamp": "2026-07-22T17:59:33.134586Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 213,
+      "timestamp": "2026-07-22T17:59:40.146027Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:59:33.134586Z",
+    "timestamp": "2026-07-22T17:59:40.146027Z",
     "agent_id": "xqjG",
-    "agent_seq": 212
+    "agent_seq": 213
   }
 }
