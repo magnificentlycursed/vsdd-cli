@@ -1,6 +1,6 @@
 {
   "next_display_id": 770,
-  "next_comment_id": 1003,
+  "next_comment_id": 1004,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5551,7 +5551,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:04:25.473244Z",
-      "updated_at": "2026-07-22T19:04:25.473244Z"
+      "updated_at": "2026-07-22T19:08:15.165993Z",
+      "comments": {
+        "c4c33cc6-af1c-4604-86eb-80734ad721ab": {
+          "display_id": 1003,
+          "author": "xqjG",
+          "content": "Fixed in 870836ce: the sanitize home fold applies the trimmed-non-empty unset rule (shared semantics with substrate.rs's home_dir, vsdd-cli #762) plus a two-character floor before substituting — HOME as a single space or bare slash no longer rewrites spaces or separators to tildes in record-destined diagnostics. All-four-lens convergence noted for the round record.",
+          "created_at": "2026-07-22T19:08:15.152442Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAgMtHbOn1fL4GZWzVHi9iCEj2Eh78DP9ern/7hZdoHddVIHCxnBo8gVMD2JnWv0OovJlMU4Nap7qH+3zSj+1jAw=="
+        }
+      }
     },
     "3aeb90b7-e5b2-4326-9bf8-d845439a7a34": {
       "uuid": "3aeb90b7-e5b2-4326-9bf8-d845439a7a34",
@@ -22511,11 +22522,16 @@
       "agent_id": "xqjG",
       "agent_seq": 271,
       "timestamp": "2026-07-22T19:08:09.416458Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 272,
+      "timestamp": "2026-07-22T19:08:15.165993Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:08:09.416458Z",
+    "timestamp": "2026-07-22T19:08:15.165993Z",
     "agent_id": "xqjG",
-    "agent_seq": 271
+    "agent_seq": 272
   }
 }
