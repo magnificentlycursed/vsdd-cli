@@ -10053,11 +10053,12 @@
       "uuid": "7299e983-49ae-45f6-8aa2-006981260d9f",
       "display_id": 759,
       "title": "Layer 2 round 2 major QE+DE: the three integrity draft fixtures' sibling controls cannot discriminate at the kind-set grain — rationale overstates; plus the missing-owner fixture's incoherent (0 open) gauge",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:59:55.092617Z",
-      "updated_at": "2026-07-22T18:45:49.599884Z",
+      "updated_at": "2026-07-22T18:45:55.503995Z",
+      "closed_at": "2026-07-22T18:45:55.503986Z",
       "comments": {
         "bd8c50ca-85f5-43c0-ba88-c6a4c35eaab0": {
           "display_id": 992,
@@ -22183,11 +22184,16 @@
       "agent_id": "xqjG",
       "agent_seq": 237,
       "timestamp": "2026-07-22T18:45:49.599884Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 238,
+      "timestamp": "2026-07-22T18:45:55.503995Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:45:49.599884Z",
+    "timestamp": "2026-07-22T18:45:55.503995Z",
     "agent_id": "xqjG",
-    "agent_seq": 237
+    "agent_seq": 238
   }
 }
