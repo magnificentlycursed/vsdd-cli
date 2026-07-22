@@ -1,6 +1,6 @@
 {
   "next_display_id": 772,
-  "next_comment_id": 1011,
+  "next_comment_id": 1012,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -17141,7 +17141,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-21T20:26:02.165042Z",
-      "updated_at": "2026-07-22T17:12:08.734211Z",
+      "updated_at": "2026-07-22T20:19:34.887446Z",
       "closed_at": "2026-07-22T15:07:47.818281Z",
       "labels": [
         "feature"
@@ -17204,6 +17204,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAvb7dbjB3LzFYoC5akCtUO1uTlFgKGZo5HSZltlctODcoYyLrPWk56R5atSB/NFTmFVie+96OtlpzcGJX7n20Dg=="
+        },
+        "c5a29b5b-8a6d-4e08-9dae-2fa14502633e": {
+          "display_id": 1011,
+          "author": "xqjG",
+          "content": "OPERATOR ADOPTION, SECOND BATCH (2026-07-22): the operator adopts the nine draft oracles, converting the whole twenty-fixture convergence corpus to operator-adopted reference answers. Adopted: the four round-1 additions drafted under #749 (integrity-missing-owner, integrity-closed-no-evidence, integrity-unresolvable-handle, round-parity-agreeing) and the five round-2 additions drafted under #758 (stale-gate-prior-phase, stale-gate-prior-layer — the uniform gate conjunct's falsifiers, so this adoption also ratifies at fixture grain the #738 oracle amendment recorded above) and #759 (integrity-owned-open, integrity-lawful-disposition-closure, integrity-resolving-handles — the clean negatives pinning each integrity kind's discrimination). Each fixture's rationale comment carries its grounding; the DRAFT markers convert to adoption citations pointing here. The operator authors the oracle: from this act the nine carry the operator's signature, not the agent's.",
+          "created_at": "2026-07-22T20:19:34.863334Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAERCgaTIQR6Og1jQO0IaNz4fuH8/leVJPFLL/79thSt1u3hfRppGRtGuS10i37NNN0NRT0F3+h778quldu9ksCw=="
         },
         "d487bf1e-b08b-4a19-b569-8ac063d73b88": {
           "author": "xqjG",
@@ -22711,11 +22720,16 @@
       "agent_id": "xqjG",
       "agent_seq": 291,
       "timestamp": "2026-07-22T19:18:40.066Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 292,
+      "timestamp": "2026-07-22T20:19:34.887446Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:18:40.066Z",
+    "timestamp": "2026-07-22T20:19:34.887446Z",
     "agent_id": "xqjG",
-    "agent_seq": 291
+    "agent_seq": 292
   }
 }
