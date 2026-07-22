@@ -18105,12 +18105,13 @@
       "display_id": 749,
       "title": "l2r1 major QE+DE+SE: three integrity checks and active_composition are unfalsified — deletable mutants",
       "description": "The corpus runner (convergence_red_gate.rs:45) never compares active_composition despite the every-field-exact-match claim; three of five integrity kinds (owner/validator, closed-evidence, unresolvable-handles) have zero corpus coverage against the declared mirror-pinning; round-parity's inequality and the actives guard are surviving mutants. Disposition: add active_composition to the comparison; add one fixture per uncovered kind and an agreeing-counts negative; assert the corpus size exactly (eleven, not >=10). Owner: quality-engineer. Validator: data-engineer.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:01:31.418821Z",
-      "updated_at": "2026-07-22T17:33:34.952860Z",
+      "updated_at": "2026-07-22T17:33:41.250089Z",
+      "closed_at": "2026-07-22T17:33:41.250077Z",
       "labels": [
         "review"
       ],
@@ -21639,11 +21640,16 @@
       "agent_id": "xqjG",
       "agent_seq": 178,
       "timestamp": "2026-07-22T17:33:34.952860Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 179,
+      "timestamp": "2026-07-22T17:33:41.250089Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:33:34.952860Z",
+    "timestamp": "2026-07-22T17:33:41.250089Z",
     "agent_id": "xqjG",
-    "agent_seq": 178
+    "agent_seq": 179
   }
 }
