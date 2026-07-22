@@ -1,6 +1,6 @@
 {
   "next_display_id": 772,
-  "next_comment_id": 1016,
+  "next_comment_id": 1017,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18870,8 +18870,17 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:09:38.141191Z",
-      "updated_at": "2026-07-22T20:20:47.903992Z",
+      "updated_at": "2026-07-22T20:21:57.759862Z",
       "comments": {
+        "751a44b3-1819-4260-866b-68e625068904": {
+          "display_id": 1016,
+          "author": "xqjG",
+          "content": "Round 4 complete: the stop held 2/2, residue routed via #771, phase-4 query empty, sign-off recorded as the decision above. The layer's boundary issue closes with it.",
+          "created_at": "2026-07-22T20:21:57.746906Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAredKrf6ej8XQZqlp/ouRyxtQI6dS1ns0IJ0uTwc3kq+JwlmJtysw3mTsc/et9Avs71DrCK3M5YbR46abZAXAAg=="
+        },
         "7ec8404a-2d20-4928-8135-b07e1c5b2b86": {
           "display_id": 1007,
           "author": "xqjG",
@@ -22802,11 +22811,16 @@
       "agent_id": "xqjG",
       "agent_seq": 302,
       "timestamp": "2026-07-22T20:21:51.825123Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 303,
+      "timestamp": "2026-07-22T20:21:57.759862Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T20:21:51.825123Z",
+    "timestamp": "2026-07-22T20:21:57.759862Z",
     "agent_id": "xqjG",
-    "agent_seq": 302
+    "agent_seq": 303
   }
 }
