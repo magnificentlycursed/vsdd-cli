@@ -1,6 +1,6 @@
 {
   "next_display_id": 755,
-  "next_comment_id": 976,
+  "next_comment_id": 977,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3998,10 +3998,21 @@
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:03:48.807537Z",
-      "updated_at": "2026-07-22T17:03:54.094007Z",
+      "updated_at": "2026-07-22T17:26:48.726135Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "6184727c-7129-412a-9190-f7916d73ddd7": {
+          "display_id": 976,
+          "author": "xqjG",
+          "content": "Directive classification (operator, 2026-07-22, mid fix pass): 'hit substrate and chassis vocabulary if not logged' — scope: conduct-rule reaffirmation plus estate sweep, no contract amendment needed. Reading: the 2026-07-20 concrete-referents ruling named 'substrate' as the example layer-word; the operator now names 'chassis' alongside it. Contract constructs stay citations ('the crosslink chassis' title clause, the chassis-affordance closure, the session-substrate check). Applied: (1) .crosslink/rules/project.md bullet extended to name both words with the citation carve-out; (2) code sweep in the fix-pass files — snapshot acquisition and integrity-shell doc comments now say 'crosslink' where crosslink is meant; the init error message 'substrate is not a git repository' (adopter-facing) is now 'not a git repository' and its error variant renamed NotGitRepository; (3) one coined label caught in the same sweep: 'l2r1' in the subprocess module doc, replaced with 'the Layer 2 round-1 security lens' per the no-coined-labels rule.",
+          "created_at": "2026-07-22T17:26:48.707978Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAO2FVEeSjgEwhFSKemcZ0JksZt49pG+2zZDq28p+EXZZBAXZ6dyFyf4FKKHl9i4Iw4LavahVwxduDCkl9kR1dCA=="
+        }
+      }
     },
     "258e1a57-227d-443f-b62f-5c4c86546567": {
       "uuid": "258e1a57-227d-443f-b62f-5c4c86546567",
@@ -21538,11 +21549,16 @@
       "agent_id": "xqjG",
       "agent_seq": 167,
       "timestamp": "2026-07-22T17:12:14.381712Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 168,
+      "timestamp": "2026-07-22T17:26:48.726135Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:12:14.381712Z",
+    "timestamp": "2026-07-22T17:26:48.726135Z",
     "agent_id": "xqjG",
-    "agent_seq": 167
+    "agent_seq": 168
   }
 }
