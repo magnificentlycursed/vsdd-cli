@@ -745,10 +745,6 @@
     "ff758294-ca3e-4b9b-8fcb-62a540aee97f": 449
   },
   "locks": {
-    "731": {
-      "agent_id": "xqjG",
-      "claimed_at": "2026-07-21T19:50:00.280539Z"
-    },
     "740": {
       "agent_id": "xqjG",
       "claimed_at": "2026-07-22T14:24:00.737810Z"
@@ -20884,11 +20880,16 @@
       "agent_id": "xqjG",
       "agent_seq": 105,
       "timestamp": "2026-07-22T15:39:04.915263Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 106,
+      "timestamp": "2026-07-22T15:39:11.558771Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T15:39:04.915263Z",
+    "timestamp": "2026-07-22T15:39:11.558771Z",
     "agent_id": "xqjG",
-    "agent_seq": 105
+    "agent_seq": 106
   }
 }
