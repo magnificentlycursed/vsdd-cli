@@ -1,6 +1,6 @@
 {
   "next_display_id": 744,
-  "next_comment_id": 965,
+  "next_comment_id": 966,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7974,10 +7974,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T16:31:46.788125Z",
-      "updated_at": "2026-07-22T16:31:51.585195Z",
+      "updated_at": "2026-07-22T16:32:05.565235Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "7dff934f-6144-4d96-b7e2-63466b870528": {
+          "display_id": 965,
+          "author": "xqjG",
+          "content": "THE SWEEP (parked in memory during the write-block, transferred now; three-question dispositions applied per the ratified procedure): (1) PARSER DIVERGENCE, the sharp one — mdatron's frontmatter parse requires the file to open exactly with the dash fence, so a BOM or CRLF opening reads as NO frontmatter and the file SILENTLY SKIPS the walk, while vsdd's loader (post-#727) tolerates both and validates — a tripwire-tier hole exactly where tolerance was added; closing-fence semantics match (both truncate at the first bare fence line). Disposition: in-scope upstream raise — BOM and CRLF tolerance, the loudness question for frontmatterless-file skips, and a shared fence-edge-case conformance corpus; the interim divergence stands documented here. (2) NUMERIC-CLAIMS PATTERN: prose counts versus frontmatter fields — in scope, unsupported today, raised as a generic primitive any consumer wants (the prose-restatement rule's mechanical half; the contract's own until-a-pattern-exists phrasing makes the raise owed). (3) DIAGNOSTIC FORMAT ALIGNMENT: not a capability raise — an engineering-conventions item: align vsdd's human render grammar to mdatron's exact shape when Layer 3 assembles the human form; recorded for the Layer 3 design act. Items 1 and 2 join the mdatron relay note beside the #739 scope statement the operator carries.",
+          "created_at": "2026-07-22T16:32:05.550880Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqZvtHbRDW7gWtJqGLt8Ep3Dgyepj6WhYZfsltiTFe+HNYes4JW/Jk1jENtWtFA136vWPwwmdGjeJwzjUNpJSDg=="
+        }
+      }
     },
     "5b7f1cdc-f82c-4b3d-a88c-0b686ef6fbe9": {
       "uuid": "5b7f1cdc-f82c-4b3d-a88c-0b686ef6fbe9",
@@ -20953,11 +20964,16 @@
       "agent_id": "xqjG",
       "agent_seq": 114,
       "timestamp": "2026-07-22T16:31:58.395886Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 115,
+      "timestamp": "2026-07-22T16:32:05.565235Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:31:58.395886Z",
+    "timestamp": "2026-07-22T16:32:05.565235Z",
     "agent_id": "xqjG",
-    "agent_seq": 114
+    "agent_seq": 115
   }
 }
