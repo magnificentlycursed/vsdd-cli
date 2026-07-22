@@ -1,5 +1,5 @@
 {
-  "next_display_id": 749,
+  "next_display_id": 750,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -632,6 +632,7 @@
     "d5e2b012-305e-4878-9d19-6abd3cd4f4a8": 655,
     "d5f7451a-da84-48c4-ba9b-9b5385005f2f": 482,
     "d61599a3-2977-421d-bb1c-ef3d7b44fa3d": 13,
+    "d67b7d48-2528-4fb0-b20d-3d18b1c1d475": 749,
     "d6b8f6ad-3189-4053-8cb6-2494f5986c85": 193,
     "d700c4b5-6bb1-4079-bd62-0c31d5625049": 625,
     "d81e051b-f217-4351-aa5b-ce86f8cb07cc": 74,
@@ -17945,6 +17946,18 @@
         }
       }
     },
+    "d67b7d48-2528-4fb0-b20d-3d18b1c1d475": {
+      "uuid": "d67b7d48-2528-4fb0-b20d-3d18b1c1d475",
+      "display_id": 749,
+      "title": "l2r1 major QE+DE+SE: three integrity checks and active_composition are unfalsified — deletable mutants",
+      "description": "The corpus runner (convergence_red_gate.rs:45) never compares active_composition despite the every-field-exact-match claim; three of five integrity kinds (owner/validator, closed-evidence, unresolvable-handles) have zero corpus coverage against the declared mirror-pinning; round-parity's inequality and the actives guard are surviving mutants. Disposition: add active_composition to the comparison; add one fixture per uncovered kind and an agreeing-counts negative; assert the corpus size exactly (eleven, not >=10). Owner: quality-engineer. Validator: data-engineer.",
+      "status": "open",
+      "priority": "high",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:01:31.418821Z",
+      "updated_at": "2026-07-22T17:01:31.418821Z"
+    },
     "d6b8f6ad-3189-4053-8cb6-2494f5986c85": {
       "uuid": "d6b8f6ad-3189-4053-8cb6-2494f5986c85",
       "display_id": 193,
@@ -21286,11 +21299,16 @@
       "agent_id": "xqjG",
       "agent_seq": 146,
       "timestamp": "2026-07-22T17:01:24.208621Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 147,
+      "timestamp": "2026-07-22T17:01:31.418821Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:01:24.208621Z",
+    "timestamp": "2026-07-22T17:01:31.418821Z",
     "agent_id": "xqjG",
-    "agent_seq": 146
+    "agent_seq": 147
   }
 }
