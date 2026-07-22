@@ -13745,10 +13745,11 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T16:49:20.000430Z",
-      "updated_at": "2026-07-22T16:49:25.345465Z",
+      "updated_at": "2026-07-22T16:49:44.186518Z",
       "labels": [
         "review"
-      ]
+      ],
+      "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b"
     },
     "a657d2cb-e2e4-4795-b727-2fa7e009cb0b": {
       "uuid": "a657d2cb-e2e4-4795-b727-2fa7e009cb0b",
@@ -21145,11 +21146,16 @@
       "agent_id": "xqjG",
       "agent_seq": 134,
       "timestamp": "2026-07-22T16:49:33.643554Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 135,
+      "timestamp": "2026-07-22T16:49:44.186518Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:49:33.643554Z",
+    "timestamp": "2026-07-22T16:49:44.186518Z",
     "agent_id": "xqjG",
-    "agent_seq": 134
+    "agent_seq": 135
   }
 }
