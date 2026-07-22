@@ -1,6 +1,6 @@
 {
   "next_display_id": 772,
-  "next_comment_id": 1012,
+  "next_comment_id": 1013,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18852,7 +18852,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:09:38.141191Z",
-      "updated_at": "2026-07-22T19:18:40.066Z",
+      "updated_at": "2026-07-22T20:20:47.903992Z",
       "comments": {
         "7ec8404a-2d20-4928-8135-b07e1c5b2b86": {
           "display_id": 1007,
@@ -18880,6 +18880,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsE3iuVc6lJSEQN6siBEizJXeWpoSPxz8H5Tj+KJBmOwnkBY/evfVF8CJOFFRCawFyuJBH6PACGrgptWgwg/eAw=="
+        },
+        "f01a0ca6-ac84-46c3-805a-f62764ce9ae9": {
+          "display_id": 1012,
+          "author": "xqjG",
+          "content": "LAYER 2 SIGN-OFF (operator act, 2026-07-22): the operator signs off Layer 2 — snapshot acquisition, phase answer, and corroboration — closing the layer at the round-4 stop. The record at the boundary: 2a red efe0107d (13 tests failing executed) → oracle adoption and redline on #738 → 2b green a9b8d43d+159d5a5d (derivation reproduces all adopted answers first pass) → 2c 4572c951 → phase 3: four rounds (#745 discovery, #755 and #765 full verifies, #770 narrowed stop-decider), 26 findings fixed across three passes (d84109f5, a49206fe, 870836ce) plus the forced core-removal migration (74b01866, #764), stop held 2/2, residue routed (#771), phase-4 unrouted query empty. The corpus stands fully adopted at twenty (second adoption batch on #738, this batch). Loop telemetry, capture-sourced: 1,033,000 downstream tokens over four dispatches, chosen=observed on every manifest. STANDING DEBT CARRIED PAST THIS BOUNDARY, named: the manual-tests/layer-1.md run (deferred at the Layer 1 boundary, still unrun) and the layer-2 manual checklist (not addressed in this batch — the operator's oracle slot when taken up); the round-4 residue's two items ride #771's routing record; #740 (broken-state last-boundary-truth) heads the Layer 3 queue with diagnostic-format alignment and the position/health named blocks.",
+          "created_at": "2026-07-22T20:20:47.891010Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoyUj4AOA9B2CZVV0Edi75m0+8p1w3hDuX9Xl7Gby6L/Amj1RlwR/23xbSdRH0A1v4GN9QPzI8tcet5nFhGKIBw=="
         }
       }
     },
@@ -22725,11 +22734,16 @@
       "agent_id": "xqjG",
       "agent_seq": 292,
       "timestamp": "2026-07-22T20:19:34.887446Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 293,
+      "timestamp": "2026-07-22T20:20:47.903992Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T20:19:34.887446Z",
+    "timestamp": "2026-07-22T20:20:47.903992Z",
     "agent_id": "xqjG",
-    "agent_seq": 292
+    "agent_seq": 293
   }
 }
