@@ -8,7 +8,9 @@
 //! operator-adopted (The operator authors the oracle; vsdd-cli #738).
 //!
 //! Draft rules:
-//! - `current_phase` null: the enter action (`enter-next-phase`).
+//! - `current_phase` null: the first phase's authoring action
+//!   (`1a-author-behavioral-spec`) — the work, not the ceremony (operator
+//!   amendment 2026-07-22 on vsdd-cli #665).
 //! - phase-1a/1b/1c: the phase's authoring action (`1a-author-behavioral-spec`,
 //!   `1b-author-verification-architecture`, `1c-author-decomposition`).
 //! - phase-2a: `2a-author-red-gate-tests` until the layer's red-gate fail
