@@ -1,0 +1,12 @@
+# DRAFT ORACLE (round-2 fix pass, vsdd-cli #759) — awaiting operator adoption.
+# The CLEAN NEGATIVE paired with integrity-closed-no-evidence: a
+# closure with a recorded disposition and no evidence reference is
+# lawful (disposition closures close lawfully without evidence), so
+# the closed-findings-missing-evidence kind must NOT file. The pair
+# pins that the check fires on the conjunction, not on missing
+# evidence alone.
+phase: phase-5
+layer: 2
+next_action: 5-run-hardening
+degraded: null
+integrity_findings: []

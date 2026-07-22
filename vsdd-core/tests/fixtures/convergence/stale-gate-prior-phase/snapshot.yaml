@@ -1,0 +1,11 @@
+acquisition_outcome: acquired
+milestones:
+  - {name: "layer 2: snapshot acquisition, phase answer, and corroboration", state: open, is_active: true}
+findings: []
+round_manifests: []
+round_children: []
+comment_handles: []
+display_repo_name: vsdd-cli
+display_session: "session 4"
+display_work_item: "#758 stale-gate and clean-negative corpus additions"
+display_active_milestone: "layer 2: snapshot acquisition, phase answer, and corroboration (0 open)"

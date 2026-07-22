@@ -1,0 +1,11 @@
+# DRAFT ORACLE (round-2 fix pass, vsdd-cli #759) — awaiting operator adoption.
+# The CLEAN NEGATIVE paired with integrity-missing-owner: every open
+# finding carries both owner and validator, so the
+# findings-missing-owner-or-validator kind must NOT file. The pair
+# pins the discrimination at the kind-set grain — the check keys on
+# the gap, not on openness itself.
+phase: phase-4
+layer: 2
+next_action: 4-route-findings
+degraded: null
+integrity_findings: []

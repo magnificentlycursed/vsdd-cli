@@ -1,0 +1,12 @@
+# DRAFT ORACLE (round-2 fix pass, vsdd-cli #758) — awaiting operator adoption.
+# THE stale-record shape every phase transition manufactures: 2b closed
+# by its exit-gate pass, so on entering 2c the standing record IS
+# phase-2b's. Under the #738 amendment (kind, outcome, layer, AND
+# phase) that record satisfies no 2c arm — the answer stays the
+# phase's work. Dropping the phase conjunct would answer
+# enter-next-phase here: this fixture is the amendment's falsifier.
+phase: phase-2c
+layer: 2
+next_action: 2c-refactor
+degraded: null
+integrity_findings: []

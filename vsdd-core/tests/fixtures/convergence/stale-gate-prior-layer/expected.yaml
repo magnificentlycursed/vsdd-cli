@@ -1,0 +1,12 @@
+# DRAFT ORACLE (round-2 fix pass, vsdd-cli #758) — awaiting operator adoption.
+# The prior LAYER's red-gate fail record, carried into this layer's
+# 2a: kind, outcome, and phase all match — only the layer differs —
+# so the record satisfies no arm and the phase's authoring work
+# stands. Dropping the layer conjunct would answer close-phase on a
+# red gate this layer never ran: this fixture is that conjunct's
+# falsifier.
+phase: phase-2a
+layer: 2
+next_action: 2a-author-red-gate-tests
+degraded: null
+integrity_findings: []

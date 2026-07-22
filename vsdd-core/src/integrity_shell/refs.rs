@@ -5,10 +5,12 @@
 //! from the ref alone. The git listing is the shell's, through the
 //! bounded runner (vsdd-cli #751).
 //!
-//! The listing runs as TWO queries (vsdd-cli #752): local heads short,
-//! remote-tracking refs full — so remote-name stripping is structural
-//! (any remote, not a hardcoded one) and a local branch whose name
-//! merely resembles `<remote>/x` is never mangled.
+//! The listing runs as TWO queries (vsdd-cli #752), BOTH over full
+//! refnames (vsdd-cli #761: `%(refname:short)` disambiguates against
+//! tags, so a branch-tag name collision renders `heads/<name>` and
+//! forges an off-grammar finding) — prefix stripping is structural on
+//! both halves, so remote-name handling covers any remote and a local
+//! branch whose name merely resembles `<remote>/x` is never mangled.
 
 use std::path::{Path, PathBuf};
 
@@ -21,18 +23,19 @@ use crate::subprocess::{run_bounded, Subprocess};
 /// and their remote-tracking counterparts, the remote segment stripped
 /// so membership stays decidable from the ref alone (the shell half).
 pub fn local_refs(repo_root: &Path) -> Result<Vec<String>, Box<Diagnostic>> {
-    let local = git_ref_lines(repo_root, "%(refname:short)", "refs/heads")?;
+    let local = git_ref_lines(repo_root, "%(refname)", "refs/heads")?;
     let remote = git_ref_lines(repo_root, "%(refname)", "refs/remotes")?;
     Ok(normalize_ref_lines(&local, &remote))
 }
 
 /// The pure normalizer over the two listings' raw output (vsdd-cli
-/// #752): local short names pass through untouched — a local branch
-/// literally named `origin/x` stays `origin/x`; remote-tracking refs
-/// arrive FULL (`refs/remotes/<remote>/<branch>`) so the remote segment
-/// strips structurally for any remote name, each remote's symbolic
-/// `HEAD` is skipped, and the merged list dedups preserving order,
-/// locals first.
+/// #752, #761): both halves arrive FULL. Local refs strip exactly
+/// `refs/heads/` — immune to the short form's tag-collision ambiguity,
+/// and a local branch literally named `origin/x`
+/// (`refs/heads/origin/x`) stays `origin/x`. Remote-tracking refs
+/// strip `refs/remotes/<remote>/` structurally for any remote name,
+/// each remote's symbolic `HEAD` is skipped, and the merged list
+/// dedups preserving order, locals first.
 pub fn normalize_ref_lines(local: &str, remote: &str) -> Vec<String> {
     let mut refs: Vec<String> = Vec::new();
     let mut push = |name: &str| {
@@ -41,7 +44,10 @@ pub fn normalize_ref_lines(local: &str, remote: &str) -> Vec<String> {
         }
     };
     for line in local.lines() {
-        push(line.trim());
+        let Some(name) = line.trim().strip_prefix("refs/heads/") else {
+            continue;
+        };
+        push(name);
     }
     for line in remote.lines() {
         let Some(rest) = line.trim().strip_prefix("refs/remotes/") else {
@@ -120,7 +126,7 @@ fn git_ref_lines(
         )),
         Subprocess::Refused { stderr } => Err(git_diagnostic(format!(
             "git for-each-ref over {namespace} exited nonzero: {}",
-            sanitize(stderr.trim(), repo_root)
+            sanitize_then_truncate(stderr.trim(), repo_root)
         ))),
         Subprocess::Oversize => Err(git_diagnostic(
             "git for-each-ref output exceeded the artifact cap".to_string(),
@@ -129,9 +135,26 @@ fn git_ref_lines(
 }
 
 /// Record-destined text renders repo-relative (contract clause, #730):
-/// the absolute root becomes `.` wherever the child echoed it.
+/// the root becomes `.` in BOTH its given and canonicalized spellings
+/// (macOS aliases `/tmp`-family roots under `/private`), and the home
+/// directory renders `~` so an out-of-root path drops its account
+/// segment (vsdd-cli #760). Root replacements run before the home one,
+/// since the root usually lives under the home.
 fn sanitize(text: &str, repo_root: &Path) -> String {
-    text.replace(&repo_root.display().to_string(), ".")
+    let mut out = text.replace(&repo_root.display().to_string(), ".");
+    if let Ok(canonical) = repo_root.canonicalize() {
+        out = out.replace(&canonical.display().to_string(), ".");
+    }
+    if let Some(home) = std::env::var_os("HOME").filter(|h| !h.is_empty()) {
+        out = out.replace(&PathBuf::from(home).display().to_string(), "~");
+    }
+    out
+}
+
+/// Truncation happens AFTER sanitization (vsdd-cli #760): a cut that
+/// bisects an absolute path would defeat the exact-match replace.
+fn sanitize_then_truncate(text: &str, repo_root: &Path) -> String {
+    sanitize(text, repo_root).chars().take(500).collect()
 }
 
 fn git_diagnostic(message: String) -> Box<Diagnostic> {

@@ -2,8 +2,9 @@
 # A result comment citing a handle the tracker cannot resolve is the
 # citation-integrity breach the contract names ("a reference that
 # cannot be resolved ... is a defect the conformance checks flag"):
-# one unresolvable member files the kind; the resolving sibling shows
-# the check keys per handle.
+# one unresolvable member files the kind; the resolving sibling keeps
+# the in-fixture contrast, and the per-handle keying is pinned by the
+# paired clean negative, integrity-resolving-handles (vsdd-cli #759).
 phase: phase-6
 layer: 2
 next_action: 6-run-convergence-check

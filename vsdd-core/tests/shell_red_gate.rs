@@ -3,6 +3,7 @@
 //! and the session-substrate check over the installed-artifact
 //! manifest. Fails executed against the pre-implementation stubs.
 
+use std::collections::BTreeSet;
 use std::fs;
 use std::path::{Path, PathBuf};
 
@@ -130,17 +131,13 @@ fn substrate_check_passes_on_a_complete_tree() {
         "no entry fails on the complete tree: {failures:?}"
     );
 
-    // The inconclusive set is PINNED, not merely tolerated: each member
-    // is either a prose-path entry (its surface-specific check lands
-    // with its consumer) or a present `exists-and-referenced` entry
-    // whose referenced-by half has no check yet (vsdd-cli #746) — and
-    // the wiring entry the manifest names in prose is among them.
-    assert!(
-        findings
-            .iter()
-            .any(|f| f.entry_id == "githook-wiring" && f.result == CheckResult::Inconclusive),
-        "the githook-wiring prose entry reports inconclusive, never a silent pass"
-    );
+    // The inconclusive set is pinned by EQUALITY against the set the
+    // manifest itself implies (vsdd-cli #757): every prose-path entry
+    // (its surface-specific check lands with its consumer) plus every
+    // created `exists-and-referenced` entry (the referenced-by half has
+    // no check yet, vsdd-cli #746). Equality is the two-directional
+    // pin — a regression that silently upgrades presence to pass makes
+    // the sets differ, where a membership-only check stayed green.
     for finding in &findings {
         assert_eq!(
             finding.result,
@@ -148,19 +145,27 @@ fn substrate_check_passes_on_a_complete_tree() {
             "{}: only inconclusive findings remain on the complete tree",
             finding.entry_id
         );
-        let entry = manifest
-            .entries
-            .iter()
-            .find(|e| e.id == finding.entry_id)
-            .expect("every finding names a manifest entry");
-        assert!(
-            entry.path.contains(' ')
-                || entry.path.contains('—')
-                || entry.resolution == "exists-and-referenced",
-            "{}: inconclusive only for prose paths or the unverified referenced-by half",
-            finding.entry_id
-        );
     }
+    let got: BTreeSet<String> = findings.iter().map(|f| f.entry_id.clone()).collect();
+    let expected: BTreeSet<String> = manifest
+        .entries
+        .iter()
+        .filter(|e| e.resolution != "worded-absence")
+        .filter(|e| {
+            let prose = e.path.contains(' ') || e.path.contains('—');
+            let home_anchored = e.path.starts_with("~/");
+            prose || (!home_anchored && e.resolution == "exists-and-referenced")
+        })
+        .map(|e| e.id.clone())
+        .collect();
+    assert_eq!(
+        got, expected,
+        "the inconclusive set equals the manifest-implied set, both directions"
+    );
+    assert!(
+        got.contains("githook-wiring"),
+        "the wiring entry the manifest names in prose is among the pinned set"
+    );
 }
 
 #[test]
@@ -197,11 +202,12 @@ fn a_mis_rooted_session_fails_on_the_first_member() {
 
 #[test]
 fn ref_normalization_strips_any_remote_and_skips_symbolic_heads() {
-    // The pure half of the two-query listing (vsdd-cli #752): the
-    // remote segment strips structurally for ANY remote name, and each
-    // remote's symbolic HEAD never enters the membership set.
+    // The pure half of the two-query listing (vsdd-cli #752, full
+    // refnames on both halves per #761): the remote segment strips
+    // structurally for ANY remote name, and each remote's symbolic
+    // HEAD never enters the membership set.
     let normalized = normalize_ref_lines(
-        "main\nfeature/statusline-wiring\n",
+        "refs/heads/main\nrefs/heads/feature/statusline-wiring\n",
         "refs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/upstream/HEAD\nrefs/remotes/upstream/issue/42\n",
     );
     assert_eq!(
@@ -219,12 +225,15 @@ fn ref_normalization_strips_any_remote_and_skips_symbolic_heads() {
 fn a_local_branch_resembling_a_remote_ref_is_never_mangled() {
     // The hardcoded-remote defect the rework removes (vsdd-cli #752): a
     // LOCAL branch literally named `origin/x` is a name, not a remote
-    // ref — it must survive intact for the grammar to judge it.
-    let normalized = normalize_ref_lines("origin/x\n", "");
+    // ref — it must survive for the grammar to judge it. Full refnames
+    // make this structural (vsdd-cli #761): `refs/heads/origin/x`
+    // strips exactly its namespace, immune to the short form's
+    // tag-collision ambiguity.
+    let normalized = normalize_ref_lines("refs/heads/origin/x\n", "");
     assert_eq!(
         normalized,
         vec!["origin/x".to_string()],
-        "the local name passes through untouched"
+        "the local branch keeps its full name past the namespace"
     );
 }
 

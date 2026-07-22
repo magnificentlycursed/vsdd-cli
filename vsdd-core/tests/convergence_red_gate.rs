@@ -3,10 +3,13 @@
 //!
 //! Phase 2a suite: fails executed against the pre-implementation stubs;
 //! 2b turns it green. Eleven fixtures carry OPERATOR-ADOPTED oracles
-//! (adoption 2026-07-22 on vsdd-cli #738); the four fix-pass additions
-//! (vsdd-cli #749: the three integrity-kind positives and the
-//! round-parity negative control) are DRAFT ORACLES awaiting adoption,
-//! marked so in their rationale comments. The runner compares every
+//! (adoption 2026-07-22 on vsdd-cli #738); nine are DRAFT ORACLES
+//! awaiting adoption, marked so in their rationale comments — the four
+//! round-1 additions (vsdd-cli #749: three integrity-kind positives
+//! and the round-parity negative control) and the five round-2
+//! additions (vsdd-cli #758: the two stale-gate falsifiers for the
+//! #738 uniform conjunct; vsdd-cli #759: the three clean negatives
+//! pinning each integrity kind's discrimination). The runner compares every
 //! field by exact match and integrity findings at the kind-set grain,
 //! exactly the Convergence test's comparison.
 
@@ -101,7 +104,7 @@ fn every_corpus_fixture_matches_its_reference_answer() {
     }
     // Exact, not at-least (vsdd-cli #749): a silently skipped fixture
     // directory would otherwise read as coverage.
-    assert_eq!(ran, 15, "the corpus holds exactly its fifteen fixtures");
+    assert_eq!(ran, 20, "the corpus holds exactly its twenty fixtures");
 }
 
 #[test]

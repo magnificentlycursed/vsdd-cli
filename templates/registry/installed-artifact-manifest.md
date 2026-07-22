@@ -1,6 +1,6 @@
 ---
 schema_class: installed-artifact-manifest
-schema_version: 0.3.0
+schema_version: 0.3.1
 status: draft-proposal
 reference_surfaces:
   - {id: project-settings, path: .claude/settings.json, scope: repo}
@@ -172,11 +172,14 @@ the dispatch posture split (attended/autonomous), from mdatron's kickoff
 live fire", vsdd-cli #622). Git hooks carry the inverted pairing:
 per-clone wiring in git config over a tracked payload.
 
-Vocabulary gloss (vsdd-cli #715): `resolution` states what the
-substrate check verifies for the entry — `exists` (the artifact is
-present), `exists-and-referenced` (present and named by its reference
-surface), `worded-absence` (a deliberate absence recorded in words and
-checked as such). `fail_mode` records observed failure behavior:
+Vocabulary gloss (vsdd-cli #715; verification split stated per
+vsdd-cli #763): `resolution` states the entry's CLAIM — `exists` (the
+artifact is present), `exists-and-referenced` (present and named by its
+reference surface), `worded-absence` (a deliberate absence recorded in
+words and checked as such). What the substrate check VERIFIES today is
+narrower for the middle member: it verifies presence and reports the
+referenced-by half inconclusive — never a silent pass — until the
+reference-surface check lands with its consumer (vsdd-cli #746). `fail_mode` records observed failure behavior:
 `fail-closed` (absence blocks loudly), `fail-open-guarded` (absence
 degrades to a no-op with a named compensating control), and `undefined`
 (not yet characterized — a fact about the record, not a safety claim).

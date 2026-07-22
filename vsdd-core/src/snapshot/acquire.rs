@@ -200,3 +200,47 @@ fn empty(outcome: AcquisitionOutcome, repo_name: String) -> Snapshot {
         display_active_milestone: "no milestone".to_string(),
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::{parse_milestones, split_count_suffix};
+
+    #[test]
+    fn content_with_zero_parses_is_none_never_an_empty_success() {
+        // The #748 fail-loud discipline: whole-format drift reads as
+        // unusable, not as a repo with no milestones.
+        assert!(parse_milestones("some drifted header\nno list lines here\n").is_none());
+    }
+
+    #[test]
+    fn empty_output_is_an_empty_list() {
+        let parsed = parse_milestones("\n  \n").expect("no content lines is a lawful empty");
+        assert!(parsed.is_empty());
+    }
+
+    #[test]
+    fn open_and_closed_lines_parse_with_counts() {
+        let text = "#4   [\u{2713}] layer 1 (3/3)\n#5   [ ] layer 2 (1/4)\n";
+        let parsed = parse_milestones(text).expect("the list shape parses");
+        assert_eq!(parsed.len(), 2);
+        assert!(!parsed[0].state.is_active, "closed reads inactive");
+        assert!(parsed[1].state.is_active, "open reads active");
+        assert_eq!(parsed[1].counts, Some((1, 4)));
+        assert_eq!(parsed[1].state.name, "layer 2");
+    }
+
+    #[test]
+    fn count_suffix_strips_only_the_exact_digit_shape() {
+        assert_eq!(
+            split_count_suffix("layer 2 (1/4)"),
+            ("layer 2", Some((1, 4)))
+        );
+        // A name legitimately ending in a parenthetical survives whole.
+        assert_eq!(
+            split_count_suffix("release (v1/2)"),
+            ("release (v1/2)", None)
+        );
+        assert_eq!(split_count_suffix("survey (2024)"), ("survey (2024)", None));
+        assert_eq!(split_count_suffix("plain name"), ("plain name", None));
+    }
+}

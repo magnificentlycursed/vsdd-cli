@@ -1,0 +1,11 @@
+# DRAFT ORACLE (round-2 fix pass, vsdd-cli #759) — awaiting operator adoption.
+# The CLEAN NEGATIVE paired with integrity-unresolvable-handle: every
+# cited handle resolves, so the
+# unresolvable-handles-in-result-comments kind must NOT file. The
+# pair pins that the check keys per handle on resolution, not on the
+# presence of citations.
+phase: phase-6
+layer: 2
+next_action: 6-run-convergence-check
+degraded: null
+integrity_findings: []

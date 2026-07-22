@@ -92,9 +92,10 @@ fn check_entry(root: &Path, path: &str, resolution: &str) -> (CheckResult, Strin
             format!("the entry's path is prose, not a filesystem path: {path}"),
         );
     }
-    // A home-anchored path with no HOME cannot resolve: inconclusive,
-    // never a fabricated in-repo miss (vsdd-cli #746).
-    if path.starts_with("~/") && std::env::var_os("HOME").is_none() {
+    // A home-anchored path with no usable HOME cannot resolve:
+    // inconclusive, never a fabricated in-repo miss (vsdd-cli #746;
+    // empty counts as unset, vsdd-cli #762).
+    if path.starts_with("~/") && home_dir().is_none() {
         return (
             CheckResult::Inconclusive,
             format!("HOME is unset; the home-anchored path cannot resolve: {path}"),
@@ -103,14 +104,9 @@ fn check_entry(root: &Path, path: &str, resolution: &str) -> (CheckResult, Strin
     let expanded = expand(root, path);
     let present = if let Some((dir, prefix, suffix)) = glob_parts(&expanded) {
         match std::fs::read_dir(&dir) {
-            Ok(entries) => entries.flatten().any(|e| {
-                let name = e.file_name().to_string_lossy().into_owned();
-                // The length guard keeps prefix and suffix from
-                // overlapping on a short name (vsdd-cli #746).
-                name.len() >= prefix.len() + suffix.len()
-                    && name.starts_with(&prefix)
-                    && name.ends_with(&suffix)
-            }),
+            Ok(entries) => entries
+                .flatten()
+                .any(|e| glob_name_matches(&e.file_name().to_string_lossy(), &prefix, &suffix)),
             Err(e) => {
                 return (
                     CheckResult::Fail,
@@ -140,11 +136,24 @@ fn check_entry(root: &Path, path: &str, resolution: &str) -> (CheckResult, Strin
 
 fn expand(root: &Path, path: &str) -> PathBuf {
     if let Some(rest) = path.strip_prefix("~/") {
-        if let Some(home) = std::env::var_os("HOME") {
+        if let Some(home) = home_dir() {
             return PathBuf::from(home).join(rest);
         }
     }
     root.join(path)
+}
+
+/// Empty or whitespace HOME is unset (vsdd-cli #762): expanding against
+/// it would fabricate a cwd-relative resolution.
+fn home_dir() -> Option<std::ffi::OsString> {
+    std::env::var_os("HOME").filter(|h| !h.to_string_lossy().trim().is_empty())
+}
+
+/// The name-match predicate for the manifest's one-star glob: the
+/// length guard keeps prefix and suffix from overlapping on a short
+/// name (vsdd-cli #746; unit-pinned per #762).
+fn glob_name_matches(name: &str, prefix: &str, suffix: &str) -> bool {
+    name.len() >= prefix.len() + suffix.len() && name.starts_with(prefix) && name.ends_with(suffix)
 }
 
 /// One `*` in the final segment is the manifest's only glob shape.
@@ -156,4 +165,31 @@ fn glob_parts(expanded: &Path) -> Option<(PathBuf, String, String)> {
         name[..star].to_string(),
         name[star + 1..].to_string(),
     ))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::glob_name_matches;
+
+    #[test]
+    fn overlapping_prefix_and_suffix_cannot_double_count() {
+        // `ab*ba` against `aba`: starts_with and ends_with both hold,
+        // but the two fixed parts would overlap — the #746 guard.
+        assert!(!glob_name_matches("aba", "ab", "ba"));
+    }
+
+    #[test]
+    fn exact_length_name_matches_when_parts_abut() {
+        assert!(glob_name_matches("abba", "ab", "ba"));
+    }
+
+    #[test]
+    fn ordinary_glob_names_match_and_mismatch_by_content() {
+        assert!(glob_name_matches("vsdd-phase-2a.md", "vsdd-phase-", ".md"));
+        assert!(!glob_name_matches(
+            "vsdd-domain-ux.md",
+            "vsdd-phase-",
+            ".md"
+        ));
+    }
 }
