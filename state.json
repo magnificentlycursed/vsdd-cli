@@ -20087,11 +20087,12 @@
       "uuid": "f4a8ac10-da62-4e61-8a28-4e471cae50df",
       "display_id": 742,
       "title": "Clear the crosslink 0.8.0 hold: upstream patched, hub migrated to v3",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T16:29:52.701338Z",
-      "updated_at": "2026-07-22T16:32:11.498232Z",
+      "updated_at": "2026-07-22T16:32:17.456361Z",
+      "closed_at": "2026-07-22T16:32:17.456347Z",
       "labels": [
         "maintenance"
       ],
@@ -20985,11 +20986,16 @@
       "agent_id": "xqjG",
       "agent_seq": 116,
       "timestamp": "2026-07-22T16:32:11.498232Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 117,
+      "timestamp": "2026-07-22T16:32:17.456361Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:32:11.498232Z",
+    "timestamp": "2026-07-22T16:32:17.456361Z",
     "agent_id": "xqjG",
-    "agent_seq": 116
+    "agent_seq": 117
   }
 }
