@@ -4661,11 +4661,12 @@
       "uuid": "2ebb1e48-8546-47f6-97d7-af065b8e7579",
       "display_id": 756,
       "title": "Layer 2 round 2 major SE+security convergent: run_bounded's residual unbounded and silent paths — descendant-held pipe defeats the deadline at join; try_wait error leaves the child running; reader failure degrades to silent truncated Completed",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:59:10.825291Z",
-      "updated_at": "2026-07-22T18:44:57.419895Z",
+      "updated_at": "2026-07-22T18:45:03.649779Z",
+      "closed_at": "2026-07-22T18:45:03.649770Z",
       "comments": {
         "4124539c-2857-4888-8980-c4f95f4fc6dc": {
           "display_id": 989,
@@ -22114,11 +22115,16 @@
       "agent_id": "xqjG",
       "agent_seq": 228,
       "timestamp": "2026-07-22T18:44:57.419895Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 229,
+      "timestamp": "2026-07-22T18:45:03.649779Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:44:57.419895Z",
+    "timestamp": "2026-07-22T18:45:03.649779Z",
     "agent_id": "xqjG",
-    "agent_seq": 228
+    "agent_seq": 229
   }
 }
