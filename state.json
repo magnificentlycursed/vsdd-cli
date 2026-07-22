@@ -1,5 +1,5 @@
 {
-  "next_display_id": 743,
+  "next_display_id": 744,
   "next_comment_id": 965,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -272,6 +272,7 @@
     "5acd2703-1e0b-43f9-849f-f93b820ae07e": 345,
     "5b204242-cec2-422f-bff1-92f2983f7f4e": 283,
     "5b23604f-76e3-4dec-b7ec-988ac86127a0": 243,
+    "5b34459f-702c-4b3e-a162-d109cfd9d4b2": 743,
     "5b7f1cdc-f82c-4b3d-a88c-0b686ef6fbe9": 93,
     "5cf1711b-e32b-4cbc-b682-53bde531a95b": 456,
     "5d028411-68b8-47eb-9d9c-6674a424c944": 104,
@@ -7960,6 +7961,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASBlWfvpYk+Fu/MsG2hGQKMeKQnoZ9W81HnLN+zkvhsZAh5Htv7TvFQzZ57l8ZKkEqI0buWcUpcph67vqoZu6Bg=="
         }
       }
+    },
+    "5b34459f-702c-4b3e-a162-d109cfd9d4b2": {
+      "uuid": "5b34459f-702c-4b3e-a162-d109cfd9d4b2",
+      "display_id": 743,
+      "title": "Boundary sweep: three items from auditing our own build against the ratified #739 boundary",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T16:31:46.788125Z",
+      "updated_at": "2026-07-22T16:31:46.788125Z"
     },
     "5b7f1cdc-f82c-4b3d-a88c-0b686ef6fbe9": {
       "uuid": "5b7f1cdc-f82c-4b3d-a88c-0b686ef6fbe9",
@@ -20920,11 +20931,16 @@
       "agent_id": "xqjG",
       "agent_seq": 111,
       "timestamp": "2026-07-22T16:30:04.850428Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 112,
+      "timestamp": "2026-07-22T16:31:46.788125Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:30:04.850428Z",
+    "timestamp": "2026-07-22T16:31:46.788125Z",
     "agent_id": "xqjG",
-    "agent_seq": 111
+    "agent_seq": 112
   }
 }
