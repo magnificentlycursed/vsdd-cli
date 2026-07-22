@@ -1,6 +1,6 @@
 {
   "next_display_id": 755,
-  "next_comment_id": 983,
+  "next_comment_id": 984,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2047,10 +2047,21 @@
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:02:33.339850Z",
-      "updated_at": "2026-07-22T17:02:38.269053Z",
+      "updated_at": "2026-07-22T17:34:29.825176Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "f0874744-0420-4dd2-b14f-cb7e8d569815": {
+          "display_id": 983,
+          "author": "xqjG",
+          "content": "Fixed in d84109f5: the ref listing runs as two for-each-ref queries — refs/heads short, refs/remotes full — feeding pub normalize_ref_lines, pure and tested: the remote segment strips structurally for any remote name (upstream included, origin no longer hardcoded), each remote's symbolic HEAD skips, dedup preserves order locals-first, and a local branch literally named origin/x survives intact.",
+          "created_at": "2026-07-22T17:34:29.801474Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA4KH5zy1djxgxYPpLvPwR5n6HLnKnB9w04rlOUBbejZB9D/mZjyH7goXYeAYjl3ATFg0ZnO1exJyFN3lEXfNoDQ=="
+        }
+      }
     },
     "0dfaf37d-8f8d-4d99-9162-eefcdba86665": {
       "uuid": "0dfaf37d-8f8d-4d99-9162-eefcdba86665",
@@ -21692,11 +21703,16 @@
       "agent_id": "xqjG",
       "agent_seq": 186,
       "timestamp": "2026-07-22T17:34:23.747812Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 187,
+      "timestamp": "2026-07-22T17:34:29.825176Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:34:23.747812Z",
+    "timestamp": "2026-07-22T17:34:29.825176Z",
     "agent_id": "xqjG",
-    "agent_seq": 186
+    "agent_seq": 187
   }
 }
