@@ -18310,14 +18310,14 @@
     "d9c4828e-96b1-43ce-947c-9c01ba4c89d9": {
       "uuid": "d9c4828e-96b1-43ce-947c-9c01ba4c89d9",
       "display_id": 746,
-      "title": "l2r1 major SE+DE: substrate check downgrades exists-and-referenced to a bare existence probe",
+      "title": "Layer 2 round 1 major SE+DE: substrate check downgrades exists-and-referenced to a bare existence probe",
       "description": "substrate.rs:68 special-cases only worded-absence; exists and exists-and-referenced both fall to a plain existence check — the referenced half (present AND named by its reference surface) neither checked nor reported inconclusive, and the manifest's declared cross-field constraints go unexecuted. An orphaned payload (file present, wiring clobbered) passes silently, violating the module's own reported-never-silently-passed rule. Disposition: return Inconclusive with a scope note for exists-and-referenced until the reference-surface lookup lands. Owner: data-engineer. Validator: solution-architect.",
       "status": "closed",
       "priority": "high",
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:00:27.921869Z",
-      "updated_at": "2026-07-22T17:32:11.835382Z",
+      "updated_at": "2026-07-22T17:36:31.944816Z",
       "closed_at": "2026-07-22T17:32:11.835373Z",
       "labels": [
         "review"
@@ -21759,11 +21759,16 @@
       "agent_id": "xqjG",
       "agent_seq": 195,
       "timestamp": "2026-07-22T17:35:32.772129Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 196,
+      "timestamp": "2026-07-22T17:36:31.944816Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:35:32.772129Z",
+    "timestamp": "2026-07-22T17:36:31.944816Z",
     "agent_id": "xqjG",
-    "agent_seq": 195
+    "agent_seq": 196
   }
 }
