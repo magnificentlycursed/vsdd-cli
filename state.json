@@ -1,5 +1,5 @@
 {
-  "next_display_id": 768,
+  "next_display_id": 769,
   "next_comment_id": 1000,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -583,6 +583,7 @@
     "c0b88dd0-3337-4c8f-8bad-a786966158f0": 744,
     "c0cd6170-3683-44ed-907d-d54244741a5c": 392,
     "c1e55dcd-401b-4ff4-b096-201c5efbbb87": 666,
+    "c2760fc4-2769-4633-a751-78222f6356a6": 768,
     "c2d5a204-a43c-4061-b76c-ed657fa6e448": 374,
     "c30c737a-bb44-447c-93c7-6c3eab2431ad": 308,
     "c3212aa8-5826-4781-8a9a-b472205c7a85": 167,
@@ -16620,6 +16621,16 @@
         }
       }
     },
+    "c2760fc4-2769-4633-a751-78222f6356a6": {
+      "uuid": "c2760fc4-2769-4633-a751-78222f6356a6",
+      "display_id": 768,
+      "title": "Layer 2 round 3 minor QE: a stderr-only pipe holdout fails a clean successful run as TimedOut, contradicting the declared best-effort stderr posture",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T19:04:40.948726Z",
+      "updated_at": "2026-07-22T19:04:40.948726Z"
+    },
     "c2d5a204-a43c-4061-b76c-ed657fa6e448": {
       "uuid": "c2d5a204-a43c-4061-b76c-ed657fa6e448",
       "display_id": 374,
@@ -22410,11 +22421,16 @@
       "agent_id": "xqjG",
       "agent_seq": 262,
       "timestamp": "2026-07-22T19:04:33.491246Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 263,
+      "timestamp": "2026-07-22T19:04:40.948726Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:04:33.491246Z",
+    "timestamp": "2026-07-22T19:04:40.948726Z",
     "agent_id": "xqjG",
-    "agent_seq": 262
+    "agent_seq": 263
   }
 }
