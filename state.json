@@ -1,5 +1,5 @@
 {
-  "next_display_id": 754,
+  "next_display_id": 755,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -126,6 +126,7 @@
     "23fdf764-5971-4fcf-89fd-ad580cb42914": 49,
     "244bebcc-67c0-4e51-b1e7-63e9105022be": 448,
     "25216f74-354a-463e-9eb6-25bbb4b22c5f": 681,
+    "2538c31c-31fb-429e-b6e4-02dac0721c93": 754,
     "258e1a57-227d-443f-b62f-5c4c86546567": 343,
     "25c6d4b5-4833-4e46-93e5-9f0fd903aa20": 615,
     "25fb4551-5eea-4465-920b-7c69f4a7aa2c": 423,
@@ -3982,6 +3983,18 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZVG0rJoQoQ97j0Rscjl66hpI7fqxLzCuxISVWkbh2jxHN9W/Ha8LxbtOcCYgAzfsLZBHWM0g8ROFg/TeLSoqCQ=="
         }
       }
+    },
+    "2538c31c-31fb-429e-b6e4-02dac0721c93": {
+      "uuid": "2538c31c-31fb-429e-b6e4-02dac0721c93",
+      "display_id": 754,
+      "title": "l2r1 minor collector: shell trust posture and diagnostics",
+      "description": "(1) security: glob match fail-open on overlapping prefix/suffix (substrate.rs:89). (2) security: tilde expansion trusts HOME and mis-falls-back to repo-root when HOME unset, turning ~/ entries into misleading absent-artifact failures (substrate.rs:117-118) — SE converges. (3) security: chassis stdout flows unsanitized into terminal-destined display fields (acquire.rs:93). (4) security+SE: the git failure Diagnostic ships empty recovery members and a hardcoded token against the vocabulary discipline, renders an empty machine-form file field, and leaks absolute paths via message — the #730 clause applies to refs.rs's Diagnostic construction (refs.rs:95,100). (5) security: PATH-resolution trust posture undeclared for both subprocess sites — state it (a malicious crosslink/git on PATH is the operator's environment, likely out of model — but say so). (6) security nit: binding-failure detail embeds both absolute roots in Status-destined prose (substrate.rs:47) — the #730 clause. (7) QE: local_refs origin-stripping/HEAD-filter/dedup has no test. Owner: security/software-engineer. Validator: solution-architect.",
+      "status": "open",
+      "priority": "medium",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:03:48.807537Z",
+      "updated_at": "2026-07-22T17:03:48.807537Z"
     },
     "258e1a57-227d-443f-b62f-5c4c86546567": {
       "uuid": "258e1a57-227d-443f-b62f-5c4c86546567",
@@ -21461,11 +21474,16 @@
       "agent_id": "xqjG",
       "agent_seq": 161,
       "timestamp": "2026-07-22T17:03:41.603942Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 162,
+      "timestamp": "2026-07-22T17:03:48.807537Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:03:41.603942Z",
+    "timestamp": "2026-07-22T17:03:48.807537Z",
     "agent_id": "xqjG",
-    "agent_seq": 161
+    "agent_seq": 162
   }
 }
