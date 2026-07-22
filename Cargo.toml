@@ -11,7 +11,9 @@ authors = ["magnificentlycursed"]
 repository = "https://github.com/magnificentlycursed/vsdd-cli"
 
 [workspace.dependencies]
-mdatron-core = { path = "../mdatron/mdatron-core" }
+# The mdatron seam is tool-to-tool (the #739 boundary; mdatron #81 collapsed
+# its workspace upstream): vsdd consumes the mdatron BINARY, never a library.
+jsonschema = { version = "0.18", default-features = false, features = ["draft202012"] }
 serde = { version = "1", features = ["derive"] }
 serde_yaml = "0.9"
 serde_json = "1"

@@ -18,7 +18,7 @@ pub mod sets;
 
 use std::path::{Path, PathBuf};
 
-use mdatron_core::Schema;
+use crate::schema_check::Schema;
 use serde::de::DeserializeOwned;
 
 use crate::diagnostics::{yaml_location, Diagnostic};

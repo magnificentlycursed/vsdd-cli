@@ -1,12 +1,14 @@
 //! Integration tests: vsdd-core's JSON Schemas validate the existing
 //! primer / domain / supplement files in vsdd-cli/.claude/commands/ and supplements/.
 //!
-//! These are the load-bearing contracts that `mdatron-core::schema::Schema` consumes;
-//! the tests confirm both the schemas and the existing files conform.
+//! These are the load-bearing contracts the mdatron BINARY walks; since
+//! the library seam died (vsdd-cli #764), the tests execute them through
+//! the in-crate shim, which pins the same engine and draft mdatron runs.
 
 use std::path::Path;
 
-use mdatron_core::{frontmatter, Schema};
+use vsdd_core::registry::frontmatter::split_frontmatter;
+use vsdd_core::schema_check::Schema;
 
 fn load_schema(json_str: &str) -> Schema {
     let json: serde_json::Value = serde_json::from_str(json_str).expect("schema is valid JSON");
@@ -17,10 +19,17 @@ fn frontmatter_of(path: &str) -> serde_yaml_ng::Value {
     let full = Path::new(env!("CARGO_MANIFEST_DIR")).join("..").join(path);
     let content =
         std::fs::read_to_string(&full).unwrap_or_else(|e| panic!("read {}: {e}", full.display()));
-    let parsed = frontmatter::parse(&content)
-        .unwrap_or_else(|e| panic!("parse frontmatter at {}: {e}", full.display()));
-    let (fm, _body) = parsed.unwrap_or_else(|| panic!("no frontmatter at {}", full.display()));
-    fm
+    let (fm_text, _body) = split_frontmatter(&content).unwrap_or_else(|e| {
+        panic!(
+            "split frontmatter at {} (line {}, column {}): {}",
+            full.display(),
+            e.line,
+            e.column,
+            e.message
+        )
+    });
+    serde_yaml_ng::from_str(fm_text)
+        .unwrap_or_else(|e| panic!("frontmatter YAML at {}: {e}", full.display()))
 }
 
 #[test]

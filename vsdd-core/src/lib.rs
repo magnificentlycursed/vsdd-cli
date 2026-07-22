@@ -1,7 +1,9 @@
 //! vsdd-core — library for the VSDD methodology toolkit.
 //!
-//! VSDD-specific JSON Schemas, error catalog data, and registry files live here.
-//! Validation is performed by `mdatron-core` consuming this crate's data.
+//! VSDD-specific JSON Schemas, error catalog data, and registry files live
+//! here. The markdown walk is the mdatron BINARY's (tool-to-tool, the #739
+//! boundary); vsdd's own read-time schema-pair validation runs in-crate
+//! through `schema_check` (vsdd-cli #764).
 //!
 //! Currently provides:
 //! - `state` — the `.vsdd/state.yaml` artifact: schema, read with the
@@ -28,6 +30,7 @@ pub(crate) mod bounded_read;
 pub mod diagnostics;
 pub mod integrity_shell;
 pub mod registry;
+pub mod schema_check;
 pub mod snapshot;
 pub mod state;
 pub(crate) mod subprocess;

@@ -1,18 +1,16 @@
 //! Phase 2a Red Gate for vsdd-core/patterns/cross-references.yaml extensions.
 //!
 //! Each test builds a temp project laid out the way mdatron expects
-//! (.mdatron/schemas + .mdatron/patterns + fixture markdown files), runs the
-//! full mdatron_core::verify pipeline against it, and asserts that the
-//! relevant finding code appears (or does not appear) for the fixture.
-//!
-//! These tests fail by default until the corresponding rules land in
-//! vsdd-core/patterns/cross-references.yaml during the Phase 2b session.
+//! (.mdatron/schemas + .mdatron/patterns + fixture markdown files), runs
+//! the mdatron BINARY's verify over it (tool-to-tool, the #739 boundary;
+//! the library pipeline died with the seam, vsdd-cli #764), and asserts
+//! that the relevant finding code appears (or does not appear) for the
+//! fixture. mdatron on PATH is the estate's own substrate requirement —
+//! the preflight names it and the pre-commit gate enforces it — so its
+//! absence here is a loud failure, never a skip.
 
 use std::fs;
 use std::path::PathBuf;
-
-use mdatron_core::diagnostic::Finding;
-use mdatron_core::verify::{verify, VerifyConfig};
 
 struct TempProject {
     root: PathBuf,
@@ -88,9 +86,27 @@ impl TempProject {
         }
     }
 
-    fn run(&self) -> Vec<Finding> {
-        let cfg = VerifyConfig::new(&self.root);
-        verify(&cfg).expect("verify pipeline ran without internal error")
+    /// Run the mdatron binary's verify; returns the finding codes.
+    fn run(&self) -> Vec<String> {
+        let output = std::process::Command::new("mdatron")
+            .args(["verify", "--json", "-q", "--project-root"])
+            .arg(&self.root)
+            .output()
+            .expect("mdatron runs from PATH — the substrate requirement the preflight names");
+        let stdout = String::from_utf8_lossy(&output.stdout);
+        let parsed: serde_json::Value = serde_json::from_str(stdout.trim())
+            .unwrap_or_else(|e| panic!("mdatron --json output parses: {e}"));
+        parsed["findings"]
+            .as_array()
+            .expect("the output object carries a findings array")
+            .iter()
+            .map(|f| {
+                f["code"]
+                    .as_str()
+                    .expect("every finding carries a code")
+                    .to_string()
+            })
+            .collect()
     }
 }
 
@@ -98,10 +114,6 @@ impl Drop for TempProject {
     fn drop(&mut self) {
         let _ = fs::remove_dir_all(&self.root);
     }
-}
-
-fn finding_codes(findings: &[Finding]) -> Vec<&str> {
-    findings.iter().map(|f| f.code.as_str()).collect()
 }
 
 // ── VSDD-E0207: phase-primer.primer_id must match "vsdd-" + phase ──────────────
@@ -124,10 +136,9 @@ fn e0207_fires_when_primer_id_does_not_match_phase() {
          ---\n# body\n",
     );
 
-    let findings = proj.run();
-    let codes = finding_codes(&findings);
+    let codes = proj.run();
     assert!(
-        codes.contains(&"VSDD-E0207"),
+        codes.iter().any(|c| c == "VSDD-E0207"),
         "expected VSDD-E0207 finding; got {codes:?}"
     );
 }
@@ -149,10 +160,9 @@ fn e0207_silent_when_primer_id_matches_phase() {
          ---\n# body\n",
     );
 
-    let findings = proj.run();
-    let codes = finding_codes(&findings);
+    let codes = proj.run();
     assert!(
-        !codes.contains(&"VSDD-E0207"),
+        !codes.iter().any(|c| c == "VSDD-E0207"),
         "expected no VSDD-E0207 finding; got {codes:?}"
     );
 }
@@ -177,10 +187,9 @@ fn e0208_fires_when_validator_pair_is_self() {
          ---\n# body\n",
     );
 
-    let findings = proj.run();
-    let codes = finding_codes(&findings);
+    let codes = proj.run();
     assert!(
-        codes.contains(&"VSDD-E0208"),
+        codes.iter().any(|c| c == "VSDD-E0208"),
         "expected VSDD-E0208 finding; got {codes:?}"
     );
 }
@@ -203,10 +212,9 @@ fn e0208_silent_when_validator_pair_differs_from_self() {
          ---\n# body\n",
     );
 
-    let findings = proj.run();
-    let codes = finding_codes(&findings);
+    let codes = proj.run();
     assert!(
-        !codes.contains(&"VSDD-E0208"),
+        !codes.iter().any(|c| c == "VSDD-E0208"),
         "expected no VSDD-E0208 finding; got {codes:?}"
     );
 }

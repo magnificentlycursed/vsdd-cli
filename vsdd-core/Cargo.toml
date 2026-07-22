@@ -9,10 +9,12 @@ repository.workspace = true
 description = "Library for the VSDD methodology toolkit (VSDD-specific schemas, patterns, catalogs)"
 
 [dependencies]
-mdatron-core = { workspace = true }
+# The schema-pair validation engine, consumed directly since the library
+# seam died (vsdd-cli #764; the #739 workspace marker) — same version and
+# draft mdatron runs, keeping the two sides' verdicts aligned.
+jsonschema = { workspace = true }
 serde = { workspace = true }
-# Pinned to the YAML type mdatron-core's public API consumes (vsdd-cli #717;
-# promoted from dev-dependency for the registry loaders, vsdd-cli #718).
+# The registry loaders' YAML type (vsdd-cli #717, #718).
 serde_yaml_ng = "0.10"
 serde_json = { workspace = true }
 thiserror = { workspace = true }
