@@ -20,6 +20,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Layer 2 round 1 minor collector: shell trust posture and diagnostics (#754)
+- Layer 2 round 1 minor collector: acquisition and derivation honesty (#753)
+- Layer 2 round 1 major SE+DE: remote-tracking ref stripping hardcodes origin against the declared remote-name-generic rule (#752)
+- Layer 2 round 1 major security: unbounded, untimed subprocess capture at both chassis and git boundaries (#751)
+- Layer 2 round 1 major QE: the live-tree substrate test fails on any fresh clone or CI runner (#750)
+- Layer 2 round 1 major QE+DE+SE: three integrity checks and active_composition are unfalsified — deletable mutants (#749)
+- Layer 2 round 1 major SE+DE: the milestone parse guesses instead of failing — silent skip, name truncation, count loss (#748)
+- Layer 2 round 1 major SE: every Command spawn error maps to Unreachable, swapping the degraded kind (#747)
+- Layer 2 round 1 major SE+DE: substrate check downgrades exists-and-referenced to a bare existence probe (#746)
 - Phase 2c execution, Layer 2: refactor under the green suite (#744)
 - Clear the crosslink 0.8.0 hold: upstream patched, hub migrated to v3 (#742)
 - Amendment candidate: the mdatron boundary bundle (tier clause, state-validation re-home, prose-restatement rule) (#739)
