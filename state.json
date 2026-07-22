@@ -1,5 +1,5 @@
 {
-  "next_display_id": 746,
+  "next_display_id": 747,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -636,6 +636,7 @@
     "d8275115-170b-42b8-9e51-fea74cc2afc0": 527,
     "d85fe164-adcc-434c-a3f4-89ea119ae778": 365,
     "d8e84e90-6a2b-46b2-8d51-e82225545366": 400,
+    "d9c4828e-96b1-43ce-947c-9c01ba4c89d9": 746,
     "daedbd11-9d51-4bf6-a214-acf8ec6386c4": 504,
     "db1c1d10-7ebd-4613-a7e5-a165e41efd46": 5,
     "db33bb36-028a-4140-969f-708527b76cbe": 489,
@@ -18046,6 +18047,18 @@
         }
       }
     },
+    "d9c4828e-96b1-43ce-947c-9c01ba4c89d9": {
+      "uuid": "d9c4828e-96b1-43ce-947c-9c01ba4c89d9",
+      "display_id": 746,
+      "title": "l2r1 major SE+DE: substrate check downgrades exists-and-referenced to a bare existence probe",
+      "description": "substrate.rs:68 special-cases only worded-absence; exists and exists-and-referenced both fall to a plain existence check — the referenced half (present AND named by its reference surface) neither checked nor reported inconclusive, and the manifest's declared cross-field constraints go unexecuted. An orphaned payload (file present, wiring clobbered) passes silently, violating the module's own reported-never-silently-passed rule. Disposition: return Inconclusive with a scope note for exists-and-referenced until the reference-surface lookup lands. Owner: data-engineer. Validator: solution-architect.",
+      "status": "open",
+      "priority": "high",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:00:27.921869Z",
+      "updated_at": "2026-07-22T17:00:27.921869Z"
+    },
     "daedbd11-9d51-4bf6-a214-acf8ec6386c4": {
       "uuid": "daedbd11-9d51-4bf6-a214-acf8ec6386c4",
       "display_id": 504,
@@ -21181,11 +21194,16 @@
       "agent_id": "xqjG",
       "agent_seq": 137,
       "timestamp": "2026-07-22T16:57:20.344488Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 138,
+      "timestamp": "2026-07-22T17:00:27.921869Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:57:20.344488Z",
+    "timestamp": "2026-07-22T17:00:27.921869Z",
     "agent_id": "xqjG",
-    "agent_seq": 137
+    "agent_seq": 138
   }
 }
