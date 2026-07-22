@@ -1,6 +1,6 @@
 {
   "next_display_id": 772,
-  "next_comment_id": 1013,
+  "next_comment_id": 1014,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -14205,7 +14205,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T16:49:20.000430Z",
-      "updated_at": "2026-07-22T17:39:10.135969Z",
+      "updated_at": "2026-07-22T20:21:05.680270Z",
       "labels": [
         "review"
       ],
@@ -14219,6 +14219,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA74Jgp+mw+MOve8PxNplmAv1OENkpU5tc2iIQTLLsVdyWhprQSyqE/5sYnBwNu7cawIq1Q7PDM0SKG7XucMjABA=="
+        },
+        "2e52947e-9737-4db4-bd15-0293bee8bcaf": {
+          "display_id": 1013,
+          "author": "xqjG",
+          "content": "Round 1 complete and superseded by the layer's closure: 38 findings consolidated to #746-#754, all fixed in d84109f5 and verified by round 2. Closed at the Layer 2 sign-off (decision on #770).",
+          "created_at": "2026-07-22T20:21:05.665785Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALu+KyeNeqvQUZlfzoMAHFXPEMQOKbkqIn+sXj9KRlD83MRLQzWpf68uCBqHqDUtUKAWghAHIzMe5M4Yrg0BlDg=="
         },
         "e6cb9e34-43ab-41a2-a7de-27803c52631b": {
           "display_id": 986,
@@ -22739,11 +22748,16 @@
       "agent_id": "xqjG",
       "agent_seq": 293,
       "timestamp": "2026-07-22T20:20:47.903992Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 294,
+      "timestamp": "2026-07-22T20:21:05.680270Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T20:20:47.903992Z",
+    "timestamp": "2026-07-22T20:21:05.680270Z",
     "agent_id": "xqjG",
-    "agent_seq": 293
+    "agent_seq": 294
   }
 }
