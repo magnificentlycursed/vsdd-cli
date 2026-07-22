@@ -12468,12 +12468,13 @@
       "display_id": 751,
       "title": "l2r1 major security: unbounded, untimed subprocess capture at both chassis and git boundaries",
       "description": "acquire.rs:89 and refs.rs:26 use Command::output with no output cap and no timeout, while every FILE read in the crate rides the 1 MiB bounded-read discipline (#732) — an inconsistency a hostile or wedged subprocess exploits (unbounded stdout materialization; an indefinitely-hanging child blocks status forever). Disposition: cap subprocess stdout and impose a wall-clock timeout, mapping breach to the unusable outcome; align the posture with the bounded-read rule. Owner: security. Validator: software-engineer.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:02:12.824481Z",
-      "updated_at": "2026-07-22T17:34:12.016166Z",
+      "updated_at": "2026-07-22T17:34:18.163626Z",
+      "closed_at": "2026-07-22T17:34:18.163616Z",
       "labels": [
         "review"
       ],
@@ -21685,11 +21686,16 @@
       "agent_id": "xqjG",
       "agent_seq": 184,
       "timestamp": "2026-07-22T17:34:12.016166Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 185,
+      "timestamp": "2026-07-22T17:34:18.163626Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:34:12.016166Z",
+    "timestamp": "2026-07-22T17:34:18.163626Z",
     "agent_id": "xqjG",
-    "agent_seq": 184
+    "agent_seq": 185
   }
 }
