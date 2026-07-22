@@ -1,5 +1,5 @@
 {
-  "next_display_id": 751,
+  "next_display_id": 752,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -437,6 +437,7 @@
     "8f12246f-d782-4ee0-8286-b6511ae416fb": 703,
     "8f519889-86fd-4699-bc02-bd57234e4d10": 554,
     "912c3eb4-70bb-4a41-885c-7c8ef2fd18ca": 748,
+    "918beab2-ce1a-42d3-9704-44e67df0eeb5": 751,
     "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b": 439,
     "923f3492-d9da-4c55-8591-f34344b2fd1e": 101,
     "924375ed-05a1-4402-8c61-6b26182f5b97": 190,
@@ -12365,6 +12366,18 @@
         "review"
       ]
     },
+    "918beab2-ce1a-42d3-9704-44e67df0eeb5": {
+      "uuid": "918beab2-ce1a-42d3-9704-44e67df0eeb5",
+      "display_id": 751,
+      "title": "l2r1 major security: unbounded, untimed subprocess capture at both chassis and git boundaries",
+      "description": "acquire.rs:89 and refs.rs:26 use Command::output with no output cap and no timeout, while every FILE read in the crate rides the 1 MiB bounded-read discipline (#732) — an inconsistency a hostile or wedged subprocess exploits (unbounded stdout materialization; an indefinitely-hanging child blocks status forever). Disposition: cap subprocess stdout and impose a wall-clock timeout, mapping breach to the unusable outcome; align the posture with the bounded-read rule. Owner: security. Validator: software-engineer.",
+      "status": "open",
+      "priority": "high",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:02:12.824481Z",
+      "updated_at": "2026-07-22T17:02:12.824481Z"
+    },
     "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b": {
       "uuid": "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b",
       "display_id": 439,
@@ -21356,11 +21369,16 @@
       "agent_id": "xqjG",
       "agent_seq": 152,
       "timestamp": "2026-07-22T17:02:05.078827Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 153,
+      "timestamp": "2026-07-22T17:02:12.824481Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:02:05.078827Z",
+    "timestamp": "2026-07-22T17:02:12.824481Z",
     "agent_id": "xqjG",
-    "agent_seq": 152
+    "agent_seq": 153
   }
 }
