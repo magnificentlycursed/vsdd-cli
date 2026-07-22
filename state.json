@@ -1,5 +1,5 @@
 {
-  "next_display_id": 764,
+  "next_display_id": 765,
   "next_comment_id": 989,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -656,6 +656,7 @@
     "daedbd11-9d51-4bf6-a214-acf8ec6386c4": 504,
     "db1c1d10-7ebd-4613-a7e5-a165e41efd46": 5,
     "db33bb36-028a-4140-969f-708527b76cbe": 489,
+    "db3b7857-cd2c-471d-9673-254cafe70702": 764,
     "db6b5467-85b1-43ab-819c-1220a28da513": 761,
     "dc0d734e-225b-46b7-98bc-29d01b69aa33": 91,
     "dce9e81b-8e1d-4a3b-a301-050c1d7877d7": 402,
@@ -18548,6 +18549,16 @@
         }
       }
     },
+    "db3b7857-cd2c-471d-9673-254cafe70702": {
+      "uuid": "db3b7857-cd2c-471d-9673-254cafe70702",
+      "display_id": 764,
+      "title": "Execute the vsdd half of the core removal: drop the mdatron-core library seam — in-crate schema shim, conformance tests ride the mdatron binary (the #739 workspace marker; mdatron #81 collapsed the workspace upstream)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T18:36:10.053216Z",
+      "updated_at": "2026-07-22T18:36:10.053216Z"
+    },
     "db6b5467-85b1-43ab-819c-1220a28da513": {
       "uuid": "db6b5467-85b1-43ab-819c-1220a28da513",
       "display_id": 761,
@@ -22073,11 +22084,16 @@
       "agent_id": "xqjG",
       "agent_seq": 225,
       "timestamp": "2026-07-22T18:02:42.064106Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 226,
+      "timestamp": "2026-07-22T18:36:10.053216Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:02:42.064106Z",
+    "timestamp": "2026-07-22T18:36:10.053216Z",
     "agent_id": "xqjG",
-    "agent_seq": 225
+    "agent_seq": 226
   }
 }
