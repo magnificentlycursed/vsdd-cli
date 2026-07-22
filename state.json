@@ -1,6 +1,6 @@
 {
   "next_display_id": 765,
-  "next_comment_id": 995,
+  "next_comment_id": 996,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -904,7 +904,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-22T18:00:49.691266Z",
-      "updated_at": "2026-07-22T18:00:49.691266Z"
+      "updated_at": "2026-07-22T18:47:04.035976Z",
+      "comments": {
+        "12eca479-7c1b-4b5a-915a-f9927a47b708": {
+          "display_id": 995,
+          "author": "xqjG",
+          "content": "Fixed in a49206fe: in-module unit pins land for the acquisition's pure half (content-with-zero-parses is None never an empty success; open/closed lines with counts; the exact (N/M) strip against v1/2, (2024), and plain-name shapes) and for the extracted glob predicate glob_name_matches (the ab*ba/aba overlap guard, abutting exact-length match, ordinary content match). Empty or whitespace-only HOME now counts as unset in both the home-anchored guard and expand — no more fabricated cwd-relative resolution.",
+          "created_at": "2026-07-22T18:47:04.023154Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZNSGoFr0Vt9otDQeLvbA7M4cURFVhJe7Dnk7X5TuwM/GJmOLM6H1CAj6oh3SqYD9zqZuKK6KHJVq0N1rnHyCAQ=="
+        }
+      }
     },
     "006b61f2-64d1-4494-8999-668c26701e55": {
       "uuid": "006b61f2-64d1-4494-8999-668c26701e55",
@@ -22236,11 +22247,16 @@
       "agent_id": "xqjG",
       "agent_seq": 245,
       "timestamp": "2026-07-22T18:46:58.254292Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 246,
+      "timestamp": "2026-07-22T18:47:04.035976Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:46:58.254292Z",
+    "timestamp": "2026-07-22T18:47:04.035976Z",
     "agent_id": "xqjG",
-    "agent_seq": 245
+    "agent_seq": 246
   }
 }
