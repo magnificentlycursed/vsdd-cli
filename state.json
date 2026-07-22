@@ -9833,12 +9833,13 @@
       "display_id": 753,
       "title": "l2r1 minor collector: acquisition and derivation honesty",
       "description": "(1) SE: session-query Failed reads as 'no session' under Acquired (acquire.rs:53), contradicting Failed's store-problem contract — distinguish no-session from refusal or declare the conflation in the bootstrap doc. (2) SE+DE: the 2c arm enforces a current_layer conjunct the adopted rule table does not state (derive.rs:111) — code is defensible (a stale prior-layer pass must not flip the transition) but code and ADOPTED oracle now disagree; OPERATOR-SHAPED, see the batch note. (3) SE: the runtime vocabulary lookup in derive is a behavioral no-op with an overclaiming comment (derive.rs:57) — delete it and let the membership test carry the pin, or make non-membership observable. (4) DE: phase-2a/2b gate matching ignores GateResult.phase while 2c checks it (derive.rs:83) — align. (5) DE: display_active_milestone acquired without the schema-mandated precomputed count (folded into the parse major). Owner: software-engineer/data-engineer by item. Validator: quality-engineer.",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:03:28.682184Z",
-      "updated_at": "2026-07-22T17:35:01.400804Z",
+      "updated_at": "2026-07-22T17:35:07.421569Z",
+      "closed_at": "2026-07-22T17:35:07.421560Z",
       "labels": [
         "review"
       ],
@@ -21731,11 +21732,16 @@
       "agent_id": "xqjG",
       "agent_seq": 190,
       "timestamp": "2026-07-22T17:35:01.400804Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 191,
+      "timestamp": "2026-07-22T17:35:07.421569Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:35:01.400804Z",
+    "timestamp": "2026-07-22T17:35:07.421569Z",
     "agent_id": "xqjG",
-    "agent_seq": 190
+    "agent_seq": 191
   }
 }
