@@ -16761,12 +16761,13 @@
       "display_id": 747,
       "title": "l2r1 major SE: every Command spawn error maps to Unreachable, swapping the degraded kind",
       "description": "acquire.rs:91 — Err(_) => Unreachable => Absent (offline). But PermissionDenied (exec bit lost), spawn-resource failures, a nonexistent current_dir are NOT offline; a chmod-broken chassis reports tracker-absent forever instead of tracker-unusable — defeating degraded-kinds-are-never-swapped upstream of the derivation the fixtures pin. Disposition: match e.kind(): only NotFound is Unreachable, every other spawn error is Failed/unusable. Owner: software-engineer. Validator: security.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:00:49.430446Z",
-      "updated_at": "2026-07-22T17:32:25.867110Z",
+      "updated_at": "2026-07-22T17:32:32.042425Z",
+      "closed_at": "2026-07-22T17:32:32.042413Z",
       "labels": [
         "review"
       ],
@@ -21593,11 +21594,16 @@
       "agent_id": "xqjG",
       "agent_seq": 172,
       "timestamp": "2026-07-22T17:32:25.867110Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 173,
+      "timestamp": "2026-07-22T17:32:32.042425Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:32:25.867110Z",
+    "timestamp": "2026-07-22T17:32:32.042425Z",
     "agent_id": "xqjG",
-    "agent_seq": 172
+    "agent_seq": 173
   }
 }
