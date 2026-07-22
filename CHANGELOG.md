@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Layer 2 round 4 residue collector: the byte-length home-fold floor and the init suite's temp pattern — recorded and routed, not gating (#771)
 - Layer 2 round 3 minor security: cross_references tests build fixture trees at a predictable shared-temp path with a delete-then-create race — ride tempfile like the sibling suite (#769)
 - Layer 2 round 3 minor QE: a stderr-only pipe holdout fails a clean successful run as TimedOut, contradicting the declared best-effort stderr posture (#768)
 - Layer 2 round 3 minor, all-four-lenses convergent: refs.rs sanitize folds degenerate HOME spellings (a space, a bare slash) and garbles record-destined diagnostics — reuse the trimmed-non-empty rule (#767)
