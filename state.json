@@ -20057,7 +20057,10 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T16:29:52.701338Z",
-      "updated_at": "2026-07-22T16:29:52.701338Z"
+      "updated_at": "2026-07-22T16:29:57.766841Z",
+      "labels": [
+        "maintenance"
+      ]
     },
     "f4ffdfa4-1c1d-4b7a-b5df-fe75419eaaff": {
       "uuid": "f4ffdfa4-1c1d-4b7a-b5df-fe75419eaaff",
@@ -20902,11 +20905,16 @@
       "agent_id": "xqjG",
       "agent_seq": 109,
       "timestamp": "2026-07-22T16:29:52.701338Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 110,
+      "timestamp": "2026-07-22T16:29:57.766841Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:29:52.701338Z",
+    "timestamp": "2026-07-22T16:29:57.766841Z",
     "agent_id": "xqjG",
-    "agent_seq": 109
+    "agent_seq": 110
   }
 }
