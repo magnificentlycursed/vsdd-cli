@@ -1818,14 +1818,14 @@
     "0aceb01f-b39b-48d6-8f56-1b82944fa749": {
       "uuid": "0aceb01f-b39b-48d6-8f56-1b82944fa749",
       "display_id": 750,
-      "title": "l2r1 major QE: the live-tree substrate test fails on any fresh clone or CI runner",
+      "title": "Layer 2 round 1 major QE: the live-tree substrate test fails on any fresh clone or CI runner",
       "description": "shell_red_gate.rs:92 asserts no substrate entry fails on the repo tree, but per-clone payload entries (hooks, mcp servers) are gitignored — absent on a fresh checkout or CI, so the positive test fails everywhere but this working copy; it also cannot see the githook prose-path declassification because that entry never reaches a fail on this tree. Disposition: build the positive fixture as a controlled temp tree with the expected payloads present, not the live estate. Owner: quality-engineer. Validator: software-engineer.",
       "status": "closed",
       "priority": "high",
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:01:51.142165Z",
-      "updated_at": "2026-07-22T17:33:59.785229Z",
+      "updated_at": "2026-07-22T17:36:59.145801Z",
       "closed_at": "2026-07-22T17:33:59.785216Z",
       "labels": [
         "review"
@@ -21779,11 +21779,16 @@
       "agent_id": "xqjG",
       "agent_seq": 199,
       "timestamp": "2026-07-22T17:36:51.847051Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 200,
+      "timestamp": "2026-07-22T17:36:59.145801Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:36:51.847051Z",
+    "timestamp": "2026-07-22T17:36:59.145801Z",
     "agent_id": "xqjG",
-    "agent_seq": 199
+    "agent_seq": 200
   }
 }
