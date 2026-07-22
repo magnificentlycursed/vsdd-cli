@@ -18609,11 +18609,12 @@
       "uuid": "db3b7857-cd2c-471d-9673-254cafe70702",
       "display_id": 764,
       "title": "Execute the vsdd half of the core removal: drop the mdatron-core library seam — in-crate schema shim, conformance tests ride the mdatron binary (the #739 workspace marker; mdatron #81 collapsed the workspace upstream)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T18:36:10.053216Z",
-      "updated_at": "2026-07-22T18:47:39.060228Z",
+      "updated_at": "2026-07-22T18:47:44.642305Z",
+      "closed_at": "2026-07-22T18:47:44.642296Z",
       "comments": {
         "ad4c1e5e-9ea0-464b-b3a2-7a759849e2bd": {
           "display_id": 997,
@@ -22298,11 +22299,16 @@
       "agent_id": "xqjG",
       "agent_seq": 252,
       "timestamp": "2026-07-22T18:47:39.060228Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 253,
+      "timestamp": "2026-07-22T18:47:44.642305Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:47:39.060228Z",
+    "timestamp": "2026-07-22T18:47:44.642305Z",
     "agent_id": "xqjG",
-    "agent_seq": 252
+    "agent_seq": 253
   }
 }
