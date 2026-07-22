@@ -1,6 +1,6 @@
 {
   "next_display_id": 755,
-  "next_comment_id": 981,
+  "next_comment_id": 982,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -1845,10 +1845,21 @@
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:01:51.142165Z",
-      "updated_at": "2026-07-22T17:01:56.508147Z",
+      "updated_at": "2026-07-22T17:33:53.445703Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "d958b5c9-1eeb-47ab-ac1e-e728443fef13": {
+          "display_id": 981,
+          "author": "xqjG",
+          "content": "Fixed in d84109f5: the substrate positive builds the tree the manifest describes in a temp directory instead of trusting the live checkout — home-anchored entries excluded by construction (a test must not fabricate artifacts in the operator's home; none exist among entries today). The inconclusive set is pinned: githook-wiring asserted present, every member either a prose-path entry or a present exists-and-referenced entry, nothing else tolerated. Three pure normalizer tests added (any-remote strip + HEAD skip + dedup; local origin/x preserved; nested paths intact).",
+          "created_at": "2026-07-22T17:33:53.431390Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmAenTkaaLFzqWsGheHtpLZNWof7s6JOqp7bTkWUCxZaP1wYgV+6dAnQiDeGl9fS7W7DwbJY9V8KMPkMOaLrfBQ=="
+        }
+      }
     },
     "0b866840-96dd-4dfc-b11e-6e0c0a5e283a": {
       "uuid": "0b866840-96dd-4dfc-b11e-6e0c0a5e283a",
@@ -21646,11 +21657,16 @@
       "agent_id": "xqjG",
       "agent_seq": 180,
       "timestamp": "2026-07-22T17:33:47.681816Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 181,
+      "timestamp": "2026-07-22T17:33:53.445703Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:33:47.681816Z",
+    "timestamp": "2026-07-22T17:33:53.445703Z",
     "agent_id": "xqjG",
-    "agent_seq": 180
+    "agent_seq": 181
   }
 }
