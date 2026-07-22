@@ -8,8 +8,12 @@
 //! members included) resolve against the tree; an entry whose path is
 //! prose (the plugin-set surface) is `inconclusive` — reported, never
 //! silently passed — until its surface-specific check lands with its
-//! consumer. Only non-pass results are reported: one finding per
-//! dangling reference.
+//! consumer. `exists-and-referenced` claims MORE than presence, and
+//! this check verifies only presence (vsdd-cli #746): absence still
+//! fails loudly, but presence is `inconclusive` scoped to the
+//! unverified half until the reference-surface check lands — presence
+//! never silently upgrades to the full claim. Only non-pass results
+//! are reported: one finding per dangling reference.
 
 use std::path::{Path, PathBuf};
 
@@ -40,13 +44,21 @@ pub fn session_substrate_check(
     manifest: &InstalledArtifactManifest,
 ) -> Vec<SubstrateFinding> {
     if repo_root != project_root {
+        // Record-destined text names no absolute path (contract clause,
+        // vsdd-cli #730): the leaf names locate the mismatch; the
+        // operator's own shell holds the full paths.
+        let leaf = |p: &Path| {
+            p.file_name()
+                .map(|n| n.to_string_lossy().into_owned())
+                .unwrap_or_else(|| "(root)".to_string())
+        };
         return vec![SubstrateFinding {
             entry_id: "project-root-equals-repo-root".to_string(),
             result: CheckResult::Fail,
             detail: format!(
-                "the session's project root ({}) does not equal the repo root ({}) — the binding member of the session-shape rule; entry checks are withheld because they would run against the wrong root",
-                project_root.display(),
-                repo_root.display()
+                "the session's project root (…/{}) does not equal the repo root (…/{}) — the binding member of the session-shape rule; entry checks are withheld because they would run against the wrong root",
+                leaf(project_root),
+                leaf(repo_root)
             ),
         }];
     }
@@ -80,36 +92,49 @@ fn check_entry(root: &Path, path: &str, resolution: &str) -> (CheckResult, Strin
             format!("the entry's path is prose, not a filesystem path: {path}"),
         );
     }
-    let expanded = expand(root, path);
-    if let Some((dir, prefix, suffix)) = glob_parts(&expanded) {
-        return match std::fs::read_dir(&dir) {
-            Ok(entries) => {
-                let hit = entries.flatten().any(|e| {
-                    let name = e.file_name().to_string_lossy().into_owned();
-                    name.starts_with(&prefix) && name.ends_with(&suffix)
-                });
-                if hit {
-                    (CheckResult::Pass, String::new())
-                } else {
-                    (
-                        CheckResult::Fail,
-                        format!("no artifact matches the glob: {path}"),
-                    )
-                }
-            }
-            Err(e) => (
-                CheckResult::Fail,
-                format!("the glob's directory cannot be read ({path}): {e}"),
-            ),
-        };
+    // A home-anchored path with no HOME cannot resolve: inconclusive,
+    // never a fabricated in-repo miss (vsdd-cli #746).
+    if path.starts_with("~/") && std::env::var_os("HOME").is_none() {
+        return (
+            CheckResult::Inconclusive,
+            format!("HOME is unset; the home-anchored path cannot resolve: {path}"),
+        );
     }
-    if expanded.exists() {
-        (CheckResult::Pass, String::new())
+    let expanded = expand(root, path);
+    let present = if let Some((dir, prefix, suffix)) = glob_parts(&expanded) {
+        match std::fs::read_dir(&dir) {
+            Ok(entries) => entries.flatten().any(|e| {
+                let name = e.file_name().to_string_lossy().into_owned();
+                // The length guard keeps prefix and suffix from
+                // overlapping on a short name (vsdd-cli #746).
+                name.len() >= prefix.len() + suffix.len()
+                    && name.starts_with(&prefix)
+                    && name.ends_with(&suffix)
+            }),
+            Err(e) => {
+                return (
+                    CheckResult::Fail,
+                    format!("the glob's directory cannot be read ({path}): {e}"),
+                )
+            }
+        }
     } else {
-        (
+        expanded.exists()
+    };
+
+    match (present, resolution) {
+        (false, _) => (
             CheckResult::Fail,
             format!("the referenced artifact is absent: {path}"),
-        )
+        ),
+        // Presence alone never satisfies the fuller claim (#746).
+        (true, "exists-and-referenced") => (
+            CheckResult::Inconclusive,
+            format!(
+                "present, but the referenced-by half of `exists-and-referenced` has no check yet — it lands with the reference-surface consumer: {path}"
+            ),
+        ),
+        (true, _) => (CheckResult::Pass, String::new()),
     }
 }
 

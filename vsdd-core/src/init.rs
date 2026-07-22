@@ -3,7 +3,7 @@
 //! Implements the 9-step v0.1 scope agreed in the multi-domain review (SA + SO + SE
 //! + PE + QE + DR consensus on Option A):
 //!
-//!   1. refuse non-git substrate (PE tightening)
+//!   1. refuse a non-git directory (PE tightening)
 //!   2. emit 4 schemas + 1 pattern + 10 phase primers + 18 domain prompts + 14 supplements
 //!   3. create `.vsdd/` skeleton (events.jsonl + config.yaml)
 //!   4. write init-manifest.json with sha256 per deployed file
@@ -49,8 +49,8 @@ pub struct InitReport {
 /// which are wrapped in [`InitError::Io`].
 #[derive(Debug, Error)]
 pub enum InitError {
-    #[error("substrate is not a git repository: {path}; run `git init` first")]
-    SubstrateNotGit { path: PathBuf },
+    #[error("not a git repository: {path}; run `git init` first")]
+    NotGitRepository { path: PathBuf },
 
     #[error(
         "managed file drifted at {path}; resolve with --keep-operator-edits or \
@@ -79,10 +79,10 @@ impl InitError {
 pub fn init(project_root: &Path, options: &InitOptions) -> Result<InitReport, InitError> {
     let _ = options;
 
-    // Step 1: PE-tightened substrate check on the deploy path itself.
+    // Step 1: PE-tightened git-repository check on the deploy path itself.
     let git_path = project_root.join(".git");
     if !git_path.exists() {
-        return Err(InitError::SubstrateNotGit {
+        return Err(InitError::NotGitRepository {
             path: project_root.to_path_buf(),
         });
     }

@@ -16,12 +16,15 @@
   install" was a caught variant coinage). Adopter-facing text (error
   messages, diagnostics, published issues) uses plain description only,
   never estate shorthand.
-- Concrete referents over abstraction words (operator ruling 2026-07-20):
+- Concrete referents over abstraction words (operator ruling 2026-07-20;
+  reaffirmed 2026-07-22 naming "chassis" and "substrate" explicitly):
   say "crosslink" when you mean crosslink, "Claude Code" when you mean
   Claude Code, "any AI coding assistant" when you mean the class — not
-  "substrate" or similar layer-words. Exact names of contract constructs
-  (e.g. the session-substrate check) are citations and keep their names
-  until an amendment rewords them.
+  "substrate", "chassis", or similar layer-words in free prose, code
+  comments, or adopter-facing text. Exact names of contract constructs
+  (e.g. "the crosslink chassis" title clause, the chassis-affordance
+  closure, the session-substrate check) are citations and keep their
+  names until an amendment rewords them.
 
 ## Crosslink version — the 0.8.0 hold is CLEARED (2026-07-22)
 - The hold is lifted: upstream patched the migration blockers and the

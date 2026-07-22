@@ -15,10 +15,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Phase 1b: verification architecture (respec cycle) (L2)
 
 ### Fixed
+- Layer 2 round-1 fix pass: bounded subprocess runs with honest spawn classification, fail-loud milestone parse, two-query ref listing with a pure normalizer, substrate resolution honesty, the uniform gate-record conjunct, four corpus additions as draft oracles, and the substrate/chassis vocabulary sweep (#746, #747, #748, #749, #750, #751, #752, #753, #754)
 - render_machine emits user-absolute paths — nonconforming against the ratified #730 clause (#737)
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Phase 2c execution, Layer 2: refactor under the green suite (#744)
 - Clear the crosslink 0.8.0 hold: upstream patched, hub migrated to v3 (#742)
 - Amendment candidate: the mdatron boundary bundle (tier clause, state-validation re-home, prose-restatement rule) (#739)
 - Amendment candidate: promote the machine-identifying-content guard into Trust boundaries (#730)

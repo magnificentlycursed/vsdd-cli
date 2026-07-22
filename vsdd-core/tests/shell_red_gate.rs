@@ -6,7 +6,7 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use vsdd_core::integrity_shell::refs::off_grammar_refs;
+use vsdd_core::integrity_shell::refs::{normalize_ref_lines, off_grammar_refs};
 use vsdd_core::integrity_shell::substrate::{session_substrate_check, CheckResult};
 use vsdd_core::registry::{
     self,
@@ -89,22 +89,78 @@ fn an_invalid_pattern_in_the_registered_data_is_a_diagnostic() {
 }
 
 #[test]
-fn substrate_check_passes_on_this_live_tree() {
-    // The estate's own install is the positive fixture: no entry FAILS.
-    // Inconclusive is lawful for the prose-path entries (their
-    // surface-specific checks land with their consumers) — reported,
-    // never silently passed.
+fn substrate_check_passes_on_a_complete_tree() {
+    // A CONTROLLED positive (vsdd-cli #750): the test builds the tree
+    // the manifest describes rather than trusting the live checkout,
+    // whose drift would silently narrow what this test proves. Every
+    // entry with a filesystem path gets its payload created; prose-path
+    // entries are inconclusive by design, and home-anchored entries
+    // (none among today's entries — they live on the reference-surface
+    // list) would be excluded here because a test must not fabricate
+    // artifacts in the operator's home.
+    let dir = tempfile::tempdir().unwrap();
     let manifest: InstalledArtifactManifest =
         registry::load_set(&repo_root(), "installed-artifact-manifest").expect("manifest loads");
-    let findings = session_substrate_check(&repo_root(), &repo_root(), &manifest);
+    for entry in &manifest.entries {
+        let p = &entry.path;
+        if entry.resolution == "worded-absence"
+            || p.contains(' ')
+            || p.contains('—')
+            || p.starts_with("~/")
+        {
+            continue;
+        }
+        let concrete = p.replace('*', "payload");
+        let target = dir.path().join(concrete.trim_end_matches('/'));
+        if concrete.ends_with('/') {
+            fs::create_dir_all(&target).unwrap();
+        } else {
+            fs::create_dir_all(target.parent().unwrap()).unwrap();
+            fs::write(&target, "fixture payload").unwrap();
+        }
+    }
+
+    let findings = session_substrate_check(dir.path(), dir.path(), &manifest);
     let failures: Vec<_> = findings
         .iter()
         .filter(|f| f.result == CheckResult::Fail)
         .collect();
     assert!(
         failures.is_empty(),
-        "no entry fails on the live tree: {failures:?}"
+        "no entry fails on the complete tree: {failures:?}"
     );
+
+    // The inconclusive set is PINNED, not merely tolerated: each member
+    // is either a prose-path entry (its surface-specific check lands
+    // with its consumer) or a present `exists-and-referenced` entry
+    // whose referenced-by half has no check yet (vsdd-cli #746) — and
+    // the wiring entry the manifest names in prose is among them.
+    assert!(
+        findings
+            .iter()
+            .any(|f| f.entry_id == "githook-wiring" && f.result == CheckResult::Inconclusive),
+        "the githook-wiring prose entry reports inconclusive, never a silent pass"
+    );
+    for finding in &findings {
+        assert_eq!(
+            finding.result,
+            CheckResult::Inconclusive,
+            "{}: only inconclusive findings remain on the complete tree",
+            finding.entry_id
+        );
+        let entry = manifest
+            .entries
+            .iter()
+            .find(|e| e.id == finding.entry_id)
+            .expect("every finding names a manifest entry");
+        assert!(
+            entry.path.contains(' ')
+                || entry.path.contains('—')
+                || entry.resolution == "exists-and-referenced",
+            "{}: inconclusive only for prose paths or the unverified referenced-by half",
+            finding.entry_id
+        );
+    }
 }
 
 #[test]
@@ -137,6 +193,47 @@ fn a_mis_rooted_session_fails_on_the_first_member() {
         "the finding names the binding: {}",
         first.detail
     );
+}
+
+#[test]
+fn ref_normalization_strips_any_remote_and_skips_symbolic_heads() {
+    // The pure half of the two-query listing (vsdd-cli #752): the
+    // remote segment strips structurally for ANY remote name, and each
+    // remote's symbolic HEAD never enters the membership set.
+    let normalized = normalize_ref_lines(
+        "main\nfeature/statusline-wiring\n",
+        "refs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/upstream/HEAD\nrefs/remotes/upstream/issue/42\n",
+    );
+    assert_eq!(
+        normalized,
+        vec![
+            "main".to_string(),
+            "feature/statusline-wiring".to_string(),
+            "issue/42".to_string()
+        ],
+        "locals first, remotes stripped for origin and upstream alike, HEADs skipped, main deduplicated"
+    );
+}
+
+#[test]
+fn a_local_branch_resembling_a_remote_ref_is_never_mangled() {
+    // The hardcoded-remote defect the rework removes (vsdd-cli #752): a
+    // LOCAL branch literally named `origin/x` is a name, not a remote
+    // ref — it must survive intact for the grammar to judge it.
+    let normalized = normalize_ref_lines("origin/x\n", "");
+    assert_eq!(
+        normalized,
+        vec!["origin/x".to_string()],
+        "the local name passes through untouched"
+    );
+}
+
+#[test]
+fn ref_normalization_preserves_nested_branch_paths() {
+    // Multi-segment branch names keep every segment past the remote:
+    // only the remote name strips, never inner path structure.
+    let normalized = normalize_ref_lines("", "refs/remotes/origin/feature/deep/nesting\n");
+    assert_eq!(normalized, vec!["feature/deep/nesting".to_string()]);
 }
 
 #[test]

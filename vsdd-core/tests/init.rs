@@ -2,7 +2,7 @@
 //!
 //! Each test asserts one behavioral contract from the Phase 1c v0.1 init scope:
 //!
-//!   1. refuses non-git substrate (PE tightening)
+//!   1. refuses a non-git directory (PE tightening)
 //!   2. deploys all expected artifacts (schemas + pattern + 10 primers + 18 domains + 14 supplements)
 //!   3. creates the .vsdd/ skeleton
 //!   4. writes init-manifest.json with SHA-256 per deployed file
@@ -53,15 +53,15 @@ impl Drop for TempProject {
     }
 }
 
-// ── 1. Refuses non-git substrate ──────────────────────────────────────────────
+// ── 1. Refuses a non-git directory ────────────────────────────────────────────
 
 #[test]
-fn init_refuses_non_git_substrate() {
+fn init_refuses_a_non_git_directory() {
     let proj = TempProject::new("no-git");
     let result = init(proj.path(), &InitOptions::default());
     assert!(
-        matches!(result, Err(InitError::SubstrateNotGit { .. })),
-        "expected InitError::SubstrateNotGit; got {result:?}"
+        matches!(result, Err(InitError::NotGitRepository { .. })),
+        "expected InitError::NotGitRepository; got {result:?}"
     );
 }
 

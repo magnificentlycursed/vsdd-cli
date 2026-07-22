@@ -2,55 +2,61 @@
 //! the branch-grammar seam): a pure membership core over injected ref
 //! names, consuming the registered grammar — both forms perpetually
 //! valid, the exemption set as data (vsdd-cli #688 addendum), decidable
-//! from the ref alone. The git listing is the shell's.
+//! from the ref alone. The git listing is the shell's, through the
+//! bounded runner (vsdd-cli #751).
+//!
+//! The listing runs as TWO queries (vsdd-cli #752): local heads short,
+//! remote-tracking refs full — so remote-name stripping is structural
+//! (any remote, not a hardcoded one) and a local branch whose name
+//! merely resembles `<remote>/x` is never mangled.
 
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 use crate::diagnostics::Diagnostic;
 use crate::registry::sets::BranchGrammar;
 use crate::registry::REGISTRY_REPAIR_ACTION;
+use crate::subprocess::{run_bounded, Subprocess};
 
 /// The refs the query runs over: this clone's own branches — local refs
-/// and their remote-tracking counterparts, the remote name stripped so
-/// membership stays decidable from the ref alone (the shell half).
+/// and their remote-tracking counterparts, the remote segment stripped
+/// so membership stays decidable from the ref alone (the shell half).
 pub fn local_refs(repo_root: &Path) -> Result<Vec<String>, Box<Diagnostic>> {
-    let output = std::process::Command::new("git")
-        .arg("-C")
-        .arg(repo_root)
-        .args([
-            "for-each-ref",
-            "--format=%(refname:short)",
-            "refs/heads",
-            "refs/remotes",
-        ])
-        .output()
-        .map_err(|e| git_diagnostic(repo_root, format!("cannot run git: {e}")))?;
-    if !output.status.success() {
-        return Err(git_diagnostic(
-            repo_root,
-            format!(
-                "git for-each-ref failed: {}",
-                String::from_utf8_lossy(&output.stderr).trim()
-            ),
-        ));
+    let local = git_ref_lines(repo_root, "%(refname:short)", "refs/heads")?;
+    let remote = git_ref_lines(repo_root, "%(refname)", "refs/remotes")?;
+    Ok(normalize_ref_lines(&local, &remote))
+}
+
+/// The pure normalizer over the two listings' raw output (vsdd-cli
+/// #752): local short names pass through untouched — a local branch
+/// literally named `origin/x` stays `origin/x`; remote-tracking refs
+/// arrive FULL (`refs/remotes/<remote>/<branch>`) so the remote segment
+/// strips structurally for any remote name, each remote's symbolic
+/// `HEAD` is skipped, and the merged list dedups preserving order,
+/// locals first.
+pub fn normalize_ref_lines(local: &str, remote: &str) -> Vec<String> {
+    let mut refs: Vec<String> = Vec::new();
+    let mut push = |name: &str| {
+        if !name.is_empty() && !refs.iter().any(|have| have == name) {
+            refs.push(name.to_string());
+        }
+    };
+    for line in local.lines() {
+        push(line.trim());
     }
-    let mut refs = Vec::new();
-    for line in String::from_utf8_lossy(&output.stdout).lines() {
-        let name = line.trim();
-        if name.is_empty() || name.ends_with("/HEAD") {
+    for line in remote.lines() {
+        let Some(rest) = line.trim().strip_prefix("refs/remotes/") else {
+            continue;
+        };
+        // Drop the remote segment; skip the remote's symbolic HEAD.
+        let Some((_remote_name, branch)) = rest.split_once('/') else {
+            continue;
+        };
+        if branch == "HEAD" {
             continue;
         }
-        // A remote-tracking counterpart reads `origin/feature/x`; strip
-        // the remote segment so both halves share one membership check.
-        let stripped = match name.split_once('/') {
-            Some(("origin", rest)) => rest,
-            _ => name,
-        };
-        if !refs.iter().any(|have: &String| have == stripped) {
-            refs.push(stripped.to_string());
-        }
+        push(branch);
     }
-    Ok(refs)
+    refs
 }
 
 /// The pure membership core: refs matching neither registered form and
@@ -90,13 +96,53 @@ pub fn off_grammar_refs(
         .collect())
 }
 
-fn git_diagnostic(repo_root: &Path, message: String) -> Box<Diagnostic> {
+/// One bounded git query; every non-completed outcome is a diagnostic
+/// naming what actually happened (vsdd-cli #754) — never a silent empty
+/// list, and never machine-identifying text (the file renders as the
+/// repo-relative `.git`, stderr sanitized of the absolute root).
+fn git_ref_lines(
+    repo_root: &Path,
+    format: &str,
+    namespace: &str,
+) -> Result<String, Box<Diagnostic>> {
+    let format_arg = format!("--format={format}");
+    match run_bounded("git", &["for-each-ref", &format_arg, namespace], repo_root) {
+        Subprocess::Completed { stdout } => Ok(stdout),
+        Subprocess::NotFound => Err(git_diagnostic(
+            "git is not on PATH — the branch query cannot run".to_string(),
+        )),
+        Subprocess::SpawnBroken(detail) => Err(git_diagnostic(format!(
+            "git is present but failed to start: {}",
+            sanitize(&detail, repo_root)
+        ))),
+        Subprocess::TimedOut => Err(git_diagnostic(
+            "git for-each-ref ran past the deadline and was stopped".to_string(),
+        )),
+        Subprocess::Refused { stderr } => Err(git_diagnostic(format!(
+            "git for-each-ref over {namespace} exited nonzero: {}",
+            sanitize(stderr.trim(), repo_root)
+        ))),
+        Subprocess::Oversize => Err(git_diagnostic(
+            "git for-each-ref output exceeded the artifact cap".to_string(),
+        )),
+    }
+}
+
+/// Record-destined text renders repo-relative (contract clause, #730):
+/// the absolute root becomes `.` wherever the child echoed it.
+fn sanitize(text: &str, repo_root: &Path) -> String {
+    text.replace(&repo_root.display().to_string(), ".")
+}
+
+fn git_diagnostic(message: String) -> Box<Diagnostic> {
     Box::new(Diagnostic {
-        file: repo_root.to_path_buf(),
+        file: PathBuf::from(".git"),
         kind: "permission-or-io".to_string(),
         machine_token: "permission-or-io".to_string(),
         location: None,
         message,
+        // The empty action is the signal: no registered recovery exists
+        // for broken git; the text is the whole guidance.
         recovery_action: String::new(),
         recovery_text: String::new(),
     })

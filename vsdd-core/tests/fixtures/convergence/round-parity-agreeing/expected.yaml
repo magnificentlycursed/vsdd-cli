@@ -1,0 +1,11 @@
+# DRAFT ORACLE (fix pass, vsdd-cli #749) — awaiting operator adoption.
+# The NEGATIVE control for round parity: the manifest declares four
+# findings and the tracker holds four children — counts reconcile, no
+# kind files, and the answer is phase-3's work. Paired with
+# round-parity-violation so the corpus pins both directions of the
+# count-claimed-against-tracked comparison.
+phase: phase-3
+layer: 2
+next_action: 3-dispatch-review-round
+degraded: null
+integrity_findings: []

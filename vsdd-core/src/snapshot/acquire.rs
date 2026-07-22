@@ -1,25 +1,31 @@
 //! The effectful snapshot acquisition (the shell side of the purity
-//! split): builds the [`Snapshot`](super::Snapshot) from the chassis's
-//! query surface. One acquisition per invocation; the count-conduct
-//! instruments join at Layer 3.
+//! split): builds the [`Snapshot`](super::Snapshot) from crosslink's
+//! query surface via bounded, timed subprocess runs (vsdd-cli #751).
+//! One acquisition per invocation; the count-conduct instruments join
+//! at Layer 3.
 //!
 //! Absent and unusable are OUTCOMES carried in the snapshot, never
-//! errors: an unreachable chassis is the contracted normal offline
-//! mode, and the derivation degrades with the kind rather than this
-//! function failing.
+//! errors — and they are never swapped (vsdd-cli #747): only a binary
+//! missing from PATH is the offline shape; present-but-broken
+//! crosslink (spawn failure, timeout, oversize output, refused command,
+//! unparseable output) is the unusable outcome.
 //!
-//! Bootstrap scope, declared (vsdd-cli #741): milestones ride the
-//! chassis's list surface and the session fields its status JSON; the
+//! Bootstrap scope, declared (vsdd-cli #741): milestones ride
+//! crosslink's list surface and the session fields its status JSON; the
 //! tracker-join fields (findings, round manifests and children, comment
 //! handles) acquire EMPTY until their query consumers land with the
 //! parity and lifecycle gates (Layer 6) — the convergence corpus
 //! supplies those fields for the pure checks meanwhile. The milestone
-//! list is a human-format parse at bootstrap because the chassis
-//! exposes no JSON for it; the parse failing is the unusable outcome,
-//! never a guess.
+//! list is a human-format parse (no JSON surface exists upstream);
+//! output that fails the parse IS the unusable outcome, never a guess
+//! (vsdd-cli #748). DECLARED CONFLATION (vsdd-cli #753): the session
+//! status surface cannot distinguish no-active-session from a refusal
+//! at bootstrap — a refused session query renders the worded absence;
+//! the distinction lands when crosslink exposes it.
 
 use std::path::Path;
-use std::process::Command;
+
+use crate::subprocess::{run_bounded, Subprocess};
 
 use super::{AcquisitionOutcome, MilestoneState, Snapshot};
 
@@ -27,42 +33,53 @@ use super::{AcquisitionOutcome, MilestoneState, Snapshot};
 pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
     let repo_name = repo_root
         .file_name()
-        .map(|n| n.to_string_lossy().into_owned())
+        .map(|n| clean_for_display(&n.to_string_lossy()))
         .unwrap_or_else(|| "unnamed repo".to_string());
 
     if !repo_root.join(".crosslink").is_dir() {
         return empty(AcquisitionOutcome::Absent, repo_name);
     }
 
-    let milestone_lines = match chassis(repo_root, &["milestone", "list"]) {
-        ChassisResult::Ok(text) => text,
-        ChassisResult::Unreachable => return empty(AcquisitionOutcome::Absent, repo_name),
-        ChassisResult::Failed => return empty(AcquisitionOutcome::Unusable, repo_name),
+    let milestone_text = match run_bounded("crosslink", &["milestone", "list"], repo_root) {
+        Subprocess::Completed { stdout } => stdout,
+        Subprocess::NotFound => return empty(AcquisitionOutcome::Absent, repo_name),
+        // Broken, wedged, oversize, or refused: unusable, never offline.
+        _ => return empty(AcquisitionOutcome::Unusable, repo_name),
     };
-    let Some(milestones) = parse_milestones(&milestone_lines) else {
+    let Some(parsed) = parse_milestones(&milestone_text) else {
         return empty(AcquisitionOutcome::Unusable, repo_name);
     };
 
-    let (session, work_item) = match chassis(repo_root, &["session", "status", "--json"]) {
-        ChassisResult::Ok(text) => match parse_session(&text) {
-            Some(pair) => pair,
-            None => return empty(AcquisitionOutcome::Unusable, repo_name),
-        },
-        ChassisResult::Unreachable => return empty(AcquisitionOutcome::Absent, repo_name),
-        // A missing session is a worded absence, not a failure.
-        ChassisResult::Failed => ("no session".to_string(), "no work item".to_string()),
-    };
+    let (session, work_item) =
+        match run_bounded("crosslink", &["session", "status", "--json"], repo_root) {
+            Subprocess::Completed { stdout } => match parse_session(&stdout) {
+                Some(pair) => pair,
+                None => return empty(AcquisitionOutcome::Unusable, repo_name),
+            },
+            Subprocess::NotFound => return empty(AcquisitionOutcome::Absent, repo_name),
+            // The declared bootstrap conflation: a refused session query
+            // renders the worded absence (module doc; vsdd-cli #753).
+            Subprocess::Refused { .. } => ("no session".to_string(), "no work item".to_string()),
+            _ => return empty(AcquisitionOutcome::Unusable, repo_name),
+        };
 
-    let active_display = milestones
+    let active_display = parsed
         .iter()
         .rev()
-        .find(|m| m.is_active)
-        .map(|m| m.name.clone())
+        .find(|p| p.state.is_active)
+        .map(|p| match p.counts {
+            // The schema's precomputed gauge: the open-finding count
+            // scoped to the active milestone (vsdd-cli #748).
+            Some((closed, total)) => {
+                format!("{} ({} open)", p.state.name, total.saturating_sub(closed))
+            }
+            None => p.state.name.clone(),
+        })
         .unwrap_or_else(|| "no milestone".to_string());
 
     Snapshot {
         acquisition_outcome: AcquisitionOutcome::Acquired,
-        milestones,
+        milestones: parsed.into_iter().map(|p| p.state).collect(),
         findings: Vec::new(),
         round_manifests: Vec::new(),
         round_children: Vec::new(),
@@ -74,55 +91,75 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
     }
 }
 
-enum ChassisResult {
-    Ok(String),
-    /// The binary is not runnable: the offline shape.
-    Unreachable,
-    /// The binary ran and refused: a store problem, not an absence.
-    Failed,
-}
-
-fn chassis(repo_root: &Path, args: &[&str]) -> ChassisResult {
-    match Command::new("crosslink")
-        .current_dir(repo_root)
-        .args(args)
-        .output()
-    {
-        Err(_) => ChassisResult::Unreachable,
-        Ok(out) if !out.status.success() => ChassisResult::Failed,
-        Ok(out) => ChassisResult::Ok(String::from_utf8_lossy(&out.stdout).into_owned()),
-    }
-}
-
 /// The list surface's line shape: `#5   [ ] name (1/2)` — `[✓]` closed.
-/// Any non-empty line that does not parse makes the whole read unusable.
-fn parse_milestones(text: &str) -> Option<Vec<MilestoneState>> {
+///
+/// Fail-loud discipline (vsdd-cli #748): output containing non-empty
+/// lines but ZERO parseable milestone lines is `None` — whole-format
+/// drift becomes the unusable outcome, never an empty success. The
+/// count suffix strips only when it matches the exact `(N/M)` digit
+/// shape, so a name legitimately ending in a parenthetical survives.
+struct ParsedMilestone {
+    state: MilestoneState,
+    /// `(closed, total)` from the `(N/M)` suffix when present.
+    counts: Option<(u64, u64)>,
+}
+
+fn parse_milestones(text: &str) -> Option<Vec<ParsedMilestone>> {
     let mut out = Vec::new();
+    let mut content_lines = 0usize;
     for line in text.lines() {
         let line = line.trim();
-        if line.is_empty() || !line.starts_with('#') {
+        if line.is_empty() {
+            continue;
+        }
+        content_lines += 1;
+        if !line.starts_with('#') {
             continue;
         }
         let open_bracket = line.find('[')?;
         let close_bracket = line.find(']')?;
         let closed = line.get(open_bracket + 1..close_bracket)? != " ";
         let rest = line.get(close_bracket + 1..)?.trim();
-        let name = match rest.rfind(" (") {
-            Some(cut) if rest.ends_with(')') => rest[..cut].trim(),
-            _ => rest,
-        };
+        let (name, counts) = split_count_suffix(rest);
         if name.is_empty() {
             return None;
         }
-        out.push(MilestoneState {
-            name: name.to_string(),
-            state: if closed { "closed" } else { "open" }.to_string(),
-            // Bootstrap: open reads as active; the chassis's own active
-            // concept deepens this when it surfaces one.
-            is_active: !closed,
+        out.push(ParsedMilestone {
+            state: MilestoneState {
+                name: clean_for_display(name),
+                state: if closed { "closed" } else { "open" }.to_string(),
+                // Bootstrap: open reads as active; crosslink's own
+                // active concept deepens this when it surfaces one.
+                is_active: !closed,
+            },
+            counts,
         });
     }
+    if content_lines > 0 && out.is_empty() {
+        return None;
+    }
     Some(out)
+}
+
+/// Strip a trailing ` (N/M)` count suffix exactly; anything else —
+/// including a name ending in a parenthetical phrase — stays intact.
+fn split_count_suffix(rest: &str) -> (&str, Option<(u64, u64)>) {
+    if let Some(cut) = rest.rfind(" (") {
+        if let Some(inner) = rest[cut + 2..].strip_suffix(')') {
+            if let Some((closed, total)) = inner.split_once('/') {
+                if !closed.is_empty()
+                    && !total.is_empty()
+                    && closed.bytes().all(|b| b.is_ascii_digit())
+                    && total.bytes().all(|b| b.is_ascii_digit())
+                {
+                    if let (Ok(c), Ok(t)) = (closed.parse(), total.parse()) {
+                        return (rest[..cut].trim_end(), Some((c, t)));
+                    }
+                }
+            }
+        }
+    }
+    (rest, None)
 }
 
 fn parse_session(text: &str) -> Option<(String, String)> {
@@ -137,10 +174,16 @@ fn parse_session(text: &str) -> Option<(String, String)> {
         .and_then(|w| {
             let id = w.get("display_id")?.as_str()?;
             let title = w.get("title")?.as_str()?;
-            Some(format!("{id} {title}"))
+            Some(clean_for_display(&format!("{id} {title}")))
         })
         .unwrap_or_else(|| "no work item".to_string());
     Some((session, work_item))
+}
+
+/// Terminal-destined strings drop control characters at the boundary
+/// (vsdd-cli #754): crosslink output is data, never terminal input.
+fn clean_for_display(s: &str) -> String {
+    s.chars().filter(|c| !c.is_control()).collect()
 }
 
 fn empty(outcome: AcquisitionOutcome, repo_name: String) -> Snapshot {

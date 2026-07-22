@@ -10,10 +10,14 @@
 //!   (`1a-author-behavioral-spec`) — the work, not the ceremony (operator
 //!   amendment 2026-07-22 on vsdd-cli #665).
 //! - phase-1a/1b/1c: the phase's authoring action.
-//! - phase-2a: `2a-author-red-gate-tests` until the layer's red-gate fail
-//!   record appears in `last_gate_result`; then `close-phase`.
+//! - A gate record satisfies an arm when it matches on kind, outcome,
+//!   layer, AND phase — uniformly across the 2a, 2b, and 2c arms
+//!   (operator amendment 2026-07-22 on vsdd-cli #738): a stale record
+//!   from another phase of the same layer never advances the answer.
+//! - phase-2a: `2a-author-red-gate-tests` until this phase's red-gate
+//!   fail record appears in `last_gate_result`; then `close-phase`.
 //! - phase-2b: `2b-implement-to-green` while the red record stands;
-//!   `close-phase` once this layer's green-gate pass is recorded.
+//!   `close-phase` once this phase's green-gate pass is recorded.
 //! - phase-2c: `2c-refactor`; `enter-next-phase` once this phase's
 //!   phase-exit-gate pass is recorded.
 //! - phase-3: `3-dispatch-review-round`. phase-4: `4-route-findings`.
@@ -51,20 +55,18 @@ pub fn derive_phase_answer(
     };
 
     let token = next_action_token(state);
-    // The vocabulary stays authoritative at runtime: the token resolves
-    // through the loaded set when present, and the membership test pins
-    // drift red either way.
-    let next_action = actions
-        .action_vocabulary
-        .iter()
-        .find(|a| a.id == token)
-        .map(|a| a.id.clone())
-        .unwrap_or_else(|| token.to_string());
+    // Every emitted token is a registered vocabulary member; the release
+    // pin is the membership test over the full emission set — this
+    // assert catches a drifted registry in development runs.
+    debug_assert!(
+        actions.action_vocabulary.iter().any(|a| a.id == token),
+        "next-action token `{token}` is not in the loaded action vocabulary"
+    );
 
     PhaseAnswer {
         phase: state.current_phase.clone(),
         layer: state.current_layer,
-        next_action,
+        next_action: token.to_string(),
         active_composition: state.active_composition.clone(),
         degraded,
         integrity_findings,
@@ -80,9 +82,15 @@ fn next_action_token(state: &State) -> &'static str {
         return "1a-author-behavioral-spec";
     };
     let gate = state.last_gate_result.as_ref();
-    let gate_at_layer = |kind: GateKind, outcome: GateOutcome| {
+    // The uniform conjunct (operator amendment, vsdd-cli #738): a gate
+    // record satisfies an arm only when kind, outcome, layer, and phase
+    // ALL match the state's own position.
+    let gate_matches = |kind: GateKind, outcome: GateOutcome| {
         gate.is_some_and(|g| {
-            g.gate == kind && g.result == outcome && state.current_layer == Some(g.layer)
+            g.gate == kind
+                && g.result == outcome
+                && g.phase == phase
+                && state.current_layer == Some(g.layer)
         })
     };
     match phase {
@@ -90,27 +98,21 @@ fn next_action_token(state: &State) -> &'static str {
         "phase-1b" => "1b-author-verification-architecture",
         "phase-1c" => "1c-author-decomposition",
         "phase-2a" => {
-            if gate_at_layer(GateKind::RedGate, GateOutcome::Fail) {
+            if gate_matches(GateKind::RedGate, GateOutcome::Fail) {
                 "close-phase"
             } else {
                 "2a-author-red-gate-tests"
             }
         }
         "phase-2b" => {
-            if gate_at_layer(GateKind::GreenGate, GateOutcome::Pass) {
+            if gate_matches(GateKind::GreenGate, GateOutcome::Pass) {
                 "close-phase"
             } else {
                 "2b-implement-to-green"
             }
         }
         "phase-2c" => {
-            let exited = gate.is_some_and(|g| {
-                g.gate == GateKind::PhaseExitGate
-                    && g.result == GateOutcome::Pass
-                    && g.phase == "phase-2c"
-                    && state.current_layer == Some(g.layer)
-            });
-            if exited {
+            if gate_matches(GateKind::PhaseExitGate, GateOutcome::Pass) {
                 "enter-next-phase"
             } else {
                 "2c-refactor"

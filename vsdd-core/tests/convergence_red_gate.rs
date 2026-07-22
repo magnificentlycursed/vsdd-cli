@@ -2,11 +2,13 @@
 //! convergence corpus (vsdd-cli #738).
 //!
 //! Phase 2a suite: fails executed against the pre-implementation stubs;
-//! 2b turns it green. The fixtures' expected answers are DRAFT ORACLES —
-//! agent-drafted reference answers awaiting operator adoption (The
-//! operator authors the oracle); the runner compares every field by
-//! exact match and integrity findings at the kind-set grain, exactly
-//! the Convergence test's comparison.
+//! 2b turns it green. Eleven fixtures carry OPERATOR-ADOPTED oracles
+//! (adoption 2026-07-22 on vsdd-cli #738); the four fix-pass additions
+//! (vsdd-cli #749: the three integrity-kind positives and the
+//! round-parity negative control) are DRAFT ORACLES awaiting adoption,
+//! marked so in their rationale comments. The runner compares every
+//! field by exact match and integrity findings at the kind-set grain,
+//! exactly the Convergence test's comparison.
 
 use std::collections::BTreeSet;
 use std::fs;
@@ -83,6 +85,12 @@ fn every_corpus_fixture_matches_its_reference_answer() {
             "{name}: next action, exact match against the vocabulary"
         );
         assert_eq!(answer.degraded, expected.degraded, "{name}: degraded kind");
+        // The composition passes through untouched — the answer echoes
+        // the state's own record, never a recomputation (vsdd-cli #749).
+        assert_eq!(
+            answer.active_composition, state.active_composition,
+            "{name}: the active composition is the state's, verbatim"
+        );
         let got: BTreeSet<_> = answer.integrity_findings.iter().collect();
         let want: BTreeSet<_> = expected.integrity_findings.iter().collect();
         assert_eq!(
@@ -91,19 +99,27 @@ fn every_corpus_fixture_matches_its_reference_answer() {
         );
         ran += 1;
     }
-    assert!(
-        ran >= 10,
-        "the corpus holds at least ten fixtures; ran {ran}"
-    );
+    // Exact, not at-least (vsdd-cli #749): a silently skipped fixture
+    // directory would otherwise read as coverage.
+    assert_eq!(ran, 15, "the corpus holds exactly its fifteen fixtures");
 }
 
 #[test]
 fn the_derivation_is_deterministic() {
+    // Over the WHOLE corpus (vsdd-cli #749), not one convenient member:
+    // determinism is a property of the derivation, not of a fixture.
     let acts = actions();
-    let (state, snapshot, _) = load_fixture("2a-authoring");
-    let first = derive_phase_answer(&state, &snapshot, &acts);
-    let second = derive_phase_answer(&state, &snapshot, &acts);
-    assert_eq!(first, second, "identical inputs, identical answer");
+    for entry in fs::read_dir(corpus_dir()).unwrap() {
+        let dir = entry.unwrap().path();
+        if !dir.is_dir() {
+            continue;
+        }
+        let name = dir.file_name().unwrap().to_string_lossy().into_owned();
+        let (state, snapshot, _) = load_fixture(&name);
+        let first = derive_phase_answer(&state, &snapshot, &acts);
+        let second = derive_phase_answer(&state, &snapshot, &acts);
+        assert_eq!(first, second, "{name}: identical inputs, identical answer");
+    }
 }
 
 #[test]

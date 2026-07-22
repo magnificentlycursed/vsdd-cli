@@ -30,6 +30,7 @@ pub mod integrity_shell;
 pub mod registry;
 pub mod snapshot;
 pub mod state;
+pub(crate) mod subprocess;
 
 pub use bounded_read::MAX_ARTIFACT_BYTES;
 

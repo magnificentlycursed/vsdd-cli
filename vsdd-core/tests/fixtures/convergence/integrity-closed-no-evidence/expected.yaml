@@ -1,0 +1,12 @@
+# DRAFT ORACLE (fix pass, vsdd-cli #749) — awaiting operator adoption.
+# A CLOSED finding carrying neither an evidence reference nor a
+# recorded disposition is an unlawful closure (contract: Finding
+# lifecycle — closures carry evidence or a disposition). The sibling
+# closed by disposition alone is lawful and files nothing: the check
+# fires on the conjunction, not on missing evidence alone.
+phase: phase-5
+layer: 2
+next_action: 5-run-hardening
+degraded: null
+integrity_findings:
+  - closed-findings-missing-evidence

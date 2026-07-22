@@ -1,0 +1,12 @@
+# DRAFT ORACLE (fix pass, vsdd-cli #749) — awaiting operator adoption.
+# An OPEN finding with neither owner nor validator is the contract's
+# lifecycle falsifier ("a finding without an owner"): the kind files
+# and the answer stays phase-4's work — integrity findings report,
+# never steer. The owned sibling shows the check keys on the gap, not
+# on openness itself.
+phase: phase-4
+layer: 2
+next_action: 4-route-findings
+degraded: null
+integrity_findings:
+  - findings-missing-owner-or-validator
