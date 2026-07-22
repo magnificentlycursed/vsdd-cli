@@ -21,6 +21,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Execute the vsdd half of the core removal: drop the mdatron-core library seam — in-crate schema shim, conformance tests ride the mdatron binary (the #739 workspace marker; mdatron #81 collapsed the workspace upstream) (#764)
+- Layer 2 round 2 minor collector DE: the manifest gloss overstates exists-and-referenced verification; the open-count gauge is an undeclared bootstrap conflation (#763)
+- Layer 2 round 2 minor collector QE+security: untested pure halves and the env guard — milestone parse and count-strip, the glob length guard, empty-string HOME (#762)
+- Layer 2 round 2 minor SE: the local ref query's refname:short renders heads/<name> on a branch-tag name collision — a false off-grammar finding (plausible, pending reproduction) (#761)
+- Layer 2 round 2 minor SE+security+DE triple-convergent: stderr truncates before the absolute-root sanitize — a cut mid-path leaks a partial user-absolute path into a record-destined diagnostic; sanitize also misses the canonical and home forms (#760)
+- Layer 2 round 2 major QE+DE: the three integrity draft fixtures' sibling controls cannot discriminate at the kind-set grain — rationale overstates; plus the missing-owner fixture's incoherent (0 open) gauge (#759)
+- Layer 2 round 2 major QE: the #738 uniform gate conjunct has no falsifier — dropping the phase or layer match leaves all 90 tests green (#758)
+- Layer 2 round 2 major QE: the #750 pin is one-directional — reverting the #746 inconclusive branch to silent pass survives the whole suite (#757)
+- Layer 2 round 2 major SE+security convergent: run_bounded's residual unbounded and silent paths — descendant-held pipe defeats the deadline at join; try_wait error leaves the child running; reader failure degrades to silent truncated Completed (#756)
 - Layer 2 round 1 minor collector: shell trust posture and diagnostics (#754)
 - Layer 2 round 1 minor collector: acquisition and derivation honesty (#753)
 - Layer 2 round 1 major SE+DE: remote-tracking ref stripping hardcodes origin against the declared remote-name-generic rule (#752)
