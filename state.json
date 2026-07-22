@@ -10280,11 +10280,12 @@
       "uuid": "7490ad19-8b20-4105-970b-6d7dbb41f4bd",
       "display_id": 765,
       "title": "Phase 3 execution, Layer 2: round 3 — verify the round-2 fixes, re-decide the stop",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T18:49:22.232263Z",
-      "updated_at": "2026-07-22T20:21:40.337002Z",
+      "updated_at": "2026-07-22T20:21:46.176800Z",
+      "closed_at": "2026-07-22T20:21:46.176778Z",
       "comments": {
         "14115c28-18a8-462e-bfe2-7977d8aaaf28": {
           "display_id": 1000,
@@ -22795,11 +22796,16 @@
       "agent_id": "xqjG",
       "agent_seq": 300,
       "timestamp": "2026-07-22T20:21:40.337002Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 301,
+      "timestamp": "2026-07-22T20:21:46.176800Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T20:21:40.337002Z",
+    "timestamp": "2026-07-22T20:21:46.176800Z",
     "agent_id": "xqjG",
-    "agent_seq": 300
+    "agent_seq": 301
   }
 }
