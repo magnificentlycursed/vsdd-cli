@@ -1,5 +1,5 @@
 {
-  "next_display_id": 747,
+  "next_display_id": 748,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -582,6 +582,7 @@
     "c70e6660-6189-4272-aff4-fda5b10b1c48": 149,
     "c7f121d1-e484-4071-8e5a-7ff5f5652874": 395,
     "c7f3934a-9045-49e2-99e9-d428f733ee51": 707,
+    "c843dfa9-1afc-423f-8330-fe1e813a0adf": 747,
     "c862ee6b-13be-47b7-8f7b-9422839026f5": 323,
     "c881dc5a-23e0-4be8-b1d5-ceebe409c0d2": 738,
     "c8c3d322-7ce4-4482-9261-621f4a07a1e3": 332,
@@ -16601,6 +16602,18 @@
         }
       }
     },
+    "c843dfa9-1afc-423f-8330-fe1e813a0adf": {
+      "uuid": "c843dfa9-1afc-423f-8330-fe1e813a0adf",
+      "display_id": 747,
+      "title": "l2r1 major SE: every Command spawn error maps to Unreachable, swapping the degraded kind",
+      "description": "acquire.rs:91 — Err(_) => Unreachable => Absent (offline). But PermissionDenied (exec bit lost), spawn-resource failures, a nonexistent current_dir are NOT offline; a chmod-broken chassis reports tracker-absent forever instead of tracker-unusable — defeating degraded-kinds-are-never-swapped upstream of the derivation the fixtures pin. Disposition: match e.kind(): only NotFound is Unreachable, every other spawn error is Failed/unusable. Owner: software-engineer. Validator: security.",
+      "status": "open",
+      "priority": "high",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:00:49.430446Z",
+      "updated_at": "2026-07-22T17:00:49.430446Z"
+    },
     "c862ee6b-13be-47b7-8f7b-9422839026f5": {
       "uuid": "c862ee6b-13be-47b7-8f7b-9422839026f5",
       "display_id": 323,
@@ -21216,11 +21229,16 @@
       "agent_id": "xqjG",
       "agent_seq": 140,
       "timestamp": "2026-07-22T17:00:41.909927Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 141,
+      "timestamp": "2026-07-22T17:00:49.430446Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:00:41.909927Z",
+    "timestamp": "2026-07-22T17:00:49.430446Z",
     "agent_id": "xqjG",
-    "agent_seq": 140
+    "agent_seq": 141
   }
 }
