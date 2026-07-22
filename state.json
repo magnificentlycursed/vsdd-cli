@@ -1,6 +1,6 @@
 {
   "next_display_id": 765,
-  "next_comment_id": 993,
+  "next_comment_id": 994,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7624,7 +7624,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-22T18:00:10.950740Z",
-      "updated_at": "2026-07-22T18:00:10.950740Z"
+      "updated_at": "2026-07-22T18:46:07.012348Z",
+      "comments": {
+        "76e86254-e0c8-451b-a79b-2b5041e8a6a4": {
+          "display_id": 993,
+          "author": "xqjG",
+          "content": "Fixed in a49206fe (producer half) and 74b01866-adjacent refs.rs changes: run_bounded returns Refused stderr WHOLE up to the 4KiB capture bound; the diagnostic site sanitizes first and truncates to 500 chars after, so a cut can no longer bisect a path out of the exact-match replace. Sanitize now folds the given AND canonicalized root spellings to '.' (the darwin /private alias) and renders a non-empty HOME prefix as '~', root replacements ordered before the home one.",
+          "created_at": "2026-07-22T18:46:06.999850Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAMM6nJNRZfTMSpLxCFpsUTFpT+9KNIXWrTCztn0WQPttaVXW7m2U6w8WsJbMwP1DWQ9tfa01rNKUtaqqT6XYFDA=="
+        }
+      }
     },
     "5652e105-d0cb-464e-ad59-ec9d5e7420f5": {
       "uuid": "5652e105-d0cb-464e-ad59-ec9d5e7420f5",
@@ -22190,11 +22201,16 @@
       "agent_id": "xqjG",
       "agent_seq": 239,
       "timestamp": "2026-07-22T18:46:01.292619Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 240,
+      "timestamp": "2026-07-22T18:46:07.012348Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:46:01.292619Z",
+    "timestamp": "2026-07-22T18:46:07.012348Z",
     "agent_id": "xqjG",
-    "agent_seq": 239
+    "agent_seq": 240
   }
 }
