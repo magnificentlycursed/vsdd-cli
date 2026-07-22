@@ -1,6 +1,6 @@
 {
   "next_display_id": 756,
-  "next_comment_id": 987,
+  "next_comment_id": 988,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -17945,7 +17945,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:44:36.642835Z",
-      "updated_at": "2026-07-22T17:44:36.642835Z"
+      "updated_at": "2026-07-22T17:45:05.262201Z",
+      "comments": {
+        "de9f600d-23d4-41cc-be4d-bc89e1ff1135": {
+          "display_id": 987,
+          "author": "xqjG",
+          "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: operator continuation 2026-07-22. vehicle: the Workflow orchestration surface, attended side. round shape: VERIFY — each lens adversarially verifies the nine round-1 fixes (d84109f5) in its scope, tries to refute each fix claim, and sweeps the changed surfaces for regressions and new defects; the round's output re-decides the stop. domains, same four as round 1 (the fixes land on the same surfaces): software-engineer (the uniform gate conjunct, the acquisition rework, the ref normalizer, the subprocess loop), security (the bounded runner's cap/deadline/kill semantics, stderr truncation, path sanitization, PATH posture, HOME handling), quality-engineer (falsifiability of the reworked suites — the temp-tree positive's pin, corpus exactness at 15, determinism-over-all, the four draft fixtures' assertions), data-engineer (fixture shapes against the snapshot-schema mirror, resolution-vocabulary semantics per #746, the corpus rationale comments against contract text). MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH (the pass's deepest new surfaces — a new subprocess module and a reworked shell tier; high's catch record stands), quality-engineer and data-engineer MEDIUM. expected_cost_band: the verify-round band — 0-15 findings pre-dedup, 100k-250k downstream tokens (narrower than round 1's discovery posture; round 1 observed 243,445 at the same lens set). inputs: the tree at 9bdc3824 (d84109f5 fix pass + changelog mirror), the nine closed children #746-#754 with their result records, the #745 completion record. returned + telemetry recorded here after.",
+          "created_at": "2026-07-22T17:45:05.248118Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAH1F191L7m7d4GKINtAl+a42+hkU85VeBFhk5xJKNqI/kQ4TSFIRKZt3YOi7EdjFOhHHdAZoSUikbdPQkjhptAQ=="
+        }
+      }
     },
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": {
       "uuid": "d4aa93ed-6d27-477b-9d9a-0f45f5309bff",
@@ -21843,11 +21854,16 @@
       "agent_id": "xqjG",
       "agent_seq": 207,
       "timestamp": "2026-07-22T17:44:43.551022Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 208,
+      "timestamp": "2026-07-22T17:45:05.262201Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:44:43.551022Z",
+    "timestamp": "2026-07-22T17:45:05.262201Z",
     "agent_id": "xqjG",
-    "agent_seq": 207
+    "agent_seq": 208
   }
 }
