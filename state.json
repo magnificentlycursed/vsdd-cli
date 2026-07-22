@@ -21767,8 +21767,9 @@
       "uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
       "display_id": 5,
       "name": "layer 2: snapshot acquisition, phase answer, and corroboration",
-      "status": "open",
-      "created_at": "2026-07-21T20:26:18.085454Z"
+      "status": "closed",
+      "created_at": "2026-07-21T20:26:18.085454Z",
+      "closed_at": "2026-07-22T20:22:15.360449Z"
     },
     "4b3414f7-aace-4baf-a4e5-624b7dff8c4e": {
       "uuid": "4b3414f7-aace-4baf-a4e5-624b7dff8c4e",
@@ -22823,11 +22824,16 @@
       "agent_id": "xqjG",
       "agent_seq": 305,
       "timestamp": "2026-07-22T20:22:09.422637Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 306,
+      "timestamp": "2026-07-22T20:22:15.360461Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T20:22:09.422637Z",
+    "timestamp": "2026-07-22T20:22:15.360461Z",
     "agent_id": "xqjG",
-    "agent_seq": 305
+    "agent_seq": 306
   }
 }
