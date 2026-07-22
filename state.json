@@ -1,6 +1,6 @@
 {
   "next_display_id": 755,
-  "next_comment_id": 979,
+  "next_comment_id": 980,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12446,10 +12446,21 @@
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:01:10.549278Z",
-      "updated_at": "2026-07-22T17:01:15.538522Z",
+      "updated_at": "2026-07-22T17:32:43.890764Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "659cc58b-76ce-4caa-8fcb-1743046f047e": {
+          "display_id": 979,
+          "author": "xqjG",
+          "content": "Fixed in d84109f5: parse_milestones is fail-loud — output with content lines but zero parseable milestone lines returns None and the acquisition reports Unusable, never an empty success; the count suffix strips only the exact (N/M) digit shape so a name ending in a real parenthetical survives; the active-milestone display carries the open-count gauge (total minus closed, saturating).",
+          "created_at": "2026-07-22T17:32:43.874373Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAduDeqxlFbseQmvzqBtrxHI2SOJ7o6rhRc/i08oVR85gnFUuR1m83OmEkw9q0CewkvCdxq/UUfyuaONKmAV1vCg=="
+        }
+      }
     },
     "918beab2-ce1a-42d3-9704-44e67df0eeb5": {
       "uuid": "918beab2-ce1a-42d3-9704-44e67df0eeb5",
@@ -21600,11 +21611,16 @@
       "agent_id": "xqjG",
       "agent_seq": 174,
       "timestamp": "2026-07-22T17:32:37.851395Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 175,
+      "timestamp": "2026-07-22T17:32:43.890764Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:32:37.851395Z",
+    "timestamp": "2026-07-22T17:32:43.890764Z",
     "agent_id": "xqjG",
-    "agent_seq": 174
+    "agent_seq": 175
   }
 }
