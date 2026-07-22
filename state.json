@@ -1,6 +1,6 @@
 {
   "next_display_id": 765,
-  "next_comment_id": 991,
+  "next_comment_id": 992,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18066,7 +18066,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:59:40.146027Z",
-      "updated_at": "2026-07-22T17:59:40.146027Z"
+      "updated_at": "2026-07-22T18:45:32.280367Z",
+      "comments": {
+        "5f711ea7-fa4d-427d-9018-61ace795da2c": {
+          "display_id": 991,
+          "author": "xqjG",
+          "content": "Fixed in a49206fe: two stale-gate fixtures land as DRAFT oracles — stale-gate-prior-phase (phase-2c with the prior phase's exit-gate pass standing, the record shape every transition manufactures; expects 2c-refactor) falsifies the phase conjunct, and stale-gate-prior-layer (phase-2a with last layer's red-gate fail; expects 2a-author-red-gate-tests) falsifies the layer conjunct. Both reproduce against the implementation first pass — the #738 amendment now has executable falsifiers.",
+          "created_at": "2026-07-22T18:45:32.266986Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAV9jlgjBELAzI9UL0dvfvNPPKyTDFwMZ6NE6yw2Ln8uXXSWaYrdCvu0pcUZyFNPYfegOwrlwrD0xDHhbEQwU4Cg=="
+        }
+      }
     },
     "d3ad54d7-b083-4b22-9c7f-a665964f4b38": {
       "uuid": "d3ad54d7-b083-4b22-9c7f-a665964f4b38",
@@ -22144,11 +22155,16 @@
       "agent_id": "xqjG",
       "agent_seq": 233,
       "timestamp": "2026-07-22T18:45:26.651177Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 234,
+      "timestamp": "2026-07-22T18:45:32.280367Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:45:26.651177Z",
+    "timestamp": "2026-07-22T18:45:32.280367Z",
     "agent_id": "xqjG",
-    "agent_seq": 233
+    "agent_seq": 234
   }
 }
