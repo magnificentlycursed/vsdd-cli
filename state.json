@@ -1,5 +1,5 @@
 {
-  "next_display_id": 767,
+  "next_display_id": 768,
   "next_comment_id": 1000,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -181,6 +181,7 @@
     "392d2d5f-05f9-449b-898a-3d2139c9986e": 197,
     "3a14f948-1a84-4afd-9b6c-e96967192dd3": 740,
     "3a58a3bb-2ba3-41e9-a0c2-006ab4011322": 291,
+    "3a8208e4-8ce7-442b-8c7c-3b9958681eba": 767,
     "3aeb90b7-e5b2-4326-9bf8-d845439a7a34": 567,
     "3c30da43-96cf-4869-b9b6-5999810abc1e": 181,
     "3c6233b4-4183-4f10-8f40-3e26adf50855": 224,
@@ -5531,6 +5532,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAWW4XkxdfGTWdKqLvz56jrOQNSUHiwOd1FHh/640MjMHvU7GhBdMx4uyGPF3iUAZhK2KHT5eHSwITPJqWA40UBQ=="
         }
       }
+    },
+    "3a8208e4-8ce7-442b-8c7c-3b9958681eba": {
+      "uuid": "3a8208e4-8ce7-442b-8c7c-3b9958681eba",
+      "display_id": 767,
+      "title": "Layer 2 round 3 minor, all-four-lenses convergent: refs.rs sanitize folds degenerate HOME spellings (a space, a bare slash) and garbles record-destined diagnostics — reuse the trimmed-non-empty rule",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T19:04:25.473244Z",
+      "updated_at": "2026-07-22T19:04:25.473244Z"
     },
     "3aeb90b7-e5b2-4326-9bf8-d845439a7a34": {
       "uuid": "3aeb90b7-e5b2-4326-9bf8-d845439a7a34",
@@ -22385,11 +22396,16 @@
       "agent_id": "xqjG",
       "agent_seq": 260,
       "timestamp": "2026-07-22T19:04:17.562279Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 261,
+      "timestamp": "2026-07-22T19:04:25.473244Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:04:17.562279Z",
+    "timestamp": "2026-07-22T19:04:25.473244Z",
     "agent_id": "xqjG",
-    "agent_seq": 260
+    "agent_seq": 261
   }
 }
