@@ -1,6 +1,6 @@
 {
   "next_display_id": 755,
-  "next_comment_id": 977,
+  "next_comment_id": 978,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18259,10 +18259,21 @@
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:00:27.921869Z",
-      "updated_at": "2026-07-22T17:00:33.267552Z",
+      "updated_at": "2026-07-22T17:32:05.434887Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "e9c4760c-1ff9-4e77-927c-9150bcefe374": {
+          "display_id": 977,
+          "author": "xqjG",
+          "content": "Fixed in d84109f5: exists-and-referenced presence now reports inconclusive scoped to the unverified referenced-by half (absence still fails loudly) — presence never silently upgrades to the full claim; glob matching gained the prefix/suffix length guard against overlap on short names; a home-anchored path with HOME unset is inconclusive, never a fabricated in-repo miss. The temp-tree positive pins the inconclusive set.",
+          "created_at": "2026-07-22T17:32:05.416010Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXayRDIpzP8QZbbHMiqZw0dOJ11Y6LLBTotJqW732jdAxwAqlEfWQZkIBywPO2ZMc/P2MwEB468kV/lWnRn2XBw=="
+        }
+      }
     },
     "daedbd11-9d51-4bf6-a214-acf8ec6386c4": {
       "uuid": "daedbd11-9d51-4bf6-a214-acf8ec6386c4",
@@ -21554,11 +21565,16 @@
       "agent_id": "xqjG",
       "agent_seq": 168,
       "timestamp": "2026-07-22T17:26:48.726135Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 169,
+      "timestamp": "2026-07-22T17:32:05.434887Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:26:48.726135Z",
+    "timestamp": "2026-07-22T17:32:05.434887Z",
     "agent_id": "xqjG",
-    "agent_seq": 168
+    "agent_seq": 169
   }
 }
