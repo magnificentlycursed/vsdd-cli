@@ -5547,11 +5547,12 @@
       "uuid": "3a8208e4-8ce7-442b-8c7c-3b9958681eba",
       "display_id": 767,
       "title": "Layer 2 round 3 minor, all-four-lenses convergent: refs.rs sanitize folds degenerate HOME spellings (a space, a bare slash) and garbles record-destined diagnostics — reuse the trimmed-non-empty rule",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:04:25.473244Z",
-      "updated_at": "2026-07-22T19:08:15.165993Z",
+      "updated_at": "2026-07-22T19:08:21.049169Z",
+      "closed_at": "2026-07-22T19:08:21.049157Z",
       "comments": {
         "c4c33cc6-af1c-4604-86eb-80734ad721ab": {
           "display_id": 1003,
@@ -22527,11 +22528,16 @@
       "agent_id": "xqjG",
       "agent_seq": 272,
       "timestamp": "2026-07-22T19:08:15.165993Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 273,
+      "timestamp": "2026-07-22T19:08:21.049169Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:08:15.165993Z",
+    "timestamp": "2026-07-22T19:08:21.049169Z",
     "agent_id": "xqjG",
-    "agent_seq": 272
+    "agent_seq": 273
   }
 }
