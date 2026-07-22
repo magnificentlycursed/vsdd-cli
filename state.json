@@ -18305,11 +18305,12 @@
       "uuid": "d4e2836b-aa4a-4599-a0b0-84509a848b26",
       "display_id": 771,
       "title": "Layer 2 round 4 residue collector: the byte-length home-fold floor and the init suite's temp pattern — recorded and routed, not gating",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:17:33.835619Z",
-      "updated_at": "2026-07-22T19:18:04.188154Z",
+      "updated_at": "2026-07-22T19:18:10.270045Z",
+      "closed_at": "2026-07-22T19:18:10.270035Z",
       "comments": {
         "714b39ab-63c7-42e8-b841-e53a4bcf5bef": {
           "display_id": 1009,
@@ -22690,11 +22691,16 @@
       "agent_id": "xqjG",
       "agent_seq": 288,
       "timestamp": "2026-07-22T19:18:04.188154Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 289,
+      "timestamp": "2026-07-22T19:18:10.270045Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:18:04.188154Z",
+    "timestamp": "2026-07-22T19:18:10.270045Z",
     "agent_id": "xqjG",
-    "agent_seq": 288
+    "agent_seq": 289
   }
 }
