@@ -1,6 +1,6 @@
 {
   "next_display_id": 744,
-  "next_comment_id": 968,
+  "next_comment_id": 969,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -16002,12 +16002,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T15:07:58.816925Z",
-      "updated_at": "2026-07-22T15:08:16.245437Z",
+      "updated_at": "2026-07-22T16:46:34.421319Z",
       "labels": [
         "feature"
       ],
       "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
       "comments": {
+        "0f9f10ba-f23f-4ff7-871f-f71e65005162": {
+          "display_id": 968,
+          "author": "xqjG",
+          "content": "PHASE-2B EXIT, LAYER 2 (2026-07-22): suite green at 159d5a5d with both gate halves recorded on this trail; no unasserted behavior beyond the declared bootstrap scope; the regex dependency PE-noted; prose surfaces current. Exit mechanical under the autonomous-continuation conduct. Closing; 2c opens.",
+          "created_at": "2026-07-22T16:46:34.406435Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxmwW2wt7e3w0TiBWqkDuhIm23+OSYp2Rd/rIriAz4Bl4T+mRdDWyjajuMiyxmHBenw29mJo2ghaSCAspxB2fDg=="
+        },
         "6adb6950-7517-4372-975c-9719fea6b0a1": {
           "author": "xqjG",
           "content": "GREEN GATE RECORDED: commit above — RED at the re-stamped baselines (the failing runs on the #738 trail), GREEN at HEAD: cargo test --workspace exit zero, convergence 6/6 reproducing all eleven adopted answers, shell 7/7, 96 tests total, clippy zero, verify clean. Honest corrections and residues on the record: (1) the red run's convergence panics were partly fixture-loader parse failures (a generator bug concatenating empty-collection lines, repaired) rather than todo stubs — executed failures either way, the gate's validity unaffected, the earlier record's 'panic kind against the todo stubs' phrasing imprecise for five tests; (2) acquisition bootstrap scope DECLARED: tracker-join fields (findings, rounds, comments) acquire empty until their query consumers land with Layer 6's parity and lifecycle gates — the corpus supplies those fields for the pure checks; the milestone read is a human-format parse (no JSON surface exists; the chassis gap is an upstream candidate) whose parse failure maps to the unusable outcome, never a guess; (3) no todo survives (the divergence note's tripwire clears); the effectful acquisition and git listing carry no red-gate pins by the shell-integration rule — their conduct instruments land at Layer 3 per the verification architecture. NEXT per the sequence: 2c survey, then the layer's adversarial rounds.",
@@ -21015,11 +21024,16 @@
       "agent_id": "xqjG",
       "agent_seq": 120,
       "timestamp": "2026-07-22T16:34:12.306989Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 121,
+      "timestamp": "2026-07-22T16:46:34.421319Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T16:34:12.306989Z",
+    "timestamp": "2026-07-22T16:46:34.421319Z",
     "agent_id": "xqjG",
-    "agent_seq": 120
+    "agent_seq": 121
   }
 }
