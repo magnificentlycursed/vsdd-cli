@@ -1,5 +1,5 @@
 {
-  "next_display_id": 769,
+  "next_display_id": 770,
   "next_comment_id": 1000,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -733,6 +733,7 @@
     "f1b7c0a7-b5d1-4295-b2b5-3441e9ddcb50": 585,
     "f1d9c625-cfc0-487e-bcff-2830272d9272": 99,
     "f202b3bd-b16d-4501-9509-edc04dd8730a": 481,
+    "f20d6625-07a9-4fc8-b928-9ba6ea891a17": 769,
     "f23407b3-e8ed-44c4-8ec0-6693ee4cc86b": 594,
     "f268e0da-d826-4b2f-b847-2abd970090c7": 412,
     "f28aede0-7f29-4d05-9aab-6453d9b3976e": 698,
@@ -20538,6 +20539,16 @@
         }
       }
     },
+    "f20d6625-07a9-4fc8-b928-9ba6ea891a17": {
+      "uuid": "f20d6625-07a9-4fc8-b928-9ba6ea891a17",
+      "display_id": 769,
+      "title": "Layer 2 round 3 minor security: cross_references tests build fixture trees at a predictable shared-temp path with a delete-then-create race — ride tempfile like the sibling suite",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T19:04:56.015237Z",
+      "updated_at": "2026-07-22T19:04:56.015237Z"
+    },
     "f23407b3-e8ed-44c4-8ec0-6693ee4cc86b": {
       "uuid": "f23407b3-e8ed-44c4-8ec0-6693ee4cc86b",
       "display_id": 594,
@@ -22435,11 +22446,16 @@
       "agent_id": "xqjG",
       "agent_seq": 264,
       "timestamp": "2026-07-22T19:04:48.608294Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 265,
+      "timestamp": "2026-07-22T19:04:56.015237Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:04:48.608294Z",
+    "timestamp": "2026-07-22T19:04:56.015237Z",
     "agent_id": "xqjG",
-    "agent_seq": 264
+    "agent_seq": 265
   }
 }
