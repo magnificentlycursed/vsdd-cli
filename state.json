@@ -1,5 +1,5 @@
 {
-  "next_display_id": 753,
+  "next_display_id": 754,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -339,6 +339,7 @@
     "7154e6eb-7bd9-442c-b0d5-8b6a1cd44745": 230,
     "71da81e9-6238-40ae-9021-b71ae9b5f5d2": 368,
     "71e60828-9333-476d-b94b-c84e18ddb848": 503,
+    "71f1b27d-3331-4d59-81eb-7f95ba19c31c": 753,
     "7227584d-6863-45c6-9848-0bcd97225c98": 465,
     "724594c2-b517-411f-8db9-5203002832a4": 220,
     "726f2b0c-480e-4dc1-891b-9d3513ce5830": 59,
@@ -9777,6 +9778,18 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAbGz6yvnS7OYjfacggTyZAc88Xqx39mZ7MqCmZGYMsrSQ8MeZfi0PBHzbNKtrIjO/xUXtL7rgLxPDCNZuRHIzCA=="
         }
       }
+    },
+    "71f1b27d-3331-4d59-81eb-7f95ba19c31c": {
+      "uuid": "71f1b27d-3331-4d59-81eb-7f95ba19c31c",
+      "display_id": 753,
+      "title": "l2r1 minor collector: acquisition and derivation honesty",
+      "description": "(1) SE: session-query Failed reads as 'no session' under Acquired (acquire.rs:53), contradicting Failed's store-problem contract — distinguish no-session from refusal or declare the conflation in the bootstrap doc. (2) SE+DE: the 2c arm enforces a current_layer conjunct the adopted rule table does not state (derive.rs:111) — code is defensible (a stale prior-layer pass must not flip the transition) but code and ADOPTED oracle now disagree; OPERATOR-SHAPED, see the batch note. (3) SE: the runtime vocabulary lookup in derive is a behavioral no-op with an overclaiming comment (derive.rs:57) — delete it and let the membership test carry the pin, or make non-membership observable. (4) DE: phase-2a/2b gate matching ignores GateResult.phase while 2c checks it (derive.rs:83) — align. (5) DE: display_active_milestone acquired without the schema-mandated precomputed count (folded into the parse major). Owner: software-engineer/data-engineer by item. Validator: quality-engineer.",
+      "status": "open",
+      "priority": "medium",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:03:28.682184Z",
+      "updated_at": "2026-07-22T17:03:28.682184Z"
     },
     "7227584d-6863-45c6-9848-0bcd97225c98": {
       "uuid": "7227584d-6863-45c6-9848-0bcd97225c98",
@@ -21426,11 +21439,16 @@
       "agent_id": "xqjG",
       "agent_seq": 158,
       "timestamp": "2026-07-22T17:02:45.730125Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 159,
+      "timestamp": "2026-07-22T17:03:28.682184Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:02:45.730125Z",
+    "timestamp": "2026-07-22T17:03:28.682184Z",
     "agent_id": "xqjG",
-    "agent_seq": 158
+    "agent_seq": 159
   }
 }
