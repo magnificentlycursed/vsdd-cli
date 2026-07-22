@@ -18,6 +18,33 @@ fn repo_root() -> PathBuf {
         .to_path_buf()
 }
 
+/// A temp estate copied from the live tree — the six corruption and
+/// divergence tests' shared scaffolding (the 2c extraction, vsdd-cli #744).
+fn temp_estate(copy_registry: bool, copy_schemas: bool) -> tempfile::TempDir {
+    let dir = tempfile::tempdir().unwrap();
+    let reg_dir = dir.path().join("templates/registry");
+    fs::create_dir_all(&reg_dir).unwrap();
+    let schema_dir = dir.path().join(".mdatron/schemas");
+    fs::create_dir_all(&schema_dir).unwrap();
+    if copy_registry {
+        for entry in fs::read_dir(repo_root().join("templates/registry")).unwrap() {
+            let p = entry.unwrap().path();
+            if p.is_file() {
+                fs::copy(&p, reg_dir.join(p.file_name().unwrap())).unwrap();
+            }
+        }
+    }
+    if copy_schemas {
+        for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
+            let p = entry.unwrap().path();
+            if p.is_file() {
+                fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
+            }
+        }
+    }
+    dir
+}
+
 #[test]
 fn all_nine_sets_load_from_the_live_tree() {
     let reg: Registry = registry::load_all(&repo_root()).expect("all nine sets load");
@@ -225,23 +252,8 @@ fn snapshot_schema_pins_the_four_renderer_fields() {
 
 #[test]
 fn corrupted_frontmatter_yields_a_located_diagnostic() {
-    let dir = tempfile::tempdir().unwrap();
+    let dir = temp_estate(true, true);
     let reg_dir = dir.path().join("templates/registry");
-    fs::create_dir_all(&reg_dir).unwrap();
-    let schema_dir = dir.path().join(".mdatron/schemas");
-    fs::create_dir_all(&schema_dir).unwrap();
-    for entry in fs::read_dir(repo_root().join("templates/registry")).unwrap() {
-        let p = entry.unwrap().path();
-        if p.is_file() {
-            fs::copy(&p, reg_dir.join(p.file_name().unwrap())).unwrap();
-        }
-    }
-    for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
-        let p = entry.unwrap().path();
-        if p.is_file() {
-            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
-        }
-    }
     // Break the gate-data frontmatter mid-block.
     let target = reg_dir.join("gate-data.md");
     let original = fs::read_to_string(&target).unwrap();
@@ -263,17 +275,8 @@ fn corrupted_frontmatter_yields_a_located_diagnostic() {
 
 #[test]
 fn schema_class_mismatch_yields_a_diagnostic() {
-    let dir = tempfile::tempdir().unwrap();
+    let dir = temp_estate(false, true);
     let reg_dir = dir.path().join("templates/registry");
-    fs::create_dir_all(&reg_dir).unwrap();
-    let schema_dir = dir.path().join(".mdatron/schemas");
-    fs::create_dir_all(&schema_dir).unwrap();
-    for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
-        let p = entry.unwrap().path();
-        if p.is_file() {
-            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
-        }
-    }
     // A statusline artifact filed under the gate-data name.
     fs::copy(
         repo_root().join("templates/registry/statusline-data.md"),
@@ -344,9 +347,7 @@ fn registry_repair_token_is_the_registered_member() {
     let c: CompositionScopeAndActions =
         registry::load_set(&repo_root(), "composition-scope-and-actions")
             .expect("composition set loads");
-    let dir = tempfile::tempdir().unwrap();
-    fs::create_dir_all(dir.path().join("templates/registry")).unwrap();
-    fs::create_dir_all(dir.path().join(".mdatron/schemas")).unwrap();
+    let dir = temp_estate(false, false);
     let diag = registry::load_set::<GateData>(dir.path(), "gate-data")
         .expect_err("an absent artifact is a diagnostic");
     let member = c
@@ -375,23 +376,8 @@ fn invalid_class_is_rejected_before_any_path_join() {
 #[test]
 fn load_all_names_every_failing_artifact_in_one_pass() {
     // Bulk corruption reports all casualties at once (vsdd-cli #727).
-    let dir = tempfile::tempdir().unwrap();
+    let dir = temp_estate(true, true);
     let reg_dir = dir.path().join("templates/registry");
-    fs::create_dir_all(&reg_dir).unwrap();
-    let schema_dir = dir.path().join(".mdatron/schemas");
-    fs::create_dir_all(&schema_dir).unwrap();
-    for entry in fs::read_dir(repo_root().join("templates/registry")).unwrap() {
-        let p = entry.unwrap().path();
-        if p.is_file() {
-            fs::copy(&p, reg_dir.join(p.file_name().unwrap())).unwrap();
-        }
-    }
-    for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
-        let p = entry.unwrap().path();
-        if p.is_file() {
-            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
-        }
-    }
     for victim in ["gate-data.md", "statusline-data.md"] {
         let target = reg_dir.join(victim);
         let original = fs::read_to_string(&target).unwrap();
@@ -412,17 +398,8 @@ fn load_all_names_every_failing_artifact_in_one_pass() {
 #[test]
 fn bom_before_the_fence_still_splits() {
     // Windows-editor provenance (vsdd-cli #727).
-    let dir = tempfile::tempdir().unwrap();
+    let dir = temp_estate(false, true);
     let reg_dir = dir.path().join("templates/registry");
-    fs::create_dir_all(&reg_dir).unwrap();
-    let schema_dir = dir.path().join(".mdatron/schemas");
-    fs::create_dir_all(&schema_dir).unwrap();
-    for entry in fs::read_dir(repo_root().join(".mdatron/schemas")).unwrap() {
-        let p = entry.unwrap().path();
-        if p.is_file() {
-            fs::copy(&p, schema_dir.join(p.file_name().unwrap())).unwrap();
-        }
-    }
     let original = fs::read_to_string(repo_root().join("templates/registry/gate-data.md")).unwrap();
     fs::write(reg_dir.join("gate-data.md"), format!("\u{feff}{original}")).unwrap();
 
@@ -436,10 +413,8 @@ fn bom_before_the_fence_still_splits() {
 #[test]
 fn oversize_artifact_is_refused_before_parsing() {
     // The capped reader at the loader's sites (vsdd-cli #732).
-    let dir = tempfile::tempdir().unwrap();
+    let dir = temp_estate(false, false);
     let reg_dir = dir.path().join("templates/registry");
-    fs::create_dir_all(&reg_dir).unwrap();
-    fs::create_dir_all(dir.path().join(".mdatron/schemas")).unwrap();
     let mut body = String::from("---\nschema_class: gate-data\n---\n");
     while (body.len() as u64) <= vsdd_core::MAX_ARTIFACT_BYTES {
         body.push_str("padding far past the documented limit\n");
@@ -480,13 +455,10 @@ fn schema_pair_token_is_the_registered_member() {
     let c: CompositionScopeAndActions =
         registry::load_set(&repo_root(), "composition-scope-and-actions")
             .expect("composition set loads");
-    let dir = tempfile::tempdir().unwrap();
-    let reg_dir = dir.path().join("templates/registry");
-    fs::create_dir_all(&reg_dir).unwrap();
-    fs::create_dir_all(dir.path().join(".mdatron/schemas")).unwrap();
+    let dir = temp_estate(false, false);
     fs::copy(
         repo_root().join("templates/registry/gate-data.md"),
-        reg_dir.join("gate-data.md"),
+        dir.path().join("templates/registry/gate-data.md"),
     )
     .unwrap();
 

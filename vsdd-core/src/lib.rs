@@ -11,6 +11,14 @@
 //!   schema-pair-validated artifacts (Layer 1)
 //! - `diagnostics` — the rustc-shaped diagnostic whose state-surface
 //!   tokens load from the statusline data set
+//! - `snapshot` — the corroboration snapshot and its effectful
+//!   acquisition (Layer 2)
+//! - `answer` — the pure phase-answer derivation and the
+//!   snapshot-scoped integrity checks over the adopted rule table
+//!   (Layer 2)
+//! - `integrity_shell` — the shell-side checks: the refs query over
+//!   the registered branch grammar and the three-valued
+//!   session-substrate check (Layer 2)
 //! - `schemas::PHASE_PRIMER` — JSON Schema for vsdd-phase-*.md frontmatter
 //! - `schemas::DOMAIN_PROMPT` — JSON Schema for vsdd-domain-*.md frontmatter
 //! - `schemas::SUPPLEMENT` — JSON Schema for vsdd-cli/supplements/*.md frontmatter
