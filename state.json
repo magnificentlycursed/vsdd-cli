@@ -1,6 +1,6 @@
 {
   "next_display_id": 766,
-  "next_comment_id": 999,
+  "next_comment_id": 1000,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10251,7 +10251,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T18:49:22.232263Z",
-      "updated_at": "2026-07-22T18:49:22.232263Z"
+      "updated_at": "2026-07-22T18:51:21.651619Z",
+      "comments": {
+        "5b0be038-f7b8-4402-84b8-554c2eff01f1": {
+          "display_id": 999,
+          "author": "xqjG",
+          "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, attended side. round shape: VERIFY — each lens adversarially verifies the round-2 fixes (#756-#763, commit a49206fe) AND the core-removal migration (#764, commit 74b01866) in its scope, tries to refute each fix claim, sweeps the changed surfaces for regressions and new defects; the round's output re-decides the stop. domains, the same four (the change set lands on the same surfaces, plus the new schema shim): software-engineer (the channel-based subprocess collection, the full-refname listing, the schema shim's engine fidelity), security (the whole-run deadline's completeness, sanitize ordering and coverage, the shim's value-free message discipline), quality-engineer (the equality pin's two-directional strength, the stale-gate falsifiers and clean negatives actually falsifying, the unit pins), data-engineer (the five new fixtures as data, the amended gloss against the code, the binary-driven conformance tests' fidelity to what the lib pipeline proved). MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH, quality-engineer and data-engineer MEDIUM (unchanged posture). expected_cost_band: 0-10 findings pre-dedup, 150k-350k downstream tokens — recalibrated from round 2's observed 314,456 (the round-2 declaration under-called verify-posture depth by 26%; this band prices reproduction-chasing in). inputs: the tree at the round-2 fix-pass boundary (74b01866 + a49206fe + the changelog mirror), the nine closed children with result records, the #755 trail. returned + telemetry recorded here after.",
+          "created_at": "2026-07-22T18:51:21.637473Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAuRZd5mXQunD3vyLGIWg8cwNZnHBzW50KL5JXj3BSn+Phvtv5Y40YAmZvbi0AQ2LmHv0HJAT24YurPR8JYp51Dg=="
+        }
+      }
     },
     "7558fcd4-7681-4edf-aefb-5599d1a55e50": {
       "uuid": "7558fcd4-7681-4edf-aefb-5599d1a55e50",
@@ -22344,11 +22355,16 @@
       "agent_id": "xqjG",
       "agent_seq": 257,
       "timestamp": "2026-07-22T18:49:42.184745Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 258,
+      "timestamp": "2026-07-22T18:51:21.651619Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:49:42.184745Z",
+    "timestamp": "2026-07-22T18:51:21.651619Z",
     "agent_id": "xqjG",
-    "agent_seq": 257
+    "agent_seq": 258
   }
 }
