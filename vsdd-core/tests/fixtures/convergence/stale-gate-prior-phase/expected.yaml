@@ -1,4 +1,5 @@
-# DRAFT ORACLE (round-2 fix pass, vsdd-cli #758) — awaiting operator adoption.
+# ADOPTED ORACLE (operator adoption 2026-07-22, second batch, recorded
+# on vsdd-cli #738; drafted under vsdd-cli #758).
 # THE stale-record shape every phase transition manufactures: 2b closed
 # by its exit-gate pass, so on entering 2c the standing record IS
 # phase-2b's. Under the #738 amendment (kind, outcome, layer, AND

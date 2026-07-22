@@ -1,4 +1,5 @@
-# DRAFT ORACLE (fix pass, vsdd-cli #749) — awaiting operator adoption.
+# ADOPTED ORACLE (operator adoption 2026-07-22, second batch, recorded
+# on vsdd-cli #738; drafted under vsdd-cli #749).
 # A CLOSED finding carrying neither an evidence reference nor a
 # recorded disposition is an unlawful closure (contract: Finding
 # lifecycle — closures carry evidence or a disposition). The sibling

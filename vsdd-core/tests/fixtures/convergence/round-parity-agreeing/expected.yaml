@@ -1,4 +1,5 @@
-# DRAFT ORACLE (fix pass, vsdd-cli #749) — awaiting operator adoption.
+# ADOPTED ORACLE (operator adoption 2026-07-22, second batch, recorded
+# on vsdd-cli #738; drafted under vsdd-cli #749).
 # The NEGATIVE control for round parity: the manifest declares four
 # findings and the tracker holds four children — counts reconcile, no
 # kind files, and the answer is phase-3's work. Paired with

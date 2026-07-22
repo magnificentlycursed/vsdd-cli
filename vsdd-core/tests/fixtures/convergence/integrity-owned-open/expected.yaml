@@ -1,4 +1,5 @@
-# DRAFT ORACLE (round-2 fix pass, vsdd-cli #759) — awaiting operator adoption.
+# ADOPTED ORACLE (operator adoption 2026-07-22, second batch, recorded
+# on vsdd-cli #738; drafted under vsdd-cli #759).
 # The CLEAN NEGATIVE paired with integrity-missing-owner: every open
 # finding carries both owner and validator, so the
 # findings-missing-owner-or-validator kind must NOT file. The pair

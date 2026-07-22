@@ -1,4 +1,5 @@
-# DRAFT ORACLE (fix pass, vsdd-cli #749) — awaiting operator adoption.
+# ADOPTED ORACLE (operator adoption 2026-07-22, second batch, recorded
+# on vsdd-cli #738; drafted under vsdd-cli #749).
 # An OPEN finding with neither owner nor validator is the contract's
 # lifecycle falsifier ("a finding without an owner"): the kind files
 # and the answer stays phase-4's work — integrity findings report,

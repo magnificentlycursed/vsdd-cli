@@ -2,14 +2,13 @@
 //! convergence corpus (vsdd-cli #738).
 //!
 //! Phase 2a suite: fails executed against the pre-implementation stubs;
-//! 2b turns it green. Eleven fixtures carry OPERATOR-ADOPTED oracles
-//! (adoption 2026-07-22 on vsdd-cli #738); nine are DRAFT ORACLES
-//! awaiting adoption, marked so in their rationale comments — the four
-//! round-1 additions (vsdd-cli #749: three integrity-kind positives
-//! and the round-parity negative control) and the five round-2
-//! additions (vsdd-cli #758: the two stale-gate falsifiers for the
-//! #738 uniform conjunct; vsdd-cli #759: the three clean negatives
-//! pinning each integrity kind's discrimination). The runner compares every
+//! 2b turns it green. All twenty fixtures carry OPERATOR-ADOPTED
+//! oracles (both adoptions recorded on vsdd-cli #738: the original
+//! eleven 2026-07-22, and the second batch the same day covering the
+//! four round-1 additions drafted under #749 and the five round-2
+//! additions drafted under #758/#759 — the stale-gate falsifiers for
+//! the uniform conjunct and the clean negatives pinning each
+//! integrity kind's discrimination). The runner compares every
 //! field by exact match and integrity findings at the kind-set grain,
 //! exactly the Convergence test's comparison.
 
