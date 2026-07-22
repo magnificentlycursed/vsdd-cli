@@ -1,5 +1,5 @@
 {
-  "next_display_id": 742,
+  "next_display_id": 743,
   "next_comment_id": 965,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -715,6 +715,7 @@
     "f3751db1-8b7f-439b-a1ac-bb9b2890713b": 169,
     "f4031b8e-3e9b-4ec5-89f9-9061d3c110a7": 314,
     "f42889de-888d-4e77-83a3-a90c5ff8c64f": 238,
+    "f4a8ac10-da62-4e61-8a28-4e471cae50df": 742,
     "f4ffdfa4-1c1d-4b7a-b5df-fe75419eaaff": 430,
     "f520f33c-cb37-4154-b9a5-1c5a9d164cce": 674,
     "f5611ad3-35c7-4628-9bc3-a904a2c78b60": 7,
@@ -20048,6 +20049,16 @@
         }
       }
     },
+    "f4a8ac10-da62-4e61-8a28-4e471cae50df": {
+      "uuid": "f4a8ac10-da62-4e61-8a28-4e471cae50df",
+      "display_id": 742,
+      "title": "Clear the crosslink 0.8.0 hold: upstream patched, hub migrated to v3",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T16:29:52.701338Z",
+      "updated_at": "2026-07-22T16:29:52.701338Z"
+    },
     "f4ffdfa4-1c1d-4b7a-b5df-fe75419eaaff": {
       "uuid": "f4ffdfa4-1c1d-4b7a-b5df-fe75419eaaff",
       "display_id": 430,
@@ -20886,11 +20897,16 @@
       "agent_id": "xqjG",
       "agent_seq": 108,
       "timestamp": "2026-07-22T15:39:25.121576Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 109,
+      "timestamp": "2026-07-22T16:29:52.701338Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T15:39:25.121576Z",
+    "timestamp": "2026-07-22T16:29:52.701338Z",
     "agent_id": "xqjG",
-    "agent_seq": 108
+    "agent_seq": 109
   }
 }
