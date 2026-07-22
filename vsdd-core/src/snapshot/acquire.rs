@@ -55,8 +55,8 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
 
     let active_display = milestones
         .iter()
-        .filter(|m| m.is_active)
-        .last()
+        .rev()
+        .find(|m| m.is_active)
         .map(|m| m.name.clone())
         .unwrap_or_else(|| "no milestone".to_string());
 

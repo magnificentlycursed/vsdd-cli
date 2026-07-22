@@ -43,7 +43,7 @@ pub fn local_refs(repo_root: &Path) -> Result<Vec<String>, Box<Diagnostic>> {
         // A remote-tracking counterpart reads `origin/feature/x`; strip
         // the remote segment so both halves share one membership check.
         let stripped = match name.split_once('/') {
-            Some((first, rest)) if first == "origin" => rest,
+            Some(("origin", rest)) => rest,
             _ => name,
         };
         if !refs.iter().any(|have: &String| have == stripped) {

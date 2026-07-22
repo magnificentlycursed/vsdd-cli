@@ -16,7 +16,7 @@ use crate::state::State;
 /// was acquired.
 pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
     let mut kinds: Vec<String> = Vec::new();
-    let mut push = |k: &str, kinds: &mut Vec<String>| {
+    let push = |k: &str, kinds: &mut Vec<String>| {
         if !kinds.iter().any(|have| have == k) {
             kinds.push(k.to_string());
         }
