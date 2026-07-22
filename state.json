@@ -1,6 +1,6 @@
 {
   "next_display_id": 772,
-  "next_comment_id": 1010,
+  "next_comment_id": 1011,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18843,7 +18843,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:09:38.141191Z",
-      "updated_at": "2026-07-22T19:17:20.263626Z",
+      "updated_at": "2026-07-22T19:18:40.066Z",
       "comments": {
         "7ec8404a-2d20-4928-8135-b07e1c5b2b86": {
           "display_id": 1007,
@@ -18853,6 +18853,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAErergR2B5/TWxZzQZjlEmjut9meDt9TMNxoiqvyYA7GtBGi30SAW8axxGrsFsYTQlwBBgHYoie8xg2YpEE1JAQ=="
+        },
+        "c9af9db7-18c3-4790-bf58-e1e08652b26c": {
+          "display_id": 1010,
+          "author": "xqjG",
+          "content": "PHASE 4 EXECUTED AT THE STOP: the round-4 residue routed via #771 (dispositions recorded there — the home-fold floor to the defect-fix lane, the init-suite temp pattern to the consistency queue); the unrouted-findings query over the layer's rounds returns empty — #746-#754 closed with round-2 verification, #756-#763 closed with round-3 verification, #766-#769 closed with round-4 verification, #764 closed with round-3 verification, #771 closed as the routing record. LAYER 2 BOUNDARY REACHED. The operator batch now due in one ask (per the standing continuation conduct): (1) ADOPT the nine draft oracles — four from #749 (integrity-missing-owner, integrity-closed-no-evidence, integrity-unresolvable-handle, round-parity-agreeing) and five from #758/#759 (stale-gate-prior-phase, stale-gate-prior-layer, integrity-owned-open, integrity-lawful-disposition-closure, integrity-resolving-handles), rationale comments in each expected.yaml; (2) the deferred manual checklists (manual-tests/layer-1.md standing debt from the Layer 1 boundary; the layer-2 checklist authoring is the operator's oracle slot); (3) LAYER 2 SIGN-OFF closing milestone #5. Phase-3 loop total for the layer, capture-sourced: 1,033,000 downstream tokens across four dispatches (243,445 + 314,456 + 368,192 + 108,004) with chosen=observed on every manifest; two verify bands under-called and recorded, the narrowed fourth in band.",
+          "created_at": "2026-07-22T19:18:40.052346Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwVbGSCA07RdmTbcFi652gWGRLlPpFFKr/g9GHl4vv696DaCFCE0h9WiXMoQxuQK/WgamBablwuYW1oZDEKLjDQ=="
         },
         "e0ea5452-31f8-49e0-ba74-370f6b8ed2f2": {
           "display_id": 1008,
@@ -22697,11 +22706,16 @@
       "agent_id": "xqjG",
       "agent_seq": 290,
       "timestamp": "2026-07-22T19:18:15.914915Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 291,
+      "timestamp": "2026-07-22T19:18:40.066Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:18:15.914915Z",
+    "timestamp": "2026-07-22T19:18:40.066Z",
     "agent_id": "xqjG",
-    "agent_seq": 290
+    "agent_seq": 291
   }
 }
