@@ -471,3 +471,32 @@ fn bare_fence_inside_a_block_scalar_truncates_the_split() {
     );
     assert!(body.contains("text after the fence"));
 }
+
+#[test]
+fn schema_pair_token_is_the_registered_member() {
+    // The #739 rider's fidelity pin, same pattern as the loader mirror:
+    // a pair failure's recovery members are the registered
+    // restore-schema-pair member's, verbatim.
+    let c: CompositionScopeAndActions =
+        registry::load_set(&repo_root(), "composition-scope-and-actions")
+            .expect("composition set loads");
+    let dir = tempfile::tempdir().unwrap();
+    let reg_dir = dir.path().join("templates/registry");
+    fs::create_dir_all(&reg_dir).unwrap();
+    fs::create_dir_all(dir.path().join(".mdatron/schemas")).unwrap();
+    fs::copy(
+        repo_root().join("templates/registry/gate-data.md"),
+        reg_dir.join("gate-data.md"),
+    )
+    .unwrap();
+
+    let diag = registry::load_set::<GateData>(dir.path(), "gate-data")
+        .expect_err("an absent schema pair is a diagnostic");
+    let member = c
+        .action_vocabulary
+        .iter()
+        .find(|a| a.id == diag.recovery_action)
+        .expect("the pair-failure token resolves to a registered member");
+    assert_eq!(member.family, "recovery");
+    assert_eq!(diag.recovery_text, member.human);
+}

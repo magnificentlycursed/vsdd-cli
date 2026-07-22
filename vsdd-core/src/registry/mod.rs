@@ -30,6 +30,10 @@ use sets::{
 /// The registered recovery member this loader mirrors (vsdd-cli #724).
 pub(crate) const REGISTRY_REPAIR_ACTION: &str = "repair-registry-artifact";
 
+/// The registered member for schema-pair failures (vsdd-cli #739's
+/// rider) — the same declared bootstrap mirror as its sibling above.
+pub(crate) const SCHEMA_PAIR_RESTORE_ACTION: &str = "restore-schema-pair";
+
 enum BoundedTextError {
     Io(std::io::Error),
     Oversize,
@@ -93,9 +97,9 @@ fn schema_pair_diagnostic(
         machine_token: kind.to_string(),
         location,
         message,
-        recovery_action: REGISTRY_REPAIR_ACTION.to_string(),
+        recovery_action: SCHEMA_PAIR_RESTORE_ACTION.to_string(),
         recovery_text:
-            "restore or repair the schema pair file named above, then re-run — the artifact is not the broken party"
+            "restore or repair the schema pair file named in the diagnostic, then re-run — the artifact is not the broken party"
                 .to_string(),
     })
 }

@@ -42,6 +42,7 @@ action_vocabulary:
   - {id: reconcile-toward-artifact, family: recovery, phase: "", human: resolve the tracker disagreement toward the state artifact}
   - {id: correct-the-write, family: recovery, phase: "", human: "correct the refused write's input and retry; the prior file is untouched"}
   - {id: repair-registry-artifact, family: recovery, phase: "", human: "repair the registry artifact to match its schema pair, then re-run"}
+  - {id: restore-schema-pair, family: recovery, phase: "", human: "restore or repair the schema pair file named in the diagnostic, then re-run — the artifact is not the broken party"}
 ---
 
 # Composition scope + action vocabulary
@@ -70,9 +71,11 @@ answers are written in these tokens
 and are operator-adopted oracles; membership here is a proposal until that
 adoption.
 
-The write and registry surfaces' recovery members — `correct-the-write`
-and `repair-registry-artifact` — are operator-registered (2026-07-21,
-vsdd-cli #724, from the Layer 1 code round): the state write path loads
+The write and registry surfaces' recovery members — `correct-the-write`,
+`repair-registry-artifact`, and `restore-schema-pair` (the last
+registered 2026-07-22, vsdd-cli #739's rider, resolving the c2
+token-text mismatch recorded on #734) — are operator-registered
+(2026-07-21 and 2026-07-22, vsdd-cli #724 and #739): the state write path loads
 its token like the read path does, and the registry loader carries a
 declared bootstrap mirror of its member — the loader cannot load the
 vocabulary before loading, the permanent exception, pinned by a

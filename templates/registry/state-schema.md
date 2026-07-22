@@ -33,7 +33,7 @@ state_fields:
     semantics: "the published marker — absent before first publish; written once by the promotion act: {at: <ISO 8601 date>, version: <semver>, act: <tracker handle>}; the machine-readable publish-state the fix-lane falsifiers consult; immutable once present (forward-only)"
 declared_constraints:
   - entry: phase-gate consistency
-    rule: "a state entering phase-2b within a layer requires a last_gate_result carrying that layer's red-gate fail record at the entry — the single slot answers exactly that; the historical sweep over later states belongs to mdatron's state-consistency family reading tracker and git history, not to this field (operator ruling 2026-07-21, vsdd-cli #683); executed by that family (Layer 7), by vsdd bootstrap self-validation until it lands"
+    rule: "a state entering phase-2b within a layer requires a last_gate_result carrying that layer's red-gate fail record at the entry — the single slot answers exactly that; the historical sweep over later states belongs to mdatron's state-consistency family reading tracker and git history, not to this field (operator ruling 2026-07-21, vsdd-cli #683); executed by vsdd's own integrity machinery — the write-path constraint (Layer 1, landed), the snapshot-scoped checks (Layer 2), and the deep-history half with the Layer 6 gates — re-homed from mdatron's family by the boundary ruling (vsdd-cli #739)"
   - entry: published immutability
     rule: once published is present its fields never change; a diff touching it after first write fails the check
   - entry: scope-member validity
@@ -56,8 +56,9 @@ commit as the boundary evidence. Read failures take the enumerated
 discipline (malformed, absent, permission-or-io — the kinds and their
 recovery actions are the statusline data set's members, drawing
 on the action vocabulary's recovery family). Layer 1 implements read and
-write against this enumeration; mdatron validates instances once its
-state-consistency family lands, vsdd self-validating at read until then.
+write against this enumeration; the artifact's validation is vsdd's own
+at read and write — the state file is not markdown, so it is outside
+mdatron's scope by the boundary ruling (vsdd-cli #739).
 
 The three decision notes this section once held are resolved — the
 operator's walk-through ruled all three on vsdd-cli #665 (2026-07-20),
