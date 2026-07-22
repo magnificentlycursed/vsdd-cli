@@ -10,7 +10,7 @@ state_fields:
   - name: current_phase
     type: scope-member-id-nullable
     required: true
-    semantics: "the phase the project is in, from the composition-scope enumeration's phase members; never the lane member — fix-lane work does not move the phase pointer; null is pinned to mean 'not yet entered' and the derivation maps it to the first phase's authoring action, 1a-author-behavioral-spec — the work, not the ceremony (operator ruling 2026-07-20, amended 2026-07-22, vsdd-cli #665)"
+    semantics: "the phase the project is in, from the composition-scope enumeration's phase members; never the lane member — fix-lane work does not move the phase pointer; null is pinned to mean 'not yet entered' and the derivation maps it to the first phase's authoring action, 1a-author-behavioral-spec — the work, not the ceremony (operator ruling 2026-07-20, amended 2026-07-22, vsdd-cli #665); the first work commit carries the entry — the state advances to phase-1a in the same commit as the first authoring artifact, so no phase is ever unoccupied (the amendment's recorded consequence)"
   - name: current_layer
     type: non-negative-integer-nullable
     required: true
