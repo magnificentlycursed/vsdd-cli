@@ -1,6 +1,6 @@
 {
   "next_display_id": 755,
-  "next_comment_id": 982,
+  "next_comment_id": 983,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12473,10 +12473,21 @@
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:02:12.824481Z",
-      "updated_at": "2026-07-22T17:02:18.149995Z",
+      "updated_at": "2026-07-22T17:34:12.016166Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "2859ee4a-8183-4b0f-ae37-527c86422f7b": {
+          "display_id": 982,
+          "author": "xqjG",
+          "content": "Fixed in d84109f5: subprocess.rs runs every child bounded and timed — stdout capped at the shared artifact bound (one documented bound for materialization), stderr at 4KiB, a 10s wall-clock deadline with kill, reader threads so a chatty child cannot wedge a full pipe. Both crosslink acquisition arms and the git ref listing ride it. PATH-resolution posture documented as operator-environment trust, out of model.",
+          "created_at": "2026-07-22T17:34:11.998755Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmQsMWsO1V1BOEBDgGNSESnptNv3PsCfQ8tJcwTze9dhDLLWSP0FnDeVgZGV9X6wEF7iNaQZSJwEeaOV0OteoDA=="
+        }
+      }
     },
     "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b": {
       "uuid": "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b",
@@ -21669,11 +21680,16 @@
       "agent_id": "xqjG",
       "agent_seq": 183,
       "timestamp": "2026-07-22T17:34:05.933854Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 184,
+      "timestamp": "2026-07-22T17:34:12.016166Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:34:05.933854Z",
+    "timestamp": "2026-07-22T17:34:12.016166Z",
     "agent_id": "xqjG",
-    "agent_seq": 183
+    "agent_seq": 184
   }
 }
