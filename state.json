@@ -2028,14 +2028,14 @@
     "0def5273-a7dc-4dd6-b180-28165ab70e79": {
       "uuid": "0def5273-a7dc-4dd6-b180-28165ab70e79",
       "display_id": 752,
-      "title": "l2r1 major SE+DE: remote-tracking ref stripping hardcodes origin against the declared remote-name-generic rule",
+      "title": "Layer 2 round 1 major SE+DE: remote-tracking ref stripping hardcodes origin against the declared remote-name-generic rule",
       "description": "refs.rs:46 strips only literal 'origin', but the doc and dispatch-data's adopted rule say 'the remote name stripped' generically; a remote named upstream/fork leaves upstream/feature/x unstripped -> reported off-grammar (standing false positive), and a local branch literally named origin/x is mangled. Disposition: list refs/heads and refs/remotes separately, strip exactly one remote segment for remote refs only. Owner: software-engineer. Validator: data-engineer.",
       "status": "closed",
       "priority": "high",
       "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:02:33.339850Z",
-      "updated_at": "2026-07-22T17:34:35.670164Z",
+      "updated_at": "2026-07-22T17:37:13.886238Z",
       "closed_at": "2026-07-22T17:34:35.670155Z",
       "labels": [
         "review"
@@ -21789,11 +21789,16 @@
       "agent_id": "xqjG",
       "agent_seq": 201,
       "timestamp": "2026-07-22T17:37:07.130679Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 202,
+      "timestamp": "2026-07-22T17:37:13.886238Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:37:07.130679Z",
+    "timestamp": "2026-07-22T17:37:13.886238Z",
     "agent_id": "xqjG",
-    "agent_seq": 201
+    "agent_seq": 202
   }
 }
