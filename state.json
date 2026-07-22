@@ -1,5 +1,5 @@
 {
-  "next_display_id": 748,
+  "next_display_id": 749,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -435,6 +435,7 @@
     "8efd05ff-fae6-4b52-a26d-ad1ca44b5de8": 416,
     "8f12246f-d782-4ee0-8286-b6511ae416fb": 703,
     "8f519889-86fd-4699-bc02-bd57234e4d10": 554,
+    "912c3eb4-70bb-4a41-885c-7c8ef2fd18ca": 748,
     "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b": 439,
     "923f3492-d9da-4c55-8591-f34344b2fd1e": 101,
     "924375ed-05a1-4402-8c61-6b26182f5b97": 190,
@@ -12320,6 +12321,18 @@
         }
       }
     },
+    "912c3eb4-70bb-4a41-885c-7c8ef2fd18ca": {
+      "uuid": "912c3eb4-70bb-4a41-885c-7c8ef2fd18ca",
+      "display_id": 748,
+      "title": "l2r1 major SE+DE: the milestone parse guesses instead of failing — silent skip, name truncation, count loss",
+      "description": "parse_milestones (acquire.rs:103,110) contradicts its own never-a-guess declaration three ways: (a) non-# lines are skipped, so whole-format drift returns Some(empty) as Acquired with the phase-pointer check disarmed; (b) rfind(' (') truncates a name legitimately ending in a parenthetical ('cleanup (phase two)' -> 'cleanup'); (c) display_active_milestone lacks the schema-mandated precomputed open-finding count. Disposition: zero parseable lines in non-empty output = None/unusable; anchor the count suffix to the digit-slash-digit shape; carry the count field or declare its bootstrap absence. Owner: data-engineer. Validator: software-engineer.",
+      "status": "open",
+      "priority": "high",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:01:10.549278Z",
+      "updated_at": "2026-07-22T17:01:10.549278Z"
+    },
     "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b": {
       "uuid": "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b",
       "display_id": 439,
@@ -21251,11 +21264,16 @@
       "agent_id": "xqjG",
       "agent_seq": 143,
       "timestamp": "2026-07-22T17:01:02.823724Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 144,
+      "timestamp": "2026-07-22T17:01:10.549278Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:01:02.823724Z",
+    "timestamp": "2026-07-22T17:01:10.549278Z",
     "agent_id": "xqjG",
-    "agent_seq": 143
+    "agent_seq": 144
   }
 }
