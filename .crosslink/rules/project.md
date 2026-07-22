@@ -23,21 +23,19 @@
   (e.g. the session-substrate check) are citations and keep their names
   until an amendment rewords them.
 
-## Crosslink at 0.8.0 — the upgrade hold and known defects
-- HARD CONSTRAINT: the host binary stays at crosslink 0.8.0. Never upgrade to
-  0.9.x and never run `crosslink migrate hub-v3` on this hub. Retest trigger:
-  dollspace-gay/crosslink #4/#5/#7/#8/#11/#12 closing. (Operator ruling
-  2026-07-20, decision on vsdd-cli #597.)
-- `issue close` and `archive add` can report success without persisting
-  (dollspace-gay/crosslink#29, #30). Re-read state after these operations;
-  never treat the success message as the record.
-- After any `crosslink sync` that promotes issue IDs, re-verify the session
-  work binding and locks — promotion strands them (#653's defect, live at 0.8.0).
-- Titles from `-q` output are truncated (dollspace-gay/crosslink#14): use
-  `--json` whenever titles or exact text matter.
+## Crosslink version — the 0.8.0 hold is CLEARED (2026-07-22)
+- The hold is lifted: upstream patched the migration blockers and the
+  operator migrated this hub to v3; the host binary runs 0.9.0-beta.1+
+  (operator ruling 2026-07-22, vsdd-cli #742). The old hard constraint
+  and its retest trigger are history, kept on the #597/#742 trails.
+- Conduct that SURVIVES the clear until re-verified against the new
+  version: re-read state after `issue close` and `archive add` (the
+  0.8.0 persistence defects may be fixed — verify before trusting);
+  re-verify session work binding and locks after any ID-promoting
+  `crosslink sync`; use `--json` whenever titles or exact text matter.
 - Never suppress crosslink WARN output (no `2>/dev/null` on crosslink
   commands). WARN dismissal was the proximate cause of the 2026-05-28
-  identity leak.
+  identity leak. (Version-independent; stands.)
 
 ## Identity and privacy
 - Nothing machine- or person-identifying enters commits, tracker records, or
