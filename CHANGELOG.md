@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Phase 2a execution, Layer 2: red-gate suite for snapshot acquisition, phase answer, and corroboration (#738)
 - Wire the executable cross-field constraints into mdatron patterns and schema if/then (mdatron #73 assessment) (#729)
 - Phase 2b execution, Layer 1: implement to green against the red gate (#718)
 - Phase 2a execution, Layer 1: red-gate test suite for the state artifact and versioned data (#716)
