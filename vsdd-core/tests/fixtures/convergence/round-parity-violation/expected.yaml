@@ -1,3 +1,6 @@
+# A round manifest declares five findings, the tracker holds three
+# children: the round-parity kind — count-claimed-in-narration against
+# tracked objects, the detected class.
 phase: phase-3
 layer: 2
 next_action: 3-dispatch-review-round

@@ -1,3 +1,6 @@
+# Phase 2a with no gate record: authoring continues — gate records are
+# the only progress the derivation can see (state materializes no
+# suite-authoring progress by design).
 phase: phase-2a
 layer: 2
 next_action: 2a-author-red-gate-tests

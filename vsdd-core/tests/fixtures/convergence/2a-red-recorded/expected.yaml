@@ -1,3 +1,6 @@
+# The layer's red-gate fail is recorded: 2a's exit condition is met
+# (contract: Phase exit by gate — the phase closes exactly when the
+# suite fails at the pre-implementation commit and the run is recorded).
 phase: phase-2a
 layer: 2
 next_action: close-phase

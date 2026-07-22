@@ -1,3 +1,5 @@
+# Phase-3 position: dispatch the next round — round records live in the
+# tracker, not the state, so the position alone selects the action.
 phase: phase-3
 layer: 2
 next_action: 3-dispatch-review-round

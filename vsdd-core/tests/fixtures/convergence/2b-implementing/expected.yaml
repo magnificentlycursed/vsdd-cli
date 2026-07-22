@@ -1,3 +1,5 @@
+# The red record stands and no green is recorded: implement until the
+# suite passes at HEAD (contract: the 2b definition).
 phase: phase-2b
 layer: 2
 next_action: 2b-implement-to-green

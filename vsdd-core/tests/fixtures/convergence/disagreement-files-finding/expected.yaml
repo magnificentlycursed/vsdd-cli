@@ -1,3 +1,6 @@
+# The active milestone disagrees with the state's pointer: a
+# present-but-disagreeing snapshot FILES the integrity finding and
+# never degrades (the phase-state resolution).
 phase: phase-2a
 layer: 2
 next_action: 2a-author-red-gate-tests

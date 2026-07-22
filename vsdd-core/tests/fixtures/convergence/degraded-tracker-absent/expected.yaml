@@ -1,3 +1,6 @@
+# Acquisition outcome absent: the contracted normal offline mode — the
+# answer is computed from the state artifact alone and reported with
+# kind tracker-absent; the ACTION never changes under degradation.
 phase: phase-2a
 layer: 2
 next_action: 2a-author-red-gate-tests

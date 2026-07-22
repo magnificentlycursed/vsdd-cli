@@ -1,3 +1,6 @@
+# The exit gate ran and FAILED: the pointer stays, the fail record says
+# why, and the answer stays the phase's work — were at 2c, staying at
+# 2c; transitions flip only on a recorded pass.
 phase: phase-2c
 layer: 2
 next_action: 2c-refactor

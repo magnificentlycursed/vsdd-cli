@@ -1,3 +1,6 @@
+# Null phase: the answer names the work, not the ceremony (#665 as
+# amended 2026-07-22); the first work commit carries the entry, so no
+# phase is ever unoccupied.
 phase: null
 layer: null
 next_action: 1a-author-behavioral-spec

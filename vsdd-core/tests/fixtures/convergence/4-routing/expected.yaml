@@ -1,3 +1,5 @@
+# Phase-4 position: route findings; the phase exits when the unrouted
+# query returns empty (contract: Phase exit by gate).
 phase: phase-4
 layer: 2
 next_action: 4-route-findings

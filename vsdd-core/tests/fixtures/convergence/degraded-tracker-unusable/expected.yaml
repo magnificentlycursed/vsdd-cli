@@ -1,3 +1,6 @@
+# Acquisition outcome unusable: kind tracker-unusable, never swapped
+# with absent (the derivation property the verification architecture
+# names); action unchanged, computed from the state alone.
 phase: phase-2a
 layer: 2
 next_action: 2a-author-red-gate-tests
