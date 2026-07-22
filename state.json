@@ -4412,11 +4412,12 @@
       "uuid": "2ad0fcb1-2f08-47fb-ba81-d378f80ff21e",
       "display_id": 757,
       "title": "Layer 2 round 2 major QE: the #750 pin is one-directional — reverting the #746 inconclusive branch to silent pass survives the whole suite",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T17:59:24.954009Z",
-      "updated_at": "2026-07-22T18:45:15.303337Z",
+      "updated_at": "2026-07-22T18:45:21.032664Z",
+      "closed_at": "2026-07-22T18:45:21.032655Z",
       "comments": {
         "27042a04-2bc9-45b4-a6db-5bd4bd3108b6": {
           "display_id": 990,
@@ -22137,11 +22138,16 @@
       "agent_id": "xqjG",
       "agent_seq": 231,
       "timestamp": "2026-07-22T18:45:15.303337Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 232,
+      "timestamp": "2026-07-22T18:45:21.032664Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:45:15.303337Z",
+    "timestamp": "2026-07-22T18:45:21.032664Z",
     "agent_id": "xqjG",
-    "agent_seq": 231
+    "agent_seq": 232
   }
 }
