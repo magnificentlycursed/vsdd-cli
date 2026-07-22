@@ -1,5 +1,5 @@
 {
-  "next_display_id": 756,
+  "next_display_id": 757,
   "next_comment_id": 988,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -149,6 +149,7 @@
     "2d7f0fdc-4f0f-4626-93a4-37f3a285ced2": 185,
     "2e509da4-ee26-487f-9108-2d958dc96e26": 324,
     "2e55ad2f-3fa0-4676-96b4-45191e2e3312": 682,
+    "2ebb1e48-8546-47f6-97d7-af065b8e7579": 756,
     "2ed1a8b3-523f-4030-9005-f4fb6a363b8a": 68,
     "2f097bd2-3027-41d6-8c70-e1e25fbdba6f": 728,
     "2f430553-7436-4390-82e2-c1f607e7a866": 292,
@@ -4591,6 +4592,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABABtjupybGiXmBnzQm7xK2aBfPRThcgC1OiHgQCFg7QOsBzB2tt0FqUYaIGDi6CHcUkzTvvXSeL3KTF4P+NOacDQ=="
         }
       }
+    },
+    "2ebb1e48-8546-47f6-97d7-af065b8e7579": {
+      "uuid": "2ebb1e48-8546-47f6-97d7-af065b8e7579",
+      "display_id": 756,
+      "title": "Layer 2 round 2 major SE+security convergent: run_bounded's residual unbounded and silent paths — descendant-held pipe defeats the deadline at join; try_wait error leaves the child running; reader failure degrades to silent truncated Completed",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:59:10.825291Z",
+      "updated_at": "2026-07-22T17:59:10.825291Z"
     },
     "2ed1a8b3-523f-4030-9005-f4fb6a363b8a": {
       "uuid": "2ed1a8b3-523f-4030-9005-f4fb6a363b8a",
@@ -21859,11 +21870,16 @@
       "agent_id": "xqjG",
       "agent_seq": 208,
       "timestamp": "2026-07-22T17:45:05.262201Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 209,
+      "timestamp": "2026-07-22T17:59:10.825291Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:45:05.262201Z",
+    "timestamp": "2026-07-22T17:59:10.825291Z",
     "agent_id": "xqjG",
-    "agent_seq": 208
+    "agent_seq": 209
   }
 }
