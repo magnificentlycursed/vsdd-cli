@@ -12992,11 +12992,12 @@
       "uuid": "97ac5459-fc84-40ff-8d1a-c306be197a60",
       "display_id": 766,
       "title": "Layer 2 round 3 major QE (SE+security concur): the #763 gauge-conflation declaration never landed and its close record overstates — implement the declaration, correct the record",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T19:04:09.317792Z",
-      "updated_at": "2026-07-22T19:07:56.849504Z",
+      "updated_at": "2026-07-22T19:08:03.120821Z",
+      "closed_at": "2026-07-22T19:08:03.120812Z",
       "comments": {
         "ed6ddf58-37e1-4cac-affb-fa8ac52e315a": {
           "display_id": 1002,
@@ -22504,11 +22505,16 @@
       "agent_id": "xqjG",
       "agent_seq": 269,
       "timestamp": "2026-07-22T19:07:56.849504Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 270,
+      "timestamp": "2026-07-22T19:08:03.120821Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T19:07:56.849504Z",
+    "timestamp": "2026-07-22T19:08:03.120821Z",
     "agent_id": "xqjG",
-    "agent_seq": 269
+    "agent_seq": 270
   }
 }
