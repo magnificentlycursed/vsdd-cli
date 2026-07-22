@@ -1,5 +1,5 @@
 {
-  "next_display_id": 761,
+  "next_display_id": 762,
   "next_comment_id": 988,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -654,6 +654,7 @@
     "daedbd11-9d51-4bf6-a214-acf8ec6386c4": 504,
     "db1c1d10-7ebd-4613-a7e5-a165e41efd46": 5,
     "db33bb36-028a-4140-969f-708527b76cbe": 489,
+    "db6b5467-85b1-43ab-819c-1220a28da513": 761,
     "dc0d734e-225b-46b7-98bc-29d01b69aa33": 91,
     "dce9e81b-8e1d-4a3b-a301-050c1d7877d7": 402,
     "ddf98216-5ac0-4e95-b9d2-2b2e9f157752": 711,
@@ -18504,6 +18505,16 @@
         }
       }
     },
+    "db6b5467-85b1-43ab-819c-1220a28da513": {
+      "uuid": "db6b5467-85b1-43ab-819c-1220a28da513",
+      "display_id": 761,
+      "title": "Layer 2 round 2 minor SE: the local ref query's refname:short renders heads/<name> on a branch-tag name collision — a false off-grammar finding (plausible, pending reproduction)",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T18:00:33.181200Z",
+      "updated_at": "2026-07-22T18:00:33.181200Z"
+    },
     "dc0d734e-225b-46b7-98bc-29d01b69aa33": {
       "uuid": "dc0d734e-225b-46b7-98bc-29d01b69aa33",
       "display_id": 91,
@@ -21984,11 +21995,16 @@
       "agent_id": "xqjG",
       "agent_seq": 218,
       "timestamp": "2026-07-22T18:00:24.514230Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 219,
+      "timestamp": "2026-07-22T18:00:33.181200Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:00:24.514230Z",
+    "timestamp": "2026-07-22T18:00:33.181200Z",
     "agent_id": "xqjG",
-    "agent_seq": 218
+    "agent_seq": 219
   }
 }
