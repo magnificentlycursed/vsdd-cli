@@ -1,11 +1,12 @@
 {
-  "next_display_id": 762,
+  "next_display_id": 763,
   "next_comment_id": 988,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
     "00255b24-89c4-44f6-a3ff-b77bfb77f77e": 582,
     "004ae531-8833-4173-9f6a-90427e5af063": 371,
+    "00617bc6-93c1-431e-9d4c-9c126740035c": 762,
     "006b61f2-64d1-4494-8999-668c26701e55": 179,
     "00a896fe-d55b-4833-b4ab-25b57996f73d": 356,
     "00f99555-d2a7-4d6b-8e92-fec52ffa99db": 262,
@@ -904,6 +905,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA2vn/BNpx/rZHZoSXSln8nkpw5d2JBtBzPzWOHPUr7obfDMRxTB3sYIsIItWTUS7czdVZg+oJmwwj3yfDD/3OBw=="
         }
       }
+    },
+    "00617bc6-93c1-431e-9d4c-9c126740035c": {
+      "uuid": "00617bc6-93c1-431e-9d4c-9c126740035c",
+      "display_id": 762,
+      "title": "Layer 2 round 2 minor collector QE+security: untested pure halves and the env guard — milestone parse and count-strip, the glob length guard, empty-string HOME",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T18:00:49.691266Z",
+      "updated_at": "2026-07-22T18:00:49.691266Z"
     },
     "006b61f2-64d1-4494-8999-668c26701e55": {
       "uuid": "006b61f2-64d1-4494-8999-668c26701e55",
@@ -22009,11 +22020,16 @@
       "agent_id": "xqjG",
       "agent_seq": 220,
       "timestamp": "2026-07-22T18:00:42.120956Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 221,
+      "timestamp": "2026-07-22T18:00:49.691266Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T18:00:42.120956Z",
+    "timestamp": "2026-07-22T18:00:49.691266Z",
     "agent_id": "xqjG",
-    "agent_seq": 220
+    "agent_seq": 221
   }
 }
