@@ -1,5 +1,5 @@
 {
-  "next_display_id": 750,
+  "next_display_id": 751,
   "next_comment_id": 973,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -43,6 +43,7 @@
     "09d272a4-fabc-4f73-9ae7-42b8da81f29b": 64,
     "09e48a34-771e-49ea-9e9a-557901642f61": 642,
     "0a7380fb-8843-4622-9c15-b6925c7eb260": 539,
+    "0aceb01f-b39b-48d6-8f56-1b82944fa749": 750,
     "0b866840-96dd-4dfc-b11e-6e0c0a5e283a": 436,
     "0be3246f-4d2d-4190-95b7-4251dafb61eb": 565,
     "0bf75fb2-8b3b-414f-8183-05aeec471d10": 426,
@@ -1825,6 +1826,18 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxx1yYrtO45ljrBmRbUqsqlxOqrL5FaMnRZW+cemSMY8ldwc2QshWVFhdBl9tbvm9ucRaC0w21TPWa8GUv+83DA=="
         }
       }
+    },
+    "0aceb01f-b39b-48d6-8f56-1b82944fa749": {
+      "uuid": "0aceb01f-b39b-48d6-8f56-1b82944fa749",
+      "display_id": 750,
+      "title": "l2r1 major QE: the live-tree substrate test fails on any fresh clone or CI runner",
+      "description": "shell_red_gate.rs:92 asserts no substrate entry fails on the repo tree, but per-clone payload entries (hooks, mcp servers) are gitignored — absent on a fresh checkout or CI, so the positive test fails everywhere but this working copy; it also cannot see the githook prose-path declassification because that entry never reaches a fail on this tree. Disposition: build the positive fixture as a controlled temp tree with the expected payloads present, not the live estate. Owner: quality-engineer. Validator: software-engineer.",
+      "status": "open",
+      "priority": "high",
+      "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+      "created_by": "xqjG",
+      "created_at": "2026-07-22T17:01:51.142165Z",
+      "updated_at": "2026-07-22T17:01:51.142165Z"
     },
     "0b866840-96dd-4dfc-b11e-6e0c0a5e283a": {
       "uuid": "0b866840-96dd-4dfc-b11e-6e0c0a5e283a",
@@ -21321,11 +21334,16 @@
       "agent_id": "xqjG",
       "agent_seq": 149,
       "timestamp": "2026-07-22T17:01:44.011127Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 150,
+      "timestamp": "2026-07-22T17:01:51.142165Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T17:01:44.011127Z",
+    "timestamp": "2026-07-22T17:01:51.142165Z",
     "agent_id": "xqjG",
-    "agent_seq": 149
+    "agent_seq": 150
   }
 }
