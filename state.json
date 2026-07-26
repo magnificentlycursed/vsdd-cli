@@ -1,6 +1,6 @@
 {
   "next_display_id": 783,
-  "next_comment_id": 1033,
+  "next_comment_id": 1034,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10388,7 +10388,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:44:54.011468Z",
-      "updated_at": "2026-07-26T05:44:54.011468Z"
+      "updated_at": "2026-07-26T06:28:58.773701Z",
+      "comments": {
+        "6d0d9f1a-2cbc-4365-986c-e9f4c7beda5e": {
+          "display_id": 1033,
+          "author": "xqjG",
+          "content": "Fixed in ff331dd9: the executed-mutant gaps are closed — the absences fixture carries genuinely empty values so the renderer's worded-absence branch executes; render_human words its absences (the code half that was missing outright); the generic truncation branch, the degraded only-if half (healthy segments assert NO marker word for every registered kind), the machine report.degraded block by exact match, the milestone's position in field order, the per-fixture byte-identity/superset/color-strip quantifiers, the CountingReader positive control, and the nonzero wall-clock observation all have executed falsifiers; the machine form shares the one unregistered-kind fallback wording with its sibling surfaces. Conduct suite 18 -> 25 tests.",
+          "created_at": "2026-07-26T06:28:58.731072Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+DFYA9yW/WyCWdb/47/iEpt1N7FvQYUPgA/86gbYmeer00aCaggrL6ctfkzfjCaiy8yyvV3K74Gt1kUjRUw4BA=="
+        }
+      }
     },
     "737eaf25-a900-4f6b-8e7b-4db72ffde15f": {
       "uuid": "737eaf25-a900-4f6b-8e7b-4db72ffde15f",
@@ -23405,11 +23416,16 @@
       "agent_id": "xqjG",
       "agent_seq": 358,
       "timestamp": "2026-07-26T06:28:25.239537Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 359,
+      "timestamp": "2026-07-26T06:28:58.773701Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:28:25.239537Z",
+    "timestamp": "2026-07-26T06:28:58.773701Z",
     "agent_id": "xqjG",
-    "agent_seq": 358
+    "agent_seq": 359
   }
 }
