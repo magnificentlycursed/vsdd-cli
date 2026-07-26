@@ -95,9 +95,10 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
     out.push_str("report\n");
     match &answer.degraded {
         Some(kind) => {
-            let next_step = clean_for_terminal(
-                super::degraded_next_step(data, kind).unwrap_or(super::UNREGISTERED_DEGRADED_KIND),
-            );
+            // The registry strings arrive pre-cleaned from the loader
+            // (vsdd-cli #794); only the dynamic strings clean at render.
+            let next_step =
+                super::degraded_next_step(data, kind).unwrap_or(super::UNREGISTERED_DEGRADED_KIND);
             // The next-step text leads (it already words the
             // condition); the kind token trails for the machine-form
             // cross-reference — one statement, not three (vsdd-cli
@@ -117,4 +118,37 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
         }
     }
     out
+}
+
+#[cfg(test)]
+mod tests {
+    use super::registered_absence;
+    use vsdd_core::registry::sets::StatuslineData;
+
+    fn data() -> StatuslineData {
+        let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .parent()
+            .unwrap()
+            .to_path_buf();
+        vsdd_core::registry::load_set(&root, "statusline-data").expect("statusline data loads")
+    }
+
+    #[test]
+    fn registered_absence_is_loud_on_an_unregistered_field() {
+        // The expect posture pinned (vsdd-cli #795): asking for a field
+        // the registry does not carry panics rather than returning an
+        // empty slot — the same loud failure fit() takes.
+        let d = data();
+        assert_eq!(registered_absence(&d, "work-item"), "no work item");
+        // Return an owned bool from the closure, never the borrowed &str
+        // (which would reference the captured data).
+        let panicked = std::panic::catch_unwind(|| {
+            let d = data();
+            registered_absence(&d, "not-a-field").is_empty()
+        });
+        assert!(
+            panicked.is_err(),
+            "an unregistered field is loud, never an empty slot"
+        );
+    }
 }

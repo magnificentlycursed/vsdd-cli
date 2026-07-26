@@ -109,7 +109,10 @@ fn schema_pair_diagnostic(
 /// parse failure (with location), a `schema_class` mismatch, or a
 /// schema-pair violation each yield a diagnostic naming the file —
 /// never a panic (the registry is adopter-edited).
-pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T, Box<Diagnostic>> {
+pub fn load_set<T: DeserializeOwned + sets::PostLoad>(
+    repo_root: &Path,
+    class: &str,
+) -> Result<T, Box<Diagnostic>> {
     // One safe path segment only: the traversal cannot exist even if a
     // future caller passes untrusted input (vsdd-cli #727).
     if class.is_empty()
@@ -273,7 +276,7 @@ pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T,
     // toolkit defect, never the adopter's artifact (vsdd-cli #723). No
     // registered recovery action applies: the empty action is the
     // explicit no-adopter-act-exists signal.
-    serde_yaml_ng::from_str::<T>(fm).map_err(|e| {
+    let mut value = serde_yaml_ng::from_str::<T>(fm).map_err(|e| {
         Box::new(Diagnostic {
             file: path,
             kind: "loader-pair-disagreement".to_string(),
@@ -285,7 +288,14 @@ pub fn load_set<T: DeserializeOwned>(repo_root: &Path, class: &str) -> Result<T,
             recovery_action: String::new(),
             recovery_text: String::new(),
         })
-    })
+    })?;
+    // Adopter-authored display strings are cleaned once, here, so every
+    // downstream surface — segment, human, machine — receives
+    // terminal-safe data and no render site can miss a member of the
+    // class (vsdd-cli #794). Most sets have nothing terminal-destined
+    // and take the no-op default.
+    value.post_load();
+    Ok(value)
 }
 
 /// Load all nine sets from the repo. One pass names every failing

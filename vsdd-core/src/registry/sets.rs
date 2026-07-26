@@ -269,3 +269,92 @@ pub struct SnapshotSchemaSet {
     /// Deepens at Layer 2.
     pub audit: Value,
 }
+
+/// A post-deserialization hook the registry loader runs on every set
+/// (vsdd-cli #794): the one place adopter-authored, terminal-destined
+/// display strings are cleaned, so every downstream surface receives
+/// terminal-safe data. Sets with no terminal-destined free-form string
+/// take the no-op default.
+pub trait PostLoad {
+    fn post_load(&mut self) {}
+}
+
+impl PostLoad for StatuslineData {
+    fn post_load(&mut self) {
+        use crate::text::clean_for_terminal;
+        self.truncation_mark = clean_for_terminal(&self.truncation_mark);
+        self.broken_state_mark = clean_for_terminal(&self.broken_state_mark);
+        for f in &mut self.display_fields {
+            f.absence_text = clean_for_terminal(&f.absence_text);
+        }
+        for k in &mut self.degraded_kinds {
+            k.marker_word = clean_for_terminal(&k.marker_word);
+            k.next_step_text = clean_for_terminal(&k.next_step_text);
+        }
+        for k in &mut self.read_failure_kinds {
+            k.human_diagnostic = clean_for_terminal(&k.human_diagnostic);
+            k.human_recovery = clean_for_terminal(&k.human_recovery);
+        }
+    }
+}
+
+impl PostLoad for GateData {}
+impl PostLoad for InstalledArtifactManifest {}
+impl PostLoad for CompositionScopeAndActions {}
+impl PostLoad for ActToAffordanceMap {}
+impl PostLoad for EconomicsData {}
+impl PostLoad for DispatchData {}
+impl PostLoad for StateSchemaSet {}
+impl PostLoad for SnapshotSchemaSet {}
+
+#[cfg(test)]
+mod post_load_tests {
+    use super::*;
+
+    #[test]
+    fn statusline_post_load_cleans_every_registry_display_string() {
+        // The registry-string class cleaned once at load (vsdd-cli
+        // #794): a hostile character in any terminal-destined field is
+        // gone after post_load — the surfaces never see it.
+        let mut d = StatuslineData {
+            schema_class: "statusline-data".to_string(),
+            schema_version: "0.0.0".to_string(),
+            status: "test".to_string(),
+            read_failure_kinds: vec![ReadFailureKind {
+                kind: "malformed".to_string(),
+                machine_token: "malformed".to_string(),
+                recovery_action: "x".to_string(),
+                human_diagnostic: "diag\u{202e}".to_string(),
+                human_recovery: "rec\u{200b}".to_string(),
+            }],
+            degraded_kinds: vec![DegradedKind {
+                kind: "tracker-absent".to_string(),
+                marker_word: "mark\u{2060}".to_string(),
+                benign: true,
+                next_step_text: "step\u{e0069}".to_string(),
+            }],
+            wiring_outcomes: vec![],
+            display_fields: vec![DisplayField {
+                field: "work-item".to_string(),
+                width_budget_chars: 24,
+                absence_text: "none\u{2028}".to_string(),
+            }],
+            truncation_mark: "(cut)\u{1b}".to_string(),
+            truncation_rule: String::new(),
+            substrate_findings_visibility: String::new(),
+            broken_state_mark: "broken\u{feff}".to_string(),
+            wall_clock_budget_ms: 250,
+            timing_check: serde_yaml_ng::Value::Null,
+            repo_set_config: serde_yaml_ng::Value::Null,
+            composition_instruction_conduct: String::new(),
+        };
+        d.post_load();
+        assert_eq!(d.truncation_mark, "(cut)");
+        assert_eq!(d.broken_state_mark, "broken");
+        assert_eq!(d.display_fields[0].absence_text, "none");
+        assert_eq!(d.degraded_kinds[0].marker_word, "mark");
+        assert_eq!(d.degraded_kinds[0].next_step_text, "step");
+        assert_eq!(d.read_failure_kinds[0].human_diagnostic, "diag");
+        assert_eq!(d.read_failure_kinds[0].human_recovery, "rec");
+    }
+}

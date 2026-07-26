@@ -26,5 +26,6 @@ regex = "1"
 # rides NamedTempFile for RAII cleanup on every failure ordering
 # (vsdd-cli #721, #726; PE note on the #720 fix-pass record).
 tempfile = "3"
+unicode-general-category = "1"
 
 [dev-dependencies]

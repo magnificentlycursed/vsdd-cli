@@ -8,33 +8,42 @@
 //! project's own hidden-Unicode rule (`.crosslink/rules/web.md`) names
 //! "zero-width chars, RTL overrides — strip and re-evaluate", and the
 //! Trojan-Source class (CVE-2021-42574) reorders visible text with the
-//! bidi controls. So the cleaner drops the C0/C1 control set AND the
-//! bidi-formatting, isolate, directional-mark, zero-width, and
-//! deprecated-format code points.
+//! bidi controls. The policy strips by Unicode General_Category rather
+//! than a hand-list (vsdd-cli #793): two rounds proved an enumeration
+//! is always one adversarial probe short of the class. It drops the
+//! control category (`Cc` — C0/C1), the entire format category (`Cf` —
+//! bidi overrides, isolates, directional marks, zero-width, word
+//! joiner, the deprecated set, interlinear annotation, and the tag
+//! block that smuggles ASCII), and the line/paragraph separators
+//! (`Zl`/`Zp`) that would break a one-line surface.
 //!
-//! Deliberately NOT stripped: combining marks and other legitimate
-//! non-Latin text shaping — over-stripping would corrupt real repo and
-//! milestone names in most of the world's scripts, and they are not on
-//! the threat list. The line is drawn exactly at the named set.
+//! Deliberately NOT stripped: combining marks (`Mn`/`Mc`/`Me`) and
+//! normal spaces (`Zs`) — legitimate text, not on the threat list;
+//! over-stripping would corrupt real repo and milestone names in most
+//! of the world's scripts. The line is drawn at the category boundary.
+//!
+//! Scope, declared (vsdd-cli #796): this policy covers the STATUS
+//! surfaces (the segment, human, machine, and broken-state renderings)
+//! and the registry strings they consume. The `vsdd init` command
+//! surface — its preflight report and init-error prints — is Layer 4's
+//! (Install) and routes its own operator-local strings (cwd, on-PATH
+//! tool versions) through this same helper when Layer 4 hardens; the
+//! cleaner is available to it, the wiring is that layer's act.
+
+use unicode_general_category::{get_general_category, GeneralCategory};
 
 /// True for a code point that must never reach a terminal surface: a
-/// control character or a display-affecting format/bidi code point.
+/// control, a format character, or a line/paragraph separator. Fixed
+/// by category so a new Unicode format character is covered without a
+/// code change (vsdd-cli #793).
 pub fn is_terminal_unsafe(c: char) -> bool {
-    c.is_control()
-        || matches!(c,
-            // Bidi embeddings and overrides (Trojan-Source).
-            '\u{202A}'..='\u{202E}'
-            // Directional isolates.
-            | '\u{2066}'..='\u{2069}'
-            // Left-to-right / right-to-left marks and the Arabic mark.
-            | '\u{200E}' | '\u{200F}' | '\u{061C}'
-            // Zero-width space, non-joiner, joiner.
-            | '\u{200B}'..='\u{200D}'
-            // Zero-width no-break space / BOM.
-            | '\u{FEFF}'
-            // Deprecated format controls.
-            | '\u{206A}'..='\u{206F}'
-        )
+    matches!(
+        get_general_category(c),
+        GeneralCategory::Control
+            | GeneralCategory::Format
+            | GeneralCategory::LineSeparator
+            | GeneralCategory::ParagraphSeparator
+    )
 }
 
 /// Drop every terminal-unsafe code point; the shared cleaner for all
@@ -53,12 +62,27 @@ mod tests {
     }
 
     #[test]
-    fn bidi_and_zero_width_are_stripped() {
-        // The Trojan-Source set and the project's named hidden-Unicode.
+    fn the_whole_format_and_separator_class_is_stripped() {
+        // The category boundary (vsdd-cli #793), member by member across
+        // the class the two rounds probed: bidi, zero-width, the word
+        // joiner and invisible operators, the deprecated set, BOM, the
+        // interlinear annotations, the tag block (ASCII smuggling), the
+        // soft hyphen, and the line/paragraph separators.
         assert_eq!(clean_for_terminal("safe\u{202E}reversed"), "safereversed");
         assert_eq!(clean_for_terminal("zero\u{200B}width"), "zerowidth");
         assert_eq!(clean_for_terminal("iso\u{2066}late\u{2069}"), "isolate");
         assert_eq!(clean_for_terminal("\u{FEFF}bom"), "bom");
+        assert_eq!(clean_for_terminal("word\u{2060}joiner"), "wordjoiner");
+        assert_eq!(clean_for_terminal("op\u{2061}\u{2064}s"), "ops");
+        assert_eq!(clean_for_terminal("soft\u{00AD}hyphen"), "softhyphen");
+        assert_eq!(
+            clean_for_terminal("inter\u{FFF9}lin\u{FFFB}ear"),
+            "interlinear"
+        );
+        // The tag block smuggles ASCII invisibly into agent-consumed text.
+        assert_eq!(clean_for_terminal("tag\u{E0068}\u{E0069}"), "tag");
+        // Line and paragraph separators would break a one-line surface.
+        assert_eq!(clean_for_terminal("a\u{2028}b\u{2029}c"), "abc");
     }
 
     #[test]

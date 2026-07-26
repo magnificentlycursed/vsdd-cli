@@ -1110,7 +1110,21 @@ fn the_status_command_cleans_config_diagnostics_on_stderr() {
     scrub_model_credentials();
     let dir = tempfile::tempdir().unwrap();
     let cfg = dir.path().join("hostile.yaml");
-    fs::write(&cfg, "repos: [unclosed \u{1b}[31m").unwrap();
+    // An unknown key carrying an escape byte: the deny-unknown-fields
+    // diagnostic ECHOES the field name, so a raw print WOULD leak the
+    // byte and a cleaned print must not — the raw-vs-cleaned distinction
+    // this falsifier needs (vsdd-cli #795). The previous fixture (a
+    // syntax error) produced a diagnostic that never echoed the byte,
+    // so it could not tell raw from cleaned.
+    // The escape is a YAML \x1b escape in a double-quoted key, not a raw
+    // byte — YAML rejects raw control bytes before deny-unknown-fields
+    // can echo the name, so only the escaped form reaches the
+    // diagnostic (and thus tests the print's cleaning).
+    fs::write(
+        &cfg,
+        "repos: []\nper_repo_budget_ms: 5\n\"\\x1b[31mevil\": 1\n",
+    )
+    .unwrap();
     let output = std::process::Command::new(env!("CARGO_BIN_EXE_vsdd"))
         .args(["status", "--statusline", "--repo-set"])
         .arg(&cfg)
@@ -1118,16 +1132,21 @@ fn the_status_command_cleans_config_diagnostics_on_stderr() {
         .env_remove("ANTHROPIC_API_KEY")
         .output()
         .expect("the built binary runs");
-    // A malformed config is a diagnostic (nonzero exit), and no control
-    // byte reaches the terminal stream.
+    let stderr = String::from_utf8_lossy(&output.stderr);
     assert!(
         !output.status.success(),
         "the malformed config exits nonzero"
     );
+    // The diagnostic path is proven reached (it names the unknown
+    // field), and no escape byte survives — so a revert to a raw print
+    // turns this red.
+    assert!(
+        stderr.contains("evil"),
+        "the diagnostic echoes the unknown field, proving the print path: {stderr:?}"
+    );
     assert!(
         !output.stderr.contains(&0x1b),
-        "no escape byte reaches stderr: {:?}",
-        String::from_utf8_lossy(&output.stderr)
+        "no escape byte reaches stderr: {stderr:?}"
     );
 }
 

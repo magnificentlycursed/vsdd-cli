@@ -74,10 +74,9 @@ pub fn compose_broken_state(
         clean_for_terminal(&diagnostic.kind)
     ));
     match registered {
-        Some(k) => human.push_str(&format!(
-            "  = recovery: {}\n",
-            clean_for_terminal(&k.human_recovery)
-        )),
+        // human_recovery is a registry string, pre-cleaned at load
+        // (vsdd-cli #794); the dynamic message/kind/path clean here.
+        Some(k) => human.push_str(&format!("  = recovery: {}\n", k.human_recovery)),
         None => human.push_str(
             "  = recovery: the read-failure kind is unregistered — repair the statusline data set\n",
         ),
