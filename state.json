@@ -1,6 +1,6 @@
 {
   "next_display_id": 784,
-  "next_comment_id": 1038,
+  "next_comment_id": 1039,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8957,7 +8957,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T06:32:53.695994Z",
-      "updated_at": "2026-07-26T06:32:53.695994Z"
+      "updated_at": "2026-07-26T06:33:47.032559Z",
+      "comments": {
+        "f5575491-a08c-4281-a2c6-41250ad7aa6c": {
+          "display_id": 1038,
+          "author": "xqjG",
+          "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, attended side — host awake (the #775 incident's condition holds: dispatch only under a live session). round shape: VERIFY — each lens adversarially verifies the seven round-1 fixes (ff331dd9) in its scope, tries to refute each claim, sweeps the changed surfaces for regressions; the round re-decides the stop. domains, the same four (the fixes land on the same display surfaces): software-engineer (the unified fit path with protected tails, the digit-exact split, bounded_line's channel semantics, the canonical dedup), security (the terminal-boundary cleaning's coverage, the capped config read, the script's loud-degrade branch, the home fold in the broken path), quality-engineer (do the new falsifiers actually falsify — re-run the surviving-mutant checks against the grown suite; the emptied absences fixture; the per-fixture quantifiers), user-experience (the reworded degraded line as read, the breach line's wording, the identity-prefixed broken line's glance shape, the revised script guidance). MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH, quality-engineer and user-experience MEDIUM (unchanged posture). expected_cost_band: 0-12 findings pre-dedup, 200k-380k downstream tokens — priced from the verify-round history (Layer 2 observed 314k and 368k at four lenses; the two undercalls are the calibration evidence). inputs: the tree at the fix-pass boundary (ff331dd9 + the changelog mirror), the seven closed children, the #775 trail with the dispatch-incident record. returned + telemetry recorded here after.",
+          "created_at": "2026-07-26T06:33:46.987104Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA5spBHU9sEjcQmoWUM6qS7iShCr3+d3DGKJn6FBEeZLHOpBUy+CGHFKN2AmT8NQ3nXRrvtCQrS1NCb7nBwg8rBg=="
+        }
+      }
     },
     "62d3364e-758d-4ce5-9c3f-7846839f9363": {
       "uuid": "62d3364e-758d-4ce5-9c3f-7846839f9363",
@@ -23536,11 +23547,16 @@
       "agent_id": "xqjG",
       "agent_seq": 373,
       "timestamp": "2026-07-26T06:33:11.145425Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 374,
+      "timestamp": "2026-07-26T06:33:47.032559Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:33:11.145425Z",
+    "timestamp": "2026-07-26T06:33:47.032559Z",
     "agent_id": "xqjG",
-    "agent_seq": 373
+    "agent_seq": 374
   }
 }
