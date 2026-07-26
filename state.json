@@ -12653,11 +12653,12 @@
       "uuid": "89fcf1f9-e0ca-4372-a5a9-29d1fbff8b52",
       "display_id": 801,
       "title": "Layer 3 round 5 nit collector: the composition set's human vocabulary takes the no-op PostLoad (latent until a later layer prints it); post_load runs after schema minLength so an all-format-char field cleans to empty",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:59:18.134837Z",
-      "updated_at": "2026-07-26T11:12:13.567912Z",
+      "updated_at": "2026-07-26T11:12:18.983786Z",
+      "closed_at": "2026-07-26T11:12:18.983777Z",
       "comments": {
         "d5c35f63-c8f7-4552-93d1-5e7f92785fc6": {
           "display_id": 1066,
@@ -24537,11 +24538,16 @@
       "agent_id": "xqjG",
       "agent_seq": 467,
       "timestamp": "2026-07-26T11:12:13.567912Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 468,
+      "timestamp": "2026-07-26T11:12:18.983786Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T11:12:13.567912Z",
+    "timestamp": "2026-07-26T11:12:18.983786Z",
     "agent_id": "xqjG",
-    "agent_seq": 467
+    "agent_seq": 468
   }
 }
