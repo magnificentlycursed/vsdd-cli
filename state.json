@@ -1,6 +1,6 @@
 {
   "next_display_id": 788,
-  "next_comment_id": 1046,
+  "next_comment_id": 1047,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -17685,7 +17685,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T09:06:27.997582Z",
-      "updated_at": "2026-07-26T09:23:02.801308Z",
+      "updated_at": "2026-07-26T09:32:12.822861Z",
       "comments": {
         "8466b841-923a-4b9f-b47b-d4216f971c82": {
           "display_id": 1045,
@@ -17695,6 +17695,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASs8/S7K2Y7GGZFz4AiHVye5RxDP8QAHqBHKW4ao0/vMLggsRnd3h7h028+bk7uOICg6LBWvaaEZN/dKNxkUiCQ=="
+        },
+        "b09d0614-ec18-4b1e-bf63-f0f8cd7e8c62": {
+          "display_id": 1046,
+          "author": "xqjG",
+          "content": "MANIFEST CORRECTION: the Workflow surface has no synchronous mode — it always dispatches to the background — so 'run_in_background false' was not expressible and is withdrawn from the manifest above. The conduct point stands as a recommendation the operator holds, not a tool setting I can enforce: the durable fix for the interruption class is Layer 8's container-backed vehicle. Round 3 launched normally under the live turn; the three completed lenses cache on any resume, so an interruption costs at most the in-flight lens, not the round. Everything else in the manifest holds.",
+          "created_at": "2026-07-26T09:32:12.805488Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJLl3SPr+9sWRokGhFZgUXsKnEZy/FAEpk8rXscmjpgm3etYd09vV5s/soEmtsCbkJKcmSLJ76cBFp+eGjoA9DQ=="
         }
       }
     },
@@ -23779,11 +23788,16 @@
       "agent_id": "xqjG",
       "agent_seq": 395,
       "timestamp": "2026-07-26T09:23:02.801308Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 396,
+      "timestamp": "2026-07-26T09:32:12.822861Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:23:02.801308Z",
+    "timestamp": "2026-07-26T09:32:12.822861Z",
     "agent_id": "xqjG",
-    "agent_seq": 395
+    "agent_seq": 396
   }
 }
