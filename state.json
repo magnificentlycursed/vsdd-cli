@@ -1,6 +1,6 @@
 {
   "next_display_id": 802,
-  "next_comment_id": 1063,
+  "next_comment_id": 1064,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -16444,7 +16444,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:58:33.597138Z",
-      "updated_at": "2026-07-26T10:58:33.597138Z"
+      "updated_at": "2026-07-26T11:11:24.075754Z",
+      "comments": {
+        "74e2f224-0536-44f8-b1fe-62c60e9392a2": {
+          "display_id": 1063,
+          "author": "xqjG",
+          "content": "Fixed in 52f94321: is_terminal_unsafe now also strips UNASSIGNED default-ignorable code points in the reserved ranges (U+2065, U+FFF0-FFF8, U+E0000-E0FFF), gated on GeneralCategory::Unassigned so the assigned invisibles stay category-caught and the variation selectors (U+E0100-E01EF, Mn) in the same block survive. U+E0000 no longer reaches the terminal. Unit-pinned both ways: the unassigned ignorables strip, a variation selector survives. This closes the last edge of the char class — the category proxy plus the reserved-range gate cover assigned AND unassigned invisibles.",
+          "created_at": "2026-07-26T11:11:24.061748Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA2HhkIfxQu64PuLLwJ3KmLAit0nupGUStw3rfzIZACm5cbokUcFhEOwho9j2/MCN/jRpP3jc1G7YwgPGbDg0pDQ=="
+        }
+      }
     },
     "b4a63600-5efb-41e5-8984-a684848726e8": {
       "uuid": "b4a63600-5efb-41e5-8984-a684848726e8",
@@ -24452,11 +24463,16 @@
       "agent_id": "xqjG",
       "agent_seq": 457,
       "timestamp": "2026-07-26T11:00:13.816276Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 458,
+      "timestamp": "2026-07-26T11:11:24.075754Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T11:00:13.816276Z",
+    "timestamp": "2026-07-26T11:11:24.075754Z",
     "agent_id": "xqjG",
-    "agent_seq": 457
+    "agent_seq": 458
   }
 }
