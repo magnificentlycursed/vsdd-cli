@@ -20481,11 +20481,12 @@
       "uuid": "ea5249a5-764e-46f9-8d16-5bfc170b6155",
       "display_id": 791,
       "title": "Layer 3 round 3 minor collector SE: the cleaning trust model is inconsistent — free-form registry strings (next_step_text, human_recovery) render raw while the enum kind is cleaned; #786's registered-absence source is dead behind acquire.rs's upstream hardcode; the empty-fallback empty-slot with renderer disagreement",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T09:44:31.963884Z",
-      "updated_at": "2026-07-26T09:52:43.124515Z",
+      "updated_at": "2026-07-26T09:52:48.735958Z",
+      "closed_at": "2026-07-26T09:52:48.735947Z",
       "comments": {
         "582469a1-ebc5-4fd6-a083-9730bb81a3cf": {
           "display_id": 1051,
@@ -23992,11 +23993,16 @@
       "agent_id": "xqjG",
       "agent_seq": 415,
       "timestamp": "2026-07-26T09:52:43.124515Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 416,
+      "timestamp": "2026-07-26T09:52:48.735958Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:52:43.124515Z",
+    "timestamp": "2026-07-26T09:52:48.735958Z",
     "agent_id": "xqjG",
-    "agent_seq": 415
+    "agent_seq": 416
   }
 }
