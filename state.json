@@ -1,6 +1,6 @@
 {
   "next_display_id": 783,
-  "next_comment_id": 1030,
+  "next_comment_id": 1031,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9852,7 +9852,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:44:13.786606Z",
-      "updated_at": "2026-07-26T05:44:13.786606Z"
+      "updated_at": "2026-07-26T06:26:41.189461Z",
+      "comments": {
+        "784f6ae4-b15e-4290-bbe8-1d37f4588ec7": {
+          "display_id": 1030,
+          "author": "xqjG",
+          "content": "Fixed in ff331dd9: the composition root's broken arm prefixes the worded repo name (the acquisition's own leaf derivation) to the registered mark, so every composed line — healthy or broken — identifies its repo; the single-repo broken glance gains the same identity. Pinned: segment_for_repo healthy and broken, two distinct broken members surviving composition distinguishably.",
+          "created_at": "2026-07-26T06:26:41.133287Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZHfnNb8qPfy3BeVgECEdp4Mbqh5Kjt1TO/L7cqwgmOEb9JJGkydqTe0ehi2+k2ryS93vTvgb/xnn5UumMfneCQ=="
+        }
+      }
     },
     "6ef7a421-5d4f-4ec7-91b1-64893cb35733": {
       "uuid": "6ef7a421-5d4f-4ec7-91b1-64893cb35733",
@@ -23336,11 +23347,16 @@
       "agent_id": "xqjG",
       "agent_seq": 349,
       "timestamp": "2026-07-26T05:46:23.607182Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 350,
+      "timestamp": "2026-07-26T06:26:41.189461Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T05:46:23.607182Z",
+    "timestamp": "2026-07-26T06:26:41.189461Z",
     "agent_id": "xqjG",
-    "agent_seq": 349
+    "agent_seq": 350
   }
 }
