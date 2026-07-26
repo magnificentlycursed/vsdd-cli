@@ -19146,11 +19146,12 @@
       "uuid": "d92976d0-b2c9-47d6-9f12-fc77e1b43b91",
       "display_id": 786,
       "title": "Layer 3 round 2 minor collector QE: falsifiability gaps on just-fixed surfaces — degenerate-budget hard-cuts, the config artifact cap, and both #782 surfaces (home fold, degraded-line shape) have no falsifier; plus the work-item-budget hardcode and the render-text hardcode-parallel nits",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T08:53:05.449579Z",
-      "updated_at": "2026-07-26T09:04:50.720031Z",
+      "updated_at": "2026-07-26T09:05:02.389350Z",
+      "closed_at": "2026-07-26T09:05:02.389330Z",
       "comments": {
         "95271209-b3d8-4618-b44b-c2e3a5ef68b2": {
           "display_id": 1043,
@@ -23717,11 +23718,16 @@
       "agent_id": "xqjG",
       "agent_seq": 389,
       "timestamp": "2026-07-26T09:04:50.720031Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 390,
+      "timestamp": "2026-07-26T09:05:02.389350Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:04:50.720031Z",
+    "timestamp": "2026-07-26T09:05:02.389350Z",
     "agent_id": "xqjG",
-    "agent_seq": 389
+    "agent_seq": 390
   }
 }
