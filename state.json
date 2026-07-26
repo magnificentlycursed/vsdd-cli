@@ -19441,11 +19441,12 @@
       "uuid": "d8a4ac5b-b08f-4daa-9cc7-03f9b869859c",
       "display_id": 799,
       "title": "Layer 3 round 5 major security: the machine form renders state-sourced strings (phase, scope, domains) and the diagnostic file/message RAW — the last uncleaned sink; contradicts the text.rs scope claim that the policy covers the machine rendering",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:58:49.860710Z",
-      "updated_at": "2026-07-26T11:11:41.109507Z",
+      "updated_at": "2026-07-26T11:11:46.435865Z",
+      "closed_at": "2026-07-26T11:11:46.435857Z",
       "comments": {
         "f1ae5294-310f-4b41-88d1-dc68f93b786e": {
           "display_id": 1064,
@@ -24491,11 +24492,16 @@
       "agent_id": "xqjG",
       "agent_seq": 461,
       "timestamp": "2026-07-26T11:11:41.109507Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 462,
+      "timestamp": "2026-07-26T11:11:46.435865Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T11:11:41.109507Z",
+    "timestamp": "2026-07-26T11:11:46.435865Z",
     "agent_id": "xqjG",
-    "agent_seq": 461
+    "agent_seq": 462
   }
 }
