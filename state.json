@@ -9848,11 +9848,12 @@
       "uuid": "6ebf885d-e7a3-44f9-b50f-e222c3913318",
       "display_id": 776,
       "title": "Layer 3 round 1 major SE+UX convergent: broken members of the composed display render with no repo identity — indistinguishable lines; segment_for_repo untested",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:44:13.786606Z",
-      "updated_at": "2026-07-26T06:26:41.189461Z",
+      "updated_at": "2026-07-26T06:26:55.080109Z",
+      "closed_at": "2026-07-26T06:26:55.080084Z",
       "comments": {
         "784f6ae4-b15e-4290-bbe8-1d37f4588ec7": {
           "display_id": 1030,
@@ -23352,11 +23353,16 @@
       "agent_id": "xqjG",
       "agent_seq": 350,
       "timestamp": "2026-07-26T06:26:41.189461Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 351,
+      "timestamp": "2026-07-26T06:26:55.080109Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:26:41.189461Z",
+    "timestamp": "2026-07-26T06:26:55.080109Z",
     "agent_id": "xqjG",
-    "agent_seq": 350
+    "agent_seq": 351
   }
 }
