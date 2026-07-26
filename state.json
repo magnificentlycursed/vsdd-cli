@@ -10406,11 +10406,12 @@
       "uuid": "74c556c9-fc41-42a0-be10-433b40209255",
       "display_id": 774,
       "title": "Phase 2c execution, Layer 3: refactor under the green suite",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T01:16:37.926754Z",
-      "updated_at": "2026-07-26T01:20:35.316609Z",
+      "updated_at": "2026-07-26T01:20:47.635629Z",
+      "closed_at": "2026-07-26T01:20:47.635608Z",
       "comments": {
         "063c7af3-5d25-450e-825e-fbe40ecfbe3c": {
           "display_id": 1024,
@@ -23043,11 +23044,16 @@
       "agent_id": "xqjG",
       "agent_seq": 322,
       "timestamp": "2026-07-26T01:20:35.316609Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 323,
+      "timestamp": "2026-07-26T01:20:47.635629Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T01:20:35.316609Z",
+    "timestamp": "2026-07-26T01:20:47.635629Z",
     "agent_id": "xqjG",
-    "agent_seq": 322
+    "agent_seq": 323
   }
 }
