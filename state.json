@@ -1,6 +1,6 @@
 {
   "next_display_id": 797,
-  "next_comment_id": 1058,
+  "next_comment_id": 1059,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9212,7 +9212,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:23:52.874679Z",
-      "updated_at": "2026-07-26T10:23:52.874679Z"
+      "updated_at": "2026-07-26T10:34:50.982024Z",
+      "comments": {
+        "532c2d76-3ea2-4268-8433-ea48aa643229": {
+          "display_id": 1058,
+          "author": "xqjG",
+          "content": "Fixed in 800878a5 as a DECLARED scope boundary: the text.rs module doc now states the shared policy covers the STATUS surfaces (segment, human, machine, broken-state) and the registry strings they consume; the vsdd init/preflight command surface (cwd, on-PATH tool versions, init-error paths) is Layer 4's (Install) and routes its own operator-local strings through the same helper when Layer 4 hardens. The content there is operator-environment (the same trust boundary as the PATH posture), not adopter/state data; the cleaner is available and the wiring is Layer 4's act. Recorded so the asymmetry is a deliberate decision, not a silent gap — the finding's own preferred disposition.",
+          "created_at": "2026-07-26T10:34:50.965611Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAb5eo7eY3/udVVsuv82qysjjU0sdhWjPuVVpzb1uR5RGWpyTe1KJhhzZe/Vm/dvhhc5paad5EhFXBxliFTpDUAA=="
+        }
+      }
     },
     "63dc42bf-5802-4cfb-ae43-d877680b8ba0": {
       "uuid": "63dc42bf-5802-4cfb-ae43-d877680b8ba0",
@@ -24237,11 +24248,16 @@
       "agent_id": "xqjG",
       "agent_seq": 439,
       "timestamp": "2026-07-26T10:34:44.979695Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 440,
+      "timestamp": "2026-07-26T10:34:50.982024Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:34:44.979695Z",
+    "timestamp": "2026-07-26T10:34:50.982024Z",
     "agent_id": "xqjG",
-    "agent_seq": 439
+    "agent_seq": 440
   }
 }
