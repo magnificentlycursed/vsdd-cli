@@ -100,12 +100,12 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
                     return ExitCode::from(2);
                 }
             };
-            let current = segment_for_repo(&cwd, &data, &actions);
+            let current = vsdd::status::segment_for_repo(&cwd, &data, &actions);
             let others: Vec<String> = config
                 .repos
                 .iter()
                 .filter(|r| r.as_path() != cwd.as_path())
-                .map(|r| segment_for_repo(r, &data, &actions))
+                .map(|r| vsdd::status::segment_for_repo(r, &data, &actions))
                 .collect();
             println!("{}", vsdd::status::multi::render_multi(&current, &others));
             return ExitCode::SUCCESS;
@@ -153,23 +153,6 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
             ExitCode::from(1)
         }
     }
-}
-
-/// One repo's segment line for the composed display: its own state,
-/// its own single acquisition; a broken member renders its mark.
-fn segment_for_repo(
-    root: &std::path::Path,
-    data: &vsdd_core::registry::sets::StatuslineData,
-    actions: &vsdd_core::registry::sets::CompositionScopeAndActions,
-) -> String {
-    let run = vsdd::status::run_statusline(
-        root,
-        std::io::empty(),
-        data,
-        actions,
-        vsdd_core::snapshot::acquire::acquire_snapshot,
-    );
-    run.segment
 }
 
 fn cmd_init(args: InitArgs) -> ExitCode {

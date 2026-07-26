@@ -42,11 +42,7 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
     out.push_str("report\n");
     match &answer.degraded {
         Some(kind) => {
-            let next_step = data
-                .degraded_kinds
-                .iter()
-                .find(|k| &k.kind == kind)
-                .map(|k| k.next_step_text.as_str())
+            let next_step = super::degraded_next_step(data, kind)
                 .unwrap_or("unregistered degraded kind — repair the statusline data set");
             out.push_str(&format!(
                 "  corroboration: degraded — {kind}: {next_step}\n"

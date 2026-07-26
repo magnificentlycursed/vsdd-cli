@@ -16,12 +16,7 @@ pub fn render_machine(
     data: &StatuslineData,
 ) -> serde_json::Value {
     let degraded = answer.degraded.as_ref().map(|kind| {
-        let next_step = data
-            .degraded_kinds
-            .iter()
-            .find(|k| &k.kind == kind)
-            .map(|k| k.next_step_text.clone())
-            .unwrap_or_default();
+        let next_step = super::degraded_next_step(data, kind).unwrap_or_default();
         json!({ "kind": kind, "next_step": next_step })
     });
     json!({

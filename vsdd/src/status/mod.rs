@@ -19,6 +19,34 @@ use vsdd_core::answer::derive::derive_phase_answer;
 use vsdd_core::registry::sets::{CompositionScopeAndActions, StatuslineData};
 use vsdd_core::snapshot::Snapshot;
 
+/// The registered next-step text for a degraded kind; the fallback
+/// wording is shared by every surface that names an unregistered kind.
+pub(crate) fn degraded_next_step<'a>(data: &'a StatuslineData, kind: &str) -> Option<&'a str> {
+    data.degraded_kinds
+        .iter()
+        .find(|k| k.kind == kind)
+        .map(|k| k.next_step_text.as_str())
+}
+
+/// One repo's segment line for the composed display: its own state,
+/// its own single acquisition; a broken member renders its mark. The
+/// effectful sibling of `multi::render_multi`, homed with the
+/// composition root rather than the binary's argument parsing.
+pub fn segment_for_repo(
+    root: &Path,
+    data: &StatuslineData,
+    actions: &CompositionScopeAndActions,
+) -> String {
+    run_statusline(
+        root,
+        std::io::empty(),
+        data,
+        actions,
+        vsdd_core::snapshot::acquire::acquire_snapshot,
+    )
+    .segment
+}
+
 /// The statusline path's output plus its conduct instruments.
 pub struct StatuslineRun {
     pub segment: String,

@@ -23,6 +23,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Phase 2c execution, Layer 3: refactor under the green suite — the degraded lookup shared, the per-repo segment helper homed with the composition root (#774)
 - Phase 3 execution, Layer 2: round 4 — verify the round-3 fixes, re-decide the stop (#770)
 - Phase 3 execution, Layer 2: round 3 — verify the round-2 fixes, re-decide the stop (#765)
 - Phase 3 execution, Layer 2: round 2 — verify the round-1 fixes, re-decide the stop (#755)
