@@ -26,6 +26,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Layer 3 round 3 minor collector SE: the cleaning trust model is inconsistent — free-form registry strings (next_step_text, human_recovery) render raw while the enum kind is cleaned; #786's registered-absence source is dead behind acquire.rs's upstream hardcode; the empty-fallback empty-slot with renderer disagreement (#791)
+- Layer 3 round 3 major QE+SE: the degenerate-budget falsifier goes vacuous (unwrap_or empty masks a budget-ignoring mutant), and the three main.rs diagnostic prints have no falsifier at all (#790)
+- Layer 3 round 3 major SE: the broken-state human form's file-path line interpolates raw — one line below the #784 fix; a hostile repo subdirectory name reaches the terminal (#789)
+- Layer 3 round 3 major security+SE convergent: the terminal cleaner strips only is_control — bidi overrides, zero-width, and format chars reach every rendered surface (the Trojan-Source class the project's own web.md names); shared with acquire.rs's clean_for_display (#788)
 - Layer 3 round 2 minor collector QE: falsifiability gaps on just-fixed surfaces — degenerate-budget hard-cuts, the config artifact cap, and both #782 surfaces (home fold, degraded-line shape) have no falsifier; plus the work-item-budget hardcode and the render-text hardcode-parallel nits (#786)
 - Layer 3 round 2 major QE: two round-1 falsifiers do not falsify — the glued-mark mutant survives the generic branch (milestone spaced-mark masks it), and machine report.degraded is pinned single-kind where the criterion quantifies per registered kind (#785)
 - Layer 3 round 2 major, three-lens convergent (SE+security+UX): #777 incomplete — the human form's composition line, the broken-state human form, and main.rs diagnostic prints interpolate state-sourced text raw; live ESC/BEL/newline injection through ordinary vsdd status (#784)
