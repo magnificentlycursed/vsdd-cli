@@ -10384,11 +10384,12 @@
       "uuid": "735bf7e8-22b7-4fb8-ba06-214128a1d80a",
       "display_id": 779,
       "title": "Layer 3 round 1 major QE: the falsifiability batch — dead absence branch behind a pre-materialized fixture, the human form's missing absence handling, the generic truncation branch, the degraded only-if half, hardcoded-zero instrument mutants, the machine degraded block, field order, and the per-fixture quantifiers",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:44:54.011468Z",
-      "updated_at": "2026-07-26T06:28:58.773701Z",
+      "updated_at": "2026-07-26T06:29:12.388867Z",
+      "closed_at": "2026-07-26T06:29:12.388843Z",
       "comments": {
         "6d0d9f1a-2cbc-4365-986c-e9f4c7beda5e": {
           "display_id": 1033,
@@ -23421,11 +23422,16 @@
       "agent_id": "xqjG",
       "agent_seq": 359,
       "timestamp": "2026-07-26T06:28:58.773701Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 360,
+      "timestamp": "2026-07-26T06:29:12.388867Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:28:58.773701Z",
+    "timestamp": "2026-07-26T06:29:12.388867Z",
     "agent_id": "xqjG",
-    "agent_seq": 359
+    "agent_seq": 360
   }
 }
