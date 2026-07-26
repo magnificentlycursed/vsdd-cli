@@ -1,5 +1,5 @@
 {
-  "next_display_id": 781,
+  "next_display_id": 782,
   "next_comment_id": 1029,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -222,6 +222,7 @@
     "49e09929-b9ae-4309-920c-8ec2168746d7": 486,
     "49e2a1f6-9eff-46a5-9d36-46faafa05e75": 720,
     "4a63ba29-aef4-415b-8ff5-ad6edd0813e4": 137,
+    "4a70bffa-b227-48e8-864b-8c2216ef4772": 781,
     "4aa6843f-d5c0-4c58-8fa1-ec61d18ace2f": 525,
     "4ab316a9-7b9f-4afa-8469-ed5512e65aca": 467,
     "4ab3b628-84a3-47ff-85a2-0d59de99f861": 310,
@@ -6782,6 +6783,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAWsc0eYa0wBOwBt3MFh0/o5fWpREKsqXL/hOw6u4Mi+Ucq53ks5R3lznYt3+zDRMoNF4lj2KBLrvR34uQzKIbCw=="
         }
       }
+    },
+    "4a70bffa-b227-48e8-864b-8c2216ef4772": {
+      "uuid": "4a70bffa-b227-48e8-864b-8c2216ef4772",
+      "display_id": 781,
+      "title": "Layer 3 round 1 minor collector security+SE+UX: adopter-surface conduct — the uncapped config read, the wiring script's silent degrade on a named-but-missing config, uncanonicalized current-repo dedup, the ambiguous composition guidance",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T05:45:20.333597Z",
+      "updated_at": "2026-07-26T05:45:20.333597Z"
     },
     "4aa6843f-d5c0-4c58-8fa1-ec61d18ace2f": {
       "uuid": "4aa6843f-d5c0-4c58-8fa1-ec61d18ace2f",
@@ -23272,11 +23283,16 @@
       "agent_id": "xqjG",
       "agent_seq": 344,
       "timestamp": "2026-07-26T05:45:13.959822Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 345,
+      "timestamp": "2026-07-26T05:45:20.333597Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T05:45:13.959822Z",
+    "timestamp": "2026-07-26T05:45:20.333597Z",
     "agent_id": "xqjG",
-    "agent_seq": 344
+    "agent_seq": 345
   }
 }
