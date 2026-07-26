@@ -28,6 +28,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Layer 3 round 5 nit collector: the composition set's human vocabulary takes the no-op PostLoad (latent until a later layer prints it); post_load runs after schema minLength so an all-format-char field cleans to empty (#801)
+- Layer 3 round 5 major SE+QE convergent: the post_load loader wiring is unpinned — deleting value.post_load() leaves all tests green (the unit test pins the logic, nothing pins the call); plus the missing #789 hostile-path falsifier (record corrected on #795) (#800)
+- Layer 3 round 5 major security: the machine form renders state-sourced strings (phase, scope, domains) and the diagnostic file/message RAW — the last uncleaned sink; contradicts the text.rs scope claim that the policy covers the machine rendering (#799)
+- Layer 3 round 5 major security: default-ignorable UNASSIGNED code points (U+E0000, U+2065, U+FFF0-FFF8, unassigned tag block) pass the Cc/Cf/Zl/Zp category filter and reach the terminal — the category proxy covers assigned invisibles only (#798)
 - Layer 3 round 4 minor: the vsdd init/preflight command surface prints cwd, tool versions, and init errors outside the shared cleaner — a Layer 4 (Install) surface carry, not a Layer 3 status surface (#796)
 - Layer 3 round 4 major SE+QE convergent: the round-3 falsifiers do not falsify — the #790 command-level stderr test's fixture cannot echo an escape byte, the #789 path-line fix has no hostile-path fixture, and registered_absence's expect is unpinned (#795)
 - Layer 3 round 4 major SE+QE convergent: registry free-form strings truncation_mark, absence_text, marker_word, broken_state_mark still reach the terminal uncleaned — the rest of the #791 class; fix once at load (#794)
