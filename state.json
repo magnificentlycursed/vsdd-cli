@@ -16440,11 +16440,12 @@
       "uuid": "b3d2d570-cc90-45a5-8708-bd8b6ed3a63d",
       "display_id": 798,
       "title": "Layer 3 round 5 major security: default-ignorable UNASSIGNED code points (U+E0000, U+2065, U+FFF0-FFF8, unassigned tag block) pass the Cc/Cf/Zl/Zp category filter and reach the terminal — the category proxy covers assigned invisibles only",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:58:33.597138Z",
-      "updated_at": "2026-07-26T11:11:24.075754Z",
+      "updated_at": "2026-07-26T11:11:30.359165Z",
+      "closed_at": "2026-07-26T11:11:30.359152Z",
       "comments": {
         "74e2f224-0536-44f8-b1fe-62c60e9392a2": {
           "display_id": 1063,
@@ -24468,11 +24469,16 @@
       "agent_id": "xqjG",
       "agent_seq": 458,
       "timestamp": "2026-07-26T11:11:24.075754Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 459,
+      "timestamp": "2026-07-26T11:11:30.359165Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T11:11:24.075754Z",
+    "timestamp": "2026-07-26T11:11:30.359165Z",
     "agent_id": "xqjG",
-    "agent_seq": 458
+    "agent_seq": 459
   }
 }
