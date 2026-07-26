@@ -1,5 +1,5 @@
 {
-  "next_display_id": 790,
+  "next_display_id": 791,
   "next_comment_id": 1047,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -92,6 +92,7 @@
     "182607fc-450f-4d19-b88f-e3a0a0f76438": 35,
     "1856252e-b44f-4dec-b540-0f97e3092ae2": 661,
     "1864b3df-655c-41ca-8c34-4dfdd818921f": 26,
+    "190de25e-5ced-485c-8f3e-08fb1d0a1b83": 790,
     "197f07f6-bb15-420c-86a2-80949a28116d": 28,
     "19995a86-8349-4444-9bad-a63f2481ec1d": 352,
     "19e1d473-4c01-4d1c-83d6-4e8ec78d0869": 255,
@@ -3104,6 +3105,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAeLCx/dJNPomrSu1Cl1RxmUD/zmdfPNUknce0HZggTYV0ImFjCXCWQOrbOMvRLDr/sb+Jw9JLvLiQzGqh4ICPCg=="
         }
       }
+    },
+    "190de25e-5ced-485c-8f3e-08fb1d0a1b83": {
+      "uuid": "190de25e-5ced-485c-8f3e-08fb1d0a1b83",
+      "display_id": 790,
+      "title": "Layer 3 round 3 major QE+SE: the degenerate-budget falsifier goes vacuous (unwrap_or empty masks a budget-ignoring mutant), and the three main.rs diagnostic prints have no falsifier at all",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T09:44:19.492538Z",
+      "updated_at": "2026-07-26T09:44:19.492538Z"
     },
     "197f07f6-bb15-420c-86a2-80949a28116d": {
       "uuid": "197f07f6-bb15-420c-86a2-80949a28116d",
@@ -23843,11 +23854,16 @@
       "agent_id": "xqjG",
       "agent_seq": 400,
       "timestamp": "2026-07-26T09:44:13.472869Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 401,
+      "timestamp": "2026-07-26T09:44:19.492538Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:44:13.472869Z",
+    "timestamp": "2026-07-26T09:44:19.492538Z",
     "agent_id": "xqjG",
-    "agent_seq": 400
+    "agent_seq": 401
   }
 }
