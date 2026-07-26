@@ -19148,11 +19148,12 @@
       "uuid": "d77904e3-6848-4e58-8fa7-8c2750b45f38",
       "display_id": 789,
       "title": "Layer 3 round 3 major SE: the broken-state human form's file-path line interpolates raw — one line below the #784 fix; a hostile repo subdirectory name reaches the terminal",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T09:44:06.484579Z",
-      "updated_at": "2026-07-26T09:51:49.951165Z",
+      "updated_at": "2026-07-26T09:52:12.351931Z",
+      "closed_at": "2026-07-26T09:52:12.351920Z",
       "comments": {
         "f4f581f8-e950-4360-ab09-d0e22caa02df": {
           "display_id": 1049,
@@ -23946,11 +23947,16 @@
       "agent_id": "xqjG",
       "agent_seq": 409,
       "timestamp": "2026-07-26T09:51:49.951165Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 410,
+      "timestamp": "2026-07-26T09:52:12.351931Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:51:49.951165Z",
+    "timestamp": "2026-07-26T09:52:12.351931Z",
     "agent_id": "xqjG",
-    "agent_seq": 409
+    "agent_seq": 410
   }
 }
