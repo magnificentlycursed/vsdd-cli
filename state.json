@@ -1,5 +1,5 @@
 {
-  "next_display_id": 788,
+  "next_display_id": 789,
   "next_comment_id": 1047,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -514,6 +514,7 @@
     "a3d3a8aa-3d32-4014-9e56-b16ec198454c": 57,
     "a3e86713-0981-441f-88ff-14abe6867ebe": 16,
     "a455642a-f33e-445a-8628-f21677b6b382": 364,
+    "a45dde90-5a1a-4e98-9ab6-ad6b9051fc78": 788,
     "a49e97bf-2181-4013-852b-af22dbc380ab": 289,
     "a4e1eb16-f469-4349-8870-926f82dce6ea": 10,
     "a59859eb-591f-40de-a8fc-b0c41c5f39dc": 680,
@@ -14519,6 +14520,16 @@
         }
       }
     },
+    "a45dde90-5a1a-4e98-9ab6-ad6b9051fc78": {
+      "uuid": "a45dde90-5a1a-4e98-9ab6-ad6b9051fc78",
+      "display_id": 788,
+      "title": "Layer 3 round 3 major security+SE convergent: the terminal cleaner strips only is_control — bidi overrides, zero-width, and format chars reach every rendered surface (the Trojan-Source class the project's own web.md names); shared with acquire.rs's clean_for_display",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T09:43:54.019075Z",
+      "updated_at": "2026-07-26T09:43:54.019075Z"
+    },
     "a49e97bf-2181-4013-852b-af22dbc380ab": {
       "uuid": "a49e97bf-2181-4013-852b-af22dbc380ab",
       "display_id": 289,
@@ -23793,11 +23804,16 @@
       "agent_id": "xqjG",
       "agent_seq": 396,
       "timestamp": "2026-07-26T09:32:12.822861Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 397,
+      "timestamp": "2026-07-26T09:43:54.019075Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:32:12.822861Z",
+    "timestamp": "2026-07-26T09:43:54.019075Z",
     "agent_id": "xqjG",
-    "agent_seq": 396
+    "agent_seq": 397
   }
 }
