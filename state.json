@@ -1,6 +1,6 @@
 {
   "next_display_id": 787,
-  "next_comment_id": 1040,
+  "next_comment_id": 1041,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8982,8 +8982,17 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T06:32:53.695994Z",
-      "updated_at": "2026-07-26T07:42:50.736545Z",
+      "updated_at": "2026-07-26T08:54:04.554899Z",
       "comments": {
+        "d4e0c04e-e3a9-4e13-963f-f1a408a9f1bb": {
+          "display_id": 1040,
+          "author": "xqjG",
+          "content": "ROUND 2 COMPLETE, all four lenses (security re-ran clean from cache; the three others replayed). Verdict grid: 28 verdicts, 24 held, 4 incomplete — all four the SAME #777 hole (each lens found it in its scope: SE and UX the composition line, security the broken-state form and main.rs prints, all three the same class); no regression, no fix reversed. Stop: NOT reached, unanimous (all four refuse). Three children: #784 (major, three-lens convergent: #777 incomplete — clean_for_terminal reached render_segment and render_human's own interpolations but MISSED the human composition line's scope+domains, the broken-state human form's diagnostic.message/kind, and main.rs's registry/config eprintln diagnostics; live-confirmed ESC, BEL, TAB, and forged-newline injection from an adopter-edited state.yaml through ordinary vsdd status; machine and segment forms verified safe), #785 (major QE: two named round-1 falsifiers do not actually falsify — the glued-mark mutant survives the generic fit branch because the milestone field's correctly-spaced mark in the same rendered line satisfies the containment check, and the machine report.degraded pin is single-fixture where the criterion quantifies per registered kind), #786 (minor collector QE: the degenerate-budget hard-cuts, the config artifact cap, and both #782 surfaces have no falsifier; the generic-truncation test hardcodes the work-item budget; the human absence/fallback wordings are hardcoded parallels of registered/shared texts). TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 all four; effort chosen=observed (SE/security high, QE/UX medium); band DECLARED 200k-380k. OBSERVED, honestly split: the completing run of all four lenses was 412,823 tokens / 205 tools (over the ceiling by 9%, the verify-depth pattern); the earlier partial run that lost the security lens to a connection drop burned 558,392 more before the resume — TOTAL round cost ~971k, the great majority of it INTERRUPTION WASTE, not review depth. This is the third consecutive background dispatch mauled by host sleep or a mid-response drop (the #775 four-hour stall, the overnight partial here, now the security-lens drop). Conduct recommendation carried, not self-served: the durable fix is Layer 8's container-backed autonomous vehicle; until it exists, verify rounds should run only while the operator is at the keyboard — flagged for the operator's call. Fix pass follows.",
+          "created_at": "2026-07-26T08:54:04.513254Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAidmPhd2QySwVZ1biFSinwALlrFQj4aYpCKkX+IGN7WLLmdLUhc4kSf4DNcZpGnVU+/UDIC32fuDKS8syh+y0Dg=="
+        },
         "f5575491-a08c-4281-a2c6-41250ad7aa6c": {
           "display_id": 1038,
           "author": "xqjG",
@@ -23641,11 +23650,16 @@
       "agent_id": "xqjG",
       "agent_seq": 381,
       "timestamp": "2026-07-26T08:53:22.654724Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 382,
+      "timestamp": "2026-07-26T08:54:04.554899Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T08:53:22.654724Z",
+    "timestamp": "2026-07-26T08:54:04.554899Z",
     "agent_id": "xqjG",
-    "agent_seq": 381
+    "agent_seq": 382
   }
 }
