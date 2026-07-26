@@ -1,6 +1,6 @@
 {
   "next_display_id": 787,
-  "next_comment_id": 1041,
+  "next_comment_id": 1042,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18809,7 +18809,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T08:52:03.159650Z",
-      "updated_at": "2026-07-26T08:52:03.159650Z"
+      "updated_at": "2026-07-26T09:03:34.947888Z",
+      "comments": {
+        "e73e377c-906c-495e-af0a-916379311401": {
+          "display_id": 1041,
+          "author": "xqjG",
+          "content": "Fixed in ff0d3a3f: clean_for_terminal (now pub for the binary crate) reaches every human-form interpolation the round-1 pass missed — the composition line's scope and each domain, the broken-state human form's diagnostic message and kind, and cmd_status's three registry/config diagnostic prints. The hostile-state test seeds a hostile scope and domain; a new broken_state_human_form test seeds a diagnostic whose message and kind carry ESC/BEL/forged-newline and asserts none reach the surface and the message renders one line. Segment and machine forms were already safe (the machine form is serde JSON — escaped by construction). Three-lens convergence honored: SE and UX found the composition line, security the broken form and main.rs prints, all one class.",
+          "created_at": "2026-07-26T09:03:34.878518Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAvqKLBsw5Bvoa7Pmbz94NVXZTI6QtiKNi4JBbNwPhCPQSHkh4UdwKIXDl4lOujL5H/jtXivNExGyNbDpIE0ERBA=="
+        }
+      }
     },
     "d556dda8-95a8-44ff-8fb4-1beced69e422": {
       "uuid": "d556dda8-95a8-44ff-8fb4-1beced69e422",
@@ -23655,11 +23666,16 @@
       "agent_id": "xqjG",
       "agent_seq": 382,
       "timestamp": "2026-07-26T08:54:04.554899Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 383,
+      "timestamp": "2026-07-26T09:03:34.947888Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T08:54:04.554899Z",
+    "timestamp": "2026-07-26T09:03:34.947888Z",
     "agent_id": "xqjG",
-    "agent_seq": 382
+    "agent_seq": 383
   }
 }
