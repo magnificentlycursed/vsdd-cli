@@ -1,6 +1,6 @@
 {
   "next_display_id": 783,
-  "next_comment_id": 1035,
+  "next_comment_id": 1036,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -6814,7 +6814,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:45:20.333597Z",
-      "updated_at": "2026-07-26T05:45:20.333597Z"
+      "updated_at": "2026-07-26T06:30:15.944013Z",
+      "comments": {
+        "7566b5f3-994c-4070-8d42-bb7450ca4333": {
+          "display_id": 1035,
+          "author": "xqjG",
+          "content": "Fixed in ff331dd9: the repo-set config read honors the 1MiB materialization cap with an oversize diagnostic; the wiring script errors loudly to stderr when VSDD_STATUSLINE_CONFIG names a missing file (the default location's absence stays the lawful single-repo shape); current-repo dedup canonicalizes both spellings; the composition guidance names the exact one-line invocation with the multi-repo suffix as an explicit variant.",
+          "created_at": "2026-07-26T06:30:15.901410Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAfOo1Zh3QKOtKVfAJ4V8mTQPR/xXmDpLYc8Q6baTue87TXOx7AMzS3zg1ryesmQzKw2AYIKjjl6bKARNk6Qo2AA=="
+        }
+      }
     },
     "4aa6843f-d5c0-4c58-8fa1-ec61d18ace2f": {
       "uuid": "4aa6843f-d5c0-4c58-8fa1-ec61d18ace2f",
@@ -23451,11 +23462,16 @@
       "agent_id": "xqjG",
       "agent_seq": 364,
       "timestamp": "2026-07-26T06:30:03.679715Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 365,
+      "timestamp": "2026-07-26T06:30:15.944013Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:30:03.679715Z",
+    "timestamp": "2026-07-26T06:30:15.944013Z",
     "agent_id": "xqjG",
-    "agent_seq": 364
+    "agent_seq": 365
   }
 }
