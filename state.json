@@ -1,6 +1,6 @@
 {
   "next_display_id": 773,
-  "next_comment_id": 1018,
+  "next_comment_id": 1019,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5302,7 +5302,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T00:00:18.234168Z",
-      "updated_at": "2026-07-26T00:00:50.930446Z",
+      "updated_at": "2026-07-26T00:01:18.779344Z",
       "comments": {
         "3945217a-0e91-4da4-90e3-ebbe8fc73675": {
           "display_id": 1017,
@@ -5312,6 +5312,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAP9ukEU5mnz9PH+sDn+NT4qeqwUw17QKLiGzlATowBz2WpgQrWILx2eSx8Aev6u4ZtsOJJJoVNb8B/sOwvNSDAQ=="
+        },
+        "43f67bc0-1e84-402b-86ab-ac71e73a2fa2": {
+          "display_id": 1018,
+          "author": "xqjG",
+          "content": "PHASE-2A DESIGN ACT — the crate-level module map (draft, for operator adoption). All in the vsdd binary crate per the architecture sketch: vsdd/src/status/mod.rs — the composition root and effectful shell: ONE acquisition, ONE derivation, ONE rendering per invocation; composes the broken-state outputs on all three surfaces when the state read fails; hosts the instrument seams. vsdd/src/status/segment.rs — the PURE segment renderer: (answer-or-broken, display fields, the loaded statusline data) to one line; field order repo-name/phase-answer/work-item/milestone-with-count; per-field width budgets with the (cut) mark set off by a space and the milestone name truncating before the count; worded absences from the data; the degraded marker as the kind's plain marker word; no session field; deterministic byte-for-byte; color as optional decoration only. vsdd/src/status/human.rs — the PURE human form: TWO SECTIONS per the adopted facets note — the answer (position: phase, layer, next action, composition) and the report (health: degraded kind with its full next-step text, integrity findings, substrate findings); superset of every segment field plus the session rendering (the demotion ruling); broken-state renders the rustc-shaped diagnostic with per-kind recovery, its grammar aligned to mdatron's exact rendering shape (the boundary-sweep disposition, executed here). vsdd/src/status/machine.rs — the PURE machine form: named blocks answer and report; broken-state is the structured state-unreadable signal (enumerated kind, diagnostic payload, recovery action from the vocabulary); superset-of-segment verified. vsdd/src/status/broken.rs — the shared broken-state composition, carrying #740: the last-boundary truth (the most recent boundary commit's subject from a bounded git log query — a new pub seam in vsdd-core's shell since the runner is core-internal) rendered as recovery context on the human and machine forms; absence of a boundary commit is a worded absence, never a failure. vsdd/src/status/instruments.rs — the conduct seams: the counting stdin wrapper (the statusline path reads zero bytes; the sentinel fixture backs the count), the acquisition counter, the whole-invocation wall-clock against the 250ms budget with the 7-run median and twice-budget ceiling; model-absence is the test environment's property (no credentials, no network), documented not coded. vsdd/src/status/multi.rs — the composed multi-repo display over the explicit repo-set config ({repos, per_repo_budget_ms} at the registered location): one segment line per repo, current first, per-line worded repo identity, every single-segment conduct check holding per line. templates/statusline/vsdd-statusline.sh — the wiring script (installed by Layer 4, authored here): reads the repo-set config, invokes the composed display, passes the substrate's stdin through unconsumed, aggregate cost denominated repo-count-times-per-repo-budget; ownership and drift refusal per the managed-file discipline; the non-wrapper composition instruction ships beside it per the registered conduct.",
+          "created_at": "2026-07-26T00:01:18.765976Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAI3Jca7qVmoOKtQMKvZKiXWCc+sCUU6rRg8OVrivY1kNxHMOSsIyCh4A0fuWvT9407GZRnNfK7NToypEwjtN0Dw=="
         }
       }
     },
@@ -22891,11 +22900,16 @@
       "agent_id": "xqjG",
       "agent_seq": 311,
       "timestamp": "2026-07-26T00:00:50.930446Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 312,
+      "timestamp": "2026-07-26T00:01:18.779344Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T00:00:50.930446Z",
+    "timestamp": "2026-07-26T00:01:18.779344Z",
     "agent_id": "xqjG",
-    "agent_seq": 311
+    "agent_seq": 312
   }
 }
