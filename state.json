@@ -1,6 +1,6 @@
 {
   "next_display_id": 792,
-  "next_comment_id": 1051,
+  "next_comment_id": 1052,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20485,7 +20485,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T09:44:31.963884Z",
-      "updated_at": "2026-07-26T09:44:31.963884Z"
+      "updated_at": "2026-07-26T09:52:43.124515Z",
+      "comments": {
+        "582469a1-ebc5-4fd6-a083-9730bb81a3cf": {
+          "display_id": 1051,
+          "author": "xqjG",
+          "content": "Fixed in 94d3c2cf: the free-form registry strings now cross the cleaner uniformly — human.rs's next_step and broken.rs's human_recovery join diagnostic.message and kind, so the trust model is consistent (every terminal-destined string cleaned regardless of source); the misleading broken.rs comment is corrected. registered_absence takes fit()'s loud posture (expect on a drifted registry, never a silent empty slot), so the two renderers fail the same way. And #786's anti-drift purpose is now met at the operative layer: acquire.rs's absence wordings are named constants (ABSENT_SESSION/WORK_ITEM/MILESTONE) with a fidelity test pinning the two that have registered counterparts to the data set's absence_text — an edit to either side turns the pin red. Session has no registered display field (the demotion), so it carries no mirror, stated.",
+          "created_at": "2026-07-26T09:52:43.106345Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAo9gYjnDN1mymkSu5Wg+EBaPUeUXXJVIPjBptIbyT/im9TqrOfuYOtbHYalT4e8+HsVUCwGtN0V27HO4A4zquBQ=="
+        }
+      }
     },
     "ea5320ed-b672-4d36-833b-f058324ab289": {
       "uuid": "ea5320ed-b672-4d36-833b-f058324ab289",
@@ -23976,11 +23987,16 @@
       "agent_id": "xqjG",
       "agent_seq": 414,
       "timestamp": "2026-07-26T09:52:37.443079Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 415,
+      "timestamp": "2026-07-26T09:52:43.124515Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:52:37.443079Z",
+    "timestamp": "2026-07-26T09:52:43.124515Z",
     "agent_id": "xqjG",
-    "agent_seq": 414
+    "agent_seq": 415
   }
 }
