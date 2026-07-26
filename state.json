@@ -21767,6 +21767,13 @@
       "created_at": "2026-07-21T16:53:41.332042Z",
       "closed_at": "2026-07-21T20:25:57.897642Z"
     },
+    "275a0c10-f8f2-4da5-9a43-e3eb861ce8bc": {
+      "uuid": "275a0c10-f8f2-4da5-9a43-e3eb861ce8bc",
+      "display_id": 6,
+      "name": "layer 3: the three renderings and the wiring script",
+      "status": "open",
+      "created_at": "2026-07-26T00:00:12.985150Z"
+    },
     "38db2f74-d59c-495d-94c0-e0619d79251b": {
       "uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
       "display_id": 5,
@@ -21802,7 +21809,7 @@
       "closed_at": "2026-07-20T16:24:00.974812Z"
     }
   },
-  "next_milestone_id": 6,
+  "next_milestone_id": 7,
   "unsigned_event_warnings": [
     {
       "agent_id": "xqjG",
@@ -22838,11 +22845,16 @@
       "agent_id": "xqjG",
       "agent_seq": 307,
       "timestamp": "2026-07-22T20:23:00.599786Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 308,
+      "timestamp": "2026-07-26T00:00:12.985489Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-22T20:23:00.599786Z",
+    "timestamp": "2026-07-26T00:00:12.985489Z",
     "agent_id": "xqjG",
-    "agent_seq": 307
+    "agent_seq": 308
   }
 }
