@@ -22369,11 +22369,12 @@
       "uuid": "fea77f0d-bf8b-4d1f-92c2-560a1e45bb31",
       "display_id": 794,
       "title": "Layer 3 round 4 major SE+QE convergent: registry free-form strings truncation_mark, absence_text, marker_word, broken_state_mark still reach the terminal uncleaned — the rest of the #791 class; fix once at load",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:23:26.046581Z",
-      "updated_at": "2026-07-26T10:34:16.115467Z",
+      "updated_at": "2026-07-26T10:34:22.043810Z",
+      "closed_at": "2026-07-26T10:34:22.043800Z",
       "comments": {
         "d929eca8-6c3a-4fae-8236-2d645e5c0c9a": {
           "display_id": 1056,
@@ -24207,11 +24208,16 @@
       "agent_id": "xqjG",
       "agent_seq": 434,
       "timestamp": "2026-07-26T10:34:16.115467Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 435,
+      "timestamp": "2026-07-26T10:34:22.043810Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:34:16.115467Z",
+    "timestamp": "2026-07-26T10:34:22.043810Z",
     "agent_id": "xqjG",
-    "agent_seq": 434
+    "agent_seq": 435
   }
 }
