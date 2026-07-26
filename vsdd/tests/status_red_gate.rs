@@ -59,6 +59,20 @@ fn actions() -> CompositionScopeAndActions {
         .expect("composition set loads")
 }
 
+/// A hermetic repo root for the composition-root tests: the fixture's
+/// state artifact in place, nothing else — the healthy path, not a
+/// dependence on the live checkout's own install state.
+fn temp_repo_with_state(fixture: &str) -> tempfile::TempDir {
+    let dir = tempfile::tempdir().unwrap();
+    fs::create_dir_all(dir.path().join(".vsdd")).unwrap();
+    fs::copy(
+        corpus().join(fixture).join("state.yaml"),
+        dir.path().join(".vsdd/state.yaml"),
+    )
+    .unwrap();
+    dir
+}
+
 /// The model-absence scrub: the exercised path must need none of these,
 /// and their absence makes any model call fail loudly.
 fn scrub_model_credentials() {
@@ -124,12 +138,14 @@ fn segment_renders_the_four_fields_in_order() {
     let (answer, snapshot) = load(&corpus().join("3-reviewing"));
     let segment = render_segment(&answer, &snapshot, &data());
     assert!(!segment.is_empty(), "the segment renders, never blank");
+    let phase_value = answer
+        .phase
+        .as_deref()
+        .expect("the fixture carries a phase");
     let repo = segment
         .find(&snapshot.display_repo_name)
         .expect("repo name present");
-    let phase = segment
-        .find(&answer.next_action)
-        .expect("phase answer present");
+    let phase = segment.find(phase_value).expect("phase answer present");
     let work = segment
         .find(&snapshot.display_work_item)
         .expect("work item present");
@@ -254,7 +270,7 @@ fn human_form_is_a_superset_of_the_segment_and_renders_the_session() {
     let human = render_human(&answer, &snapshot, &d);
     for value in [
         snapshot.display_repo_name.as_str(),
-        answer.next_action.as_str(),
+        answer.phase.as_deref().expect("phase present"),
         snapshot.display_work_item.as_str(),
         snapshot.display_active_milestone.as_str(),
     ] {
@@ -263,6 +279,10 @@ fn human_form_is_a_superset_of_the_segment_and_renders_the_session() {
             "the human form carries the segment field {value:?}"
         );
     }
+    assert!(
+        human.contains(&answer.next_action),
+        "the human form carries the next action (position content)"
+    );
     assert!(
         human.contains(snapshot.display_session.as_str()),
         "the session renders in the human form (the demotion ruling)"
@@ -431,7 +451,8 @@ fn the_statusline_path_consumes_zero_stdin_and_leaks_no_sentinel() {
     let snapshot: Snapshot =
         serde_yaml_ng::from_str(&fs::read_to_string(snapshot_dir.join("snapshot.yaml")).unwrap())
             .unwrap();
-    let run = run_statusline(&repo_root(), reader, &data(), &actions(), move |_root| {
+    let root = temp_repo_with_state("3-reviewing");
+    let run = run_statusline(root.path(), reader, &data(), &actions(), move |_root| {
         snapshot.clone()
     });
     assert_eq!(
@@ -454,9 +475,10 @@ fn exactly_one_acquisition_per_invocation() {
     let snapshot: Snapshot =
         serde_yaml_ng::from_str(&fs::read_to_string(snapshot_dir.join("snapshot.yaml")).unwrap())
             .unwrap();
+    let root = temp_repo_with_state("3-reviewing");
     let mut calls = 0u64;
     let run = run_statusline(
-        &repo_root(),
+        root.path(),
         std::io::empty(),
         &data(),
         &actions(),
@@ -486,12 +508,13 @@ fn the_whole_invocation_fits_the_wall_clock_budget() {
             .unwrap();
     // The registered flake shape: 7 runs, median at or under budget,
     // max at or under twice budget.
+    let root = temp_repo_with_state("3-reviewing");
     let mut samples: VecDeque<Duration> = VecDeque::new();
     let mut last_segment = String::new();
     for _ in 0..7 {
         let started = Instant::now();
         let run = run_statusline(
-            &repo_root(),
+            root.path(),
             std::io::empty(),
             &data(),
             &actions(),
