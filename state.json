@@ -1,6 +1,6 @@
 {
   "next_display_id": 797,
-  "next_comment_id": 1057,
+  "next_comment_id": 1058,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19933,7 +19933,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:23:39.775895Z",
-      "updated_at": "2026-07-26T10:23:39.775895Z"
+      "updated_at": "2026-07-26T10:34:33.388056Z",
+      "comments": {
+        "bab2f8c0-7e62-4241-a6e5-e9ef3664ee97": {
+          "display_id": 1057,
+          "author": "xqjG",
+          "content": "Fixed in 800878a5: the three round-3 falsifiers are now real. The command-level stderr test uses a YAML \\x1b-escaped unknown-field key — YAML rejects RAW control bytes before the diagnostic forms, but the escape parses to a real ESC in the key that deny-unknown-fields echoes, so the diagnostic genuinely carries the byte and a raw-print revert leaks it (the test asserts stderr names the field AND carries no 0x1b, proving both reach and cleaning). The broken-state test seeds a hostile file PATH (control+bidi), pinning #789's shown_path clean. registered_absence gets a catch_unwind loudness pin. The vacuity is gone: each mutant the falsifiers target now dies.",
+          "created_at": "2026-07-26T10:34:33.372193Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAclu6AYKnuBH8EkUSufmQwd0YNo8nAnYr5frc7NQZwwm7LEv8nVpmbNGbMLlZny3RzAqpJVTt0C6bYFpSkMxbDw=="
+        }
+      }
     },
     "e257a734-d077-4f98-b47c-cf010cbaa999": {
       "uuid": "e257a734-d077-4f98-b47c-cf010cbaa999",
@@ -24214,11 +24225,16 @@
       "agent_id": "xqjG",
       "agent_seq": 436,
       "timestamp": "2026-07-26T10:34:27.743128Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 437,
+      "timestamp": "2026-07-26T10:34:33.388056Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:34:27.743128Z",
+    "timestamp": "2026-07-26T10:34:33.388056Z",
     "agent_id": "xqjG",
-    "agent_seq": 436
+    "agent_seq": 437
   }
 }
