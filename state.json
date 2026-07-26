@@ -1,5 +1,5 @@
 {
-  "next_display_id": 777,
+  "next_display_id": 778,
   "next_comment_id": 1029,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -651,6 +651,7 @@
     "d4e2836b-aa4a-4599-a0b0-84509a848b26": 771,
     "d4ec7994-809e-4d32-9016-cb544ea6028a": 213,
     "d500ac17-43c6-45cc-b13d-03ad666b8f5e": 719,
+    "d556dda8-95a8-44ff-8fb4-1beced69e422": 777,
     "d5c8df6b-b485-46bd-827c-5d4b675ae2a4": 722,
     "d5e2b012-305e-4878-9d19-6abd3cd4f4a8": 655,
     "d5f7451a-da84-48c4-ba9b-9b5385005f2f": 482,
@@ -18590,6 +18591,16 @@
         }
       }
     },
+    "d556dda8-95a8-44ff-8fb4-1beced69e422": {
+      "uuid": "d556dda8-95a8-44ff-8fb4-1beced69e422",
+      "display_id": 777,
+      "title": "Layer 3 round 1 major security: state-sourced display strings reach the terminal uncleaned — live escape and newline injection through the segment and human form",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T05:44:26.989095Z",
+      "updated_at": "2026-07-26T05:44:26.989095Z"
+    },
     "d5c8df6b-b485-46bd-827c-5d4b675ae2a4": {
       "uuid": "d5c8df6b-b485-46bd-827c-5d4b675ae2a4",
       "display_id": 722,
@@ -23172,11 +23183,16 @@
       "agent_id": "xqjG",
       "agent_seq": 336,
       "timestamp": "2026-07-26T05:44:20.766397Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 337,
+      "timestamp": "2026-07-26T05:44:26.989095Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T05:44:20.766397Z",
+    "timestamp": "2026-07-26T05:44:26.989095Z",
     "agent_id": "xqjG",
-    "agent_seq": 336
+    "agent_seq": 337
   }
 }
