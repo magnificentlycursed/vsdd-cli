@@ -24,6 +24,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Layer 3 round 1 nit collector UX+security: the degraded report line's triple restatement; the broken forms' absolute state path (#782)
+- Layer 3 round 1 minor collector security+SE+UX: adopter-surface conduct — the uncapped config read, the wiring script's silent degrade on a named-but-missing config, uncanonicalized current-repo dedup, the ambiguous composition guidance (#781)
+- Layer 3 round 1 minor collector SE: segment arithmetic — the open-count split lacks digit-exactness, the fit budget invariant breaks at saturation, the layer suffix is the first truncation casualty (#780)
+- Layer 3 round 1 major QE: the falsifiability batch — dead absence branch behind a pre-materialized fixture, the human form's missing absence handling, the generic truncation branch, the degraded only-if half, hardcoded-zero instrument mutants, the machine degraded block, field order, and the per-fixture quantifiers (#779)
+- Layer 3 round 1 major QE+SE convergent: the declared time budgets have no instrument — the wall-clock test stubs the acquisition its registered scope names, and per_repo_budget_ms is consumed nowhere (#778)
+- Layer 3 round 1 major security: state-sourced display strings reach the terminal uncleaned — live escape and newline injection through the segment and human form (#777)
+- Layer 3 round 1 major SE+UX convergent: broken members of the composed display render with no repo identity — indistinguishable lines; segment_for_repo untested (#776)
 - Phase 2b execution, Layer 3: implement the renderings to green against the red gate (#773)
 - Phase 2a execution, Layer 3: red gate for the three renderings and the wiring script (#772)
 - Phase 2c execution, Layer 3: refactor under the green suite (#774)
