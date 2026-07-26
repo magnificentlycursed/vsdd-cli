@@ -1,5 +1,5 @@
 {
-  "next_display_id": 799,
+  "next_display_id": 800,
   "next_comment_id": 1062,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -679,6 +679,7 @@
     "d81e051b-f217-4351-aa5b-ce86f8cb07cc": 74,
     "d8275115-170b-42b8-9e51-fea74cc2afc0": 527,
     "d85fe164-adcc-434c-a3f4-89ea119ae778": 365,
+    "d8a4ac5b-b08f-4daa-9cc7-03f9b869859c": 799,
     "d8e84e90-6a2b-46b2-8d51-e82225545366": 400,
     "d92976d0-b2c9-47d6-9f12-fc77e1b43b91": 786,
     "d9c4828e-96b1-43ce-947c-9c01ba4c89d9": 746,
@@ -19385,6 +19386,16 @@
         }
       }
     },
+    "d8a4ac5b-b08f-4daa-9cc7-03f9b869859c": {
+      "uuid": "d8a4ac5b-b08f-4daa-9cc7-03f9b869859c",
+      "display_id": 799,
+      "title": "Layer 3 round 5 major security: the machine form renders state-sourced strings (phase, scope, domains) and the diagnostic file/message RAW — the last uncleaned sink; contradicts the text.rs scope claim that the policy covers the machine rendering",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T10:58:49.860710Z",
+      "updated_at": "2026-07-26T10:58:49.860710Z"
+    },
     "d8e84e90-6a2b-46b2-8d51-e82225545366": {
       "uuid": "d8e84e90-6a2b-46b2-8d51-e82225545366",
       "display_id": 400,
@@ -24363,11 +24374,16 @@
       "agent_id": "xqjG",
       "agent_seq": 450,
       "timestamp": "2026-07-26T10:58:43.217171Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 451,
+      "timestamp": "2026-07-26T10:58:49.860710Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:58:43.217171Z",
+    "timestamp": "2026-07-26T10:58:49.860710Z",
     "agent_id": "xqjG",
-    "agent_seq": 450
+    "agent_seq": 451
   }
 }
