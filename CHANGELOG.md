@@ -25,6 +25,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Layer 3 round 2 minor collector QE: falsifiability gaps on just-fixed surfaces — degenerate-budget hard-cuts, the config artifact cap, and both #782 surfaces (home fold, degraded-line shape) have no falsifier; plus the work-item-budget hardcode and the render-text hardcode-parallel nits (#786)
+- Layer 3 round 2 major QE: two round-1 falsifiers do not falsify — the glued-mark mutant survives the generic branch (milestone spaced-mark masks it), and machine report.degraded is pinned single-kind where the criterion quantifies per registered kind (#785)
+- Layer 3 round 2 major, three-lens convergent (SE+security+UX): #777 incomplete — the human form's composition line, the broken-state human form, and main.rs diagnostic prints interpolate state-sourced text raw; live ESC/BEL/newline injection through ordinary vsdd status (#784)
 - Layer 3 round 1 nit collector UX+security: the degraded report line's triple restatement; the broken forms' absolute state path (#782)
 - Layer 3 round 1 minor collector security+SE+UX: adopter-surface conduct — the uncapped config read, the wiring script's silent degrade on a named-but-missing config, uncanonicalized current-repo dedup, the ambiguous composition guidance (#781)
 - Layer 3 round 1 minor collector SE: segment arithmetic — the open-count split lacks digit-exactness, the fit budget invariant breaks at saturation, the layer suffix is the first truncation casualty (#780)
