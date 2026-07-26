@@ -5857,11 +5857,12 @@
       "uuid": "3e613757-95d1-4668-af63-324be716afee",
       "display_id": 778,
       "title": "Layer 3 round 1 major QE+SE convergent: the declared time budgets have no instrument — the wall-clock test stubs the acquisition its registered scope names, and per_repo_budget_ms is consumed nowhere",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:44:40.075314Z",
-      "updated_at": "2026-07-26T06:27:59.101849Z",
+      "updated_at": "2026-07-26T06:28:12.683485Z",
+      "closed_at": "2026-07-26T06:28:12.683460Z",
       "comments": {
         "f8904181-e4b2-469e-903d-5752eade1a75": {
           "display_id": 1032,
@@ -23398,11 +23399,16 @@
       "agent_id": "xqjG",
       "agent_seq": 356,
       "timestamp": "2026-07-26T06:27:59.101849Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 357,
+      "timestamp": "2026-07-26T06:28:12.683485Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:27:59.101849Z",
+    "timestamp": "2026-07-26T06:28:12.683485Z",
     "agent_id": "xqjG",
-    "agent_seq": 356
+    "agent_seq": 357
   }
 }
