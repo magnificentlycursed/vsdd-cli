@@ -1,5 +1,5 @@
 {
-  "next_display_id": 796,
+  "next_display_id": 797,
   "next_comment_id": 1054,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -311,6 +311,7 @@
     "62d3364e-758d-4ce5-9c3f-7846839f9363": 143,
     "62dc4091-7748-4cea-9b1e-d9291bbcbc8a": 763,
     "638ac266-0115-42d7-8c18-a702e79e3910": 701,
+    "63b85964-782e-4a02-8134-0cf61cae7dbf": 796,
     "63dc42bf-5802-4cfb-ae43-d877680b8ba0": 312,
     "64258ac1-a67a-4a08-9115-9cf643682628": 492,
     "647e7b11-3a77-4d3b-931b-741f8e307416": 581,
@@ -9189,6 +9190,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAHiER6mIjM9r1Up5V7qBV2L18smZITDIBbUCPrr9XVOyYD26Cct+2uq6EU/unTeBI/fdi2f7jdrMlTtmqOat6Cw=="
         }
       }
+    },
+    "63b85964-782e-4a02-8134-0cf61cae7dbf": {
+      "uuid": "63b85964-782e-4a02-8134-0cf61cae7dbf",
+      "display_id": 796,
+      "title": "Layer 3 round 4 minor: the vsdd init/preflight command surface prints cwd, tool versions, and init errors outside the shared cleaner — a Layer 4 (Install) surface carry, not a Layer 3 status surface",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T10:23:52.874679Z",
+      "updated_at": "2026-07-26T10:23:52.874679Z"
     },
     "63dc42bf-5802-4cfb-ae43-d877680b8ba0": {
       "uuid": "63dc42bf-5802-4cfb-ae43-d877680b8ba0",
@@ -24129,11 +24140,16 @@
       "agent_id": "xqjG",
       "agent_seq": 427,
       "timestamp": "2026-07-26T10:23:46.543712Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 428,
+      "timestamp": "2026-07-26T10:23:52.874679Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:23:46.543712Z",
+    "timestamp": "2026-07-26T10:23:52.874679Z",
     "agent_id": "xqjG",
-    "agent_seq": 427
+    "agent_seq": 428
   }
 }
