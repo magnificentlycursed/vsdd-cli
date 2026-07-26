@@ -18805,11 +18805,12 @@
       "uuid": "d50599c9-9156-4ddc-9b7d-fe2b1393261c",
       "display_id": 784,
       "title": "Layer 3 round 2 major, three-lens convergent (SE+security+UX): #777 incomplete — the human form's composition line, the broken-state human form, and main.rs diagnostic prints interpolate state-sourced text raw; live ESC/BEL/newline injection through ordinary vsdd status",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T08:52:03.159650Z",
-      "updated_at": "2026-07-26T09:03:34.947888Z",
+      "updated_at": "2026-07-26T09:03:49.099467Z",
+      "closed_at": "2026-07-26T09:03:49.099441Z",
       "comments": {
         "e73e377c-906c-495e-af0a-916379311401": {
           "display_id": 1041,
@@ -23671,11 +23672,16 @@
       "agent_id": "xqjG",
       "agent_seq": 383,
       "timestamp": "2026-07-26T09:03:34.947888Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 384,
+      "timestamp": "2026-07-26T09:03:49.099467Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:03:34.947888Z",
+    "timestamp": "2026-07-26T09:03:49.099467Z",
     "agent_id": "xqjG",
-    "agent_seq": 383
+    "agent_seq": 384
   }
 }
