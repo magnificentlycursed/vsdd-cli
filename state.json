@@ -1,5 +1,5 @@
 {
-  "next_display_id": 791,
+  "next_display_id": 792,
   "next_comment_id": 1047,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -723,6 +723,7 @@
     "e950a0b2-4f67-4f73-88ef-c3a7cc452cf8": 517,
     "e952eaab-44f8-4702-9bfe-8d72ecc90362": 687,
     "e9aca564-3a26-4d99-b1cd-027f710855c0": 191,
+    "ea5249a5-764e-46f9-8d16-5bfc170b6155": 791,
     "ea5320ed-b672-4d36-833b-f058324ab289": 515,
     "eb24da88-5810-4b54-a800-0fd7df787f3c": 545,
     "eb48a379-dcc7-44df-88e4-84432a5eb3f7": 55,
@@ -20439,6 +20440,16 @@
         }
       }
     },
+    "ea5249a5-764e-46f9-8d16-5bfc170b6155": {
+      "uuid": "ea5249a5-764e-46f9-8d16-5bfc170b6155",
+      "display_id": 791,
+      "title": "Layer 3 round 3 minor collector SE: the cleaning trust model is inconsistent — free-form registry strings (next_step_text, human_recovery) render raw while the enum kind is cleaned; #786's registered-absence source is dead behind acquire.rs's upstream hardcode; the empty-fallback empty-slot with renderer disagreement",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T09:44:31.963884Z",
+      "updated_at": "2026-07-26T09:44:31.963884Z"
+    },
     "ea5320ed-b672-4d36-833b-f058324ab289": {
       "uuid": "ea5320ed-b672-4d36-833b-f058324ab289",
       "display_id": 515,
@@ -23868,11 +23879,16 @@
       "agent_id": "xqjG",
       "agent_seq": 402,
       "timestamp": "2026-07-26T09:44:25.968937Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 403,
+      "timestamp": "2026-07-26T09:44:31.963884Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:44:25.968937Z",
+    "timestamp": "2026-07-26T09:44:31.963884Z",
     "agent_id": "xqjG",
-    "agent_seq": 402
+    "agent_seq": 403
   }
 }
