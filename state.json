@@ -1,5 +1,5 @@
 {
-  "next_display_id": 782,
+  "next_display_id": 783,
   "next_comment_id": 1029,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -598,6 +598,7 @@
     "c3212aa8-5826-4781-8a9a-b472205c7a85": 167,
     "c33ec009-d50e-4c0d-a83f-ff8744074bea": 683,
     "c357c153-26c1-414d-9cab-d22e466819b9": 126,
+    "c376bd9d-18d6-4098-94aa-868ee4d21c63": 782,
     "c39e677d-2aa0-41eb-803b-35cab288c6cc": 208,
     "c3e32b4c-f54c-40e5-adbb-b8388cae827e": 605,
     "c4ddcfe7-c9b8-401b-a070-986967b887f6": 250,
@@ -17087,6 +17088,16 @@
         }
       }
     },
+    "c376bd9d-18d6-4098-94aa-868ee4d21c63": {
+      "uuid": "c376bd9d-18d6-4098-94aa-868ee4d21c63",
+      "display_id": 782,
+      "title": "Layer 3 round 1 nit collector UX+security: the degraded report line's triple restatement; the broken forms' absolute state path",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T05:45:33.496235Z",
+      "updated_at": "2026-07-26T05:45:33.496235Z"
+    },
     "c39e677d-2aa0-41eb-803b-35cab288c6cc": {
       "uuid": "c39e677d-2aa0-41eb-803b-35cab288c6cc",
       "display_id": 208,
@@ -23297,11 +23308,16 @@
       "agent_id": "xqjG",
       "agent_seq": 346,
       "timestamp": "2026-07-26T05:45:27.081051Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 347,
+      "timestamp": "2026-07-26T05:45:33.496235Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T05:45:27.081051Z",
+    "timestamp": "2026-07-26T05:45:33.496235Z",
     "agent_id": "xqjG",
-    "agent_seq": 346
+    "agent_seq": 347
   }
 }
