@@ -27,6 +27,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Layer 3 round 4 minor: the vsdd init/preflight command surface prints cwd, tool versions, and init errors outside the shared cleaner — a Layer 4 (Install) surface carry, not a Layer 3 status surface (#796)
+- Layer 3 round 4 major SE+QE convergent: the round-3 falsifiers do not falsify — the #790 command-level stderr test's fixture cannot echo an escape byte, the #789 path-line fix has no hostile-path fixture, and registered_absence's expect is unpinned (#795)
+- Layer 3 round 4 major SE+QE convergent: registry free-form strings truncation_mark, absence_text, marker_word, broken_state_mark still reach the terminal uncleaned — the rest of the #791 class; fix once at load (#794)
+- Layer 3 round 4 major security+QE convergent: the terminal cleaner enumerates a fixed code-point list and misses the rest of the class (WORD JOINER, invisible operators, tag block, interlinear, line/para separators) — fix by Unicode category, not enumeration (#793)
 - Layer 3 round 3 minor collector SE: the cleaning trust model is inconsistent — free-form registry strings (next_step_text, human_recovery) render raw while the enum kind is cleaned; #786's registered-absence source is dead behind acquire.rs's upstream hardcode; the empty-fallback empty-slot with renderer disagreement (#791)
 - Layer 3 round 3 major QE+SE: the degenerate-budget falsifier goes vacuous (unwrap_or empty masks a budget-ignoring mutant), and the three main.rs diagnostic prints have no falsifier at all (#790)
 - Layer 3 round 3 major SE: the broken-state human form's file-path line interpolates raw — one line below the #784 fix; a hostile repo subdirectory name reaches the terminal (#789)
