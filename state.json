@@ -1,6 +1,6 @@
 {
   "next_display_id": 773,
-  "next_comment_id": 1021,
+  "next_comment_id": 1022,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5302,7 +5302,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T00:00:18.234168Z",
-      "updated_at": "2026-07-26T00:08:35.511065Z",
+      "updated_at": "2026-07-26T00:15:23.391498Z",
       "comments": {
         "1c5b1ee6-0518-4c5f-83d7-52f1e50a153a": {
           "display_id": 1019,
@@ -5321,6 +5321,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZ+EMoTCwoW9hwW1Z5Gnpi+/d29NxrqCwdUHL/t0Fnd950ywi1ZOpZgj5s5TW0I4JIZzPorkDLi8d8FegCLDxAA=="
+        },
+        "24f03996-78b1-4d57-a221-9dbf06a44666": {
+          "display_id": 1021,
+          "author": "xqjG",
+          "content": "RED GATE RECORDED (gate: red-gate, phase: phase-2a, layer: 3, result: FAIL — the wanted direction; evidence: commit 94c30d16, executed run). The suite: 18 tests, 0 passed, 18 failed EXECUTED — every failure an assertion panic against the phase-2a stubs, none a compile failure and none vacuously green (the determinism, timing, and color tests carry non-empty-output conjuncts so they too are red against empty stubs; the stubs are deliberately wrong on every conduct member — the composition root consumes stdin and acquires zero times). The standing workspace is untouched: 97 pass under --no-fail-fast beside the 18 red. Coverage against the statusline-conduct slice, member by member: field order + session demotion, byte-identical rendering, budgeted truncation with the (cut) mark and the surviving count, worded absences, degraded marker words and next-step texts data-driven by exact match, broken-state on all three surfaces for all three read-failure kinds (with parse location on malformed, per-kind recovery, vocabulary-membership on the machine action), the #740 last-boundary line in both directions, stdin-count-zero with the sentinel backing, acquisition-count-of-one, the whole-invocation wall-clock under the registered 7-run median + twice-budget ceiling, color-strip on segment and human form, machine/human supersets with the facets note's answer/report named blocks, the composed two-repo display with a degraded member and per-line identity, the repo-set config parse-and-refuse pair, and the wiring-script template deliverable. Model-absence rides the harness (offline cargo test + the per-test credential scrub), per the criterion's enforced-not-asserted shape. The adopted checklist landed as manual-tests/layer-3.md. Phase 2a's gate condition is met; next action per the adopted oracle: close-phase, then 2b-implement-to-green.",
+          "created_at": "2026-07-26T00:15:23.377589Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQTAdtK4y1uau4I08Q74fzamWYnLHWoZK3Ul6efWdj+DNXS8E92psQ8UD0PfVwBJTQEUhXfG7HjRmNOM/8xduAg=="
         },
         "3945217a-0e91-4da4-90e3-ebbe8fc73675": {
           "display_id": 1017,
@@ -22933,11 +22942,16 @@
       "agent_id": "xqjG",
       "agent_seq": 314,
       "timestamp": "2026-07-26T00:08:35.511065Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 315,
+      "timestamp": "2026-07-26T00:15:23.391498Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T00:08:35.511065Z",
+    "timestamp": "2026-07-26T00:15:23.391498Z",
     "agent_id": "xqjG",
-    "agent_seq": 314
+    "agent_seq": 315
   }
 }
