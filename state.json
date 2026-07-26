@@ -1,5 +1,5 @@
 {
-  "next_display_id": 801,
+  "next_display_id": 802,
   "next_comment_id": 1062,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -441,6 +441,7 @@
     "89356e0a-a0d7-419b-8097-15d3a8133b93": 96,
     "89424e77-4971-47b0-8d44-093cd04eff53": 12,
     "89c35877-8a8a-4ca6-a3ec-9b4e37f832d0": 643,
+    "89fcf1f9-e0ca-4372-a5a9-29d1fbff8b52": 801,
     "8a081517-8b7e-44d5-afcc-e185b79be2da": 139,
     "8a4cf33f-5211-44c9-94b0-58a27067013f": 189,
     "8b0e4b66-e3f9-4650-8550-b1a351b19e3e": 617,
@@ -12635,6 +12636,16 @@
         }
       }
     },
+    "89fcf1f9-e0ca-4372-a5a9-29d1fbff8b52": {
+      "uuid": "89fcf1f9-e0ca-4372-a5a9-29d1fbff8b52",
+      "display_id": 801,
+      "title": "Layer 3 round 5 nit collector: the composition set's human vocabulary takes the no-op PostLoad (latent until a later layer prints it); post_load runs after schema minLength so an all-format-char field cleans to empty",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T10:59:18.134837Z",
+      "updated_at": "2026-07-26T10:59:18.134837Z"
+    },
     "8a081517-8b7e-44d5-afcc-e185b79be2da": {
       "uuid": "8a081517-8b7e-44d5-afcc-e185b79be2da",
       "display_id": 139,
@@ -24413,11 +24424,16 @@
       "agent_id": "xqjG",
       "agent_seq": 454,
       "timestamp": "2026-07-26T10:59:11.660211Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 455,
+      "timestamp": "2026-07-26T10:59:18.134837Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:59:11.660211Z",
+    "timestamp": "2026-07-26T10:59:18.134837Z",
     "agent_id": "xqjG",
-    "agent_seq": 454
+    "agent_seq": 455
   }
 }
