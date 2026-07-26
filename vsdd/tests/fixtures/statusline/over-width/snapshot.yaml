@@ -1,0 +1,11 @@
+acquisition_outcome: acquired
+milestones:
+  - {name: "the exceptionally long-winded milestone name that overflows every budget", state: open, is_active: true}
+findings: []
+round_manifests: []
+round_children: []
+comment_handles: []
+display_repo_name: vsdd-cli
+display_session: "session 9"
+display_work_item: "#772 layer 3 red gate"
+display_active_milestone: "the exceptionally long-winded milestone name that overflows every budget (5 open)"

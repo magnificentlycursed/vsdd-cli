@@ -1,0 +1,17 @@
+schema_version: "0.1.0"
+current_phase: phase-3
+current_layer: 3
+open_findings_pointer:
+  milestone: "the exceptionally long-winded milestone name that overflows every budget"
+last_gate_result:
+  gate: phase-exit-gate
+  phase: phase-2c
+  layer: 3
+  result: pass
+  evidence: "vsdd-cli #772 fixture"
+  recorded: "2026-07-25T00:00:00Z"
+active_composition:
+  scope: phase-3
+  domains: [quality-engineer]
+  mode: skill-interactive
+  config_inputs_hash: "sha256:statusline-fixture"
