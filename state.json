@@ -1,6 +1,6 @@
 {
   "next_display_id": 773,
-  "next_comment_id": 1022,
+  "next_comment_id": 1023,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5302,7 +5302,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T00:00:18.234168Z",
-      "updated_at": "2026-07-26T00:15:23.391498Z",
+      "updated_at": "2026-07-26T00:18:32.135165Z",
       "comments": {
         "1c5b1ee6-0518-4c5f-83d7-52f1e50a153a": {
           "display_id": 1019,
@@ -5348,6 +5348,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAI3Jca7qVmoOKtQMKvZKiXWCc+sCUU6rRg8OVrivY1kNxHMOSsIyCh4A0fuWvT9407GZRnNfK7NToypEwjtN0Dw=="
+        },
+        "b1fdf115-da56-424e-814a-ccc308c586e8": {
+          "display_id": 1022,
+          "author": "xqjG",
+          "content": "ORACLE REDLINE (pre-implementation, commit follows the red run): two authoring drifts from the ADOPTED seed caught at 2b entry — (1) the segment-order test asserted the next-action token as a segment field; the adopted enumeration is repo-name/phase-answer/work-item/milestone-with-count and the token class exceeds the field's 20-char budget by shape, so the test now asserts the phase value with next-action verified as human-form position content; (2) the three composition-root tests depended on the live checkout's install state (no .vsdd/state.yaml exists until Layer 4) — now hermetic temp roots seeded from the adopted corpus. No seed values changed; the suite stays 18 failing executed, 0 passing. The drift class is the same self-consistency trap the adoption discipline exists for — the seed was adopted, the tests are its implementation, and the mismatch was resolved TOWARD the adopted text.",
+          "created_at": "2026-07-26T00:18:32.121835Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA78LkIk3eEjdkOU2CJcpjwajLXVSrcjb5AZEQER5HMlpGcPqAFX9WKCSwASE6XmBBEEbPv63/qC2h/oSUvkGVAg=="
         }
       }
     },
@@ -22947,11 +22956,16 @@
       "agent_id": "xqjG",
       "agent_seq": 315,
       "timestamp": "2026-07-26T00:15:23.391498Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 316,
+      "timestamp": "2026-07-26T00:18:32.135165Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T00:15:23.391498Z",
+    "timestamp": "2026-07-26T00:18:32.135165Z",
     "agent_id": "xqjG",
-    "agent_seq": 315
+    "agent_seq": 316
   }
 }
