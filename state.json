@@ -1,5 +1,5 @@
 {
-  "next_display_id": 789,
+  "next_display_id": 790,
   "next_comment_id": 1047,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -669,6 +669,7 @@
     "d67b7d48-2528-4fb0-b20d-3d18b1c1d475": 749,
     "d6b8f6ad-3189-4053-8cb6-2494f5986c85": 193,
     "d700c4b5-6bb1-4079-bd62-0c31d5625049": 625,
+    "d77904e3-6848-4e58-8fa7-8c2750b45f38": 789,
     "d81e051b-f217-4351-aa5b-ce86f8cb07cc": 74,
     "d8275115-170b-42b8-9e51-fea74cc2afc0": 527,
     "d85fe164-adcc-434c-a3f4-89ea119ae778": 365,
@@ -19102,6 +19103,16 @@
         }
       }
     },
+    "d77904e3-6848-4e58-8fa7-8c2750b45f38": {
+      "uuid": "d77904e3-6848-4e58-8fa7-8c2750b45f38",
+      "display_id": 789,
+      "title": "Layer 3 round 3 major SE: the broken-state human form's file-path line interpolates raw — one line below the #784 fix; a hostile repo subdirectory name reaches the terminal",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T09:44:06.484579Z",
+      "updated_at": "2026-07-26T09:44:06.484579Z"
+    },
     "d81e051b-f217-4351-aa5b-ce86f8cb07cc": {
       "uuid": "d81e051b-f217-4351-aa5b-ce86f8cb07cc",
       "display_id": 74,
@@ -23818,11 +23829,16 @@
       "agent_id": "xqjG",
       "agent_seq": 398,
       "timestamp": "2026-07-26T09:44:00.525650Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 399,
+      "timestamp": "2026-07-26T09:44:06.484579Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:44:00.525650Z",
+    "timestamp": "2026-07-26T09:44:06.484579Z",
     "agent_id": "xqjG",
-    "agent_seq": 398
+    "agent_seq": 399
   }
 }
