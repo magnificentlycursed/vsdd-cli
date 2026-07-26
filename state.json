@@ -18691,11 +18691,12 @@
       "uuid": "d556dda8-95a8-44ff-8fb4-1beced69e422",
       "display_id": 777,
       "title": "Layer 3 round 1 major security: state-sourced display strings reach the terminal uncleaned — live escape and newline injection through the segment and human form",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:44:26.989095Z",
-      "updated_at": "2026-07-26T06:27:20.549580Z",
+      "updated_at": "2026-07-26T06:27:33.564722Z",
+      "closed_at": "2026-07-26T06:27:33.564697Z",
       "comments": {
         "f67eb273-6fb1-4ce6-8912-1cd806030f08": {
           "display_id": 1031,
@@ -23375,11 +23376,16 @@
       "agent_id": "xqjG",
       "agent_seq": 353,
       "timestamp": "2026-07-26T06:27:20.549580Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 354,
+      "timestamp": "2026-07-26T06:27:33.564722Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:27:20.549580Z",
+    "timestamp": "2026-07-26T06:27:33.564722Z",
     "agent_id": "xqjG",
-    "agent_seq": 353
+    "agent_seq": 354
   }
 }
