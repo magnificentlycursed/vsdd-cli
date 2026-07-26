@@ -16,8 +16,11 @@ path = "src/main.rs"
 vsdd-core = { path = "../vsdd-core" }
 clap = { workspace = true }
 serde_yaml = { workspace = true }
-# The machine form is JSON (Layer 3, vsdd-cli #772).
+# The machine form is JSON; the repo-set config is YAML with the same
+# type the core loaders use (Layer 3, vsdd-cli #772, #773).
 serde_json = { workspace = true }
+serde = { workspace = true }
+serde_yaml_ng = "0.10"
 
 [dev-dependencies]
 # The red-gate suite parses snapshot fixtures with the same YAML type

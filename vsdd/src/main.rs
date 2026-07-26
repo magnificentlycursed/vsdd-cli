@@ -20,6 +20,25 @@ struct Cli {
 enum Command {
     /// Initialize the VSDD methodology toolkit in the current project.
     Init(InitArgs),
+    /// Answer the phase question: human form by default, machine form
+    /// for agents, one-line segment for statusline surfaces.
+    Status(StatusArgs),
+}
+
+#[derive(clap::Args, Debug)]
+struct StatusArgs {
+    /// Render the one-line statusline segment.
+    #[arg(long)]
+    statusline: bool,
+
+    /// Render the machine form (JSON) instead of the human form.
+    #[arg(long, conflicts_with = "statusline")]
+    machine: bool,
+
+    /// Compose the multi-repo display over a repo-set config
+    /// (statusline only).
+    #[arg(long = "repo-set", requires = "statusline")]
+    repo_set: Option<std::path::PathBuf>,
 }
 
 #[derive(clap::Args, Debug)]
@@ -37,7 +56,120 @@ fn main() -> ExitCode {
     let cli = Cli::parse();
     match cli.command {
         Command::Init(args) => cmd_init(args),
+        Command::Status(args) => cmd_status(args),
     }
+}
+
+fn cmd_status(args: StatusArgs) -> ExitCode {
+    use vsdd_core::registry::{
+        self,
+        sets::{CompositionScopeAndActions, StatuslineData},
+    };
+
+    let cwd = match std::env::current_dir() {
+        Ok(p) => p,
+        Err(e) => {
+            eprintln!("vsdd status: cannot read current directory: {e}");
+            return ExitCode::from(2);
+        }
+    };
+    let data: StatuslineData = match registry::load_set(&cwd, "statusline-data") {
+        Ok(d) => d,
+        Err(diagnostic) => {
+            eprintln!("{}", diagnostic.message);
+            return ExitCode::from(2);
+        }
+    };
+    let actions: CompositionScopeAndActions =
+        match registry::load_set(&cwd, "composition-scope-and-actions") {
+            Ok(a) => a,
+            Err(diagnostic) => {
+                eprintln!("{}", diagnostic.message);
+                return ExitCode::from(2);
+            }
+        };
+
+    if args.statusline {
+        // The composed multi-repo display when a repo set is given:
+        // one line per configured repo, current repo first.
+        if let Some(config_path) = &args.repo_set {
+            let config = match vsdd::status::multi::read_repo_set_config(config_path) {
+                Ok(c) => c,
+                Err(diagnostic) => {
+                    eprintln!("{}", diagnostic.message);
+                    return ExitCode::from(2);
+                }
+            };
+            let current = segment_for_repo(&cwd, &data, &actions);
+            let others: Vec<String> = config
+                .repos
+                .iter()
+                .filter(|r| r.as_path() != cwd.as_path())
+                .map(|r| segment_for_repo(r, &data, &actions))
+                .collect();
+            println!("{}", vsdd::status::multi::render_multi(&current, &others));
+            return ExitCode::SUCCESS;
+        }
+        // Stdin is passed to the counting seam and never read.
+        let run = vsdd::status::run_statusline(
+            &cwd,
+            std::io::stdin().lock(),
+            &data,
+            &actions,
+            vsdd_core::snapshot::acquire::acquire_snapshot,
+        );
+        println!("{}", run.segment);
+        return ExitCode::SUCCESS;
+    }
+
+    match vsdd_core::state::read_state(&cwd.join(".vsdd/state.yaml"), &data) {
+        Ok(state) => {
+            let snapshot = vsdd_core::snapshot::acquire::acquire_snapshot(&cwd);
+            let answer =
+                vsdd_core::answer::derive::derive_phase_answer(&state, &snapshot, &actions);
+            if args.machine {
+                println!(
+                    "{}",
+                    vsdd::status::machine::render_machine(&answer, &snapshot, &data)
+                );
+            } else {
+                print!(
+                    "{}",
+                    vsdd::status::human::render_human(&answer, &snapshot, &data)
+                );
+            }
+            ExitCode::SUCCESS
+        }
+        Err(diagnostic) => {
+            // The broken-state branch: every surface still speaks.
+            let last = vsdd_core::snapshot::acquire::last_boundary_subject(&cwd);
+            let surfaces =
+                vsdd::status::broken::compose_broken_state(&diagnostic, &data, last.as_deref());
+            if args.machine {
+                println!("{}", surfaces.machine);
+            } else {
+                eprint!("{}", surfaces.human);
+            }
+            ExitCode::from(1)
+        }
+    }
+}
+
+/// One repo's segment line for the composed display: its own state,
+/// its own single acquisition; a broken member renders its mark.
+fn segment_for_repo(
+    root: &std::path::Path,
+    data: &vsdd_core::registry::sets::StatuslineData,
+    actions: &vsdd_core::registry::sets::CompositionScopeAndActions,
+) -> String {
+    let run = vsdd::status::run_statusline(
+        root,
+        std::io::empty(),
+        data,
+        actions,
+        vsdd_core::snapshot::acquire::acquire_snapshot,
+    );
+    run.segment
 }
 
 fn cmd_init(args: InitArgs) -> ExitCode {
@@ -94,6 +226,7 @@ mod tests {
                 assert!(!args.check);
                 assert!(!args.ci_mode);
             }
+            other => panic!("expected the init command, parsed {other:?}"),
         }
     }
 
@@ -105,6 +238,7 @@ mod tests {
                 assert!(args.check);
                 assert!(!args.ci_mode);
             }
+            other => panic!("expected the init command, parsed {other:?}"),
         }
     }
 
@@ -116,7 +250,31 @@ mod tests {
                 assert!(!args.check);
                 assert!(args.ci_mode);
             }
+            other => panic!("expected the init command, parsed {other:?}"),
         }
+    }
+
+    #[test]
+    fn parses_status_with_the_three_form_flags() {
+        let cli = Cli::parse_from(["vsdd", "status", "--statusline"]);
+        match cli.command {
+            Command::Status(args) => {
+                assert!(args.statusline);
+                assert!(!args.machine);
+                assert!(args.repo_set.is_none());
+            }
+            other => panic!("expected the status command, parsed {other:?}"),
+        }
+        let conflict = Cli::try_parse_from(["vsdd", "status", "--statusline", "--machine"]);
+        assert!(
+            conflict.is_err(),
+            "the segment and machine forms are distinct surfaces"
+        );
+        let requires = Cli::try_parse_from(["vsdd", "status", "--repo-set", "x.yaml"]);
+        assert!(
+            requires.is_err(),
+            "the repo set composes the statusline surface only"
+        );
     }
 
     #[test]

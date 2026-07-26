@@ -1,10 +1,8 @@
 //! `vsdd status` — the three renderings and the wiring script
-//! (Layer 3; vsdd-cli #772). One acquisition, one derivation, one
-//! rendering per invocation; the composition root owns the effectful
-//! shell and the conduct instruments; every renderer is pure.
-//!
-//! PHASE-2A STUBS: bodies are pre-implementation placeholders the red
-//! gate fails against, executed; phase 2b replaces them.
+//! (Layer 3; vsdd-cli #772, #773). One acquisition, one derivation,
+//! one rendering per invocation; the composition root owns the
+//! effectful shell and the conduct instruments; every renderer is
+//! pure.
 
 pub mod broken;
 pub mod human;
@@ -15,7 +13,9 @@ pub mod segment;
 
 use std::io::Read;
 use std::path::Path;
+use std::time::Instant;
 
+use vsdd_core::answer::derive::derive_phase_answer;
 use vsdd_core::registry::sets::{CompositionScopeAndActions, StatuslineData};
 use vsdd_core::snapshot::Snapshot;
 
@@ -27,27 +27,44 @@ pub struct StatuslineRun {
 
 /// The composition root for `vsdd status --statusline`: reads the
 /// state artifact, performs exactly ONE snapshot acquisition through
-/// `acquire`, derives once, renders once; stdin is accepted only to be
-/// counted — the statusline path reads zero bytes of it.
+/// `acquire`, derives once, renders once. Stdin is accepted only to be
+/// counted — the statusline path reads zero bytes of it: the
+/// substrate's session JSON stays cataloged but unconsumed, and the
+/// counting seam makes consumption fail a count rather than pass on
+/// output invariance. On a broken state the boundary query replaces
+/// the acquisition and the three-surface composition speaks instead.
 pub fn run_statusline(
     repo_root: &Path,
     stdin: impl Read,
     data: &StatuslineData,
     actions: &CompositionScopeAndActions,
-    acquire: impl FnMut(&Path) -> Snapshot,
+    mut acquire: impl FnMut(&Path) -> Snapshot,
 ) -> StatuslineRun {
-    // Phase-2a stub: deliberately wrong on every conduct member — it
-    // consumes stdin, acquires nothing, and renders nothing.
-    let _ = (repo_root, data, actions, acquire);
-    let mut sink = Vec::new();
-    let mut stdin = stdin;
-    let consumed = stdin.read_to_end(&mut sink).unwrap_or(0) as u64;
+    let started = Instant::now();
+    // Held, counted, never read: the zero on this counter is the
+    // criterion's stdin seam.
+    let counting = instruments::CountingReader::new(stdin);
+    let mut acquisition_count = 0u64;
+
+    let segment = match vsdd_core::state::read_state(&repo_root.join(".vsdd/state.yaml"), data) {
+        Ok(state) => {
+            acquisition_count += 1;
+            let snapshot = acquire(repo_root);
+            let answer = derive_phase_answer(&state, &snapshot, actions);
+            segment::render_segment(&answer, &snapshot, data)
+        }
+        Err(diagnostic) => {
+            let last = vsdd_core::snapshot::acquire::last_boundary_subject(repo_root);
+            broken::compose_broken_state(&diagnostic, data, last.as_deref()).segment
+        }
+    };
+
     StatuslineRun {
-        segment: String::new(),
+        segment,
         instruments: instruments::InvocationInstruments {
-            stdin_bytes_read: consumed,
-            acquisition_count: 0,
-            wall_clock: std::time::Duration::ZERO,
+            stdin_bytes_read: counting.bytes_read(),
+            acquisition_count,
+            wall_clock: started.elapsed(),
         },
     }
 }

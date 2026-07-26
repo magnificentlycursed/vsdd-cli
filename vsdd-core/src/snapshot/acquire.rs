@@ -209,6 +209,29 @@ fn empty(outcome: AcquisitionOutcome, repo_name: String) -> Snapshot {
     }
 }
 
+/// The most recent boundary commit's subject from this clone's own
+/// history (vsdd-cli #740): the broken-state surfaces render it as
+/// recovery context — where the build stood when the state artifact
+/// was last provably right. Bootstrap heuristic, declared: the newest
+/// first-parent subject containing the word "boundary" within the last
+/// hundred; the boundary-commit grammar deepens when the gate
+/// machinery (Layer 6) registers one. Every failure shape is None —
+/// the caller words the absence.
+pub fn last_boundary_subject(repo_root: &Path) -> Option<String> {
+    match run_bounded(
+        "git",
+        &["log", "--format=%s", "-n", "100", "--first-parent"],
+        repo_root,
+    ) {
+        Subprocess::Completed { stdout } => stdout
+            .lines()
+            .map(str::trim)
+            .find(|s| s.to_lowercase().contains("boundary"))
+            .map(clean_for_display),
+        _ => None,
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::{parse_milestones, split_count_suffix};

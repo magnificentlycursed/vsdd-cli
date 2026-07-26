@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Phase 2b execution, Layer 3: the three renderings and the wiring script implemented to green — segment, human and machine forms with the facets blocks, broken-state on all three surfaces with the last-boundary truth, conduct instruments, multi-repo composition, the wiring script, and the vsdd status command (#773)
 - Phase 2b execution, Layer 2: implement to green against the convergence corpus (#741)
 - Phase 2a execution, Layer 2: red-gate suite for snapshot acquisition, phase answer, and corroboration (#738)
 - Wire the executable cross-field constraints into mdatron patterns and schema if/then (mdatron #73 assessment) (#729)
