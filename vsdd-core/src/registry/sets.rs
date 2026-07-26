@@ -300,7 +300,20 @@ impl PostLoad for StatuslineData {
 
 impl PostLoad for GateData {}
 impl PostLoad for InstalledArtifactManifest {}
-impl PostLoad for CompositionScopeAndActions {}
+impl PostLoad for CompositionScopeAndActions {
+    fn post_load(&mut self) {
+        use crate::text::clean_for_terminal;
+        // Latent-safe (vsdd-cli #801): these human strings have no
+        // terminal sink today, but the clean-at-source invariant means
+        // a later layer that prints them cannot inherit an unclean one.
+        for a in &mut self.action_vocabulary {
+            a.human = clean_for_terminal(&a.human);
+        }
+        for s in &mut self.scope_members {
+            s.whitepaper_name = clean_for_terminal(&s.whitepaper_name);
+        }
+    }
+}
 impl PostLoad for ActToAffordanceMap {}
 impl PostLoad for EconomicsData {}
 impl PostLoad for DispatchData {}

@@ -29,21 +29,43 @@
 //! (Install) and routes its own operator-local strings (cwd, on-PATH
 //! tool versions) through this same helper when Layer 4 hardens; the
 //! cleaner is available to it, the wiring is that layer's act.
+//!
+//! Degenerate edge, accepted (vsdd-cli #801): a schema-legal display
+//! string made ENTIRELY of format characters cleans to empty here,
+//! after the schema's minLength-1 check has passed. This is safe — the
+//! render layer words an empty display value as its registered absence
+//! rather than an empty slot — so the post-clean empty is an accepted
+//! degenerate rendering, not a schema breach to re-diagnose.
 
 use unicode_general_category::{get_general_category, GeneralCategory};
 
 /// True for a code point that must never reach a terminal surface: a
-/// control, a format character, or a line/paragraph separator. Fixed
-/// by category so a new Unicode format character is covered without a
-/// code change (vsdd-cli #793).
+/// control, a format character, or a line/paragraph separator (by
+/// category, so a new Unicode format character is covered without a
+/// code change — vsdd-cli #793), OR an UNASSIGNED code point in a
+/// default-ignorable reserved range (vsdd-cli #798). The category proxy
+/// covers only ASSIGNED invisibles; a reserved-but-default-ignorable
+/// code point like U+E0000 renders invisibly on conformant terminals
+/// today while categorized `Cn` (Unassigned), so it must be stripped by
+/// range. The gate on `Unassigned` is deliberate: the same E0000-E0FFF
+/// block holds the variation selectors (U+E0100-E01EF, category `Mn`),
+/// which are legitimate text and must survive.
 pub fn is_terminal_unsafe(c: char) -> bool {
+    let category = get_general_category(c);
     matches!(
-        get_general_category(c),
+        category,
         GeneralCategory::Control
             | GeneralCategory::Format
             | GeneralCategory::LineSeparator
             | GeneralCategory::ParagraphSeparator
-    )
+    ) || (category == GeneralCategory::Unassigned && in_default_ignorable_reserved(c))
+}
+
+/// The default-ignorable reserved ranges (Unicode
+/// DerivedCoreProperties, the reserved half of
+/// `Default_Ignorable_Code_Point`): invisible today, unassigned today.
+fn in_default_ignorable_reserved(c: char) -> bool {
+    matches!(c, '\u{2065}' | '\u{FFF0}'..='\u{FFF8}' | '\u{E0000}'..='\u{E0FFF}')
 }
 
 /// Drop every terminal-unsafe code point; the shared cleaner for all
@@ -83,6 +105,20 @@ mod tests {
         assert_eq!(clean_for_terminal("tag\u{E0068}\u{E0069}"), "tag");
         // Line and paragraph separators would break a one-line surface.
         assert_eq!(clean_for_terminal("a\u{2028}b\u{2029}c"), "abc");
+        // Unassigned default-ignorables render invisibly but are Cn, not
+        // Cf — stripped by range (vsdd-cli #798).
+        assert_eq!(clean_for_terminal("tag\u{E0000}block"), "tagblock");
+        assert_eq!(clean_for_terminal("ign\u{2065}ore"), "ignore");
+        assert_eq!(clean_for_terminal("re\u{FFF0}served"), "reserved");
+    }
+
+    #[test]
+    fn variation_selectors_survive() {
+        // The E0100-E01EF block shares the tag block's page but is Mn
+        // (legitimate emoji/glyph variation), not Unassigned — kept
+        // (vsdd-cli #798).
+        let vs = "text\u{E0100}";
+        assert_eq!(clean_for_terminal(vs), vs);
     }
 
     #[test]

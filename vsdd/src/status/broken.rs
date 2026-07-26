@@ -83,12 +83,17 @@ pub fn compose_broken_state(
     }
     human.push_str(&format!("  = last boundary: {boundary}\n"));
 
+    // The machine form is a terminal surface too (it prints to stdout
+    // and an agent consumes it): the same cleaning the human form gets
+    // (vsdd-cli #799). serde escapes controls but not the bidi/tag
+    // class, so the dynamic strings reuse the cleaned values, and the
+    // registered strings are already clean from the loader's PostLoad.
     let machine = json!({
         "state_unreadable": {
-            "kind": diagnostic.machine_token,
+            "kind": clean_for_terminal(&diagnostic.machine_token),
             "diagnostic": {
-                "file": display_path(diagnostic),
-                "message": diagnostic.message,
+                "file": shown_path,
+                "message": message,
                 "location": diagnostic.location.map(|(l, c)| json!({"line": l, "column": c})),
             },
             "recovery_action": registered.map(|k| k.recovery_action.as_str()).unwrap_or(""),

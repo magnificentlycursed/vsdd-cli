@@ -137,12 +137,28 @@ pub fn validate_state_bytes(
         },
     }
 
-    serde_yaml_ng::from_str::<State>(text).map_err(|e| {
+    let mut state = serde_yaml_ng::from_str::<State>(text).map_err(|e| {
         malformed(
             path,
             format!("state content failure: {e}"),
             yaml_location(&e, 0),
             vocabulary,
         )
-    })
+    })?;
+    // State display strings are cleaned at THIS source boundary (vsdd-cli
+    // #799), the peer of the acquisition's snapshot cleaning and the
+    // registry loader's PostLoad: so every downstream render form — the
+    // segment, the human form, AND the machine form — receives
+    // terminal-safe data without a per-sink clean, and the answer's
+    // verbatim echo of the composition (vsdd-cli #749) stays an echo of
+    // the already-clean state.
+    if let Some(phase) = state.current_phase.as_mut() {
+        *phase = crate::text::clean_for_terminal(phase);
+    }
+    state.active_composition.scope =
+        crate::text::clean_for_terminal(&state.active_composition.scope);
+    for domain in &mut state.active_composition.domains {
+        *domain = crate::text::clean_for_terminal(domain);
+    }
+    Ok(state)
 }

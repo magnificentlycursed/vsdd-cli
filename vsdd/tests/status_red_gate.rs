@@ -358,6 +358,66 @@ fn broken_state_human_form_cleans_state_sourced_diagnostic_text() {
 }
 
 #[test]
+fn the_machine_form_cleans_state_and_diagnostic_strings() {
+    // The machine form is a terminal AND agent surface (vsdd-cli #799):
+    // state-sourced strings arrive clean from read_state, and the
+    // broken machine block cleans the dynamic diagnostic strings — the
+    // sink the render-site approach missed.
+    scrub_model_credentials();
+    let d = data();
+
+    // Healthy: a hostile scope in the state file is cleaned at read, so
+    // the machine form never carries it.
+    let dir = tempfile::tempdir().unwrap();
+    fs::create_dir_all(dir.path().join(".vsdd")).unwrap();
+    let hostile = fs::read_to_string(corpus().join("3-reviewing/state.yaml"))
+        .unwrap()
+        .replace(
+            "  scope: phase-3",
+            "  scope: \"phase-3\\u202ereversed\\u200bzw\"",
+        );
+    fs::write(dir.path().join(".vsdd/state.yaml"), hostile).unwrap();
+    let state = read_state(&dir.path().join(".vsdd/state.yaml"), &d).expect("state reads");
+    let snapshot: Snapshot = serde_yaml_ng::from_str(
+        &fs::read_to_string(corpus().join("3-reviewing/snapshot.yaml")).unwrap(),
+    )
+    .unwrap();
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+    let machine = render_machine(&answer, &snapshot, &d).to_string();
+    for spoof in ['\u{202e}', '\u{200b}'] {
+        assert!(
+            !machine.contains(spoof),
+            "the machine form carries no {spoof:?}: {machine}"
+        );
+    }
+
+    // Broken: a hostile diagnostic file path and message are cleaned in
+    // BOTH the machine and human forms (vsdd-cli #799, and the missing
+    // #789 path falsifier now present).
+    let hostile_diag = vsdd_core::diagnostics::Diagnostic {
+        file: std::path::PathBuf::from(".vsdd/su\u{202e}b\u{200b}/state.yaml"),
+        kind: "malformed".to_string(),
+        machine_token: "malformed".to_string(),
+        location: None,
+        message: "bad \u{1b}]0;x\u{7}\u{2060}token".to_string(),
+        recovery_action: String::new(),
+        recovery_text: String::new(),
+    };
+    let surfaces = compose_broken_state(&hostile_diag, &d, None);
+    let machine_broken = surfaces.machine.to_string();
+    for spoof in ['\u{202e}', '\u{200b}', '\u{1b}', '\u{7}', '\u{2060}'] {
+        assert!(
+            !surfaces.human.contains(spoof),
+            "broken human form carries no {spoof:?}"
+        );
+        assert!(
+            !machine_broken.contains(spoof),
+            "broken machine form carries no {spoof:?}: {machine_broken}"
+        );
+    }
+}
+
+#[test]
 fn segment_is_byte_identical_across_invocations() {
     // Per fixture (vsdd-cli #779), not one convenient member — the
     // absence, truncation, and degraded paths are the ones a

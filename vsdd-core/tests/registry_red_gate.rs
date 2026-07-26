@@ -46,6 +46,38 @@ fn temp_estate(copy_registry: bool, copy_schemas: bool) -> tempfile::TempDir {
 }
 
 #[test]
+fn load_set_cleans_registry_display_strings_at_load() {
+    // The PostLoad WIRING pinned (vsdd-cli #800): the post_load unit
+    // test pins the logic, but nothing pinned that load_set CALLS it —
+    // deleting the call left the suite green. This loads a doctored
+    // statusline-data artifact through the real load_set and asserts the
+    // hostile character is gone, so a dropped post_load call turns red.
+    let estate = temp_estate(true, true);
+    let md = estate.path().join("templates/registry/statusline-data.md");
+    let original = fs::read_to_string(&md).unwrap();
+    // Inject a zero-width space into a next_step_text value — the field
+    // is minLength-1 with no pattern, so it passes schema validation and
+    // only post_load removes it.
+    let doctored = original.replacen(
+        "next_step_text: \"tracker offline",
+        "next_step_text: \"tracker\u{200b} offline",
+        1,
+    );
+    assert_ne!(doctored, original, "the injection point exists");
+    fs::write(&md, doctored).unwrap();
+
+    let loaded: StatuslineData =
+        registry::load_set(estate.path(), "statusline-data").expect("the doctored artifact loads");
+    for k in &loaded.degraded_kinds {
+        assert!(
+            !k.next_step_text.contains('\u{200b}'),
+            "load_set cleaned the registry string at load: {:?}",
+            k.next_step_text
+        );
+    }
+}
+
+#[test]
 fn all_nine_sets_load_from_the_live_tree() {
     let reg: Registry = registry::load_all(&repo_root()).expect("all nine sets load");
     assert_eq!(reg.gate_data.schema_class, "gate-data");
