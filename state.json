@@ -2208,11 +2208,12 @@
       "uuid": "0e8d3e96-bcbe-4ff8-935e-1730a7757801",
       "display_id": 800,
       "title": "Layer 3 round 5 major SE+QE convergent: the post_load loader wiring is unpinned — deleting value.post_load() leaves all tests green (the unit test pins the logic, nothing pins the call); plus the missing #789 hostile-path falsifier (record corrected on #795)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:59:04.211646Z",
-      "updated_at": "2026-07-26T11:11:57.390246Z",
+      "updated_at": "2026-07-26T11:12:02.845182Z",
+      "closed_at": "2026-07-26T11:12:02.845173Z",
       "comments": {
         "edfcff55-507e-4754-b364-aba9f872b325": {
           "display_id": 1065,
@@ -24514,11 +24515,16 @@
       "agent_id": "xqjG",
       "agent_seq": 464,
       "timestamp": "2026-07-26T11:11:57.390246Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 465,
+      "timestamp": "2026-07-26T11:12:02.845182Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T11:11:57.390246Z",
+    "timestamp": "2026-07-26T11:12:02.845182Z",
     "agent_id": "xqjG",
-    "agent_seq": 464
+    "agent_seq": 465
   }
 }
