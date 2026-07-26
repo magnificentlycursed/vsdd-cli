@@ -3111,11 +3111,12 @@
       "uuid": "190de25e-5ced-485c-8f3e-08fb1d0a1b83",
       "display_id": 790,
       "title": "Layer 3 round 3 major QE+SE: the degenerate-budget falsifier goes vacuous (unwrap_or empty masks a budget-ignoring mutant), and the three main.rs diagnostic prints have no falsifier at all",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T09:44:19.492538Z",
-      "updated_at": "2026-07-26T09:52:26.085138Z",
+      "updated_at": "2026-07-26T09:52:31.887477Z",
+      "closed_at": "2026-07-26T09:52:31.887469Z",
       "comments": {
         "f5a1e5e7-f5ca-4020-af76-eca7abb0e4d3": {
           "display_id": 1050,
@@ -23969,11 +23970,16 @@
       "agent_id": "xqjG",
       "agent_seq": 412,
       "timestamp": "2026-07-26T09:52:26.085138Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 413,
+      "timestamp": "2026-07-26T09:52:31.887477Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:52:26.085138Z",
+    "timestamp": "2026-07-26T09:52:31.887477Z",
     "agent_id": "xqjG",
-    "agent_seq": 412
+    "agent_seq": 413
   }
 }
