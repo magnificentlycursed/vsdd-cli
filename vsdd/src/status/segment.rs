@@ -129,12 +129,12 @@ fn split_open_count(value: &str) -> Option<(&str, &str)> {
     }
 }
 
-/// Terminal-destined strings drop control characters at the boundary —
-/// the render-side mirror of the acquisition's cleaning (vsdd-cli
-/// #777): state-sourced and git-sourced text is data, never terminal
-/// input.
+/// Terminal-destined strings drop control characters AND the
+/// display-spoofing set at the boundary — the render-side use of the
+/// one shared policy (vsdd-cli #777, #784, #788): state-sourced and
+/// git-sourced text is data, never terminal input.
 pub fn clean_for_terminal(s: &str) -> String {
-    s.chars().filter(|c| !c.is_control()).collect()
+    vsdd_core::text::clean_for_terminal(s)
 }
 
 fn take_chars(value: &str, keep: usize) -> String {

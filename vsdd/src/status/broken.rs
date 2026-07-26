@@ -62,7 +62,7 @@ pub fn compose_broken_state(
     // nothing and keeps the rule uniform.
     let message = clean_for_terminal(&diagnostic.message);
     let mut human = format!("error[{}]: {message}\n", diagnostic.machine_token);
-    let shown_path = display_path(diagnostic);
+    let shown_path = clean_for_terminal(&display_path(diagnostic));
     match diagnostic.location {
         Some((line, column)) => human.push_str(&format!(
             " --> {shown_path} (line {line}, column {column})\n"
@@ -74,7 +74,10 @@ pub fn compose_broken_state(
         clean_for_terminal(&diagnostic.kind)
     ));
     match registered {
-        Some(k) => human.push_str(&format!("  = recovery: {}\n", k.human_recovery)),
+        Some(k) => human.push_str(&format!(
+            "  = recovery: {}\n",
+            clean_for_terminal(&k.human_recovery)
+        )),
         None => human.push_str(
             "  = recovery: the read-failure kind is unregistered — repair the statusline data set\n",
         ),

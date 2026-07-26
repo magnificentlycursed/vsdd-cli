@@ -32,7 +32,11 @@ fn registered_absence<'a>(data: &'a StatuslineData, field: &str) -> &'a str {
         .iter()
         .find(|f| f.field == field)
         .map(|f| f.absence_text.as_str())
-        .unwrap_or("")
+        // The same loud posture the segment's fit() takes (vsdd-cli
+        // #791): a missing registered field is a drifted registry, not
+        // a silent empty slot — and the schema pair requires all four,
+        // so this is a belt-and-braces guard, never a live path.
+        .expect("the display field is registered")
 }
 
 /// Render the human terminal form. Pure.
@@ -91,8 +95,9 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
     out.push_str("report\n");
     match &answer.degraded {
         Some(kind) => {
-            let next_step =
-                super::degraded_next_step(data, kind).unwrap_or(super::UNREGISTERED_DEGRADED_KIND);
+            let next_step = clean_for_terminal(
+                super::degraded_next_step(data, kind).unwrap_or(super::UNREGISTERED_DEGRADED_KIND),
+            );
             // The next-step text leads (it already words the
             // condition); the kind token trails for the machine-form
             // cross-reference — one statement, not three (vsdd-cli

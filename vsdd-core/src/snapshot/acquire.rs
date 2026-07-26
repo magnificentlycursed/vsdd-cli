@@ -35,6 +35,17 @@ use crate::subprocess::{run_bounded, Subprocess};
 
 use super::{AcquisitionOutcome, MilestoneState, Snapshot};
 
+/// The bootstrap absence wordings. Declared mirrors of the statusline
+/// data set's `absence_text` for the fields that have one (vsdd-cli
+/// #791; the #724 declared-mirror pattern): a fidelity test pins the
+/// two registered ones so an edit to the data set cannot silently
+/// diverge the acquisition from the render layer. `session` has no
+/// registered display field (the demotion ruling), so it carries no
+/// mirror to pin.
+const ABSENT_SESSION: &str = "no session";
+const ABSENT_WORK_ITEM: &str = "no work item";
+const ABSENT_MILESTONE: &str = "no milestone";
+
 /// Acquire the corroboration snapshot for the repo.
 pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
     let repo_name = repo_root
@@ -65,7 +76,9 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
             Subprocess::NotFound => return empty(AcquisitionOutcome::Absent, repo_name),
             // The declared bootstrap conflation: a refused session query
             // renders the worded absence (module doc; vsdd-cli #753).
-            Subprocess::Refused { .. } => ("no session".to_string(), "no work item".to_string()),
+            Subprocess::Refused { .. } => {
+                (ABSENT_SESSION.to_string(), ABSENT_WORK_ITEM.to_string())
+            }
             _ => return empty(AcquisitionOutcome::Unusable, repo_name),
         };
 
@@ -83,7 +96,7 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
             }
             None => p.state.name.clone(),
         })
-        .unwrap_or_else(|| "no milestone".to_string());
+        .unwrap_or_else(|| ABSENT_MILESTONE.to_string());
 
     Snapshot {
         acquisition_outcome: AcquisitionOutcome::Acquired,
@@ -176,7 +189,7 @@ fn parse_session(text: &str) -> Option<(String, String)> {
         .get("session_id")
         .and_then(|v| v.as_u64())
         .map(|id| format!("session {id}"))
-        .unwrap_or_else(|| "no session".to_string());
+        .unwrap_or_else(|| ABSENT_SESSION.to_string());
     let work_item = value
         .get("working_on")
         .and_then(|w| {
@@ -184,14 +197,16 @@ fn parse_session(text: &str) -> Option<(String, String)> {
             let title = w.get("title")?.as_str()?;
             Some(clean_for_display(&format!("{id} {title}")))
         })
-        .unwrap_or_else(|| "no work item".to_string());
+        .unwrap_or_else(|| ABSENT_WORK_ITEM.to_string());
     Some((session, work_item))
 }
 
 /// Terminal-destined strings drop control characters at the boundary
 /// (vsdd-cli #754): crosslink output is data, never terminal input.
 fn clean_for_display(s: &str) -> String {
-    s.chars().filter(|c| !c.is_control()).collect()
+    // The one shared terminal-cleaning policy (vsdd-cli #788): control
+    // characters AND display-spoofing bidi/zero-width/format chars.
+    crate::text::clean_for_terminal(s)
 }
 
 fn empty(outcome: AcquisitionOutcome, repo_name: String) -> Snapshot {
@@ -203,9 +218,9 @@ fn empty(outcome: AcquisitionOutcome, repo_name: String) -> Snapshot {
         round_children: Vec::new(),
         comment_handles: Vec::new(),
         display_repo_name: repo_name,
-        display_session: "no session".to_string(),
-        display_work_item: "no work item".to_string(),
-        display_active_milestone: "no milestone".to_string(),
+        display_session: ABSENT_SESSION.to_string(),
+        display_work_item: ABSENT_WORK_ITEM.to_string(),
+        display_active_milestone: ABSENT_MILESTONE.to_string(),
     }
 }
 
@@ -234,7 +249,30 @@ pub fn last_boundary_subject(repo_root: &Path) -> Option<String> {
 
 #[cfg(test)]
 mod tests {
-    use super::{parse_milestones, split_count_suffix};
+    use super::{parse_milestones, split_count_suffix, ABSENT_MILESTONE, ABSENT_WORK_ITEM};
+
+    #[test]
+    fn the_absence_wordings_mirror_the_registered_set() {
+        // The declared-mirror fidelity pin (vsdd-cli #791): the
+        // acquisition's bootstrap absence words match the statusline
+        // data set's absence_text, so an edit to one cannot silently
+        // diverge the render layer from the acquisition.
+        let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .parent()
+            .unwrap()
+            .to_path_buf();
+        let data: crate::registry::sets::StatuslineData =
+            crate::registry::load_set(&root, "statusline-data").expect("statusline data loads");
+        let registered = |field: &str| {
+            data.display_fields
+                .iter()
+                .find(|f| f.field == field)
+                .map(|f| f.absence_text.clone())
+                .unwrap_or_default()
+        };
+        assert_eq!(registered("work-item"), ABSENT_WORK_ITEM);
+        assert_eq!(registered("milestone-with-count"), ABSENT_MILESTONE);
+    }
 
     #[test]
     fn content_with_zero_parses_is_none_never_an_empty_success() {

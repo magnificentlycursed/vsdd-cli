@@ -297,6 +297,38 @@ fn control_characters_never_reach_the_terminal() {
 }
 
 #[test]
+fn display_spoofing_characters_never_reach_the_terminal() {
+    // The Trojan-Source class (vsdd-cli #788): bidi overrides and
+    // zero-width chars from a state-sourced field are stripped from
+    // every rendered surface, not just C0/C1 controls.
+    scrub_model_credentials();
+    let dir = tempfile::tempdir().unwrap();
+    fs::create_dir_all(dir.path().join(".vsdd")).unwrap();
+    let hostile = fs::read_to_string(corpus().join("3-reviewing/state.yaml"))
+        .unwrap()
+        .replace(
+            "  scope: phase-3",
+            "  scope: \"phase-3\\u202ereversed\\u200bzw\"",
+        );
+    fs::write(dir.path().join(".vsdd/state.yaml"), hostile).unwrap();
+    let state = read_state(&dir.path().join(".vsdd/state.yaml"), &data()).expect("state reads");
+    let snapshot: Snapshot = serde_yaml_ng::from_str(
+        &fs::read_to_string(corpus().join("3-reviewing/snapshot.yaml")).unwrap(),
+    )
+    .unwrap();
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+    let human = render_human(&answer, &snapshot, &data());
+    for spoof in ['\u{202e}', '\u{200b}'] {
+        assert!(
+            !human.contains(spoof),
+            "the display-spoofing char {spoof:?} never reaches the human form: {human:?}"
+        );
+    }
+    // The visible text survives.
+    assert!(human.contains("reversed") && human.contains("zw"));
+}
+
+#[test]
 fn broken_state_human_form_cleans_state_sourced_diagnostic_text() {
     // The broken-state human form (vsdd-cli #784): a diagnostic whose
     // message and kind echo hostile state bytes must not carry them to
@@ -899,13 +931,21 @@ fn a_degenerate_budget_hard_cuts_and_never_overflows() {
     let (answer, snapshot) = load(&corpus().join("3-reviewing"));
     let d = data_with_budget("work-item", 3);
     let segment = render_segment(&answer, &snapshot, &d);
-    let work_field = segment
-        .split("  ")
-        .find(|part| part.contains('#') || part.chars().count() == 3)
-        .unwrap_or("");
+    // Structural location (vsdd-cli #790): the work-item field is the
+    // third of the four in registered order, so a budget-ignoring
+    // mutant renders its full value HERE and fails — no vacuous
+    // unwrap_or that would let a failed locate pass.
+    let fields: Vec<&str> = segment.split("  ").collect();
+    let work_field = fields
+        .get(2)
+        .expect("the work-item field is the third in order");
     assert!(
         work_field.chars().count() <= 3,
         "the work-item field never exceeds a budget of 3: {segment:?}"
+    );
+    assert!(
+        work_field.contains("#7") || work_field.chars().count() < 3,
+        "the field carries a hard-cut prefix of the real value, not an empty slot: {segment:?}"
     );
     // The whole segment stays one line regardless.
     assert_eq!(segment.lines().count(), 1);
@@ -1055,6 +1095,39 @@ fn a_member_over_budget_yields_a_worded_line_not_a_stall() {
     assert_eq!(
         fast, "the rendered line",
         "a within-budget render passes through"
+    );
+}
+
+// ── The command surface's diagnostic prints (vsdd-cli #790) ─────────────
+
+#[test]
+fn the_status_command_cleans_config_diagnostics_on_stderr() {
+    // The three cmd_status diagnostic eprintlns (vsdd-cli #784) get a
+    // red test (vsdd-cli #790): a reversion to raw reopens the #777
+    // hole on the stderr path. Run the built binary in the real repo
+    // root (valid registry data) with a repo-set config carrying a
+    // control byte near a syntax error, and assert stderr stays clean.
+    scrub_model_credentials();
+    let dir = tempfile::tempdir().unwrap();
+    let cfg = dir.path().join("hostile.yaml");
+    fs::write(&cfg, "repos: [unclosed \u{1b}[31m").unwrap();
+    let output = std::process::Command::new(env!("CARGO_BIN_EXE_vsdd"))
+        .args(["status", "--statusline", "--repo-set"])
+        .arg(&cfg)
+        .current_dir(repo_root())
+        .env_remove("ANTHROPIC_API_KEY")
+        .output()
+        .expect("the built binary runs");
+    // A malformed config is a diagnostic (nonzero exit), and no control
+    // byte reaches the terminal stream.
+    assert!(
+        !output.status.success(),
+        "the malformed config exits nonzero"
+    );
+    assert!(
+        !output.stderr.contains(&0x1b),
+        "no escape byte reaches stderr: {:?}",
+        String::from_utf8_lossy(&output.stderr)
     );
 }
 

@@ -34,6 +34,7 @@ pub mod schema_check;
 pub mod snapshot;
 pub mod state;
 pub(crate) mod subprocess;
+pub mod text;
 
 pub use bounded_read::MAX_ARTIFACT_BYTES;
 
