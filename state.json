@@ -1,5 +1,5 @@
 {
-  "next_display_id": 794,
+  "next_display_id": 795,
   "next_comment_id": 1054,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -792,6 +792,7 @@
     "fdd817d1-9a97-4dbd-9e2e-0cb2210995c4": 204,
     "fe24efcf-82fa-4073-9d50-f75e1f8b73f7": 633,
     "fe6b7115-1f83-464d-8bd2-6041dab3fce2": 693,
+    "fea77f0d-bf8b-4d1f-92c2-560a1e45bb31": 794,
     "ff07710c-a016-4b3e-a2c4-b44be5e9ce17": 375,
     "ff285fca-9bc6-4567-a6b6-1b134382cf6b": 535,
     "ff758294-ca3e-4b9b-8fcb-62a540aee97f": 449
@@ -22313,6 +22314,16 @@
         }
       }
     },
+    "fea77f0d-bf8b-4d1f-92c2-560a1e45bb31": {
+      "uuid": "fea77f0d-bf8b-4d1f-92c2-560a1e45bb31",
+      "display_id": 794,
+      "title": "Layer 3 round 4 major SE+QE convergent: registry free-form strings truncation_mark, absence_text, marker_word, broken_state_mark still reach the terminal uncleaned — the rest of the #791 class; fix once at load",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-26T10:23:26.046581Z",
+      "updated_at": "2026-07-26T10:23:26.046581Z"
+    },
     "ff07710c-a016-4b3e-a2c4-b44be5e9ce17": {
       "uuid": "ff07710c-a016-4b3e-a2c4-b44be5e9ce17",
       "display_id": 375,
@@ -24079,11 +24090,16 @@
       "agent_id": "xqjG",
       "agent_seq": 423,
       "timestamp": "2026-07-26T10:23:19.600509Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 424,
+      "timestamp": "2026-07-26T10:23:26.046581Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:23:19.600509Z",
+    "timestamp": "2026-07-26T10:23:26.046581Z",
     "agent_id": "xqjG",
-    "agent_seq": 423
+    "agent_seq": 424
   }
 }
