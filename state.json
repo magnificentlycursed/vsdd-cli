@@ -3814,11 +3814,12 @@
       "uuid": "21cbdfd1-aece-4290-a441-dd1c36fa9219",
       "display_id": 785,
       "title": "Layer 3 round 2 major QE: two round-1 falsifiers do not falsify — the glued-mark mutant survives the generic branch (milestone spaced-mark masks it), and machine report.degraded is pinned single-kind where the criterion quantifies per registered kind",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T08:52:32.141846Z",
-      "updated_at": "2026-07-26T09:04:14.071653Z",
+      "updated_at": "2026-07-26T09:04:27.122864Z",
+      "closed_at": "2026-07-26T09:04:27.122840Z",
       "comments": {
         "6c03a5f0-07f5-4259-b2ff-f252c75dab9a": {
           "display_id": 1042,
@@ -23694,11 +23695,16 @@
       "agent_id": "xqjG",
       "agent_seq": 386,
       "timestamp": "2026-07-26T09:04:14.071653Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 387,
+      "timestamp": "2026-07-26T09:04:27.122864Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:04:14.071653Z",
+    "timestamp": "2026-07-26T09:04:27.122864Z",
     "agent_id": "xqjG",
-    "agent_seq": 386
+    "agent_seq": 387
   }
 }
