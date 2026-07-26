@@ -133,7 +133,7 @@ fn split_open_count(value: &str) -> Option<(&str, &str)> {
 /// the render-side mirror of the acquisition's cleaning (vsdd-cli
 /// #777): state-sourced and git-sourced text is data, never terminal
 /// input.
-pub(crate) fn clean_for_terminal(s: &str) -> String {
+pub fn clean_for_terminal(s: &str) -> String {
     s.chars().filter(|c| !c.is_control()).collect()
 }
 

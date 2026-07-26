@@ -193,17 +193,27 @@ fn generic_truncation_marks_every_field_not_just_the_milestone() {
         "the fixture overflows the work-item budget"
     );
     let segment = render_segment(&answer, &long_work, &d);
-    assert!(
-        segment.contains(&format!(" {}", d.truncation_mark)),
-        "the mark is set off by a space on the generic branch: {segment:?}"
-    );
     let work_field = segment
         .split("  ")
         .find(|part| part.contains("#738"))
         .expect("the work-item field is locatable");
+    // The assert lives on the FIELD, not the whole segment (vsdd-cli
+    // #785): the milestone field's own spaced mark would otherwise mask
+    // a glued mark on this branch.
     assert!(
-        work_field.chars().count() <= 24,
-        "the work-item field honors its budget: {work_field:?}"
+        work_field.contains(&format!(" {}", d.truncation_mark)),
+        "the mark is set off by a space on the generic branch: {work_field:?}"
+    );
+    assert!(
+        !work_field.contains(&format!("t{}", d.truncation_mark)),
+        "the mark is never glued to the truncated value: {work_field:?}"
+    );
+    // The budget is read from the registered data, never a literal
+    // (vsdd-cli #786): a lawful budget change cannot fail this test.
+    let budget = field_budget(&d, "work-item");
+    assert!(
+        work_field.chars().count() <= budget,
+        "the work-item field honors its budget of {budget}: {work_field:?}"
     );
 }
 
@@ -246,11 +256,22 @@ fn control_characters_never_reach_the_terminal() {
     scrub_model_credentials();
     let dir = tempfile::tempdir().unwrap();
     fs::create_dir_all(dir.path().join(".vsdd")).unwrap();
+    // Hostile control characters in BOTH the phase field and the
+    // composition fields (scope, a domain) — every human-form
+    // interpolation crosses the boundary cleaned (vsdd-cli #784).
     let hostile = fs::read_to_string(corpus().join("3-reviewing/state.yaml"))
         .unwrap()
         .replace(
             "current_phase: phase-3",
             "current_phase: \"phase-3\\u001b[31mred\\nline\"",
+        )
+        .replace(
+            "  scope: phase-3",
+            "  scope: \"phase-3\\u001b]0;pwned\\u0007\"",
+        )
+        .replace(
+            "domains: [quality-engineer]",
+            "domains: [\"quality-engineer\\u001b[31m\"]",
         );
     fs::write(dir.path().join(".vsdd/state.yaml"), hostile).unwrap();
     let state =
@@ -272,6 +293,35 @@ fn control_characters_never_reach_the_terminal() {
     assert!(
         segment.lines().count() == 1,
         "an embedded newline cannot break the one-line invariant: {segment:?}"
+    );
+}
+
+#[test]
+fn broken_state_human_form_cleans_state_sourced_diagnostic_text() {
+    // The broken-state human form (vsdd-cli #784): a diagnostic whose
+    // message and kind echo hostile state bytes must not carry them to
+    // the terminal — the same rule the healthy forms hold.
+    scrub_model_credentials();
+    let d = data();
+    let hostile = vsdd_core::diagnostics::Diagnostic {
+        file: std::path::PathBuf::from(".vsdd/state.yaml"),
+        kind: "malformed\u{1b}[31m".to_string(),
+        machine_token: "malformed".to_string(),
+        location: Some((3, 1)),
+        message: "unexpected token \u{1b}]0;pwned\u{7} at\nline 3".to_string(),
+        recovery_action: String::new(),
+        recovery_text: String::new(),
+    };
+    let surfaces = vsdd::status::broken::compose_broken_state(&hostile, &d, None);
+    assert!(
+        !surfaces.human.contains('\u{1b}') && !surfaces.human.contains('\u{7}'),
+        "no control byte reaches the broken-state human form: {:?}",
+        surfaces.human
+    );
+    // The forged newline in the message cannot forge a diagnostic line.
+    assert!(
+        surfaces.human.contains("unexpected token") && !surfaces.human.contains("at\nline 3"),
+        "the message renders as one cleaned line"
     );
 }
 
@@ -460,22 +510,29 @@ fn human_form_words_its_absences_never_empty_slots() {
 
 #[test]
 fn machine_form_reports_the_degraded_kind_and_next_step_exactly() {
-    // The report.degraded block agents branch on (vsdd-cli #779).
+    // The report.degraded block agents branch on, per registered kind
+    // (vsdd-cli #785): a hardcoded-kind mutant dies on the arm whose
+    // fixture kind differs from the hardcode.
     scrub_model_credentials();
-    let (answer, snapshot) = load(&corpus().join("degraded-tracker-absent"));
     let d = data();
-    let machine = render_machine(&answer, &snapshot, &d);
-    let degraded = &machine["report"]["degraded"];
-    assert_eq!(
-        degraded["kind"].as_str(),
-        Some("tracker-absent"),
-        "the kind by exact match"
-    );
-    assert_eq!(
-        degraded["next_step"].as_str(),
-        Some(degraded_kind(&d, "tracker-absent").next_step_text.as_str()),
-        "the registered next-step text, exact"
-    );
+    for (fixture, kind) in [
+        ("degraded-tracker-absent", "tracker-absent"),
+        ("degraded-tracker-unusable", "tracker-unusable"),
+    ] {
+        let (answer, snapshot) = load(&corpus().join(fixture));
+        let machine = render_machine(&answer, &snapshot, &d);
+        let degraded = &machine["report"]["degraded"];
+        assert_eq!(
+            degraded["kind"].as_str(),
+            Some(kind),
+            "{fixture}: the kind by exact match"
+        );
+        assert_eq!(
+            degraded["next_step"].as_str(),
+            Some(degraded_kind(&d, kind).next_step_text.as_str()),
+            "{fixture}: the registered next-step text, exact"
+        );
+    }
 }
 
 #[test]
@@ -817,6 +874,117 @@ fn the_repo_set_config_parses_and_a_malformed_one_is_a_diagnostic() {
         !diagnostic.message.is_empty(),
         "the diagnostic says what failed"
     );
+}
+
+// ── Falsifiers for the just-fixed surfaces (vsdd-cli #786) ─────────────
+
+/// The registered data with one field's budget overridden — the lever
+/// for exercising the degenerate-budget branch without editing the
+/// versioned artifact.
+fn data_with_budget(field: &str, budget: u64) -> StatuslineData {
+    let mut d = data();
+    d.display_fields
+        .iter_mut()
+        .find(|f| f.field == field)
+        .expect("the field is registered")
+        .width_budget_chars = budget;
+    d
+}
+
+#[test]
+fn a_degenerate_budget_hard_cuts_and_never_overflows() {
+    // #780's invariant made falsifiable (vsdd-cli #786): a budget below
+    // the mark's own width renders within budget, never a spilled mark.
+    scrub_model_credentials();
+    let (answer, snapshot) = load(&corpus().join("3-reviewing"));
+    let d = data_with_budget("work-item", 3);
+    let segment = render_segment(&answer, &snapshot, &d);
+    let work_field = segment
+        .split("  ")
+        .find(|part| part.contains('#') || part.chars().count() == 3)
+        .unwrap_or("");
+    assert!(
+        work_field.chars().count() <= 3,
+        "the work-item field never exceeds a budget of 3: {segment:?}"
+    );
+    // The whole segment stays one line regardless.
+    assert_eq!(segment.lines().count(), 1);
+}
+
+#[test]
+fn the_config_read_refuses_an_oversize_file() {
+    // #781's cap made falsifiable (vsdd-cli #786): a file past the
+    // artifact cap is a diagnostic, never a whole-file materialization.
+    scrub_model_credentials();
+    let dir = tempfile::tempdir().unwrap();
+    let big = dir.path().join("statusline.yaml");
+    let cap = vsdd_core::MAX_ARTIFACT_BYTES as usize;
+    let mut body = String::from("repos:\n");
+    // One valid line, then padding comments past the cap.
+    body.push_str("  - /one\nper_repo_budget_ms: 250\n");
+    while body.len() <= cap + 16 {
+        body.push_str("# padding to exceed the artifact cap\n");
+    }
+    fs::write(&big, body).unwrap();
+    let diagnostic = read_repo_set_config(&big)
+        .expect_err("an oversize config is a diagnostic, never a whole-file read");
+    assert!(
+        diagnostic.message.contains("cap"),
+        "the diagnostic names the cap breach: {}",
+        diagnostic.message
+    );
+}
+
+#[test]
+fn the_broken_form_folds_the_home_prefix() {
+    // #782's home fold made falsifiable (vsdd-cli #786): a state path
+    // under HOME renders with ~, keeping the account segment out.
+    scrub_model_credentials();
+    let d = data();
+    let home = std::env::var("HOME").expect("HOME set in the test env");
+    assert!(home.trim().len() > 1, "the test needs a real HOME");
+    let under_home = std::path::PathBuf::from(&home).join("proj/.vsdd/state.yaml");
+    let diagnostic = vsdd_core::diagnostics::Diagnostic {
+        file: under_home,
+        kind: "malformed".to_string(),
+        machine_token: "malformed".to_string(),
+        location: None,
+        message: "bad".to_string(),
+        recovery_action: String::new(),
+        recovery_text: String::new(),
+    };
+    let surfaces = compose_broken_state(&diagnostic, &d, None);
+    assert!(
+        surfaces.human.contains("~/proj/.vsdd/state.yaml"),
+        "the home prefix folds to ~: {:?}",
+        surfaces.human
+    );
+    assert!(
+        !surfaces.human.contains(&home),
+        "the account segment never renders"
+    );
+}
+
+#[test]
+fn the_degraded_report_line_leads_with_the_next_step() {
+    // #782's line shape made falsifiable (vsdd-cli #786): the actionable
+    // next step leads; the kind token trails as the cross-reference.
+    scrub_model_credentials();
+    let (answer, snapshot) = load(&corpus().join("degraded-tracker-absent"));
+    let d = data();
+    let human = render_human(&answer, &snapshot, &d);
+    let line = human
+        .lines()
+        .find(|l| l.contains("corroboration: degraded"))
+        .expect("the degraded corroboration line renders");
+    let next_step = &degraded_kind(&d, "tracker-absent").next_step_text;
+    let step_at = line
+        .find(next_step.as_str())
+        .expect("the next step is present");
+    let kind_at = line
+        .find("(kind: tracker-absent)")
+        .expect("the kind trails");
+    assert!(step_at < kind_at, "next step leads, kind trails: {line:?}");
 }
 
 // ── The composed display's effectful half (vsdd-cli #776, #778) ────────

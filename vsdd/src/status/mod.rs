@@ -6,6 +6,7 @@
 
 pub mod broken;
 pub mod human;
+pub use segment::clean_for_terminal;
 pub mod instruments;
 pub mod machine;
 pub mod multi;

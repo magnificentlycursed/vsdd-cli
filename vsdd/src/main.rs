@@ -76,7 +76,7 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
     let data: StatuslineData = match registry::load_set(&cwd, "statusline-data") {
         Ok(d) => d,
         Err(diagnostic) => {
-            eprintln!("{}", diagnostic.message);
+            eprintln!("{}", vsdd::status::clean_for_terminal(&diagnostic.message));
             return ExitCode::from(2);
         }
     };
@@ -84,7 +84,7 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
         match registry::load_set(&cwd, "composition-scope-and-actions") {
             Ok(a) => a,
             Err(diagnostic) => {
-                eprintln!("{}", diagnostic.message);
+                eprintln!("{}", vsdd::status::clean_for_terminal(&diagnostic.message));
                 return ExitCode::from(2);
             }
         };
@@ -96,7 +96,7 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
             let config = match vsdd::status::multi::read_repo_set_config(config_path) {
                 Ok(c) => c,
                 Err(diagnostic) => {
-                    eprintln!("{}", diagnostic.message);
+                    eprintln!("{}", vsdd::status::clean_for_terminal(&diagnostic.message));
                     return ExitCode::from(2);
                 }
             };

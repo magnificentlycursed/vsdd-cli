@@ -12,6 +12,8 @@ use serde_json::json;
 use vsdd_core::diagnostics::Diagnostic;
 use vsdd_core::registry::sets::StatuslineData;
 
+use super::segment::clean_for_terminal;
+
 /// The rendered state path folds the home prefix to `~` (vsdd-cli
 /// #782): the diagnostic stays actionable while the account segment
 /// stays out of captured output; the degenerate-HOME rule matches the
@@ -52,10 +54,14 @@ pub fn compose_broken_state(
         .find(|k| k.machine_token == diagnostic.machine_token);
     let boundary = last_boundary.unwrap_or(NO_BOUNDARY);
 
-    let mut human = format!(
-        "error[{}]: {}\n",
-        diagnostic.machine_token, diagnostic.message
-    );
+    // The diagnostic's message and kind carry state-sourced text (a
+    // malformed state.yaml echoes its own bytes); they cross the
+    // terminal boundary cleaned, the same rule the segment and human
+    // forms hold (vsdd-cli #784). The machine token is a registered
+    // enum member — no adopter content — but cleaning it too costs
+    // nothing and keeps the rule uniform.
+    let message = clean_for_terminal(&diagnostic.message);
+    let mut human = format!("error[{}]: {message}\n", diagnostic.machine_token);
     let shown_path = display_path(diagnostic);
     match diagnostic.location {
         Some((line, column)) => human.push_str(&format!(
@@ -63,7 +69,10 @@ pub fn compose_broken_state(
         )),
         None => human.push_str(&format!(" --> {shown_path}\n")),
     }
-    human.push_str(&format!("  = kind: {}\n", diagnostic.kind));
+    human.push_str(&format!(
+        "  = kind: {}\n",
+        clean_for_terminal(&diagnostic.kind)
+    ));
     match registered {
         Some(k) => human.push_str(&format!("  = recovery: {}\n", k.human_recovery)),
         None => human.push_str(

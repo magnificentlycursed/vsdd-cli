@@ -24,6 +24,17 @@ fn worded(value: &str, absence: &str) -> String {
     }
 }
 
+/// The registered absence text for a display field — the human form
+/// shares the segment's source rather than hardcoding a parallel that
+/// could silently drift (vsdd-cli #786).
+fn registered_absence<'a>(data: &'a StatuslineData, field: &str) -> &'a str {
+    data.display_fields
+        .iter()
+        .find(|f| f.field == field)
+        .map(|f| f.absence_text.as_str())
+        .unwrap_or("")
+}
+
 /// Render the human terminal form. Pure.
 pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &StatuslineData) -> String {
     let mut out = String::new();
@@ -46,22 +57,35 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
         .ok()
         .and_then(|v| v.as_str().map(str::to_string))
         .unwrap_or_default();
-    out.push_str(&format!(
-        "  composition: {} [{}] {mode}\n",
-        answer.active_composition.scope,
-        answer.active_composition.domains.join(", "),
-    ));
+    // The composition fields cross the same terminal boundary every
+    // other value does (vsdd-cli #784): scope and each domain are
+    // state-sourced text, cleaned before interpolation.
+    let scope = clean_for_terminal(&answer.active_composition.scope);
+    let domains = answer
+        .active_composition
+        .domains
+        .iter()
+        .map(|d| clean_for_terminal(d))
+        .collect::<Vec<_>>()
+        .join(", ");
+    out.push_str(&format!("  composition: {scope} [{domains}] {mode}\n"));
     out.push_str(&format!(
         "  session: {}\n",
         worded(&snapshot.display_session, "no session")
     ));
     out.push_str(&format!(
         "  work item: {}\n",
-        worded(&snapshot.display_work_item, "no work item")
+        worded(
+            &snapshot.display_work_item,
+            registered_absence(data, "work-item")
+        )
     ));
     out.push_str(&format!(
         "  milestone: {}\n",
-        worded(&snapshot.display_active_milestone, "no milestone")
+        worded(
+            &snapshot.display_active_milestone,
+            registered_absence(data, "milestone-with-count")
+        )
     ));
 
     out.push_str("report\n");
