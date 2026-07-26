@@ -1,6 +1,6 @@
 {
   "next_display_id": 802,
-  "next_comment_id": 1064,
+  "next_comment_id": 1065,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19445,7 +19445,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:58:49.860710Z",
-      "updated_at": "2026-07-26T10:58:49.860710Z"
+      "updated_at": "2026-07-26T11:11:41.109507Z",
+      "comments": {
+        "f1ae5294-310f-4b41-88d1-dc68f93b786e": {
+          "display_id": 1064,
+          "author": "xqjG",
+          "content": "Fixed in 52f94321: state-sourced display strings (current_phase, active_composition scope/domains) are cleaned at the read_state source boundary — the peer of the acquisition's snapshot cleaning and the loader's PostLoad — so all three render forms including the MACHINE form receive clean data, and the #749 verbatim composition echo stays an echo of already-clean state. The broken machine block now reuses the cleaned path and message and cleans the kind. Pinned by a machine-form falsifier (hostile scope via state renders clean; hostile diagnostic path/message clean on both broken surfaces). The last uncleaned sink is closed at the source, not the sink.",
+          "created_at": "2026-07-26T11:11:41.097021Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA5uKLewWfjSlznrNVhSzaYRPQBD2qTFq2Y3r8I3+pcYWbZrqMBixRmK3g69lUKFcMv3vDETLFAumxj9CEmryhDg=="
+        }
+      }
     },
     "d8e84e90-6a2b-46b2-8d51-e82225545366": {
       "uuid": "d8e84e90-6a2b-46b2-8d51-e82225545366",
@@ -24475,11 +24486,16 @@
       "agent_id": "xqjG",
       "agent_seq": 460,
       "timestamp": "2026-07-26T11:11:35.824814Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 461,
+      "timestamp": "2026-07-26T11:11:41.109507Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T11:11:35.824814Z",
+    "timestamp": "2026-07-26T11:11:41.109507Z",
     "agent_id": "xqjG",
-    "agent_seq": 460
+    "agent_seq": 461
   }
 }
