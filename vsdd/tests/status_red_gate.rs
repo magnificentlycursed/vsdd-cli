@@ -149,25 +149,158 @@ fn segment_renders_the_four_fields_in_order() {
     let work = segment
         .find(&snapshot.display_work_item)
         .expect("work item present");
+    // The full milestone display exceeds its budget; the surviving
+    // count locates the field (the #680 gauge).
+    let milestone = segment.find("(0 open)").expect("milestone gauge present");
     assert!(
-        repo < phase && phase < work,
+        repo < phase && phase < work && work < milestone,
         "field order: repo, answer, work item, milestone"
     );
     assert!(
         !segment.contains(&snapshot.display_session),
         "the session is not a segment field (the demotion ruling)"
     );
+    // The only-if half of \"exactly when degraded\" (vsdd-cli #779): a
+    // healthy answer renders NO degraded marker word.
+    let d = data();
+    for kind in &d.degraded_kinds {
+        assert!(
+            !segment.contains(kind.marker_word.as_str()),
+            "a healthy segment carries no {:?} marker",
+            kind.marker_word
+        );
+    }
+}
+
+#[test]
+fn generic_truncation_marks_every_field_not_just_the_milestone() {
+    // The generic branch (vsdd-cli #779): an over-width work item
+    // truncates with the mark set off by a space, within budget.
+    scrub_model_credentials();
+    let (answer, _snapshot) = load(&corpus().join("3-reviewing"));
+    let d = data();
+    let long_work: Snapshot = serde_yaml_ng::from_str(
+        &fs::read_to_string(corpus().join("3-reviewing/snapshot.yaml"))
+            .unwrap()
+            .replace(
+                "display_work_item: \"#738 layer 2 red gate\"",
+                "display_work_item: \"#738 the exceptionally long-winded work item title\"",
+            ),
+    )
+    .unwrap();
+    assert!(
+        long_work.display_work_item.len() > 24,
+        "the fixture overflows the work-item budget"
+    );
+    let segment = render_segment(&answer, &long_work, &d);
+    assert!(
+        segment.contains(&format!(" {}", d.truncation_mark)),
+        "the mark is set off by a space on the generic branch: {segment:?}"
+    );
+    let work_field = segment
+        .split("  ")
+        .find(|part| part.contains("#738"))
+        .expect("the work-item field is locatable");
+    assert!(
+        work_field.chars().count() <= 24,
+        "the work-item field honors its budget: {work_field:?}"
+    );
+}
+
+#[test]
+fn the_layer_suffix_survives_phase_truncation() {
+    // The protected-tail order generalized from #680 (vsdd-cli #780):
+    // the phase NAME yields; the layer suffix survives.
+    scrub_model_credentials();
+    let dir = tempfile::tempdir().unwrap();
+    fs::create_dir_all(dir.path().join(".vsdd")).unwrap();
+    let long_phase = fs::read_to_string(corpus().join("3-reviewing/state.yaml"))
+        .unwrap()
+        .replace(
+            "current_phase: phase-3",
+            "current_phase: phase-3-adversarial-refinement",
+        );
+    fs::write(dir.path().join(".vsdd/state.yaml"), long_phase).unwrap();
+    let state =
+        read_state(&dir.path().join(".vsdd/state.yaml"), &data()).expect("free-text phase reads");
+    let snapshot: Snapshot = serde_yaml_ng::from_str(
+        &fs::read_to_string(corpus().join("3-reviewing/snapshot.yaml")).unwrap(),
+    )
+    .unwrap();
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+    let segment = render_segment(&answer, &snapshot, &data());
+    assert!(
+        segment.contains("L2"),
+        "the layer suffix survives truncation: {segment:?}"
+    );
+    assert!(
+        segment.contains(&data().truncation_mark),
+        "the over-budget phase carries the mark: {segment:?}"
+    );
+}
+
+#[test]
+fn control_characters_never_reach_the_terminal() {
+    // The terminal boundary (vsdd-cli #777): an escape or newline in a
+    // state-sourced string renders as data, never as terminal input.
+    scrub_model_credentials();
+    let dir = tempfile::tempdir().unwrap();
+    fs::create_dir_all(dir.path().join(".vsdd")).unwrap();
+    let hostile = fs::read_to_string(corpus().join("3-reviewing/state.yaml"))
+        .unwrap()
+        .replace(
+            "current_phase: phase-3",
+            "current_phase: \"phase-3\\u001b[31mred\\nline\"",
+        );
+    fs::write(dir.path().join(".vsdd/state.yaml"), hostile).unwrap();
+    let state =
+        read_state(&dir.path().join(".vsdd/state.yaml"), &data()).expect("hostile state reads");
+    let snapshot: Snapshot = serde_yaml_ng::from_str(
+        &fs::read_to_string(corpus().join("3-reviewing/snapshot.yaml")).unwrap(),
+    )
+    .unwrap();
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+    let d = data();
+    let segment = render_segment(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d);
+    for (name, text) in [("segment", &segment), ("human form", &human)] {
+        assert!(
+            !text.contains('\u{1b}'),
+            "{name}: no escape byte reaches the terminal"
+        );
+    }
+    assert!(
+        segment.lines().count() == 1,
+        "an embedded newline cannot break the one-line invariant: {segment:?}"
+    );
 }
 
 #[test]
 fn segment_is_byte_identical_across_invocations() {
+    // Per fixture (vsdd-cli #779), not one convenient member — the
+    // absence, truncation, and degraded paths are the ones a
+    // nondeterminism would hide in.
     scrub_model_credentials();
-    let (answer, snapshot) = load(&corpus().join("3-reviewing"));
     let d = data();
-    let first = render_segment(&answer, &snapshot, &d);
-    let second = render_segment(&answer, &snapshot, &d);
-    assert!(!first.is_empty(), "a rendered segment is never blank");
-    assert_eq!(first, second, "byte-identical across repeated invocations");
+    for fixture in [
+        corpus().join("3-reviewing"),
+        corpus().join("degraded-tracker-absent"),
+        corpus().join("degraded-tracker-unusable"),
+        fixtures().join("absences"),
+        fixtures().join("over-width"),
+    ] {
+        let (answer, snapshot) = load(&fixture);
+        let first = render_segment(&answer, &snapshot, &d);
+        let second = render_segment(&answer, &snapshot, &d);
+        assert!(
+            !first.is_empty(),
+            "{fixture:?}: a rendered segment is never blank"
+        );
+        assert_eq!(
+            first, second,
+            "{fixture:?}: byte-identical across invocations"
+        );
+    }
 }
 
 #[test]
@@ -265,8 +398,28 @@ fn human_form_names_the_degraded_kind_and_its_full_next_step() {
 #[test]
 fn human_form_is_a_superset_of_the_segment_and_renders_the_session() {
     scrub_model_credentials();
-    let (answer, snapshot) = load(&corpus().join("3-reviewing"));
     let d = data();
+    // Per fixture (vsdd-cli #779): the degraded members too.
+    for fixture in [
+        "3-reviewing",
+        "degraded-tracker-absent",
+        "degraded-tracker-unusable",
+    ] {
+        let (answer, snapshot) = load(&corpus().join(fixture));
+        let human = render_human(&answer, &snapshot, &d);
+        for value in [
+            snapshot.display_repo_name.as_str(),
+            snapshot.display_work_item.as_str(),
+            snapshot.display_active_milestone.as_str(),
+            snapshot.display_session.as_str(),
+        ] {
+            assert!(
+                human.contains(value),
+                "{fixture}: the human form carries {value:?}"
+            );
+        }
+    }
+    let (answer, snapshot) = load(&corpus().join("3-reviewing"));
     let human = render_human(&answer, &snapshot, &d);
     for value in [
         snapshot.display_repo_name.as_str(),
@@ -286,6 +439,42 @@ fn human_form_is_a_superset_of_the_segment_and_renders_the_session() {
     assert!(
         human.contains(snapshot.display_session.as_str()),
         "the session renders in the human form (the demotion ruling)"
+    );
+}
+
+#[test]
+fn human_form_words_its_absences_never_empty_slots() {
+    // The criterion's own member (vsdd-cli #779): the surface assistive
+    // technology is routed to words what is absent.
+    scrub_model_credentials();
+    let (answer, snapshot) = load(&fixtures().join("absences"));
+    let human = render_human(&answer, &snapshot, &data());
+    for wording in ["no session", "no work item", "no milestone"] {
+        assert!(
+            human.contains(wording),
+            "the human form words the absence: {wording}"
+        );
+    }
+    assert!(!human.contains("work item: \n"), "no empty slot renders");
+}
+
+#[test]
+fn machine_form_reports_the_degraded_kind_and_next_step_exactly() {
+    // The report.degraded block agents branch on (vsdd-cli #779).
+    scrub_model_credentials();
+    let (answer, snapshot) = load(&corpus().join("degraded-tracker-absent"));
+    let d = data();
+    let machine = render_machine(&answer, &snapshot, &d);
+    let degraded = &machine["report"]["degraded"];
+    assert_eq!(
+        degraded["kind"].as_str(),
+        Some("tracker-absent"),
+        "the kind by exact match"
+    );
+    assert_eq!(
+        degraded["next_step"].as_str(),
+        Some(degraded_kind(&d, "tracker-absent").next_step_text.as_str()),
+        "the registered next-step text, exact"
     );
 }
 
@@ -502,10 +691,6 @@ fn the_whole_invocation_fits_the_wall_clock_budget() {
     scrub_model_credentials();
     let d = data();
     let budget = Duration::from_millis(d.wall_clock_budget_ms);
-    let snapshot_dir = corpus().join("3-reviewing");
-    let snapshot: Snapshot =
-        serde_yaml_ng::from_str(&fs::read_to_string(snapshot_dir.join("snapshot.yaml")).unwrap())
-            .unwrap();
     // The registered flake shape: 7 runs, median at or under budget,
     // max at or under twice budget.
     let root = temp_repo_with_state("3-reviewing");
@@ -518,9 +703,18 @@ fn the_whole_invocation_fits_the_wall_clock_budget() {
             std::io::empty(),
             &data(),
             &actions(),
-            |_root| snapshot.clone(),
+            // The REAL acquirer (vsdd-cli #778): the registered scope
+            // is acquisition through render; the hermetic root has no
+            // tracker, so the acquisition resolves offline and fast —
+            // the tracker-present timing joins the command-level
+            // fixtures.
+            vsdd_core::snapshot::acquire::acquire_snapshot,
         );
         samples.push_back(started.elapsed());
+        assert!(
+            run.instruments.wall_clock > Duration::ZERO,
+            "the wall-clock instrument observes, never hardcodes (vsdd-cli #779)"
+        );
         last_segment = run.segment;
     }
     let mut sorted: Vec<Duration> = samples.into_iter().collect();
@@ -541,8 +735,18 @@ fn the_whole_invocation_fits_the_wall_clock_budget() {
 #[test]
 fn stripping_color_loses_no_information() {
     scrub_model_credentials();
-    let (answer, snapshot) = load(&corpus().join("degraded-tracker-absent"));
     let d = data();
+    // The healthy member passes the same check (vsdd-cli #779).
+    for fixture in ["3-reviewing", "degraded-tracker-unusable"] {
+        let (answer, snapshot) = load(&corpus().join(fixture));
+        let seg = render_segment(&answer, &snapshot, &d);
+        assert_eq!(
+            strip_ansi(&seg),
+            seg,
+            "{fixture}: the segment is plain words"
+        );
+    }
+    let (answer, snapshot) = load(&corpus().join("degraded-tracker-absent"));
     let segment = render_segment(&answer, &snapshot, &d);
     let human = render_human(&answer, &snapshot, &d);
     for (name, text) in [("segment", &segment), ("human form", &human)] {
@@ -612,6 +816,77 @@ fn the_repo_set_config_parses_and_a_malformed_one_is_a_diagnostic() {
     assert!(
         !diagnostic.message.is_empty(),
         "the diagnostic says what failed"
+    );
+}
+
+// ── The composed display's effectful half (vsdd-cli #776, #778) ────────
+
+#[test]
+fn a_broken_member_line_still_names_its_repo() {
+    scrub_model_credentials();
+    let healthy = temp_repo_with_state("3-reviewing");
+    let broken = tempfile::tempdir().unwrap();
+    fs::create_dir_all(broken.path().join(".vsdd")).unwrap();
+    fs::write(broken.path().join(".vsdd/state.yaml"), "{{ not yaml [").unwrap();
+
+    let d = data();
+    let acts = actions();
+    let healthy_line = vsdd::status::segment_for_repo(healthy.path(), &d, &acts);
+    let broken_line = vsdd::status::segment_for_repo(broken.path(), &d, &acts);
+
+    let healthy_name = healthy.path().file_name().unwrap().to_string_lossy();
+    let broken_name = broken.path().file_name().unwrap().to_string_lossy();
+    assert!(
+        healthy_line.contains(healthy_name.as_ref()),
+        "the healthy line names its repo"
+    );
+    assert!(
+        broken_line.contains(broken_name.as_ref()),
+        "the BROKEN line still names its repo (vsdd-cli #776): {broken_line:?}"
+    );
+    assert!(
+        broken_line.contains(d.broken_state_mark.as_str()),
+        "and carries the registered mark"
+    );
+
+    // Two broken members are never indistinguishable in composition.
+    let broken2 = tempfile::tempdir().unwrap();
+    fs::create_dir_all(broken2.path().join(".vsdd")).unwrap();
+    fs::write(broken2.path().join(".vsdd/state.yaml"), "{{ not yaml [").unwrap();
+    let broken2_line = vsdd::status::segment_for_repo(broken2.path(), &d, &acts);
+    assert_ne!(
+        broken_line, broken2_line,
+        "distinct broken repos render distinct lines"
+    );
+    let composed = render_multi(&healthy_line, &[broken_line.clone(), broken2_line.clone()]);
+    for line in [&broken_line, &broken2_line] {
+        assert!(
+            composed.lines().any(|l| l == line),
+            "each broken member survives composition identifiably"
+        );
+    }
+}
+
+#[test]
+fn a_member_over_budget_yields_a_worded_line_not_a_stall() {
+    // The per-repo budget's consumer (vsdd-cli #778): breach renders a
+    // worded, repo-identified line; the display never waits it out.
+    scrub_model_credentials();
+    let root = PathBuf::from("/somewhere/repo-alpha");
+    let slow = vsdd::status::bounded_line(&root, Duration::from_millis(30), || {
+        std::thread::sleep(Duration::from_millis(400));
+        "too late".to_string()
+    });
+    assert!(
+        slow.contains("repo-alpha") && slow.contains("no answer within budget"),
+        "the breach line identifies the repo and words the condition: {slow:?}"
+    );
+    let fast = vsdd::status::bounded_line(&root, Duration::from_millis(500), || {
+        "the rendered line".to_string()
+    });
+    assert_eq!(
+        fast, "the rendered line",
+        "a within-budget render passes through"
     );
 }
 

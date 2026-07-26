@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Phase 1b: verification architecture (respec cycle) (L2)
 
 ### Fixed
+- Layer 3 round-1 fix pass: broken lines carry their repo identity, control characters cleaned at the terminal boundary, both time budgets get instruments, the falsifiability batch (dead absence branch, human absences, generic truncation, only-if degraded, instrument mutants), digit-exact gauge split, protected layer suffix, bounded config read, loud script degrade, canonical dedup, copy refinements (#776, #777, #778, #779, #780, #781, #782)
 - Layer 2 round-3 fix pass: the #763 gauge-conflation declaration implemented for real with its record corrected, the degenerate-HOME fold rule, stderr holdout never fails a clean run, conformance temp trees ride tempfile (#766, #767, #768, #769)
 - Layer 2 round-2 fix pass: whole-run subprocess deadline with loud read failures, sanitize-then-truncate git diagnostics with canonical and home forms, full-refname local listing, two-directional substrate pin, stale-gate falsifiers and clean-negative fixtures for the corpus, unit pins for the parse and glob halves, empty-HOME guard, declared gauge conflation, manifest gloss honesty (#756, #757, #758, #759, #760, #761, #762, #763)
 - Layer 2 round-1 fix pass: bounded subprocess runs with honest spawn classification, fail-loud milestone parse, two-query ref listing with a pure normalizer, substrate resolution honesty, the uniform gate-record conjunct, four corpus additions as draft oracles, and the substrate/chassis vocabulary sweep (#746, #747, #748, #749, #750, #751, #752, #753, #754)
@@ -23,6 +24,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Phase 2b execution, Layer 3: implement the renderings to green against the red gate (#773)
+- Phase 2a execution, Layer 3: red gate for the three renderings and the wiring script (#772)
+- Phase 2c execution, Layer 3: refactor under the green suite (#774)
 - Phase 2c execution, Layer 3: refactor under the green suite — the degraded lookup shared, the per-repo segment helper homed with the composition root (#774)
 - Phase 3 execution, Layer 2: round 4 — verify the round-3 fixes, re-decide the stop (#770)
 - Phase 3 execution, Layer 2: round 3 — verify the round-2 fixes, re-decide the stop (#765)

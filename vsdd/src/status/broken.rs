@@ -12,6 +12,23 @@ use serde_json::json;
 use vsdd_core::diagnostics::Diagnostic;
 use vsdd_core::registry::sets::StatuslineData;
 
+/// The rendered state path folds the home prefix to `~` (vsdd-cli
+/// #782): the diagnostic stays actionable while the account segment
+/// stays out of captured output; the degenerate-HOME rule matches the
+/// refs sanitizer's (vsdd-cli #767).
+fn display_path(diagnostic: &Diagnostic) -> String {
+    let raw = diagnostic.file.display().to_string();
+    if let Some(home) = std::env::var_os("HOME") {
+        let home = std::path::PathBuf::from(home).display().to_string();
+        if home.trim().len() > 1 {
+            if let Some(rest) = raw.strip_prefix(&home) {
+                return format!("~{rest}");
+            }
+        }
+    }
+    raw
+}
+
 /// The worded absence for a history with no boundary commit yet.
 const NO_BOUNDARY: &str = "no boundary commit recorded";
 
@@ -39,12 +56,12 @@ pub fn compose_broken_state(
         "error[{}]: {}\n",
         diagnostic.machine_token, diagnostic.message
     );
+    let shown_path = display_path(diagnostic);
     match diagnostic.location {
         Some((line, column)) => human.push_str(&format!(
-            " --> {} (line {line}, column {column})\n",
-            diagnostic.file.display()
+            " --> {shown_path} (line {line}, column {column})\n"
         )),
-        None => human.push_str(&format!(" --> {}\n", diagnostic.file.display())),
+        None => human.push_str(&format!(" --> {shown_path}\n")),
     }
     human.push_str(&format!("  = kind: {}\n", diagnostic.kind));
     match registered {
@@ -59,7 +76,7 @@ pub fn compose_broken_state(
         "state_unreadable": {
             "kind": diagnostic.machine_token,
             "diagnostic": {
-                "file": diagnostic.file.display().to_string(),
+                "file": display_path(diagnostic),
                 "message": diagnostic.message,
                 "location": diagnostic.location.map(|(l, c)| json!({"line": l, "column": c})),
             },

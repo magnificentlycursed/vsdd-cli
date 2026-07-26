@@ -10,14 +10,33 @@ use vsdd_core::answer::PhaseAnswer;
 use vsdd_core::registry::sets::StatuslineData;
 use vsdd_core::snapshot::Snapshot;
 
+use super::segment::clean_for_terminal;
+
+/// A display value or its worded absence — the human form never prints
+/// an empty slot (the criterion's own words; vsdd-cli #779), and every
+/// value crosses the terminal boundary cleaned (vsdd-cli #777).
+fn worded(value: &str, absence: &str) -> String {
+    let cleaned = clean_for_terminal(value);
+    if cleaned.is_empty() {
+        absence.to_string()
+    } else {
+        cleaned
+    }
+}
+
 /// Render the human terminal form. Pure.
 pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &StatuslineData) -> String {
     let mut out = String::new();
     out.push_str("answer\n");
-    out.push_str(&format!("  repo: {}\n", snapshot.display_repo_name));
+    out.push_str(&format!(
+        "  repo: {}\n",
+        worded(&snapshot.display_repo_name, "unnamed repo")
+    ));
     match (answer.phase.as_deref(), answer.layer) {
-        (Some(p), Some(l)) => out.push_str(&format!("  phase: {p} (layer {l})\n")),
-        (Some(p), None) => out.push_str(&format!("  phase: {p}\n")),
+        (Some(p), Some(l)) => {
+            out.push_str(&format!("  phase: {} (layer {l})\n", clean_for_terminal(p)))
+        }
+        (Some(p), None) => out.push_str(&format!("  phase: {}\n", clean_for_terminal(p))),
         (None, _) => out.push_str("  phase: not entered\n"),
     }
     out.push_str(&format!("  next action: {}\n", answer.next_action));
@@ -32,20 +51,30 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
         answer.active_composition.scope,
         answer.active_composition.domains.join(", "),
     ));
-    out.push_str(&format!("  session: {}\n", snapshot.display_session));
-    out.push_str(&format!("  work item: {}\n", snapshot.display_work_item));
+    out.push_str(&format!(
+        "  session: {}\n",
+        worded(&snapshot.display_session, "no session")
+    ));
+    out.push_str(&format!(
+        "  work item: {}\n",
+        worded(&snapshot.display_work_item, "no work item")
+    ));
     out.push_str(&format!(
         "  milestone: {}\n",
-        snapshot.display_active_milestone
+        worded(&snapshot.display_active_milestone, "no milestone")
     ));
 
     out.push_str("report\n");
     match &answer.degraded {
         Some(kind) => {
-            let next_step = super::degraded_next_step(data, kind)
-                .unwrap_or("unregistered degraded kind — repair the statusline data set");
+            let next_step =
+                super::degraded_next_step(data, kind).unwrap_or(super::UNREGISTERED_DEGRADED_KIND);
+            // The next-step text leads (it already words the
+            // condition); the kind token trails for the machine-form
+            // cross-reference — one statement, not three (vsdd-cli
+            // #782).
             out.push_str(&format!(
-                "  corroboration: degraded — {kind}: {next_step}\n"
+                "  corroboration: degraded — {next_step} (kind: {kind})\n"
             ));
         }
         None => out.push_str("  corroboration: acquired\n"),

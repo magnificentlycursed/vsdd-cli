@@ -19,6 +19,21 @@ use vsdd_core::answer::derive::derive_phase_answer;
 use vsdd_core::registry::sets::{CompositionScopeAndActions, StatuslineData};
 use vsdd_core::snapshot::Snapshot;
 
+/// The one fallback wording every surface uses for an unregistered
+/// degraded kind — the machine form included, so no surface goes
+/// silent where its siblings speak (vsdd-cli #779).
+pub(crate) const UNREGISTERED_DEGRADED_KIND: &str =
+    "unregistered degraded kind — repair the statusline data set";
+
+/// The worded repo identity for a root — the same leaf derivation the
+/// acquisition uses; composed display lines carry it even when broken
+/// (vsdd-cli #776).
+pub(crate) fn worded_repo_name(root: &Path) -> String {
+    root.file_name()
+        .map(|n| segment::clean_for_terminal(&n.to_string_lossy()))
+        .unwrap_or_else(|| "unnamed repo".to_string())
+}
+
 /// The registered next-step text for a degraded kind; the fallback
 /// wording is shared by every surface that names an unregistered kind.
 pub(crate) fn degraded_next_step<'a>(data: &'a StatuslineData, kind: &str) -> Option<&'a str> {
@@ -26,6 +41,31 @@ pub(crate) fn degraded_next_step<'a>(data: &'a StatuslineData, kind: &str) -> Op
         .iter()
         .find(|k| k.kind == kind)
         .map(|k| k.next_step_text.as_str())
+}
+
+/// A member line bounded by the configured per-repo budget (vsdd-cli
+/// #778: the registered field finally has a consumer — one wedged
+/// member repo can no longer stall the whole composed display). On
+/// breach the line still identifies its repo and points at the pull
+/// surface; the render thread is abandoned to finish or die on its
+/// own, the same posture the bounded subprocess runner takes. DRAFT
+/// COPY, raised for registration with the statusline data set: the
+/// breach wording below.
+pub fn bounded_line(
+    root: &Path,
+    budget: std::time::Duration,
+    render: impl FnOnce() -> String + Send + 'static,
+) -> String {
+    let (tx, rx) = std::sync::mpsc::channel();
+    std::thread::spawn(move || {
+        let _ = tx.send(render());
+    });
+    rx.recv_timeout(budget).unwrap_or_else(|_| {
+        format!(
+            "{}  no answer within budget — vsdd status",
+            worded_repo_name(root)
+        )
+    })
 }
 
 /// One repo's segment line for the composed display: its own state,
@@ -83,7 +123,12 @@ pub fn run_statusline(
         }
         Err(diagnostic) => {
             let last = vsdd_core::snapshot::acquire::last_boundary_subject(repo_root);
-            broken::compose_broken_state(&diagnostic, data, last.as_deref()).segment
+            let surfaces = broken::compose_broken_state(&diagnostic, data, last.as_deref());
+            // The broken line still says WHICH repo (vsdd-cli #776):
+            // two broken members of the composed display must never be
+            // indistinguishable, and the single-repo glance gains the
+            // same identity.
+            format!("{}  {}", worded_repo_name(repo_root), surfaces.segment)
         }
     };
 

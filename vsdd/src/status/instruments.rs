@@ -37,3 +37,24 @@ pub struct InvocationInstruments {
     pub acquisition_count: u64,
     pub wall_clock: std::time::Duration,
 }
+
+#[cfg(test)]
+mod tests {
+    use super::CountingReader;
+    use std::io::Read;
+
+    #[test]
+    fn the_counter_counts_what_is_actually_read() {
+        // The positive control for the stdin seam (vsdd-cli #779): a
+        // hardcoded-zero counter cannot pass this, so the zero the
+        // statusline test asserts is a real observation.
+        let mut reader = CountingReader::new(&b"twelve bytes"[..]);
+        assert_eq!(reader.bytes_read(), 0, "nothing read yet");
+        let mut buf = [0u8; 6];
+        reader.read_exact(&mut buf).unwrap();
+        assert_eq!(reader.bytes_read(), 6);
+        let mut rest = Vec::new();
+        reader.read_to_end(&mut rest).unwrap();
+        assert_eq!(reader.bytes_read(), 12);
+    }
+}

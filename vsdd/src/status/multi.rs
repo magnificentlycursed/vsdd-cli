@@ -27,16 +27,32 @@ struct RawRepoSetConfig {
 }
 
 /// Read the repo-set config; a malformed file is a diagnostic, never
-/// a panic and never a silent empty set.
+/// a panic and never a silent empty set. The read rides the same
+/// materialization cap every other adopter-artifact read honors
+/// (vsdd-cli #781; the #726 bound).
 pub fn read_repo_set_config(path: &Path) -> Result<RepoSetConfig, Box<Diagnostic>> {
-    let text = std::fs::read_to_string(path).map_err(|e| {
-        config_diagnostic(
+    use std::io::Read;
+    let cap = vsdd_core::MAX_ARTIFACT_BYTES;
+    let mut bytes = Vec::new();
+    let read = std::fs::File::open(path)
+        .and_then(|f| f.take(cap + 1).read_to_end(&mut bytes))
+        .map_err(|e| {
+            config_diagnostic(
+                path,
+                "permission-or-io",
+                format!("cannot read the repo-set config: {e}"),
+                None,
+            )
+        })?;
+    if read as u64 > cap {
+        return Err(config_diagnostic(
             path,
-            "permission-or-io",
-            format!("cannot read the repo-set config: {e}"),
+            "oversize",
+            format!("the repo-set config exceeds the artifact cap ({cap} bytes)"),
             None,
-        )
-    })?;
+        ));
+    }
+    let text = String::from_utf8_lossy(&bytes).into_owned();
     let raw: RawRepoSetConfig = serde_yaml_ng::from_str(&text).map_err(|e| {
         let location = e.location().map(|l| (l.line(), l.column()));
         config_diagnostic(

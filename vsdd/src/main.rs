@@ -101,11 +101,29 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
                 }
             };
             let current = vsdd::status::segment_for_repo(&cwd, &data, &actions);
+            // Dedup on canonical spellings: a symlinked config entry
+            // (/tmp vs /private/tmp) must not render the current repo
+            // twice (vsdd-cli #781).
+            let canonical_cwd = cwd.canonicalize().unwrap_or_else(|_| cwd.clone());
+            // Member repos render under the configured per-repo budget
+            // (vsdd-cli #778); the current repo — the one the operator
+            // is in — renders unbounded, since its answer is the line
+            // the display exists for.
+            let budget = std::time::Duration::from_millis(config.per_repo_budget_ms);
+            let shared_data = std::sync::Arc::new(data);
+            let shared_actions = std::sync::Arc::new(actions);
             let others: Vec<String> = config
                 .repos
                 .iter()
-                .filter(|r| r.as_path() != cwd.as_path())
-                .map(|r| vsdd::status::segment_for_repo(r, &data, &actions))
+                .filter(|r| r.canonicalize().unwrap_or_else(|_| r.to_path_buf()) != canonical_cwd)
+                .map(|r| {
+                    let root = r.clone();
+                    let d = shared_data.clone();
+                    let a = shared_actions.clone();
+                    vsdd::status::bounded_line(r, budget, move || {
+                        vsdd::status::segment_for_repo(&root, &d, &a)
+                    })
+                })
                 .collect();
             println!("{}", vsdd::status::multi::render_multi(&current, &others));
             return ExitCode::SUCCESS;

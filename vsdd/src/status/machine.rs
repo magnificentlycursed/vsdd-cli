@@ -16,7 +16,10 @@ pub fn render_machine(
     data: &StatuslineData,
 ) -> serde_json::Value {
     let degraded = answer.degraded.as_ref().map(|kind| {
-        let next_step = super::degraded_next_step(data, kind).unwrap_or_default();
+        // The same fallback its sibling surfaces word — the machine
+        // form never goes silent where they speak (vsdd-cli #779).
+        let next_step =
+            super::degraded_next_step(data, kind).unwrap_or(super::UNREGISTERED_DEGRADED_KIND);
         json!({ "kind": kind, "next_step": next_step })
     });
     json!({
