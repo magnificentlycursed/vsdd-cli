@@ -6810,11 +6810,12 @@
       "uuid": "4a70bffa-b227-48e8-864b-8c2216ef4772",
       "display_id": 781,
       "title": "Layer 3 round 1 minor collector security+SE+UX: adopter-surface conduct — the uncapped config read, the wiring script's silent degrade on a named-but-missing config, uncanonicalized current-repo dedup, the ambiguous composition guidance",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:45:20.333597Z",
-      "updated_at": "2026-07-26T06:30:15.944013Z",
+      "updated_at": "2026-07-26T06:30:29.033380Z",
+      "closed_at": "2026-07-26T06:30:29.033355Z",
       "comments": {
         "7566b5f3-994c-4070-8d42-bb7450ca4333": {
           "display_id": 1035,
@@ -23467,11 +23468,16 @@
       "agent_id": "xqjG",
       "agent_seq": 365,
       "timestamp": "2026-07-26T06:30:15.944013Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 366,
+      "timestamp": "2026-07-26T06:30:29.033380Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:30:15.944013Z",
+    "timestamp": "2026-07-26T06:30:29.033380Z",
     "agent_id": "xqjG",
-    "agent_seq": 365
+    "agent_seq": 366
   }
 }
