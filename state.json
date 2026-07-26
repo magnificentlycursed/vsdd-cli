@@ -4616,11 +4616,12 @@
       "uuid": "2cb31f45-184f-44cb-8381-fa7d98f4e691",
       "display_id": 780,
       "title": "Layer 3 round 1 minor collector SE: segment arithmetic — the open-count split lacks digit-exactness, the fit budget invariant breaks at saturation, the layer suffix is the first truncation casualty",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T05:45:07.117235Z",
-      "updated_at": "2026-07-26T06:29:38.299010Z",
+      "updated_at": "2026-07-26T06:29:51.258491Z",
+      "closed_at": "2026-07-26T06:29:51.258467Z",
       "comments": {
         "ed96b463-599a-4b38-b35a-f0704118e5f4": {
           "display_id": 1034,
@@ -23444,11 +23445,16 @@
       "agent_id": "xqjG",
       "agent_seq": 362,
       "timestamp": "2026-07-26T06:29:38.299010Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 363,
+      "timestamp": "2026-07-26T06:29:51.258491Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T06:29:38.299010Z",
+    "timestamp": "2026-07-26T06:29:51.258491Z",
     "agent_id": "xqjG",
-    "agent_seq": 362
+    "agent_seq": 363
   }
 }
