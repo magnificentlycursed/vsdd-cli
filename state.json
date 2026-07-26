@@ -1,6 +1,6 @@
 {
   "next_display_id": 792,
-  "next_comment_id": 1047,
+  "next_comment_id": 1048,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -17725,8 +17725,17 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T09:06:27.997582Z",
-      "updated_at": "2026-07-26T09:32:12.822861Z",
+      "updated_at": "2026-07-26T09:45:07.979137Z",
       "comments": {
+        "2d30964b-ab43-4579-a75d-1ea650116f57": {
+          "display_id": 1047,
+          "author": "xqjG",
+          "content": "ROUND 3 RETURNED — synchronous, no interruptions, IN BAND (242,526 tokens / 117 tools against 120k-240k, a whisker over — the narrowing worked). All three round-2 fix claims verified: #785 held clean on all lenses; #784 and #786 held on their NAMED sites but the round uncovered adjacent misses the narrow claim did not cover. Stop: NOT reached, unanimous (all three lenses). Four children: #788 (major, security+SE convergent, DEMONSTRATED end-to-end on the built binary: clean_for_terminal and acquire.rs's clean_for_display filter only is_control, so bidi overrides U+202E, isolates U+2066-2069, zero-width U+200B/U+FEFF, and format chars pass to every rendered surface — the Trojan-Source/display-spoofing class, reachable through state-sourced scope/domain AND crosslink-sourced work-item/milestone; the project's OWN .crosslink/rules/web.md names exactly this — 'Zero-width chars, RTL overrides: Strip and re-evaluate' — so the toolkit contradicts its own threat list; not a regression, the is_control-only definition predates ff0d3a3f, which widened its reach uniformly), #789 (major SE: the broken-state human form's file-path line — broken.rs shown_path — interpolates raw one line below the #784 message fix; a hostile repo checked out with a control/bidi subdirectory name puts attacker-influenced bytes on cwd, so the path reaches the terminal uncleaned), #790 (major QE+SE: the #786 degenerate-budget falsifier goes VACUOUS — unwrap_or empty turns a failed field-locate into a passing assertion, so a budget-ignoring absence mutant escapes the falsifier written to catch exactly it; and the three main.rs diagnostic prints #784 cleaned have no red test — reverting them to raw passes the whole suite, needing a command-level malformed-artifact fixture), #791 (minor collector: free-form registry strings next_step_text and human_recovery render raw while the schema-pinned enum kind is cleaned — inconsistent trust model; #786's registered_absence read is dead in the live binary because acquire.rs hardcodes the absence words upstream, so the anti-drift purpose is unmet at the operative layer; the empty-fallback can still render the forbidden empty slot and the two renderers disagree on how they fail). TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 all three; effort chosen=observed (security/SE high, QE medium); band 120k-240k declared, 242,526 observed — essentially on the ceiling, the first verify round to land in its declared band because it was narrowed and ran uninterrupted. Fix pass follows.",
+          "created_at": "2026-07-26T09:45:07.965886Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZeqJBic32b1AAjGPWtHXsVoRWxxLpGiZSDym9zXmV7nuaQdfhY2a95TVieIpM9fJFC5FO+7tBKma4ODDU2XJBA=="
+        },
         "8466b841-923a-4b9f-b47b-d4216f971c82": {
           "display_id": 1045,
           "author": "xqjG",
@@ -23893,11 +23902,16 @@
       "agent_id": "xqjG",
       "agent_seq": 404,
       "timestamp": "2026-07-26T09:44:38.285564Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 405,
+      "timestamp": "2026-07-26T09:45:07.979137Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T09:44:38.285564Z",
+    "timestamp": "2026-07-26T09:45:07.979137Z",
     "agent_id": "xqjG",
-    "agent_seq": 404
+    "agent_seq": 405
   }
 }
