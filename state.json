@@ -9208,11 +9208,12 @@
       "uuid": "63b85964-782e-4a02-8134-0cf61cae7dbf",
       "display_id": 796,
       "title": "Layer 3 round 4 minor: the vsdd init/preflight command surface prints cwd, tool versions, and init errors outside the shared cleaner — a Layer 4 (Install) surface carry, not a Layer 3 status surface",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-26T10:23:52.874679Z",
-      "updated_at": "2026-07-26T10:34:50.982024Z",
+      "updated_at": "2026-07-26T10:34:56.334972Z",
+      "closed_at": "2026-07-26T10:34:56.334963Z",
       "comments": {
         "532c2d76-3ea2-4268-8433-ea48aa643229": {
           "display_id": 1058,
@@ -24253,11 +24254,16 @@
       "agent_id": "xqjG",
       "agent_seq": 440,
       "timestamp": "2026-07-26T10:34:50.982024Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 441,
+      "timestamp": "2026-07-26T10:34:56.334972Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T10:34:50.982024Z",
+    "timestamp": "2026-07-26T10:34:56.334972Z",
     "agent_id": "xqjG",
-    "agent_seq": 440
+    "agent_seq": 441
   }
 }
