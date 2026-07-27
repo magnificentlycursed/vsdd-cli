@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1099,
+  "next_comment_id": 1100,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9361,11 +9361,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:30:56.853873Z",
-      "updated_at": "2026-07-27T18:31:58.599905Z",
+      "updated_at": "2026-07-27T21:28:22.283763Z",
       "labels": [
         "deviation"
       ],
       "comments": {
+        "0eb3ddea-991f-41d0-b2b1-735828cf1a12": {
+          "display_id": 1099,
+          "author": "xqjG",
+          "content": "REMEDIATION COMPLETE (the deviation record stands): the out-of-process contract edits were reverted (9b451099) and the amendment re-entered its full owned process — draft via the design affordance, four-lens cold review, terminal + final verify, operator ratification — landing properly as #810 (8c9aaeda). Two standing conduct rules captured in memory (route findings before fixing; spec amendments are owned and reviewed). The deviation itself remains recorded per the ungated-work discipline. Closing the remediation.",
+          "created_at": "2026-07-27T21:28:22.267543Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAjaaaxulgKQDH+U/A7O9YdUwxtrmdtufTEWaw7ekZ1Yaup2P5li6DaEzDzfon23cHj7SWiRZUI9bycr3Q/asTCA=="
+        },
         "315086f8-e316-45af-b69e-e137015e9644": {
           "display_id": 1079,
           "author": "xqjG",
@@ -25398,11 +25407,16 @@
       "agent_id": "xqjG",
       "agent_seq": 543,
       "timestamp": "2026-07-27T21:28:16.029136Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 544,
+      "timestamp": "2026-07-27T21:28:22.283763Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:28:16.029136Z",
+    "timestamp": "2026-07-27T21:28:22.283763Z",
     "agent_id": "xqjG",
-    "agent_seq": 543
+    "agent_seq": 544
   }
 }
