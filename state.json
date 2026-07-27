@@ -14983,11 +14983,12 @@
       "uuid": "a389b2f5-106a-4804-a966-806943e2628b",
       "display_id": 812,
       "title": "Registration act: 'invariant-first' enters as a registered draft term under the vocabulary maturity lifecycle (operator-owned) — carried with the #810 ratification",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:30:03.684759Z",
-      "updated_at": "2026-07-27T21:26:08.554972Z",
+      "updated_at": "2026-07-27T21:26:14.361003Z",
+      "closed_at": "2026-07-27T21:26:14.360994Z",
       "labels": [
         "registration"
       ],
@@ -25327,11 +25328,16 @@
       "agent_id": "xqjG",
       "agent_seq": 534,
       "timestamp": "2026-07-27T21:26:08.554972Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 535,
+      "timestamp": "2026-07-27T21:26:14.361003Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:26:08.554972Z",
+    "timestamp": "2026-07-27T21:26:14.361003Z",
     "agent_id": "xqjG",
-    "agent_seq": 534
+    "agent_seq": 535
   }
 }
