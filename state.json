@@ -8439,7 +8439,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-27T18:17:20.090187Z",
+      "updated_at": "2026-07-27T18:32:27.300319Z",
       "labels": [
         "spec-amendment"
       ],
@@ -24951,11 +24951,16 @@
       "agent_id": "xqjG",
       "agent_seq": 503,
       "timestamp": "2026-07-27T18:32:21.382200Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 504,
+      "timestamp": "2026-07-27T18:32:27.300319Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:32:21.382200Z",
+    "timestamp": "2026-07-27T18:32:27.300319Z",
     "agent_id": "xqjG",
-    "agent_seq": 503
+    "agent_seq": 504
   }
 }
