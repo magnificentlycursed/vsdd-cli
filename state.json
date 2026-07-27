@@ -1,6 +1,6 @@
 {
   "next_display_id": 811,
-  "next_comment_id": 1086,
+  "next_comment_id": 1087,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13724,7 +13724,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:51.692487Z",
-      "updated_at": "2026-07-27T20:13:39.145007Z",
+      "updated_at": "2026-07-27T20:14:15.671885Z",
       "labels": [
         "spec-amendment"
       ],
@@ -13746,6 +13746,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAC39y4pYy0xFMgUISsQomQZX0AxGSiJfPx5X7B9j1/aVNnWmCFisSN78uv810xJLdTKVo7TS0LWI0xIS4SJ9gDw=="
+        },
+        "cd45bf2c-aa6a-4dbd-8559-32a01625a768": {
+          "display_id": 1086,
+          "author": "xqjG",
+          "content": "REVIEW-ROUND MANIFEST (declared before spend). vehicle: Workflow, attended side (operator present). subject: the draft .design/re-sequence-enforcement-spine.md. composition: solution-architect PRIMARY, solution-owner, documentation-reviewer, technical-writer (operator-confirmed). MODEL chosen: claude-fable-5 all four. EFFORT: SA + SO HIGH, DR + TW MEDIUM. output: per-lens findings on the draft (wrong / missing / mis-scoped / unclear / mis-registered), each lens's verdict (ratify-as-drafted vs revise-then-ratify), and each lens's position on the two open questions. band: 0-14 findings pre-dedup, 120k-280k tokens. After: triage, revise the draft, operator ratifies as the exit; only then does the contract change.",
+          "created_at": "2026-07-27T20:14:15.657279Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAB1V9bsYLJ5pDuUgfUkKjfsQcn6oNxuWaVZgwnULsCQ8IFQCO/O2En8in/BvclMUOhD9QbDUQiE4fohfYlag6Cg=="
         }
       }
     },
@@ -25110,11 +25119,16 @@
       "agent_id": "xqjG",
       "agent_seq": 516,
       "timestamp": "2026-07-27T20:13:39.145007Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 517,
+      "timestamp": "2026-07-27T20:14:15.671885Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T20:13:39.145007Z",
+    "timestamp": "2026-07-27T20:14:15.671885Z",
     "agent_id": "xqjG",
-    "agent_seq": 516
+    "agent_seq": 517
   }
 }
