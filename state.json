@@ -13754,11 +13754,12 @@
       "uuid": "95e5dadc-0b23-4aa0-825f-82a3918c1f5b",
       "display_id": 810,
       "title": "Decomposition amendment (phase 1c + 1a/1b): re-sequence the build to front-load the enforcement spine — invariant-first applied to build order — resolving the enforcement-gap class (#806 routing, #809 amendment-discipline, and the Layer-8 directive-classification they share)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:51.692487Z",
-      "updated_at": "2026-07-27T21:25:51.060412Z",
+      "updated_at": "2026-07-27T21:25:56.732119Z",
+      "closed_at": "2026-07-27T21:25:56.732107Z",
       "labels": [
         "spec-amendment"
       ],
@@ -25304,11 +25305,16 @@
       "agent_id": "xqjG",
       "agent_seq": 531,
       "timestamp": "2026-07-27T21:25:51.060412Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 532,
+      "timestamp": "2026-07-27T21:25:56.732119Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:25:51.060412Z",
+    "timestamp": "2026-07-27T21:25:56.732119Z",
     "agent_id": "xqjG",
-    "agent_seq": 531
+    "agent_seq": 532
   }
 }
