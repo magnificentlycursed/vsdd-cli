@@ -1,5 +1,5 @@
 {
-  "next_display_id": 803,
+  "next_display_id": 804,
   "next_comment_id": 1069,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -472,6 +472,7 @@
     "924375ed-05a1-4402-8c61-6b26182f5b97": 190,
     "92f55925-07fa-4604-a852-ca83a506e167": 71,
     "9447a149-e007-4352-9314-f64081bd04e9": 390,
+    "9483fa7a-0f91-4485-8f60-abef77a51e26": 803,
     "953c2d75-fc34-46d4-b984-8796a529fa06": 505,
     "95eaf845-5910-4270-a5a1-f032e3a3dd88": 658,
     "967a6481-3a84-498d-b0cf-60a33974e0c7": 697,
@@ -13473,6 +13474,16 @@
         }
       }
     },
+    "9483fa7a-0f91-4485-8f60-abef77a51e26": {
+      "uuid": "9483fa7a-0f91-4485-8f60-abef77a51e26",
+      "display_id": 803,
+      "title": "Layer 3 round 6 major security: config_inputs_hash — the 4th ActiveComposition string field — is uncleaned at read_state and reaches the machine form raw; #799 cleaned three of the four sibling fields and missed it",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-27T17:33:46.184704Z",
+      "updated_at": "2026-07-27T17:33:46.184704Z"
+    },
     "953c2d75-fc34-46d4-b984-8796a529fa06": {
       "uuid": "953c2d75-fc34-46d4-b984-8796a529fa06",
       "display_id": 505,
@@ -24599,11 +24610,16 @@
       "agent_id": "xqjG",
       "agent_seq": 473,
       "timestamp": "2026-07-26T11:14:00.610975Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 474,
+      "timestamp": "2026-07-27T17:33:46.184704Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-26T11:14:00.610975Z",
+    "timestamp": "2026-07-27T17:33:46.184704Z",
     "agent_id": "xqjG",
-    "agent_seq": 473
+    "agent_seq": 474
   }
 }
