@@ -1,5 +1,5 @@
 {
-  "next_display_id": 806,
+  "next_display_id": 807,
   "next_comment_id": 1070,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -475,6 +475,7 @@
     "92f55925-07fa-4604-a852-ca83a506e167": 71,
     "9447a149-e007-4352-9314-f64081bd04e9": 390,
     "9483fa7a-0f91-4485-8f60-abef77a51e26": 803,
+    "94e75639-8c3e-4d86-9009-6da6b6fc38d9": 806,
     "953c2d75-fc34-46d4-b984-8796a529fa06": 505,
     "95eaf845-5910-4270-a5a1-f032e3a3dd88": 658,
     "967a6481-3a84-498d-b0cf-60a33974e0c7": 697,
@@ -13514,6 +13515,16 @@
       "created_at": "2026-07-27T17:33:46.184704Z",
       "updated_at": "2026-07-27T17:33:46.184704Z"
     },
+    "94e75639-8c3e-4d86-9009-6da6b6fc38d9": {
+      "uuid": "94e75639-8c3e-4d86-9009-6da6b6fc38d9",
+      "display_id": 806,
+      "title": "Decomposition gap: phase-4 routing enforcement deferred to Layer 6 with no bootstrap format-carry, so Layers 1-5 build with no mechanical flow-enforcement over their own review loops — the June-cycle orphaning reproduced during bootstrap",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-27T18:02:07.817477Z",
+      "updated_at": "2026-07-27T18:02:07.817477Z"
+    },
     "953c2d75-fc34-46d4-b984-8796a529fa06": {
       "uuid": "953c2d75-fc34-46d4-b984-8796a529fa06",
       "display_id": 505,
@@ -24689,11 +24700,16 @@
       "agent_id": "xqjG",
       "agent_seq": 481,
       "timestamp": "2026-07-27T17:47:28.049634Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 482,
+      "timestamp": "2026-07-27T18:02:07.817477Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T17:47:28.049634Z",
+    "timestamp": "2026-07-27T18:02:07.817477Z",
     "agent_id": "xqjG",
-    "agent_seq": 481
+    "agent_seq": 482
   }
 }
