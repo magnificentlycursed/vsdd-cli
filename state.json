@@ -1,6 +1,6 @@
 {
   "next_display_id": 807,
-  "next_comment_id": 1071,
+  "next_comment_id": 1072,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13527,11 +13527,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:02:07.817477Z",
-      "updated_at": "2026-07-27T18:02:59.770826Z",
+      "updated_at": "2026-07-27T18:03:28.034186Z",
       "labels": [
         "finding"
       ],
       "comments": {
+        "1520599d-e63e-4359-a74f-837f7a3e9c72": {
+          "display_id": 1071,
+          "author": "xqjG",
+          "content": "PHASE-4 ROUTING (the routing this finding is itself about, applied to itself).\n\nRouting question: 'what artifact, had it been correct, would have prevented this?' Answer: the DECOMPOSITION — it deferred the invariant and omitted its bootstrap carry. So this routes to PHASE 1c (decomposition), with a PHASE 1a/1b touch for the one principle that is spec-level, not just milestone-level.\n\nTARGET PHASES:\n- Phase 1c (decomposition): (a) add a bootstrap format-carry for routing, mirroring the parity clause — effective immediately for Layers 4-9, closing the gap without re-decomposition; (b) record whether the unrouted-findings + round-parity QUERIES (the tracker-only checks, as distinct from the fix-scale red gate) should be pulled forward out of Layer 6 into an early layer, since their true dependency is crosslink typed comments, not install/composition. Decision (b) is the operator's — it may be judged not worth re-sequencing mid-build given the format-carry closes the live gap.\n- Phase 1a/1b (spec architecture): consider elevating 'invariant-first decomposition — the core discipline's cheapest enforceable form is built/carried as early as its true dependencies allow, minimizing the un-self-enforced trusted base' to a stated decomposition principle, so future layerings do not repeat the component-cohesion ordering. This is the 'architectural concern crosses layers DESIGN.md did not anticipate' row of the phase-4 table.\n\nNOT routed to Layer 3 / Phase 2b: this is not a vsdd-core code defect. The Layer-3 terminal-safety finding set is a SEPARATE routing pass (owed next) and most of it routes up too (spec gap: the Status requirement never specified terminal-output safety).\n\nDISPOSITION: amendment candidate drafted below for operator ratification; the bootstrap format-carry is the actionable half and can bind on ratification. The re-sequencing question and the invariant-first principle are operator decisions.",
+          "created_at": "2026-07-27T18:03:28.020355Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7H0rk8hwYiQmO6KbrxVbHyJG5eglFyX60KGfrMZftbXkNnxCbV6UePKedTXLJ525vkgzwKoOnH6MpPOD3cFvCA=="
+        },
         "3c477102-2894-45c3-a074-d45540956dde": {
           "display_id": 1070,
           "author": "xqjG",
@@ -24738,11 +24747,16 @@
       "agent_id": "xqjG",
       "agent_seq": 485,
       "timestamp": "2026-07-27T18:02:59.770826Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 486,
+      "timestamp": "2026-07-27T18:03:28.034186Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:02:59.770826Z",
+    "timestamp": "2026-07-27T18:03:28.034186Z",
     "agent_id": "xqjG",
-    "agent_seq": 485
+    "agent_seq": 486
   }
 }
