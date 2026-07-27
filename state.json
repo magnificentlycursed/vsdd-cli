@@ -1,6 +1,6 @@
 {
   "next_display_id": 811,
-  "next_comment_id": 1084,
+  "next_comment_id": 1085,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13724,10 +13724,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:51.692487Z",
-      "updated_at": "2026-07-27T20:03:57.127992Z",
+      "updated_at": "2026-07-27T20:04:40.145198Z",
       "labels": [
         "spec-amendment"
-      ]
+      ],
+      "comments": {
+        "6ced2dac-1410-4fff-97d2-98a5590d453f": {
+          "display_id": 1084,
+          "author": "xqjG",
+          "content": "DIRECTIVE CLASSIFICATION of operator 'B' (2026-07-27): SPEC AMENDMENT — a re-decomposition. It amends the contract's Decomposition section (phase 1c) driven by the invariant-first principle (phase 1a/1b). Amend-then-act: the contract changes only through the design process, NOT a solo edit — doing it by hand would repeat the #808 deviation we are mid-remediating.\n\nVEHICLE: the estate's design affordance (the design workflow / skill), attended — 'design authoring the chassis design workflow' per the act-to-affordance map; hand-rolling an equivalent is the nonconformance this whole thread is about. Design is attended (operator present), so this runs collaboratively, then cold-reviewed under composition, then operator-ratified as the exit.\n\nCOMPOSITION (proposed; note it differs from the #806/#807 amendment-review composition because a re-decomposition is architecture-led): Solution Architect PRIMARY (decomposition, dependency analysis, the new ordering), Solution Owner (contract-change authority, scope), Documentation Reviewer + Technical Writer (prose, register, Revision line).\n\nSCOPE: (1) adopt invariant-first as a decomposition principle; (2) re-sequence so the enforcement spine — directive classification, the unrouted-findings + round-parity queries, the amendment-discipline gating — is built as early as true dependencies allow (or bootstrap-carried), minimizing the un-self-enforced base; (3) fold in the reverted #806 clauses (routing format-carry + invariant-first) as they find their proper home in the new order. PARKED, rides separately: #807 terminal-safety (a Status-requirement amendment, not decomposition) and the Layer-3 rebuild — both wait until this lands. Entering the design workflow now to author the amendment attended.",
+          "created_at": "2026-07-27T20:04:40.126713Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqLRYuLLu/Wf2BhgCzxyningyu541Sv+eaiJzA8qtRKw+h4pJqkmQtN3hjL6OP9jiWMfcFaL3WVfGhDpb3Mr7BA=="
+        }
+      }
     },
     "95eaf845-5910-4270-a5a1-f032e3a3dd88": {
       "uuid": "95eaf845-5910-4270-a5a1-f032e3a3dd88",
@@ -25080,11 +25091,16 @@
       "agent_id": "xqjG",
       "agent_seq": 514,
       "timestamp": "2026-07-27T20:04:13.185101Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 515,
+      "timestamp": "2026-07-27T20:04:40.145198Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T20:04:13.185101Z",
+    "timestamp": "2026-07-27T20:04:40.145198Z",
     "agent_id": "xqjG",
-    "agent_seq": 514
+    "agent_seq": 515
   }
 }
