@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1095,
+  "next_comment_id": 1096,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -14987,10 +14987,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:30:03.684759Z",
-      "updated_at": "2026-07-27T20:30:09.803149Z",
+      "updated_at": "2026-07-27T21:26:08.554972Z",
       "labels": [
         "registration"
-      ]
+      ],
+      "comments": {
+        "a84c6d39-dc77-4879-bad1-5dff9106a447": {
+          "display_id": 1095,
+          "author": "xqjG",
+          "content": "DONE: 'invariant-first' registered in templates/registry/vocabulary.yaml (commit above), executing the #810 ratification. Draft maturity tracked here (the vocabulary schema has no per-term status field — a small mechanism gap noted for the lifecycle's own build; the term is canonical-in-contract now, draft in the maturity sense until the lifecycle mechanizes stages). Closing.",
+          "created_at": "2026-07-27T21:26:08.540555Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAVIptN2aaDCxhms+2h/TtpgEkiTnTEUm5yGwmc+DOvH4fZhv04j5+CAzz7/TFctUfZZs2tzEDB9DDdB09gYidDA=="
+        }
+      }
     },
     "a3a204cd-3caf-4da1-b1bd-09212d1754e4": {
       "uuid": "a3a204cd-3caf-4da1-b1bd-09212d1754e4",
@@ -25311,11 +25322,16 @@
       "agent_id": "xqjG",
       "agent_seq": 533,
       "timestamp": "2026-07-27T21:26:02.554449Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 534,
+      "timestamp": "2026-07-27T21:26:08.554972Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:26:02.554449Z",
+    "timestamp": "2026-07-27T21:26:08.554972Z",
     "agent_id": "xqjG",
-    "agent_seq": 533
+    "agent_seq": 534
   }
 }
