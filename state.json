@@ -1,6 +1,6 @@
 {
   "next_display_id": 807,
-  "next_comment_id": 1070,
+  "next_comment_id": 1071,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13527,10 +13527,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:02:07.817477Z",
-      "updated_at": "2026-07-27T18:02:13.381788Z",
+      "updated_at": "2026-07-27T18:02:59.770826Z",
       "labels": [
         "finding"
-      ]
+      ],
+      "comments": {
+        "3c477102-2894-45c3-a074-d45540956dde": {
+          "display_id": 1070,
+          "author": "xqjG",
+          "content": "THE FINDING (discovered during Layer 3's phase-3 loop, 2026-07-27, operator-surfaced).\n\nWHAT HAPPENED. Layer 3's phase-3 ran six rounds. Every round's findings were filed as child issues and closed with fix (result) comments; NONE carried a routing disposition naming a target phase. Phase 4 (the Feedback Integration Loop) never ran for any finding. This is the phase-4 primer's named primary failure mode verbatim — 'routing every finding to Phase 2b, which collapses the pipeline' — and a scale model of the June cycle the tool exists to prevent (137 findings, 82 orphaned, contract line 55/85). The spec (DESIGN.md Status requirement) did not change across six rounds while vsdd's code churned every round — the exact collapse signal the primer describes.\n\nROOT CAUSE (why it was possible). The mechanism that enforces routing — the unrouted-findings query, 'Phase 4 closes only when the unrouted-findings query returns empty' (contract line 62), tested by 'a fixture with unrouted findings fails phase-4 exit' (line 191) — ships as a Layer 6 gate (line 261). Finding-lifecycle enforcement is Layer 7 (line 262); directive classification is Layer 8 (line 263). We are at Layer 3. Nothing built enforces routing.\n\nTWO SEPARABLE DEFECTS.\n1. PACKAGING: the unrouted-findings query is a thin tracker query (does each round-child carry a plan comment naming a target phase?). It depends on crosslink typed comments — which exist today — NOT on Layer 4 install or Layer 5 composition. It was bundled into the Layer 6 'Gates' milestone by component cohesion, riding downstream on the coattails of the expensive gates (fix-scale red gate, mutation floor, fresh-container smoke) that genuinely need Layers 4-5. Cohesion-by-name, not true dependency.\n2. MISSING BOOTSTRAP CARRY: the contract already anticipates late gates by giving their disciplines interim format-carry conventions during bootstrap. Parity got one (line 176: 'During bootstrap, the parity discipline is format-carried: a round result comment is malformed unless it cites its child-issue handles'). Routing — the more mission-critical of the two — got NO equivalent clause. So for Layers 1-5, phase-4 routing has neither a built gate nor a bootstrap convention; its only enforcement is the attended operator.\n\nSTRUCTURAL READING. The decomposition ordered by architectural component (core layers -> binary -> hooks/dispatch) rather than invariant-first. Consequence: the tool's raison d'etre — flow-enforcement — sits at milestone 6-of-10, so the trusted (un-self-enforced) base is Layers 0-5, the large majority of the build. A verifier cannot self-verify into existence — a trusted base is unavoidable — but this decomposition made it maximal rather than minimal. The attended-design posture is the contract's acknowledgment of the bootstrap gap, and it worked here: the operator supplied the missing gate by inspection. But that is the operator standing in for a gate, not the gate.",
+          "created_at": "2026-07-27T18:02:59.756025Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAinikE+FzETroOE6mLtCQSyFwGm6ZcsnXxWO3lVDVGKaZjizesCmAlFMQbFmeWuIfO5oiGcGQIg9lIytApFzoAw=="
+        }
+      }
     },
     "953c2d75-fc34-46d4-b984-8796a529fa06": {
       "uuid": "953c2d75-fc34-46d4-b984-8796a529fa06",
@@ -24722,11 +24733,16 @@
       "agent_id": "xqjG",
       "agent_seq": 484,
       "timestamp": "2026-07-27T18:02:21.959371Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 485,
+      "timestamp": "2026-07-27T18:02:59.770826Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:02:21.959371Z",
+    "timestamp": "2026-07-27T18:02:59.770826Z",
     "agent_id": "xqjG",
-    "agent_seq": 484
+    "agent_seq": 485
   }
 }
