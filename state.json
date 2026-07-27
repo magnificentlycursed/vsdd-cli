@@ -1,6 +1,6 @@
 {
   "next_display_id": 809,
-  "next_comment_id": 1081,
+  "next_comment_id": 1082,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8439,11 +8439,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-27T18:32:27.300319Z",
+      "updated_at": "2026-07-27T18:32:40.111149Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "59367da7-d0a2-44f1-98ae-cd2707e3ecc2": {
+          "display_id": 1081,
+          "author": "xqjG",
+          "content": "REOPENED (deviation #808): the ratifying commit was reverted as out-of-process. The drafted amendment text above (the two clauses) is the review DRAFT for the proper phase-1a/1b re-entry — composition (Solution Owner authoring the spec-contract change, Solution Architect, Documentation Reviewer / Technical Writer on prose+register), cold review lenses, then operator ratification as the exit. The Layer-3 rebuild stays parked until this ratifies validly.",
+          "created_at": "2026-07-27T18:32:40.097352Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABATTCXPMDm4JkYKNEi3ilmQjhuXI2OkPQbl8l8ruaexdxnB4nRCerulr4cez5xeUvPEtx52kLYOvHU45bd4MtDAA=="
+        },
         "a534d9bf-89a0-450d-8742-344b26da7d6b": {
           "display_id": 1078,
           "author": "xqjG",
@@ -24970,11 +24979,16 @@
       "agent_id": "xqjG",
       "agent_seq": 505,
       "timestamp": "2026-07-27T18:32:34.073088Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 506,
+      "timestamp": "2026-07-27T18:32:40.111149Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:32:34.073088Z",
+    "timestamp": "2026-07-27T18:32:40.111149Z",
     "agent_id": "xqjG",
-    "agent_seq": 505
+    "agent_seq": 506
   }
 }
