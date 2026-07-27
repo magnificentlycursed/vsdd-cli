@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1093,
+  "next_comment_id": 1094,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13758,11 +13758,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:51.692487Z",
-      "updated_at": "2026-07-27T21:17:12.593746Z",
+      "updated_at": "2026-07-27T21:20:06.009386Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "029a287c-def1-43a5-8c03-c98fc40a5137": {
+          "display_id": 1093,
+          "author": "xqjG",
+          "content": "OPERATOR RATIFICATION (2026-07-27, 'Ok, continue' to the ratification ask). #810 ratified as reviewed — the amendment has cleared draft -> composed cold review -> revise -> terminal verify -> revise -> final verify (unanimous ratify-ready), batch touches applied. Applying the seven-region edit to the contract now; the applying commit is the amendment-discipline format-carry's first exercised instance (its evidence section cites this ratified review record). Then: register invariant-first (#812), unblock the Layer-2 increment (#811); #807 proceeds separately; the Layer-3 rebuild stays parked.",
+          "created_at": "2026-07-27T21:20:05.993151Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAMopyAR4paBUcH+RQWVZNdAjG63tnLQdrtzAG1psgoV7qFxKXqbOk/sVCnaqL3I//+d+ofhZsJilUtE3gPd/4Ag=="
+        },
         "3424f4a7-6915-4ee1-835c-b84fafbca066": {
           "display_id": 1092,
           "author": "xqjG",
@@ -25276,11 +25285,16 @@
       "agent_id": "xqjG",
       "agent_seq": 529,
       "timestamp": "2026-07-27T21:17:12.593746Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 530,
+      "timestamp": "2026-07-27T21:20:06.009386Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:17:12.593746Z",
+    "timestamp": "2026-07-27T21:20:06.009386Z",
     "agent_id": "xqjG",
-    "agent_seq": 529
+    "agent_seq": 530
   }
 }
