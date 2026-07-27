@@ -1,5 +1,5 @@
 {
-  "next_display_id": 805,
+  "next_display_id": 806,
   "next_comment_id": 1069,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -106,6 +106,7 @@
     "1a98d28f-5a42-4f1e-90eb-23f9a979c85c": 537,
     "1ae5d111-8891-4b6c-b515-24454992fed1": 511,
     "1c93b7e8-3fe2-4aff-b1c2-3b61e88630ae": 510,
+    "1cd84415-2903-4c47-baff-1304152581f7": 805,
     "1d032b03-dea4-4f2c-89ce-c074b5c1fee7": 451,
     "1d2c1d6e-a3d0-4f3f-be36-eea74b86c3bc": 647,
     "1d7db25e-13d3-4838-bd6f-dc41b2218ad9": 337,
@@ -3485,6 +3486,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIpSNmcZGxbbTbDjfKaeWzOoK8oQ33qzz5P99AWMZD1gEBVSevcazOIUwsCGhKEUHZWGPZ0/AHytY0wJZO/kWDQ=="
         }
       }
+    },
+    "1cd84415-2903-4c47-baff-1304152581f7": {
+      "uuid": "1cd84415-2903-4c47-baff-1304152581f7",
+      "display_id": 805,
+      "title": "Layer 3 round 6 nit collector: remaining state string fields uncleaned (comparison-only, latent per #801); intra-state cleaning asymmetry (current_phase cleaned vs gate.phase not); broken human form prints machine_token raw while machine cleans it",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-07-27T17:34:14.704346Z",
+      "updated_at": "2026-07-27T17:34:14.704346Z"
     },
     "1d032b03-dea4-4f2c-89ce-c074b5c1fee7": {
       "uuid": "1d032b03-dea4-4f2c-89ce-c074b5c1fee7",
@@ -24649,11 +24660,16 @@
       "agent_id": "xqjG",
       "agent_seq": 477,
       "timestamp": "2026-07-27T17:34:07.797505Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 478,
+      "timestamp": "2026-07-27T17:34:14.704346Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T17:34:07.797505Z",
+    "timestamp": "2026-07-27T17:34:14.704346Z",
     "agent_id": "xqjG",
-    "agent_seq": 477
+    "agent_seq": 478
   }
 }
