@@ -1,6 +1,6 @@
 {
   "next_display_id": 808,
-  "next_comment_id": 1078,
+  "next_comment_id": 1079,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8434,10 +8434,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-27T18:16:38.044816Z",
+      "updated_at": "2026-07-27T18:17:20.090187Z",
       "labels": [
         "spec-amendment"
-      ]
+      ],
+      "comments": {
+        "a534d9bf-89a0-450d-8742-344b26da7d6b": {
+          "display_id": 1078,
+          "author": "xqjG",
+          "content": "AMENDMENT DRAFT — awaiting operator ratification (I draft, you ratify; on your word it binds, I apply the contract text + Revision line, run the minimal rebuild, one verify round, and close Layer 3). Routed here from the Layer-3 terminal-safety finding class (#788/#793/#798/#803/#804 and siblings) per the #806 phase-4 pass.\n\nPROPOSED ADDITION to the Status requirement (contract ~line 173), a new paragraph:\n\n  'Terminal-output safety: every string vsdd renders to a terminal or\n   agent-consumed surface — the segment, the human form, the machine\n   form, and the broken-state outputs — that is sourced from outside the\n   tool's own trusted constants (adopter-edited state, tracker and git\n   query output, adopter-authored registry data) is stripped of the\n   display-unsafe Unicode class before it reaches that surface. The class\n   is defined by Unicode property, never a hand-enumerated list: the\n   control category, the format category, the line and paragraph\n   separators, and every code point carrying Default_Ignorable_Code_Point\n   — including the property's reserved (unassigned) half, which renders\n   invisibly on conformant terminals. Combining marks and normal spaces\n   are preserved: they are legitimate text in the world's scripts, not\n   the hidden-Unicode threat. Cleaning happens at the source boundaries —\n   the acquisition, the state read, and the registry load — so every\n   downstream rendering inherits safe data; the machine form, whose\n   serialization can carry any struct field, is additionally sanitized\n   whole at output so no field can be missed. The threat is\n   display-spoofing and invisible smuggling into agent context (the\n   Trojan-Source class; the same hidden-Unicode threat crosslink names for\n   inbound web content), and the requirement is the outbound peer of\n   that inbound rule.'\n\nPLUS a Trust-boundaries / boundary-procedure note (raise, do not block):\n\n  'Terminal-output safety is a candidate shared primitive: crosslink's\n   safe-fetch already sanitizes inbound content and its rules name the\n   hidden-Unicode threat, so a single shared implementation could serve\n   both the inbound (strip what you read) and outbound (strip what you\n   emit) directions rather than each tool re-deriving it. vsdd satisfies\n   the requirement locally now via the UCD property; the shared-primitive\n   question is raised to crosslink under the three-question boundary\n   procedure (vsdd-cli #739) as a separate, non-blocking item.'\n\nMECHANISM (verification-architecture note, 1b): the implementation uses the Default_Ignorable_Code_Point property from a maintained UCD crate (verify exact crate/API at implementation — unicode-properties is the candidate), REPLACING the hand-rolled category+range+Hangul-enumeration classifier. The enumeration approach is explicitly rejected: rounds 3-6 demonstrated it is always one adversarial probe short of the class. The existing rounds-1-to-5 tests become this requirement's verification architecture; the round-6 uncommitted edits are superseded (keep the recursive JSON sanitizer, discard the Hangul enumeration).\n\nSCOPE: the init/preflight command surface (the Layer 4 carry, #796) falls under this same requirement when Layer 4 hardens; the cleaner is the shared one.\n\nON RATIFICATION, in order: apply the clause + Revision line (mdatron verify); swap the predicate to the UCD property and keep the machine-form recursive sanitizer (drop the uncommitted Hangul arm); re-point the existing terminal-safety tests as the requirement's verification; one verify round against the specified requirement; close #803/#804/#805 as resolved-by-amendment; close Layer 3 to its boundary. RATIFICATION ASK: approve the two clauses as drafted, or redline.",
+          "created_at": "2026-07-27T18:17:20.075982Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwKFL1QBGN5JBNLeR7gca9myVdJvhpIUdPa1DGOxniKgf/scQECvmb2uNK2WamaRUbY/eqECTZEQGTj2SYTlaAw=="
+        }
+      }
     },
     "59f5d276-a9d1-4072-a89e-993a1a4e6cd1": {
       "uuid": "59f5d276-a9d1-4072-a89e-993a1a4e6cd1",
@@ -24882,11 +24893,16 @@
       "agent_id": "xqjG",
       "agent_seq": 497,
       "timestamp": "2026-07-27T18:16:45.013045Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 498,
+      "timestamp": "2026-07-27T18:17:20.090187Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:16:45.013045Z",
+    "timestamp": "2026-07-27T18:17:20.090187Z",
     "agent_id": "xqjG",
-    "agent_seq": 497
+    "agent_seq": 498
   }
 }
