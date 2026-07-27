@@ -1,6 +1,6 @@
 {
   "next_display_id": 807,
-  "next_comment_id": 1073,
+  "next_comment_id": 1074,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13527,7 +13527,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:02:07.817477Z",
-      "updated_at": "2026-07-27T18:04:12.264792Z",
+      "updated_at": "2026-07-27T18:13:50.393472Z",
       "labels": [
         "finding"
       ],
@@ -13540,6 +13540,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7H0rk8hwYiQmO6KbrxVbHyJG5eglFyX60KGfrMZftbXkNnxCbV6UePKedTXLJ525vkgzwKoOnH6MpPOD3cFvCA=="
+        },
+        "17332abf-c141-4d73-a9ed-1148d736050f": {
+          "display_id": 1073,
+          "author": "xqjG",
+          "content": "RATIFIED (operator, 2026-07-27: 'accepting your recommendations'). Applied in commit above (contract + Revision line; mdatron clean):\n- Format-carry clause ratified AS DRAFTED with the clarifying sentence added (the disposition is the classification act, not a routing-away; 'fix in this layer' is a valid disposition). Binds now for the remainder of the build.\n- Invariant-first principle adopted, lightweight, scoped 'as early as true dependencies allow'.\n- Re-sequencing: NOT done (operator accepted the recommendation to not churn). Recorded intent: when Layer 6 is built, co-locate the unrouted-findings query with round-parity (its Layer 2 sibling) and build it first as the gate's priority member; the round-parity-in-Layer-2 / unrouted-in-Layer-6 split is the mispackaging to correct then, not by reopening Layer 2 now. Also recorded: mechanizing the query in an early layer would not enforce during bootstrap anyway (the tool is not deployed until Layer 4), so the format-carry is the effective interim regardless.\nThis finding stays OPEN until its 1a/1b touch (the invariant-first principle) and the Layer-6 co-location note are both consumed — the principle is now in the contract, so the remaining open thread is the Layer-6 build note, carried forward. Closing as the amendment is landed; the Layer-6 co-location is recorded here for that layer's phase-2a entry to consume.",
+          "created_at": "2026-07-27T18:13:50.378210Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcJUD/JBr/VHfjxgHIcOzdF0xpUGLTlyWrlLDNFBroB3Et33DNMSCuKjUZINAIokhj4AyxNpwt4uxsmgDL+KzAg=="
         },
         "1ef87a68-7d3b-49a9-af80-82dc868a0401": {
           "display_id": 1072,
@@ -24766,11 +24775,16 @@
       "agent_id": "xqjG",
       "agent_seq": 487,
       "timestamp": "2026-07-27T18:04:12.264792Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 488,
+      "timestamp": "2026-07-27T18:13:50.393472Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:04:12.264792Z",
+    "timestamp": "2026-07-27T18:13:50.393472Z",
     "agent_id": "xqjG",
-    "agent_seq": 487
+    "agent_seq": 488
   }
 }
