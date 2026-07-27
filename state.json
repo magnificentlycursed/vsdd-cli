@@ -1,5 +1,5 @@
 {
-  "next_display_id": 810,
+  "next_display_id": 811,
   "next_comment_id": 1083,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -479,6 +479,7 @@
     "9483fa7a-0f91-4485-8f60-abef77a51e26": 803,
     "94e75639-8c3e-4d86-9009-6da6b6fc38d9": 806,
     "953c2d75-fc34-46d4-b984-8796a529fa06": 505,
+    "95e5dadc-0b23-4aa0-825f-82a3918c1f5b": 810,
     "95eaf845-5910-4270-a5a1-f032e3a3dd88": 658,
     "967a6481-3a84-498d-b0cf-60a33974e0c7": 697,
     "976c72bd-36fd-4d27-929f-c285817110cf": 619,
@@ -13711,6 +13712,16 @@
         }
       }
     },
+    "95e5dadc-0b23-4aa0-825f-82a3918c1f5b": {
+      "uuid": "95e5dadc-0b23-4aa0-825f-82a3918c1f5b",
+      "display_id": 810,
+      "title": "Decomposition amendment (phase 1c + 1a/1b): re-sequence the build to front-load the enforcement spine — invariant-first applied to build order — resolving the enforcement-gap class (#806 routing, #809 amendment-discipline, and the Layer-8 directive-classification they share)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-27T20:03:51.692487Z",
+      "updated_at": "2026-07-27T20:03:51.692487Z"
+    },
     "95eaf845-5910-4270-a5a1-f032e3a3dd88": {
       "uuid": "95eaf845-5910-4270-a5a1-f032e3a3dd88",
       "display_id": 658,
@@ -25031,11 +25042,16 @@
       "agent_id": "xqjG",
       "agent_seq": 510,
       "timestamp": "2026-07-27T20:03:21.494205Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 511,
+      "timestamp": "2026-07-27T20:03:51.692487Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T20:03:21.494205Z",
+    "timestamp": "2026-07-27T20:03:51.692487Z",
     "agent_id": "xqjG",
-    "agent_seq": 510
+    "agent_seq": 511
   }
 }
