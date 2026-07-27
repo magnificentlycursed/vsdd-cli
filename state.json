@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1100,
+  "next_comment_id": 1101,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3481,11 +3481,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:29:39.834420Z",
-      "updated_at": "2026-07-27T21:26:25.859540Z",
+      "updated_at": "2026-07-27T23:08:26.245977Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "93474783-f7a8-46f6-a871-1403f27f5596": {
+          "display_id": 1100,
+          "author": "xqjG",
+          "content": "Phase-2a/2b build done (unrouted-findings query). Red-gate seed exercised: integrity-unrouted-fix-close expects [unrouted-findings], derivation returned [] before the check (RED), returns [unrouted-findings] after (GREEN); clean-negative pair integrity-routed-fix-close stays []. Footprint landed: FindingRecord gains routing_present + closed_before_ratification (forward-only universe, defaults true so the fixed-baseline fixtures stay outside the universe untouched); the check in snapshot_integrity; snapshot-schema.md mirror re-pinned (per-finding datums + unrouted-findings check); acquisition bootstrap-scope declared for the two new datums (populate at the Layer 6 join); corpus 20->22. Full workspace suite 0 failed, clippy clean, mdatron verify clean. Oracles for the two new fixtures are DRAFT — operator adoption pending as the phase-2a exit act.",
+          "created_at": "2026-07-27T23:08:26.232584Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABABwW2gxWpuE0T2qtSe0P1ViwD0Ok2jA4KHotKb2GNRP+vE1j0SJY7Mph7PXisiWsSNlr2FVZTkqVvcoYJy9C3Aw=="
+        },
         "d0f2a45a-15e9-4a9e-ad6a-2755c0f3dde0": {
           "display_id": 1088,
           "author": "xqjG",
@@ -25419,11 +25428,16 @@
       "agent_id": "xqjG",
       "agent_seq": 546,
       "timestamp": "2026-07-27T21:28:34.582922Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 547,
+      "timestamp": "2026-07-27T23:08:26.245977Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:28:34.582922Z",
+    "timestamp": "2026-07-27T23:08:26.245977Z",
     "agent_id": "xqjG",
-    "agent_seq": 546
+    "agent_seq": 547
   }
 }
