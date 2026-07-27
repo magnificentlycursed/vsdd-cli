@@ -28,6 +28,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Registration act: 'invariant-first' enters as a registered draft term under the vocabulary maturity lifecycle (operator-owned) — carried with the #810 ratification (#812)
+- Decomposition amendment (phase 1c + 1a/1b): re-sequence the build to front-load the enforcement spine — invariant-first applied to build order — resolving the enforcement-gap class (#806 routing, #809 amendment-discipline, and the Layer-8 directive-classification they share) (#810)
+- Decomposition gap: phase-4 routing enforcement deferred to Layer 6 with no bootstrap format-carry, so Layers 1-5 build with no mechanical flow-enforcement over their own review loops — the June-cycle orphaning reproduced during bootstrap (#806)
 - Layer 3 round 5 nit collector: the composition set's human vocabulary takes the no-op PostLoad (latent until a later layer prints it); post_load runs after schema minLength so an all-format-char field cleans to empty (#801)
 - Layer 3 round 5 major SE+QE convergent: the post_load loader wiring is unpinned — deleting value.post_load() leaves all tests green (the unit test pins the logic, nothing pins the call); plus the missing #789 hostile-path falsifier (record corrected on #795) (#800)
 - Layer 3 round 5 major security: the machine form renders state-sourced strings (phase, scope, domains) and the diagnostic file/message RAW — the last uncleaned sink; contradicts the text.rs scope claim that the policy covers the machine rendering (#799)
