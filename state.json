@@ -1,5 +1,5 @@
 {
-  "next_display_id": 812,
+  "next_display_id": 813,
   "next_comment_id": 1088,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -524,6 +524,7 @@
     "a29d3f3c-8c6b-407a-a468-10ace32e1a58": 506,
     "a2f64e5e-9bdb-48d9-865a-8ea935d08d85": 704,
     "a34d2f8b-7ed5-437a-ad08-3574b4e3dab6": 77,
+    "a389b2f5-106a-4804-a966-806943e2628b": 812,
     "a3a204cd-3caf-4da1-b1bd-09212d1754e4": 61,
     "a3b81fee-d47c-4c82-9cc8-041f981a3701": 637,
     "a3d3a8aa-3d32-4014-9e56-b16ec198454c": 57,
@@ -14912,6 +14913,16 @@
         }
       }
     },
+    "a389b2f5-106a-4804-a966-806943e2628b": {
+      "uuid": "a389b2f5-106a-4804-a966-806943e2628b",
+      "display_id": 812,
+      "title": "Registration act: 'invariant-first' enters as a registered draft term under the vocabulary maturity lifecycle (operator-owned) — carried with the #810 ratification",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-27T20:30:03.684759Z",
+      "updated_at": "2026-07-27T20:30:03.684759Z"
+    },
     "a3a204cd-3caf-4da1-b1bd-09212d1754e4": {
       "uuid": "a3a204cd-3caf-4da1-b1bd-09212d1754e4",
       "display_id": 61,
@@ -25171,11 +25182,16 @@
       "agent_id": "xqjG",
       "agent_seq": 521,
       "timestamp": "2026-07-27T20:29:55.461191Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 522,
+      "timestamp": "2026-07-27T20:30:03.684759Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T20:29:55.461191Z",
+    "timestamp": "2026-07-27T20:30:03.684759Z",
     "agent_id": "xqjG",
-    "agent_seq": 521
+    "agent_seq": 522
   }
 }
