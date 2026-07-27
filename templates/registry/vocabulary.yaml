@@ -82,6 +82,12 @@ terms:
     deprecated_aliases: []
     abbreviation: ""
     domain_scope: [methodology]
+  - term: invariant-first
+    definition: Decomposition ordering that places a mission-critical process invariant's cheapest form (detection, or a bootstrap format-carry where its mechanized gate is downstream) as early as its own true dependencies allow, minimizing the layers built before the tool can enforce its own construction
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology, decomposition]
 # === End vsdd managed ===
 
 # Operator extensions land below this marker.
