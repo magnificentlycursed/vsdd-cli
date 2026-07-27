@@ -1,6 +1,6 @@
 {
   "next_display_id": 809,
-  "next_comment_id": 1079,
+  "next_comment_id": 1080,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9298,10 +9298,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:30:56.853873Z",
-      "updated_at": "2026-07-27T18:31:02.647919Z",
+      "updated_at": "2026-07-27T18:31:58.599905Z",
       "labels": [
         "deviation"
-      ]
+      ],
+      "comments": {
+        "315086f8-e316-45af-b69e-e137015e9644": {
+          "display_id": 1079,
+          "author": "xqjG",
+          "content": "THE DEVIATION (recorded; the record stands per the ungated-work discipline).\n\nWHAT: contract amendments #806 (routing format-carry + invariant-first principle) and #807 (terminal-output-safety requirement + shared-primitive boundary raise) were authored and committed directly to the ratified governing document (.design/agent-first-vsdd-toolkit.md) by a single agent inside a Layer-3 EXECUTION session, on operator content-approval alone.\n\nWHY IT IS A DEVIATION — two ways, one root:\n1. VSDD process: a spec amendment is a re-entry into phase 1a/1b — authored under a declared composition, run through cold review lenses, THEN ratified. Operator approval is the phase EXIT (the ratification gate), never a substitute for the phase's composition and review. The amendment was inlined into execution with neither; the earlier amendments (#730, #739) were legitimate precisely because they ran under the phase-1c spec-review loop with rounds and dispositions.\n2. Domain ownership (operator guidance): spec-contract changes are the Solution Owner's to author; the prose and register are Documentation Reviewer / Technical Writer's. A solo agent editing the contract's normative text and register bypassed all three owning domains.\n\nROOT: this is the same collapse the whole session has been catching — an owned, reviewed process skipped in favor of solo-act-on-approval. #806 was findings orphaned by skipping phase 4; this is an amendment orphaned by skipping phase 1a/1b. Third occurrence of the pattern this session.\n\nREMEDIATION (operator-directed, path A): reverted in commit 9b451099 (contract restored to 25851ca0; mdatron clean). The drafted text is preserved on #806/#807 and re-enters phase 1a/1b as the DRAFT — no drafting lost, but it now gets the composition and cold review it skipped, with operator ratification as the true exit. #806 and #807 reopened for that re-entry. The deviation record stands regardless of the redo.",
+          "created_at": "2026-07-27T18:31:58.584808Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXJmGp/4R71L5SyguYo2UhGoYnGAheA0xkjWiw4VbPF5/vv6+YjNemIf+TEefQ2xfvWe9l3ZB99ky8n7y4Zk4Dw=="
+        }
+      }
     },
     "62d3364e-758d-4ce5-9c3f-7846839f9363": {
       "uuid": "62d3364e-758d-4ce5-9c3f-7846839f9363",
@@ -24931,11 +24942,16 @@
       "agent_id": "xqjG",
       "agent_seq": 501,
       "timestamp": "2026-07-27T18:31:09.576242Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 502,
+      "timestamp": "2026-07-27T18:31:58.599905Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:31:09.576242Z",
+    "timestamp": "2026-07-27T18:31:58.599905Z",
     "agent_id": "xqjG",
-    "agent_seq": 501
+    "agent_seq": 502
   }
 }
