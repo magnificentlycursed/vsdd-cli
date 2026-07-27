@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1090,
+  "next_comment_id": 1091,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13758,7 +13758,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:51.692487Z",
-      "updated_at": "2026-07-27T20:31:01.399797Z",
+      "updated_at": "2026-07-27T20:59:09.115413Z",
       "labels": [
         "spec-amendment"
       ],
@@ -13780,6 +13780,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqLRYuLLu/Wf2BhgCzxyningyu541Sv+eaiJzA8qtRKw+h4pJqkmQtN3hjL6OP9jiWMfcFaL3WVfGhDpb3Mr7BA=="
+        },
+        "6df268ea-768b-4a0b-95b8-0d7ebe1f6922": {
+          "display_id": 1090,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY ROUND — manifest (declared before spend). vehicle: Workflow, attended. subject: the REVISED .design/re-sequence-enforcement-spine.md. composition: SA-primary/SO/DR-TW (same as the review). Each lens verifies its round-1 findings are resolved in the revision AND sweeps for anything the revision introduced, then gives a stop verdict (ratify-ready vs another-cycle) — the loop's closing stage that decides the stop signal. MODEL: fable all four. EFFORT: SA+SO high, DR+TW medium. band: 0-8 findings, 100k-240k tokens. On a clean stop: operator ratifies as the exit.",
+          "created_at": "2026-07-27T20:59:09.097775Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA5wmrV+YdzkXk5/keXN8t/KA+awS4syLcJAYcm+BynT2+t9znO3q8rNkScaPucaSje/GG7r02IgFruOkL50i0Cw=="
         },
         "936ea489-34da-4175-97c1-312485e104f1": {
           "display_id": 1085,
@@ -25234,11 +25243,16 @@
       "agent_id": "xqjG",
       "agent_seq": 526,
       "timestamp": "2026-07-27T20:31:01.399797Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 527,
+      "timestamp": "2026-07-27T20:59:09.115413Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T20:31:01.399797Z",
+    "timestamp": "2026-07-27T20:59:09.115413Z",
     "agent_id": "xqjG",
-    "agent_seq": 526
+    "agent_seq": 527
   }
 }
