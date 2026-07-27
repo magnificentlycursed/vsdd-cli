@@ -9357,11 +9357,12 @@
       "uuid": "627c8f6a-1181-4ae6-8dac-157a63c17dd7",
       "display_id": 808,
       "title": "Process deviation: the contract was amended out-of-process for #806/#807 (solo edit in an execution session, no phase-1a/1b composition, no review round) and committed on operator content-approval alone — reverted; re-entering the design phase properly",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:30:56.853873Z",
-      "updated_at": "2026-07-27T21:28:22.283763Z",
+      "updated_at": "2026-07-27T21:28:28.190997Z",
+      "closed_at": "2026-07-27T21:28:28.190988Z",
       "labels": [
         "deviation"
       ],
@@ -25412,11 +25413,16 @@
       "agent_id": "xqjG",
       "agent_seq": 544,
       "timestamp": "2026-07-27T21:28:22.283763Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 545,
+      "timestamp": "2026-07-27T21:28:28.190997Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:28:22.283763Z",
+    "timestamp": "2026-07-27T21:28:28.190997Z",
     "agent_id": "xqjG",
-    "agent_seq": 544
+    "agent_seq": 545
   }
 }
