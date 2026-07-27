@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1098,
+  "next_comment_id": 1099,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19579,7 +19579,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:06.861196Z",
-      "updated_at": "2026-07-27T20:04:13.185101Z",
+      "updated_at": "2026-07-27T21:28:03.648269Z",
       "labels": [
         "finding"
       ],
@@ -19592,6 +19592,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcFQROMG7FAApydAaLbw05HNQCNEUvUSMI2qDbkk71l6HnQjL096a87OlOB8g7R7pVMxiqs2tPi52CvS0xlZ9AQ=="
+        },
+        "f63b503b-030e-4d91-bdff-3a6ab0e4e699": {
+          "display_id": 1098,
+          "author": "xqjG",
+          "content": "RESOLVED by #810 (ratified + applied, 8c9aaeda): the amendment-discipline format-carry is in the Gates bootstrap paragraph, keyed to the commit's structured evidence section, with its mechanized home named at Layer 7 + Layer 8 detection. The amendment-discipline enforcement gap is closed at the contract level. Closing.",
+          "created_at": "2026-07-27T21:28:03.633633Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKVhrZ+R2+Mz3Msjlm7WdTV1k4YaICJyYzvib6wOxTOZk7xN8CBNpxbRR7U1D8xDmEeyM12WV+hCflu8ySaOyDw=="
         }
       }
     },
@@ -25377,11 +25386,16 @@
       "agent_id": "xqjG",
       "agent_seq": 540,
       "timestamp": "2026-07-27T21:27:56.273140Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 541,
+      "timestamp": "2026-07-27T21:28:03.648269Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:27:56.273140Z",
+    "timestamp": "2026-07-27T21:28:03.648269Z",
     "agent_id": "xqjG",
-    "agent_seq": 540
+    "agent_seq": 541
   }
 }
