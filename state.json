@@ -1,5 +1,5 @@
 {
-  "next_display_id": 808,
+  "next_display_id": 809,
   "next_comment_id": 1079,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -313,6 +313,7 @@
     "6174e9ae-c7fb-4ba5-8ae8-382e803a1530": 92,
     "61eb1245-c533-4c74-9e28-139e012686e4": 797,
     "6253a77f-ca5c-4e27-a7ac-c285bbcb8385": 783,
+    "627c8f6a-1181-4ae6-8dac-157a63c17dd7": 808,
     "62d3364e-758d-4ce5-9c3f-7846839f9363": 143,
     "62dc4091-7748-4cea-9b1e-d9291bbcbc8a": 763,
     "638ac266-0115-42d7-8c18-a702e79e3910": 701,
@@ -9284,6 +9285,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXAvUaDRFeP96uKI5TdSJ8+kuZTACBEJkZLoyNmJwu+ha1UNr+VtiVCT4XkFfXlRIPpeIv59ou5atsskDZZESBQ=="
         }
       }
+    },
+    "627c8f6a-1181-4ae6-8dac-157a63c17dd7": {
+      "uuid": "627c8f6a-1181-4ae6-8dac-157a63c17dd7",
+      "display_id": 808,
+      "title": "Process deviation: the contract was amended out-of-process for #806/#807 (solo edit in an execution session, no phase-1a/1b composition, no review round) and committed on operator content-approval alone — reverted; re-entering the design phase properly",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-27T18:30:56.853873Z",
+      "updated_at": "2026-07-27T18:30:56.853873Z"
     },
     "62d3364e-758d-4ce5-9c3f-7846839f9363": {
       "uuid": "62d3364e-758d-4ce5-9c3f-7846839f9363",
@@ -24898,11 +24909,16 @@
       "agent_id": "xqjG",
       "agent_seq": 498,
       "timestamp": "2026-07-27T18:17:20.090187Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 499,
+      "timestamp": "2026-07-27T18:30:56.853873Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T18:17:20.090187Z",
+    "timestamp": "2026-07-27T18:30:56.853873Z",
     "agent_id": "xqjG",
-    "agent_seq": 498
+    "agent_seq": 499
   }
 }
