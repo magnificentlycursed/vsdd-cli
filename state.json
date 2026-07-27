@@ -1,5 +1,5 @@
 {
-  "next_display_id": 809,
+  "next_display_id": 810,
   "next_comment_id": 1083,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -676,6 +676,7 @@
     "d500ac17-43c6-45cc-b13d-03ad666b8f5e": 719,
     "d50599c9-9156-4ddc-9b7d-fe2b1393261c": 784,
     "d556dda8-95a8-44ff-8fb4-1beced69e422": 777,
+    "d566bde3-cc23-4bf9-8614-dbd52675e612": 809,
     "d5c8df6b-b485-46bd-827c-5d4b675ae2a4": 722,
     "d5e2b012-305e-4878-9d19-6abd3cd4f4a8": 655,
     "d5f7451a-da84-48c4-ba9b-9b5385005f2f": 482,
@@ -19381,6 +19382,16 @@
         }
       }
     },
+    "d566bde3-cc23-4bf9-8614-dbd52675e612": {
+      "uuid": "d566bde3-cc23-4bf9-8614-dbd52675e612",
+      "display_id": 809,
+      "title": "Enforcement-gap finding: the spec-amendment discipline (directive classification -> chassis-managed spec-review loop, Layer 8) is unbuilt like routing (#806), so contract amendments have no mechanical guard during bootstrap — sibling of #806, the same downstream-deferred enforcement spine",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-27T20:03:06.861196Z",
+      "updated_at": "2026-07-27T20:03:06.861196Z"
+    },
     "d5c8df6b-b485-46bd-827c-5d4b675ae2a4": {
       "uuid": "d5c8df6b-b485-46bd-827c-5d4b675ae2a4",
       "display_id": 722,
@@ -24998,11 +25009,16 @@
       "agent_id": "xqjG",
       "agent_seq": 507,
       "timestamp": "2026-07-27T19:58:26.019871Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 508,
+      "timestamp": "2026-07-27T20:03:06.861196Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T19:58:26.019871Z",
+    "timestamp": "2026-07-27T20:03:06.861196Z",
     "agent_id": "xqjG",
-    "agent_seq": 507
+    "agent_seq": 508
   }
 }
