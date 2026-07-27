@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1091,
+  "next_comment_id": 1092,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13758,7 +13758,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:51.692487Z",
-      "updated_at": "2026-07-27T20:59:09.115413Z",
+      "updated_at": "2026-07-27T21:08:27.008142Z",
       "labels": [
         "spec-amendment"
       ],
@@ -13807,6 +13807,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJK5D+t4yegHqrmIsoL8KvtoDpF65vWMTG7Q+GKkSW32NP+JeY76Gnb6UkGT9vowM6JN1o0doxQA4CSdNUnoLAw=="
+        },
+        "a4ba00c3-b934-4019-a58c-db71921a0efb": {
+          "display_id": 1091,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY ROUND 1 — split 1 ratify-ready (SA) / 2 another-cycle (SO, DR), plus the TW register lens died on a transient classifier error (a dead register lens is not a clean verdict). One real CONVERGENT finding (SO major, DR major, SA minor): the Architecture edit-map undercounted — it listed five regions but REQ-3's format-carry edits and REQ-7's fixture-corpus edit were absent, so an applier would miss two contract edits. Plus two nits: REQ-1/AC-1 form-count (two vs three), and REQ-5 'at or after ratification' misreadable as creation-time not closure-time. All fixed in the draft: edit-map now enumerates seven regions matching every requirement; REQ-1/AC-1 aligned on three forms (detection / format-carry / mechanized gate); REQ-5 reworded to exclude only pre-ratification CLOSURES (open findings stay in the universe). Every substantive round-1 finding was verified RESOLVED by all three returning lenses (Status enumeration, disposition-closure exemption, round-parity double-home, footprint, forward-only, fixture, five-kinds, register, Q1/Q2). Dispatching a final verify: confirm the three fixes + recover the TW register verdict + decide the stop; nits do not block (batch-touch at ratification).",
+          "created_at": "2026-07-27T21:08:26.993565Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAvejrttMrnJL0weWvPIElgvSLmElnlsnW97QVDY2vCGNQBnaY+pJT762VYMWyW9h7PaKb0JuRuO6kuwLki0XDCg=="
         },
         "cd45bf2c-aa6a-4dbd-8559-32a01625a768": {
           "display_id": 1086,
@@ -25248,11 +25257,16 @@
       "agent_id": "xqjG",
       "agent_seq": 527,
       "timestamp": "2026-07-27T20:59:09.115413Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 528,
+      "timestamp": "2026-07-27T21:08:27.008142Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T20:59:09.115413Z",
+    "timestamp": "2026-07-27T21:08:27.008142Z",
     "agent_id": "xqjG",
-    "agent_seq": 527
+    "agent_seq": 528
   }
 }
