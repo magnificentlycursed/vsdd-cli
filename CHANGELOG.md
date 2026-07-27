@@ -28,6 +28,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Process deviation: the contract was amended out-of-process for #806/#807 (solo edit in an execution session, no phase-1a/1b composition, no review round) and committed on operator content-approval alone — reverted; re-entering the design phase properly (#808)
+- Enforcement-gap finding: the spec-amendment discipline (directive classification -> chassis-managed spec-review loop, Layer 8) is unbuilt like routing (#806), so contract amendments have no mechanical guard during bootstrap — sibling of #806, the same downstream-deferred enforcement spine (#809)
+- Decomposition gap: phase-4 routing enforcement deferred to Layer 6 with no bootstrap format-carry, so Layers 1-5 build with no mechanical flow-enforcement over their own review loops — the June-cycle orphaning reproduced during bootstrap (#806)
 - Registration act: 'invariant-first' enters as a registered draft term under the vocabulary maturity lifecycle (operator-owned) — carried with the #810 ratification (#812)
 - Decomposition amendment (phase 1c + 1a/1b): re-sequence the build to front-load the enforcement spine — invariant-first applied to build order — resolving the enforcement-gap class (#806 routing, #809 amendment-discipline, and the Layer-8 directive-classification they share) (#810)
 - Decomposition gap: phase-4 routing enforcement deferred to Layer 6 with no bootstrap format-carry, so Layers 1-5 build with no mechanical flow-enforcement over their own review loops — the June-cycle orphaning reproduced during bootstrap (#806)
