@@ -19575,11 +19575,12 @@
       "uuid": "d566bde3-cc23-4bf9-8614-dbd52675e612",
       "display_id": 809,
       "title": "Enforcement-gap finding: the spec-amendment discipline (directive classification -> chassis-managed spec-review loop, Layer 8) is unbuilt like routing (#806), so contract amendments have no mechanical guard during bootstrap — sibling of #806, the same downstream-deferred enforcement spine",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:06.861196Z",
-      "updated_at": "2026-07-27T21:28:03.648269Z",
+      "updated_at": "2026-07-27T21:28:09.640706Z",
+      "closed_at": "2026-07-27T21:28:09.640697Z",
       "labels": [
         "finding"
       ],
@@ -25391,11 +25392,16 @@
       "agent_id": "xqjG",
       "agent_seq": 541,
       "timestamp": "2026-07-27T21:28:03.648269Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 542,
+      "timestamp": "2026-07-27T21:28:09.640706Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:28:03.648269Z",
+    "timestamp": "2026-07-27T21:28:09.640706Z",
     "agent_id": "xqjG",
-    "agent_seq": 541
+    "agent_seq": 542
   }
 }
