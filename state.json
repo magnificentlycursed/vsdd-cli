@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1092,
+  "next_comment_id": 1093,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13758,11 +13758,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:03:51.692487Z",
-      "updated_at": "2026-07-27T21:08:27.008142Z",
+      "updated_at": "2026-07-27T21:17:12.593746Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "3424f4a7-6915-4ee1-835c-b84fafbca066": {
+          "display_id": 1092,
+          "author": "xqjG",
+          "content": "FINAL VERIFY ROUND — UNANIMOUS RATIFY-READY (4/4: SA, SO, DR, TW; the TW register lens recovered on this run). All three fixes confirmed grounded against contract and code: the seven-region edit-map is complete with bijective requirement coverage (no phantom, no missing edit); REQ-1/AC-1 agree on the three forms; REQ-5 keys on closure time. Remaining items are all minor/nit and were APPLIED as batch touches (not deferred): AC-5 anchored to region 4; REQ-5 reopened-finding case spelled out; the footprint names the closure-time datum; REQ-1's all-caps emphasis normalized to the contract register. mdatron clean, no placeholders. The amendment has cleared its full owned process — draft (design affordance) -> composed cold review (revise-then-ratify, blocking finding caught) -> revise -> terminal verify (edit-map defect caught) -> revise -> final verify (ratify-ready). READY FOR OPERATOR RATIFICATION as the phase exit; only on ratification does the contract change.",
+          "created_at": "2026-07-27T21:17:12.578798Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAAZQEru2L67nxneWpEcPEPB9vq4MH8ndMHHNnHf1YPayUBvXRmDW/W1eQr5STl8HA08WE1mTdyPX70gZxJWy0Aw=="
+        },
         "61e91a1b-6cd3-4f90-9152-3bc24753499a": {
           "display_id": 1087,
           "author": "xqjG",
@@ -25262,11 +25271,16 @@
       "agent_id": "xqjG",
       "agent_seq": 528,
       "timestamp": "2026-07-27T21:08:27.008142Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 529,
+      "timestamp": "2026-07-27T21:17:12.593746Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T21:08:27.008142Z",
+    "timestamp": "2026-07-27T21:17:12.593746Z",
     "agent_id": "xqjG",
-    "agent_seq": 528
+    "agent_seq": 529
   }
 }
