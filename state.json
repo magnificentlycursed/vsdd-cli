@@ -852,6 +852,10 @@
     "804": {
       "agent_id": "xqjG",
       "claimed_at": "2026-07-27T17:34:07.797505Z"
+    },
+    "805": {
+      "agent_id": "xqjG",
+      "claimed_at": "2026-07-27T17:34:21.873757Z"
     }
   },
   "issues": {
@@ -24665,11 +24669,16 @@
       "agent_id": "xqjG",
       "agent_seq": 478,
       "timestamp": "2026-07-27T17:34:14.704346Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 479,
+      "timestamp": "2026-07-27T17:34:21.873757Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-27T17:34:14.704346Z",
+    "timestamp": "2026-07-27T17:34:21.873757Z",
     "agent_id": "xqjG",
-    "agent_seq": 478
+    "agent_seq": 479
   }
 }
