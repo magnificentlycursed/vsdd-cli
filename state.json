@@ -1,6 +1,6 @@
 {
   "next_display_id": 814,
-  "next_comment_id": 1117,
+  "next_comment_id": 1118,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5774,12 +5774,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T20:38:16.888150Z",
-      "updated_at": "2026-07-28T21:04:53.225841Z",
+      "updated_at": "2026-07-28T21:05:41.948909Z",
       "closed_at": "2026-07-28T21:04:53.225833Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "3454acc3-3cf7-40c0-b217-cf334a8779b4": {
+          "display_id": 1117,
+          "author": "xqjG",
+          "content": "LAYER 3 CLOSED to its boundary. Milestone #6 (the three renderings and the wiring script) reaches its exit: the statusline-conduct slice of Status detection closed, terminal cleaning rebuilt on the ratified Terminal output safety requirement. Boundary commit follows; the phase-3 loop (#802) converged via spec-then-rebuild, not more rounds. This is the 0.1.0-alpha / vsdd-status self-dogfooding threshold.",
+          "created_at": "2026-07-28T21:05:41.931454Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA4jOlproYB1r6eSXh85k+E1A2ooWnYQhXzY8xXDetP6AhkCr6FgVyA8ewHloBa3Qid/h3g3ndastl3j9f9fr1DA=="
+        },
         "be19443d-5d73-434f-add4-f5115df56511": {
           "display_id": 1112,
           "author": "xqjG",
@@ -25740,11 +25749,16 @@
       "agent_id": "xqjG",
       "agent_seq": 579,
       "timestamp": "2026-07-28T21:04:58.878420Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 580,
+      "timestamp": "2026-07-28T21:05:41.948909Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:04:58.878420Z",
+    "timestamp": "2026-07-28T21:05:41.948909Z",
     "agent_id": "xqjG",
-    "agent_seq": 579
+    "agent_seq": 580
   }
 }
