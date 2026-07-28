@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1129,
+  "next_comment_id": 1130,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10314,7 +10314,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-28T21:39:37.460949Z",
+      "updated_at": "2026-07-28T21:43:35.156944Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10327,6 +10327,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIjC3YEIfEn39RsibOT3gzxn3pBWGzvZprTlPst6rMWOipfwTBGOBhunlh6zufp3BXQ9UsCb+F8wv7Uq5zmfoBg=="
+        },
+        "7ae5eadd-56c4-4316-8967-5832e7765aeb": {
+          "display_id": 1129,
+          "author": "xqjG",
+          "content": "DRAFT written: .design/agent-first-controls.md. Evaluates Layers 6/7/8 against every audit gap (the table): the right controls exist but land in the back third + two genuinely unowned gaps (structural routing; bootstrap self-governance) = the #810 finding one level up. 10 requirements covering routing-before-fix (mechanized bootstrap form + verify rounds), structural routing edges, phase-transition gates, round-closure discipline, per-layer phase-5 gate, self-governance/dogfood-now (self-hosted state + dependency-free self-checked control scripts, tripwire->registry), the declared vehicle mix (hooks/CI/crosslink/mdatron with fail-closed + mechanical-vs-adversarial split), mdatron v0.2.0 leverage, and naming/register as a control. 5 open questions (dogfood scope this cycle, adopt a req-registry, retroactive phase-5 for L1/L2, mdatron upgrade sequencing, pull reviewer-role tool-restriction earlier). Next: resolve open questions (interactive) then cold review with SA/SO/AI-Engineer + Claude Code supplement + DR/TW.",
+          "created_at": "2026-07-28T21:43:35.142974Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKJUoepeTZWq/3vEDLHEBhaU7LlMO48DDPITrVQeoLNT+V5+c2mUJUJLXMOaGu4sgLviCz09KIhN3Wua4/tE5BA=="
         },
         "e7d5f091-a6e4-4407-9129-db54c854c982": {
           "display_id": 1126,
@@ -26054,11 +26063,16 @@
       "agent_id": "xqjG",
       "agent_seq": 611,
       "timestamp": "2026-07-28T21:39:37.460949Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 612,
+      "timestamp": "2026-07-28T21:43:35.156944Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:39:37.460949Z",
+    "timestamp": "2026-07-28T21:43:35.156944Z",
     "agent_id": "xqjG",
-    "agent_seq": 611
+    "agent_seq": 612
   }
 }
