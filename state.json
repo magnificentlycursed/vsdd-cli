@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1131,
+  "next_comment_id": 1132,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10314,7 +10314,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-28T22:24:58.274990Z",
+      "updated_at": "2026-07-28T22:27:24.550082Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10345,6 +10345,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJ3tA1oEzpTZcPA5R6EfoVxyrgo4kVF1zxMgCeRCrNRMK/pfxjF1SMwxlhwLK5TU06SP0UWk5pl1PL/LXlbtEDw=="
+        },
+        "e17f69b0-f9fa-4473-b9bf-dedae52c0c18": {
+          "display_id": 1131,
+          "author": "xqjG",
+          "content": "DRAFT RE-AUTHORED THROUGH THE MECHANISM (corrective complete). Process followed this time: /vsdd-phase-1a primer loaded (governing); composition declared (above); domain skills composed (/vsdd-domain-solution-owner primary, /vsdd-domain-solution-architect, /vsdd-domain-ai-engineer) + claude-code-cli supplement applied; authored via crosslink's /design skill -> validation PASS (11 REQ, 9 AC, 6 open questions, no placeholders), knowledge page 'agent-first-controls' created, pipeline state .design/agent-first-controls.pipeline.json written (sha256:b75c11fd...). SHARPENED per operator (2026-07-28): the keystone (REQ-1) is now the mechanism-invocation-timing audit — 'audit that the methodology's mechanisms were invoked at the correct times' as the product's major goal; every audit gap reframed as an instance (a required mechanism un-invoked at its correct time, un-detected). REQ-2 the trace substrate (.vsdd/events has a June composition-event precedent). This session's 3 bypasses (routing collapse, phase-compressed rebuild, and this cycle's design-phase bypass) are named acceptance-test cases the product must flag. NEXT: resolve the 6 open questions (interactive, design phase 3) then the composed cold review (SA/SO/AI-Engineer + Claude Code supplement + Security/PE/QE + DR/TW), then operator ratification.",
+          "created_at": "2026-07-28T22:27:24.536765Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAeudbTzMb+Kjrb5+m2Ae0qpm2EpjS+HQj0ntXBaapJdmo9ArvbFkVlqs785DYSPLlH/zzM9ld3k8YzHn6Y4aBDw=="
         },
         "e7d5f091-a6e4-4407-9129-db54c854c982": {
           "display_id": 1126,
@@ -26082,11 +26091,16 @@
       "agent_id": "xqjG",
       "agent_seq": 613,
       "timestamp": "2026-07-28T22:24:58.274990Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 614,
+      "timestamp": "2026-07-28T22:27:24.550082Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T22:24:58.274990Z",
+    "timestamp": "2026-07-28T22:27:24.550082Z",
     "agent_id": "xqjG",
-    "agent_seq": 613
+    "agent_seq": 614
   }
 }
