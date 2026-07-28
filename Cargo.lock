@@ -1101,6 +1101,7 @@ dependencies = [
 name = "vsdd-core"
 version = "0.1.0"
 dependencies = [
+ "icu_properties",
  "jsonschema",
  "regex",
  "serde",

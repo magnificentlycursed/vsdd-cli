@@ -22,7 +22,7 @@ pub fn render_machine(
             super::degraded_next_step(data, kind).unwrap_or(super::UNREGISTERED_DEGRADED_KIND);
         json!({ "kind": kind, "next_step": next_step })
     });
-    json!({
+    let mut out = json!({
         "vsdd_status_version": "0.1.0",
         "answer": {
             "phase": answer.phase,
@@ -41,5 +41,15 @@ pub fn render_machine(
             "degraded": degraded,
             "integrity_findings": answer.integrity_findings,
         },
-    })
+    });
+    // The whole-of-output machine-form pass (contract: Terminal output
+    // safety, vsdd-cli #807): sanitize every string value and object key
+    // in the built form, so a hostile code point in any field — the
+    // state-sourced composition fields (config_inputs_hash among them,
+    // #803), the tracker-sourced display fields, the integrity kinds —
+    // cannot reach the agent surface regardless of the struct's shape.
+    // The systematic sink retiring the field-by-field misses (#803/#805);
+    // still pure (deterministic, no IO).
+    vsdd_core::text::clean_json_strings(&mut out);
+    out
 }

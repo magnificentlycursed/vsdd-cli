@@ -1,71 +1,113 @@
-//! The one terminal-cleaning policy, shared across both crates
-//! (vsdd-cli #788). Every string that reaches a terminal surface — the
-//! acquisition's display fields, the render tier's segment and human
-//! forms, the broken-state diagnostics — passes through here, so the
-//! policy has a single definition to audit and extend.
+//! The one terminal-cleaning policy, shared across both crates (contract:
+//! Terminal output safety, vsdd-cli #807; the shared helper first landed
+//! at #788). Every string vsdd emits to a terminal or agent-consumed
+//! surface that is sourced from outside the tool's own compiled-in
+//! constants passes through here, so the policy has one definition to
+//! audit.
 //!
-//! The threat is display-spoofing, not just cursor forging: the
-//! project's own hidden-Unicode rule (`.crosslink/rules/web.md`) names
-//! "zero-width chars, RTL overrides — strip and re-evaluate", and the
-//! Trojan-Source class (CVE-2021-42574) reorders visible text with the
-//! bidi controls. The policy strips by Unicode General_Category rather
-//! than a hand-list (vsdd-cli #793): two rounds proved an enumeration
-//! is always one adversarial probe short of the class. It drops the
-//! control category (`Cc` — C0/C1), the entire format category (`Cf` —
-//! bidi overrides, isolates, directional marks, zero-width, word
-//! joiner, the deprecated set, interlinear annotation, and the tag
-//! block that smuggles ASCII), and the line/paragraph separators
-//! (`Zl`/`Zp`) that would break a one-line surface.
+//! The threat is display-spoofing and invisible smuggling into agent
+//! context — the bidirectional-reordering Trojan Source class
+//! (CVE-2021-42574) — and the rule is the outbound peer of the inbound
+//! hidden-Unicode rule crosslink carries for web content
+//! (`.crosslink/rules/web.md`). The class is defined BY UNICODE PROPERTY,
+//! never a hand-enumerated list (six phase-3 rounds proved an enumeration
+//! is always one adversarial probe short of the class): the union of the
+//! control category (`Cc`), the format category (`Cf` — bidi overrides,
+//! isolates, zero-width, the word joiner, the tag block that smuggles
+//! ASCII), the line and paragraph separators (`Zl`/`Zp`), and every code
+//! point carrying `Default_Ignorable_Code_Point` from the Unicode
+//! Character Database (via `icu_properties`, compiled_data). The property
+//! subsumes what the old classifier enumerated by range (the reserved
+//! ignorables) and by list (the Hangul fillers), and it WINS over
+//! combining-mark preservation: the variation selectors and the combining
+//! grapheme joiner carry the property and are stripped (the ratified
+//! ruling reversing #798 — the selector-run payload channel outweighs
+//! rendering fidelity on these surfaces; the base character survives).
 //!
-//! Deliberately NOT stripped: combining marks (`Mn`/`Mc`/`Me`) and
-//! normal spaces (`Zs`) — legitimate text, not on the threat list;
-//! over-stripping would corrupt real repo and milestone names in most
-//! of the world's scripts. The line is drawn at the category boundary.
+//! Preserved: combining marks that do NOT carry the property (`Mn`/`Mc`/
+//! `Me` outside it — the accents and marks of the world's scripts) and
+//! normal spaces (`Zs`). Accepted residuals (contract): blank-but-cell-
+//! occupying code points outside the class, combining-mark stacking
+//! (bounded in practice by the field budgets), and the visible-character
+//! threats (confusables, implicit reordering) whose defense is detection,
+//! not stripping.
 //!
-//! Scope, declared (vsdd-cli #796): this policy covers the STATUS
-//! surfaces (the segment, human, machine, and broken-state renderings)
-//! and the registry strings they consume. The `vsdd init` command
-//! surface — its preflight report and init-error prints — is Layer 4's
-//! (Install) and routes its own operator-local strings (cwd, on-PATH
-//! tool versions) through this same helper when Layer 4 hardens; the
-//! cleaner is available to it, the wiring is that layer's act.
+//! Two sinks live here: [`clean_for_terminal`] cleans a string at a
+//! source boundary or a composition point, and [`clean_json_strings`]
+//! sanitizes a whole serialized machine-form value — every string value
+//! AND every object key — so no field is missed whatever the struct's
+//! shape (contract: the whole-of-output machine-form pass). Scope binds
+//! now on the Status surfaces; the `vsdd init` surface (Layer 4) and the
+//! other agent-consumed surfaces inherit the property at their owning
+//! layers, wiring this same helper.
 //!
 //! Degenerate edge, accepted (vsdd-cli #801): a schema-legal display
-//! string made ENTIRELY of format characters cleans to empty here,
+//! string made ENTIRELY of stripped code points cleans to empty here,
 //! after the schema's minLength-1 check has passed. This is safe — the
-//! render layer words an empty display value as its registered absence
-//! rather than an empty slot — so the post-clean empty is an accepted
-//! degenerate rendering, not a schema breach to re-diagnose.
+//! render layer words an empty display value as its registered absence —
+//! so the post-clean empty is an accepted degenerate rendering, not a
+//! schema breach to re-diagnose.
 
+use icu_properties::props::DefaultIgnorableCodePoint;
+use icu_properties::CodePointSetData;
 use unicode_general_category::{get_general_category, GeneralCategory};
 
-/// True for a code point that must never reach a terminal surface: a
-/// control, a format character, or a line/paragraph separator (by
-/// category, so a new Unicode format character is covered without a
-/// code change — vsdd-cli #793), OR an UNASSIGNED code point in a
-/// default-ignorable reserved range (vsdd-cli #798). The category proxy
-/// covers only ASSIGNED invisibles; a reserved-but-default-ignorable
-/// code point like U+E0000 renders invisibly on conformant terminals
-/// today while categorized `Cn` (Unassigned), so it must be stripped by
-/// range. The gate on `Unassigned` is deliberate: the same E0000-E0FFF
-/// block holds the variation selectors (U+E0100-E01EF, category `Mn`),
-/// which are legitimate text and must survive.
+/// True for a code point that must never reach a terminal or
+/// agent-consumed surface (contract: Terminal output safety, vsdd-cli
+/// #807): the display-unsafe class is the union of the control category
+/// (`Cc`), the format category (`Cf`), the line and paragraph separators
+/// (`Zl`/`Zp`), and every code point carrying the Unicode Character
+/// Database property `Default_Ignorable_Code_Point` — its reserved
+/// unassigned portion (invisible on conformant terminals) and its
+/// assigned members alike. The property subsumes what the hand-rolled
+/// classifier had to enumerate by range and by the Hangul-filler list,
+/// and it wins over combining-mark preservation: the variation selectors
+/// and the combining grapheme joiner carry the property and are stripped
+/// (the invisible-payload channel outweighs rendering fidelity on these
+/// surfaces; the ratified ruling reversing vsdd-cli #798). Combining
+/// marks that do NOT carry the property, and normal spaces (`Zs`), are
+/// preserved as legitimate text.
 pub fn is_terminal_unsafe(c: char) -> bool {
-    let category = get_general_category(c);
     matches!(
-        category,
+        get_general_category(c),
         GeneralCategory::Control
             | GeneralCategory::Format
             | GeneralCategory::LineSeparator
             | GeneralCategory::ParagraphSeparator
-    ) || (category == GeneralCategory::Unassigned && in_default_ignorable_reserved(c))
+    ) || CodePointSetData::new::<DefaultIgnorableCodePoint>().contains(c)
 }
 
-/// The default-ignorable reserved ranges (Unicode
-/// DerivedCoreProperties, the reserved half of
-/// `Default_Ignorable_Code_Point`): invisible today, unassigned today.
-fn in_default_ignorable_reserved(c: char) -> bool {
-    matches!(c, '\u{2065}' | '\u{FFF0}'..='\u{FFF8}' | '\u{E0000}'..='\u{E0FFF}')
+/// Recursively clean every string VALUE and every object KEY in a JSON
+/// tree — the machine-form output's whole-of-output pass (contract:
+/// Terminal output safety; vsdd-cli #803, key coverage ratified in
+/// #807): rather than cleaning hand-picked struct fields (which left one
+/// sibling uncovered each round), the whole serialized form passes
+/// through here, so no field is missed whatever the struct's shape. Keys
+/// are cleaned too — a map keyed by an adopter repo or milestone name
+/// carries the class in its keys exactly as a value does; a tool-authored
+/// constant key cleans to itself, so the common case rebuilds nothing.
+pub fn clean_json_strings(value: &mut serde_json::Value) {
+    match value {
+        serde_json::Value::String(s) => {
+            let cleaned = clean_for_terminal(s);
+            if &cleaned != s {
+                *s = cleaned;
+            }
+        }
+        serde_json::Value::Array(items) => items.iter_mut().for_each(clean_json_strings),
+        serde_json::Value::Object(map) => {
+            if map.keys().any(|k| clean_for_terminal(k) != *k) {
+                let old = std::mem::take(map);
+                for (k, mut v) in old {
+                    clean_json_strings(&mut v);
+                    map.insert(clean_for_terminal(&k), v);
+                }
+            } else {
+                map.values_mut().for_each(clean_json_strings);
+            }
+        }
+        _ => {}
+    }
 }
 
 /// Drop every terminal-unsafe code point; the shared cleaner for all
@@ -76,7 +118,7 @@ pub fn clean_for_terminal(s: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::clean_for_terminal;
+    use super::{clean_for_terminal, clean_json_strings};
 
     #[test]
     fn control_bytes_are_stripped() {
@@ -113,12 +155,51 @@ mod tests {
     }
 
     #[test]
-    fn variation_selectors_survive() {
-        // The E0100-E01EF block shares the tag block's page but is Mn
-        // (legitimate emoji/glyph variation), not Unassigned — kept
-        // (vsdd-cli #798).
-        let vs = "text\u{E0100}";
-        assert_eq!(clean_for_terminal(vs), vs);
+    fn variation_selectors_are_stripped() {
+        // The ratified reversal of #798 (contract: Terminal output
+        // safety): variation selectors carry Default_Ignorable_Code_Point
+        // and are a selector-run smuggling channel, so the property wins
+        // over their Mn category and they strip — the base character
+        // survives. This is the rebuild's red-gate seed: it asserted the
+        // opposite before the property swap.
+        assert_eq!(clean_for_terminal("text\u{E0100}"), "text");
+        assert_eq!(clean_for_terminal("emoji\u{2764}\u{FE0F}"), "emoji\u{2764}");
+        // The combining grapheme joiner is default-ignorable Mn too.
+        assert_eq!(clean_for_terminal("a\u{034F}b"), "ab");
+    }
+
+    #[test]
+    fn assigned_default_ignorables_are_stripped_by_property() {
+        // The Hangul fillers (category Lo) render as blank cells and are
+        // default-ignorable; the property catches them where the
+        // category proxy could not (vsdd-cli #804, subsumed by the
+        // ratified property predicate — the round-6 hand-list retired).
+        assert_eq!(clean_for_terminal("ba\u{115F}d"), "bad");
+        assert_eq!(clean_for_terminal("ba\u{1160}d"), "bad");
+        assert_eq!(clean_for_terminal("ba\u{3164}d"), "bad");
+        assert_eq!(clean_for_terminal("ba\u{FFA0}d"), "bad");
+    }
+
+    #[test]
+    fn json_sanitizer_cleans_values_and_keys_recursively() {
+        // The whole-of-output machine-form pass (contract: Terminal
+        // output safety): every string value AND every object key,
+        // recursively, so no field is missed whatever the struct's shape
+        // — the systematic fix for the field-by-field misses (#803/#805).
+        let mut v = serde_json::json!({
+            "safe\u{202E}key": ["a\u{200B}b", {"nested\u{2060}": "va\u{E0100}l"}],
+            "plain": "ok"
+        });
+        clean_json_strings(&mut v);
+        let obj = v.as_object().unwrap();
+        assert!(obj.contains_key("safekey"), "the object key is cleaned");
+        assert!(!obj.contains_key("safe\u{202E}key"));
+        let arr = obj["safekey"].as_array().unwrap();
+        assert_eq!(arr[0], serde_json::Value::String("ab".into()));
+        let nested = arr[1].as_object().unwrap();
+        assert!(nested.contains_key("nested"), "a nested key is cleaned");
+        assert_eq!(nested["nested"], serde_json::Value::String("val".into()));
+        assert_eq!(obj["plain"], serde_json::Value::String("ok".into()));
     }
 
     #[test]

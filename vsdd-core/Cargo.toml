@@ -27,5 +27,11 @@ regex = "1"
 # (vsdd-cli #721, #726; PE note on the #720 fix-pass record).
 tempfile = "3"
 unicode-general-category = "1"
+# The Default_Ignorable_Code_Point property from the Unicode Character
+# Database (DerivedCoreProperties), the class the hand-rolled classifier
+# had to enumerate (vsdd-cli #807 ratified requirement — Terminal output
+# safety). Already resolved in the tree via jsonschema; compiled_data
+# feature carries the property table in-binary, no runtime data load.
+icu_properties = "2"
 
 [dev-dependencies]

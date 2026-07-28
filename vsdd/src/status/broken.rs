@@ -61,7 +61,12 @@ pub fn compose_broken_state(
     // enum member — no adopter content — but cleaning it too costs
     // nothing and keeps the rule uniform.
     let message = clean_for_terminal(&diagnostic.message);
-    let mut human = format!("error[{}]: {message}\n", diagnostic.machine_token);
+    // The machine token is a registered read-failure kind (tool-authored,
+    // no adopter content), but the rule is uniform — the human form cleans
+    // it exactly as the machine form does (vsdd-cli #805: the human
+    // error[token] rendered it raw while the machine form cleaned it).
+    let machine_token = clean_for_terminal(&diagnostic.machine_token);
+    let mut human = format!("error[{machine_token}]: {message}\n");
     let shown_path = clean_for_terminal(&display_path(diagnostic));
     match diagnostic.location {
         Some((line, column)) => human.push_str(&format!(
@@ -83,14 +88,17 @@ pub fn compose_broken_state(
     }
     human.push_str(&format!("  = last boundary: {boundary}\n"));
 
-    // The machine form is a terminal surface too (it prints to stdout
-    // and an agent consumes it): the same cleaning the human form gets
-    // (vsdd-cli #799). serde escapes controls but not the bidi/tag
-    // class, so the dynamic strings reuse the cleaned values, and the
-    // registered strings are already clean from the loader's PostLoad.
-    let machine = json!({
+    // The machine form is a terminal surface too (it prints to stdout and
+    // an agent consumes it). The broken-state composition is the third
+    // cleaning sink (contract: Terminal output safety, vsdd-cli #807): the
+    // read failed, so no source boundary fired over this payload. A
+    // whole-of-output pass over the built value is the systematic
+    // guarantee — every string and key cleaned regardless of shape — so a
+    // field added later cannot escape (the field-by-field misses this
+    // retires, #799/#805).
+    let mut machine = json!({
         "state_unreadable": {
-            "kind": clean_for_terminal(&diagnostic.machine_token),
+            "kind": machine_token,
             "diagnostic": {
                 "file": shown_path,
                 "message": message,
@@ -101,6 +109,7 @@ pub fn compose_broken_state(
         },
         "last_boundary": boundary,
     });
+    vsdd_core::text::clean_json_strings(&mut machine);
 
     BrokenSurfaces {
         segment: data.broken_state_mark.clone(),
