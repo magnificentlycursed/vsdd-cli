@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1108,
+  "next_comment_id": 1109,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8504,7 +8504,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-28T17:20:53.712065Z",
+      "updated_at": "2026-07-28T17:43:00.462705Z",
       "labels": [
         "spec-amendment"
       ],
@@ -8580,6 +8580,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAkeNouXK/WZ8k43X1X3h8r+rtWZSUhHtJN55fp4uKkeucbal2wKxgSmHP0RCmEmoXaxjwHia1xabcv4tiPZitDg=="
+        },
+        "cc96d673-4007-4ea1-9f61-c9323a3d450e": {
+          "display_id": 1108,
+          "author": "xqjG",
+          "content": "RE-VERIFY (security + register) — BOTH stop-signal-holds. Security: both prior substantive findings genuinely closed (surface list now names waiver + cost surfaces with instances-marker + never-unbound clause; mdatron diagnostic stream homed on the raise); fresh full-text scan found no blocking/substantive defect; 3 minors. Register: prior_findings_resolved=true; 3 minors. STOP SIGNAL HOLDS across all three lenses (architecture held on v2; security + register hold on v3/v4).\n\nv4 POLISH (folded the worthwhile minors, no re-verify needed — verifiers' own proposed fixes on already-held text): 'enforces'->'carries' residue in insertion (3); dropped the factually-loose 'four categories the property does not itself cover' (Cf overlaps the property) — insertion (4) now states the class union cleanly; added the mechanism-note clause to the Revision entry (chronicle completeness). Self-caught and fixed a Zs re-introduction while editing insertion (4). Skipped: process-input latent seam (universal statement + never-unbound clause cover it) and the git-query-output naming nit (complement-of-constants definition governs; list is instances).\n\nDraft .design/terminal-output-safety.md is RATIFY-READY. On ratification: apply the 5 verbatim insertions + Revision line (mdatron verify), commit citing this review's ratified decision record (the amendment-discipline format-carry's second exercised instance), unblock the Layer-3 rebuild, close #807. AWAITING OPERATOR RATIFICATION (the phase exit).",
+          "created_at": "2026-07-28T17:43:00.447785Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAnGzcVEWylfOoqxu8k47IeEkemWv5foC2rWITY73Q1Un1JL6IxLkyviIRcYJnsJDsXtwwuvATcSVSf/7l49ueBw=="
         }
       }
     },
@@ -25538,11 +25547,16 @@
       "agent_id": "xqjG",
       "agent_seq": 556,
       "timestamp": "2026-07-28T17:20:53.712065Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 557,
+      "timestamp": "2026-07-28T17:43:00.462705Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T17:20:53.712065Z",
+    "timestamp": "2026-07-28T17:43:00.462705Z",
     "agent_id": "xqjG",
-    "agent_seq": 556
+    "agent_seq": 557
   }
 }
