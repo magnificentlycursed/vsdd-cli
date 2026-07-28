@@ -1,5 +1,5 @@
 {
-  "next_display_id": 814,
+  "next_display_id": 815,
   "next_comment_id": 1118,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -37,6 +37,7 @@
     "0775bdc5-5f0d-491a-b84a-ad7a6aab717d": 305,
     "089c6e9a-09dd-46e2-b475-384de198c3e0": 199,
     "08f0cde3-f188-4bea-9a25-b3ea49b681ee": 603,
+    "08f99aec-f175-4b22-8233-1655f00e0c30": 814,
     "08fd88db-303a-4206-bfd0-6ee363b5c8a7": 97,
     "09146280-3de6-490a-bfcb-9ae3087c9d07": 69,
     "092853f9-6db6-4d3e-9ae2-a1e7da9e057c": 248,
@@ -1738,6 +1739,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoeucbSmlfwH0IEEj3MKbk1SH+qBgCfAqLaXTCqRMdLg3v3YD2RBcsbyMc2oJnXj5le4sXD7y8XC7ww4LWFILAQ=="
         }
       }
+    },
+    "08f99aec-f175-4b22-8233-1655f00e0c30": {
+      "uuid": "08f99aec-f175-4b22-8233-1655f00e0c30",
+      "display_id": 814,
+      "title": "Phase 5, Layer 3: mutation + property testing over the pure core (per-layer cadence ruling 2026-07-28)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-28T21:23:02.924622Z",
+      "updated_at": "2026-07-28T21:23:02.924622Z"
     },
     "08fd88db-303a-4206-bfd0-6ee363b5c8a7": {
       "uuid": "08fd88db-303a-4206-bfd0-6ee363b5c8a7",
@@ -25760,11 +25771,16 @@
       "agent_id": "xqjG",
       "agent_seq": 581,
       "timestamp": "2026-07-28T21:05:47.704714Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 582,
+      "timestamp": "2026-07-28T21:23:02.924622Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:05:47.704714Z",
+    "timestamp": "2026-07-28T21:23:02.924622Z",
     "agent_id": "xqjG",
-    "agent_seq": 581
+    "agent_seq": 582
   }
 }
