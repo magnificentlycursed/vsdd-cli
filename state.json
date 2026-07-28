@@ -13780,11 +13780,12 @@
       "uuid": "9483fa7a-0f91-4485-8f60-abef77a51e26",
       "display_id": 803,
       "title": "Layer 3 round 6 major security: config_inputs_hash — the 4th ActiveComposition string field — is uncleaned at read_state and reaches the machine form raw; #799 cleaned three of the four sibling fields and missed it",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T17:33:46.184704Z",
-      "updated_at": "2026-07-28T21:03:23.120842Z",
+      "updated_at": "2026-07-28T21:03:29.580539Z",
+      "closed_at": "2026-07-28T21:03:29.580531Z",
       "comments": {
         "0d72552d-855a-4d27-8272-23f380c14014": {
           "display_id": 1113,
@@ -25664,11 +25665,16 @@
       "agent_id": "xqjG",
       "agent_seq": 567,
       "timestamp": "2026-07-28T21:03:23.120842Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 568,
+      "timestamp": "2026-07-28T21:03:29.580539Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:03:23.120842Z",
+    "timestamp": "2026-07-28T21:03:29.580539Z",
     "agent_id": "xqjG",
-    "agent_seq": 567
+    "agent_seq": 568
   }
 }
