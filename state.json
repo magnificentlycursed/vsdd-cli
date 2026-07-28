@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1105,
+  "next_comment_id": 1106,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8504,11 +8504,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-28T03:15:10.387287Z",
+      "updated_at": "2026-07-28T17:02:21.559067Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "3935b842-5e7e-4a0f-9efb-a573d350c100": {
+          "display_id": 1105,
+          "author": "xqjG",
+          "content": "OPERATOR TRIAGE — 4 rulings (2026-07-28): D1 STRIP variation selectors (the Default_Ignorable property wins over combining-mark preservation; the class is Cc|Cf|Zl|Zp|Default_Ignorable_Code_Point, the base char survives, invisible payload channel closed; REVERSES #798, inverts variation_selectors_survive). D2 BIND at owning layer (Status now, generated context + gate outputs + init at their layers). D4 STANDALONE requirement 'Terminal output safety' with a leading name + Trust-boundaries cross-reference for the raise and peer framing. D9 confusables (CVE-2021-42694) OUT OF SCOPE as a DECLARED residual — stripping is the wrong mechanism for visible chars; confusable-skeleton detection routed to the shared-primitive raise; CVE citation split (cite 2021-42574 for the bidi half covered). Fix pass now folds these + all fix-pass findings + a verbatim 'Proposed contract text' section (D12) so the register is reviewed against shipping words.",
+          "created_at": "2026-07-28T17:02:21.545417Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA85esw6MY8nNReLXlUTjjoMfZKDCTbdnMCweCYkPn/ALtFA2xD68JboICDljrO8MrQZvNtZdE1x8KOi5Wivg6DA=="
+        },
         "57e893cc-5f71-4f10-8609-2da711b14a83": {
           "display_id": 1103,
           "author": "xqjG",
@@ -25496,11 +25505,16 @@
       "agent_id": "xqjG",
       "agent_seq": 553,
       "timestamp": "2026-07-28T03:15:10.387287Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 554,
+      "timestamp": "2026-07-28T17:02:21.559067Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T03:15:10.387287Z",
+    "timestamp": "2026-07-28T17:02:21.559067Z",
     "agent_id": "xqjG",
-    "agent_seq": 553
+    "agent_seq": 554
   }
 }
