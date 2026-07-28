@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Layer 2 amendment increment: the unrouted-findings process-integrity query the #810 amendment placed — a fix-closed finding (not an exempt disposition closure) carrying no filed routing files the kind, inside a forward-only universe that excludes records closed before the #810 ratification boundary. FindingRecord gains routing_present and closed_before_ratification (the universe datum, default true so the sealed milestone-#5 fixtures stay untouched); the snapshot-schema audit mirror is re-pinned; the convergence corpus grows 20→22 with an operator-adopted red-gate seed pair (#811)
 - Phase 2b execution, Layer 3: the three renderings and the wiring script implemented to green — segment, human and machine forms with the facets blocks, broken-state on all three surfaces with the last-boundary truth, conduct instruments, multi-repo composition, the wiring script, and the vsdd status command (#773)
 - Phase 2b execution, Layer 2: implement to green against the convergence corpus (#741)
 - Phase 2a execution, Layer 2: red-gate suite for snapshot acquisition, phase answer, and corroboration (#738)
