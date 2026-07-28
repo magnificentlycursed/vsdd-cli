@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1130,
+  "next_comment_id": 1131,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10314,7 +10314,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-28T21:43:35.156944Z",
+      "updated_at": "2026-07-28T22:24:58.274990Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10336,6 +10336,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKJUoepeTZWq/3vEDLHEBhaU7LlMO48DDPITrVQeoLNT+V5+c2mUJUJLXMOaGu4sgLviCz09KIhN3Wua4/tE5BA=="
+        },
+        "96442c51-6b23-4060-960c-3f7338477559": {
+          "display_id": 1130,
+          "author": "xqjG",
+          "content": "PRE-PHASE COMPOSITION DECLARATION (phase-1a primer, emitted at phase entry — the bootstrap-carried form of PhaseCompositionDeclared; its absence is what fires VSDD-E0050, and per the operator this very declaration is one of the mechanism-invocations the product audits):\n\nphase: phase-1a\ncomposed_domains: [solution-owner, solution-architect, software-engineer, quality-engineer, platform-engineer, performance-engineer, ai-engineer]\nsupplements_in_scope: [claude-code-cli]\ncomposition_mode: skill-interactive\noperator_confirmation: confirmed (contributors operator-named 2026-07-28: AI Engineer + Claude Code supplement; baseline per the primer; SA-central for a decomposition/controls design)\ndeclared_at: 2026-07-28T22:24:57Z\nnote: corrective re-entry — the prior agent-first-controls draft bypassed this. Documentation Reviewer + Technical Writer join at the cold review (reviewer mode). Skills loaded this session: /vsdd-phase-1a, /design, /vsdd-domain-solution-owner, /vsdd-domain-solution-architect, /vsdd-domain-ai-engineer; claude-code-cli supplement applied.",
+          "created_at": "2026-07-28T22:24:58.259885Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJ3tA1oEzpTZcPA5R6EfoVxyrgo4kVF1zxMgCeRCrNRMK/pfxjF1SMwxlhwLK5TU06SP0UWk5pl1PL/LXlbtEDw=="
         },
         "e7d5f091-a6e4-4407-9129-db54c854c982": {
           "display_id": 1126,
@@ -26068,11 +26077,16 @@
       "agent_id": "xqjG",
       "agent_seq": 612,
       "timestamp": "2026-07-28T21:43:35.156944Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 613,
+      "timestamp": "2026-07-28T22:24:58.274990Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:43:35.156944Z",
+    "timestamp": "2026-07-28T22:24:58.274990Z",
     "agent_id": "xqjG",
-    "agent_seq": 612
+    "agent_seq": 613
   }
 }
