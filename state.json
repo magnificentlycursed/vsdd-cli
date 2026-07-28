@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1106,
+  "next_comment_id": 1107,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8504,7 +8504,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-28T17:02:21.559067Z",
+      "updated_at": "2026-07-28T17:06:02.227623Z",
       "labels": [
         "spec-amendment"
       ],
@@ -8535,6 +8535,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABATTCXPMDm4JkYKNEi3ilmQjhuXI2OkPQbl8l8ruaexdxnB4nRCerulr4cez5xeUvPEtx52kLYOvHU45bd4MtDAA=="
+        },
+        "8e255ab8-6f5a-4df8-be24-facd9040f262": {
+          "display_id": 1106,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY ROUND (declared before spend). v2 draft written (.design/terminal-output-safety.md) — restructured to a standalone requirement, all 4 rulings folded, all fix-pass findings addressed, verbatim 'Proposed contract text' added (5 insertions). Verify vehicle: Workflow, 3 higher-dialed adversarial verifiers, fable-5, HIGH effort. Charges: (1) finding-resolution + architecture — confirm each of the 24 triaged findings resolved and the 4 rulings correctly reflected, flag any new defect; (2) security — confirm the class union + strip-VS precedence + 3 sinks + crate correction + confusables-residual actually close the raised threat gaps; (3) register — check the verbatim contract text against the register bar (no coined labels, expanded acronyms, plain domain names, 'Trojan Source' unhyphenated, Revision-entry chronicle shape). Each returns verdict stop-signal-holds vs needs-another-round + any open findings. expected_cost_band: 0-8 open findings, 80k-180k tokens. Clean terminal round -> operator ratification; residual blockers -> fix + re-verify.",
+          "created_at": "2026-07-28T17:06:02.214565Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA5u4pyhhdQlwqzB2nMMtY5asXChOcvmYD74CQbvwHmZzk8/uF+08WmMAe+QkUk1yFC3CkJAYBpdK9h+loC9P9CQ=="
         },
         "a1bcce0a-ae9e-4db4-8097-641a9422eec8": {
           "display_id": 1104,
@@ -25510,11 +25519,16 @@
       "agent_id": "xqjG",
       "agent_seq": 554,
       "timestamp": "2026-07-28T17:02:21.559067Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 555,
+      "timestamp": "2026-07-28T17:06:02.227623Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T17:02:21.559067Z",
+    "timestamp": "2026-07-28T17:06:02.227623Z",
     "agent_id": "xqjG",
-    "agent_seq": 554
+    "agent_seq": 555
   }
 }
