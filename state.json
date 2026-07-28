@@ -1,6 +1,6 @@
 {
   "next_display_id": 815,
-  "next_comment_id": 1118,
+  "next_comment_id": 1119,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -1752,10 +1752,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:23:02.924622Z",
-      "updated_at": "2026-07-28T21:23:08.317555Z",
+      "updated_at": "2026-07-28T21:23:22.168685Z",
       "labels": [
         "feature"
-      ]
+      ],
+      "comments": {
+        "de8f36d9-9da3-43a7-b97f-a9c25d96e388": {
+          "display_id": 1118,
+          "author": "xqjG",
+          "content": "OPERATOR RULING (2026-07-28): phase 5 (mutation/fuzz/property) is a PER-LAYER obligation, not a project-level pass — resolves the contract's phase-5-candidates ambiguity. Applies to Layer 3 now (this issue). CONSEQUENCE flagged: Layers 1 and 2 closed without phase 5 and are retroactively non-compliant under this ruling — operator decides whether they need retroactive phase-5 increments (forward-only would let them stand as recorded; the ruling's cadence binds from here). FOLLOW-UP: the contract's Verification-architecture phase-5 language should be clarified to state per-layer cadence — a small spec amendment through the owned process, not a hand-edit. Milestone #6 (Layer 3) stays closed; this phase-5 pass is a tracked increment under the boundary (the #811 precedent), not a reopen.",
+          "created_at": "2026-07-28T21:23:22.154840Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA4D/g1m+BDBhBM5BVIkQPZTW2tgvJEdWO0PiR8UOZRaq122kPefFy7f5wBYOCE3PqW7KjmMux+4VGdI3iZtayAA=="
+        }
+      }
     },
     "08fd88db-303a-4206-bfd0-6ee363b5c8a7": {
       "uuid": "08fd88db-303a-4206-bfd0-6ee363b5c8a7",
@@ -25793,11 +25804,16 @@
       "agent_id": "xqjG",
       "agent_seq": 584,
       "timestamp": "2026-07-28T21:23:15.019093Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 585,
+      "timestamp": "2026-07-28T21:23:22.168685Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:23:15.019093Z",
+    "timestamp": "2026-07-28T21:23:22.168685Z",
     "agent_id": "xqjG",
-    "agent_seq": 584
+    "agent_seq": 585
   }
 }
