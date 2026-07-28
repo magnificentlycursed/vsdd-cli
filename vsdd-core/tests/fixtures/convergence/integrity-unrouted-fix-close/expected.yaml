@@ -1,0 +1,18 @@
+# ADOPTED ORACLE (operator adoption 2026-07-27, recorded on vsdd-cli
+# #811 — the phase-2a exit act for this amendment increment; drafted
+# under #811).
+# The RED-GATE SEED for the unrouted-findings query (contract: Status —
+# the process-integrity query the re-sequence-enforcement-spine amendment
+# placed at Layer 2; vsdd-cli #810). A finding closed by FIX (closed, no
+# disposition) that carries no filed routing is the enforcement gap this
+# whole thread exists to close. It fires the unrouted-findings kind and
+# nothing else: the evidence reference is present, so the
+# closed-findings-missing-evidence kind stays silent — the pair with
+# integrity-routed-fix-close pins that the check fires on absence of
+# routing, not on the fix-close alone.
+phase: phase-5
+layer: 2
+next_action: 5-run-hardening
+degraded: null
+integrity_findings:
+  - unrouted-findings

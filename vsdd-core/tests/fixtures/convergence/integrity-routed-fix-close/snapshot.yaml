@@ -1,0 +1,17 @@
+acquisition_outcome: acquired
+milestones:
+  - {name: "layer 2: snapshot acquisition, phase answer, and corroboration", state: open, is_active: true}
+findings:
+  # The CLEAN NEGATIVE paired with integrity-unrouted-fix-close: an
+  # identical fix-close inside the universe that DOES carry a filed
+  # routing (routing_present true). The unrouted-findings kind must stay
+  # silent — the pair pins that the check fires on the absence of routing,
+  # not on the fix-close alone.
+  - {handle: "the routed fix-close", status: closed, owner: quality-engineer, validator: software-engineer, evidence_reference_present: true, disposition: null, routing_present: true, closed_before_ratification: false}
+round_manifests: []
+round_children: []
+comment_handles: []
+display_repo_name: vsdd-cli
+display_session: "session 4"
+display_work_item: "#811 unrouted-findings query"
+display_active_milestone: "layer 2: snapshot acquisition, phase answer, and corroboration (0 open)"

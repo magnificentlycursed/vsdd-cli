@@ -36,6 +36,28 @@ pub struct FindingRecord {
     pub evidence_reference_present: bool,
     #[serde(default)]
     pub disposition: Option<String>,
+    /// Whether a routing `plan` comment was filed for this finding — the
+    /// datum the unrouted-findings process-integrity query reads (contract:
+    /// Status; vsdd-cli #810/#811). Bootstrap-empty like the rest of the
+    /// tracker join: the acquisition populates it when the Layer 6
+    /// finding-query lands; the convergence corpus supplies it for the pure
+    /// check meanwhile.
+    #[serde(default)]
+    pub routing_present: bool,
+    /// The forward-only universe boundary (contract: Status, REQ-5 of the
+    /// re-sequence-enforcement-spine amendment; vsdd-cli #810): a finding
+    /// closed BEFORE the routing amendment's ratification boundary sits
+    /// outside the query's universe and is never flagged. It defaults
+    /// `true` so records predating closure-time capture — the fixed-baseline
+    /// fixtures among them — stay outside the universe; the acquisition sets
+    /// it `false` for findings closed at or after the boundary (and for open
+    /// findings, which are in the universe) when the Layer 6 join lands.
+    #[serde(default = "closed_before_ratification_default")]
+    pub closed_before_ratification: bool,
+}
+
+fn closed_before_ratification_default() -> bool {
+    true
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]

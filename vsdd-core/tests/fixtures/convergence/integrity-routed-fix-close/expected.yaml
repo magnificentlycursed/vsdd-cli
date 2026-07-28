@@ -1,0 +1,12 @@
+# ADOPTED ORACLE (operator adoption 2026-07-27, recorded on vsdd-cli
+# #811 — the phase-2a exit act for this amendment increment; drafted
+# under #811).
+# The CLEAN NEGATIVE paired with integrity-unrouted-fix-close: a fix-close
+# that carries a filed routing is lawful, so the unrouted-findings kind
+# must NOT file. The pair pins that the check fires on the conjunction
+# (fix-close AND in-universe AND no routing), not on the fix-close alone.
+phase: phase-5
+layer: 2
+next_action: 5-run-hardening
+degraded: null
+integrity_findings: []

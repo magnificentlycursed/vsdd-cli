@@ -5,7 +5,7 @@ status: draft-proposal
 snapshot_fields:
   - {field: acquisition_outcome, contents: "acquired, absent, or unusable — the corroboration condition the degraded-kind derivation branches on"}
   - {field: milestones, contents: "per milestone: exact name, state, is-active"}
-  - {field: findings, contents: "per finding under the active scope: handle, status, owner domain or absent, validator domain or absent, evidence-reference presence for closed records, disposition where closed"}
+  - {field: findings, contents: "per finding under the active scope: handle, status, owner domain or absent, validator domain or absent, evidence-reference presence for closed records, disposition where closed, filed-routing presence, and whether the record closed before the routing amendment's ratification boundary (the unrouted-findings query's forward-only universe datum)"}
   - {field: round_manifests, contents: "per round issue: handle, the manifest's declared finding count"}
   - {field: round_children, contents: "per round issue: the tracked child count"}
   - {field: comment_handles, contents: "per handle cited in result comments: the handle text and whether it resolves"}
@@ -19,6 +19,7 @@ audit:
     - {check: unresolvable-handles-in-result-comments, consumes: comment_handles, materialized: true}
     - {check: findings-missing-owner-or-validator, consumes: findings, materialized: true}
     - {check: closed-findings-missing-evidence, consumes: findings, materialized: true}
+    - {check: unrouted-findings, consumes: findings, materialized: true}
     - {check: phase-pointer-against-milestone-state, consumes: "milestones + the state artifact (the derivation's first input)", materialized: true}
     - {check: degraded-kind-derivation, consumes: acquisition_outcome, materialized: true}
   shell_side_checks:

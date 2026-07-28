@@ -15,7 +15,14 @@
 //! tracker-join fields (findings, round manifests and children, comment
 //! handles) acquire EMPTY until their query consumers land with the
 //! parity and lifecycle gates (Layer 6) — the convergence corpus
-//! supplies those fields for the pure checks meanwhile. The milestone
+//! supplies those fields for the pure checks meanwhile. The finding
+//! record's routing_present and closed_before_ratification datums (the
+//! unrouted-findings query's inputs; vsdd-cli #811) ride that same Layer
+//! 6 join: the routing presence from the finding's `plan` comments, and
+//! the forward-only universe boundary (REQ-5) applied here at
+//! acquisition, keyed to the routing amendment's ratification boundary,
+//! so a finding closed before it acquires closed_before_ratification
+//! true and stays outside the query's universe. The milestone
 //! list is a human-format parse (no JSON surface exists upstream);
 //! output that fails the parse IS the unusable outcome, never a guess
 //! (vsdd-cli #748). DECLARED CONFLATION (vsdd-cli #753): the session

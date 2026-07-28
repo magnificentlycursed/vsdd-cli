@@ -2,7 +2,7 @@
 //! convergence corpus (vsdd-cli #738).
 //!
 //! Phase 2a suite: fails executed against the pre-implementation stubs;
-//! 2b turns it green. All twenty fixtures carry OPERATOR-ADOPTED
+//! 2b turns it green. Twenty of the fixtures carry OPERATOR-ADOPTED
 //! oracles (both adoptions recorded on vsdd-cli #738: the original
 //! eleven 2026-07-22, and the second batch the same day covering the
 //! four round-1 additions drafted under #749 and the five round-2
@@ -11,6 +11,15 @@
 //! integrity kind's discrimination). The runner compares every
 //! field by exact match and integrity findings at the kind-set grain,
 //! exactly the Convergence test's comparison.
+//!
+//! The final two — integrity-unrouted-fix-close and its clean-negative
+//! pair integrity-routed-fix-close — are the vsdd-cli #811 amendment
+//! increment: the fresh red-gate seed for the unrouted-findings query
+//! the re-sequence-enforcement-spine amendment placed at Layer 2
+//! (vsdd-cli #810). They enter as a tracked increment under the
+//! fix-scale gate, NOT as a reopen of milestone #5's fixed baseline;
+//! their oracles were operator-adopted 2026-07-27 (recorded on vsdd-cli
+//! #811, the increment's phase-2a exit act).
 
 use std::collections::BTreeSet;
 use std::fs;
@@ -102,8 +111,12 @@ fn every_corpus_fixture_matches_its_reference_answer() {
         ran += 1;
     }
     // Exact, not at-least (vsdd-cli #749): a silently skipped fixture
-    // directory would otherwise read as coverage.
-    assert_eq!(ran, 20, "the corpus holds exactly its twenty fixtures");
+    // directory would otherwise read as coverage. Twenty-two since the
+    // #811 amendment increment (the unrouted-findings seed pair).
+    assert_eq!(
+        ran, 22,
+        "the corpus holds exactly its twenty-two fixtures"
+    );
 }
 
 #[test]

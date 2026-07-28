@@ -61,6 +61,23 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
         push("closed-findings-missing-evidence", &mut kinds);
     }
 
+    // the unrouted-findings query (contract: Status — the process-integrity
+    // query the re-sequence-enforcement-spine amendment placed at Layer 2;
+    // vsdd-cli #810/#811): a finding closed by FIX — closed, and not an
+    // exempt disposition closure — that carries no filed routing. The
+    // forward-only universe (REQ-5) excludes findings closed before the
+    // routing amendment's ratification boundary, carried on the record's
+    // `closed_before_ratification` datum. An integrity finding that never
+    // degrades the answer, exactly like its siblings.
+    if snapshot.findings.iter().any(|f| {
+        f.status == "closed"
+            && f.disposition.is_none()
+            && !f.closed_before_ratification
+            && !f.routing_present
+    }) {
+        push("unrouted-findings", &mut kinds);
+    }
+
     // the phase pointer against milestone state: active milestones exist
     // and the pointer's milestone is not among them.
     let actives: Vec<&str> = snapshot
