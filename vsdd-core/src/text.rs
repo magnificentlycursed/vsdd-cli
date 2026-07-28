@@ -86,6 +86,11 @@ pub fn is_terminal_unsafe(c: char) -> bool {
 /// are cleaned too — a map keyed by an adopter repo or milestone name
 /// carries the class in its keys exactly as a value does; a tool-authored
 /// constant key cleans to itself, so the common case rebuilds nothing.
+/// Collision disposition: two keys that clean to the same string collapse
+/// to one entry, the last iterated winning (never a panic). This is
+/// reachable only for hostile keys carrying the class — where collapsing
+/// the colliding pair is the safe disposition, not a data loss to
+/// preserve — since tool-authored constant keys never collide.
 pub fn clean_json_strings(value: &mut serde_json::Value) {
     match value {
         serde_json::Value::String(s) => {
@@ -200,6 +205,18 @@ mod tests {
         assert!(nested.contains_key("nested"), "a nested key is cleaned");
         assert_eq!(nested["nested"], serde_json::Value::String("val".into()));
         assert_eq!(obj["plain"], serde_json::Value::String("ok".into()));
+    }
+
+    #[test]
+    fn json_sanitizer_collapses_colliding_cleaned_keys_without_panic() {
+        // Hostile edge (verify-round finding, both lenses): two keys that
+        // clean to the same string collapse to one entry — last iterated
+        // wins, never a panic. The documented residual, pinned.
+        let mut v = serde_json::json!({"k": 1, "k\u{200B}": 2});
+        clean_json_strings(&mut v);
+        let obj = v.as_object().unwrap();
+        assert_eq!(obj.len(), 1, "colliding cleaned keys collapse to one");
+        assert!(obj.contains_key("k"));
     }
 
     #[test]

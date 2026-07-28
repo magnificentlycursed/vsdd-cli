@@ -52,7 +52,13 @@ pub fn compose_broken_state(
         .read_failure_kinds
         .iter()
         .find(|k| k.machine_token == diagnostic.machine_token);
-    let boundary = last_boundary.unwrap_or(NO_BOUNDARY);
+    // Cleaned at composition too (contract: Terminal output safety, the
+    // third sink; vsdd-cli #807): the boundary subject is source-cleaned
+    // at acquisition today, but this pure function must not let a future
+    // caller passing an un-source-cleaned subject leak the class to the
+    // human form, which has no whole-of-output backstop (the machine form
+    // does). Idempotent on the already-clean value.
+    let boundary = clean_for_terminal(last_boundary.unwrap_or(NO_BOUNDARY));
 
     // The diagnostic's message and kind carry state-sourced text (a
     // malformed state.yaml echoes its own bytes); they cross the
