@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1107,
+  "next_comment_id": 1108,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8504,11 +8504,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-28T17:06:02.227623Z",
+      "updated_at": "2026-07-28T17:20:53.712065Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "31a5489d-0a32-4348-90bc-bb9437f4d03f": {
+          "display_id": 1107,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY ROUND 1 — 2/3 needs-another-round (resolution+architecture: stop-signal-holds w/ 3 minors; security + register: needs-another-round). FIX PASS to v3 (all one-clause edits, no ruling contradicted):\nSUBSTANTIVE: (1) surface-binding list was closed — added the instances-marker AND named the waiver-enumeration and cost-query/advisory surfaces [Security]; (2) mdatron's hook-relayed diagnostic stream named as a second companion on the shared-primitive raise — the estate's third hidden-content emitter now homed [Security]; (3) Revision entry 'separator categories' over-included Zs (preserved) -> 'control and format categories and the line and paragraph separators' [Register].\nMINORS folded: 'reserved half'->'portion'; residuals 'Three'->'Edges' + restored 'bounded in practice by' hedge; implicit-bidi reordering named as a declared residual beside confusables (threat sentence + Out-of-scope); 'enforces'->'carries' (inbound is safe-fetch-server + conduct, not fully mechanized); insertion-4 antecedent 'the property does not itself cover' + backticked DerivedCoreProperties; 'check-needs'->'check needs'; 'settings probe'->'substrate settings file'; AC-2/AC-8/REQ-8/Q5 aligned so the checklist matches the shipping words (crate CLASS in contract, icu_properties candidate in the decision record). RE-VERIFY: security + register re-run (architecture verdict carries forward, edits corrective-only).",
+          "created_at": "2026-07-28T17:20:53.698937Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+bKpJF2nop1wDJkGytDX0xin4lPXpTZnzTvrjTXv1izrXZ6gn0+6rx4F3Cab/EEYI14cnywmbi/2W/8mFjvNCQ=="
+        },
         "3935b842-5e7e-4a0f-9efb-a573d350c100": {
           "display_id": 1105,
           "author": "xqjG",
@@ -25524,11 +25533,16 @@
       "agent_id": "xqjG",
       "agent_seq": 555,
       "timestamp": "2026-07-28T17:06:02.227623Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 556,
+      "timestamp": "2026-07-28T17:20:53.712065Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T17:06:02.227623Z",
+    "timestamp": "2026-07-28T17:20:53.712065Z",
     "agent_id": "xqjG",
-    "agent_seq": 555
+    "agent_seq": 556
   }
 }
