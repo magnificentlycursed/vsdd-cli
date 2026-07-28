@@ -1663,11 +1663,12 @@
       "uuid": "06fcba1d-8071-46a0-a588-b1a0579c0db2",
       "display_id": 804,
       "title": "Layer 3 round 6 minor security+SE convergent: assigned default-ignorable Hangul fillers (U+115F, U+1160, U+3164, U+FFA0, category Lo) pass the Cc/Cf/Zl/Zp+unassigned filter and reach every surface — invisible, no declared preservation decision covers them",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-27T17:34:00.197654Z",
-      "updated_at": "2026-07-28T21:03:37.409103Z",
+      "updated_at": "2026-07-28T21:03:43.273206Z",
+      "closed_at": "2026-07-28T21:03:43.273197Z",
       "comments": {
         "9ec75ec6-4247-4113-b974-3a3d4b46fc5a": {
           "display_id": 1114,
@@ -25684,11 +25685,16 @@
       "agent_id": "xqjG",
       "agent_seq": 569,
       "timestamp": "2026-07-28T21:03:37.409103Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 570,
+      "timestamp": "2026-07-28T21:03:43.273206Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:03:37.409103Z",
+    "timestamp": "2026-07-28T21:03:43.273206Z",
     "agent_id": "xqjG",
-    "agent_seq": 569
+    "agent_seq": 570
   }
 }
