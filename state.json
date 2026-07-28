@@ -1,5 +1,5 @@
 {
-  "next_display_id": 816,
+  "next_display_id": 817,
   "next_comment_id": 1127,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -123,6 +123,7 @@
     "204800b4-ce52-4384-a41c-f558c7ed7a91": 688,
     "2058cb44-8c51-4744-9ee9-f229a7d8e3da": 463,
     "210870d8-4340-47e4-8f4d-54d08b9ae2af": 428,
+    "211eda62-996e-45f9-9c02-92149684df45": 816,
     "21501164-cc79-47cc-aaba-72f07b610148": 95,
     "21736494-3f1f-4ea2-9a4d-ac6d18808225": 41,
     "21be0cef-45fc-48a6-9c0e-99887f29d9dc": 182,
@@ -3994,6 +3995,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqga4gP4uy8iZRTiInsZ4gkx1jYFKp5MK9ZPAkPwFE798/8Cft5S3YbTmxoIeJECJQkOcchttvaufpnJUxwEIAw=="
         }
       }
+    },
+    "211eda62-996e-45f9-9c02-92149684df45": {
+      "uuid": "211eda62-996e-45f9-9c02-92149684df45",
+      "display_id": 816,
+      "title": "mdatron v0.2.0 integration: breaking config.yaml requirement, three raises shipped, new control surfaces, and the reciprocal cold-read request",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-28T21:37:51.044269Z",
+      "updated_at": "2026-07-28T21:37:51.044269Z"
     },
     "21501164-cc79-47cc-aaba-72f07b610148": {
       "uuid": "21501164-cc79-47cc-aaba-72f07b610148",
@@ -25991,11 +26002,16 @@
       "agent_id": "xqjG",
       "agent_seq": 606,
       "timestamp": "2026-07-28T21:33:26.665619Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 607,
+      "timestamp": "2026-07-28T21:37:51.044269Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:33:26.665619Z",
+    "timestamp": "2026-07-28T21:37:51.044269Z",
     "agent_id": "xqjG",
-    "agent_seq": 606
+    "agent_seq": 607
   }
 }
