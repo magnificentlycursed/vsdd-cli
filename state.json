@@ -1,6 +1,6 @@
 {
   "next_display_id": 814,
-  "next_comment_id": 1111,
+  "next_comment_id": 1112,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5770,10 +5770,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T20:38:16.888150Z",
-      "updated_at": "2026-07-28T20:38:24.116220Z",
+      "updated_at": "2026-07-28T20:52:31.982438Z",
       "labels": [
         "feature"
-      ]
+      ],
+      "comments": {
+        "d7614942-c75b-48e8-853c-841f3b2fbbc3": {
+          "display_id": 1111,
+          "author": "xqjG",
+          "content": "Committed 24e76e2e: rebuild to green. Predicate swapped to Cc/Cf/Zl/Zp + Default_Ignorable_Code_Point (icu_properties, already in the tree); reserved-range + Hangul hand-lists retired; variation selectors + CGJ now strip (reversing #798, test inverted — the red-gate seed). Whole-of-output sanitizer wired into render_machine + broken machine form and extended to clean object keys (#803/#805 systematic fix); broken human machine_token cleaned. Full workspace suite green, clippy clean. NEXT: step (c) one verify round against the ratified requirement, then step (d) Layer 3 close.",
+          "created_at": "2026-07-28T20:52:31.967285Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqxWEJ4cVkAaR8qor0kTBsnQQR7ky2Bsxs/2Wya2xEpixtHEWFyxrZrSusZxkYlJyA/b9Mjp2oaGqCCbLbXzTCA=="
+        }
+      }
     },
     "369b931f-8c34-42e9-bbb3-af898ff70c63": {
       "uuid": "369b931f-8c34-42e9-bbb3-af898ff70c63",
@@ -25620,11 +25631,16 @@
       "agent_id": "xqjG",
       "agent_seq": 564,
       "timestamp": "2026-07-28T20:38:31.129159Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 565,
+      "timestamp": "2026-07-28T20:52:31.982438Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T20:38:31.129159Z",
+    "timestamp": "2026-07-28T20:52:31.982438Z",
     "agent_id": "xqjG",
-    "agent_seq": 564
+    "agent_seq": 565
   }
 }
