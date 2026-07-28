@@ -5774,11 +5774,12 @@
       "uuid": "35b852a8-c6a4-44c2-9eb2-c0fe46cf585c",
       "display_id": 813,
       "title": "Layer 3 rebuild: implement Terminal output safety (#807) — Default_Ignorable_Code_Point property predicate, systematic machine-form sanitizer, retire the hand-list",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T20:38:16.888150Z",
-      "updated_at": "2026-07-28T20:53:06.369762Z",
+      "updated_at": "2026-07-28T21:04:53.225841Z",
+      "closed_at": "2026-07-28T21:04:53.225833Z",
       "labels": [
         "feature"
       ],
@@ -25733,11 +25734,16 @@
       "agent_id": "xqjG",
       "agent_seq": 577,
       "timestamp": "2026-07-28T21:04:47.466322Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 578,
+      "timestamp": "2026-07-28T21:04:53.225841Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:04:47.466322Z",
+    "timestamp": "2026-07-28T21:04:53.225841Z",
     "agent_id": "xqjG",
-    "agent_seq": 577
+    "agent_seq": 578
   }
 }
