@@ -1,6 +1,6 @@
 {
   "next_display_id": 813,
-  "next_comment_id": 1104,
+  "next_comment_id": 1105,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8504,7 +8504,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T18:16:33.136442Z",
-      "updated_at": "2026-07-28T03:04:46.332990Z",
+      "updated_at": "2026-07-28T03:15:10.387287Z",
       "labels": [
         "spec-amendment"
       ],
@@ -8526,6 +8526,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABATTCXPMDm4JkYKNEi3ilmQjhuXI2OkPQbl8l8ruaexdxnB4nRCerulr4cez5xeUvPEtx52kLYOvHU45bd4MtDAA=="
+        },
+        "a1bcce0a-ae9e-4db4-8097-641a9422eec8": {
+          "display_id": 1104,
+          "author": "xqjG",
+          "content": "COLD REVIEW RETURNED — 5/5 lenses revise-before-ratify (fable-5, 276k tokens, within the 150-320k band; 0 dispatch failures). 43 findings, deduped to 24 distinct. TRIAGE + ROUTING (routing before fixing):\n\nCONVERGENT BLOCKERS (multiple independent lenses):\n- D1 [Security+SA, both BLOCKING]: the strip-set and preserve-set OVERLAP. Default_Ignorable_Code_Point includes variation selectors (U+FE00-FE0F, U+E0100-E01EF), the combining grapheme joiner, Mongolian VS — all category Mn. REQ-2 says strip all Default_Ignorable AND preserve Mn/Mc/Me: contradiction, no precedence. AND the draft's 'no behavioral loss' claim is FALSE — text.rs's variation_selectors_survive test pins U+E0100 as KEPT (#798 ruling), which a pure property predicate strips. -> OPERATOR TRIAGE (reverses #798; security-vs-fidelity).\n- D2 [SO BLOCKING]: scope. REQ-1's 'agent-consumed surface' generality is silently narrowed to Status's 4 forms, leaving generated agent context (built from the adopter registry — the biggest agent-context pipeline, the named threat's prime target) and gate outputs neither bound nor excluded. -> OPERATOR TRIAGE.\n- D3 [SO+Security+SA+DR, 4 lenses]: the dual sink is not gapless. Broken-state human diagnostic composes from a FAILED read (upstream of every source boundary, not the machine form so no whole-output backstop) and can quote raw adopter bytes; shell-joined git-ref strings and the statusline repo-set config load also escape the 3 named boundaries. -> FIX PASS.\n\nOPERATOR-TRIAGE (spec-intent / structure):\n- D4 [SO->Trust-boundaries(c); SA->standalone requirement(b); both reject Status-clause(a)]: clause placement. -> OPERATOR TRIAGE.\n- D9 [Security]: confusables/homoglyphs (CVE-2021-42694, the OTHER Trojan Source CVE) neither in nor out of scope; no stripping class catches them. -> OPERATOR TRIAGE (propose: out-of-scope accepted residual).\n\nFIX-PASS (self-resolvable, folding into the revised draft):\n- D5 [SO+SA]: #739 three-question procedure MISCITED — it governs mdatron check-needs and literally forbids the raise; record as a plain crosslink-tracker proposal, #739 as precedent only.\n- D6 [SO+SA+DR]: REQ-6 carries transient content (round-6 uncommitted-edit disposition, clean_json_strings identifier, 'uncommitted') into standing contract text — keep durable mechanism, move edit-disposition to the decision record.\n- D7 [SO+Security+DR]: REQ-1 external-source parenthetical reads exhaustive but omits repo-set config, artifact manifest, settings, .vsdd/config.yaml — define as complement-of-trusted-constants, anchor to Trust-boundaries enumeration, mark illustrative.\n- D8 [Security]: CRATE — neither unicode-general-category nor unicode-properties carries the property; Default_Ignorable_Code_Point is a DerivedCoreProperties binary property, not General_Category. icu_properties (ICU4X) is the verified-capable candidate; forbid hand-deriving from category data (that IS the rejected enumeration).\n- D10 [SA]: the whole-of-output pass is unclassified vs the purity enumeration; classify as a pure filter applied once by the shell at output (not a second derivation).\n- D11 [Security]: machine-form backstop exempts JSON keys on an unstated invariant; clean keys too (identity on the trusted case) or state the invariant with a falsifier.\n- D12 [TW]: draft has NO verbatim clause text — only REQ-level descriptions; add a 'Proposed contract text' section with the exact insertions + Revision entry so the words shipping are the words reviewed (cures the #808-shaped gap).\n- D13 [TW+SO+DR]: AC-8 Revision anchor wrong — anchor on the re-entry issue carrying ratification (not #807), name composition + terminal-verify round, put #807/#808 in motivated-by.\n- D14/D15 [Security]: name accepted residuals — combining-mark flooding (bound by cell/grapheme budgets), and blank-but-cell-occupying chars (U+2800, exotic Zs).\n- D16-D24 [register, multi-lens]: drop 'three members' count; expand 'UCD'; write out 'SA/SO'; 'three forms + broken-state branch' not 'four surfaces'; drop coined 'systematic sink' (a source is not a sink); 'Trojan Source' unhyphenated; own the ZWJ/ZWNJ strip trade-off; rephrase REQ-7 'the cleaner'; D23 silent-strip accepted-with-reasoning.\n\nNEXT: operator triage on D1/D2/D4/D9, then one fix pass folding all fix-pass items + rulings, verbatim clause text added, then terminal + final verify, then ratification.",
+          "created_at": "2026-07-28T03:15:10.372177Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1+z/CXKUxdm72pCygBjXR9fDGFwDDbiWR7AsIiftehOouS9jP84SL8+kgvYSGYLrHFnIQZi/SDJ8OsYq3yDdDQ=="
         },
         "a534d9bf-89a0-450d-8742-344b26da7d6b": {
           "display_id": 1078,
@@ -25482,11 +25491,16 @@
       "agent_id": "xqjG",
       "agent_seq": 552,
       "timestamp": "2026-07-28T03:04:46.332990Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 553,
+      "timestamp": "2026-07-28T03:15:10.387287Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T03:04:46.332990Z",
+    "timestamp": "2026-07-28T03:15:10.387287Z",
     "agent_id": "xqjG",
-    "agent_seq": 552
+    "agent_seq": 553
   }
 }
