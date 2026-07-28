@@ -1,6 +1,6 @@
 {
   "next_display_id": 814,
-  "next_comment_id": 1115,
+  "next_comment_id": 1116,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3589,8 +3589,17 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-07-27T17:34:14.704346Z",
-      "updated_at": "2026-07-27T18:15:09.440363Z",
+      "updated_at": "2026-07-28T21:03:54.562152Z",
       "comments": {
+        "3b2210da-5010-4817-a20f-5904ba0e21de": {
+          "display_id": 1115,
+          "author": "xqjG",
+          "content": "Resolved by the Layer-3 rebuild (#813, commits 24e76e2e + f06d0797): the Default_Ignorable_Code_Point property predicate + whole-of-output machine-form sanitizer (values and keys) close this systematically. Verified layer-3-closeable by the closing verify round (empirical strip/preserve probe + mutation tests). Closing with no separate changelog entry — the #813 rebuild entry carries the substance.",
+          "created_at": "2026-07-28T21:03:54.543225Z",
+          "kind": "resolution",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALptFKAk54h5UU196Ijg4Qh2bOHyuztjf06758QPEMlp9DGz7fFdqBluRdCpzUyi9mXLAMibZuAYEgtMhgk1JBw=="
+        },
         "65f1c198-ff14-47ea-a669-3aecc803a100": {
           "display_id": 1076,
           "author": "xqjG",
@@ -25691,11 +25700,16 @@
       "agent_id": "xqjG",
       "agent_seq": 571,
       "timestamp": "2026-07-28T21:03:48.839121Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 572,
+      "timestamp": "2026-07-28T21:03:54.562152Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:03:48.839121Z",
+    "timestamp": "2026-07-28T21:03:54.562152Z",
     "agent_id": "xqjG",
-    "agent_seq": 571
+    "agent_seq": 572
   }
 }
