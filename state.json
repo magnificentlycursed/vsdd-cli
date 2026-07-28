@@ -3477,11 +3477,12 @@
       "uuid": "1ad57c8b-f80e-4ef5-95b4-6620cc3943d2",
       "display_id": 811,
       "title": "Layer 2 amendment increment: implement the unrouted-findings process-integrity query — routing field on the snapshot (FindingRecord, deny_unknown_fields today), acquisition extension, snapshot-schema audit-mirror re-pin, convergence-corpus kind-set extension, own fresh red-gate seed under the fix-scale gate — BLOCKED on #810 ratifying",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-27T20:29:39.834420Z",
-      "updated_at": "2026-07-28T00:51:36.928148Z",
+      "updated_at": "2026-07-28T00:52:15.810720Z",
+      "closed_at": "2026-07-28T00:52:15.810711Z",
       "labels": [
         "feature"
       ],
@@ -25461,11 +25462,16 @@
       "agent_id": "xqjG",
       "agent_seq": 549,
       "timestamp": "2026-07-28T00:51:36.928148Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 550,
+      "timestamp": "2026-07-28T00:52:15.810720Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T00:51:36.928148Z",
+    "timestamp": "2026-07-28T00:52:15.810720Z",
     "agent_id": "xqjG",
-    "agent_seq": 549
+    "agent_seq": 550
   }
 }
