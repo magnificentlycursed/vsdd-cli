@@ -1,6 +1,6 @@
 {
   "next_display_id": 815,
-  "next_comment_id": 1122,
+  "next_comment_id": 1123,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2789,7 +2789,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-26T09:53:58.414441Z",
-      "updated_at": "2026-07-26T10:35:43.093777Z",
+      "updated_at": "2026-07-28T21:24:22.511228Z",
       "comments": {
         "6e55ee9b-ad55-4a52-8c80-d38c1ea1b1e3": {
           "display_id": 1059,
@@ -2808,6 +2808,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAFAdXTkT+qfXm7oX6pyMNEpC/iuwA8ZCp91eJ7+nEWQj0/4QTVwjXC5AzByDJ+h5LgzEbj7bc8ZeIP2Q9IbhTAg=="
+        },
+        "a8cad882-2d37-411a-ab5c-eea159dd9537": {
+          "display_id": 1122,
+          "author": "xqjG",
+          "content": "Closed as lifecycle cleanup (Layer-3 compliance audit, 2026-07-28). This phase-3 round's findings were fix-closed IN PLACE without phase-4 routing — the recorded deviation (#806/#808), forward-only, standing on that record. The round's terminal-safety fixes landed and were then SUPERSEDED by the Layer-3 rebuild (#813) under the ratified Terminal output safety requirement (#807); their tests became its verification architecture. Round issue left open at the time; closed now.",
+          "created_at": "2026-07-28T21:24:22.498065Z",
+          "kind": "resolution",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsYDjFvl4ktCgwB07XzCFcmQ40KNv6K3k5Syb/HvS2XtM3acau+KPMZKrSlFr4YlzjXkdO5Iz7K9IB6QHPMDiAw=="
         },
         "b66d376f-0659-4b5f-aa18-8aa4430407c9": {
           "display_id": 1054,
@@ -25872,11 +25881,16 @@
       "agent_id": "xqjG",
       "agent_seq": 594,
       "timestamp": "2026-07-28T21:24:16.919002Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 595,
+      "timestamp": "2026-07-28T21:24:22.511228Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:24:16.919002Z",
+    "timestamp": "2026-07-28T21:24:22.511228Z",
     "agent_id": "xqjG",
-    "agent_seq": 594
+    "agent_seq": 595
   }
 }
