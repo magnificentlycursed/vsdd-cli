@@ -3585,11 +3585,12 @@
       "uuid": "1cd84415-2903-4c47-baff-1304152581f7",
       "display_id": 805,
       "title": "Layer 3 round 6 nit collector: remaining state string fields uncleaned (comparison-only, latent per #801); intra-state cleaning asymmetry (current_phase cleaned vs gate.phase not); broken human form prints machine_token raw while machine cleans it",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-07-27T17:34:14.704346Z",
-      "updated_at": "2026-07-28T21:03:54.562152Z",
+      "updated_at": "2026-07-28T21:04:01.497200Z",
+      "closed_at": "2026-07-28T21:04:01.497192Z",
       "comments": {
         "3b2210da-5010-4817-a20f-5904ba0e21de": {
           "display_id": 1115,
@@ -25705,11 +25706,16 @@
       "agent_id": "xqjG",
       "agent_seq": 572,
       "timestamp": "2026-07-28T21:03:54.562152Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 573,
+      "timestamp": "2026-07-28T21:04:01.497200Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T21:03:54.562152Z",
+    "timestamp": "2026-07-28T21:04:01.497200Z",
     "agent_id": "xqjG",
-    "agent_seq": 572
+    "agent_seq": 573
   }
 }
