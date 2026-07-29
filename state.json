@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1165,
+  "next_comment_id": 1166,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3312,7 +3312,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:44:17.238741Z",
-      "updated_at": "2026-07-29T03:21:27.690284Z",
+      "updated_at": "2026-07-29T04:00:00.286972Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3379,6 +3379,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoshrJ7W68z1W5uc549iy4T9z8shr07iSDfRGmnzy2Gd4hwcAXufJ3gmzPkw/c/uJhEmPsFIZCeh5nsU3XbPECg=="
+        },
+        "b35c6048-d56d-4853-b7ad-c971aa801261": {
+          "display_id": 1165,
+          "author": "xqjG",
+          "content": "FINAL SWEEP applied (operator term decisions + confirm-round minors). Terminology now settled and grounded (AI Eng > Platform Eng > SWE/QE, operator rule): platform->ENGINE, forcing seam->GUARDRAIL (Platform-Eng, detective/preventive), Claude Code=RUNTIME HARNESS, vsdd=METHODOLOGY HARNESS; installed-artifact integrity + crosslink(tracker/orchestration) queued for the contract-wide follow-on (pre-existing terms). Confirm-round minors swept: Slice 1 added to the cleaner enumeration + its own cleaner act; pricing-preset recategorized (Slice-2 input reaching S7 via static-price); engine-data list marked illustrative (failure-kind enum/mapping schema/cannot-run predicate are engine data by the >1-reader rule); CI 'active today' scoped to the conformance workflows (routing/gate/budget legs add at S1/4/7); fresh-container reconciled with Gates L177 (bootstrap form of kickoff --container) + named owner; splice gains an explicit old-Layer->Slice crosswalk; follow-on terminology amendment documented. Grep-verified: 0 platform, 0 forcing-seam, 0 bare-seam. #819 draft is at the RATIFICATION GATE (5/5 ratify-ready + minors swept; renames are below the re-review threshold per the confirm's own DAG-preserving-rename finding).",
+          "created_at": "2026-07-29T04:00:00.242516Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAlSgADY5v4J7EpDVrLaeUri4eGH8WyC2ZXnaHBEjtohnLGY9AMaTjxtcuH6KXabwsx39fY+zbEHw1tKcSNjccAQ=="
         },
         "f741785f-fb77-415a-8a9d-90bdfebbe466": {
           "display_id": 1160,
@@ -26663,11 +26672,16 @@
       "agent_id": "xqjG",
       "agent_seq": 656,
       "timestamp": "2026-07-29T03:21:27.690284Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 657,
+      "timestamp": "2026-07-29T04:00:00.286972Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T03:21:27.690284Z",
+    "timestamp": "2026-07-29T04:00:00.286972Z",
     "agent_id": "xqjG",
-    "agent_seq": 656
+    "agent_seq": 657
   }
 }
