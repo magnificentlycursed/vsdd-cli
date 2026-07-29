@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1211,
+  "next_comment_id": 1212,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -23634,12 +23634,23 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:05:31.856735Z",
-      "updated_at": "2026-06-02T01:05:31.856735Z",
+      "updated_at": "2026-07-29T10:04:36.990637Z",
       "labels": [
         "bootstrap",
         "feature",
         "tech-debt"
-      ]
+      ],
+      "comments": {
+        "6181edcc-1af0-4168-9c37-d529f4f76373": {
+          "display_id": 1211,
+          "author": "xqjG",
+          "content": "CLOSED — tracker sweep (#826, operator-directed 2026-07-29). Strengthen bootstrap-validator — that is mdatron (separate repo); mdatron's concern. A binary-first-plan stub (2026-06-02); the plan is superseded by the ratified contract (.design/agent-first-vsdd-toolkit.md:4) + rescoped by #819's enforcement-spine slices, and the plan doc was removed (#826). No live scope in the stub; where still needed the work is re-homed to the slices.",
+          "created_at": "2026-07-29T10:04:36.977271Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAOd/g9wj3MVn0gbsvm28VrNUsRzCfPuM6qRrYrOaPysoL76VG7xjubx1K0MIwFpYbBJGvWnc/mczwuBooWyQTBw=="
+        }
+      }
     },
     "f591f434-c4ef-46d4-ba90-aaf6e96e1915": {
       "uuid": "f591f434-c4ef-46d4-ba90-aaf6e96e1915",
@@ -27590,11 +27601,16 @@
       "agent_id": "xqjG",
       "agent_seq": 731,
       "timestamp": "2026-07-29T10:04:30.285021Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 732,
+      "timestamp": "2026-07-29T10:04:36.990637Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:04:30.285021Z",
+    "timestamp": "2026-07-29T10:04:36.990637Z",
     "agent_id": "xqjG",
-    "agent_seq": 731
+    "agent_seq": 732
   }
 }
