@@ -1735,12 +1735,13 @@
       "uuid": "0775bdc5-5f0d-491a-b84a-ad7a6aab717d",
       "display_id": 305,
       "title": "Spec review round 1: vocabulary registry path correction",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:27:11.769691Z",
-      "updated_at": "2026-07-29T10:25:54.752694Z",
+      "updated_at": "2026-07-29T10:26:01.178484Z",
+      "closed_at": "2026-07-29T10:26:01.178473Z",
       "labels": [
         "spec-review-round-1"
       ],
@@ -28077,11 +28078,16 @@
       "agent_id": "xqjG",
       "agent_seq": 777,
       "timestamp": "2026-07-29T10:25:54.752694Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 778,
+      "timestamp": "2026-07-29T10:26:01.178484Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:25:54.752694Z",
+    "timestamp": "2026-07-29T10:26:01.178484Z",
     "agent_id": "xqjG",
-    "agent_seq": 777
+    "agent_seq": 778
   }
 }
