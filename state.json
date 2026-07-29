@@ -12922,11 +12922,12 @@
       "display_id": 829,
       "title": "parse_milestones treats crosslink 'No milestones found.' as Unusable, not an empty list",
       "description": "Discovered during Slice-1 finding-join dogfood (#820).\n\nvsdd-core/src/snapshot/acquire.rs parse_milestones treats crosslink's empty-state human output 'No milestones found.' as whole-format drift -> None -> AcquisitionOutcome::Unusable, instead of an empty milestone list. On any repo with no crosslink milestones (this one included), acquire_snapshot short-circuits to Unusable and never reaches the session or finding-query legs.\n\nRepro: 'crosslink milestone list' -> 'No milestones found.'; acquire_snapshot(repo) -> Unusable.\n\nImpact: the live status answer + the finding-query join are unreachable on no-milestone repos. Pre-existing (Layer 1/2 milestone leg); outside the Slice-1 finding-join build scope, so filed + routed rather than fixed inline.\n\nFix direction: parse_milestones should recognize crosslink's empty-state message as a lawful empty list (0 milestones), distinct from unparseable drift. Needs its own red-gate test (empty-message -> Some(empty), not None). Relates to #820.",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T13:19:11.898416Z",
-      "updated_at": "2026-07-29T16:56:03.543698Z",
+      "updated_at": "2026-07-29T16:56:11.746962Z",
+      "closed_at": "2026-07-29T16:56:11.746947Z",
       "labels": [
         "bug"
       ],
@@ -28490,11 +28491,16 @@
       "agent_id": "xqjG",
       "agent_seq": 811,
       "timestamp": "2026-07-29T16:56:03.543698Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 812,
+      "timestamp": "2026-07-29T16:56:11.746962Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T16:56:03.543698Z",
+    "timestamp": "2026-07-29T16:56:11.746962Z",
     "agent_id": "xqjG",
-    "agent_seq": 811
+    "agent_seq": 812
   }
 }
