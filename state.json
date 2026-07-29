@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1135,
+  "next_comment_id": 1136,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10323,7 +10323,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:26:17.533252Z",
+      "updated_at": "2026-07-29T00:29:28.376600Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10363,6 +10363,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKJUoepeTZWq/3vEDLHEBhaU7LlMO48DDPITrVQeoLNT+V5+c2mUJUJLXMOaGu4sgLviCz09KIhN3Wua4/tE5BA=="
+        },
+        "7c39faec-1192-43d4-9693-1c0aef3cc067": {
+          "display_id": 1135,
+          "author": "xqjG",
+          "content": "COLD REVIEW DID NOT RUN — all 7 lenses errored on the Fable 5 credit limit ('You've reached your Fable 5 limit'); 0 findings produced, ~164k tokens spent on the failed attempt (fast fail, 26s). Environment limit, not a design/process issue. Recovery options: re-run the same 7 lenses on Opus 4.8 (available, capable, and cheaper than Fable — / vs /) or top up Fable credits. Awaiting operator choice. NOTE: the mdatron #49 cold-read agent runs on the session model (Opus 4.8), unaffected, still in flight.",
+          "created_at": "2026-07-29T00:29:28.363381Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA9nTGOvwJILvbIicR7pjmSv/j8yUN1JY0jr/utVdhPymttDC3SUNwDBqwGDV31ZdMmgc2ZNgI7kKBF2VgVtFdAw=="
         },
         "96442c51-6b23-4060-960c-3f7338477559": {
           "display_id": 1130,
@@ -26138,11 +26147,16 @@
       "agent_id": "xqjG",
       "agent_seq": 617,
       "timestamp": "2026-07-29T00:26:17.533252Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 618,
+      "timestamp": "2026-07-29T00:29:28.376600Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:26:17.533252Z",
+    "timestamp": "2026-07-29T00:29:28.376600Z",
     "agent_id": "xqjG",
-    "agent_seq": 617
+    "agent_seq": 618
   }
 }
