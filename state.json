@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1235,
+  "next_comment_id": 1236,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13342,10 +13342,21 @@
       "parent_uuid": "499db8b4-9473-4cbe-bc65-db5a3067004c",
       "created_by": "xqjG",
       "created_at": "2026-07-21T16:28:19.881515Z",
-      "updated_at": "2026-07-21T16:28:24.021491Z",
+      "updated_at": "2026-07-29T10:26:23.349029Z",
       "labels": [
         "review"
-      ]
+      ],
+      "comments": {
+        "87a6c863-c542-40e3-bfdf-18d05be3bb96": {
+          "display_id": 1235,
+          "author": "xqjG",
+          "content": "KEPT (tracker sweep #826) — not stale. Nit (1) gate-data citation is optional cleanup. Nit (2) is a LIVE record-vs-host divergence (installed-artifact-manifest says statusLine wiring is user-level, but no statusLine key exists on the host) whose durable fix is the installer — re-homed to the install slice (Layer 4). Operator-action candidate stands: re-wire the statusLine, or reword the note until the installer lands.",
+          "created_at": "2026-07-29T10:26:23.321377Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAMgUMELQ8H7I46fuz4q2VkTnT4Oht5aZU2jWGi4GiFRcfMW1IrsJX0DIWrCiLrtKWRRHTtrZ2t989/rti5Ua2Dg=="
+        }
+      }
     },
     "845a9333-39d6-4005-bb5e-a5f7fa30d0b2": {
       "uuid": "845a9333-39d6-4005-bb5e-a5f7fa30d0b2",
@@ -28105,11 +28116,16 @@
       "agent_id": "xqjG",
       "agent_seq": 780,
       "timestamp": "2026-07-29T10:26:15.405113Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 781,
+      "timestamp": "2026-07-29T10:26:23.349029Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:26:15.405113Z",
+    "timestamp": "2026-07-29T10:26:23.349029Z",
     "agent_id": "xqjG",
-    "agent_seq": 780
+    "agent_seq": 781
   }
 }
