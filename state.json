@@ -1,6 +1,6 @@
 {
   "next_display_id": 833,
-  "next_comment_id": 1255,
+  "next_comment_id": 1256,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3054,13 +3054,24 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:34:07.114352Z",
-      "updated_at": "2026-07-29T18:03:40.564204Z",
+      "updated_at": "2026-07-29T18:26:59.992097Z",
       "labels": [
         "spec-amendment"
       ],
       "related": [
         "c389841b-08ba-46e0-aecd-8525413e007f"
-      ]
+      ],
+      "comments": {
+        "bc82ff3d-2165-4553-834c-cb77c8450fd6": {
+          "display_id": 1255,
+          "author": "xqjG",
+          "content": "SCOPED for a fresh cold-reviewed cycle (deferred from the 2026-07-29 marathon by operator direction — a semantic contract+code rename must not run at a marathon tail by a terminology-error-dense agent; it is a contract amendment = owned+reviewed).\n\nACTIVE surfaces (~11 files):\n- Corpus (templates/registry/): snapshot-schema, dispatch-data, act-to-affordance-map (chassis-workflow 'kind' x13 — CHECK the schema's kind enum before renaming the value), installed-artifact-manifest, gate-data.\n- Code: vsdd/src/status/mod.rs, vsdd-core/src/answer/integrity.rs, and the integrity_shell/substrate.rs MODULE (rename module + refs in lib.rs + integrity_shell/mod.rs).\n- Contract: .design/agent-first-vsdd-toolkit.md (chassis + substrate throughout).\n- README.md.\n\nEXCLUDE: the frozen review-log (~15 files with 'substrate' — evidence, never rewritten); CHANGELOG (history); superseded DESIGN-*.md (sunsetting); and iCloud conflict-copy JUNK to DELETE not rename: 'snapshot-schema 2.md', 'act-to-affordance-map 2.md' (the ~/Documents sync hazard).\n\nPOLYSEMY (substrate is NOT find-replace): session-substrate -> installed-artifact integrity (named check + code module); 'the substrate' (Claude Code) -> runtime harness; 'substrate conventions' (cargo/git, e.g. vsdd-domain-ux) -> ecosystem conventions. chassis -> crosslink (tool) / tracker+orchestration (surfaces).\n\nALSO: register 'slice'/'vertical-slice' in vocabulary.yaml (grounded agile SWE; used throughout #819 unregistered). The workspace-shape paragraph amendment (vsdd-core removal, #15) is a contract-BEHAVIORAL change -> full cold review, not a terminology edit.\n\nENFORCEMENT follow-on (#832): once the rename clears chassis + session-substrate from the corpus, arm them as E0093 anti_patterns (like 'forcing seam', PR #13) so they can't return.",
+          "created_at": "2026-07-29T18:26:59.973167Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABACZcfGudJ2AFhTL0v/oCYQc7RGuAV+BRpW+whE6zv7Z63wW7L5wQLis8KE6BrwNJbNWDuAgYzh8nB8FCVpKHzAA=="
+        }
+      }
     },
     "145ca913-7878-4e9a-b628-a14fb58d0294": {
       "uuid": "145ca913-7878-4e9a-b628-a14fb58d0294",
@@ -28752,11 +28763,16 @@
       "agent_id": "xqjG",
       "agent_seq": 834,
       "timestamp": "2026-07-29T18:13:43.236802Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 835,
+      "timestamp": "2026-07-29T18:26:59.992097Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T18:13:43.236802Z",
+    "timestamp": "2026-07-29T18:26:59.992097Z",
     "agent_id": "xqjG",
-    "agent_seq": 834
+    "agent_seq": 835
   }
 }
