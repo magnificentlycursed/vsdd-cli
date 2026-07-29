@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1176,
+  "next_comment_id": 1177,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4162,7 +4162,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T04:17:09.815372Z",
+      "updated_at": "2026-07-29T05:50:32.625504Z",
       "labels": [
         "feature"
       ],
@@ -4193,6 +4193,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwh0L8hBSB8q31t/qCTPChjTlODpVQKtmDokfnQjOAuvbnFrk5D1GURaMfAM097iC5hWHCD7dab1YJWM8OTFtDQ=="
+        },
+        "9a493e41-fa99-4576-856c-a0bc31d91ce0": {
+          "display_id": 1176,
+          "author": "xqjG",
+          "content": "CONFIG.YAML PREP DONE + EMPIRICALLY VALIDATED (2026-07-28, #816). Drafted .mdatron/config.yaml declaring vsdd-cli's governed corpus (file_globs: .claude/commands/vsdd-*.md [28 domain prompts + phase primers], supplements/*.md [14], templates/registry/*.md [9 data sets], review-log/**/*.md [29], DESIGN-*.md, methodology.md; require_frontmatter on the schema-classed sets; vocabulary_globs = methodology + DESIGN-* only [review-log frozen, not vocab-scanned -- mirrors mdatron #97]). CHANGELOG.md intentionally excluded (crosslink-generated, no schema_class, no changelog schema). Routing stays by frontmatter schema_class (as 0.1.0).\n\nVALIDATION: (1) installed 0.1.0 verify still CLEAN -- config.yaml is inert for 0.1.0, no regression. (2) v0.3.0-in-progress binary (../mdatron feature/100, target/debug/mdatron) verify CLEAN on the whole corpus. PROOF it walks (not vacuous): an injected naked review-log file fired MDATRON-W0040 citing the config's require_frontmatter; clean on removal. Completeness check: the 'outlier' classes (error-catalog/vsdd-config/<class-slug>/changelog) are literal TEXT inside DESIGN-SCHEMA.md, not separate files -- no jurisdiction gap; all real schema-classed files are in-jurisdiction.\n\nMIGRATION SCOPE = config.yaml ALONE. v0.3.0 is clean on our corpus with NO fixes needed. The upgrade (0.1.0 -> v0.3.0, skipping v0.2.0) is a clean flip, still GATED on: v0.3.0 finalization (not tagged) + pin both mdatron seams (CI checkout -> v0.3.0 tag; pre-commit window 0.1.x -> 0.3.x) + the stale-CI fix (mdatron-verify.yml still references the pre-collapse mdatron-cli/mdatron-core layout; remote inaccessible here -- needs operator's remote read). config.yaml is in the working tree, inert+valid.",
+          "created_at": "2026-07-29T05:50:32.608010Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYJ46UkGkodvOXm3YyvBuWWFaD8Y8GMJM0KbKcC25kD9OkzWLb+dqzfvjVFaherjEDnC8O8OehbRHmu0aWD2wAQ=="
         },
         "b14155e7-9ebb-43bb-817c-4d2d0ed2e7d7": {
           "display_id": 1157,
@@ -26893,11 +26902,16 @@
       "agent_id": "xqjG",
       "agent_seq": 676,
       "timestamp": "2026-07-29T05:34:05.062527Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 677,
+      "timestamp": "2026-07-29T05:50:32.625504Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T05:34:05.062527Z",
+    "timestamp": "2026-07-29T05:50:32.625504Z",
     "agent_id": "xqjG",
-    "agent_seq": 676
+    "agent_seq": 677
   }
 }
