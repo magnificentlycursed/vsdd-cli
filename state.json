@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1139,
+  "next_comment_id": 1140,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10341,7 +10341,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:30:38.156923Z",
+      "updated_at": "2026-07-29T00:37:20.506067Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10408,6 +10408,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJ3tA1oEzpTZcPA5R6EfoVxyrgo4kVF1zxMgCeRCrNRMK/pfxjF1SMwxlhwLK5TU06SP0UWk5pl1PL/LXlbtEDw=="
+        },
+        "b953a50e-8e11-4be0-9179-b2c52b319d9f": {
+          "display_id": 1139,
+          "author": "xqjG",
+          "content": "DESIGN DEPENDENCY from the #49 cold-read (fold into the post-cold-review revision): the mdatron-vehicle controls (the conformance leg of the mechanism-invocation-timing audit) read mdatron output as a TRACE. The cold-read found v0.1.0 bleeds adopter content INTO engine lines (inline field names, raw jsonschema strings) — a trace-integrity hazard for us. So the design's mdatron-conformance leg DEPENDS on mdatron's output-envelope/marking discipline (v0.3.0 cluster B) being solid; record that dependency + prefer the machine envelope (--json / the published envelope schema) over parsing human-form engine lines. Not editing the doc now (under cold review); apply in the revision.",
+          "created_at": "2026-07-29T00:37:20.485903Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA01PARTXZg0rFLHlmdFpqFDJNKR4cvERQVN/g9JjkSJF0pyxq3ZRiS37Zgk5cb6jXX0yCtwatK1v48gUVhzqyCA=="
         },
         "e17f69b0-f9fa-4473-b9bf-dedae52c0c18": {
           "display_id": 1131,
@@ -26194,11 +26203,16 @@
       "agent_id": "xqjG",
       "agent_seq": 621,
       "timestamp": "2026-07-29T00:37:11.909308Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 622,
+      "timestamp": "2026-07-29T00:37:20.506067Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:37:11.909308Z",
+    "timestamp": "2026-07-29T00:37:20.506067Z",
     "agent_id": "xqjG",
-    "agent_seq": 621
+    "agent_seq": 622
   }
 }
