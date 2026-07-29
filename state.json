@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1142,
+  "next_comment_id": 1143,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10341,7 +10341,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:41:34.786860Z",
+      "updated_at": "2026-07-29T00:48:19.084185Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10426,6 +10426,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA01PARTXZg0rFLHlmdFpqFDJNKR4cvERQVN/g9JjkSJF0pyxq3ZRiS37Zgk5cb6jXX0yCtwatK1v48gUVhzqyCA=="
+        },
+        "c59ceab5-9fb2-4937-8157-af489cb5236e": {
+          "display_id": 1142,
+          "author": "xqjG",
+          "content": "FIX PASS to v2 complete — all 7/7 cold-review lenses addressed (0 open questions; 11 REQ, 11 AC). Blockers closed: trace substrate re-based off the retired events store onto the derived-view model + tamper-evidence requirement; the audit is one single-home Status aggregate consuming mdatron records as inputs; the fabricated VSDD-E0050 code removed (plain description); routing reconciled with the ratified plan-comment (edge is an addition); the now-built controls are detection-only with blocking at true layers; a runtime-cost budget is a requirement+AC; mdatron sequenced separately (#816); Revision-line entry drafted; the 3 acceptance-case bypasses specified + named once; non-vacuity defined; pin-update kept shape-tier; managed-install + Python/Rust mirror parity + controls-own-output-honors-#807 added. TERMINAL VERIFY (declared before spend): Workflow, 4 lenses on Opus 4.8 (Fable capped) — solution-architect HIGH (re-base, single-home, re-sequencing delta), solution-owner HIGH (routing reconciliation, scope, mdatron sequencing, Revision-line), security HIGH (trace tamper-evidence/forgeability, tier rule, bypass vectors), documentation-reviewer+technical-writer MEDIUM (register, no minted codes/coinages, fixtures-specified, Revision-line shape). Confirms blockers closed + no regressions; AI-Engineer/Platform-Engineer/QE fixes (cost budget, #816, non-vacuity, fixtures) folded and cross-checked by these lenses. expected_cost_band: 0-8 open findings, 150k-300k tokens.",
+          "created_at": "2026-07-29T00:48:19.070278Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAan4UEk7azD2Xwn7ruM2j5KCtThW5LOR29thqpSZI831dD8AiBH2vsyIQMYWUqi0v481daCtW1L1n0bdhkUN+BQ=="
         },
         "e17f69b0-f9fa-4473-b9bf-dedae52c0c18": {
           "display_id": 1131,
@@ -26236,11 +26245,16 @@
       "agent_id": "xqjG",
       "agent_seq": 624,
       "timestamp": "2026-07-29T00:41:34.786860Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 625,
+      "timestamp": "2026-07-29T00:48:19.084185Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:41:34.786860Z",
+    "timestamp": "2026-07-29T00:48:19.084185Z",
     "agent_id": "xqjG",
-    "agent_seq": 624
+    "agent_seq": 625
   }
 }
