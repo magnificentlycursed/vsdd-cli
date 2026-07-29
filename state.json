@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1143,
+  "next_comment_id": 1144,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10341,7 +10341,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:48:19.084185Z",
+      "updated_at": "2026-07-29T00:53:37.012700Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10390,6 +10390,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAuA5ueufTKTFGgbSN+Eakh4YX7D1ISMoqTEyq07svZp7CSCE9Q2S1dh1TKZnGUxfHSx8qdqdQus3DOax93NXbCg=="
+        },
+        "49d65cef-436f-4369-a67e-6efbe85438f6": {
+          "display_id": 1143,
+          "author": "xqjG",
+          "content": "COMPOSITION ADDITION: Red Team added to this design cycle (operator, 2026-07-28) — closing a composition gap. A controls-that-catch-deviation design needs the escape/evasion lens; Security covered can-the-boundary-be-crossed, Red Team covers how-the-agent-chooses-to-escape + is-the-golden-path-actually-the-easy-path (the incentive gradient) + the escape taxonomy (bypass / forge / Goodhart / self-modification / erosion), grounded in this session as a live corpus of real escapes (hand-roll vs the skill; fix-in-place vs route; coinage; over-production; the fabricated contracted code) — each caught by the operator, never a control. Running a focused Red Team escape-analysis pass on v2 (Opus 4.8), in parallel with the terminal verify; its escape taxonomy feeds v3 as a likely new requirement class (per escape vector: a control + a non-forgeable trace + an incentive-gradient check).",
+          "created_at": "2026-07-29T00:53:36.998243Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAPh6HMgckzTtWtWCCkOlp9PH21vc+8aiZFcWrjQJexgMg6MomcxTGUmVu+ld7rpzwg7xCzD+yFZSCpOf2e/S7CQ=="
         },
         "7ae5eadd-56c4-4316-8967-5832e7765aeb": {
           "display_id": 1129,
@@ -26250,11 +26259,16 @@
       "agent_id": "xqjG",
       "agent_seq": 625,
       "timestamp": "2026-07-29T00:48:19.084185Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 626,
+      "timestamp": "2026-07-29T00:53:37.012700Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:48:19.084185Z",
+    "timestamp": "2026-07-29T00:53:37.012700Z",
     "agent_id": "xqjG",
-    "agent_seq": 625
+    "agent_seq": 626
   }
 }
