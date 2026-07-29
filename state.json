@@ -1,6 +1,6 @@
 {
   "next_display_id": 823,
-  "next_comment_id": 1188,
+  "next_comment_id": 1189,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7194,7 +7194,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T07:46:22.276519Z",
-      "updated_at": "2026-07-29T07:56:13.348234Z",
+      "updated_at": "2026-07-29T07:59:22.977785Z",
       "comments": {
         "12ba7907-7c68-4903-9d9f-85d8f0816451": {
           "display_id": 1187,
@@ -7213,6 +7213,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIeLdhJDuC2ql9piYZXlE8ZFEFXbmPqu08EUh7zOtXT4YDa8vQY6W4lSHUUkMDx1CGxGbOZ6mGKGhXvHbHmAhAQ=="
+        },
+        "91590096-b17a-4f94-86c3-44d8d84c75a0": {
+          "display_id": 1188,
+          "author": "xqjG",
+          "content": "F2 DONE (investigation of M3 — the dormant terminology guardrail). CONCLUSION: the 'no coined labels'/terminology-grounding discipline is NOT mechanized on this tree; it is convention-grade only.\n- families.vocabulary=inactive because .mdatron/vocabulary.yaml (mdatron's E0090 register) is ABSENT. We half-wired it: vocabulary_globs IS set in .mdatron/config.yaml (methodology.md, DESIGN-*.md), but with no register the family never activates. The half-wiring is misleading — it implies vocabulary enforcement that does not run.\n- MDATRON-E0090 = 'unregistered-coinage' (introduced v0.2.0): fires when a bold-introduced term in governed prose is absent from .mdatron/vocabulary.yaml. This IS the mechanized form of the coinage discipline.\n- The vsdd-NATIVE enforcer referenced by templates/registry/vocabulary.yaml + methodology docs — check-naming-discipline.py (VSDD-W0001) — does NOT exist in the tree and is wired nowhere (0 refs in .githooks/.github/.crosslink; pre-commit runs only mdatron verify). So the vsdd-native mechanization is spec'd-but-unbuilt.\n- templates/registry/vocabulary.yaml exists (~70 terms, schema_class vocabulary-registry, deployed to .vsdd/registry/ by vsdd init) — data with no running consumer.\nDECISION NEEDED (terminology register is operator-owned spec work — not solo-armable; arming fires a triage-needing E0090 set over methodology.md + DESIGN-*.md): (a) ARM mdatron E0090 — author .mdatron/vocabulary.yaml (port/adapt from templates/registry/vocabulary.yaml; note path+schema differ), then triage; moves the discipline convention->CI-grade; OR (b) REMOVE the misleading vocabulary_globs half-wiring until a register is authored. Either way, stop implying enforcement that isn't running. This is a concrete instance of the enforcement-grade ladder: a load-bearing discipline sitting at convention grade with an available CI-grade mechanization unadopted.",
+          "created_at": "2026-07-29T07:59:22.962390Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAuCSyXWykXWK3q/TOBleqInjSll9oVvWDMT7LHAx1Y4fGg/2YlNMHm7P77Ts/Cvl7ZndurrjFCHjbYyRY/ML7Ag=="
         }
       }
     },
@@ -27088,11 +27097,16 @@
       "agent_id": "xqjG",
       "agent_seq": 690,
       "timestamp": "2026-07-29T07:56:13.348234Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 691,
+      "timestamp": "2026-07-29T07:59:22.977785Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T07:56:13.348234Z",
+    "timestamp": "2026-07-29T07:59:22.977785Z",
     "agent_id": "xqjG",
-    "agent_seq": 690
+    "agent_seq": 691
   }
 }
