@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1221,
+  "next_comment_id": 1222,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -6422,10 +6422,21 @@
       "parent_uuid": "c881dc5a-23e0-4be8-b1d5-ceebe409c0d2",
       "created_by": "xqjG",
       "created_at": "2026-07-22T14:23:53.982276Z",
-      "updated_at": "2026-07-22T14:23:56.987951Z",
+      "updated_at": "2026-07-29T10:11:03.814614Z",
       "labels": [
         "feature"
-      ]
+      ],
+      "comments": {
+        "d0fee3f5-5fff-47d9-9069-f5c0a17343e1": {
+          "display_id": 1221,
+          "author": "xqjG",
+          "content": "CLOSED — DONE (tracker sweep #826). the last-boundary-from-git answer was built + tested in Layer 3 (core-internal bounded runner; status_red_gate covers it; 'Folded in: #740' in the Layer-3 build); Layer 3 closed, milestone #6.",
+          "created_at": "2026-07-29T10:11:03.801392Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQMcJstu9IbDdminMXP+10L6FfAs11HXNYbU6tJopqAGpX0dZdv077VTRfHXhEEZ39gLgK4KG6BrXPOCSFI36Bg=="
+        }
+      }
     },
     "3a58a3bb-2ba3-41e9-a0c2-006ab4011322": {
       "uuid": "3a58a3bb-2ba3-41e9-a0c2-006ab4011322",
@@ -27799,11 +27810,16 @@
       "agent_id": "xqjG",
       "agent_seq": 752,
       "timestamp": "2026-07-29T10:10:57.366937Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 753,
+      "timestamp": "2026-07-29T10:11:03.814614Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:10:57.366937Z",
+    "timestamp": "2026-07-29T10:11:03.814614Z",
     "agent_id": "xqjG",
-    "agent_seq": 752
+    "agent_seq": 753
   }
 }
