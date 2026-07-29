@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1174,
+  "next_comment_id": 1175,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19525,7 +19525,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T05:08:26.724388Z",
+      "updated_at": "2026-07-29T05:22:09.867229Z",
       "labels": [
         "red-gate"
       ],
@@ -19538,6 +19538,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEtChYz4DO1nM2tMO+JpG+ziRqZunvD+mxbWkhhbsvRnW0ATJsDWmOPy1tpb7d10U2DzGy9PcPS4wFdhWX63IBA=="
+        },
+        "93ae89c6-ee0c-41e5-93f3-d7c3dcc0c6e6": {
+          "display_id": 1174,
+          "author": "xqjG",
+          "content": "PHASE-2A/2B STATUS — honest boundary reached (design decision required before the effectful read).\nVERIFIED THIS SESSION: (1) discrimination rule is crisp — a finding = an issue whose PARENT is 'review'-labeled (finding #750 parent=745[review] subissues=0; rounds have parent=None+subissues; work issues no parent). is_finding(parent_labels) is the correct design. (2) Red gate increment 1 (3 mapper tests: routing_present/is_finding/closed_before_ratification) verified RED — failing-executed, non-vacuous. REVERTED from the working tree (git checkout acquire.rs) to avoid an orphaned dead-code red gate; re-lands WITH the effectful read in the focused 2b, trivially reproducible from this record.\nTHE 2B DESIGN DECISION (the real blocker, surfaced by grounding — the AIE cost finding, live): reading findings-with-routing needs a 'crosslink issue show' PER finding ('issue list --json' omits comments/labels) = O(n) subprocess calls. acquire_snapshot runs on the statusline (250ms budget), so O(n) findings there is a budget hazard. Two forks to resolve before coding: (a) TWO-PATH acquisition — lightweight statusline acquire (findings feed integrity/health-detail via a PULL, not the hot segment) vs a fuller acquire for the guardrail/CI path; (b) within the full path: bulk query vs bounded per-finding shows vs cache. CHEAPEST FIX + raise candidate: an UPSTREAM crosslink bulk findings+comments export (issue export --json interface returned nothing parseable; confirm or raise). Flag to Platform Engineer — benefits every crosslink adopter.\nQUEUED behind the effectful-read design: the assembler (assemble_findings), acquire wiring, guardrail verdict wrapper (wraps snapshot_integrity's unrouted-findings), the commit-msg hook + CI leg, and the vsdd-core->vsdd merge (#15).",
+          "created_at": "2026-07-29T05:22:09.839721Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1ioikNFJFrrH+6B2voS5xiivhD5A6/tf7iKNk5ZqAmKInb2XyTk43TXw11RVNSeLAsbs8rTzwzhBHxdRJ5BOBw=="
         },
         "97f40d9c-0935-4a76-bef1-bef0e2989510": {
           "display_id": 1173,
@@ -26865,11 +26874,16 @@
       "agent_id": "xqjG",
       "agent_seq": 674,
       "timestamp": "2026-07-29T05:08:26.724388Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 675,
+      "timestamp": "2026-07-29T05:22:09.867229Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T05:08:26.724388Z",
+    "timestamp": "2026-07-29T05:22:09.867229Z",
     "agent_id": "xqjG",
-    "agent_seq": 674
+    "agent_seq": 675
   }
 }
