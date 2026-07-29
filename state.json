@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1200,
+  "next_comment_id": 1201,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5315,7 +5315,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-07-29T09:36:27.079962Z"
+      "updated_at": "2026-07-29T09:38:57.682316Z",
+      "comments": {
+        "cec21a56-8712-4601-9d3d-6becb495997b": {
+          "display_id": 1200,
+          "author": "xqjG",
+          "content": "docs/refactor removal PR opened (f51c80ed, 10 files / 2197 deletions). Contract supersedes it (.design/agent-first-vsdd-toolkit.md:4). Follow-ons on this issue: (1) re-ground #14 (vsdd subprocess client + init drift + templates) and #15 (vsdd-core removal) OFF the dead binary-first-plan framing INTO the slice framing (#819: vsdd-core = the engine; removal is a slice/phase-2a act) — this resolves the operator's vsdd-core annoyance; (2) redo #14's design the vsdd way (.design/ via /design + kickoff), reusing the preserved content (scratchpad), NOT a hand-authored phase spec; (3) optional owned trim of the contract's now-dangling supersedes reference.",
+          "created_at": "2026-07-29T09:38:57.666096Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABACJkcdzq7lMJ770b3ioKkasMEuqDYVcI5Xy5PrZ3FCqvFjRbea5/miLRtA5oxRaOrYlFZUgqVilGX61CqC+IxCA=="
+        }
+      }
     },
     "2cd4a8fd-699a-4a0d-841e-9c117583cbdd": {
       "uuid": "2cd4a8fd-699a-4a0d-841e-9c117583cbdd",
@@ -27373,11 +27384,16 @@
       "agent_id": "xqjG",
       "agent_seq": 711,
       "timestamp": "2026-07-29T09:38:50.692134Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 712,
+      "timestamp": "2026-07-29T09:38:57.682316Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T09:38:50.692134Z",
+    "timestamp": "2026-07-29T09:38:57.682316Z",
     "agent_id": "xqjG",
-    "agent_seq": 711
+    "agent_seq": 712
   }
 }
