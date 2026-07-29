@@ -1,6 +1,6 @@
 {
   "next_display_id": 819,
-  "next_comment_id": 1151,
+  "next_comment_id": 1152,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10351,7 +10351,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T01:24:12.670465Z",
+      "updated_at": "2026-07-29T01:26:39.546897Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10427,6 +10427,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAuA5ueufTKTFGgbSN+Eakh4YX7D1ISMoqTEyq07svZp7CSCE9Q2S1dh1TKZnGUxfHSx8qdqdQus3DOax93NXbCg=="
+        },
+        "207c3a51-db84-4bf3-b43f-30bba3f1873d": {
+          "display_id": 1151,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY of v3 (declared before spend). Vehicle: Workflow, 3 lenses on Opus 4.8 (Fable capped), HIGH effort: solution-architect (forcing-seam respects true deps; escape-vector table coherent, no double-home; heartbeat placement; delta over #810; now-built detection is compiled-binary no-init-dep), security (is tamper-evidence-by-corroboration REAL per-trace not just phrasing; fail-closed reconciled with benign-offline; bypass enumeration complete incl. mis-rooted-session/--no-verify/server-CI qualifier/slow-hook-fails-closed; disposition + fix-no-finding closed with non-forgeable halves; re-pin requires re-review), red-team (re-walk the top escapes against v3 — does the forcing-seam binding shift the gradient so deviation produces compiler-shaped feedback, or still escapable; is the audit heartbeat gap closed; fresh golden_path_verdict). Clean -> ratification; residual -> fix + re-verify. expected_cost_band: 0-8 open findings, 150k-300k tokens.",
+          "created_at": "2026-07-29T01:26:39.531641Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAHrykRPg3GflrQmT5DqkJhGMEoA7D+Ylq6gSbpK0lH+WyNMr0fv8mClvXjwE1bj7skFEJL9Ei6fFk2usTQ738CA=="
         },
         "222dc050-fcb9-4f72-ab72-bf5d6f11a92e": {
           "display_id": 1144,
@@ -26432,11 +26441,16 @@
       "agent_id": "xqjG",
       "agent_seq": 639,
       "timestamp": "2026-07-29T01:24:12.670465Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 640,
+      "timestamp": "2026-07-29T01:26:39.546897Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T01:24:12.670465Z",
+    "timestamp": "2026-07-29T01:26:39.546897Z",
     "agent_id": "xqjG",
-    "agent_seq": 639
+    "agent_seq": 640
   }
 }
