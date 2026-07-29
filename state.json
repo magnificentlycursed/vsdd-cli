@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1141,
+  "next_comment_id": 1142,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10341,7 +10341,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:40:44.819984Z",
+      "updated_at": "2026-07-29T00:41:34.786860Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10435,6 +10435,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAeudbTzMb+Kjrb5+m2Ae0qpm2EpjS+HQj0ntXBaapJdmo9ArvbFkVlqs785DYSPLlH/zzM9ld3k8YzHn6Y4aBDw=="
+        },
+        "e626e448-8cd9-4e0b-827d-d7a8cbe4ec4a": {
+          "display_id": 1141,
+          "author": "xqjG",
+          "content": "CORRECTION — the prior triage comment had backticked terms eaten by shell command-substitution; clean version here. COLD REVIEW: unanimous 7/7 revise-before-ratify, ~15 blocking/substantive deduped.\nFIX-PASS (I resolve): (1) re-base the trace substrate off the RETIRED .vsdd/events store onto the contract derived-view model (state.yaml active-composition field + boundary commit history + milestone closes + typed result comments — a query, not a store) [SA]; (2) add a trace-INTEGRITY requirement so traces are not forgeable/self-authored (git history + tracker integrity, not agent-editable logs) [Security]; (3) the keystone becomes ONE single-home Status aggregate control that CONSUMES mdatron records as inputs (the #810 Layer2-query/Layer6-gate pattern), not frame+control+double-home [SA+SO]; (4) REMOVE the VSDD-E0050 contracted assertion — plain description or a proposed allocation through the owning phase; coinage reflex again, 4 lenses [SO+Security+QE+DR/TW]; (5) reconcile routing — the plan comment IS the routing (contract l.77 + #810 carry); the dependency edge is an ADDITION, not a replacement [SO+SA]; (6) add a per-session hook wall-clock budget + firing cadence + cost-banding as a requirement/AC, not prose [AIE]; (7) draft the Revision-line entry (AC-9, absent); (8) specify the 3 regression fixtures + fix the middle-bypass named 3 ways [QE+DR/TW]; plus self-governance layer owner, non-vacuity defined, pin-update is shape-tier not truth-tier authorization, the tripwire routes external content through the #807 cleaner, a real keystone falsification AC, an L1/L2 phase-5 retest trigger, the re-sequencing delta over #810 stated.\nOPERATOR DECISIONS (premises overturned by the review): (A) dogfood first-blocking-control-now is NOT dependency-free — needs the Layer4/7 hook seam; buildable-now form is non-blocking detection. (B) mdatron fold-in has no migration path + crosses the repo boundary + breaks live CI — sequence separately (#816) may be cleaner.",
+          "created_at": "2026-07-29T00:41:34.772722Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAM3l//ccBcGIMfQrZy/3qZVD3XVElbeFUpgTSbwCZ26RP1DVAMioNBXUmHrwQLyrNCtjRLIbhC6Zr5QbiD4ZFCg=="
         },
         "e7d5f091-a6e4-4407-9129-db54c854c982": {
           "display_id": 1126,
@@ -26222,11 +26231,16 @@
       "agent_id": "xqjG",
       "agent_seq": 623,
       "timestamp": "2026-07-29T00:40:44.819984Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 624,
+      "timestamp": "2026-07-29T00:41:34.786860Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:40:44.819984Z",
+    "timestamp": "2026-07-29T00:41:34.786860Z",
     "agent_id": "xqjG",
-    "agent_seq": 623
+    "agent_seq": 624
   }
 }
