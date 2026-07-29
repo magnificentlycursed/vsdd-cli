@@ -1,6 +1,6 @@
 {
   "next_display_id": 831,
-  "next_comment_id": 1251,
+  "next_comment_id": 1252,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20281,7 +20281,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T14:06:11.601732Z",
+      "updated_at": "2026-07-29T16:56:44.178093Z",
       "labels": [
         "red-gate"
       ],
@@ -20326,6 +20326,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAg1V0WojkqNUEZ6jrzWsLed3I0rG9nVHWWaB8Q9E1h76g8hnamFi+Ooc9RLK/y8ELY8DqEvgpLmkA/TR9n57oCQ=="
+        },
+        "3edb5dcb-8551-4a03-b637-ee053a6c4612": {
+          "display_id": 1251,
+          "author": "xqjG",
+          "content": "Slice-1 detection + both designs on main (PR #9, commit a736eb7a — carried the detection due to branch topology; the redundant detection PR #6 closed). #829 prerequisite on main. Guardrail BUILD now unblocked: #829 landed, detection landed, mdatron 0.4.0 on main, develop on the crosslink mirror. Next: build 'vsdd gate' + block/pass/fail-closed tests off main, then the CI leg (crosslink @ develop).",
+          "created_at": "2026-07-29T16:56:44.160463Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAb/ak5NVtIrw5xMhnXyk9PCaTcCmExuNW5ivwm4zUaaJ+TYikD5wHiMDUy/5hq08zbhrsrbujbQjfvN2vcbvyDw=="
         },
         "5b5166a4-da2e-44f0-9315-8b274bd15066": {
           "display_id": 1238,
@@ -28518,11 +28527,16 @@
       "agent_id": "xqjG",
       "agent_seq": 816,
       "timestamp": "2026-07-29T16:56:37.697574Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 817,
+      "timestamp": "2026-07-29T16:56:44.178093Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T16:56:37.697574Z",
+    "timestamp": "2026-07-29T16:56:44.178093Z",
     "agent_id": "xqjG",
-    "agent_seq": 816
+    "agent_seq": 817
   }
 }
