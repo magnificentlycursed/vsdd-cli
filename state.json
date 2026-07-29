@@ -9413,11 +9413,12 @@
       "uuid": "5b34459f-702c-4b3e-a162-d109cfd9d4b2",
       "display_id": 743,
       "title": "Boundary sweep: three items from auditing our own build against the ratified #739 boundary",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-22T16:31:46.788125Z",
-      "updated_at": "2026-07-29T10:10:45.188938Z",
+      "updated_at": "2026-07-29T10:10:51.360048Z",
+      "closed_at": "2026-07-29T10:10:51.360034Z",
       "labels": [
         "review"
       ],
@@ -27792,11 +27793,16 @@
       "agent_id": "xqjG",
       "agent_seq": 750,
       "timestamp": "2026-07-29T10:10:45.188938Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 751,
+      "timestamp": "2026-07-29T10:10:51.360048Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:10:45.188938Z",
+    "timestamp": "2026-07-29T10:10:51.360048Z",
     "agent_id": "xqjG",
-    "agent_seq": 750
+    "agent_seq": 751
   }
 }
