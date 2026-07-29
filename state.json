@@ -1,6 +1,6 @@
 {
   "next_display_id": 819,
-  "next_comment_id": 1150,
+  "next_comment_id": 1151,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10351,7 +10351,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T01:09:44.762369Z",
+      "updated_at": "2026-07-29T01:24:12.670465Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10364,6 +10364,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAVce3TSrRAVAiK7EPSYjUnX/cXX7XIr+x5GyOyaQ/e0Fn2pu8r7iyM67pf6LsPTNM1tAvNgKY7ltNqDJwRpToAA=="
+        },
+        "0319460c-04c6-4990-be06-bc04e7d7be13": {
+          "display_id": 1150,
+          "author": "xqjG",
+          "content": "V3 WRITTEN — folds all three review passes + the four decisions. Key changes over v2: (1) the FORCING-SEAM correction — the now-built detection binds to seams that exist today (git pre-commit + session-stop hook) so deviation produces compiler-shaped feedback = enforcement, not the advisory latent-record both Red Team adversaries flagged; (2) REQ-1 gains an EXTERNAL HEARTBEAT so the audit is not exempt from its own discipline; (3) REQ-2 traces are tamper-evident by CORROBORATION (git + signed remote tracker), not local git alone; (4) REQ-3 closes the disposition-closure and fix-with-no-owning-finding routing bypasses with named non-forgeable halves; (5) REQ-4 phase gating resolves gate evidence to a boundary commit + marks unverified self-report (Fix 1 shape); (6) REQ-8 fail-closed distinguishes checks-run-clean from dormant/could-not-check reconciled with benign-offline (Fix 2 shape), enumerates the mis-rooted-session + --no-verify bypasses with the server-side-CI qualifier, slow-hook fails closed; (7) REQ-10 re-pin requires re-review; (8) NEW REQ-12 escape-vector coverage table (control + non-forgeable trace + enforcement-vs-advisory per corpus escape); (9) honest live-dormant note on #811/the Layer-2 queries; (10) the Revision-line lens count reconciled (7 lenses, DR+TW combined) and the six-round/rounds-1-5 wording fixed. 12 REQ, 12 AC, 0 open. Knowledge + pipeline synced. NEXT: terminal verify of v3, then ratification, then build Fixes 1+2 against the ratified shapes.",
+          "created_at": "2026-07-29T01:24:12.655539Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAbwgHgBNyXa46clRZxlh/bbGOB/UTLld0K2y62q1niWpX/5YZnNHc4d5pRqDxT5R07YW1lGiO2DuifGQgGtgaBw=="
         },
         "0e49180e-db04-4ba6-a278-8ddcbbdb7938": {
           "display_id": 1133,
@@ -26418,11 +26427,16 @@
       "agent_id": "xqjG",
       "agent_seq": 638,
       "timestamp": "2026-07-29T01:18:37.274540Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 639,
+      "timestamp": "2026-07-29T01:24:12.670465Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T01:18:37.274540Z",
+    "timestamp": "2026-07-29T01:24:12.670465Z",
     "agent_id": "xqjG",
-    "agent_seq": 638
+    "agent_seq": 639
   }
 }
