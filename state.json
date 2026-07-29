@@ -23412,11 +23412,12 @@
       "display_id": 598,
       "title": "phase-1c data authoring: the versioned data sets",
       "description": "Umbrella for the in-phase data-authoring work package named in the Decomposition section (ratified contract, phase 1c). Sets authored before phase 2a opens, landing as Layer 1 artifacts. Enumeration brought current 2026-07-20 with the chassis-affordance and attended/autonomous amendments (the original 13-item text predated them; contract governs):\n\n(1) state schema with contents enumeration incl. published marker; (2) composition-scope domain and action vocabulary; (3) statusline data set — read-failure kinds with kind-to-action and recovery members (machine tokens + human text), degraded kinds with next-step text, wiring-outcome enumeration, per-field width budgets, wall-clock budget with flake-resistant timing-check shape; (4) failure-kind enumeration completed with abort and not-collected; (5) flake repetition number and per-test aggregation rule; (6) cannot-run predicate command binding and exit-and-timeout semantics; (7) mapping schema — confirm or override the adopted report-set default; (8) registered branch grammar — both registered forms with their refs-query seam; (9) autonomous-dispatch preflight members with each member's observation binding, the three-valued result semantics, and the dispatch-failed classification's fencing rule; (10) dispatch-manifest schema — the recording fields Recorded review dispatch enumerates, shipped as versioned data so parity queries read manifests as data; (11) effort-scaling signal catalog and tier-and-effort defaults; (12) mutation floor; (13) token budgets and calibration bands; (14) preset contents; (15) statusline and prompt copy incl. the benign-offline vs broken-state word distinction; (16) installed-artifact manifest schema with lifetime-half and reference-surface fields, PLUS this repo's populated manifest instance — authored ahead of the Layer 0 repair close (act 9), which verifies against it; (17) act-to-affordance map with its recorded swarm condition; (18) snapshot schema audit against the full Status integrity-query list plus renderer display fields.\n\nChild issues per set as authoring runs; operator authorship where the oracle rule requires it (all judgment numbers are proposals until operator adoption is recorded). The statusline numbers resolve the routed items of 'phase-1c work item: statusline wiring script shape' (#362).",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-20T16:44:56.612097Z",
-      "updated_at": "2026-07-29T10:09:50.856837Z",
+      "updated_at": "2026-07-29T10:09:56.785665Z",
+      "closed_at": "2026-07-29T10:09:56.785631Z",
       "comments": {
         "127c00b7-fa18-4d6f-85a8-251f145951db": {
           "author": "xqjG",
@@ -27712,11 +27713,16 @@
       "agent_id": "xqjG",
       "agent_seq": 742,
       "timestamp": "2026-07-29T10:09:50.856837Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 743,
+      "timestamp": "2026-07-29T10:09:56.785665Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:09:50.856837Z",
+    "timestamp": "2026-07-29T10:09:56.785665Z",
     "agent_id": "xqjG",
-    "agent_seq": 742
+    "agent_seq": 743
   }
 }
