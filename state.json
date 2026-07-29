@@ -1,6 +1,6 @@
 {
   "next_display_id": 818,
-  "next_comment_id": 1147,
+  "next_comment_id": 1148,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10346,7 +10346,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T01:02:37.048724Z",
+      "updated_at": "2026-07-29T01:09:44.762369Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10395,6 +10395,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA/wGs8PWfLAzco1pMAlK/0uGBA9ViuOTrB8ANqVqoPvvORxX82fJ3oWrzhOkHs1932llaA7mNW/ZV3k/ReAF+Cg=="
+        },
+        "18e4d93f-b9fe-4050-95b7-c9091451ddf4": {
+          "display_id": 1147,
+          "author": "xqjG",
+          "content": "OPERATOR DECISIONS after the Red Team cycle (2026-07-28): (A) BIND detection to a forcing seam now — wire the now-built detection into seams that exist today (the repo git pre-commit refusing a governed-set commit while an unrouted/ungated finding stands; a session-stop hook non-zero-exiting on any new integrity finding), so deviation produces compiler-shaped feedback = real enforcement in the bootstrap window; corrects the detection-only scoping. (B) FIX the shipped Layer-1/3 vulns now (defect-fix lane): false-assurance (three-valued could-not-check / dormant-vs-clean), forgeable-state envelope (mark phase/gate provenance unverified until evidence resolves to a boundary commit), prose-injection (quoted-untrusted framing on echoed external content).\nV3 PLAN — fold into one revision: the terminal-verify blocker (Revision-line seven-lens/eight-domains count) + its Security minors (git-history-alone-not-tamper-evident -> corroborate with remote/tracker; make-the-hook-slow disposition; --no-verify/CI non-bypassability; mis-rooted-session bypass; six-round vs rounds-1-5 wording); the design-escape findings (detection-must-bind-to-a-seam; keystone-needs-an-external-heartbeat; disposition-closure routing bypass; fix-with-no-owning-finding; forgeable composition; edge-presence-not-correctness; pin-repin-without-review; self-modification of the control scripts); the wider-eval findings (the built-vuln controls REQ-2/4/8; the honest note that #811 and the Layer-2 queries are live-dormant until the Layer-6 join; the corpus-coverage tally). Then terminal verify -> ratification. HONEST CORRECTION on the record: I overstated #811 as the enforcement spine first mechanized fruit; Red Team showed it is fixture-green but live-inert (findings acquire empty until Layer 6).",
+          "created_at": "2026-07-29T01:09:44.748093Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAi5wVMoTQU4Br1EpgO7wB64Jj7oTCky4KhnzMzG4ctALxrKO9ICWBW7tPkICROp7pxxlNzIPrF7KWxXSr3UvsDw=="
         },
         "1f83f8e5-2597-4d9f-ad0c-483749f9d2c0": {
           "display_id": 1136,
@@ -26341,11 +26350,16 @@
       "agent_id": "xqjG",
       "agent_seq": 632,
       "timestamp": "2026-07-29T01:05:19.037207Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 633,
+      "timestamp": "2026-07-29T01:09:44.762369Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T01:05:19.037207Z",
+    "timestamp": "2026-07-29T01:09:44.762369Z",
     "agent_id": "xqjG",
-    "agent_seq": 632
+    "agent_seq": 633
   }
 }
