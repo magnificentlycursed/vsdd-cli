@@ -1,5 +1,5 @@
 {
-  "next_display_id": 818,
+  "next_display_id": 819,
   "next_comment_id": 1148,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -576,6 +576,7 @@
     "b1a30001-c13f-4c23-9d87-22993adf59d6": 473,
     "b1dc511f-a080-498f-8d5f-e5065d02aa63": 733,
     "b1e25038-bf58-4bae-9be7-022923da5e7d": 281,
+    "b1e8ac84-f4a2-4a1e-bf12-b5b73d5d604b": 818,
     "b23d9e2f-3260-437b-84a6-17ef8c91d85a": 200,
     "b2c11363-ddd4-40af-b6d5-f6cb8b26c49e": 242,
     "b2c809d3-83db-4473-b4cb-99679d67c205": 435,
@@ -17131,6 +17132,16 @@
         }
       }
     },
+    "b1e8ac84-f4a2-4a1e-bf12-b5b73d5d604b": {
+      "uuid": "b1e8ac84-f4a2-4a1e-bf12-b5b73d5d604b",
+      "display_id": 818,
+      "title": "Security hardening (defect lane): shipped Layer-1/3 agent-context-integrity vulns from the Red Team wider eval — false-assurance dormant-vs-clean, forgeable-state envelope provenance, visible-prose injection in agent-consumed diagnostics",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-29T01:09:50.691294Z",
+      "updated_at": "2026-07-29T01:09:50.691294Z"
+    },
     "b23d9e2f-3260-437b-84a6-17ef8c91d85a": {
       "uuid": "b23d9e2f-3260-437b-84a6-17ef8c91d85a",
       "display_id": 200,
@@ -26355,11 +26366,16 @@
       "agent_id": "xqjG",
       "agent_seq": 633,
       "timestamp": "2026-07-29T01:09:44.762369Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 634,
+      "timestamp": "2026-07-29T01:09:50.691294Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T01:09:44.762369Z",
+    "timestamp": "2026-07-29T01:09:50.691294Z",
     "agent_id": "xqjG",
-    "agent_seq": 633
+    "agent_seq": 634
   }
 }
