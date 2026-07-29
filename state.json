@@ -15912,11 +15912,12 @@
       "display_id": 830,
       "title": "Adopt mdatron 0.4.0 (envelope 2.0.0, breaking) — bump pins + re-verify",
       "description": "mdatron 0.4.0 shipped (first normal release; envelope mdatron_output_version 1.1.0 -> 2.0.0, breaking). Operator directive: adopt ASAP; also gates mdatron's crates.io publish (held pending vsdd-cli clear-to-publish).\n\nConsumer-facing breaking changes: families reshaped bare-string -> {state, reason}; quoted[] gained required origin/trusted; verify --json no longer re-emits findings on stderr (stdout envelope authoritative). Wins: summary.files_checked now = files VALIDATED (the non-vacuity fix); E0080 -> pipeline_error.kind; new W0045/W0046/W0047; my relayed [see: <label>] interpolation ruling shipped.\n\nvsdd-cli adoption scope (assessed): (1) bump pins v0.3.0 -> v0.4.0 in .github/workflows/{mdatron-verify,vsdd-test}.yml + .githooks/pre-commit MIN_VERSION; (2) re-verify vsdd's own codes (VSDD-E0207/E0208, MDATRON-W0040) still fire under 0.4.0 — cross_references.rs + jurisdiction_nonvacuity.rs parse only findings[].code + pipeline_status (untyped Value, stable fields), so no parse break expected, but empirical re-run required; (3) fix a stale files_checked comment in jurisdiction_nonvacuity.rs.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T13:43:17.636972Z",
-      "updated_at": "2026-07-29T16:56:25.035714Z",
+      "updated_at": "2026-07-29T16:56:31.323324Z",
+      "closed_at": "2026-07-29T16:56:31.323312Z",
       "labels": [
         "upgrade"
       ],
@@ -28511,11 +28512,16 @@
       "agent_id": "xqjG",
       "agent_seq": 814,
       "timestamp": "2026-07-29T16:56:25.035714Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 815,
+      "timestamp": "2026-07-29T16:56:31.323324Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T16:56:25.035714Z",
+    "timestamp": "2026-07-29T16:56:31.323324Z",
     "agent_id": "xqjG",
-    "agent_seq": 814
+    "agent_seq": 815
   }
 }
