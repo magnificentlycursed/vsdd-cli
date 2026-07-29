@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1162,
+  "next_comment_id": 1163,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10443,7 +10443,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T01:44:11.332755Z",
+      "updated_at": "2026-07-29T02:58:49.988138Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10555,6 +10555,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAPh6HMgckzTtWtWCCkOlp9PH21vc+8aiZFcWrjQJexgMg6MomcxTGUmVu+ld7rpzwg7xCzD+yFZSCpOf2e/S7CQ=="
+        },
+        "4f575518-34ee-484d-ad0e-f6e47e07638f": {
+          "display_id": 1162,
+          "author": "xqjG",
+          "content": "Thermite architecture study (agent report 2026-07-28); filed dollspace-gay/Thermite#93 for its enforcement drift. Lessons for #815 (the tamper-proof / grade-4 half):\n1. Tool-allowlist-per-role IS real grade-4 — Claude Code refuses an ungranted tool (verified: acto-critic lacks Edit). BUT a capability fence is only as strong as the FULL residual set: Thermite's critic still holds Write+Bash, so its 'read-only' is grade-1 convention, not capability. A genuine read-only critic must withhold EVERY mutation tool (drop Write, constrain Bash) or run on a read-only mount. This is precisely WHY #815's tamper-evidence-by-corroboration half stays necessary — it covers the residual Write/Bash surface a porous fence cannot.\n2. Add a LIVENESS axis orthogonal to the 4 grades: a designed grade is worthless if de-wired. Thermite's two edit-time gates silently died (commit 5581b65f) and every doc still claims them live. The meta-harness must ROUTE ITS OWN CONTROL PLANE (settings.json, agent defs) — a gate that guards the gates. Directly reinforces the vsdd draft's own 'route the control plane' instinct.\n3. Split grade 2: 2a commit/push-time (records a deviation) vs 2b edit-time PreToolUse (prevents the edit) — 2b is closer to grade-4 in effect and still substrate-portable; a sweet spot for controls that can't be grade-4.\n4. Match doc claims to enforced reality mechanically. Thermite's goal.md R-SIDE-1/R-BV-1 'forward-looking — not yet enforced' labels are the good model; make 'enforced' a checked property (a test asserting the claimed wiring exists).",
+          "created_at": "2026-07-29T02:58:49.926573Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAj1CBFFEgVCNT8RuFqFAi1RocPqYqroriOoOAjZVK+YZO971kEvOlz52ptp8tiIlFofSKaiicBGL33h59J2h3DA=="
         },
         "7ae5eadd-56c4-4316-8967-5832e7765aeb": {
           "display_id": 1129,
@@ -26621,11 +26630,16 @@
       "agent_id": "xqjG",
       "agent_seq": 653,
       "timestamp": "2026-07-29T02:34:04.372925Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 654,
+      "timestamp": "2026-07-29T02:58:49.988138Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T02:34:04.372925Z",
+    "timestamp": "2026-07-29T02:58:49.988138Z",
     "agent_id": "xqjG",
-    "agent_seq": 653
+    "agent_seq": 654
   }
 }
