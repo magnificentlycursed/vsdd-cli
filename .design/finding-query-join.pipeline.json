@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "design_doc": ".design/finding-query-join.md",
+  "doc_hash": "sha256:00a41ca73cf65a676a48817c230d31428b1a8e413b93d9624a206bc55c41f626",
+  "stage": "designed",
+  "plans": [],
+  "runs": []
+}

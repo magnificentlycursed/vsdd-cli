@@ -81,6 +81,43 @@ pub struct CommentHandle {
     pub resolves: bool,
 }
 
+/// Which finding-field groups the acquisition populated (vsdd-cli #820, REQ-7 of
+/// `.design/finding-query-join.md`). The finding-reading integrity checks
+/// consult it so a spine-only live join (Slice 1) does not mis-fire the sibling
+/// checks that read the field groups Slice 5 defers. It defaults to all-acquired
+/// so pre-marker snapshots and the convergence fixtures declare full
+/// acquisition; the live spine-only join sets [`FindingFieldsAcquired::SPINE_ONLY`].
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct FindingFieldsAcquired {
+    /// handle, status, disposition, routing_present, closed_before_ratification.
+    pub spine: bool,
+    /// owner, validator (Slice 5).
+    pub lifecycle_roles: bool,
+    /// evidence_reference_present (Slice 5).
+    pub evidence: bool,
+}
+
+impl Default for FindingFieldsAcquired {
+    fn default() -> Self {
+        FindingFieldsAcquired {
+            spine: true,
+            lifecycle_roles: true,
+            evidence: true,
+        }
+    }
+}
+
+impl FindingFieldsAcquired {
+    /// The Slice-1 live join populates the spine only; the lifecycle-role and
+    /// evidence groups acquire in Slice 5.
+    pub const SPINE_ONLY: Self = FindingFieldsAcquired {
+        spine: true,
+        lifecycle_roles: false,
+        evidence: false,
+    };
+}
+
 /// One acquisition, one derivation, one rendering — never a second
 /// computation (the Status requirement).
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -96,4 +133,13 @@ pub struct Snapshot {
     pub display_session: String,
     pub display_work_item: String,
     pub display_active_milestone: String,
+    /// Which finding-field groups the acquisition populated (vsdd-cli #820); the
+    /// finding-reading integrity checks gate on it. Defaults to all-acquired.
+    #[serde(default)]
+    pub finding_fields_acquired: FindingFieldsAcquired,
+    /// A worded note when the finding query was capped this acquisition (REQ-4,
+    /// vsdd-cli #820): findings past the cap were not examined. None when the
+    /// query ran whole. Never a silent drop.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub finding_acquisition_note: Option<String>,
 }
