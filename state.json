@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1237,
+  "next_comment_id": 1238,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -11235,7 +11235,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T08:10:39.572095Z",
-      "updated_at": "2026-07-29T08:11:36.685414Z",
+      "updated_at": "2026-07-29T10:46:23.357466Z",
       "comments": {
         "2d9a5862-69d1-41ec-94da-197ce00c575a": {
           "display_id": 1190,
@@ -11245,6 +11245,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYh1VXVyuxFF9vLvKwj41JuMjwyphV/ZreHyXTGNhcA+ZUotvUwKHO3+bfYJdNxd9MrM5U7JxKPzWdQ34Rr1xDA=="
+        },
+        "d1736d49-bf50-41b4-8d2f-cf59eadd0320": {
+          "display_id": 1237,
+          "author": "xqjG",
+          "content": "DONE (core) — E0091 ARMED over the enduring corpus; PR #5 open, CI GREEN (verify 32s + test 49s; families.vocabulary active). The 'no coined labels' discipline is now a CI-backed check over the artifacts the harness ships (domain prompts, supplements, registry data sets) — not agent vigilance (which this session proved unreliable). Register: .mdatron/vocabulary.yaml; allows VSDD/MDATRON code namespaces + genuine tech terms (H1-6, OSC-8, JSON5); rewrote the enduring coinages ('R79 F3 anti-pattern', 'milestone N-1', 'milestones M1..MN') to plain descriptors. DELIBERATELY OUT OF SCOPE: the transitional prose (methodology.md, DESIGN-*.md) — superseded/stop-gap, retires as the harness subsumes the methodology; its ~80-cluster debt retires with it (doc-sunset #821). Remaining: merge PR #5 + branch protection to make it a hard block.",
+          "created_at": "2026-07-29T10:46:23.341986Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAv4nXD/JwIZrekUPYLhbi1mUAbBSP99VghUYxyQ2FkYIs7Yb1tR+Q5cAvr0CAmjszco0VyRVFZ1YuldtEZKaFCg=="
         }
       }
     },
@@ -28135,11 +28144,16 @@
       "agent_id": "xqjG",
       "agent_seq": 782,
       "timestamp": "2026-07-29T10:29:14.071886Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 783,
+      "timestamp": "2026-07-29T10:46:23.357466Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:29:14.071886Z",
+    "timestamp": "2026-07-29T10:46:23.357466Z",
     "agent_id": "xqjG",
-    "agent_seq": 782
+    "agent_seq": 783
   }
 }
