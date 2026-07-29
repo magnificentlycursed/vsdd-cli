@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1133,
+  "next_comment_id": 1134,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10323,11 +10323,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-28T22:27:24.550082Z",
+      "updated_at": "2026-07-29T00:22:45.305644Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "0e49180e-db04-4ba6-a278-8ddcbbdb7938": {
+          "display_id": 1133,
+          "author": "xqjG",
+          "content": "mdatron v0.3.0 impacts this design: cluster B (contract-stability + audit hardening — envelope schema, families-inactive lint, code-resolves-in-explain) is the design's TOP mdatron dependency — it is the conformance vehicle for the keystone (mechanism-invocation-timing audit, record-estate leg) and the register/family-inactive check (REQ-1/REQ-10/REQ-11). Cluster A's priority is coupled to the design's action-time mdatron use. Recorded as a design input; the design's mdatron leverage (REQ-10) already folds the v0.2.0 upgrade into this cycle (#816) and would extend to B when it ships. Prioritization relayed on #816.",
+          "created_at": "2026-07-29T00:22:45.292462Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAORdmscYQmv4DzpRTo7lFbXMsSejsQuas0aZM0lxFoXX1bW8a7CWRx3wXaBqN3jcxUfiQq2+igjTDEkQXxuT1AQ=="
+        },
         "12cf4591-361b-4493-95b4-4ef2f4db1f18": {
           "display_id": 1128,
           "author": "xqjG",
@@ -26110,11 +26119,16 @@
       "agent_id": "xqjG",
       "agent_seq": 615,
       "timestamp": "2026-07-29T00:22:39.020965Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 616,
+      "timestamp": "2026-07-29T00:22:45.305644Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:22:39.020965Z",
+    "timestamp": "2026-07-29T00:22:45.305644Z",
     "agent_id": "xqjG",
-    "agent_seq": 615
+    "agent_seq": 616
   }
 }
