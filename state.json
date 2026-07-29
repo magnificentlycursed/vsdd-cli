@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1177,
+  "next_comment_id": 1178,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4162,7 +4162,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T05:50:32.625504Z",
+      "updated_at": "2026-07-29T05:53:52.228166Z",
       "labels": [
         "feature"
       ],
@@ -4238,6 +4238,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA++8pa0Urxl06XSvUq5xpuQxBZ7byx5W93N5EW0I+lgd/k0E0PRA4ZfM/+80S+WqKYd8h5hBqeUoQhovi2mzTAA=="
+        },
+        "d7478d34-7aa2-4180-a98b-f77d4753c12b": {
+          "display_id": 1177,
+          "author": "xqjG",
+          "content": "Committed: .mdatron/config.yaml (governed-corpus jurisdiction) at a19a999f | pre-commit mdatron verify clean | 1 file, +37. The config-prep unit is landed. mdatron upgrade (0.1.0 -> v0.3.0, skip v0.2.0) now gated only on: v0.3.0 finalization + pinning both mdatron guardrails (CI checkout -> v0.3.0 tag; pre-commit window 0.1.x -> 0.3.x) + the stale-CI fix (mdatron-verify.yml pre-collapse layout; needs operator's remote read).",
+          "created_at": "2026-07-29T05:53:52.213007Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAFJ7KfeJsEKIt86816N/cTaSLswQ4ifr7iSp23pzreYoHz2G++3+uG6/AOMSnRzQW01L+ljWQ+LkUqv27iBsRCg=="
         }
       }
     },
@@ -26907,11 +26916,16 @@
       "agent_id": "xqjG",
       "agent_seq": 677,
       "timestamp": "2026-07-29T05:50:32.625504Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 678,
+      "timestamp": "2026-07-29T05:53:52.228166Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T05:50:32.625504Z",
+    "timestamp": "2026-07-29T05:53:52.228166Z",
     "agent_id": "xqjG",
-    "agent_seq": 677
+    "agent_seq": 678
   }
 }
