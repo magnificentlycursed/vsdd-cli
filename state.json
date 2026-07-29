@@ -1,6 +1,6 @@
 {
   "next_display_id": 828,
-  "next_comment_id": 1242,
+  "next_comment_id": 1243,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20179,7 +20179,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T12:35:27.024995Z",
+      "updated_at": "2026-07-29T12:35:34.145847Z",
       "labels": [
         "red-gate"
       ],
@@ -20213,6 +20213,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXtq/oadt4SkH/xA7+IuwspwVwqJG2EJU3LsCuahNr+ivIkQRkrvpDqHHALCYU8ytR6c0zWqhnL8KmYb0AxsmDg=="
+        },
+        "38e96fd0-8a87-45da-bf35-60b462ccbcc7": {
+          "display_id": 1242,
+          "author": "xqjG",
+          "content": "Q1 (disposition source) resolved: disposition label-carry (dismissed/hallucinated/consolidated labels, read from issue show), plus upstream crosslink close-reason request filed as #827 to supersede it if implemented. Design updated: D1 + REQ-9 + AC-9/AC-10 (now 9 REQ, 10 AC, 0 open blocks; doc_hash refreshed). Contract note: promoting the label-carry to a contract-level format-carry re-enters the spec-amendment loop under review, NOT hand-edited here. Design is crosslink-kickoff-ready pending: (a) the seed PR push (operator; git-mutation hook), (b) retro-labelling the disposition closures already past the 2026-07-27 boundary.",
+          "created_at": "2026-07-29T12:35:34.131620Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAg1V0WojkqNUEZ6jrzWsLed3I0rG9nVHWWaB8Q9E1h76g8hnamFi+Ooc9RLK/y8ELY8DqEvgpLmkA/TR9n57oCQ=="
         },
         "5b5166a4-da2e-44f0-9315-8b274bd15066": {
           "display_id": 1238,
@@ -28263,11 +28272,16 @@
       "agent_id": "xqjG",
       "agent_seq": 793,
       "timestamp": "2026-07-29T12:35:27.024995Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 794,
+      "timestamp": "2026-07-29T12:35:34.145847Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T12:35:27.024995Z",
+    "timestamp": "2026-07-29T12:35:34.145847Z",
     "agent_id": "xqjG",
-    "agent_seq": 793
+    "agent_seq": 794
   }
 }
