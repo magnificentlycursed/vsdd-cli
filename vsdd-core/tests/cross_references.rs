@@ -1,7 +1,9 @@
 //! Phase 2a Red Gate for vsdd-core/patterns/cross-references.yaml extensions.
 //!
 //! Each test builds a temp project laid out the way mdatron expects
-//! (.mdatron/schemas + .mdatron/patterns + fixture markdown files), runs
+//! (.mdatron/schemas + .mdatron/patterns + fixture markdown files),
+//! declares its jurisdiction with `mdatron init` (v0.3.0 requires a
+//! config.yaml or verify fails with MDATRON-E0080; vsdd-cli #816), runs
 //! the mdatron BINARY's verify over it (tool-to-tool, the #739 boundary;
 //! the library pipeline died with the seam, vsdd-cli #764), and asserts
 //! that the relevant finding code appears (or does not appear) for the
@@ -30,6 +32,14 @@ impl TempProject {
         let root = dir.path().to_path_buf();
         let proj = Self { _dir: dir, root };
         proj.seed_schemas_and_patterns();
+        // v0.3.0 requires a declared jurisdiction (config.yaml) or verify
+        // fails with MDATRON-E0080 before any file is checked. Seed it the
+        // adopter way -- `mdatron init` -- rather than hand-rolling a
+        // config.yaml: hand-rolling the .mdatron layout is exactly what left
+        // this harness (and the real tree, vsdd-cli #816) brittle to the
+        // 0.1.x -> 0.3.0 jurisdiction requirement. init stays forward-
+        // compatible with whatever layout a future mdatron requires.
+        proj.mdatron_init();
         proj
     }
 
@@ -64,6 +74,24 @@ impl TempProject {
             vsdd_core::patterns::CROSS_REFERENCES,
         )
         .unwrap();
+    }
+
+    /// Declare the project's jurisdiction the way a real adopter does, so
+    /// the temp project is a faithful v0.3.0 layout and stays valid as the
+    /// tool's required layout evolves (vsdd-cli #816). init is idempotent
+    /// and preserves the adopter-seeded schemas/patterns above; it adds the
+    /// config.yaml (default `**/*.md`, which covers every fixture path these
+    /// tests write) and the managed manifest.
+    fn mdatron_init(&self) {
+        let status = std::process::Command::new("mdatron")
+            .args(["init", "-q", "--project-root"])
+            .arg(&self.root)
+            .status()
+            .expect("mdatron runs from PATH — the estate's tooling requirement");
+        assert!(
+            status.success(),
+            "mdatron init seeds the project jurisdiction"
+        );
     }
 
     fn write(&self, rel: &str, content: &str) {
