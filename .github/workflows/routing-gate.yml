@@ -54,7 +54,9 @@ jobs:
           key: cargo-routing-gate-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock') }}
 
       - name: Install crosslink CLI (@ develop, until develop -> main)
-        working-directory: crosslink
+        # crosslink's Rust crate is nested at <repo>/crosslink/ — the repo root
+        # is docs + tooling; the installable binary crate is the crosslink/ subdir.
+        working-directory: crosslink/crosslink
         run: cargo install --path . --locked
 
       - name: Hydrate the tracker from the hub
