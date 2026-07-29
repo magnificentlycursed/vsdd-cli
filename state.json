@@ -1,6 +1,6 @@
 {
   "next_display_id": 830,
-  "next_comment_id": 1243,
+  "next_comment_id": 1244,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12917,10 +12917,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T13:19:11.898416Z",
-      "updated_at": "2026-07-29T13:19:18.068542Z",
+      "updated_at": "2026-07-29T13:19:24.260921Z",
       "labels": [
         "bug"
-      ]
+      ],
+      "comments": {
+        "4a7f516b-2c34-445b-90e3-df429d76ae4a": {
+          "display_id": 1243,
+          "author": "xqjG",
+          "content": "Routing (plan): route to the fix lane — a defect in the Layer 1/2 milestone leg (parse_milestones), outside the current Slice-1 finding-join build scope. Fix carries its own red gate: 'No milestones found.' parses to Some(empty list), not None; the existing empty_output_is_an_empty_list test extends to the crosslink empty-state wording. No contract touch.",
+          "created_at": "2026-07-29T13:19:24.243590Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXexTu7Pg9VM3XX6TZt7eoC1X+Pn7wFo0a57xMvIX/whkkhc9ffIJZiTD8NvVW/1ShRfD8zZ8KNpRLuRIL7kRAA=="
+        }
+      }
     },
     "806985a0-f87d-4619-b567-088e9cc44377": {
       "uuid": "806985a0-f87d-4619-b567-088e9cc44377",
@@ -28336,11 +28347,16 @@
       "agent_id": "xqjG",
       "agent_seq": 799,
       "timestamp": "2026-07-29T13:19:18.068542Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 800,
+      "timestamp": "2026-07-29T13:19:24.260921Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T13:19:18.068542Z",
+    "timestamp": "2026-07-29T13:19:24.260921Z",
     "agent_id": "xqjG",
-    "agent_seq": 799
+    "agent_seq": 800
   }
 }
