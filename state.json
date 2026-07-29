@@ -17262,9 +17262,12 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T12:34:49.900661Z",
-      "updated_at": "2026-07-29T12:34:55.344350Z",
+      "updated_at": "2026-07-29T12:35:27.024995Z",
       "labels": [
         "upstream"
+      ],
+      "related": [
+        "ccced380-4c00-4475-bd76-75a386e41968"
       ]
     },
     "abeafec1-2f39-4886-8522-3bb2613a7df8": {
@@ -20176,9 +20179,12 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T12:27:06.116349Z",
+      "updated_at": "2026-07-29T12:35:27.024995Z",
       "labels": [
         "red-gate"
+      ],
+      "related": [
+        "abaa3805-8026-43da-b189-4d2e54c3a4e9"
       ],
       "comments": {
         "1817eee2-3b5a-4a13-9c55-f15daded7238": {
@@ -28252,11 +28258,16 @@
       "agent_id": "xqjG",
       "agent_seq": 792,
       "timestamp": "2026-07-29T12:34:55.344350Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 793,
+      "timestamp": "2026-07-29T12:35:27.024995Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T12:34:55.344350Z",
+    "timestamp": "2026-07-29T12:35:27.024995Z",
     "agent_id": "xqjG",
-    "agent_seq": 792
+    "agent_seq": 793
   }
 }
