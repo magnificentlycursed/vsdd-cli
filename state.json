@@ -21722,11 +21722,12 @@
       "display_id": 2,
       "title": "Apply revised AI Engineer domain prompt (tool-agnostic; supplements provide specifics)",
       "description": "Current state: \n\nDesired state: \n\nReason: \n\nDrafted in conversation 2026-06-01 but not applied as file edit. Revision: AIE becomes tool-agnostic; substrate supplements (claude-code-cli; future anthropic-api) provide specific mechanism citations + telemetry signal catalogs. Replaces prescriptive '4 canonical query templates' with looser 'when invoked' description per operator feedback. 9 evaluation lenses spanning cost economics + AI-system-design discipline. Apply to .claude/commands/vsdd-domain-ai-engineer.md with single-agent attribution (no fake co-author trailers per the attribution-honesty discipline).",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:04:18.434079Z",
-      "updated_at": "2026-07-29T10:03:30.945796Z",
+      "updated_at": "2026-07-29T10:03:37.625744Z",
+      "closed_at": "2026-07-29T10:03:37.625732Z",
       "labels": [
         "ai-engineer",
         "refactor",
@@ -27496,11 +27497,16 @@
       "agent_id": "xqjG",
       "agent_seq": 722,
       "timestamp": "2026-07-29T10:03:30.945796Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 723,
+      "timestamp": "2026-07-29T10:03:37.625744Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:03:30.945796Z",
+    "timestamp": "2026-07-29T10:03:37.625744Z",
     "agent_id": "xqjG",
-    "agent_seq": 722
+    "agent_seq": 723
   }
 }
