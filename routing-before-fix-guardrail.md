@@ -7,14 +7,13 @@ created: 2026-07-29
 updated: 2026-07-29
 ---
 
+# Feature: The routing-before-fix guardrail (the unrouted-findings gate)
 
-## Design Specification
-
-### Summary
+## Summary
 
 A `vsdd gate` command that consumes the now-live unrouted-findings query (Slice 1's finding-query join) and BLOCKS when a closed-by-fix finding in the forward-only universe carries no routing. Wired as a required CI leg on every PR — install crosslink, hydrate the tracker, run the gate — it turns the routing-before-fix discipline from detection (a `vsdd status` report that never changes the exit code) into an enforced CI-backed block. Fail-closed: an unverifiable acquisition blocks, never silently passes.
 
-### Requirements
+## Requirements
 
 - REQ-1: A dedicated `vsdd gate` subcommand (the contract's phase-gate command, runnable under `crosslink swarm gate`): it acquires the snapshot, runs the unrouted-findings query, exits 0 (pass) when the query returns empty and non-zero (block) when any finding is unrouted. It is distinct from `vsdd status` (`vsdd/src/main.rs:63`), which reports the same query but always exits 0 ("an integrity finding never degrades the answer").
 - REQ-2: The gate consumes a STATE-FREE unrouted-findings query. The predicate today lives inside `snapshot_integrity` (`vsdd-core/src/answer/integrity.rs:17`), which takes `&State` for the phase-pointer check; extract the unrouted-findings predicate into a standalone pure `unrouted_findings(snapshot: &Snapshot) -> Vec<String>` (the offending handles) so the gate runs without requiring `.vsdd/state.yaml` — a repo may gate before a state artifact exists.
@@ -24,7 +23,7 @@ A `vsdd gate` command that consumes the now-live unrouted-findings query (Slice 
 - REQ-6: A required CI leg on every PR installs crosslink at a pinned ref, fetches the hub branch, runs `crosslink sync` to hydrate the tracker into `.crosslink/issues.db`, builds vsdd, then runs `vsdd gate`. A non-zero gate fails the check and blocks merge — the CI-backed block grade.
 - REQ-7: Block/pass/fail-closed tests: unit tests over the state-free query (unrouted finding → non-empty; routed / disposition-closure / out-of-universe / open → empty) and the gate's exit-code mapping (findings → non-zero; clean → zero; Absent/Unusable → non-zero fail-closed).
 
-### Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] AC-1: `vsdd gate` exits non-zero when the acquired snapshot has a closed-by-fix, in-universe, unrouted finding.
 - [ ] AC-2: `vsdd gate` exits zero when there are none (all closed-by-fix findings routed, out of the forward-only universe, or disposition closures).
@@ -34,7 +33,7 @@ A `vsdd gate` command that consumes the now-live unrouted-findings query (Slice 
 - [ ] AC-6: the CI leg fails the PR check on a non-zero `vsdd gate` against the hydrated tracker.
 - [ ] AC-7: unit tests cover block / pass / fail-closed; `cargo test --workspace`, clippy, and `mdatron verify` stay green.
 
-### Architecture
+## Architecture
 
 `vsdd gate` lands as a new `Command` variant beside `Status`/`Init` in `vsdd/src/main.rs`. It calls `acquire_snapshot(&cwd)` (the same acquisition `status` uses), then the state-free `unrouted_findings`, and maps the result to `ExitCode`. No `.vsdd/state.yaml` read (unlike `cmd_status`, which needs state for the derivation).
 
@@ -46,10 +45,31 @@ The CI leg (`.github/workflows/`): checkout vsdd-cli; checkout + `cargo install`
 
 Interaction with #829: the gate acquires the full snapshot (milestone + session + finding legs). The milestone-empty-parse fix (#829) is a prerequisite — without it, a no-milestone repo's acquisition is `Unusable`, so the gate fail-closes (blocks) even with zero unrouted findings. The gate's end-to-end correctness depends on #829 landing on main first.
 
-### Out of Scope
+## Decisions
+
+### D1: Consume crosslink from the mirror's `develop` branch (resolves the former Q1)
+
+Ruling (operator): until crosslink merges `develop` → `main`, vsdd-cli consumes
+crosslink from the `magnificentlycursed/crosslink` mirror's **`develop`** branch,
+kept current by the maintainer — for both local dev and the CI guardrail leg. The
+CI leg `cargo install`s crosslink @ develop, fetches the hub branch, runs
+`crosslink sync` to hydrate `.crosslink/issues.db`, then runs `vsdd gate`. This is
+a deliberate moving-ref consumption (the surface vsdd needs is on develop) rather
+than a pinned release tag; when develop → main lands, the leg re-pins to a main
+release tag.
+
+Sequencing (scope): `develop` is not yet pushed to the mirror (GitHub 404), and
+it is a moving ref, so the CI leg cannot be built or proven yet. Therefore the
+gate COMMAND + its block/pass/fail-closed unit tests land first; the CI leg lands
+once `develop` is on the mirror. The dependency posture + the exact consumed read
+surface are logged to the crosslink mirror (from:vsdd-cli) so a breaking change
+to that surface gives us a heads-up before it breaks the gate. The gate build
+also waits on #829 (milestone-empty-parse) on main, else the gate fail-closes on
+a no-milestone acquisition.
+
+## Out of Scope
 
 - The round-parity gate (a sibling gate command consuming the round-parity query) — a later increment.
 - The contract-commit amendment-discipline gate (Layer 7) — separate.
 - The open-survivor branch of the unrouted-findings query ("survives its round open") — needs round-membership data (Slice 6).
 - A local pre-push hook — the operator chose the CI-backed block; a hook could be an additive convenience later, but it is friction-grade and out of scope here.
-
