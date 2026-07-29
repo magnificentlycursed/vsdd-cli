@@ -24964,6 +24964,14 @@
       "status": "open",
       "created_at": "2026-07-29T17:43:58.691769Z"
     },
+    "6b26f932-b5d9-4c95-8bf1-850d2535b84f": {
+      "uuid": "6b26f932-b5d9-4c95-8bf1-850d2535b84f",
+      "display_id": 8,
+      "name": "Slice 1 — Live self-governance: tracker join + first guardrail",
+      "description": "Detection (the finding-query join, live) + guardrail (vsdd gate, fail-closed) + the routing-gate CI leg. Build/enforcement increment; closes no fixture criterion. Tracking #820. Block-grade needs operator branch-protection (required 'routing gate' check).",
+      "status": "open",
+      "created_at": "2026-07-29T17:44:05.074852Z"
+    },
     "d762a0df-47f3-423d-9974-8d8132fda3fa": {
       "uuid": "d762a0df-47f3-423d-9974-8d8132fda3fa",
       "display_id": 1,
@@ -24982,7 +24990,7 @@
       "closed_at": "2026-07-20T16:24:00.974812Z"
     }
   },
-  "next_milestone_id": 8,
+  "next_milestone_id": 9,
   "unsigned_event_warnings": [
     {
       "agent_id": "xqjG",
@@ -28593,11 +28601,16 @@
       "agent_id": "xqjG",
       "agent_seq": 822,
       "timestamp": "2026-07-29T17:43:58.692168Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 823,
+      "timestamp": "2026-07-29T17:44:05.075495Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T17:43:58.692168Z",
+    "timestamp": "2026-07-29T17:44:05.075495Z",
     "agent_id": "xqjG",
-    "agent_seq": 822
+    "agent_seq": 823
   }
 }
