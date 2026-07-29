@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1206,
+  "next_comment_id": 1207,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21726,12 +21726,23 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:04:18.434079Z",
-      "updated_at": "2026-06-02T01:04:18.434079Z",
+      "updated_at": "2026-07-29T10:03:30.945796Z",
       "labels": [
         "ai-engineer",
         "refactor",
         "tech-debt"
-      ]
+      ],
+      "comments": {
+        "d55d0622-1bc4-4afe-852a-49934b5ce7b3": {
+          "display_id": 1206,
+          "author": "xqjG",
+          "content": "CLOSED — tracker sweep (#826, operator-directed 2026-07-29). Apply revised AI Engineer domain prompt — the domain prompts are current under the ratified data sets. A binary-first-plan stub (2026-06-02); the plan is superseded by the ratified contract (.design/agent-first-vsdd-toolkit.md:4) + rescoped by #819's enforcement-spine slices, and the plan doc was removed (#826). No live scope in the stub; where still needed the work is re-homed to the slices.",
+          "created_at": "2026-07-29T10:03:30.929646Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAY74IM+WUKXKtApMMS9Y+JJ2Ic4qGY/LDT8dSJDlIMRra1ggnMk9AiHq8zdFiIx+UNd6TrJR5TOUlCi0Cd0nIDA=="
+        }
+      }
     },
     "e2b33599-7a54-47e7-b0ec-0ee8bf7e9e95": {
       "uuid": "e2b33599-7a54-47e7-b0ec-0ee8bf7e9e95",
@@ -27480,11 +27491,16 @@
       "agent_id": "xqjG",
       "agent_seq": 721,
       "timestamp": "2026-07-29T10:03:23.053516Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 722,
+      "timestamp": "2026-07-29T10:03:30.945796Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:03:23.053516Z",
+    "timestamp": "2026-07-29T10:03:30.945796Z",
     "agent_id": "xqjG",
-    "agent_seq": 721
+    "agent_seq": 722
   }
 }
