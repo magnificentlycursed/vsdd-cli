@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1238,
+  "next_comment_id": 1239,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20157,7 +20157,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T09:56:55.116004Z",
+      "updated_at": "2026-07-29T10:55:59.617978Z",
       "labels": [
         "red-gate"
       ],
@@ -20170,6 +20170,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEtChYz4DO1nM2tMO+JpG+ziRqZunvD+mxbWkhhbsvRnW0ATJsDWmOPy1tpb7d10U2DzGy9PcPS4wFdhWX63IBA=="
+        },
+        "5b5166a4-da2e-44f0-9315-8b274bd15066": {
+          "display_id": 1238,
+          "author": "xqjG",
+          "content": "SESSION CLOSE 2026-07-29. Accomplished: mdatron v0.3.0 flip + proper init (#816); #818 Fix 1 + cold-review revise (committed); 6-domain mdatron diagnostic-efficacy analysis (relay-ready in scratchpad); the enforcing CI-on-PR gate (CI now runs vsdd-cli's own tests + repointed/pinned mdatron @v0.3.0) PR #1 merged; non-vacuity canary PR #2 merged; docs/refactor legacy removed PR #4 merged (#826); stale-issue sweep 32 closed; E0091 letter-cluster guardrail armed over the enduring corpus PR #5 merged (#823); #14/#15 closed+folded into #820 (vsdd-core removal = slice work, not dead-plan). ADOPTED the PR workflow (no direct-to-main; methodology's own per-milestone-PR discipline). NEXT: #820 Slice-1 phase-2a the vsdd way — draft the tracker-join red-gate seed (3 mappers in vsdd-core/src/snapshot/acquire.rs: routing_present=plan-kind comment, is_finding=parent-has-review-label, closed_before_ratification=closed_at vs ratification boundary) for operator adoption, then implement + the commit-msg/CI guardrail. The folded #14/#15 scope (vsdd subprocess client, init drift, templates, vsdd-core removal) is SEPARATE design done the vsdd way (.design/ -> kickoff), not crammed into Slice 1. OPERATOR PENDING: branch protection (require mdatron verify + vsdd-cli test). Recovery: memory -> this note -> #820 -> the contract.",
+          "created_at": "2026-07-29T10:55:59.598055Z",
+          "kind": "handoff",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwU+Z22OkoTesimVJ0k+eaEgNJWv55m97FKxZUnsJFkOqhLt/kaTpQgd2Ottt5Oei/HOFJaJUp//vnuUajjtQCA=="
         },
         "93ae89c6-ee0c-41e5-93f3-d7c3dcc0c6e6": {
           "display_id": 1174,
@@ -28159,11 +28168,16 @@
       "agent_id": "xqjG",
       "agent_seq": 785,
       "timestamp": "2026-07-29T10:55:52.617698Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 786,
+      "timestamp": "2026-07-29T10:55:59.617978Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:55:52.617698Z",
+    "timestamp": "2026-07-29T10:55:59.617978Z",
     "agent_id": "xqjG",
-    "agent_seq": 785
+    "agent_seq": 786
   }
 }
