@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1175,
+  "next_comment_id": 1176,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19525,7 +19525,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T05:22:09.867229Z",
+      "updated_at": "2026-07-29T05:34:05.062527Z",
       "labels": [
         "red-gate"
       ],
@@ -19556,6 +19556,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcjBSRnWIgVoMu1t00caEibKIAAsKgpQx7AV1rhF0UgbH0G62VKeWg5CQtOfofG6JKRDpqYPrl69Y2ZhO23tUDQ=="
+        },
+        "9a9fe6a5-e858-4feb-8238-262f6e84d3fa": {
+          "display_id": 1175,
+          "author": "xqjG",
+          "content": "2B DESIGN DECISIONS (operator-approved 2026-07-28):\n1. TWO-PATH ACQUISITION adopted. The statusline acquire stays lightweight (milestones + session; findings NOT read on the hot 250ms path — they don't render on the segment; they feed integrity/health-detail via PULL and the guardrail/CI). A fuller findings-read serves the guardrail/CI/report path, where a bounded per-finding 'crosslink issue show' is affordable. This resolves the O(n)-on-statusline blocker; Slice 1's 2b ships on this basis.\n2. UPSTREAM RAISE FILED: dollspace-gay/crosslink#52 — bulk issue query lacks comment metadata (no single call returns issues WITH comments; issue list + export are comment-shallow, only issue show is deep = O(n) fan-out). Ask: enrich issue list --json with labels + comment kinds (optionally behind --detail), or add parent_id/closed_at/comments to export --json. Framed as an OPTIMIZATION, not a blocker (two-path lets us ship with bounded per-finding show meanwhile). When it lands, the fuller read collapses to one bulk call.\n\nNEXT (focused 2b): re-land the mapper red gate + assemble_findings; implement the fuller findings-read on the guardrail/CI/report path (bounded per-finding show now; bulk call once crosslink#52 ships); guardrail verdict wrapper; commit-msg hook + CI leg; then the vsdd-core->vsdd merge (#15).",
+          "created_at": "2026-07-29T05:34:05.046568Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZtKEx1b39KAqVCIdOTfCy5iCsee8Lkzp0v4PmzqrMbiEk4ogYCSfpBjmc6OMNo83QkEySf2IeekjdVUa5iAMAQ=="
         },
         "c05538a7-6f42-4f0c-8996-2ee75dc817e5": {
           "display_id": 1171,
@@ -26879,11 +26888,16 @@
       "agent_id": "xqjG",
       "agent_seq": 675,
       "timestamp": "2026-07-29T05:22:09.867229Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 676,
+      "timestamp": "2026-07-29T05:34:05.062527Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T05:22:09.867229Z",
+    "timestamp": "2026-07-29T05:34:05.062527Z",
     "agent_id": "xqjG",
-    "agent_seq": 675
+    "agent_seq": 676
   }
 }
