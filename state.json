@@ -24972,6 +24972,14 @@
       "status": "open",
       "created_at": "2026-07-29T17:43:58.691769Z"
     },
+    "5f146f3b-f610-41bd-9105-6b222c9d2a0f": {
+      "uuid": "5f146f3b-f610-41bd-9105-6b222c9d2a0f",
+      "display_id": 13,
+      "name": "Slice 6 — Recorded dispatch and directive flow",
+      "description": "Closes: Directive walkthrough, Swarm live fire, Oracle provenance, round-parity fixture, Red-gate cheat blocked (dispatch). Depends on: Slice 2, Slice 5.",
+      "status": "open",
+      "created_at": "2026-07-29T17:44:36.802588Z"
+    },
     "5f30579d-bcba-4c3c-a9b3-ad4feb400c68": {
       "uuid": "5f30579d-bcba-4c3c-a9b3-ad4feb400c68",
       "display_id": 12,
@@ -25022,7 +25030,7 @@
       "closed_at": "2026-07-20T16:24:00.974812Z"
     }
   },
-  "next_milestone_id": 13,
+  "next_milestone_id": 14,
   "unsigned_event_warnings": [
     {
       "agent_id": "xqjG",
@@ -28658,11 +28666,16 @@
       "agent_id": "xqjG",
       "agent_seq": 827,
       "timestamp": "2026-07-29T17:44:30.176404Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 828,
+      "timestamp": "2026-07-29T17:44:36.802988Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T17:44:30.176404Z",
+    "timestamp": "2026-07-29T17:44:36.802988Z",
     "agent_id": "xqjG",
-    "agent_seq": 827
+    "agent_seq": 828
   }
 }
