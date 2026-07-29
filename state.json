@@ -1,6 +1,6 @@
 {
   "next_display_id": 826,
-  "next_comment_id": 1197,
+  "next_comment_id": 1198,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10495,7 +10495,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-06-02T19:06:03.186249Z",
-      "updated_at": "2026-07-29T08:58:32.227489Z",
+      "updated_at": "2026-07-29T09:14:18.331414Z",
       "blockers": [
         "d61599a3-2977-421d-bb1c-ef3d7b44fa3d"
       ],
@@ -10508,6 +10508,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYOTm/JKg0JbsuRXijiiMwelBFur1/sNVD1dvhPKt7m3ZkJQ9i92/4XkvjZr6TF0ibRLUFZ+L9Gid9g6MpwFQBA=="
+        },
+        "e123bc84-bfda-45e9-93a0-2bef514bc90b": {
+          "display_id": 1197,
+          "author": "xqjG",
+          "content": "PHASE-1A DRAFT authored for review — docs/refactor/phase-3-vsdd-client/phase-1a-behavioral-spec.md, draft PR #3 (github.com/magnificentlycursed/vsdd-cli/pull/3). Pre-composition DRAFT (NOT ratified; composition + confirmation are the operator's). Covers: (A) the mdatron subprocess client — 10 contracts incl. the load-bearing pipeline-failure-is-never-clean (#816/#822 M1), quoted-content-untrusted (#818), coverage-not-from-files_checked (#822 M2); (B) init two-way -> three-way + --force/--update/--no-prompt/--dry-run + interactive Conflict prompt + breaking template_version_at_deploy manifest field; (C) template deployment as managed artifacts. Grounded in the current code (init.rs two-way, ManifestEntry sha256-only, templates deferred; subprocess.rs bounded runner) + the mdatron v0.3.0 envelope. Open questions Q1-Q5 (pipeline-failure reason channel, template set+destinations, init atomicity, manifest migration, client module home). Workspace-shape contract touch left to #15/Phase 4. Enters real phase-1a via operator composition; don't merge until ratified.",
+          "created_at": "2026-07-29T09:14:18.314101Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZI5gRN6z8SRRSrbOr207P/0yqsknGh2vzoDTf6Y6VnWGpYLoz0ZN82xclLZTnysTatGnjWHCyJgwTf39jWfYAg=="
         }
       }
     },
@@ -27306,11 +27315,16 @@
       "agent_id": "xqjG",
       "agent_seq": 706,
       "timestamp": "2026-07-29T09:06:55.853701Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 707,
+      "timestamp": "2026-07-29T09:14:18.331414Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T09:06:55.853701Z",
+    "timestamp": "2026-07-29T09:14:18.331414Z",
     "agent_id": "xqjG",
-    "agent_seq": 706
+    "agent_seq": 707
   }
 }
