@@ -18,7 +18,7 @@
         "properties": {
           "act": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
           "affordance": {"type": "string", "minLength": 1},
-          "kind": {"type": "string", "enum": ["chassis-workflow", "skill", "domain-lens", "session-surface"]},
+          "kind": {"type": "string", "enum": ["crosslink-workflow", "skill", "domain-lens", "session-surface"]},
           "condition": {"type": "string"}
         },
         "additionalProperties": false

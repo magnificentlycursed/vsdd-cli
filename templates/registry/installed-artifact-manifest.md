@@ -92,8 +92,8 @@ entries:
     resolution: exists
     fail_mode: undefined
     note: "this repo is the source of these artifacts — tracked by the .gitignore carve-outs (operator ruling 2026-07-20); 28 members, 18 domain prompts + 10 phase primers (counts verified against disk 2026-07-21, vsdd-cli #684)"
-  - {id: chassis-hook-config, path: .crosslink/hook-config.json, class: chassis-config, source: crosslink-init, lifetime: tracked-wiring, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: fail-closed}
-  - {id: chassis-rules, path: .crosslink/rules/, class: rules, source: crosslink-init, lifetime: tracked-payload, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: undefined}
+  - {id: crosslink-hook-config, path: .crosslink/hook-config.json, class: crosslink-config, source: crosslink-init, lifetime: tracked-wiring, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: fail-closed}
+  - {id: crosslink-rules, path: .crosslink/rules/, class: rules, source: crosslink-init, lifetime: tracked-payload, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: undefined}
   - id: project-rules
     path: .crosslink/rules/project.md
     class: rules
@@ -124,11 +124,11 @@ entries:
     resolution: exists-and-referenced
     fail_mode: fail-closed
     note: blocks the commit when mdatron is absent (operator ruling 2026-07-20, vsdd-cli #658)
-  - {id: identity-agent, path: .crosslink/agent.json, class: identity-state, source: chassis-runtime, lifetime: per-clone-payload, referenced_by: [], pairs_with: [identity-keys], resolution: exists, fail_mode: undefined}
+  - {id: identity-agent, path: .crosslink/agent.json, class: identity-state, source: crosslink-runtime, lifetime: per-clone-payload, referenced_by: [], pairs_with: [identity-keys], resolution: exists, fail_mode: undefined}
   - id: identity-keys
     path: .crosslink/keys/
     class: identity-state
-    source: chassis-runtime
+    source: crosslink-runtime
     lifetime: per-clone-payload
     referenced_by: []
     pairs_with: [identity-agent]
@@ -138,7 +138,7 @@ entries:
   - id: identity-driver-key
     path: .crosslink/driver-key.pub
     class: identity-state
-    source: chassis-runtime
+    source: crosslink-runtime
     lifetime: per-clone-payload
     referenced_by: []
     pairs_with: []
@@ -160,7 +160,7 @@ entries:
 # Installed-artifact manifest — vsdd-cli instance
 
 The installed environment is a closed world (contract: Conformance at action
-time, the chassis-affordance closure, ratified 2026-07-20). The frontmatter
+time, the crosslink-affordance closure, ratified 2026-07-20). The frontmatter
 above is the versioned data: every artifact the environment expects, each
 with its source, its lifetime, its pairing, and its observed fail mode.
 The lifetime axis is tracked-or-per-clone crossed with wiring-or-payload
