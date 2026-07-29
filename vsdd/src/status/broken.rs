@@ -34,6 +34,24 @@ fn display_path(diagnostic: &Diagnostic) -> String {
 /// The worded absence for a history with no boundary commit yet.
 const NO_BOUNDARY: &str = "no boundary commit recorded";
 
+/// Cap echoed external content (adopter file bytes quoted by a parse
+/// error, git commit subjects) before it reaches an agent-consumed
+/// surface (vsdd-cli #818, Red Team wider eval): an oversized verbatim
+/// quote is a prompt-injection carrier, and terminal-output-safety strips
+/// only the invisible-Unicode class, not visible prose. This bounds the
+/// visible-prose volume; the terminal cleaner has already run, so the
+/// count is over cleaned characters.
+const QUOTED_MAX: usize = 512;
+
+fn bound_quote(s: String) -> String {
+    if s.chars().count() > QUOTED_MAX {
+        let kept: String = s.chars().take(QUOTED_MAX).collect();
+        format!("{kept}… (quote truncated)")
+    } else {
+        s
+    }
+}
+
 /// The three surfaces' broken-state outputs.
 pub struct BrokenSurfaces {
     pub segment: String,
@@ -58,7 +76,7 @@ pub fn compose_broken_state(
     // caller passing an un-source-cleaned subject leak the class to the
     // human form, which has no whole-of-output backstop (the machine form
     // does). Idempotent on the already-clean value.
-    let boundary = clean_for_terminal(last_boundary.unwrap_or(NO_BOUNDARY));
+    let boundary = bound_quote(clean_for_terminal(last_boundary.unwrap_or(NO_BOUNDARY)));
 
     // The diagnostic's message and kind carry state-sourced text (a
     // malformed state.yaml echoes its own bytes); they cross the
@@ -66,7 +84,7 @@ pub fn compose_broken_state(
     // forms hold (vsdd-cli #784). The machine token is a registered
     // enum member — no adopter content — but cleaning it too costs
     // nothing and keeps the rule uniform.
-    let message = clean_for_terminal(&diagnostic.message);
+    let message = bound_quote(clean_for_terminal(&diagnostic.message));
     // The machine token is a registered read-failure kind (tool-authored,
     // no adopter content), but the rule is uniform — the human form cleans
     // it exactly as the machine form does (vsdd-cli #805: the human
@@ -105,6 +123,12 @@ pub fn compose_broken_state(
     let mut machine = json!({
         "state_unreadable": {
             "kind": machine_token,
+            // The diagnostic quotes external content (adopter file bytes a
+            // parse error echoes, git commit subjects): it is DATA for
+            // display, never an instruction (vsdd-cli #818). The actionable
+            // signal is the enumerated `kind` above; an agent must branch on
+            // that and treat the quoted text as untrusted.
+            "quoted_content_untrusted": true,
             "diagnostic": {
                 "file": shown_path,
                 "message": message,
