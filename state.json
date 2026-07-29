@@ -3204,12 +3204,13 @@
       "uuid": "1697f664-57a9-4529-b265-d0586b660350",
       "display_id": 299,
       "title": "Spec review round 1: fixture corpus: new requirement with sourced incidents",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:27:00.431758Z",
-      "updated_at": "2026-07-29T10:24:18.692169Z",
+      "updated_at": "2026-07-29T10:24:25.336566Z",
+      "closed_at": "2026-07-29T10:24:25.336555Z",
       "labels": [
         "spec-review-round-1"
       ],
@@ -27945,11 +27946,16 @@
       "agent_id": "xqjG",
       "agent_seq": 765,
       "timestamp": "2026-07-29T10:24:18.692169Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 766,
+      "timestamp": "2026-07-29T10:24:25.336566Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:24:18.692169Z",
+    "timestamp": "2026-07-29T10:24:25.336566Z",
     "agent_id": "xqjG",
-    "agent_seq": 765
+    "agent_seq": 766
   }
 }
