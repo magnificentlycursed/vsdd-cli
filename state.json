@@ -19432,7 +19432,10 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T17:55:47.580199Z",
-      "updated_at": "2026-07-29T17:55:47.580199Z"
+      "updated_at": "2026-07-29T17:55:52.695168Z",
+      "labels": [
+        "guardrail"
+      ]
     },
     "c39e677d-2aa0-41eb-803b-35cab288c6cc": {
       "uuid": "c39e677d-2aa0-41eb-803b-35cab288c6cc",
@@ -28701,11 +28704,16 @@
       "agent_id": "xqjG",
       "agent_seq": 830,
       "timestamp": "2026-07-29T17:55:47.580199Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 831,
+      "timestamp": "2026-07-29T17:55:52.695168Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T17:55:47.580199Z",
+    "timestamp": "2026-07-29T17:55:52.695168Z",
     "agent_id": "xqjG",
-    "agent_seq": 830
+    "agent_seq": 831
   }
 }
