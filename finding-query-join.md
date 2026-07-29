@@ -32,12 +32,19 @@ does not mis-fire the sibling checks that read fields Slice 1 defers.
   label) becomes a `FindingRecord`. The join evaluates `is_finding` over the
   parent's labels; the query keeps operating over an already-filtered
   `snapshot.findings` set (it does not itself call `is_finding`).
-- REQ-3: The join acquires findings by a bounded walk: `crosslink issue list
-  --label review -s all --json` for the review-round issues, then `crosslink
-  issue show --json` per review-round issue for its `subissues`, then `crosslink
-  issue show --json` per candidate finding for its `comments`, `closed_at`, and
-  `status`. Every subprocess call goes through `run_bounded` (`acquire.rs:41`,
-  `vsdd-core/src/subprocess.rs`) — bounded and timed like the existing legs.
+- REQ-3: The join acquires findings by a bounded walk, keyed on child
+  `parent_id` (verified against the live tracker: `issue show`'s `subissues`
+  field is never populated, so the parent-side child list is not a usable
+  linkage; the child's `parent_id` is): (1) `crosslink issue list --label review
+  -s all --json` for the review-round issue ids; (2) one `crosslink issue list -s
+  all --json` for every issue's `parent_id`, `status`, and `closed_at`, filtered
+  to issues whose `parent_id` is a review-round id (the `is_finding` predicate)
+  and which fall in the forward-only universe (REQ-5); (3) `crosslink issue show
+  --json` per surviving finding for its `labels` (disposition, REQ-9) and
+  `comments` (routing). Every subprocess call goes through `run_bounded`
+  (`acquire.rs:41`, `vsdd-core/src/subprocess.rs`) — bounded and timed like the
+  existing legs. The two `issue list` calls are fixed-count; only step (3) is
+  per-finding, and it runs only over the forward-only universe.
 - REQ-4: The walk is bounded against the "one bounded acquisition per
   invocation" contract by (a) restricting the finding universe to the
   forward-only set (REQ-5 below) and (b) a declared hard cap on findings
@@ -125,11 +132,15 @@ snapshot to `Unusable`.
 The finding walk (REQ-3) reuses the three green pure mappers already in
 `acquire.rs` (`is_finding`, `routing_present`, `closed_before_ratification`) as
 the field derivations, and `run_bounded` (`vsdd-core/src/subprocess.rs`) as the
-bounded-subprocess primitive. `crosslink issue list --json` carries neither
-`labels` nor `comments` (verified), so the walk must `issue show` per issue to
-reach `comments[].kind` (for `routing_present`) and `closed_at` (for
-`closed_before_ratification`); the N+1 is inherent, bounded by the forward-only
-universe (REQ-5) and a hard cap (REQ-4).
+bounded-subprocess primitive. `crosslink issue list --json` carries `parent_id`,
+`status`, and `closed_at` but neither `labels` nor `comments` (verified), so the
+bulk list resolves the finding set (children of review-round ids), the
+forward-only filter, and `closed_before_ratification`, while the per-finding
+`issue show` reaches only `labels` (for `disposition`) and `comments[].kind`
+(for `routing_present`); the N+1 is confined to that per-finding step over the
+forward-only universe (REQ-5) and a hard cap (REQ-4). The parent-side
+`subissues` field is not usable for the walk (it is never populated on `issue
+show`; vsdd-cli #828), so linkage is read from child `parent_id`.
 
 `FindingRecord` (`vsdd-core/src/snapshot/mod.rs:29`) already carries all the
 fields the query reads; its serde defaults (`routing_present` default false,
