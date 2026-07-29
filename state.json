@@ -1,6 +1,6 @@
 {
   "next_display_id": 831,
-  "next_comment_id": 1252,
+  "next_comment_id": 1253,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20281,7 +20281,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T16:56:44.178093Z",
+      "updated_at": "2026-07-29T17:20:26.823176Z",
       "labels": [
         "red-gate"
       ],
@@ -20353,6 +20353,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA0n5rFIOzaRzkkeUCxti9z2mJ3f4/sd8W99fcm5fAgmaFvyyepMh2KWUY4supVQua8bV5pskWQlUvmO+J2unmBw=="
+        },
+        "8b4ef66d-2bfb-4dd9-a1c8-e77bf493503e": {
+          "display_id": 1252,
+          "author": "xqjG",
+          "content": "Slice 1 BUILT + on main: detection (finding-query join) + guardrail (vsdd gate, fail-closed) + the routing-gate CI leg (proven green on PR #10 — crosslink @ develop builds, crosslink sync hydrates, gate runs). Merged d146019f. The only remaining step for the CI-backed-BLOCK grade is the operator marking 'routing gate' a required status check in branch protection (turns 'runs on PR' into a hard block). Detection + guardrail both live.",
+          "created_at": "2026-07-29T17:20:26.794225Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA8GHLr/gS5rul4XRT0iKy8aXZYEblAfr3ZXXu8woHks2M7bJrxPsKPcJDrIYRKsy4KhsOgehi77lkvXr9Q9qQBg=="
         },
         "93ae89c6-ee0c-41e5-93f3-d7c3dcc0c6e6": {
           "display_id": 1174,
@@ -28532,11 +28541,16 @@
       "agent_id": "xqjG",
       "agent_seq": 817,
       "timestamp": "2026-07-29T16:56:44.178093Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 818,
+      "timestamp": "2026-07-29T17:20:26.823176Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T16:56:44.178093Z",
+    "timestamp": "2026-07-29T17:20:26.823176Z",
     "agent_id": "xqjG",
-    "agent_seq": 817
+    "agent_seq": 818
   }
 }
