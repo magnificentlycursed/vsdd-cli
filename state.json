@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1169,
+  "next_comment_id": 1170,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -6890,11 +6890,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-06-02T19:06:19.628324Z",
-      "updated_at": "2026-06-02T19:06:19.628324Z",
+      "updated_at": "2026-07-29T04:23:07.138869Z",
       "blockers": [
         "67f6e412-c5f3-4d73-a583-14ffd4127b49"
       ],
       "comments": {
+        "0596ddd8-202e-41c7-9dc5-bdfe8038b9e0": {
+          "display_id": 1169,
+          "author": "xqjG",
+          "content": "UN-STUCK (operator direction 2026-07-28). Rescheduled from 'the mdatron session's cycle / when the collapse schedules' to land WITH the engine/Slice-1 work (phase-2a). No longer a perpetual punt.\n\nSCOPE CORRECTION: the FULL single-crate collapse in this issue's title is SUPERSEDED for vsdd -- the cost crate (Slice 7) requires a workspace, so vsdd stays a 2-crate workspace. The actual pending act is narrower: REMOVE the vsdd-core crate by merging it into the vsdd binary crate, leaving {vsdd, cost} (the #739 2026-07-22 marker: 'both cores planned for removal').\n\nWHY HERE: the engine (ratified #819) IS the re-characterized vsdd-core -- state/snapshot/derivation/queries -- plus the binary's renderings; and Slice 1 already rewrites acquire.rs inside vsdd-core (the tracker-join). Merging the crate boundary away while that code is being touched is the natural moment; the slice's crate-level module map is a phase-2a act per #819, so the merge is decided/executed there.\n\nVSDD SUB-QUESTION DECIDED: the cost crate keeps the vsdd workspace (yes -- it is why full collapse is superseded). The other #739 sub-question (whether mdatron's single crate keeps a lib target) is mdatron's, excluded here.\n\nCONTRACT TOUCH: the Architecture-section workspace-shape paragraph ('this paragraph takes its amendment when the collapse schedules') now takes that scoped amendment -- ROUTED to an owned cycle (bundle with the terminology follow-on, or the Slice-1 phase-1a/1b entry), never solo-hand-edited. Issue title is now inaccurate for vsdd (full-collapse wording); retitle to 'vsdd-core removal (merge into the vsdd binary crate; cost workspace retained)' when convenient.",
+          "created_at": "2026-07-29T04:23:07.121795Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsWww50qD0TeQ1uaEveWxk7ZyAfW4ob99Pt0FggUZc4UTCWdcSvj9cjRiWIiFLBUS9Lvz9JOmJkfcGWRDrS/4CA=="
+        },
         "5d9a7e3c-675c-443a-9cc5-23c6e4eaf989": {
           "author": "xqjG",
           "content": "Operator decision 2026-07-18 (respec session): the single-crate collapse is superseded for vsdd — the respec's cost crate requires a workspace — and deferred to Phase 1c for mdatron as an optional simplification. This issue is rescoped accordingly by the respec (see the respec tracking issue and .design/agent-first-vsdd-toolkit.md, Architecture section).",
@@ -26726,11 +26735,16 @@
       "agent_id": "xqjG",
       "agent_seq": 662,
       "timestamp": "2026-07-29T04:17:09.815372Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 663,
+      "timestamp": "2026-07-29T04:23:07.138869Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:17:09.815372Z",
+    "timestamp": "2026-07-29T04:23:07.138869Z",
     "agent_id": "xqjG",
-    "agent_seq": 662
+    "agent_seq": 663
   }
 }
