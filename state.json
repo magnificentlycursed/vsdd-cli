@@ -1,6 +1,6 @@
 {
   "next_display_id": 833,
-  "next_comment_id": 1256,
+  "next_comment_id": 1257,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19457,7 +19457,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T17:55:47.580199Z",
-      "updated_at": "2026-07-29T18:05:16.707334Z",
+      "updated_at": "2026-07-29T18:31:58.091980Z",
       "labels": [
         "guardrail"
       ],
@@ -19473,6 +19473,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+nr7dhUFk3PfC4M3vzLCLZU6xMq7/O86Q3A8/0sY4eNS2vs4naix2iQjymhQW1yoIQGTKeejOeE3fWBAoVl4DA=="
+        },
+        "b4d2a110-be92-4535-9fca-978568477996": {
+          "display_id": 1256,
+          "author": "xqjG",
+          "content": "Merged to main (PR #13). E0093 'forcing seam' deprecated-term block is live — pre-commit + CI hard-fail on the term in governed prose. chassis + session-substrate arm as #821's rename clears them (linked). The lint half of the linter/tracker migration is now a live gate on main.",
+          "created_at": "2026-07-29T18:31:58.077170Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArU1yyzhzu0ZoQCS+OcpdT8CT/g2Kbr8Isgm9Twp4P7RmQBY0uHeeXnnzsZYo5TNRt2KEorHiK8l+i17/bsiVAQ=="
         }
       }
     },
@@ -28768,11 +28777,16 @@
       "agent_id": "xqjG",
       "agent_seq": 835,
       "timestamp": "2026-07-29T18:26:59.992097Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 836,
+      "timestamp": "2026-07-29T18:31:58.091980Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T18:26:59.992097Z",
+    "timestamp": "2026-07-29T18:31:58.091980Z",
     "agent_id": "xqjG",
-    "agent_seq": 835
+    "agent_seq": 836
   }
 }
