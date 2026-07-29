@@ -1,6 +1,6 @@
 {
   "next_display_id": 830,
-  "next_comment_id": 1245,
+  "next_comment_id": 1246,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12921,7 +12921,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T13:19:11.898416Z",
-      "updated_at": "2026-07-29T13:19:30.194391Z",
+      "updated_at": "2026-07-29T13:32:47.536110Z",
       "labels": [
         "bug"
       ],
@@ -12929,6 +12929,15 @@
         "ccced380-4c00-4475-bd76-75a386e41968"
       ],
       "comments": {
+        "1936565a-1e5d-4a0a-b84c-b43f95c22601": {
+          "display_id": 1245,
+          "author": "xqjG",
+          "content": "Fixed on branch fix-milestone-empty-parse (commit 8ea6a155, off main — independent of the #820 PR). parse_milestones now recognizes crosslink's 'No milestones found.' empty-state (declared-mirror const EMPTY_MILESTONE_LIST) as a lawful empty list; genuine drift still fails loud (content_with_zero test preserved). Red gate observed (crosslink_empty_state_message_is_an_empty_list failed against the prior parser, green after). cargo test --workspace + clippy + mdatron all green. Awaits operator push + PR; end-to-end 'vsdd status' works once this and the #820 join are both on main.",
+          "created_at": "2026-07-29T13:32:47.517022Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxFLxBjbEPmKogb1/WIrHzP2Tn5iEP9DY9EogXrXJF4gpsBHhodiH6vuPSByO7wvDADCxtFIV9v1tGUSrh6rLAw=="
+        },
         "4a7f516b-2c34-445b-90e3-df429d76ae4a": {
           "display_id": 1243,
           "author": "xqjG",
@@ -28384,11 +28393,16 @@
       "agent_id": "xqjG",
       "agent_seq": 803,
       "timestamp": "2026-07-29T13:26:42.514165Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 804,
+      "timestamp": "2026-07-29T13:32:47.536110Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T13:26:42.514165Z",
+    "timestamp": "2026-07-29T13:32:47.536110Z",
     "agent_id": "xqjG",
-    "agent_seq": 803
+    "agent_seq": 804
   }
 }
