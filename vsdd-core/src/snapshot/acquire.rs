@@ -267,16 +267,14 @@ pub fn last_boundary_subject(repo_root: &Path) -> Option<String> {
 /// findings (vsdd-cli #820).
 #[allow(dead_code)]
 fn is_finding(parent_labels: &[String]) -> bool {
-    let _ = parent_labels; // red-gate stub (#820); the adopted behaviour is authored in 2b
-    false
+    parent_labels.iter().any(|label| label == "review")
 }
 
 /// True when a routing edge is present — a `plan`-kind comment on the finding
 /// (the bootstrap routing format-carry; vsdd-cli #810).
 #[allow(dead_code)]
 fn routing_present(comment_kinds: &[String]) -> bool {
-    let _ = comment_kinds; // red-gate stub (#820)
-    false
+    comment_kinds.iter().any(|kind| kind == "plan")
 }
 
 /// True when the finding was closed before the routing amendment's ratification
@@ -284,8 +282,9 @@ fn routing_present(comment_kinds: &[String]) -> bool {
 /// vsdd-cli #811). No `closed_at`, or a close at/after the boundary, is IN.
 #[allow(dead_code)]
 fn closed_before_ratification(closed_at: Option<&str>, boundary: &str) -> bool {
-    let _ = (closed_at, boundary); // red-gate stub (#820)
-    false
+    // ISO-8601 Zulu timestamps sort lexicographically; strictly-before excludes
+    // the boundary itself, keeping the forward-only universe inclusive of it.
+    closed_at.is_some_and(|closed| closed < boundary)
 }
 
 #[cfg(test)]
