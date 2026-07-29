@@ -10551,12 +10551,13 @@
       "uuid": "663a0501-aeca-4a84-91a4-c75855fe22aa",
       "display_id": 306,
       "title": "Spec review round 1: plain naming: mutation floor, pack/lens unification, register sweep",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:27:14.352855Z",
-      "updated_at": "2026-07-29T10:26:08.667240Z",
+      "updated_at": "2026-07-29T10:26:15.405113Z",
+      "closed_at": "2026-07-29T10:26:15.405098Z",
       "labels": [
         "spec-review-round-1"
       ],
@@ -28099,11 +28100,16 @@
       "agent_id": "xqjG",
       "agent_seq": 779,
       "timestamp": "2026-07-29T10:26:08.667240Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 780,
+      "timestamp": "2026-07-29T10:26:15.405113Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:26:08.667240Z",
+    "timestamp": "2026-07-29T10:26:15.405113Z",
     "agent_id": "xqjG",
-    "agent_seq": 779
+    "agent_seq": 780
   }
 }
