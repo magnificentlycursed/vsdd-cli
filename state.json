@@ -24980,6 +24980,14 @@
       "status": "open",
       "created_at": "2026-07-29T17:44:05.074852Z"
     },
+    "a2ec2135-8043-4348-ab74-1ff4d2270d92": {
+      "uuid": "a2ec2135-8043-4348-ab74-1ff4d2270d92",
+      "display_id": 10,
+      "name": "Slice 3 — Install: packaging the guardrails for adopters",
+      "description": "Closes: Install behaviors. vsdd init (managed files + drift refusal), statusline offer end to end. Depends on: engine, Slice 1 (hook payload), Slice 2 (generated members).",
+      "status": "open",
+      "created_at": "2026-07-29T17:44:17.177902Z"
+    },
     "d762a0df-47f3-423d-9974-8d8132fda3fa": {
       "uuid": "d762a0df-47f3-423d-9974-8d8132fda3fa",
       "display_id": 1,
@@ -24998,7 +25006,7 @@
       "closed_at": "2026-07-20T16:24:00.974812Z"
     }
   },
-  "next_milestone_id": 10,
+  "next_milestone_id": 11,
   "unsigned_event_warnings": [
     {
       "agent_id": "xqjG",
@@ -28619,11 +28627,16 @@
       "agent_id": "xqjG",
       "agent_seq": 824,
       "timestamp": "2026-07-29T17:44:11.217753Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 825,
+      "timestamp": "2026-07-29T17:44:17.178269Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T17:44:11.217753Z",
+    "timestamp": "2026-07-29T17:44:17.178269Z",
     "agent_id": "xqjG",
-    "agent_seq": 824
+    "agent_seq": 825
   }
 }
