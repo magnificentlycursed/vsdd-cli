@@ -53,6 +53,11 @@ const ABSENT_SESSION: &str = "no session";
 const ABSENT_WORK_ITEM: &str = "no work item";
 const ABSENT_MILESTONE: &str = "no milestone";
 
+/// crosslink's empty-state output for a repo with no milestones — a declared
+/// mirror (vsdd-cli #829): recognized as a lawful empty list, distinct from the
+/// whole-format drift the parser otherwise fails loud on.
+const EMPTY_MILESTONE_LIST: &str = "No milestones found.";
+
 /// Acquire the corroboration snapshot for the repo.
 pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
     let repo_name = repo_root
@@ -133,6 +138,11 @@ struct ParsedMilestone {
 }
 
 fn parse_milestones(text: &str) -> Option<Vec<ParsedMilestone>> {
+    // crosslink's empty-state message is a lawful empty list, not the
+    // whole-format drift the fail-loud check below guards against (vsdd-cli #829).
+    if text.trim() == EMPTY_MILESTONE_LIST {
+        return Some(Vec::new());
+    }
     let mut out = Vec::new();
     let mut content_lines = 0usize;
     for line in text.lines() {
@@ -291,6 +301,17 @@ mod tests {
     #[test]
     fn empty_output_is_an_empty_list() {
         let parsed = parse_milestones("\n  \n").expect("no content lines is a lawful empty");
+        assert!(parsed.is_empty());
+    }
+
+    #[test]
+    fn crosslink_empty_state_message_is_an_empty_list() {
+        // vsdd-cli #829: crosslink prints "No milestones found." for a repo with
+        // no milestones; that is a lawful empty list, not the whole-format drift
+        // the fail-loud check guards against. A genuine drift line still parses
+        // to None (the sibling test above).
+        let parsed =
+            parse_milestones("No milestones found.\n").expect("the empty-state message is empty");
         assert!(parsed.is_empty());
     }
 
