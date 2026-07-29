@@ -23,6 +23,16 @@ struct TempProject {
     root: PathBuf,
 }
 
+/// The parsed shape of a `verify --json` run the tests assert against.
+/// Carries `pipeline_status` so a silent test can prove the pipeline
+/// actually RAN (an E0080 failure is `failed`, never `ok`) rather than pass
+/// vacuously on an empty `findings` array — the flip-fallout class this
+/// suite fell to (vsdd-cli #822 F1; the #818 false-assurance family).
+struct VerifyRun {
+    codes: Vec<String>,
+    pipeline_status: String,
+}
+
 impl TempProject {
     fn new(name: &str) -> Self {
         let dir = tempfile::Builder::new()
@@ -121,17 +131,20 @@ impl TempProject {
         }
     }
 
-    /// Run the mdatron binary's verify; returns the finding codes.
-    fn run(&self) -> Vec<String> {
+    /// Run the mdatron binary's verify; returns the finding codes AND the
+    /// pipeline status. Tests assert on `pipeline_status` so a run that
+    /// never completed (E0080: `failed`) cannot satisfy a "code absent"
+    /// assertion vacuously (vsdd-cli #822 F1).
+    fn run(&self) -> VerifyRun {
         let output = std::process::Command::new("mdatron")
             .args(["verify", "--json", "-q", "--project-root"])
             .arg(&self.root)
             .output()
-            .expect("mdatron runs from PATH — the substrate requirement the preflight names");
+            .expect("mdatron runs from PATH — the estate's tooling requirement");
         let stdout = String::from_utf8_lossy(&output.stdout);
         let parsed: serde_json::Value = serde_json::from_str(stdout.trim())
             .unwrap_or_else(|e| panic!("mdatron --json output parses: {e}"));
-        parsed["findings"]
+        let codes = parsed["findings"]
             .as_array()
             .expect("the output object carries a findings array")
             .iter()
@@ -141,7 +154,15 @@ impl TempProject {
                     .expect("every finding carries a code")
                     .to_string()
             })
-            .collect()
+            .collect();
+        let pipeline_status = parsed["pipeline_status"]
+            .as_str()
+            .expect("the envelope carries a pipeline_status")
+            .to_string();
+        VerifyRun {
+            codes,
+            pipeline_status,
+        }
     }
 }
 
@@ -165,10 +186,12 @@ fn e0207_fires_when_primer_id_does_not_match_phase() {
          ---\n# body\n",
     );
 
-    let codes = proj.run();
+    let run = proj.run();
+    assert_eq!(run.pipeline_status, "ok", "the pipeline ran to completion");
     assert!(
-        codes.iter().any(|c| c == "VSDD-E0207"),
-        "expected VSDD-E0207 finding; got {codes:?}"
+        run.codes.iter().any(|c| c == "VSDD-E0207"),
+        "expected VSDD-E0207 finding; got {:?}",
+        run.codes
     );
 }
 
@@ -188,11 +211,34 @@ fn e0207_silent_when_primer_id_matches_phase() {
          supplements_in_scope: []\n\
          ---\n# body\n",
     );
+    // Positive control (vsdd-cli #822 F1): a same-run sentinel that MUST
+    // fire a sibling cross-reference code, so "E0207 absent" cannot pass
+    // vacuously over an inert or failed pipeline. A domain paired with
+    // itself trips E0208 while resolving E0201 (it is its own index entry).
+    proj.write(
+        ".claude/commands/vsdd-domain-quality-engineer.md",
+        "---\n\
+         schema_class: domain-prompt\n\
+         domain_slug: quality-engineer\n\
+         role_titles: [Quality Engineer]\n\
+         tier: core\n\
+         classification_universe: [resolved]\n\
+         validator_pair: quality-engineer\n\
+         supplements_applied: []\n\
+         ---\n# body\n",
+    );
 
-    let codes = proj.run();
+    let run = proj.run();
+    assert_eq!(run.pipeline_status, "ok", "the pipeline ran to completion");
     assert!(
-        !codes.iter().any(|c| c == "VSDD-E0207"),
-        "expected no VSDD-E0207 finding; got {codes:?}"
+        run.codes.iter().any(|c| c == "VSDD-E0208"),
+        "sentinel: the cross-reference evaluator actually ran this corpus; got {:?}",
+        run.codes
+    );
+    assert!(
+        !run.codes.iter().any(|c| c == "VSDD-E0207"),
+        "expected no VSDD-E0207 finding; got {:?}",
+        run.codes
     );
 }
 
@@ -216,10 +262,12 @@ fn e0208_fires_when_validator_pair_is_self() {
          ---\n# body\n",
     );
 
-    let codes = proj.run();
+    let run = proj.run();
+    assert_eq!(run.pipeline_status, "ok", "the pipeline ran to completion");
     assert!(
-        codes.iter().any(|c| c == "VSDD-E0208"),
-        "expected VSDD-E0208 finding; got {codes:?}"
+        run.codes.iter().any(|c| c == "VSDD-E0208"),
+        "expected VSDD-E0208 finding; got {:?}",
+        run.codes
     );
 }
 
@@ -240,10 +288,33 @@ fn e0208_silent_when_validator_pair_differs_from_self() {
          supplements_applied: []\n\
          ---\n# body\n",
     );
+    // Positive control (vsdd-cli #822 F1): a same-run sentinel firing a
+    // sibling code, so "E0208 absent" cannot pass vacuously. A phase primer
+    // whose primer_id and phase disagree trips E0207.
+    proj.write(
+        ".claude/commands/vsdd-phase-1a.md",
+        "---\n\
+         schema_class: phase-primer\n\
+         primer_id: vsdd-phase-1a\n\
+         phase: phase-2a\n\
+         version: 0.1.0\n\
+         frequency: per-milestone\n\
+         governing_skill: true\n\
+         relevant_domains: []\n\
+         supplements_in_scope: []\n\
+         ---\n# body\n",
+    );
 
-    let codes = proj.run();
+    let run = proj.run();
+    assert_eq!(run.pipeline_status, "ok", "the pipeline ran to completion");
     assert!(
-        !codes.iter().any(|c| c == "VSDD-E0208"),
-        "expected no VSDD-E0208 finding; got {codes:?}"
+        run.codes.iter().any(|c| c == "VSDD-E0207"),
+        "sentinel: the cross-reference evaluator actually ran this corpus; got {:?}",
+        run.codes
+    );
+    assert!(
+        !run.codes.iter().any(|c| c == "VSDD-E0208"),
+        "expected no VSDD-E0208 finding; got {:?}",
+        run.codes
     );
 }
