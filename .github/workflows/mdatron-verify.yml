@@ -18,13 +18,16 @@ jobs:
         with:
           path: vsdd-cli
 
-      # mdatron isn't published to crates.io yet; check out the sibling repo
-      # so the path dependency `../mdatron/mdatron-core` in vsdd-cli's
-      # Cargo.toml resolves the same way it does locally.
+      # mdatron isn't published to crates.io yet (#48), and since the #81
+      # workspace collapse vsdd consumes the mdatron BINARY (there is no longer
+      # a path dependency on mdatron-core). Check out the collapsed repo at the
+      # pinned release tag so CI validates against the version the repo targets
+      # (0.3.x), not a floating main (vsdd-cli #824).
       - name: Checkout mdatron
         uses: actions/checkout@v4
         with:
-          repository: magnificentlycursed/mdatron-cli
+          repository: magnificentlycursed/mdatron
+          ref: v0.3.0
           path: mdatron
 
       - name: Install Rust toolchain
@@ -41,7 +44,7 @@ jobs:
 
       - name: Install mdatron CLI
         working-directory: mdatron
-        run: cargo install --path mdatron-cli --locked
+        run: cargo install --path . --locked
 
       - name: Run mdatron verify
         working-directory: vsdd-cli

@@ -1,0 +1,64 @@
+name: vsdd-cli test
+
+# Runs vsdd-cli's OWN test suite (and clippy) on every PR — the toolkit-tests
+# gate (vsdd-cli #822 F3 / M1). Corpus conformance (mdatron verify) is a
+# SEPARATE workflow; passing it does not mean the toolkit's behavior is green —
+# that gap is exactly how the v0.3.0 flip landed a red suite as a clean commit
+# (#816). Several tests (e.g. cross_references) invoke the mdatron BINARY, so
+# mdatron is installed from the pinned release tag first.
+#
+# Before #824 this file ran MDATRON's own tests — a vestige of the pre-#81
+# path dependency, when building vsdd-cli built mdatron. mdatron's tests belong
+# to mdatron's CI; vsdd-cli's CI tests vsdd-cli.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: vsdd-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout vsdd-cli
+        uses: actions/checkout@v4
+        with:
+          path: vsdd-cli
+
+      # Pinned to the release tag (not floating main) so the binary under test
+      # is the version the repo targets (#824; the version-skew gap, #822 M6).
+      - name: Checkout mdatron
+        uses: actions/checkout@v4
+        with:
+          repository: magnificentlycursed/mdatron
+          ref: v0.3.0
+          path: mdatron
+
+      - name: Install Rust toolchain
+        run: rustup show
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            mdatron/target
+            vsdd-cli/target
+          key: cargo-vsdd-test-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock') }}
+
+      - name: Install mdatron CLI (the toolkit tests invoke the binary)
+        working-directory: mdatron
+        run: cargo install --path . --locked
+
+      - name: cargo test --workspace
+        working-directory: vsdd-cli
+        run: cargo test --workspace --locked
+
+      - name: cargo clippy
+        working-directory: vsdd-cli
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
