@@ -1,5 +1,5 @@
 {
-  "next_display_id": 826,
+  "next_display_id": 827,
   "next_comment_id": 1199,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -161,6 +161,7 @@
     "2c5f341e-443e-4bf4-bfdd-45b503f48987": 85,
     "2ca426b9-943e-451b-bf21-00b38e91fb61": 650,
     "2cb31f45-184f-44cb-8381-fa7d98f4e691": 780,
+    "2cbde495-e7fd-4d41-b1ee-8391dfd5ee96": 826,
     "2cd4a8fd-699a-4a0d-841e-9c117583cbdd": 347,
     "2d7f0fdc-4f0f-4626-93a4-37f3a285ced2": 185,
     "2e509da4-ee26-487f-9108-2d958dc96e26": 324,
@@ -5301,6 +5302,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdaSfY5Ee9rNqwkWP0bmEgVQvFi1Ic+X8Gk31Jd1TXYwVKJIM/wrncY3+2ZNHp0rp0NEufraH0HHydaNzcx3kCw=="
         }
       }
+    },
+    "2cbde495-e7fd-4d41-b1ee-8391dfd5ee96": {
+      "uuid": "2cbde495-e7fd-4d41-b1ee-8391dfd5ee96",
+      "display_id": 826,
+      "title": "clean up superseded binary-first-plan (docs/refactor legacy); re-ground #14/#15 to the slice framing",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-29T09:36:27.079962Z",
+      "updated_at": "2026-07-29T09:36:27.079962Z"
     },
     "2cd4a8fd-699a-4a0d-841e-9c117583cbdd": {
       "uuid": "2cd4a8fd-699a-4a0d-841e-9c117583cbdd",
@@ -27334,11 +27345,16 @@
       "agent_id": "xqjG",
       "agent_seq": 708,
       "timestamp": "2026-07-29T09:26:34.104909Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 709,
+      "timestamp": "2026-07-29T09:36:27.079962Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T09:26:34.104909Z",
+    "timestamp": "2026-07-29T09:36:27.079962Z",
     "agent_id": "xqjG",
-    "agent_seq": 708
+    "agent_seq": 709
   }
 }
