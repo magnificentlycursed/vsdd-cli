@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1137,
+  "next_comment_id": 1138,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4008,7 +4008,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T00:22:39.020965Z",
+      "updated_at": "2026-07-29T00:33:45.304964Z",
       "labels": [
         "feature"
       ],
@@ -4030,6 +4030,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAu870tzSfKTrFOgz1AY9ITt8ogQqikTJwi39mbmJgfuFDIYkZS0cbEMQWBFQRd7af2FFe/89c+ei3Kf+pGqDcBw=="
+        },
+        "b5361b1a-e3ca-4707-af59-5aeec6cc636b": {
+          "display_id": 1137,
+          "author": "xqjG",
+          "content": "mdatron #49 COLD READ complete (fresh agent, read only v0.2.0 README + dsl-reference, attempted init-and-hook on a scratch tree). VERDICT: partially — the HOOK half works flawlessly from the README alone (pre-commit wiring, clean/diagnostic verify, explain, --json, --project-root all match); the INIT half is blocked.\n\nBlockers/friction, by cause:\nVERSION-GAP (local binary is mdatron 0.1.0, docs are v0.2.0 — clears if installed from a v0.2.x checkout per README l.30-31 'cargo install --path mdatron --locked'): 'mdatron init' absent (the one non-optional onboarding step); 'mdatron pin' absent (onboarding step 4); 'verify --compact' absent; the no-config error says 'run mdatron init first' (which doesn't exist) instead of the documented 'no jurisdiction declared' — a circular dead-end.\nDOC-INTRINSIC (would remain even on v0.2.0): (3) config.yaml format is never shown in either doc — no example, no field list — so 'scope your jurisdiction' is unfollowable; (4) output-marking discipline violated — the adopter field name rides INLINE in the engine note ('= note: Additional properties are not allowed (\\'extra\\' was unexpected) ()', raw jsonschema string + trailing '()'), no prefix-marked '= unexpected:' quoted block as README l.83-86 promises; (8) namespace contradiction — README pattern example uses code MDATRON-W0100 while dsl-reference l.28-29 says MDATRON-* is reserved for the engine; (5 nit) source span is absolute-path, line-only, column 0 vs the documented rustc-shape 'bad.md:3:1'.\n\nFINDING THAT MATTERS FOR OUR INTEGRATION: we are on 0.1.0; every v0.2.0 capability the agent-first-controls design leans on (pin --update, verify --compact, config.yaml jurisdiction) is ABSENT until we install v0.2.0 (cargo install --path ../mdatron --locked). Reinforces the config.yaml migration + #764 harness work folded into #815. Full report available for relay to mdatron (routes into their docs pre-v1.0).",
+          "created_at": "2026-07-29T00:33:45.287280Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAy7XNkpUhpnlXjN7v6iKuCpeyzcjEoZX4ELH8e7NY1MBnKPrp98C7vtXorpuPt8T5TWOI0tG26vv6jpRQdq0xBQ=="
         }
       }
     },
@@ -26166,11 +26175,16 @@
       "agent_id": "xqjG",
       "agent_seq": 619,
       "timestamp": "2026-07-29T00:30:38.156923Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 620,
+      "timestamp": "2026-07-29T00:33:45.304964Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:30:38.156923Z",
+    "timestamp": "2026-07-29T00:33:45.304964Z",
     "agent_id": "xqjG",
-    "agent_seq": 619
+    "agent_seq": 620
   }
 }
