@@ -40,7 +40,7 @@ use std::path::Path;
 
 use crate::subprocess::{run_bounded, Subprocess};
 
-use super::{AcquisitionOutcome, MilestoneState, Snapshot};
+use super::{AcquisitionOutcome, FindingFieldsAcquired, MilestoneState, Snapshot};
 
 /// The bootstrap absence wordings. Declared mirrors of the statusline
 /// data set's `absence_text` for the fields that have one (vsdd-cli
@@ -116,6 +116,9 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
         display_session: session,
         display_work_item: work_item,
         display_active_milestone: active_display,
+        // No findings acquired yet at this increment; the finding-query join
+        // sets SPINE_ONLY when it populates them (vsdd-cli #820).
+        finding_fields_acquired: FindingFieldsAcquired::default(),
     }
 }
 
@@ -228,6 +231,7 @@ fn empty(outcome: AcquisitionOutcome, repo_name: String) -> Snapshot {
         display_session: ABSENT_SESSION.to_string(),
         display_work_item: ABSENT_WORK_ITEM.to_string(),
         display_active_milestone: ABSENT_MILESTONE.to_string(),
+        finding_fields_acquired: FindingFieldsAcquired::default(),
     }
 }
 
