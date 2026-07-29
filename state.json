@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1167,
+  "next_comment_id": 1168,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3312,7 +3312,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:44:17.238741Z",
-      "updated_at": "2026-07-29T04:07:33.860248Z",
+      "updated_at": "2026-07-29T04:14:30.370477Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3370,6 +3370,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASVTbfuSWM4I4x4pE5tHtuU9O1sPA5yzAWZRy2QDnk7H317yaY3CT9iROvrYKagd2OdiqdtF+uUDFT/OmjzzPAg=="
+        },
+        "9133cb46-cc0e-41c7-9b9e-26c8ad67658d": {
+          "display_id": 1167,
+          "author": "xqjG",
+          "content": "CLOSING (resolution): RATIFIED + APPLIED at boundary commit 2980e573 (pre-commit mdatron verify clean). The enforcement-spine-first re-decomposition is spliced into .design/agent-first-vsdd-toolkit.md — Decomposition section replaced (engine + guardrail + Slices 1-7 + criteria audit + cadence/deferral/architecture); Estate-cleanup / Data-authoring / Methodology-rewrite bodies retained verbatim with layer-refs updated (crosswalk) + estate mdatron-act + data categorization appended; ratification stamp dated 2026-07-28; Revision-line entry added; engine/guardrail/runtime-harness/methodology-harness terms registered. Disposition: complete. PhaseExited{phase: phase-1c, exit_status: complete} for this amendment. Follow-ons tracked separately: contract-wide terminology amendment; crosslink#15; vsdd-cli#15 vsdd-core merge; mdatron#96 answer.",
+          "created_at": "2026-07-29T04:14:30.353819Z",
+          "kind": "resolution",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7/f/noJxb2JLKXb5kWn1cicNXwPf7xlh660d3MaVq/ySgEvMxlPAz+lZVqT9RCBcd/sSw3cL/mOelhBcfALeBg=="
         },
         "916dc09f-3c07-4807-a4d8-5e4144464470": {
           "display_id": 1164,
@@ -26691,11 +26700,16 @@
       "agent_id": "xqjG",
       "agent_seq": 658,
       "timestamp": "2026-07-29T04:07:33.860248Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 659,
+      "timestamp": "2026-07-29T04:14:30.370477Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:07:33.860248Z",
+    "timestamp": "2026-07-29T04:14:30.370477Z",
     "agent_id": "xqjG",
-    "agent_seq": 658
+    "agent_seq": 659
   }
 }
