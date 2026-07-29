@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1170,
+  "next_comment_id": 1171,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -1867,12 +1867,21 @@
       "parent_uuid": "c881dc5a-23e0-4be8-b1d5-ceebe409c0d2",
       "created_by": "xqjG",
       "created_at": "2026-07-22T14:08:58.077630Z",
-      "updated_at": "2026-07-22T15:18:32.957399Z",
+      "updated_at": "2026-07-29T04:23:13.875550Z",
       "closed_at": "2026-07-22T15:18:32.957399Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "00a4c8b3-d676-4420-944c-34d79b66ee29": {
+          "display_id": 1170,
+          "author": "xqjG",
+          "content": "Collapse scheduled (see #15, operator direction 2026-07-28): the vsdd-core removal is re-homed from 'the mdatron session's cycle' to the engine/Slice-1 work (phase-2a). The 2026-07-22 marker's vsdd sub-question is decided -- the cost crate keeps the workspace; the mdatron lib-target sub-question stays mdatron's. The contract workspace-shape paragraph's anticipated amendment is routed to an owned cycle.",
+          "created_at": "2026-07-29T04:23:13.858334Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXbUHWuQtvAONPeu2zotRGmz0+pBSJRxHQL/tkpi4VFCp68MMkpJZCAatFNPG8zv+LpQUyMzXfoIZtaMqkj+nCA=="
+        },
         "076e0067-6d4b-4392-9846-0d758d039177": {
           "author": "xqjG",
           "content": "DIRECTIVE (2026-07-22, mid-flow): both cores are planned for removal — mdatron-core and vsdd-core. CLASSIFICATION: spec-amendment-adjacent plan information; scope read as the standing structural intent, with scheduling and the workspace question open. WHAT IT CHANGES IN THIS BUNDLE: (1) the engine-reuse language dies — the boundary is tool-to-tool: mdatron is invoked over the markdown estate at action and boundary time; no consumer builds on a library seam. (2) vsdd's read-time validation transition gets explicit: the contract already frames vsdd's read-time schema validation as BOOTSTRAP ('schema-validated at read by vsdd during bootstrap, by mdatron's conformance families once landed'), so the mdatron-core link was always transitional — end-state is vsdd's own light shape checks (the serde typed decode IS a shape check, plus schema_class identity) with the mdatron CLI as the authoritative walker at commit and CI, and the YAML state file validated by vsdd's own code entirely (already true at write; the read-time schema-pair call is the piece that migrates off the library). The jsonschema-crate alternative stays a PE decision if deeper read-time validation proves needed (the #723 residue's dependency class). (3) The contract's workspace-shape paragraph ('superseded for vsdd — the cost crate requires a workspace') takes an amendment when the collapse schedules; OPEN SUB-QUESTIONS, decision-needed at scheduling, not now: does the cost crate keep the vsdd workspace with the binary crate, and does mdatron's single crate keep a lib target — the latter is the mdatron cycle's call, and this estate should not depend on it either way. The two boundary texts update this turn; the collapse itself is not scheduled by this record.",
@@ -26740,11 +26749,16 @@
       "agent_id": "xqjG",
       "agent_seq": 663,
       "timestamp": "2026-07-29T04:23:07.138869Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 664,
+      "timestamp": "2026-07-29T04:23:13.875550Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:23:07.138869Z",
+    "timestamp": "2026-07-29T04:23:13.875550Z",
     "agent_id": "xqjG",
-    "agent_seq": 663
+    "agent_seq": 664
   }
 }
