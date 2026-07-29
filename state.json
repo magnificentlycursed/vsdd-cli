@@ -1,6 +1,6 @@
 {
   "next_display_id": 833,
-  "next_comment_id": 1258,
+  "next_comment_id": 1259,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3054,7 +3054,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:34:07.114352Z",
-      "updated_at": "2026-07-29T18:33:35.711387Z",
+      "updated_at": "2026-07-29T18:47:29.542414Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3070,6 +3070,15 @@
           "kind": "handoff",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxyamSsF4zeBPSRuhitSd1jDOxJokSbCqnBNdl3RZwYfBtI2qODRJhet9J1LvJQJ+FLZK5TnOeP6vfVTdd9iZBw=="
+        },
+        "b5233379-5d71-4f2a-a810-5fdbe386572a": {
+          "display_id": 1258,
+          "author": "xqjG",
+          "content": "STARTED — increment 1 done + committed on branch rename-chassis-substrate-821 (unpushed; part of the atomic cycle's eventual single PR): deleted the iCloud conflict-copy junk (untracked), and renamed chassis -> crosslink across the 5 registry data sets + their 2 schemas (act-to-affordance-map kind enum, installed-artifact-manifest class/source enums — data+schema together). mdatron verify clean (0/0).\n\nSTOPPED before the nuanced part — CONFIRMED it needs per-usage care + cold review, not a bulk: the remaining chassis is ONLY in the contract (agent-first-vsdd-toolkit.md, ~41 usages), and a blind rename BREAKS it: title 'on the crosslink chassis' -> 'crosslink crosslink'; line 13 gloss 'crosslink (chassis):' -> 'crosslink (crosslink)'; lines 258/334 'the crosslink chassis' doubled; and line 334 LITERALLY documents this deferral. Correct handling drops the redundant metaphor ('the crosslink chassis' -> 'crosslink'; 'crosslink (chassis)' -> 'crosslink'), not chassis->crosslink.\n\nREMAINING for the cold-reviewed pass (fresh context): (1) contract chassis per-usage (drop-the-metaphor, ~41); (2) substrate polysemy (session-substrate->installed-artifact integrity [code module substrate.rs + status/mod.rs + integrity.rs + contract + corpus], the-substrate->runtime harness, substrate-conventions->ecosystem); (3) register 'slice'; (4) workspace-shape amendment (contract-behavioral); (5) cold review; (6) arm chassis+substrate E0093. The contract isn't in mdatron jurisdiction, so it has NO mechanical verify — cold review is the only check for the contract edits, which is why it must be cold-reviewed, not blind-perled.",
+          "created_at": "2026-07-29T18:47:29.526688Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA/F6iZplYG8Qxa0UMIXguFi1byhl0BAckf6CsTn37v1icxA1bB7khvRaEr+5DiJHE6Y3PATrq8+V3tJhjEp1fDQ=="
         },
         "bc82ff3d-2165-4553-834c-cb77c8450fd6": {
           "display_id": 1255,
@@ -28812,11 +28821,16 @@
       "agent_id": "xqjG",
       "agent_seq": 840,
       "timestamp": "2026-07-29T18:35:20.689884Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 841,
+      "timestamp": "2026-07-29T18:47:29.542414Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T18:35:20.689884Z",
+    "timestamp": "2026-07-29T18:47:29.542414Z",
     "agent_id": "xqjG",
-    "agent_seq": 840
+    "agent_seq": 841
   }
 }
