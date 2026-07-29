@@ -32,6 +32,12 @@ require_frontmatter:
 # frozen review-log is walked/routed but NOT vocabulary-scanned (its retired
 # finding-handle scheme is evidence, not coinage) — mirroring mdatron's ruling
 # (#97). The vsdd-cli precedent is the same: no vocab over the review-log.
+#
+# STAGED (vsdd-cli #823): these globs declare the vocabulary scan scope, but the
+# register itself (.mdatron/vocabulary.yaml) is NOT YET authored — so the
+# vocabulary family is inactive BY DESIGN, pending the E0091 arming cleanup
+# (adjudicate the label schemes, spec-review the DESIGN coinage debt, then land
+# the register clean). Documented-inert, not silently misleading (see #822 F2).
 vocabulary_globs:
   - "methodology.md"
   - "DESIGN-*.md"
