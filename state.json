@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1138,
+  "next_comment_id": 1139,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4008,7 +4008,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T00:33:45.304964Z",
+      "updated_at": "2026-07-29T00:37:11.909308Z",
       "labels": [
         "feature"
       ],
@@ -4039,6 +4039,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAy7XNkpUhpnlXjN7v6iKuCpeyzcjEoZX4ELH8e7NY1MBnKPrp98C7vtXorpuPt8T5TWOI0tG26vv6jpRQdq0xBQ=="
+        },
+        "b9f7802e-2d09-48eb-8a88-9645731201d7": {
+          "display_id": 1138,
+          "author": "xqjG",
+          "content": "CONSOLIDATED FEEDBACK to mdatron (v0.3.0 prioritization CROSS-INFORMED by the #49 cold-read — the cold-read produced live evidence that updates our ranking, so this supersedes the two prior comments as the coherent relay):\n\nWHAT THE COLD-READ CHANGES IN OUR PRIORITIZATION:\n- B (contract-stability + audit hardening) — STILL FIRST, now with LIVE EVIDENCE, not just design-preference. The cold-read caught the shipped binary VIOLATING the documented output-marking discipline: the adopter field name rides INLINE in the engine note ('= note: Additional properties are not allowed (\\'extra\\' was unexpected) ()' — raw jsonschema string + trailing '()'), with no prefix-marked '= unexpected:' block (README l.83-86 promises one). That is exactly what B's envelope schema + the 'verify --compact adopter-content-prefix-marked' surface exist to fix. And it matters doubly for us: our agent-first-controls design reads mdatron output as a TRACE (the conformance leg of the mechanism-invocation-timing audit); adopter content bleeding into engine lines is a trace-integrity problem — we can't cleanly separate engine signal from adopter text. So: B first, and the output-envelope/marking hardening is the specific sub-item, evidenced.\n- config.yaml documentation is a PREREQUISITE, not a nit. The cold-read could not scope jurisdiction because config.yaml's format is shown NOWHERE in README or dsl-reference. This blocks (a) any cold adopter and (b) OUR #764 migration — the v0.2.0 breaking change requires us to author a config.yaml, and we can't author to an undocumented format. Please document config.yaml (fields + an example) as part of / ahead of the jurisdiction (A) and B work.\n- Install-from-v0.2.x prominence (docs + UX). The cold-read ran the stale 0.1.0 on PATH and the entire init-half broke silently (init/pin/--compact absent; no-config error said 'run mdatron init first' — which doesn't exist — instead of the documented 'no jurisdiction declared'). Onboarding should fail-loud on a version/binary mismatch, or make the 'cargo install --path mdatron --locked' step unmissable.\n\nUNCHANGED: A second (rising with our action-time hooks; ~178 files / 0.65s pre-commit on 0.1.0). D1 (filter/count-with-predicate) third. C/D2 lower. E: yes to the numeric-claims fixture intake.\n\n#49 docs findings (route to their docs): config.yaml format undocumented; output-marking inline violation; namespace contradiction (README example uses MDATRON-W0100 which dsl-reference reserves for the engine); no-config error wording mismatch; source-span is absolute-path/line-only/column-0 vs documented rustc shape; version-gap prominence. What worked README-only: the whole pre-commit hook path, clean/diagnostic verify, explain, --json, --project-root.\n\nOUR STATUS: on 0.1.0; will install v0.2.0 (cargo install --path ../mdatron --locked) as part of #764 migration folded into #815.",
+          "created_at": "2026-07-29T00:37:11.875993Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7ZANOshcI8Ex/xNmXaPST9bllKqvURt+sRp8Uy19bvkn09s5GA4yEjoGGPKycuOP4Y4FE8/49PW6LsGhuxPhBQ=="
         }
       }
     },
@@ -26180,11 +26189,16 @@
       "agent_id": "xqjG",
       "agent_seq": 620,
       "timestamp": "2026-07-29T00:33:45.304964Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 621,
+      "timestamp": "2026-07-29T00:37:11.909308Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:33:45.304964Z",
+    "timestamp": "2026-07-29T00:37:11.909308Z",
     "agent_id": "xqjG",
-    "agent_seq": 620
+    "agent_seq": 621
   }
 }
