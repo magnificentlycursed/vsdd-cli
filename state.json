@@ -22702,12 +22702,13 @@
       "display_id": 673,
       "title": "data-sets review round 1",
       "description": "Round 1 of the spec-review loop over the nine authored data-set pairs (#598, package complete at 0fd21462). Attended design session; the round's cold lenses dispatch as this session's own fan-outs per the ratified split. Composition and manifest in the plan comment. Round closes at full disposition with parity — the result comment cites child handles inline.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
       "created_by": "xqjG",
       "created_at": "2026-07-21T02:56:10.621271Z",
-      "updated_at": "2026-07-29T10:10:04.165203Z",
+      "updated_at": "2026-07-29T10:10:11.090536Z",
+      "closed_at": "2026-07-29T10:10:11.090522Z",
       "comments": {
         "5bfc744b-fe10-4a64-ba88-35b77acc944d": {
           "author": "xqjG",
@@ -27732,11 +27733,16 @@
       "agent_id": "xqjG",
       "agent_seq": 744,
       "timestamp": "2026-07-29T10:10:04.165203Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 745,
+      "timestamp": "2026-07-29T10:10:11.090536Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:10:04.165203Z",
+    "timestamp": "2026-07-29T10:10:11.090536Z",
     "agent_id": "xqjG",
-    "agent_seq": 744
+    "agent_seq": 745
   }
 }
