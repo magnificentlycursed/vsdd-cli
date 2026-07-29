@@ -24947,6 +24947,14 @@
       "created_at": "2026-07-21T20:26:18.085454Z",
       "closed_at": "2026-07-22T20:22:15.360449Z"
     },
+    "45984aa0-de21-439f-b54c-985c1206e60a": {
+      "uuid": "45984aa0-de21-439f-b54c-985c1206e60a",
+      "display_id": 9,
+      "name": "Slice 2 — Composition, generated context, and static price",
+      "description": "Closes: Composition purity. Composition function + config-integrity, context generator + token-budget gate, pricing + priced bill of materials. Depends on: the engine.",
+      "status": "open",
+      "created_at": "2026-07-29T17:44:11.217199Z"
+    },
     "4b3414f7-aace-4baf-a4e5-624b7dff8c4e": {
       "uuid": "4b3414f7-aace-4baf-a4e5-624b7dff8c4e",
       "display_id": 3,
@@ -24990,7 +24998,7 @@
       "closed_at": "2026-07-20T16:24:00.974812Z"
     }
   },
-  "next_milestone_id": 9,
+  "next_milestone_id": 10,
   "unsigned_event_warnings": [
     {
       "agent_id": "xqjG",
@@ -28606,11 +28614,16 @@
       "agent_id": "xqjG",
       "agent_seq": 823,
       "timestamp": "2026-07-29T17:44:05.075495Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 824,
+      "timestamp": "2026-07-29T17:44:11.217753Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T17:44:05.075495Z",
+    "timestamp": "2026-07-29T17:44:11.217753Z",
     "agent_id": "xqjG",
-    "agent_seq": 823
+    "agent_seq": 824
   }
 }
