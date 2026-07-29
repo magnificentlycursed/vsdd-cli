@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1140,
+  "next_comment_id": 1141,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10341,7 +10341,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:37:20.506067Z",
+      "updated_at": "2026-07-29T00:40:44.819984Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10372,6 +10372,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIjC3YEIfEn39RsibOT3gzxn3pBWGzvZprTlPst6rMWOipfwTBGOBhunlh6zufp3BXQ9UsCb+F8wv7Uq5zmfoBg=="
+        },
+        "16f4f885-65e4-466f-ae84-29cf1d97babe": {
+          "display_id": 1140,
+          "author": "xqjG",
+          "content": "COLD REVIEW (Opus 4.8, 7 lenses) — UNANIMOUS 7/7 revise-before-ratify; ~15 blocking/substantive deduped. TRIAGE (route before fixing):\n\nFIX-PASS (I resolve in the revision):\n- Trace substrate: RE-BASE off the retired .vsdd/events/ store onto the contract's derived-view model (state.yaml active-composition field, boundary commit history, milestone closes, typed result comments — a query, not a store) [SA blocking]; ADD a trace-integrity requirement (git history + tracker integrity, not agent-editable logs) so traces aren't forgeable/self-authored [Security blocking].\n- Keystone home: make it ONE thing — a single-home Status aggregate control that CONSUMES mdatron conformance records as inputs (the #810 Layer-2-query-consumed-by-Layer-6-gate pattern), not a frame+control+double-homed surface [SA+SO blocking].\n- VSDD-E0050: REMOVE the 'contracted' assertion (it's nowhere in the contract) — describe the condition plainly (phase-composition-not-declared) OR mark it a proposed allocation through the owning phase; the coinage reflex again [SO+Security+QE+DR/TW — 4 lenses].\n- REQ-3 routing: reconcile with the ratified mechanism — the routing IS the  comment (contract l.77 + #810 carry); the dependency edge is an ADDITION, not a replacement; don't re-mechanize what #810 format-carried [SO blocking + SA].\n- Cost: add a requirement+AC for a per-session hook wall-clock budget + per-control firing cadence + cost-banding/model-tier (not prose only) [AIE blocking + substantive].\n- Revision-line entry: DRAFT it (AC-9 requires it; absent) [SO+DR/TW].\n- Fixtures: specify the 3 regression fixtures concretely + fix the middle-bypass named 3 ways [QE+DR/TW].\n- Also: self-governance layer owner (not 'throughout'); non-vacuity defined; pin --update = shape-tier, don't assign it truth-tier amendment authorization (tier-rule); the dependency-free tripwire emitting external content must route through the #807 cleaner; keystone gets a real falsification AC; L1/L2 phase-5 deferral gets a retest trigger; re-sequencing delta over #810 stated; note contract text uses plain leading names not REQ-n.\n\nOPERATOR DECISIONS (two prior resolutions rested on premises the review overturned):\n(A) Dogfood 'first blocking control now' — the review shows it needs the Layer-4/7 hook seam, NOT dependency-free-now. Buildable-now form is non-blocking DETECTION.\n(B) mdatron fold-in — no migration path, crosses the repo boundary, breaks live CI; sequence separately (#816) may be cleaner.\n\nNext: operator re-decides (A)+(B); I run the fix pass on the rest; terminal verify; ratification.",
+          "created_at": "2026-07-29T00:40:44.804792Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA/wGs8PWfLAzco1pMAlK/0uGBA9ViuOTrB8ANqVqoPvvORxX82fJ3oWrzhOkHs1932llaA7mNW/ZV3k/ReAF+Cg=="
         },
         "1f83f8e5-2597-4d9f-ad0c-483749f9d2c0": {
           "display_id": 1136,
@@ -26208,11 +26217,16 @@
       "agent_id": "xqjG",
       "agent_seq": 622,
       "timestamp": "2026-07-29T00:37:20.506067Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 623,
+      "timestamp": "2026-07-29T00:40:44.819984Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:37:20.506067Z",
+    "timestamp": "2026-07-29T00:40:44.819984Z",
     "agent_id": "xqjG",
-    "agent_seq": 622
+    "agent_seq": 623
   }
 }
