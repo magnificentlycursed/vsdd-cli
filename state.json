@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1161,
+  "next_comment_id": 1162,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3312,7 +3312,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:44:17.238741Z",
-      "updated_at": "2026-07-29T02:30:00.566440Z",
+      "updated_at": "2026-07-29T02:34:04.372925Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3352,6 +3352,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASVTbfuSWM4I4x4pE5tHtuU9O1sPA5yzAWZRy2QDnk7H317yaY3CT9iROvrYKagd2OdiqdtF+uUDFT/OmjzzPAg=="
+        },
+        "a52273ca-63e5-4b3f-98a1-75089d37bb7e": {
+          "display_id": 1161,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY OUTCOME (7 lenses, Opus 4.8, wf_dd71abd7-3e5): ALL prior findings across all 7 lenses RESOLVED. AI-Engineer = resolved-ratify-ready. Other 6 = needs-another-round SOLELY on revision-introduced (mostly over-correction) defects; every lens: structure/DAG/criteria-mapping sound, both operator decisions honored, zero built-state fabrications, 'cheaply fixable -> ratify-ready'.\n\nNew defects to fix (route-before-fix):\n1. [SUBSTANTIVE x5: SA/SO/Red-Team/PE/DR] line 15 'Trust boundaries is amended accordingly' = an unowned/unrouted phase-1b amendment asserted as DONE inside a phase-1c pass (the #808 owned-amendment rule; my 3rd premature-governance-assertion this arc). FIX: drop the amendment claim — the honest framing needs NO amendment (local block is a bypassable self-check that RECORDS not certifies; CI reads server-synced state; corroboration-only is scoped to the phase answer, untouched). State explicitly no Trust-boundaries change is required. (If any clarification is wanted, route to SO/phase-1a via the 'Routed, not applied here' list — do NOT assert done.)\n2. [SUBSTANTIVE: Red-Team] 'non-bypassable CI-backed block' overstates the grade on THIS repo's verified direct-to-main push model (no branch-protection/required-status-checks -> CI reds POST-HOC, doesn't PREVENT landing). FIX: grade honestly ('non-suppressible post-hoc server-side verification; a landing-block only under required-checks') AND name the branch-protection/required-checks + PR-gated-flow config as the wiring act that upgrades it (Slice 1 wiring obligation / estate precondition).\n3. [SUBSTANTIVE x3: SA/SO/QE] substrate/data-authoring contradiction: line 5 lists preflight-members + dispatch-manifest-schema as substrate primitives but line 26 says they feed Slice 6. FIX: remove them from line 5; Slice 6 line 20 '(a substrate artifact)' -> '(a Slice-6 data-authoring artifact)'; keep line 26's partition.\n4. [SUBSTANTIVE x3: SA/SO/QE] terminal-safety cleaner mis-map: 'preflight surfaces' assigned to Slice 3 (Install has no preflight; it's Slice 6's dispatch preflight); Slice 6 has no cleaner act; Slice 2's generated context dropped. FIX: move preflight cleaner-wiring to Slice 6 + add Slice 6 cleaner act; add Slice 2 generated-context to the enumeration + body.\n5. [SUBSTANTIVE x2: SA/PE] Slice 2 vsdd bootstrap leg overstates 'config INTEGRITY'; contract grants vsdd config SCHEMA validation only (integrity = mdatron's). FIX: recharacterize as schema/shape validation-at-read; integrity rules gate on mdatron.\nMinors: [QE] fresh-container 'like swarm live fire' (one-time) vs standing/recurring -> class as manual-recurring; [QE/DR] splice line 41 replace-vs-retain tension -> scope replacement to Layer 1-9 + preamble + audit, retain bookend bodies; [AIE] per-commit budget binds every per-commit-seam slice (1 and 4); [DR] register 'enforcement-spine-first ordering' or note ordering-principle names are exempt metaphors (like 'invariant-first').\n\nPlan: apply all -> focused confirm (SA/SO/Red-Team/DR, narrow charge) -> operator ratification.",
+          "created_at": "2026-07-29T02:34:04.359135Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoshrJ7W68z1W5uc549iy4T9z8shr07iSDfRGmnzy2Gd4hwcAXufJ3gmzPkw/c/uJhEmPsFIZCeh5nsU3XbPECg=="
         },
         "f741785f-fb77-415a-8a9d-90bdfebbe466": {
           "display_id": 1160,
@@ -26607,11 +26616,16 @@
       "agent_id": "xqjG",
       "agent_seq": 652,
       "timestamp": "2026-07-29T02:30:00.566440Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 653,
+      "timestamp": "2026-07-29T02:34:04.372925Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T02:30:00.566440Z",
+    "timestamp": "2026-07-29T02:34:04.372925Z",
     "agent_id": "xqjG",
-    "agent_seq": 652
+    "agent_seq": 653
   }
 }
