@@ -13,17 +13,17 @@ if ! command -v mdatron >/dev/null 2>&1; then
   exit 2
 fi
 
-# Minimum-version sanity check (per crosslink #12 PE/F2). The v0.3.0 flip
-# (vsdd-cli #816): mdatron must be 0.3.x. Stale 0.1.x/0.2.x binaries predate
-# the config.yaml jurisdiction (MDATRON-E0080), the families report (#90),
-# and the managed manifest (init) this repo now relies on; warn early rather
-# than discover later.
-MIN_VERSION="0.3.0"
+# Minimum-version sanity check (per crosslink #12 PE/F2). mdatron 0.4.0
+# adoption (vsdd-cli #830): mdatron must be 0.4.x. The --json envelope went
+# 2.0.0 (breaking) and files_checked now counts files VALIDATED; stale 0.3.x
+# and earlier binaries report the old envelope and pre-2.0.0 semantics this
+# repo no longer targets, so warn early rather than discover later.
+MIN_VERSION="0.4.0"
 mdatron_version=$(mdatron --version 2>/dev/null | awk '{print $2}' || true)
 if [ -z "$mdatron_version" ]; then
   echo "pre-commit: could not determine mdatron version (got empty output) — proceeding" >&2
-elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.3\.[0-9]+'; then
-  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.3.x supported window" >&2
+elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.4\.[0-9]+'; then
+  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.4.x supported window" >&2
   echo "pre-commit:   reinstall with  cargo install --path ../mdatron --locked --force" >&2
   echo "pre-commit:   minimum required for vsdd-cli compatibility: ${MIN_VERSION}" >&2
 fi

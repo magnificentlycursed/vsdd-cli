@@ -1,16 +1,16 @@
 //! Standing non-vacuity proof for the REAL `.mdatron/` jurisdiction
-//! (vsdd-cli #822 M2 / #825 F5).
+//! (vsdd-cli #822 M2 / #825 F5; updated for mdatron 0.4.0, #830).
 //!
-//! `mdatron verify: clean` on the real tree reports `files_checked: 0` —
-//! mdatron counts files-WITH-findings, not files walked — so the envelope
-//! alone cannot distinguish "checked the corpus, all clean" from "the
-//! `file_globs` matched nothing and checked nothing." A misscoped jurisdiction
-//! (a typo'd glob, a moved corpus) would pass silently. Until mdatron exposes a
-//! files-walked count, this canary is the proof: it copies the real
-//! `.mdatron/` config + schemas into a temp project, drops a frontmatter-less
-//! governed file at a path the real `file_globs` + `require_frontmatter` match,
-//! and asserts mdatron CATCHES it (MDATRON-W0040). If the real jurisdiction
-//! ever goes vacuous (globs match nothing, config fails to load), this goes red.
+//! mdatron 0.4.0 reports `files_checked` as the count of files VALIDATED (79 on
+//! the real tree; it was 0 under 0.3.0, which counted only files-WITH-findings),
+//! so a misscoped jurisdiction that matched nothing now shows `files_checked: 0`
+//! rather than passing silently. This canary is the stronger, behavioral proof
+//! beyond that count: it copies the real `.mdatron/` config + schemas into a
+//! temp project, drops a frontmatter-less governed file at a path the real
+//! `file_globs` + `require_frontmatter` match, and asserts mdatron CATCHES it
+//! (MDATRON-W0040) — proving the RULES fire, not merely that files were walked.
+//! If the real jurisdiction ever goes vacuous (globs match nothing, config fails
+//! to load, the rule stops firing), this goes red.
 //!
 //! Runs the mdatron BINARY (the #739 tool-to-tool boundary), like
 //! cross_references; mdatron on PATH is the estate's tooling requirement.

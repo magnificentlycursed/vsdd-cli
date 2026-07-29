@@ -15,8 +15,13 @@ file_globs:
   - "supplements/*.md"             # language/interface supplements (schema_class: supplement)
   - "templates/registry/*.md"      # the versioned data sets (schema_class: <each set>)
   - "review-log/**/*.md"           # typed review-log entries (schema_class: review-entry)
-  - "DESIGN-*.md"                  # design docs (schema_class: design-doc)
-  - "methodology.md"               # schema_class: methodology-spec
+# DESIGN-*.md and methodology.md are DROPPED from jurisdiction (vsdd-cli #830):
+# superseded transitional prose (the ratified contract
+# .design/agent-first-vsdd-toolkit.md replaced them) whose schema_class
+# (design-doc / methodology-spec) has no schema, so mdatron 0.4.0 rightly flags
+# them MDATRON-W0045 (schema-class-unrouted). They are already out of vocab scope
+# and are slated for doc-sunset (#821); walking them only produced W0045 noise,
+# never validation.
 # CHANGELOG.md is intentionally excluded: crosslink-generated, no schema_class
 # frontmatter, and no changelog schema exists — it is not authored governed data.
 
