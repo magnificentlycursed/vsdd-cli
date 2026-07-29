@@ -17068,11 +17068,12 @@
       "display_id": 294,
       "title": "Respec: agent-first VSDD toolkit on the crosslink chassis (fresh design cycle)",
       "description": "Goal: \n\nAcceptance criteria:\n- \n\nFresh design cycle superseding the 2026-05 design corpus (4 DESIGN-*.md docs + binary-first plan #11-#17), initiated by operator 2026-07-18 after a five-dataset evaluation (bookmark-cli-manual, issue-tracker-cli, #12/#13 cycles, vsdd-suite self-reviews, vsdd-cli/wip review-logs), a read of the VSDD/VDD whitepapers, crosslink governing docs, and the Thermite harness (ACToR).\n\nMandate: vsdd-cli becomes the methodology layer installed into crosslink's seams (rules, skills, hooks, gates, swarm); mdatron stays the artifact-conformance engine invoked at action time; delivery is agent-first (context + constraints + hooks; binaries are organs, not the product).\n\nOperator decisions recorded: agent-side interpretation; determinism in the process, not the tool; crosslink is the required chassis (two-mode parity retired); provably = in-flight gating AND after-the-fact audit; phase state = written artifact; Red Gate = keep and mechanize (red suite provably fails against pre-implementation commit; mutation floors; critic post-hoc tests); no coinages / plain names.\n\nCore behavioral contracts to author in Phase 1a: deterministic phase answer ('what phase are we in'); directive reconciliation (every mid-flow operator directive classified — Phase 4 routing / spec amendment / recorded override + re-entry path — before execution; silent execution is a named defect); phase-exit by verifiable gate, not assertion; finding lifecycle state lives in crosslink alone (findings filed in subject repo's tracker); composition = activation axes keyed on artifact surfaces with pairs preserved and mechanically separated (validator lifecycle, no self-validation).\n\nDeliverables: lean methodology.md (process spec) + toolkit DESIGN.md (implementation contract), authored in .design/ per chassis convention.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-19T00:53:12.462673Z",
-      "updated_at": "2026-07-29T10:08:10.117265Z",
+      "updated_at": "2026-07-29T10:08:16.996624Z",
+      "closed_at": "2026-07-29T10:08:16.996612Z",
       "labels": [
         "feature",
         "phase-1a",
@@ -27692,11 +27693,16 @@
       "agent_id": "xqjG",
       "agent_seq": 740,
       "timestamp": "2026-07-29T10:08:10.117265Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 741,
+      "timestamp": "2026-07-29T10:08:16.996624Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:08:10.117265Z",
+    "timestamp": "2026-07-29T10:08:16.996624Z",
     "agent_id": "xqjG",
-    "agent_seq": 740
+    "agent_seq": 741
   }
 }
