@@ -1,5 +1,5 @@
 {
-  "next_display_id": 820,
+  "next_display_id": 821,
   "next_comment_id": 1171,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -655,6 +655,7 @@
     "cc22ace2-3052-4f7e-bbac-ee15dc32bdb4": 500,
     "cc2c331b-7f4a-4ec8-894b-5baf1885f630": 325,
     "cc5e2d88-a1b5-4043-9557-5128841eddfe": 245,
+    "ccced380-4c00-4475-bd76-75a386e41968": 820,
     "cd286365-0b67-429d-a41a-14086fa9ebe7": 399,
     "cd323aa6-ca89-4905-998d-96cbb4dc85a2": 21,
     "cd71a0e7-d520-4d71-95e4-b1ffb60547c9": 559,
@@ -19498,6 +19499,16 @@
         }
       }
     },
+    "ccced380-4c00-4475-bd76-75a386e41968": {
+      "uuid": "ccced380-4c00-4475-bd76-75a386e41968",
+      "display_id": 820,
+      "title": "Slice 1 (phase-2a): Live self-governance — tracker join + first guardrail; red-gate seed (integration tests for the live acquisition + block/pass tests for the guardrail; closes no fixture criterion by design)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-29T04:31:35.431233Z",
+      "updated_at": "2026-07-29T04:31:35.431233Z"
+    },
     "cd286365-0b67-429d-a41a-14086fa9ebe7": {
       "uuid": "cd286365-0b67-429d-a41a-14086fa9ebe7",
       "display_id": 399,
@@ -26754,11 +26765,16 @@
       "agent_id": "xqjG",
       "agent_seq": 664,
       "timestamp": "2026-07-29T04:23:13.875550Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 665,
+      "timestamp": "2026-07-29T04:31:35.431233Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:23:13.875550Z",
+    "timestamp": "2026-07-29T04:31:35.431233Z",
     "agent_id": "xqjG",
-    "agent_seq": 664
+    "agent_seq": 665
   }
 }
