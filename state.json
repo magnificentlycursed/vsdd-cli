@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1228,
+  "next_comment_id": 1229,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7274,10 +7274,21 @@
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:27:01.776803Z",
-      "updated_at": "2026-07-19T02:27:02.425743Z",
+      "updated_at": "2026-07-29T10:24:32.933837Z",
       "labels": [
         "spec-review-round-1"
-      ]
+      ],
+      "comments": {
+        "c354241a-97c1-480c-b5f5-2ea0a975a6e7": {
+          "display_id": 1228,
+          "author": "xqjG",
+          "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract (install/status/config-integrity/conformance/gate/scope criteria present). Reopen if this specific finding resurfaces as a live gap.",
+          "created_at": "2026-07-29T10:24:32.857415Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZpwgPIlNqAsQkPLrjuiFJytXtKXK6lWFVbPssIQ3vT9uwcvXRrQVppBQ+bsSeojxZthD5LCYZIcFJI9o79tJBg=="
+        }
+      }
     },
     "46d41484-9355-4c25-b28b-fcc0afc8719f": {
       "uuid": "46d41484-9355-4c25-b28b-fcc0afc8719f",
@@ -27951,11 +27962,16 @@
       "agent_id": "xqjG",
       "agent_seq": 766,
       "timestamp": "2026-07-29T10:24:25.336566Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 767,
+      "timestamp": "2026-07-29T10:24:32.933837Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:24:25.336566Z",
+    "timestamp": "2026-07-29T10:24:32.933837Z",
     "agent_id": "xqjG",
-    "agent_seq": 766
+    "agent_seq": 767
   }
 }
