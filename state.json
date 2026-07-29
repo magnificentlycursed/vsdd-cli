@@ -24988,6 +24988,14 @@
       "status": "open",
       "created_at": "2026-07-29T17:44:30.175910Z"
     },
+    "60a4af0c-e8c4-491e-84c9-8181e4b2aa18": {
+      "uuid": "60a4af0c-e8c4-491e-84c9-8181e4b2aa18",
+      "display_id": 14,
+      "name": "Slice 7 — The cost crate",
+      "description": "Closes: Cost queries — 'is 100k a lot', efficiency advisories, the unit ledger + calibration bands, capture-source provenance, CI budget gates. Depends on: Slice 6, Slice 2, engine calibration-band + token-budget data.",
+      "status": "open",
+      "created_at": "2026-07-29T17:44:43.779095Z"
+    },
     "6b26f932-b5d9-4c95-8bf1-850d2535b84f": {
       "uuid": "6b26f932-b5d9-4c95-8bf1-850d2535b84f",
       "display_id": 8,
@@ -25030,7 +25038,7 @@
       "closed_at": "2026-07-20T16:24:00.974812Z"
     }
   },
-  "next_milestone_id": 14,
+  "next_milestone_id": 15,
   "unsigned_event_warnings": [
     {
       "agent_id": "xqjG",
@@ -28671,11 +28679,16 @@
       "agent_id": "xqjG",
       "agent_seq": 828,
       "timestamp": "2026-07-29T17:44:36.802988Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 829,
+      "timestamp": "2026-07-29T17:44:43.779474Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T17:44:36.802988Z",
+    "timestamp": "2026-07-29T17:44:43.779474Z",
     "agent_id": "xqjG",
-    "agent_seq": 828
+    "agent_seq": 829
   }
 }
