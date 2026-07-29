@@ -14245,11 +14245,12 @@
       "display_id": 8,
       "title": "vsdd-cli Step 2.3 nice-to-haves",
       "description": "Goal: \n\nAcceptance criteria:\n- \n\nThree deferred items from mdatron/STEP-2-SCOPE.md sub-step 2.3 nice-to-haves: (1) DESIGN-VERIFICATION per-hook declarative-vs-delegate categorization table (which of the 19 hooks are mdatron declarative patterns vs delegate registrations); (2) DESIGN-OBSERVABILITY coordination subsection on how mdatron's audit-trail emission flows into vsdd-cli's .vsdd/events.jsonl sink as ValidationPassed/Failed event payloads; (3) README 'Relationship to mdatron' explainer section. Plus M3 Phase 5 adaptation (Phase 5 for spec-stage projects) — defer until second adaptation case surfaces.",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:05:36.632473Z",
-      "updated_at": "2026-07-29T10:04:49.863038Z",
+      "updated_at": "2026-07-29T10:04:56.088546Z",
+      "closed_at": "2026-07-29T10:04:56.088533Z",
       "labels": [
         "feature",
         "step-2",
@@ -27628,11 +27629,16 @@
       "agent_id": "xqjG",
       "agent_seq": 734,
       "timestamp": "2026-07-29T10:04:49.863038Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 735,
+      "timestamp": "2026-07-29T10:04:56.088546Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:04:49.863038Z",
+    "timestamp": "2026-07-29T10:04:56.088546Z",
     "agent_id": "xqjG",
-    "agent_seq": 734
+    "agent_seq": 735
   }
 }
