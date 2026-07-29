@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1185,
+  "next_comment_id": 1186,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4162,7 +4162,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T07:12:36.405194Z",
+      "updated_at": "2026-07-29T07:24:12.013928Z",
       "labels": [
         "feature"
       ],
@@ -4283,6 +4283,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAFJ7KfeJsEKIt86816N/cTaSLswQ4ifr7iSp23pzreYoHz2G++3+uG6/AOMSnRzQW01L+ljWQ+LkUqv27iBsRCg=="
+        },
+        "de66d81a-983d-4ee2-8309-2a2aafb1fb56": {
+          "display_id": 1185,
+          "author": "xqjG",
+          "content": "FLIP FALLOUT FIXED — commit above. cross_references TempProject now runs `mdatron init` after seeding schemas/patterns (adopter setup path, not a hand-rolled config.yaml). Root cause was the missing config.yaml jurisdiction (E0080), not the templates/registry index (that was an over-copy artifact in my first repro). Whole workspace GREEN under v0.3.0 — the flip is complete. Note for the record: using init in the harness fixes the CLASS (forward-compatible to future mdatron layout requirements), matching the lesson that hand-rolling .mdatron/ is what made both the harness and the real tree brittle to this flip.",
+          "created_at": "2026-07-29T07:24:11.998317Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAkDoSN3WUpzr0mM6NOPRe5ywd+aiuty4MtgBKpAgQ91eBEYlGrCb5GFPAZV5X6u32Z7AwrKdgze1aamTG/2AzDg=="
         }
       }
     },
@@ -27019,11 +27028,16 @@
       "agent_id": "xqjG",
       "agent_seq": 685,
       "timestamp": "2026-07-29T07:12:36.405194Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 686,
+      "timestamp": "2026-07-29T07:24:12.013928Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T07:12:36.405194Z",
+    "timestamp": "2026-07-29T07:24:12.013928Z",
     "agent_id": "xqjG",
-    "agent_seq": 685
+    "agent_seq": 686
   }
 }
