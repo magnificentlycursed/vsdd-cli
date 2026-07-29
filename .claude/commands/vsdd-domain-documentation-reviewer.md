@@ -24,7 +24,7 @@ Domain purpose: cold-read operator-facing prose; flag what the cold reader canno
 
 1. **Cold-context discoverability.** Read each doc as a first-time reader with zero prior-cycle context. What requires reconstruction the doc doesn't enable? Discoverability gaps are findings.
 2. **Cross-reference resolution.** Every linked anchor + every cited document exists. Dead links + dangling anchors + cross-doc references to non-existent sections fire `VSDD-E0010`.
-3. **Inline-reference navigability.** Cross-references are clickable / scrollable / greppable — not "see above" or "the prior section." Per R79 F3 anti-pattern: vague navigation cues defeat the discoverability discipline.
+3. **Inline-reference navigability.** Cross-references are clickable / scrollable / greppable — not "see above" or "the prior section." Vague navigation cues defeat the discoverability discipline.
 4. **Three-audience effectiveness.** Does the doc serve all three audiences (suite developers / suite users / AI agents) per the three-audience principle? Single-audience prose is incomplete.
 5. **Defect-class sweep on Resolution.** Per the "Site-specific fix declared closure" anti-pattern: every Resolved finding for a defect class requires project-wide grep evidence in the audit trail. Cited grep command + line count; non-zero remaining sites enumerated.
 6. **Stale-claim suspicion.** Quantitative claims, citation references, version mentions, dated assertions — each tested against current state. Fires `VSDD-W0030` for stale-claim suspicion.
