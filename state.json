@@ -1,6 +1,6 @@
 {
   "next_display_id": 833,
-  "next_comment_id": 1259,
+  "next_comment_id": 1260,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3054,7 +3054,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:34:07.114352Z",
-      "updated_at": "2026-07-29T18:47:29.542414Z",
+      "updated_at": "2026-07-29T19:04:40.009778Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3088,6 +3088,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABACZcfGudJ2AFhTL0v/oCYQc7RGuAV+BRpW+whE6zv7Z63wW7L5wQLis8KE6BrwNJbNWDuAgYzh8nB8FCVpKHzAA=="
+        },
+        "ebcc4a78-d141-4ed2-8229-9bcbfbcfdfa4": {
+          "display_id": 1259,
+          "author": "xqjG",
+          "content": "COLD REVIEW RUN dispatched (wf_0ac03bda-2ee), operator-directed 'use the cold review run'. Attended review-round fan-out via the Workflow surface (act-to-affordance-map). Round manifest / dials: model = inherited Opus (stated explicitly per the never-inherited-silently rule); effort = high on the 4 drafters + 4 cold lenses, low on the mechanical verify.\n\nShape: (Draft, parallel, disjoint files) contract | code | governed-corpus | live-docs — each applies the DECIDED groundings (chassis->crosslink drop-metaphor; session-substrate->installed-artifact integrity; the-substrate[runtime]->runtime harness; substrate-conventions->ecosystem) and FLAGS the genuinely-ambiguous contract senses (substrate step / autonomous substrate / the substrate checks / substrate-settings) rather than guessing. Then (Cold review, 4 fresh lenses: SA/SO/DR/TW over the full git diff) + (Verify: cargo test, mdatron verify, residual grep).\n\nScope exclusions (deliberate, no-silent-caps): CHANGELOG.md, DESIGN-*.md, review-log/* — ungoverned historical/deprecated records; renaming them would falsify what they recorded at the time. Governed set that must end clean for E0093 arming = supplements/*.md + templates/registry/*.md only (mdatron jurisdiction).\n\nDrafts land in the working tree UNCOMMITTED; I triage findings + adjudicate the flagged senses, then present for operator ratification (the exit gate). E0093 arming of chassis+substrate is the post-ratification step, once the governed set verifies 0 residual.",
+          "created_at": "2026-07-29T19:04:39.993795Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAADOhhpkM2VEdvFFgL3jIxAwfdFTmuU+DFqxTTVVxwm1LNHDYBxKQQReOt8RKa415GCHHXTLzOIweoQ+0O9qFCQ=="
         }
       }
     },
@@ -28826,11 +28835,16 @@
       "agent_id": "xqjG",
       "agent_seq": 841,
       "timestamp": "2026-07-29T18:47:29.542414Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 842,
+      "timestamp": "2026-07-29T19:04:40.009778Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T18:47:29.542414Z",
+    "timestamp": "2026-07-29T19:04:40.009778Z",
     "agent_id": "xqjG",
-    "agent_seq": 841
+    "agent_seq": 842
   }
 }
