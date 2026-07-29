@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1132,
+  "next_comment_id": 1133,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4008,11 +4008,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-28T21:39:31.622342Z",
+      "updated_at": "2026-07-29T00:22:39.020965Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "6c62168d-ee12-4cdc-911f-8258a370504d": {
+          "display_id": 1132,
+          "author": "xqjG",
+          "content": "mdatron v0.3.0 SCOPE CONSULTATION — vsdd-cli prioritization (design-informed; the agent-first-controls design #815 drives this, since it makes mdatron the conformance vehicle for the mechanism-invocation-timing audit):\n\n1. B (contract-stability + audit hardening) — TOP. It IS the conformance leg our design needs: the published JSON envelope schema (we WILL pin+validate it — the seam governed both ends), families-inactive-is-reported (a family that should fire but doesn't = an un-invoked mechanism = our core signal), every-code-resolves-in-explain, three-forms-agree. Makes the reserved-code-semantic-swap structurally impossible — our whole thesis (catch by mechanism, not by hand as #12's children did). ENVELOPE GAP to check: expose which check families were active/ran per verify, so we can audit that a required family was actually invoked.\n2. A (incremental verify + resource bounds) — SECOND, rising. NUMBERS you asked: governed corpus ~178 .md files; mdatron verify (whole-tree, v0.1.0) = 0.65s wall-clock in pre-commit. Noticeable-but-tolerable -> A waits honestly for pre-commit. BUT our design wires mdatron into ACTION-TIME hooks (per tool call; verify --compact for hook budgets); at that cadence 0.65s/call is a real tax and changed-file-plus-dependents jumps. Build A before we lean on per-call mdatron.\n3. D1 (filter/count-with-predicate) — THIRD. Our audit rules want 'exactly one / at least one' predicates (exactly one composition declaration per phase entry; a disposition for every finding in a round). The authoring-rule workaround costs clarity for these; not blocking, but it serves the invocation-timing audit directly.\n4. C / D2 / E — lower. C (mutation/fuzz): engine-internal, we inherit. D2 (regex-validity): consumer-side fine for now. E: YES to numeric-claims fixture intake — take our 3 drift cases verbatim (standing offer accepted); Windows walk defer (no Windows contributors).\n\nOUTSTANDING: (1) D1 migration status — we are STILL ON mdatron 0.1.0, NOT upgraded to v0.2.0, so the config-refusal has NOT bitten #764 yet; when I used 'mdatron verify --files' ergonomics were fine (acceptable escape); the config.yaml migration is folded into this design cycle. (2) #49 cold read — queued; needs a genuinely fresh session (no prior mdatron context); pending operator go to dispatch a cold agent. (3) No new three-question raises.",
+          "created_at": "2026-07-29T00:22:38.994718Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAfnz7MVcp92gemOtIqcG9WIWEKsaNiiyLImNPUuzr4HW8pjWjVIsdkyPVsDx8U/AviHf5f+l32cYyO56QiHpiBA=="
+        },
         "78802760-bc49-4b58-a701-a1250b9d4a4e": {
           "display_id": 1127,
           "author": "xqjG",
@@ -26096,11 +26105,16 @@
       "agent_id": "xqjG",
       "agent_seq": 614,
       "timestamp": "2026-07-28T22:27:24.550082Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 615,
+      "timestamp": "2026-07-29T00:22:39.020965Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-28T22:27:24.550082Z",
+    "timestamp": "2026-07-29T00:22:39.020965Z",
     "agent_id": "xqjG",
-    "agent_seq": 614
+    "agent_seq": 615
   }
 }
