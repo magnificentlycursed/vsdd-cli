@@ -1,6 +1,6 @@
 {
   "next_display_id": 826,
-  "next_comment_id": 1196,
+  "next_comment_id": 1197,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4442,7 +4442,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:02:23.320418Z",
-      "updated_at": "2026-07-29T09:02:23.320418Z"
+      "updated_at": "2026-07-29T09:06:55.853701Z",
+      "comments": {
+        "aec7f030-fc0e-4d62-831d-79e0673143ba": {
+          "display_id": 1196,
+          "author": "xqjG",
+          "content": "F5 DONE — PR #2 (nonvacuity-canary) CI GREEN: test 43s (runs the new canary in CI via the F3 gate) + verify 24s; auto-triggered cleanly (no reopen — validates the PR workflow now that origin/main is current). The canary copies the REAL .mdatron/config.yaml + schemas into a temp project, injects a frontmatter-less governed file at a real-file_globs path, and asserts MDATRON-W0040 fires — a positive-control (a vacuous/misscoped config produces no W0040 -> red). Closes #822 M2 via canary (until mdatron exposes files_walked). READY TO MERGE.",
+          "created_at": "2026-07-29T09:06:55.835877Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA2eTEHfFvFONE//Jkm7WNjaZhBLYrEb5bboYGNDcVOzP7Zg3tMnfkWwllVMPRDhxfjrSCw57gWiedH2fNN5v/Aw=="
+        }
+      }
     },
     "22407099-fe26-4cae-b079-f62b2dca0027": {
       "uuid": "22407099-fe26-4cae-b079-f62b2dca0027",
@@ -27290,11 +27301,16 @@
       "agent_id": "xqjG",
       "agent_seq": 705,
       "timestamp": "2026-07-29T09:02:32.203157Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 706,
+      "timestamp": "2026-07-29T09:06:55.853701Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T09:02:32.203157Z",
+    "timestamp": "2026-07-29T09:06:55.853701Z",
     "agent_id": "xqjG",
-    "agent_seq": 705
+    "agent_seq": 706
   }
 }
