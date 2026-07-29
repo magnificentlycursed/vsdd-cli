@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1184,
+  "next_comment_id": 1185,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4162,11 +4162,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T06:45:11.907592Z",
+      "updated_at": "2026-07-29T07:12:36.405194Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "2080b230-e980-440e-8899-322391f32e51": {
+          "display_id": 1184,
+          "author": "xqjG",
+          "content": "FLIP FALLOUT (discovered dogfooding v0.3.0) — the v0.3.0 flip BROKE vsdd's own cross-reference conformance tests (cross_references.rs E0207 + E0208). Correcting the record: 'mdatron verify clean on the real corpus' held, but the TEST SUITE went red at the flip commit (3ea9cdb7). ROOT CAUSE: cross_references.rs builds a temp mdatron project and runs the mdatron BINARY over it; the E0207/E0208 rules live alongside a key('domains',...) rule in cross-references.yaml whose index source is templates/registry/composition-scope-and-actions.md. mdatron v0.3.0 HARD-FAILS the whole pipeline (MDATRON-E0080, 'index build error: file IO ... No such file or directory', files_checked=0) when that key-index source is absent, taking down the unrelated E0207/E0208 rules with it. 0.1.0 tolerated the missing index. The TempProject harness seeds schemas+patterns+fixture but NOT the index source (nor a config.yaml). FIX DIRECTION (open): (a) update the harness to seed config.yaml + the domains-index source so the temp project is complete under v0.3.0; AND/OR (b) mdatron feedback — is whole-pipeline-fail on a missing key-index source intended, vs failing only the dependent rule? This is substantive v0.3.0-behavior feedback feeding #48. ALSO: iCloud made a byte-identical conflict-copy 'convergence_red_gate 2.rs' of an actively-edited file (repo lives under ~/Documents) — removed; the repo under an iCloud-synced dir is a hazard.",
+          "created_at": "2026-07-29T07:12:36.367433Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAU+a3GznuYuLrPKSS4GcnLYKJwCKrdMovhyUuZeQ8ZxRPTVjt6VE9AIh8kpTIV9smVUqG8d3PJ9kbxYpL/tUBBA=="
+        },
         "6c62168d-ee12-4cdc-911f-8258a370504d": {
           "display_id": 1132,
           "author": "xqjG",
@@ -27005,11 +27014,16 @@
       "agent_id": "xqjG",
       "agent_seq": 684,
       "timestamp": "2026-07-29T07:12:28.484106Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 685,
+      "timestamp": "2026-07-29T07:12:36.405194Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T07:12:28.484106Z",
+    "timestamp": "2026-07-29T07:12:36.405194Z",
     "agent_id": "xqjG",
-    "agent_seq": 684
+    "agent_seq": 685
   }
 }
