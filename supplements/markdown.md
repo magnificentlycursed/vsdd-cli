@@ -14,7 +14,7 @@ Per-domain extensions for markdown-bearing surfaces (README, DESIGN docs, method
 
 - **CommonMark + GFM tables.** [CommonMark](https://commonmark.org/) as base spec; GitHub-Flavored Markdown for tables, task lists, strikethrough. Other dialect features avoided unless target renderer supports them.
 - **Heading hierarchy discipline.** H1 once per document (the title); H2 for top-level sections; H3 for subsections; H4+ reserved for tightly-nested context. Skipping heading levels is the accessibility + structural failure mode.
-- **Inline-reference navigability.** Cross-references are clickable + scrollable + greppable. "See above" / "the prior section" are vague navigation cues that defeat discoverability (R79 F3 anti-pattern).
+- **Inline-reference navigability.** Cross-references are clickable + scrollable + greppable. "See above" / "the prior section" are vague navigation cues that defeat discoverability.
 - **Code-fence language tags.** Every code fence carries its language (` ```yaml ` / ` ```rust ` / ` ```bash `). Syntax highlighting + machine-parseable language detection.
 - **Anchor-ID determinism.** Per the anchor-ID generation conventions, anchors are deterministically derived from frontmatter (`{review_number}-f{finding_number}` etc.). No hand-authored `<a id="..."></a>` tags.
 

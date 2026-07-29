@@ -33,11 +33,15 @@ require_frontmatter:
 # finding-handle scheme is evidence, not coinage) — mirroring mdatron's ruling
 # (#97). The vsdd-cli precedent is the same: no vocab over the review-log.
 #
-# STAGED (vsdd-cli #823): these globs declare the vocabulary scan scope, but the
-# register itself (.mdatron/vocabulary.yaml) is NOT YET authored — so the
-# vocabulary family is inactive BY DESIGN, pending the E0091 arming cleanup
-# (adjudicate the label schemes, spec-review the DESIGN coinage debt, then land
-# the register clean). Documented-inert, not silently misleading (see #822 F2).
+# ARMED (vsdd-cli #823): .mdatron/vocabulary.yaml drives MDATRON-E0091 (the
+# letter-cluster prohibition) over the ENDURING governed artifacts — the domain
+# prompts, supplements, and registry data sets the harness ships and adopters
+# receive. The transitional prose specs (methodology.md, DESIGN-*.md) are
+# intentionally OUT of vocabulary scope: they are superseded by the ratified
+# contract / bootstrap stop-gaps that retire as the harness subsumes the
+# methodology, so their coinage debt retires with them (doc-sunset tracked
+# separately, #821).
 vocabulary_globs:
-  - "methodology.md"
-  - "DESIGN-*.md"
+  - ".claude/commands/vsdd-*.md"
+  - "supplements/*.md"
+  - "templates/registry/*.md"

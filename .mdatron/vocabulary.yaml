@@ -1,0 +1,18 @@
+# vsdd-cli's naming register (methodology.md § Naming + coinage governance),
+# scoped by vocabulary_globs (.mdatron/config.yaml) to the ENDURING governed
+# artifacts. This ARMS the letter-cluster prohibition MDATRON-E0091 —
+# mechanizing the estate's "no coined labels" discipline from convention grade
+# to a CI-backed check (vsdd-cli #823). A letter+number cluster in governed
+# prose outside the allowed schemes fires E0091.
+#
+# Allowed schemes: the diagnostic-code namespaces (vsdd's own VSDD-Exxxx and the
+# mdatron MDATRON-Exxxx it cites), plus standard technical terms that read as
+# clusters but are not coinages — markdown/HTML heading levels, terminal OSC
+# escape sequences, and versioned data-format names.
+label_schemes:
+  allow:
+    - "^VSDD-[EWL][0-9]{4}$"     # vsdd's own diagnostic codes
+    - "^MDATRON-[EWL][0-9]{4}$"  # the mdatron codes vsdd cites
+    - "^H[1-6]$"                 # markdown/HTML heading levels (H1..H6)
+    - "^OSC-[0-9]+$"            # terminal OSC escape sequences (OSC-8)
+    - "^JSON[0-9]+$"            # versioned JSON formats (JSON5)

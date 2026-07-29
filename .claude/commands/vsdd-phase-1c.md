@@ -28,7 +28,7 @@ Phase 1c decomposes the spec into **milestones** — independently-buildable, in
 - Names its **acceptance criteria** (a subset of DESIGN.md § Behavioral contracts that this milestone closes)
 - Names its **manual-tests/layer-N.md** checklist (auto-scaffolded by the `post-design-md-modification.py` hook)
 - Names its **Phase 2a Red Gate** seed (failing-by-default test stubs derived from acceptance criteria; also auto-scaffolded)
-- Names its **dependencies on earlier milestones** (milestone N may depend on milestone N-1's behavior, not on milestone N-1's internals)
+- Names its **dependencies on earlier milestones** (milestone N may depend on the preceding milestone's behavior, not on its internals)
 - Names its **Exit Signal pointer** (the `ExitSignaled` event reference produced when the milestone closes)
 
 The Exacting Mentor stance applies: "milestone that depends on a future milestone's internals" is the failure mode; "milestone whose acceptance criteria don't cover the behaviors it claims to close" is the failure mode; "milestone that bundles too many behaviors so the Red Gate is unfalsifiable in aggregate" is the failure mode.
@@ -47,7 +47,7 @@ declared_at: <ISO 8601 timestamp>
 
 Phase 1c closes when:
 
-- DESIGN.md § Decomposition lists all milestones M1..MN with acceptance criteria per milestone
+- DESIGN.md § Decomposition lists all milestones with acceptance criteria per milestone
 - Each milestone's acceptance criteria are a non-empty subset of DESIGN.md § Behavioral contracts
 - DR's cold-reader pass produces no Open findings on decomposition completeness
 - SO has signed off on the spec-gate close (per the "Raise to SO" routing discipline at methodology.md § Domain change authority)
