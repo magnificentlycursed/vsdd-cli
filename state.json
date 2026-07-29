@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1218,
+  "next_comment_id": 1219,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2745,11 +2745,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-21T13:20:45.761485Z",
-      "updated_at": "2026-07-21T13:20:48.266269Z",
+      "updated_at": "2026-07-29T10:10:17.980796Z",
       "labels": [
         "review"
       ],
       "comments": {
+        "47b6648c-8815-485a-9416-227d37e9d522": {
+          "display_id": 1218,
+          "author": "xqjG",
+          "content": "CLOSED — DONE (tracker sweep #826). 'TERMINAL VERIFY ROUND COMPLETE'; data-sets terminal-verify round resolved.",
+          "created_at": "2026-07-29T10:10:17.964479Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArlsi7TK/CQrX25NdcrIFZBY+5/CDnSEMJq1ILTw7snmETZRneub2vVBrhNyfHDOHAwpmaorLE6XtN/Jp0welBg=="
+        },
         "9fdd2632-8347-44c0-aa65-57c43c094f75": {
           "author": "xqjG",
           "content": "DISPATCH MANIFEST (declared before the spend). dispatch_id: terminal-verify-round workflow run under this issue. invoked_by: the operator's 2026-07-21 directive — ratify #706, then dispatch the terminal verify round. vehicle: the Workflow orchestration surface, attended side. reviewer_role: read-only cold lenses. domains: the round composition unchanged — quality-engineer, ux, solution-architect, documentation-reviewer, solution-owner — because the stop signal is only meaningful over the full round composition. STAGE: terminal-verify-round, the first execution of the stage the contract now names (d3b19c02). MODEL TIER, CHOSEN: claude-fable-5 — the session model, per the ADOPTED stage default (economics-data tier_effort_defaults: terminal-verify-round rides session-model; the round that decides the stop signal gets the higher dial). Set explicitly via the Workflow model dial, not inherited — the dial lands on the adopted default deliberately, and the documented per-token weight (2x the round-2 tier) is declared here before the spend. EFFORT, CHOSEN: high, the adopted stage default, set explicitly per agent. expected_cost_band: the adopted cold-round band (3-50 findings, 5-25 min, 200k-600k tokens) with the verification-shaped scope targeting the floor; the tier weight doubles per-token cost relative to round 2 at comparable token counts. Capture source for actuals: workflow task telemetry plus transcript usage records, the pinned source. TASKS: (1) verify the seven round-2 fixes (commit 026564ee) and the #706 amendment (d3b19c02); (2) each lens's terminal sweep over its full domain scope; (3) the stop verdict: does any REAL, evidence-bearing finding remain — the round that holds a real finding fails the stop, per the contract. coverage: the remaining thirteen domains do not run — no matching surface; declared. returned + telemetry: recorded here after the run.",
@@ -27738,11 +27747,16 @@
       "agent_id": "xqjG",
       "agent_seq": 745,
       "timestamp": "2026-07-29T10:10:11.090536Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 746,
+      "timestamp": "2026-07-29T10:10:17.980796Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:10:11.090536Z",
+    "timestamp": "2026-07-29T10:10:17.980796Z",
     "agent_id": "xqjG",
-    "agent_seq": 745
+    "agent_seq": 746
   }
 }
