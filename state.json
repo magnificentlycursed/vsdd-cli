@@ -1,6 +1,6 @@
 {
   "next_display_id": 817,
-  "next_comment_id": 1134,
+  "next_comment_id": 1135,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10323,11 +10323,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:22:45.305644Z",
+      "updated_at": "2026-07-29T00:26:17.533252Z",
       "labels": [
         "spec-amendment"
       ],
       "comments": {
+        "005cfd3c-b903-4c97-87bc-c35a900947c6": {
+          "display_id": 1134,
+          "author": "xqjG",
+          "content": "COLD REVIEW DISPATCH (declared before spend). Vehicle: Workflow. Target: .design/agent-first-controls.md (resolved — 0 open questions, 11 REQ, 9 AC). Round shape: DESIGN / spec-amendment review. Lenses (7), fable-5: solution-architect HIGH (decomposition, invariant-first re-sequencing, the audit-home split, seams), solution-owner HIGH (spec-contract, scope, what-amends-the-contract vs build, does the keystone belong in the contract), security HIGH (the enforcement/trust controls, hooks as attack surface, fail-closed, tool-restricted reviewer, can traces be forged), ai-engineer MEDIUM (cost of the control machinery — adversarial-dispatch leg, per-call hook cost, model-tier right-sizing), platform-engineer MEDIUM (the vehicle: Claude Code hooks + Rust mirror, CI, settings, the claude-code-cli supplement; self-hosting wiring), quality-engineer MEDIUM (falsifiable ACs, the gate/round-closure/phase-5 control design, mutation), documentation-reviewer+technical-writer MEDIUM (register, plain-naming — the naming pattern this session — clarity, the Revision-line shape). expected_cost_band: 0-25 findings pre-dedup, 300k-500k tokens. output: per-lens findings + verdict (sound-as-drafted vs revise-before-ratify). After: route findings, revise, terminal verify, operator ratification.",
+          "created_at": "2026-07-29T00:26:17.520204Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAVce3TSrRAVAiK7EPSYjUnX/cXX7XIr+x5GyOyaQ/e0Fn2pu8r7iyM67pf6LsPTNM1tAvNgKY7ltNqDJwRpToAA=="
+        },
         "0e49180e-db04-4ba6-a278-8ddcbbdb7938": {
           "display_id": 1133,
           "author": "xqjG",
@@ -26124,11 +26133,16 @@
       "agent_id": "xqjG",
       "agent_seq": 616,
       "timestamp": "2026-07-29T00:22:45.305644Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 617,
+      "timestamp": "2026-07-29T00:26:17.533252Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:22:45.305644Z",
+    "timestamp": "2026-07-29T00:26:17.533252Z",
     "agent_id": "xqjG",
-    "agent_seq": 616
+    "agent_seq": 617
   }
 }
