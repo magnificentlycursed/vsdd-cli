@@ -19453,11 +19453,12 @@
       "display_id": 832,
       "title": "Mechanize the deprecated-term prohibition + scrub the slips (chassis/forcing-seam/substrate/platform)",
       "description": "Memory did not hold — used deprecated terms a day after grounding them (#819). Build a mechanized deprecated-term register check over the enduring corpus (like E0091), and scrub this session's slips. Grounding: chassis->tracker/orchestration; platform->harness; substrate->runtime harness; forcing seam->enforcement point.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T17:55:47.580199Z",
-      "updated_at": "2026-07-29T18:31:58.091980Z",
+      "updated_at": "2026-07-29T18:32:05.048155Z",
+      "closed_at": "2026-07-29T18:32:05.048140Z",
       "labels": [
         "guardrail"
       ],
@@ -28782,11 +28783,16 @@
       "agent_id": "xqjG",
       "agent_seq": 836,
       "timestamp": "2026-07-29T18:31:58.091980Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 837,
+      "timestamp": "2026-07-29T18:32:05.048155Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T18:31:58.091980Z",
+    "timestamp": "2026-07-29T18:32:05.048155Z",
     "agent_id": "xqjG",
-    "agent_seq": 836
+    "agent_seq": 837
   }
 }
