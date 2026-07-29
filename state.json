@@ -15864,12 +15864,13 @@
       "uuid": "9fe7c72a-9615-4a37-8c48-86d6a3545110",
       "display_id": 298,
       "title": "Spec review round 1: unobservable falsification clause: rephrase to trace-gap form",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:26:59.170233Z",
-      "updated_at": "2026-07-29T10:24:04.064547Z",
+      "updated_at": "2026-07-29T10:24:11.009759Z",
+      "closed_at": "2026-07-29T10:24:11.009748Z",
       "labels": [
         "spec-review-round-1"
       ],
@@ -27923,11 +27924,16 @@
       "agent_id": "xqjG",
       "agent_seq": 763,
       "timestamp": "2026-07-29T10:24:04.064547Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 764,
+      "timestamp": "2026-07-29T10:24:11.009759Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:24:04.064547Z",
+    "timestamp": "2026-07-29T10:24:11.009759Z",
     "agent_id": "xqjG",
-    "agent_seq": 763
+    "agent_seq": 764
   }
 }
