@@ -10535,11 +10535,12 @@
       "display_id": 14,
       "title": "Phase 3: vsdd subprocess client + drift handling + templates deployment",
       "description": "v0.1.0 blocker.\n\nScope: (1) Add src/mdatron.rs to vsdd: subprocess invocation wrapper for mdatron verify --json + envelope parsing + exit-code mapping. (2) Remove mdatron-core = { path = ... } from vsdd-core/Cargo.toml. (3) Migrate vsdd-core/tests/init.rs + tests/cross_references.rs: integration tests now spawn mdatron binary against fixture projects rather than calling library APIs. (4) Migrate vsdd init from two-way (manifest vs current) to three-way (manifest vs current vs new_template) classification per crosslink/src/commands/init/manifest.rs:classify_update. (5) Add --force / --update / --no-prompt / --dry-run to vsdd's init CLI. (6) Extend ManifestEntry with template_version_at_deploy field (breaking manifest change - land before v0.1.0 publishes). (7) Implement interactive prompt on Conflict action per crosslink. (8) vsdd init template deployment: extend artifact registry to include templates/* files (DESIGN.md.vsdd-template + 3 registry yamls + 2 github workflows).\n\nAcceptance: vsdd's tests pass without depending on mdatron-core library API; vsdd init re-run after a toolkit version bump exercises Conflict path; --no-prompt skips, --force overwrites, --dry-run previews; templates deploy alongside 42 markdown artifacts.\n\nPer docs/refactor/binary-first-plan.md Phase 3. Blocked by Phase 2.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-06-02T19:06:03.186249Z",
-      "updated_at": "2026-07-29T09:57:01.997666Z",
+      "updated_at": "2026-07-29T09:57:08.598926Z",
+      "closed_at": "2026-07-29T09:57:08.598914Z",
       "blockers": [
         "d61599a3-2977-421d-bb1c-ef3d7b44fa3d"
       ],
@@ -27431,11 +27432,16 @@
       "agent_id": "xqjG",
       "agent_seq": 715,
       "timestamp": "2026-07-29T09:57:01.997666Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 716,
+      "timestamp": "2026-07-29T09:57:08.598926Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T09:57:01.997666Z",
+    "timestamp": "2026-07-29T09:57:08.598926Z",
     "agent_id": "xqjG",
-    "agent_seq": 715
+    "agent_seq": 716
   }
 }
