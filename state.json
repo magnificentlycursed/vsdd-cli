@@ -1,5 +1,5 @@
 {
-  "next_display_id": 830,
+  "next_display_id": 831,
   "next_comment_id": 1247,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -522,6 +522,7 @@
     "9e541c67-10fe-4008-8c85-0a7487ba5f3a": 433,
     "9e6b6b60-1b03-4c5b-a412-1885c4759e2e": 268,
     "9e9f1f1b-7274-4b94-ad42-9dc0cf02b233": 27,
+    "9eb6a689-664a-4981-878c-ce6d5bc71765": 830,
     "9f2d4665-0d09-458e-aef9-3f54eb4b3feb": 404,
     "9f42ae57-cd07-4c6b-a2ec-2eaf886c45d7": 231,
     "9f6149cf-f899-41c5-97b9-9c705c71b1a9": 38,
@@ -15896,6 +15897,17 @@
         }
       }
     },
+    "9eb6a689-664a-4981-878c-ce6d5bc71765": {
+      "uuid": "9eb6a689-664a-4981-878c-ce6d5bc71765",
+      "display_id": 830,
+      "title": "Adopt mdatron 0.4.0 (envelope 2.0.0, breaking) — bump pins + re-verify",
+      "description": "mdatron 0.4.0 shipped (first normal release; envelope mdatron_output_version 1.1.0 -> 2.0.0, breaking). Operator directive: adopt ASAP; also gates mdatron's crates.io publish (held pending vsdd-cli clear-to-publish).\n\nConsumer-facing breaking changes: families reshaped bare-string -> {state, reason}; quoted[] gained required origin/trusted; verify --json no longer re-emits findings on stderr (stdout envelope authoritative). Wins: summary.files_checked now = files VALIDATED (the non-vacuity fix); E0080 -> pipeline_error.kind; new W0045/W0046/W0047; my relayed [see: <label>] interpolation ruling shipped.\n\nvsdd-cli adoption scope (assessed): (1) bump pins v0.3.0 -> v0.4.0 in .github/workflows/{mdatron-verify,vsdd-test}.yml + .githooks/pre-commit MIN_VERSION; (2) re-verify vsdd's own codes (VSDD-E0207/E0208, MDATRON-W0040) still fire under 0.4.0 — cross_references.rs + jurisdiction_nonvacuity.rs parse only findings[].code + pipeline_status (untyped Value, stable fields), so no parse break expected, but empirical re-run required; (3) fix a stale files_checked comment in jurisdiction_nonvacuity.rs.",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-29T13:43:17.636972Z",
+      "updated_at": "2026-07-29T13:43:17.636972Z"
+    },
     "9f2d4665-0d09-458e-aef9-3f54eb4b3feb": {
       "uuid": "9f2d4665-0d09-458e-aef9-3f54eb4b3feb",
       "display_id": 404,
@@ -28412,11 +28424,16 @@
       "agent_id": "xqjG",
       "agent_seq": 805,
       "timestamp": "2026-07-29T13:40:22.436712Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 806,
+      "timestamp": "2026-07-29T13:43:17.636972Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T13:40:22.436712Z",
+    "timestamp": "2026-07-29T13:43:17.636972Z",
     "agent_id": "xqjG",
-    "agent_seq": 805
+    "agent_seq": 806
   }
 }
