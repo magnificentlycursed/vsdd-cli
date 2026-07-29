@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1172,
+  "next_comment_id": 1173,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19525,11 +19525,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T04:31:54.685017Z",
+      "updated_at": "2026-07-29T05:02:31.081575Z",
       "labels": [
         "red-gate"
       ],
       "comments": {
+        "2dfc715f-d0c1-4afe-bfba-a10571fe5142": {
+          "display_id": 1172,
+          "author": "xqjG",
+          "content": "PHASE-2A DESIGN ACTS (grounded in the live crosslink surface, verified 2026-07-28):\n1. Finding discrimination (bootstrap rule): a finding is an issue whose PARENT is a review-round issue (parent carries label 'review'). Verified: #750 parent_id=745, #745='Phase 3 execution... adversarial refinement round 1' label ['review']. This is the bootstrap format-carry; Slice 5's filing convention formalizes it.\n2. SCOPE REFINEMENT: Slice 1's tracker-join reads only the ENFORCEMENT-SPINE fields the unrouted-findings query needs -- discrimination, routing_present (a 'plan'-kind comment; verified kind exists), closed_before_ratification (closed_at vs the ratification boundary), status/disposition. owner/validator/evidence_reference_present are NOT crosslink-native (verified: finding #750 has no such fields, only a 'result' comment) -- they depend on Slice 5's filing convention, so reading them at Slice 1 would back-depend on a later slice (DAG violation). They stay bootstrap-empty until Slice 5. Recorded as a Slice-1 scope decision.\n3. Test seam: pure mappers (routing_present, is_finding-via-parent-review-label, closed_before_ratification-vs-boundary) unit-tested with canned crosslink JSON; a few real-crosslink integration tests over a temp repo. Red gate = failing-executed on the positive/after assertions against minimal mapper bodies.",
+          "created_at": "2026-07-29T05:02:31.049453Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEtChYz4DO1nM2tMO+JpG+ziRqZunvD+mxbWkhhbsvRnW0ATJsDWmOPy1tpb7d10U2DzGy9PcPS4wFdhWX63IBA=="
+        },
         "c05538a7-6f42-4f0c-8996-2ee75dc817e5": {
           "display_id": 1171,
           "author": "xqjG",
@@ -26837,11 +26846,16 @@
       "agent_id": "xqjG",
       "agent_seq": 672,
       "timestamp": "2026-07-29T04:56:21.100871Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 673,
+      "timestamp": "2026-07-29T05:02:31.081575Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:56:21.100871Z",
+    "timestamp": "2026-07-29T05:02:31.081575Z",
     "agent_id": "xqjG",
-    "agent_seq": 672
+    "agent_seq": 673
   }
 }
