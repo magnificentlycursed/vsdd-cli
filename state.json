@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1179,
+  "next_comment_id": 1180,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4162,7 +4162,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T05:53:52.228166Z",
+      "updated_at": "2026-07-29T06:25:04.079684Z",
       "labels": [
         "feature"
       ],
@@ -4202,6 +4202,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYJ46UkGkodvOXm3YyvBuWWFaD8Y8GMJM0KbKcC25kD9OkzWLb+dqzfvjVFaherjEDnC8O8OehbRHmu0aWD2wAQ=="
+        },
+        "a2c699ce-2d86-4713-a8e1-f241d2dae5f6": {
+          "display_id": 1179,
+          "author": "xqjG",
+          "content": "#48 PUBLISH-GATE FEEDBACK: DEFERRED by operator (2026-07-28) — give it after building on v0.3.0 across a COUPLE OF SLICES/LAYERS (real dogfooding, not a single verify run). Interim relay to mdatron: adopting v0.3.0 now; config.yaml migration validated clean in prep (E0080 cleared, whole corpus clean); no blockers found in adoption so far; firm clear-to-publish / blocking verdict follows after a couple slices of real use. So: hold #48 on our account, we're actively dogfooding.",
+          "created_at": "2026-07-29T06:25:04.063983Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABADrmgUk9Be9oOuLgObPF9wJuFle6j9kGtwTsmFrS22c35AhwqTK/0MvJxUB8PTuOqxU4l9j528kl6yHaClwaCBg=="
         },
         "b14155e7-9ebb-43bb-817c-4d2d0ed2e7d7": {
           "display_id": 1157,
@@ -26935,11 +26944,16 @@
       "agent_id": "xqjG",
       "agent_seq": 679,
       "timestamp": "2026-07-29T06:18:21.047129Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 680,
+      "timestamp": "2026-07-29T06:25:04.079684Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T06:18:21.047129Z",
+    "timestamp": "2026-07-29T06:25:04.079684Z",
     "agent_id": "xqjG",
-    "agent_seq": 679
+    "agent_seq": 680
   }
 }
