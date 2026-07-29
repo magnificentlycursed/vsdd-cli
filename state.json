@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1164,
+  "next_comment_id": 1165,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3312,7 +3312,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:44:17.238741Z",
-      "updated_at": "2026-07-29T03:10:19.024947Z",
+      "updated_at": "2026-07-29T03:21:27.690284Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3361,6 +3361,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASVTbfuSWM4I4x4pE5tHtuU9O1sPA5yzAWZRy2QDnk7H317yaY3CT9iROvrYKagd2OdiqdtF+uUDFT/OmjzzPAg=="
+        },
+        "916dc09f-3c07-4807-a4d8-5e4144464470": {
+          "display_id": 1164,
+          "author": "xqjG",
+          "content": "CONFIRM ROUND (5 lenses, Opus 4.8, wf_ce836916-f73): ALL FIVE = resolved-ratify-ready. Zero blocking/substantive. The three round-2 fixes verified against the contract (Trust-boundaries no-amendment; platform/data carve-out; Slice-2 config-SHAPE-not-integrity); DAG re-verified acyclic after the platform rename; rename complete + coherent (only 'session-substrate' tokens remain, correctly untouched). SPEC-REVIEW LOOP CONVERGED.\n\n10 MINORS to sweep (none block ratification):\n- pricing-preset categorization vs the '>1 reader = platform' rule (reword: preset is Slice-2 input, reaches S7 via static-price behavior) [SA/QE]\n- shared gate/fix-lane data (failure-kind enum, mapping schema, cannot-run predicate) read by S4+S5 -> note platform-data list is illustrative, any >1-reader set is platform [SA]\n- CI 'active today ... for budget gates' over-attaches (budget gates wire at S7) -> scope 'active today' to the conformance workflows [QE]\n- Slice 1 omitted from the per-slice terminal-safety cleaner enumeration (its friction/CI output can surface tracker/commit external content) -> add Slice 1 [DR/QE]\n- manual-recurring fresh-container check: name the owner inline; reconcile against Gates L177 'mechanizing via kickoff --container' + Verification-arch class list L220-221 [QE]\n- splice: add an explicit old-Layer->Slice crosswalk (L5->S2, L4->S3, L6->S4, L7->S5, L8->S6, L9->S7) [DR]\nROUTE to SO (cross-section, outside Decomposition): the 'platform' homonym with contract L64 'vary by platform or run order' (OS sense) [SA/DR]; the manual-recurring-vs-Gates-L177 reconciliation if it touches the Gates requirement.\n\nRemaining before landing: (1) sweep the minors; (2) apply session-substrate -> installed-artifact/installed-environment integrity rename (pending operator term pick) as a cross-section naming rider under SO sign-off; (3) operator ratification of #819.",
+          "created_at": "2026-07-29T03:21:27.674102Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAzAllTvnMry5W8MxK5Pa8hfLF/zLKv/Pga31b8k6ngekSKL8270NCmix23Hvgm+xUZsFAo/kcO3abuZwSE2msAA=="
         },
         "a52273ca-63e5-4b3f-98a1-75089d37bb7e": {
           "display_id": 1161,
@@ -26649,11 +26658,16 @@
       "agent_id": "xqjG",
       "agent_seq": 655,
       "timestamp": "2026-07-29T03:10:19.024947Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 656,
+      "timestamp": "2026-07-29T03:21:27.690284Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T03:10:19.024947Z",
+    "timestamp": "2026-07-29T03:21:27.690284Z",
     "agent_id": "xqjG",
-    "agent_seq": 655
+    "agent_seq": 656
   }
 }
