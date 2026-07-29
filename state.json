@@ -1,5 +1,5 @@
 {
-  "next_display_id": 829,
+  "next_display_id": 830,
   "next_comment_id": 1243,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -416,6 +416,7 @@
     "7f776fcf-23f8-4002-878d-b23de530cfed": 604,
     "7fc312a1-9459-4aa8-b4d6-1c88612af807": 620,
     "80092129-d06f-433b-846a-3d3dd16244a2": 520,
+    "8024f9be-fc74-4585-970d-68789fb87440": 829,
     "806985a0-f87d-4619-b567-088e9cc44377": 198,
     "80ebb00f-f6d2-4a44-8948-c1dc9e11aebf": 187,
     "8117de6e-dc3d-4d33-8ffd-658317148845": 524,
@@ -12906,6 +12907,17 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAA2d/LZEUt/pe/nZP1YQwTWix3yv/AY3CPCpvDOumhXIiAbX+9OX149JHgxEeU+LcPSEBUtiWgxk9Vhmr5l8WDA=="
         }
       }
+    },
+    "8024f9be-fc74-4585-970d-68789fb87440": {
+      "uuid": "8024f9be-fc74-4585-970d-68789fb87440",
+      "display_id": 829,
+      "title": "parse_milestones treats crosslink 'No milestones found.' as Unusable, not an empty list",
+      "description": "Discovered during Slice-1 finding-join dogfood (#820).\n\nvsdd-core/src/snapshot/acquire.rs parse_milestones treats crosslink's empty-state human output 'No milestones found.' as whole-format drift -> None -> AcquisitionOutcome::Unusable, instead of an empty milestone list. On any repo with no crosslink milestones (this one included), acquire_snapshot short-circuits to Unusable and never reaches the session or finding-query legs.\n\nRepro: 'crosslink milestone list' -> 'No milestones found.'; acquire_snapshot(repo) -> Unusable.\n\nImpact: the live status answer + the finding-query join are unreachable on no-milestone repos. Pre-existing (Layer 1/2 milestone leg); outside the Slice-1 finding-join build scope, so filed + routed rather than fixed inline.\n\nFix direction: parse_milestones should recognize crosslink's empty-state message as a lawful empty list (0 milestones), distinct from unparseable drift. Needs its own red-gate test (empty-message -> Some(empty), not None). Relates to #820.",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-29T13:19:11.898416Z",
+      "updated_at": "2026-07-29T13:19:11.898416Z"
     },
     "806985a0-f87d-4619-b567-088e9cc44377": {
       "uuid": "806985a0-f87d-4619-b567-088e9cc44377",
@@ -28311,11 +28323,16 @@
       "agent_id": "xqjG",
       "agent_seq": 797,
       "timestamp": "2026-07-29T12:48:20.758251Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 798,
+      "timestamp": "2026-07-29T13:19:11.898416Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T12:48:20.758251Z",
+    "timestamp": "2026-07-29T13:19:11.898416Z",
     "agent_id": "xqjG",
-    "agent_seq": 797
+    "agent_seq": 798
   }
 }
