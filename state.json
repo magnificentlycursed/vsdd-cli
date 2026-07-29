@@ -1,6 +1,6 @@
 {
   "next_display_id": 819,
-  "next_comment_id": 1152,
+  "next_comment_id": 1153,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4018,7 +4018,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T00:37:11.909308Z",
+      "updated_at": "2026-07-29T01:32:50.228342Z",
       "labels": [
         "feature"
       ],
@@ -4058,6 +4058,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7ZANOshcI8Ex/xNmXaPST9bllKqvURt+sRp8Uy19bvkn09s5GA4yEjoGGPKycuOP4Y4FE8/49PW6LsGhuxPhBQ=="
+        },
+        "bd3caf39-2e92-4cdc-95bd-f322ae2292a5": {
+          "display_id": 1152,
+          "author": "xqjG",
+          "content": "vsdd-cli PRACTICE ADOPTION for mdatron's own development (operator direction 2026-07-28). Adopt the vsdd METHODOLOGY practices, not the vsdd TOOL (not at alpha; its enforcement is live-dormant). KEY INSIGHT: mdatron does not need the vsdd-cli tool to ENFORCE these practices — mdatron IS a conformance engine, so it can enforce the vsdd record-conventions on its own development using mdatron itself plus git hooks. LOAD-BEARING LESSON from this session's Red Team: practices as CONDUCT ALONE drift — deviation is cheaper than compliance and the human becomes the only gate (how every escape in our corpus happened, mine included). So adopt the practices AND bind the enforceable ones to a forcing seam.\n\nPRACTICES (conduct): (1) phase discipline — 1a spec-review-loop, 1b verification-architecture, 1c decomposition, 2a red-gate, 2b implement-to-green, 2c exit-gate, 3 adversarial cold review, 4 ROUTE findings, 5 harden, 6 exit; layers/phases are crosslink milestones, exits are boundary commits + typed result comments. (2) ROUTE FINDINGS BEFORE FIXING (the #1 lesson) — every finding routes to the phase that would have prevented it before any fix; a fix-close with no prior routing plan is malformed; never grind fix-in-place. (3) owned/reviewed spec changes — never hand-edit the governing DESIGN solo; a spec change re-enters 1a under a declared composition + cold multi-lens review; operator ratification is the EXIT, not a substitute for the process. (4) crosslink discipline — issue-before-code; typed comments; findings carry owner+validator; closures carry evidence or a disposition. (5) naming/register — no coined labels, letter-clusters, or all-caps tokens; plain names; a durable term is a registration act.\n\nENFORCEMENT (mechanize with what mdatron already has — conduct alone drifts): use mdatron's own engine (rules/patterns over the design + tracker record estate) + the git pre-commit + a session-stop hook to make the key disciplines non-optional, so deviation produces compiler-shaped feedback at the act, not a latent record — e.g. an mdatron rule flagging a round-result comment missing its child-issue handle citations (parity); a pre-commit refusing a governed-DESIGN change whose commit evidence section does not cite the ratified review (amendment discipline); a check that a fix-close finding carries a prior routing plan. Bind, do not just document.\n\nHONEST BOUNDARY: the parts that need the vsdd-cli tool — the phase-answer derivation, the process-integrity status queries, the mechanized gate commands — are not shippable yet; keep those as conduct + cold review until vsdd-cli ships; do not wait on the tool for the rest.\n\nREUSE OUR ESCAPE CORPUS as mdatron's regression seeds: detection-without-a-seam is advisory; fix-in-place; relabel a fix-close as a disposition to dodge routing; fix with no owning finding filed before the commit; forge a self-authored gate/composition record; edit the checker itself. If mdatron's seams do not catch each, they are insufficient.\n\nRELAY CAVEATS: (1) mdatron likely already does some of this (ran cold reviews for us, has a tracker) — this is aligning + mechanizing, not replacing; (2) the vsdd phase primers and domain prompts are deployable artifacts if mdatron wants to load them directly rather than paraphrase.",
+          "created_at": "2026-07-29T01:32:50.210627Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA++8pa0Urxl06XSvUq5xpuQxBZ7byx5W93N5EW0I+lgd/k0E0PRA4ZfM/+80S+WqKYd8h5hBqeUoQhovi2mzTAA=="
         }
       }
     },
@@ -26446,11 +26455,16 @@
       "agent_id": "xqjG",
       "agent_seq": 640,
       "timestamp": "2026-07-29T01:26:39.546897Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 641,
+      "timestamp": "2026-07-29T01:32:50.228342Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T01:26:39.546897Z",
+    "timestamp": "2026-07-29T01:32:50.228342Z",
     "agent_id": "xqjG",
-    "agent_seq": 640
+    "agent_seq": 641
   }
 }
