@@ -1,6 +1,6 @@
 {
   "next_display_id": 833,
-  "next_comment_id": 1253,
+  "next_comment_id": 1254,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19435,13 +19435,24 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T17:55:47.580199Z",
-      "updated_at": "2026-07-29T18:03:40.564204Z",
+      "updated_at": "2026-07-29T18:05:16.707334Z",
       "labels": [
         "guardrail"
       ],
       "related": [
         "13f1a50f-9bef-4d67-afd4-3b2465a947cd"
-      ]
+      ],
+      "comments": {
+        "2fbac706-c0ef-463d-a357-40f08409d1e6": {
+          "display_id": 1253,
+          "author": "xqjG",
+          "content": "Reconciled with #821 (the atomic owned rename cycle). My ad-hoc two-file corpus scrub (chassis->crosslink in act-to-affordance-map + snapshot-schema) was REVERTED — that scrub is #821's owned+reviewed job, not a freelance on this branch. #832 is scoped to the ENFORCEMENT: arm mdatron E0093 (anti_patterns in .mdatron/vocabulary.yaml) so deprecated terms cannot re-enter governed prose. Dependency: arming chassis + substrate requires #821 to clear them from the corpus first (else verify reds on the corpus). 'forcing seam' is armable independently (0 corpus usages; my slip); 'platform' is NOT armable as a bare pattern (collides with 'cross-platform' + the platform-engineer domain) — needs a precise pattern or is out of scope. My session's own durable additions (REQ-13/AC-13/escape-row, the design docs) are terminology-clean; the slips were in chat, not artifacts.",
+          "created_at": "2026-07-29T18:05:16.692775Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+nr7dhUFk3PfC4M3vzLCLZU6xMq7/O86Q3A8/0sY4eNS2vs4naix2iQjymhQW1yoIQGTKeejOeE3fWBAoVl4DA=="
+        }
+      }
     },
     "c39e677d-2aa0-41eb-803b-35cab288c6cc": {
       "uuid": "c39e677d-2aa0-41eb-803b-35cab288c6cc",
@@ -28720,11 +28731,16 @@
       "agent_id": "xqjG",
       "agent_seq": 832,
       "timestamp": "2026-07-29T18:03:40.564204Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 833,
+      "timestamp": "2026-07-29T18:05:16.707334Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T18:03:40.564204Z",
+    "timestamp": "2026-07-29T18:05:16.707334Z",
     "agent_id": "xqjG",
-    "agent_seq": 832
+    "agent_seq": 833
   }
 }
