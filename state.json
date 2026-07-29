@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1168,
+  "next_comment_id": 1169,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4134,7 +4134,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T01:57:55.885182Z",
+      "updated_at": "2026-07-29T04:17:09.815372Z",
       "labels": [
         "feature"
       ],
@@ -4156,6 +4156,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAu870tzSfKTrFOgz1AY9ITt8ogQqikTJwi39mbmJgfuFDIYkZS0cbEMQWBFQRd7af2FFe/89c+ei3Kf+pGqDcBw=="
+        },
+        "7d886c87-5501-404b-8357-538f318d1023": {
+          "display_id": 1168,
+          "author": "xqjG",
+          "content": "OUTBOUND to mdatron#96 (session-end enforcement + the checker-edit escape). Our answer: YES, drop the session-stop hook. A Stop hook is in-repo code = grade-2 friction at best and hits the self-protection regress (the guard guards itself, is editable, cannot robustly self-protect) -- shipping it as a blocking seam would be asserted-enforcement-that-isnt. vsdd-cli does NOT intend session-end enforcement as a blocking mechanism; the intended architecture is commit-time hooks (friction) + CI-tested integrity (the durable CI-backed block) + the owned-bypass stance. checker-edit is caught by CI running the integrity logic over the checkers OWN wiring (route-your-own-control-plane), with the tamper-proof residual routed to the corroboration oracle (#815). Live proof it is the right call: Thermite just had its two edit-time gates silently de-wired by a crosslink-init settings clobber (crosslink#15) and nothing caught it (Thermite#93) -- a session-stop hook would share that fate. Methodology note raised: the 'three mechanisms (engine, git pre-commit, session-stop hook)' directive should update -- the durable third leg is CI-tested integrity, not a session-stop hook. Terminology updates sent: seam->guardrail (Platform-Eng, detective/preventive); grades detection/friction/CI-backed-block (+ tamper-proof-via-oracle beyond, #815); runtime harness (Claude Code) / methodology harness (vsdd) / engine (vsdd shared base); grounding priority AI-Eng>Platform-Eng>SWE/QE. Full reply relayed by operator.",
+          "created_at": "2026-07-29T04:17:09.802552Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwh0L8hBSB8q31t/qCTPChjTlODpVQKtmDokfnQjOAuvbnFrk5D1GURaMfAM097iC5hWHCD7dab1YJWM8OTFtDQ=="
         },
         "b14155e7-9ebb-43bb-817c-4d2d0ed2e7d7": {
           "display_id": 1157,
@@ -26712,11 +26721,16 @@
       "agent_id": "xqjG",
       "agent_seq": 661,
       "timestamp": "2026-07-29T04:14:42.665854Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 662,
+      "timestamp": "2026-07-29T04:17:09.815372Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:14:42.665854Z",
+    "timestamp": "2026-07-29T04:17:09.815372Z",
     "agent_id": "xqjG",
-    "agent_seq": 661
+    "agent_seq": 662
   }
 }
