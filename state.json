@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1201,
+  "next_comment_id": 1202,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7260,7 +7260,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T07:46:22.276519Z",
-      "updated_at": "2026-07-29T09:38:50.692134Z",
+      "updated_at": "2026-07-29T09:55:44.247378Z",
       "comments": {
         "12ba7907-7c68-4903-9d9f-85d8f0816451": {
           "display_id": 1187,
@@ -7288,6 +7288,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIeLdhJDuC2ql9piYZXlE8ZFEFXbmPqu08EUh7zOtXT4YDa8vQY6W4lSHUUkMDx1CGxGbOZ6mGKGhXvHbHmAhAQ=="
+        },
+        "5328a8f6-5879-470a-baac-47031b1aeffa": {
+          "display_id": 1201,
+          "author": "xqjG",
+          "content": "NAMING-DISCIPLINE CORRECTION (operator caught 2026-07-29): the M1-M7 (findings) and F1-F6 (follow-ons) labels used across this issue — and the A1-Q5 in the now-closed #14 draft — are letter-cluster coinages that BREAK the naming discipline (the exact pattern E0091 prohibits). Plain descriptors, used henceforth:\nFINDINGS (were the M-labels): conformance-clean-is-not-test-green (the spine doesn't run the toolkit's own tests / doesn't guard guardrail-swaps); verify-clean-cannot-prove-coverage; dormant-terminology-register; jurisdiction self-audit bypass; vacuous silent-tests; stale + fail-open CI; unenforced no-off-rails-prose goal.\nFOLLOW-ONS (were the F-labels): silent-test positive controls (done); vocabulary-register investigation (done); the spine-runs-the-toolkit-tests gate (done via PR #1); CI re-pin + fail-closed version guard; the non-vacuity canary (done, PR #2); mdatron feedback relay.\nPast comments/commits are append-only history; plain names from here. That this recurred WHILE analyzing the E0091 letter-cluster prohibition is itself evidence the discipline needs mechanization (#823), not agent vigilance.",
+          "created_at": "2026-07-29T09:55:44.231905Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA8YEQdfRc2tsl12LPaYfOsb1Bz9Vg3QiPaX1wl1+9aSpa5jGXOaLnDV8QVc5xRJzjRxc5SNM2hfWpK9gdMn7JCQ=="
         },
         "82c3ebe9-e2f3-4cc5-a7c7-4c22e06691fe": {
           "display_id": 1189,
@@ -27389,11 +27398,16 @@
       "agent_id": "xqjG",
       "agent_seq": 712,
       "timestamp": "2026-07-29T09:38:57.682316Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 713,
+      "timestamp": "2026-07-29T09:55:44.247378Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T09:38:57.682316Z",
+    "timestamp": "2026-07-29T09:55:44.247378Z",
     "agent_id": "xqjG",
-    "agent_seq": 712
+    "agent_seq": 713
   }
 }
