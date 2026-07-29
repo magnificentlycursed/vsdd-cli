@@ -1,6 +1,6 @@
 {
   "next_display_id": 831,
-  "next_comment_id": 1249,
+  "next_comment_id": 1250,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12926,7 +12926,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T13:19:11.898416Z",
-      "updated_at": "2026-07-29T13:32:47.536110Z",
+      "updated_at": "2026-07-29T16:56:03.543698Z",
       "labels": [
         "bug"
       ],
@@ -12951,6 +12951,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXexTu7Pg9VM3XX6TZt7eoC1X+Pn7wFo0a57xMvIX/whkkhc9ffIJZiTD8NvVW/1ShRfD8zZ8KNpRLuRIL7kRAA=="
+        },
+        "cbfe806e-bd24-44e4-87b8-2d8cd783ea7f": {
+          "display_id": 1249,
+          "author": "xqjG",
+          "content": "Resolved: merged to main via PR #7 (commit a8888cd2). main green (mdatron 0.4.0 verify clean, workspace tests pass).",
+          "created_at": "2026-07-29T16:56:03.519010Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA/EhPjzrdPdqrWwBtmmOel+6xtMCXRmg7kEVIEpsZ1UT8lp+S6PA1vGJBIKL1ixAK3KJ0lHHuU6Yjn8zbJwXODQ=="
         }
       }
     },
@@ -28476,11 +28485,16 @@
       "agent_id": "xqjG",
       "agent_seq": 810,
       "timestamp": "2026-07-29T14:06:11.601732Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 811,
+      "timestamp": "2026-07-29T16:56:03.543698Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T14:06:11.601732Z",
+    "timestamp": "2026-07-29T16:56:03.543698Z",
     "agent_id": "xqjG",
-    "agent_seq": 810
+    "agent_seq": 811
   }
 }
