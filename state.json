@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1156,
+  "next_comment_id": 1157,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3312,7 +3312,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:44:17.238741Z",
-      "updated_at": "2026-07-29T01:47:16.085645Z",
+      "updated_at": "2026-07-29T01:57:47.460818Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3325,6 +3325,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1x2vIVVviw9DWUtoUK9BnoKMlba9LXb+UjB2xjgVT5tcY3hiXaBpmIQL31Qf35wVvclnCezaGXsCAWUrukeEBA=="
+        },
+        "904dbf04-9591-411f-a245-7858dd77f6be": {
+          "display_id": 1156,
+          "author": "xqjG",
+          "content": "Operator input (2026-07-28), folded into the draft: mdatron v0.2.0 is READY and v0.3.0 will be cut soon. Verified this tree: mdatron 0.1.0 on PATH, .mdatron/ has patterns+schemas but NO config.yaml, 'mdatron verify' clean (exit 0) ONLY because it still pins 0.1.0. Coupling for self-governance: Slice 1 extends .githooks/pre-commit, which is the mdatron-conformance seam pinning 0.1.x; adopting v0.2.0 (breaking: refuses a tree with no config.yaml, exit 2) fails the seam closed on every commit until #816's config.yaml migration lands. So keeping the self-governance seam current with mdatron's cadence is a bootstrap-substrate prerequisite of Slice 1, recorded under Estate cleanup. The cross-repo conformance-family dependency (Slices 2/5) now tracks the real release line, verified per family, not a fixed 'v1.0'; reconciling the version references across the contract's other sections is routed to SO, not this phase-1c re-decomposition.",
+          "created_at": "2026-07-29T01:57:47.430080Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASVTbfuSWM4I4x4pE5tHtuU9O1sPA5yzAWZRy2QDnk7H317yaY3CT9iROvrYKagd2OdiqdtF+uUDFT/OmjzzPAg=="
         }
       }
     },
@@ -26537,11 +26546,16 @@
       "agent_id": "xqjG",
       "agent_seq": 647,
       "timestamp": "2026-07-29T01:47:16.085645Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 648,
+      "timestamp": "2026-07-29T01:57:47.460818Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T01:47:16.085645Z",
+    "timestamp": "2026-07-29T01:57:47.460818Z",
     "agent_id": "xqjG",
-    "agent_seq": 647
+    "agent_seq": 648
   }
 }
