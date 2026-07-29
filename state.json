@@ -7230,11 +7230,12 @@
       "display_id": 6,
       "title": "M1 amendment extension: attribution honesty for inline composition",
       "description": "Steps to reproduce:\n1. \n\nExpected: \nActual: \n\nThe M1 InlineMultiDomain composition shape amendment landed at vsdd-cli commit 60eb150 has a gap: it doesn't address attribution honesty. Inline-single-agent multi-domain composition has been using git 'Co-authored-by: Solution Owner <so@vsdd-domains>' trailers performatively — claiming independent multi-domain review that didn't structurally occur. Phase 2b primer says prose commits 'carry Co-authored-by: TW + DR trailers'; treating that literally for inline-single-agent work is dishonest attribution. Fix: amend M1 to declare 'inline-single-agent composition uses Composition: footer naming model + applied lenses; git Co-authored-by trailers are reserved for actually-independent contributors (separate humans or separate agents).' Small amendment but resolves the attribution-honesty observation surfaced 2026-06-01.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:05:22.141108Z",
-      "updated_at": "2026-07-29T10:04:23.778869Z",
+      "updated_at": "2026-07-29T10:04:30.285021Z",
+      "closed_at": "2026-07-29T10:04:30.285009Z",
       "labels": [
         "bug",
         "methodology",
@@ -27584,11 +27585,16 @@
       "agent_id": "xqjG",
       "agent_seq": 730,
       "timestamp": "2026-07-29T10:04:23.778869Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 731,
+      "timestamp": "2026-07-29T10:04:30.285021Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:04:23.778869Z",
+    "timestamp": "2026-07-29T10:04:30.285021Z",
     "agent_id": "xqjG",
-    "agent_seq": 730
+    "agent_seq": 731
   }
 }
