@@ -1,6 +1,6 @@
 {
   "next_display_id": 820,
-  "next_comment_id": 1163,
+  "next_comment_id": 1164,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3312,7 +3312,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:44:17.238741Z",
-      "updated_at": "2026-07-29T02:34:04.372925Z",
+      "updated_at": "2026-07-29T03:10:19.024947Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3334,6 +3334,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALuIRzGKDVT2f8oGu+1BE2KEwEHJnAzepbgkRsdlO62eZO3QLSYmUK7vzfxRZX4jugakHqxZw3s3HfI3HYXnRCw=="
+        },
+        "26181239-3192-4c2f-8280-fcb2a81693ea": {
+          "display_id": 1163,
+          "author": "xqjG",
+          "content": "REVISED (round 2 fixes + operator naming decision): 'substrate' -> 'platform' throughout (operator: platform has AI/ML + platform-eng pedigree AND is self-explanatory; fixes the reader-inference problem). Added plain-language definitions — a Terms glossary entry per load-bearing term (platform / forcing seam / self-governance+adopter seam / the three grades) plus inline glosses; platform explicitly distinguished from the crosslink chassis and the Claude Code harness. All terminal-verify defects applied: Trust-boundaries no-amendment (stays within ratified corroboration-only; routes any clarification to SO); CI grade graded honestly (post-hoc red by default, landing-block once branch-protection wired, named as a Slice-1 config act); Slice 2 vsdd leg = config-SHAPE not integrity (rules gate on mdatron); platform/data partition fixed (single-slice data excluded; Slice 6 preflight = a Slice-6 artifact); terminal-safety cleaner re-mapped (Slice 2 context, Slice 3 init only, Slice 6 preflight+manifest); fresh-container = manual-recurring; per-commit budget binds Slices 1+4; splice scoped to Layer 1-9; ordering-principle names exempt from registration. Focused confirm dispatching (SA/SO/Red-Team/DR).",
+          "created_at": "2026-07-29T03:10:19.010025Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZEiiXNZScOldnLzJ0YlyH5rPsfAsyoroAdDIy5wwhQh1fwcPHqdun+YP89uhxiz/554tryavimGDqZ8tUyidDw=="
         },
         "4ea1238a-6992-40d7-a5b9-8919fcc2bc92": {
           "display_id": 1158,
@@ -26635,11 +26644,16 @@
       "agent_id": "xqjG",
       "agent_seq": 654,
       "timestamp": "2026-07-29T02:58:49.988138Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 655,
+      "timestamp": "2026-07-29T03:10:19.024947Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T02:58:49.988138Z",
+    "timestamp": "2026-07-29T03:10:19.024947Z",
     "agent_id": "xqjG",
-    "agent_seq": 654
+    "agent_seq": 655
   }
 }
