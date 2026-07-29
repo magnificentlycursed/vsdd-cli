@@ -1,6 +1,6 @@
 {
   "next_display_id": 818,
-  "next_comment_id": 1144,
+  "next_comment_id": 1145,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10346,7 +10346,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T00:53:37.012700Z",
+      "updated_at": "2026-07-29T01:00:17.116588Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10395,6 +10395,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAuA5ueufTKTFGgbSN+Eakh4YX7D1ISMoqTEyq07svZp7CSCE9Q2S1dh1TKZnGUxfHSx8qdqdQus3DOax93NXbCg=="
+        },
+        "222dc050-fcb9-4f72-ab72-bf5d6f11a92e": {
+          "display_id": 1144,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY (v2, Opus 4.8, 4 lenses) — 2/4 stop-signal-holds (SA, Security; prior findings resolved), 2/4 needs-another-round (SO, DR/TW) on ONE shared substantive blocker: the drafted Revision-line entry says \"seven-lens\" but enumerates eight domains (the review was 7 lenses; DR+TW is one combined lens) — a prose-count-vs-enumeration mismatch, the exact class the contract Trust-boundaries falsifier flags. Cheap fix: state it as 7 lenses with a combined documentation-reviewer/technical-writer lens.\nSHARP MINORS to fold (mostly Security): (1) git-history is NOT tamper-evident alone — the local leg is rewritable by the audited actor; non-forgeability needs corroboration with the signed/remote tracker (refine REQ-2); (2) reconcile REQ-8 could-not-check with the contract benign-offline (tracker-absent) rule so a tracker-dependent check cannot pass vacuously offline; (3) specify the runtime disposition of a slow/timing-out hook (fail-closed block, else \"make the hook slow\" is a bypass); (4) add the mis-rooted-session / no-live-hooks bypass vector (the estates real demonstrated bypass; its session-substrate backstop is self-referential when mis-rooted); (5) \"non-bypassable Layer-6\" overclaims for a commit-time gate (--no-verify skips it; true non-bypassability needs server-side CI). Plus DR/TW minor: bypass #1 says \"six-round routing collapse\" but body says \"rounds 1-5\" — reconcile (rounds 1-5 collapsed of the six-round loop; round 6 routed).\nV3 PLAN: hold the fix pass; fold the terminal-verify blocker+minors TOGETHER with the two in-flight Red Team passes (design-escape wo00pi41w + wider-eval-of-the-built-system #817 wjbspls43) into ONE v3 revision, then a final verify, then ratification. Not fixing v2 piecemeal.",
+          "created_at": "2026-07-29T01:00:17.099032Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhKfEu6yKVbAeg2JJ0BqG3flUp11CdGyvw3h/PSVD3bXeFwLRlhlIxqeoUXSMP+BvNrMwsQZb2PiZE4toFzENBQ=="
         },
         "49d65cef-436f-4369-a67e-6efbe85438f6": {
           "display_id": 1143,
@@ -26297,11 +26306,16 @@
       "agent_id": "xqjG",
       "agent_seq": 629,
       "timestamp": "2026-07-29T00:56:46.780232Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 630,
+      "timestamp": "2026-07-29T01:00:17.116588Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T00:56:46.780232Z",
+    "timestamp": "2026-07-29T01:00:17.116588Z",
     "agent_id": "xqjG",
-    "agent_seq": 629
+    "agent_seq": 630
   }
 }
