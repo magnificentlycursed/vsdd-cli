@@ -1429,12 +1429,13 @@
       "uuid": "04aafb5a-dd38-4ef5-8691-c9043be1414f",
       "display_id": 295,
       "title": "Spec review round 1: orphaned operator-oracle contract: add acceptance criterion",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:26:54.482873Z",
-      "updated_at": "2026-07-29T10:23:19.195889Z",
+      "updated_at": "2026-07-29T10:23:26.589798Z",
+      "closed_at": "2026-07-29T10:23:26.589786Z",
       "labels": [
         "spec-review-round-1"
       ],
@@ -27857,11 +27858,16 @@
       "agent_id": "xqjG",
       "agent_seq": 757,
       "timestamp": "2026-07-29T10:23:19.195889Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 758,
+      "timestamp": "2026-07-29T10:23:26.589798Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:23:19.195889Z",
+    "timestamp": "2026-07-29T10:23:26.589798Z",
     "agent_id": "xqjG",
-    "agent_seq": 757
+    "agent_seq": 758
   }
 }
