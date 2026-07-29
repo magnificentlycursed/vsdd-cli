@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1219,
+  "next_comment_id": 1220,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7628,7 +7628,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-21T19:01:52.393405Z",
-      "updated_at": "2026-07-21T19:02:05.758884Z",
+      "updated_at": "2026-07-29T10:10:31.598581Z",
       "labels": [
         "review"
       ],
@@ -7649,6 +7649,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIAMzZgoU/cpvPMjzoNXkOLdM0L39tWsGXbbQnLh+s32d/a2Htre69UolXYF/vMMf39JkOdNE87OZbadw1Jj5AA=="
+        },
+        "e4b53a70-65fd-44b6-bd47-cb03f48353c4": {
+          "display_id": 1219,
+          "author": "xqjG",
+          "content": "CLOSED — DONE (tracker sweep #826). 'FIX PASS COMPLETE (daacdc84 + 1545f7e6)'; Layer-1 adversarial round 1 resolved (Layer 1 built = the engine, #819).",
+          "created_at": "2026-07-29T10:10:31.583957Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANEG7CjWi45Nn/AoJ75/BKKwPot5IQgtdl0guP4+2tvMy7QfjGB9pUtrSImkRhmVNTN9Zi4lJBHTx1Jn1Th/4DQ=="
         },
         "e685e397-d116-4bbd-a65c-44c712abc290": {
           "author": "xqjG",
@@ -27758,11 +27767,16 @@
       "agent_id": "xqjG",
       "agent_seq": 747,
       "timestamp": "2026-07-29T10:10:24.381392Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 748,
+      "timestamp": "2026-07-29T10:10:31.598581Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:10:24.381392Z",
+    "timestamp": "2026-07-29T10:10:31.598581Z",
     "agent_id": "xqjG",
-    "agent_seq": 747
+    "agent_seq": 748
   }
 }
