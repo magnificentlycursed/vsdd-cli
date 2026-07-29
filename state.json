@@ -2741,11 +2741,12 @@
       "uuid": "12cba19e-0feb-4891-a149-e483c4a92de8",
       "display_id": 708,
       "title": "data-sets review: terminal verify round — decides the stop signal",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-21T13:20:45.761485Z",
-      "updated_at": "2026-07-29T10:10:17.980796Z",
+      "updated_at": "2026-07-29T10:10:24.381392Z",
+      "closed_at": "2026-07-29T10:10:24.381377Z",
       "labels": [
         "review"
       ],
@@ -27752,11 +27753,16 @@
       "agent_id": "xqjG",
       "agent_seq": 746,
       "timestamp": "2026-07-29T10:10:17.980796Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 747,
+      "timestamp": "2026-07-29T10:10:24.381392Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:10:17.980796Z",
+    "timestamp": "2026-07-29T10:10:24.381392Z",
     "agent_id": "xqjG",
-    "agent_seq": 746
+    "agent_seq": 747
   }
 }
