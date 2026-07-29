@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1231,
+  "next_comment_id": 1232,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -22002,10 +22002,21 @@
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:27:07.567773Z",
-      "updated_at": "2026-07-19T02:27:08.350363Z",
+      "updated_at": "2026-07-29T10:25:27.423283Z",
       "labels": [
         "spec-review-round-1"
-      ]
+      ],
+      "comments": {
+        "d022b508-c67a-4831-97be-cd9a4383620d": {
+          "display_id": 1231,
+          "author": "xqjG",
+          "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract. Reopen if this specific finding resurfaces as a live gap.",
+          "created_at": "2026-07-29T10:25:27.408540Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAV1nUyMdxZY5EBBnUsf6GHlWtAG3YLPuRJoz0gYx9S7NcH43O/+yOhVIhosj1kpzF+HTLLFCJIEcyujo614RaDA=="
+        }
+      }
     },
     "e2f41522-406f-4dfa-a61c-a4410c94ac7f": {
       "uuid": "e2f41522-406f-4dfa-a61c-a4410c94ac7f",
@@ -28017,11 +28028,16 @@
       "agent_id": "xqjG",
       "agent_seq": 772,
       "timestamp": "2026-07-29T10:25:20.648915Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 773,
+      "timestamp": "2026-07-29T10:25:27.423283Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:25:20.648915Z",
+    "timestamp": "2026-07-29T10:25:27.423283Z",
     "agent_id": "xqjG",
-    "agent_seq": 772
+    "agent_seq": 773
   }
 }
