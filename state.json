@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1180,
+  "next_comment_id": 1181,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -17396,11 +17396,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:09:50.691294Z",
-      "updated_at": "2026-07-29T06:18:21.047129Z",
+      "updated_at": "2026-07-29T06:27:39.452058Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "1cae5c9f-f577-4d6f-8343-ee98eb839f0e": {
+          "display_id": 1180,
+          "author": "xqjG",
+          "content": "FIX 1 COLD REVIEW (wf_79d280cb-234, security+SE, both REVISE) — routed, to address in a Fix-1 revise round: (1) SUBSTANTIVE: the security surfaces (machine gate_provenance key, human self-report line) + the 2b/2c driven arms are UNTESTED — a regression (drop driven() on 2b/2c, delete the machine key, flip the human cond) passes CI while reopening #817. FIX: status_red_gate.rs end-to-end assertions (machine+human surface provenance) + convergence fixtures for the 2b-green-pass and 2c-exit-pass driven arms (oracle additions). (2) SUBSTANTIVE: mod.rs doc over-claims a 'verified provenance ... added there' path that does NOT exist (one variant, no Verified, no mechanized path) — the over-claim reflex again. FIX: doc states only UnverifiedSelfReport exists, absence != verified, the load-bearing invariant (advancement token => provenance present); move 'verified' to a #815 forward-ref. (3) MINOR: human.rs hardcodes the string (is_some) -> machine/human divergence if Verified lands -> match the variant. (4) MINOR: machine added a security field without bumping vsdd_status_version -> bump/note. Revise round owed on #818.",
+          "created_at": "2026-07-29T06:27:39.432667Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAWqPVfNYCoCyqIYMUuSF7g7Ly9VdV5kmWdLw/yt1WyXmPVW8mNstVed/SNUrBGShVz/aZnlD40UMmuSfh3Mt+BQ=="
+        },
         "3469191f-9e49-44c1-8c6b-f7121a223d48": {
           "display_id": 1148,
           "author": "xqjG",
@@ -26949,11 +26958,16 @@
       "agent_id": "xqjG",
       "agent_seq": 680,
       "timestamp": "2026-07-29T06:25:04.079684Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 681,
+      "timestamp": "2026-07-29T06:27:39.452058Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T06:25:04.079684Z",
+    "timestamp": "2026-07-29T06:27:39.452058Z",
     "agent_id": "xqjG",
-    "agent_seq": 680
+    "agent_seq": 681
   }
 }
