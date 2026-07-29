@@ -21210,11 +21210,12 @@
       "display_id": 5,
       "title": "Simplify mdatron over-formalization (8 candidates identified)",
       "description": "Current state: \n\nDesired state: \n\nReason: \n\nPer the over-formalization audit. Eight candidates in mdatron where formalism exceeds substance: (1) cluster-batching shape framework (M1 amendment cost-rubric + applicability rules + decision tree + per-finding annotation could be 2-3 sentences); (2) status tier 3-tier discipline (candidate/accepted/deprecated) with promotion governance for ~30 codes; (3) per-feature axes (9 yes/no axes driving domain activation); (4) 18 methodology event variants with per-variant payload schemas + cardinality classification; (5) error code reserved range partitioning (E0001-E0099 / E0100-E0199 / etc.); (6) per-error-code falsifiability fixture pairs (directory per code with positive+negative); (7) bypass-marker dual-form schema + PR-approval-label + anti-self-application discipline; (8) 4 goals enumeration with 'every artifact must serve all 4 / advance at least 1'. Some of these are simultaneously mdatron AND vsdd-cli concerns since mdatron inherited the form.",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:05:15.778149Z",
-      "updated_at": "2026-07-29T10:04:10.615613Z",
+      "updated_at": "2026-07-29T10:04:16.982831Z",
+      "closed_at": "2026-07-29T10:04:16.982819Z",
       "labels": [
         "methodology-simplification",
         "refactor",
@@ -27562,11 +27563,16 @@
       "agent_id": "xqjG",
       "agent_seq": 728,
       "timestamp": "2026-07-29T10:04:10.615613Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 729,
+      "timestamp": "2026-07-29T10:04:16.982831Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:04:10.615613Z",
+    "timestamp": "2026-07-29T10:04:16.982831Z",
     "agent_id": "xqjG",
-    "agent_seq": 728
+    "agent_seq": 729
   }
 }
