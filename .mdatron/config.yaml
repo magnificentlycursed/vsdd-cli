@@ -1,0 +1,37 @@
+# mdatron configuration for vsdd-cli — declares the governed corpus (jurisdiction).
+# Required by mdatron v0.2.0+ (MDATRON-E0080: "no jurisdiction declared"); inert
+# under 0.1.0. Authored for the 0.1.0 -> v0.3.0 upgrade (vsdd-cli #816). Files
+# route to their schema by frontmatter `schema_class` (as under 0.1.0); these
+# globs bound what mdatron walks.
+#
+# Scope decision (mirrors mdatron's own, #77/#96): vsdd-cli's OWN authored
+# markdown estate is in jurisdiction; chassis-deployed tooling markdown
+# (crosslink's .claude/ hooks and non-vsdd commands, .crosslink/) is not ours to
+# validate. The `vsdd-*` commands ARE vsdd-source (the installed-artifact
+# manifest marks them so), hence included; the crosslink-deployed commands are
+# excluded by the `vsdd-` prefix.
+file_globs:
+  - ".claude/commands/vsdd-*.md"   # domain prompts + phase primers (schema_class: domain-prompt | phase-primer)
+  - "supplements/*.md"             # language/interface supplements (schema_class: supplement)
+  - "templates/registry/*.md"      # the versioned data sets (schema_class: <each set>)
+  - "review-log/**/*.md"           # typed review-log entries (schema_class: review-entry)
+  - "DESIGN-*.md"                  # design docs (schema_class: design-doc)
+  - "methodology.md"               # schema_class: methodology-spec
+# CHANGELOG.md is intentionally excluded: crosslink-generated, no schema_class
+# frontmatter, and no changelog schema exists — it is not authored governed data.
+
+# A naked file (no frontmatter) in these globs warns loudly (MDATRON-W0040),
+# never a silent pass — every schema-classed set must declare its class (#80 D2).
+require_frontmatter:
+  - ".claude/commands/vsdd-*.md"
+  - "supplements/*.md"
+  - "templates/registry/*.md"
+  - "review-log/**/*.md"
+
+# The naming register applies only to forward-looking governance prose. The
+# frozen review-log is walked/routed but NOT vocabulary-scanned (its retired
+# finding-handle scheme is evidence, not coinage) — mirroring mdatron's ruling
+# (#97). The vsdd-cli precedent is the same: no vocab over the review-log.
+vocabulary_globs:
+  - "methodology.md"
+  - "DESIGN-*.md"
