@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1241,
+  "next_comment_id": 1242,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20161,11 +20161,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T12:09:19.576654Z",
+      "updated_at": "2026-07-29T12:27:06.116349Z",
       "labels": [
         "red-gate"
       ],
       "comments": {
+        "1817eee2-3b5a-4a13-9c55-f15daded7238": {
+          "display_id": 1241,
+          "author": "xqjG",
+          "content": "Design doc drafted: .design/finding-query-join.md (the finding-query join — Slice-1 tracker-join increment). Rulings captured: field-readiness guard (siblings dormant until their fields acquire); bounded N+1 over the forward-only REQ-5 universe (hard cap + truncation marker); finding-leg failure -> findings absent, snapshot stays Acquired. Boundary value pinned to 2026-07-27 (#810) from the contract Status requirement. One open question: how crosslink exposes a finding's recorded disposition (no labels exist; potential upstream capability requirement) — held for resolution before pipeline kickoff.",
+          "created_at": "2026-07-29T12:27:06.102155Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAVS+A+oYrttban4dyRcla21h9Fsh6ZoYU5hDcAN0RsjBZPojib7Lu/tkCfOOUa6lgvqINEIx9S421nxJh0uT/BQ=="
+        },
         "2dfc715f-d0c1-4afe-bfba-a10571fe5142": {
           "display_id": 1172,
           "author": "xqjG",
@@ -28213,11 +28222,16 @@
       "agent_id": "xqjG",
       "agent_seq": 789,
       "timestamp": "2026-07-29T12:09:19.576654Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 790,
+      "timestamp": "2026-07-29T12:27:06.116349Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T12:09:19.576654Z",
+    "timestamp": "2026-07-29T12:27:06.116349Z",
     "agent_id": "xqjG",
-    "agent_seq": 789
+    "agent_seq": 790
   }
 }
