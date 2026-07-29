@@ -1,0 +1,14 @@
+# The layer's green-gate pass is recorded: 2b's exit condition is met
+# (contract: the 2b definition — the suite passes at HEAD and the run is
+# recorded, so the phase closes).
+phase: phase-2b
+layer: 2
+next_action: close-phase
+# The close-phase action is driven by the state's own green-gate record,
+# whose evidence is never resolved to a boundary — a self-report, marked
+# accordingly and never presented as verified advancement (vsdd-cli #818
+# Fix 1 revise; oracle redline for operator adoption, the 2b sibling of
+# 2a-red-recorded — pins the GreenGate/Pass -> close-phase driven arm).
+gate_provenance: unverified-self-report
+degraded: null
+integrity_findings: []

@@ -6,7 +6,7 @@
 //! the renderer emits plain words; decoration, if any ever arrives,
 //! must strip losslessly.
 
-use vsdd_core::answer::PhaseAnswer;
+use vsdd_core::answer::{GateProvenance, PhaseAnswer};
 use vsdd_core::registry::sets::StatuslineData;
 use vsdd_core::snapshot::Snapshot;
 
@@ -59,8 +59,21 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
     // verdict's provenance: it is a self-report from the agent-writable state
     // artifact, evidence unresolved to a boundary — never verified
     // advancement (vsdd-cli #818 Fix 1).
-    if answer.gate_provenance.is_some() {
-        out.push_str("    (gate: unverified self-report — evidence not resolved to a boundary)\n");
+    // Exhaustive match, not `is_some` / `if let` / `Option::map` (#818 Fix 1
+    // revise): a future variant — a verified provenance from a mechanized
+    // gate (#815) — must force a new arm HERE (the compile error is the
+    // point) rather than silently render as "unverified self-report" and
+    // diverge from the machine form that serializes the real value. Every
+    // idiomatic rewrite the lints suggest drops that exhaustiveness, so the
+    // allow is deliberate.
+    #[allow(clippy::single_match)]
+    match &answer.gate_provenance {
+        Some(GateProvenance::UnverifiedSelfReport) => {
+            out.push_str(
+                "    (gate: unverified self-report — evidence not resolved to a boundary)\n",
+            );
+        }
+        None => {}
     }
     // The mode renders through its registered serde name — the enum
     // carries no display of its own by design.

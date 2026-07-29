@@ -16,8 +16,16 @@ use crate::state::ActiveComposition;
 /// agent-writable state artifact is a SELF-REPORT, not a verified result.
 /// The derivation and the machine/human forms mark it as such so a
 /// self-authored `last_gate_result{result: pass}` is never presented as
-/// verified advancement. The mechanized gate (its evidence resolved to a
-/// commit/boundary) is what earns a verified provenance, added there.
+/// verified advancement.
+///
+/// The sole variant emitted today is `UnverifiedSelfReport`. Its ABSENCE
+/// on a `PhaseAnswer` means the action was not gate-driven (an authoring
+/// step) — never "verified". The load-bearing invariant: the advancement
+/// tokens `close-phase` / `enter-next-phase` are emitted ONLY with this
+/// provenance present (see `derive::next_action`). Resolving a gate's
+/// evidence to a real boundary — the mechanized gate that would earn a
+/// verified provenance — is not built here; it belongs to the
+/// enforcement-spine work (vsdd-cli #815).
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "kebab-case")]
 pub enum GateProvenance {

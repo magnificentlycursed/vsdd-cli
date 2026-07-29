@@ -1,0 +1,14 @@
+# The exit gate ran and PASSED: 2c's transition fires (contract: Phase
+# exit by gate — the transition flips exactly on a recorded pass).
+phase: phase-2c
+layer: 2
+next_action: enter-next-phase
+# The enter-next-phase action is driven by the state's own phase-exit-gate
+# record, whose evidence is never resolved to a boundary — a self-report,
+# marked accordingly and never presented as verified advancement (vsdd-cli
+# #818 Fix 1 revise; oracle redline for operator adoption, the 2c sibling
+# of 2a-red-recorded — pins the PhaseExitGate/Pass -> enter-next-phase
+# driven arm).
+gate_provenance: unverified-self-report
+degraded: null
+integrity_findings: []

@@ -23,7 +23,12 @@ pub fn render_machine(
         json!({ "kind": kind, "next_step": next_step })
     });
     let mut out = json!({
-        "vsdd_status_version": "0.1.0",
+        // Bumped 0.1.0 -> 0.1.1 for the additive `gate_provenance` field
+        // (#818 Fix 1): a SECURITY SIGNAL a consumer must honor before
+        // treating close-phase / enter-next-phase as authoritative — an
+        // "unverified-self-report" value means the driving gate was a
+        // self-report from the agent-writable state, evidence unresolved.
+        "vsdd_status_version": "0.1.1",
         "answer": {
             "phase": answer.phase,
             "layer": answer.layer,

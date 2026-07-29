@@ -20,6 +20,15 @@
 //! fix-scale gate, NOT as a reopen of milestone #5's fixed baseline;
 //! their oracles were operator-adopted 2026-07-27 (recorded on vsdd-cli
 //! #811, the increment's phase-2a exit act).
+//!
+//! The 2b-green-recorded and 2c-exit-recorded fixtures are the vsdd-cli
+//! #818 Fix 1 revise increment: they pin gate_provenance on the two
+//! gate-driven advancement arms the surface fix left unfixtured
+//! (GreenGate/Pass -> close-phase, PhaseExitGate/Pass -> enter-next-phase).
+//! Their expected answers are REDLINES AWAITING OPERATOR ADOPTION (the
+//! 2b/2c siblings of the 2a-red-recorded redline); the next_action values
+//! instantiate the rule table adopted on #738 and the provenance
+//! instantiates Fix 1's marking — both already-adopted.
 
 use std::collections::BTreeSet;
 use std::fs;
@@ -118,11 +127,12 @@ fn every_corpus_fixture_matches_its_reference_answer() {
         ran += 1;
     }
     // Exact, not at-least (vsdd-cli #749): a silently skipped fixture
-    // directory would otherwise read as coverage. Twenty-two since the
-    // #811 amendment increment (the unrouted-findings seed pair).
+    // directory would otherwise read as coverage. Twenty-four since the
+    // #818 Fix 1 revise added the 2b/2c driven-arm provenance redlines
+    // (the #811 unrouted-findings seed pair had taken it to twenty-two).
     assert_eq!(
-        ran, 22,
-        "the corpus holds exactly its twenty-two fixtures"
+        ran, 24,
+        "the corpus holds exactly its twenty-four fixtures"
     );
 }
 

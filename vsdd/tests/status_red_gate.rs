@@ -713,6 +713,68 @@ fn machine_form_carries_the_named_blocks_and_is_a_superset() {
     }
 }
 
+// ── The gate-provenance security surface (vsdd-cli #818 Fix 1) ──────────
+
+#[test]
+fn a_gate_driven_next_action_is_marked_unverified_on_both_agent_surfaces() {
+    // The forgeable-state envelope (vsdd-cli #818 Fix 1; Red Team #817):
+    // `read_state` validates only shape and a gate's evidence is never
+    // resolved, so a state-sourced verdict driving next_action must read as
+    // unverified-self-report on EVERY surface an agent consumes — the
+    // machine envelope key AND the human line — or a self-authored
+    // `last_gate_result` is presented as verified advancement. This is the
+    // end-to-end surface guard the derivation-level convergence corpus
+    // cannot give: it stops at the PhaseAnswer, before the renderings.
+    scrub_model_credentials();
+    let d = data();
+    // 2a-red-recorded: the layer's red-gate fail drives close-phase — a
+    // gate-driven advancement arm.
+    let (answer, snapshot) = load(&corpus().join("2a-red-recorded"));
+    assert_eq!(
+        answer.next_action, "close-phase",
+        "precondition: the fixture drives a gate advancement"
+    );
+    // Machine surface: the enumerated provenance value, exact (kebab).
+    let machine = render_machine(&answer, &snapshot, &d);
+    assert_eq!(
+        machine["answer"]["gate_provenance"].as_str(),
+        Some("unverified-self-report"),
+        "the machine envelope marks the gate-driven advancement unverified: {machine}"
+    );
+    // Human surface: the worded self-report line.
+    let human = render_human(&answer, &snapshot, &d);
+    assert!(
+        human.contains("unverified self-report"),
+        "the human form words the self-report provenance: {human:?}"
+    );
+}
+
+#[test]
+fn a_non_gate_driven_action_carries_no_provenance_on_either_surface() {
+    // The only-if half (vsdd-cli #818 Fix 1): an authoring action no gate
+    // drove carries NO provenance — absence is "not gate-driven", never
+    // "verified". Paired with the test above this pins the mark to exactly
+    // the gate-driven arms: an always-mark mutant dies here, a never-mark
+    // mutant dies above.
+    scrub_model_credentials();
+    let d = data();
+    // 3-reviewing: phase-3 dispatch — no gate in the derivation.
+    let (answer, snapshot) = load(&corpus().join("3-reviewing"));
+    assert_eq!(answer.gate_provenance, None, "precondition: no gate drove it");
+    // Machine form (manual json!): the key is present but null.
+    let machine = render_machine(&answer, &snapshot, &d);
+    assert!(
+        machine["answer"]["gate_provenance"].is_null(),
+        "no gate-driven action carries a null provenance, never a value: {machine}"
+    );
+    // Human form: no self-report line at all.
+    let human = render_human(&answer, &snapshot, &d);
+    assert!(
+        !human.contains("unverified self-report"),
+        "the human form carries no provenance line for an authoring action: {human:?}"
+    );
+}
+
 // ── The broken-state branch, all three surfaces, every kind ────────────
 
 fn broken_fixture(kind: &str) -> (tempfile::TempDir, vsdd_core::diagnostics::Diagnostic) {
