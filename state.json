@@ -7624,11 +7624,12 @@
       "uuid": "49e2a1f6-9eff-46a5-9d36-46faafa05e75",
       "display_id": 720,
       "title": "Phase 3 execution, Layer 1: adversarial refinement round 1 over the layer's code",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-21T19:01:52.393405Z",
-      "updated_at": "2026-07-29T10:10:31.598581Z",
+      "updated_at": "2026-07-29T10:10:38.201939Z",
+      "closed_at": "2026-07-29T10:10:38.201928Z",
       "labels": [
         "review"
       ],
@@ -27772,11 +27773,16 @@
       "agent_id": "xqjG",
       "agent_seq": 748,
       "timestamp": "2026-07-29T10:10:31.598581Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 749,
+      "timestamp": "2026-07-29T10:10:38.201939Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:10:31.598581Z",
+    "timestamp": "2026-07-29T10:10:38.201939Z",
     "agent_id": "xqjG",
-    "agent_seq": 748
+    "agent_seq": 749
   }
 }
