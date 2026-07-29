@@ -8,22 +8,23 @@ if ! command -v mdatron >/dev/null 2>&1; then
   # conformance checker blocks the commit rather than silently skipping —
   # a guarded no-op hides the absence until something depends on it.
   echo "pre-commit: mdatron not on PATH — commit blocked (fail-closed)" >&2
-  echo "pre-commit: install with  cargo install --path ../mdatron/mdatron-cli" >&2
+  echo "pre-commit: install with  cargo install --path ../mdatron --locked" >&2
   echo "pre-commit: (bypass for a genuine emergency: git commit --no-verify — the deviation is yours to record)" >&2
   exit 2
 fi
 
-# Minimum-version sanity check (per crosslink #12 PE/F2). Bootstrap-period
-# requirement: mdatron must be 0.1.x. Stale binaries from before the
-# crosslink #12 reserved-code amendment / Phase 2 explain catalog would
-# emit wrong codes or miss surfaces; warn early rather than discover later.
-MIN_VERSION="0.1.0"
+# Minimum-version sanity check (per crosslink #12 PE/F2). The v0.3.0 flip
+# (vsdd-cli #816): mdatron must be 0.3.x. Stale 0.1.x/0.2.x binaries predate
+# the config.yaml jurisdiction (MDATRON-E0080), the families report (#90),
+# and the managed manifest (init) this repo now relies on; warn early rather
+# than discover later.
+MIN_VERSION="0.3.0"
 mdatron_version=$(mdatron --version 2>/dev/null | awk '{print $2}' || true)
 if [ -z "$mdatron_version" ]; then
   echo "pre-commit: could not determine mdatron version (got empty output) — proceeding" >&2
-elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.1\.[0-9]+'; then
-  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.1.x bootstrap window" >&2
-  echo "pre-commit:   reinstall with  cargo install --path ../mdatron/mdatron-cli --locked --force" >&2
+elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.3\.[0-9]+'; then
+  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.3.x supported window" >&2
+  echo "pre-commit:   reinstall with  cargo install --path ../mdatron --locked --force" >&2
   echo "pre-commit:   minimum required for vsdd-cli compatibility: ${MIN_VERSION}" >&2
 fi
 
