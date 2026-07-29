@@ -1,6 +1,6 @@
 {
   "next_display_id": 825,
-  "next_comment_id": 1192,
+  "next_comment_id": 1193,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -14020,7 +14020,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T08:30:42.797800Z",
-      "updated_at": "2026-07-29T08:30:42.797800Z"
+      "updated_at": "2026-07-29T08:35:17.758705Z",
+      "comments": {
+        "eadd0426-103b-465e-bf3e-be294f7d32f9": {
+          "display_id": 1192,
+          "author": "xqjG",
+          "content": "PR #1 opened (github.com/magnificentlycursed/vsdd-cli/pull/1) — the repo's FIRST PR (confirms direct-to-main until now). Fixes: F4 (repoint magnificentlycursed/mdatron-cli -> magnificentlycursed/mdatron @ pinned v0.3.0; install cargo install --path .; drop the removed mdatron-core rationale) + F3 (repurpose mdatron-test.yml -> vsdd-test.yml running vsdd-cli's OWN cargo test --workspace + clippy; mdatron-test previously ran MDATRON's tests, vestigial). CI runs on the PR = the validation. OPERATOR ACTION: review/merge + enable branch protection on main requiring checks 'mdatron verify' + 'vsdd-cli test' (the harness-level restriction only you can set).",
+          "created_at": "2026-07-29T08:35:17.743148Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAh4AD/p8Fn6hOha9k7fdiP7bDwx4saPnAMGnZ5lTwAuqTOwfoA6E9SPC+CymWGIqb/moX8pIOj0+xZOErnz8lAg=="
+        }
+      }
     },
     "8cbfac57-6551-472d-abbf-fda9516ba3fa": {
       "uuid": "8cbfac57-6551-472d-abbf-fda9516ba3fa",
@@ -27196,11 +27207,16 @@
       "agent_id": "xqjG",
       "agent_seq": 698,
       "timestamp": "2026-07-29T08:30:50.267546Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 699,
+      "timestamp": "2026-07-29T08:35:17.758705Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T08:30:50.267546Z",
+    "timestamp": "2026-07-29T08:35:17.758705Z",
     "agent_id": "xqjG",
-    "agent_seq": 698
+    "agent_seq": 699
   }
 }
