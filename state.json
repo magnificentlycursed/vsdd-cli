@@ -1,5 +1,5 @@
 {
-  "next_display_id": 828,
+  "next_display_id": 829,
   "next_comment_id": 1243,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -32,6 +32,7 @@
     "065d8e07-6e95-4f62-887f-64d78bc95538": 141,
     "068e8776-021d-4e20-afff-df08cda2dbc1": 114,
     "06a18acf-7008-4bf4-99bd-d399ae20a9fd": 266,
+    "06c5ca64-c39c-40fa-8671-bfb593ffae0e": 828,
     "06ef8d29-886e-4a4d-acb6-1fed5df7c722": 30,
     "06fcba1d-8071-46a0-a588-b1a0579c0db2": 804,
     "0775bdc5-5f0d-491a-b84a-ad7a6aab717d": 305,
@@ -1675,6 +1676,17 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKo0KyEGZrPs8evhUKTmXDmuW2OhGsjkyzjxZIacwGkmItUZ3WaFaqOsmKreP9opGt9+jH00ocMSB/AVUY4YuAA=="
         }
       }
+    },
+    "06c5ca64-c39c-40fa-8671-bfb593ffae0e": {
+      "uuid": "06c5ca64-c39c-40fa-8671-bfb593ffae0e",
+      "display_id": 828,
+      "title": "Upstream crosslink observation: issue show --json 'subissues' is never populated",
+      "description": "For operator relay to the crosslink project.\n\nObservation: 'crosslink issue show <id> --json' returns 'subissues: []' for every issue checked, even for issues that provably have children — e.g. #745 has children #752/#753/#754 (each carries 'parent_id': 745), yet #745's 'subissues' is empty, and #754 (labelled 'review') also shows 'subissues': []. Parent linkage IS present and correct on the CHILD side ('parent_id'); only the parent-side 'subissues' array is unpopulated in the show JSON.\n\nVerified: 326 issues carry a non-null 'parent_id'; 'subissues' length is 0 across every issue sampled.\n\nQuestion: is the empty 'subissues' on 'issue show --json' intended (parent-side child lists not serialized), or a serialization gap? If intended, documenting it would help consumers; if a gap, populating 'subissues' from the parent_id index would let consumers walk parent->children without a full 'issue list' scan.\n\nImpact on vsdd-cli: the finding-query join (#820, .design/finding-query-join.md) needed parent->child linkage to find a review round's findings. Because 'subissues' is empty, the walk instead uses one bulk 'issue list -s all --json' and filters on child 'parent_id' — functional, so this is not a blocker, just an efficiency/clarity note. Relates to #820.",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-07-29T12:47:55.980302Z",
+      "updated_at": "2026-07-29T12:47:55.980302Z"
     },
     "06ef8d29-886e-4a4d-acb6-1fed5df7c722": {
       "uuid": "06ef8d29-886e-4a4d-acb6-1fed5df7c722",
@@ -28277,11 +28289,16 @@
       "agent_id": "xqjG",
       "agent_seq": 794,
       "timestamp": "2026-07-29T12:35:34.145847Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 795,
+      "timestamp": "2026-07-29T12:47:55.980302Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T12:35:34.145847Z",
+    "timestamp": "2026-07-29T12:47:55.980302Z",
     "agent_id": "xqjG",
-    "agent_seq": 794
+    "agent_seq": 795
   }
 }
