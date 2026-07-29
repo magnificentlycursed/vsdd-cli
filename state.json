@@ -7269,12 +7269,13 @@
       "uuid": "468905b6-4cd3-4e40-a2f4-f090ba2db596",
       "display_id": 300,
       "title": "Spec review round 1: coverage holes: criteria for install, status detection, config integrity, conformance checks, gate coverage, scope echo",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:27:01.776803Z",
-      "updated_at": "2026-07-29T10:24:32.933837Z",
+      "updated_at": "2026-07-29T10:24:38.875810Z",
+      "closed_at": "2026-07-29T10:24:38.875799Z",
       "labels": [
         "spec-review-round-1"
       ],
@@ -27967,11 +27968,16 @@
       "agent_id": "xqjG",
       "agent_seq": 767,
       "timestamp": "2026-07-29T10:24:32.933837Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 768,
+      "timestamp": "2026-07-29T10:24:38.875810Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:24:32.933837Z",
+    "timestamp": "2026-07-29T10:24:38.875810Z",
     "agent_id": "xqjG",
-    "agent_seq": 767
+    "agent_seq": 768
   }
 }
