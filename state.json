@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1173,
+  "next_comment_id": 1174,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19525,7 +19525,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T05:02:31.081575Z",
+      "updated_at": "2026-07-29T05:08:26.724388Z",
       "labels": [
         "red-gate"
       ],
@@ -19538,6 +19538,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEtChYz4DO1nM2tMO+JpG+ziRqZunvD+mxbWkhhbsvRnW0ATJsDWmOPy1tpb7d10U2DzGy9PcPS4wFdhWX63IBA=="
+        },
+        "97f40d9c-0935-4a76-bef1-bef0e2989510": {
+          "display_id": 1173,
+          "author": "xqjG",
+          "content": "RED GATE — increment 1 landed (working tree, verified red; NOT committed — avoids leaving main red mid-red-gate). Added 3 pure tracker-join mappers to vsdd-core/src/snapshot/acquire.rs with minimal bodies + failing-by-default tests in the acquire test module: routing_present(comment_kinds) [plan-kind = routing edge], is_finding(parent_labels) [parent labeled 'review' = a finding], closed_before_ratification(closed_at, boundary) [open + closed-at/after = in universe]. cargo test -p vsdd-core --lib snapshot::acquire::tests: 5 passed / 3 FAILED (the new ones), 0 vacuous — each fails on its named-behavior assertion, not a panic. Scope: crosslink-native enforcement-spine fields only (per the #820 scope decision); owner/validator/evidence deferred to Slice 5; round manifests/children/comment-handles deferred to Slice 6 (round-parity homes there).\n\nREMAINING red-gate pieces before the red-gate commit: (a) acquire_snapshot integration test over a real temp crosslink repo (proves the effectful shell wires findings->mappers); (b) guardrail block/pass tests (commit-msg hook + CI leg — script/manual-class, hand-carried at bootstrap). Then phase-2b implements the mapper bodies + the acquire assembly -> green; the vsdd-core->vsdd merge (#15) folds in at 2b entry.",
+          "created_at": "2026-07-29T05:08:26.710961Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcjBSRnWIgVoMu1t00caEibKIAAsKgpQx7AV1rhF0UgbH0G62VKeWg5CQtOfofG6JKRDpqYPrl69Y2ZhO23tUDQ=="
         },
         "c05538a7-6f42-4f0c-8996-2ee75dc817e5": {
           "display_id": 1171,
@@ -26851,11 +26860,16 @@
       "agent_id": "xqjG",
       "agent_seq": 673,
       "timestamp": "2026-07-29T05:02:31.081575Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 674,
+      "timestamp": "2026-07-29T05:08:26.724388Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T05:02:31.081575Z",
+    "timestamp": "2026-07-29T05:08:26.724388Z",
     "agent_id": "xqjG",
-    "agent_seq": 673
+    "agent_seq": 674
   }
 }
