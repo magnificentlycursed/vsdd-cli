@@ -19507,7 +19507,10 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T04:31:35.431233Z"
+      "updated_at": "2026-07-29T04:31:40.378449Z",
+      "labels": [
+        "red-gate"
+      ]
     },
     "cd286365-0b67-429d-a41a-14086fa9ebe7": {
       "uuid": "cd286365-0b67-429d-a41a-14086fa9ebe7",
@@ -26770,11 +26773,16 @@
       "agent_id": "xqjG",
       "agent_seq": 665,
       "timestamp": "2026-07-29T04:31:35.431233Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 666,
+      "timestamp": "2026-07-29T04:31:40.378449Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:31:35.431233Z",
+    "timestamp": "2026-07-29T04:31:40.378449Z",
     "agent_id": "xqjG",
-    "agent_seq": 665
+    "agent_seq": 666
   }
 }
