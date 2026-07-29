@@ -1,6 +1,6 @@
 {
   "next_display_id": 827,
-  "next_comment_id": 1199,
+  "next_comment_id": 1200,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7249,7 +7249,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T07:46:22.276519Z",
-      "updated_at": "2026-07-29T08:35:24.580828Z",
+      "updated_at": "2026-07-29T09:38:50.692134Z",
       "comments": {
         "12ba7907-7c68-4903-9d9f-85d8f0816451": {
           "display_id": 1187,
@@ -7295,6 +7295,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAuCSyXWykXWK3q/TOBleqInjSll9oVvWDMT7LHAx1Y4fGg/2YlNMHm7P77Ts/Cvl7ZndurrjFCHjbYyRY/ML7Ag=="
+        },
+        "9581cbee-feb4-41f5-8ce7-ea94cb807518": {
+          "display_id": 1199,
+          "author": "xqjG",
+          "content": "M7 (meta-harness finding, operator-named 2026-07-29): a stated harness goal — PROHIBIT off-the-rails prose designs + ad-hoc folders from proliferating — is UNENFORCED, so it drifted. docs/refactor/ (superseded per the contract) lingered 2 months AND I extended it this session (a hand-authored phase-1a spec in a new sub-folder, with letter-cluster labels) — the exact proliferation the harness aims to prevent. Same convention-not-mechanized class as M3 (dormant vocab register) and M1 (silent CI). The vsdd way is design docs in .design/ via the /design skill + crosslink kickoff -> the pipeline; ad-hoc prose specs/folders should be flagged/blocked (a guardrail to mechanize the goal). Cleanup in progress: docs/refactor removal PR (#826); #14/#15 to be re-grounded off the dead binary-first framing to the slice framing.",
+          "created_at": "2026-07-29T09:38:50.674695Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAznS9LdQUCrKecMNR3ZxjIJ+JQdzRSoxcA8IzPRqXFA8/blVjHsI1s6kH5NZbQPpnMqdKyD5R2nNVZEHonOqDAw=="
         },
         "c59986de-bc6f-48ec-9987-00bf151c2eab": {
           "display_id": 1193,
@@ -27359,11 +27368,16 @@
       "agent_id": "xqjG",
       "agent_seq": 710,
       "timestamp": "2026-07-29T09:36:34.698071Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 711,
+      "timestamp": "2026-07-29T09:38:50.692134Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T09:36:34.698071Z",
+    "timestamp": "2026-07-29T09:38:50.692134Z",
     "agent_id": "xqjG",
-    "agent_seq": 710
+    "agent_seq": 711
   }
 }
