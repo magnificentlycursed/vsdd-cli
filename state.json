@@ -22732,12 +22732,13 @@
       "uuid": "eb957827-6327-47e1-a5b6-8a28e216fbca",
       "display_id": 302,
       "title": "Spec review round 1: cross-references: exact heading-name matching",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
       "created_by": "xqjG",
       "created_at": "2026-07-19T02:27:05.619809Z",
-      "updated_at": "2026-07-29T10:25:13.594284Z",
+      "updated_at": "2026-07-29T10:25:20.648915Z",
+      "closed_at": "2026-07-29T10:25:20.648904Z",
       "labels": [
         "spec-review-round-1"
       ],
@@ -28011,11 +28012,16 @@
       "agent_id": "xqjG",
       "agent_seq": 771,
       "timestamp": "2026-07-29T10:25:13.594284Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 772,
+      "timestamp": "2026-07-29T10:25:20.648915Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:25:13.594284Z",
+    "timestamp": "2026-07-29T10:25:20.648915Z",
     "agent_id": "xqjG",
-    "agent_seq": 771
+    "agent_seq": 772
   }
 }
