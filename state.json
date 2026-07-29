@@ -1,6 +1,6 @@
 {
   "next_display_id": 821,
-  "next_comment_id": 1171,
+  "next_comment_id": 1172,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19511,10 +19511,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T04:31:40.378449Z",
+      "updated_at": "2026-07-29T04:31:54.685017Z",
       "labels": [
         "red-gate"
-      ]
+      ],
+      "comments": {
+        "c05538a7-6f42-4f0c-8996-2ee75dc817e5": {
+          "display_id": 1171,
+          "author": "xqjG",
+          "content": "Pre-phase composition declaration:\nphase: phase-2a (Slice 1)\ncomposed_domains: [quality-engineer]\ncomposition_mode: skill-interactive\noperator_confirmation: confirmed (operator direction 'let's do phase-2a Slice 1 next', 2026-07-28)\ndeclared_at: 2026-07-28\n\nSlice 1 (ratified #819) closes NO fixture-based acceptance criterion — it is the enforcement-spine increment mechanizing the #810 routing-before-fix format-carry. Per the ratified per-slice-obligations, its phase-2a red-gate seed is therefore: (a) INTEGRATION tests for the live tracker-join (finding-vs-issue discrimination, plan-comment routing presence, manifest/children counts, comment-handle resolution — each positive + a mis-map negative), and (b) BLOCK/PASS tests for the guardrail (friction commit-msg hook + the CI-backstop routing/parity check). Depends on: the engine (built). Carries: the vsdd-core->vsdd merge (#15) and the mdatron-currency estate prerequisite (#816). Per The operator authors the oracle, the red-gate seed + manual-test checklist are operator-adopted; drafts to follow.",
+          "created_at": "2026-07-29T04:31:54.671469Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdVB7uZEjyoid7Ke4dDXWcRdu0PHpG7UY7mh496xHzGHQCz+qJSW0UKE7OhDyy4oi669zeCza/t769qZoMWekCw=="
+        }
+      }
     },
     "cd286365-0b67-429d-a41a-14086fa9ebe7": {
       "uuid": "cd286365-0b67-429d-a41a-14086fa9ebe7",
@@ -26787,11 +26798,16 @@
       "agent_id": "xqjG",
       "agent_seq": 667,
       "timestamp": "2026-07-29T04:31:47.607509Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 668,
+      "timestamp": "2026-07-29T04:31:54.685017Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:31:47.607509Z",
+    "timestamp": "2026-07-29T04:31:54.685017Z",
     "agent_id": "xqjG",
-    "agent_seq": 667
+    "agent_seq": 668
   }
 }
