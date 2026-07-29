@@ -254,9 +254,46 @@ pub fn last_boundary_subject(repo_root: &Path) -> Option<String> {
     }
 }
 
+// ── Tracker-join mappers: the unrouted-findings query's pure inputs (#820) ──
+// Slice 1's enforcement-spine increment, mechanizing the routing-before-fix
+// format-carry (#810/#811). Pure over canned tracker data; the effectful join
+// that feeds them real crosslink data lands with the query consumer (a later
+// Slice-1 increment), hence #[allow(dead_code)] on the stubs meanwhile. The
+// bootstrap discrimination rules they read are formalized by Slice 5's filing
+// convention.
+
+/// True when the finding's parent is a review-round issue — the bootstrap
+/// finding-discrimination rule: a `review`-labelled parent marks its children
+/// findings (vsdd-cli #820).
+#[allow(dead_code)]
+fn is_finding(parent_labels: &[String]) -> bool {
+    let _ = parent_labels; // red-gate stub (#820); the adopted behaviour is authored in 2b
+    false
+}
+
+/// True when a routing edge is present — a `plan`-kind comment on the finding
+/// (the bootstrap routing format-carry; vsdd-cli #810).
+#[allow(dead_code)]
+fn routing_present(comment_kinds: &[String]) -> bool {
+    let _ = comment_kinds; // red-gate stub (#820)
+    false
+}
+
+/// True when the finding was closed before the routing amendment's ratification
+/// boundary — outside the forward-only unrouted-findings universe (REQ-5;
+/// vsdd-cli #811). No `closed_at`, or a close at/after the boundary, is IN.
+#[allow(dead_code)]
+fn closed_before_ratification(closed_at: Option<&str>, boundary: &str) -> bool {
+    let _ = (closed_at, boundary); // red-gate stub (#820)
+    false
+}
+
 #[cfg(test)]
 mod tests {
-    use super::{parse_milestones, split_count_suffix, ABSENT_MILESTONE, ABSENT_WORK_ITEM};
+    use super::{
+        closed_before_ratification, is_finding, parse_milestones, routing_present,
+        split_count_suffix, ABSENT_MILESTONE, ABSENT_WORK_ITEM,
+    };
 
     #[test]
     fn the_absence_wordings_mirror_the_registered_set() {
@@ -318,5 +355,71 @@ mod tests {
         );
         assert_eq!(split_count_suffix("survey (2024)"), ("survey (2024)", None));
         assert_eq!(split_count_suffix("plain name"), ("plain name", None));
+    }
+
+    // ── Tracker-join mappers (Slice 1 red gate, vsdd-cli #820) ──────────────
+    // Failing-executed against the stub bodies above; the operator adopts these
+    // as the red-gate oracle before 2b implements the mappers to green.
+
+    #[test]
+    fn a_review_labelled_parent_marks_its_children_findings() {
+        // The bootstrap discrimination rule (#820): a finding is an issue whose
+        // parent is a review-round issue (the parent carries the `review` label).
+        assert!(
+            is_finding(&["review".to_string()]),
+            "a review-labelled parent marks a finding"
+        );
+        assert!(
+            is_finding(&["review".to_string(), "high".to_string()]),
+            "review among the parent's labels still marks a finding"
+        );
+        assert!(
+            !is_finding(&["feature".to_string()]),
+            "a non-review parent is not a finding"
+        );
+        assert!(!is_finding(&[]), "no parent labels is not a finding");
+    }
+
+    #[test]
+    fn a_plan_kind_comment_is_a_routing_edge() {
+        // The bootstrap routing format-carry (#810): routing presence is a
+        // `plan`-kind comment on the finding.
+        assert!(
+            routing_present(&["plan".to_string()]),
+            "a plan-kind comment is a routing edge"
+        );
+        assert!(
+            routing_present(&["result".to_string(), "plan".to_string()]),
+            "plan among the comment kinds reads as routed"
+        );
+        assert!(
+            !routing_present(&["result".to_string()]),
+            "a finding with only non-plan comments is unrouted"
+        );
+        assert!(!routing_present(&[]), "a finding with no comments is unrouted");
+    }
+
+    #[test]
+    fn a_finding_closed_before_the_boundary_is_outside_the_universe() {
+        // The forward-only universe boundary (REQ-5; #811): a finding closed
+        // strictly before the ratification boundary is excluded; open, or closed
+        // at/after the boundary, stays in. ISO-8601 Zulu sorts lexicographically.
+        let boundary = "2026-07-27T00:00:00Z";
+        assert!(
+            closed_before_ratification(Some("2026-07-20T00:00:00Z"), boundary),
+            "closed before the boundary is outside the universe"
+        );
+        assert!(
+            !closed_before_ratification(Some("2026-07-28T00:00:00Z"), boundary),
+            "closed after the boundary stays in the universe"
+        );
+        assert!(
+            !closed_before_ratification(Some(boundary), boundary),
+            "closed exactly at the boundary stays in (forward-only is inclusive)"
+        );
+        assert!(
+            !closed_before_ratification(None, boundary),
+            "an open finding is in the universe"
+        );
     }
 }
