@@ -1,6 +1,6 @@
 {
   "next_display_id": 833,
-  "next_comment_id": 1254,
+  "next_comment_id": 1255,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18664,10 +18664,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T17:25:34.572838Z",
-      "updated_at": "2026-07-29T17:25:40.243048Z",
+      "updated_at": "2026-07-29T18:13:43.236802Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "ca90ecc1-bf3a-43e7-8fc7-0993c4c2faec": {
+          "display_id": 1254,
+          "author": "xqjG",
+          "content": "Escape corpus extended (agent-first-controls.md) with two more from today's probes, using grounded terms: (1) the milestone mechanism never invoked — mandated + machinery-backed + the crosslink-usage-absence detector designed-unbuilt + no enforcement point creates/requires a milestone (fix: build the mid-cycle-without-milestones detection + an active-milestone enforcement point; decomposition instantiated as milestones this session); (2) the tracker populated-but-unconsulted — #821 existed when I freelanced #832 + a scrub; the pre-code guard forces create-before-code, never search-first (fix: a find-or-create enforcement point). Also: #832's E0093 'forcing seam' anti-pattern is ARMED + proven block-grade (E-code -> verify exits 1 -> pre-commit + CI hard-fail). chassis/substrate arm as #821 clears them. Searched before filing (no existing find-or-create/milestone-detection issue); recording here rather than spawning duplicates.",
+          "created_at": "2026-07-29T18:13:43.207948Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAbyPt3r/9Gvl/cIBkhbvT+KFrpuzQX99jSw51xIKNAr21Sy4T9jnLG9T6F0C/l9kGsLhQGGMPHfAXszdkxiyXAg=="
+        }
+      }
     },
     "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7": {
       "uuid": "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7",
@@ -28736,11 +28747,16 @@
       "agent_id": "xqjG",
       "agent_seq": 833,
       "timestamp": "2026-07-29T18:05:16.707334Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 834,
+      "timestamp": "2026-07-29T18:13:43.236802Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T18:05:16.707334Z",
+    "timestamp": "2026-07-29T18:13:43.236802Z",
     "agent_id": "xqjG",
-    "agent_seq": 833
+    "agent_seq": 834
   }
 }
