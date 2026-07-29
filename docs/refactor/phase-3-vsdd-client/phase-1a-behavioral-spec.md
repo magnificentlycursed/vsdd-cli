@@ -4,19 +4,16 @@
 **Parent plan:** [`../binary-first-plan.md`](../binary-first-plan.md) § Phase 3.
 **Consumes:** [Phase 2 mdatron `--json`](../phase-2-mdatron-json/phase-1a-behavioral-spec.md) — the output-envelope + exit-code contract, as shipped by **mdatron v0.3.0**; and the current `vsdd-core` (the `mdatron-core` path dependency is already removed; `tests/cross_references.rs` already spawns the binary).
 
-> **STATUS: DRAFT authored 2026-07-29 for the operator's phase-1a composition + review — NOT ratified and NOT a phase entry.** The composition (which domains) and the confirmation are the operator's; this is a starting point so the design work is teed up rather than blank. It is a design doc under `docs/refactor/` (outside mdatron's jurisdiction), not a contract edit. The Architecture-section workspace-shape contract touch belongs to #15/Phase 4, not here (see Out of scope).
+> **STATUS: phase-1a ENTERED — composition confirmed by the operator 2026-07-29; the five open questions are resolved (see § Resolved design decisions). The spec still requires the phase-1a cold-reader (DR) pass + ratification before it merges/closes.** A design doc under `docs/refactor/` (outside mdatron's jurisdiction), not a contract edit. The Architecture-section workspace-shape contract touch belongs to #15/Phase 4, not here (see Out of scope).
 
-## Pre-phase composition declaration (PROPOSED — operator confirms)
+## Pre-phase composition declaration
 
 ```yaml
 phase: phase-1a
-# Proposed from #14's surface: a CLI + manifest change (SE/PE), a subprocess
-# trust boundary (SA/SE), a breaking manifest-format change (DE), and an
-# interactive prompt (UX may be warranted). Operator adjusts.
 composed_domains: [solution-owner, solution-architect, software-engineer, platform-engineer, data-engineer, documentation-reviewer]
 composition_mode: skill-interactive
-operator_confirmation: PENDING
-declared_at: <on entry>
+operator_confirmation: confirmed
+declared_at: 2026-07-29
 ```
 
 ## Scope
@@ -38,7 +35,7 @@ The client is the single seam through which vsdd calls mdatron. It builds on the
 - **A1 — invocation shape.** The client spawns `mdatron verify --json --project-root <root>` (no shell; args passed directly). It reads stdout as the sole machine channel.
 - **A2 — clean.** Exit `0` + `pipeline_status: "ok"` + empty `findings` → a `Clean` outcome carrying the parsed envelope (`mdatron_version`, `families`, `summary`). No finding is fabricated.
 - **A3 — findings.** Exit `1` + `pipeline_status: "ok"` + non-empty `findings` → a `Findings` outcome carrying every finding verbatim (`code`, `severity`, `location{file,line,column}`, `summary`, `message`, `help`, `explain_ref`, `quoted[]`). No finding is dropped or truncated.
-- **A4 — pipeline failure is NOT clean.** Exit `2` / `pipeline_status: "failed"` → a `DidNotRun` outcome that is *distinct from Clean* and carries the failure reason. This is the load-bearing contract: a caller must never read a pipeline failure as clean (the exact class behind vsdd-cli #816 / #822 M1). Edge: under `--json` the E0080 reason currently lives on stderr, which `-q` suppresses — see Open question Q1.
+- **A4 — pipeline failure is NOT clean.** Exit `2` / `pipeline_status: "failed"` → a `DidNotRun` outcome that is *distinct from Clean*. This is the load-bearing contract: a caller must never read a pipeline failure as clean (the exact class behind vsdd-cli #816 / #822 M1). The distinction rests on **exit code + `pipeline_status` alone** (both machine-readable), so it holds regardless of the reason. The human reason (E0080 + note) lives on stderr; the client runs `--json` **without `-q`** (stdout stays pure JSON; stderr carries the reason) and captures stderr to surface WHY on a `DidNotRun` (§ Resolved Q1).
 - **A5 — unusable checker.** Exit `≥101`, non-JSON stdout, or an unparseable envelope → an `Unusable` error (loud). Never degraded-to-clean.
 - **A6 — checker absent.** mdatron not on PATH → a `NotInstalled` error, distinct from every run outcome (fail-closed, matching the pre-commit precedent).
 - **A7 — envelope version.** The client honors `mdatron_output_version`: a **major** mismatch is a distinct `IncompatibleEnvelope` error (an incompatible envelope is never parsed as Clean); unknown **minor/additive** fields are tolerated (forward-compatible reading).
@@ -56,15 +53,16 @@ Today (`vsdd-core/src/init.rs`): two-way — Unchanged (disk==manifest) is skipp
 - **B4 — `--update`.** Applies ToolkitUpgrade updates; leaves Conflict files untouched (unless `--force`).
 - **B5 — `--no-prompt`.** Non-interactive: Conflict files are **skipped** (never overwritten) unless `--force`; suitable for CI. `ci_mode` implies `--no-prompt`.
 - **B6 — interactive Conflict prompt** (default; TTY; not `--no-prompt`). On a Conflict, the operator is prompted per file: keep the operator edit / accept the new template / show the diff. The choice is applied per file.
-- **B7 — `ManifestEntry.template_version_at_deploy`.** Each entry records the toolkit version whose template it deployed, enabling three-way classification across upgrades. This is a **breaking manifest-format change** and must land before v0.1.0 publishes. A manifest lacking the field is treated as pre-Phase-3 and re-classified conservatively (see Q4).
+- **B7 — `ManifestEntry.template_version_at_deploy`.** Each entry records the toolkit version whose template it deployed, enabling three-way classification across upgrades. This is a **breaking manifest-format change** and must land before v0.1.0 publishes. A manifest lacking the field is migrated **sha-first** (§ Resolved Q4): classify by the existing recorded sha — disk == recorded sha → adopt/upgrade and backfill the field; disk ≠ recorded sha → Conflict (operator review, never a silent overwrite).
 - **B8 — idempotence preserved.** All-Unchanged → no writes, no `ProjectInitialized` event, exit 0 (unchanged from today).
 - **B9 — errors.** Non-git directory → refuse (unchanged); IO error → typed IO error; corrupt manifest → treated as first-init (unchanged), never a false drift.
+- **B10 — atomicity: re-run-to-converge** (§ Resolved Q3), mirroring mdatron's v0.1 init posture — idempotent, no transactional atomicity. The manifest is written last, so a partial/interrupted init re-runs cleanly (re-deploys the missing files, then writes the manifest).
 
 ### C. template deployment
 
-- **C1 — templates deployed.** `vsdd init` deploys the `templates/*` artifacts to their adopter destinations alongside the 42 markdown artifacts (the current plan deploys 4 schemas + 1 pattern + 10 primers + 18 domain prompts + 14 supplements; templates were explicitly deferred, `init.rs:14`).
+- **C1 — templates deployed.** `vsdd init` deploys **all 16** `templates/*` artifacts (§ Resolved Q2) alongside the 42 markdown + 4 schema + 1 pattern artifacts it already deploys (templates were explicitly deferred, `init.rs:14`). The set: 2 CI workflows, 1 DESIGN template, 1 statusline script, 12 `templates/registry/*` data sets. (The "6-template" count in the #15 scope line is stale — correct it.)
 - **C2 — templates are managed.** Deployed template files enter the manifest (hashed, drift-tracked) and are subject to the same three-way classification (B) as every other managed artifact.
-- **C3 — destinations.** Each template deploys to its adopter location (e.g. the two CI workflow templates → the adopter's `.github/workflows/`; the DESIGN template + registry data sets → their documented adopter paths). The exact template set + destination mapping is Q2.
+- **C3 — destinations** (§ Resolved Q2): `.github/workflows/vsdd-verify.yml` + `vsdd-observe-pr-body.yml` → adopter `.github/workflows/`; `DESIGN.md.vsdd-template` → adopter `DESIGN.md`; `statusline/vsdd-statusline.sh` → adopter statusline path; the 12 `templates/registry/*` data sets → adopter `.vsdd/registry/` (per the `vocabulary.yaml` header's own deploy note).
 
 ## Edge cases + error conditions to cover
 
@@ -76,10 +74,14 @@ mdatron: absent (A6), old/incompatible envelope (A7), timeout (A8), crash/non-JS
 - mdatron's own `init` / `config.yaml` (Phase 5 — already shipped in mdatron v0.2/v0.3).
 - crates.io publish + CI install-hint migration (Phase 6 / #48).
 
-## Open questions (for the design)
+## Resolved design decisions (operator, 2026-07-29)
 
-- **Q1 — the pipeline-failure reason channel (A4).** mdatron under `-q` suppresses the E0080 reason to stderr only. Does the client (a) run mdatron **without** `-q` and capture stderr for the reason (brittle — human prose), or (b) rely on the reason reaching the JSON envelope? (b) is the durable fix and is already raised in the diagnostic-efficacy feedback ("carry the failure reason into the envelope"); (a) is a viable interim. Recommend: interim (a) capturing stderr, with a note that the envelope fix retires it.
-- **Q2 — the template set + destinations (C1/C3).** Enumerate `templates/*` and each deploy destination from the artifact registry + the adopter layout.
-- **Q3 — init atomicity.** Is a partially-completed init (interrupted mid-deploy) required to be recoverable/atomic, or is re-run-to-converge sufficient (today's posture)?
-- **Q4 — manifest migration (B7).** How is an existing manifest without `template_version_at_deploy` handled — re-hash and adopt current templates as the baseline, or force a Conflict review? This is the breaking-change migration path.
-- **Q5 — where the client lives.** `src/mdatron.rs` vs `src/commands/verify/subprocess.rs` (the plan lists both) — a Phase-4 module-map question that only needs a placeholder here.
+- **Q1 — pipeline-failure reason channel → RESOLVED.** Verified empirically: exit `2` + `pipeline_status: "failed"` make `DidNotRun` machine-distinguishable with no reason needed (the safety contract holds on the exit code). For the human reason, run `--json` **without** `-q` and capture stderr — stdout stays pure JSON. mdatron's reason-in-envelope fix (raised in the diagnostic-efficacy feedback) is then a nicety, not a dependency. Folded into A4.
+- **Q2 — template set + destinations → RESOLVED: deploy all 16.** All of `templates/*` deploys; the "6-template" count in #15 is stale and should be corrected. Destinations in C3.
+- **Q3 — init atomicity → RESOLVED: re-run-to-converge.** Match mdatron's v0.1 init posture — idempotent, no transactional atomicity; the manifest is written last so a partial init re-runs cleanly. Folded into B10.
+- **Q4 — manifest migration → RESOLVED: sha-first, conservative.** A pre-Phase-3 manifest (no `template_version_at_deploy`) is classified by the existing recorded sha: disk == recorded sha → adopt/upgrade + backfill; disk ≠ recorded sha → Conflict (operator review, never silent overwrite). Folded into B7.
+- **Q5 — client module home → RESOLVED: `src/mdatron.rs`; final placement deferred to Phase 4's module map.**
+
+## Remaining phase-1a step
+
+The composition is confirmed and the design questions are resolved; what remains before ratification is the **phase-1a cold-reader (DR) pass** over the behavioral contracts — the Exacting Mentor test that a cold reviewer can construct a falsifying example for any vague contract — iterating until they cannot, then the operator ratifies and this merges.
