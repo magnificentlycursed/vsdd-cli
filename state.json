@@ -1,6 +1,6 @@
 {
   "next_display_id": 818,
-  "next_comment_id": 1145,
+  "next_comment_id": 1146,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10346,7 +10346,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:33:06.937966Z",
-      "updated_at": "2026-07-29T01:00:17.116588Z",
+      "updated_at": "2026-07-29T01:02:37.048724Z",
       "labels": [
         "spec-amendment"
       ],
@@ -10368,6 +10368,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAORdmscYQmv4DzpRTo7lFbXMsSejsQuas0aZM0lxFoXX1bW8a7CWRx3wXaBqN3jcxUfiQq2+igjTDEkQXxuT1AQ=="
+        },
+        "0ef85e9b-af3c-4436-bef1-2370bbb3b5df": {
+          "display_id": 1145,
+          "author": "xqjG",
+          "content": "RED TEAM ESCAPE ANALYSIS (design v2, 2 adversaries, Opus 4.8) — BOTH return golden_path_verdict = NOT-THE-EASY-PATH. This challenges the design core, correctly.\nMASTER FINDING: every now-built v2 control is detection-only, non-blocking, surfaced through a vsdd status poll — while ALL real enforcement seams (Layer-4 install/hooks, Layer-6 gates, Layer-7 conformance, #816 mdatron) are downstream/unbuilt. During the bootstrap window v2 targets, it REBUILDS THE EXACT CORPUS TOPOLOGY: a record a human must read, caught by the operator, never by a control. The six-round collapse re-runs identically. And the incentive gradient still favors deviation: for every flagship escape (hand-roll design, fix-in-place, phase-compress) the deviation stays cheaper than compliance because nothing FORCES the compliant path; bootstrap format-carries are conventions the contract itself says fail because they depend on the agent choosing to comply.\nBLOCKING ESCAPES: (1) detection-only = advisory, not enforcement, in bootstrap [both]; (2) the keystone audits every OTHER mechanism but nothing audits whether the AUDIT ran — it is exempt from its own discipline (absence of a poll leaves no trace) [A]; (3) the incentive gradient points away from compliance [B]; (4) the \"non-bypassable Layer-6 backstop\" is a commit-time gate skippable via --no-verify (true non-bypassability needs server-side CI) [A].\nSUBSTANTIVE ESCAPES: disposition-closure exemption = universal routing bypass (relabel fix-closes as consolidated/dismissed); fix-with-no-owning-finding is invisible to routing detection (the June narration pattern); state.yaml composition is agent-authored so \"tamper-evident\" is a category error (git proves authorship not truth); routing edge checked for PRESENCE not correctness (attach to any target); pin --update re-pin passes the drift gate without re-review; phase-transition gate reads self-authored records; SELF-MODIFICATION — the agent edits the detection scripts (managed artifacts it can also edit); an unwired instance control is a silent aggregate gap; done-conditions are self-authored 2-fixture tests.\nKEY BUILDABLE-NOW FIX (Adversary A): bind the now-built detection to a FIRED seam that exists today — a session-stop hook that runs status and non-zero-exits on any new integrity finding, and/or the existing git pre-commit refusing a governed-set commit while an unrouted/ungated finding stands — so deviation produces compiler-shaped feedback, not a latent record. Absent that, mark the increment honestly as ADVISORY, not enforcement. This reopens dogfood decision (A): a forcing seam IS buildable now (the repo already has a pre-commit), so detection-only-without-a-seam was the wrong scoping.\nFolding into v3 with the terminal-verify + the wider-eval #817 (still running).",
+          "created_at": "2026-07-29T01:02:37.035544Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAGneCJ7kwjJsk1ysk9eg7DRecSVHMeO05KsfZcG8KOcSuxNTaiEE3nbMbI1HbVE0sr0d+Uo5ofL/3kYHdeCPcBg=="
         },
         "12cf4591-361b-4493-95b4-4ef2f4db1f18": {
           "display_id": 1128,
@@ -26311,11 +26320,16 @@
       "agent_id": "xqjG",
       "agent_seq": 630,
       "timestamp": "2026-07-29T01:00:17.116588Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 631,
+      "timestamp": "2026-07-29T01:02:37.048724Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T01:00:17.116588Z",
+    "timestamp": "2026-07-29T01:02:37.048724Z",
     "agent_id": "xqjG",
-    "agent_seq": 630
+    "agent_seq": 631
   }
 }
