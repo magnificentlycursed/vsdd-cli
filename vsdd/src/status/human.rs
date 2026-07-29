@@ -55,6 +55,13 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
         (None, _) => out.push_str("  phase: not entered\n"),
     }
     out.push_str(&format!("  next action: {}\n", answer.next_action));
+    // A next action driven by a state-sourced gate verdict names that
+    // verdict's provenance: it is a self-report from the agent-writable state
+    // artifact, evidence unresolved to a boundary — never verified
+    // advancement (vsdd-cli #818 Fix 1).
+    if answer.gate_provenance.is_some() {
+        out.push_str("    (gate: unverified self-report — evidence not resolved to a boundary)\n");
+    }
     // The mode renders through its registered serde name — the enum
     // carries no display of its own by design.
     let mode = serde_json::to_value(answer.active_composition.mode)

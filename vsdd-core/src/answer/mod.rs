@@ -9,6 +9,24 @@ use serde::{Deserialize, Serialize};
 
 use crate::state::ActiveComposition;
 
+/// The provenance of a gate verdict that drove `next_action` (contract:
+/// Trust boundaries; vsdd-cli #818 Fix 1). `read_state` validates only the
+/// state artifact's shape, and a `GateResult`'s `evidence` is a free string
+/// never resolved to a real boundary — so a gate verdict read from the
+/// agent-writable state artifact is a SELF-REPORT, not a verified result.
+/// The derivation and the machine/human forms mark it as such so a
+/// self-authored `last_gate_result{result: pass}` is never presented as
+/// verified advancement. The mechanized gate (its evidence resolved to a
+/// commit/boundary) is what earns a verified provenance, added there.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "kebab-case")]
+pub enum GateProvenance {
+    /// The driving gate result came from the state artifact with evidence
+    /// unresolved to a boundary — trusted for the derivation's flow, but
+    /// never asserted as a verified verdict.
+    UnverifiedSelfReport,
+}
+
 /// The one computed answer behind all three Status renderings.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -20,6 +38,12 @@ pub struct PhaseAnswer {
     /// are outside this output domain (operator ruling, vsdd-cli #689).
     pub next_action: String,
     pub active_composition: ActiveComposition,
+    /// Present exactly when `next_action` was driven by a state-sourced gate
+    /// verdict (the phase-2a/2b/2c advancement arms); marks that verdict's
+    /// provenance so a self-authored `last_gate_result` is never presented as
+    /// verified (vsdd-cli #818 Fix 1). Absent when no gate drove the action.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub gate_provenance: Option<GateProvenance>,
     /// The degraded kind — present exactly when corroboration is absent
     /// or unusable, never a bare flag (tracker-absent | tracker-unusable).
     #[serde(default, skip_serializing_if = "Option::is_none")]

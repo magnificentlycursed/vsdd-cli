@@ -28,6 +28,7 @@ use std::path::{Path, PathBuf};
 use serde::Deserialize;
 
 use vsdd_core::answer::derive::derive_phase_answer;
+use vsdd_core::answer::GateProvenance;
 use vsdd_core::registry::{self, sets::CompositionScopeAndActions, sets::StatuslineData};
 use vsdd_core::snapshot::Snapshot;
 use vsdd_core::state::read_state;
@@ -59,6 +60,8 @@ struct Expected {
     phase: Option<String>,
     layer: Option<u32>,
     next_action: String,
+    #[serde(default)]
+    gate_provenance: Option<GateProvenance>,
     degraded: Option<String>,
     integrity_findings: Vec<String>,
 }
@@ -96,6 +99,10 @@ fn every_corpus_fixture_matches_its_reference_answer() {
             "{name}: next action, exact match against the vocabulary"
         );
         assert_eq!(answer.degraded, expected.degraded, "{name}: degraded kind");
+        assert_eq!(
+            answer.gate_provenance, expected.gate_provenance,
+            "{name}: gate provenance — a state-sourced gate verdict driving next_action is marked unverified-self-report (#818 Fix 1)"
+        );
         // The composition passes through untouched — the answer echoes
         // the state's own record, never a recomputation (vsdd-cli #749).
         assert_eq!(

@@ -4,5 +4,10 @@
 phase: phase-2a
 layer: 2
 next_action: close-phase
+# The close-phase action is driven by the state's own red-gate record, whose
+# evidence is never resolved to a boundary — so it is a self-report, marked
+# accordingly and never presented as verified advancement (vsdd-cli #818 Fix 1;
+# oracle redline for operator adoption).
+gate_provenance: unverified-self-report
 degraded: null
 integrity_findings: []

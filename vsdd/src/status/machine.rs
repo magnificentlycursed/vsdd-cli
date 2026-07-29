@@ -28,6 +28,10 @@ pub fn render_machine(
             "phase": answer.phase,
             "layer": answer.layer,
             "next_action": answer.next_action,
+            // Present when a state-sourced gate verdict drove next_action;
+            // marks it unverified-self-report so an agent never reads a
+            // self-authored gate record as verified advancement (#818 Fix 1).
+            "gate_provenance": answer.gate_provenance,
             "active_composition": serde_json::to_value(&answer.active_composition)
                 .unwrap_or(serde_json::Value::Null),
             "display": {
