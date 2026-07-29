@@ -16241,11 +16241,12 @@
       "display_id": 10,
       "title": "Phase 2b: vsdd init pre-flight check",
       "description": "Goal: \n\nAcceptance criteria:\n- \n\nImplement vsdd::preflight module with: PreflightReport struct + CheckResult enum + check_environment(cwd) function; per-check probes for git repo presence, crosslink on PATH, mdatron on PATH, cargo on PATH. Wire vsdd init --check to print the report. Per Phase 2b primer: SE primary + QE + PE; Rust supplement. Minimal file deployment + ProjectInitialized event emission land in subsequent Phase 2b iterations.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:21:12.118751Z",
-      "updated_at": "2026-07-29T10:05:03.163812Z",
+      "updated_at": "2026-07-29T10:05:09.265494Z",
+      "closed_at": "2026-07-29T10:05:09.265480Z",
       "labels": [
         "feature",
         "phase-2b",
@@ -27650,11 +27651,16 @@
       "agent_id": "xqjG",
       "agent_seq": 736,
       "timestamp": "2026-07-29T10:05:03.163812Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 737,
+      "timestamp": "2026-07-29T10:05:09.265494Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:05:03.163812Z",
+    "timestamp": "2026-07-29T10:05:09.265494Z",
     "agent_id": "xqjG",
-    "agent_seq": 736
+    "agent_seq": 737
   }
 }
