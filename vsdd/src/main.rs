@@ -23,6 +23,9 @@ enum Command {
     /// Answer the phase question: human form by default, machine form
     /// for agents, one-line segment for statusline surfaces.
     Status(StatusArgs),
+    /// The routing-before-fix guardrail: block when a finding closed by fix
+    /// carries no routing. Exit 0 pass, 1 blocked, 2 unverifiable (fail-closed).
+    Gate(GateArgs),
 }
 
 #[derive(clap::Args, Debug)]
@@ -52,11 +55,19 @@ struct InitArgs {
     ci_mode: bool,
 }
 
+#[derive(clap::Args, Debug)]
+struct GateArgs {
+    /// Render the verdict as JSON instead of human text.
+    #[arg(long)]
+    machine: bool,
+}
+
 fn main() -> ExitCode {
     let cli = Cli::parse();
     match cli.command {
         Command::Init(args) => cmd_init(args),
         Command::Status(args) => cmd_status(args),
+        Command::Gate(args) => cmd_gate(args),
     }
 }
 
@@ -169,6 +180,77 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
                 eprint!("{}", surfaces.human);
             }
             ExitCode::from(1)
+        }
+    }
+}
+
+fn cmd_gate(args: GateArgs) -> ExitCode {
+    use vsdd_core::answer::integrity::{gate_verdict, GateVerdict};
+
+    let cwd = match std::env::current_dir() {
+        Ok(p) => p,
+        Err(e) => {
+            eprintln!("vsdd gate: cannot read current directory: {e}");
+            return ExitCode::from(2);
+        }
+    };
+    let snapshot = vsdd_core::snapshot::acquire::acquire_snapshot(&cwd);
+    match gate_verdict(&snapshot) {
+        GateVerdict::Pass => {
+            if args.machine {
+                println!(
+                    "{}",
+                    serde_json::json!({"gate": "unrouted-findings", "verdict": "pass"})
+                );
+            } else {
+                println!(
+                    "vsdd gate: pass — no unrouted findings in the forward-only universe \
+                     (routing-before-fix satisfied)"
+                );
+            }
+            ExitCode::SUCCESS
+        }
+        GateVerdict::Block(handles) => {
+            if args.machine {
+                println!(
+                    "{}",
+                    serde_json::json!({
+                        "gate": "unrouted-findings",
+                        "verdict": "block",
+                        "unrouted": handles,
+                    })
+                );
+            } else {
+                eprintln!(
+                    "vsdd gate: BLOCKED — {} finding(s) closed by fix without filed routing:",
+                    handles.len()
+                );
+                for handle in &handles {
+                    eprintln!(
+                        "  {handle} — file a routing `plan` comment naming the target phase, \
+                         or the fix lane"
+                    );
+                }
+            }
+            ExitCode::from(1)
+        }
+        GateVerdict::Unverifiable(reason) => {
+            // Fail-closed: an unverifiable acquisition blocks, distinct from a
+            // clean pass and from a findings block (exit 2, mirroring mdatron's
+            // pipeline-failure code).
+            if args.machine {
+                println!(
+                    "{}",
+                    serde_json::json!({
+                        "gate": "unrouted-findings",
+                        "verdict": "unverifiable",
+                        "reason": reason,
+                    })
+                );
+            } else {
+                eprintln!("vsdd gate: UNVERIFIABLE (fail-closed) — {reason}");
+            }
+            ExitCode::from(2)
         }
     }
 }

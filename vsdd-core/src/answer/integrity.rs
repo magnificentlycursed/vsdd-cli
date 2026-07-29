@@ -8,7 +8,7 @@
 //! `templates/registry/snapshot-schema.md` — a declared mirror like the
 //! loader's recovery constant, pinned by the convergence corpus.
 
-use crate::snapshot::Snapshot;
+use crate::snapshot::{AcquisitionOutcome, Snapshot};
 use crate::state::State;
 
 /// Run the snapshot-scoped checks; returns finding kinds, deduplicated,
@@ -75,14 +75,7 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
     // routing amendment's ratification boundary, carried on the record's
     // `closed_before_ratification` datum. An integrity finding that never
     // degrades the answer, exactly like its siblings.
-    if snapshot.finding_fields_acquired.spine
-        && snapshot.findings.iter().any(|f| {
-            f.status == "closed"
-                && f.disposition.is_none()
-                && !f.closed_before_ratification
-                && !f.routing_present
-        })
-    {
+    if !unrouted_findings(snapshot).is_empty() {
         push("unrouted-findings", &mut kinds);
     }
 
@@ -101,9 +94,69 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
     kinds
 }
 
+/// The unrouted-findings query as a standalone predicate (vsdd-cli #820): the
+/// handles of findings closed by FIX — closed, and not an exempt disposition
+/// closure — that sit in the forward-only universe (REQ-5, not closed before the
+/// ratification boundary) and carry no filed routing. Empty when the spine field
+/// group was not acquired (the field-readiness gate). `snapshot_integrity` emits
+/// the `unrouted-findings` kind iff this is non-empty, and the `vsdd gate`
+/// guardrail blocks on it — one predicate, so the report and the block never
+/// diverge.
+pub fn unrouted_findings(snapshot: &Snapshot) -> Vec<String> {
+    if !snapshot.finding_fields_acquired.spine {
+        return Vec::new();
+    }
+    snapshot
+        .findings
+        .iter()
+        .filter(|f| {
+            f.status == "closed"
+                && f.disposition.is_none()
+                && !f.closed_before_ratification
+                && !f.routing_present
+        })
+        .map(|f| f.handle.clone())
+        .collect()
+}
+
+/// The routing-before-fix guardrail's verdict over an acquired snapshot
+/// (vsdd-cli #820). Fail-closed: an unverifiable acquisition blocks, never
+/// passes vacuously.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum GateVerdict {
+    /// No unrouted findings — the gate passes.
+    Pass,
+    /// Findings closed by fix without routing — the handles that need routing.
+    Block(Vec<String>),
+    /// The acquisition could not be verified (tracker absent or unusable); the
+    /// gate blocks rather than pass on an unchecked run.
+    Unverifiable(String),
+}
+
+/// Compute the guardrail verdict (vsdd-cli #820): Acquired → Pass or Block on the
+/// unrouted-findings query; Absent or Unusable → Unverifiable (fail-closed).
+pub fn gate_verdict(snapshot: &Snapshot) -> GateVerdict {
+    match snapshot.acquisition_outcome {
+        AcquisitionOutcome::Acquired => {
+            let unrouted = unrouted_findings(snapshot);
+            if unrouted.is_empty() {
+                GateVerdict::Pass
+            } else {
+                GateVerdict::Block(unrouted)
+            }
+        }
+        AcquisitionOutcome::Absent => GateVerdict::Unverifiable(
+            "crosslink tracker absent — routing cannot be verified".to_string(),
+        ),
+        AcquisitionOutcome::Unusable => GateVerdict::Unverifiable(
+            "crosslink tracker unusable — routing cannot be verified".to_string(),
+        ),
+    }
+}
+
 #[cfg(test)]
 mod tests {
-    use super::snapshot_integrity;
+    use super::{gate_verdict, snapshot_integrity, unrouted_findings, GateVerdict};
     use crate::snapshot::{AcquisitionOutcome, FindingFieldsAcquired, FindingRecord, Snapshot};
     use crate::state::schema::{ActiveComposition, CompositionMode, OpenFindingsPointer, State};
 
@@ -185,5 +238,79 @@ mod tests {
             kinds.iter().any(|k| k == "findings-missing-owner-or-validator"),
             "lifecycle-role check fires when its fields were acquired"
         );
+    }
+
+    // ── The routing-before-fix guardrail (Slice 1, vsdd-cli #820) ────────────
+
+    fn closed_unrouted_finding(handle: &str) -> FindingRecord {
+        FindingRecord {
+            handle: handle.to_string(),
+            status: "closed".to_string(),
+            owner: None,
+            validator: None,
+            evidence_reference_present: false,
+            disposition: None,
+            routing_present: false,
+            closed_before_ratification: false,
+        }
+    }
+
+    #[test]
+    fn unrouted_findings_lists_closed_fix_closes_without_routing() {
+        let snap = snapshot_with(
+            vec![closed_unrouted_finding("#77")],
+            FindingFieldsAcquired::SPINE_ONLY,
+        );
+        assert_eq!(unrouted_findings(&snap), vec!["#77".to_string()]);
+        // AC-5: snapshot_integrity emits the kind iff the query is non-empty —
+        // the report and the gate share one predicate, so they never diverge.
+        assert!(snapshot_integrity(&minimal_state(), &snap)
+            .iter()
+            .any(|k| k == "unrouted-findings"));
+    }
+
+    #[test]
+    fn unrouted_findings_excludes_routed_disposition_and_out_of_universe() {
+        let mut routed = closed_unrouted_finding("#1");
+        routed.routing_present = true;
+        let mut disposed = closed_unrouted_finding("#2");
+        disposed.disposition = Some("dismissed".to_string());
+        let mut pre_boundary = closed_unrouted_finding("#3");
+        pre_boundary.closed_before_ratification = true;
+        let snap = snapshot_with(
+            vec![routed, disposed, pre_boundary],
+            FindingFieldsAcquired::SPINE_ONLY,
+        );
+        assert!(unrouted_findings(&snap).is_empty());
+        assert!(!snapshot_integrity(&minimal_state(), &snap)
+            .iter()
+            .any(|k| k == "unrouted-findings"));
+    }
+
+    #[test]
+    fn gate_blocks_unrouted_passes_clean_and_fails_closed_on_degraded() {
+        let unrouted = snapshot_with(
+            vec![closed_unrouted_finding("#77")],
+            FindingFieldsAcquired::SPINE_ONLY,
+        );
+        assert_eq!(
+            gate_verdict(&unrouted),
+            GateVerdict::Block(vec!["#77".to_string()]),
+            "an unrouted fix-close blocks, naming the handle"
+        );
+
+        let clean = snapshot_with(Vec::new(), FindingFieldsAcquired::SPINE_ONLY);
+        assert_eq!(gate_verdict(&clean), GateVerdict::Pass);
+
+        // Fail-closed: an unverifiable acquisition blocks, never passes.
+        let mut absent = snapshot_with(Vec::new(), FindingFieldsAcquired::SPINE_ONLY);
+        absent.acquisition_outcome = AcquisitionOutcome::Absent;
+        assert!(matches!(gate_verdict(&absent), GateVerdict::Unverifiable(_)));
+        let mut unusable = snapshot_with(Vec::new(), FindingFieldsAcquired::SPINE_ONLY);
+        unusable.acquisition_outcome = AcquisitionOutcome::Unusable;
+        assert!(matches!(
+            gate_verdict(&unusable),
+            GateVerdict::Unverifiable(_)
+        ));
     }
 }
