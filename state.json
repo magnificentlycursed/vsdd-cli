@@ -3308,11 +3308,12 @@
       "uuid": "193da836-d03a-41e7-90b8-a198752415ab",
       "display_id": 819,
       "title": "Phase-1c re-decomposition: horizontal component layers -> vertical capability slices, enforcement live-early (driven by the Layer-3 audit + the agent-first-controls Red Team convergence)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:44:17.238741Z",
-      "updated_at": "2026-07-29T04:14:30.370477Z",
+      "updated_at": "2026-07-29T04:14:36.601165Z",
+      "closed_at": "2026-07-29T04:14:36.601153Z",
       "labels": [
         "spec-amendment"
       ],
@@ -26705,11 +26706,16 @@
       "agent_id": "xqjG",
       "agent_seq": 659,
       "timestamp": "2026-07-29T04:14:30.370477Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 660,
+      "timestamp": "2026-07-29T04:14:36.601165Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T04:14:30.370477Z",
+    "timestamp": "2026-07-29T04:14:36.601165Z",
     "agent_id": "xqjG",
-    "agent_seq": 659
+    "agent_seq": 660
   }
 }
