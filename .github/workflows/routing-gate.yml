@@ -1,0 +1,66 @@
+name: routing gate
+
+# The routing-before-fix guardrail (vsdd-cli #820, Slice 1): blocks a PR when a
+# finding closed by fix carries no filed routing (`vsdd gate` — exit 0 pass, 1
+# blocked, 2 unverifiable/fail-closed). It consumes the LIVE crosslink tracker,
+# so it installs crosslink and hydrates the tracker (crosslink sync from the hub
+# branch) before running the gate.
+#
+# crosslink is consumed from the mirror's `develop` branch until crosslink
+# merges develop -> main (operator ruling; the consumption posture + the read
+# surface we depend on are logged at magnificentlycursed/crosslink#1). When
+# develop -> main lands, re-pin `ref:` to a main release tag.
+#
+# To make this a hard block, mark "routing gate" a required status check in the
+# branch-protection settings (the CI-backed-block grade; branch protection is
+# the operator's to set).
+
+on:
+  pull_request:
+
+concurrency:
+  group: routing-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  routing-gate:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout vsdd-cli
+        uses: actions/checkout@v4
+        with:
+          path: vsdd-cli
+          # Full history so the crosslink hub branch is fetchable for `sync`.
+          fetch-depth: 0
+
+      - name: Checkout crosslink (develop)
+        uses: actions/checkout@v4
+        with:
+          repository: magnificentlycursed/crosslink
+          ref: develop
+          path: crosslink
+
+      - name: Install Rust toolchain
+        run: rustup show
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            crosslink/target
+            vsdd-cli/target
+          key: cargo-routing-gate-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock') }}
+
+      - name: Install crosslink CLI (@ develop, until develop -> main)
+        working-directory: crosslink
+        run: cargo install --path . --locked
+
+      - name: Hydrate the tracker from the hub
+        working-directory: vsdd-cli
+        run: crosslink sync
+
+      - name: Run the routing-before-fix gate
+        working-directory: vsdd-cli
+        run: cargo run -p vsdd -- gate
