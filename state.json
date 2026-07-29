@@ -1,6 +1,6 @@
 {
   "next_display_id": 822,
-  "next_comment_id": 1181,
+  "next_comment_id": 1182,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4162,7 +4162,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T06:25:04.079684Z",
+      "updated_at": "2026-07-29T06:42:17.994287Z",
       "labels": [
         "feature"
       ],
@@ -4229,6 +4229,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAy7XNkpUhpnlXjN7v6iKuCpeyzcjEoZX4ELH8e7NY1MBnKPrp98C7vtXorpuPt8T5TWOI0tG26vv6jpRQdq0xBQ=="
+        },
+        "b6792f36-c663-456e-a97c-f24b468d2456": {
+          "display_id": 1181,
+          "author": "xqjG",
+          "content": "MDATRON 0.1.0 -> 0.3.0 UPGRADE FEEDBACK (from vsdd-cli's actual flip, 2026-07-28 — adoption experience; the clear-to-publish #48 verdict still follows after a couple slices per operator):\n\nWORKED WELL:\n1. E0080 jurisdiction path: migration was config.yaml ALONE, no code/corpus changes. 'no jurisdiction declared' pointed straight at the fix.\n2. `mdatron init` idempotency + the adopter/managed split is the standout. On a mirror of our exact hand-built 0.1.x layout, init added ONLY the missing managed manifest.yaml and preserved our adopter-owned config.yaml verbatim (hash-checked). The adopter-owned (config.yaml) vs managed (manifest.yaml, 'do not edit by hand', E0060) partition is clean and the seeded files state their own ownership. Refusing a hand-modified managed file with E0060 is exactly right.\n3. families report (#90): emitted on verify --json. Good.\n4. Tag hygiene: v0.3.0 properly bumps Cargo.toml to 0.3.0.\n5. End-to-end: our pre-commit guardrail ran v0.3.0 verify live during the flip commit — clean.\n\nFEEDBACK / QUESTIONS FROM REAL USE:\nA. families active/inactive SEMANTICS need documenting — this is load-bearing for us. On a CLEAN run (0 findings) we get schema=active, vocabulary/route/pin/citation=inactive, EVEN THOUGH we set vocabulary_globs (methodology.md, DESIGN-*.md). So 'active' is not 'produced findings' (run was clean) and 'inactive' is not 'not configured' (vocabulary IS configured). For families to serve as the un-invoked-mechanism audit signal we asked for, we need to distinguish 'invoked, ran, nothing to act on (clean)' from 'not invoked / not applicable'. Please document precisely what active vs inactive mean, ideally tri-state.\nB. init discoverability on 0.1.x->0.3.x upgrades: we hand-built .mdatron/ under 0.1.x and never knew to run init; verify is clean WITHOUT manifest.yaml, so nothing surfaced the missing managed manifest. E0080 flagged config.yaml but nothing pointed at the manifest gap. Suggest a migration note ('run mdatron init after upgrading') or a verify hint when .mdatron/ predates the managed-manifest layout.\nC. pin (#84): `mdatron pin` reports 'no pin record (pins.yaml absent)'. Is pins.yaml part of the recommended adoption baseline, or an advanced opt-in? init does not scaffold it. Clarify in adoption docs.",
+          "created_at": "2026-07-29T06:42:17.965585Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAr/nyqAP7grO1KSqL1eFk5A+9oQuMYW2wUxyIFuo1kNOHJKL9kEPtdqhQ7E3L2i4+WCTyF3I41EFTOlOLcOecAg=="
         },
         "b9f7802e-2d09-48eb-8a88-9645731201d7": {
           "display_id": 1138,
@@ -26963,11 +26972,16 @@
       "agent_id": "xqjG",
       "agent_seq": 681,
       "timestamp": "2026-07-29T06:27:39.452058Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 682,
+      "timestamp": "2026-07-29T06:42:17.994287Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T06:27:39.452058Z",
+    "timestamp": "2026-07-29T06:42:17.994287Z",
     "agent_id": "xqjG",
-    "agent_seq": 681
+    "agent_seq": 682
   }
 }
