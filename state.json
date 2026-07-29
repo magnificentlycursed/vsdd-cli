@@ -1,6 +1,6 @@
 {
   "next_display_id": 823,
-  "next_comment_id": 1186,
+  "next_comment_id": 1187,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7194,7 +7194,18 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T07:46:22.276519Z",
-      "updated_at": "2026-07-29T07:46:22.276519Z"
+      "updated_at": "2026-07-29T07:47:09.859486Z",
+      "comments": {
+        "4105ef8e-c93d-49cf-a0eb-d606d6e3f3bd": {
+          "display_id": 1186,
+          "author": "xqjG",
+          "content": "CAPTURE incorporating a 6-domain analysis (AI Engineer, Red Team, Software Engineer, Quality Engineer, Documentation Reviewer, Platform Engineer), each grounded in its vsdd domain prompt + live v0.3.0 output. Discovered dogfooding the mdatron v0.3.0 flip (#816). Full analysis: scratchpad/mdatron-diagnostic-efficacy-analysis.md (this session).\n\nTHEME: mdatron cannot tell 'checked N files, all clean' from 'checked nothing', and several ordinary conditions collapse a real problem into a green result. The enforcement spine we're building rests on that guardrail and inherits the blind spots.\n\nMETA-HARNESS FINDINGS (ours):\n- M1 conformance-clean != test-green: the pre-commit/CI gate is 'mdatron verify' ONLY; it never runs the toolkit's own tests, and nothing treated swapping the conformance engine (the v0.3.0 flip) as high-blast-radius. The flip landed as a clean boundary commit while the test suite was red; I compounded it by asserting 'clean' on partial verification (the false-assurance class #818 targets). The harness caught its builder committing the sin the harness exists to prevent.\n- M2 'mdatron verify: clean' is NOT self-evidently non-vacuous: files_checked counts files-WITH-FINDINGS (verified: clean repo -> 0, identical to empty jurisdiction). No envelope field proves coverage.\n- M3 the terminology / no-coined-labels register is DORMANT: config sets vocabulary_globs but families.vocabulary=inactive -> that load-bearing guardrail is not running and nothing said so.\n- M4 self-audit bypass: an agent can shrink config.yaml file_globs / use --files to escape the corpus it is judged against -- sanctioned (E0060 says jurisdiction edits 'do not drift') and undetected. A self-hosted meta-harness can't detect an agent shrinking its own jurisdiction.\n- M5 harness silent-tests pass VACUOUSLY: e0207_silent_* assert a code is ABSENT; an empty findings array satisfies that whether the check ran clean OR never ran. TempProject::run() reads only findings[].code, never pipeline_status.\n- M6 CI stale + fail-open: mdatron-verify.yml/mdatron-test.yml reference pre-collapse mdatron-cli/mdatron-core, float to mdatron main (skew vs pinned 0.3.x local); pre-commit version guard warns-then-proceeds.\n\nINIT QUESTION (operator asked): init PREVENTS+RESOLVES the flip trigger and our fix eac65898 applies it correctly (seeds schemas/patterns THEN inits, so schemas aren't empty -- avoiding the Red Team dissent's 'fresh-init clean over nothing' trap). BUT init is scaffolding, not armor -- the fix is CORRECT-BUT-INCOMPLETE: the silent tests still pass vacuously; the naive control 'files_checked > 0' does NOT work (M2). Durable prevention is a coverage assertion (F1), not init.\n\nFOLLOW-ONS: F1 add positive controls to silent tests (assert pipeline_status==ok AND families.<family>==active, or a sentinel; make TempProject::run assert pipeline_status) -- completes eac65898/closes M5. F2 investigate M3 (why vocabulary inactive). F3 spine gate runs cargo test + treats guardrail-swap as full-re-verify (M1). F4 CI re-pin to a released mdatron binary + fail-closed version guard (M6). F5 standing non-vacuity proof for verify-clean (M2; depends on mdatron adding files_walked). F6 relay the mdatron diagnostic feedback (operator-mediated; 10 substantive items in the analysis Part 2).\n\nNot fixing here (route-before-fix): this is the capture. Follow-ons to be scheduled against the enforcement-spine work.",
+          "created_at": "2026-07-29T07:47:09.842322Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIeLdhJDuC2ql9piYZXlE8ZFEFXbmPqu08EUh7zOtXT4YDa8vQY6W4lSHUUkMDx1CGxGbOZ6mGKGhXvHbHmAhAQ=="
+        }
+      }
     },
     "47255ef5-c093-4d1f-8ed0-d192b2bf1dbf": {
       "uuid": "47255ef5-c093-4d1f-8ed0-d192b2bf1dbf",
@@ -27058,11 +27069,16 @@
       "agent_id": "xqjG",
       "agent_seq": 688,
       "timestamp": "2026-07-29T07:46:30.914823Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 689,
+      "timestamp": "2026-07-29T07:47:09.859486Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T07:46:30.914823Z",
+    "timestamp": "2026-07-29T07:47:09.859486Z",
     "agent_id": "xqjG",
-    "agent_seq": 688
+    "agent_seq": 689
   }
 }
