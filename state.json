@@ -23630,11 +23630,12 @@
       "display_id": 7,
       "title": "Strengthen bootstrap-validator: detect VSDD-E0050 phase-composition-not-declared",
       "description": "Goal: \n\nAcceptance criteria:\n- \n\nBootstrap-validator currently covers 5 cascade-prone patterns (count drift, orphan rules, broken anchors, header-vs-table, schema_class). Doesn't yet catch VSDD-E0050 (phase-composition-not-declared). The Step 3 first-attempt drift would have been caught if this check existed. Implementation: scan commits for prose-surface or implementation work; require .vsdd/events/*.yaml composition declaration OR commit-message YAML block. Throwaway script — bounded value until mdatron-core's full hook chain operates.",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:05:31.856735Z",
-      "updated_at": "2026-07-29T10:04:36.990637Z",
+      "updated_at": "2026-07-29T10:04:43.098759Z",
+      "closed_at": "2026-07-29T10:04:43.098747Z",
       "labels": [
         "bootstrap",
         "feature",
@@ -27606,11 +27607,16 @@
       "agent_id": "xqjG",
       "agent_seq": 732,
       "timestamp": "2026-07-29T10:04:36.990637Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 733,
+      "timestamp": "2026-07-29T10:04:43.098759Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:04:36.990637Z",
+    "timestamp": "2026-07-29T10:04:43.098759Z",
     "agent_id": "xqjG",
-    "agent_seq": 732
+    "agent_seq": 733
   }
 }
