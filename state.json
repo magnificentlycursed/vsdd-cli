@@ -2949,11 +2949,12 @@
       "display_id": 3,
       "title": "Expand claude-code-cli supplement: hook event catalog + MCP + sub-agents + OTel signal catalog + FinOps queries",
       "description": "Goal: \n\nAcceptance criteria:\n- \n\nFor the revised AIE domain (crosslink #2) to actually answer substrate questions concretely, claude-code-cli supplement needs new sections: (1) Hook event catalog — SessionStart / PreToolUse / PostToolUse / UserPromptSubmit / Stop / SubagentStop / Notification — each with doc URL, firing-conditions, cost-impact, problem-to-hook mapping; (2) MCP server pattern — registration, tool surface; (3) Sub-agent via Task tool — when to use, prompt structure, cost; (4) Statusline + CLAUDE.md + slash commands + background tasks; (5) OTel signal catalog — metrics, log events, traces, FinOps queries, hook-attribute-injection bridge for per-skill/per-domain/per-phase attribution. Substantial but tractable.",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:04:39.841601Z",
-      "updated_at": "2026-07-29T10:03:44.597742Z",
+      "updated_at": "2026-07-29T10:03:50.806127Z",
+      "closed_at": "2026-07-29T10:03:50.806116Z",
       "labels": [
         "ai-engineer",
         "feature",
@@ -27518,11 +27519,16 @@
       "agent_id": "xqjG",
       "agent_seq": 724,
       "timestamp": "2026-07-29T10:03:44.597742Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 725,
+      "timestamp": "2026-07-29T10:03:50.806127Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-29T10:03:44.597742Z",
+    "timestamp": "2026-07-29T10:03:50.806127Z",
     "agent_id": "xqjG",
-    "agent_seq": 724
+    "agent_seq": 725
   }
 }
