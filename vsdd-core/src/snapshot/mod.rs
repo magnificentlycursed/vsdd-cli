@@ -137,4 +137,9 @@ pub struct Snapshot {
     /// finding-reading integrity checks gate on it. Defaults to all-acquired.
     #[serde(default)]
     pub finding_fields_acquired: FindingFieldsAcquired,
+    /// A worded note when the finding query was capped this acquisition (REQ-4,
+    /// vsdd-cli #820): findings past the cap were not examined. None when the
+    /// query ran whole. Never a silent drop.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub finding_acquisition_note: Option<String>,
 }

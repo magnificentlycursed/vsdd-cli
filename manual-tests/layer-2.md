@@ -18,3 +18,13 @@ the automated suite cannot grade; outcomes recorded on the layer trail.
    finding names the artifact and the repair a tired human can follow.
 4. **The live refs query.** Run the off-grammar query over this repo's
    own branches; confirm the output flags nothing and reads plainly.
+5. **The live finding-query join** (vsdd-cli #820). Run `cargo test -p
+   vsdd-core --lib snapshot::acquire::tests::live_finding_walk_in_isolation
+   -- --ignored --nocapture` against a repo with a live crosslink tracker.
+   Confirm the walk lists exactly the review-round children in the
+   forward-only universe (open, or closed at/after 2026-07-27), and judge
+   each finding's routing (a `plan` comment), disposition (a
+   dismissed/hallucinated/consolidated label), and universe classification
+   against your own read of the tracker. A closed fix-close with no routing
+   is the unrouted-findings condition the guardrail exists to catch.
+   End-to-end via `vsdd status` awaits the milestone-empty-parse fix (#829).

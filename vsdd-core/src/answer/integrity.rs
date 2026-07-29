@@ -154,6 +154,7 @@ mod tests {
             display_work_item: "test".to_string(),
             display_active_milestone: "test".to_string(),
             finding_fields_acquired: acquired,
+            finding_acquisition_note: None,
         }
     }
 
