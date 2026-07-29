@@ -22,12 +22,12 @@ jobs:
       # workspace collapse vsdd consumes the mdatron BINARY (there is no longer
       # a path dependency on mdatron-core). Check out the collapsed repo at the
       # pinned release tag so CI validates against the version the repo targets
-      # (0.3.x), not a floating main (vsdd-cli #824).
+      # (0.4.x), not a floating main (vsdd-cli #824, #830).
       - name: Checkout mdatron
         uses: actions/checkout@v4
         with:
           repository: magnificentlycursed/mdatron
-          ref: v0.3.0
+          ref: v0.4.0
           path: mdatron
 
       - name: Install Rust toolchain
