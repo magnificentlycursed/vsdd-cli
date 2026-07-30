@@ -1,6 +1,6 @@
 {
   "next_display_id": 833,
-  "next_comment_id": 1264,
+  "next_comment_id": 1265,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -3054,7 +3054,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:34:07.114352Z",
-      "updated_at": "2026-07-30T12:19:33.963987Z",
+      "updated_at": "2026-07-30T12:24:40.794701Z",
       "labels": [
         "spec-amendment"
       ],
@@ -3088,6 +3088,15 @@
           "kind": "handoff",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxyamSsF4zeBPSRuhitSd1jDOxJokSbCqnBNdl3RZwYfBtI2qODRJhet9J1LvJQJ+FLZK5TnOeP6vfVTdd9iZBw=="
+        },
+        "46173fc2-f00d-464e-a947-86020904cc97": {
+          "display_id": 1264,
+          "author": "xqjG",
+          "content": "ALL REQUIRED CHECKS GREEN on PR #14: verify pass, test pass, routing-gate pass. PR is mergeable. Awaiting operator merge decision (merge is the operator's act; not auto-merging). Post-merge follow-ons: substrate_anchors frontmatter-key rename (deferred, own owned schema-shape decision); branch cleanup; the workspace-shape amendment stays with #15 (blocked on #14's design cycle).",
+          "created_at": "2026-07-30T12:24:40.779183Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAzMILzLxO06BAMpiNmlF9byDEz8JdA2gh0LS1m2IDIqqLuQoAP67oy01zocPmUBDAKX1lvikRhz0HibmfyV9RBg=="
         },
         "5701da95-9ed3-424f-b0ea-e58d948610b5": {
           "display_id": 1262,
@@ -28896,11 +28905,16 @@
       "agent_id": "xqjG",
       "agent_seq": 846,
       "timestamp": "2026-07-30T12:19:33.963987Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 847,
+      "timestamp": "2026-07-30T12:24:40.794701Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T12:19:33.963987Z",
+    "timestamp": "2026-07-30T12:24:40.794701Z",
     "agent_id": "xqjG",
-    "agent_seq": 846
+    "agent_seq": 847
   }
 }
