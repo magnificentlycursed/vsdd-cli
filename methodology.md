@@ -3,7 +3,7 @@ schema_class: methodology-spec
 methodology_version: 0.1.0
 methodology_anchors: [README.md, DESIGN-METHODOLOGY.md, DESIGN-SCHEMA.md, DESIGN-OBSERVABILITY.md, DESIGN-VERIFICATION.md]
 whitepaper_url: https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00
-substrate_anchors: [https://github.com/dollspace-gay/crosslink, https://code.claude.com/docs/en/agent-sdk/overview]
+dependency_anchors: [https://github.com/dollspace-gay/crosslink, https://code.claude.com/docs/en/agent-sdk/overview]
 last_revision_trigger: "Phase 1a spec authoring per DESIGN-METHODOLOGY § Methodology spec section list"
 ---
 
