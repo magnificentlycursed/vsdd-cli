@@ -278,6 +278,7 @@ fn cmd_init(args: InitArgs) -> ExitCode {
 
     let options = vsdd_core::init::InitOptions {
         ci_mode: args.ci_mode,
+        ..Default::default()
     };
     match vsdd_core::init::init(&cwd, &options) {
         Ok(report) => {

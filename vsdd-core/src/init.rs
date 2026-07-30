@@ -32,6 +32,64 @@ pub struct InitOptions {
     /// CI bootstrap mode: skip operator prompts; use defaults; produce
     /// CI-runtime-shaped outputs.
     pub ci_mode: bool,
+
+    // ── Slice 3 (Install) red-gate seed fields (crosslink #838). ──────────────
+    // The ratified flag surface from `.design/install-slice.md` (REQ-2..6).
+    // These exist so the Phase 2a Red Gate compiles and fails on its named
+    // behavioral assertions; `init()` does not yet act on them (Phase 2b).
+    /// `--force`: overwrite Conflict (operator-edited) files (REQ-3).
+    pub force: bool,
+    /// `--update`: apply ToolkitUpgrade files only (REQ-4).
+    pub update: bool,
+    /// `--no-prompt`: non-interactive; skip Conflict files unless `force` (REQ-5).
+    pub no_prompt: bool,
+    /// `--dry-run`: print the plan and write nothing (REQ-2).
+    pub dry_run: bool,
+    /// The operator's per-file Conflict resolutions — the non-interactive
+    /// stand-in for the interactive prompt's choices (REQ-6). Keyed by the
+    /// artifact's project-relative destination path.
+    pub resolved_conflicts: BTreeMap<String, ConflictChoice>,
+}
+
+/// The per-file three-way classification outcome (REQ-1 / AC-1), mirroring
+/// crosslink's `classify_update`.
+///
+/// Red-gate seed: the variants are the ratified outcomes; [`classify`] is a
+/// placeholder stub Phase 2b implements.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Classification {
+    /// All three hashes equal — skip.
+    Unchanged,
+    /// disk == manifest != template — update.
+    ToolkitUpgrade,
+    /// disk != manifest — the operator-edited case; do not silently overwrite.
+    Conflict,
+    /// Destination absent — deploy.
+    Missing,
+}
+
+/// The operator's resolution of a single Conflict file (REQ-6) — the
+/// non-interactive representation of the interactive prompt's per-file choice.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum ConflictChoice {
+    /// Keep the operator's edit; leave the file byte-unchanged.
+    KeepOperatorEdit,
+    /// Accept the new template; overwrite the file.
+    AcceptNewTemplate,
+}
+
+/// Classify a managed file from the triple `(recorded manifest sha, current
+/// disk sha, new-template sha)` — REQ-1 / AC-1.
+///
+/// Red-gate seed stub: returns a fixed placeholder so the Phase 2a suite
+/// compiles and fails on its named assertions. Phase 2b implements the
+/// three-way (crosslink `classify_update`-mirroring) logic.
+pub fn classify(
+    _manifest_sha: Option<&str>,
+    _disk_sha: Option<&str>,
+    _template_sha: &str,
+) -> Classification {
+    Classification::Missing
 }
 
 /// Per-run deployment outcome.
