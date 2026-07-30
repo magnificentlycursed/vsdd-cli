@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "design_doc": ".design/install-slice.md",
+  "doc_hash": "sha256:a33bcb58e3d32caa19cb0cabdfd41222ec5b24e89d2363d0b012d1be18c51fff",
+  "stage": "designed",
+  "plans": [],
+  "runs": []
+}
