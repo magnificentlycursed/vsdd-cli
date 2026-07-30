@@ -20,7 +20,7 @@
 //!   (Layer 2)
 //! - `integrity_shell` — the shell-side checks: the refs query over
 //!   the registered branch grammar and the three-valued
-//!   session-substrate check (Layer 2)
+//!   installed-artifact-integrity check (Layer 2)
 //! - `schemas::PHASE_PRIMER` — JSON Schema for vsdd-phase-*.md frontmatter
 //! - `schemas::DOMAIN_PROMPT` — JSON Schema for vsdd-domain-*.md frontmatter
 //! - `schemas::SUPPLEMENT` — JSON Schema for vsdd-cli/supplements/*.md frontmatter

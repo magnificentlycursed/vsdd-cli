@@ -1,4 +1,4 @@
-//! The session-substrate check over the installed-artifact manifest
+//! The installed-artifact-integrity check over the installed-artifact manifest
 //! (contract: Conformance at action time, the closed-world install):
 //! three-valued and fail-closed per entry, surfaced in Status as
 //! integrity findings that never degrade the answer.
@@ -28,7 +28,7 @@ pub enum CheckResult {
 }
 
 #[derive(Debug, Clone)]
-pub struct SubstrateFinding {
+pub struct InstalledArtifactFinding {
     pub entry_id: String,
     pub result: CheckResult,
     pub detail: String,
@@ -38,11 +38,11 @@ pub struct SubstrateFinding {
 /// project root equals the repo root (the session-shape rule) — and a
 /// broken binding returns alone, because entry checks against the wrong
 /// root would mislead.
-pub fn session_substrate_check(
+pub fn installed_artifact_integrity_check(
     repo_root: &Path,
     project_root: &Path,
     manifest: &InstalledArtifactManifest,
-) -> Vec<SubstrateFinding> {
+) -> Vec<InstalledArtifactFinding> {
     if repo_root != project_root {
         // Record-destined text names no absolute path (contract clause,
         // vsdd-cli #730): the leaf names locate the mismatch; the
@@ -52,7 +52,7 @@ pub fn session_substrate_check(
                 .map(|n| n.to_string_lossy().into_owned())
                 .unwrap_or_else(|| "(root)".to_string())
         };
-        return vec![SubstrateFinding {
+        return vec![InstalledArtifactFinding {
             entry_id: "project-root-equals-repo-root".to_string(),
             result: CheckResult::Fail,
             detail: format!(
@@ -67,7 +67,7 @@ pub fn session_substrate_check(
     for entry in &manifest.entries {
         let (result, detail) = check_entry(repo_root, &entry.path, &entry.resolution);
         if result != CheckResult::Pass {
-            findings.push(SubstrateFinding {
+            findings.push(InstalledArtifactFinding {
                 entry_id: entry.id.clone(),
                 result,
                 detail,

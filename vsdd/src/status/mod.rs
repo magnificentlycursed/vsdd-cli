@@ -98,7 +98,7 @@ pub struct StatuslineRun {
 /// state artifact, performs exactly ONE snapshot acquisition through
 /// `acquire`, derives once, renders once. Stdin is accepted only to be
 /// counted — the statusline path reads zero bytes of it: the
-/// substrate's session JSON stays cataloged but unconsumed, and the
+/// runtime harness's session JSON stays cataloged but unconsumed, and the
 /// counting seam makes consumption fail a count rather than pass on
 /// output invariance. On a broken state the boundary query replaces
 /// the acquisition and the three-surface composition speaks instead.

@@ -26,7 +26,7 @@ audit:
     - {check: degraded-kind-derivation, consumes: acquisition_outcome, materialized: true}
   shell_side_checks:
     - {check: off-grammar-branch-names, home: "the effectful shell's refs query over this clone's own branches; joins the report there — git references cannot materialize into the snapshot"}
-    - {check: session-substrate-check, home: "the effectful shell over the installed-artifact manifest and the filesystem, including the project-root-equals-repo-root member; joins the report there"}
+    - {check: installed-artifact-integrity-check, home: "the effectful shell over the installed-artifact manifest and the filesystem, including the project-root-equals-repo-root member; joins the report there"}
     - {check: unsigned-event-count, home: "the crosslink's own compaction detection, consumed by the shell; joins the report there"}
   renderer_display_fields:
     - {field: display_repo_name, materialized: true}

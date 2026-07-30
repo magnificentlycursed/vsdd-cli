@@ -5,8 +5,8 @@ A Rust toolkit that interprets + implements [Verified Spec-Driven Development (V
 **Credits + sources:**
 - [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) — the methodology this toolkit implements
 - [VDD whitepaper](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25) — predecessor; introduces the hyper-critical-adversary discipline
-- [crosslink](https://github.com/dollspace-gay/crosslink) — the canonical operational substrate this toolkit composes against
-- [@dollspace.gay](https://bsky.app/profile/dollspace.gay) on Bsky + [dollspace-gay](https://github.com/dollspace-gay) on GitHub — methodology + substrate author
+- [crosslink](https://github.com/dollspace-gay/crosslink) — the canonical operational orchestration layer this toolkit composes against
+- [@dollspace.gay](https://bsky.app/profile/dollspace.gay) on Bsky + [dollspace-gay](https://github.com/dollspace-gay) on GitHub — methodology + crosslink author
 
 **This is not my methodology.** VSDD is dollspace's. This repo is one collaborator's *interpretation and implementation* of that methodology as a Rust toolkit. The toolkit:
 - adds an observability subsystem (OTel + FinOps surfaces) on top of the methodology
@@ -46,7 +46,7 @@ Both readers want clear positioning, named trade-offs, deferred decisions surfac
 
 **Domain abbreviations** (expanded on first use; reference table here for the shorthand used throughout): SO = Solution Owner, SA = Solution Architect, SE = Software Engineer, QE = Quality Engineer, TW = Technical Writer, DR = Documentation Reviewer, UX = User Experience, PE = Platform Engineer, AIE = AI Engineer, Security, Red Team. See the [Domain set](#domain-set) section for the full 18-domain list + activation criteria.
 
-**Substrate abbreviations:** OTel = OpenTelemetry; OTLP = OpenTelemetry Protocol; MCP = Model Context Protocol; SDK = Software Development Kit; SARIF = Static Analysis Results Interchange Format (machine-readable CI output); LSP = Language Server Protocol (IDE integration).
+**Infrastructure abbreviations:** OTel = OpenTelemetry; OTLP = OpenTelemetry Protocol; MCP = Model Context Protocol; SDK = Software Development Kit; SARIF = Static Analysis Results Interchange Format (machine-readable CI output); LSP = Language Server Protocol (IDE integration).
 
 **Evidence references:** `R## F##` (e.g., `R78 F4`, `R91 F1`) refers to the **existing-suite** Review N Finding M — historical methodology-evolution evidence from [`guild-projects/guild-portfolio/vsdd-suite/suite-development/review-log/`](https://github.com/magnificentlycursed/guild-portfolio/tree/main/vsdd-suite/suite-development/review-log). `G-###` (e.g., `G-156`) refers to existing-suite governing findings at [`vsdd-suite/suite-development/FINDINGS-INDEX.md`](https://github.com/magnificentlycursed/guild-portfolio/blob/main/vsdd-suite/suite-development/FINDINGS-INDEX.md). `PR #N` refers to existing-suite pull requests. Bookmark-cli-manual references like `TW R1 F2` are findings from the existing reference-example project's per-domain review logs.
 
@@ -129,7 +129,7 @@ The rebuild's product is:
 A project adopts the suite via:
 
 ```sh
-cargo install crosslink         # substrate (issue tracker + session management)
+cargo install crosslink         # issue tracker + session management
 cargo install mdatron           # validator engine (typed-markdown; Schematron-derived)
 cargo install vsdd              # methodology toolkit (composes against mdatron)
 cd <project-root>
@@ -137,13 +137,13 @@ crosslink init                  # crosslink's own setup
 vsdd init                       # deploys toolkit assets (pre-flights for mdatron presence)
 ```
 
-**Init order is required, not advisory.** `crosslink init` deploys substrate (hooks, MCP servers, rules) that `vsdd init` composes against. `mdatron` must be installed before `vsdd init` runs — vsdd-cli's validator hooks subprocess to `mdatron verify hook <id>` per the canonical-engine discipline (see [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md) § One source; two enforcement surfaces). Running `vsdd init` first (without crosslink) fires `VSDD-E0220: existing-file-malformed-refuse-to-overwrite` on missing crosslink artifacts; running `vsdd init` without mdatron fires `VSDD-E0221: mdatron-not-installed` with the corrective `cargo install mdatron --locked` instruction (per [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 6). The reverse orders are not order-independent by construction.
+**Init order is required, not advisory.** `crosslink init` deploys installed artifacts (hooks, MCP servers, rules) that `vsdd init` composes against. `mdatron` must be installed before `vsdd init` runs — vsdd-cli's validator hooks subprocess to `mdatron verify hook <id>` per the canonical-engine discipline (see [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md) § One source; two enforcement surfaces). Running `vsdd init` first (without crosslink) fires `VSDD-E0220: existing-file-malformed-refuse-to-overwrite` on missing crosslink artifacts; running `vsdd init` without mdatron fires `VSDD-E0221: mdatron-not-installed` with the corrective `cargo install mdatron --locked` instruction (per [`mdatron BOUNDARY-PREAMBLE.md`](../mdatron/BOUNDARY-PREAMBLE.md) § 6). The reverse orders are not order-independent by construction.
 
 **Platform requirement: v1 is GitHub-only.** The methodology's CI-side teeth — bypass-approval label gate, CODEOWNERS auto-routing, SARIF emission, CHANGELOG cooperation, dependency-approval PR-description structure — are GitHub-API-specific. `vsdd init --check` detects non-GitHub remotes and refuses deployment. No commitment to support GitLab / Bitbucket / Forgejo / Codeberg / self-hosted Gitea / sourcehut in v1 or v1+; revisit only with adoption evidence + operator-directive.
 
 `vsdd init` (subcommand of the single `vsdd` Rust binary distributed via `cargo install vsdd`). The shift-left discipline: every defect class preventable at adoption-time gets caught at adoption-time, not at first commit or first session.
 
-**Pre-flight validation (`vsdd init --check`):** runs before deployment — validates git repo present + claude-code installed (substrate version pinned) + crosslink installed (if axis declared) + cargo toolchain + Python version. Reports OK/missing before any artifacts deploy. Prevents mid-init inconsistent state.
+**Pre-flight validation (`vsdd init --check`):** runs before deployment — validates git repo present + claude-code installed (runtime-harness version pinned) + crosslink installed (if axis declared) + cargo toolchain + Python version. Reports OK/missing before any artifacts deploy. Prevents mid-init inconsistent state.
 
 **Deployment steps:**
 
@@ -155,7 +155,7 @@ vsdd init                       # deploys toolkit assets (pre-flights for mdatro
 6. **Interactive auth method prompt** — Plan vs API key; writes `auth_method` + `auth_method_credential_source` to `.vsdd/config.yaml` (NO key value); emits `AuthMethodDeclared` event
 7. Creates `.vsdd/events.jsonl` for the suite-side audit-trail sink
 8. Deploys default OTel collector configuration (`.vsdd/otel-collector.yaml`) — local collector with `.vsdd/events.jsonl` + crosslink-hub sinks default-on; external-backend endpoints declared as commented examples; sets `CLAUDE_CODE_ENABLE_TELEMETRY=1` + OTLP exporter env vars
-9. Deploys `.claude/mcp.json` registering the methodology + substrate-docs MCP server (`vsdd mcp-serve` invocation) — single server exposes 4 tools: methodology lookup, Claude Code docs search, crosslink docs search, Anthropic API docs search (stub in v1); pre-warms cache with substrate doc snapshots
+9. Deploys `.claude/mcp.json` registering the methodology + composed-tool docs MCP server (`vsdd mcp-serve` invocation) — single server exposes 4 tools: methodology lookup, Claude Code docs search, crosslink docs search, Anthropic API docs search (stub in v1); pre-warms cache with composed-tool doc snapshots
 10. Deploys `DESIGN.md.template` (operator authors Phase 1a from a schema-validated structural template — closes DESIGN-doc structural drift class)
 11. Deploys `.vsdd/registry/vocabulary.yaml` (canonical methodology terms registry) + `.vsdd/registry/canonical-patterns.yaml` + `.vsdd/registry/anonymization-patterns.yaml` (per-project-extensible credential-detection patterns)
 12. Deploys `.github/PULL_REQUEST_TEMPLATE.md` (PR template artifact class) + `.github/CODEOWNERS` (auto-routes TW + DR co-authorship for prose surfaces) + `.github/ISSUE_TEMPLATE/*.md`
@@ -238,20 +238,20 @@ vsdd observe pr-body --layer <N>       # auto-generate PR description with manua
 vsdd mcp-serve                         # MCP server (long-running stdio loop)
 ```
 
-### Claude Code substrate features leveraged
+### Claude Code features leveraged
 
-The rebuild explicitly leverages these features rather than treating the substrate generically:
+The rebuild explicitly leverages these features rather than treating the runtime harness generically:
 
 | Feature | Suite usage |
 |---|---|
-| **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/observability)** | Primary integration substrate; runs claude-code CLI as subprocess; emits OTel telemetry + SDK message stream cost data |
+| **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/observability)** | Primary integration runtime harness; runs claude-code CLI as subprocess; emits OTel telemetry + SDK message stream cost data |
 | **OpenTelemetry export** (`CLAUDE_CODE_ENABLE_TELEMETRY=1` + exporter env vars) | Metrics (tokens, cost, sessions, tool decisions); log events (prompts, API requests, errors); traces (interactions, llm_requests, tools, hooks) → vsdd-deployed OTel collector → `.vsdd/events.jsonl` + crosslink hub |
 | **SDK message stream cost data** (`message.usage`, `modelUsage`, `total_cost_usd`) | Per-step + per-model + cumulative SDK estimate; consumed by `vsdd observe` for in-session reports (caveat: client-side estimate, not authoritative) |
 | **W3C trace context propagation** | SDK auto-injects TRACEPARENT into CLI subprocess + Bash/PowerShell tool calls; full delegation chain visible in single trace |
 | `.claude/hooks/*.py` | ~19 methodology hooks deployed by `vsdd init` |
 | `.claude/commands/*.md` | 10 phase-primer + 16 per-domain + 2 meta skills |
 | `.claude/agents/*.md` | Per-domain cold-session reviewer agents pre-configured |
-| `.claude/mcp.json` | Methodology + substrate-docs MCP server (`vsdd mcp-serve`) |
+| `.claude/mcp.json` | Methodology + composed-tool docs MCP server (`vsdd mcp-serve`) |
 | Cron triggers (`CronCreate`) | Scheduled drift sweeps + session-close reminders + methodology-staleness checks |
 | Notifications (`PushNotification`, `RemoteTrigger`) | Operator alerts: budget breach, rate-limit headroom, scheduled-session reminders |
 | LSP integration | Real-time frontmatter validation during methodology + project authoring |
@@ -394,7 +394,7 @@ Total deployed in a VSDD project: ~24 hooks. Hook count growth governed by earne
 
 ### Hook architecture
 
-Pure-Python hooks operator-side (Claude Code substrate convention preserved); the same enforcement logic exists as Rust binary mirror for CI execution. Two surfaces share the JSON Schema source. No Python-wrapper-invokes-Rust pattern.
+Pure-Python hooks operator-side (Claude Code hook convention preserved); the same enforcement logic exists as Rust binary mirror for CI execution. Two surfaces share the JSON Schema source. No Python-wrapper-invokes-Rust pattern.
 
 Every methodology hook runs in both contexts (operator-local + CI). Bypass-marker requires rationale + PR-approval label.
 
@@ -860,7 +860,7 @@ Author-introduced cognitive scaffolding terms (terms invented for organizational
 | 2e — Author 14 supplements (with cuts) | No |
 | 2f — Author methodology spec | No |
 | 2g — Author CI workflow templates | Goal-4 specific |
-| 2h — Implement methodology + substrate-docs MCP server (full v1 deliverable) | No |
+| 2h — Implement methodology + composed-tool docs MCP server (full v1 deliverable) | No |
 | 2i — Deploy default OTel collector config + sink wiring | Yes |
 | 2j — Auth-method declaration UX + event variants + anonymization hook API-key detection | Cross-cutting |
 | 2k — Implement error catalog (~30 codes) + validator falsifiability fixtures + `vsdd verify explain` | Yes (Goal 2 operationalization) |

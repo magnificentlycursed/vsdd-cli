@@ -28,5 +28,5 @@ not fixtures. Record the run as a result comment on the layer's trail.
    between the refusal and the composition.
 6. **The #713 re-wire.** Wire the segment through the script on this
    host (the user-level statusLine entry that vanished 2026-07-20),
-   then rewrite the substrate settings once (any unrelated settings
+   then rewrite the runtime-harness config once (any unrelated settings
    change). Pass: the segment survives the rewrite.

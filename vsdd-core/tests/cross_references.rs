@@ -7,7 +7,7 @@
 //! the mdatron BINARY's verify over it (tool-to-tool, the #739 boundary;
 //! the library pipeline died with the seam, vsdd-cli #764), and asserts
 //! that the relevant finding code appears (or does not appear) for the
-//! fixture. mdatron on PATH is the estate's own substrate requirement —
+//! fixture. mdatron on PATH is the estate's own baseline tooling requirement —
 //! the preflight names it and the pre-commit gate enforces it — so its
 //! absence here is a loud failure, never a skip.
 

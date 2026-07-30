@@ -28,7 +28,7 @@ rules:
 
 The default-vehicle map (contract: Conformance at action time, the
 crosslink-affordance closure; owned by the AI Engineer domain — the
-directive-reconciliation substrate step's duty at act scale). Proposals
+directive-reconciliation mechanization step's duty at act scale). Proposals
 until operator adoption is recorded (vsdd-cli #670).
 
 The `kind` field generalizes the map beyond crosslink workflows: a

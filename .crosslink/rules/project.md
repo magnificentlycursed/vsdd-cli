@@ -22,9 +22,12 @@
   Claude Code, "any AI coding assistant" when you mean the class — not
   "substrate", "chassis", or similar layer-words in free prose, code
   comments, or adopter-facing text. Exact names of contract constructs
-  (e.g. "the crosslink chassis" title clause, the chassis-affordance
-  closure, the session-substrate check) are citations and keep their
-  names until an amendment rewords them.
+  are citations and keep their names until an amendment
+  rewords them; #821 reworded the crosslink title clause, the
+  crosslink-affordance closure, and the
+  installed-artifact-integrity check (formerly the "crosslink
+  chassis" title clause, the chassis-affordance closure, and
+  the session-substrate check).
 
 ## Crosslink version — the 0.8.0 hold is CLEARED (2026-07-22)
 - The hold is lifted: upstream patched the migration blockers and the

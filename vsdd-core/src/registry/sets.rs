@@ -87,7 +87,7 @@ pub struct StatuslineData {
     pub display_fields: Vec<DisplayField>,
     pub truncation_mark: String,
     pub truncation_rule: String,
-    pub substrate_findings_visibility: String,
+    pub installed_artifact_findings_visibility: String,
     pub broken_state_mark: String,
     pub wall_clock_budget_ms: u64,
     /// Deepens at Layer 3 (the timing check's consumer).
@@ -354,7 +354,7 @@ mod post_load_tests {
             }],
             truncation_mark: "(cut)\u{1b}".to_string(),
             truncation_rule: String::new(),
-            substrate_findings_visibility: String::new(),
+            installed_artifact_findings_visibility: String::new(),
             broken_state_mark: "broken\u{feff}".to_string(),
             wall_clock_budget_ms: 250,
             timing_check: serde_yaml_ng::Value::Null,
