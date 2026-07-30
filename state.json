@@ -1,5 +1,5 @@
 {
-  "next_display_id": 835,
+  "next_display_id": 836,
   "next_comment_id": 1267,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -758,6 +758,7 @@
     "e73d77bc-5dda-41a4-b3d6-e6fcf57f36e4": 253,
     "e7862db5-fd2f-419a-bbe2-969154e7e297": 150,
     "e78e96c0-91cd-4915-b03c-2c81e3679ec8": 417,
+    "e84838a3-03d8-42b0-b088-af5a14a45235": 835,
     "e925db46-8bfe-410a-8756-45b4f8cddac9": 571,
     "e92d6041-aa82-457a-9729-619b240dd2dd": 122,
     "e92d85ac-4a50-49a7-9034-4923a68846f6": 351,
@@ -22944,6 +22945,16 @@
         }
       }
     },
+    "e84838a3-03d8-42b0-b088-af5a14a45235": {
+      "uuid": "e84838a3-03d8-42b0-b088-af5a14a45235",
+      "display_id": 835,
+      "title": "Slice 4 (Gate execution) phase-1a design — vsdd way: mdatron subprocess client (folded from #14; seeded from captured phase-1a A)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-30T15:58:43.406068Z",
+      "updated_at": "2026-07-30T15:58:43.406068Z"
+    },
     "e925db46-8bfe-410a-8756-45b4f8cddac9": {
       "uuid": "e925db46-8bfe-410a-8756-45b4f8cddac9",
       "display_id": 571,
@@ -29029,11 +29040,16 @@
       "agent_id": "xqjG",
       "agent_seq": 860,
       "timestamp": "2026-07-30T15:58:35.991644Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 861,
+      "timestamp": "2026-07-30T15:58:43.406068Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T15:58:35.991644Z",
+    "timestamp": "2026-07-30T15:58:43.406068Z",
     "agent_id": "xqjG",
-    "agent_seq": 860
+    "agent_seq": 861
   }
 }
