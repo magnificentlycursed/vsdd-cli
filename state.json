@@ -1,6 +1,6 @@
 {
   "next_display_id": 837,
-  "next_comment_id": 1269,
+  "next_comment_id": 1270,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -23341,10 +23341,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T16:06:11.888099Z",
-      "updated_at": "2026-07-30T16:06:17.182382Z",
+      "updated_at": "2026-07-30T17:10:05.103125Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "a780c382-9315-41ef-973c-6329c8f472d2": {
+          "display_id": 1269,
+          "author": "xqjG",
+          "content": "DRAFT authored the vsdd way: .design/gate-execution-slice.md (15 REQ / 19 AC, grounded in contract 275/192/81/177 + Slice-1 code). REUSES (not duplicates): vsdd gate, unrouted_findings + gate_verdict (integrity.rs), routing-gate CI, gate-data.md, state-schema GateResult/GateKind. ADDS: red-gate checkout-and-run at layer+fix scale, executed-pin discipline, the 3 removal lanes + set-equality approval, invocation stamp, graded retrofit, no-executed-pin forms, mutation floor, terminal-round check. 5 open questions: (Q1) mutation tool + kill-ratio floor (cargo-mutants absent from repo; floor unfilled); (Q2) gate command surface (subcommands vs top-level); (Q3) removal-lane approval-record format; (Q4) invocation-stamp representation (GateResult lacks a stamp field); (Q5) fix-lane checkout-and-run fixture seam (corpus is snapshot-based). Named split respected: round-parity/never-started = Slice 6. kickoff plan stalled + cleaned. Open questions to operator.",
+          "created_at": "2026-07-30T17:10:05.053108Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA103HG5B0twEtY+QUOWrpisJowlC9JdTC76wx6hSQxAshfCzm43p5TgsRqZwz5ykn8jrkTYio8t62JaL/0ioxBQ=="
+        }
+      }
     },
     "ec70a531-79f7-47e7-a340-43f41e98ab7a": {
       "uuid": "ec70a531-79f7-47e7-a340-43f41e98ab7a",
@@ -29134,11 +29145,16 @@
       "agent_id": "xqjG",
       "agent_seq": 870,
       "timestamp": "2026-07-30T17:09:50.468651Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 871,
+      "timestamp": "2026-07-30T17:10:05.103125Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T17:09:50.468651Z",
+    "timestamp": "2026-07-30T17:10:05.103125Z",
     "agent_id": "xqjG",
-    "agent_seq": 870
+    "agent_seq": 871
   }
 }
