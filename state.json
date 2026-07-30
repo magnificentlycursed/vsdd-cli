@@ -1,6 +1,6 @@
 {
   "next_display_id": 839,
-  "next_comment_id": 1274,
+  "next_comment_id": 1275,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8596,7 +8596,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-30T17:45:01.135304Z",
-      "updated_at": "2026-07-30T17:49:03.792622Z",
+      "updated_at": "2026-07-30T19:20:37.481395Z",
       "labels": [
         "upstream"
       ],
@@ -8609,6 +8609,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQ01wDsLosF/QGRPoHubmk0QwRZ2pC0Ir6/oSYRlTt65rZL2ab0QAVpb3Vxl0lFDesHTlpR/dZPLaYnDhp5lRBw=="
+        },
+        "8e40181d-52ee-450d-8327-f92405c80feb": {
+          "display_id": 1274,
+          "author": "xqjG",
+          "content": "ESCALATION — container path ALSO fails at the agent-runtime layer (build-time validation, per the operator's trust-at-build-time ruling). Progress vs the local stall: with --image ghcr.io/forecast-bio/crosslink-agent:latest (the default dollspace-gay/crosslink-agent:latest is a dead org path — 404; forecast-bio's is the live one) the container launches, auth RESOLVES (env-file:kickoff.env), Rust toolchain installs, crosslink hooks init. THEN it exits 0 without doing any work because the Claude Code agent runtime can't start: repeated 'Claude configuration file not found at /home/agent/.claude/.claude.json' — a backup exists (.claude.json.backup.*) but the image entrypoint never restores it. Net: both kickoff vehicles are unusable here — local tmux stalls (no auth), container exits (no .claude.json). Two image bugs to fix upstream: (1) default --image points at a non-existent org path; (2) the agent image doesn't provision/restore .claude.json so Claude Code won't launch. Falling back to a host subagent build for Slice 3 (the reliable path, same as Slice 1).",
+          "created_at": "2026-07-30T19:20:37.465627Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALYhTXFqEwYsJMvOE4n02Xavxztc1FILqYJCGibUqGkzD0X/UPk06cHpkCdqkYTZBMzsiTg7eATdjooTZjSi/BA=="
         },
         "efa5ab3e-ccb4-48d4-8362-48c161b04daf": {
           "display_id": 1271,
@@ -29274,11 +29283,16 @@
       "agent_id": "xqjG",
       "agent_seq": 881,
       "timestamp": "2026-07-30T18:45:47.726734Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 882,
+      "timestamp": "2026-07-30T19:20:37.481395Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T18:45:47.726734Z",
+    "timestamp": "2026-07-30T19:20:37.481395Z",
     "agent_id": "xqjG",
-    "agent_seq": 881
+    "agent_seq": 882
   }
 }
