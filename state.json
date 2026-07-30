@@ -1,6 +1,6 @@
 {
   "next_display_id": 836,
-  "next_comment_id": 1267,
+  "next_comment_id": 1268,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -22957,10 +22957,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T15:58:43.406068Z",
-      "updated_at": "2026-07-30T15:58:48.710606Z",
+      "updated_at": "2026-07-30T16:02:10.678847Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "a9027951-2de7-4a00-a7f0-1299a84966f9": {
+          "display_id": 1267,
+          "author": "xqjG",
+          "content": "CLOSING — DEFUNCT. Operator-flagged + verified: the 'mdatron subprocess client' (captured phase-1a A1-A10) is obsolete. mdatron is now a standalone peer CLI (own package, no library API); vsdd does NOT invoke 'mdatron verify' at runtime — the only vsdd->mdatron touchpoint is preflight.rs checking mdatron is on PATH, plus init.rs deploying .mdatron/ schema+pattern files. Ratified contract 248: 'Hooks: thin Python wrappers invoking mdatron and vsdd; vsdd supplies schemas and patterns, mdatron executes them' = peers, not caller/callee. The REAL Slice 4 (contract 275) = 'Gate execution and the mutation floor' (vsdd's own red-gate/phase-exit gate/terminal-round check/mutation floor; extends Slice 1's vsdd gate), which does NOT wrap mdatron. A1-A10 came from the superseded binary-first plan; its live concerns (pipeline-failure handling, untrusted-quoted) are owned by the hooks + mdatron's envelope contract + the ratified Terminal-output-safety requirement. Real Slice 4 (gate execution) can be designed separately if/when wanted.",
+          "created_at": "2026-07-30T16:02:10.664713Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArZ1HAiBnzpJgIlYw8eyHs0VKl7xZo3qIg6C9IT2QeXVP+A3f0VFHcKtZ63vNESuc5FVsvy9frB7Qk5ydvsJYAw=="
+        }
+      }
     },
     "e925db46-8bfe-410a-8756-45b4f8cddac9": {
       "uuid": "e925db46-8bfe-410a-8756-45b4f8cddac9",
@@ -29062,11 +29073,16 @@
       "agent_id": "xqjG",
       "agent_seq": 863,
       "timestamp": "2026-07-30T15:58:56.068255Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 864,
+      "timestamp": "2026-07-30T16:02:10.678847Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T15:58:56.068255Z",
+    "timestamp": "2026-07-30T16:02:10.678847Z",
     "agent_id": "xqjG",
-    "agent_seq": 863
+    "agent_seq": 864
   }
 }
