@@ -1,5 +1,5 @@
 {
-  "next_display_id": 834,
+  "next_display_id": 835,
   "next_comment_id": 1267,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -692,6 +692,7 @@
     "d2cbf9af-6fee-489a-ac35-3e157850cdeb": 472,
     "d2dd58da-91d5-4bb3-9ea9-6677e8e567d7": 578,
     "d3120875-0c00-44ec-85fe-c61660674198": 606,
+    "d31c7b83-8d30-4b19-8e4e-23f8695374e3": 834,
     "d3868580-526b-43ce-8e63-41c7b0372542": 758,
     "d3ad54d7-b083-4b22-9c7f-a665964f4b38": 755,
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": 24,
@@ -21203,6 +21204,16 @@
         }
       }
     },
+    "d31c7b83-8d30-4b19-8e4e-23f8695374e3": {
+      "uuid": "d31c7b83-8d30-4b19-8e4e-23f8695374e3",
+      "display_id": 834,
+      "title": "Slice 3 (Install) phase-1a design — vsdd way: init drift-handling + template deployment (folded from #14; seeded from captured phase-1a B/C)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-30T15:58:22.806676Z",
+      "updated_at": "2026-07-30T15:58:22.806676Z"
+    },
     "d3868580-526b-43ce-8e63-41c7b0372542": {
       "uuid": "d3868580-526b-43ce-8e63-41c7b0372542",
       "display_id": 758,
@@ -28996,11 +29007,16 @@
       "agent_id": "xqjG",
       "agent_seq": 857,
       "timestamp": "2026-07-30T15:33:12.493075Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 858,
+      "timestamp": "2026-07-30T15:58:22.806676Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T15:33:12.493075Z",
+    "timestamp": "2026-07-30T15:58:22.806676Z",
     "agent_id": "xqjG",
-    "agent_seq": 857
+    "agent_seq": 858
   }
 }
