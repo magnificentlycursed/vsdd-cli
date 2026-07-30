@@ -257,7 +257,7 @@ requirement:**
 >   before it reaches the surface; the cleaned set is the complement of the
 >   tool's authored constants — every string read across a trust boundary
 >   this contract names (adopter-edited state and configuration, tracker
->   and git query output, adopter-authored registry data, the substrate
+>   and git query output, adopter-authored registry data, the runtime-harness
 >   settings file, the installed-artifact manifest, the repo-set
 >   configuration) is external and cleaned, the named sources instances
 >   rather than the whole set. The class is defined by Unicode property, never a hand-enumerated

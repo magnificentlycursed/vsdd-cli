@@ -15,7 +15,7 @@ branch_grammar:
     - "the refs query runs over this clone's own branches — local refs and their remote-tracking counterparts; other actors' refs are their own repos' concern"
     - "the pre-push hook checks the same membership and warns toward the currently-preferred form; it never blocks a registered form, never forces a retroactive rename"
     - "preferred form: display-form once the repo's hub sync has assigned display IDs, session-form before that"
-    - "exempt refs: main, the chassis's own branches (crosslink/hub, crosslink/knowledge, wip-archive and other operator-created archive refs recorded on the tracker) — the set below is the same adoption as structured data (vsdd-cli #688 addendum; promoted for the Layer 2 consumer, #738)"
+    - "exempt refs: main, the crosslink's own branches (crosslink/hub, crosslink/knowledge, wip-archive and other operator-created archive refs recorded on the tracker) — the set below is the same adoption as structured data (vsdd-cli #688 addendum; promoted for the Layer 2 consumer, #738)"
   exempt_refs:
     - main
     - crosslink/hub
@@ -28,7 +28,7 @@ preflight_members:
   - id: consent-state
     observation_binding: "the launch mode's consent grants are recorded in Claude Code's config surfaces for the exact target path — project trust for the vehicle's worktree path (path-scoped, so fresh worktrees re-raise it) and the bypass-permissions acceptance where the mode requires it; unreadable config is inconclusive"
   - id: identity-approval
-    observation_binding: "the dispatch identity's key fingerprint is present in the chassis trust store before launch (approve-then-dispatch: the pre-approved pool or the per-dispatch approval act) and its key material is provisioned into the launch environment; either half absent is fail"
+    observation_binding: "the dispatch identity's key fingerprint is present in the crosslink trust store before launch (approve-then-dispatch: the pre-approved pool or the per-dispatch approval act) and its key material is provisioned into the launch environment; either half absent is fail"
   - id: model-credentials
     observation_binding: "model credentials resolve in the launch environment by presence probe — never by echoing values; absent is fail; a probe that cannot determine presence is inconclusive"
   - id: project-server-trust-and-load
@@ -37,7 +37,7 @@ preflight_semantics:
   result_values: [pass, fail, inconclusive]
   rule: "fail-closed — a failed or inconclusive member blocks dispatch naming the member; inconclusive never passes silently"
   bootstrap: "format-carried until the preflight command ships: an autonomous dispatch records its member checks as a hand-performed checklist on the dispatch record"
-fencing_rule: "a dispatch classified dead (never-started or stalled, by the chassis's launch record, session records, and heartbeat staleness) is closed under that classification; a first write landing after the classification joins as a flagged late-writer under the closed dispatch, never a silent revival"
+fencing_rule: "a dispatch classified dead (never-started or stalled, by the crosslink's launch record, session records, and heartbeat staleness) is closed under that classification; a first write landing after the classification joins as a flagged late-writer under the closed dispatch, never a silent revival"
 manifest_fields:
   - {field: dispatch_id, meaning: "stable identifier for this dispatch"}
   - {field: invoked_by, meaning: "the operator act that invoked the dispatch — invocation provenance recorded, never assumed"}

@@ -6,7 +6,7 @@
 # never discovered — and the aggregate budget is denominated repo
 # count times per_repo_budget_ms, both read from the same file.
 #
-# The substrate's session JSON arrives on stdin and passes through
+# The runtime harness's session JSON arrives on stdin and passes through
 # UNCONSUMED: the segment reads none of it (the stdin-count conduct).
 #
 # This file is a managed artifact: vsdd init refuses to overwrite a

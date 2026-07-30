@@ -72,7 +72,7 @@ phases_referenced: []
 
 ## Conventions
 
-This section is the spec's vocabulary anchor. Methodology terms are sourced from the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) (authoritative) and from [crosslink](https://github.com/dollspace-gay/crosslink) (substrate) wherever a structured unit maps to a crosslink primitive. New terms are not introduced casually — methodology amendments adding terms require the earned-by-recurrence trigger per § Forward-only disciplines.
+This section is the spec's vocabulary anchor. Methodology terms are sourced from the [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) (authoritative) and from [crosslink](https://github.com/dollspace-gay/crosslink) wherever a structured unit maps to a crosslink primitive. New terms are not introduced casually — methodology amendments adding terms require the earned-by-recurrence trigger per § Forward-only disciplines.
 
 ### Methodology vocabulary
 
@@ -456,5 +456,5 @@ phases_referenced: []
 - [`DESIGN-SCHEMA.md`](./DESIGN-SCHEMA.md) — type system + 13 artifact-class schemas + anchor-ID generation + bypass-marker schema + error catalog file format + schema versioning + cross-field validation
 - [`DESIGN-OBSERVABILITY.md`](./DESIGN-OBSERVABILITY.md) — OTel collector design + 18 methodology event variant payloads + capture-source provenance + three pillars + dashboard ladder + FinOps + MCP server architecture
 - [`DESIGN-VERIFICATION.md`](./DESIGN-VERIFICATION.md) — validator architecture + ~19 methodology hooks + CI workflow templates + bypass-marker enforcement + error catalog implementation + per-error-code falsifiability fixtures + dependency approval discipline + methodology version pin discipline
-- [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) — the observability + execution substrate the toolkit composes against
-- [`crosslink`](https://github.com/dollspace-gay/crosslink) — the operational substrate authored by dollspace + the absorption target for toolkit patterns
+- [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) — the observability + execution runtime harness the toolkit composes against
+- [`crosslink`](https://github.com/dollspace-gay/crosslink) — the operational orchestration layer authored by dollspace + the absorption target for toolkit patterns

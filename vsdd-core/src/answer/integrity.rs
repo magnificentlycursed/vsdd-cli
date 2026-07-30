@@ -1,7 +1,7 @@
 //! The pure snapshot-scoped integrity checks — the snapshot-schema
 //! audit's members whose inputs are materialized fields. The
 //! degraded-kind check is the derivation's own enforced property; the
-//! three shell-side checks (refs, substrate, unsigned events) join the
+//! three shell-side checks (refs, installed-artifact integrity, unsigned events) join the
 //! report in `integrity_shell`.
 //!
 //! The emitted kinds mirror the audit block's check ids in

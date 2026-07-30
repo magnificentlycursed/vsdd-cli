@@ -13,8 +13,8 @@ the automated suite cannot grade; outcomes recorded on the layer trail.
    the human form when Layer 3 lands (or read the statusline set's
    next-step texts against the fixtures now): does "tracker offline"
    read as the contracted normal condition, not an alarm?
-3. **The hollow-shell substrate report reads as instructions.** Run the
-   substrate check against a stripped temp tree; judge whether each
+3. **The hollow-shell installed-artifact-integrity report reads as instructions.** Run the
+   installed-artifact-integrity check against a stripped temp tree; judge whether each
    finding names the artifact and the repair a tired human can follow.
 4. **The live refs query.** Run the off-grammar query over this repo's
    own branches; confirm the output flags nothing and reads plainly.

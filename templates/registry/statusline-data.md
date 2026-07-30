@@ -41,7 +41,7 @@ display_fields:
   - {field: milestone-with-count, width_budget_chars: 34, absence_text: "no milestone"}
 truncation_mark: "(cut)"
 truncation_rule: "the mark is set off from the truncated value by a space, never glued; milestone-with-count truncates the name before the count — the open-finding count always survives truncation (operator ruling 2026-07-21, vsdd-cli #680)"
-substrate_findings_visibility: "the glance segment does not carry substrate findings; the machine and human forms carry them (operator ruling 2026-07-21, vsdd-cli #690)"
+installed_artifact_findings_visibility: "the glance segment does not carry installed-artifact-integrity findings; the machine and human forms carry them (operator ruling 2026-07-21, vsdd-cli #690)"
 broken_state_mark: "state unreadable — vsdd status"
 wall_clock_budget_ms: 250
 timing_check:

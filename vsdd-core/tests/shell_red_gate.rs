@@ -1,6 +1,6 @@
 //! Layer 2 red gate — the shell-side integrity checks (vsdd-cli #738):
 //! the refs query's pure membership core over the registered grammar,
-//! and the session-substrate check over the installed-artifact
+//! and the installed-artifact-integrity check over the installed-artifact
 //! manifest. Fails executed against the pre-implementation stubs.
 
 use std::collections::BTreeSet;
@@ -8,7 +8,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 use vsdd_core::integrity_shell::refs::{normalize_ref_lines, off_grammar_refs};
-use vsdd_core::integrity_shell::substrate::{session_substrate_check, CheckResult};
+use vsdd_core::integrity_shell::installed_artifact::{installed_artifact_integrity_check, CheckResult};
 use vsdd_core::registry::{
     self,
     sets::{BranchForm, BranchGrammar, DispatchData, InstalledArtifactManifest},
@@ -90,7 +90,7 @@ fn an_invalid_pattern_in_the_registered_data_is_a_diagnostic() {
 }
 
 #[test]
-fn substrate_check_passes_on_a_complete_tree() {
+fn installed_artifact_check_passes_on_a_complete_tree() {
     // A CONTROLLED positive (vsdd-cli #750): the test builds the tree
     // the manifest describes rather than trusting the live checkout,
     // whose drift would silently narrow what this test proves. Every
@@ -121,7 +121,7 @@ fn substrate_check_passes_on_a_complete_tree() {
         }
     }
 
-    let findings = session_substrate_check(dir.path(), dir.path(), &manifest);
+    let findings = installed_artifact_integrity_check(dir.path(), dir.path(), &manifest);
     let failures: Vec<_> = findings
         .iter()
         .filter(|f| f.result == CheckResult::Fail)
@@ -176,7 +176,7 @@ fn a_missing_tracked_payload_fails_the_check() {
     fs::create_dir_all(dir.path().join(".claude/hooks")).unwrap();
     let manifest: InstalledArtifactManifest =
         registry::load_set(&repo_root(), "installed-artifact-manifest").expect("manifest loads");
-    let findings = session_substrate_check(dir.path(), dir.path(), &manifest);
+    let findings = installed_artifact_integrity_check(dir.path(), dir.path(), &manifest);
     assert!(
         findings.iter().any(|f| f.result == CheckResult::Fail),
         "a tree missing tracked payloads fails loudly"
@@ -190,7 +190,7 @@ fn a_mis_rooted_session_fails_on_the_first_member() {
     let elsewhere = tempfile::tempdir().unwrap();
     let manifest: InstalledArtifactManifest =
         registry::load_set(&repo_root(), "installed-artifact-manifest").expect("manifest loads");
-    let findings = session_substrate_check(&repo_root(), elsewhere.path(), &manifest);
+    let findings = installed_artifact_integrity_check(&repo_root(), elsewhere.path(), &manifest);
     let first = findings.first().expect("the binding member reports first");
     assert_eq!(first.result, CheckResult::Fail);
     assert!(
@@ -251,7 +251,7 @@ fn worded_absence_passes_by_declaration() {
     // the declaration rather than probing a path that is prose.
     let manifest: InstalledArtifactManifest =
         registry::load_set(&repo_root(), "installed-artifact-manifest").expect("manifest loads");
-    let findings = session_substrate_check(&repo_root(), &repo_root(), &manifest);
+    let findings = installed_artifact_integrity_check(&repo_root(), &repo_root(), &manifest);
     assert!(
         !findings
             .iter()

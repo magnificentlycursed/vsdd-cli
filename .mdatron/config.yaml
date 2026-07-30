@@ -5,7 +5,7 @@
 # globs bound what mdatron walks.
 #
 # Scope decision (mirrors mdatron's own, #77/#96): vsdd-cli's OWN authored
-# markdown estate is in jurisdiction; chassis-deployed tooling markdown
+# markdown estate is in jurisdiction; crosslink-deployed tooling markdown
 # (crosslink's .claude/ hooks and non-vsdd commands, .crosslink/) is not ours to
 # validate. The `vsdd-*` commands ARE vsdd-source (the installed-artifact
 # manifest marks them so), hence included; the crosslink-deployed commands are

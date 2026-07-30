@@ -81,7 +81,7 @@ entries:
     pairs_with: []
     resolution: exists
     fail_mode: undefined
-    note: "the wired plugin set the session-substrate check verifies present — a wired-but-absent plugin is exactly this entry's catch (vsdd-cli #686); enablement lives at user scope — host-wiring, the axis value added for it (vsdd-cli #703): every clone on this host inherits it, a fresh host diverges silently, and the check is the compensating control"
+    note: "the wired plugin set the installed-artifact-integrity check verifies present — a wired-but-absent plugin is exactly this entry's catch (vsdd-cli #686); enablement lives at user scope — host-wiring, the axis value added for it (vsdd-cli #703): every clone on this host inherits it, a fresh host diverges silently, and the check is the compensating control"
   - id: commands-vsdd
     path: .claude/commands/vsdd-*.md
     class: command-listing
@@ -92,8 +92,8 @@ entries:
     resolution: exists
     fail_mode: undefined
     note: "this repo is the source of these artifacts — tracked by the .gitignore carve-outs (operator ruling 2026-07-20); 28 members, 18 domain prompts + 10 phase primers (counts verified against disk 2026-07-21, vsdd-cli #684)"
-  - {id: chassis-hook-config, path: .crosslink/hook-config.json, class: chassis-config, source: crosslink-init, lifetime: tracked-wiring, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: fail-closed}
-  - {id: chassis-rules, path: .crosslink/rules/, class: rules, source: crosslink-init, lifetime: tracked-payload, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: undefined}
+  - {id: crosslink-hook-config, path: .crosslink/hook-config.json, class: crosslink-config, source: crosslink-init, lifetime: tracked-wiring, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: fail-closed}
+  - {id: crosslink-rules, path: .crosslink/rules/, class: rules, source: crosslink-init, lifetime: tracked-payload, referenced_by: [], pairs_with: [], resolution: exists, fail_mode: undefined}
   - id: project-rules
     path: .crosslink/rules/project.md
     class: rules
@@ -113,7 +113,7 @@ entries:
     pairs_with: [githook-pre-commit]
     resolution: exists
     fail_mode: fail-open-guarded
-    note: git silently runs no hooks when hooksPath is unset in a fresh clone — git's own semantics, not repairable in-repo; the session-substrate check over this entry is the compensating control
+    note: git silently runs no hooks when hooksPath is unset in a fresh clone — git's own semantics, not repairable in-repo; the installed-artifact-integrity check over this entry is the compensating control
   - id: githook-pre-commit
     path: .githooks/pre-commit
     class: git-hook-payload
@@ -124,11 +124,11 @@ entries:
     resolution: exists-and-referenced
     fail_mode: fail-closed
     note: blocks the commit when mdatron is absent (operator ruling 2026-07-20, vsdd-cli #658)
-  - {id: identity-agent, path: .crosslink/agent.json, class: identity-state, source: chassis-runtime, lifetime: per-clone-payload, referenced_by: [], pairs_with: [identity-keys], resolution: exists, fail_mode: undefined}
+  - {id: identity-agent, path: .crosslink/agent.json, class: identity-state, source: crosslink-runtime, lifetime: per-clone-payload, referenced_by: [], pairs_with: [identity-keys], resolution: exists, fail_mode: undefined}
   - id: identity-keys
     path: .crosslink/keys/
     class: identity-state
-    source: chassis-runtime
+    source: crosslink-runtime
     lifetime: per-clone-payload
     referenced_by: []
     pairs_with: [identity-agent]
@@ -138,7 +138,7 @@ entries:
   - id: identity-driver-key
     path: .crosslink/driver-key.pub
     class: identity-state
-    source: chassis-runtime
+    source: crosslink-runtime
     lifetime: per-clone-payload
     referenced_by: []
     pairs_with: []
@@ -160,7 +160,7 @@ entries:
 # Installed-artifact manifest — vsdd-cli instance
 
 The installed environment is a closed world (contract: Conformance at action
-time, the chassis-affordance closure, ratified 2026-07-20). The frontmatter
+time, the crosslink-affordance closure, ratified 2026-07-20). The frontmatter
 above is the versioned data: every artifact the environment expects, each
 with its source, its lifetime, its pairing, and its observed fail mode.
 The lifetime axis is tracked-or-per-clone crossed with wiring-or-payload
@@ -176,7 +176,7 @@ Vocabulary gloss (vsdd-cli #715; verification split stated per
 vsdd-cli #763): `resolution` states the entry's CLAIM — `exists` (the
 artifact is present), `exists-and-referenced` (present and named by its
 reference surface), `worded-absence` (a deliberate absence recorded in
-words and checked as such). What the substrate check VERIFIES today is
+words and checked as such). What the installed-artifact-integrity check VERIFIES today is
 narrower for the middle member: it verifies presence and reports the
 referenced-by half inconclusive — never a silent pass — until the
 reference-surface check lands with its consumer (vsdd-cli #746). `fail_mode` records observed failure behavior:
@@ -193,13 +193,13 @@ alone — the omission is this stated fact, not an oversight (vsdd-cli
 same ruling: the enabled-plugin map is a reference surface like any
 other, and the one enabled plugin is manifest-listed.
 
-The session-substrate check consumes these entries (three-valued,
+The installed-artifact-integrity check consumes these entries (three-valued,
 fail-closed; surfaced in Status per the contract). mdatron validates this
 file against `.mdatron/schemas/installed-artifact-manifest.json` — the
 schema pair rule: a data set and its schema land together, always.
 
 Declared cross-field constraints (schema description carries them; executed
-by the session-substrate check at read, and by mdatron's cross-file family
+by the installed-artifact-integrity check at read, and by mdatron's cross-file family
 when it lands — vsdd-cli #661): entry ids unique; every `pairs_with` id
 resolves to an entry; every `referenced_by` id resolves to a reference
 surface.

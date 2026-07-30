@@ -8,7 +8,7 @@ extensions: []
 
 # Claude Code CLI Supplement
 
-Per-domain extensions for projects that integrate with the [Claude Code CLI](https://code.claude.com/docs/en/) and/or the [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview). Per the methodology's substrate composition, vsdd-cli composes against this substrate as primitive.
+Per-domain extensions for projects that integrate with the [Claude Code CLI](https://code.claude.com/docs/en/) and/or the [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview). Per the methodology's runtime-harness composition, vsdd-cli composes against this runtime harness as primitive.
 
 ## AI Engineer extensions
 
@@ -21,7 +21,7 @@ Per-domain extensions for projects that integrate with the [Claude Code CLI](htt
 
 ## Software Engineer extensions
 
-- **`.claude/` substrate directory.** Hooks at `.claude/hooks/`; slash commands at `.claude/commands/`; MCP servers at `.claude/mcp.json`; settings at `.claude/settings.json`.
+- **`.claude/` runtime-harness directory.** Hooks at `.claude/hooks/`; slash commands at `.claude/commands/`; MCP servers at `.claude/mcp.json`; settings at `.claude/settings.json`.
 - **Hook architecture.** Pure-Python hooks at `.claude/hooks/*.py`; vsdd-cli's Rust mirror subprocess from Python wrapper. One source; two enforcement surfaces.
 - **Slash command discipline.** `.claude/commands/<name>.md` defines slash commands. VSDD-prefix discipline (`/vsdd-phase-3`, `/vsdd-domain-quality-engineer`) ensures no collision with crosslink's 14 commands.
 - **MCP server integration.** `.claude/mcp.json` registers MCP servers; vsdd-cli registers `vsdd mcp-serve` exposing 4 tools (methodology.lookup, claude_code.docs.search, crosslink.docs.search, anthropic.api.docs.search).

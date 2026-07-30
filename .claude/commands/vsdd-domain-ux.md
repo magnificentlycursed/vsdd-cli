@@ -27,7 +27,7 @@ Domain purpose: ensure the operator's path through the system is discoverable + 
 3. **Affordance discoverability.** Capabilities are discoverable via `--help` / interactive prompts / cohesive command names / consistent flag conventions. Features that require doc-reading to find are gap-class.
 4. **Recovery path ergonomics.** Failed operations have a recovery path that doesn't require re-running from scratch. Re-invocation cost (cold-start, re-read state, re-authentication) compounds at scale.
 5. **Operator-time-binding visibility.** Operations that take measurable wall-clock (network calls, large compute, etc.) communicate progress + ETA. Silent long-running operations are the UX-anti-pattern.
-6. **Consistency across surfaces.** CLI conventions, error formats, flag patterns, command naming — consistent within the toolkit + consistent with substrate conventions (cargo / git / rustup ecosystem).
+6. **Consistency across surfaces.** CLI conventions, error formats, flag patterns, command naming — consistent within the toolkit + consistent with ecosystem conventions (cargo / git / rustup).
 7. **Interactive prompt design.** Prompts state the default + the implications of each choice + the cancel path. Prompts that lock the operator into a path are the UX failure mode.
 8. **Notification + alert ergonomics.** When the toolkit needs operator attention (budget breach, rate-limit, scheduled cycle), the notification names the operator's action.
 

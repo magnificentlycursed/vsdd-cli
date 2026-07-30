@@ -21,10 +21,16 @@ label_schemes:
 # mechanized form of the terminology grounding (vsdd-cli #819/#832): a governed
 # prose usage of a deprecated coined/metaphor term fires E0093, so the discipline
 # holds without a human linter. 'forcing seam' is armed now (0 corpus usages;
-# purely a future-guard). 'chassis' and 'session-substrate' arm as the #821
-# rename clears them from the corpus (arming before the rename would fire E0093
-# on the corpus that still carries them). 'platform' is deliberately NOT armed as
+# purely a future-guard). 'chassis' and 'substrate' are armed as of #821 (the
+# contract-wide rename cleared them from the governed corpus; arming before the
+# rename would have fired E0093 on the corpus still carrying them). Per the operator
+# ruling on #821, 'substrate' is armed as a bare layer-word — not only
+# 'session-substrate' — so name the concrete referent. 'platform' is deliberately NOT armed as
 # a bare pattern — it collides with 'cross-platform' and the platform-engineer domain.
 anti_patterns:
   - pattern: "(?i)forcing[ -]seam"
     register: "deprecated coinage (vsdd-cli #819/#832) — use 'enforcement point' (the site, PEP) or 'guardrail' (the mechanism), not the opaque metaphor"
+  - pattern: "(?i)\\bchassis\\b"
+    register: "deprecated layer-word (vsdd-cli #821) — use 'crosslink' (the tracker + orchestration tool); drop the metaphor where it sits beside 'crosslink'"
+  - pattern: "(?i)\\bsubstrate\\b"
+    register: "deprecated layer-word (vsdd-cli #821) — name the concrete referent: 'crosslink', 'installed-artifact integrity' (the manifest check), 'the runtime harness' (Claude Code), or 'ecosystem conventions' (cargo/git)"

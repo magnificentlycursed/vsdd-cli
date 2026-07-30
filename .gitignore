@@ -57,6 +57,6 @@ archive/
 .crosslink/.promoted-uuids
 .crosslink/promotion-log.json
 
-# crosslink 0.9 migration arrivals: chassis-deployed skills; the pre-v3 backup store
+# crosslink 0.9 migration arrivals: crosslink-deployed skills; the pre-v3 backup store
 .claude/skills/
 .crosslink/pre-v3-backup-*.db

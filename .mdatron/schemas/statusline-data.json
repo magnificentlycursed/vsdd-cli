@@ -14,7 +14,7 @@
     "display_fields",
     "truncation_mark",
     "truncation_rule",
-    "substrate_findings_visibility",
+    "installed_artifact_findings_visibility",
     "broken_state_mark",
     "wall_clock_budget_ms",
     "timing_check",
@@ -251,7 +251,7 @@
       "type": "string",
       "minLength": 1
     },
-    "substrate_findings_visibility": {
+    "installed_artifact_findings_visibility": {
       "type": "string",
       "minLength": 1
     }
