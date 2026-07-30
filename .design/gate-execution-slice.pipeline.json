@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "design_doc": ".design/gate-execution-slice.md",
+  "doc_hash": "sha256:93145288434a306e95f26c5651bced1d3469ad3312eafd9c58095f3160c05d57",
+  "stage": "designed",
+  "plans": [],
+  "runs": []
+}
