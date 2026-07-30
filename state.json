@@ -1,5 +1,5 @@
 {
-  "next_display_id": 837,
+  "next_display_id": 838,
   "next_comment_id": 1270,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -264,6 +264,7 @@
     "521e1f80-f258-4334-ba3e-00fff16d5a70": 405,
     "530fc52d-b38c-4292-93e7-b82470db0856": 67,
     "531e3b02-1f84-4149-9e81-6ee296944d1e": 595,
+    "5327240a-453e-4ff2-bfbe-99c1c884d2aa": 837,
     "533135b4-b667-496f-bc28-7298898e6f08": 475,
     "5363eb98-14dd-424c-a3b3-74fecd36c873": 672,
     "5390175e-d7a4-4e5d-9096-44789ed3120f": 731,
@@ -8564,6 +8565,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdyOeO5YtX+xC4Q5OcpymHlilCjFRYuuIeAZb92f2TU/whvjRnWG7RH0rjmuxE6CEOxIuqFc4zEfQVnaKWgAqAA=="
         }
       }
+    },
+    "5327240a-453e-4ff2-bfbe-99c1c884d2aa": {
+      "uuid": "5327240a-453e-4ff2-bfbe-99c1c884d2aa",
+      "display_id": 837,
+      "title": "Upstream crosslink observation: kickoff plan agents launch but stall (no status file, no progress, no gap report)",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-30T17:45:01.135304Z",
+      "updated_at": "2026-07-30T17:45:01.135304Z"
     },
     "533135b4-b667-496f-bc28-7298898e6f08": {
       "uuid": "533135b4-b667-496f-bc28-7298898e6f08",
@@ -29150,11 +29161,16 @@
       "agent_id": "xqjG",
       "agent_seq": 871,
       "timestamp": "2026-07-30T17:10:05.103125Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 872,
+      "timestamp": "2026-07-30T17:45:01.135304Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T17:10:05.103125Z",
+    "timestamp": "2026-07-30T17:45:01.135304Z",
     "agent_id": "xqjG",
-    "agent_seq": 871
+    "agent_seq": 872
   }
 }
