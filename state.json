@@ -22953,11 +22953,12 @@
       "uuid": "e84838a3-03d8-42b0-b088-af5a14a45235",
       "display_id": 835,
       "title": "Slice 4 (Gate execution) phase-1a design — vsdd way: mdatron subprocess client (folded from #14; seeded from captured phase-1a A)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T15:58:43.406068Z",
-      "updated_at": "2026-07-30T16:02:10.678847Z",
+      "updated_at": "2026-07-30T16:02:17.741685Z",
+      "closed_at": "2026-07-30T16:02:17.741667Z",
       "labels": [
         "design"
       ],
@@ -29078,11 +29079,16 @@
       "agent_id": "xqjG",
       "agent_seq": 864,
       "timestamp": "2026-07-30T16:02:10.678847Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 865,
+      "timestamp": "2026-07-30T16:02:17.741685Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T16:02:10.678847Z",
+    "timestamp": "2026-07-30T16:02:17.741685Z",
     "agent_id": "xqjG",
-    "agent_seq": 864
+    "agent_seq": 865
   }
 }
