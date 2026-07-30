@@ -1,6 +1,6 @@
 {
   "next_display_id": 838,
-  "next_comment_id": 1273,
+  "next_comment_id": 1274,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -23388,11 +23388,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T16:06:11.888099Z",
-      "updated_at": "2026-07-30T17:10:05.103125Z",
+      "updated_at": "2026-07-30T18:08:30.351866Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "7caa44d7-a49f-4408-b807-50eede945967": {
+          "display_id": 1273,
+          "author": "xqjG",
+          "content": "PHASE-1A RATIFIED by operator 2026-07-30. .design/gate-execution-slice.md (15 REQ / 20 AC) — all 5 resolved: cargo-mutants + 65% starting kill-ratio floor (SIGNED OFF, ratchet-up after baseline); vsdd gate subcommands (red/phase-exit/mutation); the removal-lane approval record (.vsdd/removal-approvals.yaml, deletion/mapping/disablement + two-way set-equality, SIGNED OFF); GateResult invocation stamp; runnable-mini-repo fix-lane fixtures. Reuses Slice-1 vsdd gate + unrouted_findings + gate_verdict + routing-gate CI + gate-data.md. Design ratified; committing via PR.",
+          "created_at": "2026-07-30T18:08:30.337057Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAkyqOLkUkamrTOBQpQcpWSoZ4h0nN8g8Ov7ebKIMBP0+0E9B9xHswQr1nEwYc7eY/3necKDJx+KoWogVqUZzCBA=="
+        },
         "a780c382-9315-41ef-973c-6329c8f472d2": {
           "display_id": 1269,
           "author": "xqjG",
@@ -29227,11 +29236,16 @@
       "agent_id": "xqjG",
       "agent_seq": 877,
       "timestamp": "2026-07-30T18:08:22.653481Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 878,
+      "timestamp": "2026-07-30T18:08:30.351866Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T18:08:22.653481Z",
+    "timestamp": "2026-07-30T18:08:30.351866Z",
     "agent_id": "xqjG",
-    "agent_seq": 877
+    "agent_seq": 878
   }
 }
