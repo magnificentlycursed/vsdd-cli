@@ -1,6 +1,6 @@
 {
   "next_display_id": 838,
-  "next_comment_id": 1272,
+  "next_comment_id": 1273,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21260,11 +21260,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T15:58:22.806676Z",
-      "updated_at": "2026-07-30T17:09:50.468651Z",
+      "updated_at": "2026-07-30T18:08:22.653481Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "75e8afe9-d2ad-4f2b-8ad2-80aa78c80e5d": {
+          "display_id": 1272,
+          "author": "xqjG",
+          "content": "PHASE-1A RATIFIED by operator 2026-07-30. .design/install-slice.md (16 REQ / 16 AC) — all 3 open questions resolved: D1 registry->.vsdd/registry/ + loader repoint; D2 installed-artifact-manifest GENERATED not deployed (15 deployed + 1 generated); D3 per-artifact management class (11 managed / 1 scaffold / 3 section-managed — all 3 .yaml registry files carry the operator-extension anchors). Design ratified; committing via PR. Ready to build (kickoff run --container at build time).",
+          "created_at": "2026-07-30T18:08:22.637161Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAPULa6T88D0pFAs24+U3ydXh/RhEXxOkqXdkRpmfUY19L0ST7fCsDfS0CeAzjCllXS8V3XhATeU95Ovz+a+8HAw=="
+        },
         "7f6bc7f7-a099-4113-9d81-3821eca1af88": {
           "display_id": 1268,
           "author": "xqjG",
@@ -29213,11 +29222,16 @@
       "agent_id": "xqjG",
       "agent_seq": 876,
       "timestamp": "2026-07-30T17:49:03.792622Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 877,
+      "timestamp": "2026-07-30T18:08:22.653481Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T17:49:03.792622Z",
+    "timestamp": "2026-07-30T18:08:22.653481Z",
     "agent_id": "xqjG",
-    "agent_seq": 876
+    "agent_seq": 877
   }
 }
