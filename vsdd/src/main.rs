@@ -3,6 +3,7 @@
 //! `vsdd init --check` runs the pre-flight environment probe. Substantive deployment
 //! (file emission, ProjectInitialized event) lands in subsequent Phase 2b iterations.
 
+use std::io::IsTerminal;
 use std::process::ExitCode;
 
 use clap::{Parser, Subcommand};
@@ -46,13 +47,30 @@ struct StatusArgs {
 
 #[derive(clap::Args, Debug)]
 struct InitArgs {
-    /// Dry-run: report the deployment plan without writing files.
+    /// Pre-flight only: report the environment probe without deploying.
     #[arg(long)]
     check: bool,
 
-    /// Non-interactive CI mode: skip operator prompts; use defaults.
+    /// Non-interactive CI mode: skip operator prompts; use defaults. Implies
+    /// --no-prompt.
     #[arg(long = "ci-mode")]
     ci_mode: bool,
+
+    /// Overwrite Conflict (operator-edited) managed files with the template.
+    #[arg(long)]
+    force: bool,
+
+    /// Apply toolkit upgrades (unedited files whose template changed) only.
+    #[arg(long)]
+    update: bool,
+
+    /// Non-interactive: skip Conflict files (never overwrite) unless --force.
+    #[arg(long = "no-prompt")]
+    no_prompt: bool,
+
+    /// Print the per-file classification and planned action; write nothing.
+    #[arg(long = "dry-run")]
+    dry_run: bool,
 }
 
 #[derive(clap::Args, Debug)]
@@ -272,27 +290,115 @@ fn cmd_init(args: InitArgs) -> ExitCode {
     }
 
     if args.check {
-        // Dry-run: pre-flight passed; no deployment.
+        // Pre-flight only: pre-flight passed; no deployment.
         return ExitCode::SUCCESS;
+    }
+
+    // Interactive Conflict prompt (REQ-6): on a TTY, without --no-prompt /
+    // --ci-mode / --force, discover the conflicts and prompt per file, then run
+    // for real with the operator's choices. The core `init` never reads stdin.
+    let mut resolved = std::collections::BTreeMap::new();
+    let interactive = !args.dry_run
+        && !args.no_prompt
+        && !args.ci_mode
+        && !args.force
+        && std::io::stdin().is_terminal()
+        && std::io::stdout().is_terminal();
+    if interactive {
+        let probe = vsdd_core::init::InitOptions {
+            ci_mode: args.ci_mode,
+            force: args.force,
+            update: args.update,
+            no_prompt: args.no_prompt,
+            dry_run: false,
+            resolved_conflicts: std::collections::BTreeMap::new(),
+        };
+        if let Ok(conflicts) = vsdd_core::init::plan_conflicts(&cwd, &probe) {
+            for conflict in conflicts {
+                let choice = prompt_conflict(&conflict);
+                resolved.insert(conflict.rel_path, choice);
+            }
+        }
     }
 
     let options = vsdd_core::init::InitOptions {
         ci_mode: args.ci_mode,
-        ..Default::default()
+        force: args.force,
+        update: args.update,
+        // After prompting we've captured every choice, so suppress the core's
+        // fail-closed drift refusal for any file we did not explicitly resolve.
+        no_prompt: args.no_prompt || interactive,
+        dry_run: args.dry_run,
+        resolved_conflicts: resolved,
     };
     match vsdd_core::init::init(&cwd, &options) {
         Ok(report) => {
-            println!(
-                "vsdd init: deployed {} file(s); skipped {} unchanged file(s); manifest at {}",
-                report.deployed.len(),
-                report.skipped.len(),
-                report.manifest_path.display()
-            );
+            if args.dry_run {
+                println!("vsdd init: dry-run complete; no files written");
+            } else {
+                println!(
+                    "vsdd init: deployed {} file(s); skipped {} unchanged file(s); manifest at {}",
+                    report.deployed.len(),
+                    report.skipped.len(),
+                    report.manifest_path.display()
+                );
+            }
             ExitCode::SUCCESS
         }
         Err(e) => {
             eprintln!("error[VSDD-E0230]: init failed\n   = note: {e}");
             ExitCode::from(2)
+        }
+    }
+}
+
+/// Prompt the operator to resolve one Conflict file (REQ-6): keep the edit,
+/// accept the new template, or show a diff and re-ask.
+fn prompt_conflict(conflict: &vsdd_core::init::ConflictInfo) -> vsdd_core::init::ConflictChoice {
+    use std::io::Write;
+    use vsdd_core::init::ConflictChoice;
+
+    loop {
+        eprint!(
+            "vsdd init: conflict at {} — [k]eep your edit / [a]ccept new template / [d]iff? ",
+            conflict.rel_path
+        );
+        let _ = std::io::stderr().flush();
+
+        let mut line = String::new();
+        if std::io::stdin().read_line(&mut line).unwrap_or(0) == 0 {
+            // EOF: preserve the operator's work (the safe default).
+            return ConflictChoice::KeepOperatorEdit;
+        }
+        match line.trim() {
+            "a" | "accept" => return ConflictChoice::AcceptNewTemplate,
+            "k" | "keep" => return ConflictChoice::KeepOperatorEdit,
+            "d" | "diff" => print_conflict_diff(conflict),
+            _ => eprintln!("  please answer k, a, or d"),
+        }
+    }
+}
+
+/// Print a line-level diff of the operator's copy against the template.
+fn print_conflict_diff(conflict: &vsdd_core::init::ConflictInfo) {
+    let disk = std::fs::read(&conflict.dest).unwrap_or_default();
+    let yours = String::from_utf8_lossy(&disk);
+    let template = String::from_utf8_lossy(&conflict.template);
+    let yours_lines: Vec<&str> = yours.lines().collect();
+    let template_lines: Vec<&str> = template.lines().collect();
+    eprintln!("--- {} (your copy)", conflict.rel_path);
+    eprintln!("+++ {} (new template)", conflict.rel_path);
+    let max = yours_lines.len().max(template_lines.len());
+    for i in 0..max {
+        let y = yours_lines.get(i).copied();
+        let t = template_lines.get(i).copied();
+        if y != t {
+            if let Some(y) = y {
+                eprintln!("- {y}");
+            }
+            if let Some(t) = t {
+                eprintln!("+ {t}");
+            }
         }
     }
 }

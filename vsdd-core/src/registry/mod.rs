@@ -50,6 +50,24 @@ fn read_bounded_utf8(path: &Path) -> Result<String, BoundedTextError> {
     String::from_utf8(bounded.bytes).map_err(BoundedTextError::NotUtf8)
 }
 
+/// Resolve a registry set's path (REQ-14 / D1). Deployed adopters read from
+/// `<repo_root>/.vsdd/registry/` (the config home and `vsdd init` deploy
+/// destination); the vsdd-cli source repo, which has no `.vsdd/registry/`,
+/// falls back to `<repo_root>/templates/registry/` so it still loads from its
+/// own tree.
+fn registry_set_path(repo_root: &Path, class: &str) -> PathBuf {
+    let deployed = repo_root
+        .join(".vsdd/registry")
+        .join(format!("{class}.md"));
+    if deployed.exists() {
+        deployed
+    } else {
+        repo_root
+            .join("templates/registry")
+            .join(format!("{class}.md"))
+    }
+}
+
 /// All nine sets, loaded and validated.
 #[derive(Debug)]
 pub struct Registry {
@@ -136,9 +154,7 @@ pub fn load_set<T: DeserializeOwned + sets::PostLoad>(
         }));
     }
 
-    let path = repo_root
-        .join("templates/registry")
-        .join(format!("{class}.md"));
+    let path = registry_set_path(repo_root, class);
     let text = read_bounded_utf8(&path).map_err(|e| match e {
         BoundedTextError::Io(e) => {
             let kind = if e.kind() == std::io::ErrorKind::NotFound {
