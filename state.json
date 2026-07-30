@@ -1,6 +1,6 @@
 {
   "next_display_id": 837,
-  "next_comment_id": 1268,
+  "next_comment_id": 1269,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21222,10 +21222,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T15:58:22.806676Z",
-      "updated_at": "2026-07-30T15:58:28.586955Z",
+      "updated_at": "2026-07-30T17:09:50.468651Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "7f6bc7f7-a099-4113-9d81-3821eca1af88": {
+          "display_id": 1268,
+          "author": "xqjG",
+          "content": "DRAFT authored the vsdd way: .design/install-slice.md (13 REQ / 13 AC, seeded from captured B/C, re-grounded vs current code). Template set VERIFIED = 16 (2 CI + 1 DESIGN + 1 statusline + 12 registry); ManifestEntry confirmed sha256-only. Re-grounding surfaced 3 open questions for operator resolution: (Q1 load-bearing) registry deploy path — loader reads <cwd>/templates/registry/ but deploy target is .vsdd/registry/ (disagree); (Q2) installed-artifact-manifest.md is vsdd-cli-instance-specific — generate the adopter's, don't template it; (Q3) scaffold-vs-managed — DESIGN template + vocabulary extensions vs whole-file drift (per-file management class). crosslink kickoff plan launched but STALLED (no status file / no file writes in 15min; infra launches, in-agent work stalls) — stopped + cleaned. Proceeding on the re-grounding.",
+          "created_at": "2026-07-30T17:09:50.419212Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAVEgp5zP3+3+KxTT0I9zUDFizdoVqQYPfXrzIqZRHqzSJS0YvoR7kd1+dtz+qaMcc3t7LRcMxGUNV8NVzT4u1AQ=="
+        }
+      }
     },
     "d3868580-526b-43ce-8e63-41c7b0372542": {
       "uuid": "d3868580-526b-43ce-8e63-41c7b0372542",
@@ -29118,11 +29129,16 @@
       "agent_id": "xqjG",
       "agent_seq": 869,
       "timestamp": "2026-07-30T16:06:25.081711Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 870,
+      "timestamp": "2026-07-30T17:09:50.468651Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-30T16:06:25.081711Z",
+    "timestamp": "2026-07-30T17:09:50.468651Z",
     "agent_id": "xqjG",
-    "agent_seq": 869
+    "agent_seq": 870
   }
 }
