@@ -10,14 +10,20 @@ extensions: []
 
 Per-domain extensions for projects that integrate with the [Claude Code CLI](https://code.claude.com/docs/en/) and/or the [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview). Per the methodology's runtime-harness composition, vsdd-cli composes against this runtime harness as primitive.
 
+## Activation
+
+**Tier — runtime-determined always-on.** This supplement composes into the dispatch whenever the runtime is Claude Code — determined by the runtime the agent executes in, not by the task surface or the project's languages (the three-tier supplement-activation model). It is not task-gated; a dispatch under the Claude Code runtime that omits it is a conformance gap.
+
+The current supplement frontmatter gates only by `languages_or_interfaces`; there is no runtime-determined-always-on field yet, so this note documents the model rather than enforcing it. Once the frontmatter field lands, the composition function (Slice 2) computes this supplement into the SHOULD unconditionally under the Claude Code runtime and the verifier gates on it. The frontmatter field, the mdatron schema change, and the composition-function wiring are the named Slice-2 cross-repo follow-on — out of scope for this prose edit.
+
 ## AI Engineer extensions
 
-- **Agent SDK as observability primitive.** `CLAUDE_CODE_ENABLE_TELEMETRY=1` + per-signal exporter env vars; Agent SDK emits metrics + log events + traces to any OTLP-compatible backend.
-- **W3C trace context propagation.** SDK auto-injects TRACEPARENT into CLI subprocess + Bash/PowerShell tool calls; full delegation chain visible as single trace.
-- **Sub-agent delegation via Task tool.** Spawning sub-agents via `Task` tool nests under parent's span tree; cost-aware delegation pattern.
+- **Harness run record as the measured ground truth.** Each dispatched agent writes an append-only transcript `agent-<id>.jsonl` recording per-message `usage` (`input_tokens` / `output_tokens` / `cache_creation_input_tokens` / `cache_read_input_tokens`), `tool_use` inputs, `model`, effort, and timestamps. This record — which the checked agent cannot author — is the source for every cost/efficiency figure. There is no telemetry export, no exporter env var, and no external collector.
+- **Delegation chain from the transcript turn tree.** The transcript's own `uuid` / `parentUuid` linkage (with `spawnDepth`) is the delegation-chain record: parent-to-sub-agent nesting reconstructs directly from the records. No trace-context header injection and no external trace backend.
+- **Sub-agent delegation via Task tool.** Spawning sub-agents via the `Task` tool nests the child under the parent in the transcript turn tree (`parentUuid` / `spawnDepth`); the cost-aware delegation pattern is judged from that record.
 - **Prompt-cache discipline.** 5-minute default TTL (API key); 1-hour TTL via `ENABLE_PROMPT_CACHING_1H=1` (paid more per write; longer cache reuse). Plan auth auto-enables 1-hour TTL.
-- **SDK message stream cost.** `total_cost_usd` + `modelUsage` from SDK is client-side estimate from bundled price table — not authoritative billing. v1 ships estimate; v1+ reconciles with Anthropic Usage API.
-- **Capture-source provenance.** Every cost-relevant event carries `capture_source` enum (otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled / unmeasurable).
+- **Cost is a projection under subscription auth.** `total_cost_usd` + `modelUsage` from the SDK is a client-side estimate from a bundled price table, not authoritative billing; under subscription (Max/Pro) auth, dollars are a **projection** — the binding constraints are usage windows and operator time. The records carry usage tokens; the static price table (Slice 2) computes the projected bill. No Usage-API reconciliation.
+- **Capture-source provenance.** Every cost-relevant figure carries a capture-source tag — one of **recorded** (read verbatim from the run-record usage/tool events), **measured** (computed deterministically over recorded values or an actual file), or **judgment** (a labeled right-sizing assessment). A figure with no capture-source tag is rejected.
 
 ## Software Engineer extensions
 

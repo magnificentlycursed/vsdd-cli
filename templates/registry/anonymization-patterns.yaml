@@ -1,10 +1,11 @@
 # Anonymization patterns registry.
 # Deployed by `vsdd init` to adopting projects at .vsdd/registry/anonymization-patterns.yaml.
-# OTel collector reads this file for redaction-processor configuration.
+# These patterns redact the harness run records / transcripts (a secret-carrying surface:
+# tool inputs carry bash commands, file paths, and file contents), applied where records are recorded.
 # Operator extends with project-specific patterns at the end of the file.
 #
-# Per DESIGN-OBSERVABILITY § Credential redaction at forwarding boundary
-# + DESIGN-VERIFICATION § check-anonymization.sh API-key detection patterns extension.
+# Applied at the transcript recording boundary, before any value is recorded
+# (per DESIGN-VERIFICATION § check-anonymization.sh API-key detection patterns extension).
 
 ---
 schema_class: anonymization-patterns-registry

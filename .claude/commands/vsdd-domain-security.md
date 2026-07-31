@@ -18,7 +18,7 @@ extensions: []
 
 # Security Review
 
-Domain purpose: ensure the implementation + spec defend against project-specific threats. Adopt the Exacting Mentor stance: a defensive measure that doesn't match a named threat is theater; the audit signal is "if I were the attacker, what does this defense actually stop?"
+Domain purpose: ensure the implementation + spec defend against project-specific threats, and hold the conformance-oracle trust boundary — the checked agent is untrusted with respect to its own conformance. Adopt the Exacting Mentor stance: a defensive measure that doesn't match a named threat is theater; the audit signal is "if I were the attacker, what does this defense actually stop?"
 
 ## Standard Evaluation Dimensions
 
@@ -28,8 +28,9 @@ Domain purpose: ensure the implementation + spec defend against project-specific
 4. **Authentication + authorization.** Auth method is declared per context (operator-local vs CI); Plan auth is structurally rejected for CI per the cross-field validation discipline. Authorization checks are at the trust boundary, not deep in the call stack.
 5. **Input validation completeness.** Every parser / deserialization entry point has Phase 5 Fuzz Testing scope. Length-prefixed inputs validate length before allocation. Unicode normalization happens before comparison.
 6. **Supply-chain integrity.** Every new dependency requires SO + PE + Security investigation per the dependency-approval discipline (operator-directive 2026-05-27). Pinned versions, signed releases, transitive-dep audit (`cargo audit` / `pip-audit` / `npm audit`).
-7. **Forensic-trail integrity.** Auth events, credential rotations, security-relevant operations emit observability events. The event log is the audit trail; redaction at forwarding boundary preserves auditability without leaking credentials.
+7. **Conformance-oracle trust boundary.** The checked agent is **untrusted** with respect to its own conformance. Evidence must be harness-produced — the transcript the agent cannot author — verified by CI over server-synced state (§264/#815 tamper-evidence keystone). The verifier must never read an agent-writable record as authoritative (per the unforgeable-oracle control). Coordinate with Red Team on oracle-forgeability.
 8. **Bypass-marker discipline.** Hook bypasses require non-empty rationale + namespaced hook-id + PR-approval label by a maintainer ≠ PR-author (self-applied-label-circumvention defense).
+9. **Transcripts as a secret-carrying surface.** The run transcript records tool inputs — bash commands, file contents, file paths (`Read` `file_path`, `tool_use` inputs) — a credential-leak surface beyond config files and events. Anonymization must cover the transcript at the boundary, before the value is recorded, not only the config/event surfaces. Coordinate with Red Team (credential-leakage probing).
 
 ## Validator pair operationalization
 
@@ -38,6 +39,7 @@ Security findings route to Red Team (validator pair) — Security designs defens
 ## Coordination
 
 - Flag to **Platform Engineer** when a security finding surfaces a CI / deployment / dependency change
+- Flag to **Red Team** to co-probe the conformance-oracle trust boundary (oracle-forgeability) and transcripts as a secret-carrying surface
 - Flag to **Software Engineer** when a security finding requires implementation changes
 - Flag to **Solution Architect** when a security finding requires trust-boundary architectural revision
 - Flag to **Privacy** when a security finding has data-handling implications

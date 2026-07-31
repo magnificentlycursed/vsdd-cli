@@ -21,6 +21,10 @@ You are entering Phase 5 (Formal Hardening). Per the phase-domain composition ma
 
 Plus the always-on baseline. Skill mode for tool runs + bounded-disposition surfaces; cold-session for first-run baselines or adversarial-framing surfaces (per the cold-session-vs-inline rubric).
 
+## Dispatch & conformance discipline
+
+Phase 5's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). The composition SHOULD is the **process-governing baseline ∪ the axis-activated product domains** (the adopter-inheritance baseline), which the conformance verifier audits as `WAS ⊇ SHOULD`.
+
 ## Phase-specific discipline
 
 Phase 5 produces evidence of correctness **qualitatively different** from Phase 3 cold-batch adversarial review. Phase 3 proves the implementation passes the spec's tests; Phase 5 probes whether the spec's tests are themselves strong enough.
@@ -48,6 +52,8 @@ Phase 5 produces evidence of correctness **qualitatively different** from Phase 
 ```yaml
 phase: phase-5
 composed_domains: [quality-engineer, security, solution-architect]
+invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
+always_on_supplements: [claude-code-cli, bash, rust]
 composition_mode: skill-interactive  # OR cold-session-cluster-spawn (first-run baselines)
 cold_session_shape: <N/A — bounded judgment surface | cold-session cluster spawn — adversarial-framing judgment>
 surfaces_active: [A.0, A, B, C, D]  # subset per project Phase 5 strategy

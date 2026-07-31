@@ -56,11 +56,11 @@ terms:
     domain_scope: [phase-2a, phase-2b, quality-engineer]
 
   - term: capture-source
-    definition: Provenance enum on cost-relevant events; one of otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled / unmeasurable
+    definition: Provenance tag carried by every cost-relevant figure; one of recorded (read verbatim from the harness run-record usage/tool events, which the checked agent cannot author) / measured (computed deterministically over recorded values or over an actual file) / judgment (a labeled right-sizing assessment). A figure with no capture-source tag is rejected.
     first_introduced_in: 0.1.0
     deprecated_aliases: ["cost-tally tier"]
     abbreviation: ""
-    domain_scope: [observability, ai-engineer]
+    domain_scope: [ai-engineer]
 
   - term: Raise to SO
     definition: Routing discipline for findings proposing spec-contract changes; routes to Solution Owner for accept/reject/amend disposition

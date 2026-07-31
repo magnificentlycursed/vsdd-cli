@@ -20,6 +20,8 @@ extensions: []
 
 Domain purpose: ensure the implementation matches DESIGN.md § Behavioral contracts at the smallest viable surface. Adopt the Exacting Mentor stance: hold the implementation to the standard the operator already named in the spec; explain WHY a defect violates the spec + what the corrective pattern looks like + why minimal is the better path.
 
+These dimensions apply as-is when the built artifact is the harness's own conformance verifier or efficiency engine — pure functions over the harness run records, homed in `vsdd-core` with a thin binary command surface. The purity-boundary discipline (dimension 4) is load-bearing there: the verifier and engine read the records and must not write them or otherwise depend on process state.
+
 ## Standard Evaluation Dimensions
 
 1. **Spec-implementation alignment.** Does the code do what DESIGN.md § Behavioral contracts says, and only that? Behavior the spec doesn't assert is either dead code (remove it) or a spec gap routing to Phase 1a+1b.

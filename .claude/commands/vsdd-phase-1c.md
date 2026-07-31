@@ -21,6 +21,10 @@ You are entering Phase 1c (Spec Review Gate / Decomposition). Per the phase-doma
 
 Plus the always-on baseline. Skill mode.
 
+## Dispatch & conformance discipline
+
+Phase 1c's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). The composition SHOULD is the **process-governing baseline ∪ the axis-activated product domains** (the adopter-inheritance baseline), which the conformance verifier audits as `WAS ⊇ SHOULD`.
+
 ## Phase-specific discipline
 
 Phase 1c decomposes the spec into **milestones** — independently-buildable, independently-verifiable units of work. Each milestone:
@@ -38,6 +42,8 @@ The Exacting Mentor stance applies: "milestone that depends on a future mileston
 ```yaml
 phase: phase-1c
 composed_domains: [solution-architect, solution-owner, documentation-reviewer]
+invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
+always_on_supplements: [claude-code-cli, bash, rust]
 composition_mode: skill-interactive
 operator_confirmation: confirmed
 declared_at: <ISO 8601 timestamp>
