@@ -1,5 +1,5 @@
 {
-  "next_display_id": 843,
+  "next_display_id": 844,
   "next_comment_id": 1294,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -182,6 +182,7 @@
     "308031f7-a477-4211-84f0-5c989e754dd3": 344,
     "31b1b51c-3b25-4ad2-a502-ceb23ae8b39d": 119,
     "31c25e3e-3a5d-4146-b151-5c0954a17b28": 135,
+    "31f88b17-ff6e-4240-aa28-fb661e649ada": 843,
     "3238de60-2ddf-4974-afc1-6c62d2f8be59": 532,
     "32501e27-a60a-42f5-9eaa-1e3b92288580": 103,
     "32c6719d-6948-4e2b-b317-aedd081aaa50": 616,
@@ -6160,6 +6161,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1839w9myuOjMyg5VdkyRnV/kcLw3ZjHCC9EV53mlEeHScW+FTw31H74dwOP3n4ikdFqXXHLDqSATCAftZPOpDg=="
         }
       }
+    },
+    "31f88b17-ff6e-4240-aa28-fb661e649ada": {
+      "uuid": "31f88b17-ff6e-4240-aa28-fb661e649ada",
+      "display_id": 843,
+      "title": "Events-store full decommission: init.rs stops creating .vsdd/events.jsonl, retire pinning tests, dispose committed event data (#840 full-retirement, DE-F5/RT)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-31T21:20:08.979328Z",
+      "updated_at": "2026-07-31T21:20:08.979328Z"
     },
     "3238de60-2ddf-4974-afc1-6c62d2f8be59": {
       "uuid": "3238de60-2ddf-4974-afc1-6c62d2f8be59",
@@ -29701,11 +29712,16 @@
       "agent_id": "xqjG",
       "agent_seq": 915,
       "timestamp": "2026-07-31T21:13:52.703935Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 916,
+      "timestamp": "2026-07-31T21:20:08.979328Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T21:13:52.703935Z",
+    "timestamp": "2026-07-31T21:20:08.979328Z",
     "agent_id": "xqjG",
-    "agent_seq": 915
+    "agent_seq": 916
   }
 }
