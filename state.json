@@ -19314,11 +19314,12 @@
       "uuid": "c01fe672-7186-4a26-b7e6-3afa200cc2e1",
       "display_id": 817,
       "title": "Red Team wider evaluation: the implemented agent-first system (Layers 1-3, esp. Layer 3 terminal-output-safety / machine form / broken-state as agent context)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T00:56:34.387247Z",
-      "updated_at": "2026-07-31T23:17:31.188731Z",
+      "updated_at": "2026-07-31T23:17:37.564893Z",
+      "closed_at": "2026-07-31T23:17:37.564881Z",
       "labels": [
         "feature"
       ],
@@ -29846,11 +29847,16 @@
       "agent_id": "xqjG",
       "agent_seq": 929,
       "timestamp": "2026-07-31T23:17:31.188731Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 930,
+      "timestamp": "2026-07-31T23:17:37.564893Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T23:17:31.188731Z",
+    "timestamp": "2026-07-31T23:17:37.564893Z",
     "agent_id": "xqjG",
-    "agent_seq": 929
+    "agent_seq": 930
   }
 }
