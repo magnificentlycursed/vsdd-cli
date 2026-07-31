@@ -1,6 +1,6 @@
 {
   "next_display_id": 843,
-  "next_comment_id": 1291,
+  "next_comment_id": 1292,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19815,7 +19815,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T20:51:26.705351Z",
+      "updated_at": "2026-07-31T20:54:21.413358Z",
       "labels": [
         "design"
       ],
@@ -19909,6 +19909,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAUV1lELPD0IZK/rRHx4V3k7IGco0BcAq958MCCzr0NmJCvMaIS9v5+/50EA/RDTi9EOterV1y9lg09UMp5a9iBg=="
+        },
+        "e2b0af93-426c-40aa-8f20-d33c06e5e73d": {
+          "display_id": 1291,
+          "author": "xqjG",
+          "content": "REVERSAL (operator 2026-07-31): the mcp-serve SCRAP is retracted. The search capability (methodology.lookup — targeted 1-5k-token search over vsdd's own methodology corpus, cooperating with crosslink knowledge, mtime-aware cache, instead of bulk-loading a 34k mega-design or grepping) is the POINT — it is the read-inflation fix, core to the efficiency thesis. My scrap over-weighted the external *.docs.search overlap with WebFetch. Correct direction: KEEP the search core; MATURE the under-baked design in a proper pass (rough edges: brittle external scraping, the retired observe-namespaced mcp-cache commands, absorbability hand-waving); apply the own/consume boundary to the external tools (mdatron/crosslink own+expose their docs, vsdd consumes; claude/anthropic via WebFetch/their surfaces). mcp-serve stays on the current-direction command surface (needs re-home from the sunsetting docs + a design pass), NOT scrapped. Confirming the 'search doing thing' framing with the operator before the re-design; halted the design-doc scrap edit (revert sent).",
+          "created_at": "2026-07-31T20:54:21.399473Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABADlSFBLkcxyybcwqpVu1Ih5F4JVxhXCBJTtavNQIKKQ2MwNI7XBMbzQFA/S7ccrh891hqH0YzYcf9Lz/QA89KBw=="
         },
         "f839b987-e657-4f32-a12f-d95f8a8d5d12": {
           "display_id": 1289,
@@ -29659,11 +29668,16 @@
       "agent_id": "xqjG",
       "agent_seq": 912,
       "timestamp": "2026-07-31T20:51:26.705351Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 913,
+      "timestamp": "2026-07-31T20:54:21.413358Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T20:51:26.705351Z",
+    "timestamp": "2026-07-31T20:54:21.413358Z",
     "agent_id": "xqjG",
-    "agent_seq": 912
+    "agent_seq": 913
   }
 }
