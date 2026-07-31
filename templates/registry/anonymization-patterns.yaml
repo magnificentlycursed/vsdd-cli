@@ -1,10 +1,17 @@
 # Anonymization patterns registry.
 # Deployed by `vsdd init` to adopting projects at .vsdd/registry/anonymization-patterns.yaml.
-# These patterns redact the harness run records / transcripts (a secret-carrying surface:
-# tool inputs carry bash commands, file paths, and file contents), applied where records are recorded.
-# Operator extends with project-specific patterns at the end of the file.
-#
-# Applied at the transcript recording boundary, before any value is recorded
+# Tool inputs are a secret-carrying surface: they carry bash commands, file paths, and file contents.
+# These patterns feed TWO redaction stages. They are NOT applied at the local transcript-recording
+# boundary "before any value is recorded": the local `agent-<id>.jsonl` is agent-writable and NOT
+# authoritative (the unforgeable-oracle control — the oracle is only the server-synced, tamper-evident
+# copy; §264/#815), so that boundary is neither trustworthy nor the one vsdd/CI controls.
+#   (1) the check-anonymization pre-commit hook — over COMMITTED text (corpus / code / docs);
+#   (2) the sync-side redaction stage — over the TRANSCRIPT (not git-tracked), applied server/CI-side
+#       as the corroborated copy is formed (before the corroboration copy; reconciled with its
+#       tamper-evidence ordering, so redaction forms the corroborated copy rather than defeating it).
+# Redaction covers ACCIDENTAL leakage only; deliberate exfiltration by the untrusted agent is bounded
+# by capability-restriction, not by these patterns (regex is evadable; the local copy is agent-editable).
+# Operator extends with project-specific patterns at the end of the file
 # (per DESIGN-VERIFICATION § check-anonymization.sh API-key detection patterns extension).
 
 ---

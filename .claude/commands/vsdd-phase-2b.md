@@ -21,11 +21,11 @@ You are entering Phase 2b (Minimal Implementation). Per the phase-domain composi
 - **Documentation Reviewer** — cold-reader pass on prose updates
 - **Platform Engineer** — when Phase 2b adds a dependency, PE artifact (lockfile, audit gate, env pin) lands in the same commit
 
-Plus the always-on baseline + per-feature-axes-activated domains (DE / AI Engineer / etc. per project axes). Skill mode.
+Plus the core always-on quartet + per-feature-axes-activated domains (DE / AI Engineer / etc. per project axes). Skill mode.
 
 ## Dispatch & conformance discipline
 
-Phase 2b's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). The composition SHOULD is the **process-governing baseline ∪ the axis-activated product domains** (the adopter-inheritance baseline), which the conformance verifier audits as `WAS ⊇ SHOULD`.
+Phase 2b's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the axis-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
 
 ## Phase-specific discipline
 
@@ -45,6 +45,7 @@ Per-commit discipline:
 ```yaml
 phase: phase-2b
 composed_domains: [software-engineer, quality-engineer, technical-writer, documentation-reviewer, platform-engineer, ...axes-activated]
+# audited SHOULD for this build dispatch = the phase-matrix entry (these composed_domains + the core always-on quartet + the supplements in scope); the full process-governing set is the audited SHOULD only for review compositions (Phase 3)
 invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
 always_on_supplements: [claude-code-cli, bash, rust]
 composition_mode: skill-interactive
@@ -61,7 +62,7 @@ Phase 2b closes when:
 - Dependency additions have corresponding `docs/dependencies/<crate>.md` investigations + SO + PE + Security approval trailers
 - Prose surfaces (README, DESIGN, manual-tests, CHANGELOG) stay current per the TW + DR composition
 
-Emit `PhaseExited{phase: phase-2b, exit_status: complete, layer: <N>}` at the closing commit. Opens Phase 2c.
+Record the phase transition (`PhaseExited{phase: phase-2b, exit_status: complete, layer: <N>}`) in the crosslink session breadcrumb and the harness run record at the closing commit. Opens Phase 2c.
 
 ## Cross-references
 

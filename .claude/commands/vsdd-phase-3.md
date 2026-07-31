@@ -31,7 +31,7 @@ supplements_in_scope: []
 
 ## Composition
 
-You are entering Phase 3 (Adversarial Refinement / The VDD Roast). **This is the only phase that runs domains in cold-session reviewer mode**, NOT skill mode. Per the cluster-batching shape, the active domain set (always-on baseline + per-feature axes-activated) spawns into 4 clusters with adversarial-pair separation:
+You are entering Phase 3 (Adversarial Refinement / The VDD Roast). **This is the only phase that runs domains in cold-session reviewer mode**, NOT skill mode. Per the cluster-batching shape, the active domain set (the process-governing set + per-feature axes-activated) spawns into 4 clusters with adversarial-pair separation:
 
 - **Implementation cluster** — SE + QE + Performance Engineer
 - **Architecture cluster** — SA + Platform Engineer + Data Engineer (when active)
@@ -42,7 +42,7 @@ Adversarial-pair separation invariant: Security ↔ Red Team on different cluste
 
 ## Dispatch & conformance discipline
 
-Phase 3's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). The composition SHOULD is the **process-governing baseline ∪ the axis-activated product domains** (the adopter-inheritance baseline), which the conformance verifier audits as `WAS ⊇ SHOULD`.
+Phase 3's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). Phase 3 is a **review composition**, so its composition SHOULD is the full **process-governing set** (the eleven process-governing domains) ∪ the axis-activated product domains — the review roster — which the conformance verifier audits as `WAS ⊇ SHOULD`. This full-set audit is the review-composition level; a build-phase dispatch is audited only against its phase-matrix entry (its composed domains + the core always-on quartet + supplements), not the whole set.
 
 ## The Exacting Mentor stance
 
@@ -62,7 +62,7 @@ You are an experienced reviewer who has seen this defect class before. You hold 
 **Pre-session methodology check:** every Phase 3 session declares its shape before execution begins:
 - Cluster shape (4-cluster default; per-domain alternative for high-stakes)
 - Memory isolation mode (worktree-no-memory; container-isolated)
-- Active domain set (always-on baseline + axes-activated)
+- Active domain set (the process-governing set + axes-activated)
 - Cost budget (per-swarm-invocation token band; per-session wall-clock budget)
 - Sycophancy compensation (when reviewer overlaps with author identity)
 
@@ -75,6 +75,7 @@ You are an experienced reviewer who has seen this defect class before. You hold 
 ```yaml
 phase: phase-3
 composed_domains: [<all-active-domains>]
+# review composition: composed_domains = the process-governing set + the axis-activated product domains (the full review roster is the audited SHOULD here)
 invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
 always_on_supplements: [claude-code-cli, bash, rust]
 composition_mode: reviewer-cold-session
@@ -92,7 +93,7 @@ Swarm-invocation triggers:
 - **Continue if:** any active domain produced real findings (Resolved-pending / Deferred / Accepted with remediation)
 - **Stop if:** all active domains produced only Hallucinated findings on the swarm invocation AND no domain raised "out of session" concerns AND cold-session-isolation discipline held throughout
 
-Emit `PhaseExited{phase: phase-3, exit_status: implementation-mvr-reached, layer: <N>, round_count: <N>}` at the closing swarm-invocation commit. Opens Phase 4 routing (or directly Phase 5 if no findings to route + project intent declares Phase 5).
+Record the phase transition (`PhaseExited{phase: phase-3, exit_status: implementation-mvr-reached, layer: <N>, round_count: <N>}`) in the crosslink session breadcrumb and the harness run record at the closing swarm-invocation commit. Opens Phase 4 routing (or directly Phase 5 if no findings to route + project intent declares Phase 5).
 
 ## Cross-references
 
