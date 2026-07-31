@@ -1,6 +1,6 @@
 {
   "next_display_id": 843,
-  "next_comment_id": 1288,
+  "next_comment_id": 1289,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19815,7 +19815,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T20:35:00.018944Z",
+      "updated_at": "2026-07-31T20:47:19.413586Z",
       "labels": [
         "design"
       ],
@@ -19882,6 +19882,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdXgzZJ9PR6LRw78LYt/QRrpynkgIXbFOdJBMEIx4o0GGd+UH7zLU/OGjCQJVwS8/efcLPJOpsl5Dhrj5vvRyCA=="
+        },
+        "b0774631-37d9-450c-b623-6a68aabfcb3d": {
+          "display_id": 1288,
+          "author": "xqjG",
+          "content": "OWN-YOUR-OWN-DOCS BOUNDARY (operator ruling 2026-07-31). mdatron owns its own docs; by the same sibling-self-hosted-tool principle, crosslink owns its own docs. Correction to REQ-20 (reverses my earlier 'add mdatron.docs.search' recommendation): vsdd mcp-serve owns methodology.lookup (vsdd's own docs); mdatron + crosslink each own a queryable docs surface vsdd CONSUMES, not re-serves. Verified: crosslink has NO docs command/MCP today (only --help + knowledge pages), so vsdd scraping crosslink docs is a stopgap; correct mechanism = crosslink exposes a queryable docs surface (named upstream capability request, same pattern as the injection point / kickoff #837), consumed by vsdd. claude_code/anthropic docs = external web references (different category), pending the mcp-serve design. IMPORTANT: the mcp-serve DESIGN currently lives ONLY in the sunsetting DESIGN docs (DESIGN-OBSERVABILITY/METHODOLOGY/etc.) — the sunset coverage-check MUST preserve/re-home it into the contract or a slice design (it is a current-direction planned command). Also check whether the vsdd-side crosslink-guide skill re-documents crosslink (should defer to crosslink's own help).",
+          "created_at": "2026-07-31T20:47:19.400659Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAbL6dqtyWr5mhQFxt4hFVQicEWWmxI3piDeNPzInnfmeQsgvSfpsDvEP0o2uaAKNMALO8Y2svFz+iQviDzfxAAg=="
         },
         "b7a212b9-0d10-41a2-acf8-cd3acd85ce79": {
           "display_id": 1287,
@@ -29617,11 +29626,16 @@
       "agent_id": "xqjG",
       "agent_seq": 909,
       "timestamp": "2026-07-31T20:35:00.018944Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 910,
+      "timestamp": "2026-07-31T20:47:19.413586Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T20:35:00.018944Z",
+    "timestamp": "2026-07-31T20:47:19.413586Z",
     "agent_id": "xqjG",
-    "agent_seq": 909
+    "agent_seq": 910
   }
 }
