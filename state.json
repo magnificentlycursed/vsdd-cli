@@ -1,6 +1,6 @@
 {
   "next_display_id": 841,
-  "next_comment_id": 1280,
+  "next_comment_id": 1281,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19781,11 +19781,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T18:03:25.073005Z",
+      "updated_at": "2026-07-31T18:09:24.553908Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "079d502c-d9bf-4144-ae1a-b7a88739c23f": {
+          "display_id": 1280,
+          "author": "xqjG",
+          "content": "DOMAIN-EDIT SCOPE for this cycle (grounded — all 11 personas read this session). These are governed-corpus/spec edits, part of the amendment (SO-owned, cold-reviewed); per REQ-12 enforceable content mechanizes into checks, not prose.\n\nCROSS-CUTTING (telemetry purge — the retired observability apparatus is still in 4 personas): AIE dim1 capture_source=OTel + dims3/7; PE dim7 'CI failures -> OTel collector'; Security dim7 forensic-trail via observability events/forwarding-boundary redaction; DE dim6 'schema changes emit events' + dim8 '.vsdd/events.jsonl the worked example' (retired §248). All -> records-based (transcripts + CI-synced state).\n\nMAJOR (re-ground/re-point): AIE (OTel-lens -> record-based right-sizing + efficiency-engine owner; capture_source=run records); RT (dim7 'enforcement not declaration' generalized to every control; +control-circumvention, correct-path-only, oracle-forgeability, process-audit role); PE (owner of the enforcement machinery's physical firing — CI conformance gate, required-check-RAN-not-passed, dispatch+injection, exercise-audit CI-leg); Security (conformance-oracle trust boundary — unforgeable/harness-produced+CI/#815; transcripts as a secret-carrying surface).\n\nMODERATE (extend): QE (dim1 elevated to meta-level — the conformance controls themselves non-vacuous+falsifiable; owns 'authored != exercised' + per-control falsifiers); DE (exercise-registry schema + control+fire-check-land-together pairing; re-ground events-store); SO (re-scoped attended/autonomous split, Cost re-scope, adopter-inheritance model); SA (leverage-vs-build boundary §355, oracle trust-boundary, exercise-registry format).\n\nMODERATE: DR (name its §133 read-but-ignored-instrument role + warm-independent posture REQ-13).\nMINIMAL: SE (dimensions apply as-is to building the verifier); TW (judgment-only prose per REQ-12; vocab-registry already handles deprecations like 'seam').",
+          "created_at": "2026-07-31T18:09:24.539709Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoMHJJOnLqsnnas4UNgXDRNkKvfN5M5OA0TwxpqTXmiGBoml5vvQeMPPh2eJUSCMVhlS6ect+EkYQ8ERUeS8lDQ=="
+        },
         "69e3e46e-23d5-4eb2-834d-29d569c10eb6": {
           "display_id": 1279,
           "author": "xqjG",
@@ -29435,11 +29444,16 @@
       "agent_id": "xqjG",
       "agent_seq": 895,
       "timestamp": "2026-07-31T18:03:25.073005Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 896,
+      "timestamp": "2026-07-31T18:09:24.553908Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T18:03:25.073005Z",
+    "timestamp": "2026-07-31T18:09:24.553908Z",
     "agent_id": "xqjG",
-    "agent_seq": 895
+    "agent_seq": 896
   }
 }
