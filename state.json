@@ -1,6 +1,6 @@
 {
   "next_display_id": 844,
-  "next_comment_id": 1300,
+  "next_comment_id": 1301,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19318,7 +19318,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T00:56:34.387247Z",
-      "updated_at": "2026-07-29T01:05:19.037207Z",
+      "updated_at": "2026-07-31T23:17:31.188731Z",
       "labels": [
         "feature"
       ],
@@ -19331,6 +19331,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAFLIXtQYI/atgMB0jPY/DtceXBdNMeLtu43uGfBuu+IVm3KymOnwvlB1E5RI/dpxoECnn6evNlDP/7GfKTjrHAA=="
+        },
+        "b317b600-84ec-43ea-8469-94b1e0be049e": {
+          "display_id": 1300,
+          "author": "xqjG",
+          "content": "CLOSING — subsumed by #840 (escape corpus, REQ-22) + its findings landed via #818 (security hardening). The wider-evaluation discipline is now the sustained escape-corpus coverage bar in the ratified subsystem.",
+          "created_at": "2026-07-31T23:17:31.175380Z",
+          "kind": "resolution",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAX4mqUHlbMYeUVwEtZlVuJKIm1pzfzUgln38q47MTeiEJmZqOMvCR5VwMcaS3/PGQyt7NmqzNELIBiNpkc8GnBA=="
         }
       }
     },
@@ -29832,11 +29841,16 @@
       "agent_id": "xqjG",
       "agent_seq": 928,
       "timestamp": "2026-07-31T23:17:25.394198Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 929,
+      "timestamp": "2026-07-31T23:17:31.188731Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T23:17:25.394198Z",
+    "timestamp": "2026-07-31T23:17:31.188731Z",
     "agent_id": "xqjG",
-    "agent_seq": 928
+    "agent_seq": 929
   }
 }
