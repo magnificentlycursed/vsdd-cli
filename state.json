@@ -1,6 +1,6 @@
 {
   "next_display_id": 843,
-  "next_comment_id": 1286,
+  "next_comment_id": 1287,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24073,7 +24073,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-31T20:01:11.896576Z",
-      "updated_at": "2026-07-31T20:01:51.443918Z",
+      "updated_at": "2026-07-31T20:17:28.973036Z",
       "labels": [
         "design"
       ],
@@ -24086,6 +24086,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA5Z8CUvTznnYj3gxWE093rFuGXIbXt/wLaS6u2HB8wi4CFQGsdiVqqeNDwrnjiN93OVBd/Gu6N+wsHa2E2rArBQ=="
+        },
+        "aa49df3d-75ac-4f86-ab62-82d31df4091d": {
+          "display_id": 1286,
+          "author": "xqjG",
+          "content": "SCOPE SET (operator 2026-07-31): REMOVE, drop the idea (option 2). vsdd observe was never built; the pr-body scaffolding (template + init.rs deployment + install-slice test assertions) is dead scaffolding + a cargo-cult green test. Delete: templates/.github/workflows/vsdd-observe-pr-body.yml; the include_bytes! + deploy entry in vsdd-core/src/init.rs (~705-706); the install_slice_red_gate.rs assertions (~525,588,692). This is a code+test change with a red-gate, sequenced after #840 lands. The PR-body idea is dropped; if ever wanted it returns as a fresh designed feature.",
+          "created_at": "2026-07-31T20:17:28.957908Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAh1/Iw9Bcob8jVDnM8IXNjH7gKYePevsS/EEBkK/yKYb/p4SK6dHOdu251+DMfz2jO88WFpnJpCuASjSDmSyXAw=="
         }
       }
     },
@@ -29589,11 +29598,16 @@
       "agent_id": "xqjG",
       "agent_seq": 907,
       "timestamp": "2026-07-31T20:01:51.443918Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 908,
+      "timestamp": "2026-07-31T20:17:28.973036Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T20:01:51.443918Z",
+    "timestamp": "2026-07-31T20:17:28.973036Z",
     "agent_id": "xqjG",
-    "agent_seq": 907
+    "agent_seq": 908
   }
 }
