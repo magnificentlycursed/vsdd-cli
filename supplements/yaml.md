@@ -8,7 +8,7 @@ extensions: []
 
 # YAML Supplement
 
-Per-domain extensions for YAML-bearing surfaces (CI workflows, OTel collector config, methodology frontmatter, structural rule files, `.vsdd/config.yaml`).
+Per-domain extensions for YAML-bearing surfaces (CI workflows, methodology frontmatter, structural rule files, `.vsdd/config.yaml`).
 
 ## Software Engineer extensions
 
@@ -19,7 +19,6 @@ Per-domain extensions for YAML-bearing surfaces (CI workflows, OTel collector co
 ## Platform Engineer extensions
 
 - **CI workflow YAML.** GitHub Actions workflows live at `.github/workflows/*.yml`. Schema validated against [GitHub's published schema](https://json.schemastore.org/github-workflow.json). Per-step env discipline; per-job runner pinning.
-- **OTel collector config YAML.** `.vsdd/otel-collector.yaml` follows OpenTelemetry collector schema. Processor ordering invariant (redaction before exporters) is structural.
 - **Per-project config YAML.** `.vsdd/config.yaml` validated against the vsdd-config artifact class schema. Cross-field validation rejects invalid combinations (e.g., `auth_method.ci: plan`).
 
 ## Security extensions

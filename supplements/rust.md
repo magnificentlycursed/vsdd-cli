@@ -10,6 +10,12 @@ extensions: []
 
 Per-domain extensions for Rust projects. Loads alongside the domain prompts in scope when the project declares Rust as a primary language.
 
+## Activation
+
+**Tier — project-determined always-on.** This project is a Rust project, so this supplement composes into every dispatch unconditionally — a project-determined always-on supplement, distinct from the task-determined supplements (e.g. `github-actions`, `json`, `markdown`) that enter the composition only when their surface is in scope (the three-tier supplement-activation model).
+
+The current supplement frontmatter gates only by `languages_or_interfaces`; there is no project-determined-always-on field yet, so this note documents the model rather than enforcing it. Once the frontmatter field lands, the composition function (Slice 2) computes this supplement into the SHOULD unconditionally for this project and the verifier gates on it. The frontmatter field, the mdatron schema change, and the composition-function wiring are the named Slice-2 cross-repo follow-on — out of scope for this prose edit.
+
 ## Software Engineer extensions
 
 - **Ownership + lifetime discipline.** Lifetimes named explicitly when elided forms surprise the reader. Lifetime parameters in public API are part of the contract; semver-major bump required to change them.

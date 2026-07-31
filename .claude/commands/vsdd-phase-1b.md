@@ -19,7 +19,11 @@ You are entering Phase 1b (Verification Architecture). Per the phase-domain comp
 - **Solution Architect** — architecture lens + purity boundary identification
 - **Quality Engineer** — test strategy + falsifiability check
 
-Plus the always-on baseline. Skill mode.
+Plus the core always-on quartet. Skill mode.
+
+## Dispatch & conformance discipline
+
+Phase 1b's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the axis-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
 
 ## Phase-specific discipline
 
@@ -37,6 +41,9 @@ The Exacting Mentor stance applies: "purity claim without verification path" is 
 ```yaml
 phase: phase-1b
 composed_domains: [solution-owner, solution-architect, quality-engineer]
+# audited SHOULD for this build dispatch = the phase-matrix entry (these composed_domains + the core always-on quartet + the supplements in scope); the full process-governing set is the audited SHOULD only for review compositions (Phase 3)
+invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
+always_on_supplements: [claude-code-cli, bash, rust]
 composition_mode: skill-interactive
 operator_confirmation: confirmed
 declared_at: <ISO 8601 timestamp>
@@ -50,7 +57,7 @@ Phase 1b closes when:
 - `**Phase 5 strategy:**` line is committed at DESIGN.md § Project intent (verbatim per the project's intent calibration)
 - SA + QE concur on the purity-boundary list (no silent "pure but takes a clock as parameter" exceptions without explicit named-refinement)
 
-Emit `PhaseExited{phase: phase-1b, exit_status: complete, layer: <N>}` at the closing commit.
+Record the phase transition (`PhaseExited{phase: phase-1b, exit_status: complete, layer: <N>}`) in the crosslink session breadcrumb and the harness run record at the closing commit.
 
 ## Cross-references
 

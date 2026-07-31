@@ -13,6 +13,8 @@ sycophancy_failure_modes:
   - "Site-specific fix declared closure without project-wide grep — adjacent defects of the same class persist"
   - "Catching only the cited site of the named finding — defect class survives in adjacent sections"
   - "Vague-approval pass ('looks good') without naming what specifically held — closure without evidence"
+  - "Reviewing a curated summary in place of the raw artifact — curation re-imports the author's blind spot"
+  - "Treating injected judgment-prose as satisfied because it was present in context — injected-but-ignored is exactly what the cold review exists to catch"
 extensions: []
 ---
 
@@ -30,6 +32,8 @@ Domain purpose: cold-read operator-facing prose; flag what the cold reader canno
 6. **Stale-claim suspicion.** Quantitative claims, citation references, version mentions, dated assertions — each tested against current state. Fires `VSDD-W0030` for stale-claim suspicion.
 7. **Naming-discipline cold-read.** Letter-label anti-pattern (Cluster A; Surface B; Tier C); abbreviations without first-use expansion; suite-internal terminology bleeding into operator-facing prose. Cold-reader catches what the author normalized.
 8. **Prose-surface composition discipline.** Every commit touching prose surfaces (README / DESIGN / manual-tests / PROCESS / CHANGELOG) carries TW + DR co-authorship trailers per the per-milestone PR discipline. Missing trailers fire `VSDD-W0180`.
+9. **The read-but-ignored instrument.** Once a persona's or supplement's enforceable content is mechanized into conformance checks, only irreducible judgment-shaped guidance remains as prose, and that prose is *injected* into the dispatched agent's context — but injection proves the guidance was present, not that it was followed. The cold review is **the** instrument that catches injected-but-ignored judgment-prose: no machine check can score adherence to judgment-shaped guidance, so the reviewer who receives the same slice is the only guardrail against read-but-ignored. This is the sharp edge of "availability is not activation" (contract §133) at the prose layer, and it makes DR load-bearing in the conformance subsystem rather than a courtesy pass.
+10. **Warm-independent review posture.** Review is independent-of-frame always — a different agent, never handed the author's reasoning; independence is the invariant. The cold-versus-warm *depth* is a right-sized dial: a reviewer may be **warm on the raw artifact** (handed the raw diff, design, or contract slice) but never on a curated summary, because curation re-imports the author's blind spot. True cold — re-load the raw artifact yourself — is reserved for terminal rounds guarding against collective anchoring. A reviewer handed the author's rationale, or a curated summary in place of the raw artifact, is a finding; "cold" invoked to justify a redundant re-load that adds no independence is waste.
 
 ## Validator pair operationalization
 

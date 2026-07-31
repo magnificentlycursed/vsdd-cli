@@ -12,7 +12,7 @@ Per-domain extensions for GitHub Actions CI/CD workflows. Per the methodology's 
 
 ## Platform Engineer extensions
 
-- **Per-workflow file discipline.** One workflow per concern (`vsdd-verify.yml`, `vsdd-observe-pr-body.yml`, `release.yml`). Per-workflow trigger declarations explicit.
+- **Per-workflow file discipline.** One workflow per concern (`vsdd-verify.yml`, `release.yml`, and the PR-body generator workflow — surviving, being re-homed off the retired `observe` namespace, follow-on #842). Per-workflow trigger declarations explicit.
 - **Action pinning.** Third-party actions pinned to commit SHA (not version tag) + Renovate-updated. Tag-pinning is supply-chain-attack-surface (tag can be moved).
 - **Runner version pinning.** `runs-on: ubuntu-22.04` (not `ubuntu-latest`). Pin so build is reproducible across CI runs.
 - **Concurrency control.** `concurrency:` block per workflow to cancel in-progress runs on push; reduces wasted CI cost.
@@ -33,4 +33,4 @@ Per-domain extensions for GitHub Actions CI/CD workflows. Per the methodology's 
 - **CI auth method.** API key (Anthropic's recommended for automation); Plan auth structurally rejected by the methodology's cross-field validation. `ANTHROPIC_API_KEY` via GitHub Secrets.
 - **Cost-band per workflow.** Per workflow's typical token consumption tracked; budget breach alerts via `PushNotification` events.
 - **Scheduled cron sweeps.** `schedule:` triggers for methodology drift sweeps + dependency audit + CHANGELOG discipline check; per-cron cost tracked.
-- **CI vs operator-local cost split.** Per the methodology's auth_method.operator_local + auth_method.ci separation; CI cost has its own ledger.
+- **CI vs operator-local cost split.** Per the methodology's auth_method.operator_local + auth_method.ci separation; CI-side usage is read from its own run records, tagged separately from operator-local (no separate dollar ledger).

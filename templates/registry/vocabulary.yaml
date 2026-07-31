@@ -8,7 +8,7 @@
 ---
 schema_class: vocabulary-registry
 schema_version: 1.0.0
-registry_version: 0.1.0
+registry_version: 0.2.0
 ---
 
 # === vsdd managed ===
@@ -55,12 +55,20 @@ terms:
     abbreviation: ""
     domain_scope: [phase-2a, phase-2b, quality-engineer]
 
-  - term: capture-source
-    definition: Provenance enum on cost-relevant events; one of otel-metric / otel-log-event / otel-trace-attribute / vsdd-custom-event / sdk-result-message / usage-api-reconciled / unmeasurable
+  - term: provenance
+    definition: The provenance tag carried by every cost-relevant figure; one of recorded (read verbatim from the harness run-record usage/tool events, which the checked agent cannot author) / measured (computed deterministically over recorded values or over an actual file) / judgment (a labeled right-sizing assessment) / could-not-check (a figure the record cannot establish; reported honestly, never fabricated, never dropped, never shown as a real metric). A figure with no provenance tag is rejected. Distinct from capture-source, which names only which record field a datum was captured from.
+    version: 1.0.0
     first_introduced_in: 0.1.0
-    deprecated_aliases: ["cost-tally tier"]
+    deprecated_aliases: ["cost-tally tier", "otel-metric", "otel-log-event", "otel-trace-attribute", "vsdd-custom-event", "sdk-result-message", "usage-api-reconciled", "unmeasurable"]
     abbreviation: ""
-    domain_scope: [observability, ai-engineer]
+    domain_scope: [ai-engineer]
+
+  - term: capture-source
+    definition: Which record field a datum was captured from (e.g. token counts from the run-record usage events; effort from the dispatch manifest, with the transcript a sometimes-available backstop). Names the source field only, not the provenance tag (the recorded/measured/judgment/could-not-check assessment).
+    first_introduced_in: 0.1.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [ai-engineer]
 
   - term: Raise to SO
     definition: Routing discipline for findings proposing spec-contract changes; routes to Solution Owner for accept/reject/amend disposition

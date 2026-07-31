@@ -10,6 +10,12 @@ extensions: []
 
 Per-domain extensions for shell-script-bearing projects (build scripts, CI scripts, operator-runbook scripts).
 
+## Activation
+
+**Tier — runtime-determined always-on.** The shell is load-bearing for **every** agent — the #821 run alone made 91 Bash calls — so this supplement composes into every dispatch regardless of the task surface or the project's languages (the three-tier supplement-activation model). It is not task-gated; a dispatch that omits it is a conformance gap.
+
+The current supplement frontmatter gates only by `languages_or_interfaces`; there is no runtime-determined-always-on field yet, so this note documents the model rather than enforcing it. Once the frontmatter field lands, the composition function (Slice 2) computes this supplement into the SHOULD for every agent and the verifier gates on it. The frontmatter field, the mdatron schema change, and the composition-function wiring are the named Slice-2 cross-repo follow-on — out of scope for this prose edit.
+
 ## Software Engineer extensions
 
 - **`set -euo pipefail` at top of every script.** Fail-fast on error + unset-variable + pipeline-failure. The single most load-bearing bash discipline.

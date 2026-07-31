@@ -15,7 +15,11 @@ supplements_in_scope: []
 
 Phase 6 is **operator-orchestrated attestation** — no specific domain composition. The operator (or a single agent with the convergence primer loaded) walks the four dimensions and produces the convergence record.
 
-Always-on baseline applies for coordination but no domain owns Phase 6 work itself. The VSDD Methodology meta-domain validates methodology-semantic-coherence at the close.
+The core always-on quartet applies for coordination but no domain owns Phase 6 work itself. The VSDD Methodology meta-domain validates methodology-semantic-coherence at the close.
+
+## Dispatch & conformance discipline
+
+Phase 6 is **operator-orchestrated attestation**: signing the four-dimensional convergence record is the human's irreducible ratification slot and runs in the operator session, not as a dispatched agent. The phases-dispatched keystone (which supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all *agent*-work is dispatched) therefore governs the **agent-work the attestation spawns** — a convergence-check helper, or a routed inconsistency fix re-entering an earlier phase — rather than the attestation itself. Any such dispatched agent-work carries its composed governing context — the target phase's primer, its composed domains, and the supplements in scope — delivered by **injection** at dispatch and **audited as skill invocations** (invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance), and the conformance verifier audits it as `WAS ⊇ SHOULD` against that phase's matrix entry. The full **process-governing set** is the audited SHOULD for review compositions (Phase 3), not for this operator-orchestrated attestation.
 
 ## Phase-specific discipline
 
@@ -64,6 +68,9 @@ Inconsistent rows route via Phase 4 BEFORE convergence is declared. Inconsistenc
 ```yaml
 phase: phase-6
 composed_domains: [vsdd-methodology]
+# operator-orchestrated attestation: minimal composition; the phases-dispatched audit applies to the agent-work this phase spawns, against that work's phase-matrix entry — not the full process-governing set
+invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
+always_on_supplements: [claude-code-cli, bash, rust]
 composition_mode: operator-orchestrated
 operator_confirmation: confirmed
 project_intent: <intent-level per DESIGN.md>
@@ -82,7 +89,7 @@ Phase 6 closes when:
 4. Convergence attestation is signed and dated in the round's closing block (anonymized-project posture uses commit-sha as the signature)
 5. CHANGELOG.md final entry references the Phase 6 convergence round by link
 
-Emit `ExitSignaled{project: <name>, attestation_commit: <sha>, attested_by: <fingerprint-or-handle>, per_dimension: {...}, cross_dimension_consistency_check: pass}` at the closing commit. The project is at the Exit Signal — converged.
+Record the Exit Signal (`ExitSignaled{project: <name>, attestation_commit: <sha>, attested_by: <fingerprint-or-handle>, per_dimension: {...}, cross_dimension_consistency_check: pass}`) in the crosslink session breadcrumb and the harness run record at the closing commit. The project is at the Exit Signal — converged.
 
 ## Cross-references
 
