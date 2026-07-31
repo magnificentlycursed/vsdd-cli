@@ -1,6 +1,6 @@
 {
   "next_display_id": 841,
-  "next_comment_id": 1282,
+  "next_comment_id": 1283,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19781,7 +19781,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T18:26:25.792072Z",
+      "updated_at": "2026-07-31T18:50:26.153379Z",
       "labels": [
         "design"
       ],
@@ -19812,6 +19812,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIWmgLVtYMei59tbAnIVq/h13Mum+8hN+ckeHnHS/xUoWPkVQlVrY+g4ffSpNj/lGZRQdH7jurr4jS23CirkzDQ=="
+        },
+        "7243978b-6ddb-459a-903a-0e548d57753d": {
+          "display_id": 1282,
+          "author": "xqjG",
+          "content": "COHERENCE PASS complete + HAND-AUDITED (REQ-17 bootstrap-interim; REQ-16 signal). Dispatched agent a28eefd6. Composition VERIFIED FROM TRANSCRIPT (the oracle, REQ-10 — not the agent's self-report): grep of the harness transcript's Skill tool_use events shows all 7 invoked — design, vsdd-phase-1a, vsdd-domain-{solution-owner,ai-engineer,red-team,platform-engineer,solution-architect}; zero Read-instead, zero paraphrase. FIRST verifiably-conformant dispatch of the amendment (contrast the founding cargo-cult failure, REQ-15).\n\nDoc: .design/verifiable-conformance-and-efficiency.md now 20 REQ / 22 AC / 0 open questions. Q1 (verifier = Slice-4 gate leg + sibling efficiency engine in vsdd-core), Q2 (vsdd-owned injection point; crosslink FR for the generic hook), Q3 (dial presence = hard gate, appropriateness = advisory) resolved in-doc. Added REQ-18 (adopter-inheritance: process-governing baseline UNION axis-activated product domains), REQ-19 (operator-session control), REQ-20 (mechanism-per-control + underutilization audit). REQ-4 extended with the three-tier supplement activation model. Amendment-scope manifest added (Part 1 authored here; Parts 2/3 referenced).\n\nTension #5 VERIFIED against supplements/*.md: frontmatter gates by languages_or_interfaces + domains_in_scope only, no runtime-always-on tier — the activation-model edit (Part 2) is warranted.\n\nNEXT: dispatch Part 2 (domain personas + primer pass + supplement-activation) and Part 3 (contract re-scopes: Cost 140-153, attended/autonomous split, adopter-inheritance), author-only, each conformance-audited; then the 11-domain warm-independent review (RT on process+artifact); then SO ratifies.",
+          "created_at": "2026-07-31T18:50:26.134388Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3T8JERCuQiabSgtOiT1iHhMW3jO4pD6fKGplxI++77Owx8ZzKcjz7LRkAknjTtWVmosWjDKErtbpU41Q6Y/pCg=="
         },
         "8f658332-87d7-4cf4-ada2-f8d8f12f2453": {
           "display_id": 1278,
@@ -29463,11 +29472,16 @@
       "agent_id": "xqjG",
       "agent_seq": 897,
       "timestamp": "2026-07-31T18:26:25.792072Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 898,
+      "timestamp": "2026-07-31T18:50:26.153379Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T18:26:25.792072Z",
+    "timestamp": "2026-07-31T18:50:26.153379Z",
     "agent_id": "xqjG",
-    "agent_seq": 897
+    "agent_seq": 898
   }
 }
