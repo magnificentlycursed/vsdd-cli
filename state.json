@@ -1,6 +1,6 @@
 {
   "next_display_id": 843,
-  "next_comment_id": 1290,
+  "next_comment_id": 1291,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19815,7 +19815,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T20:49:16.799408Z",
+      "updated_at": "2026-07-31T20:51:26.705351Z",
       "labels": [
         "design"
       ],
@@ -19846,6 +19846,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAnKg1EUaBlMKJn3e4y+VG4mB6tUT0DWw826Ew5zX6o6cYu4B4uijny+HVc0QjFtokMCkekLvaVYLbViP0gpYdBQ=="
+        },
+        "5dc93a27-38d4-45ed-850f-dfa9a398fbf5": {
+          "display_id": 1290,
+          "author": "xqjG",
+          "content": "DECISION (operator 2026-07-31): SCRAP vsdd mcp-serve. Rationale: under-baked (spec only in the sunsetting DESIGN docs, never re-homed); 3/4 tools are brittle external-doc scrapers (WebFetch+extract, 5-20k tokens/query); and it DUPLICATES existing affordances — crosslink knowledge (search_knowledge MCP + knowledge pages), the agent's built-in WebFetch/WebSearch, and each sibling tool's own docs surface. Building it is the hand-roll-an-existing-affordance anti-pattern REQ-5/REQ-20/§355 forbid — it would fail the subsystem's own law. The knowledge-surfacing NEED is covered by those existing affordances (nothing lost). Actions: remove vsdd mcp-serve from the planned command surface; REQ-20 re-points knowledge-surfacing from 'build a docs-server' to 'ride existing affordances (crosslink knowledge + WebFetch/WebSearch + consume sibling docs surfaces)'; the DESIGN-doc mcp-serve spec dies with the sunset (NO re-home). Forward command surface: gate conformance, dispatch, insight, gate budget. crosslink-guide skill = crosslink's own self-doc (not vsdd-prefixed, outside mdatron govern) — fine, not a re-authoring violation.",
+          "created_at": "2026-07-31T20:51:26.690742Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEUC7EyWhN0/VRkTTb2+CJd8wUNED0g3aA6lOPdNmuiEBUOXAoQuJBKOCTniPjnsTfFKaAbBzevJwfVfY6d28CA=="
         },
         "69e3e46e-23d5-4eb2-834d-29d569c10eb6": {
           "display_id": 1279,
@@ -29645,11 +29654,16 @@
       "agent_id": "xqjG",
       "agent_seq": 911,
       "timestamp": "2026-07-31T20:49:16.799408Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 912,
+      "timestamp": "2026-07-31T20:51:26.705351Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T20:49:16.799408Z",
+    "timestamp": "2026-07-31T20:51:26.705351Z",
     "agent_id": "xqjG",
-    "agent_seq": 911
+    "agent_seq": 912
   }
 }
