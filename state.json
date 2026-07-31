@@ -18953,11 +18953,12 @@
       "display_id": 831,
       "title": "agent-first-controls amendment: bind the spend-driving structure at the composition gate (mdatron#11 escape)",
       "description": "mdatron dogfooded vsdd-cli phase-3 and an agent escaped the controls: a manual roast sprawled to 39 agents / 2.27M tokens via an undeclared, uncapped verifier fan-out (magnificentlycursed/vsdd-cli#11). Checked against .design/agent-first-controls.md: all three handholds are gaps. Amendment to close them: (1) the composition gate binds the spend-driving structure (fan-out shape + agent-count ceiling), not just the declared lens set; (2) a hard agent-count cap that blocks on breach; (3) per-agent/per-phase running telemetry that flags fan-out before the spend; plus (4) tighten the refutation-mechanism spec so 'hallucinated = non-resurfacing across rounds' is gate-checkable and can't be silently swapped for a synchronous per-finding fan-out. Efficacy of the domain-lens content is separately validated (#12).",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T17:25:34.572838Z",
-      "updated_at": "2026-07-31T23:17:13.110608Z",
+      "updated_at": "2026-07-31T23:17:19.201502Z",
+      "closed_at": "2026-07-31T23:17:19.201491Z",
       "labels": [
         "design"
       ],
@@ -29825,11 +29826,16 @@
       "agent_id": "xqjG",
       "agent_seq": 926,
       "timestamp": "2026-07-31T23:17:13.110608Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 927,
+      "timestamp": "2026-07-31T23:17:19.201502Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T23:17:13.110608Z",
+    "timestamp": "2026-07-31T23:17:19.201502Z",
     "agent_id": "xqjG",
-    "agent_seq": 926
+    "agent_seq": 927
   }
 }
