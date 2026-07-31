@@ -2745,11 +2745,12 @@
       "uuid": "1215a1eb-8804-4b82-bbc7-5d45e5e95c68",
       "display_id": 838,
       "title": "Slice 3 (Install) phase-2a: red-gate seed + build (static-member half; generated members split to post-Slice-2)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T18:45:28.972283Z",
-      "updated_at": "2026-07-31T01:44:13.552557Z",
+      "updated_at": "2026-07-31T01:44:20.877594Z",
+      "closed_at": "2026-07-31T01:44:20.877583Z",
       "labels": [
         "build"
       ],
@@ -29318,11 +29319,16 @@
       "agent_id": "xqjG",
       "agent_seq": 884,
       "timestamp": "2026-07-31T01:44:13.552557Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 885,
+      "timestamp": "2026-07-31T01:44:20.877594Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T01:44:13.552557Z",
+    "timestamp": "2026-07-31T01:44:20.877594Z",
     "agent_id": "xqjG",
-    "agent_seq": 884
+    "agent_seq": 885
   }
 }
