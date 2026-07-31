@@ -1,5 +1,5 @@
 {
-  "next_display_id": 842,
+  "next_display_id": 843,
   "next_comment_id": 1285,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -795,6 +795,7 @@
     "eeb15c72-58b9-4395-a838-eda43f149dc3": 124,
     "eed1172f-c892-499f-b45c-09396c579734": 251,
     "eee68bde-a961-4834-8e0f-e7250beb19f2": 25,
+    "efa47144-e126-451f-9aff-0bc3ef5c3260": 842,
     "f011ed8c-e4b8-4a43-b93e-0ac29c98e94e": 379,
     "f0cb6455-a3ce-424c-bae0-e331cf531bca": 652,
     "f131c9de-8d5c-4454-ac5b-69ff71058fa3": 380,
@@ -24060,6 +24061,16 @@
         }
       }
     },
+    "efa47144-e126-451f-9aff-0bc3ef5c3260": {
+      "uuid": "efa47144-e126-451f-9aff-0bc3ef5c3260",
+      "display_id": 842,
+      "title": "Re-home the PR-body generator off the retired 'vsdd observe' namespace (template + init.rs + install-slice tests)",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-07-31T20:01:11.896576Z",
+      "updated_at": "2026-07-31T20:01:11.896576Z"
+    },
     "f011ed8c-e4b8-4a43-b93e-0ac29c98e94e": {
       "uuid": "f011ed8c-e4b8-4a43-b93e-0ac29c98e94e",
       "display_id": 379,
@@ -29540,11 +29551,16 @@
       "agent_id": "xqjG",
       "agent_seq": 903,
       "timestamp": "2026-07-31T19:27:17.541483Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 904,
+      "timestamp": "2026-07-31T20:01:11.896576Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T19:27:17.541483Z",
+    "timestamp": "2026-07-31T20:01:11.896576Z",
     "agent_id": "xqjG",
-    "agent_seq": 903
+    "agent_seq": 904
   }
 }
