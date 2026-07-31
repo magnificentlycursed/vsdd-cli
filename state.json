@@ -1,6 +1,6 @@
 {
   "next_display_id": 844,
-  "next_comment_id": 1297,
+  "next_comment_id": 1298,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19833,7 +19833,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T22:40:06.161538Z",
+      "updated_at": "2026-07-31T23:06:38.373338Z",
       "labels": [
         "design"
       ],
@@ -19882,6 +19882,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAnKg1EUaBlMKJn3e4y+VG4mB6tUT0DWw826Ew5zX6o6cYu4B4uijny+HVc0QjFtokMCkekLvaVYLbViP0gpYdBQ=="
+        },
+        "388f6236-36a8-417f-bc47-9ceb806efb63": {
+          "display_id": 1297,
+          "author": "xqjG",
+          "content": "RATIFIED — OperatorDirectiveApplied{spec-contract-amended, #840} (SO disposition; operator directive 2026-07-31, condition 'ratify once the last two pass' met — DE + AIE re-verify APPROVED, all 6 blocker-raising lenses ratifiable/approved). The verifiable-conformance + efficiency subsystem amendment is RATIFIED: 24 REQ / 29 AC, whole-tree mdatron clean, committed cfe9fb5e (doc hash sha256:0840602560b212bb9df1fde391c4c0354b33c58f761911933619adaf74cb09c5). Both founding CRITICALs resolved + held; all conformant-review findings closed + independently re-verified; every authoring/review/fix dispatch skill-audited from the transcript oracle + retained on this issue (the RT-F5 process fix). Named phase-1c follow-ons: contract-document integration (Part-1's new behavioral contracts into the contract/methodology) + the Part-2 primer composition-declaration wording. Cleanup (#826): root DESIGN-doc sunset + defunct-code removal + close #234/#815/#831/#817/#842 + re-home #656/#657. Events-store code decommission = #843. Opening the PR.",
+          "created_at": "2026-07-31T23:06:38.346627Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAotBN7NGQG/gZU0eiLFYkZ/1r3Kv86rkcr6hcFUJ5PaR2uusktxMevRgMPVI4TeZHE5D6hOOrhFLqnQhoVB0mCg=="
         },
         "41e007b1-21dd-45dd-93d9-06167ccd1ed3": {
           "display_id": 1294,
@@ -29776,11 +29785,16 @@
       "agent_id": "xqjG",
       "agent_seq": 921,
       "timestamp": "2026-07-31T22:40:06.161538Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 922,
+      "timestamp": "2026-07-31T23:06:38.373338Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T22:40:06.161538Z",
+    "timestamp": "2026-07-31T23:06:38.373338Z",
     "agent_id": "xqjG",
-    "agent_seq": 921
+    "agent_seq": 922
   }
 }
