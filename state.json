@@ -1,5 +1,5 @@
 {
-  "next_display_id": 840,
+  "next_display_id": 841,
   "next_comment_id": 1277,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -644,6 +644,7 @@
     "c389841b-08ba-46e0-aecd-8525413e007f": 832,
     "c39e677d-2aa0-41eb-803b-35cab288c6cc": 208,
     "c3e32b4c-f54c-40e5-adbb-b8388cae827e": 605,
+    "c4dda79c-2dcc-4ca5-a664-287cf876dc6c": 840,
     "c4ddcfe7-c9b8-401b-a070-986967b887f6": 250,
     "c5502e29-2460-453c-8db9-ef96263059eb": 225,
     "c6210408-4dd1-4427-946a-9b4a79dc9165": 327,
@@ -19768,6 +19769,16 @@
         }
       }
     },
+    "c4dda79c-2dcc-4ca5-a664-287cf876dc6c": {
+      "uuid": "c4dda79c-2dcc-4ca5-a664-287cf876dc6c",
+      "display_id": 840,
+      "title": "Design cycle (spec amendment): verifiable-conformance + efficiency subsystem — prove the harness's disciplines fired per dispatched agent; supersedes DESIGN-OBSERVABILITY + re-scopes Cost-is-knowable + re-grounds AI-Engineer; AIE+RedTeam",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-31T17:18:11.352409Z",
+      "updated_at": "2026-07-31T17:18:11.352409Z"
+    },
     "c4ddcfe7-c9b8-401b-a070-986967b887f6": {
       "uuid": "c4ddcfe7-c9b8-401b-a070-986967b887f6",
       "display_id": 250,
@@ -29358,11 +29369,16 @@
       "agent_id": "xqjG",
       "agent_seq": 889,
       "timestamp": "2026-07-31T01:45:10.781830Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 890,
+      "timestamp": "2026-07-31T17:18:11.352409Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T01:45:10.781830Z",
+    "timestamp": "2026-07-31T17:18:11.352409Z",
     "agent_id": "xqjG",
-    "agent_seq": 889
+    "agent_seq": 890
   }
 }
