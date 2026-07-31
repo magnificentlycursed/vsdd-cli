@@ -1,5 +1,5 @@
 {
-  "next_display_id": 839,
+  "next_display_id": 840,
   "next_comment_id": 1277,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -260,6 +260,7 @@
     "5077e0ab-049a-4b7e-86b2-e37c883b2d03": 677,
     "50a37dbe-18dc-460f-8a00-05eea68fcf26": 234,
     "5120a23e-b23e-4ebb-a088-f11a0d93a938": 161,
+    "51724a70-3698-43ea-b663-f739303a5169": 839,
     "51b59359-c0e9-481d-9c1d-ca2ee813b0d2": 195,
     "51d23251-4451-4746-89eb-347f846a6148": 695,
     "521e1f80-f258-4334-ba3e-00fff16d5a70": 405,
@@ -8479,6 +8480,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAddkNCs9QxvITcUFzW1jzKukwdkebHMNxVObdZaj6XNt3Omz+70GDFpiorxyGeax5k/XnUzVa8n2GBluU+Tv/Bw=="
         }
       }
+    },
+    "51724a70-3698-43ea-b663-f739303a5169": {
+      "uuid": "51724a70-3698-43ea-b663-f739303a5169",
+      "display_id": 839,
+      "title": "Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity, generated context + token-budget gate, pricing + priced bill of materials (unblocks Slice 3 generated-members + Slice 4)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-07-31T01:44:58.019134Z",
+      "updated_at": "2026-07-31T01:44:58.019134Z"
     },
     "51b59359-c0e9-481d-9c1d-ca2ee813b0d2": {
       "uuid": "51b59359-c0e9-481d-9c1d-ca2ee813b0d2",
@@ -29325,11 +29336,16 @@
       "agent_id": "xqjG",
       "agent_seq": 886,
       "timestamp": "2026-07-31T01:44:26.973364Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 887,
+      "timestamp": "2026-07-31T01:44:58.019134Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T01:44:26.973364Z",
+    "timestamp": "2026-07-31T01:44:58.019134Z",
     "agent_id": "xqjG",
-    "agent_seq": 886
+    "agent_seq": 887
   }
 }
