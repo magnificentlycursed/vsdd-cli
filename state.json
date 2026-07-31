@@ -1,6 +1,6 @@
 {
   "next_display_id": 844,
-  "next_comment_id": 1301,
+  "next_comment_id": 1302,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8496,7 +8496,18 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-06-08T01:51:09.343134Z",
-      "updated_at": "2026-06-08T01:51:09.343134Z"
+      "updated_at": "2026-07-31T23:17:49.227500Z",
+      "comments": {
+        "b045057d-8990-4266-a4fb-82291af76200": {
+          "display_id": 1301,
+          "author": "xqjG",
+          "content": "CLOSING — the .vsdd/events.jsonl events store is fully retired by #840 (operator decision; methodology lifecycle facts re-homed to the crosslink session breadcrumb + harness run records + tracker comments). The events.jsonl writer + OperatorDirectiveApplied emission this issue tracked are defunct. Built-code decommission (init.rs + tests) = #843.",
+          "created_at": "2026-07-31T23:17:49.214745Z",
+          "kind": "resolution",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAtpr8/yboEbh/sJmS/h4w3bv7Zjh5+yxpagj5M3+At7rd3IBa8UVgHt36b5J9GqdJdCAAc8DbEPefIcisa4MjBQ=="
+        }
+      }
     },
     "5120a23e-b23e-4ebb-a088-f11a0d93a938": {
       "uuid": "5120a23e-b23e-4ebb-a088-f11a0d93a938",
@@ -29853,11 +29864,16 @@
       "agent_id": "xqjG",
       "agent_seq": 931,
       "timestamp": "2026-07-31T23:17:43.474029Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 932,
+      "timestamp": "2026-07-31T23:17:49.227500Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T23:17:43.474029Z",
+    "timestamp": "2026-07-31T23:17:49.227500Z",
     "agent_id": "xqjG",
-    "agent_seq": 931
+    "agent_seq": 932
   }
 }
