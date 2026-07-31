@@ -1,6 +1,6 @@
 {
   "next_display_id": 844,
-  "next_comment_id": 1303,
+  "next_comment_id": 1304,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10794,8 +10794,17 @@
       "parent_uuid": "aab7eb64-ad2b-4f6b-99c1-885a0fc5258a",
       "created_by": "xqjG",
       "created_at": "2026-07-21T00:11:17.272205Z",
-      "updated_at": "2026-07-21T00:11:17.272205Z",
+      "updated_at": "2026-07-31T23:18:09.555378Z",
       "comments": {
+        "c5bc8507-0b4d-4d88-b723-08f951c74151": {
+          "display_id": 1303,
+          "author": "xqjG",
+          "content": "RE-HOME (not closing) — real integrity debt (phantom co-author trailers / fabricated domain identities on main), mislabeled 'Layer 0' (retired horizontal decomposition). Re-framed off Layer-0; remains open. Route to the Security/integrity lane.",
+          "created_at": "2026-07-31T23:18:09.542085Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhIrbRBHW2PAeATEivs2o7BifzVrUII/H1rvLWVmJ5oOOVfv+ZXlYR3wYPbll9HQZdNi44oTHguuCGtiKILmSDw=="
+        },
         "cde4a55f-af8a-431b-8b73-382f2d20ed9a": {
           "author": "xqjG",
           "content": "Operator ruling 2026-07-20 (decision on #597): retroactive cleanup bundles with the #656 rewrite decision — one rewrite-and-force-push event would cover both this issue's trailer stripping and the driver-key blob purge, decided after the cross-persona audit. Going-forward half is closed by ruling: no domain trailers ever again; the Claude model trailer stays. This issue remains open pending the bundled rewrite decision.",
@@ -29889,11 +29898,16 @@
       "agent_id": "xqjG",
       "agent_seq": 934,
       "timestamp": "2026-07-31T23:18:02.573165Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 935,
+      "timestamp": "2026-07-31T23:18:09.555378Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T23:18:02.573165Z",
+    "timestamp": "2026-07-31T23:18:09.555378Z",
     "agent_id": "xqjG",
-    "agent_seq": 934
+    "agent_seq": 935
   }
 }
