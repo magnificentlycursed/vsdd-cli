@@ -1,6 +1,6 @@
 {
   "next_display_id": 844,
-  "next_comment_id": 1299,
+  "next_comment_id": 1300,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18957,11 +18957,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T17:25:34.572838Z",
-      "updated_at": "2026-07-29T18:13:43.236802Z",
+      "updated_at": "2026-07-31T23:17:13.110608Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "3534d953-0678-4993-9570-6bed2e66d892": {
+          "display_id": 1299,
+          "author": "xqjG",
+          "content": "CLOSING — subsumed by #840. The spend-driving-structure-at-the-composition-gate controls (fan-out shape + hard agent-count ceiling, from the mdatron#11 39-agent/2.27M-token escape) are folded into #840 REQ-21 (three-leg: declaration-completeness block / runtime admission-control / records-detection) + the escape corpus (REQ-22). Ratified + merged.",
+          "created_at": "2026-07-31T23:17:13.095194Z",
+          "kind": "resolution",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAl/cHTL6/z2qEnl6U2mag/SiCCXPG9SjypdNSHHOs1OuH2CERk41nf2Rk1hGYoxy4hhntJ27N8SyPsWWP6T6aAg=="
+        },
         "ca90ecc1-bf3a-43e7-8fc7-0993c4c2faec": {
           "display_id": 1254,
           "author": "xqjG",
@@ -29811,11 +29820,16 @@
       "agent_id": "xqjG",
       "agent_seq": 925,
       "timestamp": "2026-07-31T23:17:07.196204Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 926,
+      "timestamp": "2026-07-31T23:17:13.110608Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T23:17:07.196204Z",
+    "timestamp": "2026-07-31T23:17:13.110608Z",
     "agent_id": "xqjG",
-    "agent_seq": 925
+    "agent_seq": 926
   }
 }
