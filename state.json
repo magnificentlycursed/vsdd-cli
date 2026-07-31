@@ -1,6 +1,6 @@
 {
   "next_display_id": 844,
-  "next_comment_id": 1294,
+  "next_comment_id": 1295,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19833,7 +19833,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T21:13:52.703935Z",
+      "updated_at": "2026-07-31T21:20:36.274061Z",
       "labels": [
         "design"
       ],
@@ -19873,6 +19873,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAnKg1EUaBlMKJn3e4y+VG4mB6tUT0DWw826Ew5zX6o6cYu4B4uijny+HVc0QjFtokMCkekLvaVYLbViP0gpYdBQ=="
+        },
+        "41e007b1-21dd-45dd-93d9-06167ccd1ed3": {
+          "display_id": 1294,
+          "author": "xqjG",
+          "content": "RETAINED REVIEW AUDIT (addresses RT-F5 process finding — the checkable artifact, not a claim). All 11 conformant-review dispatches, skills transcript-verified:\nSO: vsdd-domain-solution-owner,vsdd-phase-3 | SA: vsdd-domain-solution-architect,vsdd-phase-3 | QE: vsdd-domain-quality-engineer,vsdd-phase-3 | AIE: vsdd-domain-ai-engineer,vsdd-phase-3 | PE: vsdd-domain-platform-engineer,vsdd-phase-3 | RT: vsdd-domain-red-team,vsdd-phase-3 | Security: vsdd-domain-security,vsdd-phase-3 | DE: vsdd-domain-data-engineer,vsdd-phase-3 | DR: vsdd-domain-documentation-reviewer,vsdd-phase-3 | SE: vsdd-domain-software-engineer,vsdd-phase-3 | TW: vsdd-domain-technical-writer,vsdd-phase-3. (PE re-run a3d2f7c after the first PE dispatch returned degenerate.)\n\nFIX-ROUND DECISIONS (operator 2026-07-31): (1) C6 audit level = REVIEW-ROSTER — the process-governing baseline is enforced for REVIEW compositions; build-phase dispatches carry only their phase primer + supplements (resolves SO-F2 efficiency/cold-review contradiction). PerfE placed as code-shipping-activated (per the phase-1a primer), meta-domains (Sanity Check, VSDD-Methodology) are phase-level not partition members — making the partition total; 'baseline' renamed to distinguish the process-governing SET from the core quartet. (2) C9 = FULL events-store retirement — purge PhaseExited/OperatorDirectiveApplied event-emission across the 9 primers + SO/methodology/DE personas + the contract; the built-code decommission (init.rs + pinning tests + committed data) is the named follow-on just filed. Process fix: retain audit artifacts (this comment), re-review the changed surface BEFORE ratification, no commit-before-review.",
+          "created_at": "2026-07-31T21:20:36.257098Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcIinM24h0lxYnbx6tiax+DZVRvrPm91FdnEtq6MrHQXvXxHGW4iqIfBSJIab6Bxxms9c2tpIiP9KdNSJHzCEAA=="
         },
         "5dc93a27-38d4-45ed-850f-dfa9a398fbf5": {
           "display_id": 1290,
@@ -29734,11 +29743,16 @@
       "agent_id": "xqjG",
       "agent_seq": 918,
       "timestamp": "2026-07-31T21:20:23.747175Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 919,
+      "timestamp": "2026-07-31T21:20:36.274061Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T21:20:23.747175Z",
+    "timestamp": "2026-07-31T21:20:36.274061Z",
     "agent_id": "xqjG",
-    "agent_seq": 918
+    "agent_seq": 919
   }
 }
