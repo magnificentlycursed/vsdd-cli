@@ -1,6 +1,6 @@
 {
   "next_display_id": 844,
-  "next_comment_id": 1296,
+  "next_comment_id": 1297,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19833,7 +19833,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T22:02:26.853481Z",
+      "updated_at": "2026-07-31T22:40:06.161538Z",
       "labels": [
         "design"
       ],
@@ -19864,6 +19864,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAlrIWUqHgiJzPpkgcPYL3w3V2b5e12cbUb66V38y8r4CXOG4MBU2A3nZwiy+dkE0P0ejagtiYf0qeG6EKolO7Cw=="
+        },
+        "31a1cd24-f3c6-4180-a15f-285464b71b9d": {
+          "display_id": 1296,
+          "author": "xqjG",
+          "content": "RE-VERIFY COMPLETE — all 6 lenses ratifiable/approved (skill-audited, retained): QE PASS (V1 supplement-carve-out + V2 role-from-phase CLOSED; both CRITICALs intact, no regression); Security RATIFIABLE (all 4 redaction must-fixes CLOSED, corroborated against built state — .githooks/pre-commit runs only mdatron, so leg-1 authored-not-exercised is TRUE); DE APPROVED (N1 4-value enum + N2 deprecation + N3 journal CLOSED; F3/F6 explicitly Slice-4-deferred); AIE APPROVE (R1 effort dispatch-primitive-dependent + R2 durationMs + R3 AC-6 proxy CLOSED, record-corroborated: effort:high x24 in agent-a5e20d9b, durationMs in 66 files, attributionSkill in 41). SA + RT were ratifiable in the first verify; RT's role-anchor now fixed + confirmed by QE. The two founding CRITICALs (governing-law falsifiability, oracle-forgeability) resolved and held. Amendment: 24 REQ / 29 AC, whole-tree mdatron clean.\n\nNON-BLOCKING advisories (every lens marked these non-blocking): REQ-23 leg-1 cite .claude/hooks -> .githooks/pre-commit; relabel agent-a5e20d9b exemplar (workflow-subagent) + count as-of; propagate the 4-value provenance to the live consumers (contract Cost provenance refs + SO persona:37); vocabulary registry_version 0.1.0->0.2.0; the phase-3 primer composition-declaration template needs the supplements-carved-out wording (Part-2 primer-pass follow-on). The dangling 3-value in the sunset docs (methodology/README/DESIGN-*) is moot (deleted in cleanup); .vsdd/events data is #843.\n\nREADY FOR SO RATIFICATION (operator gate). Recommend a tiny consistency-touch first (the live design-doc + contract + SO-persona + registry items) so the ratified surface carries zero open advisories; the primer wording rides the Part-2 follow-on.",
+          "created_at": "2026-07-31T22:40:06.138804Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7Kv6K1/oVBFstH6R6pN7T8jaCSBwpn+dt1OYM8pj+bZUFxJAFVgXWHLkUFpdu+8LJJv+8MmQK8PqZlz96eGvDg=="
         },
         "3387c2ca-a0c2-46c6-84b8-a625f926ca17": {
           "display_id": 1281,
@@ -29762,11 +29771,16 @@
       "agent_id": "xqjG",
       "agent_seq": 920,
       "timestamp": "2026-07-31T22:02:26.853481Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 921,
+      "timestamp": "2026-07-31T22:40:06.161538Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T22:02:26.853481Z",
+    "timestamp": "2026-07-31T22:40:06.161538Z",
     "agent_id": "xqjG",
-    "agent_seq": 920
+    "agent_seq": 921
   }
 }
