@@ -1,6 +1,6 @@
 {
   "next_display_id": 841,
-  "next_comment_id": 1279,
+  "next_comment_id": 1280,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19781,11 +19781,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-07-31T17:26:53.136711Z",
+      "updated_at": "2026-07-31T18:03:25.073005Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "69e3e46e-23d5-4eb2-834d-29d569c10eb6": {
+          "display_id": 1279,
+          "author": "xqjG",
+          "content": "COMPOSITION confirmed (operator 2026-07-31), phase-1a spec-amendment cycle: solution-owner (primary/authority), solution-architect, software-engineer, quality-engineer, ai-engineer, platform-engineer, red-team, security, data-engineer, documentation-reviewer, technical-writer. Rationale: this subsystem IS the process-governing enforcement core, so its load-bearing set is the full process-governing domain set — the two adversarial validator-pairs that own enforcement (AIE+PE, RT+Security), QE for conformance-verification, SO/SA for authority+architecture, SE baseline, DE for the mdatron/schema-governed data (registry + exercise-registry), DR+TW for the governed prose. Security is the recommended add (the oracle's unforgeability, REQ-10/#815; secrets-in-transcripts) pending explicit operator nod.\n\nDESIGN INSIGHT captured (feeds Slice 2's composition function + this subsystem's SHOULD): domains split into PROCESS-GOVERNING (inherited by every vsdd adopter to FUNCTION — the process dispatches AI [AIE], enforces via CI/hooks [PE], is circumventable + oracle-trust-dependent [RT/Security], runs on mdatron schema-data [DE], produces governed prose [DR/TW], on the SO/SA/SE/QE baseline) vs PRODUCT-REVIEWING (per the adopter's product axes: UX/A11y/Privacy/L10n + product activation of RT/DR/AIE). The composition SHOULD = process-governing-baseline UNION axis-activated-product-domains — which is what the conformance verifier then audits was loaded.",
+          "created_at": "2026-07-31T18:03:25.057612Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIWmgLVtYMei59tbAnIVq/h13Mum+8hN+ckeHnHS/xUoWPkVQlVrY+g4ffSpNj/lGZRQdH7jurr4jS23CirkzDQ=="
+        },
         "8f658332-87d7-4cf4-ada2-f8d8f12f2453": {
           "display_id": 1278,
           "author": "xqjG",
@@ -29421,11 +29430,16 @@
       "agent_id": "xqjG",
       "agent_seq": 894,
       "timestamp": "2026-07-31T17:26:53.136711Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 895,
+      "timestamp": "2026-07-31T18:03:25.073005Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-07-31T17:26:53.136711Z",
+    "timestamp": "2026-07-31T18:03:25.073005Z",
     "agent_id": "xqjG",
-    "agent_seq": 894
+    "agent_seq": 895
   }
 }
