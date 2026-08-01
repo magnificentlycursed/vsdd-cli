@@ -100,6 +100,6 @@ Obligations: closes **Cost queries** — the twelfth and final open criterion; a
 
 ## Contract pin
 
-Decomposition-hash: sha256:d95b56b42084ca66f2543ff310c2c23c11c41ddb18add66395a0840c4ad231f7
+Decomposition-hash: sha256:acfb5010ae580bcc89e942c0afe6431aae3ccd092ee9697ef2809bdee9ad80e2
 
 The hash covers the bytes of `.design/agent-first-vsdd-toolkit.md` from the `## Decomposition (phase 1c)` heading line up to, and excluding, the next `## ` heading. A change to the contract's Decomposition section without a matching re-pin here is the loud drift signal — convention grade until the doc-drift check mechanizes, per the contract's design-docs-pin-content-hash rule in Conformance at action time.
