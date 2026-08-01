@@ -1,5 +1,5 @@
 {
-  "next_display_id": 846,
+  "next_display_id": 847,
   "next_comment_id": 1306,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -327,6 +327,7 @@
     "616c419e-de21-4b2f-881e-71f06477280d": 44,
     "6174e9ae-c7fb-4ba5-8ae8-382e803a1530": 92,
     "61eb1245-c533-4c74-9e28-139e012686e4": 797,
+    "621f83c4-4ccd-4aa0-b15c-290237888d56": 846,
     "6253a77f-ca5c-4e27-a7ac-c285bbcb8385": 783,
     "627c8f6a-1181-4ae6-8dac-157a63c17dd7": 808,
     "62d3364e-758d-4ce5-9c3f-7846839f9363": 143,
@@ -10445,6 +10446,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhCu8Fyg9fwJ//ZpzBFK2kjKVa5WcWRcee2q9eOVWR4buxi0iAMYK/FZ1Yy55/0+mw9cx2SIhsmgwypi+WrahAw=="
         }
       }
+    },
+    "621f83c4-4ccd-4aa0-b15c-290237888d56": {
+      "uuid": "621f83c4-4ccd-4aa0-b15c-290237888d56",
+      "display_id": 846,
+      "title": "Upstream crosslink observation: /design --continue unconditionally resets pipeline.json (stage designed, plans/runs wiped)",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-08-01T19:36:18.173557Z",
+      "updated_at": "2026-08-01T19:36:18.173557Z"
     },
     "6253a77f-ca5c-4e27-a7ac-c285bbcb8385": {
       "uuid": "6253a77f-ca5c-4e27-a7ac-c285bbcb8385",
@@ -29999,11 +30010,16 @@
       "agent_id": "xqjG",
       "agent_seq": 943,
       "timestamp": "2026-08-01T19:36:11.545413Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 944,
+      "timestamp": "2026-08-01T19:36:18.173557Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:36:11.545413Z",
+    "timestamp": "2026-08-01T19:36:18.173557Z",
     "agent_id": "xqjG",
-    "agent_seq": 943
+    "agent_seq": 944
   }
 }
