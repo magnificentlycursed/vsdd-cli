@@ -1,6 +1,6 @@
 {
   "next_display_id": 845,
-  "next_comment_id": 1304,
+  "next_comment_id": 1305,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4483,7 +4483,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-07-29T07:24:12.013928Z",
+      "updated_at": "2026-08-01T18:43:47.022442Z",
       "labels": [
         "feature"
       ],
@@ -4559,6 +4559,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAVXhKyLJVdc2W7/wDzRo1fJGxAcgOREQSNpJo4Gd6joS79ixV2eNftyQ45CwX8GXRW43N2Wtj1HXZSrdHlr5mBg=="
+        },
+        "b4118ff8-3f6e-4a72-b933-6c8406e56ccf": {
+          "display_id": 1304,
+          "author": "xqjG",
+          "content": "mdatron v0.5.0 is now published on crates.io (operator, 2026-08-01). Switch vsdd off the git-source pin: CI (.github/workflows/mdatron-verify.yml + vsdd-test.yml currently checkout/install mdatron@v0.4.0 from git) and the shipped template (.github/workflows/vsdd-verify.yml installs mdatron --git) → 'cargo install mdatron' from crates.io, pinned to 0.5.0; and the rewritten README's mdatron install note (git → crates.io). Version bump 0.4.0→0.5.0: check the changelog for breaking DSL/schema/pattern changes before pinning (mdatron drives the pre-commit + CI verify gates).",
+          "created_at": "2026-08-01T18:43:47.008067Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAGtjivSrXLnsp3AAtoi7mXkGCVSYbeQvXV8kGUYUlRSo9KnLIxQvamclLZbo8PlqBr/dV5j+zcsRu+Li25zGwBw=="
         },
         "b5361b1a-e3ca-4707-af59-5aeec6cc636b": {
           "display_id": 1137,
@@ -29936,11 +29945,16 @@
       "agent_id": "xqjG",
       "agent_seq": 938,
       "timestamp": "2026-08-01T18:43:39.742682Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 939,
+      "timestamp": "2026-08-01T18:43:47.022442Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T18:43:39.742682Z",
+    "timestamp": "2026-08-01T18:43:47.022442Z",
     "agent_id": "xqjG",
-    "agent_seq": 938
+    "agent_seq": 939
   }
 }
