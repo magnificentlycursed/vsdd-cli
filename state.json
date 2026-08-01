@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1343,
+  "next_comment_id": 1344,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15267,11 +15267,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-01T19:41:31.153163Z",
+      "updated_at": "2026-08-01T21:06:14.518890Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "2af3d49e-0b4c-461d-b508-2fe2b428ed31": {
+          "display_id": 1343,
+          "author": "xqjG",
+          "content": "Design doc drafted: .design/decomposition-topology-remediation.md (via the /design flow; sidecar authored at birth per the ratified Design-doc lifecycle member's sanctioned operation). Interview decisions recorded (operator, 2026-08-01): derived build-plan doc as the swarm input (contract untouched); absorb-everything slice-fleet disposition (open phases under ## Requirements, completed program outside the parser's grouping surface — no skip mechanism needed); deviation registry as versioned data + vsdd gate leg + CI backstop. 8 REQs, 7 ACs, 4 open questions pending operator resolution (registry self-home, re-evaluation semantics, gate-leg result semantics, the verifiable-conformance sidecar). Next: resolve open questions, then the cold review round per the amendment discipline.",
+          "created_at": "2026-08-01T21:06:14.487230Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdfLtnmk6WjC3biuT6ypP/XvQlPmF2+MdQGykIWNckop8G7IjhhP6VkDLjqh15pSXKmaw9UL11EH5L5D5s4HAAw=="
+        },
         "8aa6c456-5375-45e5-993d-b42fa746ca93": {
           "display_id": 1306,
           "author": "xqjG",
@@ -30840,11 +30849,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1009,
       "timestamp": "2026-08-01T20:54:25.604197Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1010,
+      "timestamp": "2026-08-01T21:06:14.518890Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T20:54:25.604197Z",
+    "timestamp": "2026-08-01T21:06:14.518890Z",
     "agent_id": "xqjG",
-    "agent_seq": 1009
+    "agent_seq": 1010
   }
 }
