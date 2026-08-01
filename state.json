@@ -1,5 +1,5 @@
 {
-  "next_display_id": 850,
+  "next_display_id": 851,
   "next_comment_id": 1314,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -501,6 +501,7 @@
     "92f55925-07fa-4604-a852-ca83a506e167": 71,
     "9447a149-e007-4352-9314-f64081bd04e9": 390,
     "9483fa7a-0f91-4485-8f60-abef77a51e26": 803,
+    "94a7f3f5-d187-415f-9d02-94cb2c6285bf": 850,
     "94e75639-8c3e-4d86-9009-6da6b6fc38d9": 806,
     "953c2d75-fc34-46d4-b984-8796a529fa06": 505,
     "95e5dadc-0b23-4aa0-825f-82a3918c1f5b": 810,
@@ -15449,6 +15450,16 @@
         }
       }
     },
+    "94a7f3f5-d187-415f-9d02-94cb2c6285bf": {
+      "uuid": "94a7f3f5-d187-415f-9d02-94cb2c6285bf",
+      "display_id": 850,
+      "title": "Upstream crosslink observation: TIMEOUT sentinel never written — timeout kill leaves agents classified RUNNING",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-08-01T19:52:41.763085Z",
+      "updated_at": "2026-08-01T19:52:41.763085Z"
+    },
     "94e75639-8c3e-4d86-9009-6da6b6fc38d9": {
       "uuid": "94e75639-8c3e-4d86-9009-6da6b6fc38d9",
       "display_id": 806,
@@ -30250,11 +30261,16 @@
       "agent_id": "xqjG",
       "agent_seq": 964,
       "timestamp": "2026-08-01T19:52:34.874012Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 965,
+      "timestamp": "2026-08-01T19:52:41.763085Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:52:34.874012Z",
+    "timestamp": "2026-08-01T19:52:41.763085Z",
     "agent_id": "xqjG",
-    "agent_seq": 964
+    "agent_seq": 965
   }
 }
