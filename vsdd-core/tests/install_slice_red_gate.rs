@@ -1,6 +1,6 @@
 //! Phase 2a Red Gate for Slice 3 (Install) — the STATIC-MEMBER half.
 //!
-//! Oracle for `.design/install-slice.md` (16 REQ / 16 AC), crosslink #838.
+//! Oracle for the `install-slice` design (16 REQ / 16 AC; the `install-slice` knowledge page — design retired under #845), crosslink #838.
 //! Each test encodes one ratified acceptance criterion's behavior and FAILS
 //! against the current `vsdd_core::init` on its named assertion — the
 //! oracle-before-implementation discipline. Phase 2b turns them green.
@@ -27,7 +27,7 @@
 //!
 //! DEFERRED (out of the static-member half — needs Slice 2's generator):
 //!   deploying the GENERATED members (skills, generated-form domain prompts).
-//!   None of install-slice.md's 16 ACs targets generated-member deployment, so
+//!   None of the install-slice design's 16 ACs targets generated-member deployment, so
 //!   no AC is dropped here; that surface is a separate work item.
 
 use std::collections::BTreeMap;

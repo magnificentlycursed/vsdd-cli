@@ -1,8 +1,0 @@
-{
-  "schema_version": 1,
-  "design_doc": ".design/verifiable-conformance-and-efficiency.md",
-  "doc_hash": "sha256:0840602560b212bb9df1fde391c4c0354b33c58f761911933619adaf74cb09c5",
-  "stage": "designed",
-  "plans": [],
-  "runs": []
-}

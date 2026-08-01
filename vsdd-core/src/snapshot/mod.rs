@@ -82,7 +82,7 @@ pub struct CommentHandle {
 }
 
 /// Which finding-field groups the acquisition populated (vsdd-cli #820, REQ-7 of
-/// `.design/finding-query-join.md`). The finding-reading integrity checks
+/// the `finding-query-join` knowledge page; design retired under #845). The finding-reading integrity checks
 /// consult it so a spine-only live join (Slice 1) does not mis-fire the sibling
 /// checks that read the field groups Slice 5 defers. It defaults to all-acquired
 /// so pre-marker snapshots and the convergence fixtures declare full
