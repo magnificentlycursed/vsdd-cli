@@ -57,7 +57,7 @@ Phase 1c closes when:
 - DESIGN.md § Decomposition lists all milestones with acceptance criteria per milestone
 - Each milestone's acceptance criteria are a non-empty subset of DESIGN.md § Behavioral contracts
 - DR's cold-reader pass produces no Open findings on decomposition completeness
-- SO has signed off on the spec-gate close (per the "Raise to SO" routing discipline at methodology.md § Domain change authority)
+- SO has signed off on the spec-gate close (per the "Raise to SO" routing discipline at the spec contract § Solution Owner change authority)
 - `manual-tests/layer-N.md` stubs auto-scaffolded for each milestone per the `post-design-md-modification.py` hook
 
 Record the phase transition (`PhaseExited{phase: phase-1c, exit_status: complete}`) in the crosslink session breadcrumb and the harness run record at the closing commit. The decomposition opens Phase 2a per-milestone sessions.
@@ -67,4 +67,4 @@ Record the phase transition (`PhaseExited{phase: phase-1c, exit_status: complete
 - [Phase 1a primer](./vsdd-phase-1a.md) — Behavioral Specification (consumed)
 - [Phase 1b primer](./vsdd-phase-1b.md) — Verification Architecture (consumed)
 - [Phase 2a primer](./vsdd-phase-2a.md) — Test Suite Generation (opens per-milestone after Phase 1c closes)
-- [methodology.md § Per-milestone PR discipline](../../README.md#per-milestone-pr-discipline) — draft PR opens at Phase 2a; PR template auto-generation
+- [the spec contract § Per-milestone PR discipline](../../.design/agent-first-vsdd-toolkit.md#per-milestone-pr-discipline) — draft PR opens at Phase 2a; PR template auto-generation

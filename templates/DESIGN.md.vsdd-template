@@ -14,8 +14,8 @@ last_revision_trigger: "Phase 1a — initial DESIGN.md authoring"
 This is the vsdd-cli DESIGN.md template. `vsdd init` deploys this to adopting projects
 that don't already have a DESIGN.md. Operators populate the per-section content.
 
-Per the methodology contract `.design/agent-first-vsdd-toolkit.md` + the per-artifact-class
-JSON Schemas in `.mdatron/schemas/` (design-doc class). Sections marked REQUIRED below must be
+Per the methodology contract `.design/agent-first-vsdd-toolkit.md` (the design-doc class is
+schema-less by design — no `.mdatron/schemas/` entry). Sections marked REQUIRED below must be
 non-empty before the spec-gate close criterion at Phase 1c is satisfied.
 -->
 

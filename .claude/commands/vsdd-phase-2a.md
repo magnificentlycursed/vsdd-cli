@@ -67,4 +67,4 @@ Record the phase transition (`PhaseExited{phase: phase-2a, exit_status: complete
 - [Phase 1c primer](./vsdd-phase-1c.md) — Spec Review Gate (consumed)
 - [Phase 2b primer](./vsdd-phase-2b.md) — Minimal Implementation (turns the Red Gate green)
 - [Quality Engineer domain](./vsdd-domain-quality-engineer.md) — test falsifiability discipline
-- [README § Per-milestone PR discipline](../../README.md#per-milestone-pr-discipline) — draft PR opens here
+- [the spec contract § Per-milestone PR discipline](../../.design/agent-first-vsdd-toolkit.md#per-milestone-pr-discipline) — draft PR opens here

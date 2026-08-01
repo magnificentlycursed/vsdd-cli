@@ -45,4 +45,4 @@ SE findings route to Solution Architect (validator pair) when they propose chang
 
 ## DESIGN.md change authority
 
-Findings proposing changes to DESIGN.md § Behavioral contracts route to **Solution Owner** via the Raise-to-SO discipline (per methodology.md § Domain change authority). SE-side resolution is implementation-only; spec changes require SO sign-off.
+Findings proposing changes to DESIGN.md § Behavioral contracts route to **Solution Owner** via the Raise-to-SO discipline (per the spec contract § Solution Owner change authority). SE-side resolution is implementation-only; spec changes require SO sign-off.

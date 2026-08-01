@@ -1,6 +1,6 @@
 # vsdd
 
-**vsdd** is a Rust toolkit that harnesses an AI agent's development process to
+**vsdd** is a Rust toolkit that binds an AI agent's development process to
 **Verified Spec-Driven Development (VSDD)** — a software methodology in which the
 specification is authored first, made verifiable, and defended by adversarial
 cold-session review before any code is accepted. vsdd is a **methodology
@@ -31,7 +31,8 @@ worked example.
 
 > VSDD extends **VDD** (the adversarial-review predecessor methodology) with a
 > spec-first pipeline. Both methodologies, crosslink, and the Thermite harness
-> are authored by **[dollspace](https://github.com/dollspace-gay)**; see
+> (the outer agent harness) are authored by
+> **[dollspace](https://github.com/dollspace-gay)**; see
 > [Credits](#credits). vsdd-cli is an independent Rust implementation of that
 > methodology, not the methodology itself.
 
@@ -40,9 +41,9 @@ worked example.
 vsdd is under active bootstrap and respecification. The pieces described below
 are labelled **built** or **planned** throughout, and the two are kept strictly
 separate — an unbuilt capability is never described here as if it ships. The
-current built core is the **engine** (the shared code and data every capability
-builds on: phase state, the status answer, the versioned registry data, and
-terminal-output safety) plus the first vertical slice (the routing-before-fix
+current built core is the **engine** — the shared core every capability builds
+on (phase state, the status answer, the versioned registry data, and
+terminal-output safety) — plus the first vertical slice (the routing-before-fix
 guardrail). The conformance-and-efficiency subsystem, the golden-path
 dispatcher, and the efficiency insight engine are designed and queued, not yet
 built.
@@ -83,7 +84,7 @@ vsdd ships as a single `vsdd` binary that dispatches subcommands, matching the
 | Command | What it does |
 |---|---|
 | `vsdd init` | Drift-aware toolkit deployment into a crosslink-initialized repo. Deploys managed files and registry data, records per-file state in a manifest, and refuses to clobber operator edits — on a conflict it prompts to keep the edit, accept the new template, or show a diff. Flags: `--check` (pre-flight probe only), `--dry-run`, `--update` (upgrade unedited files whose template changed), `--force`, and `--ci-mode` / `--no-prompt` (non-interactive). |
-| `vsdd status` | Answers "what phase are we in?" from the phase-state artifact and the tracker, in one command. Three forms from one computation: a human terminal form (default), a machine form (`--machine`, JSON), and a one-line statusline segment (`--statusline`, with `--repo-set <path>` for a multi-repo display). It also reports process-integrity drift unprompted (round-parity, unrouted findings, dangling installed-artifact references) and stays honest under a broken state — every surface still speaks. |
+| `vsdd status` | Answers "what phase are we in?" from the phase-state artifact and the tracker, in one command. Three forms from one computation: a human terminal form (default), a machine form (`--machine`, JSON), and a one-line statusline segment (`--statusline`, with `--repo-set <path>` for a multi-repo display). It also reports process-integrity drift unprompted (phase-pointer/milestone mismatch, unrouted findings, dangling installed-artifact references) and stays honest under a broken state — every surface still speaks. |
 | `vsdd gate` | The routing-before-fix guardrail (the first vertical slice): blocks when a finding closed by a fix carries no filed routing. Exit codes are `0` pass, `1` blocked, `2` unverifiable (fail-closed). `--machine` renders the verdict as JSON. |
 
 ### Planned
@@ -159,9 +160,9 @@ the subsystem mechanizes that check rather than trusting it.
   is the design for the conformance-and-efficiency subsystem (the planned
   commands above).
 - All design work lives in [`.design/`](./.design/), authored through the
-  `/design` skill and the crosslink pipeline. The root `DESIGN-VERIFICATION.md`
-  document is **retired** — superseded by the contract above and pending
-  removal; do not treat it as current.
+  `/design` skill and the crosslink pipeline. The root `DESIGN-*.md` documents
+  (including `DESIGN-VERIFICATION.md`) were **removed** under #826 — superseded
+  by the contract above; git history is the archive.
 
 ## Continuous integration
 

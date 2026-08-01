@@ -97,4 +97,4 @@ Record the Exit Signal (`ExitSignaled{project: <name>, attestation_commit: <sha>
 - [Phase 5 primer](./vsdd-phase-5.md) — Test + Formal-verification MVR signals (Dimensions 2 + 4)
 - [Solution Owner domain](./vsdd-domain-solution-owner.md) — Spec MVR signal (Dimension 1)
 - [VSDD Methodology meta-domain](./vsdd-domain-vsdd-methodology.md) — methodology-semantic-coherence at the close
-- [methodology.md § MVR and Exit Signal convergence](../../methodology.md#mvr-and-exit-signal-convergence) — convergence discipline overview
+- [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) — the canonical convergence discipline (MVR + Exit Signal)

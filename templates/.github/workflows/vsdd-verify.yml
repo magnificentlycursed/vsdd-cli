@@ -1,7 +1,7 @@
 # vsdd-verify.yml — deployed by `vsdd init` to adopting projects at .github/workflows/vsdd-verify.yml
 # Runs all methodology hooks via the Rust mirror; emits SARIF for GitHub Code Scanning.
 #
-# Per DESIGN-VERIFICATION § CI workflow templates + the v1 GitHub-only platform requirement.
+# Per the methodology contract .design/agent-first-vsdd-toolkit.md (Conformance checks + Gates) + the v1 GitHub-only platform requirement.
 # Auth method: API key (Plan auth structurally rejected for CI per the cross-field validation).
 
 name: vsdd verify
