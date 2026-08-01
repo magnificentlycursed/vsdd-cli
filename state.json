@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1342,
+  "next_comment_id": 1343,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5679,7 +5679,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-08-01T20:49:09.266608Z",
+      "updated_at": "2026-08-01T20:54:25.604197Z",
       "comments": {
         "00e9ffcc-b49a-4e4b-82d6-c1c53d12e5f0": {
           "display_id": 1312,
@@ -5689,6 +5689,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsdfuTvUH1dO+0NhFd65O64wa+PKizwoTVBKpyQbHNKtAEEE7ikfU5E66UwUEKMA8Ldf2GMIa/rnAwCcYYBn6Ag=="
+        },
+        "10701964-c795-4248-97f3-149e4cacfd39": {
+          "display_id": 1342,
+          "author": "xqjG",
+          "content": "MERGED: PR #19 squash-merged to main as 74421d1b (checks green: verify 26s / test 49s / routing-gate 4m23s). The #826 cleanup-PR scope is fully landed: 4 root DESIGN docs + methodology.md + agent-first-controls + re-sequence input deleted, README rewritten, every citer repointed, DESIGN-VERIFICATION deletion-safety closed, and the SO-ratified contract amendment (migrated disciplines + Design-doc lifecycle member) on main carrying its evidence section per the Gates amendment format-carry. Remaining on this issue: the re-ground-#14/#15-to-slice-framing half of the title scope. Next acts elsewhere: #845 (topology remediation + deviation registry), #853 (file-home ruling), #854 (orphaned-code catalog), #842 (template re-home), Slices 1/2/4.",
+          "created_at": "2026-08-01T20:54:25.588258Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALr4UiWMiYdsdIhT3WtbTWdzORaH/DSjBkSPBOml0jOeHxPbiJjaNIVJZFw3egFy352ODSOXmlTSkOn/gFmXPDw=="
         },
         "2540a029-4d55-46af-8b68-821d8bce9d8c": {
           "display_id": 1310,
@@ -30826,11 +30835,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1008,
       "timestamp": "2026-08-01T20:49:09.266608Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1009,
+      "timestamp": "2026-08-01T20:54:25.604197Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T20:49:09.266608Z",
+    "timestamp": "2026-08-01T20:54:25.604197Z",
     "agent_id": "xqjG",
-    "agent_seq": 1008
+    "agent_seq": 1009
   }
 }
