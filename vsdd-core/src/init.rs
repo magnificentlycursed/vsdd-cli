@@ -1,5 +1,5 @@
 //! Project bootstrap: three-way drift classification + template deployment +
-//! idempotent re-init (Slice 3, Install; `.design/install-slice.md`).
+//! idempotent re-init (Slice 3, Install; the `install-slice` knowledge page — design retired under #845).
 //!
 //! Pipeline:
 //!   1. refuse a non-git directory (PE tightening; REQ-9)

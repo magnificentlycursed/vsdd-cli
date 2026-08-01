@@ -1,8 +1,0 @@
-{
-  "schema_version": 1,
-  "design_doc": ".design/routing-before-fix-guardrail.md",
-  "doc_hash": "sha256:dcc03236e35bd09fdfe2d78588c7abea119c786f6936ae2e8cffc50496c25ea4",
-  "stage": "designed",
-  "plans": [],
-  "runs": []
-}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "design_doc": ".design/decomposition-topology-remediation.md",
+  "doc_hash": "sha256:0c7d7e2cb32b9e932cc136bf95b56f3944202d5bc5e115240576abfb024031c3",
+  "stage": "designed",
+  "plans": [],
+  "runs": []
+}

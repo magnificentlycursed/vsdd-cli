@@ -1,0 +1,265 @@
+# Deviation registry — self-governance instance (vsdd-cli).
+#
+# Contract control: Conformance at action time — the deviation-registry control
+# beside the act-to-affordance map, in the AI-Engineer-owned versioned-data-set
+# family (ratified design .design/decomposition-topology-remediation.md, REQ-4
+# and REQ-5; registered in the contract by the REQ-7 clause (a) amendment).
+# The map records what SHOULD carry an act; this registry records departures,
+# with expiry. `vsdd gate` enumerates `standing` entries and fails loud on a
+# lapsed expiry or a fired retest trigger without a newer Solution Owner
+# disposition_ref (REQ-6; the gate leg is a build-plan phase deliverable).
+#
+# Entry schema (REQ-4): id (plain kebab name), deviation, deviates_from (an
+# act-to-affordance map `act` key, or null with deviation_class), stated_reason,
+# retest_trigger (typed: date | issue-state | version-compare |
+# artifact-presence; exactly one machine-decidable predicate; a fully-machine
+# boolean compound within one class counts as one), trigger_context (optional),
+# entry_date (the 30-day default expiry computes from it), expiry (absent for
+# resolved), owning_issue, status (standing | resolved), disposition_ref
+# (issue plus comment timestamp of the Solution Owner decision comment).
+# Transitions: standing -> resolved, or standing -> re-armed standing with a
+# rewritten expiry; resolved is terminal — regression requires a new entry.
+# Creation at `standing`, re-arm, and resolution each carry their own Solution
+# Owner disposition_ref. Founding-set expiries are sized to their retest
+# horizons by the ratification disposition (REQ-4's expiry-sizing provision),
+# which is the Solution Owner coverage for each beyond-default expiry.
+
+schema_version: 1
+
+entries:
+  - id: manual-dispatch-fallback
+    deviation: >-
+      Runtime-harness Agent/Workflow dispatch rides in place of crosslink
+      kickoff/swarm for autonomous execution.
+    deviates_from: autonomous-execution
+    stated_reason: >-
+      Upstream kickoff-plan stall plus the missing vsdd-layer injection seam
+      into swarm-dispatched agents (vsdd-cli #837/#851; upstream
+      dollspace-gay/crosslink #55/#62).
+    retest_trigger:
+      type: issue-state
+      predicate: "dollspace-gay/crosslink#55 state == closed"
+    trigger_context: >-
+      Second disjunct held as context, not predicate: the local mirror pulled
+      past a fix commit — promotable into the predicate by Solution Owner
+      re-arm once a fix commit is namable.
+    entry_date: 2026-08-01
+    expiry: 2026-10-30
+    owning_issue: "vsdd-cli#845"
+    status: standing
+    disposition_ref:
+      issue: "vsdd-cli#845"
+      comment_timestamp: "2026-08-01 21:59"
+
+  - id: mdatron-sibling-pin-lag
+    deviation: >-
+      The CI sibling checkout is tag-pinned to mdatron v0.4.0
+      (mdatron-verify.yml) while the sibling's latest release is v0.5.0, with
+      the pre-commit window at 0.4.x — a persisted toolchain-pin lag.
+    deviates_from: null
+    deviation_class: toolchain-pin
+    stated_reason: >-
+      The pin validates CI against the version the repo targets (vsdd-cli
+      #824/#830); the lag is one minor at entry (pinned v0.4.0 against latest
+      v0.5.0) and the pre-commit window's next move rides the same posture.
+    retest_trigger:
+      type: version-compare
+      predicate: >-
+        the sibling's latest release exceeds the pinned ref's minor version
+        by 2 or more
+    trigger_context: >-
+      Observation binding: a GitHub API latest-release query on the CI leg —
+      never the tag-pinned checkout, which cannot observe advance. Currently
+      false (v0.5.0 against v0.4.0 is a lag of one minor).
+    entry_date: 2026-08-01
+    expiry: 2026-09-30
+    owning_issue: "vsdd-cli#816"
+    status: standing
+    disposition_ref:
+      issue: "vsdd-cli#845"
+      comment_timestamp: "2026-08-01 21:59"
+
+  - id: hand-split-slice-topology
+    deviation: >-
+      The hand-split decomposition topology — the parent contract plus the
+      hand-split slice fleet (five independently-pipelined slice docs, the
+      #840 sidecar, and a built slice doc that never had one), a workaround
+      crosslink cannot model. Scope: doc-topology convergence only — flow
+      re-entry stays open under manual-dispatch-fallback.
+    deviates_from: null
+    deviation_class: doc-topology
+    stated_reason: >-
+      One pipeline per doc was the only shape crosslink could represent until
+      the build-plan projection converged the program on the intended
+      one-doc-to-swarm flow; resolved by this cycle — the disposition
+      comment's cited evidence is the cycle's closing boundary commit.
+    entry_date: 2026-08-01
+    owning_issue: "vsdd-cli#845"
+    status: resolved
+    disposition_ref:
+      issue: "vsdd-cli#845"
+      comment_timestamp: "2026-08-01 21:59"
+
+  - id: dial-less-crosslink-dispatch
+    deviation: >-
+      crosslink swarm's launch surface hardcodes model "opus" and exposes no
+      effort dial (mirror: crosslink/src/commands/swarm/lifecycle.rs:728-744)
+      — a dispatch that cannot set both provisioning dials explicitly.
+    deviates_from: attended-review-round-fan-out
+    stated_reason: >-
+      The dial conduct bound to the dispatch act — every dispatch sets model
+      and effort explicitly, never inherited — cannot be ridden on a surface
+      that lacks the dials; blocked upstream until the effort-parameter issue
+      lands.
+    retest_trigger:
+      type: issue-state
+      predicate: "dollspace-gay/crosslink#61 state == closed"
+    entry_date: 2026-08-01
+    expiry: 2026-10-30
+    owning_issue: "vsdd-cli#852"
+    status: standing
+    disposition_ref:
+      issue: "vsdd-cli#845"
+      comment_timestamp: "2026-08-01 21:59"
+
+  - id: container-kickoff-blocked-posture
+    deviation: >-
+      Attended tmux kickoff, with gate verification run host-side by the
+      attended session, is the working posture in place of container kickoff.
+    deviates_from: autonomous-execution
+    stated_reason: >-
+      Container kickoff is blocked at released versions for Rust fix-lane
+      verification (dollspace-gay/crosslink #9, #10; recorded on vsdd-cli
+      #597); the posture was previously prose in the map's
+      autonomous-execution condition and now carries this entry's trigger and
+      expiry.
+    retest_trigger:
+      type: issue-state
+      predicate: >-
+        dollspace-gay/crosslink#9 state == closed or
+        dollspace-gay/crosslink#10 state == closed
+    entry_date: 2026-08-01
+    expiry: 2026-10-30
+    owning_issue: "vsdd-cli#849"
+    status: standing
+    disposition_ref:
+      issue: "vsdd-cli#845"
+      comment_timestamp: "2026-08-01 21:59"
+
+  - id: crosslink-develop-consumption
+    deviation: >-
+      routing-gate.yml consumes crosslink from the fork's develop branch
+      (its lines 9-12 record the posture) pending the sibling's
+      develop-to-main merge, with a re-pin to a main release tag owed when it
+      lands.
+    deviates_from: null
+    deviation_class: toolchain-pin
+    stated_reason: >-
+      The fork's develop carries what the gate leg depends on ahead of the
+      develop-to-main merge (operator ruling; the consumption posture and the
+      read surface depended on are logged at magnificentlycursed/crosslink#1).
+    retest_trigger:
+      type: issue-state
+      predicate: "magnificentlycursed/crosslink#1 state == closed"
+    entry_date: 2026-08-01
+    expiry: 2026-10-30
+    owning_issue: "vsdd-cli#845"
+    status: standing
+    disposition_ref:
+      issue: "vsdd-cli#845"
+      comment_timestamp: "2026-08-01 21:59"
+
+  - id: hand-authored-build-plan
+    deviation: >-
+      The build-plan document (.design/build-plan.md) is hand-authored — a
+      persisted bootstrap fallback pending Slice 2's generated-context
+      machinery producing it from the contract's Decomposition.
+    deviates_from: null
+    deviation_class: bootstrap-fallback
+    stated_reason: >-
+      Slice 2's generator is unbuilt; the hand-authored projection rides
+      under REQ-2's contract-tie discipline (contract-over-derived precedence,
+      Decomposition content-hash pin) until generation lands.
+    retest_trigger:
+      type: artifact-presence
+      predicate: >-
+        the Slice-2 phase is present in .design/build-plan.md's
+        "## Completed phases" section (grep-decidable, zero-network)
+    entry_date: 2026-08-01
+    expiry: 2026-11-29
+    owning_issue: "vsdd-cli#845"
+    status: standing
+    disposition_ref:
+      issue: "vsdd-cli#845"
+      comment_timestamp: "2026-08-01 21:59"
+
+# Initial-population sweep record (REQ-9; AC-4 requires it present with each
+# candidate entered or declined-with-mitigation). Swept at registry authoring.
+initial_population_sweep:
+  date: 2026-08-01
+  surfaces_swept:
+    - "templates/registry/act-to-affordance-map.md condition fields"
+    - ".github/workflows/ comments (routing-gate.yml, mdatron-verify.yml)"
+    - >-
+      the contract's prose fallbacks (.design/agent-first-vsdd-toolkit.md,
+      Conformance at action time, as enumerated by
+      .design/decomposition-topology-remediation.md REQ-9)
+  candidates:
+    - candidate: >-
+        manual dispatch fallback (map phase-3-review-round condition's
+        kickoff-carried alternative; contract prose fallback)
+      disposition: entered
+      entry: manual-dispatch-fallback
+    - candidate: >-
+        attended tmux posture (map autonomous-execution condition, line 8
+        prose)
+      disposition: entered
+      entry: container-kickoff-blocked-posture
+    - candidate: "mdatron sibling tag pin (mdatron-verify.yml checkout ref v0.4.0)"
+      disposition: entered
+      entry: mdatron-sibling-pin-lag
+    - candidate: "crosslink consumed from the fork's develop (routing-gate.yml lines 9-12)"
+      disposition: entered
+      entry: crosslink-develop-consumption
+    - candidate: >-
+        dial-less swarm dispatch (hardcoded model, no effort surface;
+        mirror lifecycle.rs:728-744)
+      disposition: entered
+      entry: dial-less-crosslink-dispatch
+    - candidate: "the hand-split slice topology (the founding evidence's deviation)"
+      disposition: entered
+      entry: hand-split-slice-topology
+    - candidate: "the hand-authored build-plan (REQ-2's named generation future)"
+      disposition: entered
+      entry: hand-authored-build-plan
+    - candidate: >-
+        the H3-under-Requirements parser coupling (vsdd-cli #847 / upstream
+        #57 doc/code mismatch)
+      disposition: declined
+      mitigation: >-
+        AC-7a's exactness check catches parser drift at the consumption
+        point — swarm init must propose exactly the open-phase set (decline
+        recorded in REQ-9).
+    - candidate: >-
+        kickoff status covers pipeline-sidecar runs only (map run-monitoring
+        condition; upstream #18)
+      disposition: declined
+      mitigation: >-
+        A scope note on a ridden affordance, not an off-affordance ride —
+        crosslink kickoff list is the all-modes surface and is the one
+        ridden.
+    - candidate: >-
+        intervene naming drift (map mid-flow-intervention-record condition)
+      disposition: declined
+      mitigation: >-
+        Naming drift, not a deviation — the affordance is ridden under its
+        installed name (crosslink issue intervene); the map condition records
+        the drift and divergence stays decidable at audit.
+    - candidate: >-
+        adoption-record conditions (map versioned-data-set-authoring,
+        schema-bearing-artifact-authoring, attended-review-round-fan-out)
+      disposition: declined
+      mitigation: >-
+        Adoption provenance, not deviations — these conditions bind conduct
+        and record adopting decisions rather than departures; no entry shape
+        applies.
