@@ -1,6 +1,6 @@
 {
   "next_display_id": 853,
-  "next_comment_id": 1316,
+  "next_comment_id": 1317,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15507,10 +15507,21 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:52:41.763085Z",
-      "updated_at": "2026-08-01T19:52:46.827780Z",
+      "updated_at": "2026-08-01T19:54:33.535753Z",
       "labels": [
         "upstream"
-      ]
+      ],
+      "comments": {
+        "60cd6977-ad11-43be-9ad9-c67ac8038f70": {
+          "display_id": 1316,
+          "author": "xqjG",
+          "content": "SOURCE (attended-design knowledge page, 2026-07-20): the harvest checks for a TIMEOUT sentinel that nothing ever writes — the timeout kill leaves the agent classified RUNNING, caught only by the wall-clock check against .kickoff-metadata.json. Impact: vsdd's never-started/stalled/timeout classification consumes these sentinels (dispatch-manifest round-parity queries); a phantom-RUNNING state after timeout kill corrupts the started-then-stalled vs timed-out distinction. Ask: write the sentinel at kill time.",
+          "created_at": "2026-08-01T19:54:33.515856Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAO0xs134EHHCqcTMEhkbQYtEdne6sCCqkfO4DoI42eIU3f2IN/fcmy58Wxd9wH+EBEZGqfswbxT5oI47g53slCw=="
+        }
+      }
     },
     "94e75639-8c3e-4d86-9009-6da6b6fc38d9": {
       "uuid": "94e75639-8c3e-4d86-9009-6da6b6fc38d9",
@@ -30381,11 +30392,16 @@
       "agent_id": "xqjG",
       "agent_seq": 975,
       "timestamp": "2026-08-01T19:54:26.891538Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 976,
+      "timestamp": "2026-08-01T19:54:33.535753Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:54:26.891538Z",
+    "timestamp": "2026-08-01T19:54:33.535753Z",
     "agent_id": "xqjG",
-    "agent_seq": 975
+    "agent_seq": 976
   }
 }
