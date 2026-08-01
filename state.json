@@ -1,5 +1,5 @@
 {
-  "next_display_id": 847,
+  "next_display_id": 848,
   "next_comment_id": 1306,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -611,6 +611,7 @@
     "b5566f34-368a-4a63-b4da-0c9152b24ef6": 638,
     "b5b93d41-06b2-42fc-b5f1-2b305b431f3d": 648,
     "b676a5ff-8b60-41dd-a14d-8ed6ad227a3a": 222,
+    "b6a38e1c-4cd3-4d9e-a5a1-0928f2115b37": 847,
     "b6e02a2d-a1cb-4c9c-9462-9dc5536e9e5b": 247,
     "b6f134b8-b6f8-49ef-a28a-113ff64077cf": 158,
     "b7207adc-ff0e-40a0-b0bd-58710b7a4321": 723,
@@ -18886,6 +18887,16 @@
         }
       }
     },
+    "b6a38e1c-4cd3-4d9e-a5a1-0928f2115b37": {
+      "uuid": "b6a38e1c-4cd3-4d9e-a5a1-0928f2115b37",
+      "display_id": 847,
+      "title": "Upstream crosslink observation: swarm docs describe H2 '## Phase:' headers; parser only recognizes H3 '### Phase N:' under Requirements",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-08-01T19:36:37.136319Z",
+      "updated_at": "2026-08-01T19:36:37.136319Z"
+    },
     "b6e02a2d-a1cb-4c9c-9462-9dc5536e9e5b": {
       "uuid": "b6e02a2d-a1cb-4c9c-9462-9dc5536e9e5b",
       "display_id": 247,
@@ -30032,11 +30043,16 @@
       "agent_id": "xqjG",
       "agent_seq": 946,
       "timestamp": "2026-08-01T19:36:30.423841Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 947,
+      "timestamp": "2026-08-01T19:36:37.136319Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:36:30.423841Z",
+    "timestamp": "2026-08-01T19:36:37.136319Z",
     "agent_id": "xqjG",
-    "agent_seq": 946
+    "agent_seq": 947
   }
 }
