@@ -1,6 +1,6 @@
 {
   "next_display_id": 848,
-  "next_comment_id": 1313,
+  "next_comment_id": 1314,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5627,7 +5627,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-08-01T19:42:16.899103Z",
+      "updated_at": "2026-08-01T19:42:22.978536Z",
       "comments": {
         "00e9ffcc-b49a-4e4b-82d6-c1c53d12e5f0": {
           "display_id": 1312,
@@ -5646,6 +5646,15 @@
           "kind": "handoff",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAn+c4keIoNUH1A9xq2YteNCLXVgoiOs34C+X+hNJwyBatOJ20muQNQ5D1DfiTrkrZ/2yBeRy2TvdSMTnmZntaDw=="
+        },
+        "9bf46f07-f511-49da-92b2-401c3998dea6": {
+          "display_id": 1313,
+          "author": "xqjG",
+          "content": "DISPATCH MANIFEST — amendment-review round 1 (PR #19, Commit-2 gate). TARGET: the uncommitted contract delta on .design/agent-first-vsdd-toolkit.md (git diff at eec731bd), five pieces: (1) Solution Owner change authority section (migrated from methodology.md § Domain change authority); (2) Per-milestone PR discipline section (migrated from README.md, pre-rewrite); (3) Dependency approval requirement + Trust-boundaries member (migrated from DESIGN-VERIFICATION.md); (4) Design-doc lifecycle Trust-boundaries member (new, operator-ratified 2026-08-01); (5) Methodology-rewrite amendment notes (requirement + decomposition, DR-F6 reconcile). LENSES (6, warm-independent, raw-diff handoff): solution-owner (contract authority), security + platform-engineer (dependency-approval owners), red-team (circumvention probe), documentation-reviewer (cold read), quality-engineer (falsifiability). VEHICLE: runtime-harness Agent dispatch — BOOTSTRAP-INTERIM per the phases-dispatched keystone, hand-audited from transcripts, declared as such. DIALS: session model, default effort. EXIT: all six verdicts in; blockers fixed + re-verified; operator (SO) ratifies; then Commit 2 lands citing this round per the Gates amendment format-carry.",
+          "created_at": "2026-08-01T19:42:22.960791Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcmgpmvY8kYkXINANc9k0hriBHU1/sU8SSJDHQF3tgTkAzG1rRtw7eV/4js8PkqgphkPZnDBv1fNz8c6dq/BNBg=="
         },
         "cec21a56-8712-4601-9d3d-6becb495997b": {
           "display_id": 1200,
@@ -30170,11 +30179,16 @@
       "agent_id": "xqjG",
       "agent_seq": 957,
       "timestamp": "2026-08-01T19:42:16.899103Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 958,
+      "timestamp": "2026-08-01T19:42:22.978536Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:42:16.899103Z",
+    "timestamp": "2026-08-01T19:42:22.978536Z",
     "agent_id": "xqjG",
-    "agent_seq": 957
+    "agent_seq": 958
   }
 }
