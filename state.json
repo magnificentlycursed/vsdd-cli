@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1340,
+  "next_comment_id": 1341,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5679,7 +5679,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-08-01T20:43:38.413180Z",
+      "updated_at": "2026-08-01T20:49:02.209847Z",
       "comments": {
         "00e9ffcc-b49a-4e4b-82d6-c1c53d12e5f0": {
           "display_id": 1312,
@@ -5761,6 +5761,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAbtIMdqQ/eqn6xsdCvTtNB4FBsSM5TlDC7RVbCI9A5/Pv61ebq7BLjGGgXGJTQtVCN+5vxP3J/uSfvhfdkAs+Aw=="
+        },
+        "e7861a58-c26a-4843-a128-ca63ba61d17e": {
+          "display_id": 1340,
+          "author": "xqjG",
+          "content": "OperatorDirectiveApplied{directive: spec-contract-amended} — SO RATIFICATION, 2026-08-01. The operator ratifies the #826 contract amendment: the migrated Solution Owner change authority + Per-milestone PR discipline behavioral contracts, the Dependency approval requirement + Dependency-manifests trust member, the Design-doc lifecycle trust member, and the Methodology-rewrite amendment notes, as amended through review rounds 1-3 (recorded above: round-1 six-lens NEEDS-CHANGES; fix pass; round-2 six-lens re-verify with all round-1 findings closed and zero reopened; 15-item micro-fix; round-3 sight-clean; mdatron clean throughout). RIDER (RT-R3 discharge): the retained-verbatim device on the Methodology-rewrite requirement — non-normative brackets re-scoping verbatim-retained text — is recorded as a deliberate temporary state expiring with the #853 file-home ruling. Rationale: migration-fidelity law satisfied (every drop carries a recorded disposition), every enforcement claim honest-graded against the verified tree/ruleset/mirror state, every falsifier observable. Disposition home per the ratified section itself: this tracker comment + the harness run record; no events store.",
+          "created_at": "2026-08-01T20:49:02.196749Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABATY8F8kfI0InTsfj5xnDqDWYkCvjSj1+qzEYoxYR4v7ympYcCgmIJ2+SY5akyjoy3whhJ1klnSEyZxvpN0awuBg=="
         }
       }
     },
@@ -30798,11 +30807,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1006,
       "timestamp": "2026-08-01T20:43:38.413180Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1007,
+      "timestamp": "2026-08-01T20:49:02.209847Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T20:43:38.413180Z",
+    "timestamp": "2026-08-01T20:49:02.209847Z",
     "agent_id": "xqjG",
-    "agent_seq": 1006
+    "agent_seq": 1007
   }
 }
