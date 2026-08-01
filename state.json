@@ -1,6 +1,6 @@
 {
   "next_display_id": 853,
-  "next_comment_id": 1319,
+  "next_comment_id": 1320,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7044,7 +7044,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:53:03.791348Z",
-      "updated_at": "2026-08-01T19:54:40.164749Z",
+      "updated_at": "2026-08-01T19:56:48.074465Z",
       "labels": [
         "upstream"
       ],
@@ -7057,6 +7057,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmUHe7Fd8aJjXUyh45fKJNJQ+FTqLgiqpsEEgHZQ7DB8yd98ywR8XLqUSj7FfakzjjtZf6HWLB6slwyyxgs/hDg=="
+        },
+        "4b3d21e2-9c2a-4b76-8344-6244711ba745": {
+          "display_id": 1319,
+          "author": "xqjG",
+          "content": "PARTIALLY ADDRESSED UPSTREAM (verified from the commit diff, dollspace-gay/crosslink 26ee1885, merged 2026-08-01, PR #44 / gh#43 'configurable kickoff prompt template via hook-config.json'): kickoff run now checks hook-config.json 'agent.kickoff_template' (a file path, resolved relative to .crosslink/) and uses that file's content as the ENTIRE agent prompt, bypassing build_prompt; 'agent.no_template: true' yields an empty prompt (run.rs step 5; utils.rs read_kickoff_template/read_no_template). This IS a workable seam for the vsdd layer: the orchestrator controls the template file and can regenerate it per dispatch with the composition+primer+personas baked in. THREE CAVEATS narrow the remaining ask: (1) REPLACE, not INJECT — the custom path loses crosslink's own built prompt entirely (15-step protocol, issue id, branch, design-doc content, conventions, verify-level steps; no placeholder interpolation), so vsdd must re-author the crosslink half too and it drifts as upstream evolves; ask remains: an append/injection mode or placeholder interpolation so crosslink's half stays tool-maintained. (2) Config-level, not dispatch-level — one template path in hook-config.json races under parallel dispatches with different compositions; ask: a per-dispatch --template flag on kickoff run/plan. (3) Nothing for swarm — the template hook is kickoff-run only. Same commit also adds 'agent.binary' (swap claude for another CLI; non-claude gets prompt via stdin, Anthropic env/credential mounts gated). NOT addressed by this commit: #852 (no effort/thinking-budget flag), #837/#846/#847/#848/#849/#850 untouched. Our local mirror (6b4f736f, 2026-07-31) predates this — re-audit after next pull.",
+          "created_at": "2026-08-01T19:56:48.057988Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAh6w0ZX4j10OaKjhFS4/1Ucjuxjp4UkFxbnmrdNKSKJbpV915PX/7bXeGQTGhJJ2qM9I+WPu4mFRQVQTeaFHQBg=="
         }
       }
     },
@@ -30438,11 +30447,16 @@
       "agent_id": "xqjG",
       "agent_seq": 979,
       "timestamp": "2026-08-01T19:54:54.232100Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 980,
+      "timestamp": "2026-08-01T19:56:48.074465Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:54:54.232100Z",
+    "timestamp": "2026-08-01T19:56:48.074465Z",
     "agent_id": "xqjG",
-    "agent_seq": 979
+    "agent_seq": 980
   }
 }
