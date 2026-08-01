@@ -1,6 +1,6 @@
 {
   "next_display_id": 848,
-  "next_comment_id": 1308,
+  "next_comment_id": 1309,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18921,10 +18921,21 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:36:37.136319Z",
-      "updated_at": "2026-08-01T19:36:42.083948Z",
+      "updated_at": "2026-08-01T19:37:36.585492Z",
       "labels": [
         "upstream"
-      ]
+      ],
+      "comments": {
+        "320353c1-cf02-4bc3-b203-48b42ac7f99b": {
+          "display_id": 1308,
+          "author": "xqjG",
+          "content": "DETAIL (crosslink @ 6b4f736f): docs_src/guides/swarm.qmd:265-277 documents H2 '## Phase:' / '## Layer:' headers as the explicit-phasing mechanism, but the parser consumed by swarm init (design_doc.rs:159-165, via init.rs:18) recognizes only H3 '### Layer N:' / '### Phase N:' INSIDE the '## Requirements' section; an H2 '## Phase:' lands in unknown_sections and produces no phase grouping. Trust the code: H3-under-Requirements with (parallel)/(sequential) hints is what works. Doc fix or parser extension — either closes it.",
+          "created_at": "2026-08-01T19:37:36.570661Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAitFB3haKo4JvdF8ZCPAC7e7u5Cs+Ajv4lWBf/kdGrvqNbQrsCkJDBhYOR9SspZhRVJuBvysLG4lYIjdqccqiBg=="
+        }
+      }
     },
     "b6e02a2d-a1cb-4c9c-9462-9dc5536e9e5b": {
       "uuid": "b6e02a2d-a1cb-4c9c-9462-9dc5536e9e5b",
@@ -30097,11 +30108,16 @@
       "agent_id": "xqjG",
       "agent_seq": 951,
       "timestamp": "2026-08-01T19:37:29.931159Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 952,
+      "timestamp": "2026-08-01T19:37:36.585492Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:37:29.931159Z",
+    "timestamp": "2026-08-01T19:37:36.585492Z",
     "agent_id": "xqjG",
-    "agent_seq": 951
+    "agent_seq": 952
   }
 }
