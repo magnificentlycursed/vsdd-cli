@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1349,
+  "next_comment_id": 1350,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15267,11 +15267,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-01T21:45:12.409269Z",
+      "updated_at": "2026-08-01T21:52:48.715489Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "06f69927-ee4e-4d62-8f58-18f859ea0e67": {
+          "display_id": 1349,
+          "author": "xqjG",
+          "content": "ROUND 3 (sight-check of the 21-item micro-fix): CLOSED CLEAN. Verified in-file: resolution transition SO-gated with premature-resolution fixture; override predicate decidable with the entry-level/registry-level carve-out; entry 2 re-grounded (pin-lag residual, currently-false version-compare predicate, CI-leg API observation binding); entry 6 = fork#1 issue-state, entry 7 = artifact-presence zero-network; absent/shape-invalid fail-closed negatives seeded; Provenance: marker grammar; typed trigger grammar; AC-9 (byte budgets 64KB/8KB, hash-pin presence, citer-sweep); 'a further sanctioned operation' ordinal fixed; the false unknown-sections verified-tag GONE (replaced with the correct mechanism cite); grade clause names creation/re-arm/resolution. Doc: 9 REQs / 10 AC checkboxes / 35,193 bytes (inside its own budget). mdatron clean; scope = doc + sidecar only. The design is at the OPERATOR RATIFICATION GATE: round-1 seven-lens NEEDS-CHANGES (3 BLOCKERs) → fix pass → round-2 re-verify (zero reopens; 4 RATIFIABLE / 3 narrow) → 21-item micro-fix → round-3 sight-clean. Ratification carries: (1) the design; (2) the Q1 path refinement (.vsdd/registry/deviation-registry.yaml, deploy-family-canonical); (3) the founding-entry dispositions with retest-horizon expiry sizing (the ratification decision comment IS the disposition_ref the entries cite); plus the DR-F6 knowledge-page refresh at exit.",
+          "created_at": "2026-08-01T21:52:48.695696Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAad7WLqS11lMai3WeinHAWmQJ7gySuDuAupmVHVsJeJ50xppoJC09ig7F+rWT+iP5od9E7fw/+Pnwrffn+z5DDA=="
+        },
         "1136c4a6-54da-40f5-981f-51c661ea8f4a": {
           "display_id": 1348,
           "author": "xqjG",
@@ -30924,11 +30933,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1015,
       "timestamp": "2026-08-01T21:45:12.409269Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1016,
+      "timestamp": "2026-08-01T21:52:48.715489Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T21:45:12.409269Z",
+    "timestamp": "2026-08-01T21:52:48.715489Z",
     "agent_id": "xqjG",
-    "agent_seq": 1015
+    "agent_seq": 1016
   }
 }
