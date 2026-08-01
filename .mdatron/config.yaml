@@ -15,13 +15,14 @@ file_globs:
   - "supplements/*.md"             # language/interface supplements (schema_class: supplement)
   - "templates/registry/*.md"      # the versioned data sets (schema_class: <each set>)
   - "review-log/**/*.md"           # typed review-log entries (schema_class: review-entry)
-# DESIGN-*.md and methodology.md are DROPPED from jurisdiction (vsdd-cli #830):
+# DESIGN-*.md and methodology.md were dropped from jurisdiction (vsdd-cli #830)
+# and have since been removed from the tree (doc-sunset, vsdd-cli #826):
 # superseded transitional prose (the ratified contract
 # .design/agent-first-vsdd-toolkit.md replaced them) whose schema_class
-# (design-doc / methodology-spec) has no schema, so mdatron 0.4.0 rightly flags
-# them MDATRON-W0045 (schema-class-unrouted). They are already out of vocab scope
-# and are slated for doc-sunset (#821); walking them only produced W0045 noise,
-# never validation.
+# (design-doc / methodology-spec) had no schema, so mdatron 0.4.0 rightly flagged
+# them MDATRON-W0045 (schema-class-unrouted). They were out of vocab scope and
+# their doc-sunset (#821) completed under #826; walking them only produced W0045
+# noise, never validation.
 # CHANGELOG.md is intentionally excluded: crosslink-generated, no schema_class
 # frontmatter, and no changelog schema exists — it is not authored governed data.
 
@@ -41,11 +42,11 @@ require_frontmatter:
 # ARMED (vsdd-cli #823): .mdatron/vocabulary.yaml drives MDATRON-E0091 (the
 # letter-cluster prohibition) over the ENDURING governed artifacts — the domain
 # prompts, supplements, and registry data sets the harness ships and adopters
-# receive. The transitional prose specs (methodology.md, DESIGN-*.md) are
-# intentionally OUT of vocabulary scope: they are superseded by the ratified
-# contract / bootstrap stop-gaps that retire as the harness subsumes the
-# methodology, so their coinage debt retires with them (doc-sunset tracked
-# separately, #821).
+# receive. The transitional prose specs (methodology.md, DESIGN-*.md) were
+# intentionally OUT of vocabulary scope: superseded by the ratified contract /
+# bootstrap stop-gaps that retire as the harness subsumes the methodology, so
+# their coinage debt retired with them when they were removed (doc-sunset,
+# #821, completed under #826).
 vocabulary_globs:
   - ".claude/commands/vsdd-*.md"
   - "supplements/*.md"

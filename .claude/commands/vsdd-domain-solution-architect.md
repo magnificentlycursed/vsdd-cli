@@ -49,4 +49,4 @@ SA findings route to Solution Owner (validator pair) when the finding affects DE
 
 ## DESIGN.md change authority
 
-SA may propose decomposition + architecture changes; final authority rests with SO per methodology.md § Domain change authority. Architecture changes that don't affect external contracts may close at SA pair-review; changes affecting external contracts Raise to SO.
+SA may propose decomposition + architecture changes; final authority rests with SO per the spec contract § Solution Owner change authority. Architecture changes that don't affect external contracts may close at SA pair-review; changes affecting external contracts Raise to SO.

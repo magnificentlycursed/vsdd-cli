@@ -1,9 +1,9 @@
 # Canonical patterns registry.
 # Deployed by `vsdd init` to adopting projects at .vsdd/registry/canonical-patterns.yaml.
-# Drives the check-naming-discipline.py hook's letter-label + organizational-scaffolding detection.
+# Drives mdatron's letter-label + organizational-scaffolding detection.
 #
-# Per methodology.md § Naming + coinage governance
-# + DESIGN-VERIFICATION § check-naming-discipline hook.
+# Per .design/agent-first-vsdd-toolkit.md (vocabulary + coinage governance),
+# CI-armed by mdatron MDATRON-E0091 (letter-cluster / letter-label prohibition).
 
 ---
 schema_class: canonical-patterns-registry
@@ -13,7 +13,7 @@ registry_version: 0.1.0
 
 # === vsdd managed ===
 
-# Letter-label anti-pattern enforcement (fires VSDD-E0160).
+# Letter-label anti-pattern enforcement — mdatron MDATRON-E0091 (letter-cluster prohibition).
 # Per the multi-recurrence evidence in the existing-suite (R78 F4 + R94 + PR #38/44/52)
 # + the Phase 4 routing of letter-label citations in vsdd-cli's own docs (commit a0a4987).
 letter_label_anti_patterns:
@@ -53,7 +53,11 @@ acceptable_letter_patterns:
   - "\\bFinding \\d+\\b"
   - "\\bPhase \\d+[a-z]?\\b"
 
-# Synthesis-review citation anti-pattern enforcement (fires VSDD-E0160 candidate).
+# Synthesis-review citation anti-pattern — planned adopter-side check, currently
+# authored-not-exercised: no built hook consumes this section (its only consumer,
+# the retired check-naming-discipline hook, is gone; mdatron's naming family has no
+# dedicated citation-handle code). Letter-cluster-shaped citations ("per A12")
+# already fall under MDATRON-E0091.
 # Per the Phase 4 routing of "per SA-#", "per AIE-#", "per RT-#" citations
 # in vsdd-cli's own docs that were stripped in commit a0a4987.
 synthesis_review_citation_anti_patterns:

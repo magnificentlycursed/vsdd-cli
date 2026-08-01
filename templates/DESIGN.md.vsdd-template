@@ -14,9 +14,9 @@ last_revision_trigger: "Phase 1a — initial DESIGN.md authoring"
 This is the vsdd-cli DESIGN.md template. `vsdd init` deploys this to adopting projects
 that don't already have a DESIGN.md. Operators populate the per-section content.
 
-Per DESIGN-METHODOLOGY § Methodology spec section list + DESIGN-SCHEMA § Per-artifact-class
-schemas (DESIGN doc class). Sections marked REQUIRED below must be non-empty before the
-spec-gate close criterion at Phase 1c is satisfied.
+Per the methodology contract `.design/agent-first-vsdd-toolkit.md` (the design-doc class is
+schema-less by design — no `.mdatron/schemas/` entry). Sections marked REQUIRED below must be
+non-empty before the spec-gate close criterion at Phase 1c is satisfied.
 -->
 
 ## Project intent (REQUIRED)
@@ -64,7 +64,7 @@ Declare each axis in `.vsdd/config.yaml`. Active axes drive domain activation + 
 
 ## Verification architecture (REQUIRED — Phase 1b authors this section)
 
-[Per DESIGN-METHODOLOGY § Phase 1b primer:
+[Per `.design/agent-first-vsdd-toolkit.md` § Verification architecture (phase 1b):
 1. Which functions are pure?
 2. Which behaviors are automatable vs manual-test-only?
 3. Which behaviors are Phase 5 candidates (mutation / fuzz / proof)?
@@ -89,7 +89,7 @@ Declare each axis in `.vsdd/config.yaml`. Active axes drive domain activation + 
 
 ## Decomposition (REQUIRED — Phase 1c authors this section)
 
-[Per DESIGN-METHODOLOGY § Phase 1c primer: milestone N decomposition.]
+[Per `.design/agent-first-vsdd-toolkit.md` § Decomposition (phase 1c): milestone N decomposition.]
 
 ### Milestone 1: <name>
 
@@ -116,7 +116,6 @@ Declare each axis in `.vsdd/config.yaml`. Active axes drive domain activation + 
 
 ## Cross-references
 
-- [`methodology.md`](./methodology.md) — VSDD methodology spec (deployed by `vsdd init`)
 - [`README.md`](./README.md) — project positioning
 - [`manual-tests/`](./manual-tests/) — per-milestone manual-test checklists
 - [`CHANGELOG.md`](./CHANGELOG.md) — per-release entries per Keep a Changelog 1.0.0

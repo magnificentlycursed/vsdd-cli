@@ -68,4 +68,4 @@ Record the phase transition (`PhaseExited{phase: phase-1a, exit_status: complete
 - [Phase 1b primer](./vsdd-phase-1b.md) — Verification Architecture (often co-authored)
 - [Phase 1c primer](./vsdd-phase-1c.md) — Spec Review Gate (decomposition; closes the spec phase)
 - [Solution Owner domain](./vsdd-domain-solution-owner.md) — spec-contract authority
-- [methodology.md § Domain change authority](../../methodology.md#domain-change-authority) — Raise-to-SO routing
+- [the spec contract § Solution Owner change authority](../../.design/agent-first-vsdd-toolkit.md#solution-owner-change-authority) — Raise-to-SO routing

@@ -100,5 +100,3 @@ Record the phase transition (`PhaseExited{phase: phase-3, exit_status: implement
 - [Phase 2c primer](./vsdd-phase-2c.md) — implementation surface entering Phase 3
 - [Phase 4 primer](./vsdd-phase-4.md) — Feedback Integration (routes Phase 3 findings)
 - [Phase 5 primer](./vsdd-phase-5.md) — Formal Hardening (runs AFTER implementation-MVR)
-- [methodology.md § Adversarial review stance](../../methodology.md#adversarial-review-stance-the-exacting-mentor) — full stance + lenses + tone-flex policy
-- [DESIGN-METHODOLOGY § Cluster-batching shape](../../DESIGN-METHODOLOGY.md#cluster-batching-shape-for-phase-3-cycles) — 4-cluster default + adversarial-pair separation

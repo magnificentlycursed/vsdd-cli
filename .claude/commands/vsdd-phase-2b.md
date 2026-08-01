@@ -70,4 +70,4 @@ Record the phase transition (`PhaseExited{phase: phase-2b, exit_status: complete
 - [Phase 2c primer](./vsdd-phase-2c.md) — Refactor (next)
 - [Software Engineer domain](./vsdd-domain-software-engineer.md)
 - [Platform Engineer domain](./vsdd-domain-platform-engineer.md) — dependency approval discipline
-- [README § Per-milestone PR discipline](../../README.md#per-milestone-pr-discipline) — PR accumulates Phase 2b commits
+- [the spec contract § Per-milestone PR discipline](../../.design/agent-first-vsdd-toolkit.md#per-milestone-pr-discipline) — PR accumulates Phase 2b commits

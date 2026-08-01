@@ -86,4 +86,4 @@ Record the phase transition (`PhaseExited{phase: phase-4, exit_status: complete,
 
 - [Phase 3 primer](./vsdd-phase-3.md) — Adversarial Refinement (produces the findings Phase 4 routes)
 - All earlier-phase primers — routing destinations
-- [methodology.md § MVR and Exit Signal convergence](../../methodology.md#mvr-and-exit-signal-convergence) — the IAR refinement loop continues until MVR
+- [VSDD whitepaper](https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00) — the IAR refinement loop continues until MVR (the canonical convergence discipline)
