@@ -2,7 +2,7 @@
 # Deployed by `vsdd init` to adopting projects at .vsdd/registry/canonical-patterns.yaml.
 # Drives the check-naming-discipline.py hook's letter-label + organizational-scaffolding detection.
 #
-# Per methodology.md § Naming + coinage governance
+# Per .design/agent-first-vsdd-toolkit.md (vocabulary + coinage governance)
 # + DESIGN-VERIFICATION § check-naming-discipline hook.
 
 ---

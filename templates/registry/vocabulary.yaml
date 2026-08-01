@@ -2,7 +2,7 @@
 # Deployed by `vsdd init` to adopting projects at .vsdd/registry/vocabulary.yaml.
 # Operator extensions land at the end of this file; toolkit-canonical entries are managed.
 #
-# Per methodology.md § Naming + coinage governance + DESIGN-VERIFICATION § check-naming-discipline.py.
+# Per .design/agent-first-vsdd-toolkit.md (vocabulary + coinage governance) + DESIGN-VERIFICATION § check-naming-discipline.py.
 # The hook fires VSDD-W0001 (vestigial-pattern-detected) on deprecated_aliases usage.
 
 ---
