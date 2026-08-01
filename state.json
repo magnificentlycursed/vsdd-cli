@@ -1,5 +1,5 @@
 {
-  "next_display_id": 851,
+  "next_display_id": 852,
   "next_comment_id": 1314,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -210,6 +210,7 @@
     "3cb88507-4e95-4691-aaa6-c8a9d37fe622": 516,
     "3e0521b5-c6c8-407f-be59-9de61e41da33": 540,
     "3e613757-95d1-4668-af63-324be716afee": 778,
+    "3e92224a-8c86-4495-aa55-7b71fcedb8b3": 851,
     "3ec70a71-6b44-4458-9558-dff3f91f8ca7": 173,
     "3efedc04-2194-4515-b43a-8cf7616d797e": 279,
     "3fd478b0-2ebd-4989-8393-70732c1d3db7": 70,
@@ -7021,6 +7022,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXBYEk4ATY3NGIjrwlsZ7Rz0BGMHWc333NLRvtQz0c/GXnxTCOMUAPdmWTzjSf9MfFwHNo5drlcImQBVV+phUBQ=="
         }
       }
+    },
+    "3e92224a-8c86-4495-aa55-7b71fcedb8b3": {
+      "uuid": "3e92224a-8c86-4495-aa55-7b71fcedb8b3",
+      "display_id": 851,
+      "title": "Upstream crosslink request: prompt-injection seam in kickoff/swarm dispatch prompt assembly (consumer-tool context injection)",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-08-01T19:53:03.791348Z",
+      "updated_at": "2026-08-01T19:53:03.791348Z"
     },
     "3ec70a71-6b44-4458-9558-dff3f91f8ca7": {
       "uuid": "3ec70a71-6b44-4458-9558-dff3f91f8ca7",
@@ -30283,11 +30294,16 @@
       "agent_id": "xqjG",
       "agent_seq": 967,
       "timestamp": "2026-08-01T19:52:56.432099Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 968,
+      "timestamp": "2026-08-01T19:53:03.791348Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:52:56.432099Z",
+    "timestamp": "2026-08-01T19:53:03.791348Z",
     "agent_id": "xqjG",
-    "agent_seq": 967
+    "agent_seq": 968
   }
 }
