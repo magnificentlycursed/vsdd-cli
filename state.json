@@ -1,6 +1,6 @@
 {
   "next_display_id": 848,
-  "next_comment_id": 1311,
+  "next_comment_id": 1312,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -14972,7 +14972,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-01T19:37:23.760827Z",
+      "updated_at": "2026-08-01T19:41:31.153163Z",
       "labels": [
         "design"
       ],
@@ -14985,6 +14985,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAynBmj0P9Dwk6BAhbDIWmIokyUA7BnxmuA5OUW5CZRVmXs0u5b1BwGZbhbahXUuaX2nQpnsKj2pB4jC2StwTjBQ=="
+        },
+        "f07a6edd-e2e7-4548-bb9c-6ba3b4f75234": {
+          "display_id": 1311,
+          "author": "xqjG",
+          "content": "OPERATOR INITIAL READ (2026-08-01, re-scopes this issue): Q8's finding is a DEVIATION TO REMEDIATE, not a candidate pattern to possibly ratify. Two deliverables for the SO cycle: (1) REMEDIATION — fix what we've already done: restructure the contract's Requirements with the '### Layer N:'/'### Phase N:' H3 headers crosslink's parser consumes (design_doc.rs:159-165), re-parent/retire the hand-split slice-doc pipelines, re-enter the intended one-doc->swarm flow. Upstream dependency stays visible: #837 (kickoff agents stall) may block the LIVE swarm fire, not the restructuring. (2) PREVENTION — revise the methodology harness so this class of deviation cannot silently persist: the contract's 'fallback must not calcify' clause was prose with NO fire-check (authored-not-exercised, the #840 governing law hitting the methodology itself — it calcified undetected). Control shape: a DEVIATION REGISTRY — every off-affordance act / persisted bootstrap fallback carries a recorded entry with stated reason + retest trigger + expiry; a check enumerates standing deviations and fails loud on fired-trigger-or-lapsed-expiry without re-evaluation. Extends the act-to-affordance map + hand-rolled-affordance fixture; exercise-registry pattern applied to standing workarounds. Grade path: convention -> CI-backed block. NOT riding cleanup PR #19 (new control design, not a migration); this cycle is its home, with the topology remediation as founding evidence.",
+          "created_at": "2026-08-01T19:41:31.140260Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQHmnu2g3pHlvXmilgQRJCT7rbOrE241C/j69Y15/a+0o5F/9qbXTwykRrZFwPVWWp6nBYRP6BcI1cjq/lF8HAA=="
         }
       }
     },
@@ -30142,11 +30151,16 @@
       "agent_id": "xqjG",
       "agent_seq": 955,
       "timestamp": "2026-08-01T19:40:04.665909Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 956,
+      "timestamp": "2026-08-01T19:41:31.153163Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:40:04.665909Z",
+    "timestamp": "2026-08-01T19:41:31.153163Z",
     "agent_id": "xqjG",
-    "agent_seq": 955
+    "agent_seq": 956
   }
 }
