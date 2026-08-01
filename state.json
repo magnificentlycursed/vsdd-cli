@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1339,
+  "next_comment_id": 1340,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5679,7 +5679,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-08-01T20:37:37.510786Z",
+      "updated_at": "2026-08-01T20:43:38.413180Z",
       "comments": {
         "00e9ffcc-b49a-4e4b-82d6-c1c53d12e5f0": {
           "display_id": 1312,
@@ -5716,6 +5716,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsea4o85bYt+wrs6rLHiYtHWzPAOQUhuBERhUMNcDGWEG7+Rb6wTErRf9RvBZ2VgBFXg0B3fZeYgH6FfVJ6YKBQ=="
+        },
+        "bed80084-2f4b-49ed-8b82-40fa6bf41fec": {
+          "display_id": 1339,
+          "author": "xqjG",
+          "content": "ROUND 3 (sight-check of the 15-item micro-fix): CLOSED CLEAN. Verified in-file: #657 re-attributed to vsdd-cli (3-lens convergence fixed); bypass-marker 'previously exercised' overclaim replaced with authored-not-exercised-on-this-surface + convention-grade listing; disposition-carrying re-baseline added as third sanctioned op (with the day-one-red adoption path); PR-lifecycle events + sibling codes re-home/disposition sentence present (only E0090 carried as a code; E0070/E0080/W0041/W0180 → recorded drop; E0016/W0070 → #854); bracket-normative-force falsifier added; SEC-R2 skip-on-continue raise extension present (cites #846/upstream #56). Diff scope: contract only, 37 insertions / 3 deletions vs eec731bd. mdatron verify: clean. The amendment is at the operator ratification gate: all round-1 findings closed, round-2 residue landed, round-3 sight-clean. Pending SO ratification riders: RT-R3 retained-verbatim device recorded as deliberate temporary state expiring with #853.",
+          "created_at": "2026-08-01T20:43:38.388946Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA4bB7kZCN7WPvFIZ1sQGVJLl1nM8FGLeDUgz6nyWPIi6Jxz8o+DTzlA4qGoj56IzDwoQZ8UeKzoZZ1F9NRw56DQ=="
         },
         "cec21a56-8712-4601-9d3d-6becb495997b": {
           "display_id": 1200,
@@ -30784,11 +30793,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1005,
       "timestamp": "2026-08-01T20:38:17.231251Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1006,
+      "timestamp": "2026-08-01T20:43:38.413180Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T20:38:17.231251Z",
+    "timestamp": "2026-08-01T20:43:38.413180Z",
     "agent_id": "xqjG",
-    "agent_seq": 1005
+    "agent_seq": 1006
   }
 }
