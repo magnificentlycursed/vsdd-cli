@@ -4,7 +4,7 @@ tags: ["design-doc"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-08-01
 ---
 
 # Feature: Finding-query join (the unrouted-findings query's live acquisition)
@@ -52,7 +52,8 @@ does not mis-fire the sibling checks that read fields Slice 1 defers.
   worded truncation marker rather than silently dropping findings (the
   no-silent-caps discipline).
 - REQ-5: The universe is forward-only per the re-sequence-enforcement-spine
-  amendment (REQ-5; `.design/re-sequence-enforcement-spine.md`): a finding
+  amendment (REQ-5; the design doc was removed under vsdd-cli #826 — the
+  amendment survives as a crosslink knowledge page): a finding
   closed strictly before the routing amendment's ratification boundary is
   outside the universe; a finding open at ratification, or closed at/after it,
   or reopened after it, is inside. The boundary value is the routing amendment's
