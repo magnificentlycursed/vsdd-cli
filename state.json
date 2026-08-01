@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1348,
+  "next_comment_id": 1349,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15267,11 +15267,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-01T21:22:22.522875Z",
+      "updated_at": "2026-08-01T21:45:12.409269Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "1136c4a6-54da-40f5-981f-51c661ea8f4a": {
+          "display_id": 1348,
+          "author": "xqjG",
+          "content": "RE-VERIFY ROUND 2 RESULT (7 lenses, delta-focused): ZERO round-1 findings reopened — all closed/partial/carried; every load-bearing fact re-verified independently (parser mechanics, mirror citations, sidecar states, ruleset, contract members). VERDICTS: PE/SA/AIE/SO RATIFIABLE, RT/QE/DR NEEDS-CHANGES narrowly. Notable verifications: the self-re-arm rejection fixture has a real decidable substrate (crosslink comments carry author + driver_key_fingerprint columns, server-synced — QE); the deploy-if-absent Scaffold class already exists in init.rs (PE); decision fidelity holds with the Q1 refinement properly staged (SO). CONSOLIDATED MICRO-FIX (~28 clauses, one author pass): (1) resolution transition SO-gated + premature-resolution fixture (RT-R3, the unguarded exit door); (2) entry-3 disposition_ref -> ratification comment shape, commit as cited evidence (RT-R4=DR-R2) + resolved-entry field exemption (AIE-R2); (3) override predicate reconciled with shape rules (RT-R2); (4) founding expiries sized to retest horizons at ratification dispositions (RT-F7); (5) creation+re-arm named in the convention-grade clause (RT-R1); (6) self-re-arm fixture annotated CI-leg-only w/ #815+signing dependency (RT-R5); (7) typed retest_trigger grammar: date|issue-state|version-compare|artifact-presence, compound rule stated (QE-R2/AIE-R3); (8) entry-6 predicate = fork consumption-posture issue state (PE-R1) + quote un-fused (DR-R6); (9) entry-7 predicate = Slice-2 phase present in Completed phases, grep-decidable zero-network (AIE-R3); (10) entry-2 RE-GROUNDED: #816 landed, checkout tag-pinned v0.4.0, sibling at v0.5.0 — predicate already fired as written (DR-R4+AIE-F7); re-scope to the true residual (pre-commit window + pin lag) with a currently-false predicate + real observation binding; (11) absent-registry + shape-invalid fail-closed fixtures (QE-R1); (12) Provenance: marker grammar (QE-F9); (13) AC-6 clause-presence list (QE-F5 residual); (14) AC-1 fallback rationale corrected — AC-items/title, not unknown sections; false verified-in tag removed (QE-R3=DR-R1, the fabricated-verification class); (15) issue-trigger fired-direction fixture noted at gate-leg 2a (QE-R4); (16) landing ACs: size budgets, hash-pin presence, citer-sweep zero-stale-refs (QE-R5+DR-R8); (17) byte bounds — doc<=64KB, phase<=8KB (AIE-R1, measured 526B/line); (18) adopter deploy-before-gate ordering + re-init path (SA-R1); (19) obligation/provenance lines never route off-doc (SA-R2); (20) schema-upgrade channel accepted-residual note (SA-R3); (21) amendment folds the lifecycle member's drifted-sidecars sentence correction (SO-R1); (22) 'a further sanctioned operation' — ordinal collision fixed (SO-R2=DR-R3); (23) registry-authoring dispatch composes the data-engineer lens per the map's versioned-data-set-authoring binding (SO-R3); (24) AC-7a surface pinned to the landing commit's CI run + swarm-reset note (PE-R2); (25) Summary count taxonomy (DR-R5); (26) clobber-incident handle named or dropped (DR-R7). ESTATE NOTE (out of doc scope): routing-gate.yml's header comment is stale vs the live ruleset (says not-yet-required; it is). Round 3 = sight-check, then operator ratification carrying: the design, the Q1 path refinement, and the founding-entry dispositions with expiry sizing.",
+          "created_at": "2026-08-01T21:45:12.390685Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABARtVtBxYAz/h8NIm2+SEOJIySeY9Rjo+IcqonCzX8VXSgyvifKQGN6kdKcaSkvI6iGMCsjE6jk1JSJ7WsI8EaBA=="
+        },
         "2af3d49e-0b4c-461d-b508-2fe2b428ed31": {
           "display_id": 1343,
           "author": "xqjG",
@@ -30910,11 +30919,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1014,
       "timestamp": "2026-08-01T21:22:22.522875Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1015,
+      "timestamp": "2026-08-01T21:45:12.409269Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T21:22:22.522875Z",
+    "timestamp": "2026-08-01T21:45:12.409269Z",
     "agent_id": "xqjG",
-    "agent_seq": 1014
+    "agent_seq": 1015
   }
 }
