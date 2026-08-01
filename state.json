@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1345,
+  "next_comment_id": 1346,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15267,7 +15267,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-01T21:11:10.212863Z",
+      "updated_at": "2026-08-01T21:11:49.187763Z",
       "labels": [
         "design"
       ],
@@ -15280,6 +15280,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdfLtnmk6WjC3biuT6ypP/XvQlPmF2+MdQGykIWNckop8G7IjhhP6VkDLjqh15pSXKmaw9UL11EH5L5D5s4HAAw=="
+        },
+        "4418edcd-261f-4241-9a3f-2d1d03af4188": {
+          "display_id": 1345,
+          "author": "xqjG",
+          "content": "DISPATCH MANIFEST — #845 design cold-review round 1. TARGET: .design/decomposition-topology-remediation.md (new, 8 REQ / 7 AC, interview + open-question decisions operator-resolved 2026-08-01). LENSES (7, warm-independent, raw-doc handoff): solution-architect PRIMARY (decomposition/projection topology + the completed-phases-outside-Requirements mechanism), solution-owner (scope + contract authority + decision fidelity), ai-engineer (the registry as act-to-affordance-map-family data + dispatch surface), platform-engineer (gate leg + CI backstop + template deployment implementability), red-team (registry circumvention — including the unregistered-deviation direction), documentation-reviewer (cold read), quality-engineer (AC falsifiability + red-gate seedability). VEHICLE: runtime-harness Agent dispatch — BOOTSTRAP-INTERIM declared per the phases-dispatched keystone, hand-audited; this dispatch itself rides the manual-dispatch fallback that REQ-4's founding entry registers (stated reason: upstream #55/#62; the deviation is now record-carried, exactly the discipline this design lands). DIALS: session model, default effort. EXIT: verdicts in, fix round if needed, operator (SO) ratification; then the REQ-7 contract amendment as its own commit under the format-carry.",
+          "created_at": "2026-08-01T21:11:49.141079Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAaAPMx0Zke0r/l5c25O+1Lfxc1dmV7fTWKrA5R6LtmIriUhC7hQX3o0XA1XhT+Bi/e4k7g1sos0HC5Tx2SDLwDQ=="
         },
         "8aa6c456-5375-45e5-993d-b42fa746ca93": {
           "display_id": 1306,
@@ -30868,11 +30877,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1011,
       "timestamp": "2026-08-01T21:11:10.212863Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1012,
+      "timestamp": "2026-08-01T21:11:49.187763Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T21:11:10.212863Z",
+    "timestamp": "2026-08-01T21:11:49.187763Z",
     "agent_id": "xqjG",
-    "agent_seq": 1011
+    "agent_seq": 1012
   }
 }
