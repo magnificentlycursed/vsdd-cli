@@ -1,5 +1,5 @@
 {
-  "next_display_id": 853,
+  "next_display_id": 854,
   "next_comment_id": 1336,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -145,6 +145,7 @@
     "2538c31c-31fb-429e-b6e4-02dac0721c93": 754,
     "258e1a57-227d-443f-b62f-5c4c86546567": 343,
     "25c6d4b5-4833-4e46-93e5-9f0fd903aa20": 615,
+    "25eefea7-7c96-468c-9b59-d6642824c412": 853,
     "25fb4551-5eea-4465-920b-7c69f4a7aa2c": 423,
     "260e1a7d-d5f4-4d86-aeba-c5be505fb6d5": 734,
     "264340d5-7a7e-4e21-af17-474faf2306cc": 206,
@@ -5116,6 +5117,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAm67rCJcylBf3n59RUJBUmjlBTjtq4yylydzPcBRD85zvXR1WubLcbO2M01ZS62VPt019Vg555kYZXhlu8EFTBg=="
         }
       }
+    },
+    "25eefea7-7c96-468c-9b59-d6642824c412": {
+      "uuid": "25eefea7-7c96-468c-9b59-d6642824c412",
+      "display_id": 853,
+      "title": "SO ruling: file home for the adopter-facing lean methodology doc (methodology.md deleted; contract is the governing-spec home)",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-08-01T20:12:32.473315Z",
+      "updated_at": "2026-08-01T20:12:32.473315Z"
     },
     "25fb4551-5eea-4465-920b-7c69f4a7aa2c": {
       "uuid": "25fb4551-5eea-4465-920b-7c69f4a7aa2c",
@@ -30676,11 +30687,16 @@
       "agent_id": "xqjG",
       "agent_seq": 996,
       "timestamp": "2026-08-01T20:07:12.023084Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 997,
+      "timestamp": "2026-08-01T20:12:32.473315Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T20:07:12.023084Z",
+    "timestamp": "2026-08-01T20:12:32.473315Z",
     "agent_id": "xqjG",
-    "agent_seq": 996
+    "agent_seq": 997
   }
 }
