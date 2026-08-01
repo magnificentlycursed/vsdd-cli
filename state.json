@@ -1,6 +1,6 @@
 {
   "next_display_id": 853,
-  "next_comment_id": 1318,
+  "next_comment_id": 1319,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24602,10 +24602,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:53:24.257600Z",
-      "updated_at": "2026-08-01T19:53:29.239076Z",
+      "updated_at": "2026-08-01T19:54:46.343627Z",
       "labels": [
         "upstream"
-      ]
+      ],
+      "comments": {
+        "09b820ba-5d75-46df-8d65-b1831a430ab5": {
+          "display_id": 1318,
+          "author": "xqjG",
+          "content": "CONTRACT-NAMED UPSTREAM CAPABILITY REQUIREMENT (the effort dial). vsdd's dials discipline is fail-closed: model AND reasoning-effort are specified at every dispatch, never silently inherited — the composition function right-sizes both (model tier + effort as the dispatched agent's provisioning), and the efficiency engine judges over/under-provisioning from the record. kickoff exposes --model and --timeout but NO effort/thinking-budget parameter (verified on kickoff plan/launch --help, 0.9.0-beta.1+6b4f736f), so on the kickoff path the effort dial is neither settable nor recorded (transcript audit: effort present in runtime-harness Agent records, absent from kickoff records — dispatch manifest is the only reliable source). ASK: an effort/thinking-budget flag on kickoff run/plan and swarm, passed through to the launched Claude session. Sibling of #851; both gate the intended vsdd-rides-crosslink end state.",
+          "created_at": "2026-08-01T19:54:46.329019Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAe2OG9Mpa66Swi2kDBfyBKU/NFAlJ+M+9GXlWPRjYP3/euMa5R+7R5dg18kMf6/EdAJKspgTP//kVvGt4EM1VDQ=="
+        }
+      }
     },
     "f131c9de-8d5c-4454-ac5b-69ff71058fa3": {
       "uuid": "f131c9de-8d5c-4454-ac5b-69ff71058fa3",
@@ -30413,11 +30424,16 @@
       "agent_id": "xqjG",
       "agent_seq": 977,
       "timestamp": "2026-08-01T19:54:40.164749Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 978,
+      "timestamp": "2026-08-01T19:54:46.343627Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:54:40.164749Z",
+    "timestamp": "2026-08-01T19:54:46.343627Z",
     "agent_id": "xqjG",
-    "agent_seq": 977
+    "agent_seq": 978
   }
 }
