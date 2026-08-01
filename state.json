@@ -1,6 +1,6 @@
 {
   "next_display_id": 854,
-  "next_comment_id": 1336,
+  "next_comment_id": 1337,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5674,7 +5674,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-08-01T19:42:22.978536Z",
+      "updated_at": "2026-08-01T20:12:57.589213Z",
       "comments": {
         "00e9ffcc-b49a-4e4b-82d6-c1c53d12e5f0": {
           "display_id": 1312,
@@ -5702,6 +5702,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcmgpmvY8kYkXINANc9k0hriBHU1/sU8SSJDHQF3tgTkAzG1rRtw7eV/4js8PkqgphkPZnDBv1fNz8c6dq/BNBg=="
+        },
+        "aa386793-e1d3-40c6-b0f8-a0eafe70d841": {
+          "display_id": 1336,
+          "author": "xqjG",
+          "content": "ROUTING (amendment-review round 1 → fix pass, per the routing-before-fix discipline): all six lenses returned NEEDS-CHANGES; ~30 findings consolidate into six clusters, ALL routing back into the amendment draft (phase-1a fix pass on the uncommitted contract delta; no code changes): CLUSTER A (4-lens convergence: SEC-F1/F2 BLOCKER, QE-F1, PE-F1, RT-F3 + citation minors) — redraft the Design-doc lifecycle member: premise (sidecars agent-written at authoring per the /design skill itself), falsifier (scope off the sanctioned flow; author-identity is not observable), inverse direction (doc gutted with sidecar untouched; nothing compares hash to bytes; contract has no sidecar at all). CLUSTER B (DR-F3, SO-F1, PE-F2/F3/F4, RT-F2, QE-F3) — restore the dropped Per-milestone-PR substance (E0090 merge gate, bypass-marker label-applier rule [live tooling in vsdd-verify.yml], phase co-authorship, env pin, PR-description fields) + honest grade naming the 2026-07-29 ruleset as the one enforced leg + observe-pr-body stated as pending #842. CLUSTER C (RT-F1 BLOCKER, SO-F2, QE-F5) — SO-change-authority honest grade ('can never' → convention-grade statement), declare the persona-derived second source, rationale-less-disposition falsifier. CLUSTER D (RT-F4, DR-F5, SO-F4, QE-F6c) — constrain bracketed amendment-notes to non-normative provenance; unbundle primer emission-lines from the deferred file-home ruling (now tracked #853). CLUSTER E (SEC-F3/F4/F5, RT-F5, PE-F5/F6, QE-F4, DR-F1/SO-F3/PE-F7) — dependency-approval polish: name the icu_properties #813 lapse, disposition payload fields, 'gated'→'governed', hook-vs-CI leg split, undischarged baseline delta, citation handle fix + adjacent repair of the guardrail section's stale workflow names (declared). CLUSTER F — accuracy minors (dirty-build caveat, crate-segment paths, DR-F2 handle → eec731bd). Fix vehicle: the warm contract author agent, contract file only; re-verify by all six lenses delta-focused; operator ratification is the exit gate.",
+          "created_at": "2026-08-01T20:12:57.575775Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsea4o85bYt+wrs6rLHiYtHWzPAOQUhuBERhUMNcDGWEG7+Rb6wTErRf9RvBZ2VgBFXg0B3fZeYgH6FfVJ6YKBQ=="
         },
         "cec21a56-8712-4601-9d3d-6becb495997b": {
           "display_id": 1200,
@@ -30709,11 +30718,16 @@
       "agent_id": "xqjG",
       "agent_seq": 999,
       "timestamp": "2026-08-01T20:12:45.928109Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1000,
+      "timestamp": "2026-08-01T20:12:57.589213Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T20:12:45.928109Z",
+    "timestamp": "2026-08-01T20:12:57.589213Z",
     "agent_id": "xqjG",
-    "agent_seq": 999
+    "agent_seq": 1000
   }
 }
