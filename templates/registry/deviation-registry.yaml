@@ -1,0 +1,36 @@
+# Deviation registry — adopter template.
+#
+# Deploys to .vsdd/registry/deviation-registry.yaml as a deploy-if-absent
+# scaffold: this file is adopter-mutable living data, never overwritten on
+# redeploy (a managed whole-file class would clobber adopter entries).
+#
+# Contract control: Conformance at action time — the deviation-registry
+# control beside the act-to-affordance map, in the AI-Engineer-owned
+# versioned-data-set family (ratified design
+# .design/decomposition-topology-remediation.md, REQ-4 and REQ-5; registered
+# in the contract by the REQ-7 clause (a) amendment). The map records what
+# SHOULD carry an act; this registry records departures, with expiry: a
+# standing workaround gets an entry with a typed retest trigger and an
+# expiry, and `vsdd gate` enumerates `standing` entries, failing loud on a
+# lapsed expiry or a fired trigger without a newer Solution Owner
+# disposition_ref.
+#
+# Entry schema (REQ-4): id (plain kebab name), deviation, deviates_from (an
+# act-to-affordance map `act` key, or null with deviation_class),
+# stated_reason, retest_trigger (typed: date | issue-state | version-compare
+# | artifact-presence; exactly one machine-decidable predicate; a
+# fully-machine boolean compound within one class counts as one),
+# trigger_context (optional), entry_date (the 30-day default expiry computes
+# from it), expiry (absent for resolved), owning_issue, status (standing |
+# resolved), disposition_ref (issue plus comment timestamp of the Solution
+# Owner decision comment). Transitions: standing -> resolved, or standing ->
+# re-armed standing with a rewritten expiry; resolved is terminal —
+# regression requires a new entry. Creation at `standing`, re-arm, and
+# resolution each carry their own Solution Owner disposition_ref.
+#
+# Adopters do not inherit vsdd-cli's deviations: this template ships zero
+# entries.
+
+schema_version: 1
+
+entries: []

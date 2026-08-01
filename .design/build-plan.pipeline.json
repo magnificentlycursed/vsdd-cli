@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "design_doc": ".design/build-plan.md",
+  "doc_hash": "sha256:e5e472622e0ac0c7e791848f55d81e89faea9b8952f5cf716514ac1b3436686f",
+  "stage": "designed",
+  "plans": [],
+  "runs": []
+}
