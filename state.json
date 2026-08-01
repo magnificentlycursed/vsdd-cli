@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1346,
+  "next_comment_id": 1347,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15267,7 +15267,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-01T21:11:49.187763Z",
+      "updated_at": "2026-08-01T21:18:06.092535Z",
       "labels": [
         "design"
       ],
@@ -15298,6 +15298,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAynBmj0P9Dwk6BAhbDIWmIokyUA7BnxmuA5OUW5CZRVmXs0u5b1BwGZbhbahXUuaX2nQpnsKj2pB4jC2StwTjBQ=="
+        },
+        "be67803e-0695-43b0-84a2-f2a2508a01c1": {
+          "display_id": 1346,
+          "author": "xqjG",
+          "content": "CORRECTIVE NOTE (SO-F1, design cold-review round 1): earlier comments on this issue (2026-08-01 19:37 and 19:41) assert the contract 'names the manual-dispatch fallback as must not calcify' — that phrase does NOT appear in .design/agent-first-vsdd-toolkit.md (repo-wide grep confirms). It was this orchestrator's paraphrase from the #840 grounding-audit context, propagated as if quoted contract text. The contract's ACTUAL clauses: line ~131 (Conformance at action time) — hand-rolling an equivalent while the affordance exists 'carries a stated reason or is nonconformant', with the evidence line that no crosslink workflow was ever self-summoned; plus the bootstrap 'until' clauses. The prevention deliverable's premise stands on those real clauses (stronger, if anything: a stated-reason rule with no fire-check is exactly the gap the deviation registry closes). The design doc's Summary will be re-grounded accordingly in the fix pass; future citations of this issue should quote line 131, not the paraphrase.",
+          "created_at": "2026-08-01T21:18:06.061996Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdCI69CYOKQ0AitwZqS/s5qAAvBWmMdPDnoC2QMfhdAFxiIpzAZT2xFDuSirp5DBID5GDdYbKqRg4mwmlCqaIBQ=="
         },
         "ea547e41-c4b6-47b1-b957-a5ac2b2bea23": {
           "display_id": 1344,
@@ -30882,11 +30891,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1012,
       "timestamp": "2026-08-01T21:11:49.187763Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1013,
+      "timestamp": "2026-08-01T21:18:06.092535Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T21:11:49.187763Z",
+    "timestamp": "2026-08-01T21:18:06.092535Z",
     "agent_id": "xqjG",
-    "agent_seq": 1012
+    "agent_seq": 1013
   }
 }
