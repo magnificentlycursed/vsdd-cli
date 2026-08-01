@@ -1,6 +1,6 @@
 {
   "next_display_id": 853,
-  "next_comment_id": 1321,
+  "next_comment_id": 1322,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10591,7 +10591,7 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:36:18.173557Z",
-      "updated_at": "2026-08-01T19:37:29.931159Z",
+      "updated_at": "2026-08-01T20:02:20.434943Z",
       "labels": [
         "upstream"
       ],
@@ -10604,6 +10604,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAzZyvlGLNcLgThwUatGLOhrFCjCbVXk/Yz/X78DeCOvrvEMQhxrhcz5sMtXw0uBOaY3LjBR+BqAoiXTwSiFV5Bw=="
+        },
+        "96faf6fc-f801-45b1-8fdc-f0f02bac559c": {
+          "display_id": 1321,
+          "author": "xqjG",
+          "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+          "created_at": "2026-08-01T20:02:20.406818Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAAa+yaR3K9sTtjgUkA9U6NOFgtSwQgfICn5jGBbOm3z1DgYH2cIj82CDLzArtFhM7Ou6nUwChQ/ZkayGOXKOoAw=="
         }
       }
     },
@@ -30466,11 +30475,16 @@
       "agent_id": "xqjG",
       "agent_seq": 981,
       "timestamp": "2026-08-01T20:02:12.545409Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 982,
+      "timestamp": "2026-08-01T20:02:20.434943Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T20:02:12.545409Z",
+    "timestamp": "2026-08-01T20:02:20.434943Z",
     "agent_id": "xqjG",
-    "agent_seq": 981
+    "agent_seq": 982
   }
 }
