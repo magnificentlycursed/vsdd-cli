@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1351,
+  "next_comment_id": 1352,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15267,7 +15267,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-01T21:59:04.305654Z",
+      "updated_at": "2026-08-01T23:13:02.842643Z",
       "labels": [
         "design"
       ],
@@ -15316,6 +15316,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAaAPMx0Zke0r/l5c25O+1Lfxc1dmV7fTWKrA5R6LtmIriUhC7hQX3o0XA1XhT+Bi/e4k7g1sos0HC5Tx2SDLwDQ=="
+        },
+        "7f12f865-d649-426c-bc00-6c288126aa4b": {
+          "display_id": 1351,
+          "author": "xqjG",
+          "content": "Committed: design(#845) ratified design + build-plan projection + deviation registry | 6 files, 480 insertions | 74d651b3 (branch remediation/845-topology). Sight-checks: 6 phase H3s, 7 Provenance markers, hash pin present; registry 7 entries (6 standing / 1 resolved), template zero-entry; mdatron clean. Next: the REQ-7 six-clause contract amendment (own format-carry commit), then retirement, then PR.",
+          "created_at": "2026-08-01T23:13:02.820266Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAFzND/dSPrM0dWSfemyBtgt6W75sRZQAE81TDbYxMGUaXuNM2V4F+/xMRk4SM68FWW5Bx2yNg7MYeJ3un77l5Dw=="
         },
         "8aa6c456-5375-45e5-993d-b42fa746ca93": {
           "display_id": 1306,
@@ -30952,11 +30961,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1017,
       "timestamp": "2026-08-01T21:59:04.305654Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1018,
+      "timestamp": "2026-08-01T23:13:02.842643Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T21:59:04.305654Z",
+    "timestamp": "2026-08-01T23:13:02.842643Z",
     "agent_id": "xqjG",
-    "agent_seq": 1017
+    "agent_seq": 1018
   }
 }
