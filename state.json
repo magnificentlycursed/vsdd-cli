@@ -1,6 +1,6 @@
 {
   "next_display_id": 848,
-  "next_comment_id": 1309,
+  "next_comment_id": 1310,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5631,7 +5631,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-07-29T10:29:14.071886Z",
+      "updated_at": "2026-08-01T19:37:45.304092Z",
       "comments": {
         "cec21a56-8712-4601-9d3d-6becb495997b": {
           "display_id": 1200,
@@ -5641,6 +5641,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABACJkcdzq7lMJ770b3ioKkasMEuqDYVcI5Xy5PrZ3FCqvFjRbea5/miLRtA5oxRaOrYlFZUgqVilGX61CqC+IxCA=="
+        },
+        "d2175e8c-a0e0-4b5f-bd5b-cae5055672cd": {
+          "display_id": 1309,
+          "author": "xqjG",
+          "content": "Design-flow audit (operator-directed, 2026-08-01): verified crosslink's design->implementation flow from source (../crosslink @ 6b4f736f, binary==source). Outcomes: (1) hand-editing .design/*.md is crosslink-sanctioned (design-workflow.qmd:181) — vsdd's owned+reviewed law is the control on top; NO spec-vs-feature distinction exists in crosslink, so no living-spec exception (operator struck it). (2) doc_hash is a cosmetic tool-maintained derivation (only consumer: 'stale' label at stage==planned; kickoff plan overwrites it) — the C2 agent's rehash was harmless-redundant; reverted on principle, pipeline.json now byte-identical to ratified HEAD. (3) New Trust-boundaries member 'Design-doc lifecycle' being authored into the contract (operator-ratified): no spec-type exception + sidecars are crosslink-maintained, agents never edit them; grade convention. (4) Topology finding spun out to #845 (SO cycle); upstream bugs filed #846, #847.",
+          "created_at": "2026-08-01T19:37:45.290419Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1fQfCkrPVAAsxRv9XjbrV0FQUsle76h5pHwhlHHFaVtODHwRFwe4JOAbfNGkt6rjlJrHw/lyMmvMQjBEh+miAg=="
         },
         "e6b679b9-c0a4-4bb0-a4dd-65f9e7491da5": {
           "display_id": 1236,
@@ -30113,11 +30122,16 @@
       "agent_id": "xqjG",
       "agent_seq": 952,
       "timestamp": "2026-08-01T19:37:36.585492Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 953,
+      "timestamp": "2026-08-01T19:37:45.304092Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T19:37:36.585492Z",
+    "timestamp": "2026-08-01T19:37:45.304092Z",
     "agent_id": "xqjG",
-    "agent_seq": 952
+    "agent_seq": 953
   }
 }
