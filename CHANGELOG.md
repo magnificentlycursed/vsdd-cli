@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Step 5 release coupling: switch vsdd-cli mdatron-core dep from local-path to published crate when v1.0 ships (#9)
+- mdatron v0.2.0 integration: breaking config.yaml requirement, three raises shipped, new control surfaces, and the reciprocal cold-read request (#816)
 - Red Team wider evaluation: the implemented agent-first system (Layers 1-3, esp. Layer 3 terminal-output-safety / machine form / broken-state as agent context) (#817)
 - Layer 3 enhancement: the broken-state answer carries the last boundary truth from git (#740)
 - Respec: agent-first VSDD toolkit on the crosslink chassis (fresh design cycle) (#294)
@@ -38,6 +40,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Upstream crosslink observation: issue show --json 'subissues' is never populated (#828)
+- Upstream crosslink request: structured close-reason / disposition field on issue close (#827)
+- vsdd-cli overlay: domain-routing hints + compact agent-loop catalog (#235)
 - events.jsonl writer + OperatorDirective event emission (#234)
 - agent-first-controls amendment: bind the spend-driving structure at the composition gate (mdatron#11 escape) (#831)
 - Design cycle: agent-first controls to close the Layer-3 audit gaps — re-sequence + enhance, dogfood-now (#815)
