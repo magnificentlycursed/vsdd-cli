@@ -1,6 +1,6 @@
 {
   "next_display_id": 861,
-  "next_comment_id": 1415,
+  "next_comment_id": 1416,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19048,11 +19048,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T05:20:48.939851Z",
-      "updated_at": "2026-08-02T07:54:44.126524Z",
+      "updated_at": "2026-08-02T08:23:31.994459Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "15332278-a516-4607-98fc-7e80f885fde3": {
+          "display_id": 1415,
+          "author": "xqjG",
+          "content": "AUTHORING batch 2 complete — the contract-internal fold is done. Added: marker resolution (26 pending-840 markers flipped to ratified; Contract-integration path discharged as executed-this-cycle; cost-engine open question closed); term grounding (line-131 Chassis affordances -> crosslink affordances = the real #821 residual; my own additions grounded: efficiency substrate -> efficiency input, corroboration substrate -> server-synced authorship basis; the 2 citations reworded to drop bare tokens — contract now 0 armed terms with mdatron 0.5.0, no dependency on the unreleased backtick fix); Revision-line entry recording the #860 cycle; a Verifiable-conformance acceptance criterion (full AC-1..29 preserved on the knowledge page). NOTE: mdatron already SHIPPED both our raises on main — fix(#158) vocab code-span exemption (our GH#28 Gap 2) + feat(#157) section-structural E0120/E0121 (our P5/#149) — but consumed binary is 0.5.0, so grounding done by reword, not backtick-reliance. REMAINING: retire #840+#845 docs to knowledge pages (#840 already a page) + repoint citers (README, QE persona, anonymization-patterns.yaml, build-plan, deviations.rs) + git rm docs+#845 sidecar; register design-doc identifier schemes in vocabulary.yaml (measure surviving E0091 first); add .design/*.md to file_globs+vocabulary_globs + update the .design-jurisdiction line; mdatron verify clean. THEN cold review -> exit gate -> PR.",
+          "created_at": "2026-08-02T08:23:31.957735Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+m16s3QU2iGxNKV5q00POIvEDPvUW3MO3I9yAKdxQE4twixSXqT27Zw7j91Yr3SR8cGhrj2+vjEShLZD9pLUDA=="
+        },
         "584151a2-cb80-4b6f-94f0-3a9b21972aa9": {
           "display_id": 1410,
           "author": "xqjG",
@@ -32277,11 +32286,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1147,
       "timestamp": "2026-08-02T07:54:44.126524Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1148,
+      "timestamp": "2026-08-02T08:23:31.994459Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T07:54:44.126524Z",
+    "timestamp": "2026-08-02T08:23:31.994459Z",
     "agent_id": "xqjG",
-    "agent_seq": 1147
+    "agent_seq": 1148
   }
 }
