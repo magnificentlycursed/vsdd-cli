@@ -113,18 +113,30 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
         .unwrap_or_else(|| ABSENT_MILESTONE.to_string());
 
     // The finding-query join: findings acquire as the spine-only Slice-1 leg.
-    // A leg failure leaves findings absent, the snapshot still Acquired (REQ-8).
-    let (findings, finding_acquisition_note) = match acquire_findings(repo_root) {
-        Some((findings, truncated)) => {
-            let note = truncated.then(|| {
-                format!(
-                    "finding query capped at {FINDING_QUERY_CAP}; findings past the cap were not examined this acquisition"
-                )
-            });
-            (findings, note)
-        }
-        None => (Vec::new(), None),
-    };
+    // A leg failure leaves findings absent, the snapshot still Acquired
+    // (REQ-8) — but RECORDED, never erased (vsdd-cli #818 Fix 2): the marker
+    // drops to no-groups-acquired and the note words the failed step, so a
+    // failed leg is never bit-identical to a genuinely clean tracker and the
+    // routing gate fails closed on it (guardrail REQ-4) instead of passing
+    // vacuously.
+    let (findings, finding_fields_acquired, finding_acquisition_note) =
+        match acquire_findings(repo_root) {
+            Ok((findings, truncated)) => {
+                let note = truncated.then(|| {
+                    format!(
+                        "finding query capped at {FINDING_QUERY_CAP}; findings past the cap were not examined this acquisition"
+                    )
+                });
+                (findings, FindingFieldsAcquired::SPINE_ONLY, note)
+            }
+            Err(failed_step) => (
+                Vec::new(),
+                FindingFieldsAcquired::NONE,
+                Some(format!(
+                    "finding query failed ({failed_step}); findings could not be acquired this acquisition"
+                )),
+            ),
+        };
 
     Snapshot {
         acquisition_outcome: AcquisitionOutcome::Acquired,
@@ -137,7 +149,7 @@ pub fn acquire_snapshot(repo_root: &Path) -> Snapshot {
         display_session: session,
         display_work_item: work_item,
         display_active_milestone: active_display,
-        finding_fields_acquired: FindingFieldsAcquired::SPINE_ONLY,
+        finding_fields_acquired,
         finding_acquisition_note,
     }
 }
@@ -432,12 +444,15 @@ fn finding_record(item: &IssueListItem, detail: &IssueDetail) -> FindingRecord {
 }
 
 /// The effectful finding-query leg (vsdd-cli #820): walk crosslink for the
-/// forward-only universe of findings and build their records. Returns `None` on
-/// ANY subprocess or parse failure in the leg — findings are a join that can be
-/// absent without invalidating the milestone and session legs (REQ-8), so the
-/// caller keeps the snapshot `Acquired` with findings empty. The bool in `Some`
-/// is the truncation flag (REQ-4).
-fn acquire_findings(repo_root: &Path) -> Option<(Vec<FindingRecord>, bool)> {
+/// forward-only universe of findings and build their records. Returns `Err`
+/// naming the failed step on ANY subprocess or parse failure in the leg —
+/// findings are a join that can be absent without invalidating the milestone
+/// and session legs (REQ-8), so the caller keeps the snapshot `Acquired` —
+/// but the failure is RECORDED (no finding-field group acquired, plus the
+/// worded note), never erased into the shape of a clean tracker (vsdd-cli
+/// #818 Fix 2; guardrail REQ-4). The bool in `Ok` is the truncation flag
+/// (REQ-4 of the finding-query join).
+fn acquire_findings(repo_root: &Path) -> Result<(Vec<FindingRecord>, bool), &'static str> {
     // (1) review-round issue ids — crosslink applies the finding-discrimination
     // predicate server-side via the `review` label.
     let review_json = match run_bounded(
@@ -446,9 +461,10 @@ fn acquire_findings(repo_root: &Path) -> Option<(Vec<FindingRecord>, bool)> {
         repo_root,
     ) {
         Subprocess::Completed { stdout } => stdout,
-        _ => return None,
+        _ => return Err("the review-round list query failed"),
     };
-    let review_ids: Vec<u64> = parse_issue_list(&review_json)?
+    let review_ids: Vec<u64> = parse_issue_list(&review_json)
+        .ok_or("the review-round list output did not parse")?
         .iter()
         .map(|it| it.id)
         .collect();
@@ -457,9 +473,9 @@ fn acquire_findings(repo_root: &Path) -> Option<(Vec<FindingRecord>, bool)> {
     let all_json = match run_bounded("crosslink", &["issue", "list", "-s", "all", "--json"], repo_root)
     {
         Subprocess::Completed { stdout } => stdout,
-        _ => return None,
+        _ => return Err("the all-issues list query failed"),
     };
-    let all_issues = parse_issue_list(&all_json)?;
+    let all_issues = parse_issue_list(&all_json).ok_or("the all-issues list output did not parse")?;
 
     // (3) the forward-only universe (children of review rounds, not closed before
     // the boundary), capped.
@@ -472,12 +488,13 @@ fn acquire_findings(repo_root: &Path) -> Option<(Vec<FindingRecord>, bool)> {
         let detail_json =
             match run_bounded("crosslink", &["issue", "show", &id_str, "--json"], repo_root) {
                 Subprocess::Completed { stdout } => stdout,
-                _ => return None,
+                _ => return Err("a per-finding show query failed"),
             };
-        let detail = parse_issue_detail(&detail_json)?;
+        let detail =
+            parse_issue_detail(&detail_json).ok_or("a per-finding show output did not parse")?;
         findings.push(finding_record(item, &detail));
     }
-    Some((findings, truncated))
+    Ok((findings, truncated))
 }
 
 #[cfg(test)]
@@ -739,7 +756,7 @@ mod tests {
             .parent()
             .unwrap();
         match super::acquire_findings(repo) {
-            Some((findings, truncated)) => {
+            Ok((findings, truncated)) => {
                 eprintln!("findings: {} (truncated={truncated})", findings.len());
                 for f in &findings {
                     eprintln!(
@@ -752,7 +769,7 @@ mod tests {
                     );
                 }
             }
-            None => eprintln!("finding leg failed (findings absent)"),
+            Err(step) => eprintln!("finding leg failed ({step}); findings absent"),
         }
     }
 }

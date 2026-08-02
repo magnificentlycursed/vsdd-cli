@@ -78,6 +78,13 @@ struct GateArgs {
     /// Render the verdict as JSON instead of human text.
     #[arg(long)]
     machine: bool,
+
+    /// CI strictness (remediation REQ-6's mode seam): undecidable
+    /// deviation retest triggers are inconclusive (exit 2) instead of
+    /// warn-pass, and issue-state triggers resolve via the GitHub API
+    /// when GH_TOKEN is provisioned.
+    #[arg(long)]
+    ci: bool,
 }
 
 fn main() -> ExitCode {
@@ -203,6 +210,7 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
 }
 
 fn cmd_gate(args: GateArgs) -> ExitCode {
+    use vsdd_core::answer::deviations::{self, GateMode};
     use vsdd_core::answer::integrity::{gate_verdict, GateVerdict};
 
     let cwd = match std::env::current_dir() {
@@ -213,7 +221,7 @@ fn cmd_gate(args: GateArgs) -> ExitCode {
         }
     };
     let snapshot = vsdd_core::snapshot::acquire::acquire_snapshot(&cwd);
-    match gate_verdict(&snapshot) {
+    let routing_exit: u8 = match gate_verdict(&snapshot) {
         GateVerdict::Pass => {
             if args.machine {
                 println!(
@@ -226,7 +234,7 @@ fn cmd_gate(args: GateArgs) -> ExitCode {
                      (routing-before-fix satisfied)"
                 );
             }
-            ExitCode::SUCCESS
+            0
         }
         GateVerdict::Block(handles) => {
             if args.machine {
@@ -250,7 +258,7 @@ fn cmd_gate(args: GateArgs) -> ExitCode {
                     );
                 }
             }
-            ExitCode::from(1)
+            1
         }
         GateVerdict::Unverifiable(reason) => {
             // Fail-closed: an unverifiable acquisition blocks, distinct from a
@@ -268,8 +276,163 @@ fn cmd_gate(args: GateArgs) -> ExitCode {
             } else {
                 eprintln!("vsdd gate: UNVERIFIABLE (fail-closed) — {reason}");
             }
-            ExitCode::from(2)
+            2
         }
+    };
+
+    // The deviations gate leg (build-plan Phase 1; remediation REQ-6), a
+    // sibling verdict source beside the routing check: both legs run, and
+    // the worst verdict (highest exit class, 0/1/2) wins the exit code.
+    // The clock and the issue-state oracle live HERE at the CLI layer —
+    // the core stays pure (caller-supplied today, injected oracle).
+    let mode = if args.ci { GateMode::Ci } else { GateMode::Local };
+    let today = {
+        let days = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map(|d| (d.as_secs() / 86_400) as i64)
+            .unwrap_or(0);
+        deviations::iso_date_from_unix_days(days)
+    };
+    // Local mode never queries: every issue-state trigger is undecidable
+    // (warn-pass, resolved Q3). CI mode queries via `gh api` when GH_TOKEN
+    // is provisioned; without it the oracle stays undecidable and the CI
+    // leg reports inconclusive (fail-closed), never a silent pass.
+    let use_gh = args.ci && std::env::var("GH_TOKEN").is_ok_and(|v| !v.is_empty());
+    let oracle = move |issue_ref: &str| {
+        if use_gh {
+            gh_issue_state(issue_ref)
+        } else {
+            None
+        }
+    };
+    // The artifact-presence reader lives HERE at the CLI layer beside the
+    // clock and the issue oracle — the core stays fs-free. Reads are bounded
+    // (MAX_ARTIFACT_BYTES) and rooted at the working directory, matching the
+    // registry read; a missing/unreadable/oversize file reads as unavailable
+    // (pattern-not-present → not fired), never a panic.
+    let artifact_reader = |file: &str| -> Option<String> {
+        use std::io::Read;
+        let opened = std::fs::File::open(cwd.join(file)).ok()?;
+        let mut buf = Vec::new();
+        let read = opened
+            .take(vsdd_core::MAX_ARTIFACT_BYTES + 1)
+            .read_to_end(&mut buf)
+            .ok()? as u64;
+        if read > vsdd_core::MAX_ARTIFACT_BYTES {
+            return None;
+        }
+        String::from_utf8(buf).ok()
+    };
+    let outcome = deviations::deviations_gate(
+        &cwd.join(".vsdd/registry/deviation-registry.yaml"),
+        &today,
+        mode,
+        &oracle,
+        &artifact_reader,
+    );
+    for warning in &outcome.warnings {
+        eprintln!("deviations: {warning}");
+    }
+    let deviations_exit: u8 = match &outcome.verdict {
+        GateVerdict::Pass => {
+            if args.machine {
+                println!(
+                    "{}",
+                    serde_json::json!({
+                        "gate": "deviations",
+                        "verdict": "pass",
+                        "warnings": outcome.warnings,
+                    })
+                );
+            } else {
+                println!(
+                    "vsdd gate: deviations pass — no standing entry lapsed or fired unre-armed"
+                );
+            }
+            0
+        }
+        GateVerdict::Block(entries) => {
+            if args.machine {
+                println!(
+                    "{}",
+                    serde_json::json!({
+                        "gate": "deviations",
+                        "verdict": "block",
+                        "blocked": entries,
+                        "warnings": outcome.warnings,
+                    })
+                );
+            } else {
+                eprintln!(
+                    "vsdd gate: deviations BLOCKED — {} registry entries owe a retest or re-arm:",
+                    entries.len()
+                );
+                for entry in entries {
+                    eprintln!("  {entry}");
+                }
+            }
+            1
+        }
+        GateVerdict::Unverifiable(reason) => {
+            if args.machine {
+                println!(
+                    "{}",
+                    serde_json::json!({
+                        "gate": "deviations",
+                        "verdict": "unverifiable",
+                        "reason": reason,
+                        "warnings": outcome.warnings,
+                    })
+                );
+            } else {
+                eprintln!("vsdd gate: deviations UNVERIFIABLE (fail-closed) — {reason}");
+            }
+            2
+        }
+    };
+
+    ExitCode::from(routing_exit.max(deviations_exit))
+}
+
+/// Resolve an issue reference (`owner/repo#N`) to its state by shelling
+/// to `gh api` — the provisioned-GH_TOKEN seam (REQ-6). Chosen over a new
+/// HTTP dependency: `gh` ships on GitHub runners and reads GH_TOKEN
+/// itself, and arguments pass directly to the process (no shell
+/// interpolation). Any failure — missing gh, network, unknown ref — is
+/// None: undecidable, which the CI mode treats as inconclusive
+/// (fail-closed), never a silent pass.
+fn gh_issue_state(issue_ref: &str) -> Option<vsdd_core::answer::deviations::IssueState> {
+    use vsdd_core::answer::deviations::IssueState;
+    fn plain(s: &str) -> bool {
+        !s.is_empty()
+            && s.bytes()
+                .all(|b| b.is_ascii_alphanumeric() || b == b'-' || b == b'.' || b == b'_')
+    }
+    let (repo, number) = issue_ref.rsplit_once('#')?;
+    let (owner, name) = repo.split_once('/')?;
+    if !plain(owner)
+        || !plain(name)
+        || number.is_empty()
+        || !number.bytes().all(|b| b.is_ascii_digit())
+    {
+        return None;
+    }
+    let out = std::process::Command::new("gh")
+        .args([
+            "api",
+            &format!("repos/{owner}/{name}/issues/{number}"),
+            "--jq",
+            ".state",
+        ])
+        .output()
+        .ok()?;
+    if !out.status.success() {
+        return None;
+    }
+    match String::from_utf8_lossy(&out.stdout).trim() {
+        "open" => Some(IssueState::Open),
+        "closed" => Some(IssueState::Closed),
+        _ => None,
     }
 }
 

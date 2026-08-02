@@ -17,7 +17,7 @@
 //!   AC-8  ac8_idempotent_including_generated_manifest
 //!   AC-9  ac9_unmanaged_file_at_template_dest_is_conflict
 //!   AC-10 ac10_delete_subset_reconverges
-//!   AC-11 ac11_deploys_fifteen_templates_count_62
+//!   AC-11 ac11_deploys_sixteen_templates_count_63
 //!   AC-12 ac12_managed_template_drift_and_upgrade
 //!   AC-13 ac13_template_destinations_and_design_scaffold
 //!   AC-14 ac14_registry_loader_reads_vsdd_registry
@@ -573,13 +573,16 @@ fn ac10_delete_subset_reconverges() {
     );
 }
 
-// ── AC-11 (REQ-11): deploys 15 templates; generates the 16th; count = 62 ─────
+// ── AC-11 (REQ-11): deploys 16 templates; generates the manifest; count = 63 ─
+// Count amendment 15→16 / 62→63: the deviation-registry scaffold template
+// (remediation design REQ-5) — disposition-carried on the vsdd-cli #820
+// manifest, not a freelance test edit.
 
-/// Asserts all 15 template destinations are present and manifest-tracked, the
+/// Asserts all 16 template destinations are present and manifest-tracked, the
 /// generated manifest is present but not a deployed-template entry, and the
-/// event count is 62.
+/// event count is 63.
 #[test]
-fn ac11_deploys_fifteen_templates_count_62() {
+fn ac11_deploys_sixteen_templates_count_63() {
     let proj = TempProject::git();
     init(proj.path(), &InitOptions::default()).expect("init succeeds");
 
@@ -599,8 +602,9 @@ fn ac11_deploys_fifteen_templates_count_62() {
         ".vsdd/registry/anonymization-patterns.yaml",
         ".vsdd/registry/canonical-patterns.yaml",
         ".vsdd/registry/vocabulary.yaml",
+        ".vsdd/registry/deviation-registry.yaml",
     ];
-    assert_eq!(templates.len(), 15, "the deployed template set is 15 files");
+    assert_eq!(templates.len(), 16, "the deployed template set is 16 files");
 
     let manifest = read_manifest(proj.path());
     let files = manifest["files"].as_object().unwrap();
@@ -631,8 +635,8 @@ fn ac11_deploys_fifteen_templates_count_62() {
         serde_json::from_str(log.lines().next().expect("one event line")).unwrap();
     assert_eq!(
         event["deployed_artifact_count"].as_u64(),
-        Some(62),
-        "AC-11: deployed_artifact_count = 47 prior + 15 templates"
+        Some(63),
+        "AC-11: deployed_artifact_count = 47 prior + 16 templates"
     );
 }
 

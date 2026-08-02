@@ -9,15 +9,25 @@ entries:
   retest_trigger:
     type: issue-state
     predicate: dollspace-gay/crosslink#55 state == closed
-  trigger_context: 'Second disjunct held as context, not predicate: the local mirror pulled past a fix
-    commit — promotable into the predicate by Solution Owner re-arm once a fix commit is namable.'
+  trigger_context: 'Retest (2026-08-02, SO-authorized, mirror eba9a1cd): the container-side fixes (#9/#10/#59,
+    merged PRs #63/#64/#65/#72) work, but headless dispatch STALL-PERSISTS on the tmux/plan path. The
+    fork''s controlled investigation (upstream dollspace-gay/crosslink#55) refined and CORRECTED the earlier
+    attribution: the blocking dialog is claude''s folder-trust prompt, which is TTY-gated and fires on
+    ANY untrusted fresh-worktree path — NOT the .claude/settings.json pre-approval variant (refuted: an
+    empty dir with no settings still prompts); only writing hasTrustDialogAccepted clears it, and claude
+    upgrades trend stricter. The PROVEN headless vehicle is container dispatch (kickoff run --container):
+    docker run -d allocates no TTY, so no dialog renders and --skip-permissions proceeds — verified end-to-end
+    upstream — gated only on the agent image being pullable (forecast-bio/crosslink#576, closed; publication
+    to confirm). So the fallback''s exit is the container vehicle once the image is usable, or upstream
+    making kickoff plan non-interactive; #55-closed remains the machine predicate meanwhile. Changing
+    the predicate to a container-vehicle-ready signal is an SO re-arm act, not taken here.'
   entry_date: 2026-08-01
   expiry: 2026-10-30
   owning_issue: vsdd-cli#845
   status: standing
   disposition_ref:
-    issue: vsdd-cli#845
-    comment_timestamp: 2026-08-01 21:59
+    issue: vsdd-cli#858
+    comment_timestamp: 2026-08-02 03:30
 - id: mdatron-sibling-pin-lag
   deviation: The CI sibling checkout is tag-pinned to mdatron v0.4.0 (mdatron-verify.yml) while the sibling's
     latest release is v0.5.0, with the pre-commit window at 0.4.x — a persisted toolchain-pin lag.
@@ -112,8 +122,14 @@ entries:
     discipline (contract-over-derived precedence, Decomposition content-hash pin) until generation lands.
   retest_trigger:
     type: artifact-presence
-    predicate: the Slice-2 phase is present in .design/build-plan.md's "## Completed phases" section (grep-decidable,
-      zero-network)
+    file: .design/build-plan.md
+    section: '## Completed phases'
+    pattern: Slice 2
+  trigger_context: 'Preserved prose predicate (grep-decidable, zero-network): the Slice-2 phase is present
+    in .design/build-plan.md''s "## Completed phases" section. The structured file/section/pattern fields
+    above encode that predicate for the evaluator; Slice 2''s generator producing the build-plan from
+    the contract is the named future, and its landing moves the phase into Completed phases — the retest
+    signal.'
   entry_date: 2026-08-01
   expiry: 2026-11-29
   owning_issue: vsdd-cli#845

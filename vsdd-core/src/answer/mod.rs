@@ -3,6 +3,7 @@
 //! findings at the kind-set grain).
 
 pub mod derive;
+pub mod deviations;
 pub mod integrity;
 
 use serde::{Deserialize, Serialize};
@@ -35,6 +36,36 @@ pub enum GateProvenance {
     UnverifiedSelfReport,
 }
 
+/// Why a finding-reading integrity check did not run this derivation
+/// (vsdd-cli #818 Fix 2 — the dormant-vs-clean distinction). Enumerated so
+/// agent surfaces branch on members, never prose; the human form matches
+/// exhaustively, so a future variant forces a new worded arm there (the
+/// Fix-1 revise lesson).
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "kebab-case")]
+pub enum CheckNotRunReason {
+    /// The acquisition version defers the check's field group by declared
+    /// scope (the Slice-5 deferral) — dormant, not an error.
+    Dormant,
+    /// The acquisition tried to read the check's inputs and FAILED — the
+    /// finding query failed with the tracker present, so no finding record
+    /// exists to check. The could-not-check condition guardrail REQ-4 fails
+    /// the gate closed on.
+    CouldNotCheck,
+}
+
+/// A finding-reading integrity check that did NOT run this derivation, with
+/// why (vsdd-cli #818 Fix 2). Its silence in `integrity_findings` is no
+/// assurance — the false-assurance defect was exactly reading a dormant or
+/// failed check's silence as checked-clean.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct CheckNotRun {
+    /// The check id, mirroring the snapshot-schema audit block's members.
+    pub check: String,
+    pub reason: CheckNotRunReason,
+}
+
 /// The one computed answer behind all three Status renderings.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -59,4 +90,13 @@ pub struct PhaseAnswer {
     /// Snapshot-scoped integrity finding kinds; the comparison grain is
     /// the kind-set.
     pub integrity_findings: Vec<String>,
+    /// The finding-reading checks that did NOT run this derivation, each
+    /// with why — dormant (a field group this acquisition version defers) or
+    /// could-not-check (the finding query failed with the tracker present)
+    /// (vsdd-cli #818 Fix 2). The false-assurance guard: an empty
+    /// `integrity_findings` reads checked-clean ONLY when this is also
+    /// empty. Empty under a degraded outcome — the degraded kind carries
+    /// that story, like `integrity_findings` itself.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub checks_not_run: Vec<CheckNotRun>,
 }
