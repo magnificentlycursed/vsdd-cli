@@ -1,6 +1,6 @@
 {
   "next_display_id": 856,
-  "next_comment_id": 1376,
+  "next_comment_id": 1377,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25119,7 +25119,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:53:24.257600Z",
-      "updated_at": "2026-08-01T20:07:05.584769Z",
+      "updated_at": "2026-08-02T00:51:57.984592Z",
       "labels": [
         "upstream"
       ],
@@ -25141,6 +25141,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANNagHvuOSx2QZQXVtztrRXFnsVfFr8++3Ny7S7XOIlgYD4oyTI9QEAxC72zcUvQZcDXpKbBO6NyIJp4hJIzgBw=="
+        },
+        "bce600c3-66a3-4d79-8805-ef5e5c6331a9": {
+          "display_id": 1376,
+          "author": "xqjG",
+          "content": "CLOSED (tracked upstream + registry-carried): the effort-dial ask is dollspace-gay/crosslink#61 (design cycle planned upstream, per operator); deviation-registry entry dial-less-crosslink-dispatch carries the retest predicate (#61 closed) and the swarm-entry binding carries the dial condition. The registry entry is the living record.",
+          "created_at": "2026-08-02T00:51:57.965778Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAof/wwLUhmbnkbGZTlvkhyoLlKkPvK4sbpe0ijT70f0T6FOQ5XGoxWbWIMzz4jVGPOAjF/+ThylcX+0+Jw585AQ=="
         },
         "cc7efe71-aa55-4292-9fb6-4f2665a8c28f": {
           "display_id": 1327,
@@ -31479,11 +31488,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1081,
       "timestamp": "2026-08-02T00:51:51.633127Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1082,
+      "timestamp": "2026-08-02T00:51:57.984592Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:51:51.633127Z",
+    "timestamp": "2026-08-02T00:51:57.984592Z",
     "agent_id": "xqjG",
-    "agent_seq": 1081
+    "agent_seq": 1082
   }
 }
