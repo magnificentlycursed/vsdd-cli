@@ -8935,9 +8935,12 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-08-02T03:04:29.667349Z",
+      "updated_at": "2026-08-02T03:04:47.818996Z",
       "labels": [
         "design"
+      ],
+      "blockers": [
+        "ccced380-4c00-4475-bd76-75a386e41968"
       ],
       "milestone_uuid": "45984aa0-de21-439f-b54c-985c1206e60a"
     },
@@ -31804,11 +31807,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1111,
       "timestamp": "2026-08-02T03:04:39.003814Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1112,
+      "timestamp": "2026-08-02T03:04:47.818996Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T03:04:39.003814Z",
+    "timestamp": "2026-08-02T03:04:47.818996Z",
     "agent_id": "xqjG",
-    "agent_seq": 1111
+    "agent_seq": 1112
   }
 }
