@@ -1,5 +1,5 @@
 {
-  "next_display_id": 858,
+  "next_display_id": 859,
   "next_comment_id": 1390,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -331,6 +331,7 @@
     "6125a95c-b141-486b-8f83-40bb2f684777": 471,
     "616c419e-de21-4b2f-881e-71f06477280d": 44,
     "6174e9ae-c7fb-4ba5-8ae8-382e803a1530": 92,
+    "61773c97-1f73-44fd-b646-e2a17d9c8cba": 858,
     "61eb1245-c533-4c74-9e28-139e012686e4": 797,
     "621f83c4-4ccd-4aa0-b15c-290237888d56": 846,
     "6239f15a-2337-4797-8aca-0b63f79891b0": 848,
@@ -10785,6 +10786,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAUCp3CNiFKFrzkCLSeAkUFJJKZb5+NmNCaHlQLVEzKu3SILPX43ngc9BFEsO+oV7fih8WOj7dExymbsjON4hvCA=="
         }
       }
+    },
+    "61773c97-1f73-44fd-b646-e2a17d9c8cba": {
+      "uuid": "61773c97-1f73-44fd-b646-e2a17d9c8cba",
+      "display_id": 858,
+      "title": "Audit-triage execution, continued (successor to #858 — hub-outage casualty, frozen local-only; upstream defect filed)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T03:06:43.307647Z",
+      "updated_at": "2026-08-02T03:06:43.307647Z"
     },
     "61eb1245-c533-4c74-9e28-139e012686e4": {
       "uuid": "61eb1245-c533-4c74-9e28-139e012686e4",
@@ -31820,11 +31831,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1113,
       "timestamp": "2026-08-02T03:04:56.912524Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1114,
+      "timestamp": "2026-08-02T03:06:43.307647Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T03:04:56.912524Z",
+    "timestamp": "2026-08-02T03:06:43.307647Z",
     "agent_id": "xqjG",
-    "agent_seq": 1113
+    "agent_seq": 1114
   }
 }
