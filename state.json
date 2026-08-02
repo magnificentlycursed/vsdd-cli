@@ -1,6 +1,6 @@
 {
   "next_display_id": 856,
-  "next_comment_id": 1377,
+  "next_comment_id": 1378,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18383,13 +18383,24 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T12:34:49.900661Z",
-      "updated_at": "2026-07-29T12:35:27.024995Z",
+      "updated_at": "2026-08-02T00:52:16.599173Z",
       "labels": [
         "upstream"
       ],
       "related": [
         "ccced380-4c00-4475-bd76-75a386e41968"
-      ]
+      ],
+      "comments": {
+        "04c7a3ed-b749-4447-a28e-b55eb4b75767": {
+          "display_id": 1377,
+          "author": "xqjG",
+          "content": "CLOSED (re-filed upstream per channel policy): now dollspace-gay/crosslink#67.",
+          "created_at": "2026-08-02T00:52:16.579998Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3GqF/pprlJM5zb2qJEegAsAFv9eeN3TY/NrXOvjZIiah03biOZsK2BN227ysjpbg5ZRn7k/uR29OCjkLfiOwBg=="
+        }
+      }
     },
     "abeafec1-2f39-4886-8522-3bb2613a7df8": {
       "uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
@@ -31500,11 +31511,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1084,
       "timestamp": "2026-08-02T00:52:10.735589Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1085,
+      "timestamp": "2026-08-02T00:52:16.599173Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:52:10.735589Z",
+    "timestamp": "2026-08-02T00:52:16.599173Z",
     "agent_id": "xqjG",
-    "agent_seq": 1084
+    "agent_seq": 1085
   }
 }
