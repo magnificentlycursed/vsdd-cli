@@ -20540,11 +20540,12 @@
       "uuid": "c4dda79c-2dcc-4ca5-a664-287cf876dc6c",
       "display_id": 840,
       "title": "Design cycle (spec amendment): verifiable-conformance + efficiency subsystem — prove the harness's disciplines fired per dispatched agent; supersedes DESIGN-OBSERVABILITY + re-scopes Cost-is-knowable + re-grounds AI-Engineer; AIE+RedTeam",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T17:18:11.352409Z",
-      "updated_at": "2026-08-02T00:46:23.877345Z",
+      "updated_at": "2026-08-02T00:46:30.310793Z",
+      "closed_at": "2026-08-02T00:46:30.310787Z",
       "labels": [
         "design"
       ],
@@ -31150,11 +31151,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1035,
       "timestamp": "2026-08-02T00:46:23.877345Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1036,
+      "timestamp": "2026-08-02T00:46:30.310793Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:46:23.877345Z",
+    "timestamp": "2026-08-02T00:46:30.310793Z",
     "agent_id": "xqjG",
-    "agent_seq": 1035
+    "agent_seq": 1036
   }
 }
