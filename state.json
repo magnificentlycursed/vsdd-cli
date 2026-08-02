@@ -5709,11 +5709,12 @@
       "uuid": "2cbde495-e7fd-4d41-b1ee-8391dfd5ee96",
       "display_id": 826,
       "title": "clean up superseded binary-first-plan (docs/refactor legacy); re-ground #14/#15 to the slice framing",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:36:27.079962Z",
-      "updated_at": "2026-08-02T00:46:42.050888Z",
+      "updated_at": "2026-08-02T00:46:48.341511Z",
+      "closed_at": "2026-08-02T00:46:48.341505Z",
       "comments": {
         "00e9ffcc-b49a-4e4b-82d6-c1c53d12e5f0": {
           "display_id": 1312,
@@ -31171,11 +31172,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1038,
       "timestamp": "2026-08-02T00:46:42.050888Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1039,
+      "timestamp": "2026-08-02T00:46:48.341511Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:46:42.050888Z",
+    "timestamp": "2026-08-02T00:46:48.341511Z",
     "agent_id": "xqjG",
-    "agent_seq": 1038
+    "agent_seq": 1039
   }
 }
