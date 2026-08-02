@@ -28,15 +28,15 @@ The current supplement frontmatter gates only by `languages_or_interfaces`; ther
 
 ## Software Engineer extensions
 
-- **`.claude/` runtime-harness directory.** Hooks at `.claude/hooks/`; slash commands at `.claude/commands/`; MCP servers at `.claude/mcp.json`; settings at `.claude/settings.json`.
+- **`.claude/` runtime-harness directory.** Hooks at `.claude/hooks/`; slash commands at `.claude/commands/`; MCP servers at the repo-root `.mcp.json`; settings at `.claude/settings.json`.
 - **Hook architecture.** Pure-Python hooks at `.claude/hooks/*.py`; vsdd-cli's Rust mirror subprocess from Python wrapper. One source; two enforcement surfaces.
 - **Slash command discipline.** `.claude/commands/<name>.md` defines slash commands. VSDD-prefix discipline (`/vsdd-phase-3`, `/vsdd-domain-quality-engineer`) ensures no collision with crosslink's 14 commands.
-- **MCP server integration.** `.claude/mcp.json` registers MCP servers — crosslink's knowledge server (`search_knowledge`) among them. vsdd ships **no** docs-server: `vsdd mcp-serve` is **cut** (superseded). Knowledge-surfacing rides crosslink's knowledge surface plus the agent's own `WebFetch` / `WebSearch` and the sibling tools' own docs surfaces (Claude Code docs, the Anthropic API docs), not a vsdd-hosted tool set.
+- **MCP server integration.** The repo-root `.mcp.json` registers MCP servers — crosslink's knowledge server (`search_knowledge`) among them. vsdd ships **no** docs-server: `vsdd mcp-serve` is **cut** (superseded). Knowledge-surfacing rides crosslink's knowledge surface plus the agent's own `WebFetch` / `WebSearch` and the sibling tools' own docs surfaces (Claude Code docs, the Anthropic API docs), not a vsdd-hosted tool set.
 
 ## Platform Engineer extensions
 
 - **Auth method per context.** Plan (Max/Pro) for operator-local skill mode; API key for CI/automation per Anthropic's guidance. Per the methodology's `auth_method.operator_local` + `auth_method.ci` separation.
-- **`.claude/settings.json` discipline.** UNION-merge for `allowedTools`; managed-section pattern for hooks. vsdd init composes with crosslink's existing entries.
+- **`.claude/settings.json` discipline.** UNION-merge for `permissions.allow` / `permissions.ask` / `permissions.deny` (the deprecated `allowedTools` key is not taught — permission entries live under the `permissions` key); managed-section pattern for hooks. vsdd init composes with crosslink's existing entries.
 - **Plan auth × CI rejection.** Per the methodology's cross-field validation, `auth_method.ci: plan` is structurally rejected (Plan requires operator-interactive session CI cannot provide).
 - **Cron triggers + Notifications.** `CronCreate` for scheduled drift sweeps + session-close reminders; `PushNotification` + `RemoteTrigger` for budget breach + rate-limit headroom alerts.
 - **Background tasks via `Bash run_in_background`.** CI-side compositions + long-running aggregations + cold-session dispatch primitives.
