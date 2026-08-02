@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/2.1.0",
+  "title": "mdatron verify --json output envelope",
+  "description": "The machine interface of `mdatron verify --json`. Versioned: mdatron_output_version tracks THIS schema (currently 2.1.0). A published contract (DESIGN.md § Diagnostics are a versioned contract) — consumers pin and validate against it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mdatron_output_version",
+    "mdatron_version",
+    "pipeline_status",
+    "summary",
+    "families",
+    "findings"
+  ],
+  "properties": {
+    "mdatron_output_version": {
+      "type": "string",
+      "const": "2.1.0",
+      "description": "Semver of this envelope schema. Moves with the schema; a change here signals a contract change."
+    },
+    "mdatron_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+",
+      "description": "The running mdatron crate version (distinct from the envelope version)."
+    },
+    "pipeline_status": {
+      "enum": ["ok", "failed"]
+    },
+    "pipeline_error": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Present only when pipeline_status is \"failed\" (omitted on success). Carries the failure reason IN the envelope so a --json --quiet consumer receives it (the stderr note is suppressed by --quiet). `kind` disambiguates the senses the single MDATRON-E0080 code conflates.",
+      "required": ["code", "kind", "message"],
+      "properties": {
+        "code": { "type": "string" },
+        "kind": {
+          "enum": ["config", "io", "schema_load", "pattern_load", "glob", "frontmatter", "index_build", "expr_parse", "eval", "bound_exceeded"]
+        },
+        "message": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["error_count", "warning_count", "lint_count", "files_checked"],
+      "properties": {
+        "error_count": { "type": "integer", "minimum": 0 },
+        "warning_count": { "type": "integer", "minimum": 0 },
+        "lint_count": { "type": "integer", "minimum": 0 },
+        "files_checked": { "type": "integer", "minimum": 0, "description": "the number of files this run VALIDATED (ran the per-file schema and rule checks on), not a count of files that produced findings; a clean run over N files reports N, an empty jurisdiction reports 0" }
+      }
+    },
+    "families": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Per-verify activity of the five check families as a tri-state plus a reason: active = data supplied and the check ran this pass; inert = configured but did no work (e.g. scoped to no file); inactive = not configured. The reason makes the audit signal falsifiable.",
+      "required": ["schema", "route", "pin", "vocabulary", "citation"],
+      "properties": {
+        "schema": { "$ref": "#/$defs/activity" },
+        "route": { "$ref": "#/$defs/activity" },
+        "pin": { "$ref": "#/$defs/activity" },
+        "vocabulary": { "$ref": "#/$defs/activity" },
+        "citation": { "$ref": "#/$defs/activity" }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    }
+  },
+  "$defs": {
+    "activity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reason"],
+      "properties": {
+        "state": { "enum": ["active", "inert", "inactive"] },
+        "reason": { "type": "string" }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "severity", "summary", "message", "help", "location", "explain_ref"],
+      "properties": {
+        "code": { "type": "string" },
+        "severity": { "enum": ["error", "warning", "lint"] },
+        "summary": { "type": "string" },
+        "message": { "type": "string" },
+        "help": { "type": ["string", "null"] },
+        "explain_ref": { "type": ["string", "null"] },
+        "location": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["file", "line", "column"],
+          "properties": {
+            "file": { "type": "string" },
+            "line": { "type": "integer", "minimum": 0 },
+            "column": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "quoted": {
+          "type": "array",
+          "description": "Adopter-derived text carried out-of-line (absent when empty). Each region is untrusted adopter content, marked as such so a consumer need not infer it from the presence of the field.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "content", "origin", "trusted"],
+            "properties": {
+              "label": { "type": "string" },
+              "content": { "type": "string" },
+              "origin": {
+                "const": "adopter",
+                "description": "Provenance of the content. Always \"adopter\": quoted content is adopter-derived by construction."
+              },
+              "trusted": {
+                "const": false,
+                "description": "Always false: adopter content must never be treated as engine-authored instruction. The machine-readable form of the TTY `> ` prefix marking."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

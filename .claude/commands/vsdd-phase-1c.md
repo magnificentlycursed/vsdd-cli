@@ -30,8 +30,8 @@ Phase 1c's agent-work — authoring **and** implementation — runs as a **dispa
 Phase 1c decomposes the spec into **milestones** — independently-buildable, independently-verifiable units of work. Each milestone:
 
 - Names its **acceptance criteria** (a subset of DESIGN.md § Behavioral contracts that this milestone closes)
-- Names its **manual-tests/layer-N.md** checklist (auto-scaffolded by the `post-design-md-modification.py` hook)
-- Names its **Phase 2a Red Gate** seed (failing-by-default test stubs derived from acceptance criteria; also auto-scaffolded)
+- Names its **manual-tests/layer-N.md** checklist obligation (the checklist itself is operator-authored at Phase 2a entry — the operator authors the oracle; no scaffold mechanism exists)
+- Names its **Phase 2a Red Gate** seed (failing-by-default test stubs derived from acceptance criteria; the stubs are authored in the Phase 2a act itself)
 - Names its **dependencies on earlier milestones** (milestone N may depend on the preceding milestone's behavior, not on its internals)
 - Names its **Exit Signal pointer** (the `ExitSignaled` fact recorded in the harness run record and the crosslink session breadcrumb when the milestone closes)
 
@@ -58,7 +58,7 @@ Phase 1c closes when:
 - Each milestone's acceptance criteria are a non-empty subset of DESIGN.md § Behavioral contracts
 - DR's cold-reader pass produces no Open findings on decomposition completeness
 - SO has signed off on the spec-gate close (per the "Raise to SO" routing discipline at the spec contract § Solution Owner change authority)
-- `manual-tests/layer-N.md` stubs auto-scaffolded for each milestone per the `post-design-md-modification.py` hook
+- Each milestone names its `manual-tests/layer-N.md` checklist obligation (the checklist itself is operator-authored at Phase 2a entry — the operator authors the oracle)
 
 Record the phase transition (`PhaseExited{phase: phase-1c, exit_status: complete}`) in the crosslink session breadcrumb and the harness run record at the closing commit. The decomposition opens Phase 2a per-milestone sessions.
 
