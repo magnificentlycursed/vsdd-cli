@@ -1,6 +1,6 @@
 {
   "next_display_id": 859,
-  "next_comment_id": 1396,
+  "next_comment_id": 1397,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10799,7 +10799,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T03:06:43.307647Z",
-      "updated_at": "2026-08-02T03:23:03.441752Z",
+      "updated_at": "2026-08-02T03:30:17.506246Z",
       "labels": [
         "feature"
       ],
@@ -10821,6 +10821,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYARjZ3v8fXbfa09gVLkCPo2RtLFzzmqEBL2h+1CsR+tM/BX3LlJSHli4DNsx4DNw4wMwSidLp+PWZZksWbGDBg=="
+        },
+        "83b3947a-65a7-47b3-bb2d-4313d78f63e9": {
+          "display_id": 1396,
+          "author": "xqjG",
+          "content": "mdatron #147 (P3, marker-line reference rules — our GH#20 body-link/marker primitive) design consultation answered: opened magnificentlycursed/mdatron#22 with both resolver semantics pinned to our live shape. Q1 (named doc): rule-config-named {target_doc, target_section} — NOT governed_by (build-plan has no frontmatter) nor marker-line-carried; offered governed_by/in-line as configurable alternate modes for genericity. Q2 (member): the resolvable element is a LIST-ITEM's leading **bold name** (- **Slice N — ...**), NOT a heading and NOT a REQ-N id (letter-cluster/id handles are E0091-prohibited here; everything references by leading name) — a heading-only resolver would miss every one of our targets. Recommended they make the element-class configurable (heading|list-item-bold-name|frontmatter-key) to stay a generic primitive; offered our marker+target pair as a resolver-corpus fixture. NOTE for future: mdatron's #145-149 are their INTERNAL tracker numbers (unreachable by us); cross-estate answers route via a fresh GitHub issue per their disposition (updates [[sibling-feedback-channels]]).",
+          "created_at": "2026-08-02T03:30:17.486731Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqD8o7fvqLoyGySz+taWRQqxQZP002/hsEolHu45BtNWheVz+NsOw8aZIvf7KKnpkUU6/0fAyqAEbRZax6xMyDQ=="
         },
         "8bfc9d83-0f3b-416e-beba-2e1bf0e5ffa6": {
           "display_id": 1392,
@@ -31939,11 +31948,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1122,
       "timestamp": "2026-08-02T03:27:19.737749Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1123,
+      "timestamp": "2026-08-02T03:30:17.506246Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T03:27:19.737749Z",
+    "timestamp": "2026-08-02T03:30:17.506246Z",
     "agent_id": "xqjG",
-    "agent_seq": 1122
+    "agent_seq": 1123
   }
 }
