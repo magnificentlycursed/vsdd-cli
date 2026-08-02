@@ -1,5 +1,5 @@
 {
-  "next_display_id": 862,
+  "next_display_id": 863,
   "next_comment_id": 1420,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -193,6 +193,7 @@
     "33f1a0cd-73dc-43a6-8b69-58f11df307e4": 133,
     "348dac44-7950-4c6e-aa07-62958b34e58d": 320,
     "34f68ffa-47a2-4297-8145-fab958d92329": 338,
+    "355ad55d-8ea5-482f-a3b4-f7a2eccfcd7d": 862,
     "3569381e-da21-4445-9fec-338d0b2ea88a": 610,
     "358ca9e3-c16b-436b-8e2c-cad2c1ad11a3": 772,
     "35904339-839d-4cab-9953-19c588f938e1": 43,
@@ -6617,6 +6618,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA6FePVN298FTnbaNFuKxMC8NBej98hHCCuDcSe8q7ofmMk4bSCVI1p4fLcUToQEaP9TeyMhtrggiIuBkivxlACg=="
         }
       }
+    },
+    "355ad55d-8ea5-482f-a3b4-f7a2eccfcd7d": {
+      "uuid": "355ad55d-8ea5-482f-a3b4-f7a2eccfcd7d",
+      "display_id": 862,
+      "title": "fold cold-review residual nits into the contract (odds-and-ends T): sync-distinction, fixture-corpus VCE note, front-load target-grade",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T10:56:08.643484Z",
+      "updated_at": "2026-08-02T10:56:08.643484Z"
     },
     "3569381e-da21-4445-9fec-338d0b2ea88a": {
       "uuid": "3569381e-da21-4445-9fec-338d0b2ea88a",
@@ -32387,11 +32398,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1157,
       "timestamp": "2026-08-02T10:45:04.396661Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1158,
+      "timestamp": "2026-08-02T10:56:08.643484Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T10:45:04.396661Z",
+    "timestamp": "2026-08-02T10:56:08.643484Z",
     "agent_id": "xqjG",
-    "agent_seq": 1157
+    "agent_seq": 1158
   }
 }
