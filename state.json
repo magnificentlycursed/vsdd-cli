@@ -10764,11 +10764,12 @@
       "uuid": "621f83c4-4ccd-4aa0-b15c-290237888d56",
       "display_id": 846,
       "title": "Upstream crosslink observation: /design --continue unconditionally resets pipeline.json (stage designed, plans/runs wiped)",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:36:18.173557Z",
-      "updated_at": "2026-08-02T00:49:54.245837Z",
+      "updated_at": "2026-08-02T00:50:00.915947Z",
+      "closed_at": "2026-08-02T00:50:00.915939Z",
       "labels": [
         "upstream"
       ],
@@ -31367,11 +31368,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1064,
       "timestamp": "2026-08-02T00:49:54.245837Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1065,
+      "timestamp": "2026-08-02T00:50:00.915947Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:49:54.245837Z",
+    "timestamp": "2026-08-02T00:50:00.915947Z",
     "agent_id": "xqjG",
-    "agent_seq": 1064
+    "agent_seq": 1065
   }
 }
