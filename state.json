@@ -4529,11 +4529,12 @@
       "uuid": "211eda62-996e-45f9-9c02-92149684df45",
       "display_id": 816,
       "title": "mdatron v0.2.0 integration: breaking config.yaml requirement, three raises shipped, new control surfaces, and the reciprocal cold-read request",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-08-02T00:17:32.700270Z",
+      "updated_at": "2026-08-02T00:17:38.980527Z",
+      "closed_at": "2026-08-02T00:17:38.980521Z",
       "labels": [
         "feature"
       ],
@@ -31036,11 +31037,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1023,
       "timestamp": "2026-08-02T00:17:32.700270Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1024,
+      "timestamp": "2026-08-02T00:17:38.980527Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:17:32.700270Z",
+    "timestamp": "2026-08-02T00:17:38.980527Z",
     "agent_id": "xqjG",
-    "agent_seq": 1023
+    "agent_seq": 1024
   }
 }
