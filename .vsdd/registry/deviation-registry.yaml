@@ -152,7 +152,7 @@ initial_population_sweep:
   - templates/registry/act-to-affordance-map.md condition fields
   - .github/workflows/ comments (routing-gate.yml, mdatron-verify.yml)
   - the contract's prose fallbacks (.design/agent-first-vsdd-toolkit.md, Conformance at action time, as
-    enumerated by .design/decomposition-topology-remediation.md REQ-9)
+    enumerated by the decomposition-topology-remediation knowledge page REQ-9)
   candidates:
   - candidate: manual dispatch fallback (map phase-3-review-round condition's kickoff-carried alternative;
       contract prose fallback)

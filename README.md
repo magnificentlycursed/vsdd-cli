@@ -89,8 +89,9 @@ vsdd ships as a single `vsdd` binary that dispatches subcommands, matching the
 
 ### Planned
 
-These are specified in
-[`.design/verifiable-conformance-and-efficiency.md`](./.design/verifiable-conformance-and-efficiency.md)
+These are specified in the **Verifiable conformance and efficiency** behavioral contract of
+[`.design/agent-first-vsdd-toolkit.md`](./.design/agent-first-vsdd-toolkit.md)
+(design rationale preserved as the `verifiable-conformance-and-efficiency` knowledge page)
 and are **not yet built**:
 
 | Command | What it will do |
@@ -156,9 +157,11 @@ the subsystem mechanizes that check rather than trusting it.
   against. Its behavioral contracts, requirements, and acceptance criteria are
   the source of truth; when this README and the contract disagree, the contract
   wins.
-- **[`.design/verifiable-conformance-and-efficiency.md`](./.design/verifiable-conformance-and-efficiency.md)**
-  is the design for the conformance-and-efficiency subsystem (the planned
-  commands above).
+- The **Verifiable conformance and efficiency** behavioral contract in
+  [`.design/agent-first-vsdd-toolkit.md`](./.design/agent-first-vsdd-toolkit.md)
+  governs the conformance-and-efficiency subsystem (the planned commands above);
+  its design rationale is preserved as the `verifiable-conformance-and-efficiency`
+  knowledge page.
 - All design work lives in [`.design/`](./.design/), authored through the
   `/design` skill and the crosslink pipeline. The root `DESIGN-*.md` documents
   (including `DESIGN-VERIFICATION.md`) were **removed** under #826 — superseded

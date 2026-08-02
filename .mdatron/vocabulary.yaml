@@ -16,6 +16,10 @@ label_schemes:
     - "^H[1-6]$"                 # markdown/HTML heading levels (H1..H6)
     - "^OSC-[0-9]+$"            # terminal OSC escape sequences (OSC-8)
     - "^JSON[0-9]+$"            # versioned JSON formats (JSON5)
+    - "^REQ-[0-9]+$"            # requirement identifiers (design-doc convention; mdatron#28 raise — local carve-out until upstream default)
+    - "^AC-[0-9]+$"             # acceptance-criteria identifiers (design-doc convention)
+    - "^Q[0-9]+$"               # open-question identifiers (design-doc convention)
+    - "^CVE-[0-9]{4}(-[0-9]+)?$" # CVE vulnerability records (e.g., CVE-2021-42574, Trojan Source)
 
 # Deprecated-term prohibition (MDATRON-E0093, driven by anti_patterns) — the
 # mechanized form of the terminology grounding (vsdd-cli #819/#832): a governed

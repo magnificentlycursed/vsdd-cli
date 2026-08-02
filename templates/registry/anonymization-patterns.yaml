@@ -12,7 +12,7 @@
 # Redaction covers ACCIDENTAL leakage only; deliberate exfiltration by the untrusted agent is bounded
 # by capability-restriction, not by these patterns (regex is evadable; the local copy is agent-editable).
 # Operator extends with project-specific patterns at the end of the file
-# (per #840 REQ-23, the three-leg redaction ladder — .design/verifiable-conformance-and-efficiency.md).
+# (per #840 REQ-23, the three-leg redaction ladder — the Verifiable conformance and efficiency contract member).
 
 ---
 schema_class: anonymization-patterns-registry

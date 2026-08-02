@@ -1,7 +1,7 @@
 //! Phase-1 red gate — the deviations gate leg (vsdd-cli #820, phase 2a).
 //!
 //! Seeds the AC-5 fixture family from the ratified remediation design
-//! (`.design/decomposition-topology-remediation.md` REQ-4/REQ-6) against
+//! (the `decomposition-topology-remediation` knowledge page REQ-4/REQ-6) against
 //! the `answer::deviations` stub, whose placeholder verdict (always Pass
 //! plus a placeholder warning) guarantees every non-ignored test FAILS
 //! EXECUTED — the non-vacuous red. Phase 2b turns this suite green.
