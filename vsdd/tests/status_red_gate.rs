@@ -32,7 +32,7 @@ use vsdd_core::registry::{
     self,
     sets::{CompositionScopeAndActions, StatuslineData},
 };
-use vsdd_core::snapshot::Snapshot;
+use vsdd_core::snapshot::{FindingFieldsAcquired, Snapshot};
 use vsdd_core::state::read_state;
 
 fn repo_root() -> PathBuf {
@@ -772,6 +772,98 @@ fn a_non_gate_driven_action_carries_no_provenance_on_either_surface() {
     assert!(
         !human.contains("unverified self-report"),
         "the human form carries no provenance line for an authoring action: {human:?}"
+    );
+}
+
+// ── The dormant-vs-clean report surface (vsdd-cli #818 Fix 2) ──────────
+
+/// A convergence-fixture state + snapshot pair, before derivation — for the
+/// tests that perturb the snapshot's acquisition record and re-derive.
+fn load_parts(dir: &Path) -> (vsdd_core::state::State, Snapshot) {
+    let state = read_state(&dir.join("state.yaml"), &data()).expect("fixture state reads");
+    let snapshot: Snapshot =
+        serde_yaml_ng::from_str(&fs::read_to_string(dir.join("snapshot.yaml")).unwrap())
+            .expect("fixture snapshot parses");
+    (state, snapshot)
+}
+
+#[test]
+fn a_failed_finding_leg_reads_could_not_check_on_both_agent_surfaces() {
+    // The false-assurance defect (vsdd-cli #818 Fix 2; Red Team #817): a
+    // failed finding leg leaves findings empty, and a report silent about it
+    // presents integrity_findings: [] as checked-clean. The failed leg's
+    // record must read could-not-check on BOTH agent surfaces — the machine
+    // report key and the human line — or the vacuous-clean reading returns.
+    // This is the end-to-end surface guard the derivation-level tests cannot
+    // give: it stops a regression that drops the key or the line while the
+    // PhaseAnswer stays correct.
+    scrub_model_credentials();
+    let d = data();
+    let (state, mut snapshot) = load_parts(&corpus().join("4-routing"));
+    snapshot.findings.clear();
+    snapshot.finding_fields_acquired = FindingFieldsAcquired::NONE;
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+
+    // Machine surface: the manifest entry, enumerated members exact (kebab).
+    let machine = render_machine(&answer, &snapshot, &d);
+    let manifest = machine["report"]["checks_not_run"]
+        .as_array()
+        .expect("the machine report carries the checks_not_run manifest")
+        .clone();
+    assert!(
+        manifest
+            .iter()
+            .any(|c| c["check"] == "unrouted-findings" && c["reason"] == "could-not-check"),
+        "the machine manifest names the routing query could-not-check: {machine}"
+    );
+    // Human surface: the worded could-not-check line.
+    let human = render_human(&answer, &snapshot, &d);
+    assert!(
+        human.contains("could not check"),
+        "the human form words the could-not-check condition: {human:?}"
+    );
+}
+
+#[test]
+fn a_full_acquisition_reads_an_empty_manifest_and_a_deferred_group_reads_dormant() {
+    // The only-if half, both directions: under full acquisition every
+    // finding-reading check ran — the machine manifest is EXPLICITLY empty
+    // (checked-clean stays a real claim, never a missing key) and the human
+    // form carries no checks-not-run section; a spine-only acquisition names
+    // its deferred checks DORMANT — distinguishable from could-not-check on
+    // the reason member (dormant-by-scope is not failed-by-error).
+    scrub_model_credentials();
+    let d = data();
+    let (state, snapshot) = load_parts(&corpus().join("4-routing"));
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+    let machine = render_machine(&answer, &snapshot, &d);
+    assert_eq!(
+        machine["report"]["checks_not_run"],
+        serde_json::json!([]),
+        "full acquisition: an explicitly empty manifest, never a missing key"
+    );
+    let human = render_human(&answer, &snapshot, &d);
+    assert!(
+        !human.contains("checks not run"),
+        "full acquisition carries no checks-not-run section: {human:?}"
+    );
+
+    let mut spine_only = snapshot;
+    spine_only.finding_fields_acquired = FindingFieldsAcquired::SPINE_ONLY;
+    let answer = derive_phase_answer(&state, &spine_only, &actions());
+    let machine = render_machine(&answer, &spine_only, &d);
+    let manifest = machine["report"]["checks_not_run"]
+        .as_array()
+        .expect("spine-only: the manifest is present")
+        .clone();
+    assert!(
+        !manifest.is_empty() && manifest.iter().all(|c| c["reason"] == "dormant"),
+        "deferred-by-scope groups read dormant, never could-not-check: {machine}"
+    );
+    let human = render_human(&answer, &spine_only, &d);
+    assert!(
+        human.contains("dormant"),
+        "the human form words the dormant condition: {human:?}"
     );
 }
 

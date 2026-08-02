@@ -28,7 +28,12 @@ pub fn render_machine(
         // treating close-phase / enter-next-phase as authoritative — an
         // "unverified-self-report" value means the driving gate was a
         // self-report from the agent-writable state, evidence unresolved.
-        "vsdd_status_version": "0.1.1",
+        // Bumped 0.1.1 -> 0.1.2 for the additive `report.checks_not_run`
+        // field (#818 Fix 2): a SECURITY SIGNAL — an empty
+        // `integrity_findings` reads checked-clean ONLY when
+        // `checks_not_run` is also empty; entries name the finding-reading
+        // checks whose inputs were dormant or could not be acquired.
+        "vsdd_status_version": "0.1.2",
         "answer": {
             "phase": answer.phase,
             "layer": answer.layer,
@@ -49,6 +54,13 @@ pub fn render_machine(
         "report": {
             "degraded": degraded,
             "integrity_findings": answer.integrity_findings,
+            // The dormant-vs-clean distinction (#818 Fix 2): [] means every
+            // finding-reading check ran, so an empty integrity_findings IS
+            // checked-clean; entries name the checks that did not run and
+            // why (dormant | could-not-check), so their silence above is
+            // never read as assurance.
+            "checks_not_run": serde_json::to_value(&answer.checks_not_run)
+                .unwrap_or(serde_json::Value::Null),
         },
     });
     // The whole-of-output machine-form pass (contract: Terminal output

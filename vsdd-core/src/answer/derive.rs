@@ -32,7 +32,7 @@ use crate::registry::sets::CompositionScopeAndActions;
 use crate::snapshot::{AcquisitionOutcome, Snapshot};
 use crate::state::{GateKind, GateOutcome, State};
 
-use super::integrity::snapshot_integrity;
+use super::integrity::{finding_checks_not_run, snapshot_integrity};
 use super::{GateProvenance, PhaseAnswer};
 
 /// Derive the structured phase answer. Pure over its inputs.
@@ -50,6 +50,15 @@ pub fn derive_phase_answer(
     // usable snapshot to check, and the degraded kind carries the story.
     let integrity_findings = if degraded.is_none() {
         snapshot_integrity(state, snapshot)
+    } else {
+        Vec::new()
+    };
+    // The dormant-vs-clean manifest (vsdd-cli #818 Fix 2): the finding-reading
+    // checks that did NOT run, so their silence in integrity_findings is
+    // never read as checked-clean. Same degraded guard as the findings — the
+    // degraded kind carries that story whole.
+    let checks_not_run = if degraded.is_none() {
+        finding_checks_not_run(snapshot)
     } else {
         Vec::new()
     };
@@ -71,6 +80,7 @@ pub fn derive_phase_answer(
         gate_provenance,
         degraded,
         integrity_findings,
+        checks_not_run,
     }
 }
 

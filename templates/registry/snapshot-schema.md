@@ -13,8 +13,8 @@ snapshot_fields:
   - {field: display_session, contents: "session identifier or worded absence"}
   - {field: display_work_item, contents: "work item handle and title or worded absence"}
   - {field: display_active_milestone, contents: "active milestone name with its open-finding count precomputed, or worded absence"}
-  - {field: finding_fields_acquired, contents: "which finding-field groups this acquisition populated — spine (status, disposition, filed-routing presence, closed-before-ratification), lifecycle-roles (owner, validator), evidence (evidence-reference presence); the finding-reading checks gate on it so a spine-only live acquisition does not mis-fire the checks that read the groups it did not acquire (vsdd-cli #820)"}
-  - {field: finding_acquisition_note, contents: "a worded note when the finding query was capped this acquisition (findings past the cap were not examined), else absent — the no-silent-caps marker (vsdd-cli #820)"}
+  - {field: finding_fields_acquired, contents: "which finding-field groups this acquisition populated — spine (status, disposition, filed-routing presence, closed-before-ratification), lifecycle-roles (owner, validator), evidence (evidence-reference presence); the finding-reading checks gate on it so a spine-only live acquisition does not mis-fire the checks that read the groups it did not acquire (vsdd-cli #820); a finding query that FAILED with the tracker present records NO group acquired — never bit-identical to a clean tracker's spine claim — and the routing gate fails closed on the unacquired spine (vsdd-cli #818)"}
+  - {field: finding_acquisition_note, contents: "a worded note when the finding query was capped this acquisition (findings past the cap were not examined) or failed with the tracker present (findings could not be acquired, the failed step named), else absent — the no-silent-caps, no-silent-failure marker (vsdd-cli #820, #818)"}
 audit:
   snapshot_scoped_checks:
     - {check: round-parity, consumes: "round_manifests + round_children", materialized: true}
@@ -51,7 +51,13 @@ closed-findings-missing-evidence, unrouted-findings) additionally gate on
 `finding_fields_acquired`: a live acquisition that populates only some
 finding-field groups — the Slice-1 spine-only join — runs only the checks
 whose input groups it acquired, so partial acquisition never mis-fires the
-checks reading the groups it deferred (vsdd-cli #820).
+checks reading the groups it deferred (vsdd-cli #820). A gated-off check
+never lets its silence read as checked-clean: the status report names it
+dormant (a deferred group) or could-not-check (the failed finding query),
+and the routing gate fails closed when the spine group itself was not
+acquired — the tracker was present but routing could not be read, so an
+unverifiable gate never passes vacuously (vsdd-cli #818 Fix 2; the
+fail-closed requirement of the routing-before-fix guardrail).
 
 The statusline renderer's display fields ride the same snapshot: one
 acquisition, one derivation, one rendering, never a second computation.

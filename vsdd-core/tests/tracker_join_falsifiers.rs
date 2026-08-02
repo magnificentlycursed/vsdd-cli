@@ -4,10 +4,12 @@
 //! These tests target SHIPPED behavior (the mappers and acquisition landed
 //! via PR #9/#10, boundary d146019f), so they are expected green; a red test
 //! here is a found defect for Phase-4 routing, never a fix-in-place. One
-//! test is a deliberate expected-defect falsifier — see
+//! test began as a deliberate expected-defect falsifier — see
 //! `a_failed_finding_leg_with_tracker_present_must_not_pass_the_gate_vacuously`,
 //! which asserts guardrail REQ-4 (knowledge page
-//! `routing-before-fix-guardrail`) against the shipped gate.
+//! `routing-before-fix-guardrail`); its pinned defect was routed as #818
+//! Fix 2 and fixed by build-plan Phase-1 Unit C, so it now stands green as
+//! the fail-closed regression pin.
 //!
 //! Controllable tracker state: a fake `crosslink` executable — a shell
 //! script serving canned responses from the invoking repo's `fake-tracker/`
@@ -585,17 +587,20 @@ fn a_finding_leg_failure_degrades_to_empty_findings_never_unusable() {
 
 #[test]
 fn a_failed_finding_leg_with_tracker_present_must_not_pass_the_gate_vacuously() {
-    // EXPECTED-DEFECT FALSIFIER (red = the found defect, routed not fixed).
+    // THE #818 FIX-2 REGRESSION PIN (born as the expected-defect falsifier,
+    // routed before fixing; green since build-plan Phase-1 Unit C).
     //
     // Guardrail REQ-4 (knowledge page `routing-before-fix-guardrail`):
     // "when ... the finding leg returned findings-absent while the tracker
     // was present, the gate BLOCKS (non-zero) with a distinct message — an
-    // unverifiable gate never passes vacuously." The shipped acquisition
-    // records NO marker for a failed finding leg (findings empty, the spine
+    // unverifiable gate never passes vacuously." Pre-fix, the acquisition
+    // recorded NO marker for a failed finding leg (findings empty, the spine
     // group still claimed acquired, no acquisition note), so a leg-failure
-    // snapshot is bit-identical to a genuinely clean tracker's and the
-    // shipped gate Passes — the vacuous pass the requirement forbids, and
-    // the same dormant-vs-clean family as the deferred #818 Fix 2.
+    // snapshot was bit-identical to a genuinely clean tracker's and the
+    // gate Passed — the vacuous pass the requirement forbids (the #818
+    // dormant-vs-clean false-assurance family). The fix records the failed
+    // leg (no finding-field group acquired, the note wording the failed
+    // step) and the gate fails closed on the unacquired spine.
     let repo = TempRepo::new();
     serve_review_round_with_children(
         &repo,

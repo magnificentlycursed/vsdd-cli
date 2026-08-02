@@ -6,7 +6,7 @@
 //! the renderer emits plain words; decoration, if any ever arrives,
 //! must strip losslessly.
 
-use vsdd_core::answer::{GateProvenance, PhaseAnswer};
+use vsdd_core::answer::{CheckNotRunReason, GateProvenance, PhaseAnswer};
 use vsdd_core::registry::sets::StatuslineData;
 use vsdd_core::snapshot::Snapshot;
 
@@ -135,6 +135,27 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
         out.push_str("  integrity findings:\n");
         for kind in &answer.integrity_findings {
             out.push_str(&format!("    - {kind}\n"));
+        }
+    }
+    // The dormant-vs-clean distinction (vsdd-cli #818 Fix 2): checks whose
+    // inputs were not acquired are NAMED with why — their silence in the
+    // findings list above is not checked-clean. Absent exactly when every
+    // finding-reading check ran, mirroring the conditional provenance line.
+    // Exhaustive match on the reason (the Fix-1 revise lesson): a future
+    // variant must force a new worded arm here, never fall through to a
+    // wording that diverges from the machine form's enumerated member.
+    if !answer.checks_not_run.is_empty() {
+        out.push_str("  checks not run (silence is not checked-clean):\n");
+        for not_run in &answer.checks_not_run {
+            let why = match not_run.reason {
+                CheckNotRunReason::Dormant => {
+                    "dormant — this acquisition does not read its inputs yet"
+                }
+                CheckNotRunReason::CouldNotCheck => {
+                    "could not check — the finding query failed with the tracker present"
+                }
+            };
+            out.push_str(&format!("    - {}: {why}\n", not_run.check));
         }
     }
     out
