@@ -1,6 +1,6 @@
 {
   "next_display_id": 859,
-  "next_comment_id": 1390,
+  "next_comment_id": 1391,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10799,10 +10799,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T03:06:43.307647Z",
-      "updated_at": "2026-08-02T03:06:49.042215Z",
+      "updated_at": "2026-08-02T03:07:21.988663Z",
       "labels": [
         "feature"
-      ]
+      ],
+      "comments": {
+        "19881f69-3c0a-4026-bd75-53e39ec91d9a": {
+          "display_id": 1390,
+          "author": "xqjG",
+          "content": "CONTINUATION RECORD (this is the hub-known #858; the outage-born original was remapped to a negative local id by the collision handler — its trail: the triage disposition, sweep/decline dispositions, entry-1 promotion, all readable there; upstream defect filed as dollspace-gay/crosslink#74). LANDED: milestones attached (#820->8 Slice 1, #839->9 Slice 2, #836->11 Slice 4) + dependency edges per the build-plan order (#839 blocked-by #820, #836 blocked-by #839); milestone #14 'The cost crate' rename queued (stale vs the ratified no-separate-crate ruling). IN FLIGHT: the repo-fixes agent (branch chore/858-triage-fixes) + the kickoff stall retest agent (verdict grounds entry-1's resolution).",
+          "created_at": "2026-08-02T03:07:21.965808Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1OGEoBiTsHMFG+yOXcDjc5bNSWV5hgR+07IKmq4TY9jK0RzaoMhO0CtwXn5mmpizLrw3HEdXcdWjgRGAYTxkBQ=="
+        }
+      }
     },
     "61eb1245-c533-4c74-9e28-139e012686e4": {
       "uuid": "61eb1245-c533-4c74-9e28-139e012686e4",
@@ -31853,11 +31864,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1116,
       "timestamp": "2026-08-02T03:06:57.672067Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1117,
+      "timestamp": "2026-08-02T03:07:21.988663Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T03:06:57.672067Z",
+    "timestamp": "2026-08-02T03:07:21.988663Z",
     "agent_id": "xqjG",
-    "agent_seq": 1116
+    "agent_seq": 1117
   }
 }
