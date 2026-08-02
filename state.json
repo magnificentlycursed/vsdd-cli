@@ -21722,7 +21722,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-08-02T02:23:03.388673Z",
+      "updated_at": "2026-08-02T03:04:19.105092Z",
       "labels": [
         "red-gate"
       ],
@@ -21731,6 +21731,7 @@
         "8024f9be-fc74-4585-970d-68789fb87440",
         "abaa3805-8026-43da-b189-4d2e54c3a4e9"
       ],
+      "milestone_uuid": "6b26f932-b5d9-4c95-8bf1-850d2535b84f",
       "comments": {
         "1817eee2-3b5a-4a13-9c55-f15daded7238": {
           "display_id": 1241,
@@ -31786,11 +31787,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1108,
       "timestamp": "2026-08-02T02:26:14.759692Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1109,
+      "timestamp": "2026-08-02T03:04:19.105092Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T02:26:14.759692Z",
+    "timestamp": "2026-08-02T03:04:19.105092Z",
     "agent_id": "xqjG",
-    "agent_seq": 1108
+    "agent_seq": 1109
   }
 }
