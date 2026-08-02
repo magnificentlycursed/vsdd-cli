@@ -41,6 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Design unification: consolidate the contract — fold #840 subsystem + retire #845 doc, apply Section-A amendments (effort-seam, injection-seam, corroboration-substrate) + #859 dispatch posture (#860)
 - Upstream crosslink observation: issue show --json 'subissues' is never populated (#828)
 - Upstream crosslink request: structured close-reason / disposition field on issue close (#827)
 - vsdd-cli overlay: domain-routing hints + compact agent-loop catalog (#235)

@@ -27,14 +27,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout vsdd-cli
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: vsdd-cli
           # Full history so the crosslink hub branch is fetchable for `sync`.
           fetch-depth: 0
 
       - name: Checkout crosslink (develop)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: magnificentlycursed/crosslink
           ref: develop
@@ -44,7 +44,7 @@ jobs:
         run: rustup show
 
       - name: Cache cargo
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
