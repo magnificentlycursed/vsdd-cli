@@ -13,18 +13,18 @@ if ! command -v mdatron >/dev/null 2>&1; then
   exit 2
 fi
 
-# Minimum-version sanity check (per crosslink #12 PE/F2). mdatron 0.4.0
-# adoption (vsdd-cli #830): mdatron must be 0.4.x. The --json envelope went
-# 2.0.0 (breaking) and files_checked now counts files VALIDATED; stale 0.3.x
-# and earlier binaries report the old envelope and pre-2.0.0 semantics this
-# repo no longer targets, so warn early rather than discover later.
-MIN_VERSION="0.4.0"
+# Minimum-version sanity check (per crosslink #12 PE/F2). mdatron 0.5.0
+# adoption (vsdd-cli #816): mdatron must be 0.5.x — the first crates.io
+# release (upstream #48); additive over 0.4.0 (resource bounds; --json
+# envelope 2.0.0 -> 2.1.0, a MINOR). Stale 0.4.x and earlier binaries lack
+# the bound_exceeded pipeline_error kind, so warn early.
+MIN_VERSION="0.5.0"
 mdatron_version=$(mdatron --version 2>/dev/null | awk '{print $2}' || true)
 if [ -z "$mdatron_version" ]; then
   echo "pre-commit: could not determine mdatron version (got empty output) — proceeding" >&2
-elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.4\.[0-9]+'; then
-  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.4.x supported window" >&2
-  echo "pre-commit:   reinstall with  cargo install --path ../mdatron --locked --force" >&2
+elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.5\.[0-9]+'; then
+  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.5.x supported window" >&2
+  echo "pre-commit:   reinstall with  cargo install mdatron --version 0.5.0 --locked --force" >&2
   echo "pre-commit:   minimum required for vsdd-cli compatibility: ${MIN_VERSION}" >&2
 fi
 
