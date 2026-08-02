@@ -1,6 +1,6 @@
 {
   "next_display_id": 857,
-  "next_comment_id": 1384,
+  "next_comment_id": 1385,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21684,7 +21684,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-08-02T00:54:57.092967Z",
+      "updated_at": "2026-08-02T01:48:22.922078Z",
       "labels": [
         "red-gate"
       ],
@@ -21711,6 +21711,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEtChYz4DO1nM2tMO+JpG+ziRqZunvD+mxbWkhhbsvRnW0ATJsDWmOPy1tpb7d10U2DzGy9PcPS4wFdhWX63IBA=="
+        },
+        "2eed3e99-c72a-4715-9fe3-4d377b80b4a0": {
+          "display_id": 1384,
+          "author": "xqjG",
+          "content": "DISPATCH MANIFEST — build-plan Phase 1 (Slice 1 completion), phase-2a opening. GOVERNING SPEC: .design/build-plan.md ### Phase 1 (Provenance: Slice 1 — Live self-governance) + the ratified remediation design REQ-4/5/6/9 + knowledge pages routing-before-fix-guardrail / finding-query-join. BRANCH: feat/820-phase-1; the draft PR opens at the first 2a commit per the per-milestone PR discipline; commits agent-side issue-gated, merge operator-side per the ratified PR-boundary posture. UNITS (the phase's parallel bullets): (A) the deviations gate leg — 2a red seed (the AC-5 fixture family: lapsed-expiry fails / current passes / fired-date-trigger-without-newer-disposition fails / undecidable warn-local+inconclusive-CI / premature-resolution treated standing / absent+shape-invalid exit-2 both modes / abusive-override treated default+warned / self-re-arm refused CI-only-annotated / injectable issue-state oracle for the fired direction) then 2b build to green (deviations check as a sibling verdict source, pure over parsed data + caller-supplied today; the --ci strictness seam; fail-closed Unverifiable; GH_TOKEN seam in the CI leg) + the 15->16/62->63 install count amendment with the Scaffold PlanEntry, disposition-carried under this phase (this manifest + the build-plan are the disposition record). (B) the tracker-join falsifier set — the build-plan's enumerated integration tests over the BUILT detection (positive + mis-map negative per rule; forward-only boundary; field-readiness guard; finding-leg degradation; truncation marker; disposition label-carry), expected mostly green against shipped behavior, any red = a found defect routed before fixing. VEHICLE: runtime-harness Agent dispatch, BOOTSTRAP-INTERIM declared per the phases-dispatched keystone (registry entry manual-dispatch-fallback carries it, expiring 2026-10-30); skills invoked in-agent: vsdd-phase-2a + software-engineer + quality-engineer. DIALS: session model (Fable 5), default effort. RED-COMMIT BOUNDARY: unit A pauses at the seeded-red state for the orchestrator's red commit + draft-PR open, then resumes to 2b. 2a obligations owed this phase: the operator-authored manual-test checklist (operator slot, batched at phase exit) + the per-commit guardrail wall-clock budget. #818's deferred dormant-vs-clean fix overlaps unit B's field-readiness guard — reconciled at the phase review, not silently absorbed.",
+          "created_at": "2026-08-02T01:48:22.882644Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIUguQTC0eg3tQM7eZv/ePjZ7yV4wFEV0AjOF+jleNYvbaIPNC1rJM+rRE+zHVaArxwEgzJ+GWj37fKvB8yxZAg=="
         },
         "319aa1ea-e3a1-4194-b53a-3e2e401f8a6e": {
           "display_id": 1239,
@@ -31667,11 +31676,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1099,
       "timestamp": "2026-08-02T01:29:06.579438Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1100,
+      "timestamp": "2026-08-02T01:48:22.922078Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T01:29:06.579438Z",
+    "timestamp": "2026-08-02T01:48:22.922078Z",
     "agent_id": "xqjG",
-    "agent_seq": 1099
+    "agent_seq": 1100
   }
 }
