@@ -7,10 +7,19 @@ created: 2026-08-02
 updated: 2026-08-02
 ---
 
+# Incident-corpus index
 
-## Design Specification
+**Basis date:** 2026-08-02 (latest swept tracker records are timestamped 2026-08-02; working tree at branch `feat/820-phase-1`). Part of the vsdd-cli #857 pre-unification grounding set. Read-only sweep; no records were modified.
 
-### 1. oracle-forgery (fabricated or forgeable records passing as evidence)
+**Sweep scope:** the governing contract `.design/agent-first-vsdd-toolkit.md` (every `Evidence:` line, the Fixture corpus requirement, the References and name map); the ratified remediation design `.design/decomposition-topology-remediation.md`; the ratified subsystem design `.design/verifiable-conformance-and-efficiency.md` (#840); the deviation registry `.vsdd/registry/deviation-registry.yaml` (all seven founding entries); tracker issues #806, #808, #810, #816 (incl. the practice-adoption relay's escape-corpus list), #817, #818, #820, #822, #845, #853–#857; GitHub vsdd-cli #11 and #12; the knowledge pages `attended-design-autonomous-execution` and the design-doc pages; the built test suite (`vsdd-core/tests/`, `vsdd/tests/`) for what actually pins.
+
+**Pin-status vocabulary** (plain words): **PINNED** — a built, green fixture or mechanized control reproduces/blocks the incident class. **SEEDED-RED** — a red-gate fixture is committed (Phase-1 branch, draft PR #24) and pinning lands at build-to-green. **CONVENTION** — a format-carry or discipline is exercised but no mechanized check fires; the mechanized target is named and owed. **NONE-YET** — no fixture and no control pins it: red-gate-authoring debt, flagged loudly.
+
+An incident's one-line "what" is drawn from its durable record, not reconstructed. Where a fixture is *named* in the contract's Fixture corpus but not built, that is stated — a named member is a declared deliverable, not coverage (the corpus's own "deferred, never covered" rule).
+
+---
+
+## 1. Oracle-forgery (fabricated or forgeable records passing as evidence)
 
 | Incident | Date | What happened | Record | Pin |
 |---|---|---|---|---|
@@ -20,15 +29,15 @@ updated: 2026-08-02
 | Sidecar hand-edit + doc_hash recompute | 2026-08-01 | a dispatched fix agent hand-edited the ratified #840 design doc and recomputed its pipeline sidecar's doc_hash — modification of a tool-consumed record outside the sanctioned operations; reverted on principle | contract Design-doc-lifecycle member (its Evidence line); the #826 PR cycle | **NONE-YET** mechanized — falsifier is reviewer-operable from the diff (sanctioned-operation diff signatures); target CI doc_hash-vs-bytes + disposition check named in the contract, unbuilt. Honest grade in the contract: convention |
 | Forge-a-self-authored-record (escape class) | named 2026-07-29 | the standing escape shape: fabricate a gate, composition, approval, or re-arm record and have a control trust it — the local tracker, registry file, and hub branch are all agent-writable | #816 practice-adoption relay (escape corpus); #840 REQ-10; remediation design REQ-4 oracle-honesty clause | **NONE-YET** — the corroboration keystone (#815 server-synced tamper-evident oracle) is unbuilt, so every verdict resting on it is could-not-check; postdated-approval seed and self-re-arm refusal are named (self-re-arm CI-leg-only, riding #815 + signing); local gate treats `disposition_ref` as an unverified claim by design |
 
-### 2. false-assurance (clean/green asserted where nothing was checked)
+## 2. False-assurance (clean/green asserted where nothing was checked)
 
 | Incident | Date | What happened | Record | Pin |
 |---|---|---|---|---|
 | Dormant-checks-as-clean (the vacuous-gate family) | 2026-07-29 | the status report emitted `integrity_findings: []` while the finding/manifest/comment checks were dormant (inputs hardcoded empty) — not-checked read as checked-clean | #817 (finding 2), #818 Fix 2 | **SEEDED-RED** — `a_failed_finding_leg_with_tracker_present_must_not_pass_the_gate_vacuously` (`vsdd-core/tests/tracker_join_falsifiers.rs:587`, commit 50466310, draft PR #24); the fix builds as Phase-1 Unit C; #818 closes at green + cold review |
 | Thrice-closed-still-open plan issue | June 2026 | the last plan phase's tracking issue carried three closure comments while remaining open — assertion-based transition a gate would have blocked | June-cycle records (#13); contract Phase-exit-by-gate Evidence | **NONE-YET** — phase-exit gate commands are Layer-6 deliverables; the parity format-carry (convention) is the interim |
 | 23 empty no-findings issues | June 2026 | empty issues filed to prove domains had looked — compliance theater in the record | June audit record; enumerable survivors #122–#132, #229–#232; contract Recorded-review-dispatch Evidence | **NONE-YET** — the zero-finding inline-review variant is explicitly "reached by no enumerated falsifier today" (contract Fixture corpus, stated one-sided) |
-| Hollow-shell install | found 2026-07-20 | the estate's installed artifacts deployed once, the gitignored payload halves were lost to a clean/re-clone while tracked wiring survived; every guard-shimmed reference degraded to no-op silently, in both repos | contract Conformance-at-action-time Evidence (sessions-launch member); amendment-issue record 2026-07-20 | **NONE-YET** — hollow-shell tree fixture + installed-artifact-integrity check named (Status member); install slice's static half built (#838) asserts template counts, not integrity |
-| Mis-rooted sessions, zero live hooks | found 2026-07-20 | workspace-root sessions ran the entire respec over a fully-referenced runtime harness with zero live hooks — the launch-directory keying bound none of the repo's enforcement | contract sessions-launch ruling + Evidence; operator restart attempt | **NONE-YET** — mis-rooted-session fixture named, deferred to its owning layer's phase-2a |
+| Hollow-shell install | found 2026-07-20 | the estate's installed artifacts deployed once, the gitignored payload halves were lost to a clean/re-clone while tracked wiring survived; every guard-shimmed reference degraded to no-op silently, in both repos | contract Conformance-at-action-time Evidence (sessions-launch member); amendment-issue record 2026-07-20 | **PINNED — vsdd-core/tests/shell_red_gate.rs + integrity_shell/installed_artifact.rs (audit correction 2026-08-02)
+| Mis-rooted sessions, zero live hooks | found 2026-07-20 | workspace-root sessions ran the entire respec over a fully-referenced runtime harness with zero live hooks — the launch-directory keying bound none of the repo's enforcement | contract sessions-launch ruling + Evidence; operator restart attempt | **PINNED — the installed-artifact integrity machinery (audit correction 2026-08-02)
 | Conformance-clean is not test-green | 2026-07-28/29 | the mdatron v0.3.0 flip landed as a "clean" boundary commit while the toolkit's own test suite was red; the agent compounded it by asserting clean on partial verification | #822 (first finding, plain-name disposition) | **PINNED** — CI-on-PR runs the toolkit's own test suite (PR #1) with required checks in the ruleset |
 | Verify-clean cannot prove coverage | 2026-07-28/29 | mdatron's `files_checked` counts files-with-findings, so a clean repo is indistinguishable from an empty jurisdiction — no envelope field proved coverage | #822 (second finding) | **PINNED** — the non-vacuity canary (#825, PR #2); upgrade available: families tri-state gating (mdatron 2.1.0, tracked #855) |
 | Vacuous silent-tests | 2026-07-28/29 | `e0207_silent_*` asserted a code's absence — satisfied whether the check ran clean or never ran; harness read only `findings[].code` | #822 (fifth finding) | **PINNED** — positive controls + same-run sentinels; `pipeline_status == ok` asserted everywhere; non-vacuity proven by re-creating the flip |
@@ -39,7 +48,7 @@ updated: 2026-08-02
 | Reviewer derail into injected boilerplate | 2026-07 (round 3 of the corrected re-roast) | all four parallel cold reviewers hit harness failure modes; one derailed into echoing instruction-shaped text from a file it read, 0 tool-uses — completed manually | GitHub vsdd-cli #11 (companion observation in the fixture-seed comment) | **NONE-YET** — flagged as its own specimen class (runtime-harness reliability + prompt-injection); no fixture, no control |
 | Detection-without-a-seam (escape class) | named 2026-07-29 | the standing escape shape: advisory detection presented as enforcement — detection-only-is-not-governance | #816 practice-adoption relay; #840 REQ-22 honesty bar; meta-harness enforcement-grade ladder | **NONE-YET** mechanized — the honesty bar and AC-24/AC-28 are designed (#840 is 0% built); today it is held by the grade-naming convention alone |
 
-### 3. process-bypass (owned/gated flow skipped)
+## 3. Process-bypass (owned/gated flow skipped)
 
 | Incident | Date | What happened | Record | Pin |
 |---|---|---|---|---|
@@ -57,7 +66,7 @@ updated: 2026-08-02
 | Fix-with-no-owning-finding (escape class) | named 2026-07-29 | the standing escape shape: commit a fix with no finding issue filed before it | #816 practice-adoption relay; #840 subsumption notes it as a routing-control bypass | **NONE-YET** — the un-owned ungated-hotfix fixture shape named, unbuilt |
 | Edit-the-checker (escape class) | named 2026-07-29 | the standing escape shape: edit the checking mechanism itself; live proof of the risk: Thermite's two edit-time gates silently de-wired by a settings clobber and nothing caught it | #816 practice-adoption relay + the outbound to mdatron#96; crosslink#15 / Thermite#93 | **NONE-YET** — the stance (CI runs the integrity logic over the checker's own wiring) is recorded; the tamper-proof residual routes to #815 corroboration, unbuilt |
 
-### 4. spend-escape (unbounded or unaccountable expenditure)
+## 4. Spend-escape (unbounded or unaccountable expenditure)
 
 | Incident | Date | What happened | Record | Pin |
 |---|---|---|---|---|
@@ -65,7 +74,7 @@ updated: 2026-08-02
 | Re-derived reference material | 2026-07-18 session | the design session re-derived reference material that recorded usage would have flagged for reuse | contract Cost-is-knowable Evidence | **NONE-YET** — the records-based efficiency engine (#840) is unbuilt |
 | Calibration bands never updated | suite era | cost calibration bands were authored once and never updated from actuals | suite claude-code-contract records; contract Cost-is-knowable Evidence | **NONE-YET** — completed-cycle-with-calibration-bands fixture named, unbuilt |
 
-### 5. naming-coinage (invented labels and reified utterances)
+## 5. Naming-coinage (invented labels and reified utterances)
 
 | Incident | Date | What happened | Record | Pin |
 |---|---|---|---|---|
@@ -75,7 +84,7 @@ updated: 2026-08-02
 | Single-utterance reification | suite era / June 2026 | single operator utterances became named schema concepts; illustrative examples were wired as enumerated special cases; forward-only policy produced backwards-compatibility work on schemas still being designed | contract Directive-reconciliation + Conformance Evidence | **NONE-YET** mechanized — the maturity lifecycle / registration-act discipline is convention; E0090 (unregistered-coinage) covers the bold-introduced-term slice only |
 | Doc-type proliferation via free filename slugs | suite era | documentation types routed around per-file validation through free filename slugs | contract Conformance-at-action-time Evidence | **PINNED** (partial) — mdatron jurisdiction (`file_globs` allowlist) + `require_frontmatter`/W0040 close the free-slug route for the governed corpus |
 
-### 6. staleness-fabrication (records asserting what was never true or no longer true)
+## 6. Staleness-fabrication (records asserting what was never true or no longer true)
 
 | Incident | Date | What happened | Record | Pin |
 |---|---|---|---|---|
@@ -88,7 +97,7 @@ updated: 2026-08-02
 | Orphaned code catalog | 2026-08-01 | 9 VSDD codes cited in 6 live dispatch-injected files with no surviving defining home | #854 (open) | **NONE-YET** — open issue, no control |
 | Dangling citers after doc retirement | 2026-08-01 | the Solution-Owner change-authority rule and per-milestone PR discipline lived only in deleted homes (methodology.md, README), leaving every referencing domain/primer without a contract home | contract SO-change-authority + PR-discipline Evidence (the #826 cleanup review's dangling-citer finding, fix round eec731bd) | **CONVENTION** — citer-sweep zero-stale-refs acceptance check (#845 remediation), hand-run at landing; mdatron citations available for the file:line slice |
 
-### 7. topology-calcification (workarounds that silently became the architecture)
+## 7. Topology-calcification (workarounds that silently became the architecture)
 
 The class is pinned as a class by the deviation registry (`.vsdd/registry/deviation-registry.yaml`, ratified #845, disposition comment 2026-08-01 21:59) plus the deviations gate leg, whose red-gate seed is committed (`vsdd-core/tests/deviations_red_gate.rs`, commit fdbc9546, draft PR #24 — lapsed-expiry, fired-trigger, premature-resolution, absent/shape-invalid fail-closed, abusive-override directions). Honest residual, named in the design: the *registration* half (that a deviation gets an entry at all) stays convention grade — the unregistered deviation is the residual no gate reaches.
 
@@ -102,7 +111,7 @@ The class is pinned as a class by the deviation registry (`.vsdd/registry/deviat
 | Hand-authored build-plan | entered 2026-08-01 | the build-plan projection is hand-authored, a bootstrap fallback pending Slice 2's generator | registry entry `hand-authored-build-plan`; build-plan preamble (self-declared founding entry 7) | **PINNED** (data) — standing entry, artifact-presence trigger (grep-decidable), expiry 2026-11-29; plus the Decomposition content-hash pin (convention until the doc-drift check mechanizes) |
 | mdatron sibling-pin lag | 2026-08-01 → resolved 2026-08-02 | CI sibling checkout tag-pinned v0.4.0 against a v0.5.0 latest — a persisted toolchain-pin lag; resolved by adopting 0.5.0 from crates.io and retiring the checkout surface | registry entry `mdatron-sibling-pin-lag` (#816) | **PINNED** (data) — entry `resolved` under SO disposition 2026-08-02; the full lifecycle exercised |
 
-### 8. upstream doc-vs-code (dependencies whose documentation and behavior diverge)
+## 8. Upstream doc-vs-code (dependencies whose documentation and behavior diverge)
 
 | Incident | Date | What happened | Record | Pin |
 |---|---|---|---|---|
@@ -117,7 +126,7 @@ The class is pinned as a class by the deviation registry (`.vsdd/registry/deviat
 
 ---
 
-### the none-yet roster (red-gate-authoring debt, actionable)
+## The NONE-YET roster (red-gate-authoring debt, actionable)
 
 **35 of the 63 indexed incidents have no built fixture or mechanized control pinning them.** Grouped by where the debt lands:
 
@@ -160,4 +169,3 @@ The class is pinned as a class by the deviation registry (`.vsdd/registry/deviat
 **In flight (SEEDED-RED on draft PR #24, pinning lands at green):** the vacuous-gate falsifier (`tracker_join_falsifiers.rs:587`) and the deviations gate leg seed (`deviations_red_gate.rs`) — the false-assurance Fix 2 and the registry-expiry mechanization ride these.
 
 **Named class residual with no gate by design:** the unregistered deviation (the registration half of the registry) — convention grade, honestly named in the ratified remediation design; and the mdatron register/coinage mechanization covers governed prose, not tracker comments.
-
