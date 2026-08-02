@@ -1,6 +1,6 @@
 {
   "next_display_id": 860,
-  "next_comment_id": 1402,
+  "next_comment_id": 1403,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15582,7 +15582,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:35:58.642324Z",
-      "updated_at": "2026-08-02T00:46:11.803311Z",
+      "updated_at": "2026-08-02T04:25:24.577114Z",
       "closed_at": "2026-08-02T00:46:11.803304Z",
       "labels": [
         "design"
@@ -15695,6 +15695,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQHmnu2g3pHlvXmilgQRJCT7rbOrE241C/j69Y15/a+0o5F/9qbXTwykRrZFwPVWWp6nBYRP6BcI1cjq/lF8HAA=="
+        },
+        "f983a1da-5775-4266-8766-51cb40479308": {
+          "display_id": 1402,
+          "author": "xqjG",
+          "content": "Consent-posture ruling recorded on #859 (container vehicle, no gate-disabling) directly re-scopes two deviation-registry entries — routed there for execution post-feat/820-merge: entry 5 (container-kickoff-blocked-posture) trigger '#9/#10 closed' -> 'container image usable' (the posture is no longer blocked, it's the ADOPTED vehicle; #9/#10 done, image the residual); entry 1 (manual-dispatch-fallback) trigger_context names the container vehicle as the adopted exit. Both SO re-arms under the #859 disposition; deferred to avoid churning the in-flight feat/820 registry commits.",
+          "created_at": "2026-08-02T04:25:24.561925Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA9q1Pu5TktuaKjXeZ76gE07h6ungWd0ivHeULh1sP2wtCviPBy6mQJ3WxW7WFqenZjS1PoRehrshwtnzro+QHBA=="
         },
         "fe455c30-e085-41ee-bf4d-18a674e6a465": {
           "display_id": 1359,
@@ -32058,11 +32067,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1131,
       "timestamp": "2026-08-02T04:24:53.056962Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1132,
+      "timestamp": "2026-08-02T04:25:24.577114Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T04:24:53.056962Z",
+    "timestamp": "2026-08-02T04:25:24.577114Z",
     "agent_id": "xqjG",
-    "agent_seq": 1131
+    "agent_seq": 1132
   }
 }
