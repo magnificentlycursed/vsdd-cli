@@ -1,8 +1,10 @@
 {
-  "allowedTools": [
-    "Bash(tmux *)",
-    "Bash(git worktree *)"
-  ],
+  "permissions": {
+    "allow": [
+      "Bash(tmux *)",
+      "Bash(git worktree *)"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "hooks": {
     "PostToolUse": [
