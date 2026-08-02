@@ -50,7 +50,9 @@
   ],
   "auto_steal_stale_locks": false,
   "blocked_git_commands": [
-    "git push",
+    "gh pr merge",
+    "git push -f",
+    "git push --force",
     "git merge",
     "git rebase",
     "git cherry-pick",
