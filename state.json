@@ -23817,11 +23817,12 @@
       "display_id": 17,
       "title": "Phase 6: Publish mdatron 0.1.0 to crates.io + vsdd CI migration",
       "description": "v0.1.0 release gate.\n\nScope: (1) crates.io publish for mdatron (after Phases 0-4 land; Phase 5 optional). (2) vsdd-cli/.github/workflows/mdatron-verify.yml migrated: cargo install mdatron --locked --version 0.1.x replaces sibling-checkout. (3) templates/.github/workflows/vsdd-verify.yml similarly updated. (4) vsdd-cli/.githooks/pre-commit install hint switches to cargo install mdatron --locked. (5) README install instructions updated for both repos. (6) CHANGELOG entries for both repos.\n\nAcceptance: cargo install mdatron --locked --version 0.1.0 works in clean environment; vsdd-cli CI passes against published crate (sibling repo no longer required for build); pre-commit hook activates without local cargo install --path.\n\nPer docs/refactor/binary-first-plan.md Phase 6. Blocked by Phases 2 + 3 + 4 (and 5 if shipping in v0.1.0). Supersedes existing issue #9 (path-dep migration).",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-06-02T19:06:19.958782Z",
-      "updated_at": "2026-08-02T00:53:33.303970Z",
+      "updated_at": "2026-08-02T00:53:40.784863Z",
+      "closed_at": "2026-08-02T00:53:40.784852Z",
       "blockers": [
         "440db558-bd72-4bc6-8c3e-c188cc37b16e",
         "67f6e412-c5f3-4d73-a583-14ffd4127b49",
@@ -31560,11 +31561,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1089,
       "timestamp": "2026-08-02T00:53:33.303970Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1090,
+      "timestamp": "2026-08-02T00:53:40.784863Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:53:33.303970Z",
+    "timestamp": "2026-08-02T00:53:40.784863Z",
     "agent_id": "xqjG",
-    "agent_seq": 1089
+    "agent_seq": 1090
   }
 }
