@@ -1,5 +1,5 @@
 {
-  "next_display_id": 855,
+  "next_display_id": 856,
   "next_comment_id": 1358,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -803,6 +803,7 @@
     "ee19a3ab-d8b8-468a-b9e1-3be9a45d783f": 420,
     "ee28f0ff-7620-4312-ab81-cdad179bc417": 330,
     "ee2d2571-e766-4da7-bf0f-38ee5d43593b": 608,
+    "ee4dc370-aa42-4c8e-b08a-a697c63a39cd": 855,
     "eeb15c72-58b9-4395-a838-eda43f149dc3": 124,
     "eed1172f-c892-499f-b45c-09396c579734": 251,
     "eee68bde-a961-4834-8e0f-e7250beb19f2": 25,
@@ -24799,6 +24800,16 @@
         }
       }
     },
+    "ee4dc370-aa42-4c8e-b08a-a697c63a39cd": {
+      "uuid": "ee4dc370-aa42-4c8e-b08a-a697c63a39cd",
+      "display_id": 855,
+      "title": "Standing self-governance residuals (from #822): jurisdiction self-audit bypass + fail-open pre-commit version guard; families-tri-state gating now available",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T00:45:11.800282Z",
+      "updated_at": "2026-08-02T00:45:11.800282Z"
+    },
     "eeb15c72-58b9-4395-a838-eda43f149dc3": {
       "uuid": "eeb15c72-58b9-4395-a838-eda43f149dc3",
       "display_id": 124,
@@ -31066,11 +31077,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1027,
       "timestamp": "2026-08-02T00:44:26.185681Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1028,
+      "timestamp": "2026-08-02T00:45:11.800282Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:44:26.185681Z",
+    "timestamp": "2026-08-02T00:45:11.800282Z",
     "agent_id": "xqjG",
-    "agent_seq": 1027
+    "agent_seq": 1028
   }
 }
