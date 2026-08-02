@@ -1,5 +1,5 @@
 {
-  "next_display_id": 861,
+  "next_display_id": 862,
   "next_comment_id": 1420,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -476,6 +476,7 @@
     "89fcf1f9-e0ca-4372-a5a9-29d1fbff8b52": 801,
     "8a081517-8b7e-44d5-afcc-e185b79be2da": 139,
     "8a4cf33f-5211-44c9-94b0-58a27067013f": 189,
+    "8af2dcc4-ca87-48b7-87ab-7708394650c8": 861,
     "8b0e4b66-e3f9-4650-8550-b1a351b19e3e": 617,
     "8b313a5d-04a5-4ed0-b479-c07b3207ec9a": 651,
     "8b358191-5e55-4ba8-9561-f7fe25a54e5e": 176,
@@ -15191,6 +15192,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmTBBZzW2zReVTg8f+YdqoEtH7Ite4S/PaP5IPofY4i+sMGrXqP/JoL/f9WA2iCGMwDzVimlFyYqkoJc5emt6Cg=="
         }
       }
+    },
+    "8af2dcc4-ca87-48b7-87ab-7708394650c8": {
+      "uuid": "8af2dcc4-ca87-48b7-87ab-7708394650c8",
+      "display_id": 861,
+      "title": "interim hygiene batch: CHANGELOG + CI action bump + v0.6.0 section-rules prep (odds-and-ends P/Q/R)",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T10:44:47.582044Z",
+      "updated_at": "2026-08-02T10:44:47.582044Z"
     },
     "8b0e4b66-e3f9-4650-8550-b1a351b19e3e": {
       "uuid": "8b0e4b66-e3f9-4650-8550-b1a351b19e3e",
@@ -32354,11 +32365,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1154,
       "timestamp": "2026-08-02T10:35:00.831321Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1155,
+      "timestamp": "2026-08-02T10:44:47.582044Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T10:35:00.831321Z",
+    "timestamp": "2026-08-02T10:44:47.582044Z",
     "agent_id": "xqjG",
-    "agent_seq": 1154
+    "agent_seq": 1155
   }
 }
