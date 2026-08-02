@@ -18,18 +18,11 @@ jobs:
         with:
           path: vsdd-cli
 
-      # mdatron isn't published to crates.io yet (#48), and since the #81
-      # workspace collapse vsdd consumes the mdatron BINARY (there is no longer
-      # a path dependency on mdatron-core). Check out the collapsed repo at the
-      # pinned release tag so CI validates against the version the repo targets
-      # (0.4.x), not a floating main (vsdd-cli #824, #830).
-      - name: Checkout mdatron
-        uses: actions/checkout@v4
-        with:
-          repository: magnificentlycursed/mdatron
-          ref: v0.4.0
-          path: mdatron
-
+      # mdatron is published on crates.io as of 0.5.0 (upstream #48), so CI
+      # installs the pinned release from the registry — no sibling checkout,
+      # no floating branch (vsdd-cli #816; supersedes the #824/#830 tag-pin
+      # posture, and retires the sibling-checkout surface the deviation
+      # registry's mdatron-sibling-pin-lag entry tracked).
       - name: Install Rust toolchain
         run: rustup show
 
@@ -39,12 +32,11 @@ jobs:
           path: |
             ~/.cargo/registry
             ~/.cargo/git
-            mdatron/target
-          key: cargo-${{ runner.os }}-${{ hashFiles('mdatron/Cargo.lock') }}
+            ~/.cargo/bin/mdatron
+          key: cargo-mdatron-0.5.0-${{ runner.os }}
 
-      - name: Install mdatron CLI
-        working-directory: mdatron
-        run: cargo install --path . --locked
+      - name: Install mdatron CLI (crates.io, pinned)
+        run: command -v mdatron >/dev/null && mdatron --version | grep -q '0\.5\.0' || cargo install mdatron --version 0.5.0 --locked
 
       - name: Run mdatron verify
         working-directory: vsdd-cli
