@@ -6,6 +6,10 @@
     ]
   },
   "enableAllProjectMcpServers": true,
+  "statusLine": {
+    "type": "command",
+    "command": "ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null)\"; PATH=\"$ROOT/target/debug:$ROOT/target/release:$PATH\" sh \"$ROOT/templates/statusline/vsdd-statusline.sh\""
+  },
   "hooks": {
     "PostToolUse": [
       {
