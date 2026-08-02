@@ -1,6 +1,6 @@
 {
   "next_display_id": 860,
-  "next_comment_id": 1406,
+  "next_comment_id": 1407,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21867,7 +21867,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-08-02T04:57:00.405157Z",
+      "updated_at": "2026-08-02T05:19:39.340347Z",
       "labels": [
         "red-gate"
       ],
@@ -21886,6 +21886,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+Y66oq64yAY/TIWUqqSGZ5j4imh9e+HEBYwyFypSS4436C0rTBInlogylhz7uZCUBpYUvO2hLCk0Z71TvuqFAg=="
+        },
+        "152da4c3-f939-47a6-9f87-f5b5a84b8a67": {
+          "display_id": 1406,
+          "author": "xqjG",
+          "content": "Residual (c) DISPOSITIONED: operator declines the manual-tests/ authoring (2026-08-02). Per The operator authors the oracle, the manual-test checklist is the operator slot and declining is a lawful recorded decision (like the deferred layer-1.md run). The present manual-tests/layer-1/2/3.md are auto-scaffold stubs on the retired layer vocabulary; they stand as-is. Slice-1 close residuals now: (a) commit-msg friction hook -> Slice 4; (b) per-commit wall-clock budget deferred (no per-commit hook to budget); (c) manual-tests authoring DECLINED (this comment).",
+          "created_at": "2026-08-02T05:19:39.318435Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAfI5N80CDxv0wMNt1Hv++dwhwF0O/+Ko529Cw55iYVUJCxZe9/bqLXm1vgL4oArBu8yg1Ax2wrWiG4+DzhHiuBw=="
         },
         "1817eee2-3b5a-4a13-9c55-f15daded7238": {
           "display_id": 1241,
@@ -32116,11 +32125,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1135,
       "timestamp": "2026-08-02T05:08:36.531314Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1136,
+      "timestamp": "2026-08-02T05:19:39.340347Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T05:08:36.531314Z",
+    "timestamp": "2026-08-02T05:19:39.340347Z",
     "agent_id": "xqjG",
-    "agent_seq": 1135
+    "agent_seq": 1136
   }
 }
