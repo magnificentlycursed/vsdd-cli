@@ -9,14 +9,18 @@ entries:
   retest_trigger:
     type: issue-state
     predicate: dollspace-gay/crosslink#55 state == closed
-  trigger_context: 'The mirror-commit disjunct is now namable (fix commit 77b0035d, fork PR #72 / gh#66,
-    on the consumed develop line at eba9a1cd; the container-side contributors #9/#10/#59 merged as PRs
-    #63/#64/#65/#72). BUT the SO-authorized 2026-08-02 retest against the advanced mirror STALL-PERSISTED:
-    headless kickoff parks at the path-scoped project-trust dialog (dialog 2), a distinct blocker beyond
-    #55 that --skip-permissions does not clear (filed upstream on dollspace-gay/crosslink#55; falsifies
-    PR #72''s premise for tracked-settings repos). So #55 is only half-addressed for this repo''s config
-    and the mirror advance does NOT ground resolution — the entry stays standing on the #55-closed machine
-    predicate; a passing headless retest (both dialogs cleared) is what would ground a resolution disposition.'
+  trigger_context: 'Retest (2026-08-02, SO-authorized, mirror eba9a1cd): the container-side fixes (#9/#10/#59,
+    merged PRs #63/#64/#65/#72) work, but headless dispatch STALL-PERSISTS on the tmux/plan path. The
+    fork''s controlled investigation (upstream dollspace-gay/crosslink#55) refined and CORRECTED the earlier
+    attribution: the blocking dialog is claude''s folder-trust prompt, which is TTY-gated and fires on
+    ANY untrusted fresh-worktree path — NOT the .claude/settings.json pre-approval variant (refuted: an
+    empty dir with no settings still prompts); only writing hasTrustDialogAccepted clears it, and claude
+    upgrades trend stricter. The PROVEN headless vehicle is container dispatch (kickoff run --container):
+    docker run -d allocates no TTY, so no dialog renders and --skip-permissions proceeds — verified end-to-end
+    upstream — gated only on the agent image being pullable (forecast-bio/crosslink#576, closed; publication
+    to confirm). So the fallback''s exit is the container vehicle once the image is usable, or upstream
+    making kickoff plan non-interactive; #55-closed remains the machine predicate meanwhile. Changing
+    the predicate to a container-vehicle-ready signal is an SO re-arm act, not taken here.'
   entry_date: 2026-08-01
   expiry: 2026-10-30
   owning_issue: vsdd-cli#845
