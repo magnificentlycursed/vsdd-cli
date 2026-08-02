@@ -305,11 +305,30 @@ fn cmd_gate(args: GateArgs) -> ExitCode {
             None
         }
     };
+    // The artifact-presence reader lives HERE at the CLI layer beside the
+    // clock and the issue oracle — the core stays fs-free. Reads are bounded
+    // (MAX_ARTIFACT_BYTES) and rooted at the working directory, matching the
+    // registry read; a missing/unreadable/oversize file reads as unavailable
+    // (pattern-not-present → not fired), never a panic.
+    let artifact_reader = |file: &str| -> Option<String> {
+        use std::io::Read;
+        let opened = std::fs::File::open(cwd.join(file)).ok()?;
+        let mut buf = Vec::new();
+        let read = opened
+            .take(vsdd_core::MAX_ARTIFACT_BYTES + 1)
+            .read_to_end(&mut buf)
+            .ok()? as u64;
+        if read > vsdd_core::MAX_ARTIFACT_BYTES {
+            return None;
+        }
+        String::from_utf8(buf).ok()
+    };
     let outcome = deviations::deviations_gate(
         &cwd.join(".vsdd/registry/deviation-registry.yaml"),
         &today,
         mode,
         &oracle,
+        &artifact_reader,
     );
     for warning in &outcome.warnings {
         eprintln!("deviations: {warning}");

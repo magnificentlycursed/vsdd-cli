@@ -29,6 +29,13 @@ fn no_oracle(_issue_ref: &str) -> Option<IssueState> {
     None
 }
 
+/// The no-artifact direction: every artifact read is unavailable (a missing
+/// or unreadable file reads as pattern-not-present → not fired). Used by the
+/// fixtures that carry no artifact-presence trigger.
+fn no_artifact(_file: &str) -> Option<String> {
+    None
+}
+
 /// Assert the outcome blocks and the block payload names the entry.
 fn assert_blocks_entry(outcome: &DeviationsOutcome, entry_id: &str, context: &str) {
     match &outcome.verdict {
@@ -67,7 +74,7 @@ entries:
 ",
     );
     for mode in [GateMode::Local, GateMode::Ci] {
-        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle);
+        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle, &no_artifact);
         assert_blocks_entry(
             &outcome,
             "lapsed-expiry-entry",
@@ -104,7 +111,7 @@ entries:
 ",
     );
     for mode in [GateMode::Local, GateMode::Ci] {
-        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle);
+        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle, &no_artifact);
         assert_eq!(
             outcome.verdict,
             GateVerdict::Pass,
@@ -147,7 +154,7 @@ entries:
 ",
     );
     for mode in [GateMode::Local, GateMode::Ci] {
-        let outcome = deviations_gate(&stale, "2026-08-01", mode, &no_oracle);
+        let outcome = deviations_gate(&stale, "2026-08-01", mode, &no_oracle, &no_artifact);
         assert_blocks_entry(
             &outcome,
             "fired-date-trigger-entry",
@@ -179,7 +186,7 @@ entries:
     comment_timestamp: 2026-07-20 09:00
 ",
     );
-    let outcome = deviations_gate(&rearmed, "2026-08-01", GateMode::Local, &no_oracle);
+    let outcome = deviations_gate(&rearmed, "2026-08-01", GateMode::Local, &no_oracle, &no_artifact);
     assert_eq!(
         outcome.verdict,
         GateVerdict::Pass,
@@ -214,7 +221,7 @@ entries:
     comment_timestamp: 2026-07-20 12:00
 ",
     );
-    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Local, &no_oracle);
+    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Local, &no_oracle, &no_artifact);
     assert_eq!(
         outcome.verdict,
         GateVerdict::Pass,
@@ -257,7 +264,7 @@ entries:
     comment_timestamp: 2026-07-20 12:00
 ",
     );
-    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Ci, &no_oracle);
+    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Ci, &no_oracle, &no_artifact);
     assert!(
         matches!(outcome.verdict, GateVerdict::Unverifiable(_)),
         "an undecidable trigger is inconclusive (Unverifiable, exit-2 class) on the CI leg, got {:?}",
@@ -287,7 +294,7 @@ entries:
 ",
     );
     for mode in [GateMode::Local, GateMode::Ci] {
-        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle);
+        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle, &no_artifact);
         assert_blocks_entry(
             &outcome,
             "premature-resolution-entry",
@@ -304,7 +311,7 @@ fn absent_registry_is_unverifiable_in_both_modes() {
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join(".vsdd/registry/deviation-registry.yaml");
     for mode in [GateMode::Local, GateMode::Ci] {
-        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle);
+        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle, &no_artifact);
         assert!(
             matches!(outcome.verdict, GateVerdict::Unverifiable(_)),
             "an absent registry is Unverifiable in {mode:?} mode — deleting the registry never passes, got {:?}",
@@ -335,7 +342,7 @@ fn shape_invalid_registry_is_unverifiable_in_both_modes() {
 ",
     );
     for mode in [GateMode::Local, GateMode::Ci] {
-        let outcome = deviations_gate(&missing_version, "2026-08-01", mode, &no_oracle);
+        let outcome = deviations_gate(&missing_version, "2026-08-01", mode, &no_oracle, &no_artifact);
         assert!(
             matches!(outcome.verdict, GateVerdict::Unverifiable(_)),
             "a registry missing schema_version is Unverifiable in {mode:?} mode, got {:?}",
@@ -358,7 +365,7 @@ entries:
 ",
     );
     for mode in [GateMode::Local, GateMode::Ci] {
-        let outcome = deviations_gate(&missing_fields, "2026-08-01", mode, &no_oracle);
+        let outcome = deviations_gate(&missing_fields, "2026-08-01", mode, &no_oracle, &no_artifact);
         assert!(
             matches!(outcome.verdict, GateVerdict::Unverifiable(_)),
             "an entry missing required fields is Unverifiable in {mode:?} mode, got {:?}",
@@ -395,7 +402,7 @@ entries:
     );
     // Within the carried default (entry_date + 30d = 2026-08-24): the
     // entry stands, and the inoperative override is warned.
-    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Local, &no_oracle);
+    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Local, &no_oracle, &no_artifact);
     assert_eq!(
         outcome.verdict,
         GateVerdict::Pass,
@@ -412,7 +419,7 @@ entries:
 
     // Past the carried default: the entry is lapsed — the 2099 expiry
     // never took effect.
-    let lapsed = deviations_gate(&path, "2026-09-10", GateMode::Local, &no_oracle);
+    let lapsed = deviations_gate(&path, "2026-09-10", GateMode::Local, &no_oracle, &no_artifact);
     assert_blocks_entry(
         &lapsed,
         "abusive-override-entry",
@@ -455,7 +462,7 @@ entries:
     // The re-arm timestamp postdates the fired trigger, but its author is
     // not the Solution Owner: the CI leg refuses it and the fired trigger
     // still blocks.
-    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Ci, &no_oracle);
+    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Ci, &no_oracle, &no_artifact);
     assert_blocks_entry(
         &outcome,
         "self-re-arm-entry",
@@ -494,10 +501,210 @@ entries:
     let closed_oracle = |issue_ref: &str| -> Option<IssueState> {
         issue_ref.contains("#42").then_some(IssueState::Closed)
     };
-    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Local, &closed_oracle);
+    let outcome = deviations_gate(&path, "2026-08-01", GateMode::Local, &closed_oracle, &no_artifact);
     assert_blocks_entry(
         &outcome,
         "fired-issue-trigger-entry",
         "a fired issue-state trigger (oracle: closed) with no re-arm since entry",
+    );
+}
+
+/// A minimal artifact-presence fixture (file/section/pattern encoded) whose
+/// `id` and `pattern` the tests vary.
+fn artifact_presence_registry(id: &str) -> String {
+    format!(
+        r"schema_version: 1
+entries:
+- id: {id}
+  deviation: A fixture whose retest rides on a build-plan section marker.
+  deviates_from: null
+  deviation_class: test-fixture
+  stated_reason: Red-gate fixture (artifact-presence evaluator).
+  retest_trigger:
+    type: artifact-presence
+    file: .design/build-plan.md
+    section: '## Completed phases'
+    pattern: 'Slice 2'
+  entry_date: 2026-07-20
+  expiry: 2026-11-29
+  owning_issue: vsdd-cli#820
+  status: standing
+  disposition_ref:
+    issue: vsdd-cli#845
+    comment_timestamp: 2026-07-20 12:00
+"
+    )
+}
+
+// Build-plan Phase 1 (the artifact-presence leg): the pattern PRESENT in the
+// named section means the awaited artifact has appeared → the trigger FIRED →
+// Block (no newer disposition), in BOTH modes — the evaluator is decidable, so
+// CI never rides the inconclusive path here.
+#[test]
+fn artifact_present_in_section_fires_and_blocks_in_both_modes() {
+    let dir = tempfile::tempdir().unwrap();
+    let path = write_registry(&dir, &artifact_presence_registry("artifact-present-entry"));
+    // The named section carries "Slice 2".
+    let present = |_file: &str| -> Option<String> {
+        Some(
+            "# Build plan\n\n## Completed phases\n- Slice 2 landed the generator\n\n## Contract pin\nhash\n"
+                .to_string(),
+        )
+    };
+    for mode in [GateMode::Local, GateMode::Ci] {
+        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle, &present);
+        assert_blocks_entry(
+            &outcome,
+            "artifact-present-entry",
+            &format!("artifact present in the named section fires in {mode:?} mode"),
+        );
+    }
+}
+
+// The pattern NOT present anywhere → trigger not fired → the entry is a normal
+// standing entry (expiry check only) → Pass, in BOTH modes (never
+// inconclusive on the CI leg — the whole point of the evaluator).
+#[test]
+fn artifact_absent_from_section_passes_in_both_modes() {
+    let dir = tempfile::tempdir().unwrap();
+    let path = write_registry(&dir, &artifact_presence_registry("artifact-absent-entry"));
+    let absent = |_file: &str| -> Option<String> {
+        Some("# Build plan\n\n## Completed phases\n- Slice 1 only\n\n## Contract pin\nhash\n".to_string())
+    };
+    for mode in [GateMode::Local, GateMode::Ci] {
+        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle, &absent);
+        assert_eq!(
+            outcome.verdict,
+            GateVerdict::Pass,
+            "artifact absent → not fired → pass in {mode:?} mode, got {:?}",
+            outcome.verdict
+        );
+    }
+}
+
+// Section-scoping matters: the pattern is present in the FILE but in a
+// DIFFERENT section (## Requirements), not in the named ## Completed phases
+// section → not fired → Pass. A naive whole-file grep would wrongly fire here,
+// so this fixture falsifies a non-section-scoped implementation.
+#[test]
+fn pattern_outside_the_named_section_does_not_fire() {
+    let dir = tempfile::tempdir().unwrap();
+    let path = write_registry(&dir, &artifact_presence_registry("section-scoping-entry"));
+    let elsewhere = |_file: &str| -> Option<String> {
+        Some(
+            "# Build plan\n\n## Requirements\n- Slice 2 is still open work\n\n\
+             ## Completed phases\n- Slice 1 landed\n"
+                .to_string(),
+        )
+    };
+    for mode in [GateMode::Local, GateMode::Ci] {
+        let outcome = deviations_gate(&path, "2026-08-01", mode, &no_oracle, &elsewhere);
+        assert_eq!(
+            outcome.verdict,
+            GateVerdict::Pass,
+            "the pattern outside the named section does not fire in {mode:?} mode, got {:?}",
+            outcome.verdict
+        );
+    }
+}
+
+// A malformed artifact-presence trigger — missing one of file/section/pattern
+// — is rejected by the loader as Unverifiable (shape validation), in both
+// modes. And the cross-class guard: file/section/pattern on a non-artifact
+// trigger also fails closed (so the flat carrier stays as strict as the old
+// single-predicate shape).
+#[test]
+fn malformed_artifact_presence_trigger_is_unverifiable() {
+    // Missing `pattern`.
+    let dir = tempfile::tempdir().unwrap();
+    let missing_pattern = write_registry(
+        &dir,
+        r"schema_version: 1
+entries:
+- id: malformed-artifact-entry
+  deviation: An artifact-presence entry missing its pattern field.
+  deviates_from: null
+  deviation_class: test-fixture
+  stated_reason: Red-gate fixture (artifact-presence malformed direction).
+  retest_trigger:
+    type: artifact-presence
+    file: .design/build-plan.md
+    section: '## Completed phases'
+  entry_date: 2026-07-20
+  expiry: 2026-11-29
+  owning_issue: vsdd-cli#820
+  status: standing
+",
+    );
+    for mode in [GateMode::Local, GateMode::Ci] {
+        let outcome = deviations_gate(&missing_pattern, "2026-08-01", mode, &no_oracle, &no_artifact);
+        assert!(
+            matches!(outcome.verdict, GateVerdict::Unverifiable(_)),
+            "an artifact-presence trigger missing pattern is Unverifiable in {mode:?} mode, got {:?}",
+            outcome.verdict
+        );
+    }
+
+    // Cross-class guard: a date trigger carrying an artifact-presence `file`
+    // field fails closed (non-vacuity for the guard).
+    let dir2 = tempfile::tempdir().unwrap();
+    let wrong_class = write_registry(
+        &dir2,
+        r"schema_version: 1
+entries:
+- id: wrong-class-field-entry
+  deviation: A date trigger carrying an artifact-presence file field.
+  deviates_from: null
+  deviation_class: test-fixture
+  stated_reason: Red-gate fixture (cross-class shape guard).
+  retest_trigger:
+    type: date
+    predicate: '2099-01-01'
+    file: .design/build-plan.md
+  entry_date: 2026-07-20
+  expiry: 2026-08-15
+  owning_issue: vsdd-cli#820
+  status: standing
+",
+    );
+    let outcome = deviations_gate(&wrong_class, "2026-08-01", GateMode::Local, &no_oracle, &no_artifact);
+    assert!(
+        matches!(outcome.verdict, GateVerdict::Unverifiable(_)),
+        "file/section/pattern on a non-artifact-presence trigger fails closed, got {:?}",
+        outcome.verdict
+    );
+}
+
+// The live self-governance instance: founding entry 7 (hand-authored-build-plan)
+// carries the artifact-presence trigger over the real build-plan doc. Today
+// "Slice 2" is NOT in the build-plan's "## Completed phases" section (Slice 2 is
+// unbuilt), so the trigger is decidable and NOT fired — entry 7 never blocks and
+// the deviations leg passes on the local gate. This is the assertion that the
+// PR #24 routing-gate defect (entry 7 undecidable → CI inconclusive) is closed.
+#[test]
+fn live_registry_entry7_hand_authored_build_plan_is_not_fired_today() {
+    let root = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .expect("vsdd-core has a parent (the repo root)")
+        .to_path_buf();
+    let registry = root.join(".vsdd/registry/deviation-registry.yaml");
+    // The real artifact reader, rooted at the repo, mirroring the CLI boundary.
+    let read_artifact = |file: &str| std::fs::read_to_string(root.join(file)).ok();
+    // A fixed `today` within every live entry's window (the injected-clock
+    // design keeps this deterministic; revisit alongside a registry re-arm).
+    let outcome = deviations_gate(&registry, "2026-08-01", GateMode::Local, &no_oracle, &read_artifact);
+    assert!(
+        !matches!(&outcome.verdict, GateVerdict::Block(ids)
+            if ids.iter().any(|i| i.contains("hand-authored-build-plan"))),
+        "entry 7 (hand-authored-build-plan) must not block — Slice 2 is not yet in the \
+         build-plan's Completed phases; got {:?}",
+        outcome.verdict
+    );
+    assert_eq!(
+        outcome.verdict,
+        GateVerdict::Pass,
+        "the live deviation registry passes the local gate today (issue-state triggers \
+         warn-pass, entry 7 not fired), got {:?}",
+        outcome.verdict
     );
 }

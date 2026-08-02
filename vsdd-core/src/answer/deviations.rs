@@ -5,10 +5,12 @@
 //!
 //! Shape: pure over parsed data — `deviations_verdict` takes the parsed
 //! registry, a caller-supplied `today` (no clock in vsdd-core), the gate
-//! mode, and an injectable issue-state oracle, and returns a verdict plus
-//! the warn-grade surface (a warning list). `load_deviation_registry` is
-//! the I/O boundary; `deviations_gate` composes the two, mapping every
-//! load failure to `Unverifiable` — deleting the registry must never pass.
+//! mode, an injectable issue-state oracle, and an injectable artifact
+//! reader (the CLI reads a repo file's contents and threads them in — the
+//! core stays fs-free), and returns a verdict plus the warn-grade surface
+//! (a warning list). `load_deviation_registry` is the I/O boundary;
+//! `deviations_gate` composes the two, mapping every load failure to
+//! `Unverifiable` — deleting the registry must never pass.
 //!
 //! The gate compares only in-entry dates (REQ-4: re-arm rewrites the
 //! expiry in the entry; the gate never parses tracker prose). The local
@@ -98,15 +100,41 @@ pub enum DeviationStatus {
 
 /// The retest trigger: exactly one machine-decidable predicate, typed by
 /// the schema-fixed grammar (REQ-4).
+///
+/// The `date` / `issue-state` / `version-compare` classes carry a single
+/// `predicate` string. The `artifact-presence` class instead carries the
+/// structured `file` / `section` / `pattern` fields the grep-decidable
+/// evaluator reads; its prose rationale belongs in the entry's
+/// `trigger_context`. This is one flat carrier holding every class's fields
+/// (matching the module's flat-struct pattern); the loader enforces the
+/// per-class shape — a class's own fields present, the other class's fields
+/// absent — so the carrier stays exactly as strict as `deny_unknown_fields`
+/// made the single-predicate shape (vsdd-cli #820, SO disposition
+/// 2026-08-02 entry-7-trigger-encoded).
 #[derive(Debug, Clone, PartialEq, Eq, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct RetestTrigger {
     /// The predicate's grammar class.
     #[serde(rename = "type")]
     pub trigger_type: TriggerType,
-    /// The predicate text; a fully-machine boolean compound within one
-    /// class counts as one predicate.
-    pub predicate: String,
+    /// The predicate text for the `date` / `issue-state` / `version-compare`
+    /// classes; a fully-machine boolean compound within one class counts as
+    /// one predicate. Absent on the `artifact-presence` class.
+    #[serde(default)]
+    pub predicate: Option<String>,
+    /// `artifact-presence` class: the repo-relative file the evaluator reads
+    /// (its contents threaded in through the injected artifact reader).
+    #[serde(default)]
+    pub file: Option<String>,
+    /// `artifact-presence` class: the markdown section heading to scope the
+    /// search to (e.g. `## Completed phases`); the section runs from this
+    /// heading line to the next same-or-higher-level heading.
+    #[serde(default)]
+    pub section: Option<String>,
+    /// `artifact-presence` class: the substring whose presence within the
+    /// named section fires the trigger.
+    #[serde(default)]
+    pub pattern: Option<String>,
 }
 
 /// The schema-fixed trigger grammar (REQ-4): `date | issue-state |
@@ -123,9 +151,9 @@ pub enum TriggerType {
     /// evaluator in this build: undecidable (local warn-pass, CI
     /// inconclusive per resolved Q3).
     VersionCompare,
-    /// Fires on a grep-decidable artifact-presence predicate. No evaluator
-    /// in this build: undecidable (local warn-pass, CI inconclusive per
-    /// resolved Q3).
+    /// Fires when `pattern` occurs within the named `section` of `file` —
+    /// a grep-decidable, zero-network local read. Always decidable
+    /// (present → fired, absent → standing); never inconclusive.
     ArtifactPresence,
 }
 
@@ -289,6 +317,50 @@ fn parse_issue_predicate(predicate: &str) -> Option<Vec<(String, IssueState)>> {
     Some(out)
 }
 
+// ── Pure markdown section scan (the artifact-presence evaluator; no I/O) ──────
+
+/// The ATX heading level of `line` — its count of leading `#` (1–6) when
+/// followed by a space or the line end — or `None` when the line is not a
+/// heading. Leading whitespace disqualifies a heading (the estate's docs
+/// are flush-left; a `#` mid-content is not a heading).
+fn heading_level(line: &str) -> Option<usize> {
+    let hashes = line.bytes().take_while(|&b| b == b'#').count();
+    if hashes == 0 || hashes > 6 {
+        return None;
+    }
+    match line.as_bytes().get(hashes) {
+        None | Some(b' ') => Some(hashes),
+        _ => None,
+    }
+}
+
+/// Extract the body of the markdown section whose heading line trims-equal to
+/// `section_heading` — from that heading line through to (but excluding) the
+/// next heading of the same or higher level (fewer-or-equal `#`), or to
+/// end-of-file for the last section. The heading line itself is included, so
+/// a pattern in the heading counts as in-section. Returns `None` when no such
+/// heading is present, or when `section_heading` is not itself a heading.
+/// Pure over the passed-in contents (no I/O): the evaluator's core, so
+/// section scoping (not a whole-file grep) is what decides presence.
+fn extract_section(contents: &str, section_heading: &str) -> Option<String> {
+    let target = section_heading.trim();
+    let target_level = heading_level(target)?;
+    let mut body: Vec<&str> = Vec::new();
+    let mut in_section = false;
+    for line in contents.lines() {
+        if in_section {
+            if heading_level(line).is_some_and(|level| level <= target_level) {
+                break;
+            }
+            body.push(line);
+        } else if line.trim() == target {
+            in_section = true;
+            body.push(line);
+        }
+    }
+    in_section.then(|| body.join("\n"))
+}
+
 // ── Load (the I/O boundary) ──────────────────────────────────────────────────
 
 /// Read and shape-validate the deviation registry at `path` — the I/O
@@ -338,6 +410,13 @@ pub fn load_deviation_registry(
             path: display.clone(),
             detail,
         };
+        let wrong_class = || {
+            format!(
+                "entry '{}': file/section/pattern are valid only on an \
+                 artifact-presence trigger",
+                entry.id
+            )
+        };
         if parse_iso_date(&entry.entry_date).is_none() {
             return Err(defect(format!(
                 "entry '{}': entry_date {:?} is not an ISO date",
@@ -353,9 +432,20 @@ pub fn load_deviation_registry(
             }
         }
         if let Some(trigger) = &entry.retest_trigger {
+            // The flat carrier holds every class's fields; the loader enforces
+            // the per-class shape so a stray field on the wrong class fails
+            // closed, restoring the strictness `deny_unknown_fields` gave the
+            // single-predicate shape.
+            let structured = trigger.file.is_some()
+                || trigger.section.is_some()
+                || trigger.pattern.is_some();
             match trigger.trigger_type {
                 TriggerType::Date => {
-                    if parse_iso_date(trigger.predicate.trim()).is_none() {
+                    if structured {
+                        return Err(defect(wrong_class()));
+                    }
+                    let predicate = trigger.predicate.as_deref().unwrap_or("");
+                    if parse_iso_date(predicate.trim()).is_none() {
                         return Err(defect(format!(
                             "entry '{}': date trigger predicate {:?} is not an ISO date",
                             entry.id, trigger.predicate
@@ -363,7 +453,11 @@ pub fn load_deviation_registry(
                     }
                 }
                 TriggerType::IssueState => {
-                    if parse_issue_predicate(&trigger.predicate).is_none() {
+                    if structured {
+                        return Err(defect(wrong_class()));
+                    }
+                    let predicate = trigger.predicate.as_deref().unwrap_or("");
+                    if parse_issue_predicate(predicate).is_none() {
                         return Err(defect(format!(
                             "entry '{}': issue-state predicate {:?} does not match \
                              '<owner/repo#N> state == <open|closed>' (or-joined)",
@@ -371,10 +465,40 @@ pub fn load_deviation_registry(
                         )));
                     }
                 }
-                // version-compare and artifact-presence predicates carry no
-                // machine grammar in this build; they evaluate as
-                // undecidable, never silently passing in CI.
-                TriggerType::VersionCompare | TriggerType::ArtifactPresence => {}
+                TriggerType::VersionCompare => {
+                    // No evaluator in this build (undecidable, never silently
+                    // passing in CI); its single-predicate shape is preserved.
+                    if structured {
+                        return Err(defect(wrong_class()));
+                    }
+                    if trigger.predicate.is_none() {
+                        return Err(defect(format!(
+                            "entry '{}': version-compare trigger is missing its predicate",
+                            entry.id
+                        )));
+                    }
+                }
+                TriggerType::ArtifactPresence => {
+                    // The structured shape: file + section + pattern present,
+                    // and no predicate (its prose belongs in trigger_context).
+                    if trigger.predicate.is_some() {
+                        return Err(defect(format!(
+                            "entry '{}': artifact-presence trigger carries a predicate — \
+                             use file/section/pattern and move prose to trigger_context",
+                            entry.id
+                        )));
+                    }
+                    if trigger.file.is_none()
+                        || trigger.section.is_none()
+                        || trigger.pattern.is_none()
+                    {
+                        return Err(defect(format!(
+                            "entry '{}': artifact-presence trigger requires file, section, \
+                             and pattern",
+                            entry.id
+                        )));
+                    }
+                }
             }
         }
     }
@@ -390,12 +514,17 @@ pub fn load_deviation_registry(
 /// against the caller-supplied `today` (ISO date; no clock in vsdd-core).
 /// `issue_oracle` resolves an upstream issue reference to its state, or
 /// `None` when no oracle is available (the undecidable direction: local
-/// warn-pass, CI inconclusive — resolved Q3).
+/// warn-pass, CI inconclusive — resolved Q3). `artifact_oracle` resolves a
+/// repo-relative file path to its contents (or `None` when absent/unreadable
+/// — read as pattern-not-present); the artifact-presence evaluator is total
+/// (present → fired, absent → standing), never undecidable, so it never rides
+/// the CI-inconclusive path.
 pub fn deviations_verdict(
     registry: &DeviationRegistry,
     today: &str,
     mode: GateMode,
     issue_oracle: &dyn Fn(&str) -> Option<IssueState>,
+    artifact_oracle: &dyn Fn(&str) -> Option<String>,
 ) -> DeviationsOutcome {
     let mut warnings: Vec<String> = Vec::new();
     let mut blocks: Vec<String> = Vec::new();
@@ -505,7 +634,13 @@ pub fn deviations_verdict(
         };
         match trigger.trigger_type {
             TriggerType::Date => {
-                let predicate = trigger.predicate.trim();
+                let Some(predicate) = trigger.predicate.as_deref() else {
+                    return shape_defect(format!(
+                        "entry '{}': date trigger is missing its predicate",
+                        entry.id
+                    ));
+                };
+                let predicate = predicate.trim();
                 let Some(predicate_days) = parse_iso_date(predicate) else {
                     return shape_defect(format!(
                         "entry '{}': date trigger predicate {:?} is not an ISO date",
@@ -529,7 +664,11 @@ pub fn deviations_verdict(
                     }
                 }
             }
-            TriggerType::IssueState => match parse_issue_predicate(&trigger.predicate) {
+            TriggerType::IssueState => match trigger
+                .predicate
+                .as_deref()
+                .and_then(parse_issue_predicate)
+            {
                 None => undecidable(format!(
                     "issue-state predicate {:?} unparseable",
                     trigger.predicate
@@ -557,7 +696,7 @@ pub fn deviations_verdict(
                             "{}: issue-state trigger fired ({}) — retest owed; \
                              re-arm requires a Solution Owner disposition rewriting the entry",
                             entry.id,
-                            trigger.predicate.trim()
+                            trigger.predicate.as_deref().unwrap_or("").trim()
                         ));
                     } else if unknown {
                         undecidable("issue state unavailable to this gate run".to_string());
@@ -568,7 +707,39 @@ pub fn deviations_verdict(
                 undecidable("no version-compare evaluator in this build".to_string());
             }
             TriggerType::ArtifactPresence => {
-                undecidable("no artifact-presence evaluator in this build".to_string());
+                // The loader validates file/section/pattern present; the pure
+                // verdict is defensive but never touches the filesystem — the
+                // file contents are threaded in through the injected reader
+                // (mirroring issue_oracle), so a missing/unreadable file reads
+                // as pattern-not-present. Total: present → fired, absent →
+                // standing; never inconclusive.
+                let (Some(file), Some(section), Some(pattern)) =
+                    (&trigger.file, &trigger.section, &trigger.pattern)
+                else {
+                    return shape_defect(format!(
+                        "entry '{}': artifact-presence trigger requires file, section, \
+                         and pattern",
+                        entry.id
+                    ));
+                };
+                let contents = artifact_oracle(file);
+                let present = contents
+                    .as_deref()
+                    .and_then(|c| extract_section(c, section))
+                    .is_some_and(|body| body.contains(pattern.as_str()));
+                if present {
+                    // The named artifact has appeared: the deviation's retest
+                    // condition is met. Like a fired issue-state trigger it has
+                    // no in-entry firing date to compare a disposition against,
+                    // so it stays loud until the Solution Owner re-arms the
+                    // entry (a rewritten predicate/expiry) or resolves it.
+                    blocks.push(format!(
+                        "{}: artifact-presence trigger fired ({} § {} contains {:?}) — \
+                         retest owed; re-arm requires a Solution Owner disposition \
+                         rewriting the entry",
+                        entry.id, file, section, pattern
+                    ));
+                }
             }
         }
     }
@@ -599,9 +770,12 @@ pub fn deviations_gate(
     today: &str,
     mode: GateMode,
     issue_oracle: &dyn Fn(&str) -> Option<IssueState>,
+    artifact_oracle: &dyn Fn(&str) -> Option<String>,
 ) -> DeviationsOutcome {
     match load_deviation_registry(registry_path) {
-        Ok(registry) => deviations_verdict(&registry, today, mode, issue_oracle),
+        Ok(registry) => {
+            deviations_verdict(&registry, today, mode, issue_oracle, artifact_oracle)
+        }
         Err(err) => DeviationsOutcome {
             verdict: GateVerdict::Unverifiable(err.to_string()),
             warnings: Vec::new(),
@@ -611,7 +785,10 @@ pub fn deviations_gate(
 
 #[cfg(test)]
 mod tests {
-    use super::{iso_date_from_unix_days, parse_iso_date, parse_issue_predicate, IssueState};
+    use super::{
+        extract_section, heading_level, iso_date_from_unix_days, parse_iso_date,
+        parse_issue_predicate, IssueState,
+    };
 
     #[test]
     fn civil_date_round_trip_including_leap_days() {
@@ -640,5 +817,71 @@ mod tests {
             parse_issue_predicate("o/r#9 state == closed or o/r#10 state == closed").unwrap();
         assert_eq!(compound.len(), 2);
         assert_eq!(parse_issue_predicate("no grammar here"), None);
+    }
+
+    #[test]
+    fn heading_level_recognizes_atx_and_rejects_non_headings() {
+        assert_eq!(heading_level("## Two"), Some(2));
+        assert_eq!(heading_level("###### Six"), Some(6));
+        assert_eq!(heading_level("## "), Some(2));
+        assert_eq!(heading_level("##"), Some(2), "bare hashes are a heading");
+        assert_eq!(heading_level("####### Seven"), None, "seven hashes exceed level 6");
+        assert_eq!(heading_level("#notaheading"), None, "no space after the hashes");
+        assert_eq!(heading_level("- bullet"), None);
+        assert_eq!(heading_level(""), None);
+    }
+
+    #[test]
+    fn extract_section_bounds_at_next_same_level_heading() {
+        let doc = "\
+# Title
+intro line
+
+## Alpha
+alpha body
+### Alpha sub
+still alpha
+
+## Beta
+beta body
+";
+        let alpha = extract_section(doc, "## Alpha").expect("the section is present");
+        assert!(alpha.contains("alpha body"), "its own body is included");
+        assert!(
+            alpha.contains("### Alpha sub") && alpha.contains("still alpha"),
+            "a deeper (###) heading and its content stay within the section"
+        );
+        assert!(!alpha.contains("beta body"), "the next ## heading ends the section");
+        assert!(!alpha.contains("intro line"), "content before the heading is excluded");
+    }
+
+    #[test]
+    fn extract_section_ends_at_a_higher_level_heading() {
+        let doc = "## Sub\nsub body\n# Top\ntop body\n";
+        let sub = extract_section(doc, "## Sub").unwrap();
+        assert!(sub.contains("sub body"));
+        assert!(!sub.contains("top body"), "a higher-level (#) heading ends a ## section");
+    }
+
+    #[test]
+    fn extract_section_runs_to_eof_for_the_last_section() {
+        let doc = "# Title\nintro\n\n## Only\nfirst\nlast";
+        let only = extract_section(doc, "## Only").unwrap();
+        assert!(
+            only.contains("first") && only.contains("last"),
+            "the last section runs to end-of-file"
+        );
+        assert!(!only.contains("intro"), "earlier content is not captured");
+    }
+
+    #[test]
+    fn extract_section_missing_heading_is_none() {
+        let doc = "## Present\nbody\n";
+        assert_eq!(extract_section(doc, "## Absent"), None);
+        assert_eq!(
+            extract_section(doc, "Present"),
+            None,
+            "a non-heading target (no leading #) matches nothing"
+        );
     }
 }

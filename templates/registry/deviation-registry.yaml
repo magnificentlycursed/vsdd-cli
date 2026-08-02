@@ -18,9 +18,13 @@
 # Entry schema (REQ-4): id (plain kebab name), deviation, deviates_from (an
 # act-to-affordance map `act` key, or null with deviation_class),
 # stated_reason, retest_trigger (typed: date | issue-state | version-compare
-# | artifact-presence; exactly one machine-decidable predicate; a
-# fully-machine boolean compound within one class counts as one),
-# trigger_context (optional), entry_date (the 30-day default expiry computes
+# carry a single `predicate` — exactly one machine-decidable predicate, a
+# fully-machine boolean compound within one class counting as one; the
+# artifact-presence class instead carries structured `file` (repo-relative)
+# + `section` (a markdown heading, e.g. "## Completed phases") + `pattern`
+# (a substring), firing when the pattern occurs within the named section,
+# with its prose rationale in trigger_context), trigger_context (optional),
+# entry_date (the 30-day default expiry computes
 # from it), expiry (absent for resolved), owning_issue, status (standing |
 # resolved), disposition_ref (issue plus comment timestamp of the Solution
 # Owner decision comment). Transitions: standing -> resolved, or standing ->
