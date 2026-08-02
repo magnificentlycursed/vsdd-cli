@@ -1,6 +1,6 @@
 {
   "next_display_id": 856,
-  "next_comment_id": 1380,
+  "next_comment_id": 1381,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21646,7 +21646,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-07-29T17:20:26.823176Z",
+      "updated_at": "2026-08-02T00:54:57.092967Z",
       "labels": [
         "red-gate"
       ],
@@ -21793,6 +21793,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1jnFeSDVImstGancta6tFMdZeyhMiXwQ4A62vQljjV2gcfwwA/3qRksMgQDK+P1spYuabt7SQpylEtC/izhCAQ=="
+        },
+        "d03a47aa-1a6c-440e-87ef-a31ce09a81be": {
+          "display_id": 1380,
+          "author": "xqjG",
+          "content": "FIXTURE SEED for the declaration-completeness falsifier (build-plan Phase 1 / gate-leg 2a): mdatron delivered the accepted #11 offer — the uncapped-fan-out specimen spec is on https://github.com/magnificentlycursed/vsdd-cli/issues/11#issuecomment (2026-08-02 00:49): the declaration bound the LENS SET (4 cold domain-clusters) while the 27 per-finding adversarial verifiers rode undeclared, data-driven, 1:1, uncapped — 39 agents / 2.27M tokens total. The seed pairs the malformed structure with the corrected declared-ceiling contrast. Use as the negative/positive pair for the composition-gate declaration-completeness fixture when the gate leg's red-gate authoring opens.",
+          "created_at": "2026-08-02T00:54:57.060633Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALKWC4tXny1TBYFwRa0QLd2odpYjfas2+Hd1K9qKclui3t1/IMp36//J4XsLq9HslcNv3pLwg7IHhbRk4OWKeCg=="
         },
         "e7fdbbf1-6cb3-47c9-b2bc-31de1804362c": {
           "display_id": 1202,
@@ -31576,11 +31585,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1092,
       "timestamp": "2026-08-02T00:53:56.587867Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1093,
+      "timestamp": "2026-08-02T00:54:57.092967Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:53:56.587867Z",
+    "timestamp": "2026-08-02T00:54:57.092967Z",
     "agent_id": "xqjG",
-    "agent_seq": 1092
+    "agent_seq": 1093
   }
 }
