@@ -3,6 +3,7 @@
 //! findings at the kind-set grain).
 
 pub mod derive;
+pub mod deviations;
 pub mod integrity;
 
 use serde::{Deserialize, Serialize};
