@@ -1,6 +1,6 @@
 {
   "next_display_id": 856,
-  "next_comment_id": 1370,
+  "next_comment_id": 1371,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10768,7 +10768,7 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:36:18.173557Z",
-      "updated_at": "2026-08-01T20:06:32.969847Z",
+      "updated_at": "2026-08-02T00:49:54.245837Z",
       "labels": [
         "upstream"
       ],
@@ -10781,6 +10781,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAx5PvPj5IC41NMIYFfyIsmBOFpgLzSjgIQCwJZNnafe1VVS8G0cWR3k28Z9I89FVT9OY9cYj+Gc7SvlyVr8RUAg=="
+        },
+        "2fa3b712-acce-48c7-9bed-e33aae05ba3f": {
+          "display_id": 1370,
+          "author": "xqjG",
+          "content": "CLOSED (tracked upstream): filed as dollspace-gay/crosslink#56, fix in flight (their PR #65); epic magnificentlycursed/crosslink#2 tracks. The lifecycle-member interaction (the --continue heredoc vs the sanctioned amend path) is codified in the contract's Design-doc lifecycle member.",
+          "created_at": "2026-08-02T00:49:54.219561Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3lNDfyxt53tQ5eMDrb6UzF8kZuzS0WV8zbGGiHWH6ggLHSUHB9fu9z9bbtxdhzz4dcAAjs0rn4HyoIM+K/61Aw=="
         },
         "655c22b1-6bb6-4b59-8a30-3ee650e39042": {
           "display_id": 1307,
@@ -31353,11 +31362,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1063,
       "timestamp": "2026-08-02T00:49:47.920607Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1064,
+      "timestamp": "2026-08-02T00:49:54.245837Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:49:47.920607Z",
+    "timestamp": "2026-08-02T00:49:54.245837Z",
     "agent_id": "xqjG",
-    "agent_seq": 1063
+    "agent_seq": 1064
   }
 }
