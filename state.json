@@ -1,6 +1,6 @@
 {
   "next_display_id": 861,
-  "next_comment_id": 1407,
+  "next_comment_id": 1408,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10833,7 +10833,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T03:06:43.307647Z",
-      "updated_at": "2026-08-02T04:14:47.891120Z",
+      "updated_at": "2026-08-02T05:35:27.077564Z",
       "labels": [
         "feature"
       ],
@@ -10909,6 +10909,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANa5rwzOgBlgPGBg8kPKx6vXZGsLYrsYGYj+jbcHJSdO29ITqf4zsbzyl1PnRrYajZANy8NuiLQH9RfBrngtpBQ=="
+        },
+        "f3d9e89a-e439-405c-aab4-3e58d29b48ef": {
+          "display_id": 1407,
+          "author": "xqjG",
+          "content": "SO re-arm disposition (operator ruling 2026-08-02, #859 downstream + audit deviation-registry-retest-material-live): two deviation-registry entries re-scoped.\n\nENTRY 1 (manual-dispatch-fallback) — re-arm: predicate changed from \"dollspace-gay/crosslink#55 state == closed\" (the tmux-path stall fix, NOT the adopted exit) to \"dollspace-gay/crosslink#62 state == closed\" (the vsdd-layer injection seam — the load-bearing remaining capability gate for swarm-dispatched agents to carry the process). #859 adopts container kickoff as THE headless vehicle, superseding the tmux path; image publication is the operational precondition, recorded in trigger_context. Status stays standing; expiry re-armed to 2026-10-31.\n\nENTRY 5 (container-kickoff-blocked-posture) — re-arm: the \"container blocked -> attended tmux\" premise is superseded (PR #64 merged 2026-08-02 fixed the toolchain/auth substance of #9/#10; #859 adopts container). Re-scoped to \"container adopted, running on an interim fork-published agent image (magnificentlycursed), durable exit = dollspace-gay/crosslink#76 merges (fix(container): fork-publishable agent image)\". Predicate changed from \"#9 or #10 closed\" to \"dollspace-gay/crosslink#76 state == closed\". Status stays standing (interim posture: pre-merge image); expiry re-armed to 2026-10-31. Neither entry had a FIRED trigger — this is a correctness re-scope aligning the exit predicates with the adopted container vehicle, not a fire-response.",
+          "created_at": "2026-08-02T05:35:27.061132Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIFfgagJsna/ScyuUWTOC9WnZJVvMBpO+CXpVmDUUK1y0/YX+M0NLnFUdRXQk9BpZ1cK4675GBMQ1MmL/QJxADQ=="
         }
       }
     },
@@ -32163,11 +32172,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1139,
       "timestamp": "2026-08-02T05:21:05.421911Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1140,
+      "timestamp": "2026-08-02T05:35:27.077564Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T05:21:05.421911Z",
+    "timestamp": "2026-08-02T05:35:27.077564Z",
     "agent_id": "xqjG",
-    "agent_seq": 1139
+    "agent_seq": 1140
   }
 }
