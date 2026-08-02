@@ -1,5 +1,5 @@
 {
-  "next_display_id": 856,
+  "next_display_id": 857,
   "next_comment_id": 1382,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -152,6 +152,7 @@
     "26ae131f-00ab-40d3-bcb1-852dfb7a9dc4": 659,
     "276d393b-5138-42fd-9725-890f29de0155": 261,
     "27dc3f2a-725e-46cb-b2d6-b261f9d2d497": 174,
+    "27ef7b3c-c6cf-4bad-a068-624ef7bc49e0": 856,
     "292d8fd5-debe-45da-84e1-1c2d0b941605": 282,
     "2938b303-5d26-44a8-aa0c-5aa8a6c6371c": 75,
     "296ce5bf-078a-4768-a2f8-fffdc2a56f0a": 613,
@@ -5302,6 +5303,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdWfqbEZJ1mNy6fTbkqtJjnmXoZ3o0w2UiuC9vdztWRZeqTePwRF+HzbpptmZTqzs3Au8vG9U6HMTDcIZire3CA=="
         }
       }
+    },
+    "27ef7b3c-c6cf-4bad-a068-624ef7bc49e0": {
+      "uuid": "27ef7b3c-c6cf-4bad-a068-624ef7bc49e0",
+      "display_id": 856,
+      "title": "work-check hook remediation text directs 'crosslink intervene' — a command 0.9.0-beta does not ship (dead-end instruction)",
+      "status": "open",
+      "priority": "low",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T01:11:44.393068Z",
+      "updated_at": "2026-08-02T01:11:44.393068Z"
     },
     "292d8fd5-debe-45da-84e1-1c2d0b941605": {
       "uuid": "292d8fd5-debe-45da-84e1-1c2d0b941605",
@@ -31604,11 +31615,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1094,
       "timestamp": "2026-08-02T01:07:58.865955Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1095,
+      "timestamp": "2026-08-02T01:11:44.393068Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T01:07:58.865955Z",
+    "timestamp": "2026-08-02T01:11:44.393068Z",
     "agent_id": "xqjG",
-    "agent_seq": 1094
+    "agent_seq": 1095
   }
 }
