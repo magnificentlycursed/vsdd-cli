@@ -1,6 +1,6 @@
 {
   "next_display_id": 861,
-  "next_comment_id": 1411,
+  "next_comment_id": 1412,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19030,7 +19030,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T05:20:48.939851Z",
-      "updated_at": "2026-08-02T06:06:20.006745Z",
+      "updated_at": "2026-08-02T06:11:11.182714Z",
       "labels": [
         "design"
       ],
@@ -19043,6 +19043,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA81kRr6YPKbWu0ruLgLjOmxnVn7Wt6raEWWFRjlQ65LfaiRlmTLqneDEHG66r4ID2gr213trxQb1PxNazDwjRCA=="
+        },
+        "5a2212d8-9976-4181-a15b-8c953b3edbfb": {
+          "display_id": 1411,
+          "author": "xqjG",
+          "content": "RAISE FILED: magnificentlycursed/mdatron#28 — bundled vocab-family usability raise: Gap 1 (E0091 structured-id exemption, REQ-N/AC-N) + Gap 2 (vocab prose checks E0091/E0093 should exempt inline code spans like link.rs already does — our backtick finding, link.rs:110 vs vocab.rs:284) + secondary schema-exempt-vocab-walk note. Local carve-outs (^REQ-\\d+$ etc. + line-131 grounding) remain the interim per the .design-vocab-scope plan above; the raise is whether these get first-class treatment upstream.",
+          "created_at": "2026-08-02T06:11:11.145858Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA8YQAr7EJ8emgSZ5IpmuxS2/qF2nnMmdmB0uj38ZwUlHY/TOwFftBW5QhjmLP+RTrwBIPolYNtr2ycvZD8PCODQ=="
         },
         "cf4f27b9-63b8-4e69-b406-28cd622cc613": {
           "display_id": 1409,
@@ -32221,11 +32230,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1143,
       "timestamp": "2026-08-02T06:06:20.006745Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1144,
+      "timestamp": "2026-08-02T06:11:11.182714Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T06:06:20.006745Z",
+    "timestamp": "2026-08-02T06:11:11.182714Z",
     "agent_id": "xqjG",
-    "agent_seq": 1143
+    "agent_seq": 1144
   }
 }
