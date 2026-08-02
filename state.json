@@ -15168,11 +15168,12 @@
       "uuid": "8cbafcb7-3158-4dd5-b95c-fbc1a6b709a9",
       "display_id": 824,
       "title": "fix CI for the enforcing PR gate: repoint mdatron (post-collapse) + pin v0.3.0 + run vsdd-cli's own tests on PRs (F3+F4)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T08:30:42.797800Z",
-      "updated_at": "2026-08-02T00:47:18.294286Z",
+      "updated_at": "2026-08-02T00:47:24.665619Z",
+      "closed_at": "2026-08-02T00:47:24.665581Z",
       "comments": {
         "17a400be-cfad-47dc-a8bd-566410425e00": {
           "display_id": 1363,
@@ -31213,11 +31214,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1044,
       "timestamp": "2026-08-02T00:47:18.294286Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1045,
+      "timestamp": "2026-08-02T00:47:24.665619Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:47:18.294286Z",
+    "timestamp": "2026-08-02T00:47:24.665619Z",
     "agent_id": "xqjG",
-    "agent_seq": 1044
+    "agent_seq": 1045
   }
 }
