@@ -1,6 +1,6 @@
 {
   "next_display_id": 861,
-  "next_comment_id": 1410,
+  "next_comment_id": 1411,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19030,11 +19030,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T05:20:48.939851Z",
-      "updated_at": "2026-08-02T05:41:41.973476Z",
+      "updated_at": "2026-08-02T06:06:20.006745Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "584151a2-cb80-4b6f-94f0-3a9b21972aa9": {
+          "display_id": 1410,
+          "author": "xqjG",
+          "content": "RULING (operator 2026-08-02): .design/ should be in vocab scope. Reverses the #830 eviction of design docs from jurisdiction — but #830 evicted them for W0045 (schema-class-unrouted) noise on the OLD frontmatter-bearing DESIGN-*.md; the current contract is frontmatter-less, so no schema_class -> no W0045. Verified from source (mdatron verify.rs: vocab scans WALKED file_globs files scoped by vocabulary_globs; W0040 only for require_frontmatter; prose-only files scanned whole-body).\n\nDRY-RUN IMPACT (.design/*.md added to file_globs + vocabulary_globs, NOT require_frontmatter): 336 findings — 327 E0091 + 9 E0093.\n- E0091 (327): REQ-N / AC-N / Q-N / C8 SECTION IDENTIFIERS (the /design skill convention), flagged by the letter-cluster detector. Legit structural ids, not harmful coinage.\n- E0093 (9): chassis/substrate deprecated debt (contract 4, #840 4, #845 1).\n- By file: verifiable-conformance-and-efficiency.md 254, decomposition-topology-remediation.md 55 (BOTH RETIRE in this unification -> 309 findings leave .design/), contract 25, build-plan 2 (the only surviving cost, ~23 identifier E0091 + 4 chassis/substrate E0093).\n\nEXECUTION (folds into this unification, sequenced after #840/#845 retire):\n1. Register design-doc identifier patterns in vocabulary.yaml allowed set: ^REQ-\\d+$, ^AC-\\d+$, ^Q\\d+$, ^C\\d+$ (Data Engineer lens; like the existing ^JSON[0-9]+$ carve-out). NOTE the interaction: folding #840 REQ-1..23 into the contract should render them as NAMED behavioral-contract members (contract native style), not keep REQ-N labels, which also reduces E0091.\n2. Ground contract E0093: line-131 Chassis affordances -> crosslink affordances (real live-usage fix); line-6 rename-provenance + line-134 commit citation become exempt once mdatron backtick fix lands (in flight), else reword.\n3. Add .design/*.md to file_globs + vocabulary_globs (NOT require_frontmatter); update contract line-178 (\".design/ is outside mdatron jurisdiction\") to the new partial (vocab) jurisdiction.\n4. Verify mdatron clean.\n\nRAISE CANDIDATE (mdatron, actively working): E0091 could default-exempt common structured-id patterns (REQ-N/AC-N) so every spec estate need not hand-register them; local carve-out is the interim.",
+          "created_at": "2026-08-02T06:06:19.986731Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA81kRr6YPKbWu0ruLgLjOmxnVn7Wt6raEWWFRjlQ65LfaiRlmTLqneDEHG66r4ID2gr213trxQb1PxNazDwjRCA=="
+        },
         "cf4f27b9-63b8-4e69-b406-28cd622cc613": {
           "display_id": 1409,
           "author": "xqjG",
@@ -32207,11 +32216,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1142,
       "timestamp": "2026-08-02T05:41:41.973476Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1143,
+      "timestamp": "2026-08-02T06:06:20.006745Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T05:41:41.973476Z",
+    "timestamp": "2026-08-02T06:06:20.006745Z",
     "agent_id": "xqjG",
-    "agent_seq": 1142
+    "agent_seq": 1143
   }
 }
