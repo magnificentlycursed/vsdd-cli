@@ -15,6 +15,7 @@ file_globs:
   - "supplements/*.md"             # language/interface supplements (schema_class: supplement)
   - "templates/registry/*.md"      # the versioned data sets (schema_class: <each set>)
   - "review-log/**/*.md"           # typed review-log entries (schema_class: review-entry)
+  - ".design/*.md"                 # the contract + build-plan — vocab-governed (#860); frontmatter-less, so no schema_class → no schema check and no W0045 (unlike the #830-evicted frontmatter-bearing DESIGN-*.md); walked only to bring them into vocabulary scope
 # DESIGN-*.md and methodology.md were dropped from jurisdiction (vsdd-cli #830)
 # and have since been removed from the tree (doc-sunset, vsdd-cli #826):
 # superseded transitional prose (the ratified contract
@@ -51,3 +52,4 @@ vocabulary_globs:
   - ".claude/commands/vsdd-*.md"
   - "supplements/*.md"
   - "templates/registry/*.md"
+  - ".design/*.md"                 # the contract + build-plan brought into vocab scope (operator ruling, vsdd-cli #860): the frontmatter-less contract carries no schema_class so it walks W0045-clean, and the design-doc identifier schemes (REQ-/AC-/Q-/CVE-) are registered above

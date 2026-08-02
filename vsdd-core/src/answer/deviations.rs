@@ -1,6 +1,6 @@
 //! The deviations gate leg over `.vsdd/registry/deviation-registry.yaml`
 //! (build-plan Phase 1, the deviations gate leg; ratified remediation design
-//! `.design/decomposition-topology-remediation.md` REQ-4/REQ-6, fixture
+//! the `decomposition-topology-remediation` knowledge page REQ-4/REQ-6, fixture
 //! family AC-5).
 //!
 //! Shape: pure over parsed data — `deviations_verdict` takes the parsed
