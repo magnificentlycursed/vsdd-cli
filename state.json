@@ -1,6 +1,6 @@
 {
   "next_display_id": 863,
-  "next_comment_id": 1420,
+  "next_comment_id": 1421,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -15223,10 +15223,21 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-02T10:44:47.582044Z",
-      "updated_at": "2026-08-02T10:44:54.675211Z",
+      "updated_at": "2026-08-02T11:09:03.817404Z",
       "labels": [
         "chore"
-      ]
+      ],
+      "comments": {
+        "7553f298-3121-468d-bda6-455d46b67ab4": {
+          "display_id": 1420,
+          "author": "xqjG",
+          "content": "Merged (PR #31): CI actions bumped to @v5 + #860 CHANGELOG carried. v0.6.0 section-rules deferred to mdatron#34 (file-scoping). Closing.",
+          "created_at": "2026-08-02T11:09:03.761960Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAiEi0ldSMQsc8Ck5FAexHkaJJzZqkJbyCqg191HaR/31VWXVKpxJKZdPXAxcBqoJFreNCsGEev4AFMtE5KwZ1AQ=="
+        }
+      }
     },
     "8b0e4b66-e3f9-4650-8550-b1a351b19e3e": {
       "uuid": "8b0e4b66-e3f9-4650-8550-b1a351b19e3e",
@@ -32420,11 +32431,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1160,
       "timestamp": "2026-08-02T10:56:32.653608Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1161,
+      "timestamp": "2026-08-02T11:09:03.817404Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T10:56:32.653608Z",
+    "timestamp": "2026-08-02T11:09:03.817404Z",
     "agent_id": "xqjG",
-    "agent_seq": 1160
+    "agent_seq": 1161
   }
 }
