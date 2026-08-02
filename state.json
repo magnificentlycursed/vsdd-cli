@@ -7609,11 +7609,12 @@
       "uuid": "42e36a2c-31db-477f-8203-50824ef2d43a",
       "display_id": 849,
       "title": "Upstream crosslink observation: kickoff run --container omits the no-prompt permissions flag the docs promise (only 'container start' passes it)",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:52:21.823141Z",
-      "updated_at": "2026-08-02T00:51:03.935650Z",
+      "updated_at": "2026-08-02T00:51:09.838574Z",
+      "closed_at": "2026-08-02T00:51:09.838568Z",
       "labels": [
         "upstream"
       ],
@@ -31430,11 +31431,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1073,
       "timestamp": "2026-08-02T00:51:03.935650Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1074,
+      "timestamp": "2026-08-02T00:51:09.838574Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:51:03.935650Z",
+    "timestamp": "2026-08-02T00:51:09.838574Z",
     "agent_id": "xqjG",
-    "agent_seq": 1073
+    "agent_seq": 1074
   }
 }
