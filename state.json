@@ -1,6 +1,6 @@
 {
   "next_display_id": 861,
-  "next_comment_id": 1412,
+  "next_comment_id": 1413,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10833,7 +10833,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T03:06:43.307647Z",
-      "updated_at": "2026-08-02T05:38:42.731659Z",
+      "updated_at": "2026-08-02T06:30:05.718287Z",
       "labels": [
         "feature"
       ],
@@ -10900,6 +10900,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAWS/OFBLS8uQ2wU5/VWMsgx5HNIixhrDQPk+rR779Zu+FnFmK0O1NQgGjw0+rsUCorQDJem3D2TzGamvJjfkuAA=="
+        },
+        "df596657-6cff-439e-8462-f298be1a6dc3": {
+          "display_id": 1412,
+          "author": "xqjG",
+          "content": "SO re-arm CORRECTION (operator ruling 2026-08-02; fixes PR #28 routing-gate failure). Entry container-kickoff-blocked-posture BORN-FIRED: PR dollspace-gay/crosslink#76 MERGED at 05:39:53, 4 min before routing-gate ran at 05:43, so my predicate \"#76 state == closed\" evaluated TRUE and the deviations leg blocked (exit 1). Root cause: a fast-moving PR number is a fragile retest predicate. CORRECTED: predicate -> dollspace-gay/crosslink#75 (\"kickoff --container has no usable agent image\", still OPEN) — the ISSUE PR #76 fixes, which closes when the image is confirmed usable, not merely when the PR merged. Entry stays standing (container usable when #75 closes); expiry 2026-10-31; disposition_ref -> #858 06:29. Lesson: retest predicates track issues/artifact-presence, never PRs.",
+          "created_at": "2026-08-02T06:30:05.685174Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3V5cRe+YmUTvceOMhsp6RJ/BbOWhfZTjiCj+Nyy7MoKVZI2xvRqibu3BqGF5lfRDGr+2/056tnhzTO1mzM4RCA=="
         },
         "e0cd2e36-6a35-4a50-aa03-7f95a2f97b5e": {
           "display_id": 1394,
@@ -32235,11 +32244,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1144,
       "timestamp": "2026-08-02T06:11:11.182714Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1145,
+      "timestamp": "2026-08-02T06:30:05.718287Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T06:11:11.182714Z",
+    "timestamp": "2026-08-02T06:30:05.718287Z",
     "agent_id": "xqjG",
-    "agent_seq": 1144
+    "agent_seq": 1145
   }
 }
