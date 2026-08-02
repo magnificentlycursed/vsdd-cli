@@ -14210,11 +14210,12 @@
       "display_id": 9,
       "title": "Step 5 release coupling: switch vsdd-cli mdatron-core dep from local-path to published crate when v1.0 ships",
       "description": "Goal: \n\nAcceptance criteria:\n- \n\nWhen mdatron v1.0.0 publishes to crates.io, switch vsdd-cli's mdatron-core dep from local-path (current bootstrap-period state per SO-F3 build-in-mdatron-shape-from-day-one) to published-crate-dep. Trivial mechanical change in vsdd-cli/Cargo.toml: mdatron-core = { path = \"../mdatron/mdatron-core\" } becomes mdatron-core = \"1.0\". Flag this when mdatron v1.0 actually publishes. Closes the Phase 5 release-coupling step from the original 5-step bootstrap plan.",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-02T01:06:16.505263Z",
-      "updated_at": "2026-08-02T00:49:21.249332Z",
+      "updated_at": "2026-08-02T00:49:27.837122Z",
+      "closed_at": "2026-08-02T00:49:27.837114Z",
       "labels": [
         "feature",
         "step-5",
@@ -31326,11 +31327,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1059,
       "timestamp": "2026-08-02T00:49:21.249332Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1060,
+      "timestamp": "2026-08-02T00:49:27.837122Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:49:21.249332Z",
+    "timestamp": "2026-08-02T00:49:27.837122Z",
     "agent_id": "xqjG",
-    "agent_seq": 1059
+    "agent_seq": 1060
   }
 }
