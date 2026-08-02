@@ -7123,11 +7123,12 @@
       "uuid": "3e92224a-8c86-4495-aa55-7b71fcedb8b3",
       "display_id": 851,
       "title": "Upstream crosslink request: prompt-injection seam in kickoff/swarm dispatch prompt assembly (consumer-tool context injection)",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:53:03.791348Z",
-      "updated_at": "2026-08-02T00:51:39.378649Z",
+      "updated_at": "2026-08-02T00:51:45.726048Z",
+      "closed_at": "2026-08-02T00:51:45.726041Z",
       "labels": [
         "upstream"
       ],
@@ -31472,11 +31473,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1079,
       "timestamp": "2026-08-02T00:51:39.378649Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1080,
+      "timestamp": "2026-08-02T00:51:45.726048Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:51:39.378649Z",
+    "timestamp": "2026-08-02T00:51:45.726048Z",
     "agent_id": "xqjG",
-    "agent_seq": 1079
+    "agent_seq": 1080
   }
 }
