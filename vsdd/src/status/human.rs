@@ -158,6 +158,18 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
             out.push_str(&format!("    - {}: {why}\n", not_run.check));
         }
     }
+    // The acquisition's worded degradation note (the cold-review revise
+    // round on vsdd-cli #818 Fix 2): the failed step behind a
+    // could-not-check condition, or the finding-query cap marker — rendered
+    // whenever present, under the checks-not-run section every live
+    // degraded path also prints, so this line and the machine key never
+    // diverge on silence.
+    if let Some(note) = &snapshot.finding_acquisition_note {
+        out.push_str(&format!(
+            "  finding acquisition note: {}\n",
+            clean_for_terminal(note)
+        ));
+    }
     out
 }
 

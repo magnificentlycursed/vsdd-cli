@@ -11,6 +11,16 @@
 use crate::snapshot::{AcquisitionOutcome, Snapshot};
 use crate::state::State;
 
+/// The three finding-reading check ids — the snapshot-schema audit block's
+/// members that gate on `finding_fields_acquired` (the declared mirror the
+/// module doc names). ONE definition (cold-review CR-F4): `snapshot_integrity`'s
+/// emissions, `finding_checks_not_run`'s manifest, and the tests all read
+/// these, so a rename cannot desynchronize the report from the manifest
+/// silently.
+pub const CHECK_UNROUTED_FINDINGS: &str = "unrouted-findings";
+pub const CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR: &str = "findings-missing-owner-or-validator";
+pub const CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE: &str = "closed-findings-missing-evidence";
+
 /// Run the snapshot-scoped checks; returns finding kinds, deduplicated,
 /// order stable. Pure; the derivation calls it only when the snapshot
 /// was acquired.
@@ -53,7 +63,7 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
             .iter()
             .any(|f| f.status == "open" && (f.owner.is_none() || f.validator.is_none()))
     {
-        push("findings-missing-owner-or-validator", &mut kinds);
+        push(CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR, &mut kinds);
     }
 
     // a closed finding with neither an evidence reference nor a recorded
@@ -64,7 +74,7 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
             .iter()
             .any(|f| f.status == "closed" && !f.evidence_reference_present && f.disposition.is_none())
     {
-        push("closed-findings-missing-evidence", &mut kinds);
+        push(CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE, &mut kinds);
     }
 
     // the unrouted-findings query (contract: Status — the process-integrity
@@ -76,7 +86,7 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
     // `closed_before_ratification` datum. An integrity finding that never
     // degrades the answer, exactly like its siblings.
     if !unrouted_findings(snapshot).is_empty() {
-        push("unrouted-findings", &mut kinds);
+        push(CHECK_UNROUTED_FINDINGS, &mut kinds);
     }
 
     // the phase pointer against milestone state: active milestones exist
@@ -188,9 +198,9 @@ pub fn finding_checks_not_run(snapshot: &Snapshot) -> Vec<super::CheckNotRun> {
     };
     if !acquired.spine {
         return [
-            "unrouted-findings",
-            "findings-missing-owner-or-validator",
-            "closed-findings-missing-evidence",
+            CHECK_UNROUTED_FINDINGS,
+            CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
+            CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE,
         ]
         .into_iter()
         .map(|check| entry(check, CheckNotRunReason::CouldNotCheck))
@@ -199,13 +209,13 @@ pub fn finding_checks_not_run(snapshot: &Snapshot) -> Vec<super::CheckNotRun> {
     let mut out = Vec::new();
     if !acquired.lifecycle_roles {
         out.push(entry(
-            "findings-missing-owner-or-validator",
+            CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
             CheckNotRunReason::Dormant,
         ));
     }
     if !acquired.evidence {
         out.push(entry(
-            "closed-findings-missing-evidence",
+            CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE,
             CheckNotRunReason::Dormant,
         ));
     }
@@ -216,6 +226,8 @@ pub fn finding_checks_not_run(snapshot: &Snapshot) -> Vec<super::CheckNotRun> {
 mod tests {
     use super::{
         finding_checks_not_run, gate_verdict, snapshot_integrity, unrouted_findings, GateVerdict,
+        CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE, CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
+        CHECK_UNROUTED_FINDINGS,
     };
     use crate::answer::CheckNotRunReason;
     use crate::snapshot::{AcquisitionOutcome, FindingFieldsAcquired, FindingRecord, Snapshot};
@@ -413,8 +425,8 @@ mod tests {
         assert_eq!(
             named,
             vec![
-                "findings-missing-owner-or-validator",
-                "closed-findings-missing-evidence"
+                CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
+                CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE
             ]
         );
         assert!(
@@ -435,7 +447,7 @@ mod tests {
             "a failed leg reads could-not-check on every finding-reading check"
         );
         assert!(
-            unavailable.iter().any(|c| c.check == "unrouted-findings"),
+            unavailable.iter().any(|c| c.check == CHECK_UNROUTED_FINDINGS),
             "the gate's own query is named among the unavailable checks"
         );
     }

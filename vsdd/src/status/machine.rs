@@ -32,7 +32,11 @@ pub fn render_machine(
         // field (#818 Fix 2): a SECURITY SIGNAL — an empty
         // `integrity_findings` reads checked-clean ONLY when
         // `checks_not_run` is also empty; entries name the finding-reading
-        // checks whose inputs were dormant or could not be acquired.
+        // checks whose inputs were dormant or could not be acquired. The
+        // same 0.1.2 revision carries the sibling
+        // `report.finding_acquisition_note` (the cold-review revise round):
+        // the acquisition's worded degradation note — the failed step, or
+        // the cap marker — or null when the finding query ran whole.
         "vsdd_status_version": "0.1.2",
         "answer": {
             "phase": answer.phase,
@@ -56,11 +60,19 @@ pub fn render_machine(
             "integrity_findings": answer.integrity_findings,
             // The dormant-vs-clean distinction (#818 Fix 2): [] means every
             // finding-reading check ran, so an empty integrity_findings IS
-            // checked-clean; entries name the checks that did not run and
-            // why (dormant | could-not-check), so their silence above is
-            // never read as assurance.
+            // checked-clean — except under a degraded outcome, where both
+            // this and integrity_findings are empty and the degraded kind
+            // carries that story whole (the answer-struct doc's qualifier);
+            // entries name the checks that did not run and why (dormant |
+            // could-not-check), so their silence above is never read as
+            // assurance.
             "checks_not_run": serde_json::to_value(&answer.checks_not_run)
                 .unwrap_or(serde_json::Value::Null),
+            // The acquisition's worded degradation note (the cold-review
+            // revise round on #818 Fix 2): the failed step behind a
+            // could-not-check condition, or the finding-query cap marker;
+            // null when the finding query ran whole.
+            "finding_acquisition_note": snapshot.finding_acquisition_note,
         },
     });
     // The whole-of-output machine-form pass (contract: Terminal output

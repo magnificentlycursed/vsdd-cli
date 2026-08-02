@@ -586,6 +586,38 @@ fn a_finding_leg_failure_degrades_to_empty_findings_never_unusable() {
 }
 
 #[test]
+fn a_failed_finding_leg_records_the_worded_note_naming_the_failed_step() {
+    // The cold-review revise round on #818 Fix 2: the failure's worded WHY
+    // is part of the record, not just the machine marker — the note is
+    // Some, names the failed step, and words that findings could not be
+    // acquired; the marker records no finding-field group acquired. (The
+    // healthy-walk negative — no note on an under-cap clean walk — is
+    // pinned in only_children_of_review_labelled_parents_are_findings.)
+    let repo = TempRepo::new();
+    serve_review_round_with_children(
+        &repo,
+        &[issue(8, Some(100), "closed", Some(CLOSED_AFTER_BOUNDARY))],
+    );
+    repo.fail_leg("fail-show");
+
+    let snapshot = acquire_snapshot(repo.root());
+    assert_eq!(snapshot.acquisition_outcome, AcquisitionOutcome::Acquired);
+    let note = snapshot
+        .finding_acquisition_note
+        .as_deref()
+        .expect("a failed leg records the worded degradation note");
+    assert!(
+        note.contains("finding query failed") && note.contains("show query failed"),
+        "the note names the failed step: {note}"
+    );
+    assert_eq!(
+        snapshot.finding_fields_acquired,
+        FindingFieldsAcquired::NONE,
+        "the machine marker records no finding-field group acquired"
+    );
+}
+
+#[test]
 fn a_failed_finding_leg_with_tracker_present_must_not_pass_the_gate_vacuously() {
     // THE #818 FIX-2 REGRESSION PIN (born as the expected-defect falsifier,
     // routed before fixing; green since build-plan Phase-1 Unit C).
