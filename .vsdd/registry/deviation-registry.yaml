@@ -9,15 +9,21 @@ entries:
   retest_trigger:
     type: issue-state
     predicate: dollspace-gay/crosslink#55 state == closed
-  trigger_context: 'Second disjunct held as context, not predicate: the local mirror pulled past a fix
-    commit — promotable into the predicate by Solution Owner re-arm once a fix commit is namable.'
+  trigger_context: 'The mirror-commit disjunct is now namable (fix commit 77b0035d, fork PR #72 / gh#66,
+    on the consumed develop line at eba9a1cd; the container-side contributors #9/#10/#59 merged as PRs
+    #63/#64/#65/#72). BUT the SO-authorized 2026-08-02 retest against the advanced mirror STALL-PERSISTED:
+    headless kickoff parks at the path-scoped project-trust dialog (dialog 2), a distinct blocker beyond
+    #55 that --skip-permissions does not clear (filed upstream on dollspace-gay/crosslink#55; falsifies
+    PR #72''s premise for tracked-settings repos). So #55 is only half-addressed for this repo''s config
+    and the mirror advance does NOT ground resolution — the entry stays standing on the #55-closed machine
+    predicate; a passing headless retest (both dialogs cleared) is what would ground a resolution disposition.'
   entry_date: 2026-08-01
   expiry: 2026-10-30
   owning_issue: vsdd-cli#845
   status: standing
   disposition_ref:
-    issue: vsdd-cli#845
-    comment_timestamp: 2026-08-01 21:59
+    issue: vsdd-cli#858
+    comment_timestamp: 2026-08-02 03:30
 - id: mdatron-sibling-pin-lag
   deviation: The CI sibling checkout is tag-pinned to mdatron v0.4.0 (mdatron-verify.yml) while the sibling's
     latest release is v0.5.0, with the pre-commit window at 0.4.x — a persisted toolchain-pin lag.
@@ -113,12 +119,13 @@ entries:
   retest_trigger:
     type: artifact-presence
     file: .design/build-plan.md
-    section: "## Completed phases"
-    pattern: "Slice 2"
+    section: '## Completed phases'
+    pattern: Slice 2
   trigger_context: 'Preserved prose predicate (grep-decidable, zero-network): the Slice-2 phase is present
     in .design/build-plan.md''s "## Completed phases" section. The structured file/section/pattern fields
-    above encode that predicate for the evaluator; Slice 2''s generator producing the build-plan from the
-    contract is the named future, and its landing moves the phase into Completed phases — the retest signal.'
+    above encode that predicate for the evaluator; Slice 2''s generator producing the build-plan from
+    the contract is the named future, and its landing moves the phase into Completed phases — the retest
+    signal.'
   entry_date: 2026-08-01
   expiry: 2026-11-29
   owning_issue: vsdd-cli#845
