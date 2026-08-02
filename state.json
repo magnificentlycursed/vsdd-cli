@@ -1,6 +1,6 @@
 {
   "next_display_id": 857,
-  "next_comment_id": 1387,
+  "next_comment_id": 1388,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19179,7 +19179,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:09:50.691294Z",
-      "updated_at": "2026-07-29T07:12:28.484106Z",
+      "updated_at": "2026-08-02T02:04:31.758509Z",
       "labels": [
         "feature"
       ],
@@ -19210,6 +19210,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3OzYLBRJJdXKwtbH+I52GKuXbR0xTl3DGAfkp4fLACOWDxnVh/w+gG5jauH6bSudqRY6mJOHboz7Fm7y/7gvDA=="
+        },
+        "cc9c52c2-f724-4d79-9a0a-d98048e5aedc": {
+          "display_id": 1387,
+          "author": "xqjG",
+          "content": "Fix 2 (dormant-vs-clean, deferred to Slice-1 2b on this record) now has its RED-GATE PIN: build-plan Phase 1's falsifier set (vsdd-cli #820, draft PR #24) landed a_failed_finding_leg_with_tracker_present_must_not_pass_the_gate_vacuously — reproducing the exact false-assurance shape (failed finding leg -> snapshot indistinguishable from clean -> gate Pass). The fix builds as Phase-1 Unit C on that branch; this issue closes when the arm lands green + cold-reviewed per the Fix-1 precedent.",
+          "created_at": "2026-08-02T02:04:31.732907Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKWt1eS1VCkQNKdXqKQMSMzByxXwmcUWrC9wkUj5SD1wbA9ckdZaLWjte9f8fK9UIJQibaUlErpOtLt9TOUsRCg=="
         },
         "e40ae7cc-6426-463a-be70-23e6cefff5fe": {
           "display_id": 1178,
@@ -31709,11 +31718,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1102,
       "timestamp": "2026-08-02T02:04:17.184766Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1103,
+      "timestamp": "2026-08-02T02:04:31.758509Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T02:04:17.184766Z",
+    "timestamp": "2026-08-02T02:04:31.758509Z",
     "agent_id": "xqjG",
-    "agent_seq": 1102
+    "agent_seq": 1103
   }
 }
