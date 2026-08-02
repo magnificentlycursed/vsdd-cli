@@ -1,6 +1,6 @@
 {
   "next_display_id": 857,
-  "next_comment_id": 1386,
+  "next_comment_id": 1387,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21684,7 +21684,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-08-02T02:01:03.455561Z",
+      "updated_at": "2026-08-02T02:04:17.184766Z",
       "labels": [
         "red-gate"
       ],
@@ -21774,6 +21774,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA0n5rFIOzaRzkkeUCxti9z2mJ3f4/sd8W99fcm5fAgmaFvyyepMh2KWUY4supVQua8bV5pskWQlUvmO+J2unmBw=="
+        },
+        "7f0b3483-569e-4058-8c16-1bc7352a7e72": {
+          "display_id": 1386,
+          "author": "xqjG",
+          "content": "UNIT B LANDED (commit above, on the draft PR): the tracker-join falsifier set — 11 green over shipped behavior, 1 RED = a FOUND DEFECT (route-before-fix honored): a failed finding leg degrades to a snapshot bit-identical to a clean tracker's (acquire.rs:117-140 claims spine true with no failure record), so gate_verdict lacks the fail-closed arm and 'vsdd gate' exits 0 on unverifiable routing — guardrail REQ-4 violated, the false-assurance family. ROUTING: this IS #818 Fix 2 (dormant-vs-clean), already routed to Slice-1 2b on #818's record — Unit B's red test is now its red-gate pin. FIX SEQUENCED as this phase's Unit C (acquisition records the failed leg + the verdict's third arm), after Unit A's deviations-leg 2b lands (both touch integrity.rs — contention avoided). The manifest's reconciliation note is thereby resolved: not absorbed silently, pinned red and building.",
+          "created_at": "2026-08-02T02:04:17.040671Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdY3vkwwmWL1F5KoTdeXGb9k1SGkbdxGat8nxT13B1uIdbaRJBfvHbjtiOqj43pvDQztRtQJDQczAFuI8pXEYAw=="
         },
         "8b4ef66d-2bfb-4dd9-a1c8-e77bf493503e": {
           "display_id": 1252,
@@ -31695,11 +31704,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1101,
       "timestamp": "2026-08-02T02:01:03.455561Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1102,
+      "timestamp": "2026-08-02T02:04:17.184766Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T02:01:03.455561Z",
+    "timestamp": "2026-08-02T02:04:17.184766Z",
     "agent_id": "xqjG",
-    "agent_seq": 1101
+    "agent_seq": 1102
   }
 }
