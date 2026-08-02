@@ -1,5 +1,5 @@
 {
-  "next_display_id": 860,
+  "next_display_id": 861,
   "next_comment_id": 1407,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -593,6 +593,7 @@
     "ad35d03a-5a93-4764-a920-db8be9131803": 31,
     "ad57fe45-9023-431f-bbf7-c14ea6a1ec54": 326,
     "ad629d9f-88e6-4a45-87f1-8324ba0ca05b": 301,
+    "ad8da982-aa67-49d2-820e-10090ae299cb": 860,
     "adc9859f-570a-4c9e-8a53-cbfb6bfcee30": 313,
     "ae6245cb-df49-4c1e-b201-55ded6cf1f9e": 53,
     "aec8ca4e-e3cd-419d-a135-4b2e36b120ca": 587,
@@ -18999,6 +19000,16 @@
         }
       }
     },
+    "ad8da982-aa67-49d2-820e-10090ae299cb": {
+      "uuid": "ad8da982-aa67-49d2-820e-10090ae299cb",
+      "display_id": 860,
+      "title": "Design unification: consolidate the contract — fold #840 subsystem + retire #845 doc, apply Section-A amendments (effort-seam, injection-seam, corroboration-substrate) + #859 dispatch posture",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T05:20:48.939851Z",
+      "updated_at": "2026-08-02T05:20:48.939851Z"
+    },
     "adc9859f-570a-4c9e-8a53-cbfb6bfcee30": {
       "uuid": "adc9859f-570a-4c9e-8a53-cbfb6bfcee30",
       "display_id": 313,
@@ -32130,11 +32141,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1136,
       "timestamp": "2026-08-02T05:19:39.340347Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1137,
+      "timestamp": "2026-08-02T05:20:48.939851Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T05:19:39.340347Z",
+    "timestamp": "2026-08-02T05:20:48.939851Z",
     "agent_id": "xqjG",
-    "agent_seq": 1136
+    "agent_seq": 1137
   }
 }
