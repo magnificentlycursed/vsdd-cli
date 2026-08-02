@@ -6,6 +6,12 @@ name: routing gate
 # so it installs crosslink and hydrates the tracker (crosslink sync from the hub
 # branch) before running the gate.
 #
+# The same invocation is the deviations gate leg's CI mode (remediation design
+# REQ-6, `--ci`): standing deviation-registry entries are expiry- and
+# trigger-checked; issue-state retest triggers resolve via `gh api` under the
+# provisioned GH_TOKEN; undecidable triggers are inconclusive (exit 2), never a
+# silent pass; an absent or shape-invalid registry is fail-closed exit 2.
+#
 # crosslink is consumed from the mirror's `develop` branch until crosslink
 # merges develop -> main (operator ruling; the consumption posture + the read
 # surface we depend on are logged at magnificentlycursed/crosslink#1). When
@@ -63,6 +69,10 @@ jobs:
         working-directory: vsdd-cli
         run: crosslink sync
 
-      - name: Run the routing-before-fix gate
+      - name: Run the gate (routing-before-fix + deviations, CI strictness)
         working-directory: vsdd-cli
-        run: cargo run -p vsdd -- gate
+        env:
+          # The deviations leg's issue-state oracle rides `gh api`; the
+          # default token suffices for public-repo issue reads (REQ-6).
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cargo run -p vsdd -- gate --ci
