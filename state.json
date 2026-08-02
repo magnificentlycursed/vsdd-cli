@@ -1,6 +1,6 @@
 {
   "next_display_id": 858,
-  "next_comment_id": 1389,
+  "next_comment_id": 1390,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -1215,10 +1215,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T02:15:24.403401Z",
-      "updated_at": "2026-08-02T02:15:29.050624Z",
+      "updated_at": "2026-08-02T02:26:14.759692Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "bfc31c2e-21ec-4dc2-849e-1807b538dfc3": {
+          "display_id": 1389,
+          "author": "xqjG",
+          "content": "GROUNDING SET progress: (1) run-record-capability-inventory REGISTERED (the WAS-side oracle page; knowledge-cache bad-ref repaired via remote prune first). (2) thermite-architecture-refresh REGISTERED — basis 84d276e7 (bootable multicore kernel, Stage 4 + Gates G3/G4 since our last capture). Five audit-critical findings: the CONTROL-PLANE META-GATE (their crosslink incident #93 — 'crosslink init' regenerated settings.json and silently de-wired the spec-discipline + anti-pattern hooks for the entire Stage-3 arc; fixed by tooling/control-plane-check.py, a CI gate asserting every required hook's wiring + script exist, with restore snippets — vsdd has the IDENTICAL init-regeneration exposure, cf. #856's deployed-payload fragility; this seeds a vsdd control at hook-wiring grain, the installed-artifact-integrity check's sibling); the canonical REQ registry with POLICY-BEARING statuses (shipped/retired final + evidence-required, partial/blocked/deferred require remaining-scope — the successor to the binary shipped/not-started rule); RECEIPT-BOUND closures (artifact publishes only with a receipt binding sources/contracts/toolchain digests/transcripts, honest scope labels, replay-to-byte-identity, publication-path-absent-on-failure — #840 seed material); PER-CLAUSE trust migration (solver success never moves trust; failed replay stays solver-trusted AND audit-listed — the fully-worked name-the-grade model); estate-page corrections queued for the audit (R-SIDE-1/R-BV-1 shipped not candidates; new R-BAT-1; acto agents pin model fable; rotating-seed daily watchdog; doc-drift on synthetic merge commits). Still in flight: crosslink CLI surface (5 scope extensions), crosslink non-CLI integration surfaces (MCP servers + file protocols + daemon + trust), mdatron capability surface, incident-corpus index, runtime-harness surface. Then the design-impact audit.",
+          "created_at": "2026-08-02T02:26:14.742766Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAISaSFtJkXtPrN3NJAKHVxwKjDFCGmlKZ+96Ji8es0bTwgF2eHhHc1wz0E9EZE2KnxutHBBp38l9Pzn49+b6BDw=="
+        }
+      }
     },
     "03092491-629b-4c0a-9723-ea5cd901b916": {
       "uuid": "03092491-629b-4c0a-9723-ea5cd901b916",
@@ -31770,11 +31781,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1107,
       "timestamp": "2026-08-02T02:23:03.388673Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1108,
+      "timestamp": "2026-08-02T02:26:14.759692Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T02:23:03.388673Z",
+    "timestamp": "2026-08-02T02:26:14.759692Z",
     "agent_id": "xqjG",
-    "agent_seq": 1107
+    "agent_seq": 1108
   }
 }
