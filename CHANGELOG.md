@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Deviations gate — artifact-presence retest-trigger evaluator: completes the deviations gate leg so founding registry entry 7 (`hand-authored-build-plan`) is DECIDABLE (section-scoped grep-presence: build-plan § "## Completed phases" contains "Slice 2") instead of undecidable, resolving the CI-inconclusive routing-gate failure (PR #24). The trigger carries structured `file`/`section`/`pattern` fields (prose preserved in `trigger_context`); the pure `deviations_verdict` stays fs-free via an injected artifact reader mirroring the issue-state oracle; present → fired/Block, absent → standing, never inconclusive (#820)
 - Step 5 release coupling: switch vsdd-cli mdatron-core dep from local-path to published crate when v1.0 ships (#9)
 - mdatron v0.2.0 integration: breaking config.yaml requirement, three raises shipped, new control surfaces, and the reciprocal cold-read request (#816)
 - Red Team wider evaluation: the implemented agent-first system (Layers 1-3, esp. Layer 3 terminal-output-safety / machine form / broken-state as agent context) (#817)

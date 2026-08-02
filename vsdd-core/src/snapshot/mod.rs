@@ -116,6 +116,20 @@ impl FindingFieldsAcquired {
         lifecycle_roles: false,
         evidence: false,
     };
+
+    /// A FAILED finding-query leg: NO group acquired (vsdd-cli #818 Fix 2).
+    /// Distinct from [`SPINE_ONLY`](Self::SPINE_ONLY) — a group the
+    /// acquisition version defers by scope is dormant, not failed — and
+    /// never bit-identical to a genuinely clean tracker, whose record claims
+    /// the spine acquired with findings empty. The routing gate fails closed
+    /// on the unacquired spine (guardrail REQ-4, knowledge page
+    /// `routing-before-fix-guardrail`): an unverifiable gate never passes
+    /// vacuously.
+    pub const NONE: Self = FindingFieldsAcquired {
+        spine: false,
+        lifecycle_roles: false,
+        evidence: false,
+    };
 }
 
 /// One acquisition, one derivation, one rendering — never a second
@@ -137,9 +151,13 @@ pub struct Snapshot {
     /// finding-reading integrity checks gate on it. Defaults to all-acquired.
     #[serde(default)]
     pub finding_fields_acquired: FindingFieldsAcquired,
-    /// A worded note when the finding query was capped this acquisition (REQ-4,
-    /// vsdd-cli #820): findings past the cap were not examined. None when the
-    /// query ran whole. Never a silent drop.
+    /// A worded degradation note for the finding query: present when the query
+    /// was capped this acquisition (findings past the cap were not examined;
+    /// REQ-4 of the finding-query join, vsdd-cli #820) or when it FAILED with
+    /// the tracker present (findings could not be acquired, the failed step
+    /// named; vsdd-cli #818 Fix 2 — the machine marker is the unacquired
+    /// spine in `finding_fields_acquired`, this note is its worded WHY). None
+    /// when the query ran whole. Never a silent drop.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub finding_acquisition_note: Option<String>,
 }

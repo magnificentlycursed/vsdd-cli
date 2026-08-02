@@ -11,6 +11,16 @@
 use crate::snapshot::{AcquisitionOutcome, Snapshot};
 use crate::state::State;
 
+/// The three finding-reading check ids — the snapshot-schema audit block's
+/// members that gate on `finding_fields_acquired` (the declared mirror the
+/// module doc names). ONE definition (cold-review CR-F4): `snapshot_integrity`'s
+/// emissions, `finding_checks_not_run`'s manifest, and the tests all read
+/// these, so a rename cannot desynchronize the report from the manifest
+/// silently.
+pub const CHECK_UNROUTED_FINDINGS: &str = "unrouted-findings";
+pub const CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR: &str = "findings-missing-owner-or-validator";
+pub const CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE: &str = "closed-findings-missing-evidence";
+
 /// Run the snapshot-scoped checks; returns finding kinds, deduplicated,
 /// order stable. Pure; the derivation calls it only when the snapshot
 /// was acquired.
@@ -53,7 +63,7 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
             .iter()
             .any(|f| f.status == "open" && (f.owner.is_none() || f.validator.is_none()))
     {
-        push("findings-missing-owner-or-validator", &mut kinds);
+        push(CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR, &mut kinds);
     }
 
     // a closed finding with neither an evidence reference nor a recorded
@@ -64,7 +74,7 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
             .iter()
             .any(|f| f.status == "closed" && !f.evidence_reference_present && f.disposition.is_none())
     {
-        push("closed-findings-missing-evidence", &mut kinds);
+        push(CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE, &mut kinds);
     }
 
     // the unrouted-findings query (contract: Status — the process-integrity
@@ -76,7 +86,7 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
     // `closed_before_ratification` datum. An integrity finding that never
     // degrades the answer, exactly like its siblings.
     if !unrouted_findings(snapshot).is_empty() {
-        push("unrouted-findings", &mut kinds);
+        push(CHECK_UNROUTED_FINDINGS, &mut kinds);
     }
 
     // the phase pointer against milestone state: active milestones exist
@@ -135,8 +145,22 @@ pub enum GateVerdict {
 
 /// Compute the guardrail verdict (vsdd-cli #820): Acquired → Pass or Block on the
 /// unrouted-findings query; Absent or Unusable → Unverifiable (fail-closed).
+///
+/// The third fail-closed arm (vsdd-cli #818 Fix 2, guardrail REQ-4): Acquired
+/// with the spine field group UNACQUIRED — the failed finding leg's record —
+/// is Unverifiable with its own distinct message. The tracker was present but
+/// routing could not be read, so passing on the empty findings would be the
+/// vacuous pass the requirement forbids. The arm keys on the SAME field
+/// `unrouted_findings` gates its readiness on, so the query's dormancy and
+/// the gate's fail-closed arm can never diverge.
 pub fn gate_verdict(snapshot: &Snapshot) -> GateVerdict {
     match snapshot.acquisition_outcome {
+        AcquisitionOutcome::Acquired if !snapshot.finding_fields_acquired.spine => {
+            GateVerdict::Unverifiable(
+                "the finding query failed with the tracker present — routing cannot be verified"
+                    .to_string(),
+            )
+        }
         AcquisitionOutcome::Acquired => {
             let unrouted = unrouted_findings(snapshot);
             if unrouted.is_empty() {
@@ -154,9 +178,58 @@ pub fn gate_verdict(snapshot: &Snapshot) -> GateVerdict {
     }
 }
 
+/// The finding-reading checks that did NOT run over this snapshot, each with
+/// why (vsdd-cli #818 Fix 2 — the dormant-vs-clean distinction): the three
+/// finding-reading members of the snapshot-schema audit block gate on
+/// `finding_fields_acquired`, and a gated-off check must SURFACE as
+/// dormant or could-not-check rather than let its silence read as
+/// checked-clean. The reason rule: an unacquired spine under an Acquired
+/// tracker is only ever the failed finding leg (the live join never defers
+/// the spine by scope), and a failed leg acquired no finding record at all —
+/// so every finding-reading check is could-not-check; a deferred group with
+/// the spine acquired is dormant by scope (the Slice-5 deferral). Pure;
+/// empty exactly when every finding-reading check ran.
+pub fn finding_checks_not_run(snapshot: &Snapshot) -> Vec<super::CheckNotRun> {
+    use super::{CheckNotRun, CheckNotRunReason};
+    let acquired = &snapshot.finding_fields_acquired;
+    let entry = |check: &str, reason: CheckNotRunReason| CheckNotRun {
+        check: check.to_string(),
+        reason,
+    };
+    if !acquired.spine {
+        return [
+            CHECK_UNROUTED_FINDINGS,
+            CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
+            CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE,
+        ]
+        .into_iter()
+        .map(|check| entry(check, CheckNotRunReason::CouldNotCheck))
+        .collect();
+    }
+    let mut out = Vec::new();
+    if !acquired.lifecycle_roles {
+        out.push(entry(
+            CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
+            CheckNotRunReason::Dormant,
+        ));
+    }
+    if !acquired.evidence {
+        out.push(entry(
+            CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE,
+            CheckNotRunReason::Dormant,
+        ));
+    }
+    out
+}
+
 #[cfg(test)]
 mod tests {
-    use super::{gate_verdict, snapshot_integrity, unrouted_findings, GateVerdict};
+    use super::{
+        finding_checks_not_run, gate_verdict, snapshot_integrity, unrouted_findings, GateVerdict,
+        CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE, CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
+        CHECK_UNROUTED_FINDINGS,
+    };
+    use crate::answer::CheckNotRunReason;
     use crate::snapshot::{AcquisitionOutcome, FindingFieldsAcquired, FindingRecord, Snapshot};
     use crate::state::schema::{ActiveComposition, CompositionMode, OpenFindingsPointer, State};
 
@@ -312,5 +385,70 @@ mod tests {
             gate_verdict(&unusable),
             GateVerdict::Unverifiable(_)
         ));
+    }
+
+    // ── The failed-finding-leg arm (vsdd-cli #818 Fix 2, guardrail REQ-4) ────
+
+    #[test]
+    fn an_acquired_snapshot_with_the_spine_unacquired_fails_the_gate_closed() {
+        // The third arm: Acquired with the spine group unacquired — the failed
+        // finding leg's record — is Unverifiable with its own distinct
+        // message, never a vacuous Pass on the empty findings.
+        let failed = snapshot_with(Vec::new(), FindingFieldsAcquired::NONE);
+        match gate_verdict(&failed) {
+            GateVerdict::Unverifiable(reason) => assert!(
+                reason.contains("finding query failed"),
+                "the message names the failed leg, distinct from the \
+                 absent/unusable wordings: {reason}"
+            ),
+            other => panic!("a failed-leg record must fail closed, got {other:?}"),
+        }
+        // The contrast pin: the SAME empty findings with the spine acquired is
+        // the genuinely clean tracker — Pass. The arm keys on the record of
+        // what was read, not on the emptiness.
+        let clean = snapshot_with(Vec::new(), FindingFieldsAcquired::SPINE_ONLY);
+        assert_eq!(gate_verdict(&clean), GateVerdict::Pass);
+    }
+
+    #[test]
+    fn checks_not_run_distinguishes_clean_dormant_and_could_not_check() {
+        // Full acquisition: every finding-reading check ran — empty, so
+        // checked-clean stays a real claim (the mis-map negative).
+        let full = snapshot_with(Vec::new(), FindingFieldsAcquired::default());
+        assert!(finding_checks_not_run(&full).is_empty());
+
+        // Spine-only: the two deferred-group checks are DORMANT by scope —
+        // named, not silent, and not confused with an error.
+        let spine_only = snapshot_with(Vec::new(), FindingFieldsAcquired::SPINE_ONLY);
+        let dormant = finding_checks_not_run(&spine_only);
+        let named: Vec<&str> = dormant.iter().map(|c| c.check.as_str()).collect();
+        assert_eq!(
+            named,
+            vec![
+                CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
+                CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE
+            ]
+        );
+        assert!(
+            dormant.iter().all(|c| c.reason == CheckNotRunReason::Dormant),
+            "deferred-by-scope groups read dormant, never could-not-check"
+        );
+
+        // The failed leg: no finding record was acquired at all, so all three
+        // finding-reading checks are COULD-NOT-CHECK — distinguishable from
+        // dormant-by-scope on the reason member.
+        let failed = snapshot_with(Vec::new(), FindingFieldsAcquired::NONE);
+        let unavailable = finding_checks_not_run(&failed);
+        assert_eq!(unavailable.len(), 3);
+        assert!(
+            unavailable
+                .iter()
+                .all(|c| c.reason == CheckNotRunReason::CouldNotCheck),
+            "a failed leg reads could-not-check on every finding-reading check"
+        );
+        assert!(
+            unavailable.iter().any(|c| c.check == CHECK_UNROUTED_FINDINGS),
+            "the gate's own query is named among the unavailable checks"
+        );
     }
 }

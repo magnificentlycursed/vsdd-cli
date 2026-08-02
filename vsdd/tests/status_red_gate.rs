@@ -32,7 +32,7 @@ use vsdd_core::registry::{
     self,
     sets::{CompositionScopeAndActions, StatuslineData},
 };
-use vsdd_core::snapshot::Snapshot;
+use vsdd_core::snapshot::{FindingFieldsAcquired, Snapshot};
 use vsdd_core::state::read_state;
 
 fn repo_root() -> PathBuf {
@@ -772,6 +772,146 @@ fn a_non_gate_driven_action_carries_no_provenance_on_either_surface() {
     assert!(
         !human.contains("unverified self-report"),
         "the human form carries no provenance line for an authoring action: {human:?}"
+    );
+}
+
+#[test]
+fn the_machine_form_pins_the_status_version_security_signal() {
+    // Cold-review finding on the version-bump discipline (the Fix-1
+    // recurrence): `vsdd_status_version` is itself a security surface —
+    // 0.1.1 added `gate_provenance` and 0.1.2 added `report.checks_not_run`
+    // plus `report.finding_acquisition_note`, and consumers key their
+    // handling of those signals on this value. Pinning it exactly means a
+    // bump (or a revision-worthy field change without one) must fail HERE
+    // and force the documented one-line bump discipline, instead of
+    // drifting silently as it did before this pin.
+    scrub_model_credentials();
+    let (answer, snapshot) = load(&corpus().join("4-routing"));
+    let machine = render_machine(&answer, &snapshot, &data());
+    assert_eq!(
+        machine["vsdd_status_version"].as_str(),
+        Some("0.1.2"),
+        "the machine envelope carries exactly the documented status version: {machine}"
+    );
+}
+
+// ── The dormant-vs-clean report surface (vsdd-cli #818 Fix 2) ──────────
+
+/// A convergence-fixture state + snapshot pair, before derivation — for the
+/// tests that perturb the snapshot's acquisition record and re-derive.
+fn load_parts(dir: &Path) -> (vsdd_core::state::State, Snapshot) {
+    let state = read_state(&dir.join("state.yaml"), &data()).expect("fixture state reads");
+    let snapshot: Snapshot =
+        serde_yaml_ng::from_str(&fs::read_to_string(dir.join("snapshot.yaml")).unwrap())
+            .expect("fixture snapshot parses");
+    (state, snapshot)
+}
+
+#[test]
+fn a_failed_finding_leg_reads_could_not_check_on_both_agent_surfaces() {
+    // The false-assurance defect (vsdd-cli #818 Fix 2; Red Team #817): a
+    // failed finding leg leaves findings empty, and a report silent about it
+    // presents integrity_findings: [] as checked-clean. The failed leg's
+    // record must read could-not-check on BOTH agent surfaces — the machine
+    // report key and the human line — or the vacuous-clean reading returns.
+    // This is the end-to-end surface guard the derivation-level tests cannot
+    // give: it stops a regression that drops the key or the line while the
+    // PhaseAnswer stays correct.
+    scrub_model_credentials();
+    let d = data();
+    let (state, mut snapshot) = load_parts(&corpus().join("4-routing"));
+    snapshot.findings.clear();
+    snapshot.finding_fields_acquired = FindingFieldsAcquired::NONE;
+    // The worded WHY the acquisition records beside the marker — the exact
+    // string `acquire_snapshot` builds for a failed per-finding show step.
+    let note = "finding query failed (a per-finding show query failed); \
+                findings could not be acquired this acquisition";
+    snapshot.finding_acquisition_note = Some(note.to_string());
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+
+    // Machine surface: the manifest entry, enumerated members exact (kebab).
+    let machine = render_machine(&answer, &snapshot, &d);
+    let manifest = machine["report"]["checks_not_run"]
+        .as_array()
+        .expect("the machine report carries the checks_not_run manifest")
+        .clone();
+    assert!(
+        manifest.iter().any(|c| {
+            c["check"] == vsdd_core::answer::integrity::CHECK_UNROUTED_FINDINGS
+                && c["reason"] == "could-not-check"
+        }),
+        "the machine manifest names the routing query could-not-check: {machine}"
+    );
+    // Machine surface: the sibling note key carries the worded failed step
+    // (cold-review revise round).
+    assert_eq!(
+        machine["report"]["finding_acquisition_note"].as_str(),
+        Some(note),
+        "the machine report words the failed step beside the manifest: {machine}"
+    );
+    // Human surface: the worded could-not-check line plus the note line.
+    let human = render_human(&answer, &snapshot, &d);
+    assert!(
+        human.contains("could not check"),
+        "the human form words the could-not-check condition: {human:?}"
+    );
+    assert!(
+        human.contains("finding acquisition note: finding query failed"),
+        "the human form words the failed step under the section: {human:?}"
+    );
+}
+
+#[test]
+fn a_full_acquisition_reads_an_empty_manifest_and_a_deferred_group_reads_dormant() {
+    // The only-if half, both directions: under full acquisition every
+    // finding-reading check ran — the machine manifest is EXPLICITLY empty
+    // (checked-clean stays a real claim, never a missing key) and the human
+    // form carries no checks-not-run section; a spine-only acquisition names
+    // its deferred checks DORMANT — distinguishable from could-not-check on
+    // the reason member (dormant-by-scope is not failed-by-error).
+    scrub_model_credentials();
+    let d = data();
+    let (state, snapshot) = load_parts(&corpus().join("4-routing"));
+    let answer = derive_phase_answer(&state, &snapshot, &actions());
+    let machine = render_machine(&answer, &snapshot, &d);
+    assert_eq!(
+        machine["report"]["checks_not_run"],
+        serde_json::json!([]),
+        "full acquisition: an explicitly empty manifest, never a missing key"
+    );
+    let human = render_human(&answer, &snapshot, &d);
+    assert!(
+        !human.contains("checks not run"),
+        "full acquisition carries no checks-not-run section: {human:?}"
+    );
+    // The note's only-if half (cold-review revise round): a whole finding
+    // query carries a null machine key and no human line — the note never
+    // fabricates a degradation that did not happen.
+    assert!(
+        machine["report"]["finding_acquisition_note"].is_null(),
+        "no degradation, no note — the key is explicitly null: {machine}"
+    );
+    assert!(
+        !human.contains("finding acquisition note"),
+        "no degradation, no note line: {human:?}"
+    );
+
+    let mut spine_only = snapshot;
+    spine_only.finding_fields_acquired = FindingFieldsAcquired::SPINE_ONLY;
+    let answer = derive_phase_answer(&state, &spine_only, &actions());
+    let machine = render_machine(&answer, &spine_only, &d);
+    let manifest = machine["report"]["checks_not_run"]
+        .as_array()
+        .expect("spine-only: the manifest is present")
+        .clone();
+    assert!(
+        !manifest.is_empty() && manifest.iter().all(|c| c["reason"] == "dormant"),
+        "deferred-by-scope groups read dormant, never could-not-check: {machine}"
+    );
+    let human = render_human(&answer, &spine_only, &d);
+    assert!(
+        human.contains("dormant"),
+        "the human form words the dormant condition: {human:?}"
     );
 }
 

@@ -220,7 +220,7 @@ pub fn init(project_root: &Path, options: &InitOptions) -> Result<InitReport, In
     let prior_manifest = load_manifest(&manifest_path)?;
     let is_first_init = prior_manifest.is_none();
 
-    // Step 3: build the deployment plan (62 artifacts: 47 bundled + 15 templates).
+    // Step 3: build the deployment plan (63 artifacts: 47 bundled + 16 templates).
     let plan = build_deployment_plan();
 
     // Step 4a (dry-run): classify, print the plan, write nothing (REQ-2).
@@ -355,7 +355,7 @@ pub fn init(project_root: &Path, options: &InitOptions) -> Result<InitReport, In
     }
 
     // Step 7: emit ProjectInitialized on first init only (REQ-8). The count is
-    // the plan size (62): the 15 templates are counted; the generated manifest
+    // the plan size (63): the 16 templates are counted; the generated manifest
     // is not a deployed template.
     if is_first_init {
         let event = ProjectInitializedEvent {
@@ -644,7 +644,9 @@ Regenerated whenever the deployed set changes; not hand-edited.\n"
 // ── Deployment plan ──────────────────────────────────────────────────────────
 
 /// Build the (relative-path, content-bytes, management-class) deployment plan:
-/// 47 bundled artifacts + 15 `templates/*` files (REQ-11).
+/// 47 bundled artifacts + 16 `templates/*` files (REQ-11; the 16th is the
+/// deviation-registry scaffold, disposition-carried on the vsdd-cli #820
+/// manifest).
 fn build_deployment_plan() -> Vec<PlanEntry> {
     let mut plan: Vec<PlanEntry> = Vec::new();
 
@@ -694,7 +696,7 @@ fn build_deployment_plan() -> Vec<PlanEntry> {
         plan.push(managed(&format!("supplements/{name}"), content.as_bytes()));
     }
 
-    // ── The 15 `templates/*` artifacts (REQ-11/13/16). ──────────────────────
+    // ── The 16 `templates/*` artifacts (REQ-11/13/16 + the REQ-5 registry). ─
 
     // 2 CI workflows — managed.
     plan.push(managed(
@@ -771,6 +773,17 @@ fn build_deployment_plan() -> Vec<PlanEntry> {
         ".vsdd/registry/vocabulary.yaml",
         include_bytes!("../../templates/registry/vocabulary.yaml"),
     ));
+
+    // Deviation registry — deploy-if-absent scaffold (remediation REQ-5):
+    // adopter-mutable living data (a managed class would clobber adopter
+    // entries on redeploy); ships zero entries. The 16th template — the
+    // 15→16/62→63 count amendment is disposition-carried on the vsdd-cli
+    // #820 manifest.
+    plan.push(PlanEntry {
+        rel: ".vsdd/registry/deviation-registry.yaml".to_string(),
+        bytes: include_bytes!("../../templates/registry/deviation-registry.yaml").to_vec(),
+        class: ManagementClass::Scaffold,
+    });
 
     plan
 }

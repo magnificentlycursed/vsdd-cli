@@ -96,6 +96,10 @@ jobs:
           cat /tmp/context-check.out
           awk '/^## /{sec=$0} /MISSING|INVALID|ERROR/ && (sec ~ /Rule files|Configuration/) {bad=1; print "GATING problem in " sec ": " $0} END {exit bad}' /tmp/context-check.out
 
-      - name: Run the routing-before-fix gate
+      - name: Run the gate (routing-before-fix + deviations, CI strictness)
         working-directory: vsdd-cli
-        run: cargo run -p vsdd -- gate
+        env:
+          # The deviations leg's issue-state oracle rides `gh api`; the
+          # default token suffices for public-repo issue reads (REQ-6).
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cargo run -p vsdd -- gate --ci
