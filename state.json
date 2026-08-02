@@ -1,5 +1,5 @@
 {
-  "next_display_id": 857,
+  "next_display_id": 858,
   "next_comment_id": 1388,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -12,6 +12,7 @@
     "00f99555-d2a7-4d6b-8e92-fec52ffa99db": 262,
     "0149a749-b684-4fc7-b727-fc9c7bbf3bb4": 363,
     "014cd80f-132e-4da0-991c-a6230d630f6f": 735,
+    "01a5cab1-6fb4-423a-b52b-eac021ebe76c": 857,
     "03092491-629b-4c0a-9723-ea5cd901b916": 163,
     "0331b7bd-a343-43ae-8658-8af9f14a97c5": 267,
     "0349edd4-f6ad-4e04-8285-02069ec4bf9b": 360,
@@ -1201,6 +1202,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAT6xGfrm3Ia3sopVS+ZvHB10rZjKyhWwO278I7fU7YWa7/ewsrJtohQHOr/4DckInzftw1CKSujfwnYlYy5gqCA=="
         }
       }
+    },
+    "01a5cab1-6fb4-423a-b52b-eac021ebe76c": {
+      "uuid": "01a5cab1-6fb4-423a-b52b-eac021ebe76c",
+      "display_id": 857,
+      "title": "Pre-unification grounding: exhaustive crosslink CLI-surface inventory + Thermite architecture refresh (latest pull) -> knowledge pages -> design-impact audit",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T02:15:24.403401Z",
+      "updated_at": "2026-08-02T02:15:24.403401Z"
     },
     "03092491-629b-4c0a-9723-ea5cd901b916": {
       "uuid": "03092491-629b-4c0a-9723-ea5cd901b916",
@@ -31723,11 +31734,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1103,
       "timestamp": "2026-08-02T02:04:31.758509Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1104,
+      "timestamp": "2026-08-02T02:15:24.403401Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T02:04:31.758509Z",
+    "timestamp": "2026-08-02T02:15:24.403401Z",
     "agent_id": "xqjG",
-    "agent_seq": 1103
+    "agent_seq": 1104
   }
 }
