@@ -1,6 +1,6 @@
 {
   "next_display_id": 859,
-  "next_comment_id": 1398,
+  "next_comment_id": 1399,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21809,7 +21809,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-08-02T03:27:19.737749Z",
+      "updated_at": "2026-08-02T04:07:16.532086Z",
       "labels": [
         "red-gate"
       ],
@@ -21900,6 +21900,15 @@
           "kind": "handoff",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwU+Z22OkoTesimVJ0k+eaEgNJWv55m97FKxZUnsJFkOqhLt/kaTpQgd2Ottt5Oei/HOFJaJUp//vnuUajjtQCA=="
+        },
+        "732415de-b493-4147-b027-e07604331f11": {
+          "display_id": 1398,
+          "author": "xqjG",
+          "content": "GIT-STATE RECONCILED (Unit D landed via a separate worktree because the main tree was on chore/858-triage-fixes, not feat/820). feat/820-phase-1 (worktree ../vsdd-cli-feat820, HEAD e07aec6e) now carries the COMPLETE Phase-1 arc: 2a red seed -> falsifier set (+found defect) -> 2b deviations green -> Unit C fail-closed arm -> cold-review revise -> Unit D entry-7 artifact-presence evaluator -> entry-1 promotion. All-green (deviations 15/1i, workspace green, mdatron clean). Entry-1 promotion recorded HONESTLY: predicate unchanged (#55 closed); trigger_context records the retest STALL-PERSISTS at dialog-2 (the mirror advance does NOT ground resolution — superseding the stale main-tree WIP that prematurely claimed 'a passing retest grounds resolution'); disposition_ref -> #858 retest-verdict record (real timestamp, not fabricated). origin/feat/820-phase-1 is at 59cc74d8 — the last 2 commits (f5f7025e Unit D, e07aec6e entry-1) are UNPUSHED (push is the operator's act). On CI, gate --ci should now PASS: entry-7 decidable-not-fired, all issue-state entries decidable-not-fired (their upstream issues open), entry-2 version-compare not-fired (0.4->0.5 is 1 minor, <2), entry-3 resolved. MAIN-TREE WIP (superseded, safe to discard): the registry (now on feat/820), build-plan.pipeline.json (stale kickoff-plan tool-write from the dead retest runs), CHANGELOG (auto-regenerable), .crosslink/integrity/ (snapshot).",
+          "created_at": "2026-08-02T04:07:16.516054Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAj8HMZdcHr+/GVVchfaVD3Ba3OsntLipm52hRIOMcAT1qDJ7MowaIr8N3BGIuUZlMpw5oFPgfUVtJnyFJgawmAA=="
         },
         "78222f7d-9a5e-4e60-abf7-daf1397623b6": {
           "display_id": 1248,
@@ -31967,11 +31976,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1124,
       "timestamp": "2026-08-02T03:34:14.359067Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1125,
+      "timestamp": "2026-08-02T04:07:16.532086Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T03:34:14.359067Z",
+    "timestamp": "2026-08-02T04:07:16.532086Z",
     "agent_id": "xqjG",
-    "agent_seq": 1124
+    "agent_seq": 1125
   }
 }
