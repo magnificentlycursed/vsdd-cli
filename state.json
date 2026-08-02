@@ -22275,11 +22275,12 @@
       "uuid": "d31c7b83-8d30-4b19-8e4e-23f8695374e3",
       "display_id": 834,
       "title": "Slice 3 (Install) phase-1a design — vsdd way: init drift-handling + template deployment (folded from #14; seeded from captured phase-1a B/C)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T15:58:22.806676Z",
-      "updated_at": "2026-08-02T00:47:00.603446Z",
+      "updated_at": "2026-08-02T00:47:06.600632Z",
+      "closed_at": "2026-08-02T00:47:06.600625Z",
       "labels": [
         "design"
       ],
@@ -31192,11 +31193,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1041,
       "timestamp": "2026-08-02T00:47:00.603446Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1042,
+      "timestamp": "2026-08-02T00:47:06.600632Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:47:00.603446Z",
+    "timestamp": "2026-08-02T00:47:06.600632Z",
     "agent_id": "xqjG",
-    "agent_seq": 1041
+    "agent_seq": 1042
   }
 }
