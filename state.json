@@ -899,10 +899,6 @@
       "agent_id": "xqjG",
       "claimed_at": "2026-07-29T08:10:47.860064Z"
     },
-    "824": {
-      "agent_id": "xqjG",
-      "claimed_at": "2026-07-29T08:30:50.267546Z"
-    },
     "825": {
       "agent_id": "xqjG",
       "claimed_at": "2026-07-29T09:02:32.203157Z"
@@ -31219,11 +31215,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1045,
       "timestamp": "2026-08-02T00:47:24.665619Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1046,
+      "timestamp": "2026-08-02T00:47:30.430052Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:47:24.665619Z",
+    "timestamp": "2026-08-02T00:47:30.430052Z",
     "agent_id": "xqjG",
-    "agent_seq": 1045
+    "agent_seq": 1046
   }
 }
