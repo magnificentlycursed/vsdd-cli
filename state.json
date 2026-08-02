@@ -19044,11 +19044,12 @@
       "uuid": "ad8da982-aa67-49d2-820e-10090ae299cb",
       "display_id": 860,
       "title": "Design unification: consolidate the contract — fold #840 subsystem + retire #845 doc, apply Section-A amendments (effort-seam, injection-seam, corroboration-substrate) + #859 dispatch posture",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T05:20:48.939851Z",
-      "updated_at": "2026-08-02T10:34:47.304643Z",
+      "updated_at": "2026-08-02T10:34:54.339673Z",
+      "closed_at": "2026-08-02T10:34:54.339666Z",
       "labels": [
         "design"
       ],
@@ -32347,11 +32348,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1152,
       "timestamp": "2026-08-02T10:34:47.304643Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1153,
+      "timestamp": "2026-08-02T10:34:54.339673Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T10:34:47.304643Z",
+    "timestamp": "2026-08-02T10:34:54.339673Z",
     "agent_id": "xqjG",
-    "agent_seq": 1152
+    "agent_seq": 1153
   }
 }
