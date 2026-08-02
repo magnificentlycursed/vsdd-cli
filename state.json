@@ -1,6 +1,6 @@
 {
   "next_display_id": 856,
-  "next_comment_id": 1362,
+  "next_comment_id": 1363,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -22279,11 +22279,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T15:58:22.806676Z",
-      "updated_at": "2026-07-30T18:08:22.653481Z",
+      "updated_at": "2026-08-02T00:47:00.603446Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "09212c5d-1a46-4b87-9ff7-47e0428e5bb8": {
+          "display_id": 1362,
+          "author": "xqjG",
+          "content": "CLOSED — Slice 3 (Install) phase-1a design ratified (c6e1b735), its static half built and merged (#838, PR #17, d899e598), and the design doc absorbed into the build-plan's Completed phases + retired to the install-slice knowledge page under #845's disposition. The generated-members remainder is build-plan Phase 2's obligation (second Provenance: Slice 3 marker).",
+          "created_at": "2026-08-02T00:47:00.584645Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKiWD5yhy3eSFhKYw0TIldfDZsbg9At8HMJu50p4lDfB8fnMAjNtGjdaMEPQ1pERX8UVPjwcRyYz0ovNMnGIkBw=="
+        },
         "75e8afe9-d2ad-4f2b-8ad2-80aa78c80e5d": {
           "display_id": 1272,
           "author": "xqjG",
@@ -31178,11 +31187,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1040,
       "timestamp": "2026-08-02T00:46:54.465491Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1041,
+      "timestamp": "2026-08-02T00:47:00.603446Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:46:54.465491Z",
+    "timestamp": "2026-08-02T00:47:00.603446Z",
     "agent_id": "xqjG",
-    "agent_seq": 1040
+    "agent_seq": 1041
   }
 }
