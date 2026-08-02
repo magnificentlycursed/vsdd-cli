@@ -38,6 +38,31 @@ jobs:
       - name: Install mdatron CLI (crates.io, pinned)
         run: command -v mdatron >/dev/null && mdatron --version | grep -q '0\.5\.0' || cargo install mdatron --version 0.5.0 --locked
 
+      # --deny-warnings escalates a warnings-only run to a failing exit
+      # (mdatron #121, shipped at vsdd's own request; verified clean on the
+      # current tree before arming — vsdd-cli #855/#858).
       - name: Run mdatron verify
         working-directory: vsdd-cli
-        run: mdatron verify --project-root .
+        run: mdatron verify --deny-warnings --project-root .
+
+      # The #855 tri-state + non-vacuity gate: a green verify above is not
+      # evidence the required families RAN — this step consumes the versioned
+      # `verify --json` envelope and asserts the schema and vocabulary
+      # families are active (not skipped/errored) and that the run checked a
+      # non-zero file set (checked-N versus checked-nothing).
+      #
+      # The consumed envelope is pinned at .mdatron/envelope-2.1.0.schema.json
+      # (printed by `mdatron schema`; JSON carries no comment syntax, so the
+      # pin's provenance lives here): the mdatron_output_version assertion
+      # below fails loud when the announced envelope 3.0.0 major lands
+      # (mdatron #145, the links family) — that failure IS the retest
+      # trigger to re-derive the pin and this consumer.
+      - name: Assert required families fired (tri-state + non-vacuity, #855)
+        working-directory: vsdd-cli
+        run: |
+          mdatron verify --json --quiet --project-root . > /tmp/mdatron-envelope.json || true
+          jq '{envelope: .mdatron_output_version, schema: .families.schema.state, vocabulary: .families.vocabulary.state, files_checked: .summary.files_checked}' /tmp/mdatron-envelope.json
+          jq -e '.mdatron_output_version == "2.1.0"
+                 and .families.schema.state == "active"
+                 and .families.vocabulary.state == "active"
+                 and .summary.files_checked > 0' /tmp/mdatron-envelope.json > /dev/null
