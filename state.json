@@ -4812,11 +4812,12 @@
       "uuid": "22098424-38c8-47e4-aeb2-635b1b795a65",
       "display_id": 825,
       "title": "F5: standing non-vacuity canary — CI test that the real .mdatron jurisdiction catches an injected violation (#822 M2)",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T09:02:23.320418Z",
-      "updated_at": "2026-08-02T00:47:54.797234Z",
+      "updated_at": "2026-08-02T00:48:01.023643Z",
+      "closed_at": "2026-08-02T00:48:01.023635Z",
       "comments": {
         "3b95c0bd-308c-4cf5-8370-6c37080caeb0": {
           "display_id": 1365,
@@ -31255,11 +31256,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1050,
       "timestamp": "2026-08-02T00:47:54.797234Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1051,
+      "timestamp": "2026-08-02T00:48:01.023643Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:47:54.797234Z",
+    "timestamp": "2026-08-02T00:48:01.023643Z",
     "agent_id": "xqjG",
-    "agent_seq": 1050
+    "agent_seq": 1051
   }
 }
