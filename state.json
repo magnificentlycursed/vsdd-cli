@@ -1,6 +1,6 @@
 {
   "next_display_id": 859,
-  "next_comment_id": 1399,
+  "next_comment_id": 1400,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10799,7 +10799,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T03:06:43.307647Z",
-      "updated_at": "2026-08-02T03:34:14.359067Z",
+      "updated_at": "2026-08-02T04:14:47.891120Z",
       "labels": [
         "feature"
       ],
@@ -10830,6 +10830,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYARjZ3v8fXbfa09gVLkCPo2RtLFzzmqEBL2h+1CsR+tM/BX3LlJSHli4DNsx4DNw4wMwSidLp+PWZZksWbGDBg=="
+        },
+        "78d11718-adfc-4921-9d25-b026a85d1e35": {
+          "display_id": 1399,
+          "author": "xqjG",
+          "content": "#55 REFINED DIAGNOSIS (fork's controlled investigation, dollspace-gay/crosslink#55, 2026-08-02 04:11) — materially sharper AND corrects our retest attribution: (1) THE STALL IS TTY-SPECIFIC. Container path (kickoff run --container) WORKS headless: docker run -d = no TTY = the interactive folder-trust dialog cannot render = --skip-permissions proceeds (verified end-to-end against a genuinely untrusted mount, exit 0). Only the tmux path (kickoff plan, local kickoff run) stalls (interactive PTY renders the dialog). (2) CORRECTION to our finding: the blocking dialog is claude's FOLDER-TRUST prompt, TTY-gated, firing on ANY untrusted fresh-worktree path — NOT the settings-pre-approval variant we named (REFUTED: an empty dir with no settings still prompts). Only writing hasTrustDialogAccepted clears it; claude upgrades (2.1.213-220) trend STRICTER (2.1.218 gates agent-hooks on trust; the SDK's register_repo_root at 2.1.219 is unreachable from the kickoff CLI). (3) RESOLUTION FOR OUR CONSENT-POSTURE QUESTION: container dispatch is the non-interactive vehicle that needs NO gate-disabling and NO dialog-answering — the clean headless path, sidestepping the interactive gate entirely. Phase 5's dispatch design should target the container vehicle, not tmux/local. (4) DEPENDENCY: the working vehicle needs the agent image pullable — forecast-bio/crosslink#576 (CLOSED; publication state to confirm before relying on it). (5) Upstream's recommended fix: make kickoff plan non-interactive OR add --container to plan. Entry-1 trigger_context corrected on feat/820 (e2cb2ca1) to reflect this; predicate/status unchanged. This is a strong argument to REVISIT the consent-posture decision toward 'container vehicle, no gate-disabling.'",
+          "created_at": "2026-08-02T04:14:47.872095Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABARKjKfCu56J6bPGJ+cNEZptz1+1pZlHM85d8h6lOxOSPPkkW1FPSFRw9WvGWIYfzDHDJC79FfgkWNtbvk7qjjDw=="
         },
         "83b3947a-65a7-47b3-bb2d-4313d78f63e9": {
           "display_id": 1396,
@@ -31981,11 +31990,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1125,
       "timestamp": "2026-08-02T04:07:16.532086Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1126,
+      "timestamp": "2026-08-02T04:14:47.891120Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T04:07:16.532086Z",
+    "timestamp": "2026-08-02T04:14:47.891120Z",
     "agent_id": "xqjG",
-    "agent_seq": 1125
+    "agent_seq": 1126
   }
 }
