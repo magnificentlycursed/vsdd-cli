@@ -1,5 +1,5 @@
 {
-  "next_display_id": 859,
+  "next_display_id": 860,
   "next_comment_id": 1401,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -253,6 +253,7 @@
     "4adae7f2-30cd-479c-87d8-3571cf08ee82": 286,
     "4bd8fe23-58e4-4b5d-ab44-b6b3d96ed4fd": 217,
     "4bdaa302-a4db-40eb-bc61-3e53d34ba8d6": 86,
+    "4c037e09-df84-4f8b-ae5b-028f8fb1ee16": 859,
     "4c1bb873-d852-4a82-abce-c1b2dc2cd273": 563,
     "4c4eb12d-ec80-49e6-b3db-26f3442b78ae": 48,
     "4ca17610-f9aa-4569-a71e-d565acf1fd4f": 46,
@@ -8568,6 +8569,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAli3XNL3yXqNvIF3D5mKJtiGp46bfC1z8HZ/Prw833D3ePH/PlQY0QoWIw7ngBgGO5L4QckWBI86xncVWnUgjCA=="
         }
       }
+    },
+    "4c037e09-df84-4f8b-ae5b-028f8fb1ee16": {
+      "uuid": "4c037e09-df84-4f8b-ae5b-028f8fb1ee16",
+      "display_id": 859,
+      "title": "Consent-posture adoption: container kickoff as the autonomous dispatch vehicle, no gate-disabling (SO ruling 2026-08-02) + downstream edits",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-08-02T04:24:08.582323Z",
+      "updated_at": "2026-08-02T04:24:08.582323Z"
     },
     "4c1bb873-d852-4a82-abce-c1b2dc2cd273": {
       "uuid": "4c1bb873-d852-4a82-abce-c1b2dc2cd273",
@@ -32009,11 +32020,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1127,
       "timestamp": "2026-08-02T04:19:14.901552Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1128,
+      "timestamp": "2026-08-02T04:24:08.582323Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T04:19:14.901552Z",
+    "timestamp": "2026-08-02T04:24:08.582323Z",
     "agent_id": "xqjG",
-    "agent_seq": 1127
+    "agent_seq": 1128
   }
 }
