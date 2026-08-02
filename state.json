@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1357,
+  "next_comment_id": 1358,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4529,7 +4529,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:37:51.044269Z",
-      "updated_at": "2026-08-02T00:17:38.980527Z",
+      "updated_at": "2026-08-02T00:28:20.115994Z",
       "closed_at": "2026-08-02T00:17:38.980521Z",
       "labels": [
         "feature"
@@ -4606,6 +4606,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABADrmgUk9Be9oOuLgObPF9wJuFle6j9kGtwTsmFrS22c35AhwqTK/0MvJxUB8PTuOqxU4l9j528kl6yHaClwaCBg=="
+        },
+        "a5b4cbae-e654-45ff-bf0d-1df83df734b2": {
+          "display_id": 1357,
+          "author": "xqjG",
+          "content": "CHANNEL MOVE (operator-directed 2026-08-02): cross-estate feedback to mdatron now goes to mdatron's GitHub issues, not this tracker's relay pattern. The consolidated roadmap feedback upthread is re-homed as https://github.com/magnificentlycursed/mdatron/issues/20 (that copy is authoritative going forward; precedent: mdatron GH #1, the 0.4.0 adoption report). This issue stays closed.",
+          "created_at": "2026-08-02T00:28:20.095766Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAWfMXnBEAIrXNgnR9Hj/TytK8M8TZn4fBY988bD5veFHHbK7W6FfoSC5lZljD1cQ57cKgyVXbH8PMLbN9Ng68DQ=="
         },
         "abe4880a-e5e2-490d-9f4a-6245c9ed5105": {
           "display_id": 1182,
@@ -31043,11 +31052,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1025,
       "timestamp": "2026-08-02T00:17:44.894717Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1026,
+      "timestamp": "2026-08-02T00:28:20.115994Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:17:44.894717Z",
+    "timestamp": "2026-08-02T00:28:20.115994Z",
     "agent_id": "xqjG",
-    "agent_seq": 1025
+    "agent_seq": 1026
   }
 }
