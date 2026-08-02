@@ -1,6 +1,6 @@
 {
   "next_display_id": 856,
-  "next_comment_id": 1367,
+  "next_comment_id": 1368,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -11985,7 +11985,18 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-08T01:51:15.214338Z",
-      "updated_at": "2026-06-08T01:51:15.214338Z"
+      "updated_at": "2026-08-02T00:49:07.200381Z",
+      "comments": {
+        "e538bfa0-ab24-4fab-83ab-da5f3ceacabf": {
+          "display_id": 1367,
+          "author": "xqjG",
+          "content": "CLOSED (superseded by the ratified slice framing): per-code domain-routing hints = the contract's fix-scale composition (finding labels -> deterministic active set; build-plan Phases 1/2); the compact catalog + explain wrapper ride Slice 2's generated-context machinery. Anything residual re-enters through the build-plan phases, not this overlay framing.",
+          "created_at": "2026-08-02T00:49:07.184412Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAH0pdlFVGtABwWDt02NkO7isKBrXf6HNdVgvKY8AQZH04JaIsMfJJpKdRyt9mU1tvMHmrELAqgmx/q7stuOMGDA=="
+        }
+      }
     },
     "6cd1309c-56b6-4c60-90e7-b961d17eecd8": {
       "uuid": "6cd1309c-56b6-4c60-90e7-b961d17eecd8",
@@ -31288,11 +31299,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1056,
       "timestamp": "2026-08-02T00:48:47.035265Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1057,
+      "timestamp": "2026-08-02T00:49:07.200381Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:48:47.035265Z",
+    "timestamp": "2026-08-02T00:49:07.200381Z",
     "agent_id": "xqjG",
-    "agent_seq": 1056
+    "agent_seq": 1057
   }
 }
