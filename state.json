@@ -1,6 +1,6 @@
 {
   "next_display_id": 857,
-  "next_comment_id": 1383,
+  "next_comment_id": 1384,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5316,11 +5316,20 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-02T01:11:44.393068Z",
-      "updated_at": "2026-08-02T01:12:08.227399Z",
+      "updated_at": "2026-08-02T01:29:06.579438Z",
       "labels": [
         "tech-debt"
       ],
       "comments": {
+        "7a9e0be9-9c10-4a3d-a5f5-82f2ac8a13bd": {
+          "display_id": 1383,
+          "author": "xqjG",
+          "content": "EXECUTED (operator-ratified ruling: the git-posture line at the PR boundary — verified against crosslink's gh#58 reconciliation, their PR #65, which ratifies the identical model). LANDED via PR #23 (fc044c5a, branch chore/856-git-posture, committed+pushed by the agent UNDER the new policy — the live test): hook-config.json's blocked list drops blanket 'git push' (main is ruleset-blocked server-side, so plain push = feature branches only), adds force-push forms + 'gh pr merge' (closing the convention-only GitHub-CLI merge hole; friction grade, honestly — shared credential means merge-is-human cannot be server-split); commit stays issue-gated; CHANGELOG closure entries ride along. LOCAL-ONLY HALF (discovered at commit): .claude/hooks/work-check.py is gitignored — a crosslink-DEPLOYED payload, so the banner rewrite + the three intervene->issue-comment repoints live only in this install and are re-deploy-fragile; the durable fix is upstream in crosslink's shipped resource, filed as dollspace-gay/crosslink#71 (the intervene dead-end is in THEIR resources; their PR #65 touches the same file). Also posted the tracking-modes.qmd residual-overclaim review note on their PR #65. #856 stays open until upstream #71 resolves or the local payload divergence is otherwise made durable (crosslink workflow diff is the visibility surface for the divergence meanwhile).",
+          "created_at": "2026-08-02T01:29:06.538147Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAX2jejNVWknKqI1gHeaIGefksS1drGBuLpjXoFE6Yc0fNkmK6CyQuDi1ZY5JZGGV63PgKo2o4288KIfNtN/83BQ=="
+        },
         "e0538438-08c5-4ec8-a4e3-db7b7e570372": {
           "display_id": 1382,
           "author": "xqjG",
@@ -31653,11 +31662,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1098,
       "timestamp": "2026-08-02T01:12:08.227399Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1099,
+      "timestamp": "2026-08-02T01:29:06.579438Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T01:12:08.227399Z",
+    "timestamp": "2026-08-02T01:29:06.579438Z",
     "agent_id": "xqjG",
-    "agent_seq": 1098
+    "agent_seq": 1099
   }
 }
