@@ -15907,11 +15907,12 @@
       "uuid": "94a7f3f5-d187-415f-9d02-94cb2c6285bf",
       "display_id": 850,
       "title": "Upstream crosslink observation: TIMEOUT sentinel never written — timeout kill leaves agents classified RUNNING",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:52:41.763085Z",
-      "updated_at": "2026-08-02T00:51:21.262830Z",
+      "updated_at": "2026-08-02T00:51:27.385173Z",
+      "closed_at": "2026-08-02T00:51:27.385166Z",
       "labels": [
         "upstream"
       ],
@@ -31451,11 +31452,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1076,
       "timestamp": "2026-08-02T00:51:21.262830Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1077,
+      "timestamp": "2026-08-02T00:51:27.385173Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:51:21.262830Z",
+    "timestamp": "2026-08-02T00:51:27.385173Z",
     "agent_id": "xqjG",
-    "agent_seq": 1076
+    "agent_seq": 1077
   }
 }
