@@ -11981,11 +11981,12 @@
       "display_id": 235,
       "title": "vsdd-cli overlay: domain-routing hints + compact agent-loop catalog",
       "description": "vsdd-cli-side wrapper around mdatron findings. mdatron is methodology-agnostic per BOUNDARY-PREAMBLE.md § 3; the routing hints + agent-loop catalog augmentation belong on vsdd's side of the cross-process seam.\n\nTracks: per-code domain-routing hints (which VSDD domain's lens fixes each MDATRON-Exxxx), compact-form catalog for PostToolUse hook context budgets, vsdd-side explain wrapper.\n\nv0.1.x candidate; cross-cycle with crosslink #13 AIE/F3, AIE/F2 (compact form).",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-08T01:51:15.214338Z",
-      "updated_at": "2026-08-02T00:49:07.200381Z",
+      "updated_at": "2026-08-02T00:49:13.977460Z",
+      "closed_at": "2026-08-02T00:49:13.977453Z",
       "comments": {
         "e538bfa0-ab24-4fab-83ab-da5f3ceacabf": {
           "display_id": 1367,
@@ -31304,11 +31305,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1057,
       "timestamp": "2026-08-02T00:49:07.200381Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1058,
+      "timestamp": "2026-08-02T00:49:13.977460Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:49:07.200381Z",
+    "timestamp": "2026-08-02T00:49:13.977460Z",
     "agent_id": "xqjG",
-    "agent_seq": 1057
+    "agent_seq": 1058
   }
 }
