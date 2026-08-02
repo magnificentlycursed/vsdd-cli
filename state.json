@@ -1,6 +1,6 @@
 {
   "next_display_id": 855,
-  "next_comment_id": 1353,
+  "next_comment_id": 1354,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -7121,7 +7121,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:53:03.791348Z",
-      "updated_at": "2026-08-01T20:07:12.023084Z",
+      "updated_at": "2026-08-02T00:01:00.002706Z",
       "labels": [
         "upstream"
       ],
@@ -7161,6 +7161,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAAa+yaR3K9sTtjgUkA9U6NOFgtSwQgfICn5jGBbOm3z1DgYH2cIj82CDLzArtFhM7Ou6nUwChQ/ZkayGOXKOoAw=="
+        },
+        "e9ba2e93-fcf4-4091-9d44-c68b126ba027": {
+          "display_id": 1353,
+          "author": "xqjG",
+          "content": "Design input for the injection seam posted to the fork epic: https://github.com/magnificentlycursed/crosslink/issues/2#issuecomment-5154089077 — five consumer requirements (R1 interpolation/append keeping crosslink's half tool-maintained; R2 per-dispatch --template flag; R3 swarm per-agent composition incl. the uniform-clobber hazard + the exec-hook end-state; R4 coherence with the #61 dial design; R5 the assembled prompt stays auditable via KICKOFF.md). Suggested split: R1+R2 as a small fork-authored PR (the #44 pattern); R3+R4 into the #61 design cycle. The PR itself is pure crosslink work — it lives in the crosslink estate, not here.",
+          "created_at": "2026-08-02T00:00:59.973045Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABATyqeivi0ArMQOjSNkzKxWfw8R+8LqbOk0N/nlhig8pUUbeIwD5G75V40/WKkuk6Nprz53s/4qEJ+BRMD3JOeAw=="
         }
       }
     },
@@ -30980,11 +30989,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1019,
       "timestamp": "2026-08-01T23:28:10.866963Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1020,
+      "timestamp": "2026-08-02T00:01:00.002706Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-01T23:28:10.866963Z",
+    "timestamp": "2026-08-02T00:01:00.002706Z",
     "agent_id": "xqjG",
-    "agent_seq": 1019
+    "agent_seq": 1020
   }
 }
