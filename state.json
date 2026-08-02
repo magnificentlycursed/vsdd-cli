@@ -1,6 +1,6 @@
 {
   "next_display_id": 860,
-  "next_comment_id": 1405,
+  "next_comment_id": 1406,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -17469,10 +17469,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T20:37:46.826535Z",
-      "updated_at": "2026-08-01T20:37:53.269811Z",
+      "updated_at": "2026-08-02T05:08:36.531314Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "bd1cc2e9-3f93-4387-a8b9-1959e15b86df": {
+          "display_id": 1405,
+          "author": "xqjG",
+          "content": "P4/#148 (adopter code-catalog integrity) is the CI-grade mechanization of this issue. Answered mdatron on vsdd-cli GH#27 (comment 5155546223), grounded in the live corpus (89 VSDD- citations). SO-ratified governance: comprehensive=true (one authoritative catalog; any unlisted VSDD- token is an orphan that hard-blocks) + severity=error (dangling-reference class). Remediation scope once mdatron ships MDATRON-E0113: author .mdatron/code-catalogs.yaml with the FULL legal VSDD- set (reconstructing the defining home that DESIGN-VERIFICATION.md carried before the #826 cleanup, not just the 9 currently-cited orphans), then declare/fix the orphans red->green. Grammar pinned: VSDD- + one uppercase class letter (E/W in use) + exactly 4 digits.",
+          "created_at": "2026-08-02T05:08:36.503038Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAHxEeC1REw8mPZlEtVcNlU/RtNmKT/iWsYbIc/I3o70IhtOEZ+NkcNimb/j8CbKoniY0YpmJeYP3yCRqxUm30AQ=="
+        }
+      }
     },
     "a29d3f3c-8c6b-407a-a468-10ace32e1a58": {
       "uuid": "a29d3f3c-8c6b-407a-a468-10ace32e1a58",
@@ -32100,11 +32111,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1134,
       "timestamp": "2026-08-02T04:57:00.405157Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1135,
+      "timestamp": "2026-08-02T05:08:36.531314Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T04:57:00.405157Z",
+    "timestamp": "2026-08-02T05:08:36.531314Z",
     "agent_id": "xqjG",
-    "agent_seq": 1134
+    "agent_seq": 1135
   }
 }
