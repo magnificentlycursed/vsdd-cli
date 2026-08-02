@@ -18379,11 +18379,12 @@
       "display_id": 827,
       "title": "Upstream crosslink request: structured close-reason / disposition field on issue close",
       "description": "For operator relay to the crosslink project.\n\nRequest: add a structured, queryable close-reason / disposition field to crosslink issues (set at close, exposed in 'issue show --json' and ideally 'issue list --json'). Values vsdd-cli needs: dismissed, hallucinated, consolidated (with a survivor reference for consolidated).\n\nWhy: vsdd-cli's unrouted-findings process-integrity query (vsdd-core/src/answer/integrity.rs) must exempt disposition closures. crosslink today stores no structured disposition — 'issue close' takes no reason, 'issue update' has no disposition field, and no disposition labels are in use. So the finding-query join (vsdd-cli #820, .design/finding-query-join.md) adopts an interim disposition LABEL-carry (dismissed/hallucinated/consolidated labels read from 'issue show'). A structured close-reason field would supersede that label convention: the join's read moves from labels to the field with no query-side change.\n\nSupersedes: the disposition label-carry adopted in .design/finding-query-join.md (D1 / REQ-9), which exists only because this surface is absent. Relates to vsdd-cli #820.",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T12:34:49.900661Z",
-      "updated_at": "2026-08-02T00:52:16.599173Z",
+      "updated_at": "2026-08-02T00:52:23.114758Z",
+      "closed_at": "2026-08-02T00:52:23.114750Z",
       "labels": [
         "upstream"
       ],
@@ -31516,11 +31517,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1085,
       "timestamp": "2026-08-02T00:52:16.599173Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1086,
+      "timestamp": "2026-08-02T00:52:23.114758Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:52:16.599173Z",
+    "timestamp": "2026-08-02T00:52:23.114758Z",
     "agent_id": "xqjG",
-    "agent_seq": 1085
+    "agent_seq": 1086
   }
 }
