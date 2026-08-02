@@ -1,4 +1,5 @@
 {
+  "_custom_marker": "# crosslink:custom — deliberate tracked customization (agent overrides, allowed bash prefixes, tracking mode); drift from the embedded default declared for `crosslink workflow diff --check` (vsdd-cli #858). JSON carries no comment syntax, so the marker rides this key; the check matches the marker substring anywhere in the file.",
   "agent_overrides": {
     "agent_lint_commands": [
       "cargo clippy -- -D warnings",

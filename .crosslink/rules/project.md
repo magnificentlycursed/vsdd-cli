@@ -1,4 +1,7 @@
 <!-- Project-Specific Rules — vsdd-cli -->
+<!-- # crosslink:custom — deliberately customized project rules; drift from the
+     embedded default declared for `crosslink workflow diff --check`
+     (vsdd-cli #858, the control-plane interim CI adoption). -->
 <!-- Injected into every session. Mechanical guards + pointers only; the
      governing contract is .design/agent-first-vsdd-toolkit.md (ratified).
      Substantive process rules live THERE — do not restate them here. -->

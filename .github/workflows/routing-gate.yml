@@ -63,6 +63,39 @@ jobs:
         working-directory: vsdd-cli
         run: crosslink sync
 
+      # Control-plane interim checks (vsdd-cli #858, the
+      # control-plane-interim-ci adoption): the settings-clobber /
+      # silent-de-wire class — a deploy that quietly rewires or removes the
+      # edit-time gates — is catchable today with two shipped crosslink
+      # surfaces. The durable answer remains the installed-artifact-integrity
+      # check's CI grade with the populated manifest instance; these steps
+      # are the wireable interim.
+      #
+      # `workflow diff --check` exits 1 when a deployed policy file drifted
+      # from the embedded defaults without a declared `# crosslink:custom`
+      # marker. The estate's deliberate customizations (hook-config.json,
+      # rules/project.md) carry the marker, so what this gates is FUTURE
+      # undeclared drift.
+      - name: Control-plane drift check (undeclared policy drift)
+        working-directory: vsdd-cli
+        run: crosslink workflow diff --check
+
+      # `context check` has no --check flag; it gates by its own exit code
+      # (nonzero on any missing/invalid file). It cannot pass whole in CI:
+      # the hook + command payloads are machine-local by design (git-ignored;
+      # the vsdd-cli #658 posture — settings.json errors loudly when a
+      # payload is missing locally), so a fresh checkout necessarily lacks
+      # them and `crosslink sync` hydrates tracker state only. CI therefore
+      # gates the sections a checkout carries — Rule files + Configuration
+      # (hook-config.json presence/valid JSON) — and reports, without
+      # gating, the machine-local Hook/Command sections.
+      - name: Control-plane deployment check (tracked sections)
+        working-directory: vsdd-cli
+        run: |
+          crosslink context check > /tmp/context-check.out 2>&1 || true
+          cat /tmp/context-check.out
+          awk '/^## /{sec=$0} /MISSING|INVALID|ERROR/ && (sec ~ /Rule files|Configuration/) {bad=1; print "GATING problem in " sec ": " $0} END {exit bad}' /tmp/context-check.out
+
       - name: Run the routing-before-fix gate
         working-directory: vsdd-cli
         run: cargo run -p vsdd -- gate
