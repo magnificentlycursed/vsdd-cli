@@ -1,6 +1,6 @@
 {
   "next_display_id": 860,
-  "next_comment_id": 1403,
+  "next_comment_id": 1404,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21856,7 +21856,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T04:31:35.431233Z",
-      "updated_at": "2026-08-02T04:19:14.901552Z",
+      "updated_at": "2026-08-02T04:45:53.670708Z",
       "labels": [
         "red-gate"
       ],
@@ -21867,6 +21867,15 @@
       ],
       "milestone_uuid": "6b26f932-b5d9-4c95-8bf1-850d2535b84f",
       "comments": {
+        "07e762bf-5a51-45f6-8d23-466ae3dcec66": {
+          "display_id": 1403,
+          "author": "xqjG",
+          "content": "PHASE 1 MERGED to main (1d5c5a03 / PR #24; CI green on cd1ca0fd — the entry-7 evaluator cleared routing-gate). The first build-plan phase is landed: 2a red seed -> tracker-join falsifier set (+the found vacuous-gate defect) -> 2b deviations leg green + CLI --ci seam + 16-template count amendment -> Unit C fail-closed arm (#818 closed) -> cold-review revise -> Unit D entry-7 artifact-presence evaluator -> entry-1 #55-refined correction. Workspace 210+ green, mdatron clean. HONEST CLOSURE DEBT (the phase merged with its exit bookkeeping unlanded — flagging, not hiding): (1) COMPLETION MOVE owed — Phase 1 is still in build-plan.md ## Requirements (line 9); per REQ-1/REQ-2 it moves to ## Completed phases with closing evidence (1d5c5a03 / PR #24 / 'closes no fixture criterion by design, mechanizes the #810 routing-before-fix format-carry'); the merge IS the phase-exit ratification disposition. (2) The two named 2a obligations are UNLANDED: the operator-authored manual-test checklist (operator's — The operator authors the oracle), and the per-commit guardrail wall-clock budget as data (~17s falsifier-suite datum measured; authorable by me, mirroring the statusline budget's flake-resistance shape). None block anything (swarm isn't up — the container vehicle per #859 isn't built), but they're real debt. Proposing: I do the completion move + author the wall-clock budget data as a small 'close Phase 1' commit; the manual-test checklist is yours.",
+          "created_at": "2026-08-02T04:45:53.655596Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+Y66oq64yAY/TIWUqqSGZ5j4imh9e+HEBYwyFypSS4436C0rTBInlogylhz7uZCUBpYUvO2hLCk0Z71TvuqFAg=="
+        },
         "1817eee2-3b5a-4a13-9c55-f15daded7238": {
           "display_id": 1241,
           "author": "xqjG",
@@ -32072,11 +32081,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1132,
       "timestamp": "2026-08-02T04:25:24.577114Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1133,
+      "timestamp": "2026-08-02T04:45:53.670708Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T04:25:24.577114Z",
+    "timestamp": "2026-08-02T04:45:53.670708Z",
     "agent_id": "xqjG",
-    "agent_seq": 1132
+    "agent_seq": 1133
   }
 }
