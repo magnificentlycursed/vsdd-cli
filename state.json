@@ -11983,11 +11983,12 @@
       "uuid": "6cd1309c-56b6-4c60-90e7-b961d17eecd8",
       "display_id": 823,
       "title": "arm the E0091 letter-cluster guardrail: adjudicate label schemes, then spec-review the DESIGN coinage cleanup, then land the register clean",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-29T08:10:39.572095Z",
-      "updated_at": "2026-08-02T00:47:36.291807Z",
+      "updated_at": "2026-08-02T00:47:42.618666Z",
+      "closed_at": "2026-08-02T00:47:42.618657Z",
       "comments": {
         "2d9a5862-69d1-41ec-94da-197ce00c575a": {
           "display_id": 1190,
@@ -31234,11 +31235,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1047,
       "timestamp": "2026-08-02T00:47:36.291807Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1048,
+      "timestamp": "2026-08-02T00:47:42.618666Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:47:36.291807Z",
+    "timestamp": "2026-08-02T00:47:42.618666Z",
     "agent_id": "xqjG",
-    "agent_seq": 1047
+    "agent_seq": 1048
   }
 }
