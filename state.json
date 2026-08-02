@@ -19495,11 +19495,12 @@
       "uuid": "b6a38e1c-4cd3-4d9e-a5a1-0928f2115b37",
       "display_id": 847,
       "title": "Upstream crosslink observation: swarm docs describe H2 '## Phase:' headers; parser only recognizes H3 '### Phase N:' under Requirements",
-      "status": "open",
+      "status": "closed",
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T19:36:37.136319Z",
-      "updated_at": "2026-08-02T00:50:14.495414Z",
+      "updated_at": "2026-08-02T00:50:21.434615Z",
+      "closed_at": "2026-08-02T00:50:21.434605Z",
       "labels": [
         "upstream"
       ],
@@ -31388,11 +31389,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1067,
       "timestamp": "2026-08-02T00:50:14.495414Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1068,
+      "timestamp": "2026-08-02T00:50:21.434615Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-02T00:50:14.495414Z",
+    "timestamp": "2026-08-02T00:50:21.434615Z",
     "agent_id": "xqjG",
-    "agent_seq": 1067
+    "agent_seq": 1068
   }
 }
