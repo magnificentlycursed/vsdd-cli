@@ -9044,7 +9044,10 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-03T19:21:22.599908Z",
-      "updated_at": "2026-08-03T19:21:22.599908Z"
+      "updated_at": "2026-08-03T19:21:29.319200Z",
+      "labels": [
+        "design"
+      ]
     },
     "51724a70-3698-43ea-b663-f739303a5169": {
       "uuid": "51724a70-3698-43ea-b663-f739303a5169",
@@ -32661,11 +32664,16 @@
       "agent_id": "xqjG",
       "agent_seq": 15,
       "timestamp": "2026-08-03T19:21:22.599908Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 16,
+      "timestamp": "2026-08-03T19:21:29.319200Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T19:21:22.599908Z",
+    "timestamp": "2026-08-03T19:21:29.319200Z",
     "agent_id": "xqjG",
-    "agent_seq": 15
+    "agent_seq": 16
   }
 }
