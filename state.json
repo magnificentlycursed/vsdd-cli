@@ -1,6 +1,6 @@
 {
   "next_display_id": 864,
-  "next_comment_id": 1423,
+  "next_comment_id": 1424,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -11847,7 +11847,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-03T15:11:13.081511Z",
-      "updated_at": "2026-08-03T15:18:36.184699Z",
+      "updated_at": "2026-08-03T15:18:42.783611Z",
       "labels": [
         "maintenance"
       ],
@@ -11860,6 +11860,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAh7R8adL5RTdjwzeviICcoMfV56nOCyUNgz/rMPfK7absN/x0pHquBSbS48bampkvaBRevOJPwjmgp5otFzOeCg=="
+        },
+        "bbd20a43-eab4-4b81-9222-6ec791e1f494": {
+          "display_id": 1423,
+          "author": "xqjG",
+          "content": "RECOVERY COMPLETE (Source → Source.nosync rename + symlink, 2026-08-03). VERIFIED INTACT: crosslink hub works through the symlink — no absolute-path references found in .crosslink/ configs, ~/.crosslink hub (dashboard.db empty of paths), or .claude/ settings; issues.db PRAGMA integrity_check ok; integrity checks schema/counters/locks/layout PASS; compaction clean; session #6 ended with a proper handoff (readable via session last-handoff). MIGRATED (copy, no-clobber — old-path dirs left as backups): Claude Code project data from the old-path key to the new: vsdd-cli (18 memory files + 2 transcripts b953d7fb/e4c6e107), mdatron (19 memory files + 3 transcripts), crosslink (4 memory files merged into the existing index + 2 transcripts). NOT TOUCHED (intentional state): the hydration FAIL — ghost issue SQLite id -1 (uuid 97be3195, the 2026-08-02 hub-outage casualty) is deliberately frozen local-only per #858 (upstream defect dollspace-gay/crosslink#74); .crosslink/integrity/hydration-backup-20260802T030602Z.sqlite is the pre-repair snapshot from that incident, kept. Rename recorded in project memory (source-nosync-rename-symlink.md): don't remove the Source symlink without canonicalizing old-path references first.",
+          "created_at": "2026-08-03T15:18:42.769350Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA9LB4MluMPNVRq3zBtalQfEayBsTTKD94YIf90zpMCQ6FTJtqy2gY//7WmVJuw+GkSQn2+73HdVDqt/DbfChfAg=="
         }
       }
     },
@@ -32515,11 +32524,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1,
       "timestamp": "2026-08-03T15:18:36.184699Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 2,
+      "timestamp": "2026-08-03T15:18:42.783611Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T15:18:36.184699Z",
+    "timestamp": "2026-08-03T15:18:42.783611Z",
     "agent_id": "xqjG",
-    "agent_seq": 1
+    "agent_seq": 2
   }
 }
