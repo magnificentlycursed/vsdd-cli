@@ -1,5 +1,5 @@
 {
-  "next_display_id": 865,
+  "next_display_id": 866,
   "next_comment_id": 1424,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -348,6 +348,7 @@
     "63e0ff8e-6298-4857-82b9-4b0560547d27": 833,
     "64258ac1-a67a-4a08-9115-9cf643682628": 492,
     "647e7b11-3a77-4d3b-931b-741f8e307416": 581,
+    "6496a0a8-ed32-4c93-92fc-9c35974e4a83": 865,
     "64adbc21-8c2a-433c-ba8b-bf31c0f50e09": 358,
     "64d4dfd6-4312-45e4-97fe-346eef840f9c": 531,
     "651a1624-3211-4395-833a-378ca93351c6": 657,
@@ -11455,6 +11456,17 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAvs9QijA0GOxflULh/njFGmw3V6U2EVWEzSCJjZfqGs58b70g5HgCPI6n5sdrelv8MKStiK2hv26v5u5FNVtbBg=="
         }
       }
+    },
+    "6496a0a8-ed32-4c93-92fc-9c35974e4a83": {
+      "uuid": "6496a0a8-ed32-4c93-92fc-9c35974e4a83",
+      "display_id": 865,
+      "title": "Answer GH#33: methodology cost-ledger evidence bar (coverage per family/shape/form, latency scope, staleness triggers) — mdatron roast DEF7 relay",
+      "description": "Incoming methodology question, vsdd-cli GH#33 (raised 2026-08-03 from the mdatron estate per the DEF7 relay ruling, mdatron #131/#133). The methodology must define: (1) minimum cost-ledger coverage for the cost contract to count as evidenced (per check family / finding shape / output form — mdatron ships 9 families, ledger covers 1); (2) whether latency actuals belong in the same ledger (first actual exists: 0.65s / 178 files / 0.1.0, unrecorded for lack of a row shape); (3) staleness/re-measurement triggers (release? family addition? output-contract change?). Until answered each estate invents its own bar. Relates to Slice 7 (efficiency insight engine) and milestone #14's rename. Answer routes back on GH#33 per the sibling-feedback-channels convention.",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-08-03T16:14:35.272186Z",
+      "updated_at": "2026-08-03T16:14:35.272186Z"
     },
     "64adbc21-8c2a-433c-ba8b-bf31c0f50e09": {
       "uuid": "64adbc21-8c2a-433c-ba8b-bf31c0f50e09",
@@ -32569,11 +32581,16 @@
       "agent_id": "xqjG",
       "agent_seq": 7,
       "timestamp": "2026-08-03T16:12:21.276917Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 8,
+      "timestamp": "2026-08-03T16:14:35.272186Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T16:12:21.276917Z",
+    "timestamp": "2026-08-03T16:14:35.272186Z",
     "agent_id": "xqjG",
-    "agent_seq": 7
+    "agent_seq": 8
   }
 }
