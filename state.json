@@ -1,6 +1,6 @@
 {
   "next_display_id": 866,
-  "next_comment_id": 1425,
+  "next_comment_id": 1426,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8638,7 +8638,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T04:24:08.582323Z",
-      "updated_at": "2026-08-02T04:24:53.056962Z",
+      "updated_at": "2026-08-03T16:20:21.526715Z",
       "labels": [
         "design"
       ],
@@ -8651,6 +8651,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZypT+3MID0lhIAsiiI3/iQpYw3qPKfUGgy3CFWDan7xbY47fBDZwRqFbmxsUEaRKPxUvAQ6KqU93S0iVTHnCDQ=="
+        },
+        "5aec0ec6-930b-48e3-9034-e292f0bd1a10": {
+          "display_id": 1425,
+          "author": "xqjG",
+          "content": "UPSTREAM UPDATE CONSUMED (fork #1/#2, 2026-08-03). CAPABILITY DELIVERED: the dispatch-dials-and-injection-seam pair is COMPLETE on upstream develop @fe653b40 — gh#61 dials (PR #77 MERGED: per-dispatch --effort/--budget-usd recorded in .kickoff-metadata.json) + gh#62 seam (PR #80 MERGED: kickoff_template full-replacement -> interpolation with the Decision-D2 placeholder set incl. {{built_prompt}}/{{effort}}/{{model}}/{{allowed_tools}}, --template <path> flag-else-config, swarm per-phase templates). All 5 of our R1-R5 seam requirements are satisfied; R4/R5 read-back loop closes via .kickoff-metadata.json + the KICKOFF.md prompt artifact. PREDICATE CHECK (no fire): dollspace-gay#62 OPEN, #75 OPEN (merged-to-develop, auto-close pends default-branch — the known pattern), so deviation entries 1 (manual-dispatch-fallback) + 5 (container-kickoff-blocked-posture) stand correctly, predicates unfired. MIRROR HYGIENE: fork develop force-pushed to clean upstream fe653b40; dropped fork-only 4e8ad314 (superseded by upstream PR #76); repo grep confirms NOTHING here pins 4e8ad314; the read surface our gate consumes (issue list/show JSON, sync hydration) untouched. RESIDUAL: #55 plan/tmux project-trust dialog stays open upstream (fix shape confirmed: hasTrustDialogAccepted pre-grant; no CLI-reachable headless grant today) — no longer our entry-1 predicate, informational only. DECISION PARKED FOR OPERATOR: local binary is 0.9.0-beta.1+eba9a1cd (pre-seam); rebuilding to fe653b40 gains dials+seam but nothing current consumes them until Phase 5 dispatch design (and binary swaps carry hub risk per the 0.9.0 incident) — recommend deferring the rebuild to the Phase-5 build gate unless the operator wants the seam exercisable earlier.",
+          "created_at": "2026-08-03T16:20:21.512876Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAGCuPdZLF3YbXXkAK2bblQ2QZBgRJsU2pvdZ02kpk063tKmZcSe4LvoIJ6dulv0ZszZS6SjL2X6+38363w+qjCw=="
         }
       }
     },
@@ -32617,11 +32626,16 @@
       "agent_id": "xqjG",
       "agent_seq": 12,
       "timestamp": "2026-08-03T16:15:06.289669Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 13,
+      "timestamp": "2026-08-03T16:20:21.526715Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T16:15:06.289669Z",
+    "timestamp": "2026-08-03T16:20:21.526715Z",
     "agent_id": "xqjG",
-    "agent_seq": 12
+    "agent_seq": 13
   }
 }
