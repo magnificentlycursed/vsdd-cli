@@ -11843,11 +11843,12 @@
       "uuid": "682c06a5-3785-4dca-82f1-9b73b0a6b531",
       "display_id": 863,
       "title": "Recover session after Source → Source.nosync rename + symlink",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-03T15:11:13.081511Z",
-      "updated_at": "2026-08-03T15:18:42.783611Z",
+      "updated_at": "2026-08-03T15:19:00.719073Z",
+      "closed_at": "2026-08-03T15:19:00.719065Z",
       "labels": [
         "maintenance"
       ],
@@ -32529,11 +32530,16 @@
       "agent_id": "xqjG",
       "agent_seq": 2,
       "timestamp": "2026-08-03T15:18:42.783611Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 3,
+      "timestamp": "2026-08-03T15:19:00.719073Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T15:18:42.783611Z",
+    "timestamp": "2026-08-03T15:19:00.719073Z",
     "agent_id": "xqjG",
-    "agent_seq": 2
+    "agent_seq": 3
   }
 }
