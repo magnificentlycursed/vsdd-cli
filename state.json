@@ -1,6 +1,6 @@
 {
   "next_display_id": 864,
-  "next_comment_id": 1422,
+  "next_comment_id": 1423,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -11847,10 +11847,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-03T15:11:13.081511Z",
-      "updated_at": "2026-08-03T15:11:19.821612Z",
+      "updated_at": "2026-08-03T15:18:36.184699Z",
       "labels": [
         "maintenance"
-      ]
+      ],
+      "comments": {
+        "57d70406-8d83-45e8-933d-3039216cba64": {
+          "display_id": 1422,
+          "author": "xqjG",
+          "content": "Blocked: no active issue — initial session-status/hub inspection for the Source→Source.nosync recovery (work-check fired before the issue existed; expected cold-start order)",
+          "created_at": "2026-08-03T15:18:36.168188Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAh7R8adL5RTdjwzeviICcoMfV56nOCyUNgz/rMPfK7absN/x0pHquBSbS48bampkvaBRevOJPwjmgp5otFzOeCg=="
+        }
+      }
     },
     "68cce86e-8217-4ca8-9cb2-a06475530133": {
       "uuid": "68cce86e-8217-4ca8-9cb2-a06475530133",
@@ -32499,11 +32510,16 @@
       "agent_id": "xqjG",
       "agent_seq": 1169,
       "timestamp": "2026-08-03T15:11:27.890311Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1,
+      "timestamp": "2026-08-03T15:18:36.184699Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T15:11:27.890311Z",
+    "timestamp": "2026-08-03T15:18:36.184699Z",
     "agent_id": "xqjG",
-    "agent_seq": 1169
+    "agent_seq": 1
   }
 }
