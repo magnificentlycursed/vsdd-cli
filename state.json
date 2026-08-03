@@ -1938,11 +1938,12 @@
       "uuid": "089d42a1-38d9-477e-a654-d2ccc3950a40",
       "display_id": 864,
       "title": "GH issue hygiene: review open GitHub issues, close completed ones",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-03T16:12:07.594935Z",
-      "updated_at": "2026-08-03T16:14:54.232293Z",
+      "updated_at": "2026-08-03T16:15:00.350444Z",
+      "closed_at": "2026-08-03T16:15:00.350436Z",
       "labels": [
         "maintenance"
       ],
@@ -32610,11 +32611,16 @@
       "agent_id": "xqjG",
       "agent_seq": 10,
       "timestamp": "2026-08-03T16:14:54.232293Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 11,
+      "timestamp": "2026-08-03T16:15:00.350444Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T16:14:54.232293Z",
+    "timestamp": "2026-08-03T16:15:00.350444Z",
     "agent_id": "xqjG",
-    "agent_seq": 10
+    "agent_seq": 11
   }
 }
