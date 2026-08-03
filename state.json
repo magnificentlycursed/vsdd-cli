@@ -9044,11 +9044,12 @@
       "uuid": "5149b5bc-0fdb-43ef-a545-7bcd7f5e0af6",
       "display_id": 866,
       "title": "Upstream priorities epic: survey unaddressed dollspace-gay/crosslink open issues vs our roadmap, group into epics, file upstream",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-03T19:21:22.599908Z",
-      "updated_at": "2026-08-03T19:24:02.114474Z",
+      "updated_at": "2026-08-03T19:24:08.172814Z",
+      "closed_at": "2026-08-03T19:24:08.172805Z",
       "labels": [
         "design"
       ],
@@ -32694,11 +32695,16 @@
       "agent_id": "xqjG",
       "agent_seq": 18,
       "timestamp": "2026-08-03T19:24:02.114474Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 19,
+      "timestamp": "2026-08-03T19:24:08.172814Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T19:24:02.114474Z",
+    "timestamp": "2026-08-03T19:24:08.172814Z",
     "agent_id": "xqjG",
-    "agent_seq": 18
+    "agent_seq": 19
   }
 }
