@@ -1,0 +1,168 @@
+{
+  "uuid": "c4dda79c-2dcc-4ca5-a664-287cf876dc6c",
+  "display_id": 840,
+  "title": "Design cycle (spec amendment): verifiable-conformance + efficiency subsystem — prove the harness's disciplines fired per dispatched agent; supersedes DESIGN-OBSERVABILITY + re-scopes Cost-is-knowable + re-grounds AI-Engineer; AIE+RedTeam",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-31T17:18:11.352409Z",
+  "updated_at": "2026-08-02T00:46:30.310793Z",
+  "closed_at": "2026-08-02T00:46:30.310787Z",
+  "labels": [
+    "design"
+  ],
+  "comments": [
+    {
+      "uuid": "90d47f87-2ba6-4e39-b865-95f5ee45410a",
+      "display_id": 1277,
+      "author": "xqjG",
+      "content": "PHASE-1A composition (spec-amendment cycle; SO holds change authority):\nphase: phase-1a (spec amendment)\ncomposed_domains: [solution-owner (primary/spec-authority), ai-engineer, red-team, solution-architect, software-engineer, documentation-reviewer]\ncomposition_mode: skill-interactive\nFraming (operator-confirmed 2026-07-31): center of gravity = VERIFIABLE CONFORMANCE ('prove the harness's disciplines fired per dispatched agent'); efficiency/right-sizing is one axis under it.\nGrounding input: crosslink knowledge page 'conformance-efficiency-subsystem-audit' (+ scratchpad copy). Supersedes DESIGN-OBSERVABILITY.md; re-scopes Cost-is-knowable (static price + records-insight, retire telemetry stack); re-grounds AI-Engineer (observability-lens -> measured right-sizing/conformance judge); Red-Team optimized to circumvention + correct-path-only. Leverage crosslink dispatch/session/viewers; supply only the vsdd layer (composition + injection seam + verifier). Named upstream deps: kickoff (#837), the injection seam (contract 81). Slice 2 (#839) stays paused downstream of the Cost re-scope.",
+      "created_at": "2026-07-31T17:18:31.414585Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "8f658332-87d7-4cf4-ada2-f8d8f12f2453",
+      "display_id": 1278,
+      "author": "xqjG",
+      "content": "PHASE-1A DRAFT authored the vsdd way — /design skill + governing context loaded VERIFIABLY (recorded Reads this session: phase-1a primer, vsdd-domain-{solution-owner,ai-engineer,red-team,solution-architect,documentation-reviewer}, supplements/claude-code-cli). .design/verifiable-conformance-and-efficiency.md: 15 REQ (each a control: mechanism+grade+falsifier+RT-bypass), 15 AC, 3 open questions. NOTE: the non-conformant subagent-with-paraphrase opening was killed + redone properly; that bypass is recorded as founding evidence (REQ-15) — the process control was operator-caught, not mechanized. Remaining before ratification: resolve Q1-Q3; Red Team reviews the process AND the artifact (operator ruling); cold review warm-independent (piloting REQ-13). Operator ratifies (SO exit).",
+      "created_at": "2026-07-31T17:26:53.122558Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "69e3e46e-23d5-4eb2-834d-29d569c10eb6",
+      "display_id": 1279,
+      "author": "xqjG",
+      "content": "COMPOSITION confirmed (operator 2026-07-31), phase-1a spec-amendment cycle: solution-owner (primary/authority), solution-architect, software-engineer, quality-engineer, ai-engineer, platform-engineer, red-team, security, data-engineer, documentation-reviewer, technical-writer. Rationale: this subsystem IS the process-governing enforcement core, so its load-bearing set is the full process-governing domain set — the two adversarial validator-pairs that own enforcement (AIE+PE, RT+Security), QE for conformance-verification, SO/SA for authority+architecture, SE baseline, DE for the mdatron/schema-governed data (registry + exercise-registry), DR+TW for the governed prose. Security is the recommended add (the oracle's unforgeability, REQ-10/#815; secrets-in-transcripts) pending explicit operator nod.\n\nDESIGN INSIGHT captured (feeds Slice 2's composition function + this subsystem's SHOULD): domains split into PROCESS-GOVERNING (inherited by every vsdd adopter to FUNCTION — the process dispatches AI [AIE], enforces via CI/hooks [PE], is circumventable + oracle-trust-dependent [RT/Security], runs on mdatron schema-data [DE], produces governed prose [DR/TW], on the SO/SA/SE/QE baseline) vs PRODUCT-REVIEWING (per the adopter's product axes: UX/A11y/Privacy/L10n + product activation of RT/DR/AIE). The composition SHOULD = process-governing-baseline UNION axis-activated-product-domains — which is what the conformance verifier then audits was loaded.",
+      "created_at": "2026-07-31T18:03:25.057612Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "079d502c-d9bf-4144-ae1a-b7a88739c23f",
+      "display_id": 1280,
+      "author": "xqjG",
+      "content": "DOMAIN-EDIT SCOPE for this cycle (grounded — all 11 personas read this session). These are governed-corpus/spec edits, part of the amendment (SO-owned, cold-reviewed); per REQ-12 enforceable content mechanizes into checks, not prose.\n\nCROSS-CUTTING (telemetry purge — the retired observability apparatus is still in 4 personas): AIE dim1 capture_source=OTel + dims3/7; PE dim7 'CI failures -> OTel collector'; Security dim7 forensic-trail via observability events/forwarding-boundary redaction; DE dim6 'schema changes emit events' + dim8 '.vsdd/events.jsonl the worked example' (retired §248). All -> records-based (transcripts + CI-synced state).\n\nMAJOR (re-ground/re-point): AIE (OTel-lens -> record-based right-sizing + efficiency-engine owner; capture_source=run records); RT (dim7 'enforcement not declaration' generalized to every control; +control-circumvention, correct-path-only, oracle-forgeability, process-audit role); PE (owner of the enforcement machinery's physical firing — CI conformance gate, required-check-RAN-not-passed, dispatch+injection, exercise-audit CI-leg); Security (conformance-oracle trust boundary — unforgeable/harness-produced+CI/#815; transcripts as a secret-carrying surface).\n\nMODERATE (extend): QE (dim1 elevated to meta-level — the conformance controls themselves non-vacuous+falsifiable; owns 'authored != exercised' + per-control falsifiers); DE (exercise-registry schema + control+fire-check-land-together pairing; re-ground events-store); SO (re-scoped attended/autonomous split, Cost re-scope, adopter-inheritance model); SA (leverage-vs-build boundary §355, oracle trust-boundary, exercise-registry format).\n\nMODERATE: DR (name its §133 read-but-ignored-instrument role + warm-independent posture REQ-13).\nMINIMAL: SE (dimensions apply as-is to building the verifier); TW (judgment-only prose per REQ-12; vocab-registry already handles deprecations like 'seam').",
+      "created_at": "2026-07-31T18:09:24.539709Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "3387c2ca-a0c2-46c6-84b8-a625f926ca17",
+      "display_id": 1281,
+      "author": "xqjG",
+      "content": "SCOPE EXPANSION (operator 2026-07-31) — primers/supplements passes + operator-session control + underutilization audit + mechanism-per-control:\n\nPRIMERS + SUPPLEMENTS need passes (parallel to the domain edits):\n- SUPPLEMENT ACTIVATION MODEL: distinguish RUNTIME-determined always-on (claude-code-cli whenever runtime=Claude Code; bash — every agent uses the shell, 91 Bash calls in the #821 run proves it load-bearing) + PROJECT-determined always-on (rust for this Rust project) + TASK-determined (github-actions/json/markdown/etc. per surface). The composition SHOULD includes the runtime+project supplements unconditionally; REQ-4 audits they loaded. (Current supplement frontmatter gates by languages_or_interfaces only — no 'runtime-determined always-on' tier.)\n- PRIMER PASS: reflect the phases-dispatched keystone (phase work is dispatched+audited, not in-session), the conformance discipline (composed context loaded), and the composition-SHOULD (process-governing baseline). Update the composition-declaration template.\n\nOPERATOR-SESSION CONTROL (keep the right stuff loaded for the operator): the operator/orchestrator session is not a dispatched agent, so its control = the session-start HOOK (injects the session skill + runtime supplements claude-code-cli/bash + the phase pointer) + the read-gate on governed acts. Per phases-dispatched it loads LESS (orchestration + the human's slots; heavy phase-context goes to dispatched agents). NOT exempt from the exercise-audit: session-start-hook-fired + session-skill-invoked are audited, fail-loud (added to the audit-surface table).\n\nKNOWLEDGE-SURFACING + UNDERUTILIZATION AUDIT (agent-first mechanisms; where we leave features on the table):\n- Correct mechanism for crosslink/mdatron knowledge = the MCP docs-server (vsdd mcp-serve — PLANNED in claude-code-cli supplement: methodology.lookup, claude_code.docs.search, crosslink.docs.search, anthropic.api.docs.search; ADD mdatron.docs.search), NOT grepping files. UNBUILT = underutilization.\n- Underutilized AGENT features: MCP docs-server (unbuilt); Cron/PushNotification/RemoteTrigger (scheduled sweeps + budget/rate-limit alerts, unused); Skills (under-invoked, Read-instead).\n- Underutilized TRACKER/ORCHESTRATED features: crosslink SWARM (bypassed for the Workflow tool — the leverage-vs-build point); SENTINEL (the intended home for scheduled efficiency-advisory sweeps §149, unused); crosslink VIEWERS/mission-control (§149 'vsdd builds no viewer' — the surfacing home; confirm we use them); crosslink INTERVENE (mid-flow records).\n\nMECHANISM-PER-CONTROL (broader principle): each control/surface names its CORRECT agent-first mechanism (MCP tool / hook / skill / crosslink affordance / CI leg / sentinel) and rides it; hand-rolling an existing feature is §130 nonconformance AND underutilization. The underutilization audit is a first-class design output.\n\nPRESERVED durably: the audit-surface table + the full run-record capability inventory -> knowledge page 'run-record-capability-and-audit-surface'.",
+      "created_at": "2026-07-31T18:26:25.775643Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "7243978b-6ddb-459a-903a-0e548d57753d",
+      "display_id": 1282,
+      "author": "xqjG",
+      "content": "COHERENCE PASS complete + HAND-AUDITED (REQ-17 bootstrap-interim; REQ-16 signal). Dispatched agent a28eefd6. Composition VERIFIED FROM TRANSCRIPT (the oracle, REQ-10 — not the agent's self-report): grep of the harness transcript's Skill tool_use events shows all 7 invoked — design, vsdd-phase-1a, vsdd-domain-{solution-owner,ai-engineer,red-team,platform-engineer,solution-architect}; zero Read-instead, zero paraphrase. FIRST verifiably-conformant dispatch of the amendment (contrast the founding cargo-cult failure, REQ-15).\n\nDoc: .design/verifiable-conformance-and-efficiency.md now 20 REQ / 22 AC / 0 open questions. Q1 (verifier = Slice-4 gate leg + sibling efficiency engine in vsdd-core), Q2 (vsdd-owned injection point; crosslink FR for the generic hook), Q3 (dial presence = hard gate, appropriateness = advisory) resolved in-doc. Added REQ-18 (adopter-inheritance: process-governing baseline UNION axis-activated product domains), REQ-19 (operator-session control), REQ-20 (mechanism-per-control + underutilization audit). REQ-4 extended with the three-tier supplement activation model. Amendment-scope manifest added (Part 1 authored here; Parts 2/3 referenced).\n\nTension #5 VERIFIED against supplements/*.md: frontmatter gates by languages_or_interfaces + domains_in_scope only, no runtime-always-on tier — the activation-model edit (Part 2) is warranted.\n\nNEXT: dispatch Part 2 (domain personas + primer pass + supplement-activation) and Part 3 (contract re-scopes: Cost 140-153, attended/autonomous split, adopter-inheritance), author-only, each conformance-audited; then the 11-domain warm-independent review (RT on process+artifact); then SO ratifies.",
+      "created_at": "2026-07-31T18:50:26.134388Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "04d1d0fe-85b1-4e4f-b03a-1273fe53dc9d",
+      "display_id": 1284,
+      "author": "xqjG",
+      "content": "PART 2/3 DRAFT COMPLETE + SKILL-AUDITED (all transcript-verified, REQ-16/17 bootstrap-interim). Five dispatched agents, each invocation confirmed by grep of the harness transcript (the oracle, not self-report):\n- coherence pass: design + vsdd-phase-1a + SO/AIE/RT/PE/SA (7)\n- heavy personas AIE/RT/PE/Security: vsdd-phase-1a + SO/AIE/RT/PE/Security (6)\n- personas QE/DE/SO/SA/DR/SE/TW: vsdd-phase-1a + SO/QE/DE/SA/DR (6; SE/TW read as minimal targets)\n- primer pass + supplement activation: vsdd-phase-1a + SO/PE/AIE (4)\n- contract re-scopes: vsdd-phase-1a + SO/AIE/SA/RT (5)\n\nGUARDRAIL CAUGHT THE AMENDMENT (dogfooding evidence, contrast the founding cargo-cult failure): mdatron verify flagged ~60 MDATRON-E0091 findings across 17 governed-corpus files — the heavy-persona + primer + supplement edits used REQ-N/AC-N letter-cluster handles, which the naming guardrail forbids in vocab-scoped files. The QE/DE/SO/SA/DR/SE/TW persona edits were clean (descriptive names). The design doc in .design/ is exempt (not vocab-scoped). The meta-harness's own E0091 guardrail caught the amendment's edits breaking naming discipline — the enforcement working.\n\nOPERATOR DECISIONS (2026-07-31):\n1. Telemetry retirement: FULL corpus reconciliation now (not core-plus-follow-on). Footprint: vocabulary.yaml capture-source enum (mdatron-validated, 7-member OTel -> recorded/measured/judgment), DESIGN-OBSERVABILITY.md (superseded), README/DESIGN-METHODOLOGY/DESIGN-SCHEMA/methodology.md narrative purge, + the contract's downstream ledger/cost-crate/Slice-7 refs.\n2. Performance Engineer: leave omitted from REQ-18's process-governing baseline; revisit -> #841.\n3. E0091: DESCRIPTIVE NAMES in the corpus (guardrail stays intact; NOT allowlisted). Governed corpus references controls by concept name; REQ-N handles live only in .design/.\n\nDISPATCHED 4 reconciliation agents (author-only, skill-audited, each runs mdatron verify on its own files): (a) E0091 fix -> descriptive names across the 17 files; (b) vocab enum + DESIGN-SCHEMA + DESIGN-OBSERVABILITY superseded; (c) methodology narrative purge (README/DESIGN-METHODOLOGY/methodology); (d) contract downstream Cost reconciliation.\n\nNEXT: hand-audit the 4 -> mdatron-clean commits in logical units -> conformant 11-domain review (each invoking its persona skill, warm-independent, Red Team on process + artifact) -> SO ratifies -> PR.",
+      "created_at": "2026-07-31T19:27:17.526760Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "b7a212b9-0d10-41a2-acf8-cd3acd85ce79",
+      "display_id": 1287,
+      "author": "xqjG",
+      "content": "LANDING (operator go 2026-07-31: 'land #840, then run the cleanup'). Sequence: (1) complete the amendment — purge the telemetry stragglers the passes missed (PE persona dim5, privacy persona dim4, phase-2a primer) + SUBSUME agent-first-controls' live controls (#831 spend-shape+agent-count-cap at the composition gate; #817 escape corpus) into the #840 design doc; (2) commit the LIVE corpus (personas/primers/supplements/vocab/anonymization/contract/subsystem design) — EXCLUDING the DESIGN-*.md docs, which the cleanup will sunset (no point committing telemetry edits to docs being deleted); (3) conformant 11-domain review (skill-invoked, warm-independent, RT on process+artifact); (4) SO ratification (operator gate); (5) PR. Then the cleanup per the portfolio map (sunset docs, remove defunct code, close #234/#815/#831/#817/#842, re-home #656/#657).",
+      "created_at": "2026-07-31T20:35:00.005965Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "b0774631-37d9-450c-b623-6a68aabfcb3d",
+      "display_id": 1288,
+      "author": "xqjG",
+      "content": "OWN-YOUR-OWN-DOCS BOUNDARY (operator ruling 2026-07-31). mdatron owns its own docs; by the same sibling-self-hosted-tool principle, crosslink owns its own docs. Correction to REQ-20 (reverses my earlier 'add mdatron.docs.search' recommendation): vsdd mcp-serve owns methodology.lookup (vsdd's own docs); mdatron + crosslink each own a queryable docs surface vsdd CONSUMES, not re-serves. Verified: crosslink has NO docs command/MCP today (only --help + knowledge pages), so vsdd scraping crosslink docs is a stopgap; correct mechanism = crosslink exposes a queryable docs surface (named upstream capability request, same pattern as the injection point / kickoff #837), consumed by vsdd. claude_code/anthropic docs = external web references (different category), pending the mcp-serve design. IMPORTANT: the mcp-serve DESIGN currently lives ONLY in the sunsetting DESIGN docs (DESIGN-OBSERVABILITY/METHODOLOGY/etc.) — the sunset coverage-check MUST preserve/re-home it into the contract or a slice design (it is a current-direction planned command). Also check whether the vsdd-side crosslink-guide skill re-documents crosslink (should defer to crosslink's own help).",
+      "created_at": "2026-07-31T20:47:19.400659Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "f839b987-e657-4f32-a12f-d95f8a8d5d12",
+      "display_id": 1289,
+      "author": "xqjG",
+      "content": "CLARIFICATION (operator 2026-07-31) — SUPERSEDES my prior 'remove mdatron.docs.search'. The principle is AUTHOR vs CONSUME: each tool AUTHORS/owns its own docs (mdatron, crosslink, Claude Code, Anthropic); vsdd does NOT re-author/duplicate them, but vsdd SHOULD CONSUME them where they exist. So the mcp-serve *.docs.search tools are the CORRECT consumption mechanism (WebFetch+extract the authoritative source) — KEEP all: methodology.lookup (vsdd's own) + mdatron.docs.search + crosslink.docs.search + claude_code.docs.search + anthropic.api.docs.search. mdatron.docs.search STAYS (consumes mdatron's own docs). REQ-20 stands as written (consume via MCP, not grep). The real violation to find is anywhere vsdd RE-AUTHORS others' docs. Gaps: crosslink has no queryable docs surface today (only --help + knowledge pages) → the consumer needs crosslink to expose one (upstream request) or consume --help/knowledge; Claude Code (code.claude.com/docs) + Anthropic (platform.claude.com/docs) exist → consume. No subsume-agent correction sent (REQ-20 is correct as-is).",
+      "created_at": "2026-07-31T20:49:16.786008Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "5dc93a27-38d4-45ed-850f-dfa9a398fbf5",
+      "display_id": 1290,
+      "author": "xqjG",
+      "content": "DECISION (operator 2026-07-31): SCRAP vsdd mcp-serve. Rationale: under-baked (spec only in the sunsetting DESIGN docs, never re-homed); 3/4 tools are brittle external-doc scrapers (WebFetch+extract, 5-20k tokens/query); and it DUPLICATES existing affordances — crosslink knowledge (search_knowledge MCP + knowledge pages), the agent's built-in WebFetch/WebSearch, and each sibling tool's own docs surface. Building it is the hand-roll-an-existing-affordance anti-pattern REQ-5/REQ-20/§355 forbid — it would fail the subsystem's own law. The knowledge-surfacing NEED is covered by those existing affordances (nothing lost). Actions: remove vsdd mcp-serve from the planned command surface; REQ-20 re-points knowledge-surfacing from 'build a docs-server' to 'ride existing affordances (crosslink knowledge + WebFetch/WebSearch + consume sibling docs surfaces)'; the DESIGN-doc mcp-serve spec dies with the sunset (NO re-home). Forward command surface: gate conformance, dispatch, insight, gate budget. crosslink-guide skill = crosslink's own self-doc (not vsdd-prefixed, outside mdatron govern) — fine, not a re-authoring violation.",
+      "created_at": "2026-07-31T20:51:26.690742Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "e2b0af93-426c-40aa-8f20-d33c06e5e73d",
+      "display_id": 1291,
+      "author": "xqjG",
+      "content": "REVERSAL (operator 2026-07-31): the mcp-serve SCRAP is retracted. The search capability (methodology.lookup — targeted 1-5k-token search over vsdd's own methodology corpus, cooperating with crosslink knowledge, mtime-aware cache, instead of bulk-loading a 34k mega-design or grepping) is the POINT — it is the read-inflation fix, core to the efficiency thesis. My scrap over-weighted the external *.docs.search overlap with WebFetch. Correct direction: KEEP the search core; MATURE the under-baked design in a proper pass (rough edges: brittle external scraping, the retired observe-namespaced mcp-cache commands, absorbability hand-waving); apply the own/consume boundary to the external tools (mdatron/crosslink own+expose their docs, vsdd consumes; claude/anthropic via WebFetch/their surfaces). mcp-serve stays on the current-direction command surface (needs re-home from the sunsetting docs + a design pass), NOT scrapped. Confirming the 'search doing thing' framing with the operator before the re-design; halted the design-doc scrap edit (revert sent).",
+      "created_at": "2026-07-31T20:54:21.399473Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "7bac0188-35f0-4247-90e6-a4f4303e7eea",
+      "display_id": 1292,
+      "author": "xqjG",
+      "content": "DECISION FINAL (operator 2026-07-31): CUT vsdd mcp-serve for good. The priority is removing ALL superseded designs cleanly rather than carrying a half-baked one forward. The search core (targeted methodology-corpus lookup / read-inflation fix) is acknowledged valuable and MAY be re-added later as a FRESH, properly-designed feature — noted here as a possible-future idea (breadcrumb only; no separate tracked issue unless the operator wants one). Re-applying the scrap to the #840 design doc (REQ-20/AC-21/Architecture -> knowledge-surfacing rides existing affordances: crosslink knowledge + WebFetch/WebSearch + consume sibling docs surfaces); the mcp-serve DESIGN in the sunsetting DESIGN docs dies with the sunset (no re-home). Forward command surface: gate conformance, dispatch, insight, gate budget.",
+      "created_at": "2026-07-31T20:57:15.242984Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "2f1fe525-15d8-4bb7-86f5-afa1f0f7370b",
+      "display_id": 1293,
+      "author": "xqjG",
+      "content": "CONFORMANT REVIEW COMPLETE — 11-domain, all skill-audited (each invoked vsdd-phase-3 + its domain skill; the review is itself conformance-audited, REQ-15/16). VERDICT: architecturally sound, NOT ratifiable as-is. All 11 returned CHANGES-REQUESTED; findings converge into 11 clusters (top ones hit by 3-6 lenses). The core (governing law, exercise-registry as the manifest twin, WAS-superset-SHOULD, records-based efficiency, subsumption) is affirmed by every lens.\n\nConvergent must-fix clusters: C1 grade-honesty (target grades stated as current; 0% built) [RT/SO/SA/PE/QE/AIE]; C2 oracle forgeable/unavailable as specified — local jsonl is agent-writable, server-synced tamper-evidence not wired [RT-CRIT/PE/SA/DE/Security]; C3 governing law not falsifiable — liveness!=falsifiability + no independent census + registry schema undefined [QE-CRIT/DE/SA/PE]; C4 REQ-21 spend-ceiling advisory-in-disguise (post-hoc can't prevent the spend; self-contradicts REQ-22) [RT-CRIT/AIE/PE/SA/QE]; C5 native Task/Agent dispatch invisible to vsdd -> dispatch control is detective not preventive [RT/PE/SE]; C6 REQ-18 partition incomplete (PerfE/meta unplaced) + overloaded 'baseline' + WRONG audit-level (review-roster concept wired to a per-dispatch gate) [DR/SO/SA/SE]; C7 the amendment's OWN construction fails REQ-15 process-audit (monolithic human-account commit, evidence only as commit-message prose, no review-log, corpus committed BEFORE review) [RT]; C8 'the journal' undefined + record-capability factual errors (spawnDepth fabricated, effort absent from sub-agent records) [SE/AIE/DE/TW]; C9 events-store retirement over-reach (conflated OTel telemetry with the live .vsdd/events.jsonl lifecycle log across 9 primers+SO) [TW/DE]; C10 amendment-scope Part-1/Part-3 contradiction [SO/DR/RT]; C11 missing vsdd-dispatch AC + no REQ-to-slice map + SA-persona docs-server contradicts the cut + ladder top-rung diverges [SO/SA/DR/TW]. Synthesis + routing in scratchpad 840-review-synthesis.md. Next: operator steer on the fix-round shape + the embedded decisions (C6 audit-level; C9 retirement scope), then a dispatched+audited Phase-4 fix round, re-review, ratify.",
+      "created_at": "2026-07-31T21:13:52.691Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "41e007b1-21dd-45dd-93d9-06167ccd1ed3",
+      "display_id": 1294,
+      "author": "xqjG",
+      "content": "RETAINED REVIEW AUDIT (addresses RT-F5 process finding — the checkable artifact, not a claim). All 11 conformant-review dispatches, skills transcript-verified:\nSO: vsdd-domain-solution-owner,vsdd-phase-3 | SA: vsdd-domain-solution-architect,vsdd-phase-3 | QE: vsdd-domain-quality-engineer,vsdd-phase-3 | AIE: vsdd-domain-ai-engineer,vsdd-phase-3 | PE: vsdd-domain-platform-engineer,vsdd-phase-3 | RT: vsdd-domain-red-team,vsdd-phase-3 | Security: vsdd-domain-security,vsdd-phase-3 | DE: vsdd-domain-data-engineer,vsdd-phase-3 | DR: vsdd-domain-documentation-reviewer,vsdd-phase-3 | SE: vsdd-domain-software-engineer,vsdd-phase-3 | TW: vsdd-domain-technical-writer,vsdd-phase-3. (PE re-run a3d2f7c after the first PE dispatch returned degenerate.)\n\nFIX-ROUND DECISIONS (operator 2026-07-31): (1) C6 audit level = REVIEW-ROSTER — the process-governing baseline is enforced for REVIEW compositions; build-phase dispatches carry only their phase primer + supplements (resolves SO-F2 efficiency/cold-review contradiction). PerfE placed as code-shipping-activated (per the phase-1a primer), meta-domains (Sanity Check, VSDD-Methodology) are phase-level not partition members — making the partition total; 'baseline' renamed to distinguish the process-governing SET from the core quartet. (2) C9 = FULL events-store retirement — purge PhaseExited/OperatorDirectiveApplied event-emission across the 9 primers + SO/methodology/DE personas + the contract; the built-code decommission (init.rs + pinning tests + committed data) is the named follow-on just filed. Process fix: retain audit artifacts (this comment), re-review the changed surface BEFORE ratification, no commit-before-review.",
+      "created_at": "2026-07-31T21:20:36.257098Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "421cc042-c6f9-4dda-a413-e19158afd360",
+      "display_id": 1295,
+      "author": "xqjG",
+      "content": "VERIFY-REVIEW COMPLETE — 6 lenses (RT/QE/SA/Security/AIE/DE), all skill-audited (vsdd-phase-3 + domain; retained). The two CRITICALs RESOLVED + record-verified: governing law falsifiable (two-sided negative-case fixture + independent census §131 + occasion-predicate); oracle server-synced/reject-local/recompute-SHOULD. SA + RT: ratifiable. CHANGES-REQUESTED on a convergent residual set → micro-fix-round:\n1. REDACTION [Security, CRIT] — the oracle fix was routed but the redaction-placement half was NOT; security persona dim9 + anonymization-patterns.yaml still say 'before recording' (local/agent-writable — now REJECTED by REQ-10); no redaction REQ/AC; REQ-10 hardening newly routes raw tool-inputs to the server (S-N1) with redaction on the wrong side. Fix: server/CI-side redaction on the sync path (before the corroboration copy) + a mechanized REQ/AC + ordering-vs-tamper-evidence + threat-model (accidental vs exfiltration→capability-restriction) + at-rest scope.\n2. SUPPLEMENT-SIGNAL [QE-V1] — supplements routed through the skill-invocation audit they structurally can't emit (AC-16 supplement leg never passes = mirror-vacuity). Carve out; injection-presence signal.\n3. ROLE-FROM-PHASE [RT#1 + QE-V2, 2 lenses converged] — review/build role selector un-anchored (label-a-review-as-build bypass). Derive role from the non-forgeable REQ-1 phase.\n4. EFFORT-R1 [AIE, record-verified] — design-doc REQ-7 still says 'effort absent / worked-example-contradicted / could-not-check-pending', but effort IS present in Agent-tool subagent transcripts (agent-a5e20d9b: effort:high 24x; 139/141 effort-files in subagents/); persona/supplement already correct, the doc lags. Fix REQ-7 to dispatch-primitive-dependent; drop contradicted/pending.\n5. ENUM-4-VALUE [DE-VF-N1, HIGH] — vocabulary.yaml capture-source is 3-value; doc/AIE/supplement mandate 4-value (could-not-check) → a built validator rejects the could-not-check tag. Reconcile registry to 4-value + capture-source-vs-provenance naming split.\n6. ENUM-DEPRECATION [DE-VF-N2] — 7→3 deletion lacks a deprecation pointer/version bump.\n7. JOURNAL [DE-VF-N3] — authorship/oracle-membership contradiction; pin journal harness-produced or not-substrate.\nDeferrable-with-explicit-note (Slice-4): registry field-level schema + transcript read-schema/version-pin. Minors: durationMs in REQ-14, AC-6 same-bytes→proxy, AC-27 reconcile, REQ-19 trace, process-honesty reframe (bootstrap hand-audits are could-not-check-grade). NEXT: micro-fix-round (design doc + security persona + anonymization yaml + vocabulary.yaml), re-verify Security+QE, then SO ratifies.",
+      "created_at": "2026-07-31T22:02:26.830812Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "31a1cd24-f3c6-4180-a15f-285464b71b9d",
+      "display_id": 1296,
+      "author": "xqjG",
+      "content": "RE-VERIFY COMPLETE — all 6 lenses ratifiable/approved (skill-audited, retained): QE PASS (V1 supplement-carve-out + V2 role-from-phase CLOSED; both CRITICALs intact, no regression); Security RATIFIABLE (all 4 redaction must-fixes CLOSED, corroborated against built state — .githooks/pre-commit runs only mdatron, so leg-1 authored-not-exercised is TRUE); DE APPROVED (N1 4-value enum + N2 deprecation + N3 journal CLOSED; F3/F6 explicitly Slice-4-deferred); AIE APPROVE (R1 effort dispatch-primitive-dependent + R2 durationMs + R3 AC-6 proxy CLOSED, record-corroborated: effort:high x24 in agent-a5e20d9b, durationMs in 66 files, attributionSkill in 41). SA + RT were ratifiable in the first verify; RT's role-anchor now fixed + confirmed by QE. The two founding CRITICALs (governing-law falsifiability, oracle-forgeability) resolved and held. Amendment: 24 REQ / 29 AC, whole-tree mdatron clean.\n\nNON-BLOCKING advisories (every lens marked these non-blocking): REQ-23 leg-1 cite .claude/hooks -> .githooks/pre-commit; relabel agent-a5e20d9b exemplar (workflow-subagent) + count as-of; propagate the 4-value provenance to the live consumers (contract Cost provenance refs + SO persona:37); vocabulary registry_version 0.1.0->0.2.0; the phase-3 primer composition-declaration template needs the supplements-carved-out wording (Part-2 primer-pass follow-on). The dangling 3-value in the sunset docs (methodology/README/DESIGN-*) is moot (deleted in cleanup); .vsdd/events data is #843.\n\nREADY FOR SO RATIFICATION (operator gate). Recommend a tiny consistency-touch first (the live design-doc + contract + SO-persona + registry items) so the ratified surface carries zero open advisories; the primer wording rides the Part-2 follow-on.",
+      "created_at": "2026-07-31T22:40:06.138804Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "388f6236-36a8-417f-bc47-9ceb806efb63",
+      "display_id": 1297,
+      "author": "xqjG",
+      "content": "RATIFIED — OperatorDirectiveApplied{spec-contract-amended, #840} (SO disposition; operator directive 2026-07-31, condition 'ratify once the last two pass' met — DE + AIE re-verify APPROVED, all 6 blocker-raising lenses ratifiable/approved). The verifiable-conformance + efficiency subsystem amendment is RATIFIED: 24 REQ / 29 AC, whole-tree mdatron clean, committed cfe9fb5e (doc hash sha256:0840602560b212bb9df1fde391c4c0354b33c58f761911933619adaf74cb09c5). Both founding CRITICALs resolved + held; all conformant-review findings closed + independently re-verified; every authoring/review/fix dispatch skill-audited from the transcript oracle + retained on this issue (the RT-F5 process fix). Named phase-1c follow-ons: contract-document integration (Part-1's new behavioral contracts into the contract/methodology) + the Part-2 primer composition-declaration wording. Cleanup (#826): root DESIGN-doc sunset + defunct-code removal + close #234/#815/#831/#817/#842 + re-home #656/#657. Events-store code decommission = #843. Opening the PR.",
+      "created_at": "2026-07-31T23:06:38.346627Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "9acf4a87-1e64-4b3a-b121-5b971792aef3",
+      "display_id": 1360,
+      "author": "xqjG",
+      "content": "CLOSED — the verifiable-conformance + efficiency subsystem design was SO-ratified and merged (PR #18, 366f5999); its corpus edits, contract re-scopes, and the #826-cycle contract integration all landed; its build distributes across the build-plan's phases per the contract's Criteria audit, and the exercise-registry contract-integration follow-on is carried by the contract's own named Contract-integration path paragraph. The design doc stands as the ratified record; its sidecar retired under #845's disposition.",
+      "created_at": "2026-08-02T00:46:23.863068Z",
+      "kind": "result"
+    }
+  ]
+}

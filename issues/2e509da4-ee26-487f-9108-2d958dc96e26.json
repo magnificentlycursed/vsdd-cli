@@ -1,0 +1,27 @@
+{
+  "uuid": "2e509da4-ee26-487f-9108-2d958dc96e26",
+  "display_id": 324,
+  "title": "Composition contract retains a BOM phrasing residue",
+  "description": "SA question: line 88 'each with a priced bill of materials' attributes BOM inside the composition contract; presets alone have no stamped counts. Fix: 'each with an associated cost band'. [owner: solution-architect; validator: solution-owner]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:06:45.060653Z",
+  "updated_at": "2026-07-19T22:07:31.620770Z",
+  "closed_at": "2026-07-19T22:07:31.620770Z",
+  "labels": [
+    "phase-1b-round-2",
+    "solution-architect",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "6aed2b23-d8b8-41f0-8965-c289bac42b6f",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b micro-pass (sha256:cccfa7da5522125e0cd889f70333e62b11ccb266189f953cd598f4e393ab90e4).",
+      "created_at": "2026-07-19T22:07:30.852198Z",
+      "kind": "result"
+    }
+  ]
+}

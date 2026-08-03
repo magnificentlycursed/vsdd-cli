@@ -1,0 +1,48 @@
+{
+  "uuid": "f11601e7-06c1-4b98-bbeb-9cb18c3c4f6e",
+  "display_id": 852,
+  "title": "Upstream crosslink request: effort/thinking-budget dispatch parameter on kickoff run/plan and swarm",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T19:53:24.257600Z",
+  "updated_at": "2026-08-02T00:52:04.286231Z",
+  "closed_at": "2026-08-02T00:52:04.286221Z",
+  "labels": [
+    "upstream"
+  ],
+  "comments": [
+    {
+      "uuid": "09b820ba-5d75-46df-8d65-b1831a430ab5",
+      "display_id": 1318,
+      "author": "xqjG",
+      "content": "CONTRACT-NAMED UPSTREAM CAPABILITY REQUIREMENT (the effort dial). vsdd's dials discipline is fail-closed: model AND reasoning-effort are specified at every dispatch, never silently inherited — the composition function right-sizes both (model tier + effort as the dispatched agent's provisioning), and the efficiency engine judges over/under-provisioning from the record. kickoff exposes --model and --timeout but NO effort/thinking-budget parameter (verified on kickoff plan/launch --help, 0.9.0-beta.1+6b4f736f), so on the kickoff path the effort dial is neither settable nor recorded (transcript audit: effort present in runtime-harness Agent records, absent from kickoff records — dispatch manifest is the only reliable source). ASK: an effort/thinking-budget flag on kickoff run/plan and swarm, passed through to the launched Claude session. Sibling of #851; both gate the intended vsdd-rides-crosslink end state.",
+      "created_at": "2026-08-01T19:54:46.329019Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "cc7efe71-aa55-4292-9fb6-4f2665a8c28f",
+      "display_id": 1327,
+      "author": "xqjG",
+      "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+      "created_at": "2026-08-01T20:03:03.037675Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "0f9ecfb5-1b2a-4034-9137-17a2aa31f59a",
+      "display_id": 1334,
+      "author": "xqjG",
+      "content": "Filed upstream: https://github.com/dollspace-gay/crosslink/issues/61",
+      "created_at": "2026-08-01T20:07:05.570011Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "bce600c3-66a3-4d79-8805-ef5e5c6331a9",
+      "display_id": 1376,
+      "author": "xqjG",
+      "content": "CLOSED (tracked upstream + registry-carried): the effort-dial ask is dollspace-gay/crosslink#61 (design cycle planned upstream, per operator); deviation-registry entry dial-less-crosslink-dispatch carries the retest predicate (#61 closed) and the swarm-entry binding carries the dial condition. The registry entry is the living record.",
+      "created_at": "2026-08-02T00:51:57.965778Z",
+      "kind": "result"
+    }
+  ]
+}

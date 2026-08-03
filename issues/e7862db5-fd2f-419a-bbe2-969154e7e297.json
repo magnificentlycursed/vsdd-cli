@@ -1,0 +1,28 @@
+{
+  "uuid": "e7862db5-fd2f-419a-bbe2-969154e7e297",
+  "display_id": 150,
+  "title": "AIE/F4: defined() carve-out drop corpus audit confirms safety",
+  "description": "Source: mdatron/review-log/2026-06-02-ai-engineer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: audit confirmed in review",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:22:46.228020Z",
+  "updated_at": "2026-06-08T02:33:51.775284Z",
+  "closed_at": "2026-06-08T02:33:51.775284Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:ai-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "363132ca-a0d1-473d-8d5f-b2099f72829e",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (audit confirmed in review).",
+      "created_at": "2026-06-08T02:33:51.091385Z",
+      "kind": "resolution"
+    }
+  ]
+}

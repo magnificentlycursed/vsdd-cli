@@ -1,0 +1,32 @@
+{
+  "uuid": "4054257b-73d2-45dc-ae79-b076482384cd",
+  "display_id": 165,
+  "title": "PE/F2: pre-commit hook needs mdatron version sanity check",
+  "description": "Source: mdatron/review-log/2026-06-02-platform-engineer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:16.773697Z",
+  "updated_at": "2026-06-08T02:23:11.815221Z",
+  "closed_at": "2026-06-08T02:23:11.815221Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:platform-engineer",
+    "review-finding"
+  ],
+  "related": [
+    "369b931f-8c34-42e9-bbb3-af898ff70c63",
+    "f3751db1-8b7f-439b-a1ac-bb9b2890713b"
+  ],
+  "comments": [
+    {
+      "uuid": "48cfa372-3016-4512-8046-005c71327b75",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@fc98fa4 (Wave 5).",
+      "created_at": "2026-06-08T02:23:10.512835Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "a06b5d8b-ef5e-4e95-8fcd-9357d0f913c2",
+  "display_id": 736,
+  "title": "c3 residue collector: three self-graded nits, recorded not gating",
+  "description": "(1) Convergent x3 (SE, QE, DE all independently): the schema-pair read collapses every IO error to kind absent (permission-denied on an existing pair reports absent); all three lenses graded it arguable — toolkit-owned file, OS error text carried, recovery correct for both causes, no consumer branches on pair kinds; candidate for a future cleanup pass. (2) dispatch result_values pinned by count with values in the message only — deliberate shallow pin, deepens at Layer 8. (3) economics active_domains substring check on prose — the #710 inline-prose adoption's inherent limit. ROUTING: accepted as recorded residue; no fix owed this layer. Owner: software-engineer (item 1 at its cleanup pass). Validator: sanity-check.",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "014cd80f-132e-4da0-991c-a6230d630f6f",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T20:17:42.806998Z",
+  "updated_at": "2026-07-21T20:19:26.872522Z",
+  "closed_at": "2026-07-21T20:19:26.872522Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "7f45e154-a048-40c7-adec-871e24268231",
+      "author": "xqjG",
+      "content": "ROUTED (phase-4 discipline, immediately): accepted as recorded residue, dispositions stated in the description; item 1's cleanup pass is future work entering by its own finding when a consumer materializes. With this routing the unrouted-findings query over Layer 1 returns EMPTY — phase 4's exit condition, recorded.",
+      "created_at": "2026-07-21T20:18:11.282657Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "1ffa873d-b2d8-4383-b848-3a4cbf61f898",
+      "author": "xqjG",
+      "content": "Routing complete (accepted as recorded residue, dispositions in the description; the phase-4 query stands empty). Closing — item 1's future cleanup enters by its own finding when a consumer materializes.",
+      "created_at": "2026-07-21T20:19:23.096483Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "6554d7ff-4cca-4dde-b26f-a24a4cbe2752",
+  "display_id": 32,
+  "title": "QE/F7: no test on E0080 explain_ref-None path",
+  "description": "Source: mdatron/review-log/2026-06-07-quality-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:02:25.237100Z",
+  "updated_at": "2026-06-08T02:23:54.500386Z",
+  "closed_at": "2026-06-08T02:23:54.500386Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:quality-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "14384f53-683c-4fed-b901-8e5e276b1fd9",
+      "author": "xqjG",
+      "content": "Addressed by mdatron-cli/tests/cli_integration.rs::verify_tty_does_not_render_explain_line_when_explain_ref_is_none (test already exists).",
+      "created_at": "2026-06-08T02:23:53.288233Z",
+      "kind": "resolution"
+    }
+  ]
+}

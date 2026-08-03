@@ -1,0 +1,21 @@
+{
+  "uuid": "14c94689-df05-4383-b335-5c26cd20cd50",
+  "display_id": 562,
+  "title": "statusline r16 UX: the settings write has no failure contract",
+  "description": "Round 16. Lens: ux (validator: DR). Defect: the read/probe surface is exhaustively enumerated but the one WRITE across the adopter trust boundary (confirm/accept installing the wiring) has no failure contract, no fixture — permission/IO/disk failure on the write is undefined, the never-panic guarantee being read-scoped; adjacent uncovered cell: accept-flag versus read-failure. Citations verified: contract:162, :219, :217, :187, :173. Proposed: resolved-candidate (write failure mirrors the read discipline — rustc-shaped diagnostic naming file and kind, no partial write left behind, never a panic, retry named; the withdrawn offer overrides the accept flag; write-failure fixture + criterion).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:52:35.323169Z",
+  "updated_at": "2026-07-20T02:55:04.398646Z",
+  "closed_at": "2026-07-20T02:55:04.398646Z",
+  "comments": [
+    {
+      "uuid": "261ba4a0-f5b5-46ce-b8f3-16d7201ffab4",
+      "author": "xqjG",
+      "content": "Fixed: the confirmed/accepted write carries the read side's discipline — kind-naming rustc diagnostic, no partial write survives, never a panic, retry named; the withdrawn offer overrides the accept flag; write-failure seed + criterion clause. Revision: Install bullet + corpus + criterion.",
+      "created_at": "2026-07-20T02:54:36.241761Z",
+      "kind": "resolution"
+    }
+  ]
+}

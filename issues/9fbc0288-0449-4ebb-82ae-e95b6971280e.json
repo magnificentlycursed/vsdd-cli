@@ -1,0 +1,35 @@
+{
+  "uuid": "9fbc0288-0449-4ebb-82ae-e95b6971280e",
+  "display_id": 575,
+  "title": "statusline amendment cold round 18",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 18 (post round-17: flag-vs-probe fixture; write-diagnostic full naming; dual-surface kind-keyed recovery data). Series 15-16-11-6-8-2-2-2-1-2-1-2-2-3-3-2-3.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T03:24:33.113860Z",
+  "updated_at": "2026-07-20T04:04:42.000127Z",
+  "closed_at": "2026-07-20T04:04:42.000127Z",
+  "comments": [
+    {
+      "uuid": "eb5819c0-0fc8-4f59-9485-0d76b2f3c873",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 18. Subject: revision 18 statusline anchors (round-17 set plus: the read-failure-with-accept-flag member and its no-write criterion; the write-diagnostic naming file/kind/retry; the dual-surface kind-keyed recovery data sentence). Out of scope: lane and effort amendments. Known-deliberate unchanged. Lens: UX, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T03:24:56.178827Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "bf2ea892-c84e-434c-82aa-d9ec7f520664",
+      "author": "xqjG",
+      "content": "Round 18 complete (UX). 3 filed: L252 casualty/retry for every settings kind; L253 success-write preservation (the clobber risk); L254 accept-flag vs existing entry + the versioned-data inventory fold. Series ...-2-3-3. Not clean; round 19 after disposition.",
+      "created_at": "2026-07-20T04:02:54.915839Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "3ecbd319-1465-4af1-9b70-3fe98b1c0a9e",
+      "author": "xqjG",
+      "content": "Round fully disposed: 3/3 fixed. mdatron verify clean on revision 19. Closing; round 19 dispatches (UX).",
+      "created_at": "2026-07-20T04:04:40.386244Z",
+      "kind": "result"
+    }
+  ]
+}

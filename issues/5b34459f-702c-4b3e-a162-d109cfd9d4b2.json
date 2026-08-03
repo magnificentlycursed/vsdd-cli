@@ -1,0 +1,64 @@
+{
+  "uuid": "5b34459f-702c-4b3e-a162-d109cfd9d4b2",
+  "display_id": 743,
+  "title": "Boundary sweep: three items from auditing our own build against the ratified #739 boundary",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T16:31:46.788125Z",
+  "updated_at": "2026-07-29T10:10:51.360048Z",
+  "closed_at": "2026-07-29T10:10:51.360034Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "7dff934f-6144-4d96-b7e2-63466b870528",
+      "display_id": 965,
+      "author": "xqjG",
+      "content": "THE SWEEP (parked in memory during the write-block, transferred now; three-question dispositions applied per the ratified procedure): (1) PARSER DIVERGENCE, the sharp one — mdatron's frontmatter parse requires the file to open exactly with the dash fence, so a BOM or CRLF opening reads as NO frontmatter and the file SILENTLY SKIPS the walk, while vsdd's loader (post-#727) tolerates both and validates — a tripwire-tier hole exactly where tolerance was added; closing-fence semantics match (both truncate at the first bare fence line). Disposition: in-scope upstream raise — BOM and CRLF tolerance, the loudness question for frontmatterless-file skips, and a shared fence-edge-case conformance corpus; the interim divergence stands documented here. (2) NUMERIC-CLAIMS PATTERN: prose counts versus frontmatter fields — in scope, unsupported today, raised as a generic primitive any consumer wants (the prose-restatement rule's mechanical half; the contract's own until-a-pattern-exists phrasing makes the raise owed). (3) DIAGNOSTIC FORMAT ALIGNMENT: not a capability raise — an engineering-conventions item: align vsdd's human render grammar to mdatron's exact shape when Layer 3 assembles the human form; recorded for the Layer 3 design act. Items 1 and 2 join the mdatron relay note beside the #739 scope statement the operator carries.",
+      "created_at": "2026-07-22T16:32:05.550880Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "c2ba3dfb-b0d4-4787-be83-d9d9845eef1c",
+      "display_id": 967,
+      "author": "xqjG",
+      "content": "ITEM 4, added during the clear (#742 fallout): the v3 migration UPDATED the chassis-deployed commands and deposited .claude/skills/ — (a) design.md's new frontmatter is invalid strict YAML (an unquoted flow-sequence-plus-pipes argument-hint; Claude Code tolerates it, mdatron correctly refused and blocked every commit) — fixed locally by quoting, RE-CLOBBER RISK noted since the file is chassis-owned; UPSTREAM RAISE joins items 1-2: deployed command frontmatter should parse as strict YAML. (b) The skills directory and the pre-v3 backup store are gitignored as chassis arrivals. (c) MANIFEST DEBT recorded, not expanded here: the new skills listing needs its installed-artifact manifest entry by the recorded-pair rule — a data touch owed at the next manifest edit, and the class-value question (the enum has command-listing, not a skills listing) rides with it.",
+      "created_at": "2026-07-22T16:34:04.172840Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "42856ec9-ef1b-4bf0-871c-9ebd58eed85c",
+      "display_id": 972,
+      "author": "xqjG",
+      "content": "RELAY TEXT DELIVERED (2026-07-22, in-session, correcting the routed-but-not-delivered gap the operator caught — a disposition naming a raise is not the raise): the full self-contained mdatron relay was handed to the operator for carriage — raise 1 (opening-fence strictness: BOM and U+FEFF and CRLF read as no-frontmatter at frontmatter.rs's exact-prefix check, verify's schema_class dispatch then silently skips; asks are fence tolerance, a loudness option for governed-glob files parsing to none, and a shared fence-edge conformance corpus with our five contributed cases), raise 2 (the numeric-claims primitive with the three historical drift fixtures offered and a conservative configured-references first cut suggested), plus the FYI separating the crosslink-owned strict-YAML defect from mdatron's scope. The dollspace-gay/crosslink filing for that defect stays drafted awaiting the operator's outward-facing go-ahead. CONDUCT NOTE for the record: the sweep's items were disposed on this issue but the mdatron-bound text had not been delivered in carriable form until now — routed-without-payload reads as done while being binned; delivery is part of the raise.",
+      "created_at": "2026-07-22T16:57:20.331056Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "078dd7ad-a3be-49de-b680-10fda4958d8b",
+      "display_id": 973,
+      "author": "xqjG",
+      "content": "THIRD MDATRON RAISE (operator-caught 2026-07-22, correcting the crosslink strict-YAML item's routing): the design.md defect ALSO goes to mdatron, and it is the more structural of the two. The crosslink side (ship valid YAML) fixes one file; the mdatron side fixes the class. RAISE 3 — SCOPING / IGNORE LIST: mdatron walks every frontmatter-bearing markdown in the tree, including files it neither owns nor should govern — chassis-deployed command files, third-party artifacts. A malformed third-party file therefore blocks the CONSUMER's commits over a document mdatron has no mandate to validate. Passes the three-question gate: in scope (which markdown mdatron validates is core Schematron-for-markdown territory), unsupported today (it walks all), generic (any consumer with third-party-deployed markdown wants it). Asks: a route-table-style ALLOWLIST (mdatron validates only what a consumer explicitly routes — Thermite's spec-routes.toml is the precedent, and the estate's own contract already carries a closed-world route table as a first-class concept) OR an IGNORE LIST as the lighter interim; plus a stated default (walk-all vs route-only) — the route-only default is the closed-world-correct one. This retires the design.md incident's whole class: with routing, an unrouted chassis command file is simply not mdatron's to refuse. The crosslink filing stays drafted (ship valid YAML regardless); the mdatron raise is the durable fix. Relay text for carriage delivered in-session alongside raises 1 and 2.",
+      "created_at": "2026-07-22T17:04:28.542609Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "cb5e8778-17b9-46a6-95cb-3a2f189c6cbc",
+      "display_id": 975,
+      "author": "xqjG",
+      "content": "RELAY DELIVERED (operator confirmation 2026-07-22): all three mdatron raises carried to the mdatron cycle — fence tolerance/silent-skip, the numeric-claims primitive, and the scoping/ignore-list ask. Deferral watches now armed on responses; the crosslink strict-YAML filing remains the separate outward item, downgraded to ship-valid-YAML-anyway once scoping lands.",
+      "created_at": "2026-07-22T17:12:14.368888Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "db12c300-71f1-42ad-8675-c40d70dce277",
+      "display_id": 1220,
+      "author": "xqjG",
+      "content": "CLOSED — DONE (tracker sweep #826). 'RELAY DELIVERED, all three items' (operator-confirmed 2026-07-22); boundary sweep resolved.",
+      "created_at": "2026-07-29T10:10:45.169968Z",
+      "kind": "decision"
+    }
+  ]
+}

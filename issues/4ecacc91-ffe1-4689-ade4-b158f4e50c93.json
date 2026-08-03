@@ -1,0 +1,12 @@
+{
+  "uuid": "4ecacc91-ffe1-4689-ade4-b158f4e50c93",
+  "display_id": 11,
+  "title": "Phase 0: Wire-format contract design + freeze",
+  "description": "v0.1.0 blocker. Must land + freeze before any other phase implementation touches the seam.\n\nScope: (1) JSON envelope shape for `mdatron verify --json` (top-level: mdatron_wire_version, findings array, summary, pipeline_status). (2) Exit-code semantics (SE's three-state model): 0 = pipeline OK + may have findings; 1 = pipeline OK + at least one error-severity finding; 2 = pipeline failed; 3 = binary unavailable/version mismatch. (3) Global flag wiring: --quiet, --json, --log-level, --log-format, --dry-run. (4) Namespace-separation rule MDATRON-Exxxx <-> VSDD-Exxxx strictly separate; no proxy/intercept. (5) Methodology amendment: Phase 3 cluster-batched cold-session as default; inline requires operator-directive event.\n\nAcceptance: wire envelope JSON schema documented in DESIGN-MDATRON.md; exit-code semantics documented and lint-checked; methodology.md amended.\n\nPer docs/refactor/binary-first-plan.md Phase 0.",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T19:05:37.524236Z",
+  "updated_at": "2026-06-08T04:02:35.702349Z",
+  "closed_at": "2026-06-08T04:02:35.702349Z"
+}

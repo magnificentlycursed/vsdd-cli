@@ -1,0 +1,21 @@
+{
+  "uuid": "827efaac-013a-4356-b6e4-d474a6ca7380",
+  "display_id": 393,
+  "title": "lane r1: governed set undefined; falsifiers key on undefined or self-declared predicate",
+  "description": "Lane round 1. Lenses: SE (F1) + QE (F6) merged (validators: SO, SE). Owner: SO session. Defect: 'code-touching work on existing behavior' appears in three non-identical forms with no definition — formatting passes and comment edits satisfy the falsifier (over-trigger) while the gate falsifier keys on the self-declared 'defect-fix commit' (maintenance-framing evasion, the exact hole the rule closes). Citations verified: contract:51, :64, :66, :81, :83. Proposed: resolved-candidate — define the governed set decidably (changes altering built behavior: executable source, build/dependency manifests, emitted diagnostics/schemas; behavior-preserving mechanical passes excluded and stated) and key both falsifiers on that one predicate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:53:59.180022Z",
+  "updated_at": "2026-07-19T23:58:27.808919Z",
+  "closed_at": "2026-07-19T23:58:27.808919Z",
+  "comments": [
+    {
+      "uuid": "61bd926f-6ac3-4053-b41b-da9a6d5d3d9e",
+      "author": "xqjG",
+      "content": "Fixed: governed set defined decidably (changes altering built behavior: executable source, build/dependency manifests, emitted diagnostics, schemas, generated-artifact sources; behavior-preserving mechanical passes excluded and stated in the commit); both falsifiers now key on 'governed-set commit', ending the self-declared predicate. Revision: Finding lifecycle bullet + both falsification clauses.",
+      "created_at": "2026-07-19T23:58:06.307440Z",
+      "kind": "resolution"
+    }
+  ]
+}

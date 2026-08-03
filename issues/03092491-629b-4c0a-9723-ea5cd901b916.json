@@ -1,0 +1,31 @@
+{
+  "uuid": "03092491-629b-4c0a-9723-ea5cd901b916",
+  "display_id": 163,
+  "title": "DR/F6: reserved-code lint error message operator-hostile",
+  "description": "Source: mdatron/review-log/2026-06-02-documentation-reviewer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:12.590120Z",
+  "updated_at": "2026-06-08T03:52:35.062880Z",
+  "closed_at": "2026-06-08T03:52:35.062880Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:documentation-reviewer",
+    "review-finding"
+  ],
+  "blockers": [
+    "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7"
+  ],
+  "comments": [
+    {
+      "uuid": "488acd55-3803-490c-9408-5c89ea5622f3",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@19d04d7 (Phase 4-take-2 Wave 10 raise-to-SO disposition).",
+      "created_at": "2026-06-08T03:52:34.336614Z",
+      "kind": "resolution"
+    }
+  ]
+}

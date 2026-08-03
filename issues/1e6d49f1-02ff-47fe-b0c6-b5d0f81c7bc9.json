@@ -1,0 +1,29 @@
+{
+  "uuid": "1e6d49f1-02ff-47fe-b0c6-b5d0f81c7bc9",
+  "display_id": 691,
+  "title": "r1 minor SA: domain-lens entries stretch the affordance map beyond chassis-affordance scope — confirm the home",
+  "description": "Evidence: act-to-affordance-map.md:17; the contract frames the map as the chassis-affordance closure and the substrate step's mechanisms as milestone/session/hook/skill/config — a composition member is not among them; the map becomes a second composition-routing surface. Disposition: SO/AIE confirm the map as the home for act-scale domain summoning, or relocate the rule to composition integrity rules. Owner: ai-engineer. Validator: solution-owner.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:19:19.270581Z",
+  "updated_at": "2026-07-21T04:15:35.026441Z",
+  "closed_at": "2026-07-21T04:15:35.026441Z",
+  "comments": [
+    {
+      "uuid": "e5e567ef-e296-489e-bb24-8142ceee31e2",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): the generalized map CONFIRMED. The act-to-affordance map is the single home for ALL act-to-vehicle bindings — chassis-workflow, skill, domain-lens, session-surface. The session-surface adoption (decision on #597, commit f0088100) already used the map this way; this ruling makes the de-facto scope de-jure. The domain-lens entry stays; composition-routing prose gains a one-line contract note at the amendment window naming the map as the act-scale summoning home. Rejected: splitting non-chassis kinds into a second artifact.",
+      "created_at": "2026-07-21T03:52:58.688120Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "9d257b5d-e4f6-468d-a98b-61db05231004",
+      "author": "xqjG",
+      "content": "OPERATOR RULING recorded above (the generalized map confirmed); no data-side change — the map already carries domain-lens and session-surface entries lawfully under this ruling. The one-line contract note rides #698. Closing; the amendment window carries the remaining work.",
+      "created_at": "2026-07-21T04:15:29.076405Z",
+      "kind": "result"
+    }
+  ]
+}

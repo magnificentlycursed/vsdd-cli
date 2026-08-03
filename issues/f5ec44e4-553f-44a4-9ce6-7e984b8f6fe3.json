@@ -1,0 +1,21 @@
+{
+  "uuid": "f5ec44e4-553f-44a4-9ce6-7e984b8f6fe3",
+  "display_id": 398,
+  "title": "lane r1: pre-fix baseline undefined",
+  "description": "Lane round 1. Lens: QE (F3) (validator: SE). Owner: SO session. Defect: 'the pre-fix code' names no resolvable commit (parent? recorded base? squash/multi-commit fixes?) — no mechanized gate can locate the checkout target. Citations verified: contract:64, :66 vs :61. Proposed: resolved-candidate (finding issue records the baseline; default = fix commit's parent).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:06.763357Z",
+  "updated_at": "2026-07-19T23:58:33.492266Z",
+  "closed_at": "2026-07-19T23:58:33.492266Z",
+  "comments": [
+    {
+      "uuid": "8fbbceeb-558a-477c-9f08-7d00a07062b5",
+      "author": "xqjG",
+      "content": "Fixed: the finding issue records the baseline commit; single-commit default is the fix commit's parent. Revision: Phase exit by gate bullet + falsifier.",
+      "created_at": "2026-07-19T23:58:12.085622Z",
+      "kind": "resolution"
+    }
+  ]
+}

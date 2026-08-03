@@ -1,0 +1,27 @@
+{
+  "uuid": "c862ee6b-13be-47b7-8f7b-9422839026f5",
+  "display_id": 323,
+  "title": "Pricing purity unbound by any acceptance criterion",
+  "description": "QE gap, the round's one substantive item: Composition purity names only the composition function; pricing's purity and two of three properties have no CI falsifier before Phase 5. Fix: the criterion names both functions. [owner: quality-engineer; validator: solution-owner]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:06:42.134466Z",
+  "updated_at": "2026-07-19T22:07:29.945066Z",
+  "closed_at": "2026-07-19T22:07:29.945066Z",
+  "labels": [
+    "phase-1b-round-2",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "12ff8b67-aa50-469c-8284-19c95bfe0289",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b micro-pass (sha256:cccfa7da5522125e0cd889f70333e62b11ccb266189f953cd598f4e393ab90e4).",
+      "created_at": "2026-07-19T22:07:28.761965Z",
+      "kind": "result"
+    }
+  ]
+}

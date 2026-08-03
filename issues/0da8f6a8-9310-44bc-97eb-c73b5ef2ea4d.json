@@ -1,0 +1,21 @@
+{
+  "uuid": "0da8f6a8-9310-44bc-97eb-c73b5ef2ea4d",
+  "display_id": 490,
+  "title": "lane r6 Meth nit: revision header omits the 2026-07-20 amendments",
+  "description": "Lane round 6. Lens: methodology (lower-confidence observation, folded). Owner: SO session. The change-provenance header records through 2026-07-19 while three 2026-07-20 clauses exist inline. Proposed: resolved-candidate (header updated).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:56:02.370527Z",
+  "updated_at": "2026-07-20T00:58:05.841618Z",
+  "closed_at": "2026-07-20T00:58:05.841618Z",
+  "comments": [
+    {
+      "uuid": "503ac34b-f675-45a5-98c3-1d399b93539e",
+      "author": "xqjG",
+      "content": "Fixed: revision header extended with the post-ratification amendment record incl. the 2026-07-20 clauses. Revision: header line.",
+      "created_at": "2026-07-20T00:57:50.896700Z",
+      "kind": "resolution"
+    }
+  ]
+}

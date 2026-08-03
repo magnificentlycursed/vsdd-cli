@@ -1,0 +1,21 @@
+{
+  "uuid": "d85fe164-adcc-434c-a3f4-89ea119ae778",
+  "display_id": 365,
+  "title": "statusline r3 SA: derivation display-field phrasing not verbatim with renderer",
+  "description": "Round: statusline amendment cold round 3. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: derivation says 'the active milestone's open-finding count' (count only) where Status and renderer say 'the active milestone with its open-finding count' (identity + count). Citations verified: contract:196 vs :197, :160. Proposed: dismissed-candidate per reviewer (milestone identity separately carried in milestone states; 1c audit binds to the renderer's fields) — with the one-phrase alignment landed as a courtesy edit to remove the ambiguity.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:34.190935Z",
+  "updated_at": "2026-07-19T23:29:39.510707Z",
+  "closed_at": "2026-07-19T23:29:39.510707Z",
+  "comments": [
+    {
+      "uuid": "057189c0-47bb-4faf-86a0-8f465673ec87",
+      "author": "xqjG",
+      "content": "Dismissed per reviewer's own weighing (no materialization gap: milestone identity carried in milestone states; 1c audit binds to renderer fields) — with the courtesy alignment landed: derivation now reads 'the active milestone with its open-finding count', verbatim with Status and renderer. All three enumerations identical.",
+      "created_at": "2026-07-19T23:28:50.525107Z",
+      "kind": "resolution"
+    }
+  ]
+}

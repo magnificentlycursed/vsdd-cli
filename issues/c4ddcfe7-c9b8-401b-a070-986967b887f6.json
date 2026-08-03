@@ -1,0 +1,21 @@
+{
+  "uuid": "c4ddcfe7-c9b8-401b-a070-986967b887f6",
+  "display_id": 250,
+  "title": "amend-r5-SA: convergence dispatches outside the split",
+  "description": "Minor. Fix: isolation dispatches named autonomous-side, preflighted, format-carried during bootstrap. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:02:17.236179Z",
+  "updated_at": "2026-07-20T19:08:39.036296Z",
+  "closed_at": "2026-07-20T19:08:39.036296Z",
+  "comments": [
+    {
+      "uuid": "af5662fd-7d5c-4967-a3da-cd6264a2ffe0",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:08:35.915888Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "ed269944-ea06-4d31-b554-555d2d8d1c4f",
+  "display_id": 244,
+  "title": "amend-r5-SA: execution-on-attended-vehicle seed unreached",
+  "description": "Minor. Fix: roster declaration. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:01:59.811136Z",
+  "updated_at": "2026-07-20T19:08:01.527563Z",
+  "closed_at": "2026-07-20T19:08:01.527563Z",
+  "comments": [
+    {
+      "uuid": "53a2a1cf-865e-4c0a-aaa0-add27a77a151",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:07:58.571053Z",
+      "kind": "resolution"
+    }
+  ]
+}

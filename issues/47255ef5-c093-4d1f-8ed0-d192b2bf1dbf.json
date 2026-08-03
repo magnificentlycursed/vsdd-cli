@@ -1,0 +1,21 @@
+{
+  "uuid": "47255ef5-c093-4d1f-8ed0-d192b2bf1dbf",
+  "display_id": 646,
+  "title": "posture-r4-AI: launch derivation has hidden host-state inputs",
+  "description": "Blocking, derivation. Interim effort and prompt-injection mechanics are host-session state; two conformant implementations diverge. Fix: mode derives from work; vehicle bindings are 1c data; the live fire exercises the derivation live. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:57.263072Z",
+  "updated_at": "2026-07-20T18:16:06.925540Z",
+  "closed_at": "2026-07-20T18:16:06.925540Z",
+  "comments": [
+    {
+      "uuid": "fff21056-d1c2-4a1c-bd54-8a09650347db",
+      "author": "xqjG",
+      "content": "Resolved: the mode derives from the work; vehicle bindings and member observations are versioned 1c data; the live fire exercises the derivation; the hidden-input concern for effort remains recorded in the effort amendment's control-surfaces honesty clause.",
+      "created_at": "2026-07-20T18:16:04.581246Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "78334328-0a93-4fa4-8446-e1c8d34de0ae",
+  "display_id": 715,
+  "title": "cold-pass nit collector: three items; sign-off recommended ready as-is",
+  "description": "(1) adopted-vs-draft-proposal term overload — the DR pass found it genuinely confusing (one tracker chase to reconcile; tracker-less readers sit with an apparent contradiction; misreading direction conservative), which FIRES the #697 item-5 standing disposition: the one clarifying line lands in all nine artifacts. (2) manifest resolution/fail_mode vocabularies unglossed (exists vs exists-and-referenced vs worded-absence; fail_mode undefined) — one glossing sentence would close it; operator discretion. (3) manifest opening paragraph's em-dash nesting detaches the enumeration tail from its antecedent — optional sentence split; operator discretion. Owner: documentation-reviewer findings; data-engineer executes. Validator: sanity-check.",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "5868af21-6bf3-4811-ac0e-207ad5f7d52f",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T16:43:32.206512Z",
+  "updated_at": "2026-07-21T16:48:08.219761Z",
+  "closed_at": "2026-07-21T16:48:08.219761Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "4c19fc4b-4c91-4290-87f0-c949935f1b18",
+      "author": "xqjG",
+      "content": "ITEM 1 EXECUTED (commit 1cfe09aa): the clarifying line landed in all nine artifacts per the #697 item-5 standing disposition, which the cold pass's finding fired. Items 2 (resolution/fail_mode gloss) and 3 (manifest sentence split) remain open at operator discretion — both graded acceptable as recorded residue by the finding lens.",
+      "created_at": "2026-07-21T16:44:22.476114Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "b468b87e-ebd3-4f5d-a209-1a2932d38ad5",
+      "author": "xqjG",
+      "content": "ITEMS 2 AND 3 EXECUTED (operator-directed at sign-off; commit above on this trail): the resolution/fail_mode gloss paragraph and the opening-paragraph sentence split both landed in the manifest. All three collector items are now closed dispositions.",
+      "created_at": "2026-07-21T16:48:04.453853Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "9c1b13b7-e379-40dc-a233-2ad54e08ff79",
+  "display_id": 612,
+  "title": "1c-DR-r2: L7 and L9 omit Depends-on declarations for Layer 1",
+  "description": "Minor, check b. Citation (Layer 7): 'the branch-grammar pre-push backstop over the registered grammar data (a Layer 1 artifact)' — #332 declares no intra-repo Depends-on; #334 consumes calibration-band data without declaring Layer 1. Fix: explicit Depends-on lines at both. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:21:04.989045Z",
+  "updated_at": "2026-07-20T17:22:00.447079Z",
+  "closed_at": "2026-07-20T17:22:00.447079Z",
+  "comments": [
+    {
+      "uuid": "43950a07-b759-429e-a79b-5e11b6d7685d",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 7 now declares 'Depends on: Layer 1's data artifacts (the registered branch grammar among them)'; Layer 9 adds Layer 1's calibration-band and token-budget data. mdatron verify clean.",
+      "created_at": "2026-07-20T17:21:59.055066Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "uuid": "621f83c4-4ccd-4aa0-b15c-290237888d56",
+  "display_id": 846,
+  "title": "Upstream crosslink observation: /design --continue unconditionally resets pipeline.json (stage designed, plans/runs wiped)",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T19:36:18.173557Z",
+  "updated_at": "2026-08-02T00:50:00.915947Z",
+  "closed_at": "2026-08-02T00:50:00.915939Z",
+  "labels": [
+    "upstream"
+  ],
+  "comments": [
+    {
+      "uuid": "655c22b1-6bb6-4b59-8a30-3ee650e39042",
+      "display_id": 1307,
+      "author": "xqjG",
+      "content": "DETAIL (crosslink @ 6b4f736f): the /design skill's 'Pipeline State Initialization' heredoc (resources/claude/commands/design.md:163-181) unconditionally writes stage:'designed', plans:[], runs:[] on EVERY invocation — including --continue on a design whose pipeline has advanced. Consequence: resuming iteration on a planned/running design wipes its plan/run history and regresses its stage. The Rust side is fine (design_cmd.rs never touches pipeline.json; kickoff's ensure_pipeline_state creates-if-absent only). Fix direction: the skill should preserve an existing pipeline.json's stage/plans/runs and update only doc_hash.",
+      "created_at": "2026-08-01T19:37:29.914644Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "96faf6fc-f801-45b1-8fdc-f0f02bac559c",
+      "display_id": 1321,
+      "author": "xqjG",
+      "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+      "created_at": "2026-08-01T20:02:20.406818Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2c359fec-2a38-4d8c-9abe-ad1a09559520",
+      "display_id": 1329,
+      "author": "xqjG",
+      "content": "Filed upstream: https://github.com/dollspace-gay/crosslink/issues/56",
+      "created_at": "2026-08-01T20:06:32.954239Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2fa3b712-acce-48c7-9bed-e33aae05ba3f",
+      "display_id": 1370,
+      "author": "xqjG",
+      "content": "CLOSED (tracked upstream): filed as dollspace-gay/crosslink#56, fix in flight (their PR #65); epic magnificentlycursed/crosslink#2 tracks. The lifecycle-member interaction (the --continue heredoc vs the sanctioned amend path) is codified in the contract's Design-doc lifecycle member.",
+      "created_at": "2026-08-02T00:49:54.219561Z",
+      "kind": "result"
+    }
+  ]
+}

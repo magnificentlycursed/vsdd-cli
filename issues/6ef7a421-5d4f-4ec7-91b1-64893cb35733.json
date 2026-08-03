@@ -1,0 +1,25 @@
+{
+  "uuid": "6ef7a421-5d4f-4ec7-91b1-64893cb35733",
+  "display_id": 709,
+  "title": "terminal minor SA: statusline-wiring entry not re-swept against the new host-wiring axis value",
+  "description": "Evidence: installed-artifact-manifest.md:152 lifetime per-clone-wiring vs :157 note 'wiring lives at user level today' — host scope by the file's own surface declaration; the #703 axis addition touched only the plugin-set entry and never re-swept existing entries. Disposition: reclassify lifetime host-wiring, same axis rationale as #703. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "12cba19e-0feb-4891-a149-e483c4a92de8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T13:37:23.991846Z",
+  "updated_at": "2026-07-21T13:38:32.905337Z",
+  "closed_at": "2026-07-21T13:38:32.905337Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "14648d64-6dbc-4e31-aea5-495b55f272e1",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit above on this trail): statusline-wiring lifetime reclassified host-wiring with the escaped-sweep note; the axis now reads consistently across both host-scoped entries. Re-run of the terminal round re-verifies (validator: solution-architect).",
+      "created_at": "2026-07-21T13:38:29.768882Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "3e613757-95d1-4668-af63-324be716afee",
+  "display_id": 778,
+  "title": "Layer 3 round 1 major QE+SE convergent: the declared time budgets have no instrument — the wall-clock test stubs the acquisition its registered scope names, and per_repo_budget_ms is consumed nowhere",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T05:44:40.075314Z",
+  "updated_at": "2026-07-26T06:28:12.683485Z",
+  "closed_at": "2026-07-26T06:28:12.683460Z",
+  "comments": [
+    {
+      "uuid": "f8904181-e4b2-469e-903d-5752eade1a75",
+      "display_id": 1032,
+      "author": "xqjG",
+      "content": "Fixed in ff331dd9: the wall-clock conduct test now times the REAL acquirer against the hermetic root — the registered acquisition-through-render scope executes (offline-fast; the tracker-present timing joins the command-level fixtures, declared); and per_repo_budget_ms has its consumer — member repos render through bounded_line with recv_timeout against the configured budget, breach yielding a worded repo-identified line, never a stalled display; the current repo renders unbounded by design (it is the line the display exists for). REGISTRATION CANDIDATE raised: the breach line's copy ('no answer within budget — vsdd status') is DRAFT statusline copy awaiting the data set's next adoption batch.",
+      "created_at": "2026-07-26T06:27:59.058769Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "e096ed98-e7e8-4b83-8e7e-4ade609c115d",
+  "display_id": 717,
+  "title": "pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T17:51:37.305632Z",
+  "updated_at": "2026-07-21T17:55:56.991608Z",
+  "closed_at": "2026-07-21T17:55:56.991608Z",
+  "labels": [
+    "bug"
+  ],
+  "comments": [
+    {
+      "uuid": "cf5063f3-1e15-447d-8743-7c4bbc0cb5f1",
+      "author": "xqjG",
+      "content": "CLASSIFICATION (the symmetric duty, recorded at filing before the fix): fix-lane increment entry — the defect lives in pre-existing test code (vsdd-core/tests/schema_validation.rs), outside Layer 1's build scope. Form: BROKEN VERIFICATION SURFACE — the workspace suite cannot compile, so no pin test is expressible; the recorded failing state IS the red evidence per the contract's lawful bootstrap path: cargo test --workspace fails at compile with ten E0308 mismatches, serde_yaml::Value vs serde_yaml_ng::Value, at schema_validation.rs lines including 34/45/56/67/78/89/100/124/138 against mdatron-core schema.rs:52 validate(&YamlValue). Root cause: the mdatron path dependency moved its YAML type to serde_yaml_ng; this consumer's tests were not swept. DISCOVERED at the Layer 1 red-gate authoring's first suite run — which also falsifies the adopted seed's zero-pre-existing-failures baseline claim: the truthful baseline is suite-cannot-compile, corrected here per the provenance discipline. Split side: attended act ends at this filing; the fix follows immediately (bootstrap hand-carry; validator: quality-engineer at the terminal re-verify). Fix shape: the test file adopts serde_yaml_ng 0.10 as a dev-dependency matching the consumed API; no behavior change, compile restoration only.",
+      "created_at": "2026-07-21T17:52:23.576282Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "436e370d-9c43-4bf8-b974-695a2427d8a8",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e706fd42): schema_validation.rs adopts serde_yaml_ng 0.10 matching mdatron-core's consumed API; the suite compiles and its nine tests pass. Gate posture per the broken-verification-surface form: the recorded failing state above is the red evidence; the restored green run is on the #716 red-run record (31 pre-existing tests green). Bootstrap hand-carry; validator quality-engineer re-verifies at the layer's terminal check. Root-cause note for the estate: the mdatron path dependency moved YAML types — consumers' test sweeps do not ride its releases; a retest-trigger-shaped watch item for future mdatron moves.",
+      "created_at": "2026-07-21T17:55:52.069693Z",
+      "kind": "result"
+    }
+  ]
+}

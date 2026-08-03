@@ -1,0 +1,21 @@
+{
+  "uuid": "652bcaa9-dcfd-49a6-ae2a-7cd3e7a837fd",
+  "display_id": 394,
+  "title": "lane r1: fourth lane outside the classification universe; no receipt-moment analog",
+  "description": "Lane round 1. Lenses: SE (F4) + methodology (F1) merged (validators: SO). Owner: SO session. Defect: Directive reconciliation enumerates three classifications; the symmetric bullet routes fixes to an unenumerated fourth ('increments'); a self-originated fix has no operator utterance, so 'exactly as operator directives' has no statement-target — a cold agent force-fits recorded-override, which authorizes execute-then-record, inverting before-implementation. Citations verified: contract:46, :48, :51. Proposed: resolved-candidate — enumerate the increment lanes in the classification set and define the statement-target as the finding issue at filing.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:00.256518Z",
+  "updated_at": "2026-07-19T23:58:28.937515Z",
+  "closed_at": "2026-07-19T23:58:28.937515Z",
+  "comments": [
+    {
+      "uuid": "ca78212d-9c4e-4278-8a3a-6ac9be94ece9",
+      "author": "xqjG",
+      "content": "Fixed: classification universe extended with 'increment entry' (feature at 1a, or the fix lane); statement-target for self-originated work defined as the finding issue at filing (the receipt-moment analog), with the scope reading as the governed-set determination. Revision: Directive reconciliation enumeration + symmetric bullet.",
+      "created_at": "2026-07-19T23:58:07.567335Z",
+      "kind": "resolution"
+    }
+  ]
+}

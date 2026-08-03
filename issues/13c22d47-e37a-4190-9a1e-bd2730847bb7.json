@@ -1,0 +1,28 @@
+{
+  "uuid": "13c22d47-e37a-4190-9a1e-bd2730847bb7",
+  "display_id": 3,
+  "title": "Expand claude-code-cli supplement: hook event catalog + MCP + sub-agents + OTel signal catalog + FinOps queries",
+  "description": "Goal: \n\nAcceptance criteria:\n- \n\nFor the revised AIE domain (crosslink #2) to actually answer substrate questions concretely, claude-code-cli supplement needs new sections: (1) Hook event catalog — SessionStart / PreToolUse / PostToolUse / UserPromptSubmit / Stop / SubagentStop / Notification — each with doc URL, firing-conditions, cost-impact, problem-to-hook mapping; (2) MCP server pattern — registration, tool surface; (3) Sub-agent via Task tool — when to use, prompt structure, cost; (4) Statusline + CLAUDE.md + slash commands + background tasks; (5) OTel signal catalog — metrics, log events, traces, FinOps queries, hook-attribute-injection bridge for per-skill/per-domain/per-phase attribution. Substantial but tractable.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T01:04:39.841601Z",
+  "updated_at": "2026-07-29T10:03:50.806127Z",
+  "closed_at": "2026-07-29T10:03:50.806116Z",
+  "labels": [
+    "ai-engineer",
+    "feature",
+    "supplement",
+    "tech-debt"
+  ],
+  "comments": [
+    {
+      "uuid": "d496665e-2a6a-4a82-a2da-3ab2f8e6e665",
+      "display_id": 1207,
+      "author": "xqjG",
+      "content": "CLOSED — tracker sweep (#826, operator-directed 2026-07-29). Expand claude-code-cli supplement — supplements are current under the ratified data sets. A binary-first-plan stub (2026-06-02); the plan is superseded by the ratified contract (.design/agent-first-vsdd-toolkit.md:4) + rescoped by #819's enforcement-spine slices, and the plan doc was removed (#826). No live scope in the stub; where still needed the work is re-homed to the slices.",
+      "created_at": "2026-07-29T10:03:44.580029Z",
+      "kind": "decision"
+    }
+  ]
+}

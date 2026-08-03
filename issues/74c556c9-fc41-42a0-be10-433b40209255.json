@@ -1,0 +1,21 @@
+{
+  "uuid": "74c556c9-fc41-42a0-be10-433b40209255",
+  "display_id": 774,
+  "title": "Phase 2c execution, Layer 3: refactor under the green suite",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T01:16:37.926754Z",
+  "updated_at": "2026-07-26T01:20:47.635629Z",
+  "closed_at": "2026-07-26T01:20:47.635608Z",
+  "comments": [
+    {
+      "uuid": "063c7af3-5d25-450e-825e-fbe40ecfbe3c",
+      "display_id": 1024,
+      "author": "xqjG",
+      "content": "2c COMPLETE (commit follows the green gate on the #773 trail). Survey verdict: the layer landed close to shape — two items warranted movement under the green suite (the duplicated degraded-kind lookup, now one helper beside the composition root; the effectful per-repo segment helper, re-homed from main.rs's argument parsing to status::mod where the acquisition seams live). Declined, with reasons: the load-or-exit repetition in cmd_status stays (ExitCode's early-return shape reads clearer than a closure indirection at two sites); segment.rs's registered-field expect stays (the display fields are pinned versioned data; a miss is a drifted registry, and the loader's own schema-pair validation is the lawful catcher). PHASE-EXIT GATE RECORDED (gate: phase-exit-gate, phase: phase-2c, layer: 3, result: PASS; evidence: the commit on this trail; 116 tests, clippy zero, fmt clean, mdatron verify clean). Next: the phase-3 adversarial rounds.",
+      "created_at": "2026-07-26T01:20:35.278097Z",
+      "kind": "result"
+    }
+  ]
+}

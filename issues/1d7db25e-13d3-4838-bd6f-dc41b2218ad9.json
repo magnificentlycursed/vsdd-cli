@@ -1,0 +1,21 @@
+{
+  "uuid": "1d7db25e-13d3-4838-bd6f-dc41b2218ad9",
+  "display_id": 337,
+  "title": "statusline r1 SA: stdin session-JSON provenance unresolved",
+  "description": "Round: statusline amendment cold round 1. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: supplement catalogs 'session JSON on stdin' as substrate surface but the contract never states whether the segment's derivation consumes stdin (a new untrusted boundary needing fuzz scope) or ignores it reading chassis queries as the bootstrap does; the session field's source is unnamed. Citations verified: contract:167 vs :160; ~/.claude/vsdd-statusline.sh:11 (stdin unread). Anchor: Methodology rewrite (compounds renderer-signature finding). Proposed: resolved-candidate. Failure: a future architect cannot tell where the segment's inputs enter the process.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:53.394558Z",
+  "updated_at": "2026-07-19T23:08:13.793354Z",
+  "closed_at": "2026-07-19T23:08:13.793354Z",
+  "comments": [
+    {
+      "uuid": "6b918a07-7e57-4c46-88ad-68e7e64826a0",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Contract now states the segment consumes no stdin: substrate session JSON stays cataloged but unconsumed — the named seam where deferred observability surfaces arrive as their own rendering. Segment inputs are the state artifact and corroboration snapshot only. Revision: Status bullet.",
+      "created_at": "2026-07-19T23:07:50.509419Z",
+      "kind": "resolution"
+    }
+  ]
+}

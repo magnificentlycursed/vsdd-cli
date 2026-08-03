@@ -1,0 +1,21 @@
+{
+  "uuid": "fabc09e7-7448-4f16-af1c-2cc92fc2b466",
+  "display_id": 424,
+  "title": "lane r2 QE: failure-reason has no representation or compare step",
+  "description": "Lane round 2. Lens: quality-engineer (validator: SE). Owner: SO session. Defect: 'fails for the defect's stated reason' compares a runtime failure to prose; no reason representation, no gate compare stage — the wrong-reason fixture is unbuildable and the criterion degrades to pass/fail, missing the exact mdatron failure mode. Citations verified: contract:64, :166, :180, :206. Proposed: resolved-candidate (the red run records test identity and failure kind — assertion, panic, compile, timeout; the finding issue names the defect's tests; wrong-reason = mismatch of either — mechanizable).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:44.359019Z",
+  "updated_at": "2026-07-20T00:16:58.970698Z",
+  "closed_at": "2026-07-20T00:16:58.970698Z",
+  "comments": [
+    {
+      "uuid": "716ac9ce-ba53-4c87-90f4-42c9de29a90d",
+      "author": "xqjG",
+      "content": "Fixed: red run records test identity and failure kind (assertion, panic, compile failure, timeout); finding issue names the defect's tests; wrong-reason = mechanical mismatch of either — no prose comparison. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-20T00:16:35.331077Z",
+      "kind": "resolution"
+    }
+  ]
+}

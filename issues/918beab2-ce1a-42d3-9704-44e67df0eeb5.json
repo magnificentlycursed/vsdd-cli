@@ -1,0 +1,26 @@
+{
+  "uuid": "918beab2-ce1a-42d3-9704-44e67df0eeb5",
+  "display_id": 751,
+  "title": "Layer 2 round 1 major security: unbounded, untimed subprocess capture at both chassis and git boundaries",
+  "description": "acquire.rs:89 and refs.rs:26 use Command::output with no output cap and no timeout, while every FILE read in the crate rides the 1 MiB bounded-read discipline (#732) — an inconsistency a hostile or wedged subprocess exploits (unbounded stdout materialization; an indefinitely-hanging child blocks status forever). Disposition: cap subprocess stdout and impose a wall-clock timeout, mapping breach to the unusable outcome; align the posture with the bounded-read rule. Owner: security. Validator: software-engineer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:02:12.824481Z",
+  "updated_at": "2026-07-22T17:37:07.130679Z",
+  "closed_at": "2026-07-22T17:34:18.163616Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "2859ee4a-8183-4b0f-ae37-527c86422f7b",
+      "display_id": 982,
+      "author": "xqjG",
+      "content": "Fixed in d84109f5: subprocess.rs runs every child bounded and timed — stdout capped at the shared artifact bound (one documented bound for materialization), stderr at 4KiB, a 10s wall-clock deadline with kill, reader threads so a chatty child cannot wedge a full pipe. Both crosslink acquisition arms and the git ref listing ride it. PATH-resolution posture documented as operator-environment trust, out of model.",
+      "created_at": "2026-07-22T17:34:11.998755Z",
+      "kind": "result"
+    }
+  ]
+}

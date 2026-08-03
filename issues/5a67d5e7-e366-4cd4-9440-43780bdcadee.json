@@ -1,0 +1,21 @@
+{
+  "uuid": "5a67d5e7-e366-4cd4-9440-43780bdcadee",
+  "display_id": 438,
+  "title": "lane r3 SE+QE: forward gate satisfiable by missing-symbols compile failure",
+  "description": "Lane round 3. Lenses: SE + QE merged, convergent from both directions (validators: SO, SE). Owner: SO session. Defect: for the majority fix shape (test references fix-introduced symbols) the forward gate either falsely blocks on wrong-reason or is trivially satisfied by declaring compile-failure — a missing-symbols artifact demonstrating nothing, the assertion-based cheat reinstated; the retrofit branch already treats the identical topology honestly, the forward path does not; pre-publish this hardens to a deadlock. Citations verified: contract:64, :66, :85. Proposed: resolved-candidate — pin-test discipline: the defect's test pins defective behavior through the baseline's existing surface (Thermite's critic pins divergences in existing behavior); compile failure is valid red only when the code under test fails to compile, never the test itself; a pin inexpressible against the baseline surface is a forward surface-limitation, validator-approved — forward and retrofit symmetric.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:34.739727Z",
+  "updated_at": "2026-07-20T00:28:38.432092Z",
+  "closed_at": "2026-07-20T00:28:38.432092Z",
+  "comments": [
+    {
+      "uuid": "3024d998-d835-40b4-a49b-c7d2f3dc9528",
+      "author": "xqjG",
+      "content": "Fixed: pin-test discipline — the pin tests defective behavior through the baseline's existing surface; a red that is the test itself failing to build (unresolved identifiers existing at HEAD but not baseline — mechanical determination) does not satisfy the gate; compile failure valid only when the code under test fails to compile; an inexpressible pin is a validator-approved surface-limitation, the same clause forward and retrofit — symmetric honesty, no fabricated red. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-20T00:28:25.794656Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "d8e84e90-6a2b-46b2-8d51-e82225545366",
+  "display_id": 400,
+  "title": "lane r1: retrofit path undefined",
+  "description": "Lane round 1. Lens: QE (F4) (validator: SE). Owner: SO session. Defect: the rule is strictly pre-landing; the cited incident is already landed, and the anticipated retrofit (running the fix's tests against the pre-fix commit after the fact) has no defined form or evidential status — remediation of the design's own motivating case is ad hoc. Citations verified: contract:64, :68, :85. Proposed: resolved-candidate (retrofit = same checkout-and-run after the fact, recorded on the finding issue, marked retrofit: closes the verification debt, not the process breach).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:11.108349Z",
+  "updated_at": "2026-07-19T23:58:35.711110Z",
+  "closed_at": "2026-07-19T23:58:35.711110Z",
+  "comments": [
+    {
+      "uuid": "4a3f1f6e-a907-4e45-aaf9-9e8053f88736",
+      "author": "xqjG",
+      "content": "Fixed: retrofit form defined — same checkout-and-run against the recorded baseline after the fact, recorded on the finding issue, marked retrofit; equivalent verification evidence while the deviation record stands (repairs the verification, not the breach). Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-19T23:58:14.271457Z",
+      "kind": "resolution"
+    }
+  ]
+}

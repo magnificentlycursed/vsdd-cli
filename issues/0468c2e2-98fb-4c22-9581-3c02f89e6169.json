@@ -1,0 +1,21 @@
+{
+  "uuid": "0468c2e2-98fb-4c22-9581-3c02f89e6169",
+  "display_id": 518,
+  "title": "effort r1 AIE: per-stage effort presupposes an unestablished control seam",
+  "description": "Effort round 1. Lens: ai-engineer (validator: PE). Defect: the confirmed dispatch capability is prompt injection, but the API thinking budget is a request parameter no prompt can set; the fix-pass stage runs in the implementing session (session-dial surface) while cold rounds are dispatches (parameter surface) — two control planes conflated; a manifest could record an effort no seam applied. Citations verified: contract:91, :103 vs :293, :81. Proposed: resolved-candidate (state the two control surfaces honestly; the dispatch-parameter seam joins the manifest-injection seam as a named upstream capability requirement; until it lands, recorded effort for cold dispatches is the vehicle's session-level setting, recorded as such).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:38.601375Z",
+  "updated_at": "2026-07-20T01:30:15.815391Z",
+  "closed_at": "2026-07-20T01:30:15.815391Z",
+  "comments": [
+    {
+      "uuid": "b01896be-acdf-458c-a861-53e7f74346c3",
+      "author": "xqjG",
+      "content": "Fixed: two control surfaces stated honestly — session dial for the implementing session's work, dispatch parameter for cold dispatches as a named upstream capability requirement beside the manifest-injection seam; until it lands, a cold dispatch's recorded effort is the vehicle's session-level setting, recorded as such. Revision: Cost is knowable advisory clause.",
+      "created_at": "2026-07-20T01:29:51.722552Z",
+      "kind": "resolution"
+    }
+  ]
+}

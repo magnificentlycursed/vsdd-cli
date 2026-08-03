@@ -1,0 +1,31 @@
+{
+  "uuid": "5120a23e-b23e-4ebb-a088-f11a0d93a938",
+  "display_id": 161,
+  "title": "DR/F4: DESIGN sub-section template inconsistent",
+  "description": "Source: mdatron/review-log/2026-06-02-documentation-reviewer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:08.450160Z",
+  "updated_at": "2026-06-08T03:52:33.388979Z",
+  "closed_at": "2026-06-08T03:52:33.388979Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:documentation-reviewer",
+    "review-finding"
+  ],
+  "blockers": [
+    "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7"
+  ],
+  "comments": [
+    {
+      "uuid": "41bbf1fa-9bf4-4d5e-8c73-e88716a7bbf1",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@f7633de (Phase 4-take-2 Wave 10 raise-to-SO disposition).",
+      "created_at": "2026-06-08T03:52:32.457466Z",
+      "kind": "resolution"
+    }
+  ]
+}

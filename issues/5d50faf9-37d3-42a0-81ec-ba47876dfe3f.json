@@ -1,0 +1,21 @@
+{
+  "uuid": "5d50faf9-37d3-42a0-81ec-ba47876dfe3f",
+  "display_id": 406,
+  "title": "lane r1: labels are not an input the composition function accepts",
+  "description": "Lane round 1. Lens: methodology (F3) (validator: SO). Owner: SO session. Defect: label-driven composition is asserted against a function whose signature is (DESIGN.md surfaces, phase, review config) — labels are not derivable inputs, so the fix-lane composition is not computable and determinism does not reach it. Citations verified: contract:81 vs :89, :197. Proposed: resolved-candidate (finding labels enter as the fix-scale analog of declared surfaces — same function, same integrity rules; signature note updated).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:20.751448Z",
+  "updated_at": "2026-07-19T23:58:44.477853Z",
+  "closed_at": "2026-07-19T23:58:44.477853Z",
+  "comments": [
+    {
+      "uuid": "78f51580-0a5a-401b-bc57-7554af33e0bd",
+      "author": "xqjG",
+      "content": "Fixed: the finding issue's labels stand in the surfaces position at fix scale — one function, one integrity-rule set, both scales; stated in the Deterministic composition intro and the composition-function signature. Revision: Deterministic composition + Verification architecture.",
+      "created_at": "2026-07-19T23:58:20.472878Z",
+      "kind": "resolution"
+    }
+  ]
+}

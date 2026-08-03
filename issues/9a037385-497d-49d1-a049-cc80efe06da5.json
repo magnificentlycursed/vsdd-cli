@@ -1,0 +1,21 @@
+{
+  "uuid": "9a037385-497d-49d1-a049-cc80efe06da5",
+  "display_id": 333,
+  "title": "statusline r1 UX: multi-repo rendering unbounded, unordered, unowned",
+  "description": "Round: statusline amendment cold round 1. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: contract mandates one segment per governed repo but vsdd status --statusline emits only the current repo's line; multi-repo composition (cap, ordering, current-repo priority) is offloaded to an unspecified adopter wrapper; only working example is the hardcoded bootstrap loop the spec retires without replacing. Citations verified: contract:160, :197, :268; ~/.claude/vsdd-statusline.sh:8. Anchors: Status, renderer, vocabulary. Proposed: resolved-candidate. Failure: statusLine grows one row per repo with no bound; composition unowned.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:49.461826Z",
+  "updated_at": "2026-07-19T23:08:09.547403Z",
+  "closed_at": "2026-07-19T23:08:09.547403Z",
+  "comments": [
+    {
+      "uuid": "b1aa937e-e1f5-428e-941f-304f37b87a04",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Multi-repo composition now owned: the init-installed wiring script composes one segment line per configured repo, current repo first; repo set is explicit adopter configuration, never discovered — bounded by construction. Vocabulary entry aligned. Revision: Status bullet + vocabulary entry.",
+      "created_at": "2026-07-19T23:07:45.304379Z",
+      "kind": "resolution"
+    }
+  ]
+}

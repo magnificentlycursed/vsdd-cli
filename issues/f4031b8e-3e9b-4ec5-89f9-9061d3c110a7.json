@@ -1,0 +1,27 @@
+{
+  "uuid": "f4031b8e-3e9b-4ec5-89f9-9061d3c110a7",
+  "display_id": 314,
+  "title": "Degraded semantics diverge across base, resolution, and property",
+  "description": "SA and QE convergent: base says degraded on unreachability; the 1b property fires on mismatch too; QE adds malformed input is unplaced. Unified semantics: degraded exactly when tracker corroboration is absent or unusable (malformed); a present-but-disagreeing tracker files the integrity finding, resolved toward the artifact, without degrading. Property, base line, and resolution all restated to the unified rule. [owner: solution-owner; validator: quality-engineer]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:11.780163Z",
+  "updated_at": "2026-07-19T22:01:27.279370Z",
+  "closed_at": "2026-07-19T22:01:27.279370Z",
+  "labels": [
+    "phase-1b-round-1",
+    "solution-owner",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "249f2979-fe0c-4a66-b965-bc19bf30999b",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:26.548778Z",
+      "kind": "result"
+    }
+  ]
+}

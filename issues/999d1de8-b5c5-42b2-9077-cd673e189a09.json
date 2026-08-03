@@ -1,0 +1,21 @@
+{
+  "uuid": "999d1de8-b5c5-42b2-9077-cd673e189a09",
+  "display_id": 588,
+  "title": "statusline r19 UX: create-on-confirm branch unfixtured",
+  "description": "Round 19. Lens: ux (validator: DR). Defect: the trust boundary states the plainly-absent file takes the offer path with init creating it, but the only confirmed-offer fixture is the populated RMW-merge case — the first-install create branch is unverified. Citations verified: contract:219, :187, :173. Proposed: resolved-candidate (plainly-absent confirmed fixture: file created carrying the wiring, segment renders).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:15:42.798958Z",
+  "updated_at": "2026-07-20T04:16:35.158565Z",
+  "closed_at": "2026-07-20T04:16:35.158565Z",
+  "comments": [
+    {
+      "uuid": "a695fc50-2aa4-4311-879c-5a3cd20fd6e6",
+      "author": "xqjG",
+      "content": "Fixed: the install-offer fixtures split the confirmed branch — plainly-absent created carrying the wiring; populated merged with keys surviving — and the criterion verifies the create branch beside the merge branch. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T04:16:30.828213Z",
+      "kind": "resolution"
+    }
+  ]
+}

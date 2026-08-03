@@ -1,0 +1,21 @@
+{
+  "uuid": "ce76b950-5401-4886-a184-50d947ad1c3f",
+  "display_id": 288,
+  "title": "amend-r6: no-findings evidence count 23 vs 15 enumerated",
+  "description": "Minor. Fix: References states the audit-record count with the enumerated survivors. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:27.240671Z",
+  "updated_at": "2026-07-20T19:24:50.708473Z",
+  "closed_at": "2026-07-20T19:24:50.708473Z",
+  "comments": [
+    {
+      "uuid": "7b225f5c-093b-4908-b47e-329561a2894b",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:24:46.631756Z",
+      "kind": "resolution"
+    }
+  ]
+}

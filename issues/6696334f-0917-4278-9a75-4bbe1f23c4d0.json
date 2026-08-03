@@ -1,0 +1,35 @@
+{
+  "uuid": "6696334f-0917-4278-9a75-4bbe1f23c4d0",
+  "display_id": 460,
+  "title": "statusline amendment cold round 9",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 9 (post round-8: kind mapping pinned per fixture; flag-to-kind wording). Series 15-16-11-6-8-2-2-2. Testing for the clean-round stop signal.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:38:30.425951Z",
+  "updated_at": "2026-07-20T00:49:28.133514Z",
+  "closed_at": "2026-07-20T00:49:28.133514Z",
+  "comments": [
+    {
+      "uuid": "f4e5c01e-708d-4917-9bd3-a66b15989826",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 9. Subject: revision 9 statusline anchors (round-8 set with: expected degraded kind per fixture exact-match; mapping stated in the derivation property; 'degraded kind' in Convergence). Out of scope: defect-fix lane amendment. Known-deliberate unchanged. Lens: UX only (narrowed, declared: AIE clean rounds 7 and 8; SA and A11y clean round 6; both round-8 fixes UX-jurisdiction precision items). Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:38:44.371928Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "26b75a93-5e53-45a0-ab1c-3664f96f14a0",
+      "author": "xqjG",
+      "content": "Round 9 complete (UX per narrowed manifest). 1 filed: L138 segment silent on malformed state. All other paths survived the full walk. Series 15-16-11-6-8-2-2-2-1. Not clean; round 10 after disposition.",
+      "created_at": "2026-07-20T00:46:09.716076Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "8b73579f-8ab1-4fea-a51f-b3eebb15c66c",
+      "author": "xqjG",
+      "content": "Round fully disposed: 1/1 fixed and closed. mdatron verify clean on revision 10. Closing; round 10 dispatches (UX only, narrowed as before).",
+      "created_at": "2026-07-20T00:49:26.979824Z",
+      "kind": "result"
+    }
+  ]
+}

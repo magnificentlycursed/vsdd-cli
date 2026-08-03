@@ -1,0 +1,28 @@
+{
+  "uuid": "4bd8fe23-58e4-4b5d-ab44-b6b3d96ed4fd",
+  "display_id": 217,
+  "title": "TW/F6: E0001 <-> E0050 swap leaves explain-page anchors stale",
+  "description": "Source: mdatron/review-log/2026-06-02-technical-writer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: crosslink #13 explain catalog uses correct codes",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:58.775365Z",
+  "updated_at": "2026-06-08T02:34:18.138448Z",
+  "closed_at": "2026-06-08T02:34:18.138448Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "a5070524-fe2f-47e0-ac56-aac13c5d0d06",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (crosslink #13 explain catalog uses correct codes).",
+      "created_at": "2026-06-08T02:34:17.467063Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "04b51bc4-418b-4e77-b513-124296167784",
+  "display_id": 194,
+  "title": "SE/F1: verify.rs:15 doc-comment names wrong code",
+  "description": "Source: mdatron/review-log/2026-06-02-software-engineer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:14.430419Z",
+  "updated_at": "2026-06-08T01:48:07.888119Z",
+  "closed_at": "2026-06-08T01:48:07.888119Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:software-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "c90dd67e-4e21-4173-a6d0-8b62faa08ce8",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@883eaaf (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:07.096351Z",
+      "kind": "resolution"
+    }
+  ]
+}

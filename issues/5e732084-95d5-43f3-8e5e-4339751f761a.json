@@ -1,0 +1,21 @@
+{
+  "uuid": "5e732084-95d5-43f3-8e5e-4339751f761a",
+  "display_id": 793,
+  "title": "Layer 3 round 4 major security+QE convergent: the terminal cleaner enumerates a fixed code-point list and misses the rest of the class (WORD JOINER, invisible operators, tag block, interlinear, line/para separators) — fix by Unicode category, not enumeration",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T10:23:12.397142Z",
+  "updated_at": "2026-07-26T10:34:04.866424Z",
+  "closed_at": "2026-07-26T10:34:04.866413Z",
+  "comments": [
+    {
+      "uuid": "a6bd877b-6764-4885-a7bf-8ed07fbd51f0",
+      "display_id": 1055,
+      "author": "xqjG",
+      "content": "Fixed in 800878a5: is_terminal_unsafe now strips by Unicode General_Category — Control (Cc), Format (Cf), LineSeparator (Zl), ParagraphSeparator (Zp) — so the WHOLE class is covered and a future Unicode format code point needs no code change; the enumeration whack-a-mole ends. Combining marks (Mn/Mc/Me) and normal spaces (Zs) are deliberately preserved (legitimate text, not the threat). Added unicode-general-category (pure-data lookup, no unsafe on the query path) with a docs/dependencies/ justification per the estate gate — flagged as the fix's one new dependency. Unit tests walk the class member by member (word joiner, invisible operators, tag block, interlinear, soft hyphen, line/para separators all stripped; cafe-with-combining, precomposed, and Japanese survive). One shared helper, both crates, every surface.",
+      "created_at": "2026-07-26T10:33:58.863031Z",
+      "kind": "result"
+    }
+  ]
+}

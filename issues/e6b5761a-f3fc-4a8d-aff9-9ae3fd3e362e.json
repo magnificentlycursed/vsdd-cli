@@ -1,0 +1,21 @@
+{
+  "uuid": "e6b5761a-f3fc-4a8d-aff9-9ae3fd3e362e",
+  "display_id": 331,
+  "title": "statusline r1 UX: open-count field alarms; spec label diverges from evidence",
+  "description": "Round: statusline amendment cold round 1. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: segment renders a bare 'open-finding count' with no scope or baseline; the cited bootstrap evidence actually renders ALL open issues (issue list --status open), not findings — spec/evidence mismatch plus an un-readable gauge (open:157 on this estate). Citations verified: contract:160; ~/.claude/vsdd-statusline.sh:15. Anchor: Status. Proposed: resolved-candidate. Failure: the gauge discredits itself and what ships may not even be findings.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:47.235902Z",
+  "updated_at": "2026-07-19T23:08:06.931990Z",
+  "closed_at": "2026-07-19T23:08:06.931990Z",
+  "comments": [
+    {
+      "uuid": "4864f4a5-d1ff-4b14-841d-0c9b656887e9",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Open count re-scoped to the active milestone's open-finding count — bounded gauge; Status bullet states estate-wide total is an alarm; evidence parenthetical now honestly names the bootstrap divergence as what the contract corrects. Revision: Status requirement bullet.",
+      "created_at": "2026-07-19T23:07:42.747444Z",
+      "kind": "resolution"
+    }
+  ]
+}

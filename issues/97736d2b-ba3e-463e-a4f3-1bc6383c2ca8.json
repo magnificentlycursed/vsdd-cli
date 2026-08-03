@@ -1,0 +1,21 @@
+{
+  "uuid": "97736d2b-ba3e-463e-a4f3-1bc6383c2ca8",
+  "display_id": 366,
+  "title": "statusline r3 SA: wall-clock instrument's measured scope undefined",
+  "description": "Round: statusline amendment cold round 3. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: criterion times 'segment render' but the budget covers acquisition + computation; timing only the pure render is trivially met and misses the slow-acquisition regression the budget exists to catch. Citations verified: contract:185 vs :160, :197. Proposed: deferred-candidate, foldable one-phrase fix (pin scope to the full invocation, acquisition through render).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:36.104482Z",
+  "updated_at": "2026-07-19T23:29:40.462705Z",
+  "closed_at": "2026-07-19T23:29:40.462705Z",
+  "comments": [
+    {
+      "uuid": "53292620-050b-4412-8b60-49b1d99d330f",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded per standing pattern). Measured scope pinned: the criterion times the full statusline invocation, acquisition through render — a slow acquisition cannot hide behind a fast pure render. Revision: Status detection criterion.",
+      "created_at": "2026-07-19T23:28:51.374754Z",
+      "kind": "resolution"
+    }
+  ]
+}

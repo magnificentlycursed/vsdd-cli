@@ -1,0 +1,29 @@
+{
+  "uuid": "32501e27-a60a-42f5-9eaa-1e3b92288580",
+  "display_id": 103,
+  "title": "AIE/F6: not-found message pointer",
+  "description": "Source: mdatron/review-log/2026-06-07-ai-engineer-phase-2-bundle.md\nClassification: resolved\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:05:30.416072Z",
+  "updated_at": "2026-06-08T02:33:46.571638Z",
+  "closed_at": "2026-06-08T02:33:46.571638Z",
+  "labels": [
+    "classification:resolved",
+    "convergence:not-found-pointer",
+    "cycle:crosslink-13",
+    "domain:ai-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "9ce019ba-689f-4ef2-8f15-f6433d784df6",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (pre-Phase-4-take-2 cycle commit).",
+      "created_at": "2026-06-08T02:33:45.790287Z",
+      "kind": "resolution"
+    }
+  ]
+}

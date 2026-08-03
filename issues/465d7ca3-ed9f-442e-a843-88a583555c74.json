@@ -1,0 +1,21 @@
+{
+  "uuid": "465d7ca3-ed9f-442e-a843-88a583555c74",
+  "display_id": 631,
+  "title": "1c-DR-r4: two Layer 0 acts unanchored",
+  "description": "Minor, check f. The contract-duplicate deletion and chassis-config review name no path. Fix: anchor both (the 'agent-first-vsdd-toolkit 3.md' pattern in .design/; .crosslink/hook-config.json and .gitignore). Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:50.405168Z",
+  "updated_at": "2026-07-20T18:13:37.992134Z",
+  "closed_at": "2026-07-20T18:13:37.992134Z",
+  "comments": [
+    {
+      "uuid": "22dffb57-451a-4929-9bdb-e121d8a8df5e",
+      "author": "xqjG",
+      "content": "Fixed: both acts anchored — the 'agent-first-vsdd-toolkit 3.md' pattern in .design/, and .crosslink/hook-config.json plus .gitignore in the working tree.",
+      "created_at": "2026-07-20T18:13:35.238399Z",
+      "kind": "resolution"
+    }
+  ]
+}

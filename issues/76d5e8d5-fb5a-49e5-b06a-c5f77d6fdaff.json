@@ -1,0 +1,21 @@
+{
+  "uuid": "76d5e8d5-fb5a-49e5-b06a-c5f77d6fdaff",
+  "display_id": 629,
+  "title": "1c-DR-r4: architecture-deepening routing has no disposition",
+  "description": "Minor, check e. The Architecture heading routes a phase-1c deepening; the Decomposition records no disposition. Fix: state the layer-to-component mapping and route crate-level module maps to each layer's 2a design act. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:46.787906Z",
+  "updated_at": "2026-07-20T18:13:28.805776Z",
+  "closed_at": "2026-07-20T18:13:28.805776Z",
+  "comments": [
+    {
+      "uuid": "5dc35216-02ab-4ec7-8de3-19ea6816c906",
+      "author": "xqjG",
+      "content": "Fixed: the audit paragraph now maps layers onto the Architecture sketch's components (vsdd-core, binary, cost crate, mdatron families, hooks and dispatch) and routes crate-level module maps to each layer's phase-2a design act.",
+      "created_at": "2026-07-20T18:13:27.170290Z",
+      "kind": "resolution"
+    }
+  ]
+}

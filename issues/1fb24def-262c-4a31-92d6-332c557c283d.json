@@ -1,0 +1,21 @@
+{
+  "uuid": "1fb24def-262c-4a31-92d6-332c557c283d",
+  "display_id": 455,
+  "title": "lane r4 SE+Meth: published marker missing from the state-contents enumeration",
+  "description": "Lane round 4. Lenses: SE + methodology merged (validator: SO). Owner: SO session. Defect: two falsifiers consult a state-artifact field the state contract's contents enumeration does not declare; the schema check has no line to validate against. Citations verified: contract:81 vs :35. Proposed: resolved-candidate (add the published marker to the contents enumeration).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:50.334797Z",
+  "updated_at": "2026-07-20T00:38:08.424716Z",
+  "closed_at": "2026-07-20T00:38:08.424716Z",
+  "comments": [
+    {
+      "uuid": "584fdf42-c52d-4e0d-a614-65ef9fab6a4e",
+      "author": "xqjG",
+      "content": "Fixed: published marker added to the state artifact's contents enumeration with its consulting falsifiers noted. Revision: Deterministic phase answer state bullet.",
+      "created_at": "2026-07-20T00:37:50.623689Z",
+      "kind": "resolution"
+    }
+  ]
+}

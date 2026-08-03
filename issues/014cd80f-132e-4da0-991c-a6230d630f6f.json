@@ -1,0 +1,31 @@
+{
+  "uuid": "014cd80f-132e-4da0-991c-a6230d630f6f",
+  "display_id": 735,
+  "title": "Phase 3 execution, Layer 1: round 3 — verify the round-2 fixes, re-decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T20:12:08.424284Z",
+  "updated_at": "2026-07-21T20:18:01.068027Z",
+  "closed_at": "2026-07-21T20:18:01.068027Z",
+  "labels": [
+    "review"
+  ],
+  "milestone_uuid": "1fbc66a4-8d5e-4a1f-87ab-e7bc95da4259",
+  "comments": [
+    {
+      "uuid": "99dfb057-34e4-4bb4-86ff-1dbaae4a0343",
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the operator's keep-going conduct ruling — the sequence continues autonomously. vehicle: Workflow surface, attended side. STAGE: round 3, terminal weight — two consecutive stop failures; a clean round is the phase-3 stop. domains: the four-lens round composition retained. MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: HIGH all four — the terminal-weight posture per the terminal-verify-round stage default, declared. expected_cost_band: the seeded cold-code band; verification scope at the floor; prior verify round ran 197k. inputs: commit 8189017a on the round-2 tree. coverage: fourteen domains, no matching surface, declared. returned + telemetry recorded here after.",
+      "created_at": "2026-07-21T20:12:30.207804Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "45cf03f8-9ca9-4e43-add4-e4d9f05784fc",
+      "author": "xqjG",
+      "content": "ROUND 3 COMPLETE (workflow run wf_29ce8b9c-4e6) — THE STOP HOLDS, FOUR OF FOUR. All round-2 fixes verified landed at source and runtime (the security lens grepped for bypass reads and found the only File::open inside bounded_read.rs; re-probed alias amplification empirically; QE re-confirmed every pin falsifiable as named). Findings: five, every one self-graded nit-and-arguable with reasons, filed as the #736 residue collector routed accepted-as-recorded. PHASE 3 OF LAYER 1 REACHES ITS STOP: round series 26 real pre-dedup, 7 (2 real), 5 (0 real) — the whitepaper shape. TELEMETRY: chosen and observed claude-fable-5 on all four; effort high on all four per the terminal posture; actuals 243,913 downstream tokens, ~3.8 minutes, 78 tool uses (the terminal premium over round 2's 197k at mixed dials — the depth bought the empirical re-probes). Round costs, the layer's phase 3 complete: 187,308 + 197,254 + 243,913 = 628,475 downstream tokens across three rounds and two fix passes. Closing this round issue; the phase-3 exit records on the layer trail.",
+      "created_at": "2026-07-21T20:17:57.333900Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "d113213e-a776-4f88-8b10-5f10eac49670",
+  "display_id": 675,
+  "title": "r1 blocking QE: same-kind unanimity creates a gate-unpassable class and a flaky-at-HEAD delta escape",
+  "description": "Evidence: gate-data.md:18 vs contract Phase exit by gate (line 64). Over-block: a genuine kind-unstable defect pin (race: panic/timeout/abort across runs) fails every run yet aggregates flaky, and every rescue lane's own predicate disqualifies it — an honest author can produce neither a valid red nor a lawful surrogate. Under-block: the suite delta is two-valued ('no test failing at HEAD that passed at baseline'); a flaky-at-HEAD baseline-passing test satisfies neither half and escapes the regression check. Dispositions: declared expected-kind SET as valid red; or a validator-approved kind-unstable recorded state; and independently the delta must fail-closed on flaky-at-HEAD. Owner: solution-owner (amends ratified gate text). Validator: quality-engineer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:17:27.866242Z",
+  "updated_at": "2026-07-21T04:10:06.033831Z",
+  "closed_at": "2026-07-21T04:10:06.033831Z",
+  "comments": [
+    {
+      "uuid": "551fd1e1-7030-404c-b900-5db50a064f07",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): declared kind-set + fail-closed delta. The finding issue declares a SET of expected failure kinds; valid red = fails every run with each observed kind a member of the declared set — wrong-reason detection stays a mechanical set-membership check, no new approval lane. Independently: a baseline-passing test that aggregates flaky at HEAD FAILS the delta (fail-closed). Rejected: a validator-approved kind-unstable recorded state (human judgment where a set declaration suffices). Amendment-class — rides the round-1 amendment window. Data-side: gate-data gains the kind-set field shape at the fix pass.",
+      "created_at": "2026-07-21T03:52:04.040108Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "1c993ac7-7bd2-43f8-aeb2-ea16e13716a4",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, gate-data 0.2.0): pin_kind_declaration block — declared expected-kind set, set-membership red rule, fail-closed delta rule; flake_policy aggregation and scope reworded to the kind-set grain with flaky-at-HEAD failing the delta. Contract touch rides #698. Round 2 re-verifies (validator: quality-engineer).",
+      "created_at": "2026-07-21T04:09:58.884910Z",
+      "kind": "result"
+    }
+  ]
+}

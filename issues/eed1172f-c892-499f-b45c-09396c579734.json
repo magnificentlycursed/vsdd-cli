@@ -1,0 +1,21 @@
+{
+  "uuid": "eed1172f-c892-499f-b45c-09396c579734",
+  "display_id": 251,
+  "title": "amend-r5-SA: Layer 0 repair bar undecidable, manifest instance homeless",
+  "description": "Minor. Fix: data authoring authors schema plus this repo's instance ahead of the Layer 0 close; the executed 2026-07-20 repair verified against it. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:02:20.132591Z",
+  "updated_at": "2026-07-20T19:08:44.941731Z",
+  "closed_at": "2026-07-20T19:08:44.941731Z",
+  "comments": [
+    {
+      "uuid": "2d59fc2a-cb82-4e70-bb48-1a326b624f28",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:08:41.984290Z",
+      "kind": "resolution"
+    }
+  ]
+}

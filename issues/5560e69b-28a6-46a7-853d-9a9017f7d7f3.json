@@ -1,0 +1,21 @@
+{
+  "uuid": "5560e69b-28a6-46a7-853d-9a9017f7d7f3",
+  "display_id": 573,
+  "title": "lane r13 SE: one-lane invariant invites the reading that rejects the composed fixture",
+  "description": "Lane round 13. Lens: SE (validator: SA); QE and methodology both cleared the collision under the attached-scrutiny reading, proving two competent readings diverge — the defect is the prose. Also: the leftover parenthetical '(the disablement, for surviving paths)' contradicts the intent-keyed clause on the same line (QE survival note 2 corroborates). Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (primary-lane wording: each path assigned exactly one primary lane, the composed disablement an attached approval, not a second claim; the stale parenthetical removed).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T03:22:04.189499Z",
+  "updated_at": "2026-07-20T03:23:50.363571Z",
+  "closed_at": "2026-07-20T03:23:50.363571Z",
+  "comments": [
+    {
+      "uuid": "5b142f51-1eb7-42d3-856f-ed8b0e6b66d5",
+      "author": "xqjG",
+      "content": "Fixed: primary-lane wording — each path assigned exactly one primary lane, the composed disablement an attached approval never a second claim; the stale surviving-paths parenthetical removed. Both cold readings now converge. Revision: gate bullet, two sentences.",
+      "created_at": "2026-07-20T03:23:24.245508Z",
+      "kind": "resolution"
+    }
+  ]
+}

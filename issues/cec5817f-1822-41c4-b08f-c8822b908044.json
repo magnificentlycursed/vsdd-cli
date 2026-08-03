@@ -1,0 +1,21 @@
+{
+  "uuid": "cec5817f-1822-41c4-b08f-c8822b908044",
+  "display_id": 446,
+  "title": "lane r3 Meth: fix-lane phase value strains the reserved-word rule; no fix-scale composition fixture",
+  "description": "Lane round 3. Lens: methodology (validator: SO). Owner: SO session. Defect: the phase input's domain is the 1a-6 enumeration ('never computed', reserved word confines 'phase'); the fixed fix-lane value is not a member and not registered; no fixture or criterion exercises a fix-scale composition, so 'determinism testable at both scales' is unbacked. Citations verified: contract:89, :197, :201, :266, :183. Proposed: resolved-candidate (the composition function's second input is the composition scope, whose domain ships as versioned data: the phase enumeration plus the fix-lane scope value — the fix lane is not called a phase; Composition purity criterion gains the fix-scale case; failure-kind enumeration also declared versioned data completed at 1c incl. abort and not-collected kinds, per the QE survival note).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:48.283805Z",
+  "updated_at": "2026-07-20T00:28:47.656060Z",
+  "closed_at": "2026-07-20T00:28:47.656060Z",
+  "comments": [
+    {
+      "uuid": "e6040071-89a9-4444-852f-a351d3cd01bd",
+      "author": "xqjG",
+      "content": "Fixed: the function's second input renamed to composition scope with its domain shipped as versioned data (phase enumeration plus the fix-lane scope value — the fix lane is not a phase and never called one, reserved word respected); fix-scale composition fixture added and Composition purity criterion exercises the domain's second member; failure-kind enumeration declared versioned data completed at 1c incl. abort and not-collected kinds. Revision: Deterministic composition + signature + criterion + fixture corpus + gate bullet.",
+      "created_at": "2026-07-20T00:28:34.943117Z",
+      "kind": "resolution"
+    }
+  ]
+}

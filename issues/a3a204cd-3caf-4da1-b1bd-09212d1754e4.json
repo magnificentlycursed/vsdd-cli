@@ -1,0 +1,28 @@
+{
+  "uuid": "a3a204cd-3caf-4da1-b1bd-09212d1754e4",
+  "display_id": 61,
+  "title": "DR/F4: E0070 cites uncataloged E0010/E0011",
+  "description": "Source: mdatron/review-log/2026-06-07-documentation-reviewer-phase-2-bundle.md\nClassification: resolved\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:03:48.503989Z",
+  "updated_at": "2026-06-08T02:33:43.250269Z",
+  "closed_at": "2026-06-08T02:33:43.250269Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-13",
+    "domain:documentation-reviewer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "5ed46d0e-ff26-46d1-ab58-dcc2117869ef",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (pre-Phase-4-take-2 cycle commit).",
+      "created_at": "2026-06-08T02:33:42.530543Z",
+      "kind": "resolution"
+    }
+  ]
+}

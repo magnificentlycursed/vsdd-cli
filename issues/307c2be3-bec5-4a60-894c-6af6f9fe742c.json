@@ -1,0 +1,27 @@
+{
+  "uuid": "307c2be3-bec5-4a60-894c-6af6f9fe742c",
+  "display_id": 321,
+  "title": "Five-versus-four criteria count in the resolution framing",
+  "description": "SA question: the base left four criteria open with offline settled; the resolution claims five. Fix: reframe as the four open criteria, restating the settled offline behavior first for completeness. [owner: solution-architect; validator: documentation-reviewer]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:25.632780Z",
+  "updated_at": "2026-07-19T22:01:40.464140Z",
+  "closed_at": "2026-07-19T22:01:40.464140Z",
+  "labels": [
+    "phase-1b-round-1",
+    "solution-architect",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "9857782d-ffae-4455-96da-2a84c4159cac",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:39.737210Z",
+      "kind": "result"
+    }
+  ]
+}

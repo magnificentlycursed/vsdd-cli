@@ -1,0 +1,25 @@
+{
+  "uuid": "86a8bf73-70b4-42cc-9722-1578b02958ae",
+  "display_id": 297,
+  "title": "Spec review round 1: swarm live fire: assert dispatch falsification conditions",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T02:26:57.646116Z",
+  "updated_at": "2026-07-29T10:23:55.870680Z",
+  "closed_at": "2026-07-29T10:23:55.870665Z",
+  "labels": [
+    "spec-review-round-1"
+  ],
+  "comments": [
+    {
+      "uuid": "fbca7851-acda-4ced-9796-79da2a801a63",
+      "display_id": 1225,
+      "author": "xqjG",
+      "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract (install/status/config-integrity/conformance/gate/scope criteria present). Reopen if this specific finding resurfaces as a live gap.",
+      "created_at": "2026-07-29T10:23:49.059123Z",
+      "kind": "decision"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "55de35c8-87f4-4ab1-a213-9b5b6b1342ff",
+  "display_id": 690,
+  "title": "r1 minor SA: substrate-finding statusline visibility decided only by omission",
+  "description": "Evidence: contract line 131 routes 'statusline visibility for substrate findings' as a phase-1c statusline-data decision; statusline-data.md's closed field set omits any such surface without stating the decision. Disposition: state it explicitly (proposed: the segment does not carry substrate findings; machine and human forms do). Data-side + operator confirmation of the stated decision. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:19:16.286734Z",
+  "updated_at": "2026-07-21T04:13:06.388238Z",
+  "closed_at": "2026-07-21T04:13:06.388238Z",
+  "comments": [
+    {
+      "uuid": "d6a80b76-9de4-464b-873e-18b4124222d7",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): CONFIRMED — the glance surface omits substrate findings; the machine and human consultation forms carry them. The omission becomes a stated decision: statusline-data gains the explicit line at the fix pass, citing this ruling. Rejected: a presence marker (the field set just lost a segment to width pressure — #679/#680).",
+      "created_at": "2026-07-21T03:53:30.160041Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "bbbd0033-725b-4f37-b477-8c03e6f97e40",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, statusline-data 0.2.0): substrate_findings_visibility field carries the stated decision — glance segment omits substrate findings, machine and human forms carry them — citing the operator ruling. Round 2 re-verifies (validator: solution-architect).",
+      "created_at": "2026-07-21T04:12:43.762194Z",
+      "kind": "result"
+    }
+  ]
+}

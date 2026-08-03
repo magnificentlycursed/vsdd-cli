@@ -1,0 +1,28 @@
+{
+  "uuid": "fb45ebf4-323a-4b19-9934-928b45722d83",
+  "display_id": 205,
+  "title": "SA/F5: EvalError::FieldNotFound variant kept but unreachable",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-architect-phase-1-bundle.md\nClassification: deferred\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:36.207030Z",
+  "updated_at": "2026-06-08T01:48:38.436138Z",
+  "closed_at": "2026-06-08T01:48:38.436138Z",
+  "labels": [
+    "classification:deferred",
+    "cycle:crosslink-12",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "fef9ce02-5341-4f40-9209-38de7fc4639f",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@422c2dc (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:37.779347Z",
+      "kind": "resolution"
+    }
+  ]
+}

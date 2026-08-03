@@ -1,0 +1,21 @@
+{
+  "uuid": "16e11c99-ee18-4cc0-890a-b4406fe3bf9c",
+  "display_id": 401,
+  "title": "lane r1: pre-publish deadlock — broken main has no lawful path",
+  "description": "Lane round 1. Lens: SE (F3) (validator: SO). Owner: SO session. Defect: no-bypass-pre-publish plus the unconditional failing-run demand means the fix that unblocks a non-running suite cannot land lawfully pre-1.0 — the methodology can wedge its own repo shut, forcing exactly the off-process fix it prevents. Citations verified: contract:81 with :64, :66. Proposed: resolved-candidate (resolved by the broken-surface clause in the surface-allows-one fix: the recorded failing state is the red evidence; reviews follow immediately after landing).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:13.383478Z",
+  "updated_at": "2026-07-19T23:58:36.853165Z",
+  "closed_at": "2026-07-19T23:58:36.853165Z",
+  "comments": [
+    {
+      "uuid": "53614fbd-18e9-465a-9e2e-28d5013863cc",
+      "author": "xqjG",
+      "content": "Fixed: resolved by the broken-verification-surface clause — the recorded failing state is the red evidence and the lawful pre-publish path; the lifecycle bullet cross-references it as such. Revision: Phase exit by gate bullet + Finding lifecycle bullet.",
+      "created_at": "2026-07-19T23:58:15.340392Z",
+      "kind": "resolution"
+    }
+  ]
+}

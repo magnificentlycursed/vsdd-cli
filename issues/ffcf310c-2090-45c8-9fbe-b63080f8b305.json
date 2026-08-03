@@ -1,0 +1,53 @@
+{
+  "uuid": "ffcf310c-2090-45c8-9fbe-b63080f8b305",
+  "display_id": 802,
+  "title": "Phase 3 execution, Layer 3: round 6 — verify the round-5 fixes, re-decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T11:13:28.196871Z",
+  "updated_at": "2026-07-28T21:04:41.446983Z",
+  "closed_at": "2026-07-28T21:04:41.446973Z",
+  "comments": [
+    {
+      "uuid": "03fd4e37-36b0-4036-a0f2-364c7c40e415",
+      "display_id": 1068,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: operator decision at round 5 (fix + verify). vehicle: the Workflow surface (background; resume net). round shape: STOP-DECIDING VERIFY over the round-5 change set (52f94321): the default-ignorable range extension, the state-source cleaning covering the machine form, the broken machine block, the post_load wiring pin, the composition post_load, and the added #789 falsifier. THREE lenses: security (does the char class now truly close — any invisible/spoofing code point still passing, is the Unassigned-range gate correct across the reserved set, does the machine form now hold under hostile state AND hostile diagnostic), software-engineer (the read_state cleaning's correctness and its effect on the #749 verbatim echo and gate-matching logic; the broken machine block; the composition post_load; regressions), quality-engineer (do ALL round-5 falsifiers falsify — the range unit pins, the machine-form test, the wiring load-through, the hostile-path pin, the composition clean; is any claimed test actually absent again — explicitly re-check every test named in the #798-#801 closes exists and bites). CONVERGENCE: rounds 1-3 fixed members, 4-5 fixed classes and their edges; if round 6 holds, the loop has converged and Layer 3 reaches its boundary. If it finds another real major, that is strong signal to pause and reassess scope with the operator rather than continue. MODEL/EFFORT chosen: fable all three; security/SE high, QE medium. expected_cost_band: 0-4 findings pre-dedup, 120k-240k tokens. inputs: tree at 52f94321 + changelog mirror; the four closed children; the #797 trail including the record-error disclosure. returned + telemetry recorded here.",
+      "created_at": "2026-07-26T11:14:00.598110Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "e242a067-d85f-4b0d-b941-d244c7e9b405",
+      "display_id": 1069,
+      "author": "xqjG",
+      "content": "ROUND 6 RETURNED — 2 of 3 lenses (the quality lens died mid-response on a connection drop, the 4th interruption of this layer's dispatches; a dead lens is not a clean verdict, so it needs a cached re-run, but the security lens already refuses the stop). Verdicts: #798/#800/#801 held; #799 incomplete. Stop: NOT reached. Children: #803 (major security: active_composition.config_inputs_hash — the FOURTH ActiveComposition string field — is uncleaned at read_state and serialized raw into the machine form; #799 cleaned scope, domains, and phase and missed this sibling; demonstrated on the built binary with U+202E/U+200B/U+2060/tag/U+E0000 all reaching machine-form stdout), #804 (minor security+SE convergent: assigned default-ignorable Hangul fillers U+115F/1160/3164/FFA0, category Lo, are invisible in common terminal fonts but pass the Cc/Cf/Zl/Zp+unassigned filter — the only default-ignorable survivors outside a declared preservation decision), #805 (nit collector: comparison-only state fields uncleaned, intra-state asymmetry, broken human machine_token raw). TELEMETRY: 235,560 tokens across the 2 completed lenses; chosen=observed fable, security/SE high. CONVERGENCE ASSESSMENT, honest: this is the THIRD 'N-1 of N' occurrence — chars (enumerated, missed members), registry strings (cleaned 2, found 4 more), now composition fields (cleaned 3, missed 1). The member-by-member fixing does not converge because I keep hand-picking which fields to clean. There IS a systematic fix that converges by construction (recursively sanitize the machine-form JSON output, catching every field regardless of struct shape), but that is an architectural choice. Per the round-6 manifest's pre-commitment — another real major means pause and reassess scope with the operator, not continue — I am NOT dispatching round 7. Surfacing the decision to the operator with the systematic option as the recommendation. #803's one-line field fix is trivial; the question is whether to do the systematic fix that ends the class or make a scope call.",
+      "created_at": "2026-07-27T17:34:59.935391Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "fd147b57-38ca-47ee-8fce-93c0d2c6fe50",
+      "display_id": 1077,
+      "author": "xqjG",
+      "content": "ROUND 6 DISPOSITION + PHASE-3 LOOP SUSPENDED (under the #806 ratification). Round 6's findings are ROUTED, not fixed-in-place: #803/#804/#805 all route to the Phase 1a/1b terminal-safety spec amendment (routing plans recorded on each). The phase-3 loop for Layer 3 is SUSPENDED here — it was not converging by member-fixing because it was patching an UNSPECIFIED requirement (six rounds, spec unchanged, code churned: the collapse #806 names). It does not resume as more phase-3 rounds; it resumes as: (a) the terminal-safety spec amendment specifies the requirement, mechanism (Default_Ignorable UCD property), boundary (vsdd-local now + shared-primitive raise to crosslink), and systematic sink (recursive machine-form sanitization); (b) a minimal rebuild under the spec — keep the recursive JSON sanitizer, DISCARD the uncommitted round-6 Hangul enumeration (the UCD property retires it), swap the predicate; (c) ONE verify round against the now-specified requirement; (d) Layer 3 close. The falsifiability findings from earlier rounds that were fix-closed stand; the round-6 uncommitted edits are held pending the amendment. RETROSPECTIVE NOTE: rounds 1-5's terminal-safety fixes are real and landed (they close genuine injection vulnerabilities) but were built without a governing spec — the amendment supplies the spec they should have had, and their tests become its verification architecture. This is the routing that should have happened at round 1.",
+      "created_at": "2026-07-27T18:15:38.684625Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "0c5f8621-c8f3-4060-9426-7ec93e74ff95",
+      "display_id": 1110,
+      "author": "xqjG",
+      "content": "STEP (a) COMPLETE — the terminal-safety spec amendment is RATIFIED and applied (#807, contract commit 28ff06ee; changelog 2f723025). The Terminal output safety requirement now specifies the requirement, mechanism (Default_Ignorable_Code_Point property from a maintained DerivedCoreProperties crate — icu_properties the recorded candidate), boundary (vsdd-local now + shared-primitive raise), and the three cleaning points incl. whole-of-output machine-form sanitization. The Layer-3 REBUILD (step b) is now UNBLOCKED: swap is_terminal_unsafe to the property predicate; keep + commit the recursive JSON sanitizer (extend to clean object keys per the ratified requirement); DISCARD the round-6 Hangul arm (the property subsumes it); invert variation_selectors_survive (variation selectors now STRIP, property wins, reversing #798); clean the remaining uncleaned fields (#803 config_inputs_hash and the #805 comparison-only fields / broken human machine_token) via the systematic sanitizer. #803/#804/#805 are the rebuild's work items — unblocked, not yet resolved (they close when the rebuild lands). Then step (c) one verify round against the now-specified requirement, step (d) Layer 3 close. Awaiting operator direction to enter the rebuild (phase-2 execution).",
+      "created_at": "2026-07-28T19:08:17.893755Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "edc4e3e0-fbe8-4b5b-9602-011a00a1ad41",
+      "display_id": 1116,
+      "author": "xqjG",
+      "content": "PHASE-3 LOOP CONVERGED via the spec-then-rebuild path. Resumption plan complete: (a) terminal-safety spec ratified (#807); (b) rebuild landed (#813, commits 24e76e2e + f06d0797) — property predicate, systematic sanitizer, hand-lists retired; (c) closing verify round returned layer-3-closeable on both lenses (empirical strip/preserve probe, mutation-verified falsifiers, 143 tests 0 failed); (d) Layer 3 closing to its boundary. The six-round member-by-member churn is retired: the requirement now exists and the property + whole-of-output pass converge by construction. Closing with no separate changelog — #813 carries the substance.",
+      "created_at": "2026-07-28T21:04:34.080036Z",
+      "kind": "resolution"
+    }
+  ]
+}

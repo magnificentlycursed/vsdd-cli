@@ -1,0 +1,21 @@
+{
+  "uuid": "a996d30e-d46d-47b5-b799-7f158181841c",
+  "display_id": 649,
+  "title": "posture-r4-AI: identity approval checked without key possession",
+  "description": "Minor, preflight adequacy. Pre-approved identity with unprovisioned key material fails its first signed write. Fix: key material joins the identity preflight member. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:10:02.496368Z",
+  "updated_at": "2026-07-20T18:16:20.748912Z",
+  "closed_at": "2026-07-20T18:16:20.748912Z",
+  "comments": [
+    {
+      "uuid": "a063de92-3d31-4835-ab44-8d3893f07636",
+      "author": "xqjG",
+      "content": "Fixed: the identity pool member now includes 'with their key material provisioned into the launch environment before launch'.",
+      "created_at": "2026-07-20T18:16:18.928869Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "b4a63600-5efb-41e5-8984-a684848726e8",
+  "display_id": 529,
+  "title": "lane r9 QE: unapproved-declared-deletion neither fixtured nor deferred",
+  "description": "Lane round 9. Lens: QE (validator: SE). Defect: the validator-approval requirement on deletion has only its passing fixture — the rejection twin is absent from corpus and 2a list, unlike its surface-limitation and compile-defect siblings. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (unapproved-declared-deletion seed, rejected).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:22.738152Z",
+  "updated_at": "2026-07-20T01:45:56.076391Z",
+  "closed_at": "2026-07-20T01:45:56.076391Z",
+  "comments": [
+    {
+      "uuid": "39f4abcd-4fb1-461a-aa63-6f41823d680c",
+      "author": "xqjG",
+      "content": "Fixed: unapproved-declared-deletion seed added and rejected at the shared bar (with the unapproved-mapping sibling). Revision: corpus + criterion.",
+      "created_at": "2026-07-20T01:45:38.703728Z",
+      "kind": "resolution"
+    }
+  ]
+}

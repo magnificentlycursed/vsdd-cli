@@ -1,0 +1,21 @@
+{
+  "uuid": "64d4dfd6-4312-45e4-97fe-346eef840f9c",
+  "display_id": 531,
+  "title": "lane r9 Meth: fix-lane cites still lead with forbidden provisional numbers",
+  "description": "Lane round 9. Lens: methodology (validator: SO). Defect: 'cited by exact title pending hub sync as mdatron's issue #51' is internally contradictory — asserts title form, supplies a number; the branch-grammar cite proves the compliant form exists in the same revision; the resolvability check would flag these now. Citations verified: contract:68, :81, :85 vs :80, :124, :126. Proposed: resolved-candidate (lead with the resolvable relay handles on THIS tracker — the directive record and operator-relayed finding titles — with mdatron-side numbering as secondary annotation).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:25.742969Z",
+  "updated_at": "2026-07-20T01:46:00.670171Z",
+  "closed_at": "2026-07-20T01:46:00.670171Z",
+  "comments": [
+    {
+      "uuid": "0d79e065-785e-4241-899a-c5b40a1f06fb",
+      "author": "xqjG",
+      "content": "Fixed: all three cites lead with resolvable relay handles on this tracker (the directive issue and the operator-relayed dispatch finding, by exact title), mdatron numbering demoted to annotation. Revision: three evidence sentences.",
+      "created_at": "2026-07-20T01:45:42.282557Z",
+      "kind": "resolution"
+    }
+  ]
+}

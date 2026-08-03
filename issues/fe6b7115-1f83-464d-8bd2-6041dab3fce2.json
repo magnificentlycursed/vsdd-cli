@@ -1,0 +1,22 @@
+{
+  "uuid": "fe6b7115-1f83-464d-8bd2-6041dab3fce2",
+  "display_id": 693,
+  "title": "r1 minor UX: statusline copy refinements — truncation mark cost, offline scoping, phantom parse location, restore-vs-repair alignment",
+  "description": "Evidence: statusline-data.md:43 ('(cut)' is 5 chars against 10-char fields and glues to values), :22-25 (bare 'offline' on the glance surface can read network-wide; scope lives only in the human text), :13 ('at the reported location' — the static string carries no location), :10 vs :15 (restore vs repair for the same match-the-boundary recovery). Dispositions per item in the lens report; all data-side rewording. Owner: data-engineer. Validator: ux.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:20:29.415271Z",
+  "updated_at": "2026-07-21T04:13:38.991183Z",
+  "closed_at": "2026-07-21T04:13:38.991183Z",
+  "comments": [
+    {
+      "uuid": "681e9c39-d080-4142-84a7-2ddd18cd8ad1",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, statusline-data 0.2.0): truncation_rule states the space set-off (no gluing) — and the mark's cost against narrow fields shrank structurally with the 10-char session field's demotion (#679); offline marker scoped to tracker offline (degraded likewise tracker degraded; schema marker pattern widened for the scope word); malformed diagnostic now templates the parser's reported location and message instead of claiming a location the static string never carried; restore-verb alignment — fix-state-content's human text reads restore-the-content in both the statusline set and the action vocabulary. Round 2 re-verifies (validator: ux).",
+      "created_at": "2026-07-21T04:13:33.567564Z",
+      "kind": "result"
+    }
+  ]
+}

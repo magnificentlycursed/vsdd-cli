@@ -1,0 +1,21 @@
+{
+  "uuid": "cd71a0e7-d520-4d71-95e4-b1ffb60547c9",
+  "display_id": 559,
+  "title": "lane r11 Meth: pre-push warn conduct uninstrumented",
+  "description": "Lane round 11. Lens: methodology, low severity (validator: SO). Defect: never-block is triple-instrumented; the warn — the hook's sole value-add over the query — has no falsifier, fixture, or deferral; a silent no-op hook is conformant. Citations verified: contract:124 vs :128, :173, :180. Proposed: resolved-candidate (registered-non-preferred push draws the warning — falsified, not assumed; the zero-finding inline-review variant from the watch-item joins the 2a list while here).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:10:43.084862Z",
+  "updated_at": "2026-07-20T02:12:18.089952Z",
+  "closed_at": "2026-07-20T02:12:18.089952Z",
+  "comments": [
+    {
+      "uuid": "b7f35aa2-a501-430f-8726-5560c7ac9d5e",
+      "author": "xqjG",
+      "content": "Fixed: the registered-but-non-preferred push draws the hook's warning — the warn conduct falsified, not assumed; the zero-finding inline-review variant joins the 2a list as a named deferred cell per the watch-item. Revision: corpus + criterion + 2a list.",
+      "created_at": "2026-07-20T02:12:06.142599Z",
+      "kind": "resolution"
+    }
+  ]
+}

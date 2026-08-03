@@ -1,0 +1,28 @@
+{
+  "uuid": "ed7cc8eb-e2c9-47dc-b7c5-d5ab04aaf63d",
+  "display_id": 202,
+  "title": "SA/F2: lint scans .rs only; spec drift can re-enter",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-architect-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@bc83588",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:30.430456Z",
+  "updated_at": "2026-06-08T02:34:14.853561Z",
+  "closed_at": "2026-06-08T02:34:14.853561Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "5aadefd1-2387-48be-b3c7-cd9de5680f01",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@bc83588).",
+      "created_at": "2026-06-08T02:34:14.083869Z",
+      "kind": "resolution"
+    }
+  ]
+}

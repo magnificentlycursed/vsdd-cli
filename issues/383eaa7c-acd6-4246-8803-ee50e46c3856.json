@@ -1,0 +1,28 @@
+{
+  "uuid": "383eaa7c-acd6-4246-8803-ee50e46c3856",
+  "display_id": 159,
+  "title": "DR/F2: three new range-class labels load-bearing",
+  "description": "Source: mdatron/review-log/2026-06-02-documentation-reviewer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@1d81c4e (table tightened)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:04.751056Z",
+  "updated_at": "2026-06-08T02:33:56.911944Z",
+  "closed_at": "2026-06-08T02:33:56.911944Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:documentation-reviewer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "e4f4c7bf-124d-455e-938a-8e1d9d66843a",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@1d81c4e (table tightened)).",
+      "created_at": "2026-06-08T02:33:56.029250Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "uuid": "3e92224a-8c86-4495-aa55-7b71fcedb8b3",
+  "display_id": 851,
+  "title": "Upstream crosslink request: prompt-injection seam in kickoff/swarm dispatch prompt assembly (consumer-tool context injection)",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T19:53:03.791348Z",
+  "updated_at": "2026-08-02T00:51:45.726048Z",
+  "closed_at": "2026-08-02T00:51:45.726041Z",
+  "labels": [
+    "upstream"
+  ],
+  "comments": [
+    {
+      "uuid": "289ac202-b0a2-4108-aeaa-8dfaa6921330",
+      "display_id": 1317,
+      "author": "xqjG",
+      "content": "CONTRACT-NAMED UPSTREAM CAPABILITY REQUIREMENT (the injection seam). vsdd's conformance architecture is injection-by-construction: the phase primer, composed domain personas, and supplements must be INJECTED into the dispatched agent's prompt (availability-is-not-activation; the cargo-cult founding incident). When kickoff/swarm dispatches, CROSSLINK assembles the agent prompt (KICKOFF.md protocol + rules injection) and exposes no hook for a consuming tool to add content — the contract records that the dispatch primitive 'carries none of the vsdd layer' and names kickoff prompt-assembly as the candidate seam. ASK: an injection point (flag/file/extension, e.g. --inject-context <file>) on kickoff run/plan and swarm, woven into the generated prompt. This gates vsdd riding kickoff/swarm at all — the #845 remediation's critical path. Until it exists the only conformant dispatch path is the runtime-harness Agent/Workflow fallback (the calcified deviation #845 remediates).",
+      "created_at": "2026-08-01T19:54:40.151503Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4b3d21e2-9c2a-4b76-8344-6244711ba745",
+      "display_id": 1319,
+      "author": "xqjG",
+      "content": "PARTIALLY ADDRESSED UPSTREAM (verified from the commit diff, dollspace-gay/crosslink 26ee1885, merged 2026-08-01, PR #44 / gh#43 'configurable kickoff prompt template via hook-config.json'): kickoff run now checks hook-config.json 'agent.kickoff_template' (a file path, resolved relative to .crosslink/) and uses that file's content as the ENTIRE agent prompt, bypassing build_prompt; 'agent.no_template: true' yields an empty prompt (run.rs step 5; utils.rs read_kickoff_template/read_no_template). This IS a workable seam for the vsdd layer: the orchestrator controls the template file and can regenerate it per dispatch with the composition+primer+personas baked in. THREE CAVEATS narrow the remaining ask: (1) REPLACE, not INJECT — the custom path loses crosslink's own built prompt entirely (15-step protocol, issue id, branch, design-doc content, conventions, verify-level steps; no placeholder interpolation), so vsdd must re-author the crosslink half too and it drifts as upstream evolves; ask remains: an append/injection mode or placeholder interpolation so crosslink's half stays tool-maintained. (2) Config-level, not dispatch-level — one template path in hook-config.json races under parallel dispatches with different compositions; ask: a per-dispatch --template flag on kickoff run/plan. (3) Nothing for swarm — the template hook is kickoff-run only. Same commit also adds 'agent.binary' (swap claude for another CLI; non-claude gets prompt via stdin, Anthropic env/credential mounts gated). NOT addressed by this commit: #852 (no effort/thinking-budget flag), #837/#846/#847/#848/#849/#850 untouched. Our local mirror (6b4f736f, 2026-07-31) predates this — re-audit after next pull.",
+      "created_at": "2026-08-01T19:56:48.057988Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "931a0863-69a3-4f36-9e6f-d68bf599a75c",
+      "display_id": 1326,
+      "author": "xqjG",
+      "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+      "created_at": "2026-08-01T20:02:57.018392Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "44152f6a-69ab-4d93-bf89-a2ebe3920844",
+      "display_id": 1335,
+      "author": "xqjG",
+      "content": "Remaining asks filed upstream as the #43 follow-up: https://github.com/dollspace-gay/crosslink/issues/62",
+      "created_at": "2026-08-01T20:07:12.000638Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "e9ba2e93-fcf4-4091-9d44-c68b126ba027",
+      "display_id": 1353,
+      "author": "xqjG",
+      "content": "Design input for the injection seam posted to the fork epic: https://github.com/magnificentlycursed/crosslink/issues/2#issuecomment-5154089077 — five consumer requirements (R1 interpolation/append keeping crosslink's half tool-maintained; R2 per-dispatch --template flag; R3 swarm per-agent composition incl. the uniform-clobber hazard + the exec-hook end-state; R4 coherence with the #61 dial design; R5 the assembled prompt stays auditable via KICKOFF.md). Suggested split: R1+R2 as a small fork-authored PR (the #44 pattern); R3+R4 into the #61 design cycle. The PR itself is pure crosslink work — it lives in the crosslink estate, not here.",
+      "created_at": "2026-08-02T00:00:59.973045Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4eca959c-f63f-4581-aac9-44f27e5b1905",
+      "display_id": 1375,
+      "author": "xqjG",
+      "content": "CLOSED (tracked upstream + contract-carried): the injection seam is a named contract dependency; the narrowed asks are dollspace-gay/crosslink#62 with the consumer requirements posted on epic magnificentlycursed/crosslink#2 (the design-input comment feeding their #61 design cycle + any fork-authored PR). Registry entry manual-dispatch-fallback carries the interim.",
+      "created_at": "2026-08-02T00:51:39.354065Z",
+      "kind": "result"
+    }
+  ]
+}

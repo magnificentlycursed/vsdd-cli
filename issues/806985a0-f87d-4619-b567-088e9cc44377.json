@@ -1,0 +1,28 @@
+{
+  "uuid": "806985a0-f87d-4619-b567-088e9cc44377",
+  "display_id": 198,
+  "title": "SE/F5: nested Field-on-missing-key path lacks explicit test",
+  "description": "Source: mdatron/review-log/2026-06-02-software-engineer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@8dc0392",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:22.188884Z",
+  "updated_at": "2026-06-08T02:34:11.536360Z",
+  "closed_at": "2026-06-08T02:34:11.536360Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:software-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "ce3b6079-b284-4bed-8225-35d1a6b9f3d9",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@8dc0392).",
+      "created_at": "2026-06-08T02:34:10.834390Z",
+      "kind": "resolution"
+    }
+  ]
+}

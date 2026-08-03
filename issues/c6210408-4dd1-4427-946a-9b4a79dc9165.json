@@ -1,0 +1,27 @@
+{
+  "uuid": "c6210408-4dd1-4427-946a-9b4a79dc9165",
+  "display_id": 327,
+  "title": "Snapshot schema thinner than the Status integrity list",
+  "description": "SA gap for phase 1c: per-finding owner/validator/evidence-reference presence must materialize into the snapshot schema for the pure function to compute those checks. Fix: one sentence pinning the phase-1c schema audit against the full Status list. [owner: solution-architect; validator: quality-engineer]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:06:54.167494Z",
+  "updated_at": "2026-07-19T22:07:37.039161Z",
+  "closed_at": "2026-07-19T22:07:37.039161Z",
+  "labels": [
+    "phase-1b-round-2",
+    "solution-architect",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "082b50a7-beae-4f4b-b5f8-8fefadd4ed03",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b micro-pass (sha256:cccfa7da5522125e0cd889f70333e62b11ccb266189f953cd598f4e393ab90e4).",
+      "created_at": "2026-07-19T22:07:36.269501Z",
+      "kind": "result"
+    }
+  ]
+}

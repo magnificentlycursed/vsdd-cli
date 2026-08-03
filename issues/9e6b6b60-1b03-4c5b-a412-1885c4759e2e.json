@@ -1,0 +1,21 @@
+{
+  "uuid": "9e6b6b60-1b03-4c5b-a412-1885c4759e2e",
+  "display_id": 268,
+  "title": "amend-r5-DR: retired token axis in the conformance evidence",
+  "description": "Minor. Fix: one per escape path. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:03:52.961068Z",
+  "updated_at": "2026-07-20T19:10:43.623803Z",
+  "closed_at": "2026-07-20T19:10:43.623803Z",
+  "comments": [
+    {
+      "uuid": "abd05665-3540-4aa3-8456-26bcbb59ba5c",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:10:40.830891Z",
+      "kind": "resolution"
+    }
+  ]
+}

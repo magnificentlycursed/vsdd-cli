@@ -1,0 +1,21 @@
+{
+  "uuid": "73f85363-1d6d-4340-af21-14c21367383c",
+  "display_id": 512,
+  "title": "lane r8 Meth nit: flake deferral stated twice",
+  "description": "Lane round 8. Lens: methodology (validator: SO). Defect: the same 1c deferral appears twice in one bullet. Citations verified: contract:64. Proposed: resolved-candidate (trim to one).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:01.656683Z",
+  "updated_at": "2026-07-20T01:30:07.742360Z",
+  "closed_at": "2026-07-20T01:30:07.742360Z",
+  "comments": [
+    {
+      "uuid": "9fb0b756-2d00-4a53-a054-a4017fbbb420",
+      "author": "xqjG",
+      "content": "Fixed: duplicate deferral trimmed — the delta sentence carries the single statement. Revision: gate bullet.",
+      "created_at": "2026-07-20T01:29:44.358612Z",
+      "kind": "resolution"
+    }
+  ]
+}

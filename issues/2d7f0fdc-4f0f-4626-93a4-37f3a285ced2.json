@@ -1,0 +1,28 @@
+{
+  "uuid": "2d7f0fdc-4f0f-4626-93a4-37f3a285ced2",
+  "display_id": 185,
+  "title": "SC/F3: Phase 1a/1b/1c condensation self-authorized",
+  "description": "Source: mdatron/review-log/2026-06-02-sanity-check-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: vsdd-cli@99bf65e (Phase 1a/1b/1c split into separate artifacts)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:56.123588Z",
+  "updated_at": "2026-06-08T02:34:08.322696Z",
+  "closed_at": "2026-06-08T02:34:08.322696Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:sanity-check",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "74fc929e-94b6-42b3-9afb-e3ab6c24469b",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (vsdd-cli@99bf65e (Phase 1a/1b/1c split into separate artifacts)).",
+      "created_at": "2026-06-08T02:34:07.650524Z",
+      "kind": "resolution"
+    }
+  ]
+}

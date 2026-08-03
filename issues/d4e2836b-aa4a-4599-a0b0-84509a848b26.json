@@ -1,0 +1,21 @@
+{
+  "uuid": "d4e2836b-aa4a-4599-a0b0-84509a848b26",
+  "display_id": 771,
+  "title": "Layer 2 round 4 residue collector: the byte-length home-fold floor and the init suite's temp pattern — recorded and routed, not gating",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T19:17:33.835619Z",
+  "updated_at": "2026-07-22T19:18:10.270045Z",
+  "closed_at": "2026-07-22T19:18:10.270035Z",
+  "comments": [
+    {
+      "uuid": "714b39ab-63c7-42e8-b841-e53a4bcf5bef",
+      "display_id": 1009,
+      "author": "xqjG",
+      "content": "The two round-4 residuals, routed per phase 4 with dispositions (both lenses concur neither forces another code round): (1) MINOR, defect-fix lane candidate: refs.rs sanitize's two-character home-fold floor measures bytes — HOME='//' (all-separator, resolves like the excluded bare slash) and a single multibyte character both pass and can tilde-fold matching text in a git diagnostic (a doubled slash in a URL, for instance). Fix sketch on the #770 round record: require at least one non-separator character and a chars().count() floor. Narrower than the #767 defect — additionally needs matching text in a for-each-ref diagnostic. Routes to the defect-fix lane whenever next opened; the finding-issue-first discipline applies there. (2) NIT, consistency queue: vsdd-core/tests/init.rs still uses the delete-then-create shared-temp pattern with a hand-rolled Drop — the class #769 removed from cross_references.rs — on prior-layer surface this round did not touch; the nanosecond suffix and per-user TMPDIR make it a stray, not a race. Converts to tempfile::Builder whenever that file is next lawfully open. Both items recorded here so the phase-4 unrouted query returns empty; this collector closes as the routing record.",
+      "created_at": "2026-07-22T19:18:04.171822Z",
+      "kind": "result"
+    }
+  ]
+}

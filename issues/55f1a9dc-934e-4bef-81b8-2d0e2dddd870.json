@@ -1,0 +1,21 @@
+{
+  "uuid": "55f1a9dc-934e-4bef-81b8-2d0e2dddd870",
+  "display_id": 760,
+  "title": "Layer 2 round 2 minor SE+security+DE triple-convergent: stderr truncates before the absolute-root sanitize — a cut mid-path leaks a partial user-absolute path into a record-destined diagnostic; sanitize also misses the canonical and home forms",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T18:00:10.950740Z",
+  "updated_at": "2026-07-22T18:46:13.013776Z",
+  "closed_at": "2026-07-22T18:46:13.013766Z",
+  "comments": [
+    {
+      "uuid": "76e86254-e0c8-451b-a79b-2b5041e8a6a4",
+      "display_id": 993,
+      "author": "xqjG",
+      "content": "Fixed in a49206fe (producer half) and 74b01866-adjacent refs.rs changes: run_bounded returns Refused stderr WHOLE up to the 4KiB capture bound; the diagnostic site sanitizes first and truncates to 500 chars after, so a cut can no longer bisect a path out of the exact-match replace. Sanitize now folds the given AND canonicalized root spellings to '.' (the darwin /private alias) and renders a non-empty HOME prefix as '~', root replacements ordered before the home one.",
+      "created_at": "2026-07-22T18:46:06.999850Z",
+      "kind": "result"
+    }
+  ]
+}

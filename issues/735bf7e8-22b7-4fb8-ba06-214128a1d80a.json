@@ -1,0 +1,21 @@
+{
+  "uuid": "735bf7e8-22b7-4fb8-ba06-214128a1d80a",
+  "display_id": 779,
+  "title": "Layer 3 round 1 major QE: the falsifiability batch — dead absence branch behind a pre-materialized fixture, the human form's missing absence handling, the generic truncation branch, the degraded only-if half, hardcoded-zero instrument mutants, the machine degraded block, field order, and the per-fixture quantifiers",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T05:44:54.011468Z",
+  "updated_at": "2026-07-26T06:29:12.388867Z",
+  "closed_at": "2026-07-26T06:29:12.388843Z",
+  "comments": [
+    {
+      "uuid": "6d0d9f1a-2cbc-4365-986c-e9f4c7beda5e",
+      "display_id": 1033,
+      "author": "xqjG",
+      "content": "Fixed in ff331dd9: the executed-mutant gaps are closed — the absences fixture carries genuinely empty values so the renderer's worded-absence branch executes; render_human words its absences (the code half that was missing outright); the generic truncation branch, the degraded only-if half (healthy segments assert NO marker word for every registered kind), the machine report.degraded block by exact match, the milestone's position in field order, the per-fixture byte-identity/superset/color-strip quantifiers, the CountingReader positive control, and the nonzero wall-clock observation all have executed falsifiers; the machine form shares the one unregistered-kind fallback wording with its sibling surfaces. Conduct suite 18 -> 25 tests.",
+      "created_at": "2026-07-26T06:28:58.731072Z",
+      "kind": "result"
+    }
+  ]
+}

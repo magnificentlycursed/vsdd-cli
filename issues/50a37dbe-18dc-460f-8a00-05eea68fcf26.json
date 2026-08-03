@@ -1,0 +1,22 @@
+{
+  "uuid": "50a37dbe-18dc-460f-8a00-05eea68fcf26",
+  "display_id": 234,
+  "title": "events.jsonl writer + OperatorDirective event emission",
+  "description": "Umbrella for crosslink #12 + #13 findings blocked on vsdd-cli's events.jsonl writer implementation. Per DESIGN-OBSERVABILITY.md, events.jsonl is the canonical audit-trail surface; the writer is not yet implemented. Findings deferred here include OperatorDirectiveApplied/Revoked emission, PhaseExited event capture, and the M5 F3+F9 audit-trail-on-act discipline operationalization.\n\nvsdd-cli scope; v0.1.x candidate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:51:09.343134Z",
+  "updated_at": "2026-07-31T23:17:55.233639Z",
+  "closed_at": "2026-07-31T23:17:55.233628Z",
+  "comments": [
+    {
+      "uuid": "b045057d-8990-4266-a4fb-82291af76200",
+      "display_id": 1301,
+      "author": "xqjG",
+      "content": "CLOSING — the .vsdd/events.jsonl events store is fully retired by #840 (operator decision; methodology lifecycle facts re-homed to the crosslink session breadcrumb + harness run records + tracker comments). The events.jsonl writer + OperatorDirectiveApplied emission this issue tracked are defunct. Built-code decommission (init.rs + tests) = #843.",
+      "created_at": "2026-07-31T23:17:49.214745Z",
+      "kind": "resolution"
+    }
+  ]
+}

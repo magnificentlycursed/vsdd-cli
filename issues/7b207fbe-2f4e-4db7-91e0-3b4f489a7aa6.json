@@ -1,0 +1,21 @@
+{
+  "uuid": "7b207fbe-2f4e-4db7-91e0-3b4f489a7aa6",
+  "display_id": 630,
+  "title": "1c-DR-r4: session-split ruling cited without resolvable record",
+  "description": "Minor, check f. Fix: record the ruling as a decision comment on the phase-1c execution issue and cite it inline with its date. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:48.618630Z",
+  "updated_at": "2026-07-20T18:13:32.319791Z",
+  "closed_at": "2026-07-20T18:13:32.319791Z",
+  "comments": [
+    {
+      "uuid": "a51b3c41-7139-434d-814f-9eecf396571d",
+      "author": "xqjG",
+      "content": "Fixed: the ruling is recorded as a decision comment on this phase-1c execution issue and the inline citation now carries the date and the record's location.",
+      "created_at": "2026-07-20T18:13:30.472876Z",
+      "kind": "resolution"
+    }
+  ]
+}

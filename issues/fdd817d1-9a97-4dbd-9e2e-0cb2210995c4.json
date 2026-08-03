@@ -1,0 +1,28 @@
+{
+  "uuid": "fdd817d1-9a97-4dbd-9e2e-0cb2210995c4",
+  "display_id": 204,
+  "title": "SA/F4: missing Red Gate test or expect_array relax",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-architect-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:34.278473Z",
+  "updated_at": "2026-06-08T02:23:44.740351Z",
+  "closed_at": "2026-06-08T02:23:44.740351Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "cf8d1fb4-50ce-4ef1-957e-7b8855a43d44",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@f59c9f4 (Wave 8 (every/some over Null)).",
+      "created_at": "2026-06-08T02:23:43.825238Z",
+      "kind": "resolution"
+    }
+  ]
+}

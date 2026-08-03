@@ -1,0 +1,21 @@
+{
+  "uuid": "6f5a7453-f1dd-4949-aeb8-eb69be134d1b",
+  "display_id": 543,
+  "title": "lane r10 SE: cannot-run predicate undefined (runs vs slow vs hang)",
+  "description": "Lane round 10. Lens: SE (validator: SO). Defect: the run-attempt has no command binding or exit/timeout semantics; a slow suite false-confirms, a hang never returns. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (the predicate's semantics join the 1c data-authoring items beside the failure kinds; acceptable now that the validator backstops the form per the sibling fix).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:56.319434Z",
+  "updated_at": "2026-07-20T01:59:00.752129Z",
+  "closed_at": "2026-07-20T01:59:00.752129Z",
+  "comments": [
+    {
+      "uuid": "e690c647-6f40-4e27-9993-a73ea4387aa7",
+      "author": "xqjG",
+      "content": "Fixed: the cannot-run predicate's command binding and exit-and-timeout semantics join the 1c data-authoring items beside the failure kinds — a contracted deferral, acceptable now the validator backstops the form. Revision: gate bullet.",
+      "created_at": "2026-07-20T01:58:47.452683Z",
+      "kind": "resolution"
+    }
+  ]
+}

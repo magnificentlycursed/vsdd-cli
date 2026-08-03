@@ -1,0 +1,21 @@
+{
+  "uuid": "b5566f34-368a-4a63-b4da-0c9152b24ef6",
+  "display_id": 638,
+  "title": "posture-r4-SA: preflight scoped to cold rounds only",
+  "description": "Minor, completeness. Fix-scale reviews, convergence dispatches, and the container gate fall outside 'cold round'. Fix: scope to any autonomous dispatch. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:22.428036Z",
+  "updated_at": "2026-07-20T18:15:41.443805Z",
+  "closed_at": "2026-07-20T18:15:41.443805Z",
+  "comments": [
+    {
+      "uuid": "bbca706c-4989-4fec-9045-e80081da79e4",
+      "author": "xqjG",
+      "content": "Fixed: the preflight now binds 'before any autonomous dispatch' — fix-lane dispatches are named autonomous in Finding lifecycle, and the live-fire run preflights.",
+      "created_at": "2026-07-20T18:15:40.096223Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "51b59359-c0e9-481d-9c1d-ca2ee813b0d2",
+  "display_id": 195,
+  "title": "SE/F2: is_reserved_mdatron_code parse path raw byte-slice indexing",
+  "description": "Source: mdatron/review-log/2026-06-02-software-engineer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:16.461080Z",
+  "updated_at": "2026-06-08T01:48:33.867363Z",
+  "closed_at": "2026-06-08T01:48:33.867363Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:software-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "fb9ff4a9-4943-4dcb-a15b-ca4d8eb5405c",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@422c2dc (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:33.070767Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "fe24efcf-82fa-4073-9d50-f75e1f8b73f7",
+  "display_id": 633,
+  "title": "posture-r4-SA: cold-is-autonomous contradicts convergence worktree mechanics",
+  "description": "Blocking, coherence. Worktree-launched cold convergence sessions have no assignable posture under the axis. Disposition path: operator ruling retires the per-dispatch axis; cold stays context isolation, orthogonal to the structural split. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:13.351589Z",
+  "updated_at": "2026-07-20T18:15:26.094941Z",
+  "closed_at": "2026-07-20T18:15:26.094941Z",
+  "comments": [
+    {
+      "uuid": "afc047b2-6a90-4e78-82b4-b3ff6c65f9ef",
+      "author": "xqjG",
+      "content": "Resolved by the structural redraft under the operator's ruling: the per-dispatch axis is retired; cold remains context isolation, orthogonal to the attended/autonomous split; convergence worktree sessions carry no posture assignment because no per-dispatch posture exists.",
+      "created_at": "2026-07-20T18:15:24.634923Z",
+      "kind": "resolution"
+    }
+  ]
+}

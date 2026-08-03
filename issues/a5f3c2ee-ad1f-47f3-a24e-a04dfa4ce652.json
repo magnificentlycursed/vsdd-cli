@@ -1,0 +1,41 @@
+{
+  "uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+  "display_id": 745,
+  "title": "Phase 3 execution, Layer 2: adversarial refinement round 1",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T16:49:20.000430Z",
+  "updated_at": "2026-07-22T20:21:11.688242Z",
+  "closed_at": "2026-07-22T20:21:11.688233Z",
+  "labels": [
+    "review"
+  ],
+  "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
+  "comments": [
+    {
+      "uuid": "24769a6a-5aa3-47da-ad1f-feb285ea05e2",
+      "display_id": 971,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, attended side. domains, computed from the layer's surfaces (a pure derivation over adopted oracles; a subprocess-driven acquisition; filesystem and git shell checks; the convergence suite): software-engineer (primary, the derivation and integrity logic), security (the subprocess acquisition, the substrate check's filesystem semantics, the refs shell), quality-engineer (suite falsifiability, the corpus runner), data-engineer (the snapshot mirror of snapshot-schema, the acquisition's bootstrap honesty, the vocabulary consumption). coverage: fourteen domains, no matching surface, declared. MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH (round-1 discovery posture on the deepest surfaces, the established catch record), quality-engineer and data-engineer MEDIUM. expected_cost_band: the seeded cold-code band (5-30 findings pre-dedup, 120k-300k tokens); Layer 1's round 1 ran 187k at the same shape. inputs: the Layer 2 tree at 4572c951 (the 2a-2c arc on the #738/#741/#744 trails). returned + telemetry recorded here after.",
+      "created_at": "2026-07-22T16:50:42.501470Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "e6cb9e34-43ab-41a2-a7de-27803c52631b",
+      "display_id": 986,
+      "author": "xqjG",
+      "content": "Round 1 fix pass COMPLETE (commit d84109f5; changelog mirror 9bdc3824). All nine children closed with results: #746 substrate resolution honesty, #747 degraded-kind classification, #748 fail-loud milestone parse, #749 corpus falsification (four additions), #750 controlled substrate positive + normalizer tests, #751 bounded subprocess tier, #752 two-query ref listing, #753 acquisition/derivation honesty collector (2c conjunct resolved as the #738 oracle amendment — kind, outcome, layer, AND phase uniformly across the 2a/2b/2c arms; recorded on #738, no fixture values changed), #754 shell trust posture and diagnostics collector (plus the operator's mid-pass substrate/chassis vocabulary directive, classification recorded on #754). Gates after the pass: 90 tests pass / 0 fail, clippy zero, fmt clean, mdatron verify clean. OPERATOR SLOT OPEN: the four #749 fixtures are DRAFT ORACLES awaiting adoption (integrity-missing-owner, integrity-closed-no-evidence, integrity-unresolvable-handle, round-parity-agreeing) — rationale comments in each expected.yaml; adoption batches with the next natural boundary. Round-1 dispatch telemetry, for the record: 243,445 downstream tokens, 72 tool invocations, four lenses on the fable tier with chosen=observed on every manifest, SE and security at high effort, QE and DE at medium. Next: round 2, the verify round over these fixes.",
+      "created_at": "2026-07-22T17:39:10.122550Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2e52947e-9737-4db4-bd15-0293bee8bcaf",
+      "display_id": 1013,
+      "author": "xqjG",
+      "content": "Round 1 complete and superseded by the layer's closure: 38 findings consolidated to #746-#754, all fixed in d84109f5 and verified by round 2. Closed at the Layer 2 sign-off (decision on #770).",
+      "created_at": "2026-07-22T20:21:05.665785Z",
+      "kind": "result"
+    }
+  ]
+}

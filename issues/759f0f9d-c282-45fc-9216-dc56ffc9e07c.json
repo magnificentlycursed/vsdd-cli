@@ -1,0 +1,21 @@
+{
+  "uuid": "759f0f9d-c282-45fc-9216-dc56ffc9e07c",
+  "display_id": 452,
+  "title": "lane r4 Meth: consolidation survivor's label set unspecified — security domain droppable",
+  "description": "Lane round 4. Lens: methodology (validator: SO). Owner: SO session. Defect: symptoms sharing a root cause need not share labels; a security-labeled symptom absorbed into an unlabeled survivor removes the security domain from the fix composition — the motivating incident reintroduced through the amendment's own path. Citations verified: contract:81, :89, :85. Proposed: resolved-candidate (survivor carries the union of absorbed labels; consolidation can never narrow composition).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:44.024256Z",
+  "updated_at": "2026-07-20T00:38:02.518479Z",
+  "closed_at": "2026-07-20T00:38:02.518479Z",
+  "comments": [
+    {
+      "uuid": "c71f60ee-ed28-4cd6-831f-fb800ba7504e",
+      "author": "xqjG",
+      "content": "Fixed: the survivor carries the union of the absorbed findings' labels — consolidation can never narrow the composition; an absorbed security label still summons the security domain. Revision: consolidation clause.",
+      "created_at": "2026-07-20T00:37:47.244790Z",
+      "kind": "resolution"
+    }
+  ]
+}

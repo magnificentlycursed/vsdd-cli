@@ -1,0 +1,21 @@
+{
+  "uuid": "aac0ef85-6230-4279-8c7b-fd148617cb6d",
+  "display_id": 664,
+  "title": "registry first-publish preparation: registration candidates from the respec sessions",
+  "description": "Collector for terms the registry's first-publish pass (Layer 10) must decide, accumulated as they surface; registration is an operator act — nothing here is registered by listing. Candidates so far (2026-07-20): (1) 'substrate' — the ratified contract's most load-bearing unregistered term (the session-substrate check is a contractual named check; 'substrate settings', 'substrate step', 'the substrate's consent surfaces' all normative); proposed pinned meaning: the session-hosting layer — Claude Code and its config surfaces — as distinct from the chassis (crosslink) and the methodology layer (vsdd). (2) 'hollow shell' — recurring through the ratified amendment text as the name of the wiring-survives-payload-lost install state; earned-by-recurrence candidate; caught variant this session ('hollow install', corrected) shows the phrase needs pinning or paraphrasing. (3) The registry's own managed section is suite-era (defines MVR, cites superseded docs) and needs reconciliation with the contract's Terms-defined draft vocabulary (domain, surfaces, section, statusline segment, the fix-lane terms) at the same pass. Register anti-pattern trail this session (for the coinage check's evidence base): FM1/FM2, NO-GO, 'hollow install', 'carrier' — all operator-caught, all corrected in mutable surfaces.",
+  "status": "open",
+  "priority": "low",
+  "parent_uuid": "aab7eb64-ad2b-4f6b-99c1-885a0fc5258a",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:32:09.831573Z",
+  "updated_at": "2026-07-21T01:32:09.831573Z",
+  "comments": [
+    {
+      "uuid": "17db0006-4b60-4353-a9d9-993be9c9625a",
+      "author": "xqjG",
+      "content": "OPERATOR RULING 2026-07-20 supersedes the 'substrate' candidacy in this collector's description: the word is RETIRED from newly-authored text in favor of concrete referents — 'crosslink' when crosslink is meant, 'Claude Code' when Claude Code is meant, 'any AI coding assistant' when the class is meant. Mechanized in .crosslink/rules/project.md the same day. Exact names of contract constructs (the session-substrate check) remain as citations until reworded; the contract's own 'substrate' occurrences join the next amendment window's candidates rather than the registry's. 'Hollow shell' candidacy and the managed-section reconciliation stand unchanged.",
+      "created_at": "2026-07-21T01:33:24.720705Z",
+      "kind": "decision"
+    }
+  ]
+}

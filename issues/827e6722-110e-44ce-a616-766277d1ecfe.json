@@ -1,0 +1,21 @@
+{
+  "uuid": "827e6722-110e-44ce-a616-766277d1ecfe",
+  "display_id": 600,
+  "title": "1c-DR-r1: fresh-container install-and-smoke gate orphaned by the decomposition",
+  "description": "Blocking, check e. Citation (Requirements, Gates): 'fresh-container install-and-smoke via crosslink kickoff --container, mechanizing the fresh-system install check that has been satisfied once in project history, manually'. No layer's enumeration names this gate; a named requirement deliverable has no build home. Fix: home it in Layer 6 (Gates) over Layer 4's install behavior, adding the dependency. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:31.674596Z",
+  "updated_at": "2026-07-20T17:09:47.797824Z",
+  "closed_at": "2026-07-20T17:09:47.797824Z",
+  "comments": [
+    {
+      "uuid": "87583244-4c81-4fba-836e-8d81bf8de117",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 6 now enumerates 'the fresh-container install-and-smoke gate over Layer 4's install behavior (via the chassis kickoff container capability)' with Layer 4 added to its dependencies. mdatron verify clean.",
+      "created_at": "2026-07-20T17:09:46.427053Z",
+      "kind": "resolution"
+    }
+  ]
+}

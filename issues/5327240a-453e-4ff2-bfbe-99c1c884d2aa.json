@@ -1,0 +1,64 @@
+{
+  "uuid": "5327240a-453e-4ff2-bfbe-99c1c884d2aa",
+  "display_id": 837,
+  "title": "Upstream crosslink observation: kickoff plan agents launch but stall (no status file, no progress, no gap report)",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-30T17:45:01.135304Z",
+  "updated_at": "2026-08-02T00:49:41.677370Z",
+  "closed_at": "2026-08-02T00:49:41.677363Z",
+  "labels": [
+    "upstream"
+  ],
+  "comments": [
+    {
+      "uuid": "67d53880-47c2-4553-8a67-ff22df8114bf",
+      "display_id": 1270,
+      "author": "xqjG",
+      "content": "SYMPTOM (crosslink @ develop / 0.9.0-beta, macOS): 'crosslink kickoff plan <design-doc>' launches a read-only plan-analysis agent successfully — worktree created, feature branch, tmux session active, trust auto-approved — but the in-agent analysis NEVER progresses. Reproduced identically on two separate design docs (.design/install-slice.md, .design/gate-execution-slice.md) in the same session.\n\nOBSERVATIONS over 15+ min each:\n- 'kickoff status' stays 'running (no status file yet)', tmux 'active', indefinitely.\n- 'kickoff show-plan' -> 'No gap report found yet ... still running'.\n- Zero file writes in the agent's worktree (find -newermt '-3 minutes' empty).\n- 'kickoff logs <id>' shows only the repo's git commit history, no agent events — suggesting the agent's work loop never emitted anything.\n- 'kickoff stop' only 'sent interrupt'; needed 'stop --force' to kill the tmux session; 'cleanup' needed --force to remove the stale worktrees.\n\nHYPOTHESIS: the tmux-spawned agent isn't entering its work loop — possibly no model credentials/access in the spawned session, an unshown interactive prompt (e.g. a permission/trust gate the agent is blocked on), or a silent startup failure. The launch path works; the agent runtime inside doesn't.\n\nIMPACT: the vsdd-way design pipeline (kickoff plan gap-analysis, and by extension kickoff run) is currently unusable here. Worked around by authoring + re-grounding via the operator's own subagents. Filed from:vsdd-cli.",
+      "created_at": "2026-07-30T17:45:25.748382Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "efa5ab3e-ccb4-48d4-8362-48c161b04daf",
+      "display_id": 1271,
+      "author": "xqjG",
+      "content": "POSTURE (operator ruling 2026-07-30): don't smoke-test the container path now — trust it at build time. kickoff plan (design gap-analysis) is local-only and stalled (this issue); the container path is kickoff RUN only (--container docker|podman, Docker Desktop 29.6.1 up). Build posture for a ratified slice: 'crosslink kickoff run --container docker --permission-mode auto', validated at first real build. The local tmux stall (likely a permission/model-access wait) is expected to be sidestepped by the container + auto-permission run; if it isn't, that's the signal to escalate this issue.",
+      "created_at": "2026-07-30T17:49:03.776740Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "8e40181d-52ee-450d-8327-f92405c80feb",
+      "display_id": 1274,
+      "author": "xqjG",
+      "content": "ESCALATION — container path ALSO fails at the agent-runtime layer (build-time validation, per the operator's trust-at-build-time ruling). Progress vs the local stall: with --image ghcr.io/forecast-bio/crosslink-agent:latest (the default dollspace-gay/crosslink-agent:latest is a dead org path — 404; forecast-bio's is the live one) the container launches, auth RESOLVES (env-file:kickoff.env), Rust toolchain installs, crosslink hooks init. THEN it exits 0 without doing any work because the Claude Code agent runtime can't start: repeated 'Claude configuration file not found at /home/agent/.claude/.claude.json' — a backup exists (.claude.json.backup.*) but the image entrypoint never restores it. Net: both kickoff vehicles are unusable here — local tmux stalls (no auth), container exits (no .claude.json). Two image bugs to fix upstream: (1) default --image points at a non-existent org path; (2) the agent image doesn't provision/restore .claude.json so Claude Code won't launch. Falling back to a host subagent build for Slice 3 (the reliable path, same as Slice 1).",
+      "created_at": "2026-07-30T19:20:37.465627Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "479b9c3d-d280-43d1-b9a4-f9597fe795d9",
+      "display_id": 1320,
+      "author": "xqjG",
+      "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+      "created_at": "2026-08-01T20:02:12.529770Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "fde3f1b1-009f-4cd0-b313-39e518d54feb",
+      "display_id": 1328,
+      "author": "xqjG",
+      "content": "Filed upstream: https://github.com/dollspace-gay/crosslink/issues/55",
+      "created_at": "2026-08-01T20:06:26.888971Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "735ce028-6a66-4614-b21d-53fdb654d63a",
+      "display_id": 1369,
+      "author": "xqjG",
+      "content": "CLOSED (tracked upstream): the kickoff-stall observation is upstream dollspace-gay/crosslink#55, with its container-side contributors fixed in flight (their PRs #63/#64); the fork epic magnificentlycursed/crosslink#2 carries the local-to-upstream linkage, and deviation-registry entry manual-dispatch-fallback carries the retest predicate (#55 closed). Local mirror no longer needed.",
+      "created_at": "2026-08-02T00:49:35.039238Z",
+      "kind": "result"
+    }
+  ]
+}

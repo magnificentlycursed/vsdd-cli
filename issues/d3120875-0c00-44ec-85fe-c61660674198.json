@@ -1,0 +1,21 @@
+{
+  "uuid": "d3120875-0c00-44ec-85fe-c61660674198",
+  "display_id": 606,
+  "title": "1c-DR-r1: criteria-audit entry truncates the leading name Convergence test",
+  "description": "Minor, check a. Citation (Decomposition, Criteria audit): 'Convergence (#307)' vs the criteria section's rule 'Each criterion is referenced by its leading name' and the leading name 'Convergence test'. Fix: exact name in the audit. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:42.298115Z",
+  "updated_at": "2026-07-20T17:10:03.834178Z",
+  "closed_at": "2026-07-20T17:10:03.834178Z",
+  "comments": [
+    {
+      "uuid": "5a8a11a9-5e64-472d-ae48-28e15b61717f",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Audit entry now reads 'Convergence test (L2)' — the exact leading name. mdatron verify clean.",
+      "created_at": "2026-07-20T17:10:02.562632Z",
+      "kind": "resolution"
+    }
+  ]
+}

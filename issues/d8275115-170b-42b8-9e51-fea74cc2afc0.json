@@ -1,0 +1,21 @@
+{
+  "uuid": "d8275115-170b-42b8-9e51-fea74cc2afc0",
+  "display_id": 527,
+  "title": "lane r9 SE: new-at-HEAD must-pass over-fires on non-executed tests",
+  "description": "Lane round 9. Lens: SE (validator: SO). Defect: a quarantine ignore test or a relocated pre-existing ignored test is new-at-HEAD and does not execute-pass — the constraint blocks the exact relocation lane it serves, contradicting the pin doctrine's skipped-is-neither vocabulary in the same bullet; over-firing buys nothing since only failing new tests are the laundering vector. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (restate: no new-at-HEAD test may fail, skipped is neither; relocated-ignored fixture seeded).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:19.578532Z",
+  "updated_at": "2026-07-20T01:45:51.213964Z",
+  "closed_at": "2026-07-20T01:45:51.213964Z",
+  "comments": [
+    {
+      "uuid": "9ff816b0-d444-4b92-b8a6-854d784996ee",
+      "author": "xqjG",
+      "content": "Fixed: restated — no new-at-HEAD test may fail; skipped or ignored is neither, per the pin doctrine's vocabulary; relocated-ignored fixture seeded and blocks nothing. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:45:35.810919Z",
+      "kind": "resolution"
+    }
+  ]
+}

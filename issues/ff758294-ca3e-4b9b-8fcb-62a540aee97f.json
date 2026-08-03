@@ -1,0 +1,21 @@
+{
+  "uuid": "ff758294-ca3e-4b9b-8fcb-62a540aee97f",
+  "display_id": 449,
+  "title": "statusline r8 UX: condition-to-kind mapping unpinned per fixture",
+  "description": "Round 8. Lens: ux (validator: DR). AIE clean this round. Owner: SO session. Defect: property and criterion falsify that A kind is carried/named, never WHICH — a swapped mapping sends the operator to investigate the healthy offline tracker (the exact false alarm the kind design prevents) and passes deterministically. Citations verified: contract:163, :199, :188 vs :179's exact-match standard. Proposed: resolved-candidate (expected kind per fixture, exact match; property states absent-condition yields absent kind, unusable yields unusable).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:38.238626Z",
+  "updated_at": "2026-07-20T00:37:58.309622Z",
+  "closed_at": "2026-07-20T00:37:58.309622Z",
+  "comments": [
+    {
+      "uuid": "3b5078c6-2f5c-43c8-a75f-615a54f931df",
+      "author": "xqjG",
+      "content": "Fixed: expected kind pinned per fixture with exact-match comparison; derivation property states the mapping (absent yields absent, unusable yields unusable, never swapped). Revision: Status detection criterion + derivation entry.",
+      "created_at": "2026-07-20T00:37:43.189690Z",
+      "kind": "resolution"
+    }
+  ]
+}

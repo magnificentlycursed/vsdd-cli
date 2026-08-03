@@ -1,0 +1,96 @@
+{
+  "uuid": "95e5dadc-0b23-4aa0-825f-82a3918c1f5b",
+  "display_id": 810,
+  "title": "Decomposition amendment (phase 1c + 1a/1b): re-sequence the build to front-load the enforcement spine — invariant-first applied to build order — resolving the enforcement-gap class (#806 routing, #809 amendment-discipline, and the Layer-8 directive-classification they share)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-27T20:03:51.692487Z",
+  "updated_at": "2026-07-27T21:25:56.732119Z",
+  "closed_at": "2026-07-27T21:25:56.732107Z",
+  "labels": [
+    "spec-amendment"
+  ],
+  "comments": [
+    {
+      "uuid": "6ced2dac-1410-4fff-97d2-98a5590d453f",
+      "display_id": 1084,
+      "author": "xqjG",
+      "content": "DIRECTIVE CLASSIFICATION of operator 'B' (2026-07-27): SPEC AMENDMENT — a re-decomposition. It amends the contract's Decomposition section (phase 1c) driven by the invariant-first principle (phase 1a/1b). Amend-then-act: the contract changes only through the design process, NOT a solo edit — doing it by hand would repeat the #808 deviation we are mid-remediating.\n\nVEHICLE: the estate's design affordance (the design workflow / skill), attended — 'design authoring the chassis design workflow' per the act-to-affordance map; hand-rolling an equivalent is the nonconformance this whole thread is about. Design is attended (operator present), so this runs collaboratively, then cold-reviewed under composition, then operator-ratified as the exit.\n\nCOMPOSITION (proposed; note it differs from the #806/#807 amendment-review composition because a re-decomposition is architecture-led): Solution Architect PRIMARY (decomposition, dependency analysis, the new ordering), Solution Owner (contract-change authority, scope), Documentation Reviewer + Technical Writer (prose, register, Revision line).\n\nSCOPE: (1) adopt invariant-first as a decomposition principle; (2) re-sequence so the enforcement spine — directive classification, the unrouted-findings + round-parity queries, the amendment-discipline gating — is built as early as true dependencies allow (or bootstrap-carried), minimizing the un-self-enforced base; (3) fold in the reverted #806 clauses (routing format-carry + invariant-first) as they find their proper home in the new order. PARKED, rides separately: #807 terminal-safety (a Status-requirement amendment, not decomposition) and the Layer-3 rebuild — both wait until this lands. Entering the design workflow now to author the amendment attended.",
+      "created_at": "2026-07-27T20:04:40.126713Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "936ea489-34da-4175-97c1-312485e104f1",
+      "display_id": 1085,
+      "author": "xqjG",
+      "content": "Design draft written: .design/re-sequence-enforcement-spine.md (stored as knowledge, tagged design-doc). 6 requirements, 7 acceptance criteria, 2 open questions (Q1: reopen Layer-2 milestone vs. amendment increment; Q2: the amendment-discipline format-carry's exact shape/home). It authors, on the recommended lines: invariant-first principle; the unrouted-findings query assigned to Layer 2 beside its four built siblings; three bootstrap format-carries (parity existing + routing + amendment-discipline); the mechanized blocking tier kept at its true-dependency layer, cross-referenced; forward-only. Pipeline-state step skipped with reason: this is a spec-amendment track (cold review + ratification), not a kickoff feature build. Next: cold review under the SA-primary / SO / DR-TW composition; the two open questions are review inputs; operator ratifies as the exit.",
+      "created_at": "2026-07-27T20:13:39.116584Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "cd45bf2c-aa6a-4dbd-8559-32a01625a768",
+      "display_id": 1086,
+      "author": "xqjG",
+      "content": "REVIEW-ROUND MANIFEST (declared before spend). vehicle: Workflow, attended side (operator present). subject: the draft .design/re-sequence-enforcement-spine.md. composition: solution-architect PRIMARY, solution-owner, documentation-reviewer, technical-writer (operator-confirmed). MODEL chosen: claude-fable-5 all four. EFFORT: SA + SO HIGH, DR + TW MEDIUM. output: per-lens findings on the draft (wrong / missing / mis-scoped / unclear / mis-registered), each lens's verdict (ratify-as-drafted vs revise-then-ratify), and each lens's position on the two open questions. band: 0-14 findings pre-dedup, 120k-280k tokens. After: triage, revise the draft, operator ratifies as the exit; only then does the contract change.",
+      "created_at": "2026-07-27T20:14:15.657279Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "61e91a1b-6cd3-4f90-9152-3bc24753499a",
+      "display_id": 1087,
+      "author": "xqjG",
+      "content": "COLD REVIEW RETURNED — 4/4 lenses, unanimous REVISE-THEN-RATIFY (telemetry: 262,362 tokens, chosen=observed fable, SA/SO high + DR/TW medium; in band). All findings ACCEPTED into the revision. Convergent set:\n- BLOCKING (SA+SO, DR concurs): the draft moves the unrouted-findings query to Layer 2 but never amends the Status requirement's integrity-query ENUMERATION (the surface Layer 2 reports through) nor the Gates requirement body line — so the query would have no criterion home and the snapshot-schema audit would not cover it. FIX: add both as edited regions; the query joins the Status enumeration, giving it the Status-detection Layer-2 slice as its criterion home.\n- BLOCKING (SO): the routing carry as worded flags lawful disposition-closures (dismissed/hallucinated/consolidated) as malformed. FIX: scope the obligation to findings closing BY FIX or surviving open; disposition closures satisfy by their recorded disposition.\n- MAJOR: round-parity is double-homed too (Layer 6 lists BOTH siblings). FIX: rewrite the Layer 6 entry for both — Layer 6 delivers the gate COMMANDS consuming Layer 2's unrouted-findings and round-parity queries.\n- MAJOR (SA+SO): the Layer-2 increment footprint is understated — it needs a routing field on the snapshot (deny_unknown_fields today), an acquisition extension, the snapshot-schema audit-mirror re-pin, and a convergence-corpus kind-set extension, with its own fresh red-gate seed under the fix-scale gate (NOT the historical Layer 2 gate). FIX: name all four surfaces.\n- MAJOR (SO): forward-only never states the query's universe boundary for the pre-amendment closed-unrouted set. FIX: findings closed before the ratification boundary are outside the query's universe; the six-round deviation stands (recorded on #808/#806).\n- MAJOR (SO): no fixture/verification reach for the moved query. FIX: add the both-directions detection fixture pair to the corpus enumeration under the named criterion slice.\n- REGISTER (TW+DR): 'routing disposition' collides with the sanctioned 'disposition' (a closure kind) -> use 'filed routing / routing record'; 'status integrity set' -> 'process-integrity queries'; define 'format-carry' at first use; 'invariant-first' enters as a registered draft term; 'enforcement spine' stays a draft-side descriptor, not contract text; expand 'UCD' to Unicode character database property.\n- WRONG (all): snapshot_integrity computes FIVE kinds not four (omitted phase-pointer-against-milestone-state, the state-integrity member).\n- CLARITY (DR): ground the reverted-#806/#807 reference (what/when/#808 handle); fix the region count; make AC-6/AC-7 checkable and match the chronicle shape.\n\nQ1 — UNANIMOUS: tracked Layer-2 amendment increment, do NOT reopen milestone #5 (reopening would make every boundary revocable and destroy sign-off semantics); recorded as a Revision-line amendment at a named boundary; the increment carries its own fresh red-gate seed under the fix-scale gate.\nQ2 — CONVERGENT: the amendment-discipline carry lives in the Gates bootstrap paragraph (one home for all carries), keyed to the commit's structured evidence section citing the ratified spec-amendment review's decision record (the existing contracted vehicle), mirroring the parity carry's grammatical formula; mechanized home Layer 7 (blocking — it owns the commit evidence-section linkage, the governed-file read-gate, and the conformance families behind hooks) with Layer 8 directive classification as the complementary detection side.\nRevising the draft now on exactly these dispositions; then a terminal verify round, then operator ratification as the exit.",
+      "created_at": "2026-07-27T20:23:17.305921Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9b356fcb-d4c4-4fbb-bb75-899eaac26d95",
+      "display_id": 1089,
+      "author": "xqjG",
+      "content": "ROUTING OF THE COLD-REVIEW FINDINGS (correcting the batch-collapse — operator-flagged). Split by destination, at the confirmed lighter bootstrap grain:\n- FORWARD WORK, filed as tracked routed issues so it cannot orphan: #811 (the Layer-2 built increment — the query's real footprint + its own red-gate seed, routed 2a->2b, blocked on this amendment ratifying) and #812 ('invariant-first' registration as a draft term, operator act at ratification).\n- MECHANIZED BLOCKING TIER: tracked-by-decomposition — the Layer 6 phase-4 gate, the Layer 7 contract-commit gate, and the Layer 8 directive-classification detection surface at their owning layers' phase-2a; the amendment names them so they are not lost (no new issue needed).\n- DRAFT-REVISION FINDINGS (the register, clarity, count, exemption, double-home, enumeration-as-text items): dispositioned as fixed in the revised draft (.design/re-sequence-enforcement-spine.md), this round's revision. Per-finding child-issue tracking (the loop's full letter, for queryable per-lens yield) is deferred to the enforcement spine that will mechanize it — the lighter grain is the bootstrap stopgap, recorded as such.\nDraft revised to resolve every finding; both open questions resolved in-doc. Next: terminal verify round over the revised draft, then operator ratification as the exit.",
+      "created_at": "2026-07-27T20:31:01.380412Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "6df268ea-768b-4a0b-95b8-0d7ebe1f6922",
+      "display_id": 1090,
+      "author": "xqjG",
+      "content": "TERMINAL VERIFY ROUND — manifest (declared before spend). vehicle: Workflow, attended. subject: the REVISED .design/re-sequence-enforcement-spine.md. composition: SA-primary/SO/DR-TW (same as the review). Each lens verifies its round-1 findings are resolved in the revision AND sweeps for anything the revision introduced, then gives a stop verdict (ratify-ready vs another-cycle) — the loop's closing stage that decides the stop signal. MODEL: fable all four. EFFORT: SA+SO high, DR+TW medium. band: 0-8 findings, 100k-240k tokens. On a clean stop: operator ratifies as the exit.",
+      "created_at": "2026-07-27T20:59:09.097775Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "a4ba00c3-b934-4019-a58c-db71921a0efb",
+      "display_id": 1091,
+      "author": "xqjG",
+      "content": "TERMINAL VERIFY ROUND 1 — split 1 ratify-ready (SA) / 2 another-cycle (SO, DR), plus the TW register lens died on a transient classifier error (a dead register lens is not a clean verdict). One real CONVERGENT finding (SO major, DR major, SA minor): the Architecture edit-map undercounted — it listed five regions but REQ-3's format-carry edits and REQ-7's fixture-corpus edit were absent, so an applier would miss two contract edits. Plus two nits: REQ-1/AC-1 form-count (two vs three), and REQ-5 'at or after ratification' misreadable as creation-time not closure-time. All fixed in the draft: edit-map now enumerates seven regions matching every requirement; REQ-1/AC-1 aligned on three forms (detection / format-carry / mechanized gate); REQ-5 reworded to exclude only pre-ratification CLOSURES (open findings stay in the universe). Every substantive round-1 finding was verified RESOLVED by all three returning lenses (Status enumeration, disposition-closure exemption, round-parity double-home, footprint, forward-only, fixture, five-kinds, register, Q1/Q2). Dispatching a final verify: confirm the three fixes + recover the TW register verdict + decide the stop; nits do not block (batch-touch at ratification).",
+      "created_at": "2026-07-27T21:08:26.993565Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "3424f4a7-6915-4ee1-835c-b84fafbca066",
+      "display_id": 1092,
+      "author": "xqjG",
+      "content": "FINAL VERIFY ROUND — UNANIMOUS RATIFY-READY (4/4: SA, SO, DR, TW; the TW register lens recovered on this run). All three fixes confirmed grounded against contract and code: the seven-region edit-map is complete with bijective requirement coverage (no phantom, no missing edit); REQ-1/AC-1 agree on the three forms; REQ-5 keys on closure time. Remaining items are all minor/nit and were APPLIED as batch touches (not deferred): AC-5 anchored to region 4; REQ-5 reopened-finding case spelled out; the footprint names the closure-time datum; REQ-1's all-caps emphasis normalized to the contract register. mdatron clean, no placeholders. The amendment has cleared its full owned process — draft (design affordance) -> composed cold review (revise-then-ratify, blocking finding caught) -> revise -> terminal verify (edit-map defect caught) -> revise -> final verify (ratify-ready). READY FOR OPERATOR RATIFICATION as the phase exit; only on ratification does the contract change.",
+      "created_at": "2026-07-27T21:17:12.578798Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "029a287c-def1-43a5-8c03-c98fc40a5137",
+      "display_id": 1093,
+      "author": "xqjG",
+      "content": "OPERATOR RATIFICATION (2026-07-27, 'Ok, continue' to the ratification ask). #810 ratified as reviewed — the amendment has cleared draft -> composed cold review -> revise -> terminal verify -> revise -> final verify (unanimous ratify-ready), batch touches applied. Applying the seven-region edit to the contract now; the applying commit is the amendment-discipline format-carry's first exercised instance (its evidence section cites this ratified review record). Then: register invariant-first (#812), unblock the Layer-2 increment (#811); #807 proceeds separately; the Layer-3 rebuild stays parked.",
+      "created_at": "2026-07-27T21:20:05.993151Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "82b687dc-2645-495c-8e9f-05952ec09698",
+      "display_id": 1094,
+      "author": "xqjG",
+      "content": "APPLIED + RATIFIED. Contract amendment committed 8c9aaeda (seven regions + Revision line + Layer 6 priority-member note; mdatron clean); the commit's structured evidence section cites this ratified review record — the amendment-discipline format-carry's first exercised instance. 'invariant-first' registered in the vocabulary (commit follows, #812). The amendment cleared its full owned process: draft (design affordance) -> four-lens cold review (revise-then-ratify, blocking finding caught) -> revise -> terminal verify (convergent defect caught) -> revise -> final verify (unanimous ratify-ready) -> operator ratification. Closing.",
+      "created_at": "2026-07-27T21:25:51.043324Z",
+      "kind": "result"
+    }
+  ]
+}

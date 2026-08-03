@@ -1,0 +1,21 @@
+{
+  "uuid": "10757189-c10f-48b2-96c0-7bd6e8bde0bf",
+  "display_id": 264,
+  "title": "amend-r5-DR: no operator act provisions model credentials",
+  "description": "Minor. Fix: credentials join Layer 0's setup acts. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:03:37.995363Z",
+  "updated_at": "2026-07-20T19:11:08.922041Z",
+  "closed_at": "2026-07-20T19:11:08.922041Z",
+  "comments": [
+    {
+      "uuid": "7af7633f-9ee0-4a93-b97d-4bd43b4f1f91",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:11:06.140893Z",
+      "kind": "resolution"
+    }
+  ]
+}

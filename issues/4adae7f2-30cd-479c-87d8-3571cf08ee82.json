@@ -1,0 +1,21 @@
+{
+  "uuid": "4adae7f2-30cd-479c-87d8-3571cf08ee82",
+  "display_id": 286,
+  "title": "amend-r6: fix-shaped split-side generalized to features",
+  "description": "Minor, convergent. Features entering 1a run attended design after filing. Fix: per-kind split-side statement. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:21.224732Z",
+  "updated_at": "2026-07-20T19:24:35.448589Z",
+  "closed_at": "2026-07-20T19:24:35.448589Z",
+  "comments": [
+    {
+      "uuid": "53af0060-095d-499d-b121-1fa2b2252921",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:24:32.338449Z",
+      "kind": "resolution"
+    }
+  ]
+}

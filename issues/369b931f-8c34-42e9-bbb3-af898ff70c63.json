@@ -1,0 +1,28 @@
+{
+  "uuid": "369b931f-8c34-42e9-bbb3-af898ff70c63",
+  "display_id": 166,
+  "title": "PE/F3: all_emitted_codes_are_reserved must run in CI",
+  "description": "Source: mdatron/review-log/2026-06-02-platform-engineer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:18.685495Z",
+  "updated_at": "2026-06-08T02:23:15.052778Z",
+  "closed_at": "2026-06-08T02:23:15.052778Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:platform-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "1e6575bf-8553-4ccd-8728-c57a8ca92cb8",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@fc98fa4 (Wave 5).",
+      "created_at": "2026-06-08T02:23:13.701827Z",
+      "kind": "resolution"
+    }
+  ]
+}

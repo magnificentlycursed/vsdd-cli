@@ -1,0 +1,31 @@
+{
+  "uuid": "d500ac17-43c6-45cc-b13d-03ad666b8f5e",
+  "display_id": 719,
+  "title": "Phase 2c execution, Layer 1: refactor under the green suite",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T18:55:58.028168Z",
+  "updated_at": "2026-07-21T18:58:11.584128Z",
+  "closed_at": "2026-07-21T18:58:11.584128Z",
+  "labels": [
+    "refactor"
+  ],
+  "milestone_uuid": "1fbc66a4-8d5e-4a1f-87ab-e7bc95da4259",
+  "comments": [
+    {
+      "uuid": "7a0ef9b0-ac12-44af-8e41-12abc0269c55",
+      "author": "xqjG",
+      "content": "PHASE 2C ENTRY, LAYER 1 (2026-07-21, session #4). PRIMER read this session; the emission line stale as before, contract governs. COMPOSITION DECLARATION: phase-2c; composed_domains: [software-engineer, solution-architect]; skill-interactive; operator_confirmation: the go directive. DECLARED REFACTOR SURFACE (the stated-goal discipline; the primer marks this phase optional and the mentor stance forbids manufactured refactors — the survey found exactly two genuine items in the day-old minimal implementation): (1) the serde_yaml_ng error-to-location mapping repeats five times across registry/mod.rs and state/read.rs — extract one helper; (2) the vsdd-core crate doc still describes the pre-Layer-1 surface (schemas/patterns/artifacts only) — the prose catches up with the state, registry, and diagnostics modules. Both behavior-preserving; the suite stays green at every commit.",
+      "created_at": "2026-07-21T18:56:36.469689Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "60622b24-f53e-4a5a-b80e-8a1599e2571c",
+      "author": "xqjG",
+      "content": "PHASE 2C COMPLETE (commit 52a980d0): both declared-surface items landed — the five-site location mapping extracted to one crate-internal helper with the explicit line-offset parameter, and the crate doc current with the Layer 1 modules. Suite green at the commit (56/56 across eight targets), clippy zero, fmt clean; no externally-observable behavior changed. Exit status per the primer's own vocabulary: complete, small stated goal met. The milestone reaches implementation-ready; Layer 1's phase 3 — the adversarial refinement round over the layer's code — is next, and it is a review dispatch the operator gates.",
+      "created_at": "2026-07-21T18:58:07.827881Z",
+      "kind": "result"
+    }
+  ]
+}

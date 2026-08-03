@@ -1,0 +1,21 @@
+{
+  "uuid": "ee19a3ab-d8b8-468a-b9e1-3be9a45d783f",
+  "display_id": 420,
+  "title": "lane r2 SE+Meth: pre-publish waiver marker passes both falsifiers",
+  "description": "Lane round 2. Lenses: SE + methodology merged (validator: SO). Owner: SO session. Defect: falsifiers accept the waiver marker unconditionally; publish state is invisible to the check, so a hand-authored bootstrap waiver is falsifier-blessed — the exact invisible bypass the prose forecloses. Citations verified: contract:81 vs :66, :83. Proposed: resolved-candidate (the waiver escape activates at first publish — same gate that promotes vocabulary; a pre-publish waiver marker in the governed set is itself a flagged condition; Thermite precedent: waiver-count-zero is a countable bootstrap gate).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:38.182500Z",
+  "updated_at": "2026-07-20T00:16:52.829926Z",
+  "closed_at": "2026-07-20T00:16:52.829926Z",
+  "comments": [
+    {
+      "uuid": "6f413141-81aa-49a4-9013-037f402ecd8d",
+      "author": "xqjG",
+      "content": "Fixed: waiver escape activates at first publish (the vocabulary-promotion gate); a pre-publish waiver marker in the governed set is itself a flagged condition — the bootstrap bypass is countable at zero, per the Thermite slag precedent (mandatory fields, one-search enumeration, polarity inversion). Both falsifiers updated. Revision: Finding lifecycle bullet + both falsifiers.",
+      "created_at": "2026-07-20T00:16:30.590506Z",
+      "kind": "resolution"
+    }
+  ]
+}

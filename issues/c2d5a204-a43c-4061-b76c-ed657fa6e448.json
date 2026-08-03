@@ -1,0 +1,21 @@
+{
+  "uuid": "c2d5a204-a43c-4061-b76c-ed657fa6e448",
+  "display_id": 374,
+  "title": "statusline r3 AIE: zero-AI-cost label coarse (self-dismissed)",
+  "description": "Round: statusline amendment cold round 3. Lens: ai-engineer (validator: platform-engineer). Owner: SO session. Defect (candidate): 'zero-AI-cost' reads as a bundled label rather than a native unit. Self-dismissed by the reviewing lens in-report: the same clause denominates in native units (model-invocation-count zero, enforced by the offline criterion) — no conflict with Cost is knowable survives reading. Citations verified: contract:160, :133 context. Proposed: dismissed-candidate (filed for per-lens yield queryability per the loop's rule that dismissed findings file and close immediately).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:49.656996Z",
+  "updated_at": "2026-07-19T23:29:21.674691Z",
+  "closed_at": "2026-07-19T23:29:21.674691Z",
+  "comments": [
+    {
+      "uuid": "5c747bf9-a326-4fae-a9f5-cf1febb69c59",
+      "author": "xqjG",
+      "content": "Dismissed — self-dismissed by the reviewing lens in-report: zero-AI-cost is denominated in native units in the same clause (model-invocation-count zero, offline-enforced). Filed and closed for per-lens yield queryability per the loop's rule.",
+      "created_at": "2026-07-19T23:29:00.489213Z",
+      "kind": "resolution"
+    }
+  ]
+}

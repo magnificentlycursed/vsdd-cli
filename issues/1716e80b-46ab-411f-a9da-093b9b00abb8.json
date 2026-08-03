@@ -1,0 +1,21 @@
+{
+  "uuid": "1716e80b-46ab-411f-a9da-093b9b00abb8",
+  "display_id": 458,
+  "title": "lane r4 QE: no pin-green-suite-red fixture",
+  "description": "Lane round 4. Lens: QE (validator: SE). Owner: SO session. Defect: a gate dropping the standing-suite run satisfies every fixture — the second green run's regression power unverified; also the inseparable-retrofit's lifecycle-falsifier firing asserted only for its separable sibling (minor, folded here). Citations verified: contract:64 vs :173, :180. Proposed: resolved-candidate (fixture: named pin green, standing suite red, gate fails; criterion asserts both retrofit variants trip the lifecycle falsifier).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:54.533597Z",
+  "updated_at": "2026-07-20T00:38:12.663969Z",
+  "closed_at": "2026-07-20T00:38:12.663969Z",
+  "comments": [
+    {
+      "uuid": "6a2b2443-c46b-402e-b08e-bd7182a445f7",
+      "author": "xqjG",
+      "content": "Fixed: pin-green-suite-red fixture added, gate fails on the standing-suite run; both retrofit variants now asserted to trip the lifecycle falsifier. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:37:55.249126Z",
+      "kind": "resolution"
+    }
+  ]
+}

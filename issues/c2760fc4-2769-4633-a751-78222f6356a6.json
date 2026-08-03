@@ -1,0 +1,21 @@
+{
+  "uuid": "c2760fc4-2769-4633-a751-78222f6356a6",
+  "display_id": 768,
+  "title": "Layer 2 round 3 minor QE: a stderr-only pipe holdout fails a clean successful run as TimedOut, contradicting the declared best-effort stderr posture",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T19:04:40.948726Z",
+  "updated_at": "2026-07-22T19:08:39.688906Z",
+  "closed_at": "2026-07-22T19:08:39.688897Z",
+  "comments": [
+    {
+      "uuid": "e2fa27ad-2030-4b4f-b347-3c95d8eda409",
+      "display_id": 1004,
+      "author": "xqjG",
+      "content": "Fixed in 870836ce: the stderr collection is unconditional best-effort — recv_timeout's breach or loss yields an empty buffer, never TimedOut, so a descendant holding only the stderr write-end past a clean exit leaves the acquired run acquired. TimedOut remains for the data-bearing waits (the child and stdout). The module doc's garnish posture and the code now agree.",
+      "created_at": "2026-07-22T19:08:33.214433Z",
+      "kind": "result"
+    }
+  ]
+}

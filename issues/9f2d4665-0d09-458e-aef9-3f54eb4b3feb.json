@@ -1,0 +1,21 @@
+{
+  "uuid": "9f2d4665-0d09-458e-aef9-3f54eb4b3feb",
+  "display_id": 404,
+  "title": "lane r1: no fixture or criterion exercises the fix-scale falsifiers",
+  "description": "Lane round 1. Lens: QE (F7) (validator: SE). Owner: SO session. Defect: two new falsification conditions ship with no corpus member and no acceptance-criterion coverage; the corpus promises a fixture per falsification condition — the new gates can silently regress like the layer-7 gate did pre-mechanization. Citations verified: contract:66, :83 vs :180 (unchanged), :170. Proposed: resolved-candidate (fix-lane fixture reproducing the mdatron shape; waived-bypass fixture; retrofit fixture; Gate coverage criterion extended).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:18.141449Z",
+  "updated_at": "2026-07-19T23:58:41.836491Z",
+  "closed_at": "2026-07-19T23:58:41.836491Z",
+  "comments": [
+    {
+      "uuid": "0ae01275-9021-41f5-9d32-2896e8380d28",
+      "author": "xqjG",
+      "content": "Fixed: fix-lane fixture set added to the corpus (ungated-hotfix reproducing the mdatron shape, waived-bypass, retrofit, wrong-reason-failure) and the Red-gate cheat blocked criterion extended with fix-lane conduct exercising both falsifiers, the waiver pass, retrofit equivalence, and wrong-reason rejection. Revision: fixture corpus + acceptance criterion.",
+      "created_at": "2026-07-19T23:58:18.458730Z",
+      "kind": "resolution"
+    }
+  ]
+}

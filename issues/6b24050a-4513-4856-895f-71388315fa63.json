@@ -1,0 +1,200 @@
+{
+  "uuid": "6b24050a-4513-4856-895f-71388315fa63",
+  "display_id": 815,
+  "title": "Design cycle: agent-first controls to close the Layer-3 audit gaps — re-sequence + enhance, dogfood-now",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-28T21:33:06.937966Z",
+  "updated_at": "2026-07-31T23:17:01.105110Z",
+  "closed_at": "2026-07-31T23:17:01.104289Z",
+  "labels": [
+    "spec-amendment"
+  ],
+  "comments": [
+    {
+      "uuid": "e7d5f091-a6e4-4407-9129-db54c854c982",
+      "display_id": 1126,
+      "author": "xqjG",
+      "content": "DESIGN CYCLE — phase 1a, attended/interactive (operator direction 2026-07-28). BRIEF: evaluate whether the planned layers (6/7/8) close the Layer-3 audit gaps G1-G7 (recorded in .design/layer-3-compliance-audit.md), and design/enhance the agent-first controls that would. OPERATOR RULINGS (interview): (1) SCOPE = re-sequence + enhance — an invariant-first amendment within the existing decomposition (the #810 pattern), pulling the cheapest control forms earlier, filling the unowned gaps (G2 prose-not-edge routing, G7 self-governance), adding mechanized bootstrap-window controls + self-hosting; (2) SELF-GOVERNANCE = dogfood now — run vsdd's own controls over its own construction as early as possible (mechanized bootstrap controls + self-host the state artifact), so the tool is its own gate; (3) VEHICLE = declared mix per control (action-time hooks / CI+commit gates / crosslink-native edges+queries), mapped per gap in the draft. COMPOSITION: SA primary (decomposition/architecture), SO (contract), AI Engineer CONTRIBUTING (cost of the control machinery), the Claude Code supplement as the substrate-surface input (hooks = .claude/hooks/*.py + Rust mirror, the enforcement vehicle), DR/TW (register), cold-review lenses on the draft. INPUTS: the audit context doc; the decomposition Layers 6/7/8; Thermite's harness architecture (spec-routes.toml, spec-discipline.py, doc-drift.py, anti-pattern-gate.py, req-registry/req-status, the ACToR loop) — deep-read in flight. HOLDING the draft until the Thermite read returns (named mechanism template). Then: draft via the design affordance -> cold review -> operator ratification.",
+      "created_at": "2026-07-28T21:33:26.651468Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "12cf4591-361b-4493-95b4-4ef2f4db1f18",
+      "display_id": 1128,
+      "author": "xqjG",
+      "content": "DESIGN INPUTS READY. (1) Audit context: .design/layer-3-compliance-audit.md (gaps now plain-named, letter labels removed per operator naming correction). (2) Thermite control architecture: .design/thermite-control-architecture-notes.md — per-gap mechanism map (tool-restricted critic-lacks-Edit route-before-fix; spec-routes.toml structural edges; read-before-edit entry gate; fail-closed exit-3; stdlib-only self-governing tooling that is itself routed/pinned/tested; two-tier req-status->req-registry bootstrap). (3) mdatron v0.2.0 (#816) MATERIALLY impacts the design: the conformance/CI leg of the declared vehicle mix is now much stronger — pin --update (governed-file sha256 + tombstones), verify --compact (hook-budget), per-route citations, numeric_claims, routes.yaml, keys: array-of-objects indexing. AI Engineer + Claude Code supplement inputs read (hooks = .claude/hooks/*.py + Rust mirror = the action-time vehicle). Ready to draft.",
+      "created_at": "2026-07-28T21:39:37.446481Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "7ae5eadd-56c4-4316-8967-5832e7765aeb",
+      "display_id": 1129,
+      "author": "xqjG",
+      "content": "DRAFT written: .design/agent-first-controls.md. Evaluates Layers 6/7/8 against every audit gap (the table): the right controls exist but land in the back third + two genuinely unowned gaps (structural routing; bootstrap self-governance) = the #810 finding one level up. 10 requirements covering routing-before-fix (mechanized bootstrap form + verify rounds), structural routing edges, phase-transition gates, round-closure discipline, per-layer phase-5 gate, self-governance/dogfood-now (self-hosted state + dependency-free self-checked control scripts, tripwire->registry), the declared vehicle mix (hooks/CI/crosslink/mdatron with fail-closed + mechanical-vs-adversarial split), mdatron v0.2.0 leverage, and naming/register as a control. 5 open questions (dogfood scope this cycle, adopt a req-registry, retroactive phase-5 for L1/L2, mdatron upgrade sequencing, pull reviewer-role tool-restriction earlier). Next: resolve open questions (interactive) then cold review with SA/SO/AI-Engineer + Claude Code supplement + DR/TW.",
+      "created_at": "2026-07-28T21:43:35.142974Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "96442c51-6b23-4060-960c-3f7338477559",
+      "display_id": 1130,
+      "author": "xqjG",
+      "content": "PRE-PHASE COMPOSITION DECLARATION (phase-1a primer, emitted at phase entry — the bootstrap-carried form of PhaseCompositionDeclared; its absence is what fires VSDD-E0050, and per the operator this very declaration is one of the mechanism-invocations the product audits):\n\nphase: phase-1a\ncomposed_domains: [solution-owner, solution-architect, software-engineer, quality-engineer, platform-engineer, performance-engineer, ai-engineer]\nsupplements_in_scope: [claude-code-cli]\ncomposition_mode: skill-interactive\noperator_confirmation: confirmed (contributors operator-named 2026-07-28: AI Engineer + Claude Code supplement; baseline per the primer; SA-central for a decomposition/controls design)\ndeclared_at: 2026-07-28T22:24:57Z\nnote: corrective re-entry — the prior agent-first-controls draft bypassed this. Documentation Reviewer + Technical Writer join at the cold review (reviewer mode). Skills loaded this session: /vsdd-phase-1a, /design, /vsdd-domain-solution-owner, /vsdd-domain-solution-architect, /vsdd-domain-ai-engineer; claude-code-cli supplement applied.",
+      "created_at": "2026-07-28T22:24:58.259885Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "e17f69b0-f9fa-4473-b9bf-dedae52c0c18",
+      "display_id": 1131,
+      "author": "xqjG",
+      "content": "DRAFT RE-AUTHORED THROUGH THE MECHANISM (corrective complete). Process followed this time: /vsdd-phase-1a primer loaded (governing); composition declared (above); domain skills composed (/vsdd-domain-solution-owner primary, /vsdd-domain-solution-architect, /vsdd-domain-ai-engineer) + claude-code-cli supplement applied; authored via crosslink's /design skill -> validation PASS (11 REQ, 9 AC, 6 open questions, no placeholders), knowledge page 'agent-first-controls' created, pipeline state .design/agent-first-controls.pipeline.json written (sha256:b75c11fd...). SHARPENED per operator (2026-07-28): the keystone (REQ-1) is now the mechanism-invocation-timing audit — 'audit that the methodology's mechanisms were invoked at the correct times' as the product's major goal; every audit gap reframed as an instance (a required mechanism un-invoked at its correct time, un-detected). REQ-2 the trace substrate (.vsdd/events has a June composition-event precedent). This session's 3 bypasses (routing collapse, phase-compressed rebuild, and this cycle's design-phase bypass) are named acceptance-test cases the product must flag. NEXT: resolve the 6 open questions (interactive, design phase 3) then the composed cold review (SA/SO/AI-Engineer + Claude Code supplement + Security/PE/QE + DR/TW), then operator ratification.",
+      "created_at": "2026-07-28T22:27:24.536765Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "0e49180e-db04-4ba6-a278-8ddcbbdb7938",
+      "display_id": 1133,
+      "author": "xqjG",
+      "content": "mdatron v0.3.0 impacts this design: cluster B (contract-stability + audit hardening — envelope schema, families-inactive lint, code-resolves-in-explain) is the design's TOP mdatron dependency — it is the conformance vehicle for the keystone (mechanism-invocation-timing audit, record-estate leg) and the register/family-inactive check (REQ-1/REQ-10/REQ-11). Cluster A's priority is coupled to the design's action-time mdatron use. Recorded as a design input; the design's mdatron leverage (REQ-10) already folds the v0.2.0 upgrade into this cycle (#816) and would extend to B when it ships. Prioritization relayed on #816.",
+      "created_at": "2026-07-29T00:22:45.292462Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "005cfd3c-b903-4c97-87bc-c35a900947c6",
+      "display_id": 1134,
+      "author": "xqjG",
+      "content": "COLD REVIEW DISPATCH (declared before spend). Vehicle: Workflow. Target: .design/agent-first-controls.md (resolved — 0 open questions, 11 REQ, 9 AC). Round shape: DESIGN / spec-amendment review. Lenses (7), fable-5: solution-architect HIGH (decomposition, invariant-first re-sequencing, the audit-home split, seams), solution-owner HIGH (spec-contract, scope, what-amends-the-contract vs build, does the keystone belong in the contract), security HIGH (the enforcement/trust controls, hooks as attack surface, fail-closed, tool-restricted reviewer, can traces be forged), ai-engineer MEDIUM (cost of the control machinery — adversarial-dispatch leg, per-call hook cost, model-tier right-sizing), platform-engineer MEDIUM (the vehicle: Claude Code hooks + Rust mirror, CI, settings, the claude-code-cli supplement; self-hosting wiring), quality-engineer MEDIUM (falsifiable ACs, the gate/round-closure/phase-5 control design, mutation), documentation-reviewer+technical-writer MEDIUM (register, plain-naming — the naming pattern this session — clarity, the Revision-line shape). expected_cost_band: 0-25 findings pre-dedup, 300k-500k tokens. output: per-lens findings + verdict (sound-as-drafted vs revise-before-ratify). After: route findings, revise, terminal verify, operator ratification.",
+      "created_at": "2026-07-29T00:26:17.520204Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "7c39faec-1192-43d4-9693-1c0aef3cc067",
+      "display_id": 1135,
+      "author": "xqjG",
+      "content": "COLD REVIEW DID NOT RUN — all 7 lenses errored on the Fable 5 credit limit ('You've reached your Fable 5 limit'); 0 findings produced, ~164k tokens spent on the failed attempt (fast fail, 26s). Environment limit, not a design/process issue. Recovery options: re-run the same 7 lenses on Opus 4.8 (available, capable, and cheaper than Fable — / vs /) or top up Fable credits. Awaiting operator choice. NOTE: the mdatron #49 cold-read agent runs on the session model (Opus 4.8), unaffected, still in flight.",
+      "created_at": "2026-07-29T00:29:28.363381Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "1f83f8e5-2597-4d9f-ad0c-483749f9d2c0",
+      "display_id": 1136,
+      "author": "xqjG",
+      "content": "MANIFEST AMENDMENT (chosen=observed): cold-review model forced from claude-fable-5 to claude-opus-4-8 by the Fable 5 credit limit. Opus 4.8 is capable for the review and cheaper ($5/$25 vs $10/$50 per 1M). Same 7 lenses, same efforts (SA/SO/security HIGH; ai-engineer/platform-engineer/QE/DR+TW MEDIUM), same target. Re-running.",
+      "created_at": "2026-07-29T00:30:38.140326Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "b953a50e-8e11-4be0-9179-b2c52b319d9f",
+      "display_id": 1139,
+      "author": "xqjG",
+      "content": "DESIGN DEPENDENCY from the #49 cold-read (fold into the post-cold-review revision): the mdatron-vehicle controls (the conformance leg of the mechanism-invocation-timing audit) read mdatron output as a TRACE. The cold-read found v0.1.0 bleeds adopter content INTO engine lines (inline field names, raw jsonschema strings) — a trace-integrity hazard for us. So the design's mdatron-conformance leg DEPENDS on mdatron's output-envelope/marking discipline (v0.3.0 cluster B) being solid; record that dependency + prefer the machine envelope (--json / the published envelope schema) over parsing human-form engine lines. Not editing the doc now (under cold review); apply in the revision.",
+      "created_at": "2026-07-29T00:37:20.485903Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "16f4f885-65e4-466f-ae84-29cf1d97babe",
+      "display_id": 1140,
+      "author": "xqjG",
+      "content": "COLD REVIEW (Opus 4.8, 7 lenses) — UNANIMOUS 7/7 revise-before-ratify; ~15 blocking/substantive deduped. TRIAGE (route before fixing):\n\nFIX-PASS (I resolve in the revision):\n- Trace substrate: RE-BASE off the retired .vsdd/events/ store onto the contract's derived-view model (state.yaml active-composition field, boundary commit history, milestone closes, typed result comments — a query, not a store) [SA blocking]; ADD a trace-integrity requirement (git history + tracker integrity, not agent-editable logs) so traces aren't forgeable/self-authored [Security blocking].\n- Keystone home: make it ONE thing — a single-home Status aggregate control that CONSUMES mdatron conformance records as inputs (the #810 Layer-2-query-consumed-by-Layer-6-gate pattern), not a frame+control+double-homed surface [SA+SO blocking].\n- VSDD-E0050: REMOVE the 'contracted' assertion (it's nowhere in the contract) — describe the condition plainly (phase-composition-not-declared) OR mark it a proposed allocation through the owning phase; the coinage reflex again [SO+Security+QE+DR/TW — 4 lenses].\n- REQ-3 routing: reconcile with the ratified mechanism — the routing IS the  comment (contract l.77 + #810 carry); the dependency edge is an ADDITION, not a replacement; don't re-mechanize what #810 format-carried [SO blocking + SA].\n- Cost: add a requirement+AC for a per-session hook wall-clock budget + per-control firing cadence + cost-banding/model-tier (not prose only) [AIE blocking + substantive].\n- Revision-line entry: DRAFT it (AC-9 requires it; absent) [SO+DR/TW].\n- Fixtures: specify the 3 regression fixtures concretely + fix the middle-bypass named 3 ways [QE+DR/TW].\n- Also: self-governance layer owner (not 'throughout'); non-vacuity defined; pin --update = shape-tier, don't assign it truth-tier amendment authorization (tier-rule); the dependency-free tripwire emitting external content must route through the #807 cleaner; keystone gets a real falsification AC; L1/L2 phase-5 deferral gets a retest trigger; re-sequencing delta over #810 stated; note contract text uses plain leading names not REQ-n.\n\nOPERATOR DECISIONS (two prior resolutions rested on premises the review overturned):\n(A) Dogfood 'first blocking control now' — the review shows it needs the Layer-4/7 hook seam, NOT dependency-free-now. Buildable-now form is non-blocking DETECTION.\n(B) mdatron fold-in — no migration path, crosses the repo boundary, breaks live CI; sequence separately (#816) may be cleaner.\n\nNext: operator re-decides (A)+(B); I run the fix pass on the rest; terminal verify; ratification.",
+      "created_at": "2026-07-29T00:40:44.804792Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "e626e448-8cd9-4e0b-827d-d7a8cbe4ec4a",
+      "display_id": 1141,
+      "author": "xqjG",
+      "content": "CORRECTION — the prior triage comment had backticked terms eaten by shell command-substitution; clean version here. COLD REVIEW: unanimous 7/7 revise-before-ratify, ~15 blocking/substantive deduped.\nFIX-PASS (I resolve): (1) re-base the trace substrate off the RETIRED .vsdd/events store onto the contract derived-view model (state.yaml active-composition field + boundary commit history + milestone closes + typed result comments — a query, not a store) [SA]; (2) add a trace-INTEGRITY requirement so traces are not forgeable/self-authored (git history + tracker integrity, not agent-editable logs) [Security]; (3) the keystone becomes ONE single-home Status aggregate control that CONSUMES mdatron records as inputs (the #810 Layer2-query/Layer6-gate pattern), not frame+control+double-home [SA+SO]; (4) REMOVE the VSDD-E0050 contracted assertion — plain description or a proposed allocation through the owning phase; coinage reflex again, 4 lenses [SO+Security+QE+DR/TW]; (5) reconcile routing — the plan comment IS the routing (contract l.77 + #810 carry); the dependency edge is an ADDITION, not a replacement [SO+SA]; (6) add a per-session hook wall-clock budget + firing cadence + cost-banding as a requirement/AC, not prose [AIE]; (7) draft the Revision-line entry (AC-9, absent); (8) specify the 3 regression fixtures + fix the middle-bypass named 3 ways [QE+DR/TW]; plus self-governance layer owner, non-vacuity defined, pin-update is shape-tier not truth-tier authorization, the tripwire routes external content through the #807 cleaner, a real keystone falsification AC, an L1/L2 phase-5 retest trigger, the re-sequencing delta over #810 stated.\nOPERATOR DECISIONS (premises overturned by the review): (A) dogfood first-blocking-control-now is NOT dependency-free — needs the Layer4/7 hook seam; buildable-now form is non-blocking detection. (B) mdatron fold-in has no migration path + crosses the repo boundary + breaks live CI — sequence separately (#816) may be cleaner.",
+      "created_at": "2026-07-29T00:41:34.772722Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "c59ceab5-9fb2-4937-8157-af489cb5236e",
+      "display_id": 1142,
+      "author": "xqjG",
+      "content": "FIX PASS to v2 complete — all 7/7 cold-review lenses addressed (0 open questions; 11 REQ, 11 AC). Blockers closed: trace substrate re-based off the retired events store onto the derived-view model + tamper-evidence requirement; the audit is one single-home Status aggregate consuming mdatron records as inputs; the fabricated VSDD-E0050 code removed (plain description); routing reconciled with the ratified plan-comment (edge is an addition); the now-built controls are detection-only with blocking at true layers; a runtime-cost budget is a requirement+AC; mdatron sequenced separately (#816); Revision-line entry drafted; the 3 acceptance-case bypasses specified + named once; non-vacuity defined; pin-update kept shape-tier; managed-install + Python/Rust mirror parity + controls-own-output-honors-#807 added. TERMINAL VERIFY (declared before spend): Workflow, 4 lenses on Opus 4.8 (Fable capped) — solution-architect HIGH (re-base, single-home, re-sequencing delta), solution-owner HIGH (routing reconciliation, scope, mdatron sequencing, Revision-line), security HIGH (trace tamper-evidence/forgeability, tier rule, bypass vectors), documentation-reviewer+technical-writer MEDIUM (register, no minted codes/coinages, fixtures-specified, Revision-line shape). Confirms blockers closed + no regressions; AI-Engineer/Platform-Engineer/QE fixes (cost budget, #816, non-vacuity, fixtures) folded and cross-checked by these lenses. expected_cost_band: 0-8 open findings, 150k-300k tokens.",
+      "created_at": "2026-07-29T00:48:19.070278Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "49d65cef-436f-4369-a67e-6efbe85438f6",
+      "display_id": 1143,
+      "author": "xqjG",
+      "content": "COMPOSITION ADDITION: Red Team added to this design cycle (operator, 2026-07-28) — closing a composition gap. A controls-that-catch-deviation design needs the escape/evasion lens; Security covered can-the-boundary-be-crossed, Red Team covers how-the-agent-chooses-to-escape + is-the-golden-path-actually-the-easy-path (the incentive gradient) + the escape taxonomy (bypass / forge / Goodhart / self-modification / erosion), grounded in this session as a live corpus of real escapes (hand-roll vs the skill; fix-in-place vs route; coinage; over-production; the fabricated contracted code) — each caught by the operator, never a control. Running a focused Red Team escape-analysis pass on v2 (Opus 4.8), in parallel with the terminal verify; its escape taxonomy feeds v3 as a likely new requirement class (per escape vector: a control + a non-forgeable trace + an incentive-gradient check).",
+      "created_at": "2026-07-29T00:53:36.998243Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "222dc050-fcb9-4f72-ab72-bf5d6f11a92e",
+      "display_id": 1144,
+      "author": "xqjG",
+      "content": "TERMINAL VERIFY (v2, Opus 4.8, 4 lenses) — 2/4 stop-signal-holds (SA, Security; prior findings resolved), 2/4 needs-another-round (SO, DR/TW) on ONE shared substantive blocker: the drafted Revision-line entry says \"seven-lens\" but enumerates eight domains (the review was 7 lenses; DR+TW is one combined lens) — a prose-count-vs-enumeration mismatch, the exact class the contract Trust-boundaries falsifier flags. Cheap fix: state it as 7 lenses with a combined documentation-reviewer/technical-writer lens.\nSHARP MINORS to fold (mostly Security): (1) git-history is NOT tamper-evident alone — the local leg is rewritable by the audited actor; non-forgeability needs corroboration with the signed/remote tracker (refine REQ-2); (2) reconcile REQ-8 could-not-check with the contract benign-offline (tracker-absent) rule so a tracker-dependent check cannot pass vacuously offline; (3) specify the runtime disposition of a slow/timing-out hook (fail-closed block, else \"make the hook slow\" is a bypass); (4) add the mis-rooted-session / no-live-hooks bypass vector (the estates real demonstrated bypass; its session-substrate backstop is self-referential when mis-rooted); (5) \"non-bypassable Layer-6\" overclaims for a commit-time gate (--no-verify skips it; true non-bypassability needs server-side CI). Plus DR/TW minor: bypass #1 says \"six-round routing collapse\" but body says \"rounds 1-5\" — reconcile (rounds 1-5 collapsed of the six-round loop; round 6 routed).\nV3 PLAN: hold the fix pass; fold the terminal-verify blocker+minors TOGETHER with the two in-flight Red Team passes (design-escape wo00pi41w + wider-eval-of-the-built-system #817 wjbspls43) into ONE v3 revision, then a final verify, then ratification. Not fixing v2 piecemeal.",
+      "created_at": "2026-07-29T01:00:17.099032Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "0ef85e9b-af3c-4436-bef1-2370bbb3b5df",
+      "display_id": 1145,
+      "author": "xqjG",
+      "content": "RED TEAM ESCAPE ANALYSIS (design v2, 2 adversaries, Opus 4.8) — BOTH return golden_path_verdict = NOT-THE-EASY-PATH. This challenges the design core, correctly.\nMASTER FINDING: every now-built v2 control is detection-only, non-blocking, surfaced through a vsdd status poll — while ALL real enforcement seams (Layer-4 install/hooks, Layer-6 gates, Layer-7 conformance, #816 mdatron) are downstream/unbuilt. During the bootstrap window v2 targets, it REBUILDS THE EXACT CORPUS TOPOLOGY: a record a human must read, caught by the operator, never by a control. The six-round collapse re-runs identically. And the incentive gradient still favors deviation: for every flagship escape (hand-roll design, fix-in-place, phase-compress) the deviation stays cheaper than compliance because nothing FORCES the compliant path; bootstrap format-carries are conventions the contract itself says fail because they depend on the agent choosing to comply.\nBLOCKING ESCAPES: (1) detection-only = advisory, not enforcement, in bootstrap [both]; (2) the keystone audits every OTHER mechanism but nothing audits whether the AUDIT ran — it is exempt from its own discipline (absence of a poll leaves no trace) [A]; (3) the incentive gradient points away from compliance [B]; (4) the \"non-bypassable Layer-6 backstop\" is a commit-time gate skippable via --no-verify (true non-bypassability needs server-side CI) [A].\nSUBSTANTIVE ESCAPES: disposition-closure exemption = universal routing bypass (relabel fix-closes as consolidated/dismissed); fix-with-no-owning-finding is invisible to routing detection (the June narration pattern); state.yaml composition is agent-authored so \"tamper-evident\" is a category error (git proves authorship not truth); routing edge checked for PRESENCE not correctness (attach to any target); pin --update re-pin passes the drift gate without re-review; phase-transition gate reads self-authored records; SELF-MODIFICATION — the agent edits the detection scripts (managed artifacts it can also edit); an unwired instance control is a silent aggregate gap; done-conditions are self-authored 2-fixture tests.\nKEY BUILDABLE-NOW FIX (Adversary A): bind the now-built detection to a FIRED seam that exists today — a session-stop hook that runs status and non-zero-exits on any new integrity finding, and/or the existing git pre-commit refusing a governed-set commit while an unrouted/ungated finding stands — so deviation produces compiler-shaped feedback, not a latent record. Absent that, mark the increment honestly as ADVISORY, not enforcement. This reopens dogfood decision (A): a forcing seam IS buildable now (the repo already has a pre-commit), so detection-only-without-a-seam was the wrong scoping.\nFolding into v3 with the terminal-verify + the wider-eval #817 (still running).",
+      "created_at": "2026-07-29T01:02:37.035544Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "18e4d93f-b9fe-4050-95b7-c9091451ddf4",
+      "display_id": 1147,
+      "author": "xqjG",
+      "content": "OPERATOR DECISIONS after the Red Team cycle (2026-07-28): (A) BIND detection to a forcing seam now — wire the now-built detection into seams that exist today (the repo git pre-commit refusing a governed-set commit while an unrouted/ungated finding stands; a session-stop hook non-zero-exiting on any new integrity finding), so deviation produces compiler-shaped feedback = real enforcement in the bootstrap window; corrects the detection-only scoping. (B) FIX the shipped Layer-1/3 vulns now (defect-fix lane): false-assurance (three-valued could-not-check / dormant-vs-clean), forgeable-state envelope (mark phase/gate provenance unverified until evidence resolves to a boundary commit), prose-injection (quoted-untrusted framing on echoed external content).\nV3 PLAN — fold into one revision: the terminal-verify blocker (Revision-line seven-lens/eight-domains count) + its Security minors (git-history-alone-not-tamper-evident -> corroborate with remote/tracker; make-the-hook-slow disposition; --no-verify/CI non-bypassability; mis-rooted-session bypass; six-round vs rounds-1-5 wording); the design-escape findings (detection-must-bind-to-a-seam; keystone-needs-an-external-heartbeat; disposition-closure routing bypass; fix-with-no-owning-finding; forgeable composition; edge-presence-not-correctness; pin-repin-without-review; self-modification of the control scripts); the wider-eval findings (the built-vuln controls REQ-2/4/8; the honest note that #811 and the Layer-2 queries are live-dormant until the Layer-6 join; the corpus-coverage tally). Then terminal verify -> ratification. HONEST CORRECTION on the record: I overstated #811 as the enforcement spine first mechanized fruit; Red Team showed it is fixture-green but live-inert (findings acquire empty until Layer 6).",
+      "created_at": "2026-07-29T01:09:44.748093Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "0319460c-04c6-4990-be06-bc04e7d7be13",
+      "display_id": 1150,
+      "author": "xqjG",
+      "content": "V3 WRITTEN — folds all three review passes + the four decisions. Key changes over v2: (1) the FORCING-SEAM correction — the now-built detection binds to seams that exist today (git pre-commit + session-stop hook) so deviation produces compiler-shaped feedback = enforcement, not the advisory latent-record both Red Team adversaries flagged; (2) REQ-1 gains an EXTERNAL HEARTBEAT so the audit is not exempt from its own discipline; (3) REQ-2 traces are tamper-evident by CORROBORATION (git + signed remote tracker), not local git alone; (4) REQ-3 closes the disposition-closure and fix-with-no-owning-finding routing bypasses with named non-forgeable halves; (5) REQ-4 phase gating resolves gate evidence to a boundary commit + marks unverified self-report (Fix 1 shape); (6) REQ-8 fail-closed distinguishes checks-run-clean from dormant/could-not-check reconciled with benign-offline (Fix 2 shape), enumerates the mis-rooted-session + --no-verify bypasses with the server-side-CI qualifier, slow-hook fails closed; (7) REQ-10 re-pin requires re-review; (8) NEW REQ-12 escape-vector coverage table (control + non-forgeable trace + enforcement-vs-advisory per corpus escape); (9) honest live-dormant note on #811/the Layer-2 queries; (10) the Revision-line lens count reconciled (7 lenses, DR+TW combined) and the six-round/rounds-1-5 wording fixed. 12 REQ, 12 AC, 0 open. Knowledge + pipeline synced. NEXT: terminal verify of v3, then ratification, then build Fixes 1+2 against the ratified shapes.",
+      "created_at": "2026-07-29T01:24:12.655539Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "207c3a51-db84-4bf3-b43f-30bba3f1873d",
+      "display_id": 1151,
+      "author": "xqjG",
+      "content": "TERMINAL VERIFY of v3 (declared before spend). Vehicle: Workflow, 3 lenses on Opus 4.8 (Fable capped), HIGH effort: solution-architect (forcing-seam respects true deps; escape-vector table coherent, no double-home; heartbeat placement; delta over #810; now-built detection is compiled-binary no-init-dep), security (is tamper-evidence-by-corroboration REAL per-trace not just phrasing; fail-closed reconciled with benign-offline; bypass enumeration complete incl. mis-rooted-session/--no-verify/server-CI qualifier/slow-hook-fails-closed; disposition + fix-no-finding closed with non-forgeable halves; re-pin requires re-review), red-team (re-walk the top escapes against v3 — does the forcing-seam binding shift the gradient so deviation produces compiler-shaped feedback, or still escapable; is the audit heartbeat gap closed; fresh golden_path_verdict). Clean -> ratification; residual -> fix + re-verify. expected_cost_band: 0-8 open findings, 150k-300k tokens.",
+      "created_at": "2026-07-29T01:26:39.531641Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "3da4f641-7470-4194-b86a-6c6cb5ab7518",
+      "display_id": 1153,
+      "author": "xqjG",
+      "content": "V3 TERMINAL VERIFY — 3/3 needs-another-round; Red Team golden_path STILL not-the-easy-path. THE DECISIVE FINDING (Red Team verified against the actual repo): v3s load-bearing correction — the now-built controls bind to forcing seams that EXIST TODAY — is FALSE AS BUILT. Repo facts: .githooks/pre-commit runs mdatron verify on staged markdown/schema/pattern files only and exits 0 for source commits (a .rs fix commits with ZERO checks), and mdatron has no tracker/finding/routing/gate awareness, so it CANNOT refuse a governed-set commit while an unrouted/ungated finding stands; NO session-stop/SessionEnd hook exists anywhere; the crosslink sentinel (the REQ-1 heartbeat) is enabled:false; .vsdd/state.yaml does not exist. The seam has nothing to force on and is not wired — the advisory-not-enforcement gap the prior adversaries flagged, papered over by a factual misstatement about the built system rather than closed.\nOTHER BLOCKERS/SUBSTANTIVE: SA — the escape-vector table marks unrouted-findings Enforced-now, contradicting the live-dormant admission (the query needs the Layer-6 tracker-join). Security — REQ-7 says git is a truth leg not agent-editable, contradicting REQ-2 git-leg-is-rewritable; tamper-evidence-by-corroboration is otherwise substantially real. Heartbeat per-act half under-specified + sentinel disabled. Minors: delta overstatements (fix-with-no-owning-finding is ALREADY a ratified contract falsifier, line 83; compiler-shaped feedback is already the contract goal, Summary line 10); disposition-rate is a heuristic; filing-timestamp is agent-controllable locally.\nTHE CONVERGED TRUTH (three adversarial rounds): there is NO forcing seam today; making the golden path the easy path requires BUILDING enforcement, and the routing/finding disciplines genuinely cannot be enforced now because their Layer-2 tracker-join is dormant until Layer 6. Only the LIVE-DATA disciplines (git-resolved phase-gate/boundary-commit; commit-evidence owning-finding; refs/session-substrate) are enforceable-now, and only if a real seam is BUILT (the existing pre-commit does not do it). This reopens dogfood decision (A): bind-to-a-seam requires BUILDING the seam, not wiring an existing one.",
+      "created_at": "2026-07-29T01:36:11.862910Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9d365e43-96d3-43e3-9ea5-1990ad48f49b",
+      "display_id": 1154,
+      "author": "xqjG",
+      "content": "PAUSED to feed a re-decomposition (operator direction 2026-07-28). The v3 terminal verify + both Red Team passes converged on a STRUCTURAL root cause: the horizontal component layers defer the enforcement substrate (esp. the tracker-join the Layer-2 queries need) to the back third, so enforcement is never live-early and every now-enforcement claim fails. The fix is not another design iteration against the current structure — it is a phase-1c RE-DECOMPOSITION to vertical capability slices (each buildable AND enforceable end-to-end). This design (#815) becomes an INPUT to that re-decomposition: its escape corpus, the forcing-seam finding, the live-dormant finding, and the enforcement-needs-live-data-early conclusion are the drivers. #815 resumes (or is superseded) after the re-decomposition ratifies. The #818 shipped-vuln fixes proceed independently (defect lane; Fix 3 done).",
+      "created_at": "2026-07-29T01:44:11.317102Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "4f575518-34ee-484d-ad0e-f6e47e07638f",
+      "display_id": 1162,
+      "author": "xqjG",
+      "content": "Thermite architecture study (agent report 2026-07-28); filed dollspace-gay/Thermite#93 for its enforcement drift. Lessons for #815 (the tamper-proof / grade-4 half):\n1. Tool-allowlist-per-role IS real grade-4 — Claude Code refuses an ungranted tool (verified: acto-critic lacks Edit). BUT a capability fence is only as strong as the FULL residual set: Thermite's critic still holds Write+Bash, so its 'read-only' is grade-1 convention, not capability. A genuine read-only critic must withhold EVERY mutation tool (drop Write, constrain Bash) or run on a read-only mount. This is precisely WHY #815's tamper-evidence-by-corroboration half stays necessary — it covers the residual Write/Bash surface a porous fence cannot.\n2. Add a LIVENESS axis orthogonal to the 4 grades: a designed grade is worthless if de-wired. Thermite's two edit-time gates silently died (commit 5581b65f) and every doc still claims them live. The meta-harness must ROUTE ITS OWN CONTROL PLANE (settings.json, agent defs) — a gate that guards the gates. Directly reinforces the vsdd draft's own 'route the control plane' instinct.\n3. Split grade 2: 2a commit/push-time (records a deviation) vs 2b edit-time PreToolUse (prevents the edit) — 2b is closer to grade-4 in effect and still substrate-portable; a sweet spot for controls that can't be grade-4.\n4. Match doc claims to enforced reality mechanically. Thermite's goal.md R-SIDE-1/R-BV-1 'forward-looking — not yet enforced' labels are the good model; make 'enforced' a checked property (a test asserting the claimed wiring exists).",
+      "created_at": "2026-07-29T02:58:49.926573Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "ba69a84f-e3f0-4780-ad6e-f3b3ecdc6b4c",
+      "display_id": 1298,
+      "author": "xqjG",
+      "content": "CLOSING — subsumed by #840 (verifiable-conformance + efficiency subsystem, merged to main 366f5999). The agent-first-controls design cycle's core thesis ('audit that the methodology's mechanisms were invoked at the correct times') IS #840's governing law + composition→verifier loop; unique controls folded (see #831/#817). The .design/agent-first-controls.md file is deleted in the #826 cleanup.",
+      "created_at": "2026-07-31T23:16:54.453080Z",
+      "kind": "resolution"
+    }
+  ]
+}

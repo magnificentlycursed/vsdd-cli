@@ -1,0 +1,21 @@
+{
+  "uuid": "d77904e3-6848-4e58-8fa7-8c2750b45f38",
+  "display_id": 789,
+  "title": "Layer 3 round 3 major SE: the broken-state human form's file-path line interpolates raw — one line below the #784 fix; a hostile repo subdirectory name reaches the terminal",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T09:44:06.484579Z",
+  "updated_at": "2026-07-26T09:52:12.351931Z",
+  "closed_at": "2026-07-26T09:52:12.351920Z",
+  "comments": [
+    {
+      "uuid": "f4f581f8-e950-4360-ab09-d0e22caa02df",
+      "display_id": 1049,
+      "author": "xqjG",
+      "content": "Fixed in 94d3c2cf: broken.rs's shown_path now crosses clean_for_terminal — the file-path line no longer interpolates raw. A hostile repo checked out with a control-or-bidi subdirectory name (attacker-influenced cwd, the same threat mode as state.yaml content) can no longer put those bytes on the terminal through the broken-state diagnostic. Covered by the extended broken-state cleaning test.",
+      "created_at": "2026-07-26T09:51:49.933227Z",
+      "kind": "result"
+    }
+  ]
+}

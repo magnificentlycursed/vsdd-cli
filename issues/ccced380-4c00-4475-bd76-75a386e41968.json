@@ -1,0 +1,239 @@
+{
+  "uuid": "ccced380-4c00-4475-bd76-75a386e41968",
+  "display_id": 820,
+  "title": "Slice 1 (phase-2a): Live self-governance — tracker join + first guardrail; red-gate seed (integration tests for the live acquisition + block/pass tests for the guardrail; closes no fixture criterion by design)",
+  "status": "open",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T04:31:35.431233Z",
+  "updated_at": "2026-08-02T05:19:39.340347Z",
+  "labels": [
+    "red-gate"
+  ],
+  "related": [
+    "06c5ca64-c39c-40fa-8671-bfb593ffae0e",
+    "8024f9be-fc74-4585-970d-68789fb87440",
+    "abaa3805-8026-43da-b189-4d2e54c3a4e9"
+  ],
+  "milestone_uuid": "6b26f932-b5d9-4c95-8bf1-850d2535b84f",
+  "comments": [
+    {
+      "uuid": "c05538a7-6f42-4f0c-8996-2ee75dc817e5",
+      "display_id": 1171,
+      "author": "xqjG",
+      "content": "Pre-phase composition declaration:\nphase: phase-2a (Slice 1)\ncomposed_domains: [quality-engineer]\ncomposition_mode: skill-interactive\noperator_confirmation: confirmed (operator direction 'let's do phase-2a Slice 1 next', 2026-07-28)\ndeclared_at: 2026-07-28\n\nSlice 1 (ratified #819) closes NO fixture-based acceptance criterion — it is the enforcement-spine increment mechanizing the #810 routing-before-fix format-carry. Per the ratified per-slice-obligations, its phase-2a red-gate seed is therefore: (a) INTEGRATION tests for the live tracker-join (finding-vs-issue discrimination, plan-comment routing presence, manifest/children counts, comment-handle resolution — each positive + a mis-map negative), and (b) BLOCK/PASS tests for the guardrail (friction commit-msg hook + the CI-backstop routing/parity check). Depends on: the engine (built). Carries: the vsdd-core->vsdd merge (#15) and the mdatron-currency estate prerequisite (#816). Per The operator authors the oracle, the red-gate seed + manual-test checklist are operator-adopted; drafts to follow.",
+      "created_at": "2026-07-29T04:31:54.671469Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "2dfc715f-d0c1-4afe-bfba-a10571fe5142",
+      "display_id": 1172,
+      "author": "xqjG",
+      "content": "PHASE-2A DESIGN ACTS (grounded in the live crosslink surface, verified 2026-07-28):\n1. Finding discrimination (bootstrap rule): a finding is an issue whose PARENT is a review-round issue (parent carries label 'review'). Verified: #750 parent_id=745, #745='Phase 3 execution... adversarial refinement round 1' label ['review']. This is the bootstrap format-carry; Slice 5's filing convention formalizes it.\n2. SCOPE REFINEMENT: Slice 1's tracker-join reads only the ENFORCEMENT-SPINE fields the unrouted-findings query needs -- discrimination, routing_present (a 'plan'-kind comment; verified kind exists), closed_before_ratification (closed_at vs the ratification boundary), status/disposition. owner/validator/evidence_reference_present are NOT crosslink-native (verified: finding #750 has no such fields, only a 'result' comment) -- they depend on Slice 5's filing convention, so reading them at Slice 1 would back-depend on a later slice (DAG violation). They stay bootstrap-empty until Slice 5. Recorded as a Slice-1 scope decision.\n3. Test seam: pure mappers (routing_present, is_finding-via-parent-review-label, closed_before_ratification-vs-boundary) unit-tested with canned crosslink JSON; a few real-crosslink integration tests over a temp repo. Red gate = failing-executed on the positive/after assertions against minimal mapper bodies.",
+      "created_at": "2026-07-29T05:02:31.049453Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "97f40d9c-0935-4a76-bef1-bef0e2989510",
+      "display_id": 1173,
+      "author": "xqjG",
+      "content": "RED GATE — increment 1 landed (working tree, verified red; NOT committed — avoids leaving main red mid-red-gate). Added 3 pure tracker-join mappers to vsdd-core/src/snapshot/acquire.rs with minimal bodies + failing-by-default tests in the acquire test module: routing_present(comment_kinds) [plan-kind = routing edge], is_finding(parent_labels) [parent labeled 'review' = a finding], closed_before_ratification(closed_at, boundary) [open + closed-at/after = in universe]. cargo test -p vsdd-core --lib snapshot::acquire::tests: 5 passed / 3 FAILED (the new ones), 0 vacuous — each fails on its named-behavior assertion, not a panic. Scope: crosslink-native enforcement-spine fields only (per the #820 scope decision); owner/validator/evidence deferred to Slice 5; round manifests/children/comment-handles deferred to Slice 6 (round-parity homes there).\n\nREMAINING red-gate pieces before the red-gate commit: (a) acquire_snapshot integration test over a real temp crosslink repo (proves the effectful shell wires findings->mappers); (b) guardrail block/pass tests (commit-msg hook + CI leg — script/manual-class, hand-carried at bootstrap). Then phase-2b implements the mapper bodies + the acquire assembly -> green; the vsdd-core->vsdd merge (#15) folds in at 2b entry.",
+      "created_at": "2026-07-29T05:08:26.710961Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "93ae89c6-ee0c-41e5-93f3-d7c3dcc0c6e6",
+      "display_id": 1174,
+      "author": "xqjG",
+      "content": "PHASE-2A/2B STATUS — honest boundary reached (design decision required before the effectful read).\nVERIFIED THIS SESSION: (1) discrimination rule is crisp — a finding = an issue whose PARENT is 'review'-labeled (finding #750 parent=745[review] subissues=0; rounds have parent=None+subissues; work issues no parent). is_finding(parent_labels) is the correct design. (2) Red gate increment 1 (3 mapper tests: routing_present/is_finding/closed_before_ratification) verified RED — failing-executed, non-vacuous. REVERTED from the working tree (git checkout acquire.rs) to avoid an orphaned dead-code red gate; re-lands WITH the effectful read in the focused 2b, trivially reproducible from this record.\nTHE 2B DESIGN DECISION (the real blocker, surfaced by grounding — the AIE cost finding, live): reading findings-with-routing needs a 'crosslink issue show' PER finding ('issue list --json' omits comments/labels) = O(n) subprocess calls. acquire_snapshot runs on the statusline (250ms budget), so O(n) findings there is a budget hazard. Two forks to resolve before coding: (a) TWO-PATH acquisition — lightweight statusline acquire (findings feed integrity/health-detail via a PULL, not the hot segment) vs a fuller acquire for the guardrail/CI path; (b) within the full path: bulk query vs bounded per-finding shows vs cache. CHEAPEST FIX + raise candidate: an UPSTREAM crosslink bulk findings+comments export (issue export --json interface returned nothing parseable; confirm or raise). Flag to Platform Engineer — benefits every crosslink adopter.\nQUEUED behind the effectful-read design: the assembler (assemble_findings), acquire wiring, guardrail verdict wrapper (wraps snapshot_integrity's unrouted-findings), the commit-msg hook + CI leg, and the vsdd-core->vsdd merge (#15).",
+      "created_at": "2026-07-29T05:22:09.839721Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9a9fe6a5-e858-4feb-8238-262f6e84d3fa",
+      "display_id": 1175,
+      "author": "xqjG",
+      "content": "2B DESIGN DECISIONS (operator-approved 2026-07-28):\n1. TWO-PATH ACQUISITION adopted. The statusline acquire stays lightweight (milestones + session; findings NOT read on the hot 250ms path — they don't render on the segment; they feed integrity/health-detail via PULL and the guardrail/CI). A fuller findings-read serves the guardrail/CI/report path, where a bounded per-finding 'crosslink issue show' is affordable. This resolves the O(n)-on-statusline blocker; Slice 1's 2b ships on this basis.\n2. UPSTREAM RAISE FILED: dollspace-gay/crosslink#52 — bulk issue query lacks comment metadata (no single call returns issues WITH comments; issue list + export are comment-shallow, only issue show is deep = O(n) fan-out). Ask: enrich issue list --json with labels + comment kinds (optionally behind --detail), or add parent_id/closed_at/comments to export --json. Framed as an OPTIMIZATION, not a blocker (two-path lets us ship with bounded per-finding show meanwhile). When it lands, the fuller read collapses to one bulk call.\n\nNEXT (focused 2b): re-land the mapper red gate + assemble_findings; implement the fuller findings-read on the guardrail/CI/report path (bounded per-finding show now; bulk call once crosslink#52 ships); guardrail verdict wrapper; commit-msg hook + CI leg; then the vsdd-core->vsdd merge (#15).",
+      "created_at": "2026-07-29T05:34:05.046568Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "e7fdbbf1-6cb3-47c9-b2bc-31de1804362c",
+      "display_id": 1202,
+      "author": "xqjG",
+      "content": "FOLD-IN (operator direction 2026-07-29): #14 and #15 are closed and folded here, off the superseded binary-first-plan framing (cleanup #826). \n- #15 = the vsdd-core removal (merge vsdd-core into the vsdd binary crate; the cost workspace is retained) — a Slice-1 phase-2a act per #819 (vsdd-core IS the re-characterized engine; the crate boundary comes down as the engine code is touched). Carries the workspace-shape contract touch (owned/reviewed).\n- #14 = the vsdd subprocess client (vsdd invoking mdatron verify --json + envelope parse + exit-code map), init drift-handling (two-way -> three-way classification, the --force/--update/--no-prompt/--dry-run flags, the template_version_at_deploy manifest field, the interactive Conflict prompt), and template deployment (all of templates/). Its design questions are answered (content preserved in scratchpad); redo the design the vsdd way (.design/ via /design + kickoff), NOT a hand-authored spec. Its pieces distribute across slices during phase-1a decomposition (subprocess client -> the gate/verify path; init + templates -> the install slice).",
+      "created_at": "2026-07-29T09:56:55.099814Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "5b5166a4-da2e-44f0-9315-8b274bd15066",
+      "display_id": 1238,
+      "author": "xqjG",
+      "content": "SESSION CLOSE 2026-07-29. Accomplished: mdatron v0.3.0 flip + proper init (#816); #818 Fix 1 + cold-review revise (committed); 6-domain mdatron diagnostic-efficacy analysis (relay-ready in scratchpad); the enforcing CI-on-PR gate (CI now runs vsdd-cli's own tests + repointed/pinned mdatron @v0.3.0) PR #1 merged; non-vacuity canary PR #2 merged; docs/refactor legacy removed PR #4 merged (#826); stale-issue sweep 32 closed; E0091 letter-cluster guardrail armed over the enduring corpus PR #5 merged (#823); #14/#15 closed+folded into #820 (vsdd-core removal = slice work, not dead-plan). ADOPTED the PR workflow (no direct-to-main; methodology's own per-milestone-PR discipline). NEXT: #820 Slice-1 phase-2a the vsdd way — draft the tracker-join red-gate seed (3 mappers in vsdd-core/src/snapshot/acquire.rs: routing_present=plan-kind comment, is_finding=parent-has-review-label, closed_before_ratification=closed_at vs ratification boundary) for operator adoption, then implement + the commit-msg/CI guardrail. The folded #14/#15 scope (vsdd subprocess client, init drift, templates, vsdd-core removal) is SEPARATE design done the vsdd way (.design/ -> kickoff), not crammed into Slice 1. OPERATOR PENDING: branch protection (require mdatron verify + vsdd-cli test). Recovery: memory -> this note -> #820 -> the contract.",
+      "created_at": "2026-07-29T10:55:59.598055Z",
+      "kind": "handoff"
+    },
+    {
+      "uuid": "319aa1ea-e3a1-4194-b53a-3e2e401f8a6e",
+      "display_id": 1239,
+      "author": "xqjG",
+      "content": "Red-gate seed drafted (vsdd-core/src/snapshot/acquire.rs) — the three pure tracker-join mappers for the unrouted-findings query, as stubs, plus their failing tests (the oracle):\n\n  - is_finding(parent_labels): a finding is an issue whose parent is a review-round issue (parent carries the 'review' label).\n  - routing_present(comment_kinds): a routing edge is a 'plan'-kind comment on the finding.\n  - closed_before_ratification(closed_at, boundary): a finding closed strictly before the ratification boundary is outside the forward-only universe (REQ-5); open, or closed at/after the boundary (inclusive), stays in.\n\nRed proof (observed non-vacuous): cargo test -p vsdd-core --lib snapshot::acquire::tests -> 5 passed, 3 FAILED. Each new test fails on its named positive assertion (assertion panic, not compile error). Stubs return false; tests assert the adopted behavior.\n\nNext on adoption: implement the three mappers to green, wire the acquisition-side join, add the routing-before-fix guardrail, open the PR (branch tracker-join-red-gate). Held for operator adoption of the oracle before green (oracle-before-implementation discipline).",
+      "created_at": "2026-07-29T11:06:06.686553Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "a896a8f2-00d3-41d9-9a3d-e6908f3a41a7",
+      "display_id": 1240,
+      "author": "xqjG",
+      "content": "Attempted: git push -u origin tracker-join-red-gate",
+      "created_at": "2026-07-29T12:09:19.561902Z",
+      "kind": "intervention",
+      "trigger_type": "tool_blocked",
+      "intervention_context": "Slice-1 seed committed locally (red 83368601 -> green 04bbfe37); push needed to open the phase-2a draft PR. Git-mutation hook forbids agent pushes/merges; push + PR-open handed to the operator."
+    },
+    {
+      "uuid": "1817eee2-3b5a-4a13-9c55-f15daded7238",
+      "display_id": 1241,
+      "author": "xqjG",
+      "content": "Design doc drafted: .design/finding-query-join.md (the finding-query join — Slice-1 tracker-join increment). Rulings captured: field-readiness guard (siblings dormant until their fields acquire); bounded N+1 over the forward-only REQ-5 universe (hard cap + truncation marker); finding-leg failure -> findings absent, snapshot stays Acquired. Boundary value pinned to 2026-07-27 (#810) from the contract Status requirement. One open question: how crosslink exposes a finding's recorded disposition (no labels exist; potential upstream capability requirement) — held for resolution before pipeline kickoff.",
+      "created_at": "2026-07-29T12:27:06.102155Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "38e96fd0-8a87-45da-bf35-60b462ccbcc7",
+      "display_id": 1242,
+      "author": "xqjG",
+      "content": "Q1 (disposition source) resolved: disposition label-carry (dismissed/hallucinated/consolidated labels, read from issue show), plus upstream crosslink close-reason request filed as #827 to supersede it if implemented. Design updated: D1 + REQ-9 + AC-9/AC-10 (now 9 REQ, 10 AC, 0 open blocks; doc_hash refreshed). Contract note: promoting the label-carry to a contract-level format-carry re-enters the spec-amendment loop under review, NOT hand-edited here. Design is crosslink-kickoff-ready pending: (a) the seed PR push (operator; git-mutation hook), (b) retro-labelling the disposition closures already past the 2026-07-27 boundary.",
+      "created_at": "2026-07-29T12:35:34.131620Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "ce7e8fbd-ec83-4592-9983-fee98068eb3a",
+      "display_id": 1244,
+      "author": "xqjG",
+      "content": "Slice-1 detection half DONE (branch tracker-join-red-gate, 5 commits):\n  - red-gate seed (red->green): the 3 pure mappers\n  - increment A: field-readiness marker (siblings dormant until Slice 5)\n  - increment B: the finding-query join — the unrouted-findings query now runs against LIVE crosslink data (acquire_snapshot walks the forward-only universe; was hardcoded empty)\n\nDogfooded live (isolation test): walked this repo's tracker, found #713 (open, routed, in-universe). The enforcement spine's detection is live.\n\nDesign settled the vsdd way (.design/finding-query-join.md, 9 REQ / 10 AC), rulings + Q1 resolution recorded; #827 (upstream disposition field) + #828 (subissues-empty) + #829 (milestone-empty-parse blocker) filed + routed.\n\nREMAINING for Slice 1:\n  1. #829 fix (fix lane) — parse_milestones empty-state; unblocks end-to-end 'vsdd status' (the join is validated in isolation meanwhile)\n  2. the first GUARDRAIL — the block/pass that consumes the now-live query (routing-before-fix). Form (vsdd gate command vs CI check vs hook) + enforcement grade is design-worthy.\n\nAll gates green: cargo test --workspace, clippy, mdatron verify. Branch awaits operator push (git-mutation hook).",
+      "created_at": "2026-07-29T13:22:24.040957Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9e97b71d-60b0-4ed6-8e89-558b789789a5",
+      "display_id": 1246,
+      "author": "xqjG",
+      "content": "Guardrail design decisions captured (design pass in progress, interrupted by mdatron 0.4.0 adoption): command surface = dedicated 'vsdd gate' (matches contract's gate-command); enforcement grade = CI-backed block (operator ruling) — a required PR leg installs crosslink + fetches the hub + syncs + runs vsdd gate, blocking merge on an unrouted closed-by-fix finding; degraded/absent acquisition = fail-closed (unverifiable blocks, never vacuously passes). Design doc to follow (.design/routing-before-fix-guardrail.md). Also needs: extract a state-free unrouted-findings query (the gate must not require .vsdd/state.yaml, unlike vsdd status).",
+      "created_at": "2026-07-29T13:40:22.421659Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "78222f7d-9a5e-4e60-abf7-daf1397623b6",
+      "display_id": 1248,
+      "author": "xqjG",
+      "content": "Guardrail design drafted: .design/routing-before-fix-guardrail.md (7 REQ, 7 AC). Dedicated 'vsdd gate' command consuming a state-free unrouted-findings query (extracted from snapshot_integrity so gate + status share one predicate); fail-closed on Absent/Unusable; CI-backed block leg (install crosslink + hydrate hub + vsdd gate). One open question: the crosslink CI-install + tracker-hydration pattern (crosslink is 0.9.0-beta; the riskiest, most external part) — held for resolution. Prerequisite: #829 (milestone-empty-parse) on main, else the gate fail-closes on no-milestone acquisition.",
+      "created_at": "2026-07-29T14:06:11.586903Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "3edb5dcb-8551-4a03-b637-ee053a6c4612",
+      "display_id": 1251,
+      "author": "xqjG",
+      "content": "Slice-1 detection + both designs on main (PR #9, commit a736eb7a — carried the detection due to branch topology; the redundant detection PR #6 closed). #829 prerequisite on main. Guardrail BUILD now unblocked: #829 landed, detection landed, mdatron 0.4.0 on main, develop on the crosslink mirror. Next: build 'vsdd gate' + block/pass/fail-closed tests off main, then the CI leg (crosslink @ develop).",
+      "created_at": "2026-07-29T16:56:44.160463Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "8b4ef66d-2bfb-4dd9-a1c8-e77bf493503e",
+      "display_id": 1252,
+      "author": "xqjG",
+      "content": "Slice 1 BUILT + on main: detection (finding-query join) + guardrail (vsdd gate, fail-closed) + the routing-gate CI leg (proven green on PR #10 — crosslink @ develop builds, crosslink sync hydrates, gate runs). Merged d146019f. The only remaining step for the CI-backed-BLOCK grade is the operator marking 'routing gate' a required status check in branch protection (turns 'runs on PR' into a hard block). Detection + guardrail both live.",
+      "created_at": "2026-07-29T17:20:26.794225Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d03a47aa-1a6c-440e-87ef-a31ce09a81be",
+      "display_id": 1380,
+      "author": "xqjG",
+      "content": "FIXTURE SEED for the declaration-completeness falsifier (build-plan Phase 1 / gate-leg 2a): mdatron delivered the accepted #11 offer — the uncapped-fan-out specimen spec is on https://github.com/magnificentlycursed/vsdd-cli/issues/11#issuecomment (2026-08-02 00:49): the declaration bound the LENS SET (4 cold domain-clusters) while the 27 per-finding adversarial verifiers rode undeclared, data-driven, 1:1, uncapped — 39 agents / 2.27M tokens total. The seed pairs the malformed structure with the corrected declared-ceiling contrast. Use as the negative/positive pair for the composition-gate declaration-completeness fixture when the gate leg's red-gate authoring opens.",
+      "created_at": "2026-08-02T00:54:57.060633Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "2eed3e99-c72a-4715-9fe3-4d377b80b4a0",
+      "display_id": 1384,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST — build-plan Phase 1 (Slice 1 completion), phase-2a opening. GOVERNING SPEC: .design/build-plan.md ### Phase 1 (Provenance: Slice 1 — Live self-governance) + the ratified remediation design REQ-4/5/6/9 + knowledge pages routing-before-fix-guardrail / finding-query-join. BRANCH: feat/820-phase-1; the draft PR opens at the first 2a commit per the per-milestone PR discipline; commits agent-side issue-gated, merge operator-side per the ratified PR-boundary posture. UNITS (the phase's parallel bullets): (A) the deviations gate leg — 2a red seed (the AC-5 fixture family: lapsed-expiry fails / current passes / fired-date-trigger-without-newer-disposition fails / undecidable warn-local+inconclusive-CI / premature-resolution treated standing / absent+shape-invalid exit-2 both modes / abusive-override treated default+warned / self-re-arm refused CI-only-annotated / injectable issue-state oracle for the fired direction) then 2b build to green (deviations check as a sibling verdict source, pure over parsed data + caller-supplied today; the --ci strictness seam; fail-closed Unverifiable; GH_TOKEN seam in the CI leg) + the 15->16/62->63 install count amendment with the Scaffold PlanEntry, disposition-carried under this phase (this manifest + the build-plan are the disposition record). (B) the tracker-join falsifier set — the build-plan's enumerated integration tests over the BUILT detection (positive + mis-map negative per rule; forward-only boundary; field-readiness guard; finding-leg degradation; truncation marker; disposition label-carry), expected mostly green against shipped behavior, any red = a found defect routed before fixing. VEHICLE: runtime-harness Agent dispatch, BOOTSTRAP-INTERIM declared per the phases-dispatched keystone (registry entry manual-dispatch-fallback carries it, expiring 2026-10-30); skills invoked in-agent: vsdd-phase-2a + software-engineer + quality-engineer. DIALS: session model (Fable 5), default effort. RED-COMMIT BOUNDARY: unit A pauses at the seeded-red state for the orchestrator's red commit + draft-PR open, then resumes to 2b. 2a obligations owed this phase: the operator-authored manual-test checklist (operator slot, batched at phase exit) + the per-commit guardrail wall-clock budget. #818's deferred dormant-vs-clean fix overlaps unit B's field-readiness guard — reconciled at the phase review, not silently absorbed.",
+      "created_at": "2026-08-02T01:48:22.882644Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "2f6c04fd-ad59-4bba-a37b-f7bd3caff243",
+      "display_id": 1385,
+      "author": "xqjG",
+      "content": "2a RED COMMIT landed: the deviations red gate seeded (0/10 executed-failing + 1 honest ignore; workspace otherwise green) — commit on feat/820-phase-1; DRAFT PR opened per the per-milestone discipline (the test check rides red by design until 2b). Unit A resuming to 2b; Unit B (falsifier set) still running.",
+      "created_at": "2026-08-02T02:01:03.368129Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "7f0b3483-569e-4058-8c16-1bc7352a7e72",
+      "display_id": 1386,
+      "author": "xqjG",
+      "content": "UNIT B LANDED (commit above, on the draft PR): the tracker-join falsifier set — 11 green over shipped behavior, 1 RED = a FOUND DEFECT (route-before-fix honored): a failed finding leg degrades to a snapshot bit-identical to a clean tracker's (acquire.rs:117-140 claims spine true with no failure record), so gate_verdict lacks the fail-closed arm and 'vsdd gate' exits 0 on unverifiable routing — guardrail REQ-4 violated, the false-assurance family. ROUTING: this IS #818 Fix 2 (dormant-vs-clean), already routed to Slice-1 2b on #818's record — Unit B's red test is now its red-gate pin. FIX SEQUENCED as this phase's Unit C (acquisition records the failed leg + the verdict's third arm), after Unit A's deviations-leg 2b lands (both touch integrity.rs — contention avoided). The manifest's reconciliation note is thereby resolved: not absorbed silently, pinned red and building.",
+      "created_at": "2026-08-02T02:04:17.040671Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2c656faa-0fd5-41e3-a3a2-4dae5a99baee",
+      "display_id": 1388,
+      "author": "xqjG",
+      "content": "2b GREEN COMMITTED (deviations leg 10/10 + honest ignore; CLI seam --ci/GH_TOKEN; 16/63 count amendment per this manifest's disposition; workspace green except Unit B's by-design defect pin). ROUTED FINDING for SO disposition BEFORE MERGE: founding entry 7 (hand-authored-build-plan, artifact-presence class) has no evaluator in this build — per Q3's letter the CI leg rides Unverifiable on it, so routing-gate goes red on PRs once merged. OPTIONS: (a) implement the artifact-presence evaluator now — the ratified predicate is grep-decidable (the Slice-2 phase in build-plan Completed phases); needs the encoding pinned (file+pattern fields) which touches entry 7's trigger field = an SO-gated registry modification anyway; (b) SO re-arm entry 7 to a decidable class interim; (c) accept the CI red until Slice 2 lands (the trigger's own firing). Recommendation: (a) — smallest honest close, one evaluator + one dispositioned predicate re-encoding. Batched with the phase-exit operator slots (manual-test checklist authoring + the wall-clock budget; Unit B's suite measured ~17s as the budget datum). Unit C (the #818 fail-closed arm) dispatching now.",
+      "created_at": "2026-08-02T02:23:03.364173Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9516b18f-17c1-45e7-b18b-c58e5b255708",
+      "display_id": 1395,
+      "author": "xqjG",
+      "content": "OperatorDirectiveApplied{directive: entry-7-trigger-encoded} — SO DISPOSITION 2026-08-02: the routed entry-7 finding (routing-gate red: deviations Unverifiable on hand-authored-build-plan, no artifact-presence evaluator) resolved by BUILDING THE EVALUATOR (option a). This comment authorizes encoding entry 7's retest_trigger with the artifact-presence schema — type: artifact-presence, file: .design/build-plan.md, section: '## Completed phases', pattern: 'Slice 2' (the SO-gated registry trigger-field change). The evaluator lands in vsdd-core (pure, grep-decidable over the named file/section/pattern); today's answer is not-present -> the entry stays standing (expiry 2026-11-29) -> the deviations leg passes; it fires (blocks for SO attention) only when Slice 2 appears in Completed phases. This completes the gate leg (a trigger class with no evaluator was an incomplete leg — Phase-1 in-scope). Dispatched as Unit D on feat/820-phase-1.",
+      "created_at": "2026-08-02T03:27:19.723676Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "732415de-b493-4147-b027-e07604331f11",
+      "display_id": 1398,
+      "author": "xqjG",
+      "content": "GIT-STATE RECONCILED (Unit D landed via a separate worktree because the main tree was on chore/858-triage-fixes, not feat/820). feat/820-phase-1 (worktree ../vsdd-cli-feat820, HEAD e07aec6e) now carries the COMPLETE Phase-1 arc: 2a red seed -> falsifier set (+found defect) -> 2b deviations green -> Unit C fail-closed arm -> cold-review revise -> Unit D entry-7 artifact-presence evaluator -> entry-1 promotion. All-green (deviations 15/1i, workspace green, mdatron clean). Entry-1 promotion recorded HONESTLY: predicate unchanged (#55 closed); trigger_context records the retest STALL-PERSISTS at dialog-2 (the mirror advance does NOT ground resolution — superseding the stale main-tree WIP that prematurely claimed 'a passing retest grounds resolution'); disposition_ref -> #858 retest-verdict record (real timestamp, not fabricated). origin/feat/820-phase-1 is at 59cc74d8 — the last 2 commits (f5f7025e Unit D, e07aec6e entry-1) are UNPUSHED (push is the operator's act). On CI, gate --ci should now PASS: entry-7 decidable-not-fired, all issue-state entries decidable-not-fired (their upstream issues open), entry-2 version-compare not-fired (0.4->0.5 is 1 minor, <2), entry-3 resolved. MAIN-TREE WIP (superseded, safe to discard): the registry (now on feat/820), build-plan.pipeline.json (stale kickoff-plan tool-write from the dead retest runs), CHANGELOG (auto-regenerable), .crosslink/integrity/ (snapshot).",
+      "created_at": "2026-08-02T04:07:16.516054Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "71f7b51b-8ec3-4d2c-94b5-3df34d851f97",
+      "display_id": 1400,
+      "author": "xqjG",
+      "content": "PR #24 CI DIDN'T RUN — root cause: mergeState DIRTY (feat/820 branched at 0f5e54f9, before crates.io migration + git-posture #23 + triage #25 merged), and routing-gate.yml triggers on pull_request: only, so GitHub can't build the conflicted merge-ref → no run (not a gate failure — a no-run). Sole conflict: .github/workflows/routing-gate.yml (main's #858 control-plane-interim steps vs this branch's 2b gate --ci). PRE-RESOLVED on the branch (06bba1a5): feat/820's routing-gate.yml is now main's exact file + the --ci/GH_TOKEN final-step swap — so the operator's merge resolves via 'checkout --ours' (loses none of main's content). Sequence handed to operator: merge origin/main → --ours the workflow → commit → push. Unpushed on feat/820: e2cb2ca1 (entry-1 #55-refined correction), 06bba1a5 (the union) — both ride the merge push. Expected post-merge: mergeState CLEAN → CI runs → routing-gate passes (deviations green, entry-7 evaluator decidable, issue-state entries not-fired). THEN the phase-exit gates (review + your batched slots) precede merge.",
+      "created_at": "2026-08-02T04:19:14.883836Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "07e762bf-5a51-45f6-8d23-466ae3dcec66",
+      "display_id": 1403,
+      "author": "xqjG",
+      "content": "PHASE 1 MERGED to main (1d5c5a03 / PR #24; CI green on cd1ca0fd — the entry-7 evaluator cleared routing-gate). The first build-plan phase is landed: 2a red seed -> tracker-join falsifier set (+the found vacuous-gate defect) -> 2b deviations leg green + CLI --ci seam + 16-template count amendment -> Unit C fail-closed arm (#818 closed) -> cold-review revise -> Unit D entry-7 artifact-presence evaluator -> entry-1 #55-refined correction. Workspace 210+ green, mdatron clean. HONEST CLOSURE DEBT (the phase merged with its exit bookkeeping unlanded — flagging, not hiding): (1) COMPLETION MOVE owed — Phase 1 is still in build-plan.md ## Requirements (line 9); per REQ-1/REQ-2 it moves to ## Completed phases with closing evidence (1d5c5a03 / PR #24 / 'closes no fixture criterion by design, mechanizes the #810 routing-before-fix format-carry'); the merge IS the phase-exit ratification disposition. (2) The two named 2a obligations are UNLANDED: the operator-authored manual-test checklist (operator's — The operator authors the oracle), and the per-commit guardrail wall-clock budget as data (~17s falsifier-suite datum measured; authorable by me, mirroring the statusline budget's flake-resistance shape). None block anything (swarm isn't up — the container vehicle per #859 isn't built), but they're real debt. Proposing: I do the completion move + author the wall-clock budget data as a small 'close Phase 1' commit; the manual-test checklist is yours.",
+      "created_at": "2026-08-02T04:45:53.655596Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9f8c8413-8458-41d5-8ee4-fc03fe847654",
+      "display_id": 1404,
+      "author": "xqjG",
+      "content": "PHASE-1 CLOSE PR opened (#26, branch chore/820-close-phase-1): the completion move (Phase 1 -> ## Completed phases; 5 open phases remain, Phase 2 lowest). The wall-clock-budget authoring I proposed turned out to be UN-AUTHORABLE honestly and I did not fake it: verification showed Phase 1 built the CI-BACKSTOP guardrail (vsdd gate --ci + routing-gate.yml), NOT a per-commit git-hook guardrail (.githooks/ has only the mdatron pre-commit; the per-commit wrapper is Slice 4's). So the per-commit guardrail wall-clock budget is DEFERRED (no guardrail to budget — authoring one = phantom); the ~3.5s I measured is the O(n) CI scan, not the O(1) per-commit hot path the budget governs. Also surfaced: a contract-vs-build-plan discrepancy — the contract's Slice-1 design has a commit-msg friction hook (three-part guardrail) that the build-plan's Phase-1 scope didn't build; routed as a Slice-4 residual (where the pre-commit wrapper lands) + recorded in the completed-phase entry. OWED FROM OPERATOR before #26 merges: the manual-test checklist (manual-tests/; layer-vs-slice naming is yours to settle). PENDING: CI on #26 (doc-only), your checklist + merge. THEN Phase 2 (Slice 2) is the next build — it opens with the audit's Phase-2 cluster (generator dual-frontmatter, injection paths, the config-integrity owner-tension three-question disposition) and un-registers deviation entry 7 when its generator lands.",
+      "created_at": "2026-08-02T04:57:00.384879Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "152da4c3-f939-47a6-9f87-f5b5a84b8a67",
+      "display_id": 1406,
+      "author": "xqjG",
+      "content": "Residual (c) DISPOSITIONED: operator declines the manual-tests/ authoring (2026-08-02). Per The operator authors the oracle, the manual-test checklist is the operator slot and declining is a lawful recorded decision (like the deferred layer-1.md run). The present manual-tests/layer-1/2/3.md are auto-scaffold stubs on the retired layer vocabulary; they stand as-is. Slice-1 close residuals now: (a) commit-msg friction hook -> Slice 4; (b) per-commit wall-clock budget deferred (no per-commit hook to budget); (c) manual-tests authoring DECLINED (this comment).",
+      "created_at": "2026-08-02T05:19:39.318435Z",
+      "kind": "decision"
+    }
+  ]
+}

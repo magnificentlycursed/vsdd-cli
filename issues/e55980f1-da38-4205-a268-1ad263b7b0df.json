@@ -1,0 +1,21 @@
+{
+  "uuid": "e55980f1-da38-4205-a268-1ad263b7b0df",
+  "display_id": 623,
+  "title": "1c-DR-r4: L6 parity query forward-depends on the manifest format",
+  "description": "Blocking, check b. Gate coverage's parity cells need dispatch-manifest reading, but the manifest format is Layer 8's and no data set lists a manifest schema. Fix: the dispatch-manifest schema joins the data-authoring package as a Layer 1 artifact; Layer 6 reads manifests as data. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:36.297035Z",
+  "updated_at": "2026-07-20T18:13:09.992490Z",
+  "closed_at": "2026-07-20T18:13:09.992490Z",
+  "comments": [
+    {
+      "uuid": "0181d2bd-9e66-4ffd-9ed1-cd6989ac65ae",
+      "author": "xqjG",
+      "content": "Fixed: the dispatch-manifest schema joins the data-authoring package as a Layer 1 artifact ('the recording fields Recorded review dispatch enumerates, shipped as versioned data so the parity queries read manifests as data'); Layer 6 reads manifests as data with no forward dependency. mdatron verify clean.",
+      "created_at": "2026-07-20T18:13:08.324061Z",
+      "kind": "resolution"
+    }
+  ]
+}

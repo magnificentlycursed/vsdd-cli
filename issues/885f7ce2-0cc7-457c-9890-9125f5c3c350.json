@@ -1,0 +1,35 @@
+{
+  "uuid": "885f7ce2-0cc7-457c-9890-9125f5c3c350",
+  "display_id": 329,
+  "title": "statusline amendment cold round 1",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of the working-tree amendment.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:53:29.277258Z",
+  "updated_at": "2026-07-19T23:20:30.949456Z",
+  "closed_at": "2026-07-19T23:20:30.949456Z",
+  "comments": [
+    {
+      "uuid": "59706fd8-888d-4b4a-a2f2-3cd1b3813bd4",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline amendment cold round 1. Subject: working-tree .design/agent-first-vsdd-toolkit.md, the statusline amendment only (Status requirement statusline sentences; Install requirement statusline-wiring conduct; Status detection criterion statusline conduct; Verification architecture statusline segment renderer entry; Methodology rewrite supplement-catalog sentence; draft vocabulary entry statusline segment). Lenses: solution-architect, ux, ai-engineer, accessibility — four cold dispatches, fresh contexts, no shared conversation state; inputs are the contract file and the lens's domain prompt. Coverage each reviewer must declare: which amendment anchors read, which evaluation dimensions applied. Citations evidence-gated: every finding cites file and working-tree line; orchestrator verifies citations before filing; findings filed as child issues of the spec-amendment issue with this round cited. Parity: the round result comment is malformed unless it cites its child-issue handles inline.",
+      "created_at": "2026-07-19T22:53:52.971816Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "19cd974f-57c6-4cfb-b1db-b24343acfd97",
+      "author": "xqjG",
+      "content": "Round 1 complete. Four cold lenses dispatched per the plan manifest; all four returned with declared coverage (all six anchors each). 15 findings filed, parity 15/15 — handles and titles: L5 UX composition-instruction content unspecified; L6 UX open-count field alarms/spec-evidence divergence; L7 UX degraded marker names a state not a next action; L8 UX multi-repo rendering unbounded; L9 SA renderer signature cannot produce declared field set; L10 SA settings.json probe unnamed trust boundary; L11 SA Install behavior under Status-tagged criterion; L12 SA stdin session-JSON provenance unresolved; L13 SA segment format stability unstated; L14 AIE event-driven refresh cost unbounded; L15 AIE zero-AI-cost not falsifiable at shell boundary; L16 AIE Observability deferral unmarked; L17 A11y no accessible equivalent designated; L18 A11y glyph-only marks; L19 A11y over-label on color conduct. All citations evidence-verified against the working tree before filing (line-by-line check recorded in session). Proposed dispositions: 8 resolved-candidates (L5 L6 L8 L9 L10 L11 L12 L14 L15 — nine, correcting: L5,L6,L8,L9,L10,L11,L12,L14,L15), 3 deferred (L7 L17 L18), 3 dismissed-candidates (L13 L16 L19). Plus one unnumbered minor from SA (color-strip oracle pinned at Phase 2a) recorded here for the trail. Awaiting operator triage; next round gated on full disposition of this one. Phase pointer: 1c awaits operator direction; statusline spec amendment in round-1 triage.",
+      "created_at": "2026-07-19T22:59:14.416758Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5ec916f2-dbab-4b2b-983c-e58fabb2276c",
+      "author": "xqjG",
+      "content": "Round fully disposed: 15/15 children closed (12 fixed with revision evidence, 3 dismissed with dispositions). Closing the round issue per the rounds-close-at-full-disposition practice.",
+      "created_at": "2026-07-19T23:20:29.430149Z",
+      "kind": "result"
+    }
+  ]
+}

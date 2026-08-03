@@ -1,0 +1,21 @@
+{
+  "uuid": "611dfc25-83e2-4270-b049-7e3fa9d3441f",
+  "display_id": 499,
+  "title": "lane r7 Meth nit: evidence cites bare provisional IDs against the citation rule",
+  "description": "Lane round 7. Lens: methodology (observation, folded). Owner: SO session. The #51/#52 cites at the lifecycle bullet and evidence paragraph lack the title-anchored form the gate evidence uses. Proposed: resolved-candidate (title-anchored like the :68 cite).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:03:52.333156Z",
+  "updated_at": "2026-07-20T01:12:39.652304Z",
+  "closed_at": "2026-07-20T01:12:39.652304Z",
+  "comments": [
+    {
+      "uuid": "527eef8d-1bda-4044-a550-2c9cdb94a728",
+      "author": "xqjG",
+      "content": "Fixed: both bare cites now carry the exact-title-pending-hub-sync form the gate evidence uses. Revision: lifecycle evidence sentences.",
+      "created_at": "2026-07-20T01:12:26.822219Z",
+      "kind": "resolution"
+    }
+  ]
+}

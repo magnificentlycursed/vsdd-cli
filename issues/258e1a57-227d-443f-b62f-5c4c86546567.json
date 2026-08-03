@@ -1,0 +1,21 @@
+{
+  "uuid": "258e1a57-227d-443f-b62f-5c4c86546567",
+  "display_id": 343,
+  "title": "statusline r1 A11y: glyph-only marks pass every falsification path",
+  "description": "Round: statusline amendment cold round 1. Lens: accessibility (validator: ux). Owner: SO session. Defect: color-stripping is the only non-color falsification; a symbol-only degraded marker or ellipsis truncation mark satisfies it while remaining screen-reader illegible; no criterion requires the marks be legible words. Citations verified: contract:185, :197. Anchors: criteria, renderer. Proposed: deferred (resolves if the accessible-equivalent finding is adopted — full untruncated values and explicit degraded flag live in the machine form). Failure: marked-but-meaningless states for assistive tech.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:59.249526Z",
+  "updated_at": "2026-07-19T23:08:20.167051Z",
+  "closed_at": "2026-07-19T23:08:20.167051Z",
+  "comments": [
+    {
+      "uuid": "034f673d-3d3e-4738-add0-271af167c62f",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded into fix pass by operator). Degraded marker and truncation marks contracted as plain words (glyph may accompany, never substitute): Status bullet, renderer properties, and Status detection criterion all updated to worded marks. Revision: three anchors.",
+      "created_at": "2026-07-19T23:07:54.735164Z",
+      "kind": "resolution"
+    }
+  ]
+}

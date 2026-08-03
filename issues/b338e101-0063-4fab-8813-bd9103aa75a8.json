@@ -1,0 +1,21 @@
+{
+  "uuid": "b338e101-0063-4fab-8813-bd9103aa75a8",
+  "display_id": 285,
+  "title": "amend-r6: post-compaction re-read uninstrumented",
+  "description": "Minor. Fix: stale-read seed added to corpus and roster. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:18.312373Z",
+  "updated_at": "2026-07-20T19:24:28.784614Z",
+  "closed_at": "2026-07-20T19:24:28.784614Z",
+  "comments": [
+    {
+      "uuid": "630a9d62-d99a-48ed-9d15-b6c1074a9417",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:24:25.281823Z",
+      "kind": "resolution"
+    }
+  ]
+}

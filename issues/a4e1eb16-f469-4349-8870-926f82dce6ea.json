@@ -1,0 +1,27 @@
+{
+  "uuid": "a4e1eb16-f469-4349-8870-926f82dce6ea",
+  "display_id": 10,
+  "title": "Phase 2b: vsdd init pre-flight check",
+  "description": "Goal: \n\nAcceptance criteria:\n- \n\nImplement vsdd::preflight module with: PreflightReport struct + CheckResult enum + check_environment(cwd) function; per-check probes for git repo presence, crosslink on PATH, mdatron on PATH, cargo on PATH. Wire vsdd init --check to print the report. Per Phase 2b primer: SE primary + QE + PE; Rust supplement. Minimal file deployment + ProjectInitialized event emission land in subsequent Phase 2b iterations.",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T01:21:12.118751Z",
+  "updated_at": "2026-07-29T10:05:09.265494Z",
+  "closed_at": "2026-07-29T10:05:09.265480Z",
+  "labels": [
+    "feature",
+    "phase-2b",
+    "vsdd-init"
+  ],
+  "comments": [
+    {
+      "uuid": "8563c66d-aaef-4d12-b730-670d3325d00d",
+      "display_id": 1213,
+      "author": "xqjG",
+      "content": "CLOSED — tracker sweep (#826, operator-directed 2026-07-29). vsdd init pre-flight check — DONE: vsdd/src/preflight.rs exists and is wired. A binary-first-plan stub (2026-06-02); the plan is superseded by the ratified contract (.design/agent-first-vsdd-toolkit.md:4) + rescoped by #819's enforcement-spine slices, and the plan doc was removed (#826). No live scope in the stub; where still needed the work is re-homed to the slices.",
+      "created_at": "2026-07-29T10:05:03.148302Z",
+      "kind": "decision"
+    }
+  ]
+}

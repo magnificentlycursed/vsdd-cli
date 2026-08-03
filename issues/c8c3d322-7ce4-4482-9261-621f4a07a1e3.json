@@ -1,0 +1,21 @@
+{
+  "uuid": "c8c3d322-7ce4-4482-9261-621f4a07a1e3",
+  "display_id": 332,
+  "title": "statusline r1 UX: degraded marker names a state not a next action",
+  "description": "Round: statusline amendment cold round 1. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: degraded marker renders state only; tracker-absent vs tracker-malformed (different recoveries) render identically; operator must re-invoke vsdd status to learn cause and action. Citations verified: contract:160, :185. Anchor: Status, Status detection. Proposed: deferred (minimal fix: contract states the segment's degraded next-step is the human form vsdd status; can land in 1c). Failure: re-invocation-required recovery on an at-a-glance surface.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:48.232542Z",
+  "updated_at": "2026-07-19T23:08:08.400282Z",
+  "closed_at": "2026-07-19T23:08:08.400282Z",
+  "comments": [
+    {
+      "uuid": "001f076a-eddf-4226-8943-061c7316d4eb",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded into fix pass by operator). Degraded marker now has a contracted next step: the segment marks, vsdd status in human form explains cause and recovery. Revision: Status requirement bullet.",
+      "created_at": "2026-07-19T23:07:44.020405Z",
+      "kind": "resolution"
+    }
+  ]
+}

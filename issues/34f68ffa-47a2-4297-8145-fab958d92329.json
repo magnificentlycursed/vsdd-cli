@@ -1,0 +1,21 @@
+{
+  "uuid": "34f68ffa-47a2-4297-8145-fab958d92329",
+  "display_id": 338,
+  "title": "statusline r1 SA: segment format stability unstated",
+  "description": "Round: statusline amendment cold round 1. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: segment is wired into adopter settings as a persistently-invoked command; only width budgets are versioned data — field set, order, separators, markers have no stability statement. Citations verified: contract:197, :268. Anchors: Status, renderer, vocabulary. Proposed: dismissed-candidate (machine consumers are directed to the machine form; segment is display rendering, not API) with retained note: state once that the segment is an unstable display rendering to foreclose adopters scripting against it. Failure if unfixed: low — adopter coupling to unversioned display format.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:54.370681Z",
+  "updated_at": "2026-07-19T23:08:14.850045Z",
+  "closed_at": "2026-07-19T23:08:14.850045Z",
+  "comments": [
+    {
+      "uuid": "420e7534-881d-4ab8-95f7-22da0a9a2669",
+      "author": "xqjG",
+      "content": "Dismissed at operator triage (round 1). Segment is a display rendering, not a machine surface; machine consumers are directed to the machine form. The retained note landed anyway via the fix pass: Status bullet now states the segment is an unstable display rendering and scripting against it belongs on the machine form — foreclosing adopter coupling without granting format stability.",
+      "created_at": "2026-07-19T23:07:55.517909Z",
+      "kind": "resolution"
+    }
+  ]
+}

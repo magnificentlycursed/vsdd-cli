@@ -1,0 +1,21 @@
+{
+  "uuid": "21cbdfd1-aece-4290-a441-dd1c36fa9219",
+  "display_id": 785,
+  "title": "Layer 3 round 2 major QE: two round-1 falsifiers do not falsify — the glued-mark mutant survives the generic branch (milestone spaced-mark masks it), and machine report.degraded is pinned single-kind where the criterion quantifies per registered kind",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T08:52:32.141846Z",
+  "updated_at": "2026-07-26T09:04:27.122864Z",
+  "closed_at": "2026-07-26T09:04:27.122840Z",
+  "comments": [
+    {
+      "uuid": "6c03a5f0-07f5-4259-b2ff-f252c75dab9a",
+      "display_id": 1042,
+      "author": "xqjG",
+      "content": "Fixed in ff0d3a3f: both named round-1 mutants now die — the glued-mark assertion moved from the whole segment onto the work-item field (the milestone field's own correctly-spaced mark was satisfying the containment check and masking a glued mark on the generic branch; the field-scoped assert plus a no-glue negative kills it), and machine_form_reports_the_degraded_kind loops both registered kinds by exact match, so a hardcoded-kind mutant dies on the arm whose fixture kind differs.",
+      "created_at": "2026-07-26T09:04:14.025179Z",
+      "kind": "result"
+    }
+  ]
+}

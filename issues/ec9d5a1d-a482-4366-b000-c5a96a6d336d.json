@@ -1,0 +1,58 @@
+{
+  "uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "display_id": 673,
+  "title": "data-sets review round 1",
+  "description": "Round 1 of the spec-review loop over the nine authored data-set pairs (#598, package complete at 0fd21462). Attended design session; the round's cold lenses dispatch as this session's own fan-outs per the ratified split. Composition and manifest in the plan comment. Round closes at full disposition with parity — the result comment cites child handles inline.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T02:56:10.621271Z",
+  "updated_at": "2026-07-29T10:10:11.090536Z",
+  "closed_at": "2026-07-29T10:10:11.090522Z",
+  "comments": [
+    {
+      "uuid": "c01b5535-dfa5-4db8-bc80-c647a4c5e255",
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST, round 1, 2026-07-21. Vehicle: attended session fan-out (design side of the split; consent under the session's permission flow). Composition: the phase-1c baseline — solution-architect (primary), solution-owner, documentation-reviewer — plus two set-validator lenses whose flagged scrutiny seeds this round: quality-engineer (gate data: the same-kind unanimity rule vs kind-migrating flakes) and ux (statusline: five-field glanceability at the adopted widths). Reviewer roles: read-only cold agents, fresh context, no shared conversation state, each reading its own domain prompt at entry. Inputs by content hash (sha256, first 12): registry artifacts — installed-artifact-manifest 4e7d071047bf, state-schema ba12c3f1a527, composition-scope-and-actions 300e6d0ff7f5, statusline-data 8e7453398123, gate-data dc573931b66f, dispatch-data 5465138b8e22, act-to-affordance-map 8284814660b7, economics-data 2a500761c58d, snapshot-schema 511af6c72e9b; mdatron schemas — 9f85e7bfa3ac, b80cfcc60d6f, 1d6bba518a23, e956db618fa7, af4f1b325552, 427c6b3ba2df, 0f6fc3e7bd2d, 1d66b7e354d4, 81550d54a99d. Model tier: the session model, inherited by fan-out. Effort: the session-level setting, recorded as such per the interim rule the dispatch-data set carries. Expected band: cold-spec-review-round, 3 to 15 findings (the seeded calibration band; this round is its first consumer). COVERAGE DECLARED — domains not dispatched and why: ai-engineer (its economics scrutiny note is conduct-informational, folded into solution-architect's brief; declined by round budget), security and privacy (no new trust or identity surface in prose data artifacts beyond the manifest's paths-only entries, reviewed at round 1 of the set; deferred with trigger: any finding touching identity-state entries summons them), platform-engineer, performance-engineer, data-engineer (authored these sets — author-side domain, its cold-reader is documentation-reviewer, pair separation at dispatch), accessibility, localization, technical-writer, red-team, and the remaining role domains (no matching surface this round; the statusline copy's assistive-technology read is a manual-class item on the operator's checklist per the Verification architecture). Findings return as structured lists and file as evidence-gated child issues with owner and validator; clean-round validity stated per lens.",
+      "created_at": "2026-07-21T02:56:14.639363Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "abb5f278-bb05-4845-9d3b-c55fbd4934b3",
+      "author": "xqjG",
+      "content": "ACTUALS AGAINST DECLARED BAND (the contract's in-cycle comparison): declared — cold-spec-review-round, 3 to 15 findings. Findings so far: 13 from the first two lenses (QE 5, UX 8), inside the band. Token actuals the band cannot express: QE 71,732, UX 50,948 (harness task telemetry); SA/SO/DR at 70.7k-111.9k mid-run (operator's monitor, 2026-07-21). Wall-clock: ~6 minutes per lens, parallel. Filed as the operator-observed finding child of this round; the band-dimension gap is itself round-1 evidence that the calibration loop works — the seeds were marked as seeds, and the first live consumer exposed the missing unit.",
+      "created_at": "2026-07-21T03:06:40.488634Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "78979bce-b4ed-4601-99dc-7e98ec509c76",
+      "author": "xqjG",
+      "content": "MANIFEST CORRECTION (observed vs recorded): the round-1 manifest recorded 'Model tier: the session model, inherited by fan-out' — the transcripts show ALL FIVE lenses ran claude-opus-4-8 (39/56/62/22/47 api turns each, model field per request), NOT the session's model. The tier claim was assumed, not observed — precisely the class the provenance discipline forbids. Consequence for the dispatch-manifest schema (#669's manifest_fields): model_tier must be captured from telemetry after the run, never copied from session config at dispatch time. Corrected here; the schema note lands with the round-1 fix pass.",
+      "created_at": "2026-07-21T03:24:57.549651Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "a1418371-4a68-4f91-b9d5-053fc9477f2d",
+      "author": "xqjG",
+      "content": "ROUND-1 TRIAGE COMPLETE (2026-07-21). Group A — ten operator rulings recorded as decisions on their issues: #675 kind-set + fail-closed delta; #676 scope annotation; #678 set-valued mappings; #663 parsers named; #679 session segment demoted; #687 fourth stage confirmed; #691 generalized map confirmed; #683 constraint re-scoped to the 2b entry; #674 token dimension seeded from actuals + excerpt-read briefs for round 2+; #690 glance surface omits substrate findings, stated. Contract touches bundle into the amendment window issue #698 (seven touches, one window). Group B — data-side fix pass roster, all under the data-engineer lens with named validators: #677 (cannot-run third arm: present-but-unparseable fails closed; timeout-with-partial semantics; runner-report binding), #680 (milestone width + count-preservation-before-name truncation order, takes #679's freed width), #681 (recovery text branches both causes — the reword path per the finding's own recommendation), #684 (count corrections 18/28/6 + numeric-claim sweep across all nine artifacts), #685 (delete the stale three-OPEN-notes sentence, cite #665), #686 (add plugin-listings and user-settings-local-overlay manifest surfaces), #688 (record the exempt-refs adoption on #669), #689 (scope fix-lane tokens out of the derivation's output domain — the scope-out path), #692 (register sweep: driver-lane, mc, OOM/IO, note prefixes, ALL-CAPS), #693 (statusline copy: truncation mark, offline scoping, phantom location, restore-vs-repair), #694 (citation hygiene: qualify crosslink cites, anchor to symbols, drop ordinals, enumerate gate kinds), #695 (display-field identifier alignment), #697 (twelve nits per the collector), plus the data-side halves of #675/#676/#678/#679/#683/#674/#690. Closures without fixes: #682 resolved-by-repair (stands noted), #696 accepts recorded. SEQUENCE: fix pass first, then #698's amendment text drafted against the fixed data, then round 2 dispatched via the Workflow surface with explicit model+effort dials and excerpt-read briefs (#674 conduct).",
+      "created_at": "2026-07-21T03:54:32.667289Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5bfc744b-fe10-4a64-ba88-35b77acc944d",
+      "author": "xqjG",
+      "content": "FIX PASS COMPLETE (commit e61f28e5; 11 files, mdatron clean at pre-commit). All group-B items and the data halves of the group-A rulings landed; every finding child of this round is closed with its fix cited — #682 resolved-by-repair and #696 accepts stand recorded; #687/#691/#663 close onto #698, which now holds the only outstanding round-1 work: the seven contract touches, drafted next against the fixed data so contract and artifacts ratify consistent. After #698 ratifies: round 2 dispatches on the Workflow orchestration surface — per-lens model and effort set explicitly, excerpt-read briefs per the #674 ruling, manifest recording chosen values plus telemetry confirmation. Schema versions: gate-data 0.2.0, statusline-data 0.2.0, installed-artifact-manifest 0.2.0; the rest unchanged in format.",
+      "created_at": "2026-07-21T04:16:17.968291Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "be63f0ca-c88e-48e7-b39a-c4e22244234b",
+      "display_id": 1217,
+      "author": "xqjG",
+      "content": "CLOSED — DONE (tracker sweep #826). 'FIX PASS COMPLETE (commit e61f28e5)'; data-sets review round 1 resolved.",
+      "created_at": "2026-07-29T10:10:04.151295Z",
+      "kind": "decision"
+    }
+  ]
+}

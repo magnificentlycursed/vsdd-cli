@@ -1,0 +1,36 @@
+{
+  "uuid": "c1e55dcd-401b-4ff4-b096-201c5efbbb87",
+  "display_id": 666,
+  "title": "data set: composition-scope domain + action vocabulary",
+  "description": "Round 2 of #598. The composition function's second input domain (the phase enumeration plus the fix-lane scope value — the fix lane is not a phase and is never called one) and the action vocabulary the phase-answer derivation outputs from and the convergence test compares by exact match; the vocabulary also supplies the per-kind recovery actions the Status machine form emits (the statusline data set's kind-to-action mapping draws from it). Ships as the pair: registry artifact + mdatron schema. Operator walk-through: vocabulary membership (the tokens are what convergence reference answers — operator-adopted oracles — will be written in). Owner: data-engineer. Validator: vsdd-methodology (the phase-token fidelity to the whitepaper is that lens's exact concern). Flag: the existing .mdatron/schemas/phase-primer.json enum carries a phase-0 member — not a whitepaper phase; suite-era relic; cleanup candidate recorded here.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:41:46.338347Z",
+  "updated_at": "2026-07-21T02:00:05.874361Z",
+  "closed_at": "2026-07-21T02:00:05.874361Z",
+  "comments": [
+    {
+      "uuid": "c7b6beb8-7754-4113-ac10-45a8b7d8816c",
+      "author": "xqjG",
+      "content": "OPERATOR NAMING RULING 2026-07-20: stage-aligned tokens lead with the stage designator (1a-author-behavioral-spec, 2a-run-red-gate, 3-dispatch-review-round, ...). Applied to all fifteen phase-aligned members; fix-lane tokens stay unprefixed (the lane is not a stage), as do cross-phase, await, and recovery members. Mechanized as a declared constraint in the schema: a member whose phase is a phase-kind scope member must carry an id leading with that phase's stage designator — prefix-vs-phase-field mismatch becomes mechanically checkable rather than conventional. Schema id pattern widened to permit the leading digit. Still open from the walk: drop 1c-author-data-sets (project-specific token in a general vocabulary)?; merge 2b-run-green-gate into 2b-implement-to-green?; reword the fix-state-content human text; the phase-0 relic in phase-primer.json.",
+      "created_at": "2026-07-21T01:56:45.073328Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "3cc64390-9a86-437d-9242-cc369505065a",
+      "author": "xqjG",
+      "content": "Data Engineer pass (same lens as round 1, loaded this session): no new findings. Coverage by dimension: schema discipline — both pairs versioned, draft status, pair rule followed; validation at boundaries — both artifacts are walked .md, validated at commit by the existing pipeline; cross-field constraints — declared in both schema descriptions (member uniqueness, phase-reference resolution, single lane member, the stage-prefix rule mechanized from the operator's naming ruling); migration — draft status carries zero obligation, published-immutability declared on the state side; backup/recovery, workload, append-only — not applicable (git-tracked enumerations, linear consumers). Two observations, no action required: the action members' phase field accepts empty-string by type and is constrained only by the declared rule (acceptable while declared constraints execute at read); state_fields.type values are free strings — a meta-level type vocabulary would be over-schematization before Layer 1 implements against them, revisit at the snapshot-schema audit (round close).",
+      "created_at": "2026-07-21T01:59:05.968646Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "488aad7e-8311-48b4-b069-197b7bb1f247",
+      "author": "xqjG",
+      "content": "Resolved: the set landed with round 2 — registry artifact + mdatron schema pair, operator rulings applied (see the decision trail above). Evidence: the round-2 commit (mdatron verify clean after catching and fixing a real YAML defect in the first attempt — E0050, flow-map comma split, the pair rule's first live catch on its own package).",
+      "created_at": "2026-07-21T02:00:02.341575Z",
+      "kind": "result"
+    }
+  ]
+}

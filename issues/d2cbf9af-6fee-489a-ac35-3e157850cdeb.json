@@ -1,0 +1,21 @@
+{
+  "uuid": "d2cbf9af-6fee-489a-ac35-3e157850cdeb",
+  "display_id": 472,
+  "title": "lane r5 operator-relayed: branch grammar is archaeology, not registered data",
+  "description": "Lane round 5, operator-relayed from mdatron Part 3 (2026-07-20). Defect: the branch convention exists nowhere as contract — mdatron derived it by reading crosslink/Thermite source (type-prefixed kebab slugs; kickoff's feature/<driver-session-id>-<ref>-<slug>; crosslink/* reserved), then ratified feature/<issue#>-<slug> for hand-authored branches, leaving ONE repo with TWO grammars, and kickoff-generated branches carry no issue display ID. This is the closed-world artifact class: agents never hand-name what tooling can name, and name grammars are registration acts. Proposed: resolved-candidate (branch names join the closed-world registration — one canonical grammar as versioned data; generated branches carry the owning issue's display ID; the two-grammar live-fire drift is the motivating evidence). The kickoff --issue display-ID embedding also files upstream as an absorption proposal.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:47:53.140574Z",
+  "updated_at": "2026-07-20T00:49:21.008167Z",
+  "closed_at": "2026-07-20T00:49:21.008167Z",
+  "comments": [
+    {
+      "uuid": "ea637b75-0fe8-4b3b-9e80-479eb9905f6d",
+      "author": "xqjG",
+      "content": "Fixed: branch names join the closed-world registration — one canonical grammar as versioned data, generated branches carry the owning issue's display ID; the two-grammar live-fire drift cited as evidence. Display-ID embedding also filed upstream. Revision: Conformance at action time closed-world bullet.",
+      "created_at": "2026-07-20T00:49:03.311647Z",
+      "kind": "resolution"
+    }
+  ]
+}

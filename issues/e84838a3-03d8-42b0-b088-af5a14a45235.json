@@ -1,0 +1,24 @@
+{
+  "uuid": "e84838a3-03d8-42b0-b088-af5a14a45235",
+  "display_id": 835,
+  "title": "Slice 4 (Gate execution) phase-1a design — vsdd way: mdatron subprocess client (folded from #14; seeded from captured phase-1a A)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-30T15:58:43.406068Z",
+  "updated_at": "2026-07-30T16:02:17.741685Z",
+  "closed_at": "2026-07-30T16:02:17.741667Z",
+  "labels": [
+    "design"
+  ],
+  "comments": [
+    {
+      "uuid": "a9027951-2de7-4a00-a7f0-1299a84966f9",
+      "display_id": 1267,
+      "author": "xqjG",
+      "content": "CLOSING — DEFUNCT. Operator-flagged + verified: the 'mdatron subprocess client' (captured phase-1a A1-A10) is obsolete. mdatron is now a standalone peer CLI (own package, no library API); vsdd does NOT invoke 'mdatron verify' at runtime — the only vsdd->mdatron touchpoint is preflight.rs checking mdatron is on PATH, plus init.rs deploying .mdatron/ schema+pattern files. Ratified contract 248: 'Hooks: thin Python wrappers invoking mdatron and vsdd; vsdd supplies schemas and patterns, mdatron executes them' = peers, not caller/callee. The REAL Slice 4 (contract 275) = 'Gate execution and the mutation floor' (vsdd's own red-gate/phase-exit gate/terminal-round check/mutation floor; extends Slice 1's vsdd gate), which does NOT wrap mdatron. A1-A10 came from the superseded binary-first plan; its live concerns (pipeline-failure handling, untrusted-quoted) are owned by the hooks + mdatron's envelope contract + the ratified Terminal-output-safety requirement. Real Slice 4 (gate execution) can be designed separately if/when wanted.",
+      "created_at": "2026-07-30T16:02:10.664713Z",
+      "kind": "decision"
+    }
+  ]
+}

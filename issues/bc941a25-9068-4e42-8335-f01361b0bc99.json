@@ -1,0 +1,21 @@
+{
+  "uuid": "bc941a25-9068-4e42-8335-f01361b0bc99",
+  "display_id": 579,
+  "title": "statusline r18 UX: accept flag versus existing statusLine unstated",
+  "description": "Round 18. Lens: ux, lower confidence (validator: DR). Defect: the flag's guard is scoped to failed probes; its interaction with a successful probe finding an existing entry is resolvable only by construction, never stated or fixtured — automation could overwrite a customized statusLine. Citations verified: contract:162, :173, :187. Proposed: resolved-candidate (the flag equals a pre-confirmed offer and the offer never fires against an existing entry — stated; statusLine-present-with-flag fixture refuses identically). Also folding the coverage observation: the new statusline versioned-data artifacts join the versioned-data inventory line.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:02:45.163814Z",
+  "updated_at": "2026-07-20T04:04:30.844042Z",
+  "closed_at": "2026-07-20T04:04:30.844042Z",
+  "comments": [
+    {
+      "uuid": "d2558bf0-e8bc-48e8-95fa-29b4ea0ab1e4",
+      "author": "xqjG",
+      "content": "Fixed: the flag equals a pre-confirmed offer and never fires against an existing entry — refusal holds identically with or without it; the statusLine-present-with-flag fixture refuses identically; the statusline versioned-data artifacts joined the versioned-data inventory. Revision: Install bullet + criterion + Composition function requirement.",
+      "created_at": "2026-07-20T04:04:19.720965Z",
+      "kind": "resolution"
+    }
+  ]
+}

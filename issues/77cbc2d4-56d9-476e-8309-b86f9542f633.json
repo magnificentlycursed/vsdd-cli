@@ -1,0 +1,21 @@
+{
+  "uuid": "77cbc2d4-56d9-476e-8309-b86f9542f633",
+  "display_id": 555,
+  "title": "lane r11 QE+SE: path-surviving disablement has no expressible lane",
+  "description": "Lane round 11. Lenses: SE (over-fire + universe gap) + QE (accept direction untested) merged — three facets, one root (validators: SO/SA, SE). Defect: the removal-shaped rule asserts a declared lane, but both existing lanes key on vanished paths — a feature-default flip that leaves a still-valid test dormant either hard-fails (runtime skip) or launders through a mislabeled deletion (cfg-not-collected): mechanism-dependent verdicts for identical intent; the declared-object universe cannot hold the approval; double-claim across lanes unforbidden; environment parity between the two runs assumed unstated. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (the third removal-shaped lane — declared disablement: path, reason, validator approval, for surviving-but-dormant tests; the three lanes disjointly partition by intent, mechanism-independent; one-invocation-one-runner parity stated; declared-disablement accept fixture added).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:10:36.751166Z",
+  "updated_at": "2026-07-20T02:12:11.982467Z",
+  "closed_at": "2026-07-20T02:12:11.982467Z",
+  "comments": [
+    {
+      "uuid": "17e83d06-4248-47e0-b091-7e71fde3f2d1",
+      "author": "xqjG",
+      "content": "Fixed: the third removal-shaped lane — declared disablement (path, reason, validator approval) for surviving-but-dormant tests; the three lanes partition disjointly by intent, mechanism-independent; one-invocation-one-runner environment parity stated; declared-disablement accept fixture added. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T02:12:00.355192Z",
+      "kind": "resolution"
+    }
+  ]
+}

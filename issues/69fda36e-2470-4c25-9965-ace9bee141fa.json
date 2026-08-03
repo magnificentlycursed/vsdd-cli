@@ -1,0 +1,21 @@
+{
+  "uuid": "69fda36e-2470-4c25-9965-ace9bee141fa",
+  "display_id": 552,
+  "title": "statusline r15 UX: absent settings contradicts the offer path",
+  "description": "Round 15. Lens: ux (validator: DR). Defect: plainly-absent settings.json is the normal first-install condition (offer path, create-on-confirm) but the boundary's mirrored enumeration makes absent-file a withdrawal-triggering failure — two contradictory behaviors on the most common install case; the reconciling absent-with-probe-error qualifier lives only in the criterion. Citations verified: contract:162 vs :219, :187. Proposed: resolved-candidate (plainly-absent = offer path, stated at boundary and requirement; the settings failure kinds are malformed, absent-with-probe-error — an inaccessible path — and permission/IO).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:10:31.461386Z",
+  "updated_at": "2026-07-20T02:12:07.531042Z",
+  "closed_at": "2026-07-20T02:12:07.531042Z",
+  "comments": [
+    {
+      "uuid": "19ca1e62-de6d-40f1-b594-d6fa972821b3",
+      "author": "xqjG",
+      "content": "Fixed: plainly-absent settings = the normal offer path, stated at the boundary; the settings failure kinds are malformed, absent-with-probe-error (inaccessible path), permission/IO. Revision: trust boundary.",
+      "created_at": "2026-07-20T02:11:56.430316Z",
+      "kind": "resolution"
+    }
+  ]
+}

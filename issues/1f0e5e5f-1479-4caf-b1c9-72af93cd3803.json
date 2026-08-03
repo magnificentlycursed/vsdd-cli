@@ -1,0 +1,21 @@
+{
+  "uuid": "1f0e5e5f-1479-4caf-b1c9-72af93cd3803",
+  "display_id": 450,
+  "title": "statusline r8 UX: convergence test still says degraded flag",
+  "description": "Round 8. Lens: ux (validator: DR). Owner: SO session. Defect: the amendment declares degradation 'not a bare flag' while the Convergence test compares 'the degraded flag' — reification ambiguity for a cold reader. Citations verified: contract:179 vs :163, :199. Proposed: resolved-candidate (one word: kind).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:39.866406Z",
+  "updated_at": "2026-07-20T00:37:59.773578Z",
+  "closed_at": "2026-07-20T00:37:59.773578Z",
+  "comments": [
+    {
+      "uuid": "e04f375d-bc74-40d7-bc2b-9817997e66a3",
+      "author": "xqjG",
+      "content": "Fixed: Convergence test says 'the degraded kind'. Revision: one word.",
+      "created_at": "2026-07-20T00:37:44.589632Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "23ab3613-4e27-45ee-a433-3e75045e2991",
+  "display_id": 211,
+  "title": "SO/F5: bundle vs split rollback strategy undeclared",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-owner-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:47.544352Z",
+  "updated_at": "2026-06-08T03:32:19.998129Z",
+  "closed_at": "2026-06-08T03:32:19.998129Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:solution-owner",
+    "review-finding"
+  ],
+  "blockers": [
+    "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7"
+  ],
+  "comments": [
+    {
+      "uuid": "f46c4477-745e-4ae8-a889-be0ef6138285",
+      "author": "xqjG",
+      "content": "Dismissed per operator disposition 2026-06-08: the bundle's rollback strategy concern is moot post-hoc. Phase 3 reviews on crosslink #12 did not force rework on the code rename; the bundle held. The strategy-was-undeclared concern doesn't materialize.",
+      "created_at": "2026-06-08T03:32:19.220545Z",
+      "kind": "resolution"
+    }
+  ]
+}

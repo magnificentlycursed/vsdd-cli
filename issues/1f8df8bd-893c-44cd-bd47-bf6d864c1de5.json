@@ -1,0 +1,21 @@
+{
+  "uuid": "1f8df8bd-893c-44cd-bd47-bf6d864c1de5",
+  "display_id": 441,
+  "title": "lane r3 SE: one-defect-per-commit unsatisfiable for shared-root-cause findings",
+  "description": "Lane round 3. Lens: SE (validator: SO). Owner: SO session. Defect: two filed findings are two defects by linkage-definition, but a single-root-cause fix is atomic — neither symptom greens without the shared change; no merge or split rule exists. Citations verified: contract:81, :83. Proposed: resolved-candidate (consolidation is the legal path: shared-root-cause findings consolidate before the fix — one absorbs the others with cross-reference closure, the survivor lists all symptoms and names all pin tests; one owning finding per fix commit, gate runs all its pins).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:41.264520Z",
+  "updated_at": "2026-07-20T00:28:41.900332Z",
+  "closed_at": "2026-07-20T00:28:41.900332Z",
+  "comments": [
+    {
+      "uuid": "cfb111d2-24fa-47e5-9ccb-05f439878eae",
+      "author": "xqjG",
+      "content": "Fixed: consolidation path — shared-root-cause findings consolidate before the fix (one absorbs with cross-reference closures; survivor lists all symptoms, names all pin tests); one OWNING finding per fix commit; the gate runs all the survivor's pins. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-20T00:28:29.333389Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "63e0ff8e-6298-4857-82b9-4b0560547d27",
+  "display_id": 833,
+  "title": "Rename substrate_anchors -> dependency_anchors frontmatter key (deferred from #821)",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-07-30T15:23:44.581877Z",
+  "updated_at": "2026-07-30T15:33:04.965253Z",
+  "closed_at": "2026-07-30T15:33:04.965239Z",
+  "labels": [
+    "refactor"
+  ],
+  "comments": [
+    {
+      "uuid": "4ab64766-08ec-4c9e-be98-9e5b151dca20",
+      "display_id": 1266,
+      "author": "xqjG",
+      "content": "MERGED (squash of GitHub PR #15, all gates green); main synced. substrate_anchors -> dependency_anchors — the last bare substrate layer-word retired. Closing.",
+      "created_at": "2026-07-30T15:32:56.606909Z",
+      "kind": "result"
+    }
+  ]
+}

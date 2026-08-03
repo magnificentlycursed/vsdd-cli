@@ -1,0 +1,21 @@
+{
+  "uuid": "fea77f0d-bf8b-4d1f-92c2-560a1e45bb31",
+  "display_id": 794,
+  "title": "Layer 3 round 4 major SE+QE convergent: registry free-form strings truncation_mark, absence_text, marker_word, broken_state_mark still reach the terminal uncleaned — the rest of the #791 class; fix once at load",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T10:23:26.046581Z",
+  "updated_at": "2026-07-26T10:34:22.043810Z",
+  "closed_at": "2026-07-26T10:34:22.043800Z",
+  "comments": [
+    {
+      "uuid": "d929eca8-6c3a-4fae-8236-2d645e5c0c9a",
+      "display_id": 1056,
+      "author": "xqjG",
+      "content": "Fixed in 800878a5: registry display strings are cleaned once at load via a PostLoad hook the generic loader runs after deserialization — StatuslineData::post_load cleans truncation_mark, broken_state_mark, every display_field absence_text, every degraded_kind marker_word/next_step_text, and every read_failure_kind human_diagnostic/human_recovery; the other set types take the no-op default. Every downstream surface (segment, human, machine) now receives clean data, so no render site can miss a member of the class — the machine form included, which the render-site approach could not reach. The two redundant per-sink cleans round 3 added (next_step, human_recovery) are removed for a single mechanism. Pinned by a post_load unit test asserting every field is cleaned.",
+      "created_at": "2026-07-26T10:34:16.100531Z",
+      "kind": "result"
+    }
+  ]
+}

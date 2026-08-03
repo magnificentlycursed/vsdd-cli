@@ -1,0 +1,21 @@
+{
+  "uuid": "b2da1bae-942c-4705-9b16-a23c88885e76",
+  "display_id": 583,
+  "title": "lane r14 QE: relocated-ignored-test name collides with the flagged mapped case",
+  "description": "Lane round 14. Lens: QE (validator: SE). Defect: the blocks-nothing fixture's name denotes the mapped case revision 14 requires flagged — a 2a author seeding by name certifies the silent-dormancy escape. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (renamed: a genuinely-new-ignored-test fixture, no baseline history).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:02:51.642469Z",
+  "updated_at": "2026-07-20T04:04:37.268454Z",
+  "closed_at": "2026-07-20T04:04:37.268454Z",
+  "comments": [
+    {
+      "uuid": "ecf71900-02cb-4245-8907-293b79061f36",
+      "author": "xqjG",
+      "content": "Fixed: renamed to the genuinely-new-ignored-test fixture (fresh test, no baseline history) with the rename reason recorded inline; the stale duplicate entry and criterion reference removed. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T04:04:25.076562Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "1d032b03-dea4-4f2c-89ce-c074b5c1fee7",
+  "display_id": 451,
+  "title": "lane r4 SE+Meth: consolidation closures contradict evidence-graded closure",
+  "description": "Lane round 4. Lenses: SE + methodology merged (validators: SO). Owner: SO session. Defect: absorbed findings close pre-fix with a finding-handle reference — not one of commit/gate/test — so the contract's own falsifier and criterion flag the amendment's prescribed conduct; 'consolidated' is also an unenumerated disposition (silent classification-universe extension, the meta-domain's named sycophancy mode). Citations verified: contract:81 vs :78, :83, :182. Proposed: resolved-candidate (disposition closures — dismissed, hallucinated, consolidated-into-named-survivor — close immediately with disposition recorded; evidence grading scopes to resolved closures; consolidated registered as draft vocabulary).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:41.375983Z",
+  "updated_at": "2026-07-20T00:38:01.143543Z",
+  "closed_at": "2026-07-20T00:38:01.143543Z",
+  "comments": [
+    {
+      "uuid": "174e2710-5af2-4070-854e-195c11add4e6",
+      "author": "xqjG",
+      "content": "Fixed: closure grading scoped to resolved findings; disposition closures (dismissed, hallucinated, consolidated-into-named-survivor) close immediately with disposition recorded, survivor handle as the consolidation reference; consolidated registered as draft vocabulary; falsifier updated (resolved-closed without evidence, or disposition closure without recorded disposition). Revision: Finding lifecycle closure bullet + falsifier + consolidation clause.",
+      "created_at": "2026-07-20T00:37:45.845930Z",
+      "kind": "resolution"
+    }
+  ]
+}

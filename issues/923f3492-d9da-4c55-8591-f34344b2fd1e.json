@@ -1,0 +1,29 @@
+{
+  "uuid": "923f3492-d9da-4c55-8591-f34344b2fd1e",
+  "display_id": 101,
+  "title": "AIE/F4: CARGO_BIN_EXE_mdatron migration",
+  "description": "Source: mdatron/review-log/2026-06-07-ai-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:05:26.044002Z",
+  "updated_at": "2026-06-08T01:47:58.082084Z",
+  "closed_at": "2026-06-08T01:47:58.082084Z",
+  "labels": [
+    "classification:accepted",
+    "convergence:cargo-bin-exe",
+    "cycle:crosslink-13",
+    "domain:ai-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "98138622-17f2-446f-a22a-add9d691b46c",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@883eaaf (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:47:57.364670Z",
+      "kind": "resolution"
+    }
+  ]
+}

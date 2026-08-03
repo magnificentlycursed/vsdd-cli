@@ -1,0 +1,21 @@
+{
+  "uuid": "138415c9-5063-4a31-be90-c0b268fef0b7",
+  "display_id": 270,
+  "title": "amend-r5-DR: lifetime half undefined at first use",
+  "description": "Minor. Fix: defined inline — tracked wiring or per-clone payload, plus the inverted pairing. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:04:01.895966Z",
+  "updated_at": "2026-07-20T19:10:32.265531Z",
+  "closed_at": "2026-07-20T19:10:32.265531Z",
+  "comments": [
+    {
+      "uuid": "a78cc876-bd8e-4cd6-86e6-c62bed3767b9",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:10:29.562362Z",
+      "kind": "resolution"
+    }
+  ]
+}

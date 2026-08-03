@@ -1,0 +1,21 @@
+{
+  "uuid": "49e09929-b9ae-4309-920c-8ec2168746d7",
+  "display_id": 486,
+  "title": "lane r6 Meth: broken-surface fixture exercised by no criterion",
+  "description": "Lane round 6. Lens: methodology (validator: SO). Owner: SO session. Defect: the lawful-bootstrap clause's fixture is declared but no criterion drives it — asserted, not demonstrated, the class the amendment abolishes. Citations verified: contract:173, :64, :81 vs :180. Proposed: resolved-candidate (criterion clause: the fixture's recorded failing state is accepted as red evidence with reviews following landing).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:56.911256Z",
+  "updated_at": "2026-07-20T00:58:00.942487Z",
+  "closed_at": "2026-07-20T00:58:00.942487Z",
+  "comments": [
+    {
+      "uuid": "484a3e78-fa74-472d-b871-78d8e744ab5f",
+      "author": "xqjG",
+      "content": "Fixed: criterion drives the broken-surface fixture — recorded failing state accepted as red evidence, reviews follow landing. Revision: criterion.",
+      "created_at": "2026-07-20T00:57:45.750984Z",
+      "kind": "resolution"
+    }
+  ]
+}

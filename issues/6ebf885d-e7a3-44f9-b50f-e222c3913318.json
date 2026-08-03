@@ -1,0 +1,21 @@
+{
+  "uuid": "6ebf885d-e7a3-44f9-b50f-e222c3913318",
+  "display_id": 776,
+  "title": "Layer 3 round 1 major SE+UX convergent: broken members of the composed display render with no repo identity — indistinguishable lines; segment_for_repo untested",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T05:44:13.786606Z",
+  "updated_at": "2026-07-26T06:26:55.080109Z",
+  "closed_at": "2026-07-26T06:26:55.080084Z",
+  "comments": [
+    {
+      "uuid": "784f6ae4-b15e-4290-bbe8-1d37f4588ec7",
+      "display_id": 1030,
+      "author": "xqjG",
+      "content": "Fixed in ff331dd9: the composition root's broken arm prefixes the worded repo name (the acquisition's own leaf derivation) to the registered mark, so every composed line — healthy or broken — identifies its repo; the single-repo broken glance gains the same identity. Pinned: segment_for_repo healthy and broken, two distinct broken members surviving composition distinguishably.",
+      "created_at": "2026-07-26T06:26:41.133287Z",
+      "kind": "result"
+    }
+  ]
+}

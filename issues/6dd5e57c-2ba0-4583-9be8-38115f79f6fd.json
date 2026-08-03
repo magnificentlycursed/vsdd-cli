@@ -1,0 +1,27 @@
+{
+  "uuid": "6dd5e57c-2ba0-4583-9be8-38115f79f6fd",
+  "display_id": 311,
+  "title": "Phase-answer derivation's inputs cannot produce its declared output",
+  "description": "SA question merged with the primer-audit snapshot refinement: the process-integrity report needs handle resolution (filesystem and git IO), milestone state, and chassis compaction counts — none in the (state artifact, tracker snapshot) tuple. Fix: define the snapshot as an explicitly-acquired materialized view (acquisition in the effectful shell, the named clock-as-parameter refinement) and reassign the checks that cannot be materialized to the shell. [owner: solution-architect; validator: quality-engineer]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:06.003418Z",
+  "updated_at": "2026-07-19T22:01:21.680095Z",
+  "closed_at": "2026-07-19T22:01:21.680095Z",
+  "labels": [
+    "phase-1b-round-1",
+    "solution-architect",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "593f3702-6e90-4863-84c3-fd5574e4fc8e",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:20.960508Z",
+      "kind": "result"
+    }
+  ]
+}

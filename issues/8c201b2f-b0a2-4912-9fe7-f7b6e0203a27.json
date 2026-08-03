@@ -1,0 +1,28 @@
+{
+  "uuid": "8c201b2f-b0a2-4912-9fe7-f7b6e0203a27",
+  "display_id": 73,
+  "title": "PE/F8: cargo install checksums",
+  "description": "Source: mdatron/review-log/2026-06-07-platform-engineer-phase-2-bundle.md\nClassification: dismissed\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:04:19.233398Z",
+  "updated_at": "2026-07-21T00:37:41.136834Z",
+  "closed_at": "2026-07-21T00:37:41.136834Z",
+  "labels": [
+    "classification:dismissed",
+    "cycle:crosslink-13",
+    "domain:platform-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "ec7b684a-1620-4f04-bef4-88ae5d030c02",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:37:38.367400Z",
+      "kind": "result"
+    }
+  ]
+}

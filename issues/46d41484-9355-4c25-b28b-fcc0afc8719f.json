@@ -1,0 +1,27 @@
+{
+  "uuid": "46d41484-9355-4c25-b28b-fcc0afc8719f",
+  "display_id": 6,
+  "title": "M1 amendment extension: attribution honesty for inline composition",
+  "description": "Steps to reproduce:\n1. \n\nExpected: \nActual: \n\nThe M1 InlineMultiDomain composition shape amendment landed at vsdd-cli commit 60eb150 has a gap: it doesn't address attribution honesty. Inline-single-agent multi-domain composition has been using git 'Co-authored-by: Solution Owner <so@vsdd-domains>' trailers performatively — claiming independent multi-domain review that didn't structurally occur. Phase 2b primer says prose commits 'carry Co-authored-by: TW + DR trailers'; treating that literally for inline-single-agent work is dishonest attribution. Fix: amend M1 to declare 'inline-single-agent composition uses Composition: footer naming model + applied lenses; git Co-authored-by trailers are reserved for actually-independent contributors (separate humans or separate agents).' Small amendment but resolves the attribution-honesty observation surfaced 2026-06-01.",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T01:05:22.141108Z",
+  "updated_at": "2026-07-29T10:04:30.285021Z",
+  "closed_at": "2026-07-29T10:04:30.285009Z",
+  "labels": [
+    "bug",
+    "methodology",
+    "tech-debt"
+  ],
+  "comments": [
+    {
+      "uuid": "65bbbecd-1554-4a29-8b83-93e429a88b8b",
+      "display_id": 1210,
+      "author": "xqjG",
+      "content": "CLOSED — tracker sweep (#826, operator-directed 2026-07-29). Attribution/co-author amendment — pre-respec; any live attribution work is tracked at #657. A binary-first-plan stub (2026-06-02); the plan is superseded by the ratified contract (.design/agent-first-vsdd-toolkit.md:4) + rescoped by #819's enforcement-spine slices, and the plan doc was removed (#826). No live scope in the stub; where still needed the work is re-homed to the slices.",
+      "created_at": "2026-07-29T10:04:23.765796Z",
+      "kind": "decision"
+    }
+  ]
+}

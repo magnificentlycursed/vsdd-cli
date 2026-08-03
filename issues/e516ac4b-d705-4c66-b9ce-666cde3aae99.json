@@ -1,0 +1,28 @@
+{
+  "uuid": "e516ac4b-d705-4c66-b9ce-666cde3aae99",
+  "display_id": 653,
+  "title": "upstream crosslink: hub-sync ID promotion strands session work pointer and lock table on provisional IDs",
+  "description": "Observed during the 2026-07-20 first hub sync of this repo (crosslink 0.8.0): sync promoted 359 offline issues to display IDs and reported 'Updated 76 reference(s) (comments: 60, descriptions: 15, sessions: 1)', but immediately after, 'crosslink session status' showed 'Working on: L272 (issue not found)' and 'crosslink locks list' showed both active locks as '(unknown issue)' keyed to the dead provisional IDs (L1, L272) — the promoted issues are #294 and #597. The reference updater covers comments, descriptions, and session records but not the lock table or the session's work pointer, so a mid-work sync severs the session's own binding. Repair performed by hand: locks released, work re-claimed via 'crosslink session work 597'. Suggestion: include the lock table and session work pointer in the same renumbering pass; a lock or work pointer referencing a promoted provisional ID after sync should be impossible by construction. Evidence: this session's sync transcript, 2026-07-20, recorded on vsdd-cli #597's trail. Joins the upstream findings list (pattern of #430-#433, #237).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T20:22:24.398619Z",
+  "updated_at": "2026-07-20T23:33:09.883725Z",
+  "closed_at": "2026-07-20T23:33:09.883725Z",
+  "comments": [
+    {
+      "uuid": "fc731053-1ed8-46d8-9870-c50a5b8cccce",
+      "author": "xqjG",
+      "content": "HELD: operator directive 2026-07-20 (recorded as an intervention on vsdd-cli #597) — upstream-filing block pending operator information about the upstream project from an mdatron kickoff run. This issue is a local relay record in this repo's tracker only; no upstream communication has occurred. Disposition awaits the operator's information.",
+      "created_at": "2026-07-20T22:52:05.893084Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "838a5e4f-d987-4ffc-a853-5510537d607f",
+      "author": "xqjG",
+      "content": "Closed as fixed-upstream: the v2 offline/promote path (promote_offline_issues + rewrite_local_references) was deleted wholesale in upstream commit 980130f8 (PR #754, 2026-06-12); at main 85691369 v2 hubs are read-only and v3 IDs come from reduction, so the defect mechanism no longer exists. The fix ships in no stable release — installed 0.8.0 still carries it; this session's hand-repair (locks released, work re-claimed on #597) is the operative workaround at 0.8.0. Residual parked, not filed: v3 hydration leaves display-id-keyed locks and sessions.active_issue_id unremapped across the provisional-to-permanent transition (hydration.rs:291-296, 303-305, 560-563) — reachability unconfirmed; separate investigation candidate recorded on #597.",
+      "created_at": "2026-07-20T23:33:07.279221Z",
+      "kind": "result"
+    }
+  ]
+}

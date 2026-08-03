@@ -1,0 +1,28 @@
+{
+  "uuid": "8eeb4267-9236-4b5b-8530-1edfa733afa0",
+  "display_id": 201,
+  "title": "SA/F1: spec-vs-code reserved-range collision (CRITICAL)",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-architect-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@1d81c4e",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:28.329912Z",
+  "updated_at": "2026-06-08T02:34:13.258661Z",
+  "closed_at": "2026-06-08T02:34:13.258661Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "175d627f-fa3f-4047-99f3-18826f2bf07f",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@1d81c4e).",
+      "created_at": "2026-06-08T02:34:12.299902Z",
+      "kind": "resolution"
+    }
+  ]
+}

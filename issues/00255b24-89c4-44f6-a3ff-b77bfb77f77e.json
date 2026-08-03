@@ -1,0 +1,21 @@
+{
+  "uuid": "00255b24-89c4-44f6-a3ff-b77bfb77f77e",
+  "display_id": 582,
+  "title": "lane r14 QE: cfg-vanished-mapping degradation un-rostered",
+  "description": "Lane round 14. Lens: QE (validator: SE). Defect: the escape-closure's fixture is legitimately 1c-blocked but absent from the 2a deferral roster — reads as covered beside the similarly-named disablement fixture. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (roster addition).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:02:49.930412Z",
+  "updated_at": "2026-07-20T04:04:35.704696Z",
+  "closed_at": "2026-07-20T04:04:35.704696Z",
+  "comments": [
+    {
+      "uuid": "bc9cf244-c6f6-4478-b503-76c651953606",
+      "author": "xqjG",
+      "content": "Fixed: the cfg-vanished mapping-target degradation joined the 2a deferral roster with its unauthorable-until-1c reason stated. Revision: corpus roster.",
+      "created_at": "2026-07-20T04:04:23.805241Z",
+      "kind": "resolution"
+    }
+  ]
+}

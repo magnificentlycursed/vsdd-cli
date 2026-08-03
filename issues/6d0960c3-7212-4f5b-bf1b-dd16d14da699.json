@@ -1,0 +1,27 @@
+{
+  "uuid": "6d0960c3-7212-4f5b-bf1b-dd16d14da699",
+  "display_id": 309,
+  "title": "Mutation target reaches a crate outside the declared mutation scope",
+  "description": "SA defect, Raise to SO: the pure core includes the pricing function (cost crate, zero vsdd-core imports) but the Phase 5 strategy scopes mutation to vsdd-core and mdatron-core only. Fix: the strategy line adds the cost crate, or states pricing's mutation coverage lives under the cost crate's boundary. [owner: solution-architect; validator: solution-owner]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:01.845023Z",
+  "updated_at": "2026-07-19T22:01:18.121525Z",
+  "closed_at": "2026-07-19T22:01:18.121525Z",
+  "labels": [
+    "phase-1b-round-1",
+    "solution-architect",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "09247d56-dd44-4aed-9487-07202951d427",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:17.234939Z",
+      "kind": "result"
+    }
+  ]
+}

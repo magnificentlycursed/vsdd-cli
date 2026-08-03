@@ -1,0 +1,21 @@
+{
+  "uuid": "4a70bffa-b227-48e8-864b-8c2216ef4772",
+  "display_id": 781,
+  "title": "Layer 3 round 1 minor collector security+SE+UX: adopter-surface conduct — the uncapped config read, the wiring script's silent degrade on a named-but-missing config, uncanonicalized current-repo dedup, the ambiguous composition guidance",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T05:45:20.333597Z",
+  "updated_at": "2026-07-26T06:30:29.033380Z",
+  "closed_at": "2026-07-26T06:30:29.033355Z",
+  "comments": [
+    {
+      "uuid": "7566b5f3-994c-4070-8d42-bb7450ca4333",
+      "display_id": 1035,
+      "author": "xqjG",
+      "content": "Fixed in ff331dd9: the repo-set config read honors the 1MiB materialization cap with an oversize diagnostic; the wiring script errors loudly to stderr when VSDD_STATUSLINE_CONFIG names a missing file (the default location's absence stays the lawful single-repo shape); current-repo dedup canonicalizes both spellings; the composition guidance names the exact one-line invocation with the multi-repo suffix as an explicit variant.",
+      "created_at": "2026-07-26T06:30:15.901410Z",
+      "kind": "result"
+    }
+  ]
+}

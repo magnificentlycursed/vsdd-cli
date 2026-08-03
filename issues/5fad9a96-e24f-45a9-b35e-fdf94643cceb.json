@@ -1,0 +1,35 @@
+{
+  "uuid": "5fad9a96-e24f-45a9-b35e-fdf94643cceb",
+  "display_id": 586,
+  "title": "defect-fix lane amendment cold round 15",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 15 (post round-14: intent partition with the stated mechanical exception; adopted-default report-set; rostered degradation; renamed fixture; propagated requirement). Series ...-4-2-5.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:04:56.128668Z",
+  "updated_at": "2026-07-20T04:16:39.835257Z",
+  "closed_at": "2026-07-20T04:16:39.835257Z",
+  "comments": [
+    {
+      "uuid": "4ac760fd-5a72-41b5-9b47-209021d7b100",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 15. Subject: lane revision 15 anchors: the gate bullet as amended (intent partition with one stated mechanical exception; adopted-default report-set with the 1c override path; all prior machinery) + falsifier; lifecycle + falsifier; Conformance; Recorded review dispatch; References; the propagated Composition function requirement; Gates; criterion; corpus (renamed fixture, rostered degradation); Terms registrations. Out of scope: statusline and effort amendments. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T04:05:07.437928Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "f2fa0b16-2bf0-4ca4-a1c4-be262f686b9c",
+      "author": "xqjG",
+      "content": "Lane round 15 complete. SE: NO FINDINGS (reconstructed the full lane predicate — every observable case deterministic, two thin points correctly disposed as 1c items). QE: NO FINDINGS (full three-direction triangle walk, forty fixtures verified, corpus stale-free). Methodology: 1 filed at stated medium confidence — L262 adopted-default harmonization. Series ...-2-5-1. Not clean but two of three lenses clean twice running; round 16 after disposition (methodology only, narrowed with declared reason: both other lenses clean and the sole fix is pattern-application, methodology-jurisdiction).",
+      "created_at": "2026-07-20T04:15:20.164836Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5ad16170-059f-41d8-80c6-0c2ce8bd589a",
+      "author": "xqjG",
+      "content": "Round fully disposed: 1/1 fixed (the adopted-default harmonization). mdatron verify clean on lane revision 16. Closing; round 16 dispatches (methodology only, narrowed with declared reason: SE and QE clean this round and the sole fix is pattern-application).",
+      "created_at": "2026-07-20T04:16:38.404053Z",
+      "kind": "result"
+    }
+  ]
+}

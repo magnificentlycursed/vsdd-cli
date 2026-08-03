@@ -1,0 +1,31 @@
+{
+  "uuid": "08f99aec-f175-4b22-8233-1655f00e0c30",
+  "display_id": 814,
+  "title": "Phase 5, Layer 3: mutation + property testing over the pure core (per-layer cadence ruling 2026-07-28)",
+  "status": "open",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-28T21:23:02.924622Z",
+  "updated_at": "2026-07-28T21:27:32.489234Z",
+  "labels": [
+    "feature"
+  ],
+  "comments": [
+    {
+      "uuid": "de8f36d9-9da3-43a7-b97f-a9c25d96e388",
+      "display_id": 1118,
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-28): phase 5 (mutation/fuzz/property) is a PER-LAYER obligation, not a project-level pass — resolves the contract's phase-5-candidates ambiguity. Applies to Layer 3 now (this issue). CONSEQUENCE flagged: Layers 1 and 2 closed without phase 5 and are retroactively non-compliant under this ruling — operator decides whether they need retroactive phase-5 increments (forward-only would let them stand as recorded; the ruling's cadence binds from here). FOLLOW-UP: the contract's Verification-architecture phase-5 language should be clarified to state per-layer cadence — a small spec amendment through the owned process, not a hand-edit. Milestone #6 (Layer 3) stays closed; this phase-5 pass is a tracked increment under the boundary (the #811 precedent), not a reopen.",
+      "created_at": "2026-07-28T21:23:22.154840Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "2698a110-134e-4b88-8400-0318ec49afff",
+      "display_id": 1125,
+      "author": "xqjG",
+      "content": "PARKED pending a design phase (operator direction 2026-07-28). Before executing phase 5, the machination gaps the Layer-3 audit surfaced (unrouted-findings collapse, prose-not-edge routing, fix-in-place, phase-boundary informality, no per-layer phase 5, no mechanized self-governance during bootstrap) go through a DESIGN CYCLE: follow vsdd process, evaluate whether the planned layers (6/7/8) would have closed these gaps, and design/enhance the agent-first controls — with the AI Engineer domain and the Claude Code supplement contributing, and Thermite's harness architecture as inspiration. Phase 5 for Layer 3 resumes after the control design lands (it may itself be reshaped by the design).",
+      "created_at": "2026-07-28T21:27:32.475791Z",
+      "kind": "plan"
+    }
+  ]
+}

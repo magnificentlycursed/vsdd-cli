@@ -1,0 +1,21 @@
+{
+  "uuid": "b1194fff-405e-43ec-aea3-8e0080ebd374",
+  "display_id": 495,
+  "title": "lane r7 SE: dual-form grammar lacks grandfathering semantics",
+  "description": "Lane round 7. Lens: SE (validator: SO). Owner: SO session. Defect: whether a pre-sync branch becomes off-grammar after sync is undecidable — reading (ii) false-positives every legacy branch. Citations verified: contract:124. Proposed: resolved-candidate (a branch keeps the form lawful at its creation; sync never retroactively obligates a rename; the query keys on creation-time validity).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:03:46.394480Z",
+  "updated_at": "2026-07-20T01:12:33.185676Z",
+  "closed_at": "2026-07-20T01:12:33.185676Z",
+  "comments": [
+    {
+      "uuid": "58b7399d-bab4-45e2-8ec8-b41fad61429b",
+      "author": "xqjG",
+      "content": "Fixed: a branch keeps whichever form was lawful at creation; sync never retroactively obligates a rename — creation-time validity is the query's key. Revision: Conformance bullet.",
+      "created_at": "2026-07-20T01:12:20.235511Z",
+      "kind": "resolution"
+    }
+  ]
+}

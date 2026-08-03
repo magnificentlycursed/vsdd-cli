@@ -1,0 +1,27 @@
+{
+  "uuid": "cc2c331b-7f4a-4ec8-894b-5baf1885f630",
+  "display_id": 325,
+  "title": "Concurrent-boundary fixture's CI home implicit",
+  "description": "QE question: bound via the falsification-condition audit, not a named criterion. Fix: one Status-detection clause names it. [owner: quality-engineer; validator: sanity-check]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:06:48.534535Z",
+  "updated_at": "2026-07-19T22:07:33.767561Z",
+  "closed_at": "2026-07-19T22:07:33.767561Z",
+  "labels": [
+    "phase-1b-round-2",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "e3700836-4ff2-4a42-a85d-2a31444eb37e",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b micro-pass (sha256:cccfa7da5522125e0cd889f70333e62b11ccb266189f953cd598f4e393ab90e4).",
+      "created_at": "2026-07-19T22:07:32.720142Z",
+      "kind": "result"
+    }
+  ]
+}

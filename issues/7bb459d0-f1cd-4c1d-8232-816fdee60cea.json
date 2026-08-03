@@ -1,0 +1,21 @@
+{
+  "uuid": "7bb459d0-f1cd-4c1d-8232-816fdee60cea",
+  "display_id": 534,
+  "title": "effort r2 AIE: tier/effort falsifier uninstrumented and unlisted",
+  "description": "Effort round 2. Lens: AIE (validator: PE). Defect: the new manifest falsifier has no fixture and no criterion clause, and is absent from the closed deferral enumeration — its postdated-approval sibling has both. Citations verified: contract:112 vs :173, :184. Proposed: resolved-candidate (manifest-missing-tier-or-effort seed; Swarm live fire clause flags it).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:30.344293Z",
+  "updated_at": "2026-07-20T01:46:04.943873Z",
+  "closed_at": "2026-07-20T01:46:04.943873Z",
+  "comments": [
+    {
+      "uuid": "77738c7c-bede-4d0f-970a-bb98e45666af",
+      "author": "xqjG",
+      "content": "Fixed: manifest-missing-tier-or-effort seed added; the Swarm live fire criterion flags it — the recording falsifier has its instrument. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T01:45:46.329047Z",
+      "kind": "resolution"
+    }
+  ]
+}

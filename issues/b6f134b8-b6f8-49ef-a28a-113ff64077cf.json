@@ -1,0 +1,28 @@
+{
+  "uuid": "b6f134b8-b6f8-49ef-a28a-113ff64077cf",
+  "display_id": 158,
+  "title": "DR/F1: spec-vs-impl contradiction live on main",
+  "description": "Source: mdatron/review-log/2026-06-02-documentation-reviewer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@1d81c4e DESIGN-MDATRON.md amendment",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:02.755717Z",
+  "updated_at": "2026-06-08T02:33:55.095357Z",
+  "closed_at": "2026-06-08T02:33:55.095357Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:documentation-reviewer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "937eee41-2586-48ab-af8d-f7994eeaee9c",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@1d81c4e DESIGN-MDATRON.md amendment).",
+      "created_at": "2026-06-08T02:33:54.348051Z",
+      "kind": "resolution"
+    }
+  ]
+}

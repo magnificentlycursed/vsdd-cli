@@ -1,0 +1,21 @@
+{
+  "uuid": "32c6719d-6948-4e2b-b317-aedd081aaa50",
+  "display_id": 616,
+  "title": "1c-DR-r3: registered branch grammar absent from the data-authoring enumeration",
+  "description": "Minor, check e. Citation (Layer 7): 'the registered branch grammar data (a Layer 1 artifact)' — the data-authoring package's enumeration never lists the branch grammar, so an artifact two layers depend on has no authoring home. Fix: add it to the enumeration. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:31:05.707140Z",
+  "updated_at": "2026-07-20T17:32:26.272896Z",
+  "closed_at": "2026-07-20T17:32:26.272896Z",
+  "comments": [
+    {
+      "uuid": "a639857d-5c89-46df-9b11-0e4d7fa9383f",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Data-authoring enumeration now lists 'the registered branch grammar — both registered forms with their refs-query seam'. mdatron verify clean.",
+      "created_at": "2026-07-20T17:32:24.753168Z",
+      "kind": "resolution"
+    }
+  ]
+}

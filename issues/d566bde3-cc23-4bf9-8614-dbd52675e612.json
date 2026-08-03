@@ -1,0 +1,32 @@
+{
+  "uuid": "d566bde3-cc23-4bf9-8614-dbd52675e612",
+  "display_id": 809,
+  "title": "Enforcement-gap finding: the spec-amendment discipline (directive classification -> chassis-managed spec-review loop, Layer 8) is unbuilt like routing (#806), so contract amendments have no mechanical guard during bootstrap — sibling of #806, the same downstream-deferred enforcement spine",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-27T20:03:06.861196Z",
+  "updated_at": "2026-07-27T21:28:09.640706Z",
+  "closed_at": "2026-07-27T21:28:09.640697Z",
+  "labels": [
+    "finding"
+  ],
+  "comments": [
+    {
+      "uuid": "32277b0f-6000-4e15-aecc-2bed5eaad98e",
+      "display_id": 1083,
+      "author": "xqjG",
+      "content": "RESPONSE: the operator chose to re-sequence the build (path B) rather than keep hand-standing-in for the missing enforcement. This finding and #806 are resolved by the re-decomposition tracked next — front-loading directive classification, the routing/unrouted-findings and round-parity queries, and the amendment-discipline gating as early as their true dependencies allow (most are thin crosslink-tracker operations). Stays open until the re-decomposition ratifies and the spine's early layers are placed.",
+      "created_at": "2026-07-27T20:04:13.163588Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "f63b503b-030e-4d91-bdff-3a6ab0e4e699",
+      "display_id": 1098,
+      "author": "xqjG",
+      "content": "RESOLVED by #810 (ratified + applied, 8c9aaeda): the amendment-discipline format-carry is in the Gates bootstrap paragraph, keyed to the commit's structured evidence section, with its mechanized home named at Layer 7 + Layer 8 detection. The amendment-discipline enforcement gap is closed at the contract level. Closing.",
+      "created_at": "2026-07-27T21:28:03.633633Z",
+      "kind": "result"
+    }
+  ]
+}

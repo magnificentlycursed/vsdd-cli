@@ -1,0 +1,25 @@
+{
+  "uuid": "0775bdc5-5f0d-491a-b84a-ad7a6aab717d",
+  "display_id": 305,
+  "title": "Spec review round 1: vocabulary registry path correction",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T02:27:11.769691Z",
+  "updated_at": "2026-07-29T10:26:01.178484Z",
+  "closed_at": "2026-07-29T10:26:01.178473Z",
+  "labels": [
+    "spec-review-round-1"
+  ],
+  "comments": [
+    {
+      "uuid": "a576947f-2e31-4e32-9188-489790a639dc",
+      "display_id": 1233,
+      "author": "xqjG",
+      "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract. Reopen if this specific finding resurfaces as a live gap.",
+      "created_at": "2026-07-29T10:25:54.737649Z",
+      "kind": "decision"
+    }
+  ]
+}

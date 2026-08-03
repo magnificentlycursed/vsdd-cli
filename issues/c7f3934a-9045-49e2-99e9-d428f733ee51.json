@@ -1,0 +1,25 @@
+{
+  "uuid": "c7f3934a-9045-49e2-99e9-d428f733ee51",
+  "display_id": 707,
+  "title": "r2 nit collector: three low-severity items",
+  "description": "(1) gate-data.md:58 'six executed-failure kinds' imprecise — doctest compile failure is compile-time; reword to per-test valid-red kinds. (2) statusline-data.md:29 tracker-unusable next_step_text opens 'tracker data unusable' while its marker word is 'tracker degraded' — echo the marker like the tracker-absent kind does. (3) severity spread note: no blocking or major findings this round. Owner: data-engineer. Validator: sanity-check.",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "426d87e4-d8cf-4272-9c1d-e21e675de848",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T06:55:09.098163Z",
+  "updated_at": "2026-07-21T07:01:52.246247Z",
+  "closed_at": "2026-07-21T07:01:52.246247Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "5565af7e-1813-4cdc-8cdf-54ac47b31fe1",
+      "author": "xqjG",
+      "content": "FIXES LANDED (commit 026564ee): (1) gate-data prose reads 'six per-test kinds are valid reds' with doctest compile failure named the compile-time exception; (2) the tracker-unusable next step opens with its marker word 'tracker degraded', matching the tracker-absent pattern; (3) the severity-spread note stands recorded. Terminal round re-verifies (validator: sanity-check).",
+      "created_at": "2026-07-21T07:01:49.019114Z",
+      "kind": "result"
+    }
+  ]
+}

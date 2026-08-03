@@ -1,0 +1,21 @@
+{
+  "uuid": "4e46ded7-f9ae-4211-862b-01a1913e9d25",
+  "display_id": 408,
+  "title": "lane r1: pre-publish no-bypass rationale under-argued; gradient reads inverted",
+  "description": "Lane round 1. Lens: methodology (F6) (validator: SO). Owner: SO session. Defect: the version-lock rationale supports the post-publish clause; the pre-publish strictness reads arbitrary against the maturity lifecycle's pre-publish malleability. Citations verified: contract:81 vs :123. Proposed: deferred-candidate, foldable rationale sentence (pre-publish the lane is hand-carried and mechanized waiver enumeration does not exist yet, so a bypass would be invisible — strictness is the bootstrap control; post-publish, waivers are enumerable and therefore permitted).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:23.157031Z",
+  "updated_at": "2026-07-19T23:58:47.469108Z",
+  "closed_at": "2026-07-19T23:58:47.469108Z",
+  "comments": [
+    {
+      "uuid": "b43729ce-3a45-407b-b1a2-a1acb29a90fb",
+      "author": "xqjG",
+      "content": "Fixed (deferred folded): pre-publish rationale stated — the lane is hand-carried during bootstrap and waiver enumeration is not yet mechanized, so a permitted bypass would be invisible; strictness is the bootstrap control, with the broken-surface clause as the lawful escape. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-19T23:58:22.531678Z",
+      "kind": "resolution"
+    }
+  ]
+}

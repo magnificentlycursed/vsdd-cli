@@ -1,0 +1,21 @@
+{
+  "uuid": "c0425c74-0e8f-4606-a211-ce0916171fc2",
+  "display_id": 387,
+  "title": "statusline r5 UX: malformed-diagnostic recovery half unverified",
+  "description": "Round 5. Lens: ux (validator: DR). Owner: SO session. Defect: criterion verifies rustc shape + file/parse location (what-failed) but never that the diagnostic names the statusline casualty and fix-then-rerun retry (recovery) — the requirement's stated purpose for the diagnostic. Citations verified: contract:162 vs :187. Proposed: resolved-candidate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:53:01.896588Z",
+  "updated_at": "2026-07-19T23:57:19.662261Z",
+  "closed_at": "2026-07-19T23:57:19.662261Z",
+  "comments": [
+    {
+      "uuid": "34f7dd4b-8cf8-4844-bd51-ef3c05db55b9",
+      "author": "xqjG",
+      "content": "Fixed: criterion verifies the diagnostic text names the statusline casualty and fix-then-rerun retry alongside the parse-location half. Revision: Install behaviors criterion.",
+      "created_at": "2026-07-19T23:57:11.266465Z",
+      "kind": "resolution"
+    }
+  ]
+}

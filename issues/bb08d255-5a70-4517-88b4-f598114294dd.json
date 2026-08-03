@@ -1,0 +1,21 @@
+{
+  "uuid": "bb08d255-5a70-4517-88b4-f598114294dd",
+  "display_id": 410,
+  "title": "lane r1: amendment-provenance markers missing on the three bullets",
+  "description": "Lane round 1. Lens: methodology (F8) (validator: SO). Owner: SO session. Defect: the doc marks post-ratification amendments inline everywhere else; the three new normative bullets carry no marker — provenance indistinguishable from ratified text. Citations verified: contract:51, :64, :81 vs :24, :75. Proposed: resolved-candidate (add the operator-amendment markers).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:25.623144Z",
+  "updated_at": "2026-07-19T23:58:50.100800Z",
+  "closed_at": "2026-07-19T23:58:50.100800Z",
+  "comments": [
+    {
+      "uuid": "9742f493-bfc4-4159-98f5-24d1377ca593",
+      "author": "xqjG",
+      "content": "Fixed: operator-amendment 2026-07-19 markers added to all three bullets and the classification-set extension. Revision: three anchors + enumeration.",
+      "created_at": "2026-07-19T23:58:24.761217Z",
+      "kind": "resolution"
+    }
+  ]
+}

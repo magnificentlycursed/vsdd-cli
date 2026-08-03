@@ -1,0 +1,29 @@
+{
+  "uuid": "22098424-38c8-47e4-aeb2-635b1b795a65",
+  "display_id": 825,
+  "title": "F5: standing non-vacuity canary — CI test that the real .mdatron jurisdiction catches an injected violation (#822 M2)",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T09:02:23.320418Z",
+  "updated_at": "2026-08-02T00:48:22.701895Z",
+  "closed_at": "2026-08-02T00:48:22.701888Z",
+  "comments": [
+    {
+      "uuid": "aec7f030-fc0e-4d62-831d-79e0673143ba",
+      "display_id": 1196,
+      "author": "xqjG",
+      "content": "F5 DONE — PR #2 (nonvacuity-canary) CI GREEN: test 43s (runs the new canary in CI via the F3 gate) + verify 24s; auto-triggered cleanly (no reopen — validates the PR workflow now that origin/main is current). The canary copies the REAL .mdatron/config.yaml + schemas into a temp project, injects a frontmatter-less governed file at a real-file_globs path, and asserts MDATRON-W0040 fires — a positive-control (a vacuous/misscoped config produces no W0040 -> red). Closes #822 M2 via canary (until mdatron exposes files_walked). READY TO MERGE.",
+      "created_at": "2026-07-29T09:06:55.835877Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "3b95c0bd-308c-4cf5-8370-6c37080caeb0",
+      "display_id": 1365,
+      "author": "xqjG",
+      "content": "CLOSED — the standing non-vacuity canary shipped and merged (PR #2): copies the real jurisdiction into a temp project, injects a violation at a real-glob path, asserts W0040 fires; proven non-vacuous (init-disabled goes red). The mdatron-side complement is now also available: envelope 2.1.0 exposes families.<name>.state tri-state (their #107) — the gate-on-families-active upgrade is tracked in #855.",
+      "created_at": "2026-08-02T00:47:54.782502Z",
+      "kind": "result"
+    }
+  ]
+}

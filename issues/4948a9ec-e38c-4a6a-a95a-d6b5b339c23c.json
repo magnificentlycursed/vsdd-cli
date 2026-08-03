@@ -1,0 +1,29 @@
+{
+  "uuid": "4948a9ec-e38c-4a6a-a95a-d6b5b339c23c",
+  "display_id": 667,
+  "title": "data set: statusline data — read-failure kinds, degraded kinds, wiring outcomes, display budgets, copy",
+  "description": "Round 3 of #598: contract items 3 + 15 plus the four routed findings of 'phase-1c work item: statusline wiring script shape' (#362). Contents: the state read-failure kinds (absent, malformed, permission-or-io) with machine tokens, kind-to-action mapping into the action vocabulary's recovery family (1:1, established at round 2), and per-kind human diagnostic + recovery text; the degraded kinds (tracker-absent benign-offline, tracker-unusable) with marker words and next-step text; the six-member wiring-outcome enumeration from the Install requirement; per-field width budgets and worded absences for the segment's display fields; the worded truncation mark and broken-state mark; the whole-invocation wall-clock budget with a flake-resistant timing-check shape; the repo-set configuration (location, format, ownership vs drift-refusal, explicit N with aggregate cost = N x per-repo budget); the composition-instruction conduct covering wrapper and opaque-command statusLines. Every number and every copy string is an operator-owned proposal until adoption (The operator authors the oracle). Owner: data-engineer. Validator: ux (the copy and glanceability are that lens's exact concern; a11y coordination flagged for the worded-marks discipline).",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T02:07:00.116818Z",
+  "updated_at": "2026-07-21T02:12:01.269662Z",
+  "closed_at": "2026-07-21T02:12:01.269662Z",
+  "comments": [
+    {
+      "uuid": "c915f852-431a-4ac5-9086-20a89dcbc7f1",
+      "author": "xqjG",
+      "content": "OPERATOR ADOPTION 2026-07-20, all three blocks as proposed: numbers (width budgets 16/20/10/24/24; wall-clock 250ms per repo, whole invocation; timing check 7 runs, median at-or-under budget, max at-or-under twice budget), copy (marker words offline/degraded with the benign-offline distinction carried in the next-step texts; worded truncation and broken-state marks; absence texts; per-kind diagnostic and recovery strings), and the #362 shapes (adopter-owned repo-set config at ~/.config/vsdd/statusline.yaml with explicit count and aggregate cost = count x per-repo budget; two-shape composition instruction). Data Engineer pass under the session's loaded lens: no new findings — pair rule followed, kind coverage pinned by schema min/max items, kind-to-action referential constraint declared against the round-2 recovery family, numbers are data not code constants; coverage otherwise as round 2's declaration. UX validator note for the set's spec-review round: glanceability of the five-field segment at the adopted widths (94 chars worst case plus separators) is the open judgment item — flagged, not blocking adoption of the data.",
+      "created_at": "2026-07-21T02:11:21.783252Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "4f0c3cc0-5db3-44c5-9636-28132a4e4d4c",
+      "author": "xqjG",
+      "content": "Resolved: the set landed as the pair with all adoptions applied. Evidence: the round-3 commit, mdatron verify clean after catching three more flow-map-comma defects at the first attempt — the pair rule's second and third live catches.",
+      "created_at": "2026-07-21T02:11:58.302036Z",
+      "kind": "result"
+    }
+  ]
+}

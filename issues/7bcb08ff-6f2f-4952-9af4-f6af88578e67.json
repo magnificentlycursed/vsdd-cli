@@ -1,0 +1,21 @@
+{
+  "uuid": "7bcb08ff-6f2f-4952-9af4-f6af88578e67",
+  "display_id": 431,
+  "title": "upstream crosslink: settings merge clobbers the hooks block wholesale",
+  "description": "Upstream finding for dollspace-gay/crosslink, 2026-07-20. Observation from source: write_settings_json_merged unions allowedTools (preserving user additions, merge.rs:194-214) but overwrites hooks and enableAllProjectMcpServers wholesale as crosslink-managed (merge.rs:216-222) — adopter hook customizations are silently lost on update. The manifest-hash trick (hash template before allowedTools union so user additions do not register as drift, init/mod.rs:357-362) is excellent and worth extending to hooks via a managed-section or refusal pattern. Related: vsdd's statusline offer chose refuse-on-existing for adopter-owned statusLine — a stated divergence from this clobber behavior.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:13:47.647170Z",
+  "updated_at": "2026-07-20T23:32:28.361991Z",
+  "closed_at": "2026-07-20T23:32:28.361991Z",
+  "comments": [
+    {
+      "uuid": "ce567ef0-ab46-42d9-a50f-abe5e4dfd583",
+      "author": "xqjG",
+      "content": "Migrated to the canonical upstream (operator-directed workflow, decision on #597): re-verified STILL-LIVE at dollspace-gay/crosslink main 85691369 — merge.rs:221-224 replaces the hooks key wholesale by declared intent; allowedTools union is the in-function precedent — and filed as dollspace-gay/crosslink#15, which supersedes this record. Evidence: the evaluation scout reports and draft bodies on #597's trail, 2026-07-20.",
+      "created_at": "2026-07-20T23:32:25.301337Z",
+      "kind": "result"
+    }
+  ]
+}

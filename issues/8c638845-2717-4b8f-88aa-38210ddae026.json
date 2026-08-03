@@ -1,0 +1,29 @@
+{
+  "uuid": "8c638845-2717-4b8f-88aa-38210ddae026",
+  "display_id": 676,
+  "title": "r1 major QE: compile-failure modeled as a per-test kind; build-script and doctest surfaces unenumerated",
+  "description": "Evidence: gate-data.md:11; contract line 64 keys wrong-reason on named-test identity + kind. Crate compile failure produces no per-test report entry — the kind cannot attach; doctests invert it (individually compiled, reported as failed doctests). Build-script failure is ambiguous between two lanes. Disposition: per_test vs whole_suite scope annotation on kinds, or move compile-failure to the cannot-run family keeping the doctest case; add build-script and doctest dispositions. Owner: solution-owner (kind vocabulary touches contract). Validator: quality-engineer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:17:33.583030Z",
+  "updated_at": "2026-07-21T04:10:24.252632Z",
+  "closed_at": "2026-07-21T04:10:24.252632Z",
+  "comments": [
+    {
+      "uuid": "93d457dc-d5cb-4163-acea-6b8043c1b67d",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): scope annotation on failure kinds. Each kind gains a per_test | whole_suite scope member; compile-failure is whole_suite (routing to the cannot-run family) EXCEPT doctests, where compile failure is genuinely per-test; build-script failure gets an explicit whole_suite disposition. Rejected: relocating compile-failure out of the enumeration (loses the doctest case's natural home). Amendment-class touch on the failure-kind text + data-side field addition at the fix pass.",
+      "created_at": "2026-07-21T03:52:09.392357Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "fd16e018-3aff-4443-8e6c-f4dc25384bcd",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, gate-data 0.2.0): scope column (per-test | whole-suite) on every kind; doctest-compile-failure added as the per-test valid-red exception; build-script-failure added whole-suite routing to the cannot-run family; compile-failure marked whole-suite, conditional red retained. Schema encodes the scope enum and keeps exactly-one-conditional, now mechanically via contains. Contract touch rides #698. Round 2 re-verifies (validator: quality-engineer).",
+      "created_at": "2026-07-21T04:10:16.928434Z",
+      "kind": "result"
+    }
+  ]
+}

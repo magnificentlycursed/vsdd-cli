@@ -1,0 +1,21 @@
+{
+  "uuid": "210870d8-4340-47e4-8f4d-54d08b9ae2af",
+  "display_id": 428,
+  "title": "lane r2 Meth: two-prior-cases claim counts layer-scale evidence as fix-scale",
+  "description": "Lane round 2. Lens: vsdd-methodology (validator: SO). Owner: SO session. Defect: the provenance marker grants the fix-scale gate established status on 'two prior cases' but only one is fix-scale (mdatron); the layer-7 case is layer scale — a small earned-by-recurrence overclaim. Citations verified: contract:81 vs :68, :85. Proposed: resolved-candidate (reword: discipline established at layer scale; the fix-scale extension carries the same single instance as the rest of the apparatus).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:51.837371Z",
+  "updated_at": "2026-07-20T00:17:07.723429Z",
+  "closed_at": "2026-07-20T00:17:07.723429Z",
+  "comments": [
+    {
+      "uuid": "41620a7d-9d47-47e7-b6c9-cfb385248f5f",
+      "author": "xqjG",
+      "content": "Fixed: provenance reworded — the red-gate discipline is established at layer scale on two incidents; its fix-scale extension carries the same single instance as the rest of the apparatus; second fix-lane case is the review trigger. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-20T00:16:40.358764Z",
+      "kind": "resolution"
+    }
+  ]
+}

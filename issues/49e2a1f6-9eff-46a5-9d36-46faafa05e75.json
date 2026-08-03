@@ -1,0 +1,46 @@
+{
+  "uuid": "49e2a1f6-9eff-46a5-9d36-46faafa05e75",
+  "display_id": 720,
+  "title": "Phase 3 execution, Layer 1: adversarial refinement round 1 over the layer's code",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:01:52.393405Z",
+  "updated_at": "2026-07-29T10:10:38.201939Z",
+  "closed_at": "2026-07-29T10:10:38.201928Z",
+  "labels": [
+    "review"
+  ],
+  "milestone_uuid": "1fbc66a4-8d5e-4a1f-87ab-e7bc95da4259",
+  "comments": [
+    {
+      "uuid": "bfde7fd7-e2cb-4549-915e-4bc0894ef440",
+      "author": "xqjG",
+      "content": "PHASE 3 ENTRY, LAYER 1 (2026-07-21, session #4; the operator's go directive). PRIMER read this session. CONTRACT-OVER-PRIMER, recorded: review-log files carry no state — findings file as tracked issues only (Finding lifecycle in one place; the primer's review-log instruction is the superseded suite-era shape); the letter-cluster shorthand does not propagate into records (plain words per the register rules); the emission line is retired; the 4-cluster batching yields to the computed composition under the review-budget rule; the swarm binding stays conditional on the live fire, so this attended design session's adopted dispatch surface (the Workflow orchestration surface) carries the round — context-cold lenses, attended by construction. COMPOSITION DECLARATION, computed from the layer's declared surfaces (Rust library code; adopter-edited YAML crossing a trust boundary; a red-gate test suite; persisted-data loaders): software-engineer (primary code lens), security (the trust boundary), quality-engineer (suite quality plus the recorded unpinned-constraint gap), data-engineer (the loaders and their schema-pair discipline); mode reviewer-cold-dispatch from the attended session; coverage — the remaining fourteen default domains do not run, no matching surface in a library-only layer with no UI, no locale text, no accessibility surface beyond the diagnostic conduct already UX-ruled at the data level, declared not silent. DISPATCH MANIFEST: vehicle Workflow run under this issue; inputs the Layer 1 tree at 52a980d0 (files named in the briefs; the arc e706fd42..52a980d0); MODEL, CHOSEN: claude-fable-5 all four (the adopted cold-round tier default). EFFORT, CHOSEN per lens: software-engineer HIGH and security HIGH (declared deviation from the medium default — adversarial depth on the primary code lens and the trust boundary, the observed high-dial catch record as the reason), quality-engineer MEDIUM and data-engineer MEDIUM (the adopted default). expected_cost_band: the cold-code-review band is UNSEEDED (2 to 10 findings, no token dimension) — this round is its first calibration; single-lens prior actuals at these dials ran 20k-52k tokens. Round stop rule: continue on any real finding; stop when a round is entirely hallucinated. returned + findings + telemetry: recorded here after the run.",
+      "created_at": "2026-07-21T19:02:09.253533Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "b9c7ea68-3647-407d-bc29-da39498fc09b",
+      "author": "xqjG",
+      "content": "ROUND 1 COMPLETE (workflow run wf_c8a2b3ac-677). RETURNED: four lenses, structured; 26 findings pre-dedup consolidating to eight tracked children — majors #721-#725 (three convergences credited inline), minor collectors #726-#728. The round holds real findings, so the loop continues per the stop rule. HEADLINES: the write path is check-then-act (the exists window can skip the forward-only published check — the layer's headline invariant, its enforcement now known optimistic); the drift class between sets.rs structs and schema pairs has no home and misdirecting recovery text; the crate emits two recovery tokens the versioned vocabulary never registered — its own loaded-not-hardcoded rule violated on the write and registry surfaces; and the #718 recorded gap is concurred with the pin's three-test shape named. ONE DECLINED-FINDING DECISION, surfaced for the operator per the lens's own coverage note: the security lens found diagnostics echo full filesystem paths (including the home path) and raw parser text, held it against the contract, and found NO normative no-machine-identifying-content clause to cite — the estate's privacy guard lives in project.md conduct rules, not the contract; the lens declined to file and recorded the decision. Operator may want the guard promoted to contract text at a future amendment window. TELEMETRY CONFIRMATION: model CHOSEN claude-fable-5 all four, OBSERVED claude-fable-5 all four (one agent's record carries a fallbackModel field naming claude-opus-4-8 — the configured fallback, not the executed model; recorded for capture-grain honesty). EFFORT CHOSEN per lens as declared: software-engineer high, security high, quality-engineer medium, data-engineer medium — the first per-lens-mixed-dial round; the two high-dial lenses ran 53.5k/49.9k tokens with 22/20 tool uses and produced the deepest empirical findings (the lens probed serde_yaml_ng's amplification limits and Path::join semantics live), the two medium lenses 37.8k/46.2k. ACTUALS vs the unseeded band: 26 findings pre-dedup vs the 2-10 seed guess — the code band's first honest correction, same lesson as the spec band's; 187,308 downstream tokens, ~4.7 minutes wall-clock, 69 tool uses. The economics band seeds from these actuals at the fix pass. NEXT: operator triage of #721-#728 — most dispositions are code-side; the operator-shaped items are the token-registration-or-exemption ruling (#724), the fsync durability scope ruling (#726 item 2), and the declined-finding promotion question above.",
+      "created_at": "2026-07-21T19:11:09.585955Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "e685e397-d116-4bbd-a65c-44c712abc290",
+      "author": "xqjG",
+      "content": "FIX PASS COMPLETE (commits daacdc84 + 1545f7e6): all eight children closed with fixes cited — five majors and three collectors; two declared residues (the schemars-class drift test deferred as a PE dependency decision on #723; the byte-cap deferred to its Layer 3 consumer on #726) and one deliberate gap (pure-target property tests, Phase 5). Suite: 89 tests green across all targets (69 in the layer's two suites), clippy zero, fmt clean, mdatron verify clean — the new vocabulary members passed the E0212-class pattern at pre-commit, closing the loop the #729 wiring opened. The cold-code calibration band is seeded from this round's actuals. NEXT per the loop: round 2 of the layer's adversarial refinement — the verify-shaped round over these fixes — then the #730 amendment window (the privacy-guard promotion) rides the amend-then-act path.",
+      "created_at": "2026-07-21T19:47:06.870751Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "e4b53a70-65fd-44b6-bd47-cb03f48353c4",
+      "display_id": 1219,
+      "author": "xqjG",
+      "content": "CLOSED — DONE (tracker sweep #826). 'FIX PASS COMPLETE (daacdc84 + 1545f7e6)'; Layer-1 adversarial round 1 resolved (Layer 1 built = the engine, #819).",
+      "created_at": "2026-07-29T10:10:31.583957Z",
+      "kind": "decision"
+    }
+  ]
+}

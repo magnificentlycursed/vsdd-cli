@@ -1,0 +1,37 @@
+{
+  "uuid": "426d87e4-d8cf-4272-9c1d-e21e675de848",
+  "display_id": 699,
+  "title": "data-sets review round 2: verification round over the fixed data and amended contract",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T06:44:33.193763Z",
+  "updated_at": "2026-07-21T13:20:31.003719Z",
+  "closed_at": "2026-07-21T13:20:31.003719Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "109b355a-9585-4a3c-9417-33f8d88d3648",
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend, per Recorded review dispatch). dispatch_id: round-2 workflow run under this issue. invoked_by: the operator's 2026-07-21 continue directive ratifying #698 and proceeding the loop sequence. vehicle: the Workflow orchestration surface — the attended session's dispatch surface (operator-adopted, decision on #597); attended side of the split, so no autonomous preflight applies — the session's own permission flow governs. reviewer_role: read-only cold lenses (workflow subagents; conduct-restricted to reading and searching, no edits). domains: quality-engineer, ux, solution-architect, documentation-reviewer, solution-owner — the round-1 composition retained for validator symmetry: each lens re-verifies the fixes its domain validates, then cold-reads the changed text for new defects. inputs: fix-pass commit e61f28e5 and amendment boundary commit 27d9421b, read from the working tree per the citation basis. composition_ref: the phase-1c composition plus the flagged validator scrutiny items, unchanged from round 1. MODEL TIER, CHOSEN: claude-opus-4-8 for all five lenses, set explicitly via the Workflow model dial (opus) — the round-1 observed tier at half the session model's per-token weight, adopted from the #674 actuals; never inherited. EFFORT, CHOSEN: medium for all five lenses, set explicitly via the Workflow effort dial — the adopted cold-review-round default (economics-data tier_effort_defaults); this is the first effort-controlled round, round 1's effort being uncontrolled and unobservable. expected_cost_band: the adopted band — 3 to 50 findings pre-dedup, 5 to 25 minutes wall-clock, 200,000 to 600,000 downstream tokens — with the excerpt-read briefs (the #674 conduct, first application) aiming at the band's lower half; capture source for actuals: subagent transcript usage records, the pinned source. coverage: the remaining thirteen default domains do not run — no matching surface for a verification round over data sets and contract text; declared, not silent. returned + findings_filed + telemetry confirmation: recorded on this issue after the run.",
+      "created_at": "2026-07-21T06:45:01.295006Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "eaa5b4de-b826-4983-90f3-6b9fc25a33ea",
+      "author": "xqjG",
+      "content": "ROUND 2 COMPLETE (workflow run wf_f50dce16-c10). RETURNED: all five lenses completed with structured output; findings filed as children #700-#707 (six minors, one nit collector with three items; zero blocking, zero major). VERIFICATIONS: 26 of 26 round-1 fixes verdict LANDED — every fix pass disposition and all seven amendment touches verified faithful by the validating domains; no incomplete, no wrong. TELEMETRY CONFIRMATION (capture source: workflow task telemetry — per-agent model string, tokens, tool calls, duration): model CHOSEN claude-opus-4-8 via the Workflow model dial, OBSERVED claude-opus-4-8 on all five agents — chosen equals observed, the first round where that comparison is mechanical. Effort CHOSEN medium via the Workflow effort dial; the vehicle's telemetry does not independently expose effort, recorded as the honest capture-grain limit. ACTUALS vs the declared band (3-50 findings, 5-25 min, 200k-600k tokens, lower half targeted): 9 findings pre-dedup, ~6.0 minutes wall-clock, 196,238 downstream tokens, 46 tool uses — under the band floor on tokens, in-band on findings and wall-clock. ROUND-OVER-ROUND: 196,238 vs round 1's 480,118 — 59 percent reduction at equal lens count, the excerpt-read-briefs conduct's first measured pass (#674). Per-lens: quality-engineer 23,890 / 4 tools / 2m13s; ux 23,297 / 5 / 2m05s; solution-architect 48,400 / 15 / 5m51s; documentation-reviewer 50,644 / 14 / 3m05s; solution-owner 50,007 / 8 / 3m11s. The two excerpt-tightest lenses ran at less than half round 1's cheapest lens (50.9k). Next: operator triage of #700-#707.",
+      "created_at": "2026-07-21T06:55:35.192169Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4a6a86c1-40b7-4db1-95e6-0ddb5fa26b0d",
+      "author": "xqjG",
+      "content": "ROUND 2 FULLY DISPOSED: all eight children closed — seven data-side fixes (commit 026564ee) and the #706 contract touch (ratified, boundary commit above this one's hash on the trail). Two consecutive rounds with zero blocking and zero major findings; the loop advances to the terminal verify round, which decides the stop signal. Closing this round issue.",
+      "created_at": "2026-07-21T13:20:27.461461Z",
+      "kind": "result"
+    }
+  ]
+}

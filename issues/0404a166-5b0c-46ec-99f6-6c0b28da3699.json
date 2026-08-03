@@ -1,0 +1,21 @@
+{
+  "uuid": "0404a166-5b0c-46ec-99f6-6c0b28da3699",
+  "display_id": 335,
+  "title": "statusline r1 SA: settings.json probe is an unnamed trust boundary and parse surface",
+  "description": "Round: statusline amendment cold round 1. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: init must read adopter-owned settings.json to detect a statusLine entry; this JSON read is absent from the effectful-shell list, the trust-boundary enumeration, and the fuzz scope; no malformed-settings fixture; panic not excluded. Citations verified: contract:159 vs :200, :213-217, :209. Anchor: Install. Proposed: resolved-candidate. Failure: untrusted-input-treated-as-trusted — the exact class the contract hardens everywhere else.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:51.444003Z",
+  "updated_at": "2026-07-19T23:08:11.556945Z",
+  "closed_at": "2026-07-19T23:08:11.556945Z",
+  "comments": [
+    {
+      "uuid": "e095e5d0-4991-4910-9ab6-03d57b7878e9",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Settings probe named in three places: Trust boundaries (new substrate settings file entry: schema-tolerant read, no write without confirmation, diagnostic-never-panic), effectful shell list (statusline offer's settings probe), fuzz scope (substrate-settings parser). Install bullet carries the conduct. Revision: Install bullet + Trust boundaries + effectful shell + fuzz scope.",
+      "created_at": "2026-07-19T23:07:47.792851Z",
+      "kind": "resolution"
+    }
+  ]
+}

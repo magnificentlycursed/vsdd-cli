@@ -1,0 +1,27 @@
+{
+  "uuid": "503becf2-c3b7-45f2-a412-192fd8a1828f",
+  "display_id": 1,
+  "title": "Consolidate parallel design tree: fold mdatron methodology-process docs back into vsdd-cli + crosslink",
+  "description": "Current state: \n\nDesired state: \n\nReason: \n\n## What\n\nI authored a parallel methodology-process layer in the mdatron repo (BOUNDARY-PREAMBLE, V1-SHIP-CRITERIA, BOOTSTRAP-MITIGATION, STEP-2-SCOPE, dsl-falsifiability-report, .vsdd/events/, \"Step 0.5 / Step 1 / Step 2\" framing) that is parallel to vsdd-cli's own design tree. Operator diagnosed it correctly: the workstream should have been driven by VSDD's phase primers + crosslink's issue/knowledge substrate; instead I created an invented coordination layer that is now creating confusion.\n\n## Why this is tracked rather than fixed now\n\nPer operator directive 2026-06-01: \"Mark as cleanup; continue current work; revisit after Phase A.1 lands.\" mdatron's Phase A.1 foundational work (JSON Schema dispatch, DSL parser, cross-file index, etc.) is the priority; consolidation cleanup follows.\n\n## What the cleanup entails\n\nWhen this issue activates:\n\n1. DESIGN-MDATRON.md: relocate to vsdd-cli/ as a sibling DESIGN doc alongside DESIGN-SCHEMA.md, DESIGN-VERIFICATION.md, etc. OR keep in mdatron as a subsystem-internal spec — operator decides.\n2. BOUNDARY-PREAMBLE.md: 8 declarations scattered to where they logically belong in vsdd-cli's existing docs (substrate composition, binary surface, cross-doc graph, artifact class split, install order — most already mirrored at Step 0.5).\n3. V1-SHIP-CRITERIA.md: fold into vsdd-cli/DESIGN-METHODOLOGY OR file as a crosslink milestone for v1.0 ship.\n4. BOOTSTRAP-MITIGATION.md: the generic bootstrap-period methodology pattern belongs in vsdd-cli/DESIGN-METHODOLOGY as a sanctioned discipline. Specific mitigations either retire or become crosslink issues.\n5. STEP-2-SCOPE.md: retire as a scratchpad. Remaining work items become crosslink issues.\n6. .vsdd/events/*.yaml on both repos: replaced by crosslink session events when event-emission tooling lands. Until then, composition declarations go in commit messages per BOOTSTRAP-MITIGATION § Mitigation 3 literal reading.\n7. mdatron repo final shape: Cargo workspace + README pointing to vsdd-cli for canonical design + CHANGELOG + LICENSE. No methodology-process docs of its own.\n\n## Going forward (process)\n\n- crosslink issues drive trackable work\n- crosslink knowledge pages hold canonical content (per the existing vsdd-cli pattern)\n- vsdd-cli's existing DESIGN docs absorb mdatron-related content where appropriate\n- mdatron repo stays minimal: Rust code + thin README\n\n## Acceptance criteria\n\n- mdatron repo contains only: Cargo.toml, mdatron-core/, mdatron-cli/, README.md, CHANGELOG.md, LICENSE, target/ (gitignored)\n- vsdd-cli design docs absorb the load-bearing content from the deleted mdatron process docs\n- Going-forward work tracked via crosslink issues, not standalone markdown scope artifacts\n\n## Trigger\n\nRevisit after mdatron Phase A.1 (foundational engine: JSON Schema dispatch, DSL parser, cross-file index, error catalog loader, 5 built-in patterns) is sufficiently mature that the parallel-design-tree pollution becomes the bottleneck.",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-06-01T23:46:30.536431Z",
+  "updated_at": "2026-07-29T10:03:23.053516Z",
+  "closed_at": "2026-07-29T10:03:23.053505Z",
+  "labels": [
+    "consolidation",
+    "methodology-drift",
+    "refactor"
+  ],
+  "comments": [
+    {
+      "uuid": "b021302c-b45f-4252-9758-8681c9e121b0",
+      "display_id": 1205,
+      "author": "xqjG",
+      "content": "CLOSED — tracker sweep (#826, operator-directed 2026-07-29). Consolidate parallel design tree — the .design/ tree is the home now. A binary-first-plan stub (2026-06-02); the plan is superseded by the ratified contract (.design/agent-first-vsdd-toolkit.md:4) + rescoped by #819's enforcement-spine slices, and the plan doc was removed (#826). No live scope in the stub; where still needed the work is re-homed to the slices.",
+      "created_at": "2026-07-29T10:03:15.645811Z",
+      "kind": "decision"
+    }
+  ]
+}

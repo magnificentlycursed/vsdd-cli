@@ -1,0 +1,21 @@
+{
+  "uuid": "ed94bc6e-7913-49b7-9caf-31628a7d217d",
+  "display_id": 584,
+  "title": "lane r14 Meth: composition-function requirement not propagated",
+  "description": "Lane round 14. Lens: methodology, low severity (validator: SO). Defect: the requirement still says phase and the phase enumeration — the word the contract forbids for the fix lane — while contract, architecture, and criterion carry composition scope. Citations verified: contract:164 vs :89, :197, :183. Proposed: resolved-candidate (one-line propagation; same edit region gains the statusline versioned-data inventory additions).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:02:53.171417Z",
+  "updated_at": "2026-07-20T04:04:38.846924Z",
+  "closed_at": "2026-07-20T04:04:38.846924Z",
+  "comments": [
+    {
+      "uuid": "83dfac71-13ba-482f-9641-f34651d85add",
+      "author": "xqjG",
+      "content": "Fixed: the Composition function requirement propagated — composition scope with its domain as versioned data, fix-scale labels noted; the same edit carries the statusline data inventory. Revision: requirement.",
+      "created_at": "2026-07-20T04:04:26.601831Z",
+      "kind": "resolution"
+    }
+  ]
+}

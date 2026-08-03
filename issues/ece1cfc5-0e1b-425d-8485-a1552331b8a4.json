@@ -1,0 +1,21 @@
+{
+  "uuid": "ece1cfc5-0e1b-425d-8485-a1552331b8a4",
+  "display_id": 348,
+  "title": "statusline r2 SA+UX: install happy path has no acceptance criterion",
+  "description": "Round: statusline amendment cold round 2. Lenses: solution-architect and ux (cross-lens duplicate merged at filing; validators: solution-owner, documentation-reviewer). Owner: SO session. Defect: the only path that WRITES adopter-owned settings — absent statusLine, operator confirms, default wiring installed — has no falsifiable coverage, and the decline outcome is unstated; Install behaviors tests only refuse-existing and malformed paths; the fixture corpus names no settings-absent/existing-statusLine/over-width members (symptom of the same gap). Citations verified: contract:159 vs :184, :170. Proposed: resolved-candidate. Failure: wrong wiring, write-without-confirmation, or fail-to-write-on-confirmation all pass CI on the fresh-operator path most adopters traverse.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:10.091135Z",
+  "updated_at": "2026-07-19T23:18:36.136969Z",
+  "closed_at": "2026-07-19T23:18:36.136969Z",
+  "comments": [
+    {
+      "uuid": "d2627ee8-de81-4c60-8e8b-50dd389b5ddd",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Install behaviors criterion now verifies the write path and decline outcome: statusLine-absent + confirmation receives default wiring rendering a working segment; decline leaves settings untouched with manual invocation available. Fixture corpus gains named members: install-offer settings fixtures (absent-confirmed, absent-declined, present, malformed) and an over-width segment field. Revision: Install behaviors criterion + fixture corpus.",
+      "created_at": "2026-07-19T23:17:38.283380Z",
+      "kind": "resolution"
+    }
+  ]
+}

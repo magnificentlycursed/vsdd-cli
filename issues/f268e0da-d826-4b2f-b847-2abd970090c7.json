@@ -1,0 +1,21 @@
+{
+  "uuid": "f268e0da-d826-4b2f-b847-2abd970090c7",
+  "display_id": 412,
+  "title": "lane r1: no determinism or isolation requirement on the recorded failing run",
+  "description": "Lane round 1. Lens: QE (F8) (validator: SE). Owner: SO session. Defect: a single recorded failure suffices — flaky failures pass; a bundled fix (the cited change bundled module+rewiring+dependency+diagnostic) can fail for a non-defect reason. Citations verified: contract:64, :85. Proposed: resolved-candidate (failing run records its failure reason; wrong-reason and flaky runs do not satisfy; the defect's test gates in isolation from bundled changes).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:28.250884Z",
+  "updated_at": "2026-07-19T23:58:52.248558Z",
+  "closed_at": "2026-07-19T23:58:52.248558Z",
+  "comments": [
+    {
+      "uuid": "bb06abb6-0bb2-4e34-b904-dc0fa8f24abe",
+      "author": "xqjG",
+      "content": "Fixed: the failing run records its failure reason; flaky and wrong-reason failures do not satisfy the gate; bundled changes gate on the defect's test in isolation. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-19T23:58:26.851733Z",
+      "kind": "resolution"
+    }
+  ]
+}

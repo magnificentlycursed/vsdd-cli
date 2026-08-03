@@ -1,0 +1,25 @@
+{
+  "uuid": "2f097bd2-3027-41d6-8c70-e1e25fbdba6f",
+  "display_id": 728,
+  "title": "c1 minor collector: suite hardening",
+  "description": "(1) QE: the typed-decode failure branch of read_state has zero coverage — add unknown-field and wrong-type fixtures. (2) QE: unix-cfg permission tests vanish silently on non-unix and false-fail under root — add the cross-platform directory-as-path companion and the explicit euid-0 skip. (3) QE: snapshot test's name promises a pin its body does not perform — assert the length or rename. (4) QE: dispatch-data and state-schema receive liveness-only coverage against the suite doc's pinning claim — one dedicated value-pin test each. (5) QE nit: corruption tests' unasserted replacement and unfiltered dir copies — assert the tamper took and filter is_file. (6) DE: pair-final payloads (degraded_kinds, wiring_outcomes) left untyped re-open drift — type them or annotate the deepening layer per field. (7) QE coverage note, recorded: no property tests exist yet for the three declared pure targets — Phase 5 territory, noted so the gap is a decision. Owner: quality-engineer. Validator: data-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49e2a1f6-9eff-46a5-9d36-46faafa05e75",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:10:32.076295Z",
+  "updated_at": "2026-07-21T19:46:55.520222Z",
+  "closed_at": "2026-07-21T19:46:55.520222Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "fef7f841-a81f-4ce6-b8b1-3d04ac677a43",
+      "author": "xqjG",
+      "content": "FIXES LANDED (commit daacdc84): typed-decode fixtures (unknown-field, wrong-type) exercise the last uncovered read branch; the cross-platform directory-as-path companion covers the IO kind everywhere and the two mode-bit tests skip DELIBERATELY under euid 0 with a printed reason; the snapshot test asserts the exact four; dispatch-data gains value pins (five members, fifteen fields, three result values) and state-schema's pin is the #725 mirror test; corruption tests assert the tamper took and filter to files; degraded_kinds and wiring_outcomes typed with the deepening-layer annotations on the remaining Value fields. RESIDUE, declared: property tests for the three pure targets stay Phase 5 territory per the verification architecture — recorded as the deliberate gap the QE coverage note named. Validator: data-engineer.",
+      "created_at": "2026-07-21T19:46:51.802281Z",
+      "kind": "result"
+    }
+  ]
+}

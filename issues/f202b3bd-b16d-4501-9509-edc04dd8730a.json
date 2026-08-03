@@ -1,0 +1,21 @@
+{
+  "uuid": "f202b3bd-b16d-4501-9509-edc04dd8730a",
+  "display_id": 481,
+  "title": "lane r6 SE: delta join key undefined under in-lane renames",
+  "description": "Lane round 6. Lens: SE (validator: SO). Owner: SO session. Defect: the baseline-vs-HEAD comparison joins by an undefined test identity while renames are in-lane — a renamed-and-regressed test presents as new-at-HEAD plus vanished-at-baseline and escapes the delta. Citations verified: contract:64, :81. Proposed: resolved-candidate (a fix commit does not rename tests — renames are mechanical passes carried separately; the join key is the runner-reported test path, stable by that rule).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:49.873486Z",
+  "updated_at": "2026-07-20T00:57:54.635648Z",
+  "closed_at": "2026-07-20T00:57:54.635648Z",
+  "comments": [
+    {
+      "uuid": "64f8525b-b98c-459c-8d2a-09495b0cce5b",
+      "author": "xqjG",
+      "content": "Fixed: a fix commit does not rename tests (renames are mechanical passes carried separately); the delta join key is the runner-reported test path, stable by that rule. Revision: gate bullet.",
+      "created_at": "2026-07-20T00:57:35.323058Z",
+      "kind": "resolution"
+    }
+  ]
+}

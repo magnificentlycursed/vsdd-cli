@@ -1,0 +1,29 @@
+{
+  "uuid": "543a5938-f425-46fa-93fa-2169845e88af",
+  "display_id": 90,
+  "title": "SEC/F1: cmd_explain argv validation",
+  "description": "Source: mdatron/review-log/2026-06-07-security-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:05:03.716695Z",
+  "updated_at": "2026-06-08T01:47:59.693826Z",
+  "closed_at": "2026-06-08T01:47:59.693826Z",
+  "labels": [
+    "classification:accepted",
+    "convergence:argv-validation",
+    "cycle:crosslink-13",
+    "domain:security",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "f5a94b76-6481-4e0d-ac08-a0deeb00fbba",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@883eaaf (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:47:58.927719Z",
+      "kind": "resolution"
+    }
+  ]
+}

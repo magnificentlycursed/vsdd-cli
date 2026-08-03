@@ -1,0 +1,22 @@
+{
+  "uuid": "2e55ad2f-3fa0-4676-96b4-45191e2e3312",
+  "display_id": 682,
+  "title": "r1 major SO: manifest provenance gap on #658 — rulings cited but unrecorded (REPAIRED)",
+  "description": "Evidence: installed-artifact-manifest.md:24,115 cited 'operator ruling vsdd-cli #658' while #658 carried only the DE review comment, stood open, and the #598 completion comment overstated it as closed-with-adoptions. Repaired 2026-07-21 before this filing: late-recorded decision + result on #658 (marked late), #658 closed, correction note on #598. Files for the record; disposition: resolved-by-repair, the omission stands noted. Owner: solution-owner. Validator: sanity-check.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:18:50.644989Z",
+  "updated_at": "2026-07-21T04:15:02.518240Z",
+  "closed_at": "2026-07-21T04:15:02.518240Z",
+  "comments": [
+    {
+      "uuid": "2295a74d-9017-4dc2-affa-b9028f95dab0",
+      "author": "xqjG",
+      "content": "Disposition per triage: resolved-by-repair — the late-recorded decision and result on #658 with the correction note on #598 landed before this finding was filed; the omission stands noted on the record. No further action.",
+      "created_at": "2026-07-21T04:14:57.461418Z",
+      "kind": "result"
+    }
+  ]
+}

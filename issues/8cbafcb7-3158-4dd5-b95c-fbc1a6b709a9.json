@@ -1,0 +1,37 @@
+{
+  "uuid": "8cbafcb7-3158-4dd5-b95c-fbc1a6b709a9",
+  "display_id": 824,
+  "title": "fix CI for the enforcing PR gate: repoint mdatron (post-collapse) + pin v0.3.0 + run vsdd-cli's own tests on PRs (F3+F4)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T08:30:42.797800Z",
+  "updated_at": "2026-08-02T00:47:24.665619Z",
+  "closed_at": "2026-08-02T00:47:24.665581Z",
+  "comments": [
+    {
+      "uuid": "eadd0426-103b-465e-bf3e-be294f7d32f9",
+      "display_id": 1192,
+      "author": "xqjG",
+      "content": "PR #1 opened (github.com/magnificentlycursed/vsdd-cli/pull/1) — the repo's FIRST PR (confirms direct-to-main until now). Fixes: F4 (repoint magnificentlycursed/mdatron-cli -> magnificentlycursed/mdatron @ pinned v0.3.0; install cargo install --path .; drop the removed mdatron-core rationale) + F3 (repurpose mdatron-test.yml -> vsdd-test.yml running vsdd-cli's OWN cargo test --workspace + clippy; mdatron-test previously ran MDATRON's tests, vestigial). CI runs on the PR = the validation. OPERATOR ACTION: review/merge + enable branch protection on main requiring checks 'mdatron verify' + 'vsdd-cli test' (the harness-level restriction only you can set).",
+      "created_at": "2026-07-29T08:35:17.743148Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "cb4519b5-8b30-407c-8736-c5f1a40922c6",
+      "display_id": 1194,
+      "author": "xqjG",
+      "content": "PR #1 CI GREEN — both fixed workflows pass: 'verify' (mdatron verify @ v0.3.0) 1m16s + 'test' (vsdd-cli's own cargo test --workspace + clippy on ubuntu) 2m8s. Validated end-to-end: the repointed/pinned mdatron install works in CI, and vsdd-cli's own test suite now runs in CI for the first time (F3 gate, previously entirely missing; mdatron-test.yml had run MDATRON's tests). origin/main synced (162 commits, 2f2f7c27..d55b7f86; last direct-to-main push by design). Actions confirmed enabled + working; the STALE workflows failed on the main push, validating F4 live. READY TO MERGE. Operator actions: (1) merge PR #1 -> main's CI goes red->green; (2) set branch protection on main requiring checks 'mdatron verify' + 'vsdd-cli test' -> direct-to-main blocked, PR workflow enforced (closes #822 M1 at CI-block grade + M6).",
+      "created_at": "2026-07-29T08:49:20.802138Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "17a400be-cfad-47dc-a8bd-566410425e00",
+      "display_id": 1363,
+      "author": "xqjG",
+      "content": "CLOSED — fully done and since twice superseded: PR #1 landed the repoint/pin + vsdd-cli's own tests in CI; the operator set the ruleset (19991782, active 2026-07-29: PR required, three required checks, no bypass actors — verified live during the #826 amendment review); the pins since moved v0.3.0 -> v0.4.0 (#830) -> crates.io 0.5.0 (PR #21, sibling checkout retired).",
+      "created_at": "2026-08-02T00:47:18.275527Z",
+      "kind": "result"
+    }
+  ]
+}

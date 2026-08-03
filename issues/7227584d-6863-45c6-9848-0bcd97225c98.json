@@ -1,0 +1,21 @@
+{
+  "uuid": "7227584d-6863-45c6-9848-0bcd97225c98",
+  "display_id": 465,
+  "title": "lane r5 QE+Meth: malformed disposition closure unfixtured",
+  "description": "Lane round 5. Lenses: QE + methodology merged (validators: SE, SO). Owner: SO session. Defect: the falsifier's second branch — a disposition closure without its recorded disposition — has only the valid-path fixture; the invalid path is never seeded or asserted. Citations verified: contract:83, :173, :182. Proposed: resolved-candidate (seeded malformed disposition closure; criterion clause at Lifecycle in the tracker).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:46.703458Z",
+  "updated_at": "2026-07-20T00:49:10.318047Z",
+  "closed_at": "2026-07-20T00:49:10.318047Z",
+  "comments": [
+    {
+      "uuid": "2fc288c9-1d47-41c4-bbb0-554944736c69",
+      "author": "xqjG",
+      "content": "Fixed: malformed-disposition-closure seed added; criterion flags it invalid. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:48:55.456489Z",
+      "kind": "resolution"
+    }
+  ]
+}

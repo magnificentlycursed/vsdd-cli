@@ -1,0 +1,27 @@
+{
+  "uuid": "ce444053-c823-4625-b12d-7af1af6c09c9",
+  "display_id": 322,
+  "title": "Cacheable-fraction wording conflates fraction with count",
+  "description": "QE minor: the property restates as cacheable portion bounded by the total. [owner: quality-engineer; validator: technical-writer]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:27.552255Z",
+  "updated_at": "2026-07-19T22:01:43.169138Z",
+  "closed_at": "2026-07-19T22:01:43.169138Z",
+  "labels": [
+    "phase-1b-round-1",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "5478c243-4b75-4b87-8ca3-1ef3ba5c2d7f",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:41.707719Z",
+      "kind": "result"
+    }
+  ]
+}

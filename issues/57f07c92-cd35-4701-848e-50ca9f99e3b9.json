@@ -1,0 +1,21 @@
+{
+  "uuid": "57f07c92-cd35-4701-848e-50ca9f99e3b9",
+  "display_id": 339,
+  "title": "statusline r1 AIE: event-driven refresh cost unbounded and uncataloged",
+  "description": "Round: statusline amendment cold round 1. Lens: ai-engineer (validator pair: platform-engineer). Owner: SO session. Defect: segment refreshes on every conversation event via per-repo subprocess fan-out (bootstrap: 3 crosslink calls per repo, ~1.2s) with no bound, cache, throttle, or declared cost band — the most frequently executed operation escapes Cost is knowable's cost-observability. Citations verified: contract:160 (zero-AI-cost sentence) with :196 (acquisition in effectful shell). Anchors: Status, renderer. Proposed: resolved-candidate. Failure: wall-clock and load on every turn, unobserved, uncontracted.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:55.343565Z",
+  "updated_at": "2026-07-19T23:08:15.945347Z",
+  "closed_at": "2026-07-19T23:08:15.945347Z",
+  "comments": [
+    {
+      "uuid": "a879d5f0-169b-4790-a36c-b4bf634f66c0",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Segment invocation cost contracted: single snapshot acquisition (not per-field subprocess fan-out — the bootstrap three-calls-per-repo shape named as what it replaces), wall-clock bounded by a declared budget with the number set at phase-1c data authoring alongside the other numbers. Revision: Status bullet + effectful shell (snapshot acquisition for status/statusline named).",
+      "created_at": "2026-07-19T23:07:51.952066Z",
+      "kind": "resolution"
+    }
+  ]
+}

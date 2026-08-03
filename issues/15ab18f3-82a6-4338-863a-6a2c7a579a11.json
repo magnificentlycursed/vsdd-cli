@@ -1,0 +1,35 @@
+{
+  "uuid": "15ab18f3-82a6-4338-863a-6a2c7a579a11",
+  "display_id": 477,
+  "title": "statusline amendment cold round 10",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 10 (post round-9: worded broken-state mark on unreadable state; segment run against the malformed-state fixture). Series 15-16-11-6-8-2-2-2-1.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:49:40.131258Z",
+  "updated_at": "2026-07-20T00:58:08.416020Z",
+  "closed_at": "2026-07-20T00:58:08.416020Z",
+  "comments": [
+    {
+      "uuid": "12bdd400-f8aa-45c5-a310-a4296234cf27",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 10. Subject: revision 10 statusline anchors (round-9 set plus: state-unreadable in the never-silent enumeration with the shell-composed worded broken-state mark; malformed-state fixture run against the segment). Out of scope: defect-fix lane amendment. Known-deliberate unchanged. Lens: UX only (narrowed, declared: AIE clean rounds 7-8, SA/A11y clean round 6, the round-9 fix is UX-jurisdiction). Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:49:53.179371Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "135f799d-aade-496d-b114-e15a6c3b335e",
+      "author": "xqjG",
+      "content": "Round 10 complete (UX). 2 filed: L154 malformed-state diagnostic content bar; L155 effectful-shell exception unallocated — both on the round-9 addition, both symmetric one-line fixes. Series 15-16-11-6-8-2-2-2-1-2. Not clean; round 11 after disposition.",
+      "created_at": "2026-07-20T00:56:13.801436Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "bbff9008-4633-47ee-8372-253c6091b299",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed. mdatron verify clean on revision 11. Closing; round 11 dispatches (UX only).",
+      "created_at": "2026-07-20T00:58:07.234656Z",
+      "kind": "result"
+    }
+  ]
+}

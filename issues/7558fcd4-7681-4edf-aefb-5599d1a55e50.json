@@ -1,0 +1,21 @@
+{
+  "uuid": "7558fcd4-7681-4edf-aefb-5599d1a55e50",
+  "display_id": 487,
+  "title": "lane r6 Meth: approve-then-dispatch has no falsifier",
+  "description": "Lane round 6. Lens: methodology (validator: SO). Owner: SO session. Defect: the identity-ordering rule detects nothing — a late-approved write is still signed, so no existing falsifier reaches the race the rule cites as motivation. Citations verified: contract:106 vs :112, :184. Proposed: resolved-candidate (falsifier: a tracker write signed by an identity whose approval postdates the write).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:58.302914Z",
+  "updated_at": "2026-07-20T00:58:02.130067Z",
+  "closed_at": "2026-07-20T00:58:02.130067Z",
+  "comments": [
+    {
+      "uuid": "77e6fc35-f923-47ec-9069-a3b79635c668",
+      "author": "xqjG",
+      "content": "Fixed: Recorded review dispatch falsifier adds the race — a tracker write signed by an identity whose approval postdates the write. Revision: falsification list.",
+      "created_at": "2026-07-20T00:57:47.168587Z",
+      "kind": "resolution"
+    }
+  ]
+}

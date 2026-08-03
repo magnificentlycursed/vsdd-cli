@@ -1,0 +1,21 @@
+{
+  "uuid": "1d2c1d6e-a3d0-4f3f-be36-eea74b86c3bc",
+  "display_id": 647,
+  "title": "posture-r4-AI: consent-surface enumeration omits project MCP trust",
+  "description": "Minor, substrate fidelity. Headless runs silently skip unapproved project MCP servers — capability degradation no instrument sees. Fix: add the surface to Trust boundaries; detection routes to 1c preflight data. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:59.023938Z",
+  "updated_at": "2026-07-20T18:16:11.459494Z",
+  "closed_at": "2026-07-20T18:16:11.459494Z",
+  "comments": [
+    {
+      "uuid": "efe8475b-b6a3-4128-ad0f-f4592e9c6466",
+      "author": "xqjG",
+      "content": "Fixed: project MCP server trust joins the Trust boundaries consent-surface enumeration with its silent-non-load degradation named so the preflight data can bind a check to it.",
+      "created_at": "2026-07-20T18:16:09.262513Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "uuid": "1f441c2c-cfe0-4313-a843-3d49137813ef",
+  "display_id": 212,
+  "title": "TW/F1: 'frontmatter schema validation' vs 'schema load' table labels",
+  "description": "Source: mdatron/review-log/2026-06-02-technical-writer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:49.846368Z",
+  "updated_at": "2026-06-08T02:23:17.940170Z",
+  "closed_at": "2026-06-08T02:23:17.940170Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "related": [
+    "5120a23e-b23e-4ebb-a088-f11a0d93a938",
+    "bb87b558-6f8f-4f48-8866-654bfd5e8c95",
+    "d4ec7994-809e-4d32-9016-cb544ea6028a"
+  ],
+  "comments": [
+    {
+      "uuid": "e89e70ff-8d8d-4899-9357-26b07d0d77f6",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@6a0fe22 (Wave 6 (table label disambiguation)).",
+      "created_at": "2026-06-08T02:23:16.677617Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "663a0501-aeca-4a84-91a4-c75855fe22aa",
+  "display_id": 306,
+  "title": "Spec review round 1: plain naming: mutation floor, pack/lens unification, register sweep",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T02:27:14.352855Z",
+  "updated_at": "2026-07-29T10:26:15.405113Z",
+  "closed_at": "2026-07-29T10:26:15.405098Z",
+  "labels": [
+    "spec-review-round-1"
+  ],
+  "comments": [
+    {
+      "uuid": "e9ab7629-9192-4204-8736-0d83793f108a",
+      "display_id": 1234,
+      "author": "xqjG",
+      "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract. Reopen if this specific finding resurfaces as a live gap.",
+      "created_at": "2026-07-29T10:26:08.649262Z",
+      "kind": "decision"
+    }
+  ]
+}

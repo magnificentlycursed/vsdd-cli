@@ -1,0 +1,39 @@
+{
+  "uuid": "c39e677d-2aa0-41eb-803b-35cab288c6cc",
+  "display_id": 208,
+  "title": "SO/F2: pre-publish stability stance undeclared",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-owner-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:41.989769Z",
+  "updated_at": "2026-07-21T00:46:59.612396Z",
+  "closed_at": "2026-07-21T00:46:59.612396Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:solution-owner",
+    "review-finding"
+  ],
+  "blockers": [
+    "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7",
+    "e4e5f292-0481-4a38-bc1e-6e4d6ce8c687"
+  ],
+  "comments": [
+    {
+      "uuid": "2494f3e4-2958-40ec-bb6c-bbd36fffd2ae",
+      "author": "xqjG",
+      "content": "Deferred to binary-first Phase 6 (#17) per operator disposition 2026-06-08: stability stance will land formally at crates.io publish time, not pre-publish. The no-premature-version-bumps discipline governs in the interim.",
+      "created_at": "2026-06-08T03:32:18.534996Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "b02cf000-6515-4940-a133-a592ee445da9",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:46:57.038266Z",
+      "kind": "result"
+    }
+  ]
+}

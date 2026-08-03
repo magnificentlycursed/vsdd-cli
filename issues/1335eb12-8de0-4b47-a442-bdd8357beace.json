@@ -1,0 +1,21 @@
+{
+  "uuid": "1335eb12-8de0-4b47-a442-bdd8357beace",
+  "display_id": 437,
+  "title": "statusline r7 UX: human-form cause+recovery obligation has no architectural home",
+  "description": "Round 7. Lens: ux (validator: DR). Owner: SO session. Defect: the human-form renderer is placed in neither pure core nor effectful shell; the derivation's degraded output is a bare boolean without the absent-vs-unusable distinction a differentiated next step needs; the snapshot does not materialize the cause; recovery text alone among deferred content has no authoring home; and tracker-absent is contractually a NORMAL offline mode — demanding a recovery action for it risks vacuous instruction. Citations verified: contract:163, :188, :199, :200, :203, :284. Proposed: resolved-candidate (degraded becomes a kind — absent or unusable — output by the derivation; per-kind next-step text ships as versioned data authored at 1c, the absent kind's text stating the normal offline mode; human-form rendering placed in the effectful shell).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:33.274769Z",
+  "updated_at": "2026-07-20T00:28:37.201541Z",
+  "closed_at": "2026-07-20T00:28:37.201541Z",
+  "comments": [
+    {
+      "uuid": "e3495c19-b2d9-42d0-ba95-f13d7f9f02fa",
+      "author": "xqjG",
+      "content": "Fixed: degradation is a kind, not a bare flag — the derivation outputs which corroboration condition holds (absent; unusable); per-kind next-step text ships as versioned data authored at 1c, with the tracker-absent kind contracted as the normal offline mode whose text says so; human form placed in the effectful shell as a rendering over the same derivation output and snapshot (no second computation on any form); criterion asserts the human form names the kind and renders its text. Revision: Status bullet + derivation entry + effectful shell + criterion.",
+      "created_at": "2026-07-20T00:28:24.675228Z",
+      "kind": "resolution"
+    }
+  ]
+}

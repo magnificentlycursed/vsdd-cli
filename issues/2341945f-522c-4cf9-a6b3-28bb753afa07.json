@@ -1,0 +1,28 @@
+{
+  "uuid": "2341945f-522c-4cf9-a6b3-28bb753afa07",
+  "display_id": 654,
+  "title": "upstream crosslink: init --update clobbers adopter customizations inside the managed .gitignore block without warning",
+  "description": "Observed in this repo's 2026-07-20 install repair: the root .gitignore's crosslink-managed block carried a deliberate, comment-documented adopter customization (carve-outs keeping vsdd-prefixed artifacts in .claude/hooks|commands|mcp tracked as source — this repo IS the toolkit those directories deploy from). init --update replaced the block with the canonical form silently: no warning, no diff surfaced, no refusal — in a tool whose own managed-file discipline elsewhere is drift-refusal. Same defect family as vsdd-cli #431 (settings merge clobbers the hooks block wholesale): merge paths that overwrite adopter-owned intent without surfacing it. Suggestion: treat an adopter-modified managed block like a drifted managed file — refuse and print the diff, or three-way merge with the customization preserved and a conflict surfaced. Evidence: this repo's working-tree diff of .gitignore, 2026-07-20 (pre-commit state recorded on vsdd-cli #597's trail); restoration ruling recorded the same day.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T22:50:04.392434Z",
+  "updated_at": "2026-07-20T23:33:04.360973Z",
+  "closed_at": "2026-07-20T23:33:04.360973Z",
+  "comments": [
+    {
+      "uuid": "926f7637-c2e4-4c24-9b51-bd86db9f8773",
+      "author": "xqjG",
+      "content": "HELD: operator directive 2026-07-20 (recorded as an intervention on vsdd-cli #597) — upstream-filing block pending operator information about the upstream project from an mdatron kickoff run. This issue is a local relay record in this repo's tracker only; no upstream communication has occurred. Disposition awaits the operator's information.",
+      "created_at": "2026-07-20T22:52:08.853118Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "3651432c-d8a0-4310-a3a9-6dae632e38f0",
+      "author": "xqjG",
+      "content": "Migrated to the canonical upstream (operator-directed workflow, decision on #597): re-verified STILL-LIVE at dollspace-gay/crosslink main 85691369 — merge.rs:65-74 splices the canonical block unconditionally, no drift comparison; corrected attribution: init/--force path, not --update — and filed as dollspace-gay/crosslink#20, which supersedes this record. Evidence: the evaluation scout reports and draft bodies on #597's trail, 2026-07-20.",
+      "created_at": "2026-07-20T23:33:01.155797Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "985739f3-35b2-4d7e-ab9c-15c2ce66a5d1",
+  "display_id": 415,
+  "title": "statusline r6 AIE: stdin-unconsumed has no falsifier",
+  "description": "Round 6. Lens: ai-engineer (validator: PE). Owner: SO session. Defect: the stdin-unconsumed claim — the designated future observability seam — is the only statusline conduct with no instrument: a change reading stdin and rendering a context% field passes byte-identity (constant stdin), model-absence (local read), and acquisition count (stdin is not an acquisition). Citations verified: contract:163, :188, :200, :203, :173, :170. Proposed: resolved-candidate (fixture feeds populated session JSON on stdin; segment must be byte-identical to the stdin-absent run).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:27.630784Z",
+  "updated_at": "2026-07-20T00:16:43.102075Z",
+  "closed_at": "2026-07-20T00:16:43.102075Z",
+  "comments": [
+    {
+      "uuid": "1f94b534-0c7d-42ba-aa7d-541b69361781",
+      "author": "xqjG",
+      "content": "Fixed: statusline fixtures run twice — stdin fed a populated session JSON vs stdin absent — segments byte-identical; stdin-unconsumed falsified. Revision: Status detection criterion.",
+      "created_at": "2026-07-20T00:16:23.521312Z",
+      "kind": "resolution"
+    }
+  ]
+}

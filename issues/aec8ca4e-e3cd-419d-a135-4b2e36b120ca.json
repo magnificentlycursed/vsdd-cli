@@ -1,0 +1,21 @@
+{
+  "uuid": "aec8ca4e-e3cd-419d-a135-4b2e36b120ca",
+  "display_id": 587,
+  "title": "lane r15 Meth: adopted default and deferral rationale carry two epistemic statuses",
+  "description": "Lane round 15. Lens: methodology, ~55-60% confidence, honestly caveated (validator: SO). SE and QE both NO FINDINGS this round. Defect: the report-set default is committed as live behavior while its only dedicated fixture is rostered unauthorable-until-1c — but an adopted default makes the expected disposition decided, so the fixture is authorable now (the pattern's whole point, as the DSL-scope and cost-engine precedents show). Citations verified: contract:64 vs :173. Proposed: resolved-candidate via the reviewer's option (a): author the fixture against the adopted default — mapping rejected, degrade to source-path disablement — moving it from the 2a roster to the active set, with the 1c source-set override noted as what would flip and retire it.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:15:17.966696Z",
+  "updated_at": "2026-07-20T04:16:33.700574Z",
+  "closed_at": "2026-07-20T04:16:33.700574Z",
+  "comments": [
+    {
+      "uuid": "5b4ae14d-d161-46e8-ac2b-55700d963968",
+      "author": "xqjG",
+      "content": "Fixed via the reviewer's option (a): the cfg-vanished mapping-target fixture authored against the adopted report-set default (rejected, degrades to source-path disablement) — moved from the 2a roster to the active set with criterion assertion; the 1c source-set decision noted as what flips and retires it. The adopted-default pattern now matches its DSL-scope and cost-engine precedents. Revision: corpus + roster + criterion.",
+      "created_at": "2026-07-20T04:16:29.385057Z",
+      "kind": "resolution"
+    }
+  ]
+}

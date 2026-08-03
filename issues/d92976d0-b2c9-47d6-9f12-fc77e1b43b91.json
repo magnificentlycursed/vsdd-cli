@@ -1,0 +1,21 @@
+{
+  "uuid": "d92976d0-b2c9-47d6-9f12-fc77e1b43b91",
+  "display_id": 786,
+  "title": "Layer 3 round 2 minor collector QE: falsifiability gaps on just-fixed surfaces — degenerate-budget hard-cuts, the config artifact cap, and both #782 surfaces (home fold, degraded-line shape) have no falsifier; plus the work-item-budget hardcode and the render-text hardcode-parallel nits",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T08:53:05.449579Z",
+  "updated_at": "2026-07-26T09:05:02.389350Z",
+  "closed_at": "2026-07-26T09:05:02.389330Z",
+  "comments": [
+    {
+      "uuid": "95271209-b3d8-4618-b44b-c2e3a5ef68b2",
+      "display_id": 1043,
+      "author": "xqjG",
+      "content": "Fixed in ff0d3a3f: falsifiers added for the surfaces round 1 fixed by inspection — a_degenerate_budget_hard_cuts (a budget-override lever drives the sub-mark-width branch, asserting within-budget and one line), the_config_read_refuses_an_oversize_file (a past-cap file is a diagnostic naming the breach), the_broken_form_folds_the_home_prefix (a path under HOME renders ~, account segment absent), and the_degraded_report_line_leads_with_the_next_step (position of next-step before the kind token). The human form now reads work-item and milestone absence text from the registered data set (one shared source, no silent drift); the generic-truncation test reads its budget from the data, not a literal. The remaining nit — the session absence and unregistered-kind fallback wordings — stays hardcoded by design: session is the demoted field with no registered display entry, and the fallback is a shared constant already, so neither has a registered source to drift from.",
+      "created_at": "2026-07-26T09:04:50.666073Z",
+      "kind": "result"
+    }
+  ]
+}

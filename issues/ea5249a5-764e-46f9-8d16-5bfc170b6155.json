@@ -1,0 +1,21 @@
+{
+  "uuid": "ea5249a5-764e-46f9-8d16-5bfc170b6155",
+  "display_id": 791,
+  "title": "Layer 3 round 3 minor collector SE: the cleaning trust model is inconsistent — free-form registry strings (next_step_text, human_recovery) render raw while the enum kind is cleaned; #786's registered-absence source is dead behind acquire.rs's upstream hardcode; the empty-fallback empty-slot with renderer disagreement",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T09:44:31.963884Z",
+  "updated_at": "2026-07-26T09:52:48.735958Z",
+  "closed_at": "2026-07-26T09:52:48.735947Z",
+  "comments": [
+    {
+      "uuid": "582469a1-ebc5-4fd6-a083-9730bb81a3cf",
+      "display_id": 1051,
+      "author": "xqjG",
+      "content": "Fixed in 94d3c2cf: the free-form registry strings now cross the cleaner uniformly — human.rs's next_step and broken.rs's human_recovery join diagnostic.message and kind, so the trust model is consistent (every terminal-destined string cleaned regardless of source); the misleading broken.rs comment is corrected. registered_absence takes fit()'s loud posture (expect on a drifted registry, never a silent empty slot), so the two renderers fail the same way. And #786's anti-drift purpose is now met at the operative layer: acquire.rs's absence wordings are named constants (ABSENT_SESSION/WORK_ITEM/MILESTONE) with a fidelity test pinning the two that have registered counterparts to the data set's absence_text — an edit to either side turns the pin red. Session has no registered display field (the demotion), so it carries no mirror, stated.",
+      "created_at": "2026-07-26T09:52:43.106345Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "a1a065f5-c405-4bf6-9888-e12537677009",
+  "display_id": 369,
+  "title": "statusline r3 A11y: current-repo identity position-only in composed display",
+  "description": "Round: statusline amendment cold round 3. Lens: accessibility (validator: ux). Owner: SO session. Defect: current repo distinguished solely by 'current repo first' — position-encoded; per-line worded repo identity plus the operator's own cwd knowledge largely resolves it. Citations verified: contract:160, :185. Proposed: dismissed-candidate per reviewer, with rationale recorded rather than left implicit.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:41.717876Z",
+  "updated_at": "2026-07-19T23:29:43.545407Z",
+  "closed_at": "2026-07-19T23:29:43.545407Z",
+  "comments": [
+    {
+      "uuid": "3d85532d-98b4-41c5-ba5e-230e6272c58d",
+      "author": "xqjG",
+      "content": "Dismissed at triage (standing pattern, per reviewer's own lean): current-repo-first is position-encoded but per-line worded repo identity plus the operator's cwd knowledge resolves it; rationale recorded here rather than left implicit, as the reviewer asked.",
+      "created_at": "2026-07-19T23:28:56.667459Z",
+      "kind": "resolution"
+    }
+  ]
+}

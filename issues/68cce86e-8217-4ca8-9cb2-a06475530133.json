@@ -1,0 +1,28 @@
+{
+  "uuid": "68cce86e-8217-4ca8-9cb2-a06475530133",
+  "display_id": 168,
+  "title": "PE/F5: gap ranges E0060-E0069 / E0090-E0099 reserved-future annotation",
+  "description": "Source: mdatron/review-log/2026-06-02-platform-engineer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@1d81c4e (table rows added)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:22.740921Z",
+  "updated_at": "2026-06-08T02:33:58.424507Z",
+  "closed_at": "2026-06-08T02:33:58.424507Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:platform-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "db069b8e-48f4-4b42-ac6b-825e6257e249",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@1d81c4e (table rows added)).",
+      "created_at": "2026-06-08T02:33:57.737725Z",
+      "kind": "resolution"
+    }
+  ]
+}

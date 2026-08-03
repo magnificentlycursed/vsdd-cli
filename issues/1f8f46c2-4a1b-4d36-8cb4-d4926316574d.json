@@ -1,0 +1,35 @@
+{
+  "uuid": "1f8f46c2-4a1b-4d36-8cb4-d4926316574d",
+  "display_id": 523,
+  "title": "defect-fix lane amendment cold round 9",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 9 (post round-8: one-to-one mapping constraints with new-at-HEAD-must-pass; declared-deletion lane; disjunctive branch forms with both-direction fixtures; resolvable citations and References home; label-narrowing falsifier fixtured). Series 19-13-9-9-12-12-6-7.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:30:47.930423Z",
+  "updated_at": "2026-07-20T01:46:10.766613Z",
+  "closed_at": "2026-07-20T01:46:10.766613Z",
+  "comments": [
+    {
+      "uuid": "768adc64-add0-4a20-a95a-0392f7c21602",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 9. Subject: lane revision 9 anchors: gate bullet (mapping constraints — one-to-one vanished/new with new-at-HEAD-must-pass; declared-deletion lane; executed-pin both halves; delta with repetition coverage; validator-gated compile-defect; graded retrofit; broken-surface) + falsifier; lifecycle bullet + falsifier (incl. narrowed-survivor branch); Conformance closed-world (disjunctive dual-form grammar, clone-scoped refs query, resolvable evidence citation); Recorded review dispatch (approve-then-dispatch; manifest tier/effort falsifier — note: shared with the effort amendment, review only its lane-side interaction); References (mdatron fix-lane entry); composition scope; Gates; criterion; corpus (~29 members + 2a list). Out of scope: statusline and effort amendments. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:31:06.254188Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "0ea853e2-430c-4ccb-b9eb-bdbc321daa3e",
+      "author": "xqjG",
+      "content": "Lane round 9 complete. SE 1 + QE 2 + methodology 3 = 6 filed (no merges): L202 must-pass over-firing; L203 decoy laundering; L204 unapproved deletion; L205 broken-surface triangle; L206 provisional-number cites; L207 pre-push hook semantics. Series 19-13-9-9-12-12-6-7-6. Not clean; round 10 after disposition.",
+      "created_at": "2026-07-20T01:43:33.310410Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d405dd63-91dc-4ce6-b1ab-7dcbb122b945",
+      "author": "xqjG",
+      "content": "Round fully disposed: 6/6 fixed. mdatron verify clean on lane revision 10. Closing; round 10 dispatches.",
+      "created_at": "2026-07-20T01:46:09.314271Z",
+      "kind": "result"
+    }
+  ]
+}

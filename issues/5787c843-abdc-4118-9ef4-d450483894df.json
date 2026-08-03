@@ -1,0 +1,23 @@
+{
+  "uuid": "5787c843-abdc-4118-9ef4-d450483894df",
+  "display_id": 729,
+  "title": "Wire the executable cross-field constraints into mdatron patterns and schema if/then (mdatron #73 assessment)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:17:02.647636Z",
+  "updated_at": "2026-07-21T19:21:41.335052Z",
+  "closed_at": "2026-07-21T19:21:41.335052Z",
+  "labels": [
+    "feature"
+  ],
+  "comments": [
+    {
+      "uuid": "dc94c624-6056-4227-ae35-29ab8848e853",
+      "author": "xqjG",
+      "content": "WIRED (commit f1b6809e). Directive classification, recorded: increment entry, absorbable — mdatron's #73 assessment enables the executable subset of the declared cross-field constraints today; scope read as the specific wire-now instruction. LANDED: (1) .mdatron/patterns/registry-integrity.yaml (mirrored into the vsdd-core bundle as patterns::REGISTRY_INTEGRITY) — manifest pairs_with resolution VSDD-E0210, referenced_by resolution VSDD-E0211, statusline recovery-action registration against the composition vocabulary VSDD-E0212; nested every/some over self plus one key() over the composition artifact, the cross-references.yaml shape as mdatron predicted. (2) The stage-prefix rule as eleven if/then branches in the composition schema pair (mdatron's Layer-1 advice); composition-scope-and-actions bumps to 0.2.0 under the pair rule. (3) Schema descriptions now distinguish WIRED from DECLARED constraints. PROVEN both directions pre-commit: verify clean honest; broken pairs_with fires E0210; stripped prefix fires E0050 naming the pattern and the path. DEFERRAL WATCH, standing on this issue: uniqueness checks await mdatron's distinct primitive; regex-validity of branch-grammar patterns awaits new capability — retest when mdatron announces either. NOTE for the estate: these action-time checks now overlap the round-1 code suite's manifest_cross_references_resolve test — complementary by design (pre-commit catches authoring, the suite catches load-path regressions); recorded so the overlap reads as intent. Suite green (56/56), verify clean at pre-commit. Closing.",
+      "created_at": "2026-07-21T19:21:37.624026Z",
+      "kind": "result"
+    }
+  ]
+}

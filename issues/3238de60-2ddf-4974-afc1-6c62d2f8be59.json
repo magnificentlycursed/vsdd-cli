@@ -1,0 +1,21 @@
+{
+  "uuid": "3238de60-2ddf-4974-afc1-6c62d2f8be59",
+  "display_id": 532,
+  "title": "lane r9 Meth: pre-push hook cannot enforce a creation-time property at push time",
+  "description": "Lane round 9. Lens: methodology, low confidence (validator: SO). Defect: a branch created pre-sync and first pushed post-sync makes the hook either over-fire (forcing the rename the clause forbids) or collapse to the query's check, making the stated stronger behavior vacuous; the over-fire direction is unfalsified. Citations verified: contract:124, :128, :180. Proposed: resolved-candidate (the hook checks membership in the registered forms and warns toward the preferred one — never blocks a registered form).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:27.349480Z",
+  "updated_at": "2026-07-20T01:46:02.230038Z",
+  "closed_at": "2026-07-20T01:46:02.230038Z",
+  "comments": [
+    {
+      "uuid": "147f58ee-785f-4f5c-b7a6-6da857f7fdbe",
+      "author": "xqjG",
+      "content": "Fixed: the pre-push hook checks the same membership and warns toward the preferred form — never blocks a registered form, no forced rename; the vacuity resolved by making the warn-not-block conduct explicit. Revision: Conformance bullet.",
+      "created_at": "2026-07-20T01:45:43.618708Z",
+      "kind": "resolution"
+    }
+  ]
+}

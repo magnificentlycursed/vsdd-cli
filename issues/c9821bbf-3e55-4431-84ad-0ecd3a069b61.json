@@ -1,0 +1,27 @@
+{
+  "uuid": "c9821bbf-3e55-4431-84ad-0ecd3a069b61",
+  "display_id": 317,
+  "title": "Swarm live fire unplaceable in the automatable-manual split",
+  "description": "QE and SA convergent: it produces a fixture rather than consuming one. Fix: a third class — one-time live-fire acts with a named owner (operator-triggered, record becomes the reference fixture) — holding swarm live fire and any future live-fire preconditions. [owner: quality-engineer; validator: solution-owner]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:17.567386Z",
+  "updated_at": "2026-07-19T22:01:32.851934Z",
+  "closed_at": "2026-07-19T22:01:32.851934Z",
+  "labels": [
+    "phase-1b-round-1",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "890c2ce0-1740-4fb4-a284-0a5bb6b61cca",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:32.020309Z",
+      "kind": "result"
+    }
+  ]
+}

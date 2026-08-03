@@ -1,0 +1,21 @@
+{
+  "uuid": "3053c5a2-5dbf-46b1-ae20-764e36811bc2",
+  "display_id": 476,
+  "title": "upstream crosslink: kickoff dry-run leaves worktree and driver records cleanup does not reclaim",
+  "description": "Upstream finding for dollspace-gay/crosslink, 2026-07-20, from mdatron's kickoff live fire. --dry-run registers a worktree + driver record that kickoff cleanup does not treat as stale — dry runs accumulate live-looking state. Proposal: dry-run records marked as such and reclaimed by cleanup. Companion absorption proposal: kickoff --issue embeds the issue display ID in the generated branch name (currently only session-id + ref + slug; issue linkage lives only in session/lock records).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:47:59.111906Z",
+  "updated_at": "2026-07-20T23:32:57.378043Z",
+  "closed_at": "2026-07-20T23:32:57.378043Z",
+  "comments": [
+    {
+      "uuid": "bd738fec-cfe1-4bf9-838b-e125ab92e247",
+      "author": "xqjG",
+      "content": "Migrated to the canonical upstream (operator-directed workflow, decision on #597): re-verified STILL-LIVE at dollspace-gay/crosslink main 85691369 — plan.rs:176/194-200 create worktree + PlanRecord before the dry_run guard at :203; cleanup reconciliation reads runs only, never plans — and filed as dollspace-gay/crosslink#19, which supersedes this record. Evidence: the evaluation scout reports and draft bodies on #597's trail, 2026-07-20.",
+      "created_at": "2026-07-20T23:32:53.478882Z",
+      "kind": "result"
+    }
+  ]
+}

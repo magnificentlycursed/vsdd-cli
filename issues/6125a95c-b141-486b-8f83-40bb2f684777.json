@@ -1,0 +1,21 @@
+{
+  "uuid": "6125a95c-b141-486b-8f83-40bb2f684777",
+  "display_id": 471,
+  "title": "lane r5 QE: validator-approved qualifier has no negative fixture",
+  "description": "Lane round 5. Lens: QE (validator: SE). Owner: SO session. Defect: the surface-limitation escape's entire anti-cheat is the approval; no fixture seeds an unapproved record and verifies rejection — self-certification would slip. Citations verified: contract:66, :173, :180. Proposed: resolved-candidate (unapproved-surface-limitation fixture, gate rejects).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:58.522733Z",
+  "updated_at": "2026-07-20T00:49:19.818361Z",
+  "closed_at": "2026-07-20T00:49:19.818361Z",
+  "comments": [
+    {
+      "uuid": "b948b244-f936-45a7-9837-09df9dbb362e",
+      "author": "xqjG",
+      "content": "Fixed: unapproved-surface-limitation fixture added and rejected by the gate. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:49:02.187378Z",
+      "kind": "resolution"
+    }
+  ]
+}

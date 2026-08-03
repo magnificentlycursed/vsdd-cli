@@ -1,0 +1,21 @@
+{
+  "uuid": "83366e40-5de0-4aa2-b4d4-0f9fd8ad9cc3",
+  "display_id": 634,
+  "title": "posture-r4-SA: never-started distinction has no mechanism under no-placeholder rule",
+  "description": "Blocking, coherence. Zero-tracker-events keying collides with 'neither produces tracker issues'. Fix: chassis instruments — launch-status sentinel, session records, heartbeats. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:14.944174Z",
+  "updated_at": "2026-07-20T18:15:29.231386Z",
+  "closed_at": "2026-07-20T18:15:29.231386Z",
+  "comments": [
+    {
+      "uuid": "61d79028-18f5-49a0-93a2-e79373ac40fb",
+      "author": "xqjG",
+      "content": "Fixed: the never-started clause now names the chassis instruments — launch-status record written before the launch act, session records, heartbeat staleness — and states explicitly that counting filings can never make the distinction.",
+      "created_at": "2026-07-20T18:15:27.663020Z",
+      "kind": "resolution"
+    }
+  ]
+}

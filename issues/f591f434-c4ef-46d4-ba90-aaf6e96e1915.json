@@ -1,0 +1,21 @@
+{
+  "uuid": "f591f434-c4ef-46d4-ba90-aaf6e96e1915",
+  "display_id": 290,
+  "title": "amend-r6: AT unregistered abbreviation",
+  "description": "Minor. Fix: assistive-technology spelled out. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:33.822332Z",
+  "updated_at": "2026-07-20T19:25:07.268497Z",
+  "closed_at": "2026-07-20T19:25:07.268497Z",
+  "comments": [
+    {
+      "uuid": "28ae9eeb-08b8-4980-9e5d-c962ccc9d361",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:25:03.245674Z",
+      "kind": "resolution"
+    }
+  ]
+}

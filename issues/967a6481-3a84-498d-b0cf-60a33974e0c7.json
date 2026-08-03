@@ -1,0 +1,22 @@
+{
+  "uuid": "967a6481-3a84-498d-b0cf-60a33974e0c7",
+  "display_id": 697,
+  "title": "r1 nit collector — twelve low-severity items across the five lenses",
+  "description": "Enumerated for disposition without individual ceremony: orphan reconcile-toward-artifact member (no emission path; confirm consumer or mark reserved); prompt-copy half of item 15 unhomed (confirm implementation-strings intent); preset fields normalized vs contract enumeration (note the normalization); active_composition.mode vocabulary (skill-interactive|cold-dispatch) unregistered and unmapped to attended/autonomous; adopted-vs-draft-proposal term overload (one clarifying line per artifact if DR pass finds it confusing); repo-name empty absence_text (confirm structurally-always-present or word it); 3-run vs 7-run rationale unrecorded with detection power inverted relative to stakes (QE assessed shape principled, count unjustified); 'two install lifetimes' vs four-value enum phrasing; sanity-check absent from thorough preset note (it is in the 18); retrieval single-section structure acceptable at current sizes, noted for larger sets; QE schema-note: exactly-one-conditional constraint declared but unencoded; UX multi-repo three-line height noted as resolved-by-S1/S2. Owner: data-engineer. Validator: sanity-check.",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:20:42.012015Z",
+  "updated_at": "2026-07-21T04:14:39.850324Z",
+  "closed_at": "2026-07-21T04:14:39.850324Z",
+  "comments": [
+    {
+      "uuid": "bfb8e0a7-6a31-4f7c-b6f8-472f103b6032",
+      "author": "xqjG",
+      "content": "NIT DISPOSITIONS (commit e61f28e5, all twelve): (1) reconcile-toward-artifact marked reserved with its intended emitter named (composition-scope prose); (2) prompt-copy confirmed implementation-strings intent, stated in statusline prose; (3) preset normalization noted in economics prose; (4) active_composition.mode mapped to the attended/autonomous split in state-schema semantics; (5) adopted-vs-draft-proposal overload deferred to the DR cold pass by the finding's own terms; (6) repo-name confirmed structurally present, stated in statusline prose; (7) 3-run vs 7-run rationale recorded in gate-data prose — shape principled, counts unjustified, revision routes through the advisory loop on ledger actuals; (8) two-install-lifetimes phrasing corrected to the four-value axis crossing in manifest prose; (9) sanity-check-in-the-18 resolved by the #684 count corrections; (10) retrieval single-section structure noted acceptable at current sizes — no change; (11) exactly-one-conditional constraint now ENCODED in gate-data schema via contains/minContains/maxContains; (12) multi-repo height stood resolved already. Round 2 re-verifies (validator: sanity-check).",
+      "created_at": "2026-07-21T04:14:34.708957Z",
+      "kind": "result"
+    }
+  ]
+}

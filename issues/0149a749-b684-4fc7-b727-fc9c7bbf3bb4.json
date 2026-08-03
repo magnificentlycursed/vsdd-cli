@@ -1,0 +1,35 @@
+{
+  "uuid": "0149a749-b684-4fc7-b727-fc9c7bbf3bb4",
+  "display_id": 363,
+  "title": "statusline amendment cold round 3",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 3 (post round-2 disposition: 9 fixes incl. 2 folded deferred, 4 routed to the 1c wiring-script work item, 3 dismissed).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:19:00.612977Z",
+  "updated_at": "2026-07-19T23:29:24.488988Z",
+  "closed_at": "2026-07-19T23:29:24.488988Z",
+  "comments": [
+    {
+      "uuid": "3237f439-c839-418c-823e-4de4a6f9ef0d",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline amendment cold round 3. Subject: working-tree .design/agent-first-vsdd-toolkit.md, revision 3 of the statusline amendment (anchors: Status requirement statusline passage; Install requirement statusline passage; Install behaviors criterion statusline sentences; Status detection criterion statusline sentences incl. the further-conduct additions; fixture corpus install-offer members; Verification architecture — derivation display-field enumeration, renderer entry, effectful-shell wording, Trust boundaries settings entry, fuzz scope; Methodology rewrite supplement sentence; draft vocabulary entry). Known routed-out scope (not findings if re-raised as absences): wiring-script shape items tracked in 'phase-1c work item: statusline wiring script shape'. Lenses: solution-architect, ux, ai-engineer, accessibility — four cold dispatches, fresh contexts. Coverage declared; citations evidence-gated; findings filed as children; result comment malformed without handles. Stop signal: clean or hallucinated-only round.",
+      "created_at": "2026-07-19T23:19:12.458553Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "bd934c1c-5a3d-4dfa-8d5e-9e170ee01b4a",
+      "author": "xqjG",
+      "content": "Round 3 complete. Four cold lenses per manifest, declared coverage all anchors. 11 findings filed, parity 11/11 — handles and titles: L39 SA fuzz enumerations diverge; L40 SA derivation phrasing not verbatim; L41 SA wall-clock scope undefined; L42 A11y field absence not worded; L43 A11y human-form color-independence unverified; L44 A11y current-repo position-only; L45 UX confirmation prompt write-disclosure; L46 UX malformed-settings recovery; L47 UX degraded inline action (recurrence of round-2 dismissal, same weighing); L48 UX decline later-enable path; L49 AIE zero-AI-cost label (self-dismissed by the lens). All citations evidence-verified. Proposed: 1 resolved-candidate (L39), 5 deferred-candidates all foldable one-liners (L41 L42 L43 L45 L46), 5 dismissed-candidates (L40 with courtesy alignment, L44, L47, L48, L49). Not a clean round; triage per the operator's standing wait-then-triage-as-before directive, then round 4. Phase pointer: 1c awaits operator direction; statusline spec amendment in round-3 triage.",
+      "created_at": "2026-07-19T23:27:59.941407Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "ffafefce-9492-4457-994a-5b93d62d334f",
+      "author": "xqjG",
+      "content": "Round fully disposed: 11/11 children closed (1 fixed L39; 5 deferred folded and fixed L41 L42 L43 L45 L46; 5 dismissed L40 L44 L47 L48 L49, with L40's courtesy alignment landed). mdatron verify clean on revision 4. Closing the round issue per rounds-close-at-full-disposition.",
+      "created_at": "2026-07-19T23:29:23.192310Z",
+      "kind": "result"
+    }
+  ]
+}

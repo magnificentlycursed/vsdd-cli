@@ -1,0 +1,21 @@
+{
+  "uuid": "cc5e2d88-a1b5-4043-9557-5128841eddfe",
+  "display_id": 245,
+  "title": "amend-r5-SA: split-side classification statement uninstrumented",
+  "description": "Minor. Fix: Directive reconciliation falsifier + Directive walkthrough clause added. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:02:02.589197Z",
+  "updated_at": "2026-07-20T19:08:07.364786Z",
+  "closed_at": "2026-07-20T19:08:07.364786Z",
+  "comments": [
+    {
+      "uuid": "8dba8367-aff4-4563-8788-2b3698cea1fc",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:08:04.443938Z",
+      "kind": "resolution"
+    }
+  ]
+}

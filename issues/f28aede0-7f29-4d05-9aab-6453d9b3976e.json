@@ -1,0 +1,44 @@
+{
+  "uuid": "f28aede0-7f29-4d05-9aab-6453d9b3976e",
+  "display_id": 698,
+  "title": "round-1 amendment window: seven contract touches from triage rulings",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:53:43.428824Z",
+  "updated_at": "2026-07-21T06:44:12.514865Z",
+  "closed_at": "2026-07-21T06:44:12.514865Z",
+  "labels": [
+    "spec-amendment"
+  ],
+  "comments": [
+    {
+      "uuid": "361397b3-a8c3-4894-b187-88b6a9e352aa",
+      "author": "xqjG",
+      "content": "SCOPE (all seven rulings recorded as decisions on their finding issues, 2026-07-21 triage): (1) #675 — declared expected-kind SET for finding pins + the delta fails closed on flaky-at-HEAD; (2) #676 — failure kinds gain per_test|whole_suite scope; compile-failure whole_suite except doctests; build-script disposition; (3) #678 — mappings become set-valued; splits/merges lawful; every HEAD target of a split inherits dormancy scrutiny; (4) #663 — the installed-artifact manifest parser and the statusline repo-set config parser enter the read-time-diagnostic and fuzz enumerations by name; (5) #679 — the statusline field set drops the session segment (human form retains it); (6) #687 — 'terminal verify round' joins line 91's stage list; (7) #691 — one-line note naming the act-to-affordance map as the act-scale summoning home for all binding kinds. CONDUCT: one amendment window, one ratification, one boundary commit; amendment text drafted after the data-side fix pass so the contract and data land consistent; the spec-review loop's next round reads the amended text. Parent context: round 1 of the phase-1c spec-review loop (#673).",
+      "created_at": "2026-07-21T03:54:26.589641Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "5b1ddab1-fbd4-4a55-9254-79d345a06218",
+      "author": "xqjG",
+      "content": "AMENDMENT TEXT DRAFTED (2026-07-21), working tree, uncommitted — awaiting operator ratification. The seven rulings landed as fourteen text touches: the Revision line records the round; Phase exit by gate takes the kind-set declaration, the set-grain aggregation with the fail-closed flaky-at-HEAD delta, the membership-not-equality wrong-reason comparison, the failure-kind scope axis with the doctest and build-script dispositions, and the set-valued mappings with split-target dormancy inheritance; Deterministic composition's stage list gains the terminal verify round with its higher default dial; Conformance at action time's map clause names the map as the single home for every binding kind; the Status requirement, the Status detection criterion, and the segment renderer's input signature all take the session demotion consistently; and the Phase 5 strategy, the Phase-5 fuzz candidates, and Trust boundaries each name the installed-artifact-manifest and statusline-repo-set parsers. mdatron verify clean over the tree. Drafted against the FIXED data (fix pass e61f28e5), so contract and artifacts ratify consistent. Ratification is the operator act; the boundary commit follows it.",
+      "created_at": "2026-07-21T04:33:38.607660Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "52c1ba59-45af-40c4-9c19-f3bc2526bdf7",
+      "author": "xqjG",
+      "content": "RATIFIED by operator 2026-07-21 (the continue directive on the drafted text, presented in full in-session). The seven touches enter the contract; boundary commit follows this decision.",
+      "created_at": "2026-07-21T06:44:01.632257Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "199b1113-33c4-428e-8505-5b70168f7268",
+      "author": "xqjG",
+      "content": "BOUNDARY COMMIT landed: the seven-touch amendment is in the contract; mdatron verify clean at pre-commit. The round-1 cycle is fully disposed — triage, fix pass (e61f28e5), amendment (this commit). Round 2 dispatches next on the Workflow orchestration surface per the adopted conduct.",
+      "created_at": "2026-07-21T06:44:08.013689Z",
+      "kind": "result"
+    }
+  ]
+}

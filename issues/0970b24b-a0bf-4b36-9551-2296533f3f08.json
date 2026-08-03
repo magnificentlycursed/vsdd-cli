@@ -1,0 +1,46 @@
+{
+  "uuid": "0970b24b-a0bf-4b36-9551-2296533f3f08",
+  "display_id": 739,
+  "title": "Amendment candidate: the mdatron boundary bundle (tier clause, state-validation re-home, prose-restatement rule)",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "c881dc5a-23e0-4be8-b1d5-ceebe409c0d2",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T14:08:58.077630Z",
+  "updated_at": "2026-07-29T04:23:13.875550Z",
+  "closed_at": "2026-07-22T15:18:32.957399Z",
+  "labels": [
+    "spec-amendment"
+  ],
+  "comments": [
+    {
+      "uuid": "1b83b6f1-6805-4bca-8e1f-1f32c0ff8769",
+      "author": "xqjG",
+      "content": "DRAFT, the vsdd side (three touches, one window; ratification is the operator's): (1) TIER CLAUSE, Trust boundaries or Conformance at action time: a schema or pattern pass is a shape fact about an artifact, never a truth fact about the system — truth-tier verdicts come only from evidence-consuming machinery (gates, the corroboration join, hash bindings); state semantics (transitions, write-time constraints, the derivation) never encode into schema pairs. Falsification: a semantic transition rule found encoded in a schema pair; a record treating a verify pass as gate evidence. Upstream precedent: Thermite doc-drift decision 5 (the thermite-state-architecture knowledge page). (2) STATE-VALIDATION RE-HOME, Conformance at action time + the phase-state resolution's executor lines: mdatron's scope is the markdown artifact estate (the operator's 2026-07-22 scope ruling: Schematron for Markdown with rust-like errors for agent-first workflows); the state artifact is YAML, so its shape validation is vsdd's own at read and write (consuming mdatron-core's engine as a library — engine reuse, not scope creep), and the state-consistency family's evidence joins (state versus gate records, tracker, git) are vsdd integrity machinery (Layer 2's snapshot-scoped checks and the gates), not an mdatron family; mdatron's Layer 7 integration narrows to the markdown-side families: routes, pins, vocabulary and register, cross-file patterns. (3) PROSE-RESTATEMENT RULE, the artifact-authoring conduct (data-side companion in the registry prose): governed-artifact prose never restates counts or enumerations the frontmatter carries — cite the field, do not copy the value (the #684/#685 drift class; Thermite prevents it by generating views; our correction is authorial until a numeric-claims pattern exists). Drafts land in the tree at the window; the window rides Layer 2's amend-then-act path with the queued items.",
+      "created_at": "2026-07-22T14:09:38.788124Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "076e0067-6d4b-4392-9846-0d758d039177",
+      "author": "xqjG",
+      "content": "DIRECTIVE (2026-07-22, mid-flow): both cores are planned for removal — mdatron-core and vsdd-core. CLASSIFICATION: spec-amendment-adjacent plan information; scope read as the standing structural intent, with scheduling and the workspace question open. WHAT IT CHANGES IN THIS BUNDLE: (1) the engine-reuse language dies — the boundary is tool-to-tool: mdatron is invoked over the markdown estate at action and boundary time; no consumer builds on a library seam. (2) vsdd's read-time validation transition gets explicit: the contract already frames vsdd's read-time schema validation as BOOTSTRAP ('schema-validated at read by vsdd during bootstrap, by mdatron's conformance families once landed'), so the mdatron-core link was always transitional — end-state is vsdd's own light shape checks (the serde typed decode IS a shape check, plus schema_class identity) with the mdatron CLI as the authoritative walker at commit and CI, and the YAML state file validated by vsdd's own code entirely (already true at write; the read-time schema-pair call is the piece that migrates off the library). The jsonschema-crate alternative stays a PE decision if deeper read-time validation proves needed (the #723 residue's dependency class). (3) The contract's workspace-shape paragraph ('superseded for vsdd — the cost crate requires a workspace') takes an amendment when the collapse schedules; OPEN SUB-QUESTIONS, decision-needed at scheduling, not now: does the cost crate keep the vsdd workspace with the binary crate, and does mdatron's single crate keep a lib target — the latter is the mdatron cycle's call, and this estate should not depend on it either way. The two boundary texts update this turn; the collapse itself is not scheduled by this record.",
+      "created_at": "2026-07-22T14:13:58.023554Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "33b93159-7684-492e-9906-1f2ea662ca36",
+      "author": "xqjG",
+      "content": "RATIFIED AND LANDED (operator ratification 2026-07-22; boundary commit above): all four touches in the contract with the Revision chronicle entry; the three-question procedure adopted inside the tier rule with the recorded-disposition conduct; the rider registered, consumed, and fidelity-pinned. The companion mdatron-side scope statement stands drafted on this trail for the operator to carry into the mdatron design cycle — the one act this batch cannot perform from this repo. Closing.",
+      "created_at": "2026-07-22T15:18:29.056067Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "00a4c8b3-d676-4420-944c-34d79b66ee29",
+      "display_id": 1170,
+      "author": "xqjG",
+      "content": "Collapse scheduled (see #15, operator direction 2026-07-28): the vsdd-core removal is re-homed from 'the mdatron session's cycle' to the engine/Slice-1 work (phase-2a). The 2026-07-22 marker's vsdd sub-question is decided -- the cost crate keeps the workspace; the mdatron lib-target sub-question stays mdatron's. The contract workspace-shape paragraph's anticipated amendment is routed to an owned cycle.",
+      "created_at": "2026-07-29T04:23:13.858334Z",
+      "kind": "decision"
+    }
+  ]
+}

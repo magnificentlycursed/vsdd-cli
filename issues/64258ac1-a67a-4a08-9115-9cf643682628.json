@@ -1,0 +1,35 @@
+{
+  "uuid": "64258ac1-a67a-4a08-9115-9cf643682628",
+  "display_id": 492,
+  "title": "defect-fix lane amendment cold round 7",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 7 (post round-6: no-rename join key, delta-covering repetition policy, required-capability dispatch seam, dual-form branch grammar with refs integrity query, three-falsifier attribution, broken-surface criterion, approve-then-dispatch falsifier, contracted 2a completion list). Series 19-13-9-9-12-12.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:58:25.319066Z",
+  "updated_at": "2026-07-20T01:12:44.896194Z",
+  "closed_at": "2026-07-20T01:12:44.896194Z",
+  "comments": [
+    {
+      "uuid": "aa763748-81aa-498c-85e9-4f19c570a2b6",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 7. Subject: lane revision 7 anchors: gate bullet (executed-pin both halves; no-rename join key with runner-reported test path; delta with repetition-policy coverage; validator-gated compile-defect; declared kind field; graded retrofit; broken-surface) + falsifier; lifecycle bullet (consolidation with survivor references; dispatch-by-construction as required upstream capability; governed set; precedence; published marker) + falsifier; Conformance closed-world (dual-form branch grammar, refs integrity query, pre-push backstop); Recorded review dispatch (approve-then-dispatch + its new falsifier); swarm-fallback open question; Directive reconciliation; composition scope; Gates; Red-gate cheat criterion (incl. broken-surface clause and three-falsifier inline-review attribution); fixture corpus (~21 members + contracted 2a completion list). Out of scope: statusline amendment. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:58:38.356590Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "5848ae32-ba61-48fd-9ad3-edb7cc4e4256",
+      "author": "xqjG",
+      "content": "Lane round 7 complete. SE 3 + methodology 1 + QE 2 = 6 returned, 5 filed after two convergent merges (Meth+QE refs seam; SE+QE rename), plus the folded citation nit: L169 rename join fail-closed; L170 grandfathering; L171 refs domain; L172 refs-seam triangle; L173 postdated-approval fixture; L174 title citations. Series 19-13-9-9-12-12-6. Not clean; round 8 after disposition.",
+      "created_at": "2026-07-20T01:10:39.519815Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "ac4da16b-4917-41e3-bab1-3b5ef8bf7154",
+      "author": "xqjG",
+      "content": "Round fully disposed: 6/6 fixed (incl. the folded citation nit). mdatron verify clean on lane revision 8. Closing; round 8 dispatches.",
+      "created_at": "2026-07-20T01:12:43.650174Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "2be80136-ad47-4a27-a720-58bdfb0d73a9",
+  "display_id": 485,
+  "title": "lane r6 QE: inline-review attribution undercounts; free-slug maps to the conformance falsifier",
+  "description": "Lane round 6. Lens: QE (validator: SE). Owner: SO session. Defect: the criterion says two falsifiers, the evidence says three falsifications — the free-slug symptom maps to the underivable-name conformance falsifier the attribution omits. Citations verified: contract:180 vs :81, :128. Proposed: resolved-candidate (attribution corrected to three; the free-slug-only variant joins the 2a completion list).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:55.546303Z",
+  "updated_at": "2026-07-20T00:57:59.677670Z",
+  "closed_at": "2026-07-20T00:57:59.677670Z",
+  "comments": [
+    {
+      "uuid": "5022d522-d5cd-44ae-9432-bd5640c0578f",
+      "author": "xqjG",
+      "content": "Fixed: attribution corrected to three falsifiers (dispatch, lifecycle, conformance — free-slug maps to underivable-name); free-slug-only variant contracted into the 2a completion list. Revision: criterion + corpus.",
+      "created_at": "2026-07-20T00:57:43.626751Z",
+      "kind": "resolution"
+    }
+  ]
+}

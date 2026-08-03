@@ -1,0 +1,21 @@
+{
+  "uuid": "2ad0fcb1-2f08-47fb-ba81-d378f80ff21e",
+  "display_id": 757,
+  "title": "Layer 2 round 2 major QE: the #750 pin is one-directional — reverting the #746 inconclusive branch to silent pass survives the whole suite",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:59:24.954009Z",
+  "updated_at": "2026-07-22T18:45:21.032664Z",
+  "closed_at": "2026-07-22T18:45:21.032655Z",
+  "comments": [
+    {
+      "uuid": "27042a04-2bc9-45b4-a6db-5bd4bd3108b6",
+      "display_id": 990,
+      "author": "xqjG",
+      "content": "Fixed in a49206fe: substrate_check_passes_on_a_complete_tree now asserts the inconclusive entry-id set EQUALS the manifest-implied set (every prose-path entry plus every created exists-and-referenced entry), both directions — the reverted-#746 mutant that previously survived now fails on set inequality. The githook-wiring membership assert stands on top.",
+      "created_at": "2026-07-22T18:45:15.289472Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "ad57fe45-9023-431f-bbf7-c14ea6a1ec54",
+  "display_id": 326,
+  "title": "Exact-match sentence carries a per-field relaxation in tension",
+  "description": "QE question, low: clause-order tightening so 'integrity findings compared by kind' reads as that field's defined granularity. [owner: quality-engineer; validator: technical-writer]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:06:51.535096Z",
+  "updated_at": "2026-07-19T22:07:35.427846Z",
+  "closed_at": "2026-07-19T22:07:35.427846Z",
+  "labels": [
+    "phase-1b-round-2",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "0e91c122-0d6a-400e-83a5-723fe0bf79d4",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b micro-pass (sha256:cccfa7da5522125e0cd889f70333e62b11ccb266189f953cd598f4e393ab90e4).",
+      "created_at": "2026-07-19T22:07:34.651199Z",
+      "kind": "result"
+    }
+  ]
+}

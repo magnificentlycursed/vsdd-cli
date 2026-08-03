@@ -1,0 +1,22 @@
+{
+  "uuid": "51d23251-4451-4746-89eb-347f846a6148",
+  "display_id": 695,
+  "title": "r1 minor DR: display-field identifiers drift between statusline-data and snapshot-schema",
+  "description": "Evidence: statusline-data.md:37-42 (repo-name, work-item, milestone-with-count; five fields) vs snapshot-schema.md:28-32 (display_repo_name, display_work_item, display_active_milestone; four) — same fields, different names, and the count gap (phase-answer is derived, not materialized) is implicit. Disposition: align identifiers or add the one-line correspondence note. Data-side. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:20:35.800405Z",
+  "updated_at": "2026-07-21T04:14:14.644945Z",
+  "closed_at": "2026-07-21T04:14:14.644945Z",
+  "comments": [
+    {
+      "uuid": "35f1bc59-6b47-4d3e-b314-da5c01d3e81a",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, statusline-data 0.2.0): the correspondence-note path — statusline prose now maps each glance field to its snapshot field, states phase-answer as derived-never-materialized, and places display_session with the human form after the #679 demotion. Identifiers unchanged on both sides (renames would ripple through two adopted sets for cosmetic gain). Round 2 re-verifies (validator: solution-architect).",
+      "created_at": "2026-07-21T04:14:09.822842Z",
+      "kind": "result"
+    }
+  ]
+}

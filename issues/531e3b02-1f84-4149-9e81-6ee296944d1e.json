@@ -1,0 +1,21 @@
+{
+  "uuid": "531e3b02-1f84-4149-9e81-6ee296944d1e",
+  "display_id": 595,
+  "title": "statusline r21 UX: the marker spans 2 of 7 wiring outcomes",
+  "description": "Round 21. Lens: ux (validator: DR). Defect: a boolean not-installed marker cannot distinguish success, deliberate skips (refusal, decline, non-interactive no-flag), and failures — the primary automation question (did it wire?) has no defined answer and the name conflates skip with failure. Citations verified: contract:187, :162, :173. Proposed: resolved-candidate (the wiring outcome is an enumerated member — installed, refused-existing-entry, declined, not-offered-non-interactive, withdrawn-read-failure, failed-write — success affirmative, skips and failures distinct; every install fixture asserts its expected member by exact match).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:54:13.036019Z",
+  "updated_at": "2026-07-20T04:55:00.630259Z",
+  "closed_at": "2026-07-20T04:55:00.630259Z",
+  "comments": [
+    {
+      "uuid": "6b540531-252b-4b93-9f1d-feaf028c90b0",
+      "author": "xqjG",
+      "content": "Fixed: the wiring outcome is an enumerated member spanning the full path space — installed, refused-existing-entry, declined, not-offered-non-interactive, withdrawn-read-failure, failed-write — success affirmative, skips and failures distinct; every install-offer fixture asserts its expected member by exact match. Revision: Install bullet + criterion.",
+      "created_at": "2026-07-20T04:54:56.612681Z",
+      "kind": "resolution"
+    }
+  ]
+}

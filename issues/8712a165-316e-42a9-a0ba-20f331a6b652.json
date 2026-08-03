@@ -1,0 +1,21 @@
+{
+  "uuid": "8712a165-316e-42a9-a0ba-20f331a6b652",
+  "display_id": 466,
+  "title": "lane r5 SE+QE: skipped pin satisfies the green half; skipped state unenumerated",
+  "description": "Lane round 5. Lenses: SE + QE merged, both halves (validators: SO, SE). Owner: SO session. Defect: green is never defined as an executed pass — a skipped, ignored, filtered, or cfg-excluded pin reports zero-failure exit-0 and passes the green half while the fixed behavior goes unexercised (a fix can simply add ignore to its own pin); collected-but-not-run also fits no recordable kind. Citations verified: contract:64, :173. Proposed: resolved-candidate (green defined symmetrically — built, collected, ran, passed; a skipped pin is neither red nor green, recorded as its own state satisfying neither half; skipped kind joins the 1c enumeration; skipped-at-HEAD fixture).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:48.444174Z",
+  "updated_at": "2026-07-20T00:49:12.131255Z",
+  "closed_at": "2026-07-20T00:49:12.131255Z",
+  "comments": [
+    {
+      "uuid": "7ccebd22-ed16-449c-aea4-b670f41c0e14",
+      "author": "xqjG",
+      "content": "Fixed: green defined symmetrically — built, collected, ran, passed; a skipped, ignored, filtered, or not-collected pin is neither red nor green, its own recorded state satisfying neither half; skipped-pin-at-HEAD fixture added and fails the gate; skipped kind joins the 1c enumeration. Revision: gate bullet + fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:48:56.596033Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "display_id": 294,
+  "title": "Respec: agent-first VSDD toolkit on the crosslink chassis (fresh design cycle)",
+  "description": "Goal: \n\nAcceptance criteria:\n- \n\nFresh design cycle superseding the 2026-05 design corpus (4 DESIGN-*.md docs + binary-first plan #11-#17), initiated by operator 2026-07-18 after a five-dataset evaluation (bookmark-cli-manual, issue-tracker-cli, #12/#13 cycles, vsdd-suite self-reviews, vsdd-cli/wip review-logs), a read of the VSDD/VDD whitepapers, crosslink governing docs, and the Thermite harness (ACToR).\n\nMandate: vsdd-cli becomes the methodology layer installed into crosslink's seams (rules, skills, hooks, gates, swarm); mdatron stays the artifact-conformance engine invoked at action time; delivery is agent-first (context + constraints + hooks; binaries are organs, not the product).\n\nOperator decisions recorded: agent-side interpretation; determinism in the process, not the tool; crosslink is the required chassis (two-mode parity retired); provably = in-flight gating AND after-the-fact audit; phase state = written artifact; Red Gate = keep and mechanize (red suite provably fails against pre-implementation commit; mutation floors; critic post-hoc tests); no coinages / plain names.\n\nCore behavioral contracts to author in Phase 1a: deterministic phase answer ('what phase are we in'); directive reconciliation (every mid-flow operator directive classified — Phase 4 routing / spec amendment / recorded override + re-entry path — before execution; silent execution is a named defect); phase-exit by verifiable gate, not assertion; finding lifecycle state lives in crosslink alone (findings filed in subject repo's tracker); composition = activation axes keyed on artifact surfaces with pairs preserved and mechanically separated (validator lifecycle, no self-validation).\n\nDeliverables: lean methodology.md (process spec) + toolkit DESIGN.md (implementation contract), authored in .design/ per chassis convention.",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T00:53:12.462673Z",
+  "updated_at": "2026-07-29T10:08:16.996624Z",
+  "closed_at": "2026-07-29T10:08:16.996612Z",
+  "labels": [
+    "feature",
+    "phase-1a",
+    "respec"
+  ],
+  "comments": [
+    {
+      "uuid": "b5447c0f-abde-499f-8fd5-f1742dd67350",
+      "author": "xqjG",
+      "content": "Phase composition declaration — phase: phase-1a; composed domains: solution-owner (primary), solution-architect, quality-engineer, ai-engineer; composition mode: skill-interactive (operator + agent co-authoring); operator confirmation: confirmed in session 2026-07-18; artifact under design: methodology.md (process spec) + toolkit DESIGN.md (implementation contract), drafted in .design/agent-first-vsdd-toolkit.md. Activation rationale: no ui-surface, no user-data, no locales; ai-runtime axis active (methodology executed by agents); TW+DR activate at the doc-review gate, not during authoring.",
+      "created_at": "2026-07-19T00:53:40.761822Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "5dfdb892-9ed7-43ba-b262-b197b632c0a4",
+      "author": "xqjG",
+      "content": "Phase 1a draft complete pending operator read: .design/agent-first-vsdd-toolkit.md. Nine behavioral contracts (deterministic phase answer, directive reconciliation, phase exit by gate, finding lifecycle in one place, deterministic composition, recorded review dispatch, conformance at action time, cost knowability, operator authors the oracle). Late additions from operator root-cause interview: vocabulary/schema maturity lifecycle (draft vs established; reification requires registration), closed-world artifact set (route table as allowlist; computed names for generated artifacts), enforcement-as-pattern-data (not bespoke hook scripts), evidence-gated finding filing (citation verified against HEAD / failing test), build-dispatch scope manifests, declared coverage (absence of looking is a recorded fact), fresh-container install gate. All items referenced by plain names — no code labels, per the register discipline this spec itself mandates. Next: operator read → cold-reader (TW+DR) gate on the spec → Phase 1b verification architecture → Phase 1c decomposition with estate cleanup as layer 0.",
+      "created_at": "2026-07-19T01:39:23.216217Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "72b0aecf-a1ea-4664-aab0-9348feea5a4e",
+      "author": "xqjG",
+      "content": "[action] Phase 1a draft of agent-first respec complete in .design/agent-first-vsdd-toolkit.md; nine contracts; crosslink feature-mining folded in (typed comments, sessions/breadcrumbs, milestones, signing, context measurement, sentinel, archive); knowledge pages domain-value-scorecard + thermite-assessment published; awaiting operator read",
+      "created_at": "2026-07-19T02:06:14.054423Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "34b0eede-2269-4411-954e-21529dbf3770",
+      "author": "xqjG",
+      "content": "Zombie session from the June #12/#13 cycles, open since 2026-06-02 with no end handoff — closed 2026-07-18 during the agent-first respec as an exhibit of silent chassis non-use (the failure mode the respec's status contract now detects). Interim work: phase-4-take-2 sweeps, wave 10 commits, binary-first plan stalled at Phase 3 scoping. Superseded by the respec: crosslink issue L1, draft at .design/agent-first-vsdd-toolkit.md.",
+      "created_at": "2026-07-19T02:09:35.793200Z",
+      "kind": "handoff"
+    },
+    {
+      "uuid": "2875ff2d-677a-4118-85c2-c42324e2095f",
+      "author": "xqjG",
+      "content": "[action] Respec Phase 1a: draft complete at .design/agent-first-vsdd-toolkit.md (nine contracts, plain names, root causes on record); knowledge pages domain-value-scorecard + thermite-assessment published; crosslink features bound (typed comments, breadcrumbs, milestones, signing, context, sentinel). Phase pointer: phase-1a open, awaiting operator read of draft, then TW+DR cold gate, then phase-1b.",
+      "created_at": "2026-07-19T02:09:44.678514Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "7011abd7-c52c-4042-a0a9-9ed763004a51",
+      "author": "xqjG",
+      "content": "Spec-stage cold review dispatch (Phase 1a gate on the draft itself). Input: .design/agent-first-vsdd-toolkit.md at sha256:e0ef9b11f53ab35bdd8cd601fe80b9c19ab49cb87d70727591bf025a922ef068 (186 lines), uncommitted working copy. Composition: four cold reviewer lenses, separate agents (pair separation: session agent is the author/TW side, so the cold-reader pair half runs cold): solution-architect (structural consistency, contradictions, cross-reference integrity), quality-engineer (falsifiability, contract-to-criteria traceability), documentation-reviewer (cold-reader executability, implicit knowledge, forward references), register-and-vocabulary (the doc against its own conformance rules). Finding discipline: evidence-gated (line citation, verified against the file), declared coverage (clean areas stated, no empty issues), no scope-stretch. Findings triage to follow with operator.",
+      "created_at": "2026-07-19T02:14:56.567876Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "a064f04a-2b92-4d66-8913-adc49fc34b1a",
+      "author": "xqjG",
+      "content": "Manifest amendment: each reviewer's composition includes the phase-3 primer (cold-reviewer discipline), its domain prompt (.claude/commands/vsdd-domain-*.md), and supplement slices (supplements/markdown.md for all four; Thermite tone-and-voice.md + supplements/claude-code-cli.md for the register lens) — per operator direction at dispatch time. This is the cell-sliced composition the generated-context requirement will mechanize; performed by hand this once.",
+      "created_at": "2026-07-19T02:16:15.869635Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "fa1423fa-8b69-423b-8b8b-4825bad4ca09",
+      "author": "xqjG",
+      "content": "Spec-review round 1 complete: 4 cold reviewers (solution-architect 6, quality-engineer 14, documentation-reviewer 12, register-and-vocabulary 12) = 44 findings, zero cross-lens scope-stretch, all line-cited and citation-verified. Independent convergence: the operator-oracle contract has no acceptance criterion (QE + SA found separately). Verified clean: all repo/crosslink/cross-repo artifact references resolve (SA, filesystem-checked); scope integrity holds between body and out-of-scope; finding-lifecycle and cost falsifications concrete; bold/label discipline clean; heading hierarchy clean. Triage with operator next; dispositions to be filed as child issues after classification.",
+      "created_at": "2026-07-19T02:22:18.188071Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "19f78d69-a485-4cec-8a1b-8b16dc21298c",
+      "author": "xqjG",
+      "content": "Operator rulings on round 1 triage: (A) the spec is held to its own register bar — headings go plain, author tics swept, operator voice lives in evidence and conversation rather than normative text; (B) evidence separates from normative prose — each contract carries a distinct Evidence line; (C) one cold re-review round after fixes, then operator ratification read. All 12 accept-clusters approved for revision.",
+      "created_at": "2026-07-19T02:26:53.854293Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "0446be20-f366-4f45-b07c-a40db16ef87b",
+      "author": "xqjG",
+      "content": "[action] Spec-review round 1 dispositions applied: full revision at sha256:19cd076b85ed29dfe7c0de08150649eb6fac1a68ad8aaeeda3aea5bb79e3db99 (248 lines); 12 child issues closed with result evidence; dispatching cold re-review round 2 (same four lenses)",
+      "created_at": "2026-07-19T02:30:12.619646Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "b84a5a7a-b926-4739-a15c-57794b3beb19",
+      "author": "xqjG",
+      "content": "Spec-review round 2 complete and fix pass applied: 29 findings across four cold lenses (QE 11, DR 6, register 7, SA 5), zero structural — all at the definition, coverage, and naming grain. All accepted findings applied in revision sha256:76e8ba1e4e05e003368b1073069c98e11faf090c817c6bf0bcf3a00f27328e23 (258 lines): criteria may verify contracts or requirements by exact name; action vocabulary ships as versioned data; every falsification condition now paired with an exercising criterion or an explicit design exemption; fixture corpus completed to cover all criteria; session-independence mechanism stated; operator interview published as a knowledge page and referenced; pack/axes/cell defined and registered as draft vocabulary; pairing terminology unified; register residue swept; 137/82 figures reconciled; workspace-collapse disposition recorded on issue #15. Draft ready for operator ratification read; closure gated by operator per the stop rule.",
+      "created_at": "2026-07-19T02:42:28.114095Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "27231bd6-59a6-4cc2-8d40-516b4a3b5256",
+      "author": "xqjG",
+      "content": "[action] Round-2 fix pass applied; draft at sha256:76e8ba1e4e05e003368b1073069c98e11faf090c817c6bf0bcf3a00f27328e23 (258 lines) awaiting operator ratification read. Phase pointer: phase-1a, ratification pending, then phase-1b.",
+      "created_at": "2026-07-19T02:42:28.821090Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "e9555d37-65b1-4fe1-93f5-d892a333cbea",
+      "author": "xqjG",
+      "content": "Operator naming rulings applied: pack → domain / domain prompt (established predecessor names restored); axes → surfaces; cell → section (per-domain supplement slices plus one authoring section); the phrase four-dimension convergence check inlined as its enumeration (specification, tests, implementation, verification); the word phase reserved for VSDD methodology phases only (colliders recorded: the retired plan's stage numbering, crosslink swarm segments); tracker objects cited by lookup handle (repo-qualified issue IDs, titles pre-sync, milestone names, knowledge slugs). Retirements recorded in the draft's terms subsection for the registry trail. Draft now sha256:61a647100ed67e3e706751e97463f87803c0860ce2c12c21d9ca9bd2ffb604ea (261 lines).",
+      "created_at": "2026-07-19T07:41:00.126926Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "a18f7205-fc13-435e-8696-9a8fe4f2a5ec",
+      "author": "xqjG",
+      "content": "[action] Naming rulings swept: domain/domain prompt, surfaces, section adopted; phase reserved; tracker-handle citations. Draft sha256:61a647100ed67e3e706751e97463f87803c0860ce2c12c21d9ca9bd2ffb604ea awaiting operator ratification read.",
+      "created_at": "2026-07-19T07:41:00.844639Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "e3d77004-0a1c-4c5d-ba59-7117cf9123b6",
+      "author": "xqjG",
+      "content": "Phase 1a draft committed: a39c3eb (.design/agent-first-vsdd-toolkit.md, 261 lines, sha256:61a64710...). Pre-commit mdatron verify: clean. Awaiting operator ratification read to close phase 1a and open phase 1b.",
+      "created_at": "2026-07-19T08:57:28.237166Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2b5e7e50-5876-4ca0-b1bf-6ccc0d363d41",
+      "author": "xqjG",
+      "content": "[action] Draft committed at a39c3eb, mdatron verify clean. Phase pointer: phase-1a, operator ratification read pending.",
+      "created_at": "2026-07-19T08:57:28.969169Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "1c4b46fc-1ab3-4d1e-a9ae-667299c75f0e",
+      "author": "xqjG",
+      "content": "Operator ratification 2026-07-19: the design at commit a39c3eb (.design/agent-first-vsdd-toolkit.md, sha256:61a64710...) is ratified as the implementation contract after operator read. Effective on this ratification per the document header: DESIGN-METHODOLOGY.md, DESIGN-SCHEMA.md, DESIGN-OBSERVABILITY.md, DESIGN-VERIFICATION.md, and docs/refactor/binary-first-plan.md are superseded (archival mechanics scheduled as estate-cleanup, layer 0 of phase 1c); the adopted defaults in the open questions stand (DSL narrowed, cost engine as bounded crate, audit-record bulk-close-and-archive).",
+      "created_at": "2026-07-19T09:06:43.785504Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "36956a97-7ce3-4e8e-b604-50d61c09b0f2",
+      "author": "xqjG",
+      "content": "Phase 1a exited: complete. Evidence: behavioral contracts authored and specific (nine, each with falsification path and evidence line); operator + SA/QE/AI-Engineer composition surfaced their lenses during authoring; cold-reader gate run twice (rounds of 44 and 29 findings, all dispositioned with closure evidence); operator ratification recorded above. Phase 1b (verification architecture) opens. Composition declaration — phase: phase-1b; domains: solution-owner, solution-architect, quality-engineer; mode: skill-interactive; operator confirmation: confirmed by ratification ruling. Phase 1b scope: purity boundaries for vsdd-core/mdatron additions, the falsifiability instruments (fixture corpus design, convergence-test isolation mechanics), and the phase-state-location decision against its five recorded criteria. Note: phase state and exit events are hand-recorded in the tracker during bootstrap; the mechanized state artifact and gates are deliverables of this very design.",
+      "created_at": "2026-07-19T09:06:44.535639Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "6e0d2c1e-5b19-4ebe-890d-4b121e538200",
+      "author": "xqjG",
+      "content": "[action] Phase 1a ratified and exited (a39c3eb). Phase pointer: phase-1b open — verification architecture + phase-state-location decision. Composition: SO + SA + QE, skill-interactive.",
+      "created_at": "2026-07-19T09:06:45.249005Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "8700f161-4e4d-4715-bdbe-78b224d6f280",
+      "author": "xqjG",
+      "content": "Post-ratification amendment (operator ruling 2026-07-19): citation verification basis changed from HEAD to the working tree as it stands, in the finding-lifecycle contract, its falsification, and its criterion. Caught as a cross-repo divergence by the mdatron increment's solution-architect re-review. Committed at 6b7bf72; the mdatron design doc's governing-contract pin updates to match.",
+      "created_at": "2026-07-19T11:08:58.742964Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "fbf4cb97-377b-46c5-b620-b7bc0a59a052",
+      "author": "xqjG",
+      "content": "Third post-ratification amendment (operator, 2026-07-19): the spec-review loop is on the books — phase 1a's internal cycle, chassis-managed (rounds and findings as tracked child issues, disposition-gated rounds, queryable stop signal). Committed at 61e6120. Origin: the respec and mdatron cycles ran the loop in practice; the operator ruled it should be formal; the operator further ruled that finding state in comment narration violates the lifecycle contract, so per-finding tracker management applies from the current mdatron round forward.",
+      "created_at": "2026-07-19T11:23:08.764732Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "2f41e1e7-0a35-4f18-90d4-01d7b08a4f94",
+      "author": "xqjG",
+      "content": "Seventh post-ratification amendment (operator, 2026-07-19): retrieval-shaped artifacts — the two-audiences concept made contractual, with cost-per-lookup as a ledger dimension and sectioned commit bodies adopted. Committed at 437d6fa.",
+      "created_at": "2026-07-19T11:54:21.540068Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "802fec5c-4888-4f03-aa57-8807652d0e2d",
+      "display_id": 1215,
+      "author": "xqjG",
+      "content": "CLOSED — tracker sweep (#826). The respec RATIFIED: it produced .design/agent-first-vsdd-toolkit.md (the ratified contract) with 7 recorded post-ratification amendments; #819 further re-decomposed it into the enforcement-spine slices. Umbrella complete. Its round-1 review children (#295-#306) are handled separately.",
+      "created_at": "2026-07-29T10:08:10.103577Z",
+      "kind": "decision"
+    }
+  ]
+}

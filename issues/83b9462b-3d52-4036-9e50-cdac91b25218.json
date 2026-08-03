@@ -1,0 +1,21 @@
+{
+  "uuid": "83b9462b-3d52-4036-9e50-cdac91b25218",
+  "display_id": 419,
+  "title": "lane r2 SE: lifecycle falsifier flags every feature-build commit",
+  "description": "Lane round 2. Lens: software-engineer (validator: SO). Owner: SO session. Defect: line-83 falsifier lacks the fixing-a-defect qualifier its gate twin carries; every phase-2b layer-build commit is a governed-set commit naming a layer issue, not a finding issue — the check fires on the primary build flow; 'defect' itself undefined. Citations verified: contract:83 vs :66, :81. Proposed: resolved-candidate (falsifier requires an owning tracker issue — layer issue for increment builds, finding issue for fixes; a defect is work owned by a finding issue — linkage-decidable).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:36.398655Z",
+  "updated_at": "2026-07-20T00:16:51.211394Z",
+  "closed_at": "2026-07-20T00:16:51.211394Z",
+  "comments": [
+    {
+      "uuid": "ebbac6f1-eac6-412d-ab05-76665d5f0a5d",
+      "author": "xqjG",
+      "content": "Fixed: lifecycle falsifier requires an owning tracker issue — layer issue for increment builds, finding issue for fixes; defect defined by linkage (work owned by a finding issue). Feature-build commits no longer flagged. Revision: Finding lifecycle bullet + falsifier.",
+      "created_at": "2026-07-20T00:16:29.236341Z",
+      "kind": "resolution"
+    }
+  ]
+}

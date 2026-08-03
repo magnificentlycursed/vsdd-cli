@@ -1,0 +1,21 @@
+{
+  "uuid": "3c8aa216-e237-45bd-a606-06ad10c23f28",
+  "display_id": 480,
+  "title": "statusline r10 UX: effectful-shell universal claim contradicts the broken-state branch",
+  "description": "Round 10. Lens: ux (validator: DR). Owner: SO session. Defect: the shell entry asserts all forms are renderings over the derivation's output without exception; the broken-state branch has no derivation output and is allocated nowhere in the decomposition. Citations verified: contract:203 vs :163, :199-200. Proposed: resolved-candidate (the shell entry names the branch as its one enumerated exception).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:48.345339Z",
+  "updated_at": "2026-07-20T00:57:53.372038Z",
+  "closed_at": "2026-07-20T00:57:53.372038Z",
+  "comments": [
+    {
+      "uuid": "651e68dd-fbac-43b0-b9b0-da99f000da86",
+      "author": "xqjG",
+      "content": "Fixed: the effectful-shell entry names the broken-state branch as its one enumerated exception (no derivation output; the shell composes mark and diagnostic itself). Revision: effectful shell.",
+      "created_at": "2026-07-20T00:57:33.832787Z",
+      "kind": "resolution"
+    }
+  ]
+}

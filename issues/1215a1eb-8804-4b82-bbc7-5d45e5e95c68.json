@@ -1,0 +1,32 @@
+{
+  "uuid": "1215a1eb-8804-4b82-bbc7-5d45e5e95c68",
+  "display_id": 838,
+  "title": "Slice 3 (Install) phase-2a: red-gate seed + build (static-member half; generated members split to post-Slice-2)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-30T18:45:28.972283Z",
+  "updated_at": "2026-07-31T01:44:20.877594Z",
+  "closed_at": "2026-07-31T01:44:20.877583Z",
+  "labels": [
+    "build"
+  ],
+  "comments": [
+    {
+      "uuid": "a2d55915-cb84-4683-b6f3-aa21abaf3e27",
+      "display_id": 1275,
+      "author": "xqjG",
+      "content": "BUILT TO GREEN (host subagent; kickoff --container blocked by image bugs, #837). install_slice_red_gate 18/18, init 7/7 preserved, workspace 179 green, clippy -D warnings clean, mdatron clean, oracle unmodified. Committed f5c3e837 on slice-3-install-build; GitHub PR #17.\n\nBUILD-TIME AMBIGUITY RESOLUTIONS (recorded per methodology):\n1. GENERATED-MANIFEST ONTOLOGY (worth operator confirmation): the installed-artifact-manifest schema is a closed class/source vocabulary (hooks/servers/commands/plugins/git-hooks/identity/statusline/rules) with NO class for schemas/patterns/registry-data/supplements/workflows/DESIGN. So init generates the manifest over only the deployed artifacts in that ontology — 28 .claude/commands/vsdd-*.md as command-listing + the statusline as statusline-wiring (29 entries); the data/config payloads are drift-tracked by init-manifest.json + their schema pairs (stated in the generated file's body). Validates, non-empty, deterministic, differs from vsdd-cli's own. If REQ-15 intended a broader manifest, that's a schema-vocabulary extension (its own change).\n2. sha256 stays WHOLE-FILE (init.rs sibling test #4 asserts manifest.sha256==sha256(full file)); section-managed drift judged by comparing the managed REGION directly (no region-sha record) -> conservative Conflict, never silent overwrite.\n3. ManagedFileDrifted kept as the Conflict-without-force-without-TTY outcome (matches design); interactive prompt in the binary so the core never reads stdin under cargo test.",
+      "created_at": "2026-07-30T20:59:08.972763Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "fa135e50-184c-40ab-b7ef-e48c673c36a3",
+      "display_id": 1276,
+      "author": "xqjG",
+      "content": "MERGED to main (squash of PR #17, all gates green: test/verify/routing-gate). Slice 3 (Install) static-member half is BUILT + LANDED. Generated-member half (skills/domain-prompts) remains split to post-Slice-2. The generated-manifest ontology (item 1) stands as built pending any operator broadening. Closing.",
+      "created_at": "2026-07-31T01:44:13.532665Z",
+      "kind": "result"
+    }
+  ]
+}

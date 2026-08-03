@@ -1,0 +1,27 @@
+{
+  "uuid": "589443a5-31e5-4401-a55f-94f93e13660e",
+  "display_id": 316,
+  "title": "Degraded and disagreement cases have no fixtures",
+  "description": "QE gap: tracker-absent, tracker-malformed, artifact-versus-tracker-disagreement, and malformed-state fixtures join the corpus; Status detection criterion extends to the disagreement case. [owner: quality-engineer; validator: sanity-check]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:15.676224Z",
+  "updated_at": "2026-07-19T22:01:31.139062Z",
+  "closed_at": "2026-07-19T22:01:31.139062Z",
+  "labels": [
+    "phase-1b-round-1",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "fcf7ac51-dec9-4ad1-9535-1b68c5f8bad3",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:30.372120Z",
+      "kind": "result"
+    }
+  ]
+}

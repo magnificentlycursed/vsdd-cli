@@ -1,0 +1,28 @@
+{
+  "uuid": "dfb0b119-fd26-4c4f-a8ae-f763a3f9b988",
+  "display_id": 62,
+  "title": "DR/F5: README VSDD-vocabulary density",
+  "description": "Source: mdatron/review-log/2026-06-07-documentation-reviewer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:03:51.360066Z",
+  "updated_at": "2026-06-08T01:48:18.857605Z",
+  "closed_at": "2026-06-08T01:48:18.857605Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:documentation-reviewer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "54cb84e6-b3a7-42da-9c20-6d50a62260c3",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:18.161696Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "892285a2-8698-4f07-8554-44125a856416",
+  "display_id": 389,
+  "title": "statusline r5 UX+A11y: no non-interactive accept path",
+  "description": "Round 5. Lenses: ux+accessibility merged (validators: DR, UX). Owner: SO session. Defect: non-interactive is decline-only; automation and motor-limited operators have no tool-driven accept (a yes-style flag is the crosslink/Thermite CLI convention, and divergence carries no stated reason per the engineering-conventions ruling); interactive prompt's timeout conduct unstated. Citations verified: contract:162, :163, :187. Proposed: resolved-candidate (explicit accept flag = confirmed interactive run).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:53:04.755731Z",
+  "updated_at": "2026-07-19T23:57:21.963604Z",
+  "closed_at": "2026-07-19T23:57:21.963604Z",
+  "comments": [
+    {
+      "uuid": "0134fa82-b6aa-4cfa-8903-063290e0c43b",
+      "author": "xqjG",
+      "content": "Fixed: explicit accept flag contracted — non-interactive accept installs the default wiring exactly as a confirmed interactive run (upstream CLI convention followed, motor/automation path provided); criterion drives it against the statusLine-absent fixture. Revision: Install bullet + criterion.",
+      "created_at": "2026-07-19T23:57:13.350228Z",
+      "kind": "resolution"
+    }
+  ]
+}

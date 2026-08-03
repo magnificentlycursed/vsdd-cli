@@ -1,0 +1,21 @@
+{
+  "uuid": "53cff81f-d994-4784-bc0a-ea531b493444",
+  "display_id": 577,
+  "title": "statusline r18 UX: casualty and retry guidance is malformed-only",
+  "description": "Round 18. Lens: ux (validator: DR). Defect: permission/IO and inaccessible-path settings failures name what failed but not the withdrawn gauge or the retry — asymmetric with the state path's every-kind recovery. Citations verified: contract:162, :187 vs :188. Proposed: resolved-candidate (casualty and retry named for every settings read-failure kind).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:02:41.710909Z",
+  "updated_at": "2026-07-20T04:04:27.945717Z",
+  "closed_at": "2026-07-20T04:04:27.945717Z",
+  "comments": [
+    {
+      "uuid": "19d87060-8141-4ce4-bec3-88b2bc8e4417",
+      "author": "xqjG",
+      "content": "Fixed: every settings read-failure kind names the casualty and the retry — every kind guided, not only the malformed one. Revision: criterion.",
+      "created_at": "2026-07-20T04:04:17.013870Z",
+      "kind": "resolution"
+    }
+  ]
+}

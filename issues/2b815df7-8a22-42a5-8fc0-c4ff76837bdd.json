@@ -1,0 +1,53 @@
+{
+  "uuid": "2b815df7-8a22-42a5-8fc0-c4ff76837bdd",
+  "display_id": 775,
+  "title": "Phase 3 execution, Layer 3: adversarial refinement round 1",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T01:22:37.020990Z",
+  "updated_at": "2026-07-28T21:23:34.659821Z",
+  "closed_at": "2026-07-28T21:23:34.659813Z",
+  "comments": [
+    {
+      "uuid": "3c831b64-7cea-4611-b7e2-1d722595d72e",
+      "display_id": 1027,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, attended side. round shape: DISCOVERY over Layer 3's landed arc (red 94c30d16, redline c0db8bce, green 09d1a433, 2c e8b33617). domains, computed from the layer's surfaces — and this layer's fourth slot goes to UX, not data-engineer, because the surfaces are DISPLAY: software-engineer (the renderers' arithmetic — truncation, budgets, split_open_count; the composition root's seams; the command wiring and exit codes), security (the last-boundary git seam and its bootstrap heuristic, machine-identifying content on every surface — the machine form carries file paths, the boundary subject is commit text — the stdin conduct, the wiring script's shell hygiene, the repo-set config as an adopter-owned trust boundary), quality-engineer (falsifiability of the 18 conduct tests — mutant strength on truncation, marker, superset, and count seams; fixture coverage against the criterion's full member list; what the redline says about seed-to-suite fidelity), user-experience (the segment's glanceability against the width budgets as actually rendered, the human form's two-section readability, the degraded and broken wordings as an operator would meet them, the composed display's scan pattern — the #679/#680/#693 ruling lineage is this lens's own). MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH (discovery posture on the deepest new surfaces), quality-engineer and user-experience MEDIUM. expected_cost_band: the seeded cold-code discovery band, 5-30 findings pre-dedup, 150k-320k downstream tokens (Layer 2's discovery observed 243,445 at the same shape; verify-round history says do not under-call). inputs: the tree at e8b33617; the #772-#774 trail; the statusline-conduct criterion slice; the adopted statusline data set. returned + telemetry recorded here after.",
+      "created_at": "2026-07-26T01:23:23.741637Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "a057172b-9c31-4a2f-8bbe-dc7bb79354a3",
+      "display_id": 1028,
+      "author": "xqjG",
+      "content": "DISPATCH INCIDENT, recorded: the round-1 dispatch launched 2026-07-25 18:24 and idled four hours with sixteen agent starts and zero completions — every transcript ends in a stream interruption, the signature of the host sleeping between attended-session turns (in-flight lens streams cut on sleep, the workflow respawning on wake, sleeping again). No lens ever returned, so no review content was lost and the manifest stands unchanged; the run was stopped and relaunched under the live session at 22:31. CONDUCT NOTE for the attended/autonomous split: this is precisely the detached-execution-on-an-attended-vehicle shape the contract names — a long-running dispatch on a host whose wake-state tracks the operator's presence. The Workflow surface remains lawful for attended rounds (round completes within a session turn when the host is awake); the durable fix is the contract's own: container-backed autonomous dispatch (Layer 8's preflighted vehicle) for anything that must survive the operator walking away. The observed sixteen-restart cost is the incident's price tag; downstream tokens from the dead starts are capture-sourced and will be reported in this round's telemetry as waste, separate from the live run's spend.",
+      "created_at": "2026-07-26T05:32:09.704966Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "8a087f07-6daf-4954-8802-f058b6300aee",
+      "display_id": 1029,
+      "author": "xqjG",
+      "content": "ROUND 1 RETURNED (relaunched run; the incident record above covers the dead first launch). Four lenses, 27 findings pre-dedup, consolidated to seven children: #776 (major, SE+UX convergent, binary-confirmed live: a broken member of the composed multi-repo display renders the bare broken-state mark with no repo identity — two broken repos are indistinguishable; segment_for_repo itself untested), #777 (major, security, binary-confirmed live: state-sourced strings — current_phase, composition scope and domains — reach the segment and human form with no control-character cleaning; an ESC or newline in adopter-edited state.yaml injects into the terminal on every refresh, and crosslink-sourced strings get cleaning the state-sourced ones lack), #778 (major, QE+SE convergent: the wall-clock conduct test times a stubbed acquisition — the registered scope says acquisition through render, and a 10-second hung acquirer passes unmeasured; per_repo_budget_ms is parsed, tested, and consumed by nothing, so one wedged member repo stalls the whole composed display ~20s), #779 (major, QE, executed-mutant evidence: the worded-absence branch is dead code under the suite because the absences fixture pre-materializes the words; render_human has NO absence handling — an empty display field prints an empty slot on exactly the surface the criterion words; the generic truncation branch, the degraded marker's only-if half, the stdin and wall-clock instruments, the machine report.degraded block, the milestone's place in field order, and the byte-identity/superset/color-strip per-fixture quantifiers are all unfalsified — hardcoded-zero and unconditional-marker mutants survive all 18 tests), #780 (minor SE collector: the open-count split accepts any tail ending in ' open)' — a countless milestone named '... (kept open)' gets savaged under the #680 rule meant for the real gauge, breaking symmetry with the acquisition's digit-exact strip; fit() emits over-budget renderings when budgets saturate below mark length; the phase field's ' L{n}' suffix dies first under truncation — the gauge-survival order inverted), #781 (minor collector: the repo-set config reads uncapped where every sibling adopter read honors the 1MiB cap; the wiring script silently degrades to single-repo when an explicitly named config is missing; current-repo dedup compares uncanonicalized paths so a symlinked spelling renders the repo twice; the composition guidance names 'the invocation line below' above two conditional lines), #782 (nit collector: 'degraded — tracker-unusable: tracker degraded — tracker data unusable' restates one fact three times before the actionable half; the broken forms carry the absolute state path with the home segment — display-surface disposition to record). TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 all four; effort chosen=observed (SE/security high, QE/UX medium); band DECLARED 150k-320k, OBSERVED 286,211 with 132 tool invocations — IN BAND. Incident waste, separate: the dead first launch burned sixteen partial lens starts across four hours of host sleep; capture-sourced accounting rides the harvest. The UX slot earned its place: the display-identity major and both copy findings are its lineage. Fix pass follows under the standing continuation conduct.",
+      "created_at": "2026-07-26T05:46:23.593648Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "bf3c2e78-0759-41ba-9d20-735995509558",
+      "display_id": 1037,
+      "author": "xqjG",
+      "content": "Round 1 fix pass COMPLETE (ff331dd9; changelog mirror follows the closes). All seven children closed with results, each verified in the tree before its close. Gates after the pass: 125 tests pass / 0 fail (the conduct suite grew 18 to 25), clippy zero, fmt clean, mdatron verify clean. One registration candidate raised on #778's close: the budget-breach line's draft copy awaits the statusline data set's next adoption batch. Round 2 (verify) dispatches next under the standing continuation conduct.",
+      "created_at": "2026-07-26T06:32:40.989196Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "af2c288b-f143-4f07-b0b2-fb7a935adf6e",
+      "display_id": 1119,
+      "author": "xqjG",
+      "content": "Closed as lifecycle cleanup (Layer-3 compliance audit, 2026-07-28). This phase-3 round's findings were fix-closed IN PLACE without phase-4 routing — the recorded deviation (#806/#808), forward-only, standing on that record. The round's terminal-safety fixes landed and were then SUPERSEDED by the Layer-3 rebuild (#813) under the ratified Terminal output safety requirement (#807); their tests became its verification architecture. Round issue left open at the time; closed now.",
+      "created_at": "2026-07-28T21:23:29.039808Z",
+      "kind": "resolution"
+    }
+  ]
+}

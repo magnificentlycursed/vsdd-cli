@@ -1,0 +1,28 @@
+{
+  "uuid": "bb87b558-6f8f-4f48-8866-654bfd5e8c95",
+  "display_id": 214,
+  "title": "TW/F3: DESIGN.md 'Why' sub-sections asymmetric",
+  "description": "Source: mdatron/review-log/2026-06-02-technical-writer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:53.481015Z",
+  "updated_at": "2026-06-08T02:23:29.356927Z",
+  "closed_at": "2026-06-08T02:23:29.356927Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "b6407d79-f1eb-4f2f-872b-6644d3409a60",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@3aad175 (Wave 6).",
+      "created_at": "2026-06-08T02:23:28.019641Z",
+      "kind": "resolution"
+    }
+  ]
+}

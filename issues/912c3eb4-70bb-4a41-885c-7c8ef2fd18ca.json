@@ -1,0 +1,26 @@
+{
+  "uuid": "912c3eb4-70bb-4a41-885c-7c8ef2fd18ca",
+  "display_id": 748,
+  "title": "Layer 2 round 1 major SE+DE: the milestone parse guesses instead of failing — silent skip, name truncation, count loss",
+  "description": "parse_milestones (acquire.rs:103,110) contradicts its own never-a-guess declaration three ways: (a) non-# lines are skipped, so whole-format drift returns Some(empty) as Acquired with the phase-pointer check disarmed; (b) rfind(' (') truncates a name legitimately ending in a parenthetical ('cleanup (phase two)' -> 'cleanup'); (c) display_active_milestone lacks the schema-mandated precomputed open-finding count. Disposition: zero parseable lines in non-empty output = None/unusable; anchor the count suffix to the digit-slash-digit shape; carry the count field or declare its bootstrap absence. Owner: data-engineer. Validator: software-engineer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:01:10.549278Z",
+  "updated_at": "2026-07-22T17:36:45.273711Z",
+  "closed_at": "2026-07-22T17:32:50.002062Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "659cc58b-76ce-4caa-8fcb-1743046f047e",
+      "display_id": 979,
+      "author": "xqjG",
+      "content": "Fixed in d84109f5: parse_milestones is fail-loud — output with content lines but zero parseable milestone lines returns None and the acquisition reports Unusable, never an empty success; the count suffix strips only the exact (N/M) digit shape so a name ending in a real parenthetical survives; the active-milestone display carries the open-count gauge (total minus closed, saturating).",
+      "created_at": "2026-07-22T17:32:43.874373Z",
+      "kind": "result"
+    }
+  ]
+}

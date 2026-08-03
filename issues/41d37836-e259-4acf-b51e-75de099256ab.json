@@ -1,0 +1,22 @@
+{
+  "uuid": "41d37836-e259-4acf-b51e-75de099256ab",
+  "display_id": 689,
+  "title": "r1 minor SA: fix-lane action tokens underivable from the derivation's declared inputs",
+  "description": "Evidence: composition-scope-and-actions.md:35-36 vs snapshot-schema.md:8 and state-schema — neither state nor snapshot materializes fix-lane progress (finding filed? baseline recorded? gate run?), so the derivation cannot select between file-fix-finding and run-fix-gate. Disposition: scope the fix-lane members out of the derivation's output domain (stated as fix-lane workflow tokens), or materialize fix progress. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:19:12.818709Z",
+  "updated_at": "2026-07-21T04:12:38.428461Z",
+  "closed_at": "2026-07-21T04:12:38.428461Z",
+  "comments": [
+    {
+      "uuid": "94ca49c3-93bc-4dc2-8385-f7169a956134",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, composition-scope-and-actions): the scope-out path — fix-lane members stated as fix-lane workflow tokens outside the derivation's output domain (its declared inputs materialize no fix progress); the fix lane's own conduct selects between them. Round 2 re-verifies (validator: solution-architect).",
+      "created_at": "2026-07-21T04:12:33.213377Z",
+      "kind": "result"
+    }
+  ]
+}

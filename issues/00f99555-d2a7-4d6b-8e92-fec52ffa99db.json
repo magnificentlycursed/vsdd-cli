@@ -1,0 +1,21 @@
+{
+  "uuid": "00f99555-d2a7-4d6b-8e92-fec52ffa99db",
+  "display_id": 262,
+  "title": "amend-r5-DR: split-side boundary drift between the two statements",
+  "description": "Minor. Fix: both read: the attended act ends at filing and the dispatch invocation, the grant itself. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:03:28.674730Z",
+  "updated_at": "2026-07-20T19:11:22.846519Z",
+  "closed_at": "2026-07-20T19:11:22.846519Z",
+  "comments": [
+    {
+      "uuid": "1d52c279-0c1e-4bce-8454-6c637c3a99c5",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:11:18.110790Z",
+      "kind": "resolution"
+    }
+  ]
+}

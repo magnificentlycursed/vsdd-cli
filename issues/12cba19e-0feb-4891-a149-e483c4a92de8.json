@@ -1,0 +1,38 @@
+{
+  "uuid": "12cba19e-0feb-4891-a149-e483c4a92de8",
+  "display_id": 708,
+  "title": "data-sets review: terminal verify round — decides the stop signal",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T13:20:45.761485Z",
+  "updated_at": "2026-07-29T10:10:24.381392Z",
+  "closed_at": "2026-07-29T10:10:24.381377Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "9fdd2632-8347-44c0-aa65-57c43c094f75",
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). dispatch_id: terminal-verify-round workflow run under this issue. invoked_by: the operator's 2026-07-21 directive — ratify #706, then dispatch the terminal verify round. vehicle: the Workflow orchestration surface, attended side. reviewer_role: read-only cold lenses. domains: the round composition unchanged — quality-engineer, ux, solution-architect, documentation-reviewer, solution-owner — because the stop signal is only meaningful over the full round composition. STAGE: terminal-verify-round, the first execution of the stage the contract now names (d3b19c02). MODEL TIER, CHOSEN: claude-fable-5 — the session model, per the ADOPTED stage default (economics-data tier_effort_defaults: terminal-verify-round rides session-model; the round that decides the stop signal gets the higher dial). Set explicitly via the Workflow model dial, not inherited — the dial lands on the adopted default deliberately, and the documented per-token weight (2x the round-2 tier) is declared here before the spend. EFFORT, CHOSEN: high, the adopted stage default, set explicitly per agent. expected_cost_band: the adopted cold-round band (3-50 findings, 5-25 min, 200k-600k tokens) with the verification-shaped scope targeting the floor; the tier weight doubles per-token cost relative to round 2 at comparable token counts. Capture source for actuals: workflow task telemetry plus transcript usage records, the pinned source. TASKS: (1) verify the seven round-2 fixes (commit 026564ee) and the #706 amendment (d3b19c02); (2) each lens's terminal sweep over its full domain scope; (3) the stop verdict: does any REAL, evidence-bearing finding remain — the round that holds a real finding fails the stop, per the contract. coverage: the remaining thirteen domains do not run — no matching surface; declared. returned + telemetry: recorded here after the run.",
+      "created_at": "2026-07-21T13:21:14.261724Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "dc4bc03d-867d-4962-959b-a3904792994a",
+      "author": "xqjG",
+      "content": "TERMINAL VERIFY ROUND COMPLETE (workflow run wf_6d12808f-90d) — THE STOP SIGNAL DOES NOT HOLD. Verdicts: quality-engineer holds, ux holds, solution-owner holds; solution-architect FAILS (one real minor: the statusline-wiring entry escaped the #703 axis sweep — #709), documentation-reviewer FAILS (one real minor: the six-domain set resolved nowhere — #710). Per the contract, a terminal round holding a real finding fails the stop; the loop continues. VERIFICATIONS: 8 of 8 round-2 fixes and the #706 amendment verdict LANDED. FINDINGS: #709 and #710 (real minors, both FIXED post-round in commit 4485116c, closed), #711 (nit, graded arguable by the finding lens itself — Revision header chronicle gap; operator-discretion contract touch, OPEN). TELEMETRY CONFIRMATION (capture: workflow task telemetry): model CHOSEN claude-fable-5 per the adopted terminal-verify-round stage default, OBSERVED claude-fable-5 on all five agents — chosen equals observed. Effort CHOSEN high per the adopted default; the vehicle's telemetry does not expose effort independently, but its signature is visible: 83 tool uses vs round 2's 46 at comparable tokens, and the documentation-reviewer lens ran 45 tool calls over 14.7 minutes — the exhaustive resolution-chasing that caught #710, which round 2's medium dial missed on the same artifact. ACTUALS: 189,488 downstream tokens, ~14.8 minutes wall-clock (the DR lens the long pole), 3 findings pre-dedup — tokens comparable to round 2 (196,238) at twice the per-token weight, buying the deeper sweep. ROUND SEQUENCE FROM HERE: the fixes for #709/#710 are landed and closed; #711 awaits the operator's discretion ruling; the stop signal must come from a terminal round that holds no real finding, so the terminal verify round re-runs after #711's disposition.",
+      "created_at": "2026-07-21T13:39:07.926894Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "47b6648c-8815-485a-9416-227d37e9d522",
+      "display_id": 1218,
+      "author": "xqjG",
+      "content": "CLOSED — DONE (tracker sweep #826). 'TERMINAL VERIFY ROUND COMPLETE'; data-sets terminal-verify round resolved.",
+      "created_at": "2026-07-29T10:10:17.964479Z",
+      "kind": "decision"
+    }
+  ]
+}

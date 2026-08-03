@@ -1,0 +1,21 @@
+{
+  "uuid": "6b3bf9e2-83af-4502-9224-eee356c99140",
+  "display_id": 644,
+  "title": "posture-r4-AI: preflight misses model credentials in the launch environment",
+  "description": "Blocking, preflight adequacy. Host credentials do not propagate into containers; agent dies at first model call with zero activity. Fix: credentials member joins the preflight data. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:53.542966Z",
+  "updated_at": "2026-07-20T18:15:59.650789Z",
+  "closed_at": "2026-07-20T18:15:59.650789Z",
+  "comments": [
+    {
+      "uuid": "49f1570a-e3bf-4815-8401-2029f292b1db",
+      "author": "xqjG",
+      "content": "Fixed: model credentials in the launch environment join the preflight members, with observation bindings as 1c data.",
+      "created_at": "2026-07-20T18:15:58.162720Z",
+      "kind": "resolution"
+    }
+  ]
+}

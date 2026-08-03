@@ -1,0 +1,21 @@
+{
+  "uuid": "cae7fdd4-d51c-472e-a8d4-3fd7485e1c37",
+  "display_id": 293,
+  "title": "amend-r7: approval strength seam — operator approval vs validator approval",
+  "description": "Minor. 'approval never belongs to an agent' read strongly contradicts the autonomous fix lane's validator approvals. Fix: the two acts distinguished at the reviewer-roles bullet — operator approval (ratification, gates, waivers, the consent grant) never an agent's; validator approval the agent-executable second-domain review judgment, signed by its domain identity. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:34:52.001711Z",
+  "updated_at": "2026-07-20T19:35:31.168520Z",
+  "closed_at": "2026-07-20T19:35:31.168520Z",
+  "comments": [
+    {
+      "uuid": "edbd9e07-fbca-47b4-ae8d-fc282cbb077d",
+      "author": "xqjG",
+      "content": "Fixed in the working tree: concern for axis; both falsification citations carry the full heading (ratified-text mechanical correction, flagged for the ratification note); the reviewer-roles bullet distinguishes operator approval from the validator's approval record. mdatron verify clean.",
+      "created_at": "2026-07-20T19:35:28.239851Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "ee28f0ff-7620-4312-ab81-cdad179bc417",
+  "display_id": 330,
+  "title": "statusline r1 UX: composition-instruction content unspecified",
+  "description": "Round: statusline amendment cold round 1. Lens: ux (validator pair: documentation-reviewer). Owner: SO session. Defect: init 'prints the one-line composition instruction' for adopters with an existing statusLine but the spec never fixes the instruction's content or the merge path; the criterion tests only that something prints. Citations verified: .design/agent-first-vsdd-toolkit.md:159, :167, :185. Anchor: Install (with Methodology rewrite, Status detection). Proposed: resolved-candidate. Failure: the already-has-a-statusLine operator must read internals to compose the segment — the affordance-requires-doc-reading mode, on exactly the repos where a statusLine already matters.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:46.082951Z",
+  "updated_at": "2026-07-19T23:08:05.685274Z",
+  "closed_at": "2026-07-19T23:08:05.685274Z",
+  "comments": [
+    {
+      "uuid": "06d9c701-77ef-4446-997a-f18bcb44a802",
+      "author": "xqjG",
+      "content": "Fixed in working tree (operator accepted, round-1 fix pass). Install bullet now specifies the instruction is actionable as printed: exact invocation line plus compose-by-concatenation statement; Install behaviors criterion verifies the printed instruction pasted into the seeded wrapper yields a working composed segment. Revision: .design/agent-first-vsdd-toolkit.md working tree, Install requirement + Install behaviors criterion.",
+      "created_at": "2026-07-19T23:07:41.687976Z",
+      "kind": "resolution"
+    }
+  ]
+}

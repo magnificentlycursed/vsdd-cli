@@ -1,0 +1,21 @@
+{
+  "uuid": "7355c1e3-03fa-44c3-b189-b647fffc2524",
+  "display_id": 479,
+  "title": "statusline r10 UX: malformed-state diagnostic has no content bar",
+  "description": "Round 10. Lens: ux (validator: DR). Owner: SO session. Defect: the broken-state mark routes the operator to a diagnostic specified only as 'a diagnostic, never a panic' — its settings sibling is rustc-shaped naming file, location, casualty, and retry, all falsified; the state diagnostic the path terminates at names nothing. Citations verified: contract:188, :217 vs :162, :187. Proposed: resolved-candidate (same bar: rustc-shaped, names the state file and parse location, names restore-or-repair and the boundary re-run as recovery; criterion falsifies the recovery half).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:46.684143Z",
+  "updated_at": "2026-07-20T00:57:52.007267Z",
+  "closed_at": "2026-07-20T00:57:52.007267Z",
+  "comments": [
+    {
+      "uuid": "acb89c3e-214d-4312-a759-bcf89b1442a0",
+      "author": "xqjG",
+      "content": "Fixed: the malformed-state human form held to the settings bar — rustc-shaped, names state file and parse location, names restore-or-repair and the boundary re-run as recovery, both halves falsified. Revision: Status detection criterion.",
+      "created_at": "2026-07-20T00:57:32.444679Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "22407099-fe26-4cae-b079-f62b2dca0027",
+  "display_id": 228,
+  "title": "VM/F5: sycophancy-compensation in commit body not DESIGN frontmatter",
+  "description": "Source: mdatron/review-log/2026-06-02-vsdd-methodology-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:25:18.840174Z",
+  "updated_at": "2026-06-08T02:23:42.502458Z",
+  "closed_at": "2026-06-08T02:23:42.502458Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:vsdd-methodology",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "bbbcc10e-76c2-4006-8445-f62955f4d2a8",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@5d02683 (Wave 7).",
+      "created_at": "2026-06-08T02:23:41.433008Z",
+      "kind": "resolution"
+    }
+  ]
+}

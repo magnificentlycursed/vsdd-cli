@@ -1,0 +1,25 @@
+{
+  "uuid": "ec7ff633-8dca-4ce0-a999-bc418046a1cf",
+  "display_id": 727,
+  "title": "c1 minor collector: loader and diagnostic conduct",
+  "description": "(1) security: constrain load_set's class to one safe path segment before joining (latent traversal, confirmed against Path::join semantics). (2) SE: Diagnostic lacks Display and std::error::Error — breaks ? interop; init.rs already sets the thiserror idiom; render_human is the ready Display body. (3) SE: schema-pair violations Debug-dumped in an adopter-facing message; render instance_path: message per line. (4) DE: load_all first-failure-only — accumulate so one pass names every failing artifact of nine. (5) DE: split_frontmatter treats any --- line as the closing fence including inside block scalars — pin the limitation with a test and an authoring rule, or detect and name it. (6) DE: a UTF-8 BOM yields the misleading no-opening-fence message; strip or name it. (7) DE: schema-pair read/parse/compile failures still say repair-the-ARTIFACT; give pair failures their own recovery naming the schema file. (8) SE nit: version-gate message prints empty backticks when schema_version is missing or non-string — branch the cases. (9) DE nit: missing schema_class reports found-empty-string; say the key is missing. Owner: software-engineer + data-engineer by item. Validator: security (1), solution-architect (rest).",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49e2a1f6-9eff-46a5-9d36-46faafa05e75",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:10:17.539639Z",
+  "updated_at": "2026-07-21T19:46:42.534281Z",
+  "closed_at": "2026-07-21T19:46:42.534281Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "7989f5e3-0c77-470e-9141-eba3e9fb15ba",
+      "author": "xqjG",
+      "content": "FIXES LANDED (commit daacdc84 + 1545f7e6): class constrained to one safe segment with the traversal test probing five hostile shapes; Diagnostic implements Display (delegating to the trimmed human render) and std::error::Error; violations render instance-path-colon-message plain words; load_all accumulates and names every failing artifact in one pass (accumulator unboxed per clippy); the fence limitation pinned in doc with the authoring rule; BOM tolerated with its test; schema-pair failures carry their own recovery naming the pair file; the version gate and schema_class messages branch their missing/non-string/mismatch cases. Validators: security (item 1), solution-architect (rest).",
+      "created_at": "2026-07-21T19:46:39.161573Z",
+      "kind": "result"
+    }
+  ]
+}

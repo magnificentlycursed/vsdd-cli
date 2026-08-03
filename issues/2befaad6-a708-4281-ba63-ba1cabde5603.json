@@ -1,0 +1,21 @@
+{
+  "uuid": "2befaad6-a708-4281-ba63-ba1cabde5603",
+  "display_id": 421,
+  "title": "lane r2 SE: existential linkage lets a squash smuggle a second defect",
+  "description": "Lane round 2. Lens: software-engineer (validator: SO). Owner: SO session. Defect: 'names no finding issue' is existential — a two-defect squash naming one finding passes both falsifiers with the second defect ungated; multi-commit baseline default undefined; squash can dangle the recorded baseline. Citations verified: contract:81, :83, :64. Proposed: resolved-candidate (one defect per fix commit — the one-divergence-per-dispatch rule Thermite's fixer proves upstream; multi-commit fixes carry the recorded baseline explicitly; re-record on history rewrite).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:39.974560Z",
+  "updated_at": "2026-07-20T00:16:54.427949Z",
+  "closed_at": "2026-07-20T00:16:54.427949Z",
+  "comments": [
+    {
+      "uuid": "0f4934f9-d610-48f5-a68c-946283e468e0",
+      "author": "xqjG",
+      "content": "Fixed: one defect per fix commit (Thermite's one-divergence-per-dispatch rule); a two-defect commit is nonconformant; the falsifier adds the cross-check (evidence section naming one finding while the gate record shows another's tests); multi-commit fixes carry the explicit recorded baseline. Revision: Finding lifecycle bullet + falsifier.",
+      "created_at": "2026-07-20T00:16:31.909544Z",
+      "kind": "resolution"
+    }
+  ]
+}

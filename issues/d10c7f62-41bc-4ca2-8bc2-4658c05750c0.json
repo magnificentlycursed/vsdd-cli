@@ -1,0 +1,21 @@
+{
+  "uuid": "d10c7f62-41bc-4ca2-8bc2-4658c05750c0",
+  "display_id": 386,
+  "title": "statusline r5 UX: prompt-disclosure conduct has no falsifying criterion",
+  "description": "Round 5. Lens: ux (validator: DR). Owner: SO session. Defect: the requirement names write-hiding as THE interactive-prompt failure mode but no criterion falsifies a prompt that hides its write, omits the default, or omits the decline path — outcomes verified, disclosure text not. Citations verified: contract:162 vs :187. Proposed: resolved-candidate (criterion clause over the prompt transcript).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:53:00.214796Z",
+  "updated_at": "2026-07-19T23:57:18.550001Z",
+  "closed_at": "2026-07-19T23:57:18.550001Z",
+  "comments": [
+    {
+      "uuid": "e9a49f95-6c83-45b2-9730-59b045b73d75",
+      "author": "xqjG",
+      "content": "Fixed: criterion verifies the interactive confirmation transcript names the settings file, default, and decline path — disclosure falsified, not assumed. Revision: Install behaviors criterion.",
+      "created_at": "2026-07-19T23:57:10.180463Z",
+      "kind": "resolution"
+    }
+  ]
+}

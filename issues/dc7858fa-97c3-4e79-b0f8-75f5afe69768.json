@@ -1,0 +1,53 @@
+{
+  "uuid": "dc7858fa-97c3-4e79-b0f8-75f5afe69768",
+  "display_id": 770,
+  "title": "Phase 3 execution, Layer 2: round 4 — verify the round-3 fixes, re-decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T19:09:38.141191Z",
+  "updated_at": "2026-07-22T20:22:03.723534Z",
+  "closed_at": "2026-07-22T20:22:03.723525Z",
+  "comments": [
+    {
+      "uuid": "7ec8404a-2d20-4928-8135-b07e1c5b2b86",
+      "display_id": 1007,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, attended side. round shape: STOP-DECIDING VERIFY, scope NARROWED — the round-3 change set is 37 insertions across four files (870836ce), so this round runs TWO lenses, not four: software-engineer (the four fixes' correctness: the declared conflation's presence and accuracy, the home-fold rule's edges, the stderr-timeout arm's interaction with the Refused path, the tempfile conversion) and quality-engineer (regression sweep over the two touched runtime files' behavior set and the suite's continued falsification strength; the stop question). The security and data-engineer lenses' round-3 concerns are all inside these four fixes' scope and both convergent findings were mechanical — two lenses cover the residual surface; the narrowing is declared here rather than silent. MODEL, CHOSEN: claude-fable-5 both. EFFORT, CHOSEN: both HIGH (a stop decision earns the deep dial; the set is small so depth is cheap). expected_cost_band: 0-4 findings pre-dedup, 100k-220k downstream tokens — priced from the last two rounds' observed verify depth (314k and 368k at four lenses) scaled to two lenses on a 37-line change set. inputs: the tree at 870836ce + the changelog mirror; the four closed children; the #765 trail including the #763 record correction. returned + telemetry recorded here after.",
+      "created_at": "2026-07-22T19:10:08.303295Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "e0ea5452-31f8-49e0-ba74-370f6b8ed2f2",
+      "display_id": 1008,
+      "author": "xqjG",
+      "content": "ROUND 4 RETURNED — THE STOP HOLDS, 2/2. All four round-3 fix claims held under adversarial verification: #766 confirmed present at HEAD with the pre-fix absence proven from the parent commit, the declaration's accuracy checked against crosslink's own milestone output and the gauge arithmetic, and the edit confirmed comment-only (no code drift rode along — the round-2 silent no-op did not recur); #767's floor empirically rejects empty, space, tab, and bare-slash homes while folding real short homes; #768 is behaviorally identical on loss and strictly more truthful on breach, with TimedOut reachable exactly at the two data-bearing waits; #769 fully on tempfile with panic-safe cleanup and no remnants. The regression sweep found no drift and the suite still falsifies what it claims (equality pin, exact-20 corpus, unit pins all re-confirmed). RESIDUE, two items, both lenses agree neither forces another round — routed via the residue collector filed next: (1) minor: the two-character home-fold floor counts BYTES, so an all-separator '//' and a single multibyte character pass it — the defect-fix lane's shape, with the fix sketch recorded (require a non-separator character and count chars, not bytes); (2) nit: tests/init.rs still carries the delete-then-create shared-temp pattern #769 removed from its sibling — prior-layer surface, consistency stray for the queue. TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 both lenses; effort chosen=observed high both; cost band DECLARED 100k-220k, OBSERVED 108,004 with 41 tool invocations — IN BAND, the first verify declaration to price correctly (the narrowed-scope calibration worked). PHASE-3 STOP DECIDED: four rounds (discovery, two full verifies, one narrowed stop-decider), 26 findings consolidated and fixed across three fix passes plus the forced core-removal migration, every fix claim independently verified, the last round finding only carried-tier residue. Layer 2's code rounds close; phase 4 routes the residue; the operator batch comes due at the boundary.",
+      "created_at": "2026-07-22T19:17:20.248603Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "c9af9db7-18c3-4790-bf58-e1e08652b26c",
+      "display_id": 1010,
+      "author": "xqjG",
+      "content": "PHASE 4 EXECUTED AT THE STOP: the round-4 residue routed via #771 (dispositions recorded there — the home-fold floor to the defect-fix lane, the init-suite temp pattern to the consistency queue); the unrouted-findings query over the layer's rounds returns empty — #746-#754 closed with round-2 verification, #756-#763 closed with round-3 verification, #766-#769 closed with round-4 verification, #764 closed with round-3 verification, #771 closed as the routing record. LAYER 2 BOUNDARY REACHED. The operator batch now due in one ask (per the standing continuation conduct): (1) ADOPT the nine draft oracles — four from #749 (integrity-missing-owner, integrity-closed-no-evidence, integrity-unresolvable-handle, round-parity-agreeing) and five from #758/#759 (stale-gate-prior-phase, stale-gate-prior-layer, integrity-owned-open, integrity-lawful-disposition-closure, integrity-resolving-handles), rationale comments in each expected.yaml; (2) the deferred manual checklists (manual-tests/layer-1.md standing debt from the Layer 1 boundary; the layer-2 checklist authoring is the operator's oracle slot); (3) LAYER 2 SIGN-OFF closing milestone #5. Phase-3 loop total for the layer, capture-sourced: 1,033,000 downstream tokens across four dispatches (243,445 + 314,456 + 368,192 + 108,004) with chosen=observed on every manifest; two verify bands under-called and recorded, the narrowed fourth in band.",
+      "created_at": "2026-07-22T19:18:40.052346Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "f01a0ca6-ac84-46c3-805a-f62764ce9ae9",
+      "display_id": 1012,
+      "author": "xqjG",
+      "content": "LAYER 2 SIGN-OFF (operator act, 2026-07-22): the operator signs off Layer 2 — snapshot acquisition, phase answer, and corroboration — closing the layer at the round-4 stop. The record at the boundary: 2a red efe0107d (13 tests failing executed) → oracle adoption and redline on #738 → 2b green a9b8d43d+159d5a5d (derivation reproduces all adopted answers first pass) → 2c 4572c951 → phase 3: four rounds (#745 discovery, #755 and #765 full verifies, #770 narrowed stop-decider), 26 findings fixed across three passes (d84109f5, a49206fe, 870836ce) plus the forced core-removal migration (74b01866, #764), stop held 2/2, residue routed (#771), phase-4 unrouted query empty. The corpus stands fully adopted at twenty (second adoption batch on #738, this batch). Loop telemetry, capture-sourced: 1,033,000 downstream tokens over four dispatches, chosen=observed on every manifest. STANDING DEBT CARRIED PAST THIS BOUNDARY, named: the manual-tests/layer-1.md run (deferred at the Layer 1 boundary, still unrun) and the layer-2 manual checklist (not addressed in this batch — the operator's oracle slot when taken up); the round-4 residue's two items ride #771's routing record; #740 (broken-state last-boundary-truth) heads the Layer 3 queue with diagnostic-format alignment and the position/health named blocks.",
+      "created_at": "2026-07-22T20:20:47.891010Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "751a44b3-1819-4260-866b-68e625068904",
+      "display_id": 1016,
+      "author": "xqjG",
+      "content": "Round 4 complete: the stop held 2/2, residue routed via #771, phase-4 query empty, sign-off recorded as the decision above. The layer's boundary issue closes with it.",
+      "created_at": "2026-07-22T20:21:57.746906Z",
+      "kind": "result"
+    }
+  ]
+}

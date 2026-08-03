@@ -1,0 +1,21 @@
+{
+  "uuid": "11452bda-965a-4277-b80b-bb9aa4fbfde4",
+  "display_id": 397,
+  "title": "lane r1: green half missing from fix-scale gate",
+  "description": "Lane round 1. Lens: QE (F2) (validator: SE). Owner: SO session. Defect: only the failing-run half is stated; no passes-at-HEAD analog — a wrong-reason failure that persists after the fix satisfies the criterion. Citations verified: contract:64, :66 vs :61. Proposed: resolved-candidate (red then green, both recorded).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:04.511294Z",
+  "updated_at": "2026-07-19T23:58:32.448987Z",
+  "closed_at": "2026-07-19T23:58:32.448987Z",
+  "comments": [
+    {
+      "uuid": "489ecaf6-1f07-4721-af4e-50f64639e342",
+      "author": "xqjG",
+      "content": "Fixed: red then green, both recorded — failing against baseline for the stated reason, passing at HEAD. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-19T23:58:10.962100Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "5652e105-d0cb-464e-ad59-ec9d5e7420f5",
+  "display_id": 732,
+  "title": "c2 minor security: the byte-cap decline contradicted the standing #726 ruling — land the capped reader",
+  "description": "Evidence: the #726 decision comment kept the capped reader code-side; the fix-pass result declined it with an unauthorized deferral whose reasoning misidentified the bound quantity (memory binds at Layer 1, not Layer 3's wall-clock). Frozen-rulings class: an executing session re-litigated a recorded ruling without an amending record — acknowledged. Disposition: execute the standing ruling — bounded reads with a documented limit at all four sites (state read, write's prior read, registry artifact and pair reads). Owner: software-engineer. Validator: security.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "5390175e-d7a4-4e5d-9096-44789ed3120f",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:56:41.552900Z",
+  "updated_at": "2026-07-21T20:00:48.245822Z",
+  "closed_at": "2026-07-21T20:00:48.245822Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "8be5bf78-e0d0-4872-8232-915b8f0656e6",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit 8189017a): the bounded reader executes the standing #726 ruling — read_bounded with the documented one-mebibyte limit at all four sites (state read, the write's prior read, the registry artifact and schema-pair reads); oversize fails loud before any parse, naming the limit; tests at both surfaces. The unauthorized decline stands corrected on the #726 record. Validator: security at round 3.",
+      "created_at": "2026-07-21T20:00:44.990414Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "845a9333-39d6-4005-bb5e-a5f7fa30d0b2",
+  "display_id": 9,
+  "title": "Step 5 release coupling: switch vsdd-cli mdatron-core dep from local-path to published crate when v1.0 ships",
+  "description": "Goal: \n\nAcceptance criteria:\n- \n\nWhen mdatron v1.0.0 publishes to crates.io, switch vsdd-cli's mdatron-core dep from local-path (current bootstrap-period state per SO-F3 build-in-mdatron-shape-from-day-one) to published-crate-dep. Trivial mechanical change in vsdd-cli/Cargo.toml: mdatron-core = { path = \"../mdatron/mdatron-core\" } becomes mdatron-core = \"1.0\". Flag this when mdatron v1.0 actually publishes. Closes the Phase 5 release-coupling step from the original 5-step bootstrap plan.",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T01:06:16.505263Z",
+  "updated_at": "2026-08-02T00:49:27.837122Z",
+  "closed_at": "2026-08-02T00:49:27.837114Z",
+  "labels": [
+    "feature",
+    "step-5",
+    "tech-debt"
+  ],
+  "comments": [
+    {
+      "uuid": "e8ed19c0-7447-4711-ab1b-3c805aa4ce84",
+      "display_id": 1368,
+      "author": "xqjG",
+      "content": "CLOSED (superseded + discharged): the mdatron-core path dependency was eliminated by the #81 workspace collapse (vsdd consumes the mdatron BINARY), and the switch to the published crate landed at 0.5.0 (PR #21) — earlier than the v1.0 trigger this issue anticipated.",
+      "created_at": "2026-08-02T00:49:21.232265Z",
+      "kind": "result"
+    }
+  ]
+}

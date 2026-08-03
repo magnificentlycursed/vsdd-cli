@@ -1,0 +1,21 @@
+{
+  "uuid": "c7f121d1-e484-4071-8e5a-7ff5f5652874",
+  "display_id": 395,
+  "title": "lane r1: Directive reconciliation falsification not extended",
+  "description": "Lane round 1. Lens: methodology (F2) (validator: SO). Owner: SO session. Defect: the symmetric duty was added but the contract's falsification clause still covers only 'directive'/'correction' — the new duty is unfalsifiable in its own contract. Citations verified: contract:51, :53. Proposed: resolved-candidate (extend the clause: session-originated code-touching change with no recorded classification).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:01.415337Z",
+  "updated_at": "2026-07-19T23:58:30.157551Z",
+  "closed_at": "2026-07-19T23:58:30.157551Z",
+  "comments": [
+    {
+      "uuid": "4198224a-4d4f-4c0b-bd05-7638f7e2c405",
+      "author": "xqjG",
+      "content": "Fixed: Directive reconciliation's falsification clause extended — a session-originated governed-set change with no recorded classification. Revision: falsification clause.",
+      "created_at": "2026-07-19T23:58:08.760006Z",
+      "kind": "resolution"
+    }
+  ]
+}

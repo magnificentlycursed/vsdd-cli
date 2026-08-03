@@ -1,0 +1,21 @@
+{
+  "uuid": "e3ab3357-7ca5-4d8e-a94c-9f8012533ccf",
+  "display_id": 274,
+  "title": "amend-r5-DR: branch-grammar cells verify another contract than their anchor",
+  "description": "Minor. Fix: declared cross-anchor in the Red-gate cheat blocked parenthetical. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:04:20.825725Z",
+  "updated_at": "2026-07-20T19:10:09.514121Z",
+  "closed_at": "2026-07-20T19:10:09.514121Z",
+  "comments": [
+    {
+      "uuid": "0274a42a-131f-47ab-9b42-eabe66737eb8",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:10:06.835942Z",
+      "kind": "resolution"
+    }
+  ]
+}

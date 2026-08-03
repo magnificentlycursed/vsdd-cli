@@ -1,0 +1,22 @@
+{
+  "uuid": "a1075d1c-63a2-40a2-8abb-e88eb2a66826",
+  "display_id": 692,
+  "title": "r1 minor DR: register batch — driver-lane coinage, mc abbreviation, OOM/IO expansions, informal note prefixes, ALL-CAPS confirmed",
+  "description": "Evidence: dispatch-data.md:22 and act-to-affordance-map.md:8 ('driver-lane' — relay phrasing coined into two artifacts, unresolvable by a cold reader; fifth instance of the coinage class this cycle); act-to-affordance-map.md:11 ('mc' — unexpanded, contract spells mission control); gate-data.md:14 (OOM), statusline-data.md:16,19 (IO); 'intel'/'estate note' prefixes; gate-data.md:64 ALL-CAPS CONFIRMED rendering. Disposition: plain-word all of them per the register guards. Data-side, one sweep. Owner: data-engineer. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:20:26.209060Z",
+  "updated_at": "2026-07-21T04:13:28.463101Z",
+  "closed_at": "2026-07-21T04:13:28.463101Z",
+  "comments": [
+    {
+      "uuid": "0e37e864-60c0-4a2c-9637-4b479fcd0d17",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5): register sweep complete — driver-lane replaced with plain words in dispatch-data and the affordance map (gate verification run host-side by the attended session); mc expanded to mission control; OOM spelled out-of-memory; IO spelled input/output in human text (registered ids like permission-or-io and state-unreadable-io retained — ids are stable tokens, prose is where the register rule bites); estate note and intel prefixes dropped for plain recorded/source-reading phrasing; ALL-CAPS CONFIRMED and CONDITIONAL lowered. Round 2 re-verifies (validator: documentation-reviewer).",
+      "created_at": "2026-07-21T04:13:23.627953Z",
+      "kind": "result"
+    }
+  ]
+}

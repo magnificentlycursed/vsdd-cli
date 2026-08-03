@@ -1,0 +1,25 @@
+{
+  "uuid": "81e9d64b-ef7a-49d5-ba49-a107de982179",
+  "display_id": 304,
+  "title": "Spec review round 1: phase-state location: hedge contract, fold offline/concurrency/crash/bootstrap into open question",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T02:27:09.323974Z",
+  "updated_at": "2026-07-29T10:25:47.650684Z",
+  "closed_at": "2026-07-29T10:25:47.650669Z",
+  "labels": [
+    "spec-review-round-1"
+  ],
+  "comments": [
+    {
+      "uuid": "c08393cd-2037-4f0d-87d1-c892867c9f32",
+      "display_id": 1232,
+      "author": "xqjG",
+      "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract. Reopen if this specific finding resurfaces as a live gap.",
+      "created_at": "2026-07-29T10:25:41.345622Z",
+      "kind": "decision"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "cb72dfd3-5c8b-49b1-bad6-764bae3a672c",
+  "display_id": 377,
+  "title": "statusline r4 SA: multi-repo conduct criterion has no fixture and leans on the 1c wiring script",
+  "description": "Round: statusline amendment cold round 4. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: the composed multi-repo conduct clause has no corpus member, and its composing mechanism is the wiring script whose shape is routed to 1c — a current criterion transitively requiring a future milestone's implementation; not covered by the aggregate-cost routing, which deferred cost, not conduct verification. Citations verified: contract:185 vs :170, :160. Proposed: resolved-candidate via SA's own second option: seed a two-repo composition fixture (built from two single-repo fixtures) into the corpus; sequencing is safe since 1c designs the script shape before the acceptance suite is built.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:35:27.063719Z",
+  "updated_at": "2026-07-19T23:44:11.728658Z",
+  "closed_at": "2026-07-19T23:44:11.728658Z",
+  "comments": [
+    {
+      "uuid": "bb095549-2ccf-49e8-8d11-6ba5acf46858",
+      "author": "xqjG",
+      "content": "Fixed in working tree per SA's own second option: a two-repo composition fixture assembled from two single-repo members added to the corpus for the composed-display conduct checks — corpus-completeness restored; sequencing safe since 1c designs the wiring-script shape before the acceptance suite is built.",
+      "created_at": "2026-07-19T23:43:53.601265Z",
+      "kind": "resolution"
+    }
+  ]
+}

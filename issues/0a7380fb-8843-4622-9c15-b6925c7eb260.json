@@ -1,0 +1,21 @@
+{
+  "uuid": "0a7380fb-8843-4622-9c15-b6925c7eb260",
+  "display_id": 539,
+  "title": "statusline r14 UX: init completion on settings error unverified",
+  "description": "Round 14. Lens: ux (validator: DR). Defect: the no-op path is falsified to proceed; the error path — where halting is likelier — checks only diagnostic/withdrawal/no-panic. Citations verified: contract:162, :187. Proposed: resolved-candidate (the malformed criterion adds: the rest of installation proceeds).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:50.014849Z",
+  "updated_at": "2026-07-20T01:58:55.756073Z",
+  "closed_at": "2026-07-20T01:58:55.756073Z",
+  "comments": [
+    {
+      "uuid": "64521b99-9325-449f-9ad6-6d200486c9e7",
+      "author": "xqjG",
+      "content": "Fixed: the settings-error criterion adds — while the rest of installation proceeds. Revision: Install behaviors criterion.",
+      "created_at": "2026-07-20T01:58:42.614217Z",
+      "kind": "resolution"
+    }
+  ]
+}

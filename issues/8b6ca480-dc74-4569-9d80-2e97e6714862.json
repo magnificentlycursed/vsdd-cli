@@ -1,0 +1,28 @@
+{
+  "uuid": "8b6ca480-dc74-4569-9d80-2e97e6714862",
+  "display_id": 45,
+  "title": "SO/F3: Phase 0 disposition codes 4 vs 5",
+  "description": "Source: mdatron/review-log/2026-06-07-solution-owner-phase-2-bundle.md\nClassification: resolved\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:03:00.605578Z",
+  "updated_at": "2026-06-08T02:33:38.029068Z",
+  "closed_at": "2026-06-08T02:33:38.029068Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-13",
+    "domain:solution-owner",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "eac14412-bca5-4c57-ab6d-4007e1000767",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (pre-Phase-4-take-2 cycle commit).",
+      "created_at": "2026-06-08T02:33:37.136509Z",
+      "kind": "resolution"
+    }
+  ]
+}

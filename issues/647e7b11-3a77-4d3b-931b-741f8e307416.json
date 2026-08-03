@@ -1,0 +1,21 @@
+{
+  "uuid": "647e7b11-3a77-4d3b-931b-741f8e307416",
+  "display_id": 581,
+  "title": "lane r14 SE: degradation presupposes the report-set reading it defers",
+  "description": "Lane round 14. Lens: SE (validator: SA). Defect: a definite gate rule rests on an undeclared default while the governing choice is flagged open — the doc's other deferred choices use the adopted-default pattern; this one is silent. Citations verified: contract:64 vs the open-question pattern. Proposed: resolved-candidate (adopted default: targets are the report set, overridable at the 1c mapping schema, which would retire the degradation).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:02:48.370875Z",
+  "updated_at": "2026-07-20T04:04:33.891896Z",
+  "closed_at": "2026-07-20T04:04:33.891896Z",
+  "comments": [
+    {
+      "uuid": "9b6dd23a-bd4e-4bc1-9060-180fa684125b",
+      "author": "xqjG",
+      "content": "Fixed: the adopted-default pattern applied — targets are the report set, overridable at the 1c mapping schema, which would legalize such targets and retire the degradation. Revision: gate bullet.",
+      "created_at": "2026-07-20T04:04:22.422245Z",
+      "kind": "resolution"
+    }
+  ]
+}

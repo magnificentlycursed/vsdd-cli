@@ -1,0 +1,35 @@
+{
+  "uuid": "b17248d9-06a1-4111-8930-e1543d96b097",
+  "display_id": 434,
+  "title": "statusline amendment cold round 7",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 7 (post round-6: stdin two-run falsifier, human-form degraded cause+recovery criterion). Series 15-16-11-6-8-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:17:27.698134Z",
+  "updated_at": "2026-07-20T00:28:50.066705Z",
+  "closed_at": "2026-07-20T00:28:50.066705Z",
+  "comments": [
+    {
+      "uuid": "58c0198d-764a-4e82-b9bb-0c6e9fbfa55b",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 7. Subject: revision 7 statusline anchors (round-6 set plus the stdin two-run byte-identity clause and the human-form degraded cause+recovery clause in Status detection). Out of scope: the defect-fix lane amendment (own round). Known-deliberate list unchanged. Lenses: AIE + UX only — the two lenses with open findings last round; SA and A11y returned NO FINDINGS on revision 6 and their anchors changed only by the two criterion additions, which fall in AIE/UX jurisdiction (declared coverage narrowing, recorded here). Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:17:44.632142Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "cdc8ee8b-6d61-4148-a2c8-283052ca5c3c",
+      "author": "xqjG",
+      "content": "Round 7 complete (AIE+UX per the narrowed manifest). 2 filed: L111 stdin oracle insufficient (AIE); L112 human-form cause+recovery homeless (UX). Both resolved-candidates against the round-6 additions themselves. Citations evidence-verified. Series 15-16-11-6-8-2-2. Not clean; round 8 after disposition.",
+      "created_at": "2026-07-20T00:26:06.060108Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "3a9c8414-f855-42c1-aff7-ee29ceac0887",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed and closed. mdatron verify clean on revision 8. Closing; round 8 dispatches (AIE+UX, narrowed as before — changes confined to their jurisdiction).",
+      "created_at": "2026-07-20T00:28:48.895944Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "3cb88507-4e95-4691-aaa6-c8a9d37fe622",
+  "display_id": 516,
+  "title": "effort r1 Meth: manifest-effort field has no falsifier",
+  "description": "Effort round 1. Lens: methodology (validator: SO). Defect: no falsifier fires on a manifest omitting effort (or tier — a pre-existing gap the amendment widens instead of closing). Citations verified: contract:103 vs :112, :173, :184. Proposed: resolved-candidate (falsifier: a dispatch manifest missing its recorded model tier or effort level — closes both).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:35.588012Z",
+  "updated_at": "2026-07-20T01:30:13.047266Z",
+  "closed_at": "2026-07-20T01:30:13.047266Z",
+  "comments": [
+    {
+      "uuid": "480de63c-a6a6-4b38-ae9b-082787219fd4",
+      "author": "xqjG",
+      "content": "Fixed: falsifier added — a dispatch manifest missing its recorded model tier or effort level; closes the pre-existing tier gap too. Revision: Recorded review dispatch falsification list.",
+      "created_at": "2026-07-20T01:29:49.330212Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "uuid": "5390175e-d7a4-4e5d-9096-44789ed3120f",
+  "display_id": 731,
+  "title": "Phase 3 execution, Layer 1: round 2 — verify the fix pass and decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:49:53.781461Z",
+  "updated_at": "2026-07-29T10:22:19.581709Z",
+  "closed_at": "2026-07-29T10:22:19.581319Z",
+  "labels": [
+    "review"
+  ],
+  "milestone_uuid": "1fbc66a4-8d5e-4a1f-87ab-e7bc95da4259",
+  "comments": [
+    {
+      "uuid": "980c859a-ee89-4f89-841f-ef82a60be174",
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the operator's go directive continuing the loop. vehicle: the Workflow orchestration surface, attended side. STAGE: the layer's phase-3 round 2 — verification-shaped, and per the stop rule (a round of only hallucinated-or-no findings) a clean result IS the stop signal, so the round carries the stop verdict like the spec loop's terminal executions. domains: the round-1 composition retained for validator symmetry — security validates the write-path rework, software-engineer the gate pin and diagnostics ergonomics, quality-engineer its own suite demands, data-engineer the loader and mirror work plus the two declared residues' judgment. MODEL, CHOSEN: claude-fable-5 all four (the adopted tier default). EFFORT, CHOSEN per lens: security HIGH (it validates the layer's deepest rework and the stop rides partly on it; the established high-dial catch record as reason), software-engineer, quality-engineer, data-engineer MEDIUM (verification-shaped scopes; the adopted cold-round default). expected_cost_band: the freshly seeded cold-code band (5-30 findings, 120k-300k tokens) with the verification scope targeting the floor; nearest prior: the spec loop's verify round ran 196k at five lenses. inputs: commits daacdc84 and 1545f7e6 on the round-1 tree. coverage: fourteen domains without matching surface, declared. returned + telemetry: recorded here after the run.",
+      "created_at": "2026-07-21T19:50:12.324424Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "8796bba2-e0e2-438c-ab73-30b0282266f7",
+      "author": "xqjG",
+      "content": "ROUND 2 COMPLETE + FIX PASS LANDED (workflow run wf_36631ff2-ef2; fixes 8189017a). VERIFICATIONS: 16 of 17 landed; ONE INCOMPLETE — and it is the round's headline: the security lens caught this session's fix-pass decline of the #726 capped-reader ruling as a frozen-rulings contradiction (no amending operator record; deferral reasoning refuted — memory binds at this layer). Correction recorded on #726; the ruling now stands executed (#732). THE STOP DOES NOT HOLD: 3 of 4 lenses failed it — the byte-cap contradiction (now fixed), the false pinned-by-test claim on the fence limitation (both QE and DE independently, now fixed: the promised test exists), plus four nits (#734, fixed or recorded). Software-engineer held clean. TELEMETRY CONFIRMATION: model CHOSEN and OBSERVED claude-fable-5 on all four; effort CHOSEN security high, rest medium; actuals 197,254 downstream tokens, ~4.9 minutes, 85 tool uses — in the freshly seeded band. NOTE ON THE ROUND'S VALUE: the QE lens live-probed the #722 mutant kills (deleted each conjunct, watched each test fail, restored, re-verified) — the mutant-killing claim is now observed, not asserted. NEXT: round 3 — the fixes verify and the stop re-decides; two consecutive stop-failures means round 3 carries the terminal weight.",
+      "created_at": "2026-07-21T20:01:22.984656Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9efe7e56-5370-421b-9df5-1cf17ffcaa9e",
+      "author": "xqjG",
+      "content": "DIRECTIVE CLASSIFICATION (received mid-flow, 2026-07-21): operator conduct ruling — the execution sequence continues autonomously without per-stage confirmation; only contractually-operator acts (ratification, adoption, sign-off, manual-test execution) surface, batched. Scope read: a general rule for execution-shaped work, not this round only; recorded to memory. The remaining Layer 1 path runs now: round 3 dispatch, its disposition, phase-3 exit if the stop holds, the phase-4 routing query, the #730 amendment drafting — with the operator batch (ratification + the layer's manual checklist run + sign-off) presented once at the layer boundary.",
+      "created_at": "2026-07-21T20:11:51.266409Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "148cb8e2-d8a2-4040-8abe-6c095b6905e0",
+      "display_id": 1222,
+      "author": "xqjG",
+      "content": "CLOSED — DONE (tracker sweep #826; operator recall 2026-07-29). Layer-1 round-2 verify; Layer 1 is built (= the engine, #819), the round-1 fix pass landed (#720).",
+      "created_at": "2026-07-29T10:22:13.176368Z",
+      "kind": "decision"
+    }
+  ]
+}

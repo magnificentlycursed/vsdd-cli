@@ -1,0 +1,25 @@
+{
+  "uuid": "d5c8df6b-b485-46bd-827c-5d4b675ae2a4",
+  "display_id": 722,
+  "title": "c1 major QE: the 2b-entry gate-consistency refusal needs its pin — three tests named",
+  "description": "The recorded #718 gap, concurred: write.rs:72-85 has three conjuncts, any silently deletable while the suite stays green. Disposition (the lens's named shape): (1) phase-2b state with no gate record refused, prior file surviving; (2) each conjunct mismatched one at a time — wrong layer, result pass, gate green-gate — refused (kills each mutant); (3) the compliant record writes. Owner: quality-engineer. Validator: software-engineer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "49e2a1f6-9eff-46a5-9d36-46faafa05e75",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:08:47.742849Z",
+  "updated_at": "2026-07-21T19:45:10.984543Z",
+  "closed_at": "2026-07-21T19:45:10.984543Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "3a953c6d-3c8c-4a6e-a243-637127b7865e",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit daacdc84): the three-test pin exactly as demanded — no-record refused with the prior file surviving; each conjunct mismatched one at a time (wrong layer, result pass, wrong gate kind) refused with nothing written; the compliant record writes. Validator: software-engineer at the round-2 verify.",
+      "created_at": "2026-07-21T19:45:07.396024Z",
+      "kind": "result"
+    }
+  ]
+}

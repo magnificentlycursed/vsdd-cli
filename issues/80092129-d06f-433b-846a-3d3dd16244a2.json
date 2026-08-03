@@ -1,0 +1,21 @@
+{
+  "uuid": "80092129-d06f-433b-846a-3d3dd16244a2",
+  "display_id": 520,
+  "title": "effort r1 AIE: cost-per-effort attribution grain differs by auth mode",
+  "description": "Effort round 1. Lens: ai-engineer (validator: PE). Defect: per-dispatch joins hold under API auth; subscription windows are global — per-round at best; the advisory promises a grain one auth mode cannot give. Citations verified: contract:141 vs :136, :139, :103. Proposed: resolved-candidate (the advisory states its grain per auth mode).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:41.499493Z",
+  "updated_at": "2026-07-20T01:30:18.486292Z",
+  "closed_at": "2026-07-20T01:30:18.486292Z",
+  "comments": [
+    {
+      "uuid": "f78aa0ab-c531-4e74-b528-744252f288bb",
+      "author": "xqjG",
+      "content": "Fixed: attribution grain declared per auth mode — per-dispatch under API, per-round-at-best under subscription. Revision: advisory clause.",
+      "created_at": "2026-07-20T01:29:54.257701Z",
+      "kind": "resolution"
+    }
+  ]
+}

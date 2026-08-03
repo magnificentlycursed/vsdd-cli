@@ -1,0 +1,21 @@
+{
+  "uuid": "e366e7de-c688-4bdc-b092-73ad5532f759",
+  "display_id": 457,
+  "title": "lane r4 QE: spurious-compile-red discriminator unfixtured",
+  "description": "Lane round 4. Lens: QE (validator: SE). Owner: SO session. Defect: the pin-validity discipline — the amendment's core — is never driven against a real diagnostic; an inverted or stubbed check passes every enumerated fixture. Citations verified: contract:64 vs :173, :180. Proposed: resolved-candidate (fixture: fix-introduced test unbuildable at baseline, gate rejects the red).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:53.134901Z",
+  "updated_at": "2026-07-20T00:38:10.912961Z",
+  "closed_at": "2026-07-20T00:38:10.912961Z",
+  "comments": [
+    {
+      "uuid": "31ad24c8-ed33-490a-9cf3-5a2ddf6a6407",
+      "author": "xqjG",
+      "content": "Fixed: spurious-compile-red fixture added (fix-introduced pin unbuildable at baseline); criterion asserts rejection as no demonstration. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:37:53.816609Z",
+      "kind": "resolution"
+    }
+  ]
+}

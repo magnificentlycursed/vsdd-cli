@@ -1,0 +1,28 @@
+{
+  "uuid": "f64bbb1d-8ac8-4294-a6b1-50340bf28953",
+  "display_id": 180,
+  "title": "RT/F4: defined() drop widens empty-string laundry channel",
+  "description": "Source: mdatron/review-log/2026-06-02-red-team-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: cluster-batched commit: defined() silent semantic shift - dismissed per operator-directive",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:45.875804Z",
+  "updated_at": "2026-06-08T02:34:06.884798Z",
+  "closed_at": "2026-06-08T02:34:06.884798Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:red-team",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "c36171e9-de88-4a0c-9b75-bc4eebc043f7",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (cluster-batched commit: defined() silent semantic shift - dismissed per operator-directive).",
+      "created_at": "2026-06-08T02:34:06.039420Z",
+      "kind": "resolution"
+    }
+  ]
+}

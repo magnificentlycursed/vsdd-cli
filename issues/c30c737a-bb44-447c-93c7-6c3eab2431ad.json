@@ -1,0 +1,27 @@
+{
+  "uuid": "c30c737a-bb44-447c-93c7-6c3eab2431ad",
+  "display_id": 308,
+  "title": "Pricing function contradicts the base's bill-of-materials attribution",
+  "description": "SA defect, Raise to SO: the base attributes BOM emission to the composition function in three places, but composition's signature takes no token counts. The 1b decomposition is correct; the base wording must update to name the pricing function, and the pricing function needs a purity criterion binding it. [owner: solution-architect; validator: solution-owner]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:56:59.445838Z",
+  "updated_at": "2026-07-19T22:01:16.249153Z",
+  "closed_at": "2026-07-19T22:01:16.249153Z",
+  "labels": [
+    "phase-1b-round-1",
+    "solution-architect",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "d493802e-d8ba-41b6-9bf4-b3e59310c870",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:15.378294Z",
+      "kind": "result"
+    }
+  ]
+}

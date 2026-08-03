@@ -1,0 +1,31 @@
+{
+  "uuid": "e549534c-5d1c-42bc-8693-b54b1636c003",
+  "display_id": 215,
+  "title": "TW/F4: 'Code-allocation lint' naming - 'check' more accurate",
+  "description": "Source: mdatron/review-log/2026-06-02-technical-writer-phase-1-bundle.md\nClassification: deferred\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:55.209687Z",
+  "updated_at": "2026-06-08T03:52:36.836893Z",
+  "closed_at": "2026-06-08T03:52:36.836893Z",
+  "labels": [
+    "classification:deferred",
+    "cycle:crosslink-12",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "blockers": [
+    "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7"
+  ],
+  "comments": [
+    {
+      "uuid": "106b8103-0e01-482d-8be4-6d29b0e8d09e",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@19d04d7 + vsdd-cli@f7633de (Phase 4-take-2 Wave 10 raise-to-SO disposition).",
+      "created_at": "2026-06-08T03:52:35.989400Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "8e916603-40fe-4022-9b83-89944dbfdea1",
+  "display_id": 496,
+  "title": "lane r7 SE: refs query domain unstated",
+  "description": "Lane round 7. Lens: SE (validator: SO). Owner: SO session. Defect: local vs remote-tracking vs all-refs is material and unstated — local-only misses the motivating shared-history case; all-refs flags other actors' unactionable branches. Citations verified: contract:124. Proposed: resolved-candidate (the query ranges over this clone's own branches — local refs and their remote-tracking counterparts; other actors' refs are their own repos' concern).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:03:48.017459Z",
+  "updated_at": "2026-07-20T01:12:34.758510Z",
+  "closed_at": "2026-07-20T01:12:34.758510Z",
+  "comments": [
+    {
+      "uuid": "f30e5c48-0761-4242-b6ca-464b1b1c8368",
+      "author": "xqjG",
+      "content": "Fixed: the query ranges over this clone's own branches — local refs and remote-tracking counterparts; other actors' refs are their own repos' concern. Revision: Conformance bullet.",
+      "created_at": "2026-07-20T01:12:22.025311Z",
+      "kind": "resolution"
+    }
+  ]
+}

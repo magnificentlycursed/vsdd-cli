@@ -1,0 +1,21 @@
+{
+  "uuid": "8b313a5d-04a5-4ed0-b479-c07b3207ec9a",
+  "display_id": 651,
+  "title": "posture-r4-AI: started-then-stalled outside every named instrument",
+  "description": "Minor, failure coverage. Fix: heartbeat staleness joins the never-started clause as the same loud class. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:10:05.978872Z",
+  "updated_at": "2026-07-20T18:16:29.123286Z",
+  "closed_at": "2026-07-20T18:16:29.123286Z",
+  "comments": [
+    {
+      "uuid": "815e9595-da4e-426c-93f0-4ee4e8d37659",
+      "author": "xqjG",
+      "content": "Fixed: heartbeat staleness makes started-then-stalled 'the same loud class' in the never-started clause, the round-parity addition, and the stalled-agent corpus fixture.",
+      "created_at": "2026-07-20T18:16:26.928250Z",
+      "kind": "resolution"
+    }
+  ]
+}

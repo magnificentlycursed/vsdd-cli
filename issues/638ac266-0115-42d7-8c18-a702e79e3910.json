@@ -1,0 +1,25 @@
+{
+  "uuid": "638ac266-0115-42d7-8c18-a702e79e3910",
+  "display_id": 701,
+  "title": "r2 minor QE: flake aggregation leaves a stable neither-kind outcome unclassified",
+  "description": "Evidence: gate-data.md:24 — aggregation defines red (fails all), green (passes all), flaky (mixed); a pin skipped/ignored/filtered/not-collected in ALL runs is none of the three. Disposition: consistent neither-kind outcomes aggregate to the recorded neither state; flaky reserved for genuinely mixed. Owner: data-engineer. Validator: quality-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "426d87e4-d8cf-4272-9c1d-e21e675de848",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T06:54:10.978905Z",
+  "updated_at": "2026-07-21T07:00:59.715244Z",
+  "closed_at": "2026-07-21T07:00:59.715244Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "2e01ccce-2a0b-4dd9-9f53-ac157f6327ed",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit 026564ee, gate-data 0.3.0): per_test_aggregation now classifies a consistent neither-kind outcome as that recorded neither state, with flaky reserved for genuinely mixed outcomes. Terminal round re-verifies (validator: quality-engineer).",
+      "created_at": "2026-07-21T07:00:56.359330Z",
+      "kind": "result"
+    }
+  ]
+}

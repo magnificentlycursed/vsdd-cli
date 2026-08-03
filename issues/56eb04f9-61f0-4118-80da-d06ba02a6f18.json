@@ -1,0 +1,21 @@
+{
+  "uuid": "56eb04f9-61f0-4118-80da-d06ba02a6f18",
+  "display_id": 342,
+  "title": "statusline r1 A11y: no accessible equivalent designated for assistive tech",
+  "description": "Round: statusline amendment cold round 1. Lens: accessibility (validator pair: ux). Owner: SO session. Defect: first persistent UI surface ships visual-only; the machine form is framed as for agents, not named as the assistive-tech path; no explicit deferral-plus-rationale. Citations verified: contract:160. Anchors: Status, criteria. Proposed: deferred (one-sentence fix: designate machine/human form as the always-available full-information equivalent; segment as glanceable convenience). Failure: an assistive-tech operator has no contracted route to the phase answer; accessible-by-assertion.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:58.337051Z",
+  "updated_at": "2026-07-19T23:08:19.124466Z",
+  "closed_at": "2026-07-19T23:08:19.124466Z",
+  "comments": [
+    {
+      "uuid": "334237d3-b382-4ca5-bc14-6f8a48553bfb",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded into fix pass by operator). Machine and human forms designated the full-information accessible equivalents for assistive technology; segment contracted as glanceable convenience layered on them, never the only route. Revision: Status bullet.",
+      "created_at": "2026-07-19T23:07:53.966720Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "25c6d4b5-4833-4e46-93e5-9f0fd903aa20",
+  "display_id": 615,
+  "title": "1c-DR-r3: L7 Closes omits the Status detection cell the audit assigns it",
+  "description": "Minor, check a. Citation (Criteria audit): 'Status detection (#294+#307+#328 by named slice, its state-consistency backstop cell at #332)' vs Layer 7's Closes list, which never claims it. Fix: claim it in #332's Closes. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:31:03.362649Z",
+  "updated_at": "2026-07-20T17:32:23.112127Z",
+  "closed_at": "2026-07-20T17:32:23.112127Z",
+  "comments": [
+    {
+      "uuid": "bcc2d15a-3a39-4957-87b0-d198adf4bdc6",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. L7's Closes now claims 'the state-consistency backstop check of Status detection (Layer 2's declared exception, riding the conformance integration)', with the cross-repo gating sentence covering it beside Drift pin. mdatron verify clean.",
+      "created_at": "2026-07-20T17:32:21.836277Z",
+      "kind": "resolution"
+    }
+  ]
+}

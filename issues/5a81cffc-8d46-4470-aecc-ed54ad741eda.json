@@ -1,0 +1,25 @@
+{
+  "uuid": "5a81cffc-8d46-4470-aecc-ed54ad741eda",
+  "display_id": 705,
+  "title": "r2 minor DR: 'the tier field's own count' is a dangling reference the #684 fix introduced",
+  "description": "Evidence: economics-data.md:41 — no field named 'tier' carries a domain count; the only tier key is tier_effort_defaults (model tiers). A cold reader cannot resolve it. Introduced by e61f28e5. Disposition: mirror the thorough preset's note form ('count verified against the installed prompts 2026-07-21, vsdd-cli #684'). Owner: data-engineer. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "426d87e4-d8cf-4272-9c1d-e21e675de848",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T06:54:49.491607Z",
+  "updated_at": "2026-07-21T07:01:42.521010Z",
+  "closed_at": "2026-07-21T07:01:42.521010Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "92b6a577-62fe-46c8-bd29-261e135ea592",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit 026564ee): the standard preset's note now mirrors the thorough preset's resolvable form — count verified against the installed prompts — replacing the dangling tier-field reference. Terminal round re-verifies (validator: documentation-reviewer).",
+      "created_at": "2026-07-21T07:01:39.215834Z",
+      "kind": "result"
+    }
+  ]
+}

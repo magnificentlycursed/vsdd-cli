@@ -1,0 +1,21 @@
+{
+  "uuid": "41ef5a8a-8528-47d7-8fef-7c3104ccb122",
+  "display_id": 239,
+  "title": "amend-r5-SA: substrate check not wired into Status enumerations",
+  "description": "Blocking. The surfacing claim rides no Status integrity-query entry, criterion cell, or renderer input; hollow-shell fixture unreached; reverse direction unfixtured. Fix: extend the Status query list, Status detection, Layer 2's slice; add the unmanifested-artifact fixture; dangling references are integrity findings, never degradation. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:01:44.958651Z",
+  "updated_at": "2026-07-20T19:07:32.604436Z",
+  "closed_at": "2026-07-20T19:07:32.604436Z",
+  "comments": [
+    {
+      "uuid": "310eb97e-10c2-42f0-b887-e6aaa5c34436",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:07:29.680867Z",
+      "kind": "resolution"
+    }
+  ]
+}

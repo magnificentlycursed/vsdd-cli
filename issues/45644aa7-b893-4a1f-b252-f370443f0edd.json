@@ -1,0 +1,21 @@
+{
+  "uuid": "45644aa7-b893-4a1f-b252-f370443f0edd",
+  "display_id": 514,
+  "title": "effort r1 Meth: manifest clause missing its inline marker",
+  "description": "Effort round 1. Lens: methodology (validator: SO). Defect: the 'and effort level' insertion carries no operator-amendment marker while its sibling clause in the same contract does. Citations verified: contract:103 vs :106. Proposed: resolved-candidate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:32.625629Z",
+  "updated_at": "2026-07-20T01:30:10.372036Z",
+  "closed_at": "2026-07-20T01:30:10.372036Z",
+  "comments": [
+    {
+      "uuid": "4302b63a-c152-42e3-a65d-bd64a2107cc6",
+      "author": "xqjG",
+      "content": "Fixed: inline marker added at the manifest clause. Revision: Recorded review dispatch.",
+      "created_at": "2026-07-20T01:29:46.951928Z",
+      "kind": "resolution"
+    }
+  ]
+}

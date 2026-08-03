@@ -1,0 +1,21 @@
+{
+  "uuid": "681237b0-6e7a-4a1b-979d-21f52672dda3",
+  "display_id": 391,
+  "title": "statusline r5 A11y: AT claim discharged by text checks; no named screen reader",
+  "description": "Round 5. Lens: accessibility (validator: ux). Owner: SO session. Defect: 'accessible equivalents for assistive technology' is verified only by field-superset + color-strip; no manual-test item names a screen reader and version for the AT-routed human form — the domain's named over-claim mode. Citations verified: contract:163 vs :188. Proposed: resolved-candidate as an obligation entry: add the named-AT read of the human form to the Manual-by-design list (operator checklist, per The operator authors the oracle).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:53:07.446079Z",
+  "updated_at": "2026-07-19T23:57:24.112195Z",
+  "closed_at": "2026-07-19T23:57:24.112195Z",
+  "comments": [
+    {
+      "uuid": "628d46ee-8820-476a-8c8b-b37aa5622982",
+      "author": "xqjG",
+      "content": "Fixed: the assistive-technology read of the human form with a named screen reader and version added to the Manual-by-design list on the operator's checklist, per The operator authors the oracle — the AT claim is discharged by a real pass, not text checks. Revision: Verification architecture manual list.",
+      "created_at": "2026-07-19T23:57:15.360943Z",
+      "kind": "resolution"
+    }
+  ]
+}

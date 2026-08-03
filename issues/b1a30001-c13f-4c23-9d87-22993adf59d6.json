@@ -1,0 +1,21 @@
+{
+  "uuid": "b1a30001-c13f-4c23-9d87-22993adf59d6",
+  "display_id": 473,
+  "title": "lane r5 operator-relayed: kickoff prompt carries no vsdd gates — manifest by convention not construction",
+  "description": "Lane round 5, operator-relayed from mdatron Part 3 (2026-07-20). Defect: the kickoff live fire (three agents for mdatron #53/#55/#56) produced strong chassis conduct but the generated prompt carries nothing of red-gate-first, composition, validator pairing, or supplement activation — mdatron compensated with a routed plan comment, a convention the agent must choose to read. This is live evidence for the swarm-fallback clause's shape: the vsdd-supplied piece is the dispatch manifest and composition INJECTED into the dispatch vehicle's prompt (kickoff's policy/doc slot) — construction, not convention; converges with the inline-review hole as one dispatch-layer class. Proposed: resolved-candidate (the fix-scale dispatch clause names prompt-injection as the mechanism; the swarm-fallback open question gains the live-fire evidence).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:47:54.600086Z",
+  "updated_at": "2026-07-20T00:49:23.545538Z",
+  "closed_at": "2026-07-20T00:49:23.545538Z",
+  "comments": [
+    {
+      "uuid": "294ecc50-809f-433f-95e1-532db517b779",
+      "author": "xqjG",
+      "content": "Fixed: the dispatch clause names prompt-injection as the mechanism (kickoff policy slot, composition by construction); the swarm-fallback open question gains the live-fire evidence confirming the fallback shape. Revision: Finding lifecycle dispatch clause + swarm-fallback open question.",
+      "created_at": "2026-07-20T00:49:04.474534Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "89fcf1f9-e0ca-4372-a5a9-29d1fbff8b52",
+  "display_id": 801,
+  "title": "Layer 3 round 5 nit collector: the composition set's human vocabulary takes the no-op PostLoad (latent until a later layer prints it); post_load runs after schema minLength so an all-format-char field cleans to empty",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T10:59:18.134837Z",
+  "updated_at": "2026-07-26T11:12:18.983786Z",
+  "closed_at": "2026-07-26T11:12:18.983777Z",
+  "comments": [
+    {
+      "uuid": "d5c35f63-c8f7-4552-93d1-5e7f92785fc6",
+      "display_id": 1066,
+      "author": "xqjG",
+      "content": "Fixed in 52f94321: CompositionScopeAndActions gained a post_load cleaning its action human text and scope whitepaper names — the clean-at-source invariant now holds for that set too, latent-safe against a later layer wiring those strings to a print. The post-clean-empty edge (a schema-legal all-format-char field cleaning to empty after minLength passed) is documented in the text.rs scope note as an accepted degenerate rendering — the render layer words an empty value as its registered absence, so it is safe, not a schema breach to re-diagnose.",
+      "created_at": "2026-07-26T11:12:13.553691Z",
+      "kind": "result"
+    }
+  ]
+}

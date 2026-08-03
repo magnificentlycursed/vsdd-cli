@@ -1,0 +1,25 @@
+{
+  "uuid": "468905b6-4cd3-4e40-a2f4-f090ba2db596",
+  "display_id": 300,
+  "title": "Spec review round 1: coverage holes: criteria for install, status detection, config integrity, conformance checks, gate coverage, scope echo",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T02:27:01.776803Z",
+  "updated_at": "2026-07-29T10:24:38.875810Z",
+  "closed_at": "2026-07-29T10:24:38.875799Z",
+  "labels": [
+    "spec-review-round-1"
+  ],
+  "comments": [
+    {
+      "uuid": "c354241a-97c1-480c-b5f5-2ea0a975a6e7",
+      "display_id": 1228,
+      "author": "xqjG",
+      "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract (install/status/config-integrity/conformance/gate/scope criteria present). Reopen if this specific finding resurfaces as a live gap.",
+      "created_at": "2026-07-29T10:24:32.857415Z",
+      "kind": "decision"
+    }
+  ]
+}

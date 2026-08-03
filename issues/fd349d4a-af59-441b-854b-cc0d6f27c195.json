@@ -1,0 +1,21 @@
+{
+  "uuid": "fd349d4a-af59-441b-854b-cc0d6f27c195",
+  "display_id": 611,
+  "title": "1c-DR-r2: Layer 4 init payload implies a forward dependency on Layer 5's generator",
+  "description": "Minor, check b. Citation (Layer 4): 'vsdd init: managed files with drift refusal' — the Install requirement's payload includes generated skills and domain prompts, produced by Layer 5's generator, unhandled forward dependency. Fix: scope #329 to the statically-authored payload members; generated members join when #330's generator lands; full payload exercised by #331's fresh-container gate. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:21:03.425404Z",
+  "updated_at": "2026-07-20T17:21:57.551543Z",
+  "closed_at": "2026-07-20T17:21:57.551543Z",
+  "comments": [
+    {
+      "uuid": "3d737178-747a-47ae-a8b9-2d55d880aad0",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 4 now scopes the payload: statically-authored members at L4; generated members join when Layer 5's generator lands; full-payload installation exercised by Layer 6's fresh-container gate. mdatron verify clean.",
+      "created_at": "2026-07-20T17:21:56.079580Z",
+      "kind": "resolution"
+    }
+  ]
+}

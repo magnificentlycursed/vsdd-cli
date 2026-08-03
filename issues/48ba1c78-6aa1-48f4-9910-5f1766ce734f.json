@@ -1,0 +1,29 @@
+{
+  "uuid": "48ba1c78-6aa1-48f4-9910-5f1766ce734f",
+  "display_id": 670,
+  "title": "data set: act-to-affordance map with the recorded swarm condition",
+  "description": "Round 5 of #598, item 17. The map of methodology acts to their default vehicles, owned by the AI Engineer domain per the contract (Conformance at action time: every methodology act with a chassis workflow rides it; hand-rolling carries a stated reason or is nonconformant; decidable at audit against this map). Entries carry an affordance kind (chassis-workflow, skill, domain-lens) — the domain-lens kind generalizes the map to composition-summoning acts, mechanizing this session's data-engineer miss as a map entry. The phase-3 swarm binding is recorded as CONDITIONAL on the Swarm live fire criterion's pass, with the swarm-fallback open question holding the alternative — the condition is data, not prose. Owner: ai-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T02:24:18.596175Z",
+  "updated_at": "2026-07-21T02:28:26.275706Z",
+  "closed_at": "2026-07-21T02:28:26.275706Z",
+  "comments": [
+    {
+      "uuid": "b8c066e8-7a71-49bf-85a8-6cd6d930d8a3",
+      "author": "xqjG",
+      "content": "OPERATOR ADOPTION 2026-07-20: all 13 entries including the kind generalization — chassis-workflow, skill, and domain-lens kinds; the swarm binding conditional on the live fire with tonight's plan-not-launch intel recorded; the container entry carrying its blockage; the data-engineer lens entry mechanizing the composition miss.",
+      "created_at": "2026-07-21T02:28:08.023655Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "5215a070-9f71-49c4-af79-67b0dc3d0874",
+      "author": "xqjG",
+      "content": "Resolved: landed with the round-5 commit, mdatron verify clean.",
+      "created_at": "2026-07-21T02:28:22.674366Z",
+      "kind": "result"
+    }
+  ]
+}

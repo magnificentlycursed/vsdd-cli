@@ -1,0 +1,28 @@
+{
+  "uuid": "996fa1c0-e94f-46c9-8600-ebeee6636d06",
+  "display_id": 36,
+  "title": "SA/F2: format_tty refactor external consumer break",
+  "description": "Source: mdatron/review-log/2026-06-07-solution-architect-phase-2-bundle.md\nClassification: dismissed\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:02:36.574355Z",
+  "updated_at": "2026-07-21T00:35:30.062470Z",
+  "closed_at": "2026-07-21T00:35:30.062470Z",
+  "labels": [
+    "classification:dismissed",
+    "cycle:crosslink-13",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "03ea90cb-df4a-48fc-86b9-616baadc7040",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:35:26.580938Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "a29d3f3c-8c6b-407a-a468-10ace32e1a58",
+  "display_id": 506,
+  "title": "lane r8 SE+QE: declared mapping consumed as ground truth — regression launders through",
+  "description": "Lane round 8. Lenses: SE+QE merged, independently convergent (validators: SO/SA, SE). Defect: no honesty constraint — a lying mapping onto an unrelated green test suppresses fail-closed and orphans the genuinely failing relocated test outside both delta clauses. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (mappings one-to-one between vanished-at-baseline and new-at-HEAD paths; every new-at-HEAD test must pass — a failing new test fails the gate; dishonest-mapping fixture added).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:26:52.665766Z",
+  "updated_at": "2026-07-20T01:29:59.507777Z",
+  "closed_at": "2026-07-20T01:29:59.507777Z",
+  "comments": [
+    {
+      "uuid": "439d9bb1-8ac6-46ca-89c2-ac9b86ca17e3",
+      "author": "xqjG",
+      "content": "Fixed: mappings one-to-one between vanished-at-HEAD and new-at-HEAD paths; every new-at-HEAD test must pass; dishonest-mapping fixture rejected on constraint violation. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:29:36.714766Z",
+      "kind": "resolution"
+    }
+  ]
+}

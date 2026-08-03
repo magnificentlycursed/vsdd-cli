@@ -1,0 +1,21 @@
+{
+  "uuid": "533135b4-b667-496f-bc28-7298898e6f08",
+  "display_id": 475,
+  "title": "upstream crosslink: kickoff status surfaces only pipeline mode",
+  "description": "Upstream finding for dollspace-gay/crosslink, 2026-07-20, from mdatron's kickoff live fire. kickoff status with no args reports only the .design/ pipeline mode ('No pipeline state files found') and does not surface issue-driven runs (kickoff list does). Proposal: no-arg status unions both run sources.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:47:57.676149Z",
+  "updated_at": "2026-07-20T23:32:49.684965Z",
+  "closed_at": "2026-07-20T23:32:49.684965Z",
+  "comments": [
+    {
+      "uuid": "d9166bab-56e0-4db7-90a8-2d7f5e923d0b",
+      "author": "xqjG",
+      "content": "Migrated to the canonical upstream (operator-directed workflow, decision on #597): re-verified STILL-LIVE at dollspace-gay/crosslink main 85691369 — mod.rs:101-104 no-arg status renders pipeline sidecars only; run.rs:175 gates run rows on doc_path; discover_agents results annotate-only — and filed as dollspace-gay/crosslink#18, which supersedes this record. Evidence: the evaluation scout reports and draft bodies on #597's trail, 2026-07-20.",
+      "created_at": "2026-07-20T23:32:46.233626Z",
+      "kind": "result"
+    }
+  ]
+}

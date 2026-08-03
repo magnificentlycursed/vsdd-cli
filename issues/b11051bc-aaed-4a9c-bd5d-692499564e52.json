@@ -1,0 +1,35 @@
+{
+  "uuid": "b11051bc-aaed-4a9c-bd5d-692499564e52",
+  "display_id": 549,
+  "title": "statusline amendment cold round 15",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 15 (post round-14: settings read-failure parity with the state boundary; init-completion falsified on the error path; machine signal carries the enumerated kind with per-kind action). Series 15-16-11-6-8-2-2-2-1-2-1-2-2-3.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:59:26.898898Z",
+  "updated_at": "2026-07-20T02:12:20.843471Z",
+  "closed_at": "2026-07-20T02:12:20.843471Z",
+  "comments": [
+    {
+      "uuid": "38eaee06-9cb2-45bf-b4ec-0254ea93d253",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 15. Subject: revision 15 statusline anchors (round-14 set plus: settings read-failure enumeration mirrored from the state boundary with fixtures; the settings-error criterion asserting installation proceeds; the machine state-unreadable signal carrying the enumerated kind and per-kind action, three mechanical comparisons). Out of scope: lane and effort amendments. Known-deliberate unchanged. Lens: UX, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:59:44.321456Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "899956bd-4905-493d-a8f9-22c86b9b0e44",
+      "author": "xqjG",
+      "content": "Round 15 complete (UX). 3 filed: L227 absent-settings contradiction; L228 corpus false completeness; L229 mapping authoring home. Series ...-2-2-3-3. Not clean; round 16 after disposition.",
+      "created_at": "2026-07-20T02:10:45.066135Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4f95a253-9dc9-4911-bf2a-1491e13a7b88",
+      "author": "xqjG",
+      "content": "Round fully disposed: 3/3 fixed. mdatron verify clean on revision 16. Closing; round 16 dispatches (UX).",
+      "created_at": "2026-07-20T02:12:19.685974Z",
+      "kind": "result"
+    }
+  ]
+}

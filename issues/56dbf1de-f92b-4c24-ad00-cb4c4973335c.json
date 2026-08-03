@@ -1,0 +1,21 @@
+{
+  "uuid": "56dbf1de-f92b-4c24-ad00-cb4c4973335c",
+  "display_id": 544,
+  "title": "lane r10 QE: in-place quarantine hides a baseline-passing regression test",
+  "description": "Lane round 10. Lens: QE (validator: SE). Defect: ignore a baseline-passing regression-catcher at HEAD in place — not failing, not vanished, no lane needed; the regression ships green; the abuse direction is unfixtured and unlisted. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (a test that passed at baseline and is non-executing at HEAD is removal-shaped regardless of path survival — declared lane with approval or the delta fails; in-place-quarantine seed flagged).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:57.810517Z",
+  "updated_at": "2026-07-20T01:59:02.068544Z",
+  "closed_at": "2026-07-20T01:59:02.068544Z",
+  "comments": [
+    {
+      "uuid": "569333b7-2d2d-4c34-aa45-f802e7927ce2",
+      "author": "xqjG",
+      "content": "Fixed: a baseline-passing test non-executing at HEAD is removal-shaped regardless of path survival — declared approved lane or the delta fails; in-place-quarantine seed flagged. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:58:48.624211Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "b1dc511f-a080-498f-8d5f-e5065d02aa63",
+  "display_id": 733,
+  "title": "c2 minor QE+DE convergent: the fence-limitation doc claims a test pin that does not exist",
+  "description": "Evidence: frontmatter.rs:25 'pinned by test' and the daacdc84 commit message claim a truncation pin; no such test exists (both lenses grepped independently; the QE lens live-probed). A false verification-coverage claim in a pin-driven methodology — the exact class the estate hunts. Disposition: write the promised test (block scalar containing a bare --- line splits early, downstream load fails located). Owner: quality-engineer. Validator: data-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "5390175e-d7a4-4e5d-9096-44789ed3120f",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:56:54.566206Z",
+  "updated_at": "2026-07-21T20:01:00.436687Z",
+  "closed_at": "2026-07-21T20:01:00.436687Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "f0974b2c-56f3-4f37-8f59-b1d980be734b",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit 8189017a): the promised truncation pin exists — a block scalar containing a bare fence line splits early, asserted both directions (frontmatter loses the tail, the body gains it); the doc's pinned-by-test claim is now true. Validator: data-engineer at round 3.",
+      "created_at": "2026-07-21T20:00:56.817776Z",
+      "kind": "result"
+    }
+  ]
+}

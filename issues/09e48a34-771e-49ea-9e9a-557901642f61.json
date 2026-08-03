@@ -1,0 +1,21 @@
+{
+  "uuid": "09e48a34-771e-49ea-9e9a-557901642f61",
+  "display_id": 642,
+  "title": "posture-r4-AI: attended definition lets the orchestrator answer consent",
+  "description": "Blocking, substrate fidelity. 'the operator or orchestrating session present to answer' asserts a path the substrate does not have and the amendment itself forbids. Fix: attended means the operator is present; the orchestrating session surfaces, never answers. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:49.879041Z",
+  "updated_at": "2026-07-20T18:15:53.511589Z",
+  "closed_at": "2026-07-20T18:15:53.511589Z",
+  "comments": [
+    {
+      "uuid": "24ceb758-06c1-4efb-9924-860ce6a905da",
+      "author": "xqjG",
+      "content": "Fixed: attended now means the operator is present; the redraft states in-session fan-outs surface consent to the operator, 'never answered for them'.",
+      "created_at": "2026-07-20T18:15:52.042448Z",
+      "kind": "resolution"
+    }
+  ]
+}

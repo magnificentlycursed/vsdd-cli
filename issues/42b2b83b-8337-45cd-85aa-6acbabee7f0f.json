@@ -1,0 +1,31 @@
+{
+  "uuid": "42b2b83b-8337-45cd-85aa-6acbabee7f0f",
+  "display_id": 216,
+  "title": "TW/F5: OperatorDirectiveApplied-in-commit-body has no published anchor",
+  "description": "Source: mdatron/review-log/2026-06-02-technical-writer-phase-1-bundle.md\nClassification: deferred\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:56.962318Z",
+  "updated_at": "2026-06-08T03:52:38.498750Z",
+  "closed_at": "2026-06-08T03:52:38.498750Z",
+  "labels": [
+    "classification:deferred",
+    "cycle:crosslink-12",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "blockers": [
+    "50a37dbe-18dc-460f-8a00-05eea68fcf26"
+  ],
+  "comments": [
+    {
+      "uuid": "9e3e9091-233f-40c9-84c0-8bc476fb7f8e",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@f7633de (Phase 4-take-2 Wave 10 raise-to-SO disposition).",
+      "created_at": "2026-06-08T03:52:37.799639Z",
+      "kind": "resolution"
+    }
+  ]
+}

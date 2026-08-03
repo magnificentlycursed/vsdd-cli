@@ -1,0 +1,21 @@
+{
+  "uuid": "3569381e-da21-4445-9fec-338d0b2ea88a",
+  "display_id": 610,
+  "title": "1c-DR-r2: Composition purity integrity-config cells lack the cross-repo flag at L5",
+  "description": "Minor, check e. Citation (Layer 5): 'The composition function over the composition-scope domain with config integrity rules' — the contract assigns integrity validation to mdatron ('Config integrity rules are validated by mdatron') but #330 states no cross-repo flag or validator handoff. Fix: flag the integrity-violating-config cells as riding the mdatron dependency like Layer 7's families. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:21:01.756354Z",
+  "updated_at": "2026-07-20T17:21:54.455676Z",
+  "closed_at": "2026-07-20T17:21:54.455676Z",
+  "comments": [
+    {
+      "uuid": "44fa88b7-96f4-4c61-ac68-9550948f9aa9",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 5 now flags it: 'with its seeded integrity-violating-config cells riding the flagged cross-repo dependency: config-integrity validation is mdatron's per the Deterministic composition contract, and those cells gate on its landing as Layer 7's families do'. mdatron verify clean.",
+      "created_at": "2026-07-20T17:21:53.059323Z",
+      "kind": "resolution"
+    }
+  ]
+}

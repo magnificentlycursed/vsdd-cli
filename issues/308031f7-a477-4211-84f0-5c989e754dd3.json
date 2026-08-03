@@ -1,0 +1,21 @@
+{
+  "uuid": "308031f7-a477-4211-84f0-5c989e754dd3",
+  "display_id": 344,
+  "title": "statusline r1 A11y: definite-article over-label on the color conduct",
+  "description": "Round: statusline amendment cold round 1. Lens: accessibility (validator: ux). Owner: SO session. Defect: '(the accessibility conduct for a glanceable surface)' names single-channel color handling as THE accessibility conduct, implying completeness. Citations verified: contract:160. Anchor: Status. Proposed: dismissed-candidate — no independent falsification gap once the two sibling a11y findings land; becomes load-bearing over-claim only if the accessible-equivalent finding is rejected. Suggested narrowing if touched: 'the color-channel conduct'.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:59:00.353738Z",
+  "updated_at": "2026-07-19T23:08:21.212295Z",
+  "closed_at": "2026-07-19T23:08:21.212295Z",
+  "comments": [
+    {
+      "uuid": "e5fe43a2-1f91-4531-817c-2c121e6d442c",
+      "author": "xqjG",
+      "content": "Dismissed at operator triage (round 1). The over-label ceased to be load-bearing when the accessible-equivalent finding was folded into the fix pass; the label was narrowed anyway to 'the color-channel conduct' in the Status bullet rewrite.",
+      "created_at": "2026-07-19T23:07:57.268403Z",
+      "kind": "resolution"
+    }
+  ]
+}

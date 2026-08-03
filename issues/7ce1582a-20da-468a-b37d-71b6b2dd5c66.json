@@ -1,0 +1,35 @@
+{
+  "uuid": "7ce1582a-20da-468a-b37d-71b6b2dd5c66",
+  "display_id": 501,
+  "title": "statusline amendment cold round 12",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 12 (post round-11: three-form broken-state composition incl. the machine state-unreadable signal). Series 15-16-11-6-8-2-2-2-1-2-1.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:12:55.754809Z",
+  "updated_at": "2026-07-20T01:30:22.422364Z",
+  "closed_at": "2026-07-20T01:30:22.422364Z",
+  "comments": [
+    {
+      "uuid": "611d85f3-158f-461f-a593-4295499d5cd2",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 12. Subject: revision 12 statusline anchors (round-11 set plus the three-form broken-state composition: segment mark, human diagnostic, machine state-unreadable signal with payload and recovery pointer; criterion asserts the machine form parses). Out of scope: the lane and effort amendments. Known-deliberate unchanged plus: broken-state vs offline word distinction at 1c copy. Lens: UX only (narrowed as before). Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:13:19.084239Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "89c8eeee-5109-4821-8584-c2019e411550",
+      "author": "xqjG",
+      "content": "Round 12 complete (UX). 2 filed: L179 machine recovery pointer unfalsified; L180 accept flag unprinted. Series ...-1-2-1-2. Not clean; round 13 after disposition.",
+      "created_at": "2026-07-20T01:27:44.544619Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "1799266e-5fd6-4996-99a6-d5a6c1433764",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed. mdatron verify clean on revision 13. Closing; round 13 dispatches (UX).",
+      "created_at": "2026-07-20T01:30:21.064487Z",
+      "kind": "result"
+    }
+  ]
+}

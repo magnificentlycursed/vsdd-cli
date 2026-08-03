@@ -1,0 +1,42 @@
+{
+  "uuid": "7653c494-c35f-4dc2-a545-c8c81603345f",
+  "display_id": 382,
+  "title": "Directive: defect-fix lane for code-touching work (from mdatron deviation)",
+  "description": "Directive reconciliation record, 2026-07-19. Operator raised mid-flow, during the statusline amendment's round-4 triage: the mdatron hotfix deviation (mdatron #51/#52/#50, commit 0b21986 — remediation stays in mdatron's tracker per operator) exposes a methodology gap: defect fixes on existing code have no phase entry point; a maintenance-defensible fix can front-run phase-2 gates, and front-running converts design questions into compatibility constraints (E0012 lock-in). Candidate rule (operator-provided, generalized from mdatron-local): code-touching work incl. defect fixes requires pre-implementation (1) tracker issue linked to owning layer+milestone, (2) red gate — failing test demonstrated against the defect first, (3) label-mandated domain reviews (SE minimum, security label adds Security), (4) the language supplement. No bypass pre-v1; post-v1 bypass is a loud annotated ruling. CLASSIFICATION: candidate spec amendment to the ratified toolkit contract (amend-then-act) — operator asked for discussion first ('I want to talk about'), so this record holds the assessment conversation; amendment authoring gated on operator direction. Scope echo: the mdatron incident is instance/evidence; the rule is general (toolkit-level), per the operator's own framing of the decision to make.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:36:32.066463Z",
+  "updated_at": "2026-07-20T16:23:45.350906Z",
+  "closed_at": "2026-07-20T16:23:45.350906Z",
+  "comments": [
+    {
+      "uuid": "ca38caa6-179a-49a2-94d5-962f5f84f133",
+      "author": "xqjG",
+      "content": "Operator directed: author the amendment ('Do it', 2026-07-19). Authored in working tree, threaded through three contracts per the assessment: Directive reconciliation gains the symmetric classification duty for session-originated code-touching work; Phase exit by gate gains the fix-scale red gate (failing test demonstrated against pre-fix code, recorded) with falsification line and the mdatron instance as evidence; Finding lifecycle in one place gains the defect-fixes-are-increments bullet (finding issue before implementation, label-driven composition SE-minimum/security-label-adds-Security, language supplement via action-time activation, no bypass before first publish, post-publish bypass = waiver marker) with falsification line and the deviation evidence. mdatron verify clean. Cold round 1 dispatching: vsdd-methodology, software-engineer, quality-engineer lenses.",
+      "created_at": "2026-07-19T23:44:18.481900Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "171f2e48-68ca-4f49-8898-3e161e94e25f",
+      "author": "xqjG",
+      "content": "mdatron #52 lane execution report received via operator (2026-07-20). Part 1: the lane ran to completion honoring all three advised specifics — real checkout-and-run retrofit red gate (7/12 red against the recovered pre-fix implementation; 13-test retrofit suite with canonicalized temp roots that killed a wrong-reason pass, the exact discipline the lane's wrong-reason clause now mechanizes), findings as tracker issues with owners/validators and held parity (mdatron #53-#57), first live use of the consolidation path (#54 absorbed into #55, shared root cause, survivor carries all symptoms and five pins), and written invariants I1-I11 with 5 untested feeding mdatron's 2a audit. The lane's linkage and gate apparatus held under fresh-session execution — field validation. Part 2: a new deviation class surfaced — inline review by the orchestrating session with free-slug review-log files and dual-home state, three named falsifications uncaught because the checks are ratified prose pending mechanization; operator caught it. Filed this round as an operator-relayed finding (lane r5: fix-scale review dispatch mechanics unstated); folds into the round-5 disposition.",
+      "created_at": "2026-07-20T00:44:09.403855Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "f4e3f9d7-db48-4e64-a94d-8be8f0276b48",
+      "author": "xqjG",
+      "content": "The spec-review loop has reached its stop signal for this amendment: round 16 clean (methodology, narrowed with declared reason after SE and QE returned clean at round 15). Sixteen rounds, filed series 19-13-9-9-12-12-6-7-6-5-5-4-2-5-1-0; the loop absorbed two mdatron field reports mid-flight (the retroactive-verification execution and the branch/kickoff findings) and the mining of both upstream implementations. Every finding fixed with revision evidence and closed; the fix-lane fixture corpus stands at ~44 active members with a seven-cell contracted 2a roster; six draft terms registered. The amendment stands in the working tree at lane revision 16 across its anchors. Awaiting operator ratification — the loop's exit is the operator's act.",
+      "created_at": "2026-07-20T04:50:09.592508Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "32cd73c3-d98c-4505-a88f-518afacc49f1",
+      "author": "xqjG",
+      "content": "RATIFIED by operator, 2026-07-20. The defect-fix lane amendment is ratified contract text at lane revision 16: defect fixes are increments — the decidable governed set with owning-finding linkage through commit evidence sections; the fix-scale red gate with test application, executed-pin discipline both halves, the delta with its three validator-approved removal-shaped lanes (deletion, mapping, disablement — intent partition, one stated mechanical exception, adopted-default report-set); one validator bar on the three no-executed-pin forms with the gate's run attempt as the additional check; graded retrofit that closes verification debt while the deviation stands; publish-gated waivers countable at zero pre-publish via the state artifact's published marker; consolidation with survivor label union; dispatch-by-construction with the injection seam a named upstream capability; the dual-form branch grammar with its refs-query seam; approve-then-dispatch. Loop record: sixteen rounds, filed series 19-13-9-9-12-12-6-7-6-5-5-4-2-5-1-0, stop signal at round 16 (methodology clean after SE and QE clean at 15); two mdatron field reports absorbed mid-loop; ~44-fixture corpus with the seven-cell contracted 2a roster; six draft terms registered. Per the standing proviso, mdatron's local ruling now defers to this contract wording as its instantiation. Commit follows this decision.",
+      "created_at": "2026-07-20T16:23:44.018919Z",
+      "kind": "decision"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "d556dda8-95a8-44ff-8fb4-1beced69e422",
+  "display_id": 777,
+  "title": "Layer 3 round 1 major security: state-sourced display strings reach the terminal uncleaned — live escape and newline injection through the segment and human form",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T05:44:26.989095Z",
+  "updated_at": "2026-07-26T06:27:33.564722Z",
+  "closed_at": "2026-07-26T06:27:33.564697Z",
+  "comments": [
+    {
+      "uuid": "f67eb273-6fb1-4ce6-8912-1cd806030f08",
+      "display_id": 1031,
+      "author": "xqjG",
+      "content": "Fixed in ff331dd9: clean_for_terminal at the render boundary — the segment and human form drop control characters from every interpolated value, state-sourced strings included; an ESC or newline in adopter-edited state.yaml renders as data. Pinned: the hostile-state fixture asserts no escape byte reaches either surface and the one-line invariant holds. The machine form is JSON (serde escapes; inert there by construction).",
+      "created_at": "2026-07-26T06:27:20.504931Z",
+      "kind": "result"
+    }
+  ]
+}

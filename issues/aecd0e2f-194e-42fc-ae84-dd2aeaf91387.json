@@ -1,0 +1,21 @@
+{
+  "uuid": "aecd0e2f-194e-42fc-ae84-dd2aeaf91387",
+  "display_id": 641,
+  "title": "posture-r4-SA: consent-state check provenance-blind",
+  "description": "Minor, trust. Fix: the consent grant is the operator's dispatch act (upstream trust design); provenance is the invocation, not a config state. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:27.548675Z",
+  "updated_at": "2026-07-20T18:15:50.456630Z",
+  "closed_at": "2026-07-20T18:15:50.456630Z",
+  "comments": [
+    {
+      "uuid": "c827a41c-db8e-4a1b-8ff3-2e8f68358292",
+      "author": "xqjG",
+      "content": "Resolved: the consent grant is the operator's dispatch act (the chassis trust design cited in the oracle section); provenance is the invocation itself, not a forgeable config state.",
+      "created_at": "2026-07-20T18:15:49.034867Z",
+      "kind": "resolution"
+    }
+  ]
+}

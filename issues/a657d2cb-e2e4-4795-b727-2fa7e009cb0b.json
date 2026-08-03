@@ -1,0 +1,22 @@
+{
+  "uuid": "a657d2cb-e2e4-4795-b727-2fa7e009cb0b",
+  "display_id": 660,
+  "title": "DE/F2: format decision for all 18 data sets — markdown+frontmatter (validated today) vs YAML (needs mdatron capability)",
+  "description": "The estate's four existing artifact classes are frontmatter'd markdown validated by mdatron verify today (schemas keyed on frontmatter schema_class; **/*.md walked; wired into this repo's pre-commit via .githooks/pre-commit). YAML data files would be cleaner data semantics but are unwalked under current globs, and yaml-with-top-level-schema_class validation is an unverified mdatron capability — establishing it is a cross-repo increment owned by the mdatron session. DE recommendation: author the 18 sets as frontmatter'd markdown NOW (data in frontmatter fields, prose commentary in body — never ship governed data silently unvalidated), with carrier migration to dedicated data files recorded as an option that stays free while the sets are draft-status under the maturity lifecycle. Owner: data-engineer. Validator: solution-architect. Adoption: operator (the oracle rule; also Raise-to-SO territory since it shapes every Layer 1 data deliverable).",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "95eaf845-5910-4270-a5a1-f032e3a3dd88",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:25:03.398876Z",
+  "updated_at": "2026-07-21T01:33:59.431756Z",
+  "closed_at": "2026-07-21T01:33:59.431756Z",
+  "comments": [
+    {
+      "uuid": "808024d4-45a5-46f8-9499-f4c648281046",
+      "author": "xqjG",
+      "content": "Resolved: format ruling operator-adopted and executed — markdown-with-frontmatter for all 18 sets; the manifest re-authored in the adopted format. Evidence: commit fdbc3dc3 (mdatron verify clean at commit time), vsdd-cli #658 trail.",
+      "created_at": "2026-07-21T01:33:56.267475Z",
+      "kind": "result"
+    }
+  ]
+}

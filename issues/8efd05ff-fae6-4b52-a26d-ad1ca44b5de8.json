@@ -1,0 +1,21 @@
+{
+  "uuid": "8efd05ff-fae6-4b52-a26d-ad1ca44b5de8",
+  "display_id": 416,
+  "title": "statusline r6 UX: human-form cause+recovery never falsified",
+  "description": "Round 6. Lens: ux (validator: DR). Owner: SO session. Defect: 'the segment marks, vsdd status in human form explains cause and recovery' is the sole degraded-day recovery route, but no criterion reaches the human form's explanatory text — superset covers display fields only, and cause/recovery is not a display field; the operator can arrive at the promised explanation and find the flag re-rendered. Hub pushes failed all day in the design sessions — the case is real. Citations verified: contract:163 vs :188, :199. Proposed: resolved-candidate (degraded fixtures: human form names the absent-or-unusable corroboration source and a recovery action).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:29.842393Z",
+  "updated_at": "2026-07-20T00:16:45.266628Z",
+  "closed_at": "2026-07-20T00:16:45.266628Z",
+  "comments": [
+    {
+      "uuid": "57d69cd7-d361-48b2-9c01-ab8d8f6710c0",
+      "author": "xqjG",
+      "content": "Fixed: degraded fixtures' human form must name the absent-or-unusable corroboration source and a recovery action. Revision: Status detection criterion.",
+      "created_at": "2026-07-20T00:16:25.040353Z",
+      "kind": "resolution"
+    }
+  ]
+}

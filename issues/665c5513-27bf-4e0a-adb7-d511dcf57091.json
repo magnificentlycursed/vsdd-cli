@@ -1,0 +1,28 @@
+{
+  "uuid": "665c5513-27bf-4e0a-adb7-d511dcf57091",
+  "display_id": 551,
+  "title": "effort amendment cold round 4",
+  "description": "Round child of: Directive: effort level joins model tier as a managed dial. Cold review of effort revision 4 (post round-3: verbatim loop-stage naming with draft-stage honesty; control-surface cross-reference at the config anchor; complete markers). Series 9-2-3.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:59:29.606760Z",
+  "updated_at": "2026-07-20T02:06:11.219871Z",
+  "closed_at": "2026-07-20T02:06:11.219871Z",
+  "comments": [
+    {
+      "uuid": "234f815f-e01b-470b-baf1-6298744237d1",
+      "author": "xqjG",
+      "content": "Dispatch manifest — effort round 4. Subject: effort revision 4, four anchors plus header: config fields (per model-running stage of the review loop — its cold multi-lens rounds and its fix passes, verbatim; draft stage shares the implementing session's dial; gates take no dial as a general truth; control-surface cross-reference; cost-band boundary; marker); manifest clause (marker, falsifier, seed, live-fire clause); Cost is knowable advisory; methodology-rewrite sentence (now marked). Out of scope: statusline and lane amendments. Lens: vsdd-methodology only (narrowed, declared: AIE clean round 3 and all round-3 fixes methodology-jurisdiction), cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:59:46.735500Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "288bf338-4aab-4cae-8e98-0cca273269be",
+      "author": "xqjG",
+      "content": "Effort round 4 complete: NO FINDINGS (methodology, the narrowed lens per the declared reason; AIE was clean at round 3). Round-3 fixes verified faithful against the loop's verbatim stage vocabulary; all clauses land in falsifiable-or-rationale-or-contracted-deferral; provenance complete; no conflict; nothing newly broken. One non-blocking retrieval-locality note recorded. STOP SIGNAL REACHED: a clean round. Series 9-2-3-0. The effort amendment awaits operator ratification. Closing the round.",
+      "created_at": "2026-07-20T02:06:09.987619Z",
+      "kind": "result"
+    }
+  ]
+}

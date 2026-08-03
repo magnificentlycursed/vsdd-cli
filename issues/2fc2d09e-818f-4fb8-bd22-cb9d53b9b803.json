@@ -1,0 +1,31 @@
+{
+  "uuid": "2fc2d09e-818f-4fb8-bd22-cb9d53b9b803",
+  "display_id": 218,
+  "title": "UX/F1: code rename has no operator-discoverable bridge",
+  "description": "Source: mdatron/review-log/2026-06-02-ux-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:25:00.605908Z",
+  "updated_at": "2026-06-08T02:23:23.409430Z",
+  "closed_at": "2026-06-08T02:23:23.409430Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:ux",
+    "review-finding"
+  ],
+  "related": [
+    "de4cc68c-c016-45cb-80f1-249fc95e9895"
+  ],
+  "comments": [
+    {
+      "uuid": "04d43a70-5a9c-4e97-a468-63eaeff960ed",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@6a0fe22 (Wave 6 (migration note in explain)).",
+      "created_at": "2026-06-08T02:23:22.314735Z",
+      "kind": "resolution"
+    }
+  ]
+}

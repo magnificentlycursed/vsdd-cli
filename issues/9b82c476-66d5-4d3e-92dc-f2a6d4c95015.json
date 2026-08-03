@@ -1,0 +1,28 @@
+{
+  "uuid": "9b82c476-66d5-4d3e-92dc-f2a6d4c95015",
+  "display_id": 328,
+  "title": "Spec amendment: statusline rendering of the Status requirement",
+  "description": "Directive reconciliation: operator directive 2026-07-19 classified as a spec amendment to the ratified contract (amend-then-act, working tree), feature-scale design pass on the Status requirement. Deliverable: statusline subsection in .design/agent-first-vsdd-toolkit.md + README routing + supplement catalog note (methodology rewrite). Composition declaration: phase-1a-scale amendment; composed domains solution-owner, solution-architect, ai-engineer, ux, accessibility; mode skill-interactive for draft, cold round for review; operator confirmation: directed 2026-07-19. Bootstrap: hand-recorded here until state artifact ships. Documentation closed-world: contract + README only; no new standing doc.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:51:56.620804Z",
+  "updated_at": "2026-07-20T16:23:42.408197Z",
+  "closed_at": "2026-07-20T16:23:42.408197Z",
+  "comments": [
+    {
+      "uuid": "ff49beaa-cb03-4f77-ac15-103c5f32c4ac",
+      "author": "xqjG",
+      "content": "The spec-review loop has reached its stop signal for this amendment: round 22 clean (UX, narrowed with declared standing reason; SA and A11y clean since round 6, AIE clean at rounds 7 and 8). Twenty-two rounds, filed series 15-16-11-6-8-2-2-2-1-2-1-2-2-3-3-2-3-3-2-2-1-2-0. The amendment that began as a bootstrap shell script now contracts: the three-form rendering with one snapshot acquisition and a pure segment renderer; the never-silent principle across absence, degradation, truncation, and unreadable state on every surface; the degraded and read-failure kinds with per-kind recovery on both human and machine forms; the install offer with drift-refusal, read-modify-write preservation, accept-flag conduct, full read- and write-failure discipline, and the six-member wiring-outcome enumeration closing the automation trace; count-based instruments throughout (stdin, acquisition, wall-clock, model-absence); and the accessible-equivalent guarantee discharged by a real AT pass. Every finding fixed with revision evidence and closed. The amendment stands at revision 22. Awaiting operator ratification — the loop's exit is the operator's act.",
+      "created_at": "2026-07-20T05:03:21.251478Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "7685e931-4aa0-47ee-8447-44f1ebb5c05f",
+      "author": "xqjG",
+      "content": "RATIFIED by operator, 2026-07-20. The statusline amendment is ratified contract text at revision 22: the three-form rendering (machine, human, segment) over one snapshot acquisition with a pure segment renderer; the never-silent principle across absence, degradation, truncation, and unreadable state on every surface, worded marks throughout; degraded and read-failure kinds with per-kind recovery on both human and machine forms from one kind-keyed data set; the install offer with drift refusal, read-modify-write preservation, accept-flag conduct, full read- and write-failure discipline, and the six-member wiring-outcome enumeration; count-based instruments (stdin, acquisition, invocation, wall-clock, model-absence); the accessible-equivalent guarantee discharged by a real AT pass. Loop record: twenty-two rounds, filed series 15-16-11-6-8-2-2-2-1-2-1-2-2-3-3-2-3-3-2-2-1-2-0, stop signal at round 22 (UX clean under the declared standing narrowing). Commit follows this decision.",
+      "created_at": "2026-07-20T16:23:40.513867Z",
+      "kind": "decision"
+    }
+  ]
+}

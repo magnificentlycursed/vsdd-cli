@@ -1,0 +1,21 @@
+{
+  "uuid": "8f519889-86fd-4699-bc02-bd57234e4d10",
+  "display_id": 554,
+  "title": "statusline r15 UX: kind-to-action mapping has no authoring home",
+  "description": "Round 15. Lens: ux, lower confidence (validator: DR). Defect: the degraded sibling's per-kind text has an explicit 1c authoring clause; the read-failure recovery-action mapping has none — at 1c the members could be omitted with no obligation flagging it. Citations verified: contract:163, :188 vs :163's degraded clause. Proposed: resolved-candidate (parallel authoring clause).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:10:34.870426Z",
+  "updated_at": "2026-07-20T02:12:10.558107Z",
+  "closed_at": "2026-07-20T02:12:10.558107Z",
+  "comments": [
+    {
+      "uuid": "d9fd9aff-0e9b-4877-b255-4e4b938d2773",
+      "author": "xqjG",
+      "content": "Fixed: the kind-to-action mapping ships as versioned data authored at 1c with the degraded next-step text — the parallel authoring clause. Revision: Status bullet.",
+      "created_at": "2026-07-20T02:11:59.058983Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "86ba0efa-37aa-4de4-89d4-1702b6611099",
+  "display_id": 372,
+  "title": "statusline r3 UX: degraded marker lacks inline action (recurrence)",
+  "description": "Round: statusline amendment cold round 3. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: degraded word's recovery lives in the human form and README, not at the point of alarm. Recurrence of the round-2 finding 'statusline r2 UX: degraded marker carries no in-surface recovery pointer', dismissed at round-2 triage with the same weighing (width-budgeted gauge cannot embed a command). Citations verified: contract:160. Proposed: dismissed-candidate, same rationale; recurrence across independent cold rounds noted as evidence the README onboarding must carry the convention prominently.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:46.800352Z",
+  "updated_at": "2026-07-19T23:29:44.584238Z",
+  "closed_at": "2026-07-19T23:29:44.584238Z",
+  "comments": [
+    {
+      "uuid": "880bfdf6-4d6d-40d4-bb73-79f4138ea86d",
+      "author": "xqjG",
+      "content": "Dismissed at triage — recurrence of the round-2 dismissal (statusline r2 UX: degraded marker carries no in-surface recovery pointer), same weighing: a width-budgeted glanceable gauge cannot embed a command; the human form carries cause and recovery. Second independent cold raise recorded as evidence: the README onboarding section must carry the degraded-to-vsdd-status convention prominently when it is authored at ship.",
+      "created_at": "2026-07-19T23:28:57.791666Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "10560a07-fb3a-412f-bbf3-34b4fe8111f7",
+  "display_id": 635,
+  "title": "posture-r4-SA: preflight falsifier trips every pre-Layer-8 cold round",
+  "description": "Blocking, layering. The phase-1c loop's own cold rounds would violate it; no bootstrap conduct named. Fix: attended design sessions are outside the preflight's subject (in-session fan-outs); autonomous dispatch gets a format-carried bootstrap form like parity. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:16.705890Z",
+  "updated_at": "2026-07-20T18:15:32.302837Z",
+  "closed_at": "2026-07-20T18:15:32.302837Z",
+  "comments": [
+    {
+      "uuid": "228618dc-0441-4fe4-9ee5-c1b2331a3ca6",
+      "author": "xqjG",
+      "content": "Resolved: attended design sessions dispatch in-session fan-outs under the operator's permission flow and are outside the preflight's subject; the preflight binds autonomous dispatch, with a format-carried bootstrap form mirroring parity ('a hand-performed checklist on the dispatch record until the preflight command ships').",
+      "created_at": "2026-07-20T18:15:30.836236Z",
+      "kind": "resolution"
+    }
+  ]
+}

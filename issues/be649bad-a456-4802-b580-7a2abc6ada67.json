@@ -1,0 +1,21 @@
+{
+  "uuid": "be649bad-a456-4802-b580-7a2abc6ada67",
+  "display_id": 497,
+  "title": "lane r7 Meth+QE: refs-query seam completes no triangle",
+  "description": "Lane round 7. Lenses: methodology + QE merged, independently convergent (validators: SO, SE). Owner: SO session. Defect: the seam is absent from the Status integrity-query enumeration (the snapshot audit's reference list), absent from the Conformance falsifier, and has no fixture or criterion — silently, unlike the six contracted deferrals; the motivating incident alone among cited incidents has no reproducing fixture. Citations verified: contract:124 vs :163, :128, :173, :185, :188. Proposed: resolved-candidate (off-grammar-branch query joins the Status enumeration; the Conformance falsifier gains the off-grammar-branch condition; off-grammar-branch fixture + criterion clause added).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:03:49.423410Z",
+  "updated_at": "2026-07-20T01:12:36.600748Z",
+  "closed_at": "2026-07-20T01:12:36.600748Z",
+  "comments": [
+    {
+      "uuid": "3685f317-2e82-472d-9c7e-d3cab60f7340",
+      "author": "xqjG",
+      "content": "Fixed: the refs query joins the Status integrity enumeration; the Conformance falsifier gains the off-grammar-branch condition; off-grammar-branch fixture added with its Status/criterion assertion — the seam completes its triangle. Revision: Status bullet + Conformance falsifier + corpus + criterion.",
+      "created_at": "2026-07-20T01:12:23.539670Z",
+      "kind": "resolution"
+    }
+  ]
+}

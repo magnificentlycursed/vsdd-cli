@@ -1,0 +1,28 @@
+{
+  "uuid": "cf2ef4a1-85d8-4084-9b20-c13d873324e8",
+  "display_id": 207,
+  "title": "SO/F1: DESIGN-MDATRON.md table amendment not authored",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-owner-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@1d81c4e",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:39.949211Z",
+  "updated_at": "2026-06-08T02:34:16.586552Z",
+  "closed_at": "2026-06-08T02:34:16.586552Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:solution-owner",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "f1666ed7-a2fa-42d3-b020-3feab148ceec",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@1d81c4e).",
+      "created_at": "2026-06-08T02:34:15.772820Z",
+      "kind": "resolution"
+    }
+  ]
+}

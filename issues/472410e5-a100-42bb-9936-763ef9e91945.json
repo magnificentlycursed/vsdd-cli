@@ -1,0 +1,85 @@
+{
+  "uuid": "472410e5-a100-42bb-9936-763ef9e91945",
+  "display_id": 822,
+  "title": "meta-harness self-governance gaps: the enforcement spine passes clean over unverified state (v0.3.0 dogfooding)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T07:46:22.276519Z",
+  "updated_at": "2026-08-02T00:48:40.917878Z",
+  "closed_at": "2026-08-02T00:48:40.917871Z",
+  "comments": [
+    {
+      "uuid": "4105ef8e-c93d-49cf-a0eb-d606d6e3f3bd",
+      "display_id": 1186,
+      "author": "xqjG",
+      "content": "CAPTURE incorporating a 6-domain analysis (AI Engineer, Red Team, Software Engineer, Quality Engineer, Documentation Reviewer, Platform Engineer), each grounded in its vsdd domain prompt + live v0.3.0 output. Discovered dogfooding the mdatron v0.3.0 flip (#816). Full analysis: scratchpad/mdatron-diagnostic-efficacy-analysis.md (this session).\n\nTHEME: mdatron cannot tell 'checked N files, all clean' from 'checked nothing', and several ordinary conditions collapse a real problem into a green result. The enforcement spine we're building rests on that guardrail and inherits the blind spots.\n\nMETA-HARNESS FINDINGS (ours):\n- M1 conformance-clean != test-green: the pre-commit/CI gate is 'mdatron verify' ONLY; it never runs the toolkit's own tests, and nothing treated swapping the conformance engine (the v0.3.0 flip) as high-blast-radius. The flip landed as a clean boundary commit while the test suite was red; I compounded it by asserting 'clean' on partial verification (the false-assurance class #818 targets). The harness caught its builder committing the sin the harness exists to prevent.\n- M2 'mdatron verify: clean' is NOT self-evidently non-vacuous: files_checked counts files-WITH-FINDINGS (verified: clean repo -> 0, identical to empty jurisdiction). No envelope field proves coverage.\n- M3 the terminology / no-coined-labels register is DORMANT: config sets vocabulary_globs but families.vocabulary=inactive -> that load-bearing guardrail is not running and nothing said so.\n- M4 self-audit bypass: an agent can shrink config.yaml file_globs / use --files to escape the corpus it is judged against -- sanctioned (E0060 says jurisdiction edits 'do not drift') and undetected. A self-hosted meta-harness can't detect an agent shrinking its own jurisdiction.\n- M5 harness silent-tests pass VACUOUSLY: e0207_silent_* assert a code is ABSENT; an empty findings array satisfies that whether the check ran clean OR never ran. TempProject::run() reads only findings[].code, never pipeline_status.\n- M6 CI stale + fail-open: mdatron-verify.yml/mdatron-test.yml reference pre-collapse mdatron-cli/mdatron-core, float to mdatron main (skew vs pinned 0.3.x local); pre-commit version guard warns-then-proceeds.\n\nINIT QUESTION (operator asked): init PREVENTS+RESOLVES the flip trigger and our fix eac65898 applies it correctly (seeds schemas/patterns THEN inits, so schemas aren't empty -- avoiding the Red Team dissent's 'fresh-init clean over nothing' trap). BUT init is scaffolding, not armor -- the fix is CORRECT-BUT-INCOMPLETE: the silent tests still pass vacuously; the naive control 'files_checked > 0' does NOT work (M2). Durable prevention is a coverage assertion (F1), not init.\n\nFOLLOW-ONS: F1 add positive controls to silent tests (assert pipeline_status==ok AND families.<family>==active, or a sentinel; make TempProject::run assert pipeline_status) -- completes eac65898/closes M5. F2 investigate M3 (why vocabulary inactive). F3 spine gate runs cargo test + treats guardrail-swap as full-re-verify (M1). F4 CI re-pin to a released mdatron binary + fail-closed version guard (M6). F5 standing non-vacuity proof for verify-clean (M2; depends on mdatron adding files_walked). F6 relay the mdatron diagnostic feedback (operator-mediated; 10 substantive items in the analysis Part 2).\n\nNot fixing here (route-before-fix): this is the capture. Follow-ons to be scheduled against the enforcement-spine work.",
+      "created_at": "2026-07-29T07:47:09.842322Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "12ba7907-7c68-4903-9d9f-85d8f0816451",
+      "display_id": 1187,
+      "author": "xqjG",
+      "content": "F1 DONE (commit above). cross_references TempProject::run() now returns pipeline_status; every test asserts pipeline_status=='ok', and each silent test carries a same-run SENTINEL firing the sibling code (e0207_silent plants a self-paired domain -> E0208; e0208_silent plants a mismatched primer -> E0207). Non-vacuity PROVEN: with init disabled (the flip re-created), all four tests -- both silent ones included -- go red on 'the pipeline ran to completion'; pre-fix the silent tests passed vacuously there. M5 closed; completes eac65898. Note: files_checked>0 was NOT usable as the control (M2/gap-1: clean run -> files_checked 0).",
+      "created_at": "2026-07-29T07:56:13.334501Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "91590096-b17a-4f94-86c3-44d8d84c75a0",
+      "display_id": 1188,
+      "author": "xqjG",
+      "content": "F2 DONE (investigation of M3 — the dormant terminology guardrail). CONCLUSION: the 'no coined labels'/terminology-grounding discipline is NOT mechanized on this tree; it is convention-grade only.\n- families.vocabulary=inactive because .mdatron/vocabulary.yaml (mdatron's E0090 register) is ABSENT. We half-wired it: vocabulary_globs IS set in .mdatron/config.yaml (methodology.md, DESIGN-*.md), but with no register the family never activates. The half-wiring is misleading — it implies vocabulary enforcement that does not run.\n- MDATRON-E0090 = 'unregistered-coinage' (introduced v0.2.0): fires when a bold-introduced term in governed prose is absent from .mdatron/vocabulary.yaml. This IS the mechanized form of the coinage discipline.\n- The vsdd-NATIVE enforcer referenced by templates/registry/vocabulary.yaml + methodology docs — check-naming-discipline.py (VSDD-W0001) — does NOT exist in the tree and is wired nowhere (0 refs in .githooks/.github/.crosslink; pre-commit runs only mdatron verify). So the vsdd-native mechanization is spec'd-but-unbuilt.\n- templates/registry/vocabulary.yaml exists (~70 terms, schema_class vocabulary-registry, deployed to .vsdd/registry/ by vsdd init) — data with no running consumer.\nDECISION NEEDED (terminology register is operator-owned spec work — not solo-armable; arming fires a triage-needing E0090 set over methodology.md + DESIGN-*.md): (a) ARM mdatron E0090 — author .mdatron/vocabulary.yaml (port/adapt from templates/registry/vocabulary.yaml; note path+schema differ), then triage; moves the discipline convention->CI-grade; OR (b) REMOVE the misleading vocabulary_globs half-wiring until a register is authored. Either way, stop implying enforcement that isn't running. This is a concrete instance of the enforcement-grade ladder: a load-bearing discipline sitting at convention grade with an available CI-grade mechanization unadopted.",
+      "created_at": "2026-07-29T07:59:22.962390Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "82c3ebe9-e2f3-4cc5-a7c7-4c22e06691fe",
+      "display_id": 1189,
+      "author": "xqjG",
+      "content": "F2 ARM ATTEMPT (E0091, the flagship letter-cluster prohibition): PROVEN — authoring .mdatron/vocabulary.yaml with label_schemes.allow=[VSDD codes, MDATRON codes] flips families.vocabulary to ACTIVE and E0091 fires. But it immediately surfaced an 80-instance / 12-scheme COINAGE DEBT in the governance docs (DESIGN-METHODOLOGY.md, DESIGN-SCHEMA.md, DESIGN-VERIFICATION.md), so the armed register cannot LAND (pre-commit mdatron verify would block every commit) until triaged. Schemes:\n- Allow (legit tech / false positive): SHA-# (SHA-256), OSC-# (OSC-8 terminal escape), A-Z# (regex char-class fragment).\n- Bare code refs (governance call: allow bare, or require VSDD-/MDATRON- prefix): E# x14 (E0099...), W# x7 (W0191...), L# x1 (L0050).\n- ID schemes needing operator adjudication (register the scheme in allow, OR rewrite as coinage): F# x25 (the canonical prohibited finding-mode coinage), R# x19 (requirement IDs?), MITIG-F# x4 (mitigation IDs?), M# x3, STEP-# x3, SO-F# x1.\nBLOCKERS TO LANDING: (1) per-scheme registration decisions are operator-owned (no self-served schemes); (2) rewriting the real coinages is in the DESIGN contract -> spec amendment at scale (owned + reviewed, spec-review loop), not a solo sweep. Held .mdatron/vocabulary.yaml out of the tree pending adjudication; re-applies in seconds once the allow-list + rewrite scope are decided. The arming mechanism itself (F2's goal) is confirmed working.",
+      "created_at": "2026-07-29T08:07:55.202783Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "27b795e7-6147-4eec-9097-e9debc9f8cdc",
+      "display_id": 1191,
+      "author": "xqjG",
+      "content": "F2 arming spun off the full-cleanup project as #823 (operator chose 'Full cleanup project'): adjudicate the 12 schemes -> spec-review-loop rewrites of the DESIGN coinages -> land the armed register clean. #822 F2 closed as investigated + routed; #823 carries the arming to completion.",
+      "created_at": "2026-07-29T08:11:43.056466Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "c59986de-bc6f-48ec-9987-00bf151c2eab",
+      "display_id": 1193,
+      "author": "xqjG",
+      "content": "F3+F4 -> PR #1 (fix-ci-workflows): CI-on-PR becomes the enforcing gate (adds vsdd-cli's own test suite to CI + repoints/pins mdatron). Closes M1's core + M6 once branch protection is set (operator). Adopted the methodology's per-milestone PR discipline — direct-to-main was a bootstrap deviation, now retired.",
+      "created_at": "2026-07-29T08:35:24.562510Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "9581cbee-feb4-41f5-8ce7-ea94cb807518",
+      "display_id": 1199,
+      "author": "xqjG",
+      "content": "M7 (meta-harness finding, operator-named 2026-07-29): a stated harness goal — PROHIBIT off-the-rails prose designs + ad-hoc folders from proliferating — is UNENFORCED, so it drifted. docs/refactor/ (superseded per the contract) lingered 2 months AND I extended it this session (a hand-authored phase-1a spec in a new sub-folder, with letter-cluster labels) — the exact proliferation the harness aims to prevent. Same convention-not-mechanized class as M3 (dormant vocab register) and M1 (silent CI). The vsdd way is design docs in .design/ via the /design skill + crosslink kickoff -> the pipeline; ad-hoc prose specs/folders should be flagged/blocked (a guardrail to mechanize the goal). Cleanup in progress: docs/refactor removal PR (#826); #14/#15 to be re-grounded off the dead binary-first framing to the slice framing.",
+      "created_at": "2026-07-29T09:38:50.674695Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "5328a8f6-5879-470a-baac-47031b1aeffa",
+      "display_id": 1201,
+      "author": "xqjG",
+      "content": "NAMING-DISCIPLINE CORRECTION (operator caught 2026-07-29): the M1-M7 (findings) and F1-F6 (follow-ons) labels used across this issue — and the A1-Q5 in the now-closed #14 draft — are letter-cluster coinages that BREAK the naming discipline (the exact pattern E0091 prohibits). Plain descriptors, used henceforth:\nFINDINGS (were the M-labels): conformance-clean-is-not-test-green (the spine doesn't run the toolkit's own tests / doesn't guard guardrail-swaps); verify-clean-cannot-prove-coverage; dormant-terminology-register; jurisdiction self-audit bypass; vacuous silent-tests; stale + fail-open CI; unenforced no-off-rails-prose goal.\nFOLLOW-ONS (were the F-labels): silent-test positive controls (done); vocabulary-register investigation (done); the spine-runs-the-toolkit-tests gate (done via PR #1); CI re-pin + fail-closed version guard; the non-vacuity canary (done, PR #2); mdatron feedback relay.\nPast comments/commits are append-only history; plain names from here. That this recurred WHILE analyzing the E0091 letter-cluster prohibition is itself evidence the discipline needs mechanization (#823), not agent vigilance.",
+      "created_at": "2026-07-29T09:55:44.231905Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "cefb5396-c87e-46c1-aabd-00c8eb69d2c3",
+      "display_id": 1366,
+      "author": "xqjG",
+      "content": "CLOSED — the capture served its purpose; member-by-member disposition (plain names per the 2026-07-29 correction): conformance-clean-is-not-test-green DONE (PR #1 + the ruleset's required checks); verify-clean-cannot-prove-coverage DONE via the canary (#825, PR #2) with the families-tri-state upgrade now available (tracked #855); dormant-terminology-register DONE (#823 — E0091/E0093 armed and firing); vacuous silent-tests DONE (positive controls + sentinels); stale-fail-open CI DONE (PR #1, since 0.5.0/crates.io via PR #21); unenforced no-off-rails-prose goal GOVERNED (the Design-doc lifecycle contract member + the #845 deviation registry — convention grade, honestly named). The two live residuals — jurisdiction self-audit bypass and the fail-open pre-commit version guard — carry forward as #855.",
+      "created_at": "2026-08-02T00:48:34.465711Z",
+      "kind": "result"
+    }
+  ]
+}

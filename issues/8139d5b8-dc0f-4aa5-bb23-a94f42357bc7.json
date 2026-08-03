@@ -1,0 +1,21 @@
+{
+  "uuid": "8139d5b8-dc0f-4aa5-bb23-a94f42357bc7",
+  "display_id": 464,
+  "title": "lane r5 QE+Meth: compile-defect acceptance branch unfixtured",
+  "description": "Lane round 5. Lenses: QE + methodology merged (validators: SE, SO). Owner: SO session. Defect: only the rejection branch of the compile-red fork is fixtured; an implementation rejecting ALL compile-reds passes the corpus — the acceptance direction the exception exists to protect is untested, an in-set asymmetry the 2a backstop does not excuse. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (declared-compile-defect fixture whose compile-red validly satisfies; criterion clause).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:44.623829Z",
+  "updated_at": "2026-07-20T00:49:09.092869Z",
+  "closed_at": "2026-07-20T00:49:09.092869Z",
+  "comments": [
+    {
+      "uuid": "77db9839-cab4-455e-99b3-725e7d7b3b03",
+      "author": "xqjG",
+      "content": "Fixed: declared-compile-defect fixture added (validator-approved declaration whose compile-red validly satisfies); criterion exercises both branches of the fork. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:48:54.389265Z",
+      "kind": "resolution"
+    }
+  ]
+}

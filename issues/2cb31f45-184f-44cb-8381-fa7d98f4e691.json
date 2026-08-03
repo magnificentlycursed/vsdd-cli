@@ -1,0 +1,21 @@
+{
+  "uuid": "2cb31f45-184f-44cb-8381-fa7d98f4e691",
+  "display_id": 780,
+  "title": "Layer 3 round 1 minor collector SE: segment arithmetic — the open-count split lacks digit-exactness, the fit budget invariant breaks at saturation, the layer suffix is the first truncation casualty",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T05:45:07.117235Z",
+  "updated_at": "2026-07-26T06:29:51.258491Z",
+  "closed_at": "2026-07-26T06:29:51.258467Z",
+  "comments": [
+    {
+      "uuid": "ed96b463-599a-4b38-b35a-f0704118e5f4",
+      "display_id": 1034,
+      "author": "xqjG",
+      "content": "Fixed in ff331dd9: split_open_count is digit-exact (mirroring the acquisition's strip — '(kept open)' and '(many open)' stay names, unit-pinned); fit() preserves its budget invariant at degenerate budgets via hard cuts, never overflow; the phase field's layer suffix is a protected tail truncating the name first (the #680 order generalized through one fit path).",
+      "created_at": "2026-07-26T06:29:38.255015Z",
+      "kind": "result"
+    }
+  ]
+}

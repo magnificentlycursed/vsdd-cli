@@ -1,0 +1,21 @@
+{
+  "uuid": "dce9e81b-8e1d-4a3b-a301-050c1d7877d7",
+  "display_id": 402,
+  "title": "lane r1: waiver exemption in one falsifier, absent from its twin",
+  "description": "Lane round 1. Lens: QE (F5) (validator: SE). Owner: SO session. Defect: the lifecycle falsifier honors the waiver marker; the gate falsifier does not — a properly waived post-publish bypass is still flagged; the clauses cannot both be true. Citations verified: contract:66 vs :81, :83. Proposed: resolved-candidate (harmonize: both falsifiers carry the no-waiver-marker condition).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:15.356122Z",
+  "updated_at": "2026-07-19T23:58:38.474391Z",
+  "closed_at": "2026-07-19T23:58:38.474391Z",
+  "comments": [
+    {
+      "uuid": "c82cb4fb-cf22-45a4-9e0a-5375c1557ed4",
+      "author": "xqjG",
+      "content": "Fixed: the gate falsifier now carries the waiver condition (no gate record, no surface-limitation, no waiver marker); both falsifiers honor the marker, stated explicitly in the lifecycle bullet. Revision: both falsification clauses.",
+      "created_at": "2026-07-19T23:58:16.447972Z",
+      "kind": "resolution"
+    }
+  ]
+}

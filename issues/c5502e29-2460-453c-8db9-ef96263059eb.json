@@ -1,0 +1,33 @@
+{
+  "uuid": "c5502e29-2460-453c-8db9-ef96263059eb",
+  "display_id": 225,
+  "title": "VM/F2: Phase 2c skip declarative not operator-authorized",
+  "description": "Source: mdatron/review-log/2026-06-02-vsdd-methodology-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:25:13.401012Z",
+  "updated_at": "2026-06-08T02:23:35.038999Z",
+  "closed_at": "2026-06-08T02:23:35.038999Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:vsdd-methodology",
+    "review-finding"
+  ],
+  "related": [
+    "22407099-fe26-4cae-b079-f62b2dca0027",
+    "8c6ed0a9-87e4-4429-b3ec-2e87b325e35a",
+    "a66ad066-ede8-44d9-8141-9331f34f725a"
+  ],
+  "comments": [
+    {
+      "uuid": "e499d837-474d-45c9-93be-6c718275dfde",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@5d02683 (Wave 7 (methodology.md amendment)).",
+      "created_at": "2026-06-08T02:23:33.849534Z",
+      "kind": "resolution"
+    }
+  ]
+}

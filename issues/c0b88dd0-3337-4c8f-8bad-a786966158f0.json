@@ -1,0 +1,33 @@
+{
+  "uuid": "c0b88dd0-3337-4c8f-8bad-a786966158f0",
+  "display_id": 744,
+  "title": "Phase 2c execution, Layer 2: refactor under the green suite",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T16:46:55.356453Z",
+  "updated_at": "2026-07-22T16:49:08.366642Z",
+  "closed_at": "2026-07-22T16:49:08.366632Z",
+  "labels": [
+    "refactor"
+  ],
+  "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
+  "comments": [
+    {
+      "uuid": "9f9920da-1c6e-45ce-9607-e094d86f9fda",
+      "display_id": 969,
+      "author": "xqjG",
+      "content": "PHASE 2C ENTRY, LAYER 2. COMPOSITION: software-engineer, solution-architect; skill-interactive; the conduct ruling carries confirmation. DECLARED REFACTOR SURFACE (the survey found two genuine items in the fresh code; anything more would be manufactured): (1) the temp-estate copy pattern repeats across six registry_red_gate tests — extract one helper, behavior-preserving; (2) the vsdd-core crate doc lists Layer 1's modules but not Layer 2's (answer, snapshot, integrity_shell) — the prose catches up, the same doc-currency class as Layer 1's 2c. Suite green at every commit.",
+      "created_at": "2026-07-22T16:47:23.919981Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "2c69c370-6d23-464a-835a-19fb3461ef89",
+      "display_id": 970,
+      "author": "xqjG",
+      "content": "PHASE 2C COMPLETE (commit above): both declared items landed, green throughout, exit status complete. The milestone reaches implementation-ready; Layer 2's adversarial refinement opens.",
+      "created_at": "2026-07-22T16:49:01.631818Z",
+      "kind": "result"
+    }
+  ]
+}

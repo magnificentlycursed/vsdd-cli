@@ -1,0 +1,21 @@
+{
+  "uuid": "5cf1711b-e32b-4cbc-b682-53bde531a95b",
+  "display_id": 456,
+  "title": "lane r4 QE+Meth: consolidation and multi-finding-commit falsifier unfixtured",
+  "description": "Lane round 4. Lenses: QE + methodology merged (validators: SE, SO). Owner: SO session. Defect: the commit-serving-two-findings falsifier and the gate-runs-all-survivor-pins behavior reach no fixture in either direction, against the corpus's fixture-per-falsification-condition contract. Citations verified: contract:81, :83 vs :173, :180, :182, :226. Proposed: resolved-candidate (multi-finding-commit fixture flagged; consolidation fixture — valid disposition closures, survivor union labels, gate runs all pins).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:35:51.794831Z",
+  "updated_at": "2026-07-20T00:38:09.577095Z",
+  "closed_at": "2026-07-20T00:38:09.577095Z",
+  "comments": [
+    {
+      "uuid": "db7265ed-1ffe-4f41-8be6-98afda169d03",
+      "author": "xqjG",
+      "content": "Fixed: multi-finding-commit and consolidation fixtures added; criterion asserts the cross-check flags the former and the latter closes with valid disposition closures, carries the label union, and gates on all survivor pins. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:37:51.845625Z",
+      "kind": "resolution"
+    }
+  ]
+}

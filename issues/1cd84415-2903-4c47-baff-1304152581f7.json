@@ -1,0 +1,29 @@
+{
+  "uuid": "1cd84415-2903-4c47-baff-1304152581f7",
+  "display_id": 805,
+  "title": "Layer 3 round 6 nit collector: remaining state string fields uncleaned (comparison-only, latent per #801); intra-state cleaning asymmetry (current_phase cleaned vs gate.phase not); broken human form prints machine_token raw while machine cleans it",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-07-27T17:34:14.704346Z",
+  "updated_at": "2026-07-28T21:04:01.497200Z",
+  "closed_at": "2026-07-28T21:04:01.497192Z",
+  "comments": [
+    {
+      "uuid": "65f1c198-ff14-47ea-a669-3aecc803a100",
+      "display_id": 1076,
+      "author": "xqjG",
+      "content": "PHASE-4 ROUTING (under the #806 format-carry). Three nits, two dispositions: (1) the comparison-only uncleaned state fields (milestone pointer, gate strings, published) — ROUTE TO the terminal-safety amendment's clean-at-source scope decision (whether read_state cleans ALL state display-destined strings, resolving the intra-state asymmetry too); (2) the broken human machine_token-raw uniformity nit — same amendment (the recursive sanitizer subsumes it). No standalone Layer-3 fix; routed to the amendment, open until it lands.",
+      "created_at": "2026-07-27T18:15:09.423684Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "3b2210da-5010-4817-a20f-5904ba0e21de",
+      "display_id": 1115,
+      "author": "xqjG",
+      "content": "Resolved by the Layer-3 rebuild (#813, commits 24e76e2e + f06d0797): the Default_Ignorable_Code_Point property predicate + whole-of-output machine-form sanitizer (values and keys) close this systematically. Verified layer-3-closeable by the closing verify round (empirical strip/preserve probe + mutation tests). Closing with no separate changelog entry — the #813 rebuild entry carries the substance.",
+      "created_at": "2026-07-28T21:03:54.543225Z",
+      "kind": "resolution"
+    }
+  ]
+}

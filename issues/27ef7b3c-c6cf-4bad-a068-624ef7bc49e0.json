@@ -1,0 +1,31 @@
+{
+  "uuid": "27ef7b3c-c6cf-4bad-a068-624ef7bc49e0",
+  "display_id": 856,
+  "title": "work-check hook remediation text directs 'crosslink intervene' — a command 0.9.0-beta does not ship (dead-end instruction)",
+  "status": "open",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-08-02T01:11:44.393068Z",
+  "updated_at": "2026-08-02T01:29:06.579438Z",
+  "labels": [
+    "tech-debt"
+  ],
+  "comments": [
+    {
+      "uuid": "e0538438-08c5-4ec8-a4e3-db7b7e570372",
+      "display_id": 1382,
+      "author": "xqjG",
+      "content": "THE NIT (caught 2026-08-02 when the git-mutation block first fired): .claude/hooks/work-check.py's block message instructs the agent to log the intervention via 'crosslink intervene <issue-id> ... --trigger tool_blocked' — but crosslink 0.9.0-beta.1 has no 'intervene' subcommand ('unrecognized subcommand'). An agent following the hook's own remediation hits a dead end — the same circular-dead-end class the mdatron #49 cold read flagged ('run mdatron init first' when init did not exist). Compounding: the CONTRACT names 'crosslink intervene' as a wired-in surface (the Directive flow requirement: 'directive-reconciliation guidance ships in the session skill with crosslink intervene wired in'), so the contract depends on an upstream capability that has not shipped. FIX PATHS: (a) short-term, edit the hook's message text to log via an existing command (crosslink issue comment --kind result, the pattern actually used on #17); (b) upstream, file the intervene ask on dollspace-gay/crosslink per channel policy — the contract's Directive flow dependency is the motivation; until it ships, the contract's wired-in claim is authored-not-exercised. Interim practice stands: interventions log as tracker comments on the active issue.",
+      "created_at": "2026-08-02T01:12:08.211285Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "7a9e0be9-9c10-4a3d-a5f5-82f2ac8a13bd",
+      "display_id": 1383,
+      "author": "xqjG",
+      "content": "EXECUTED (operator-ratified ruling: the git-posture line at the PR boundary — verified against crosslink's gh#58 reconciliation, their PR #65, which ratifies the identical model). LANDED via PR #23 (fc044c5a, branch chore/856-git-posture, committed+pushed by the agent UNDER the new policy — the live test): hook-config.json's blocked list drops blanket 'git push' (main is ruleset-blocked server-side, so plain push = feature branches only), adds force-push forms + 'gh pr merge' (closing the convention-only GitHub-CLI merge hole; friction grade, honestly — shared credential means merge-is-human cannot be server-split); commit stays issue-gated; CHANGELOG closure entries ride along. LOCAL-ONLY HALF (discovered at commit): .claude/hooks/work-check.py is gitignored — a crosslink-DEPLOYED payload, so the banner rewrite + the three intervene->issue-comment repoints live only in this install and are re-deploy-fragile; the durable fix is upstream in crosslink's shipped resource, filed as dollspace-gay/crosslink#71 (the intervene dead-end is in THEIR resources; their PR #65 touches the same file). Also posted the tracking-modes.qmd residual-overclaim review note on their PR #65. #856 stays open until upstream #71 resolves or the local payload divergence is otherwise made durable (crosslink workflow diff is the visibility surface for the divergence meanwhile).",
+      "created_at": "2026-08-02T01:29:06.538147Z",
+      "kind": "result"
+    }
+  ]
+}

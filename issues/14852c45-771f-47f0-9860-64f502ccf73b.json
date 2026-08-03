@@ -1,0 +1,21 @@
+{
+  "uuid": "14852c45-771f-47f0-9860-64f502ccf73b",
+  "display_id": 340,
+  "title": "statusline r1 AIE: zero-AI-cost not falsifiable at the shell boundary",
+  "description": "Round: statusline amendment cold round 1. Lens: ai-engineer (validator: platform-engineer). Owner: SO session. Defect: 'no model invocation' is by-construction only for the pure renderer; the effectful snapshot acquisition is structurally unconstrained and no acceptance criterion tests model-absence — byte-identity would pass a temperature-0 model call. Citations verified: contract:160 vs :185 (no model-absence assertion), :197 (purity covers render only). Anchors: Status, criteria, renderer. Proposed: resolved-candidate. Failure: a future implementation adds a model call in acquisition and the invariant fails undetected — asserted, not enforced.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:56.252920Z",
+  "updated_at": "2026-07-19T23:08:17.024176Z",
+  "closed_at": "2026-07-19T23:08:17.024176Z",
+  "comments": [
+    {
+      "uuid": "a8e52599-beae-4ee5-9e32-c4af1d9fd39b",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Model-absence now enforced, not asserted: Status detection criterion requires every statusline fixture invocation run with no model credentials and no network so any model call fails the run loudly. Revision: Status detection criterion + Status bullet.",
+      "created_at": "2026-07-19T23:07:53.100468Z",
+      "kind": "resolution"
+    }
+  ]
+}

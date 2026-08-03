@@ -1,0 +1,45 @@
+{
+  "uuid": "d3ad54d7-b083-4b22-9c7f-a665964f4b38",
+  "display_id": 755,
+  "title": "Phase 3 execution, Layer 2: round 2 — verify the round-1 fixes, re-decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:44:36.642835Z",
+  "updated_at": "2026-07-22T20:21:28.980844Z",
+  "closed_at": "2026-07-22T20:21:28.980835Z",
+  "comments": [
+    {
+      "uuid": "de9f600d-23d4-41cc-be4d-bc89e1ff1135",
+      "display_id": 987,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: operator continuation 2026-07-22. vehicle: the Workflow orchestration surface, attended side. round shape: VERIFY — each lens adversarially verifies the nine round-1 fixes (d84109f5) in its scope, tries to refute each fix claim, and sweeps the changed surfaces for regressions and new defects; the round's output re-decides the stop. domains, same four as round 1 (the fixes land on the same surfaces): software-engineer (the uniform gate conjunct, the acquisition rework, the ref normalizer, the subprocess loop), security (the bounded runner's cap/deadline/kill semantics, stderr truncation, path sanitization, PATH posture, HOME handling), quality-engineer (falsifiability of the reworked suites — the temp-tree positive's pin, corpus exactness at 15, determinism-over-all, the four draft fixtures' assertions), data-engineer (fixture shapes against the snapshot-schema mirror, resolution-vocabulary semantics per #746, the corpus rationale comments against contract text). MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH (the pass's deepest new surfaces — a new subprocess module and a reworked shell tier; high's catch record stands), quality-engineer and data-engineer MEDIUM. expected_cost_band: the verify-round band — 0-15 findings pre-dedup, 100k-250k downstream tokens (narrower than round 1's discovery posture; round 1 observed 243,445 at the same lens set). inputs: the tree at 9bdc3824 (d84109f5 fix pass + changelog mirror), the nine closed children #746-#754 with their result records, the #745 completion record. returned + telemetry recorded here after.",
+      "created_at": "2026-07-22T17:45:05.248118Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "9a837ea0-14c4-45f5-b66a-f1366b0139b1",
+      "display_id": 988,
+      "author": "xqjG",
+      "content": "ROUND 2 RETURNED (the verify round over d84109f5). Verdict grid: 36 fix verdicts across four lenses — 33 held, 3 incomplete (#751 and #754 by security, #750 by quality-engineer); no fix regressed. Stop: NOT reached — 3 of 4 lenses recommend another round (data-engineer alone recommends stop); real majors exist. 13 findings pre-dedup consolidated to eight children: #756 (major, SE+security convergent: run_bounded's residual unbounded and silent paths — descendant-held pipe defeats the deadline at join, the demonstrated wedge; try_wait error leaves the child running; stdout read failure degrades to silent truncated Completed), #757 (major QE: the #750 pin is one-directional — reverting the #746 inconclusive branch survives the whole suite), #758 (major QE: the #738 uniform conjunct has no falsifier — dropping the phase or layer match stays green; executed mutant evidence), #759 (major QE+DE: the three integrity draft fixtures' sibling controls cannot discriminate at the kind-set grain, rationale comments overstate; the missing-owner fixture's (0 open) gauge is incoherent with its own two open findings), #760 (minor, SE+security+DE TRIPLE-convergent: stderr truncates before the absolute-root sanitize — a cut mid-path leaks a partial user-absolute path into record-destined text, the ratified #730 class; sanitize also misses the canonicalized and home forms), #761 (minor SE, PLAUSIBLE pending reproduction: refname:short renders heads/<name> on a branch-tag collision — a false off-grammar finding; fix aligns the local query to full refnames), #762 (minor collector QE+security: milestone parse and count-strip untested, glob length guard untested, empty-string HOME bypasses the #746 guard), #763 (minor collector DE: the manifest gloss now overstates what the substrate check verifies for exists-and-referenced; the open-count gauge is an undeclared bootstrap conflation — declare it like the #753 session one). TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 on all four; effort chosen=observed (SE and security high, QE and DE medium); cost band DECLARED 100k-250k downstream tokens, OBSERVED 314,456 with 110 tool invocations — OVER BAND by 26%: the verify posture's reproduction-chasing (executed mutant experiments, live-surface grounding) ran deeper than the declared band anticipated; the band figure was set from round 1's discovery shape, and the next verify-round declaration should carry its own calibration. Fix pass follows under the standing continuation conduct.",
+      "created_at": "2026-07-22T18:02:42.049574Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "3b3dc05a-d062-4699-9b46-1fa53b55bd7c",
+      "display_id": 998,
+      "author": "xqjG",
+      "content": "Round 2 fix pass COMPLETE (commits: 74b01866 the core-removal migration #764, a49206fe the eight-child fix pass #756-#763; changelog mirror follows the closes). All nine children closed with results. MID-PASS SUBSTRATE EVENT, recorded: the mdatron repo executed its half of the ratified core removal during our pass (mdatron #81 — workspace collapsed to a single binary-first crate), which broke our path dependency mid-build; the vsdd half of the migration (#764, the #739 workspace marker) was executed in the same pass rather than deferred, since every gate was blocked on it. Upstream also landed our relayed BOM/CRLF raise (their #78, with the shared fence-edge conformance corpus) and config file_globs jurisdiction (their #77) — the raise watches can note two of three delivered items acted on. Corpus now 20 fixtures exactly: 11 operator-adopted, NINE drafts awaiting the operator's adoption batch (four from #749, two stale-gate falsifiers from #758, three clean negatives from #759). Gates after the pass: 97 tests pass / 0 fail, clippy zero, fmt clean, mdatron verify clean. Round 3 (verify the round-2 fixes, re-decide the stop) dispatches next under the standing continuation conduct.",
+      "created_at": "2026-07-22T18:49:07.144316Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "1c18f6cd-1dc0-47b1-9341-e28fc0e11249",
+      "display_id": 1014,
+      "author": "xqjG",
+      "content": "Round 2 complete: 33/36 verdicts held, nine children #756-#764 (including the core-removal migration), all fixed in a49206fe + 74b01866 and verified by round 3. Closed at the Layer 2 sign-off (decision on #770).",
+      "created_at": "2026-07-22T20:21:22.929566Z",
+      "kind": "result"
+    }
+  ]
+}

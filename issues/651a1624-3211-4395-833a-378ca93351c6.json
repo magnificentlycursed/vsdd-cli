@@ -1,0 +1,29 @@
+{
+  "uuid": "651a1624-3211-4395-833a-378ca93351c6",
+  "display_id": 657,
+  "title": "Layer 0: phantom co-author trailers on public main (fabricated domain identities from the June-era attribution practice)",
+  "description": "GitHub renders the repo with a fake multi-person author cast: June-era Phase 1a commits carry Co-Authored-By trailers with fabricated domain identities (so@vsdd-domains, tw@vsdd-domains, dr@, pe@, security@, sa@, aie@, qe@, vsdd-methodology@ — plus one malformed trailer-shaped sentence), which GitHub parses into author chips ('7 people' on the repo home). Git author/committer fields are clean (single identity, all branches); trailer emails are fabricated or anthropic-noreply — attribution pollution, not identity leakage. Practice is dead in respec-era commits and contradicts the ratified contract (reviewer roles are signed tracker identities, never git co-authors). Retroactive removal = message rewrite rehashing history — the same vehicle as the driver-key blob purge (#656); the two items share one rewrite decision. Interim mitigation available: pushing current main (61 ahead) replaces the repo-home facepile with current-commit authors. Evidence: trailer enumeration over main history recorded on #597, 2026-07-20; screenshot provided by operator.",
+  "status": "open",
+  "priority": "medium",
+  "parent_uuid": "aab7eb64-ad2b-4f6b-99c1-885a0fc5258a",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T00:11:17.272205Z",
+  "updated_at": "2026-07-31T23:18:09.555378Z",
+  "comments": [
+    {
+      "uuid": "cde4a55f-af8a-431b-8b73-382f2d20ed9a",
+      "author": "xqjG",
+      "content": "Operator ruling 2026-07-20 (decision on #597): retroactive cleanup bundles with the #656 rewrite decision — one rewrite-and-force-push event would cover both this issue's trailer stripping and the driver-key blob purge, decided after the cross-persona audit. Going-forward half is closed by ruling: no domain trailers ever again; the Claude model trailer stays. This issue remains open pending the bundled rewrite decision.",
+      "created_at": "2026-07-21T00:16:07.002779Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "c5bc8507-0b4d-4d88-b723-08f951c74151",
+      "display_id": 1303,
+      "author": "xqjG",
+      "content": "RE-HOME (not closing) — real integrity debt (phantom co-author trailers / fabricated domain identities on main), mislabeled 'Layer 0' (retired horizontal decomposition). Re-framed off Layer-0; remains open. Route to the Security/integrity lane.",
+      "created_at": "2026-07-31T23:18:09.542085Z",
+      "kind": "note"
+    }
+  ]
+}

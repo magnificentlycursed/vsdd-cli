@@ -1,0 +1,21 @@
+{
+  "uuid": "5a3d1179-ba46-4f27-96a4-03ce97427b95",
+  "display_id": 277,
+  "title": "amend-r5-OP: session shape off-chassis — root sessions bind no repo substrate",
+  "description": "Operator-confirmed structural finding from the restart attempt. Fix: sessions launch from the repo they govern; workspace root is cross-repo orchestration and composed statusline only; the binding itself joins the session-substrate check; falsifier and mis-rooted fixture added. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:04:37.136727Z",
+  "updated_at": "2026-07-20T19:09:39.919594Z",
+  "closed_at": "2026-07-20T19:09:39.919594Z",
+  "comments": [
+    {
+      "uuid": "54bd3e28-2e42-40f1-ad1e-02cf4f1f1a4a",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:09:36.834144Z",
+      "kind": "resolution"
+    }
+  ]
+}

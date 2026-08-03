@@ -1,0 +1,35 @@
+{
+  "uuid": "7f6dce6c-3ab1-46d7-8b3f-69379888f792",
+  "display_id": 576,
+  "title": "defect-fix lane amendment cold round 14",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 14 (post round-13: primary-lane convergent wording; cfg-vanished composed-clause scoping with the 1c mapping-schema item). Round 13 had two of three lenses clean; this round tests for the stop signal. Series 19-13-9-9-12-12-6-7-6-5-5-4-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T03:24:39.009984Z",
+  "updated_at": "2026-07-20T04:04:44.789985Z",
+  "closed_at": "2026-07-20T04:04:44.789985Z",
+  "comments": [
+    {
+      "uuid": "e82b3747-4d1c-4d4c-8d55-cd123edb2a15",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 14. Subject: lane revision 14 anchors: the gate bullet as amended through round 13 (primary-lane partition wording with the attached-scrutiny clause; reported-but-non-executing composed scope with the cfg-vanished degradation and 1c schema item; all prior machinery) + falsifier; lifecycle + falsifier; Conformance; Recorded review dispatch; References; composition scope; Gates; criterion; corpus; Terms registrations. Out of scope: statusline and effort amendments. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only — round 13 had two clean lenses; this round tests for full convergence.",
+      "created_at": "2026-07-20T03:25:02.052112Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "155035b4-1185-4a4c-b291-52b068c235b0",
+      "author": "xqjG",
+      "content": "Lane round 14 complete. SE 2 + QE 2 + methodology 1 = 5 filed: L255 mechanism-exception honesty; L256 adopted-default report-set; L257 degradation onto the 2a roster; L258 fixture rename; L259 requirement propagation. Four of five root in the round-13 cfg-vanished clause. Series ...-4-2-5. Not clean; round 15 after disposition.",
+      "created_at": "2026-07-20T04:02:56.304259Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "8c385ef9-0332-4832-8b2e-3805868d8095",
+      "author": "xqjG",
+      "content": "Round fully disposed: 5/5 fixed. mdatron verify clean on lane revision 15. Closing; round 15 dispatches.",
+      "created_at": "2026-07-20T04:04:43.405723Z",
+      "kind": "result"
+    }
+  ]
+}

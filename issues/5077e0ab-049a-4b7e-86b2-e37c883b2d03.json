@@ -1,0 +1,22 @@
+{
+  "uuid": "5077e0ab-049a-4b7e-86b2-e37c883b2d03",
+  "display_id": 677,
+  "title": "r1 major QE: cannot-run predicate undecidable on a truncated report; timeout-with-partial-report unclassified",
+  "description": "Evidence: gate-data.md:22-25. A first-test hard abort can truncate the report mid-write — neither 'no report at all' nor 'a populated report'; the discriminator has no verdict where its one job is discrimination. Timeout with a large partial report (900 pass, hang at 901) is likewise unclassified. Runner-dependence noted (process-per-test vs in-process). Disposition: third arm — present-but-unparseable fails closed to cannot-run; extend timeout semantics; bind the verdict to the declared runner's report contract. Data-side fix. Owner: data-engineer. Validator: quality-engineer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:17:39.501080Z",
+  "updated_at": "2026-07-21T04:10:45.039278Z",
+  "closed_at": "2026-07-21T04:10:45.039278Z",
+  "comments": [
+    {
+      "uuid": "57d2bd99-e398-486c-b73e-cb1c19795d88",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, gate-data 0.2.0): cannot_run_when gains the third arm — a report the declared runner's contract cannot parse fails closed to cannot-run (truncated mid-write covered); timeout_semantics covers the partial-report case (a partial report from an unfinished run is not a population); new report_binding field binds the verdict to the declared runner's report contract and states process-model independence. Round 2 re-verifies (validator: quality-engineer).",
+      "created_at": "2026-07-21T04:10:40.365103Z",
+      "kind": "result"
+    }
+  ]
+}

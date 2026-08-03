@@ -1,0 +1,21 @@
+{
+  "uuid": "4aa6843f-d5c0-4c58-8fa1-ec61d18ace2f",
+  "display_id": 525,
+  "title": "statusline r13 UX: recovery pointer has no referent or oracle",
+  "description": "Round 13. Lens: ux (validator: DR). Defect: 'resolvable' has no referent-space; the mechanical-branch promise has no defined target; the 'exactly as' symmetry claim is false (the human half is a text check, the machine half adds unresolvable resolvability). Citations verified: contract:188, :163, :203. Proposed: resolved-candidate (the recovery action is a member of the versioned action vocabulary — resolvable becomes a mechanical membership check; each form falsified in its own idiom, the false symmetry phrase dropped).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:16.344413Z",
+  "updated_at": "2026-07-20T01:45:47.746196Z",
+  "closed_at": "2026-07-20T01:45:47.746196Z",
+  "comments": [
+    {
+      "uuid": "924c1e3b-099a-447d-bbc3-19a44a1f9dd7",
+      "author": "xqjG",
+      "content": "Fixed: the recovery action is a member of the versioned action vocabulary — resolvable is a mechanical membership check; each form falsified in its own idiom; the false symmetry phrase dropped. Revision: Status bullet + criterion.",
+      "created_at": "2026-07-20T01:45:33.303909Z",
+      "kind": "resolution"
+    }
+  ]
+}

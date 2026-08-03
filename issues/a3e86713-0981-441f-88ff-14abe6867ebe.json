@@ -1,0 +1,25 @@
+{
+  "uuid": "a3e86713-0981-441f-88ff-14abe6867ebe",
+  "display_id": 16,
+  "title": "Phase 5: mdatron init + .mdatron/config.yaml",
+  "description": "v0.1.0 OR v0.1.x - operator decision pending on release window.\n\nScope: (1) mdatron init subcommand: creates .mdatron/schemas/ + .mdatron/patterns/ empty; writes .mdatron/config.yaml with documented stub fields (schemas_dir, patterns_dir, file_globs). (2) mdatron verify reads .mdatron/config.yaml first; CLI flags override config; absent config is fine (uses defaults). (3) Three-way classification + flag surface (--force / --update / --no-prompt / --dry-run) same shape as vsdd init's Phase 3 work. (4) Managed-section markers in config.yaml per DR.\n\nAcceptance: mdatron init on fresh project produces working empty scaffold + parseable config.yaml; mdatron verify honors config.yaml; CLI overrides win; re-run after toolkit upgrade triggers --update path correctly.\n\nPer docs/refactor/binary-first-plan.md Phase 5. Blocked by Phase 4.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T19:06:19.789906Z",
+  "updated_at": "2026-07-29T10:05:59.772165Z",
+  "closed_at": "2026-07-29T10:05:59.772154Z",
+  "blockers": [
+    "440db558-bd72-4bc6-8c3e-c188cc37b16e"
+  ],
+  "comments": [
+    {
+      "uuid": "bb2b681b-32b5-4723-85ee-a1ecae0c1b25",
+      "display_id": 1214,
+      "author": "xqjG",
+      "content": "CLOSED — tracker sweep (#826). DONE upstream: mdatron shipped init + .mdatron/config.yaml in v0.2/v0.3 (this session's flip depends on it, #816). This tracked mdatron's Phase 5 from vsdd-cli; mdatron is its own repo now. The vsdd-init parallel work folded into #820 (via #14).",
+      "created_at": "2026-07-29T10:05:53.801170Z",
+      "kind": "decision"
+    }
+  ]
+}

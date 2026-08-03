@@ -1,0 +1,21 @@
+{
+  "uuid": "ee2d2571-e766-4da7-bf0f-38ee5d43593b",
+  "display_id": 608,
+  "title": "1c-DR-r2: Layer 0 exemption asserts an unrecorded operator ruling",
+  "description": "Minor, check d. Citation (Decomposition intro): 'estate cleanup is operational by the operator's sequencing ruling' — the body's only grounding ('Sequenced in Phase 1c as layer 0, since cleanup precedes build', Estate cleanup mechanics) carries no operator attribution or operational classification. Fix: ground the exemption in the open question's sequencing plus the absence of build behavior to falsify. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:20:57.192285Z",
+  "updated_at": "2026-07-20T17:21:48.582999Z",
+  "closed_at": "2026-07-20T17:21:48.582999Z",
+  "comments": [
+    {
+      "uuid": "4fad4efc-cdd1-4501-b609-c819b2729d66",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Intro now grounds the exemption in the contract body: 'estate cleanup precedes build per the Estate cleanup mechanics sequencing and delivers no build behavior for a red gate to falsify' — no operator-ruling attribution claimed. mdatron verify clean.",
+      "created_at": "2026-07-20T17:21:47.367725Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "cd286365-0b67-429d-a41a-14086fa9ebe7",
+  "display_id": 399,
+  "title": "lane r1: mechanization not extended to fix scale",
+  "description": "Lane round 1. Lenses: QE (F1) + methodology (F5) merged (validators: SE, SO). Owner: SO session. Defect: 'the gate performs the checkout and run; agent assertion plays no part' is not restated at fix scale, so 'recorded' can be agent-asserted — the motivating incident satisfies the amendment written to block it. Citations verified: contract:64, :66 vs :61, :166. Proposed: resolved-candidate (same gate command, extended; Gates requirement names the fix-scale instrument).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:08.903447Z",
+  "updated_at": "2026-07-19T23:58:34.525538Z",
+  "closed_at": "2026-07-19T23:58:34.525538Z",
+  "comments": [
+    {
+      "uuid": "0b0ebc07-900b-4c56-b7b4-3c2a9945400f",
+      "author": "xqjG",
+      "content": "Fixed: mechanization restated at fix scale — the gate performs the checkout and run, agent assertion plays no part, exactly as at layer scale; the Gates requirement's red-gate command now names both scales and the retrofit form. Revision: Phase exit by gate bullet + Gates requirement.",
+      "created_at": "2026-07-19T23:58:13.132839Z",
+      "kind": "resolution"
+    }
+  ]
+}

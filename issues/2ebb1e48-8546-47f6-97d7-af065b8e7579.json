@@ -1,0 +1,21 @@
+{
+  "uuid": "2ebb1e48-8546-47f6-97d7-af065b8e7579",
+  "display_id": 756,
+  "title": "Layer 2 round 2 major SE+security convergent: run_bounded's residual unbounded and silent paths — descendant-held pipe defeats the deadline at join; try_wait error leaves the child running; reader failure degrades to silent truncated Completed",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:59:10.825291Z",
+  "updated_at": "2026-07-22T18:45:03.649779Z",
+  "closed_at": "2026-07-22T18:45:03.649770Z",
+  "comments": [
+    {
+      "uuid": "4124539c-2857-4888-8980-c4f95f4fc6dc",
+      "display_id": 989,
+      "author": "xqjG",
+      "content": "Fixed in a49206fe: reader results return over mpsc channels and the parent collects with recv_timeout against the REMAINING deadline budget — a descendant holding the inherited pipe write-ends past the child's exit is TimedOut with the detached readers abandoned, never an unbounded join. The try_wait error arm now kills and reaps before reporting (mirroring the timeout arm). A stdout read failure or reader disappearance under a clean exit maps to SpawnBroken, never a silently truncated Completed; stderr capture stays best-effort since it garnishes diagnostics and never carries data.",
+      "created_at": "2026-07-22T18:44:57.403148Z",
+      "kind": "result"
+    }
+  ]
+}

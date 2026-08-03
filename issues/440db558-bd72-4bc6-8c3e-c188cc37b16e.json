@@ -1,0 +1,40 @@
+{
+  "uuid": "440db558-bd72-4bc6-8c3e-c188cc37b16e",
+  "display_id": 15,
+  "title": "Phase 4: Workspace re-org (collapse to single binary crate per repo)",
+  "description": "v0.1.0 blocker.\n\nScope: (1) mdatron: collapse mdatron-core + mdatron-cli into single mdatron crate; reorganize into src/main.rs + src/commands/{init,verify,explain}/mod.rs + src/dsl/ + src/schema.rs + src/diagnostic.rs + src/frontmatter.rs + src/embedded.rs. (2) vsdd: collapse vsdd-core + vsdd into single vsdd crate; reorganize into src/main.rs + src/commands/{init,verify,observe,...}/mod.rs + src/artifacts.rs (the embedded 42-markdown + 4-schema + 1-pattern + 6-template artifacts) + src/preflight.rs + src/mdatron.rs (from Phase 3). (3) Apply anyhow at binary edges (main.rs); keep typed-variant errors at module boundaries. (4) Single Cargo.toml per repo; drop [workspace] section. (5) Update cargo install discovery convention.\n\nAcceptance: cargo build produces single binary per repo; all existing tests pass after migration; cargo clippy --all-targets -- -D warnings clean.\n\nPer docs/refactor/binary-first-plan.md Phase 4. Blocked by Phase 3 (vsdd subprocess client must land before vsdd-core/vsdd merge).",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T19:06:19.628324Z",
+  "updated_at": "2026-07-29T09:57:27.652984Z",
+  "closed_at": "2026-07-29T09:57:27.652973Z",
+  "blockers": [
+    "67f6e412-c5f3-4d73-a583-14ffd4127b49"
+  ],
+  "comments": [
+    {
+      "uuid": "5d9a7e3c-675c-443a-9cc5-23c6e4eaf989",
+      "author": "xqjG",
+      "content": "Operator decision 2026-07-18 (respec session): the single-crate collapse is superseded for vsdd — the respec's cost crate requires a workspace — and deferred to Phase 1c for mdatron as an optional simplification. This issue is rescoped accordingly by the respec (see the respec tracking issue and .design/agent-first-vsdd-toolkit.md, Architecture section).",
+      "created_at": "2026-07-19T02:42:27.213109Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "0596ddd8-202e-41c7-9dc5-bdfe8038b9e0",
+      "display_id": 1169,
+      "author": "xqjG",
+      "content": "UN-STUCK (operator direction 2026-07-28). Rescheduled from 'the mdatron session's cycle / when the collapse schedules' to land WITH the engine/Slice-1 work (phase-2a). No longer a perpetual punt.\n\nSCOPE CORRECTION: the FULL single-crate collapse in this issue's title is SUPERSEDED for vsdd -- the cost crate (Slice 7) requires a workspace, so vsdd stays a 2-crate workspace. The actual pending act is narrower: REMOVE the vsdd-core crate by merging it into the vsdd binary crate, leaving {vsdd, cost} (the #739 2026-07-22 marker: 'both cores planned for removal').\n\nWHY HERE: the engine (ratified #819) IS the re-characterized vsdd-core -- state/snapshot/derivation/queries -- plus the binary's renderings; and Slice 1 already rewrites acquire.rs inside vsdd-core (the tracker-join). Merging the crate boundary away while that code is being touched is the natural moment; the slice's crate-level module map is a phase-2a act per #819, so the merge is decided/executed there.\n\nVSDD SUB-QUESTION DECIDED: the cost crate keeps the vsdd workspace (yes -- it is why full collapse is superseded). The other #739 sub-question (whether mdatron's single crate keeps a lib target) is mdatron's, excluded here.\n\nCONTRACT TOUCH: the Architecture-section workspace-shape paragraph ('this paragraph takes its amendment when the collapse schedules') now takes that scoped amendment -- ROUTED to an owned cycle (bundle with the terminology follow-on, or the Slice-1 phase-1a/1b entry), never solo-hand-edited. Issue title is now inaccurate for vsdd (full-collapse wording); retitle to 'vsdd-core removal (merge into the vsdd binary crate; cost workspace retained)' when convenient.",
+      "created_at": "2026-07-29T04:23:07.121795Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "72d7048b-0c83-4fb5-836c-235cebcb96c9",
+      "display_id": 1204,
+      "author": "xqjG",
+      "content": "CLOSED + FOLDED into #820 (Slice 1) per operator direction 2026-07-29. Framed as 'Phase 4 of the binary-first plan' (superseded; plan removed in #826). The actual work — remove the vsdd-core crate by merging it into the vsdd binary crate (cost workspace retained) — is a Slice-1 phase-2a act per #819; vsdd-core is the re-characterized engine. This is the vsdd-core question resolved: it is slice work, not dead-plan business.",
+      "created_at": "2026-07-29T09:57:21.245723Z",
+      "kind": "decision"
+    }
+  ]
+}

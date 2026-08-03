@@ -1,0 +1,29 @@
+{
+  "uuid": "3fd478b0-2ebd-4989-8393-70732c1d3db7",
+  "display_id": 70,
+  "title": "PE/F5: CARGO_BIN_EXE_mdatron migration",
+  "description": "Source: mdatron/review-log/2026-06-07-platform-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:04:09.923640Z",
+  "updated_at": "2026-06-08T01:47:56.553208Z",
+  "closed_at": "2026-06-08T01:47:56.553208Z",
+  "labels": [
+    "classification:accepted",
+    "convergence:cargo-bin-exe",
+    "cycle:crosslink-13",
+    "domain:platform-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "c39f67e2-c40b-4e68-b660-605457c73fda",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@883eaaf (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:47:55.838483Z",
+      "kind": "resolution"
+    }
+  ]
+}

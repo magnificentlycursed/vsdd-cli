@@ -1,0 +1,23 @@
+{
+  "uuid": "ee4dc370-aa42-4c8e-b08a-a697c63a39cd",
+  "display_id": 855,
+  "title": "Standing self-governance residuals (from #822): jurisdiction self-audit bypass + fail-open pre-commit version guard; families-tri-state gating now available",
+  "status": "open",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-08-02T00:45:11.800282Z",
+  "updated_at": "2026-08-02T00:45:31.811097Z",
+  "labels": [
+    "feature"
+  ],
+  "comments": [
+    {
+      "uuid": "12a8d55f-c954-4962-bb17-c3cedf70331f",
+      "display_id": 1358,
+      "author": "xqjG",
+      "content": "The two live residuals carried out of #822 (all its other members closed — see #822's disposition): (1) JURISDICTION SELF-AUDIT BYPASS — an agent can shrink .mdatron/config.yaml file_globs or use --files to escape the corpus it is judged against; sanctioned by E0060 semantics and undetected; a self-hosted meta-harness cannot detect an agent shrinking its own jurisdiction. Control direction: a diff-scoped check on jurisdiction-narrowing commits (vsdd-side; git-history comparison is not shape-tier) — candidate for the deviations/gate family in build-plan Phase 1 or its own control design. (2) FAIL-OPEN PRE-COMMIT VERSION GUARD — the mdatron version check warns-then-proceeds on skew (now at the 0.5.x window); fail-closed would block on out-of-window binaries. Small hardening, pairs with (1)'s commit-time surface. NEW OPTION since #822's capture: mdatron's 2.1.0 envelope exposes families.<name>.state tri-state (active/inert/inactive — their #107; confirmed in the roadmap disposition, their GH #20), so 'a required family actually ran' is gateable TODAY — the CI leg / canary can assert families.vocabulary.state == active, upgrading the coverage story without waiting on files_walked.",
+      "created_at": "2026-08-02T00:45:31.794600Z",
+      "kind": "plan"
+    }
+  ]
+}

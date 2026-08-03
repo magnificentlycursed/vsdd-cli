@@ -1,0 +1,96 @@
+{
+  "uuid": "c881dc5a-23e0-4be8-b1d5-ceebe409c0d2",
+  "display_id": 738,
+  "title": "Phase 2a execution, Layer 2: red-gate suite for snapshot acquisition, phase answer, and corroboration",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T20:26:02.165042Z",
+  "updated_at": "2026-07-22T20:19:34.887446Z",
+  "closed_at": "2026-07-22T15:07:47.818281Z",
+  "labels": [
+    "feature"
+  ],
+  "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
+  "comments": [
+    {
+      "uuid": "bc313d0f-1080-461c-a7d2-3df7d4d84575",
+      "author": "xqjG",
+      "content": "PHASE 2A ENTRY, LAYER 2 (2026-07-21, session #4; autonomous continuation per the operator's conduct ruling). PRIMER: vsdd-phase-2a.md read this session at Layer 1's entry; the per-milestone re-read stands satisfied by that in-session record, noted honestly. COMPOSITION DECLARATION: phase-2a; quality-engineer primary, skill-interactive, operator_confirmation carried by the Layer 1 sign-off's next-layer direction. SCOPE per the decomposition: the effectful snapshot acquisition; the pure phase-answer derivation with degraded kinds; the process-integrity queries including the refs query and the session-substrate check over the installed-artifact manifest; tracker corroboration with the unified degraded rule. CLOSES: the Convergence test; the detection-and-integrity core of Status detection; the refs-query slice of Red-gate cheat blocked. DEPENDS ON: Layer 1's state behavior (closed at d7fe1fcb). ENTRY OBLIGATIONS OWED BY THE OPERATOR, recorded: the Layer 2 manual-test checklist and red-gate seed — agent-drafted candidates follow with the module map as the next batch; Layer 1's deferred checklist run also stands open on its boundary record. PHASE-2A ACTS AHEAD: the Layer 2 crate-level module map (the design act), the fixture slice (the convergence corpus's mid-cycle states among them — the eight-fixture corpus with operator-adopted reference answers is THIS layer's oracle territory), then the failing suite and the red gate.",
+      "created_at": "2026-07-21T20:26:51.567691Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "34a6a93f-9fb3-41cf-8a8e-e407e2d4fc06",
+      "author": "xqjG",
+      "content": "LAYER 2 CRATE-LEVEL MODULE MAP (the design act). Home: vsdd-core beside Layer 1. NEW MODULES: (1) snapshot/ — mod.rs the Snapshot struct mirroring snapshot-schema's snapshot_fields verbatim (acquisition_outcome enum acquired|absent|unusable; milestones, findings, round_manifests, round_children, comment_handles, the four display fields); acquire.rs the EFFECTFUL acquisition building the snapshot from the chassis's query surface — one acquisition per invocation, absent and unusable outcomes never panic (the count-conduct instruments join at Layer 3). (2) answer/ — mod.rs the PhaseAnswer struct (phase, layer, next_action from the vocabulary, active composition echo, degraded kind, integrity findings at the kind-set grain); derive.rs the PURE derivation (State, Snapshot, the loaded registry data) -> PhaseAnswer — deterministic, degraded exactly when the outcome is absent or unusable with the kind never swapped, null phase mapping to the enter action, fix-lane tokens excluded from the output domain per the #689 ruling; integrity.rs the PURE snapshot-scoped checks, the audit's six less the degraded-kind check (which is the derivation's own enforced property): round-parity, unresolvable handles, findings missing owner or validator, closed findings missing evidence, phase pointer against milestone state. (3) integrity_shell/ — refs.rs the off-grammar query: a PURE membership core over injected ref names consuming the registered branch grammar (both forms plus exempt refs), the git listing in the shell; substrate.rs the session-substrate check over the installed-artifact manifest — three-valued fail-closed per entry by its resolution field, plus the project-root-equals-repo-root member. PURITY: derive, integrity, and refs membership are pure property targets; acquisition, git listing, and filesystem resolution are shell. DEPENDENCY, PE-FLAGGED: the regex crate — the branch grammar's registered patterns are regex strings in versioned data, and hand-rolling a matcher would reimplement what the data declares; investigation note follows with the suite. DATA-SHAPE PREREQUISITE, found by this design act: dispatch-data's exempt refs live in rules PROSE while this layer's refs query consumes them as data — the #688-adopted set promotes to a structured exempt_refs field under the pair rule (data-side mechanical, the adopted content unchanged), and sets.rs types branch_grammar per its Layer 2 deepening annotation. ORACLE TERRITORY AHEAD: the convergence fixtures' reference answers draft with the suite and are proposals until operator adoption.",
+      "created_at": "2026-07-21T20:51:52.227951Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "fe7cc6ae-f117-4d94-8d76-7a87b21e767a",
+      "author": "xqjG",
+      "content": "DIVERGENCE NOTE, once for this layer's phase 2a (the stated-reason rule, same class as the #716 note): todo! bodies in the Layer 2 modules are the red-gate pre-implementation surface — the API compiles, the tests fail executed, 2b turns them green; a todo! surviving 2b's green gate is a real defect. The hook's warning stands as the tripwire outside 2a.",
+      "created_at": "2026-07-21T20:53:53.690119Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "f6e789c6-41f8-4725-b167-65deed1866fc",
+      "author": "xqjG",
+      "content": "RED-GATE SUITE COMPLETE, FAILING RUN RECORDED (bootstrap format-carry): commit efe0107d is the suite-completion point and the layer gate's pre-implementation baseline stamp. Run record (cargo test --workspace --no-fail-fast, 2026-07-21): convergence_red_gate 0 passed / 6 failed; shell_red_gate 0 passed / 7 failed — all 13 EXECUTED (panic kind against the todo stubs, the declared set); pre-existing targets green (73); suite exit nonzero; clippy zero; fmt and verify clean. COVERAGE against the layer's criteria: the Convergence test's comparison implemented exactly (every field exact-match, integrity at the kind-set grain, ten fixtures with the at-least-ten floor asserted); determinism, degraded-kinds-never-swapped, disagreement-files-without-degrading, fix-lane exclusion, vocabulary-membership; the refs-query slice both directions plus the invalid-pattern diagnostic; the substrate check's live-tree positive, hollow-shell fail, mis-rooted first-member, and worded-absence conducts. THREE PROPOSALS NOW AWAIT THE OPERATOR (the layer's adoption batch, presented in-session): (A) the red-gate seed — cargo test --workspace binding unchanged, baseline efe0107d, expected red 13 executed, 3-run kind-set aggregation, zero pre-existing failures excused; (B) the Layer 2 manual checklist (lands as manual-tests/layer-2.md on adoption) — the convergence INDEPENDENCE check foremost: the operator answers two or three fixtures by eye from their state and snapshot files and compares against the drafted references, the one check no agent can perform on its own oracle; plus degraded-text readability, the hollow-shell substrate report's human reading, and the live refs-query output; (C) THE REFERENCE ANSWERS — the ten drafted expected.yaml files and the derivation rule table documented in answer/derive.rs are DRAFT ORACLES under The operator authors the oracle; adoption makes them the Convergence test's comparison targets. The rule table and per-fixture answers are presented in the session summary for review; adoption, amendment, or redlines per fixture all work.",
+      "created_at": "2026-07-21T20:58:03.345314Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "6c1ddfa6-26b2-4fd4-977c-81b1f9c1000a",
+      "author": "xqjG",
+      "content": "DIRECTIVE CLASSIFICATION (mid-flow, 2026-07-22): operator scope ruling for the mdatron boundary — 'Schematron for Markdown with rust-like errors for agent-first workflows.' Scope read: a general rule settling the two-project boundary, anchoring the amendment bundle already queued from the Thermite findings (tier clause, prose-restatement rule) and adding a third member: the state artifact's validation re-homes to vsdd because state.yaml is not markdown — by-medium exclusion, not argument. Both boundary texts drafted this turn: the mdatron-side scope statement (carried by the operator to the mdatron design cycle) and the vsdd amendment candidate. The state-consistency family's evidence-join half re-homes to vsdd's integrity machinery (already half-built at Layer 2); mdatron keeps every markdown-side family (schemas, cross-file patterns, routes, pins, vocabulary and register).",
+      "created_at": "2026-07-22T14:08:53.730468Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "264f534d-070b-4ebe-999e-5f74104d5411",
+      "author": "xqjG",
+      "content": "ADOPTIONS RECORDED (2026-07-22): item A ADOPTED — the red-gate seed, with the baseline honestly RE-STAMPED at fb105523 (the redline changed suite content, so the pre-implementation baseline moves to the last 2a commit; the earlier efe0107d stamp is superseded on this trail). Item B ADOPTED — manual-tests/layer-2.md committed with the adoption cited. Item C's one open question RULED: the #665 amendment (the work, not the ceremony) applied in all three homes at fb105523; C-as-amended awaits the operator's adoption word — the ten reference answers now carry no undecided member. Remaining from the decision board: C-as-amended, the #739 boundary bundle, the three-question procedure, the pair-restore registration rider.",
+      "created_at": "2026-07-22T14:21:48.456395Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "9a9efd02-ebce-44f2-a9ba-4b6fb6c2c3a7",
+      "author": "xqjG",
+      "content": "DESIGN NOTE for Layer 3's entry (operator question 2026-07-22, Thermite-informed): POSITION AND HEALTH ARE ORTHOGONAL FACETS of the one derived output — position (phase, layer, next action, composition; boundary-cadence, navigational) versus health (degraded kind, integrity, substrate, refs; continuous-cadence, diagnostic); a disagreeing snapshot filing a finding without degrading already encodes the split. SURFACING MODEL, the Thermite lesson (thermite-state-architecture knowledge page): silence when healthy at act time (hooks block, never narrate); position plus health COUNTS ONLY in the always-on session-start slice, inside the existing always-on-core 1500-token budget; full health detail is PULL (the status forms), fetched when counts are nonzero; the statusline stays position-glance plus one health word (already designed). STRUCTURAL CONSEQUENCE, deliberately deferred: the PhaseAnswer struct stays flat (no fixture churn pre-adoption); the split lands at Layer 3 as NAMED BLOCKS in the machine form — answer (position) and report (health) — two sections in the human form, and the session-start slice specified position-plus-counts under budget. The health-detail-is-pull rule is the token-economics guard: health detail scales with estate mess and ambient surfaces must not. One acquisition, one derivation, two named facets, four channels by cadence.",
+      "created_at": "2026-07-22T14:29:56.248201Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "595ca2b2-6951-4499-aefc-9b2d63fc0ec6",
+      "author": "xqjG",
+      "content": "ITEM C ADOPTED by operator (2026-07-22): the eleven reference answers stand as the convergence corpus's oracles — adopted after the operator's review arc (the pre-entry redline via the #665 amendment, the error-state question adding the failed-exit member, the rationale-comment request). Every answer now carries its grounding comment. The answers are frozen rulings from this record forward: divergence routes through directive reconciliation; the corpus grows only by the recorded lane (fixture plus adopted answer). Baseline for the seed: the rationale-comment commit (comments only — no value changed; recorded for the stamp trail). Implementation to green proceeds now per the standing conduct.",
+      "created_at": "2026-07-22T15:06:01.167527Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "d487bf1e-b08b-4a19-b569-8ac063d73b88",
+      "author": "xqjG",
+      "content": "PHASE-2A EXIT, LAYER 2 (2026-07-22): every exit condition stands — the suite red at the re-stamped baseline with the failing run recorded, the oracle corpus ADOPTED (eleven answers, rationale-annotated, the operator's review arc on this trail), the manual checklist committed and adopted. The operator's adoption completes the phase's operator obligations; the exit is mechanical under the autonomous-continuation conduct. Closing; 2b opens.",
+      "created_at": "2026-07-22T15:07:43.836772Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "3cf52ab7-23af-4422-95c8-6d2997981bfc",
+      "display_id": 974,
+      "author": "xqjG",
+      "content": "ORACLE AMENDMENT (operator ruling 2026-07-22, from the l2r1 round's code-vs-oracle divergence finding): the adopted rule table's gate-matching arms are amended to state the record-matching conjuncts explicitly — a gate record satisfies an arm when it matches on KIND, OUTCOME, LAYER, AND PHASE, uniformly across the 2a, 2b, and 2c arms. The code's extra layer conjunct at 2c was the defensible behavior (a stale prior-layer pass must not flip a transition); the amendment makes the adopted text state it, and extends the same uniformity to 2a/2b (whose arms previously matched kind+outcome+layer only). derive.rs's doc table and the implementation align to this text in the fix pass; no fixture values change (every corpus record already carries the matching phase).",
+      "created_at": "2026-07-22T17:12:08.719723Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "c5a29b5b-8a6d-4e08-9dae-2fa14502633e",
+      "display_id": 1011,
+      "author": "xqjG",
+      "content": "OPERATOR ADOPTION, SECOND BATCH (2026-07-22): the operator adopts the nine draft oracles, converting the whole twenty-fixture convergence corpus to operator-adopted reference answers. Adopted: the four round-1 additions drafted under #749 (integrity-missing-owner, integrity-closed-no-evidence, integrity-unresolvable-handle, round-parity-agreeing) and the five round-2 additions drafted under #758 (stale-gate-prior-phase, stale-gate-prior-layer — the uniform gate conjunct's falsifiers, so this adoption also ratifies at fixture grain the #738 oracle amendment recorded above) and #759 (integrity-owned-open, integrity-lawful-disposition-closure, integrity-resolving-handles — the clean negatives pinning each integrity kind's discrimination). Each fixture's rationale comment carries its grounding; the DRAFT markers convert to adoption citations pointing here. The operator authors the oracle: from this act the nine carry the operator's signature, not the agent's.",
+      "created_at": "2026-07-22T20:19:34.863334Z",
+      "kind": "decision"
+    }
+  ]
+}

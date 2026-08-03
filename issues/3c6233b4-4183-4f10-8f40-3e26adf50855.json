@@ -1,0 +1,28 @@
+{
+  "uuid": "3c6233b4-4183-4f10-8f40-3e26adf50855",
+  "display_id": 224,
+  "title": "VM/F1: Phase 1a/1b/1c condensation lacks operator-directive citation",
+  "description": "Source: mdatron/review-log/2026-06-02-vsdd-methodology-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: vsdd-cli@99bf65e (Phase 1a/1b/1c split)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:25:11.582012Z",
+  "updated_at": "2026-06-08T02:34:19.637728Z",
+  "closed_at": "2026-06-08T02:34:19.637728Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:vsdd-methodology",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "5ecd3f69-6b32-4613-9cd3-9def360bf329",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (vsdd-cli@99bf65e (Phase 1a/1b/1c split)).",
+      "created_at": "2026-06-08T02:34:18.872347Z",
+      "kind": "resolution"
+    }
+  ]
+}

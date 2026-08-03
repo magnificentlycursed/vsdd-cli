@@ -1,0 +1,21 @@
+{
+  "uuid": "0be3246f-4d2d-4190-95b7-4251dafb61eb",
+  "display_id": 565,
+  "title": "lane r12 QE: environment parity asserted without an instrument",
+  "description": "Lane round 12. Lens: QE, borderline per its own confidence note (validator: SE). Defect: the one-invocation-one-runner precondition has no check, unlike the statusline's acquisition count. Citations verified: contract:64 vs :173, :180, :188. Proposed: resolved-candidate (the gate record carries one invocation stamp spanning both runs; a split record is the falsifier's condition — mirroring the count pattern).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:52:54.159682Z",
+  "updated_at": "2026-07-20T02:55:19.556644Z",
+  "closed_at": "2026-07-20T02:55:19.556644Z",
+  "comments": [
+    {
+      "uuid": "a67d5e73-dc32-4b2c-ae5b-2d8b41f18d0e",
+      "author": "xqjG",
+      "content": "Fixed: the gate record carries one invocation stamp spanning both runs; a split record fails — mirroring the acquisition-count pattern; split-invocation seed added. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T02:54:50.382403Z",
+      "kind": "resolution"
+    }
+  ]
+}

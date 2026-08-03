@@ -1,0 +1,22 @@
+{
+  "uuid": "e0036c30-1f54-4a72-a37b-25375e328863",
+  "display_id": 685,
+  "title": "r1 major DR+SA+SO triple-convergent: stale 'Three OPEN decision notes' sentence contradicts the recorded rulings",
+  "description": "Evidence: state-schema.md:62 says three notes await the operator while the frontmatter fields carry '(operator ruling 2026-07-20, vsdd-cli #665)' inline and #665's decision confirms all three resolved. Three lenses caught it independently — the strongest convergence of the round. Disposition: delete the stale sentence, cite #665. Data-side. Owner: data-engineer. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:19:00.245476Z",
+  "updated_at": "2026-07-21T04:12:14.993149Z",
+  "closed_at": "2026-07-21T04:12:14.993149Z",
+  "comments": [
+    {
+      "uuid": "840ad262-ecdc-4d03-95fb-339051480444",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, state-schema): the stale three-OPEN-notes sentence replaced with the resolved statement citing #665's rulings and their inline presence in the field semantics. Round 2 re-verifies (validator: documentation-reviewer).",
+      "created_at": "2026-07-21T04:12:10.424780Z",
+      "kind": "result"
+    }
+  ]
+}

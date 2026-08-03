@@ -1,0 +1,21 @@
+{
+  "uuid": "f1481b82-3a0e-4a76-afa1-bb55909afa34",
+  "display_id": 618,
+  "title": "1c-DR-r3: no implementing item for Gate coverage's terminal-round check",
+  "description": "Minor, check f. Citation (Layer 6 scope) vs Gate coverage: 'a fixture whose terminal round contains a real finding fails phase-3 exit' — no #331 item implements the stop-signal check, and the Gates requirement's own enumeration carries the same gap. Fix: add the terminal-round stop-signal check to both the Gates requirement enumeration and #331's scope (a reconciliation the ratified criterion already implies). Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:31:09.701255Z",
+  "updated_at": "2026-07-20T17:32:32.336944Z",
+  "closed_at": "2026-07-20T17:32:32.336944Z",
+  "comments": [
+    {
+      "uuid": "a87bafe1-e3d1-45d4-9e10-f8204a934250",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Gates requirement gains 'terminal-round check (phase-3 exit fails while the terminal round holds a real finding — the stop signal made mechanical...)' and L6's scope gains 'the terminal-round stop-signal check' — the reconciliation the ratified Gate coverage criterion already implies, flagged for operator note at sign-off. mdatron verify clean.",
+      "created_at": "2026-07-20T17:32:30.890934Z",
+      "kind": "resolution"
+    }
+  ]
+}

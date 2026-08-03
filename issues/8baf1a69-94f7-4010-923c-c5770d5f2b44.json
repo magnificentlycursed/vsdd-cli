@@ -1,0 +1,21 @@
+{
+  "uuid": "8baf1a69-94f7-4010-923c-c5770d5f2b44",
+  "display_id": 624,
+  "title": "1c-DR-r4: L7 consolidation fixture exercises undeclared L5/L6 behavior",
+  "description": "Minor, check b. The consolidation fixture's label-union-into-composition and gates-on-survivor-pins assertions exercise Layers 5 and 6, undeclared in #332's dependency line. Fix: declare both. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:38.080972Z",
+  "updated_at": "2026-07-20T18:13:13.199782Z",
+  "closed_at": "2026-07-20T18:13:13.199782Z",
+  "comments": [
+    {
+      "uuid": "eef4160b-f196-40f0-870a-2dcd226f53bb",
+      "author": "xqjG",
+      "content": "Fixed: Layer 7 now declares 'Layer 5's composition behavior, and Layer 6's gate behavior (the consolidation fixture's label-union and survivor-pin assertions exercise both)'.",
+      "created_at": "2026-07-20T18:13:11.725503Z",
+      "kind": "resolution"
+    }
+  ]
+}

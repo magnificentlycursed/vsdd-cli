@@ -1,0 +1,48 @@
+{
+  "uuid": "6239f15a-2337-4797-8aca-0b63f79891b0",
+  "display_id": 848,
+  "title": "Upstream crosslink observation: agent hook-enforcement looser than docs — plain push/merge/rebase allowed while docs claim 'no push, no merge, gated commits'",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T19:52:02.299992Z",
+  "updated_at": "2026-08-02T00:50:52.661927Z",
+  "closed_at": "2026-08-02T00:50:52.661921Z",
+  "labels": [
+    "upstream"
+  ],
+  "comments": [
+    {
+      "uuid": "f782266b-6e5c-4556-86fd-567861190683",
+      "display_id": 1314,
+      "author": "xqjG",
+      "content": "SOURCE (attended-design knowledge page, 2026-07-20 deep read of the crosslink repo): the shipped agent_overrides reduce the agent hook block list to destructive-ops only — plain git push/merge/rebase are ALLOWED at the hook layer — while container-agents.qmd, kickoff.qmd, tracking-modes.qmd, and the generated KICKOFF.md prompt all claim 'no push, no merge, gated commits' for agents. The strict blocks are prompt-level (soft/normative) only; hook enforcement is deliberately looser than every doc says. Impact on vsdd: our dispatch-posture and trust-boundary reasoning cites the documented behavior; the enforced behavior is weaker. Ask: align docs to code or tighten agent_overrides.",
+      "created_at": "2026-08-01T19:54:21.024113Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "28529835-9942-43c2-8890-4ba6765f03ea",
+      "display_id": 1323,
+      "author": "xqjG",
+      "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+      "created_at": "2026-08-01T20:02:35.353246Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "09c55aa6-552a-409d-a3f9-9b8d21659a27",
+      "display_id": 1331,
+      "author": "xqjG",
+      "content": "Filed upstream: https://github.com/dollspace-gay/crosslink/issues/58",
+      "created_at": "2026-08-01T20:06:46.213088Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "72e71b29-4b53-42cb-8a42-e3cca0770e20",
+      "display_id": 1372,
+      "author": "xqjG",
+      "content": "CLOSED (tracked upstream): filed as dollspace-gay/crosslink#58, fix in flight (their PR #65); epic magnificentlycursed/crosslink#2 tracks.",
+      "created_at": "2026-08-02T00:50:46.660195Z",
+      "kind": "result"
+    }
+  ]
+}

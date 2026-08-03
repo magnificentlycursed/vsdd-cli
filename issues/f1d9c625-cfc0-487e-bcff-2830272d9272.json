@@ -1,0 +1,31 @@
+{
+  "uuid": "f1d9c625-cfc0-487e-bcff-2830272d9272",
+  "display_id": 99,
+  "title": "AIE/F2: compact-form catalog for agent-loop",
+  "description": "Source: mdatron/review-log/2026-06-07-ai-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:05:21.766877Z",
+  "updated_at": "2026-06-08T02:31:27.045302Z",
+  "closed_at": "2026-06-08T02:31:27.045302Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:ai-engineer",
+    "review-finding"
+  ],
+  "blockers": [
+    "6bd8f84f-c949-4151-b2e6-6a764225c340"
+  ],
+  "comments": [
+    {
+      "uuid": "d64865cf-af2e-484d-8d1a-04e8f776ad65",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@cea00ab (Phase 4-take-2 Wave 9).",
+      "created_at": "2026-06-08T02:31:26.333564Z",
+      "kind": "resolution"
+    }
+  ]
+}

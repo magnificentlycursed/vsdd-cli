@@ -1,0 +1,13 @@
+{
+  "uuid": "31f88b17-ff6e-4240-aa28-fb661e649ada",
+  "display_id": 843,
+  "title": "Events-store full decommission: init.rs stops creating .vsdd/events.jsonl, retire pinning tests, dispose committed event data (#840 full-retirement, DE-F5/RT)",
+  "status": "open",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-31T21:20:08.979328Z",
+  "updated_at": "2026-07-31T21:20:15.072477Z",
+  "labels": [
+    "feature"
+  ]
+}

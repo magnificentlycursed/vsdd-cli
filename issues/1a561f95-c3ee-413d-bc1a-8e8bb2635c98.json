@@ -1,0 +1,21 @@
+{
+  "uuid": "1a561f95-c3ee-413d-bc1a-8e8bb2635c98",
+  "display_id": 422,
+  "title": "lane r2 SE: retrofit inoperable for the entangled test+fix shape",
+  "description": "Lane round 2. Lens: software-engineer (validator: SO). Owner: SO session. Defect: when the fix's test references symbols the fix introduced (the motivating incident's exact shape), the retrofit run fails to compile — a wrong-reason failure the gate rejects; the prescribed path cannot close the verification debt of the very incident cited. Citations verified: contract:64, :85, :173. Proposed: resolved-candidate (retrofit evidence is graded: separable test → full retrofit record; inseparable → the inseparability is recorded as the retrofit's surface-limitation — honest partial evidence, never fabricated equivalence).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:41.623272Z",
+  "updated_at": "2026-07-20T00:16:55.692732Z",
+  "closed_at": "2026-07-20T00:16:55.692732Z",
+  "comments": [
+    {
+      "uuid": "8e9010ff-d42e-40e2-ab04-03ff94f035b9",
+      "author": "xqjG",
+      "content": "Fixed: retrofit evidence graded — separable test yields the full record; inseparable test (references fix-introduced symbols, baseline cannot compile) records the inseparability as the retrofit's own surface-limitation; partial declared partial, never fabricated equivalence. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-20T00:16:33.128586Z",
+      "kind": "resolution"
+    }
+  ]
+}

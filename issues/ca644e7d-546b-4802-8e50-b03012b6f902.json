@@ -1,0 +1,21 @@
+{
+  "uuid": "ca644e7d-546b-4802-8e50-b03012b6f902",
+  "display_id": 628,
+  "title": "1c-DR-r4: L5/L9 token-budget-gate ownership unstated",
+  "description": "Minor, check e. Composition purity's budget-gate cell (#330) and Cost queries' over-budget-fails-CI cell (#334) cover the same behavior with no ownership note. Fix: the gate is #330's; #334 wires it into CI. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:45.102495Z",
+  "updated_at": "2026-07-20T18:13:25.610234Z",
+  "closed_at": "2026-07-20T18:13:25.610234Z",
+  "comments": [
+    {
+      "uuid": "707e06ae-63c5-4558-934c-b47319b40f82",
+      "author": "xqjG",
+      "content": "Fixed: Layer 9 now reads 'CI budget gates (wiring Layer 5's token budget gate into CI beside the ledger gates — the gate is Layer 5's behavior, the CI wiring this layer's)'.",
+      "created_at": "2026-07-20T18:13:24.171160Z",
+      "kind": "resolution"
+    }
+  ]
+}

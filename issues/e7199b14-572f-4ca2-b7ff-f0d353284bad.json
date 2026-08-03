@@ -1,0 +1,21 @@
+{
+  "uuid": "e7199b14-572f-4ca2-b7ff-f0d353284bad",
+  "display_id": 378,
+  "title": "statusline r4 A11y: install-offer prompt has no non-interactive path",
+  "description": "Round: statusline amendment cold round 4. Lens: accessibility (validator: ux). Owner: SO session. Defect: the new interactive confirmation specifies disclosure exhaustively but nothing says how a TTY-less caller, an agent-driven init (this is an agent-first toolkit), or a motor-disability operator answers it — the offer becomes a blocking gate; no fixture drives the prompt without a live answer. Citations verified: contract:159, :184. Proposed: deferred-candidate, foldable (non-interactive init presents no prompt and makes no write; prints the manual invocation and the interactive re-run path; never a hang).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:35:28.235337Z",
+  "updated_at": "2026-07-19T23:44:12.718497Z",
+  "closed_at": "2026-07-19T23:44:12.718497Z",
+  "comments": [
+    {
+      "uuid": "828eb785-3359-4ff6-88d6-dd1c5e08cfb1",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded per standing pattern). Non-interactive conduct contracted: no prompt, no write, prints the offer's existence, the manual invocation, and the interactive path — never hangs, never writes unconfirmed; criterion drives it against the statusLine-absent fixture. Revision: Install bullet + Install behaviors criterion.",
+      "created_at": "2026-07-19T23:43:54.474419Z",
+      "kind": "resolution"
+    }
+  ]
+}

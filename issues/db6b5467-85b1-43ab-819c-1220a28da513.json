@@ -1,0 +1,21 @@
+{
+  "uuid": "db6b5467-85b1-43ab-819c-1220a28da513",
+  "display_id": 761,
+  "title": "Layer 2 round 2 minor SE: the local ref query's refname:short renders heads/<name> on a branch-tag name collision — a false off-grammar finding (plausible, pending reproduction)",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T18:00:33.181200Z",
+  "updated_at": "2026-07-22T18:46:52.925926Z",
+  "closed_at": "2026-07-22T18:46:52.925918Z",
+  "comments": [
+    {
+      "uuid": "5782ebe8-2e54-4cf1-b08c-799f5d613176",
+      "display_id": 994,
+      "author": "xqjG",
+      "content": "Fixed in a49206fe: both for-each-ref queries now use --format=%(refname) and normalize_ref_lines strips refs/heads/ structurally on the local half — the short form's tag-disambiguation ambiguity is gone by construction, so a branch-tag name collision can no longer forge heads/<name> into the membership set. The origin/x survival property is preserved (refs/heads/origin/x strips exactly its namespace) and the normalizer tests updated to the full-refname contract. The finding was PLAUSIBLE pending reproduction; the fix removes the mechanism either way.",
+      "created_at": "2026-07-22T18:46:47.134076Z",
+      "kind": "result"
+    }
+  ]
+}

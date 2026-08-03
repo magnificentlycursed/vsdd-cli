@@ -1,0 +1,21 @@
+{
+  "uuid": "e6964435-c077-4f15-a9bb-29aad86abf31",
+  "display_id": 564,
+  "title": "lane r12 QE: unapproved-disablement cell uninstrumented and undeferred",
+  "description": "Lane round 12. Lens: QE (validator: SE). Defect: every sibling approval-gated lane carries its unapproved seed or explicit deferral; declared-unapproved disablement has neither — reads as covered. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (seed + criterion clause).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:52:48.468513Z",
+  "updated_at": "2026-07-20T02:55:14.809494Z",
+  "closed_at": "2026-07-20T02:55:14.809494Z",
+  "comments": [
+    {
+      "uuid": "4c896dd5-12d7-4ff8-b36e-2967a908baa5",
+      "author": "xqjG",
+      "content": "Fixed: unapproved-disablement seed added, rejected at the shared bar. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T02:54:45.928480Z",
+      "kind": "resolution"
+    }
+  ]
+}

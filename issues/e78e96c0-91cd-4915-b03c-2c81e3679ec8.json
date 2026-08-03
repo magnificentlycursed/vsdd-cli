@@ -1,0 +1,21 @@
+{
+  "uuid": "e78e96c0-91cd-4915-b03c-2c81e3679ec8",
+  "display_id": 417,
+  "title": "lane r2 Meth: single-commit fix cannot produce red at its parent baseline",
+  "description": "Lane round 2. Lens: vsdd-methodology (validator: SO). Owner: SO session. Defect: the fix's test lives in the fix commit; checked out at the parent the test is absent, so plain checkout-and-run runs green — the gate is unsatisfiable-as-written for the single-commit case it names, and 'exactly as at layer scale' is false (2a's test commit carries tests-without-implementation by construction; a single-commit fix collapses that separation). Citations verified: contract:64, :66. Proposed: resolved-candidate — define test application at fix scale explicitly: the gate checks out the baseline and applies the defect's test to it (Thermite's critic protocol proves the test-first shape upstream; where test and fix share a commit, gate-performed test injection is the defined mechanism).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:32.126923Z",
+  "updated_at": "2026-07-20T00:16:47.421342Z",
+  "closed_at": "2026-07-20T00:16:47.421342Z",
+  "comments": [
+    {
+      "uuid": "a79e18e2-092a-46e4-ac40-bd528c030b2d",
+      "author": "xqjG",
+      "content": "Fixed: test application defined as the fix-scale mechanism — the gate checks out the baseline and applies the defect's named test(s) to it, since a fix and its test may share a commit; 'exactly as at layer scale' language dropped in favor of mechanized-like-the-layer-gate with topology-aware mechanism. Thermite's critic-fixer test-first protocol is the upstream proof. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-20T00:16:26.413066Z",
+      "kind": "resolution"
+    }
+  ]
+}

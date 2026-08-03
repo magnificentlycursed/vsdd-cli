@@ -1,0 +1,21 @@
+{
+  "uuid": "aa02487e-934c-4f01-93dd-c325258cf2d1",
+  "display_id": 592,
+  "title": "statusline r20 UX: failure signal under-determined between exit conventions",
+  "description": "Round 20. Lens: ux (validator: DR). Defect: 'signalling failure cleanly' admits exit-0-plus-diagnostic and non-zero readings — two competent implementations diverge, the fixture has no observable, and automation gets a signal on write failure but not read-withdrawal. Citations verified: contract:187, :162. Proposed: resolved-candidate (the observable defined: init exits zero when installation itself succeeds; any not-installed statusline outcome — write failure or withdrawn offer under the accept flag — sets the wiring-not-installed marker in init's machine-readable outcome summary, which automation checks instead of the exit code; both seeds assert the marker).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:48:28.558912Z",
+  "updated_at": "2026-07-20T04:49:01.342484Z",
+  "closed_at": "2026-07-20T04:49:01.342484Z",
+  "comments": [
+    {
+      "uuid": "9b0ff664-c48d-480d-a729-1c3152c086d7",
+      "author": "xqjG",
+      "content": "Fixed: the observable defined — init exits zero when installation itself succeeds; any not-installed statusline outcome (write failure, or read-withdrawal under the accept flag) sets the wiring-not-installed marker in init's machine-readable outcome summary, which automation checks; both seeds assert the marker, and read and write failure modes are detected identically. Revision: Install behaviors criterion.",
+      "created_at": "2026-07-20T04:49:00.052107Z",
+      "kind": "resolution"
+    }
+  ]
+}

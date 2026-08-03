@@ -1,0 +1,33 @@
+{
+  "uuid": "b8be7e6f-b232-4ad7-808d-929e90914ec0",
+  "display_id": 831,
+  "title": "agent-first-controls amendment: bind the spend-driving structure at the composition gate (mdatron#11 escape)",
+  "description": "mdatron dogfooded vsdd-cli phase-3 and an agent escaped the controls: a manual roast sprawled to 39 agents / 2.27M tokens via an undeclared, uncapped verifier fan-out (magnificentlycursed/vsdd-cli#11). Checked against .design/agent-first-controls.md: all three handholds are gaps. Amendment to close them: (1) the composition gate binds the spend-driving structure (fan-out shape + agent-count ceiling), not just the declared lens set; (2) a hard agent-count cap that blocks on breach; (3) per-agent/per-phase running telemetry that flags fan-out before the spend; plus (4) tighten the refutation-mechanism spec so 'hallucinated = non-resurfacing across rounds' is gate-checkable and can't be silently swapped for a synchronous per-finding fan-out. Efficacy of the domain-lens content is separately validated (#12).",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T17:25:34.572838Z",
+  "updated_at": "2026-07-31T23:17:19.201502Z",
+  "closed_at": "2026-07-31T23:17:19.201491Z",
+  "labels": [
+    "design"
+  ],
+  "comments": [
+    {
+      "uuid": "ca90ecc1-bf3a-43e7-8fc7-0993c4c2faec",
+      "display_id": 1254,
+      "author": "xqjG",
+      "content": "Escape corpus extended (agent-first-controls.md) with two more from today's probes, using grounded terms: (1) the milestone mechanism never invoked — mandated + machinery-backed + the crosslink-usage-absence detector designed-unbuilt + no enforcement point creates/requires a milestone (fix: build the mid-cycle-without-milestones detection + an active-milestone enforcement point; decomposition instantiated as milestones this session); (2) the tracker populated-but-unconsulted — #821 existed when I freelanced #832 + a scrub; the pre-code guard forces create-before-code, never search-first (fix: a find-or-create enforcement point). Also: #832's E0093 'forcing seam' anti-pattern is ARMED + proven block-grade (E-code -> verify exits 1 -> pre-commit + CI hard-fail). chassis/substrate arm as #821 clears them. Searched before filing (no existing find-or-create/milestone-detection issue); recording here rather than spawning duplicates.",
+      "created_at": "2026-07-29T18:13:43.207948Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "3534d953-0678-4993-9570-6bed2e66d892",
+      "display_id": 1299,
+      "author": "xqjG",
+      "content": "CLOSING — subsumed by #840. The spend-driving-structure-at-the-composition-gate controls (fan-out shape + hard agent-count ceiling, from the mdatron#11 39-agent/2.27M-token escape) are folded into #840 REQ-21 (three-leg: declaration-completeness block / runtime admission-control / records-detection) + the escape corpus (REQ-22). Ratified + merged.",
+      "created_at": "2026-07-31T23:17:13.095194Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "b7207adc-ff0e-40a0-b0bd-58710b7a4321",
+  "display_id": 723,
+  "title": "c1 major DE: typed decode after a passing schema pair misdirects — the drift class has no home",
+  "description": "Evidence: mod.rs:151-158 — a decode failure AFTER pair validation gets kind malformed and repair-the-artifact recovery, but the artifact just passed its pair; the real defect is struct/schema drift (live example: u32 vs unbounded integer — 4294967296 passes the pair, fails decode). Disposition: own kind for loader/pair disagreement with toolkit-naming recovery + a drift test decoding a minimal pair-valid instance per class. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "49e2a1f6-9eff-46a5-9d36-46faafa05e75",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:09:00.055777Z",
+  "updated_at": "2026-07-21T19:45:24.490107Z",
+  "closed_at": "2026-07-21T19:45:24.490107Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "3bd9bb74-f124-4783-ad7f-1e4bcc455c98",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit daacdc84): the decode-after-pair branch is the loader-pair-disagreement kind naming the toolkit as the broken party, with the empty recovery action as the explicit no-adopter-act signal; numeric widths align to the pairs' unbounded integers (u64), closing the live drift vector. RESIDUE, declared: the per-class minimal-instance drift test is deferred — no mechanical struct-introspection path exists without a schemars-class dependency, which is a PE-flagged dependency decision, not a fix-pass slip-in; the round-2 verify judges the partial. Validator: solution-architect.",
+      "created_at": "2026-07-21T19:45:20.674960Z",
+      "kind": "result"
+    }
+  ]
+}

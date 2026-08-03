@@ -1,0 +1,22 @@
+{
+  "uuid": "26ae131f-00ab-40d3-bcb1-852dfb7a9dc4",
+  "display_id": 659,
+  "title": "DE/F1: manifest schema exists only as comments — no mdatron JSON Schema pair; artifact silently unvalidated",
+  "description": "Evidence: templates/registry/installed-artifact-manifest.yaml carries its field types, enum members (class, lifetime, fail_mode, resolution), and constraints as YAML comments only; .mdatron/schemas/ holds four JSON Schemas (domain-prompt, phase-primer, review-entry, supplement) and none for installed-artifact-manifest; mdatron verify's default file_globs are **/*.md (mdatron-core/src/verify.rs:55), so a .yaml data artifact is not even walked. Result: a governed versioned-data artifact that no mechanical check validates — the silently-unvalidated class the contract's availability-is-not-activation discipline names, in data form. Fix rides the carrier decision (sibling finding): whatever carrier is ruled, the set ships as a PAIR — data artifact + .mdatron/schemas/<schema_class>.json — and the pair rule generalizes to all 18 sets of #598. Owner: data-engineer. Validator: solution-architect (affects how every data-set deliverable ships).",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "95eaf845-5910-4270-a5a1-f032e3a3dd88",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:25:00.120140Z",
+  "updated_at": "2026-07-21T01:33:52.963810Z",
+  "closed_at": "2026-07-21T01:33:52.963810Z",
+  "comments": [
+    {
+      "uuid": "bd8c35a3-6191-4b63-9e5d-849671a3c26d",
+      "author": "xqjG",
+      "content": "Resolved: schema pair authored and validating — .mdatron/schemas/installed-artifact-manifest.json landed with the data artifact; mdatron verify validated the manifest against it at the landing commit. Evidence: commit fdbc3dc3 (mdatron verify clean at commit time), vsdd-cli #658 trail.",
+      "created_at": "2026-07-21T01:33:48.435310Z",
+      "kind": "result"
+    }
+  ]
+}

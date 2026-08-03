@@ -1,0 +1,21 @@
+{
+  "uuid": "8de13e90-9b8f-4b1e-b1c8-7897efd1c077",
+  "display_id": 640,
+  "title": "posture-r4-SA: failed-preflight blocking direction uninstrumented",
+  "description": "Minor, falsifiability. Fix: corpus seeds for fail and inconclusive directions. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:25.828135Z",
+  "updated_at": "2026-07-20T18:15:47.465857Z",
+  "closed_at": "2026-07-20T18:15:47.465857Z",
+  "comments": [
+    {
+      "uuid": "4a874d97-30ac-4b74-822d-1ff02adfa25a",
+      "author": "xqjG",
+      "content": "Fixed: corpus seeds cover the failing and inconclusive directions blocking with the member named.",
+      "created_at": "2026-07-20T18:15:45.938210Z",
+      "kind": "resolution"
+    }
+  ]
+}

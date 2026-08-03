@@ -1,0 +1,35 @@
+{
+  "uuid": "40e383d5-e779-4f91-ad07-f6a2355ca0c7",
+  "display_id": 478,
+  "title": "defect-fix lane amendment cold round 6",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 6 (post round-5: symmetric executed green half, delta standing suite, survivor-referencing consolidated closures, validator-gated compile-defect declaration, declared failure-kind field, dispatch-by-construction via kickoff prompt injection, branch grammar registration, approve-then-dispatch, expanded fixture set). Series 19-13-9-9-12 (round 5 absorbed two field reports).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:49:41.562072Z",
+  "updated_at": "2026-07-20T00:58:10.813221Z",
+  "closed_at": "2026-07-20T00:58:10.813221Z",
+  "comments": [
+    {
+      "uuid": "5922762c-5c4c-4ad8-84c9-0e08158626e3",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 6. Subject: lane revision 6 anchors: gate bullet (executed-pin rule both halves — red executed-fail, green executed-pass with skipped-pin neither; delta standing suite; validator-gated compile-defect declaration; declared failure-kind field; graded retrofit; surface-limitation) + falsifier; lifecycle bullet (consolidation with survivor-referencing disposition closures; dispatch-by-construction inheritance incl. kickoff prompt injection and the inline-review violation; governed set; precedence; published marker) + falsifier (incl. survivor referential integrity); Conformance closed-world (branch grammar registration); Recorded review dispatch (approve-then-dispatch); swarm-fallback open question (live-fire evidence); Directive reconciliation; composition scope; Gates; Red-gate cheat criterion (expanded assertions); fixture corpus fix-lane set (~19 members). Out of scope: statusline amendment. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:49:54.439416Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "eb59d4f5-402d-4e0d-81f9-430a29c94b93",
+      "author": "xqjG",
+      "content": "Lane round 6 complete. SE 4 + QE 6 + methodology 3 = 13 returned, 12 filed after one merge: L156 delta join key; L157 repetition scope; L158 kickoff slot status mismatch; L159 branch enforcement seam; L160 inline-review attribution; L161 broken-surface criterion; L162 approve-then-dispatch falsifier; L163 display-ID pre-sync; L164 the QE deferred set (six one-sided cells to the 2a audit, per the reviewers' own classification, deferral to be contracted in text); L165 revision header nit. All citations verified. Series 19-13-9-9-12-12. Not clean; round 7 after disposition.",
+      "created_at": "2026-07-20T00:56:14.885487Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "813858db-3405-4db7-94dd-1a57d22da5b9",
+      "author": "xqjG",
+      "content": "Round fully disposed: 12/12 (11 fixed, 1 deferred-and-contracted per reviewer classification). mdatron verify clean on lane revision 7. Closing; round 7 dispatches.",
+      "created_at": "2026-07-20T00:58:09.683173Z",
+      "kind": "result"
+    }
+  ]
+}

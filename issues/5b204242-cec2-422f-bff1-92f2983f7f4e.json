@@ -1,0 +1,21 @@
+{
+  "uuid": "5b204242-cec2-422f-bff1-92f2983f7f4e",
+  "display_id": 283,
+  "title": "amend-r6: fresh-worktree vehicles born hollow",
+  "description": "Minor. Per-clone payloads never materialize in fresh worktrees. Fix: vehicle provisioning stated — the install step runs inside the vehicle, preflight resolution checks run against the vehicle's tree. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:12.006523Z",
+  "updated_at": "2026-07-20T19:24:16.044198Z",
+  "closed_at": "2026-07-20T19:24:16.044198Z",
+  "comments": [
+    {
+      "uuid": "961f8061-7841-4fba-a455-98fff59209e5",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:24:13.020784Z",
+      "kind": "resolution"
+    }
+  ]
+}

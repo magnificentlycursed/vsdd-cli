@@ -1,0 +1,21 @@
+{
+  "uuid": "f23407b3-e8ed-44c4-8ec0-6693ee4cc86b",
+  "display_id": 594,
+  "title": "statusline r21 UX: the outcome summary is an undefined surface",
+  "description": "Round 21. Lens: ux (validator: DR). Defect: the criterion routes automation to a surface no requirement, architecture entry, or inventory defines — no format, location, schema, or versioned membership; the clause's own 'observable defined' words contradicted. Citations verified: contract:187 vs :162, :164, :203, :269-274. Proposed: resolved-candidate (the outcome summary defined at the Install requirement as init's structured form; its wiring field's enumeration joins the versioned-data inventory).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:54:11.268302Z",
+  "updated_at": "2026-07-20T04:54:58.550139Z",
+  "closed_at": "2026-07-20T04:54:58.550139Z",
+  "comments": [
+    {
+      "uuid": "8f0ed009-b180-4324-95af-f86a467feac1",
+      "author": "xqjG",
+      "content": "Fixed: the outcome summary defined at the Install requirement — init's structured form beside the human transcript, read instead of the exit code which reflects the installation itself; the wiring-outcome enumeration joins the versioned-data inventory. Revision: Install bullet + Composition function inventory.",
+      "created_at": "2026-07-20T04:54:54.537566Z",
+      "kind": "resolution"
+    }
+  ]
+}

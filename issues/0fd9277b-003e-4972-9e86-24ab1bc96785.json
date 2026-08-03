@@ -1,0 +1,28 @@
+{
+  "uuid": "0fd9277b-003e-4972-9e86-24ab1bc96785",
+  "display_id": 178,
+  "title": "RT/F2: lint crate-list hardcoded; sibling-crate addition leaks",
+  "description": "Source: mdatron/review-log/2026-06-02-red-team-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@bc83588 (workspace-walk derives from Cargo.toml)",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:42.049530Z",
+  "updated_at": "2026-06-08T02:34:05.173486Z",
+  "closed_at": "2026-06-08T02:34:05.173486Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:red-team",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "de5825f1-630f-4407-bb87-d36e9a977337",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@bc83588 (workspace-walk derives from Cargo.toml)).",
+      "created_at": "2026-06-08T02:34:04.246035Z",
+      "kind": "resolution"
+    }
+  ]
+}

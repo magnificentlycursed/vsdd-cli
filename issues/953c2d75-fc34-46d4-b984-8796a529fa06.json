@@ -1,0 +1,21 @@
+{
+  "uuid": "953c2d75-fc34-46d4-b984-8796a529fa06",
+  "display_id": 505,
+  "title": "statusline r12 UX: non-interactive print omits the accept flag",
+  "description": "Round 12. Lens: ux (validator: DR). Defect: the headless audience is pointed at the interactive path it cannot take while the flag built for its case is doc-only. Citations verified: contract:162, :187. Proposed: resolved-candidate (fourth printed item; criterion prints all four).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:26:51.074075Z",
+  "updated_at": "2026-07-20T01:29:58.100112Z",
+  "closed_at": "2026-07-20T01:29:58.100112Z",
+  "comments": [
+    {
+      "uuid": "f36bce37-0bfb-4465-ba84-0da035d57d33",
+      "author": "xqjG",
+      "content": "Fixed: the accept flag is the fourth printed item in requirement and criterion. Revision: Install bullet + criterion.",
+      "created_at": "2026-07-20T01:29:35.387435Z",
+      "kind": "resolution"
+    }
+  ]
+}

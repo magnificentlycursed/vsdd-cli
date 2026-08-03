@@ -1,0 +1,21 @@
+{
+  "uuid": "3a58a3bb-2ba3-41e9-a0c2-006ab4011322",
+  "display_id": 291,
+  "title": "amend-r7: axis homograph in the manifest bullet",
+  "description": "Minor. 'each check naming its own axis' collides with the retired token. Fix: its own concern. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:34:45.178668Z",
+  "updated_at": "2026-07-20T19:35:19.622569Z",
+  "closed_at": "2026-07-20T19:35:19.622569Z",
+  "comments": [
+    {
+      "uuid": "565b542f-4a8e-4509-8310-beba99b93080",
+      "author": "xqjG",
+      "content": "Fixed in the working tree: concern for axis; both falsification citations carry the full heading (ratified-text mechanical correction, flagged for the ratification note); the reviewer-roles bullet distinguishes operator approval from the validator's approval record. mdatron verify clean.",
+      "created_at": "2026-07-20T19:35:16.781877Z",
+      "kind": "resolution"
+    }
+  ]
+}

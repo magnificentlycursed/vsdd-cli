@@ -1,0 +1,21 @@
+{
+  "uuid": "a3b81fee-d47c-4c82-9cc8-041f981a3701",
+  "display_id": 637,
+  "title": "posture-r4-SA: fixture corpus not extended for the new conditions",
+  "description": "Blocking, falsifiability. No preflight, never-started, or wrong-vehicle seeds; stale manifest-seed name. Fix: extend the corpus enumeration. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:20.661302Z",
+  "updated_at": "2026-07-20T18:15:38.526670Z",
+  "closed_at": "2026-07-20T18:15:38.526670Z",
+  "comments": [
+    {
+      "uuid": "4c85e1df-aecd-46fd-b605-e5886fcb4e6c",
+      "author": "xqjG",
+      "content": "Fixed: the corpus now enumerates preflight fixtures in all three result directions, a never-started fixture, a stalled-agent fixture, and an execution-on-attended-vehicle seed.",
+      "created_at": "2026-07-20T18:15:36.933388Z",
+      "kind": "resolution"
+    }
+  ]
+}

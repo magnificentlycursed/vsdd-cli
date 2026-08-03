@@ -1,0 +1,22 @@
+{
+  "uuid": "204800b4-ce52-4384-a41c-f558c7ed7a91",
+  "display_id": 688,
+  "title": "r1 minor SO: branch-grammar exempt-refs set lacks recorded adoption",
+  "description": "Evidence: dispatch-data.md:18 — the exemption list (main, chassis branches, archive refs) is necessary (the refs query would otherwise flag main) but absent from #669's adoption record; the exact registered-data-not-convention failure the grammar clause exists to prevent. Disposition: record the exemption set's adoption on #669. Mechanical. Owner: data-engineer. Validator: solution-owner.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:19:09.875515Z",
+  "updated_at": "2026-07-21T04:09:50.123706Z",
+  "closed_at": "2026-07-21T04:09:50.123706Z",
+  "comments": [
+    {
+      "uuid": "e94c8b93-df9a-4130-b9fb-3c07bb953d46",
+      "author": "xqjG",
+      "content": "FIX LANDED: the exempt-refs adoption is now recorded on #669 (late-marked addendum, 2026-07-21). Mechanical disposition complete.",
+      "created_at": "2026-07-21T04:09:42.164533Z",
+      "kind": "result"
+    }
+  ]
+}

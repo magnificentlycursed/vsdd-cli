@@ -1,0 +1,28 @@
+{
+  "uuid": "06c5ca64-c39c-40fa-8671-bfb593ffae0e",
+  "display_id": 828,
+  "title": "Upstream crosslink observation: issue show --json 'subissues' is never populated",
+  "description": "For operator relay to the crosslink project.\n\nObservation: 'crosslink issue show <id> --json' returns 'subissues: []' for every issue checked, even for issues that provably have children — e.g. #745 has children #752/#753/#754 (each carries 'parent_id': 745), yet #745's 'subissues' is empty, and #754 (labelled 'review') also shows 'subissues': []. Parent linkage IS present and correct on the CHILD side ('parent_id'); only the parent-side 'subissues' array is unpopulated in the show JSON.\n\nVerified: 326 issues carry a non-null 'parent_id'; 'subissues' length is 0 across every issue sampled.\n\nQuestion: is the empty 'subissues' on 'issue show --json' intended (parent-side child lists not serialized), or a serialization gap? If intended, documenting it would help consumers; if a gap, populating 'subissues' from the parent_id index would let consumers walk parent->children without a full 'issue list' scan.\n\nImpact on vsdd-cli: the finding-query join (#820, .design/finding-query-join.md) needed parent->child linkage to find a review round's findings. Because 'subissues' is empty, the walk instead uses one bulk 'issue list -s all --json' and filters on child 'parent_id' — functional, so this is not a blocker, just an efficiency/clarity note. Relates to #820.",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T12:47:55.980302Z",
+  "updated_at": "2026-08-02T00:52:36.312939Z",
+  "closed_at": "2026-08-02T00:52:36.312930Z",
+  "labels": [
+    "upstream"
+  ],
+  "related": [
+    "ccced380-4c00-4475-bd76-75a386e41968"
+  ],
+  "comments": [
+    {
+      "uuid": "a1300419-7c91-4785-976c-6377737bbf38",
+      "display_id": 1378,
+      "author": "xqjG",
+      "content": "CLOSED (re-filed upstream per channel policy): now dollspace-gay/crosslink#68.",
+      "created_at": "2026-08-02T00:52:29.914336Z",
+      "kind": "result"
+    }
+  ]
+}

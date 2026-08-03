@@ -1,0 +1,21 @@
+{
+  "uuid": "8b0e4b66-e3f9-4650-8550-b1a351b19e3e",
+  "display_id": 617,
+  "title": "1c-DR-r3: L4 static/generated payload split drops state artifact and hooks",
+  "description": "Minor, check f. Citation (Layer 4): 'the statically-authored members (route table stub, gate configs, review config)' vs the Install requirement's six-member payload — state artifact and hooks unaccounted. Fix: include both in the statically-authored list. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:31:07.930962Z",
+  "updated_at": "2026-07-20T17:32:29.369712Z",
+  "closed_at": "2026-07-20T17:32:29.369712Z",
+  "comments": [
+    {
+      "uuid": "ed38a4f1-f993-4416-b309-3b0ec92da198",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. L4's statically-authored members now read '(the state artifact's seeded initial form, hooks, route table stub, gate configs, review config)' — all six Install payload members accounted. mdatron verify clean.",
+      "created_at": "2026-07-20T17:32:27.969813Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "9b59ff76-ec05-4bcf-ba9f-a828b587529f",
+  "display_id": 37,
+  "title": "SA/F3: Phase 2c timing slip",
+  "description": "Source: mdatron/review-log/2026-06-07-solution-architect-phase-2-bundle.md\nClassification: resolved\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:02:39.505790Z",
+  "updated_at": "2026-06-08T02:33:32.980785Z",
+  "closed_at": "2026-06-08T02:33:32.980785Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-13",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "0b651fb8-ba9c-4fee-a543-5ce4b341a58f",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (pre-Phase-4-take-2 cycle commit).",
+      "created_at": "2026-06-08T02:33:32.323581Z",
+      "kind": "resolution"
+    }
+  ]
+}

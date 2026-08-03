@@ -1,0 +1,35 @@
+{
+  "uuid": "cc22ace2-3052-4f7e-bbac-ee15dc32bdb4",
+  "display_id": 500,
+  "title": "Directive: effort level joins model tier as a managed dial",
+  "description": "Directive reconciliation record, 2026-07-20. Operator raised session effort to xhigh by hand (the work is run-heavy: two concurrent spec amendments under multi-lens cold review) and directed: effort level joins model tier in the AI Engineer's recommendation surface, with signals for scaling up or down. CLASSIFICATION: spec amendment to the ratified contract (amend-then-act), operator-directed fold into the live cycle ('Amend now'). Scope echo: general rule — effort is a managed dial of the methodology, not a session knob. Amendment threads: review-config fields (effort levels per lens and stage), dispatch manifests (record model tier and effort), Cost is knowable advisories (tier-and-effort defaults; scaling-signal catalog as 1c versioned data — up: rework ratio, cross-lens convergence density, stalled series at stable scope; down: repeated clean rounds, dismissal-heavy yield, mechanical residue), methodology-rewrite supplement catalog (the /effort dial and API thinking-budget analog). The dial was operator-noticed, not advisory-recommended — the gap the amendment closes.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:10:35.236799Z",
+  "updated_at": "2026-07-20T04:07:02.183624Z",
+  "closed_at": "2026-07-20T04:07:02.183624Z",
+  "comments": [
+    {
+      "uuid": "d4f6deb0-4043-4396-b63a-4c9777ba8746",
+      "author": "xqjG",
+      "content": "Amendment authored per 'Amend now': review-config fields gain effort levels per lens and stage; dispatch manifests record model tier and effort level; the advisory clause proposes tier AND effort defaults with the scaling-signal catalog contracted as 1c versioned data (up: rework ratio, cross-lens convergence density, stalled series at stable scope; down: repeated clean rounds, dismissal-heavy yield, mechanical residue — all computable from tracker and manifests); the methodology-rewrite line catalogs the effort substrate surface. mdatron verify clean. Cold review dispatching: AIE + methodology lenses under its own round issue.",
+      "created_at": "2026-07-20T01:12:28.925564Z",
+      "kind": "resolution"
+    },
+    {
+      "uuid": "0dd0f0ac-1f3d-41f3-adca-b197f95f0bd2",
+      "author": "xqjG",
+      "content": "The spec-review loop has reached its stop signal for this amendment: round 4 clean (methodology, narrowed with declared reason; AIE clean round 3). Four rounds, filed series 9-2-3-0, every finding fixed with revision evidence and closed. The amendment stands in the working tree at effort revision 4 across its four anchors plus header. Awaiting operator ratification — the loop's exit is the operator's act, not the agent's.",
+      "created_at": "2026-07-20T02:06:12.766425Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "b2c0e70f-da8f-414b-b7da-1eaea1aa209e",
+      "author": "xqjG",
+      "content": "RATIFIED by operator, 2026-07-20. The effort amendment is ratified contract text at effort revision 4: review-config effort levels per lens and per model-running loop stage (cold multi-lens rounds, fix passes; draft shares the implementing session's dial; mechanized gates take no dial); dispatch manifests record model tier and effort level with the missing-recording falsifier, seed, and live-fire clause; the Cost is knowable advisory proposes tier-and-effort defaults with the six-signal scaling catalog as 1c versioned data (sources: tracker, manifests, git history; per-auth attribution grain; two control surfaces with the dispatch-parameter seam a named upstream capability); the methodology rewrite catalogs the effort and model-tier surfaces. Loop record: four rounds, filed series 9-2-3-0, stop signal at round 4 (methodology clean, AIE clean round 3), every finding fixed with revision evidence and closed. Commit note: the contract file also carries the statusline and lane amendments still in cold review — the file commit lands when they ratify or on operator instruction, so ratified and unratified text are never committed entangled without a ruling.",
+      "created_at": "2026-07-20T04:07:00.839200Z",
+      "kind": "decision"
+    }
+  ]
+}

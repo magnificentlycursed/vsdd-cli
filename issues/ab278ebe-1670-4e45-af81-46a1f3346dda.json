@@ -1,0 +1,35 @@
+{
+  "uuid": "ab278ebe-1670-4e45-af81-46a1f3346dda",
+  "display_id": 561,
+  "title": "defect-fix lane amendment cold round 12",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 12 (post round-11: declared-disablement third lane completing the disjoint removal-shaped partition; environment parity stated; run-attempt scoping; unapproved-broken-surface and bulk-mismatch seeds; warn instrument; zero-finding variant contracted to 2a). Series 19-13-9-9-12-12-6-7-6-5-5.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:12:35.927673Z",
+  "updated_at": "2026-07-20T02:55:48.974653Z",
+  "closed_at": "2026-07-20T02:55:48.974653Z",
+  "comments": [
+    {
+      "uuid": "2d8fddb5-df51-4607-ae04-570f63ec6ff0",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 12. Subject: lane revision 12 anchors: gate bullet (three disjoint removal-shaped lanes — deletion, mapping, disablement — partitioned by intent with environment parity stated; run-attempt check scoped to the two suite-cannot-run forms; one validator bar; per-pair approval sets; executed-pin; graded retrofit) + four-form falsifier; lifecycle + falsifier; Conformance (grammar; pre-push with warn instrument); Recorded review dispatch; References; composition scope; Gates; criterion; corpus (~46 members + 2a list incl. the zero-finding variant). Out of scope: statusline and effort amendments. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T02:12:49.628584Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "659550f7-2932-432b-8e40-064af2671649",
+      "author": "xqjG",
+      "content": "Lane round 12 complete. QE 2 + SE 2 + methodology NO FINDINGS (full survival; registration note folded as courtesy) = 4 filed: L239 unapproved-disablement seed; L240 parity instrument; L241 intent-keyed disablement covering vanished-from-collection; L242 composed scrutinies for relocated dormancy. Series ...-6-5-5-4. Not clean; round 13 after disposition.",
+      "created_at": "2026-07-20T02:53:16.743163Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "28e2d9c4-8fa8-4189-9787-1772bc85aabd",
+      "author": "xqjG",
+      "content": "Round fully disposed: 4/4 fixed plus the folded vocabulary registration. mdatron verify clean on lane revision 13. Closing; round 13 dispatches.",
+      "created_at": "2026-07-20T02:55:44.298726Z",
+      "kind": "result"
+    }
+  ]
+}

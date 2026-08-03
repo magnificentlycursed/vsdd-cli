@@ -1,0 +1,21 @@
+{
+  "uuid": "4dee6c3c-3c55-4c0c-bdae-a610928ce224",
+  "display_id": 509,
+  "title": "lane r8 Meth: Part-3 evidence citation unresolvable by the contract's own rule",
+  "description": "Lane round 8. Lens: methodology (validator: SO). Defect: '(mdatron Part-3 record)' is none of the enumerated resolvable forms — the contract flags exactly this. Citations verified: contract:124 vs :80. Proposed: resolved-candidate (cite by exact issue title on this tracker: the branch-grammar operator-relayed finding and the directive record's observation trail).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:26:57.296829Z",
+  "updated_at": "2026-07-20T01:30:03.685140Z",
+  "closed_at": "2026-07-20T01:30:03.685140Z",
+  "comments": [
+    {
+      "uuid": "74b99325-d9b9-47e0-a02e-81ff98450be0",
+      "author": "xqjG",
+      "content": "Fixed: citation resolvable — the operator-relayed branch-grammar finding by exact title on this tracker plus the directive record's trail, with the References home added. Revision: Conformance bullet.",
+      "created_at": "2026-07-20T01:29:40.650981Z",
+      "kind": "resolution"
+    }
+  ]
+}

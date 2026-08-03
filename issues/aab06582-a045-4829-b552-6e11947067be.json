@@ -1,0 +1,28 @@
+{
+  "uuid": "aab06582-a045-4829-b552-6e11947067be",
+  "display_id": 33,
+  "title": "QE/F8: README fence ordering is load-bearing",
+  "description": "Source: mdatron/review-log/2026-06-07-quality-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:02:27.381270Z",
+  "updated_at": "2026-06-08T02:23:46.832222Z",
+  "closed_at": "2026-06-08T02:23:46.832222Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:quality-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "c81542d8-6bad-48ed-afeb-0ca2f183549b",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@f59c9f4 (Wave 8 (round-trip markers)).",
+      "created_at": "2026-06-08T02:23:46.065512Z",
+      "kind": "resolution"
+    }
+  ]
+}

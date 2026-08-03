@@ -1,0 +1,37 @@
+{
+  "uuid": "27dc3f2a-725e-46cb-b2d6-b261f9d2d497",
+  "display_id": 174,
+  "title": "QE/F5: schema-tightening revert has no corpus regression test",
+  "description": "Source: mdatron/review-log/2026-06-02-quality-engineer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:34.383326Z",
+  "updated_at": "2026-06-08T02:23:49.315602Z",
+  "closed_at": "2026-06-08T02:23:49.315602Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:quality-engineer",
+    "review-finding"
+  ],
+  "related": [
+    "23ab3613-4e27-45ee-a433-3e75045e2991",
+    "264340d5-7a7e-4e21-af17-474faf2306cc",
+    "6554d7ff-4cca-4dde-b26f-a24a4cbe2752",
+    "80ebb00f-f6d2-4a44-8948-c1dc9e11aebf",
+    "aab06582-a045-4829-b552-6e11947067be",
+    "c3212aa8-5826-4781-8a9a-b472205c7a85",
+    "ecaf0e96-b9f5-4b9d-adea-27fb7a788345"
+  ],
+  "comments": [
+    {
+      "uuid": "f1f738aa-9676-4206-87c6-328921d3f688",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli/.github/workflows/mdatron-verify.yml (addressed by existing CI workflow).",
+      "created_at": "2026-06-08T02:23:48.128419Z",
+      "kind": "resolution"
+    }
+  ]
+}

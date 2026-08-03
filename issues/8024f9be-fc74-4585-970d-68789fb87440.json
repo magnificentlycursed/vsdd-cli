@@ -1,0 +1,44 @@
+{
+  "uuid": "8024f9be-fc74-4585-970d-68789fb87440",
+  "display_id": 829,
+  "title": "parse_milestones treats crosslink 'No milestones found.' as Unusable, not an empty list",
+  "description": "Discovered during Slice-1 finding-join dogfood (#820).\n\nvsdd-core/src/snapshot/acquire.rs parse_milestones treats crosslink's empty-state human output 'No milestones found.' as whole-format drift -> None -> AcquisitionOutcome::Unusable, instead of an empty milestone list. On any repo with no crosslink milestones (this one included), acquire_snapshot short-circuits to Unusable and never reaches the session or finding-query legs.\n\nRepro: 'crosslink milestone list' -> 'No milestones found.'; acquire_snapshot(repo) -> Unusable.\n\nImpact: the live status answer + the finding-query join are unreachable on no-milestone repos. Pre-existing (Layer 1/2 milestone leg); outside the Slice-1 finding-join build scope, so filed + routed rather than fixed inline.\n\nFix direction: parse_milestones should recognize crosslink's empty-state message as a lawful empty list (0 milestones), distinct from unparseable drift. Needs its own red-gate test (empty-message -> Some(empty), not None). Relates to #820.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T13:19:11.898416Z",
+  "updated_at": "2026-07-29T16:56:11.746962Z",
+  "closed_at": "2026-07-29T16:56:11.746947Z",
+  "labels": [
+    "bug"
+  ],
+  "related": [
+    "ccced380-4c00-4475-bd76-75a386e41968"
+  ],
+  "comments": [
+    {
+      "uuid": "4a7f516b-2c34-445b-90e3-df429d76ae4a",
+      "display_id": 1243,
+      "author": "xqjG",
+      "content": "Routing (plan): route to the fix lane — a defect in the Layer 1/2 milestone leg (parse_milestones), outside the current Slice-1 finding-join build scope. Fix carries its own red gate: 'No milestones found.' parses to Some(empty list), not None; the existing empty_output_is_an_empty_list test extends to the crosslink empty-state wording. No contract touch.",
+      "created_at": "2026-07-29T13:19:24.243590Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "1936565a-1e5d-4a0a-b84c-b43f95c22601",
+      "display_id": 1245,
+      "author": "xqjG",
+      "content": "Fixed on branch fix-milestone-empty-parse (commit 8ea6a155, off main — independent of the #820 PR). parse_milestones now recognizes crosslink's 'No milestones found.' empty-state (declared-mirror const EMPTY_MILESTONE_LIST) as a lawful empty list; genuine drift still fails loud (content_with_zero test preserved). Red gate observed (crosslink_empty_state_message_is_an_empty_list failed against the prior parser, green after). cargo test --workspace + clippy + mdatron all green. Awaits operator push + PR; end-to-end 'vsdd status' works once this and the #820 join are both on main.",
+      "created_at": "2026-07-29T13:32:47.517022Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "cbfe806e-bd24-44e4-87b8-2d8cd783ea7f",
+      "display_id": 1249,
+      "author": "xqjG",
+      "content": "Resolved: merged to main via PR #7 (commit a8888cd2). main green (mdatron 0.4.0 verify clean, workspace tests pass).",
+      "created_at": "2026-07-29T16:56:03.519010Z",
+      "kind": "result"
+    }
+  ]
+}

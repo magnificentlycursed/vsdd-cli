@@ -1,0 +1,21 @@
+{
+  "uuid": "f20d6625-07a9-4fc8-b928-9ba6ea891a17",
+  "display_id": 769,
+  "title": "Layer 2 round 3 minor security: cross_references tests build fixture trees at a predictable shared-temp path with a delete-then-create race — ride tempfile like the sibling suite",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T19:04:56.015237Z",
+  "updated_at": "2026-07-22T19:08:58.692262Z",
+  "closed_at": "2026-07-22T19:08:58.692253Z",
+  "comments": [
+    {
+      "uuid": "d23e4524-8d27-42c6-bd0a-a7626dde2c73",
+      "display_id": 1005,
+      "author": "xqjG",
+      "content": "Fixed in 870836ce: TempProject holds a tempfile::TempDir (prefixed with the test name for debuggability) — unpredictable path, exclusive creation, RAII cleanup; the hand-rolled pid-named path, its delete-then-create race, and the Drop impl are gone. Matches the sibling shell suite's pattern.",
+      "created_at": "2026-07-22T19:08:51.491489Z",
+      "kind": "result"
+    }
+  ]
+}

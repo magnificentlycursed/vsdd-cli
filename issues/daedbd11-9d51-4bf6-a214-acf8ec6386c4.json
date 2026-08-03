@@ -1,0 +1,21 @@
+{
+  "uuid": "daedbd11-9d51-4bf6-a214-acf8ec6386c4",
+  "display_id": 504,
+  "title": "statusline r12 UX: machine recovery pointer asserted, not falsified",
+  "description": "Round 12. Lens: ux (validator: DR). Defect: human form gets both halves falsified; machine form only 'parseable' — a parseable signal with an empty recovery pointer strands the agent undetected. Citations verified: contract:163 vs :188. Proposed: resolved-candidate (criterion asserts payload and pointer present and resolvable — symmetric).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:26:49.016209Z",
+  "updated_at": "2026-07-20T01:29:56.796415Z",
+  "closed_at": "2026-07-20T01:29:56.796415Z",
+  "comments": [
+    {
+      "uuid": "34d5e2ac-561b-4642-a0be-9b26d6bce221",
+      "author": "xqjG",
+      "content": "Fixed: machine signal's payload and recovery pointer asserted present and resolvable — both halves falsified on the agent surface as on the human one. Revision: Status detection criterion.",
+      "created_at": "2026-07-20T01:29:34.193267Z",
+      "kind": "resolution"
+    }
+  ]
+}

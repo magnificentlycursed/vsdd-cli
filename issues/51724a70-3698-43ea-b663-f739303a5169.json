@@ -1,0 +1,17 @@
+{
+  "uuid": "51724a70-3698-43ea-b663-f739303a5169",
+  "display_id": 839,
+  "title": "Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity, generated context + token-budget gate, pricing + priced bill of materials (unblocks Slice 3 generated-members + Slice 4)",
+  "status": "open",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-31T01:44:58.019134Z",
+  "updated_at": "2026-08-02T03:04:47.818996Z",
+  "labels": [
+    "design"
+  ],
+  "blockers": [
+    "ccced380-4c00-4475-bd76-75a386e41968"
+  ],
+  "milestone_uuid": "45984aa0-de21-439f-b54c-985c1206e60a"
+}

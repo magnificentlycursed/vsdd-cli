@@ -1,0 +1,117 @@
+{
+  "uuid": "2cbde495-e7fd-4d41-b1ee-8391dfd5ee96",
+  "display_id": 826,
+  "title": "clean up superseded binary-first-plan (docs/refactor legacy); re-ground #14/#15 to the slice framing",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T09:36:27.079962Z",
+  "updated_at": "2026-08-02T00:46:48.341511Z",
+  "closed_at": "2026-08-02T00:46:48.341505Z",
+  "comments": [
+    {
+      "uuid": "cec21a56-8712-4601-9d3d-6becb495997b",
+      "display_id": 1200,
+      "author": "xqjG",
+      "content": "docs/refactor removal PR opened (f51c80ed, 10 files / 2197 deletions). Contract supersedes it (.design/agent-first-vsdd-toolkit.md:4). Follow-ons on this issue: (1) re-ground #14 (vsdd subprocess client + init drift + templates) and #15 (vsdd-core removal) OFF the dead binary-first-plan framing INTO the slice framing (#819: vsdd-core = the engine; removal is a slice/phase-2a act) — this resolves the operator's vsdd-core annoyance; (2) redo #14's design the vsdd way (.design/ via /design + kickoff), reusing the preserved content (scratchpad), NOT a hand-authored phase spec; (3) optional owned trim of the contract's now-dangling supersedes reference.",
+      "created_at": "2026-07-29T09:38:57.666096Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "e6b679b9-c0a4-4bb0-a4dd-65f9e7491da5",
+      "display_id": 1236,
+      "author": "xqjG",
+      "content": "DONE (the substantive cleanup): (1) docs/refactor removed — PR #4 merged, CI green, gone from main; (2) #14/#15 re-grounded — closed + folded into #820 (Slice 1), resolving the vsdd-core framing; (3) stale-issue sweep — 32 issues closed (binary-first stubs, the ratified respec #294 + its round-1 cluster #295-#306, completed layer/review rounds), live/future issues kept and verified, #713 re-homed to the install slice. Remaining (optional, owned): trim the contract's now-historical 'supersedes docs/refactor/binary-first-plan.md' line if wanted (it's accurate as a record; leaving it is fine). The #14 design redo is now #820 work (the vsdd way: .design/ + kickoff).",
+      "created_at": "2026-07-29T10:29:14.038298Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d2175e8c-a0e0-4b5f-bd5b-cae5055672cd",
+      "display_id": 1309,
+      "author": "xqjG",
+      "content": "Design-flow audit (operator-directed, 2026-08-01): verified crosslink's design->implementation flow from source (../crosslink @ 6b4f736f, binary==source). Outcomes: (1) hand-editing .design/*.md is crosslink-sanctioned (design-workflow.qmd:181) — vsdd's owned+reviewed law is the control on top; NO spec-vs-feature distinction exists in crosslink, so no living-spec exception (operator struck it). (2) doc_hash is a cosmetic tool-maintained derivation (only consumer: 'stale' label at stage==planned; kickoff plan overwrites it) — the C2 agent's rehash was harmless-redundant; reverted on principle, pipeline.json now byte-identical to ratified HEAD. (3) New Trust-boundaries member 'Design-doc lifecycle' being authored into the contract (operator-ratified): no spec-type exception + sidecars are crosslink-maintained, agents never edit them; grade convention. (4) Topology finding spun out to #845 (SO cycle); upstream bugs filed #846, #847.",
+      "created_at": "2026-08-01T19:37:45.290419Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2540a029-4d55-46af-8b68-821d8bce9d8c",
+      "display_id": 1310,
+      "author": "xqjG",
+      "content": "Session auto-ended (stale after 4385 minutes). No handoff notes provided.",
+      "created_at": "2026-08-01T19:40:04.632494Z",
+      "kind": "handoff"
+    },
+    {
+      "uuid": "00e9ffcc-b49a-4e4b-82d6-c1c53d12e5f0",
+      "display_id": 1312,
+      "author": "xqjG",
+      "content": "Committed: cleanup(#826) fix round — repoint all citers of retired docs; delete DESIGN-VERIFICATION.md | Files: 22 files changed, 53 insertions(+), 984 deletions(-) | eec731bd",
+      "created_at": "2026-08-01T19:42:16.885070Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9bf46f07-f511-49da-92b2-401c3998dea6",
+      "display_id": 1313,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST — amendment-review round 1 (PR #19, Commit-2 gate). TARGET: the uncommitted contract delta on .design/agent-first-vsdd-toolkit.md (git diff at eec731bd), five pieces: (1) Solution Owner change authority section (migrated from methodology.md § Domain change authority); (2) Per-milestone PR discipline section (migrated from README.md, pre-rewrite); (3) Dependency approval requirement + Trust-boundaries member (migrated from DESIGN-VERIFICATION.md); (4) Design-doc lifecycle Trust-boundaries member (new, operator-ratified 2026-08-01); (5) Methodology-rewrite amendment notes (requirement + decomposition, DR-F6 reconcile). LENSES (6, warm-independent, raw-diff handoff): solution-owner (contract authority), security + platform-engineer (dependency-approval owners), red-team (circumvention probe), documentation-reviewer (cold read), quality-engineer (falsifiability). VEHICLE: runtime-harness Agent dispatch — BOOTSTRAP-INTERIM per the phases-dispatched keystone, hand-audited from transcripts, declared as such. DIALS: session model, default effort. EXIT: all six verdicts in; blockers fixed + re-verified; operator (SO) ratifies; then Commit 2 lands citing this round per the Gates amendment format-carry.",
+      "created_at": "2026-08-01T19:42:22.960791Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "aa386793-e1d3-40c6-b0f8-a0eafe70d841",
+      "display_id": 1336,
+      "author": "xqjG",
+      "content": "ROUTING (amendment-review round 1 → fix pass, per the routing-before-fix discipline): all six lenses returned NEEDS-CHANGES; ~30 findings consolidate into six clusters, ALL routing back into the amendment draft (phase-1a fix pass on the uncommitted contract delta; no code changes): CLUSTER A (4-lens convergence: SEC-F1/F2 BLOCKER, QE-F1, PE-F1, RT-F3 + citation minors) — redraft the Design-doc lifecycle member: premise (sidecars agent-written at authoring per the /design skill itself), falsifier (scope off the sanctioned flow; author-identity is not observable), inverse direction (doc gutted with sidecar untouched; nothing compares hash to bytes; contract has no sidecar at all). CLUSTER B (DR-F3, SO-F1, PE-F2/F3/F4, RT-F2, QE-F3) — restore the dropped Per-milestone-PR substance (E0090 merge gate, bypass-marker label-applier rule [live tooling in vsdd-verify.yml], phase co-authorship, env pin, PR-description fields) + honest grade naming the 2026-07-29 ruleset as the one enforced leg + observe-pr-body stated as pending #842. CLUSTER C (RT-F1 BLOCKER, SO-F2, QE-F5) — SO-change-authority honest grade ('can never' → convention-grade statement), declare the persona-derived second source, rationale-less-disposition falsifier. CLUSTER D (RT-F4, DR-F5, SO-F4, QE-F6c) — constrain bracketed amendment-notes to non-normative provenance; unbundle primer emission-lines from the deferred file-home ruling (now tracked #853). CLUSTER E (SEC-F3/F4/F5, RT-F5, PE-F5/F6, QE-F4, DR-F1/SO-F3/PE-F7) — dependency-approval polish: name the icu_properties #813 lapse, disposition payload fields, 'gated'→'governed', hook-vs-CI leg split, undischarged baseline delta, citation handle fix + adjacent repair of the guardrail section's stale workflow names (declared). CLUSTER F — accuracy minors (dirty-build caveat, crate-segment paths, DR-F2 handle → eec731bd). Fix vehicle: the warm contract author agent, contract file only; re-verify by all six lenses delta-focused; operator ratification is the exit gate.",
+      "created_at": "2026-08-01T20:12:57.575775Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "d40e862b-a2d8-45c4-9fc4-0cdaebfebc03",
+      "display_id": 1337,
+      "author": "xqjG",
+      "content": "RE-VERIFY ROUND 2 RESULT (6 lenses, delta-focused): ALL round-1 findings CLOSED, zero reopened; every fix-pass factual claim survived independent verification (ruleset clauses, icu_properties lapse, bypass-marker job logic, all crosslink citations at 6b4f736f, sidecar states). VERDICTS: QE RATIFIABLE (4 minors), PE RATIFIABLE (6 minors), RT/SO/SEC/DR NEEDS-CHANGES narrowly. CONVERGENT RESIDUE → micro-fix pass: (1) #657 tracker attribution, 3-lens convergence QE-R1/SEC-R1/DR-R1 (one token); (2) bypass-marker 'live/previously exercised' overclaim RT-R2/PE-R1 (never wired into this repo's CI — honest grade); (3) SO-R1/R2/R3 one-clause silent-drop dispositions (sixth description field restructure, DR description-cold-read role, events/hooks re-home sentence); (4) SEC-R2 the /design --continue heredoc fires our own falsifier from inside the sanctioned path (= #846/upstream #56 intersecting the member — extend upstream raise + preempt the justification); (5) strengthenings: RT-R1 new-sidecar residual, SEC-R3 diff-signature procedure, PE-R2 third sanctioned op (day-one-red re-baseline — PE measured 2 drifted sidecars at HEAD), PE-R3+SEC-R4 disposition-check binds to server-synced state per #815, PE-R4 bypass legs-split, PE-R5 E0016/W0070 disposition, QE-R2/R3/R4, DR-R2 wording. ROUTED AS FOLLOW-UPS (not this amendment): DR-R3 orphaned VSDD-code catalog (9 codes, 6 live files — new issue), PE-R6 vsdd-verify.yml template residue (verify-check namespace + OTel env → #842-adjacent), RT-R3 retained-verbatim device (discharged by SO disposition note at ratification). Round 3 = sight-check of the micro-diff, then operator ratification ask.",
+      "created_at": "2026-08-01T20:37:37.409092Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "bed80084-2f4b-49ed-8b82-40fa6bf41fec",
+      "display_id": 1339,
+      "author": "xqjG",
+      "content": "ROUND 3 (sight-check of the 15-item micro-fix): CLOSED CLEAN. Verified in-file: #657 re-attributed to vsdd-cli (3-lens convergence fixed); bypass-marker 'previously exercised' overclaim replaced with authored-not-exercised-on-this-surface + convention-grade listing; disposition-carrying re-baseline added as third sanctioned op (with the day-one-red adoption path); PR-lifecycle events + sibling codes re-home/disposition sentence present (only E0090 carried as a code; E0070/E0080/W0041/W0180 → recorded drop; E0016/W0070 → #854); bracket-normative-force falsifier added; SEC-R2 skip-on-continue raise extension present (cites #846/upstream #56). Diff scope: contract only, 37 insertions / 3 deletions vs eec731bd. mdatron verify: clean. The amendment is at the operator ratification gate: all round-1 findings closed, round-2 residue landed, round-3 sight-clean. Pending SO ratification riders: RT-R3 retained-verbatim device recorded as deliberate temporary state expiring with #853.",
+      "created_at": "2026-08-01T20:43:38.388946Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "e7861a58-c26a-4843-a128-ca63ba61d17e",
+      "display_id": 1340,
+      "author": "xqjG",
+      "content": "OperatorDirectiveApplied{directive: spec-contract-amended} — SO RATIFICATION, 2026-08-01. The operator ratifies the #826 contract amendment: the migrated Solution Owner change authority + Per-milestone PR discipline behavioral contracts, the Dependency approval requirement + Dependency-manifests trust member, the Design-doc lifecycle trust member, and the Methodology-rewrite amendment notes, as amended through review rounds 1-3 (recorded above: round-1 six-lens NEEDS-CHANGES; fix pass; round-2 six-lens re-verify with all round-1 findings closed and zero reopened; 15-item micro-fix; round-3 sight-clean; mdatron clean throughout). RIDER (RT-R3 discharge): the retained-verbatim device on the Methodology-rewrite requirement — non-normative brackets re-scoping verbatim-retained text — is recorded as a deliberate temporary state expiring with the #853 file-home ruling. Rationale: migration-fidelity law satisfied (every drop carries a recorded disposition), every enforcement claim honest-graded against the verified tree/ruleset/mirror state, every falsifier observable. Disposition home per the ratified section itself: this tracker comment + the harness run record; no events store.",
+      "created_at": "2026-08-01T20:49:02.196749Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "7afcd757-9b27-4113-927d-4a7cd38b4209",
+      "display_id": 1341,
+      "author": "xqjG",
+      "content": "Committed: design(#826) contract amendment — migrated disciplines + Design-doc lifecycle member (SO-ratified) | Files: 1 file changed, 37 insertions(+), 3 deletions(-) | c1c50df4",
+      "created_at": "2026-08-01T20:49:09.252491Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "10701964-c795-4248-97f3-149e4cacfd39",
+      "display_id": 1342,
+      "author": "xqjG",
+      "content": "MERGED: PR #19 squash-merged to main as 74421d1b (checks green: verify 26s / test 49s / routing-gate 4m23s). The #826 cleanup-PR scope is fully landed: 4 root DESIGN docs + methodology.md + agent-first-controls + re-sequence input deleted, README rewritten, every citer repointed, DESIGN-VERIFICATION deletion-safety closed, and the SO-ratified contract amendment (migrated disciplines + Design-doc lifecycle member) on main carrying its evidence section per the Gates amendment format-carry. Remaining on this issue: the re-ground-#14/#15-to-slice-framing half of the title scope. Next acts elsewhere: #845 (topology remediation + deviation registry), #853 (file-home ruling), #854 (orphaned-code catalog), #842 (template re-home), Slices 1/2/4.",
+      "created_at": "2026-08-01T20:54:25.588258Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2769a924-a28e-4fb3-b22c-174c8a55eba3",
+      "display_id": 1361,
+      "author": "xqjG",
+      "content": "CLOSED — the cleanup umbrella is fully discharged: docs/refactor legacy deleted, the 4 root DESIGN docs + methodology.md + agent-first-controls retired with all citers repointed (PR #19, 74421d1b), the contract amendments ratified in, and the #14/#15 re-grounding completed by the slice re-decomposition + the #845 build-plan (both already closed). Follow-ons all homed: #842/#843/#844/#853/#854.",
+      "created_at": "2026-08-02T00:46:42.020884Z",
+      "kind": "result"
+    }
+  ]
+}

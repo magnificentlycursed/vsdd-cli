@@ -1,0 +1,35 @@
+{
+  "uuid": "ec55fb5d-ece0-45ee-aa4e-79dc3c26d7c6",
+  "display_id": 836,
+  "title": "Slice 4 (Gate execution + mutation floor) phase-1a design — vsdd way: red-gate/phase-exit gate command, terminal-round check, fix-lane approval machinery, mutation floor (extends Slice 1's vsdd gate; NOT the defunct mdatron client)",
+  "status": "open",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-30T16:06:11.888099Z",
+  "updated_at": "2026-08-02T03:04:56.912524Z",
+  "labels": [
+    "design"
+  ],
+  "blockers": [
+    "51724a70-3698-43ea-b663-f739303a5169"
+  ],
+  "milestone_uuid": "d2b062d8-f2e2-45b9-9df3-686847ef1e83",
+  "comments": [
+    {
+      "uuid": "a780c382-9315-41ef-973c-6329c8f472d2",
+      "display_id": 1269,
+      "author": "xqjG",
+      "content": "DRAFT authored the vsdd way: .design/gate-execution-slice.md (15 REQ / 19 AC, grounded in contract 275/192/81/177 + Slice-1 code). REUSES (not duplicates): vsdd gate, unrouted_findings + gate_verdict (integrity.rs), routing-gate CI, gate-data.md, state-schema GateResult/GateKind. ADDS: red-gate checkout-and-run at layer+fix scale, executed-pin discipline, the 3 removal lanes + set-equality approval, invocation stamp, graded retrofit, no-executed-pin forms, mutation floor, terminal-round check. 5 open questions: (Q1) mutation tool + kill-ratio floor (cargo-mutants absent from repo; floor unfilled); (Q2) gate command surface (subcommands vs top-level); (Q3) removal-lane approval-record format; (Q4) invocation-stamp representation (GateResult lacks a stamp field); (Q5) fix-lane checkout-and-run fixture seam (corpus is snapshot-based). Named split respected: round-parity/never-started = Slice 6. kickoff plan stalled + cleaned. Open questions to operator.",
+      "created_at": "2026-07-30T17:10:05.053108Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "7caa44d7-a49f-4408-b807-50eede945967",
+      "display_id": 1273,
+      "author": "xqjG",
+      "content": "PHASE-1A RATIFIED by operator 2026-07-30. .design/gate-execution-slice.md (15 REQ / 20 AC) — all 5 resolved: cargo-mutants + 65% starting kill-ratio floor (SIGNED OFF, ratchet-up after baseline); vsdd gate subcommands (red/phase-exit/mutation); the removal-lane approval record (.vsdd/removal-approvals.yaml, deletion/mapping/disablement + two-way set-equality, SIGNED OFF); GateResult invocation stamp; runnable-mini-repo fix-lane fixtures. Reuses Slice-1 vsdd gate + unrouted_findings + gate_verdict + routing-gate CI + gate-data.md. Design ratified; committing via PR.",
+      "created_at": "2026-07-30T18:08:30.337057Z",
+      "kind": "decision"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "06fcba1d-8071-46a0-a588-b1a0579c0db2",
+  "display_id": 804,
+  "title": "Layer 3 round 6 minor security+SE convergent: assigned default-ignorable Hangul fillers (U+115F, U+1160, U+3164, U+FFA0, category Lo) pass the Cc/Cf/Zl/Zp+unassigned filter and reach every surface — invisible, no declared preservation decision covers them",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-27T17:34:00.197654Z",
+  "updated_at": "2026-07-28T21:03:43.273206Z",
+  "closed_at": "2026-07-28T21:03:43.273197Z",
+  "comments": [
+    {
+      "uuid": "aa4416cd-e3cc-4132-9f31-e80d9c1a3712",
+      "display_id": 1075,
+      "author": "xqjG",
+      "content": "PHASE-4 ROUTING (under the #806 format-carry). The Hangul fillers are the same class as #803/#798 — assigned default-ignorable code points. Correct-artifact answer: the spec requirement + the right mechanism. ROUTE TO: Phase 1a/1b terminal-safety amendment; the Default_Ignorable_Code_Point UCD property covers them by construction (the amendment retires the hand-rolled category+range+enumeration classifier that has been finding 'one more code point' every round). NOT fix-closed; routed, open until the amendment's rebuild.",
+      "created_at": "2026-07-27T18:15:03.300905Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "9ec75ec6-4247-4113-b974-3a3d4b46fc5a",
+      "display_id": 1114,
+      "author": "xqjG",
+      "content": "Resolved by the Layer-3 rebuild (#813, commits 24e76e2e + f06d0797): the Default_Ignorable_Code_Point property predicate + whole-of-output machine-form sanitizer (values and keys) close this systematically. Verified layer-3-closeable by the closing verify round (empirical strip/preserve probe + mutation tests). Closing with no separate changelog entry — the #813 rebuild entry carries the substance.",
+      "created_at": "2026-07-28T21:03:37.395402Z",
+      "kind": "resolution"
+    }
+  ]
+}

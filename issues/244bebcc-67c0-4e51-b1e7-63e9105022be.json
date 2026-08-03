@@ -1,0 +1,35 @@
+{
+  "uuid": "244bebcc-67c0-4e51-b1e7-63e9105022be",
+  "display_id": 448,
+  "title": "defect-fix lane amendment cold round 4",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 4 (post round-3: pin-test discipline, symmetric surface-limitation, consolidation path, scope-manifest binding, published marker in state artifact, antecedent-split criterion, expanded fixture set incl. green-at-baseline and inseparable-retrofit, composition-scope domain). Series 19-13-9.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:29:06.102239Z",
+  "updated_at": "2026-07-20T00:38:19.955871Z",
+  "closed_at": "2026-07-20T00:38:19.955871Z",
+  "comments": [
+    {
+      "uuid": "dc9a6b07-4748-4ff3-b133-3f14790b366b",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 4. Subject: lane revision 4 anchors: Phase exit by gate fix-scale bullet (pin-test discipline — pins defective behavior through the baseline surface; mechanical inseparability determination via unresolved-identifier check; symmetric validator-approved surface-limitation forward and retrofit; two-run green half; versioned failure-kind enumeration completed at 1c) and falsifier; Finding lifecycle bullet (scope-manifest-bound layer precedence; one OWNING finding per commit with consolidation path; state-artifact published marker) and falsifier; Directive reconciliation (unchanged); Deterministic composition (composition scope with versioned domain: phases plus fix-lane scope value) and Verification architecture signature; Gates requirement; Red-gate cheat criterion (antecedent-split assertions, green-at-baseline, inseparable-retrofit partial recording); fixture corpus fix-lane set (ten members incl. fix-scale composition). Out of scope: statusline amendment. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:29:21.796253Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "2740fa16-d506-4bf6-b52d-15955cb5d82b",
+      "author": "xqjG",
+      "content": "Lane round 4 complete. QE 3 + SE 4 + methodology 5 = 12 returned, 9 filed after 3 merges: L126 consolidation-closure contradiction (SE+Meth); L127 survivor label union / security-drop regression (Meth — the round's center); L128 executed-pin rule replacing the under-inclusive identifier discriminator (SE); L129 standing-suite scope (SE); L130 published marker in state contents (SE+Meth); L131 consolidation/multi-finding fixtures (QE+Meth); L132 spurious-compile-red fixture (QE); L133 pin-green-suite-red fixture + retrofit assertion symmetry (QE); L134 symmetric-falsifier criterion (Meth). All resolved-candidates; citations verified. Series 19-13-9-9. Not clean; round 5 after disposition.",
+      "created_at": "2026-07-20T00:36:09.991742Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "80bff33d-8d7f-44d1-a432-02ddfbb92ac0",
+      "author": "xqjG",
+      "content": "Round fully disposed: 9/9 fixed and closed. mdatron verify clean on lane revision 5. Closing; round 5 dispatches.",
+      "created_at": "2026-07-20T00:38:18.814227Z",
+      "kind": "result"
+    }
+  ]
+}

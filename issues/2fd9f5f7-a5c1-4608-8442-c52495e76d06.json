@@ -1,0 +1,112 @@
+{
+  "uuid": "2fd9f5f7-a5c1-4608-8442-c52495e76d06",
+  "display_id": 622,
+  "title": "Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire",
+  "description": "Directive classification, recorded before execution per Directive reconciliation: the operator relayed mdatron's kickoff live-fire field report (three fix-lane agents dispatched local/tmux, unattended, idled to timeout with zero tracker activity; post-mortem names the attended/autonomous posture axis the dispatch contract does not model) with direction to address it as part of the design. Classification: SPEC AMENDMENT touching Recorded review dispatch (posture axis, manifest posture recording, launch derivation), Gates (never-started as a distinct loud state; dispatch preflight), Trust boundaries (consent provisioning is an operator setup act — the orchestrator never provisions autonomy for its sub-agents; identity pre-approval before launch), the data-authoring package (posture enumeration), and Decomposition routing (Layer 0 substrate setup items; Layer 8 preflight and derivation). Served by: the chassis-managed spec-review loop, folded into the open phase-1c review cycle as a declared concurrent scope. Ratification: operator-gated, per the standing loop. Evidence: mdatron's report of 2026-07-20 (relayed image), its three dead-agent post-mortem and the orchestrator-consent-refusal observation.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:33:32.292039Z",
+  "updated_at": "2026-07-20T19:53:03.386420Z",
+  "closed_at": "2026-07-20T19:53:03.386420Z",
+  "comments": [
+    {
+      "uuid": "8c03c83d-19ed-439e-9ab4-2529a0d1290c",
+      "author": "xqjG",
+      "content": "Amendment authored in the working tree across six landing points: Recorded review dispatch (posture bullet with attended/autonomous definitions, cold-is-autonomous, launch derivation; preflight bullet with named substrate-check members and the consent-provisioning-is-operator-setup rule; never-started bullet), its falsification line (missing posture recording; attended-cold contradiction; missing preflight record), Gates round-parity (zero-tracker-events reads dispatch-failed) with the Gate coverage cell, Swarm live fire (posture recording seed; live run declares autonomous with preflight preceding), Trust boundaries (consent surfaces owned by the human; orchestrator never provisions; identity pool before launch), Terms (dispatch posture registered draft term), data authoring (posture enumeration with substrate-check members), Decomposition (Layer 0 substrate setup operator acts; Layer 8 preflight and posture-derived launch). Dispatch manifest — round 4 amendment lenses: solution-architect and ai-engineer, cold, fresh readers; declared narrowing: no UX lens (no human-facing surface beyond diagnostics) and no SE lens (spec-stage, no code mechanics beyond SA's reach) — reasons recorded here per loop practice. Tier+effort: inherited session model at session effort (xhigh). Falsifier: clean-while-defective falsifies; findings need working-tree-verifiable citations.",
+      "created_at": "2026-07-20T17:35:20.655029Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "f51b6010-e4ae-4dab-9fb9-aab7e63dbd3d",
+      "author": "xqjG",
+      "content": "Operator-directed deep dive into crosslink and Thermite completed before redraft (two very thorough parallel cold reads; full synthesis on the knowledge page 'attended-design-autonomous-execution'). Both repos implement the operator's structural ruling literally: crosslink's /design is conversational-attended by construction (no source edits, no auto-dispatch, wait-for-user) while kickoff/swarm are the autonomous executors, with the human as 'driver' acting between runs — trust attach, gates, checkpoints, merges, sentinel triage; Thermite activates autonomy by explicit human act (/goal) bounded by a mechanical stop condition, with named human-required slots (pushes, design amendments, oracle authorship, stage gates, waiver review, spec-intent review) and the do-not-re-litigate register pattern freezing attended decisions against autonomous reopening. Redraft-shaping findings: (1) never-started classification upstream is launch-status sentinel + session records + heartbeat staleness, NOT tracker-event counting — resolving the round-4 reviewer objection; (2) crosslink's trust move 'the driver explicitly invoked kickoff, so trust is implicit' grounds consent-as-dispatch-act; (3) preflight checks should carry three-valued honesty (pass/fail/INCONCLUSIVE, fail-closed); (4) escalate-don't-guess conduct for unresolved questions reaching autonomous runs; (5) three doc-vs-code mismatches in crosslink logged as upstream findings (agent_overrides vs no-push-no-merge docs; container-run missing skip-permissions; TIMEOUT sentinel never written). Redraft remains held for operator go.",
+      "created_at": "2026-07-20T18:04:59.376061Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "f6f30f4d-482d-477f-bdfe-c6da092f950f",
+      "author": "xqjG",
+      "content": "Rounds 4 (SA + AI-engineer, amendment scope) — parity: 9 + 11 findings reported, 20 children filed (the issues titled posture-r4-SA:* and posture-r4-AI:*), 20 closed. Dispositions: the per-dispatch posture axis is retired by the operator's structural ruling (design attended, execution autonomous; mode derives from the work), which dissolves the cold-conflation and orchestrator-answers-consent blockers; the surviving substance landed in the redraft — chassis instruments for never-started and stalled, three-valued fail-closed preflight with per-member observation bindings as 1c data (credentials and key material added), consent grant as the operator's dispatch act, project-MCP-trust and path-scoped-trust surfaces named, corpus extended with preflight/never-started/stalled/wrong-vehicle seeds, fencing rule routed to 1c data. The oracle section carries the operator's attended slots and the frozen-rulings rule; fix lane and directive classification state their split sides. mdatron verify clean. NEXT: operator raised the chassis-affordance gap (design/kickoff/swarm unused by these sessions) as amendment-relevant — proposal pending operator direction before further authoring; round 5 confirmation held until that scope lands.",
+      "created_at": "2026-07-20T18:17:24.188824Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "cd503728-016a-4930-b6d9-911d45e125d4",
+      "author": "xqjG",
+      "content": "Operator raised the chassis-affordance gap; install audit of vsdd-cli run in response. Findings: (1) .claude/settings.json wires every crosslink hook through guard shims (if [ -f HOOK ]) but .claude/hooks/ does not exist — the entire enforcement layer silently no-ops; (2) .mcp.json wires the three crosslink MCP servers (agent-prompt, knowledge, safe-fetch) at .claude/mcp/*.py which does not exist — dangling, with enableAllProjectMcpServers: true set; (3) .claude/commands/ carries only the vsdd primers and domain prompts — none of crosslink's fourteen skills (design, kickoff, check, commit, review, workflow, preflight, qa, ...) are installed, so no keyword or description match could ever summon them; (4) .crosslink/rules/ is fully populated but its injector (prompt-guard) is among the absent hooks, so the rules content is never injected. The estate's chassis install is a hollow shell that fails open by the guard-shim design — the silent-degradation class the contract's never-silent and three-valued disciplines exist to kill, in our own substrate. Structural-closure proposal drafted for operator review; no contract authoring until the operator rules.",
+      "created_at": "2026-07-20T18:18:12.803520Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "0fb4d290-21e9-4682-a62f-89c0037597a2",
+      "author": "xqjG",
+      "content": "Affordance closure authored on operator confirmation ('Yeah, this all seems right'), with the operator's correction folded: the estate's one kickoff use was operator-directed and unsuccessful — the affordance bullet's evidence line now states that no chassis workflow was ever self-summoned. Landed: three new Conformance-at-action-time bullets (chassis affordances the default vehicle with the AI-Engineer-owned act-to-affordance map; the installed-artifact manifest with the three-valued session-substrate check and the recorded-pair addition rule covering operator additions; availability-is-not-activation with the injection-or-recorded-Read discipline and the application-audit instruments), their falsification cells, root-cause evidence (deploy-substrate commit, gitignored payload halves lost to clean/re-clone, guard-shim silent degradation), the data-authoring additions (manifest schema with lifetime-half field; act-to-affordance map), Layer 2's session-substrate check, Layer 0's install repair and directory-policy reconciliation, and the hollow-shell corpus fixture. mdatron verify clean. Dispatch manifest — round 5 (confirmation, full amendment scope): three cold lenses — solution-architect (coherence of the split + affordance closure against the ratified body), ai-engineer (substrate fidelity of the activation and install claims), documentation-reviewer (whole-contract consistency including the Decomposition routing). Inherited model at session effort. Falsifier: clean-while-defective falsifies; citations required; stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T18:27:02.420504Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "1934defd-ff6a-40a9-93bd-4f3ff221170a",
+      "author": "xqjG",
+      "content": "Round 5 returned: SA 17 findings (4 blocking), AI-engineer 6 (2 blocking), DR 21 (2 blocking) — dominant themes: the closure's own checks are not yet wired into the ratified Status enumerations and criteria (the amendment repeating the availability-without-activation miss on itself); the checker-is-payload regress (in a fresh clone the session-substrate check is part of the missing half — tracked-side fail-loud wiring required); the git-hook lifetime inversion (tracked payload, per-clone wiring — invisible to the manifest classes as drafted); several uninstrumented falsifiers. Triage queued behind an active operator conversation (the operator's current-state observability question takes the turn); full disposition to follow.",
+      "created_at": "2026-07-20T18:38:38.907026Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "6fd04e90-935f-40f2-b0f5-5f7549a38146",
+      "author": "xqjG",
+      "content": "Operator directive: repair the chassis install now ('can we fix the crosslink init'). Classification (recorded before execution): the Layer 0 install-repair act of the affordance closure, pulled forward by operator direction as an operational act — executed in this attended session with the operator present, scope vsdd-cli only (mdatron's repair belongs to its session per the session-split ruling). Conduct: git-status snapshot before, re-run crosslink init, verify payloads and tracked-file survival after, changes left uncommitted for operator review alongside the already-flagged hook-config and gitignore modifications.",
+      "created_at": "2026-07-20T18:42:07.135721Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "f535c8c5-b965-4e42-b560-06d76d740ead",
+      "author": "xqjG",
+      "content": "Install repair executed (operator-directed, classification recorded above): crosslink init --force restored the full payload set — 7 hooks in .claude/hooks/, 3 MCP servers in .claude/mcp/, 14 chassis skills joining the 28 surviving vsdd files in .claude/commands/. hook-config.json untouched by init (the pre-existing schema-upgrade modification stands for operator review, backed up to scratchpad). Now live at call time: work-check (strict, session bound to the phase issue), post-edit-check, heartbeat, pre-web-check. Arriving at next session start: prompt-guard rules injection, session-start recovery, the MCP servers, and the chassis skills in the listing. New upstream finding filed: --update reads accidental loss as deliberate deletion (sticky hollow shell). mdatron's repair belongs to its session per the split ruling.",
+      "created_at": "2026-07-20T18:44:07.934351Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "b2846220-14cc-40a4-840e-7a1d4048954a",
+      "author": "xqjG",
+      "content": "CORRECTION and new finding, from the operator's restart attempt. Claude Code keys conversations AND project config to the launch directory. This estate's sessions have always launched from the workspace root (not a git repo, no chassis config beyond the statusline) — so: (1) 'claude --continue' from vsdd-cli found no session, correctly — the conversation lives in the root-keyed project; (2) more important, vsdd-cli's .claude/settings.json hooks, .mcp.json servers, and command listing DO NOT LOAD into root-launched sessions at all — the repaired substrate binds only to sessions launched from the repo directory. My earlier result comment's claim that work-check 'armed mid-session' was wrong: I verified the hook scripts execute by invoking them directly, but this session's harness wiring comes from the root settings, which carry only the statusline — no hook has ever fired in these sessions. The repair is real and banked: the operator's trust approval during the restart attempt bound to the vsdd-cli project path (persistent), uv is installed, payloads are complete — a session launched from vsdd-cli gets the full armed substrate. New structural finding for the amendment: the estate's workspace-root session shape is off-chassis — crosslink assumes repo-rooted sessions, and the session-split ruling already points the same direction; the session-shape rule (repo-rooted sessions; workspace root for cross-repo orchestration only) is an operator decision to fold into the affordance closure.",
+      "created_at": "2026-07-20T18:53:54.138382Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "fccddeb8-ae37-480a-9c82-ce8f13d1506f",
+      "author": "xqjG",
+      "content": "Round 5 parity: 44 findings + the operator-confirmed session-shape finding = 45 children filed (the amend-r5-SA, amend-r5-AI, amend-r5-DR, and amend-r5-OP series, display IDs 238-277), 45 closed with resolutions. Fix-pass key, by finding series: SA — escalate-dont-guess instrumented (falsifier + unresolved-question pair fixtures); substrate check wired into the Status integrity-query list, Status detection (hollow-shell and mis-rooted members, integrity-never-degradation), and Layer 2's slice, with the unmanifested-artifact fixture added; hand-rolling decidability stated against the map at audit with its seed; ruling-contradiction seed + Oracle provenance clause; split-side falsifier + Directive walkthrough clause; fencing conduct stated in the never-started bullet; swarm binding declared conditional; unlisted-vs-unrouted semantics split with dual-ownership stated; session-skill/primer delivery named (session-start injection, primer-read gating); convergence dispatches named autonomous-side and format-carried; manifest instance authored ahead of Layer 0's close with the executed repair noted; container-gate format-carry referenced; contract-over-chassis-workflow precedence with recorded divergence path; project-server trust and load state joins the preflight members. AI — tracked wiring fail-closed (first-session loudness rests on the tracked half; guard shims named as counter-example); git hooks join the manifest classes with the inverted pairing; reference-surface enumeration a 1c schema field with the starting list; Read-record entry-time honesty (ranges, post-compaction re-read); application instruments' per-instrument reach stated with cold review as the read-but-ignored catcher; invocation provenance recorded with the agent-invoked-dispatch falsifier and seed. DR — never-started dual signatures reconciled in bullet, criterion, and fixtures; split-side boundary unified (filing and the dispatch invocation, the grant); identity disjunction restored at the preflight member; credentials join Layer 0; working-tree citation fixture renamed; supplement duties homed at Layer 10 (summoning mechanics + chassis workflow supplement); retired terms cell and axis removed; abbreviations spelled out; lifetime half defined inline; independence clause cited exactly; trust-design attribution anchored in References; (Install)/(Status) exact parentheticals; branch-grammar cross-anchor declared; em dash and antecedent prose fixed. OP — the session-shape rule authored as a Conformance bullet with its falsifier and the mis-rooted fixture. Deferral roster extended for the criterion-unreached amendment fixtures, declared per the audit rule. mdatron verify clean. Round 6 confirmation dispatching: SA + DR, with the AI lens narrowed out by declared reason — its substrate-fidelity charges ran twice with the round-5 set fully incorporated; residual substrate risk rides the DR consistency pass.",
+      "created_at": "2026-07-20T19:12:06.855724Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4735eb9e-3ac1-4632-beb2-32f0c1c07ff9",
+      "author": "xqjG",
+      "content": "Round 6 parity: 18 findings from two lenses merged to 13 distinct (heavy convergence — both lenses on the preflight-list divergence and the never-started signature gap; convergent-merge credited), 13 children filed (amend-r6 series, 278-290), 13 closed. Fixes: preflight members aligned across all four homes (five members, identity disjunction restored at Trust boundaries and data authoring, project-server trust in Layer 0's acceptances); Gate coverage covers both never-started signatures; fencing duplicate removed and the late-writer seed added; statusline surfacing honestly scoped to Status's machine and human forms with segment visibility routed to the 1c statusline-data decision; vehicle provisioning stated (install-inside, preflight against the vehicle's tree); fail-closed-wiring and post-compaction stale-read seeds added with roster entries; split side stated per increment kind; unsigned-manifest direction asserted in Swarm live fire; no-findings count reconciled to the audit record with enumerable survivors; Layer 0 antecedent cited by exact title; assistive-technology spelled out. mdatron verify clean. Round 7 confirmation dispatching: single documentation-reviewer lens, declared narrowing — round 6's SA and DR findings converged near-fully, so the residual risk is consistency-grade; stop signal on a clean or hallucinated-only round.",
+      "created_at": "2026-07-20T19:25:11.296206Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5efa3834-0d47-43e2-a9e8-3cb70804ed24",
+      "author": "xqjG",
+      "content": "Round 7 parity: 3 findings, 3 children (291-293), 3 closed. Round 8 dispatching: single documentation-reviewer, scope narrowed by declared reason to the three round-7 edits and their surroundings — the terminal check on a near-clean round.",
+      "created_at": "2026-07-20T19:35:34.082034Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "c1ba9aa7-2c3f-4df8-b295-6e3271057a10",
+      "author": "xqjG",
+      "content": "Round 8: CLEAN — the stop signal. All three round-7 edits verified consistent (the two-kinds approval split holds across every approval-family occurrence; retired tokens absent outside the Terms entries; both governed-set citations exact and unique in class). Series over eight rounds: 9-7-7-30-45-13-3-0 findings, all filed as children and closed with resolutions, full parity throughout. The amendment — the attended/autonomous split, the chassis-affordance closure, and the session-shape rule — is at stop signal in the working tree, mdatron verify clean, AWAITING OPERATOR RATIFICATION. On ratification: boundary commit (carries the decomposition, the amendment, and the loop record), then this root session retires per the session-shape rule and work resumes repo-rooted.",
+      "created_at": "2026-07-20T19:39:41.499770Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "87019b73-d949-4d6c-804e-7607af8fcb3f",
+      "author": "xqjG",
+      "content": "RATIFIED by operator, 2026-07-20 ('Ratify and commit'). The attended/autonomous amendment — the structural split, the chassis-affordance closure, and the session-shape rule — enters the ratified contract at the boundary commit. Eight rounds, series 9-7-7-30-45-13-3-0, full parity; the ratified-text mechanical corrections (two exact-heading citations; the terminal-round reconciliation) ride under this ratification note.",
+      "created_at": "2026-07-20T19:52:59.873214Z",
+      "kind": "decision"
+    }
+  ]
+}

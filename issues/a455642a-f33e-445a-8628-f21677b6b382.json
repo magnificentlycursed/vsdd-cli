@@ -1,0 +1,21 @@
+{
+  "uuid": "a455642a-f33e-445a-8628-f21677b6b382",
+  "display_id": 364,
+  "title": "statusline r3 SA: fuzz enumerations diverge (Phase 5 strategy vs fuzz scope)",
+  "description": "Round: statusline amendment cold round 3. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: substrate-settings parser added to the Verification-architecture fuzz scope (:209) but the Phase 5 strategy declaration (:24) still enumerates four parsers — two normative enumerations of the same surface disagree; an implementer reading :24 as the fuzz contract skips the adopter-owned settings parse the trust boundary mandates. Citations verified: contract:24 vs :209. Proposed: resolved-candidate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:31.631519Z",
+  "updated_at": "2026-07-19T23:29:13.102641Z",
+  "closed_at": "2026-07-19T23:29:13.102641Z",
+  "comments": [
+    {
+      "uuid": "fc4a5bd2-e4e5-4ad3-8e43-d43af1827811",
+      "author": "xqjG",
+      "content": "Fixed in working tree (round-3 fix pass, standing triage pattern). Phase 5 strategy declaration at the project declarations now enumerates five parsers including substrate-settings — both normative fuzz enumerations agree. Revision: project declarations Phase 5 strategy line.",
+      "created_at": "2026-07-19T23:28:49.679656Z",
+      "kind": "resolution"
+    }
+  ]
+}

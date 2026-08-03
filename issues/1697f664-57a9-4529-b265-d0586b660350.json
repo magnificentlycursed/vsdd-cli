@@ -1,0 +1,25 @@
+{
+  "uuid": "1697f664-57a9-4529-b265-d0586b660350",
+  "display_id": 299,
+  "title": "Spec review round 1: fixture corpus: new requirement with sourced incidents",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T02:27:00.431758Z",
+  "updated_at": "2026-07-29T10:24:25.336566Z",
+  "closed_at": "2026-07-29T10:24:25.336555Z",
+  "labels": [
+    "spec-review-round-1"
+  ],
+  "comments": [
+    {
+      "uuid": "592cc864-4179-4ff0-8ec7-5bbba79cbe0f",
+      "display_id": 1227,
+      "author": "xqjG",
+      "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract (install/status/config-integrity/conformance/gate/scope criteria present). Reopen if this specific finding resurfaces as a live gap.",
+      "created_at": "2026-07-29T10:24:18.669967Z",
+      "kind": "decision"
+    }
+  ]
+}

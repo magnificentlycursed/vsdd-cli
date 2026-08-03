@@ -1,0 +1,29 @@
+{
+  "uuid": "12d9bb5b-62c8-4052-b62d-510b8e84b0f7",
+  "display_id": 671,
+  "title": "data set: economics data — effort signals, tier and effort defaults, mutation floor, token budgets, calibration bands, presets",
+  "description": "Round 6 of #598, items 11-14: the effort-scaling signal catalog (three up-signals, three down-signals, each with its computable-from source per the contract — tracker, manifests, git history, no new capture) with initial tier-and-effort defaults and the per-auth-mode attribution grain declared; the mutation floor the thorough preset declares; per-artifact-class token budgets for the CI gate; initial calibration bands seeded from this respec's own observed rounds and marked as seeds pending actuals; and the three preset contents. The heaviest operator-owned set in the package — every number is a proposal until adoption. Owner: data-engineer. Validator: ai-engineer (the advisory queries and the ledger dimensions are that domain's owned surface).",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T02:28:44.456742Z",
+  "updated_at": "2026-07-21T02:46:24.083496Z",
+  "closed_at": "2026-07-21T02:46:24.083496Z",
+  "comments": [
+    {
+      "uuid": "3b199774-bbfa-4dba-b28e-df44e4125b84",
+      "author": "xqjG",
+      "content": "OPERATOR ADOPTION 2026-07-20, all four blocks as proposed: the six effort signals with computation sources and the initial tier/effort defaults (terminal verify rounds at high); the 80 percent mutation kill-ratio floor on changed code; the per-class token budgets (5000/3000/2500/2000/1500) and the seeded calibration bands with the code-review band honestly unseeded; and the three presets with thorough as this project's declaration. Data Engineer pass under the session's loaded lens: no new findings — pair rule followed, band provenance required by schema, signal sources pinned to existing capture (no new capture introduced), preset cardinality pinned. AI Engineer validator note for the spec-review round: the advisory loop's decision routing (absorbable advisories execute, provisioning reaches the operator with the math) is conduct the session skill carries — this data set only supplies the signals and defaults it computes from.",
+      "created_at": "2026-07-21T02:46:15.545518Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "30a67940-cbf3-408a-b26c-eedb6bee0161",
+      "author": "xqjG",
+      "content": "Resolved: landed with the round-6 commit, mdatron verify clean.",
+      "created_at": "2026-07-21T02:46:19.994302Z",
+      "kind": "result"
+    }
+  ]
+}

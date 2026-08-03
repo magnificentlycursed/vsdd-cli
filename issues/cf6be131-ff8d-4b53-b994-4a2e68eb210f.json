@@ -1,0 +1,21 @@
+{
+  "uuid": "cf6be131-ff8d-4b53-b994-4a2e68eb210f",
+  "display_id": 442,
+  "title": "lane r3 SE: publish-state has no machine-readable binding",
+  "description": "Lane round 3. Lens: SE (validator: SO). Owner: SO session. Defect: waiver validity gates on first publish but 'first publish' binds to no readable artifact — the count-zero guarantee rests on prose, which the bullet itself forbids. Citations verified: contract:66, :81, :123. Proposed: resolved-candidate (the first-publish act writes the published marker into the state artifact — the operator's promotion act recorded in state and git history; falsifiers consult it).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:42.717785Z",
+  "updated_at": "2026-07-20T00:28:43.181731Z",
+  "closed_at": "2026-07-20T00:28:43.181731Z",
+  "comments": [
+    {
+      "uuid": "22c59bfb-be71-42cf-a6e4-ffd6ee13dcda",
+      "author": "xqjG",
+      "content": "Fixed: the first-publish promotion act writes the published marker into the state artifact — the machine-readable publish-state the falsifiers consult; pre-publish waiver fixture keyed on the marker's absence. Revision: Finding lifecycle bullet + criterion.",
+      "created_at": "2026-07-20T00:28:30.371042Z",
+      "kind": "resolution"
+    }
+  ]
+}

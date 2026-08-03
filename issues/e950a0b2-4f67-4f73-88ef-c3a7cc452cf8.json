@@ -1,0 +1,21 @@
+{
+  "uuid": "e950a0b2-4f67-4f73-88ef-c3a7cc452cf8",
+  "display_id": 517,
+  "title": "effort r1 Meth: preset cost bands silent on effort's runtime spend",
+  "description": "Effort round 1. Lens: methodology, low confidence (validator: SO). Defect: the static priced bill excludes thinking spend, so two presets differing only in effort advertise identical bands. Citations verified: contract:91, :141, :198. Proposed: resolved-candidate (one honest sentence: the band prices the static context bill; effort's runtime spend is the ledger's to report, never the band's to imply).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:37.153311Z",
+  "updated_at": "2026-07-20T01:30:14.426974Z",
+  "closed_at": "2026-07-20T01:30:14.426974Z",
+  "comments": [
+    {
+      "uuid": "dacdb120-605e-4680-8a08-20e7980d4868",
+      "author": "xqjG",
+      "content": "Fixed: the preset sentence states the band prices the static context bill and effort's runtime spend is the ledger's to report, never the band's to imply. Revision: config fields sentence.",
+      "created_at": "2026-07-20T01:29:50.501114Z",
+      "kind": "resolution"
+    }
+  ]
+}

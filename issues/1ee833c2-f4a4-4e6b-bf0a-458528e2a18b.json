@@ -1,0 +1,21 @@
+{
+  "uuid": "1ee833c2-f4a4-4e6b-bf0a-458528e2a18b",
+  "display_id": 519,
+  "title": "effort r1 AIE: computability claim overstates for two signals",
+  "description": "Effort round 1. Lens: ai-engineer (validator: PE). Defect: the rework ratio needs git line-attribution and mechanical residue keys on commit evidence — neither is tracker-plus-manifests. Citations verified: contract:141 vs :78, :81. Proposed: resolved-candidate (widen the source claim honestly to include git history, the audit trail the contract already names, with the two joins stated).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:40.052728Z",
+  "updated_at": "2026-07-20T01:30:17.135336Z",
+  "closed_at": "2026-07-20T01:30:17.135336Z",
+  "comments": [
+    {
+      "uuid": "e4f7896d-58db-4c02-8d1f-c75bb8f7ba86",
+      "author": "xqjG",
+      "content": "Fixed: source claim widened honestly to tracker, manifests, and git history with both joins stated; no new capture. Revision: advisory clause.",
+      "created_at": "2026-07-20T01:29:53.063753Z",
+      "kind": "resolution"
+    }
+  ]
+}

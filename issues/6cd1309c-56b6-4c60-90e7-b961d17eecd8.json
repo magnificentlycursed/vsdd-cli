@@ -1,0 +1,37 @@
+{
+  "uuid": "6cd1309c-56b6-4c60-90e7-b961d17eecd8",
+  "display_id": 823,
+  "title": "arm the E0091 letter-cluster guardrail: adjudicate label schemes, then spec-review the DESIGN coinage cleanup, then land the register clean",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T08:10:39.572095Z",
+  "updated_at": "2026-08-02T00:47:42.618666Z",
+  "closed_at": "2026-08-02T00:47:42.618657Z",
+  "comments": [
+    {
+      "uuid": "2d9a5862-69d1-41ec-94da-197ce00c575a",
+      "display_id": 1190,
+      "author": "xqjG",
+      "content": "GOAL: land .mdatron/vocabulary.yaml armed for MDATRON-E0091 (letter-cluster prohibition) — mechanizing the 'no coined labels' discipline from convention grade to CI-backed. Parent: #822 F2 (arming proven; families.vocabulary flips active; but 80-instance/12-scheme coinage debt in the DESIGN docs blocks landing since pre-commit mdatron verify would fail).\n\nSTEP 1 — adjudicate the 12 schemes (per scheme: allow a legit/registered scheme, or rewrite an ad-hoc coinage):\n- ALLOW (legit tech / false positive): SHA-<n> (SHA-256), OSC-<n> (OSC-8 terminal escape), A-Z<n> (regex char-class fragment).\n- BARE CODE REFS (governance call — allow bare '^[EWL][0-9]{4}$', or require VSDD-/MDATRON- prefixes): E-code refs x14 (E0099...), W-code refs x7 (W0191...), L-code ref x1 (L0050).\n- ADJUDICATE (register the scheme in allow, OR rewrite as coinage): finding-mode F-number x25 (the canonical prohibited pattern), requirement R-number x19, mitigation MITIG-F-number x4, milestone/mode M-number x3, STEP-number x3, domain-finding SO-F-number x1.\n\nSTEP 2 — rewrite the adjudicated coinages in DESIGN-METHODOLOGY.md / DESIGN-SCHEMA.md / DESIGN-VERIFICATION.md via the SPEC-REVIEW LOOP (owned: composition + cold review; operator approval is the exit gate, not a substitute). Not a solo sweep.\n\nSTEP 3 — author .mdatron/vocabulary.yaml with the adjudicated label_schemes.allow; mdatron verify clean; commit (pre-commit passes). Optional further stage: arm E0090 (bold-term register) by porting templates/registry/vocabulary.yaml into the terms: schema.\n\nLANDING CRITERIA: governed docs E0091-clean + register committed + families.vocabulary active. Note the irony worth recording: the contract that defines the no-coined-labels discipline currently violates it at scale.",
+      "created_at": "2026-07-29T08:11:36.669926Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "d1736d49-bf50-41b4-8d2f-cf59eadd0320",
+      "display_id": 1237,
+      "author": "xqjG",
+      "content": "DONE (core) — E0091 ARMED over the enduring corpus; PR #5 open, CI GREEN (verify 32s + test 49s; families.vocabulary active). The 'no coined labels' discipline is now a CI-backed check over the artifacts the harness ships (domain prompts, supplements, registry data sets) — not agent vigilance (which this session proved unreliable). Register: .mdatron/vocabulary.yaml; allows VSDD/MDATRON code namespaces + genuine tech terms (H1-6, OSC-8, JSON5); rewrote the enduring coinages ('R79 F3 anti-pattern', 'milestone N-1', 'milestones M1..MN') to plain descriptors. DELIBERATELY OUT OF SCOPE: the transitional prose (methodology.md, DESIGN-*.md) — superseded/stop-gap, retires as the harness subsumes the methodology; its ~80-cluster debt retires with it (doc-sunset #821). Remaining: merge PR #5 + branch protection to make it a hard block.",
+      "created_at": "2026-07-29T10:46:23.341986Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "cb0a18a8-73b6-4a04-8753-99b1a4f01f39",
+      "display_id": 1364,
+      "author": "xqjG",
+      "content": "CLOSED — E0091 armed and proven (the .mdatron/vocabulary.yaml register is live; the family fires — it caught ~60 REQ-handle findings in the #840 cycle, fixed by descriptive names per operator ruling, and E0093 deprecated-coinage rides beside it). The coinage-debt docs (DESIGN-METHODOLOGY/-SCHEMA/-VERIFICATION) were deleted whole in the #826 sunset, retiring the 80-instance debt with them. The discipline sits at CI-backed grade on the governed corpus.",
+      "created_at": "2026-08-02T00:47:36.278832Z",
+      "kind": "result"
+    }
+  ]
+}

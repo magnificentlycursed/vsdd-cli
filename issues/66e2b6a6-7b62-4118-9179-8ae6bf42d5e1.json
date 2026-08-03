@@ -1,0 +1,21 @@
+{
+  "uuid": "66e2b6a6-7b62-4118-9179-8ae6bf42d5e1",
+  "display_id": 254,
+  "title": "amend-r5-SA: MCP degradation named but never bound to a preflight member",
+  "description": "Minor. Fix: project-server trust and load state joins the members and the data list. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:02:28.647701Z",
+  "updated_at": "2026-07-20T19:09:02.337852Z",
+  "closed_at": "2026-07-20T19:09:02.337852Z",
+  "comments": [
+    {
+      "uuid": "6598e9af-5ca0-40de-9533-1d53fdbeea5b",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:08:59.551932Z",
+      "kind": "resolution"
+    }
+  ]
+}

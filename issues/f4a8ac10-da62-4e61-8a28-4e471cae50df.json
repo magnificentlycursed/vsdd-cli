@@ -1,0 +1,24 @@
+{
+  "uuid": "f4a8ac10-da62-4e61-8a28-4e471cae50df",
+  "display_id": 742,
+  "title": "Clear the crosslink 0.8.0 hold: upstream patched, hub migrated to v3",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T16:29:52.701338Z",
+  "updated_at": "2026-07-22T16:32:17.456361Z",
+  "closed_at": "2026-07-22T16:32:17.456347Z",
+  "labels": [
+    "maintenance"
+  ],
+  "comments": [
+    {
+      "uuid": "6ab8a850-5d4c-464b-ab0d-2f256f25164c",
+      "display_id": 966,
+      "author": "xqjG",
+      "content": "EXECUTED (operator ruling: upstream patched, hub migrated to v3 by the operator, clear the block): creates and comments verified working on the migrated hub; the substrate-carried guard (.crosslink/rules/project.md) rewritten — hold cleared, surviving conduct items kept until re-verified against 0.9.x (close/archive re-reads, sync rebinding, --json for exact text, never suppress WARN); both memories updated (the hold memory rewritten as cleared with the container-kickoff retest trigger explicitly NOT cleared — separate evidence owns it; the incident memory resolved); the parked boundary-sweep records transferred as #743. The incident's conduct held: no migration ran and no binary swapped from the session; the operator performed both with upstream patched.",
+      "created_at": "2026-07-22T16:32:11.484841Z",
+      "kind": "result"
+    }
+  ]
+}

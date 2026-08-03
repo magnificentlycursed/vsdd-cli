@@ -1,0 +1,21 @@
+{
+  "uuid": "682501ff-ebcf-48ca-9b23-d6a3a863f2fd",
+  "display_id": 469,
+  "title": "lane r5 SE: compile-defect declaration is validator-free beside its validator-gated twin",
+  "description": "Lane round 5. Lens: SE (validator: SO). Owner: SO session. Defect: the two no-runtime-pin paths are author-selectable with asymmetric rigor — surface-limitation needs validator approval, the compile-defect declaration none; relabeling bypasses the validator and can launder a missing-API feature into the fix lane. Citations verified: contract:64. Proposed: resolved-candidate (the declaration carries validator approval — both no-runtime-pin paths meet the same bar).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:54.179975Z",
+  "updated_at": "2026-07-20T00:49:16.804695Z",
+  "closed_at": "2026-07-20T00:49:16.804695Z",
+  "comments": [
+    {
+      "uuid": "2f89e2b5-2179-496c-8427-5a71f74cd529",
+      "author": "xqjG",
+      "content": "Fixed: the compile-defect declaration carries validator approval — both no-runtime-pin paths meet the same bar; relabeling buys no validator escape. Revision: gate bullet.",
+      "created_at": "2026-07-20T00:49:00.024233Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "e2b33599-7a54-47e7-b0ec-0ee8bf7e9e95",
+  "display_id": 278,
+  "title": "amend-r6: preflight member lists diverge across three homes",
+  "description": "Blocking, convergent. Data authoring omits project-server trust/load and narrows identity to pool-only; Layer 0 lacks a server-trust act; Trust boundaries states pool-only against the bullet's disjunction. Fix: all four aligned on five members with the identity disjunction. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:21:53.842327Z",
+  "updated_at": "2026-07-20T19:23:40.211561Z",
+  "closed_at": "2026-07-20T19:23:40.211561Z",
+  "comments": [
+    {
+      "uuid": "096d0f5e-9787-4760-a963-47180c353835",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:23:34.584832Z",
+      "kind": "resolution"
+    }
+  ]
+}

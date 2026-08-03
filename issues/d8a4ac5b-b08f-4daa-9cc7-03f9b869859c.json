@@ -1,0 +1,21 @@
+{
+  "uuid": "d8a4ac5b-b08f-4daa-9cc7-03f9b869859c",
+  "display_id": 799,
+  "title": "Layer 3 round 5 major security: the machine form renders state-sourced strings (phase, scope, domains) and the diagnostic file/message RAW — the last uncleaned sink; contradicts the text.rs scope claim that the policy covers the machine rendering",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T10:58:49.860710Z",
+  "updated_at": "2026-07-26T11:11:46.435865Z",
+  "closed_at": "2026-07-26T11:11:46.435857Z",
+  "comments": [
+    {
+      "uuid": "f1ae5294-310f-4b41-88d1-dc68f93b786e",
+      "display_id": 1064,
+      "author": "xqjG",
+      "content": "Fixed in 52f94321: state-sourced display strings (current_phase, active_composition scope/domains) are cleaned at the read_state source boundary — the peer of the acquisition's snapshot cleaning and the loader's PostLoad — so all three render forms including the MACHINE form receive clean data, and the #749 verbatim composition echo stays an echo of already-clean state. The broken machine block now reuses the cleaned path and message and cleans the kind. Pinned by a machine-form falsifier (hostile scope via state renders clean; hostile diagnostic path/message clean on both broken surfaces). The last uncleaned sink is closed at the source, not the sink.",
+      "created_at": "2026-07-26T11:11:41.097021Z",
+      "kind": "result"
+    }
+  ]
+}

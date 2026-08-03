@@ -1,0 +1,28 @@
+{
+  "uuid": "fa7f33fe-23d0-4dd1-8890-7c2e718621a1",
+  "display_id": 50,
+  "title": "TW/F1: README opener differentiation",
+  "description": "Source: mdatron/review-log/2026-06-07-technical-writer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:03:15.256728Z",
+  "updated_at": "2026-06-08T01:48:09.402179Z",
+  "closed_at": "2026-06-08T01:48:09.402179Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "80ee935d-d94e-49f1-80f6-ac711740dfa2",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:08.672088Z",
+      "kind": "resolution"
+    }
+  ]
+}

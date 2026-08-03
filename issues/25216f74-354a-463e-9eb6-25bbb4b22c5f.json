@@ -1,0 +1,22 @@
+{
+  "uuid": "25216f74-354a-463e-9eb6-25bbb4b22c5f",
+  "display_id": 681,
+  "title": "r1 major UX: permission-or-io recovery text misleads the IO half of its own scope",
+  "description": "Evidence: statusline-data.md:16-20 — kind and diagnostic admit two causes; recovery says only 'fix file permissions'. A disk/mount fault chases the wrong fix. Disposition: reword to branch both causes (data-side), or split the kind (schema+contract change — SO). Recommend the reword now. Owner: data-engineer. Validator: ux.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:18:11.746816Z",
+  "updated_at": "2026-07-21T04:11:30.366776Z",
+  "closed_at": "2026-07-21T04:11:30.366776Z",
+  "comments": [
+    {
+      "uuid": "ad271695-e34c-4ddc-9e94-36bbb5671350",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, statusline-data 0.2.0): the reword path per the finding's own recommendation — human_recovery branches both causes (file permissions, or the disk or mount fault the diagnostic names); human_diagnostic spells input/output; the registered action id fix-state-permissions is retained and its vocabulary human text now reads clear-the-fault (composition-scope aligned in the same commit). Round 2 re-verifies (validator: ux).",
+      "created_at": "2026-07-21T04:11:25.501436Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "a92b8060-c28c-4672-8c1c-be3ea8cc2d03",
+  "display_id": 572,
+  "title": "statusline r17 UX: human broken-state per-kind recovery understated at the requirement",
+  "description": "Round 17. Lens: ux, low severity (validator: DR). Defect: the criterion demands per-kind human recovery from the shared data, but the requirement frames the data as machine members only and the human form as bare diagnostic — implementers building to the requirement under-provision the data. Citations verified: contract:163 vs :188. Proposed: resolved-candidate (requirement states the human recovery is per-kind and the data carries machine members and human text both).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T03:21:57.933834Z",
+  "updated_at": "2026-07-20T03:23:45.169303Z",
+  "closed_at": "2026-07-20T03:23:45.169303Z",
+  "comments": [
+    {
+      "uuid": "4ad5f752-969f-472f-8f6d-019cad0dd2d9",
+      "author": "xqjG",
+      "content": "Fixed: the requirement states the human form's per-kind named recovery, with one kind-keyed data set carrying both surfaces' members — machine tokens and human text alike. Revision: Status bullet.",
+      "created_at": "2026-07-20T03:23:19.480387Z",
+      "kind": "resolution"
+    }
+  ]
+}

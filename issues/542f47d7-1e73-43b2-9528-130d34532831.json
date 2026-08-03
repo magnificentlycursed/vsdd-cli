@@ -1,0 +1,28 @@
+{
+  "uuid": "542f47d7-1e73-43b2-9528-130d34532831",
+  "display_id": 42,
+  "title": "SA/F8: binary-first-plan row 14 amendment",
+  "description": "Source: mdatron/review-log/2026-06-07-solution-architect-phase-2-bundle.md\nClassification: resolved\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:02:52.057528Z",
+  "updated_at": "2026-06-08T02:33:34.541354Z",
+  "closed_at": "2026-06-08T02:33:34.541354Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-13",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "333c5d66-d381-4a8d-801b-f070ea6c3319",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (pre-Phase-4-take-2 cycle commit).",
+      "created_at": "2026-06-08T02:33:33.785025Z",
+      "kind": "resolution"
+    }
+  ]
+}

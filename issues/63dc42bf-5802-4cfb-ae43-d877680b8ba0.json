@@ -1,0 +1,27 @@
+{
+  "uuid": "63dc42bf-5802-4cfb-ae43-d877680b8ba0",
+  "display_id": 312,
+  "title": "Registry classified as both adopter-edited and governed-generated",
+  "description": "QE defect: the fuzz rationale and trust boundary three disagree about what the registry is. Truth: adopter-authored source data that is also routed and governed. Trust boundary one gains the registry; boundary three clarifies sources include adopter-authored routed artifacts. [owner: quality-engineer; validator: solution-architect]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:07.911004Z",
+  "updated_at": "2026-07-19T22:01:23.310333Z",
+  "closed_at": "2026-07-19T22:01:23.310333Z",
+  "labels": [
+    "phase-1b-round-1",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "3397213b-a540-4835-bb1a-538993b1ab0c",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:22.591428Z",
+      "kind": "result"
+    }
+  ]
+}

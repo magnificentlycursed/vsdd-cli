@@ -1,0 +1,48 @@
+{
+  "uuid": "b6a38e1c-4cd3-4d9e-a5a1-0928f2115b37",
+  "display_id": 847,
+  "title": "Upstream crosslink observation: swarm docs describe H2 '## Phase:' headers; parser only recognizes H3 '### Phase N:' under Requirements",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T19:36:37.136319Z",
+  "updated_at": "2026-08-02T00:50:21.434615Z",
+  "closed_at": "2026-08-02T00:50:21.434605Z",
+  "labels": [
+    "upstream"
+  ],
+  "comments": [
+    {
+      "uuid": "320353c1-cf02-4bc3-b203-48b42ac7f99b",
+      "display_id": 1308,
+      "author": "xqjG",
+      "content": "DETAIL (crosslink @ 6b4f736f): docs_src/guides/swarm.qmd:265-277 documents H2 '## Phase:' / '## Layer:' headers as the explicit-phasing mechanism, but the parser consumed by swarm init (design_doc.rs:159-165, via init.rs:18) recognizes only H3 '### Layer N:' / '### Phase N:' INSIDE the '## Requirements' section; an H2 '## Phase:' lands in unknown_sections and produces no phase grouping. Trust the code: H3-under-Requirements with (parallel)/(sequential) hints is what works. Doc fix or parser extension — either closes it.",
+      "created_at": "2026-08-01T19:37:36.570661Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "9bae706c-d1a9-45c5-9d49-f701dbfaef7f",
+      "display_id": 1322,
+      "author": "xqjG",
+      "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+      "created_at": "2026-08-01T20:02:28.870730Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "72459ad4-bb2f-41d7-a453-78eb65112411",
+      "display_id": 1330,
+      "author": "xqjG",
+      "content": "Filed upstream: https://github.com/dollspace-gay/crosslink/issues/57",
+      "created_at": "2026-08-01T20:06:39.549930Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4969a48a-4d3b-4d50-88d5-e4d00f5b4f55",
+      "display_id": 1371,
+      "author": "xqjG",
+      "content": "CLOSED (tracked upstream + dispositioned locally): filed as dollspace-gay/crosslink#57, fix in flight (their PR #65); the local exposure was DECLINED as a registry entry with the AC-7a-exactness mitigation, recorded in the ratified #845 design (REQ-9).",
+      "created_at": "2026-08-02T00:50:14.477661Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "ba5edbf0-94d7-48fa-876d-1c3453d3d4f7",
+  "display_id": 236,
+  "title": "Raise-to-SO: pending operator dispositions",
+  "description": "Umbrella for findings classified Raise-to-SO that await operator-disposition. Single-Solution-Owner discipline (per methodology.md § Domain change authority) routes these here until the operator decides.\n\nTracks: lint-vs-check naming convention, OperatorDirectiveApplied-in-commit-body anchor, pre-publish stability stance, schema-tightening revert audit event, rollback-strategy paragraph, DESIGN sub-section template, lint error message Mentor-voice.",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:51:17.989344Z",
+  "updated_at": "2026-06-08T03:57:29.139166Z",
+  "closed_at": "2026-06-08T03:57:29.139166Z",
+  "comments": [
+    {
+      "uuid": "622aa52d-08e8-473b-9bc0-72ba91849b6f",
+      "author": "xqjG",
+      "content": "All 6 dependencies dispositioned in Phase 4-take-2 Wave 10. Specific outcomes:\n- DR/F4 closed by vsdd-cli@f7633de (template normalization)\n- DR/F6 closed by mdatron@19d04d7 (line-tracking in lint panic)\n- SA/F6 + DE/F1 closed by vsdd-cli@f7633de (schema re-tighten + OperatorDirective chain)\n- SO/F2 deferred to #17 Phase 6 publish-prep (stability stance lands at publish)\n- SO/F5 dismissed as moot post-hoc\n- TW/F4 closed by mdatron@19d04d7 + vsdd-cli@f7633de (rename across docs + code)\n\nUmbrella served its routing purpose. Closing.",
+      "created_at": "2026-06-08T03:57:28.477101Z",
+      "kind": "resolution"
+    }
+  ]
+}

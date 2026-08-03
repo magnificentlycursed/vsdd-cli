@@ -1,0 +1,99 @@
+{
+  "uuid": "13f1a50f-9bef-4d67-afd4-3b2465a947cd",
+  "display_id": 821,
+  "title": "Terminology follow-on (contract-wide): register vertical-slice/slice (grounded, agile SWE, used throughout #819 but unregistered); retire chassis -> crosslink + its tracker/orchestration surfaces; retire session-substrate -> installed-artifact integrity; workspace-shape paragraph amendment (vsdd-core removal scheduled, #15). One atomic owned cycle, ~11 files.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T04:34:07.114352Z",
+  "updated_at": "2026-07-30T15:23:30.734845Z",
+  "closed_at": "2026-07-30T15:23:30.734508Z",
+  "labels": [
+    "spec-amendment"
+  ],
+  "related": [
+    "c389841b-08ba-46e0-aecd-8525413e007f"
+  ],
+  "comments": [
+    {
+      "uuid": "bc82ff3d-2165-4553-834c-cb77c8450fd6",
+      "display_id": 1255,
+      "author": "xqjG",
+      "content": "SCOPED for a fresh cold-reviewed cycle (deferred from the 2026-07-29 marathon by operator direction — a semantic contract+code rename must not run at a marathon tail by a terminology-error-dense agent; it is a contract amendment = owned+reviewed).\n\nACTIVE surfaces (~11 files):\n- Corpus (templates/registry/): snapshot-schema, dispatch-data, act-to-affordance-map (chassis-workflow 'kind' x13 — CHECK the schema's kind enum before renaming the value), installed-artifact-manifest, gate-data.\n- Code: vsdd/src/status/mod.rs, vsdd-core/src/answer/integrity.rs, and the integrity_shell/substrate.rs MODULE (rename module + refs in lib.rs + integrity_shell/mod.rs).\n- Contract: .design/agent-first-vsdd-toolkit.md (chassis + substrate throughout).\n- README.md.\n\nEXCLUDE: the frozen review-log (~15 files with 'substrate' — evidence, never rewritten); CHANGELOG (history); superseded DESIGN-*.md (sunsetting); and iCloud conflict-copy JUNK to DELETE not rename: 'snapshot-schema 2.md', 'act-to-affordance-map 2.md' (the ~/Documents sync hazard).\n\nPOLYSEMY (substrate is NOT find-replace): session-substrate -> installed-artifact integrity (named check + code module); 'the substrate' (Claude Code) -> runtime harness; 'substrate conventions' (cargo/git, e.g. vsdd-domain-ux) -> ecosystem conventions. chassis -> crosslink (tool) / tracker+orchestration (surfaces).\n\nALSO: register 'slice'/'vertical-slice' in vocabulary.yaml (grounded agile SWE; used throughout #819 unregistered). The workspace-shape paragraph amendment (vsdd-core removal, #15) is a contract-BEHAVIORAL change -> full cold review, not a terminology edit.\n\nENFORCEMENT follow-on (#832): once the rename clears chassis + session-substrate from the corpus, arm them as E0093 anti_patterns (like 'forcing seam', PR #13) so they can't return.",
+      "created_at": "2026-07-29T18:26:59.973167Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "38760d8a-57c6-4c0a-84fb-25c9c86df75c",
+      "display_id": 1257,
+      "author": "xqjG",
+      "content": "MARATHON CLOSE 2026-07-29. NEXT: #821 terminology rename as a FRESH COLD-REVIEWED cycle (it is a CONTRACT AMENDMENT = owned + cold-reviewed; do NOT freelance; scope recorded on #821 — active files, substrate polysemy, exclusions [frozen review-log, superseded DESIGN-*.md, iCloud '... 2.md' junk to delete], workspace-shape amendment needs full review, E0093-arming of chassis/substrate follows the rename).\n\nLANDED ON MAIN: Slice 1 (#820 — finding-query join live detection + vsdd gate guardrail + routing-gate CI, all green); #829 milestone-empty-parse fix; #830 mdatron 0.4.0 (protections held); E0091 letter-cluster block; E0093 'forcing seam' deprecated-term block (#832/PR13, block-grade). 7-slice decomposition instantiated as MILESTONES (Engine + Slices 1-7 — plan is now a tracked backlog).\n\nIN-FLIGHT (uncommitted draft): agent-first-controls.md amendment (mdatron#11 fan-out REQ-13 + milestone + tracker escapes) — needs its own forcing-seam->enforcement-point pass before committing.\n\nQUEUED/SPECCED: #821 (NEXT); find-or-create tracker guard (specced #831); mid-cycle-without-milestones detection (specced); OPERATOR to set branch protection (require 'routing gate' -> hard block).\n\nCROSS-REPO (GitHub, from:vsdd-cli): mdatron#1 (0.4.0 report + clear-to-publish + design answers); crosslink#1 (consuming crosslink @ develop until develop->main).\n\nTHEME: operator doubt re manual-correction burden; honest status = 2 corrections became live gates today (E0091, E0093) + routing-before-fix became vsdd gate; linter role migrating to gates, tracker role (find-or-create) specced-not-built. Memory added: consult-existing-work-before-freelancing.\n\nRECOVERY: memory -> this breadcrumb -> #821 scoping comment + #831 escapes -> contract.",
+      "created_at": "2026-07-29T18:33:35.681925Z",
+      "kind": "handoff"
+    },
+    {
+      "uuid": "b5233379-5d71-4f2a-a810-5fdbe386572a",
+      "display_id": 1258,
+      "author": "xqjG",
+      "content": "STARTED — increment 1 done + committed on branch rename-chassis-substrate-821 (unpushed; part of the atomic cycle's eventual single PR): deleted the iCloud conflict-copy junk (untracked), and renamed chassis -> crosslink across the 5 registry data sets + their 2 schemas (act-to-affordance-map kind enum, installed-artifact-manifest class/source enums — data+schema together). mdatron verify clean (0/0).\n\nSTOPPED before the nuanced part — CONFIRMED it needs per-usage care + cold review, not a bulk: the remaining chassis is ONLY in the contract (agent-first-vsdd-toolkit.md, ~41 usages), and a blind rename BREAKS it: title 'on the crosslink chassis' -> 'crosslink crosslink'; line 13 gloss 'crosslink (chassis):' -> 'crosslink (crosslink)'; lines 258/334 'the crosslink chassis' doubled; and line 334 LITERALLY documents this deferral. Correct handling drops the redundant metaphor ('the crosslink chassis' -> 'crosslink'; 'crosslink (chassis)' -> 'crosslink'), not chassis->crosslink.\n\nREMAINING for the cold-reviewed pass (fresh context): (1) contract chassis per-usage (drop-the-metaphor, ~41); (2) substrate polysemy (session-substrate->installed-artifact integrity [code module substrate.rs + status/mod.rs + integrity.rs + contract + corpus], the-substrate->runtime harness, substrate-conventions->ecosystem); (3) register 'slice'; (4) workspace-shape amendment (contract-behavioral); (5) cold review; (6) arm chassis+substrate E0093. The contract isn't in mdatron jurisdiction, so it has NO mechanical verify — cold review is the only check for the contract edits, which is why it must be cold-reviewed, not blind-perled.",
+      "created_at": "2026-07-29T18:47:29.526688Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "ebcc4a78-d141-4ed2-8229-9bcbfbcfdfa4",
+      "display_id": 1259,
+      "author": "xqjG",
+      "content": "COLD REVIEW RUN dispatched (wf_0ac03bda-2ee), operator-directed 'use the cold review run'. Attended review-round fan-out via the Workflow surface (act-to-affordance-map). Round manifest / dials: model = inherited Opus (stated explicitly per the never-inherited-silently rule); effort = high on the 4 drafters + 4 cold lenses, low on the mechanical verify.\n\nShape: (Draft, parallel, disjoint files) contract | code | governed-corpus | live-docs — each applies the DECIDED groundings (chassis->crosslink drop-metaphor; session-substrate->installed-artifact integrity; the-substrate[runtime]->runtime harness; substrate-conventions->ecosystem) and FLAGS the genuinely-ambiguous contract senses (substrate step / autonomous substrate / the substrate checks / substrate-settings) rather than guessing. Then (Cold review, 4 fresh lenses: SA/SO/DR/TW over the full git diff) + (Verify: cargo test, mdatron verify, residual grep).\n\nScope exclusions (deliberate, no-silent-caps): CHANGELOG.md, DESIGN-*.md, review-log/* — ungoverned historical/deprecated records; renaming them would falsify what they recorded at the time. Governed set that must end clean for E0093 arming = supplements/*.md + templates/registry/*.md only (mdatron jurisdiction).\n\nDrafts land in the working tree UNCOMMITTED; I triage findings + adjudicate the flagged senses, then present for operator ratification (the exit gate). E0093 arming of chassis+substrate is the post-ratification step, once the governed set verifies 0 residual.",
+      "created_at": "2026-07-29T19:04:39.993795Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "184b9267-a8c5-4950-b243-2af6ab4a8299",
+      "display_id": 1260,
+      "author": "xqjG",
+      "content": "COLD REVIEW RESULT (wf_0ac03bda-2ee, 4 lenses: DR / cross-file-consistency / SA / +1). Verdict: DO NOT RATIFY AS-IS — for a good reason, not a bad one.\n\nWHAT'S SOUND (unanimous): ZERO meaning drift anywhere — the rename is behavior-preserving where applied. Code rename clean + complete (module substrate.rs->installed_artifact.rs, SubstrateFinding->InstalledArtifactFinding, session_substrate_check->installed_artifact_integrity_check, all call sites; cargo green). Decided-sense edits correct. Ambiguous senses correctly LEFT + flagged.\n\nBLOCKING DEFECT: the CONTRACT chassis->crosslink half is only ~half applied — the drafter died mid-pass (API connection drop), leaving ~27 chassis residuals (smoking gun: line 130 kept 2 chassis on a line the drafter edited), and the line-6 revision note FALSELY claims 'renames were applied contract-wide'. All decided, exact per-line fixes enumerated by the lenses.\n\nSCOPE GAPS (mine): .claude/commands/vsdd-domain-ux.md 'substrate conventions'->ecosystem (GOVERNED, E0093-critical); .mdatron/schemas/installed-artifact-manifest.json session-substrate (breaks .md/.json pair); .mdatron/config.yaml chassis-deployed; .crosslink/rules/project.md stale carve-out (lists the 3 constructs #821 just reworded). CHANGELOG.md +35 = pre-existing backfill, MUST stay out of the rename commit.\n\nFAILED AGENTS: draft:contract + verify (both API errors mid-response, not logic). Verify re-run host-side.\n\nNEXT: completing the DECIDED half now via a fresh subagent (contract chassis + the 4 decided residual files + rule-citation refresh); batching the genuine policy decisions to the operator (substrate-as-crosslink-metaphor extension; new-sense terms; the serde-bound substrate_findings_visibility data-migration).",
+      "created_at": "2026-07-29T20:45:52.740582Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "269cec30-279b-4141-a5c9-d24c4e054b66",
+      "display_id": 1261,
+      "author": "xqjG",
+      "content": "CYCLE COMPLETE — awaiting operator ratification (the exit gate for this owned contract amendment).\n\nDELIVERED (27 files, +162/-118):\n- chassis -> crosslink everywhere (contract all uses drop-metaphor; corpus; schemas; config; .gitignore). Only survivors: the contract line-6 rename-mapping citation + the prohibited-word MENTIONS in .crosslink/rules/project.md (both legitimate citations).\n- substrate -> grounded senses: session-substrate -> installed-artifact integrity (code module substrate.rs->installed_artifact.rs + struct/fn/tests, contract, corpus, schema desc); the-substrate[runtime] -> runtime harness; substrate conventions -> ecosystem conventions; substrate-as-crosslink-metaphor -> plain crosslink descriptors (Q1 extension, README+methodology); new senses (Q2 lens terms): substrate step->mechanization step, autonomous substrate->autonomous execution environment, the substrate checks->preflight checks, substrate-settings->runtime-harness-settings, substrate-directory->runtime-harness-directory, deployed-artifacts->installed artifacts, substrate requirement->baseline tooling requirement, substrate-docs->composed-tool docs, Substrate abbreviations->Infrastructure abbreviations; data migration (Q3): substrate_findings_visibility->installed_artifact_findings_visibility in lockstep (Rust field + data key + JSON schema).\n- .crosslink/rules/project.md carve-out refreshed to record the #821 rewording (old names kept as 'formerly' citations).\n- E0093 ARMED on chassis + substrate (.mdatron/vocabulary.yaml). mdatron verify CLEAN with the guard live = the governed corpus is provably clean and the deprecation is now mechanized.\n\nVERIFY: mdatron e=0/w=0; cargo test --workspace 161 passed / 0 failed / 1 ignored (StatuslineData still deserializes after the data migration).\n\nINTENTIONAL SURVIVORS / SCOPE: methodology 'substrate_anchors' frontmatter key LEFT (structured multi-referent key — its own owned schema-shape decision; ungoverned so non-blocking) — DEFERRED, flagged here so it is not a silent survivor. 'slice'/'vertical-slice' registration = NO mechanism needed (it is a plain approved word; vocabulary.yaml only carries letter-cluster allow + deprecated anti_patterns). Workspace-shape paragraph amendment = SPLIT OUT of #821: it is a contract-BEHAVIORAL change owned by #15 (blocked on #14's design cycle), not a terminology rename — bundling it here would violate scope discipline.\n\nCold-reviewed via wf_0ac03bda-2ee (4 lenses) + wf_5d9ce03a-b03 (2-lens confirm). CHANGELOG.md excluded from the rename commit (pre-existing backfill).",
+      "created_at": "2026-07-30T11:50:46.725710Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5701da95-9ed3-424f-b0ea-e58d948610b5",
+      "display_id": 1262,
+      "author": "xqjG",
+      "content": "RATIFIED by operator 2026-07-30 (decision: spec-contract-amended). The contract-wide chassis->crosslink and substrate->grounded-senses terminology rename, its data-contract migration (Q3), the substrate-as-crosslink-metaphor extension (Q1), the lens-term new senses (Q2), the Q1/Q2 consistency reconciliation (scrub), and the E0093 arming are approved as-is. Committing (27 files, CHANGELOG excluded) and opening the PR into main.",
+      "created_at": "2026-07-30T12:17:57.034541Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "bd79c3ac-2176-4f03-96a1-e2d46354b787",
+      "display_id": 1263,
+      "author": "xqjG",
+      "content": "COMMITTED + PR OPEN. Commit 33f2712a on rename-chassis-substrate-821 (27 files, +127/-118, CHANGELOG excluded); pre-commit mdatron verify clean. Branch pushed; GitHub PR #14 into main (https://github.com/magnificentlycursed/vsdd-cli/pull/14). The now-enforcing required checks (verify / test / routing-gate) gate the merge. Note: GitHub PR #14 is distinct from crosslink issue #14 (shared number space, unrelated).",
+      "created_at": "2026-07-30T12:19:33.950588Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "46173fc2-f00d-464e-a947-86020904cc97",
+      "display_id": 1264,
+      "author": "xqjG",
+      "content": "ALL REQUIRED CHECKS GREEN on PR #14: verify pass, test pass, routing-gate pass. PR is mergeable. Awaiting operator merge decision (merge is the operator's act; not auto-merging). Post-merge follow-ons: substrate_anchors frontmatter-key rename (deferred, own owned schema-shape decision); branch cleanup; the workspace-shape amendment stays with #15 (blocked on #14's design cycle).",
+      "created_at": "2026-07-30T12:24:40.779183Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "7fb7e5c9-a035-4efb-98f8-898370bce181",
+      "display_id": 1265,
+      "author": "xqjG",
+      "content": "MERGED to main as 49ba929e (squash of PR #14; all required gates green: verify/test/routing-gate). Local sync had to recover from an iCloud conflict-copy ref (checkpoint 2 / agents 2 / index 2) in .git that blocked the fast-forward — cleaned, main synced. Terminology rename COMPLETE + enforcement armed. Rehoming the two sub-items from this issue's title: workspace-shape paragraph amendment -> #15 (contract-behavioral, blocked on #14's design cycle); substrate_anchors key rename -> its own follow-on (verified: no consumers, ungoverned doc frontmatter). Closing #821.",
+      "created_at": "2026-07-30T15:23:23.342847Z",
+      "kind": "result"
+    }
+  ]
+}

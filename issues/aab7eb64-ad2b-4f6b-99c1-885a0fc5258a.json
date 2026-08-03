@@ -1,0 +1,277 @@
+{
+  "uuid": "aab7eb64-ad2b-4f6b-99c1-885a0fc5258a",
+  "display_id": 597,
+  "title": "Phase 1c execution: decomposition and data authoring",
+  "description": "Phase-execution issue for phase 1c. Composition declaration (bootstrap, hand-recorded per the ratified contract): phase: phase-1c; composed domains: solution-architect (primary), solution-owner, documentation-reviewer, plus the always-on baseline; composition mode: skill-interactive; operator confirmation: directed 2026-07-20 ('Proceed with phase 1c'); declared at 2026-07-20. Primer read fresh at entry (canonical .claude/commands/vsdd-phase-1c.md); superseded primer elements noted: PhaseExited/ExitSignaled retired by the derived-view ruling; auto-scaffold hooks are bootstrap hand-carried obligations. Consumed: phase 1a (behavioral contracts) and 1b (verification architecture) as ratified through the three-amendment cycle.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T16:41:21.740983Z",
+  "updated_at": "2026-07-21T16:47:15.022397Z",
+  "closed_at": "2026-07-21T16:47:15.022397Z",
+  "comments": [
+    {
+      "uuid": "d13210dd-556d-4848-98d1-3dc74a8432f2",
+      "author": "xqjG",
+      "content": "Phase 1c plan of record. (1) Decomposition authored into the contract as the Decomposition (phase 1c) section: Layer 0 estate cleanup (operational), the in-phase data-authoring work package (umbrella issue 'phase-1c data authoring: the versioned data sets'), and build Layers 1-10 — state artifact and versioned data; snapshot/phase-answer/corroboration; the three renderings and the wiring script (absorbs the tracked wiring-script-shape work item); install; composition/generated context/static price; gates; finding lifecycle and conformance integration (cross-repo dependency on mdatron v1.0 flagged); recorded dispatch and directive flow with the swarm live fire as exit act; the cost crate; the methodology rewrite (manual by design). Criteria audit in-section: all twelve acceptance criteria claimed, none unclaimed, Status detection split by named slice across L1/L2/L3. Dependencies stated on behavior, never internals. Per-layer 2a-entry obligations (manual-test checklist, red-gate seed, fixture-corpus slice) hand-carried per the bootstrap note. (2) Next: DR cold pass over the Decomposition section (completeness: unclaimed criteria, internals-dependencies, bundling that would make a layer red gate unfalsifiable, primer-conformance), findings as evidence-gated children per loop discipline. (3) Exit gate: no open DR completeness findings + SO (operator) sign-off; boundary commit + milestone close + typed result comment per the derived-view ruling. mdatron verify clean after authoring.",
+      "created_at": "2026-07-20T16:45:22.274377Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "99e8407a-14c1-4dbe-9cd2-a22b05a12869",
+      "author": "xqjG",
+      "content": "Dispatch manifest — phase-1c DR cold pass, round 1. Lens: documentation-reviewer (single lens; the primer's completion criterion names DR as the cold reader for the decomposition — no narrowing beyond the declared composition). Subject: the Decomposition (phase 1c) section of .design/agent-first-vsdd-toolkit.md, read against the full contract and the canonical phase-1c primer. Charge: completeness and conformance — unclaimed or double-claimed acceptance criteria, dependencies on internals rather than behavior, bundling that would make a layer red gate unfalsifiable, missing per-layer obligations, contradictions with the ratified contract body, prose defects. Tier+effort: inherited session model at session effort (xhigh); per-lens defaults are themselves a 1c data-authoring deliverable, so the inherit default applies. Falsifier: the pass is falsified if it reports clean while a criterion goes unclaimed or a stated dependency names internals; every finding must carry a working-tree-verifiable citation (quoted text + section) or it is dismissed at triage as evidence-ungated.",
+      "created_at": "2026-07-20T16:45:45.611471Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "e562de70-77a5-462d-a0ff-c2474792da9d",
+      "author": "xqjG",
+      "content": "DR cold pass round 1 result — parity: 9 findings reported, 9 children filed, 9 closed with resolution evidence. Handles: L274 (blocking — Red-gate cheat blocked multi-layer, fixed by named-slice split L6 primary + L2/L7/L8), L275 (blocking — fresh-container gate orphaned, homed at L6 over L4's install behavior), L276 (truth-reconciliation act unassigned, named in exclusion as executed mdatron-side), L277 (Layer 0 attribution, amendment-cycle acts separated), L278 (pre-push backstop homed at L7), L279 (wiring work item cited by exact title), L280 (Cost queries second split removed — L9 closes whole), L281 (Convergence test exact leading name), L282 (primer reconciliation for Layers 0 and 10 stated in intro). Checks b (dependencies-on-behavior) and c (bundling) passed cold. All fixes in the working tree; mdatron verify clean. Round 2 confirmation pass dispatching.",
+      "created_at": "2026-07-20T17:10:15.998403Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "961090e5-d5d6-4693-81b8-9331a1be64fa",
+      "author": "xqjG",
+      "content": "Dispatch manifest — phase-1c DR cold pass, round 2 (confirmation). Lens: documentation-reviewer, cold, fresh reader. Subject: the revised Decomposition section against the full contract and primer, same charge as round 1 (coverage, dependencies, bundling, primer conformance, internal consistency, prose). Tier+effort: inherited session model at session effort (xhigh), inherit default per the unauthored per-lens data. Falsifier: same as round 1 — clean-while-defective falsifies; findings without working-tree-verifiable citations are dismissed as evidence-ungated. Stop signal: a clean or hallucinated-only round closes the DR gate for SO sign-off.",
+      "created_at": "2026-07-20T17:10:24.054510Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "7d7fb850-3e60-40b9-840b-35c1765437dc",
+      "author": "xqjG",
+      "content": "DR cold pass round 2 result — parity: 7 findings reported, 7 children filed, 7 closed with resolution evidence. Handles: L283 (Layer 0 exemption regrounded in the sequencing text, no unrecorded ruling claimed), L284 (state-consistency cell excepted from L2, rides L7's flagged integration; audit annotated), L285 (Composition purity integrity-config cells flagged cross-repo at L5), L286 (L4 payload scoped static-first, generated members join at L5, full payload at L6's fresh-container gate), L287 (Depends-on declarations added at L7 and L9), L288 (scaffolding forward reference dropped), L289 (exact leading names restored). Zero blocking this round; checks a/b/d/e/f residue all disposed; bundling passed cold twice. All fixes in the working tree; mdatron verify clean. Round 3 confirmation pass dispatching — stop signal is a clean or hallucinated-only round.",
+      "created_at": "2026-07-20T17:22:07.911714Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5ca9a004-2df1-4a0e-9105-80e246451147",
+      "author": "xqjG",
+      "content": "Dispatch manifest — phase-1c DR cold pass, round 3 (confirmation). Lens: documentation-reviewer, cold, fresh reader; same charge and falsifier as rounds 1-2. Tier+effort: inherited session model at session effort (xhigh), inherit default. Stop signal: clean or hallucinated-only closes the DR gate for SO sign-off.",
+      "created_at": "2026-07-20T17:22:15.781687Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "7f1beff8-cca6-4904-a17c-5a33a94340ee",
+      "author": "xqjG",
+      "content": "DR cold pass round 3 result — parity: 7 findings reported, 7 children filed, 7 closed with resolution evidence. Handles: L290 (L7 claims its Status detection check), L291 (branch grammar added to data authoring), L292 (six-member payload accounted at L4), L293 (terminal-round stop-signal check added to the Gates requirement and L6 — ratified-criterion reconciliation, flagged for operator note), L294 (criteria-source precedence declared), L295 (workspace-shape deferral dispositioned to the mdatron session), L296 (retired term cell removed from the new text). Third consecutive round with narrowing yield (9 blocking+minor, 7 minor, 7 minor — zero blocking since round 1). Round 4 will run as a combined pass: DR residue on the Decomposition plus the newly authored dispatch-posture amendment (see the amendment classification on this issue).",
+      "created_at": "2026-07-20T17:32:42.806016Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "414838dd-45f0-4a63-a273-dc3f41ac2000",
+      "author": "xqjG",
+      "content": "Dispatch manifest — round 4, decomposition scope: documentation-reviewer, cold, fresh reader, same charge and falsifier as rounds 1-3, now including the amendment's Decomposition routing (Layer 0 substrate setup, Layer 8 preflight, data-authoring posture entry) within the section's scope. Concurrent amendment scope declared out-of-band for this lens: the posture amendment's contract-body clauses are reviewed by the SA and AI-engineer lenses under the amendment issue's manifest — the one-file-two-scopes discipline from the amendment cycle.",
+      "created_at": "2026-07-20T17:35:22.014742Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "b1fe0ff7-2f8f-40a9-97af-5db3a49fb60f",
+      "author": "xqjG",
+      "content": "Session-split ruling, anchored for the Decomposition's deferral disposition (operator ruling 2026-07-19, restated here as the resolvable record): the original session owns vsdd-cli work; a second session owns mdatron work; cross-stream work is redirected with a reminder. The workspace-shape single-crate-collapse deferral for mdatron accordingly re-homes to the mdatron session's own cycle.",
+      "created_at": "2026-07-20T18:13:06.908403Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "c7acbeff-5a4e-44ae-9430-54ea193466b3",
+      "author": "xqjG",
+      "content": "DR cold pass round 4 result (decomposition scope) — parity: 10 findings reported, 10 children filed (the issues titled 1c-DR-r4:*, ten of them), 10 closed with resolution evidence: manifest schema joined Layer 1 data closing the forward dependency; dependency declarations added at Layers 3, 4, 7; the conformance-fixture slice named in Layer 7's gated set; token-budget-gate ownership stated; the architecture deepening dispositioned as the layer-to-component mapping; the session-split ruling anchored as a decision on this issue; both Layer 0 acts path-anchored; LN abbreviations replaced with plain layer names. mdatron verify clean. Checks a, c, d passed cold this round.",
+      "created_at": "2026-07-20T18:17:22.438165Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "f86bbf7a-96d6-4e18-9f27-c8bb95e9f761",
+      "author": "xqjG",
+      "content": "[action] Chassis install repaired by operator direction: crosslink init --force restored 7 hooks, 3 MCP servers, 14 chassis skills (vsdd files untouched). Enforcement now armed: strict tracking, work-check live at call time; MCP and skill listing arrive at next session start. Phase pointer: 1c open — decomposition authored, attended/autonomous amendment redrafted to the operator's structural ruling plus affordance closure; round-5 triage queued (44 findings, 8 blocking).",
+      "created_at": "2026-07-20T18:44:01.454042Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "5e3d593c-642c-4e0b-ad90-0e686d4aafbb",
+      "author": "xqjG",
+      "content": "[action] Amendment at stop signal (round 8 clean, series 9-7-7-30-45-13-3-0). Awaiting operator ratification; then boundary commit and repo-rooted session handoff. Phase pointer: 1c open — decomposition authored and DR-passed, data-authoring package enumerated, amendment pending ratification.",
+      "created_at": "2026-07-20T19:39:43.851798Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "8f3d01cf-6717-4c7c-bbfa-c47319754c6f",
+      "author": "xqjG",
+      "content": "Boundary commit 46a71e4 (2026-07-20, pre-commit mdatron verify clean): the phase-1c Decomposition and the ratified attended/autonomous amendment are committed. Phase 1c remains OPEN — remaining in-phase work: the data-authoring package (umbrella issue 'phase-1c data authoring: the versioned data sets'), Layer 0 execution when sequenced, SO sign-off on phase exit. Per the ratified session-shape rule this root session retires at this boundary; work resumes repo-rooted from vsdd-cli. Left uncommitted for operator review, unchanged: .crosslink/hook-config.json (schema upgrade, backup in scratchpad), .gitignore, the stray 'agent-first-vsdd-toolkit 3.md' (a Layer 0 act), target/.",
+      "created_at": "2026-07-20T19:53:29.660684Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "63ae4b88-8c74-44f7-a49c-0437654f4231",
+      "author": "xqjG",
+      "content": "[action] BOUNDARY COMMIT 46a71e4: decomposition + attended/autonomous amendment RATIFIED and committed. Phase pointer: 1c open — next acts are the data-authoring package and Layer 0; this root session retires per the session-shape rule; resume repo-rooted from vsdd-cli (fresh session; recovery: memory -> session #2 breadcrumb -> tracker -> contract).",
+      "created_at": "2026-07-20T19:53:32.706703Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "35d1f1db-5486-410e-878d-d3371efd9153",
+      "author": "xqjG",
+      "content": "Session auto-ended (stale after 2509 minutes). No handoff notes provided.",
+      "created_at": "2026-07-20T19:59:13.363463Z",
+      "kind": "handoff"
+    },
+    {
+      "uuid": "28f4c6d8-59af-4cb3-8b3b-7cf711bfa984",
+      "author": "xqjG",
+      "content": "Recorded override: operator directed 'fix the crosslink remote first', reordering Layer 0 execution. Scope read: specific instruction, this repo only (mdatron-side act stays excluded per the Decomposition entry). Act: tracker_remote=origin set via 'crosslink config set tracker_remote origin' (chassis affordance; no hand edit). Verified: warning cleared on fresh invocation; 'crosslink config get tracker_remote' returns origin. The write joins .crosslink/hook-config.json's uncommitted diff pending Layer 0 act 4 review. Flow position: Layer 0 execution open; re-entry at the presented plan order, act 4 next.",
+      "created_at": "2026-07-20T20:13:37.524931Z",
+      "kind": "intervention",
+      "trigger_type": "redirect",
+      "intervention_context": "Layer 0 plan presented and awaiting direction; standing no-tracker_remote warning surfaced in the session status report"
+    },
+    {
+      "uuid": "03e1f739-4e6e-4cf5-97b0-f72082e60efb",
+      "author": "xqjG",
+      "content": "First hub sync executed under operator grant (2026-07-20, this session; the grant followed the tracker_remote fix recorded as the intervention above). Results: 669 issues hydrated, 359 provisional IDs promoted to permanent display IDs, 76 stored references updated. Key promotions for this phase's citations: the phase issue L272 -> #597; 'phase-1c data authoring: the versioned data sets' L273 -> #598; 'phase-1c work item: statusline wiring script shape' L37 -> #362; 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire' L297 -> #622; 'Directive: defect-fix lane for code-touching work (from mdatron deviation)' L57 -> #382; the respec root L1 -> #294. Citations may now use repo-qualified display IDs per the contract's handle rule. Defect found and repaired in passing: sync stranded the session work pointer and lock table on dead provisional IDs — filed as #653 (upstream crosslink), locks released and work re-claimed on #597 by hand. Signing audit reports bootstrap-pending (unsigned bootstrap commit expected). Flow position: Layer 0 execution; next act on direction is act 4, the chassis-config reconciliation.",
+      "created_at": "2026-07-20T20:22:55.800379Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "ebea24ea-ac48-4aec-a1bd-c287fa9b4527",
+      "author": "xqjG",
+      "content": "Recorded override: operator directive mid-act — 'Hold on filing any upstream issues. Block the filings until I give you some information about the upstream project we found in an mdatron kickoff run.' Scope read: general standing rule for this session — all upstream-finding filings blocked pending operator information; future candidates queue as observations on #597. Timing fact: #653, #654, #655 were filed before the directive landed; all three are local relay records in this repo's tracker only, no upstream communication has occurred; each is annotated held, none closed. Flow position: Layer 0 act 4 edits landed (.gitignore carve-outs restored per operator ruling, project-owned ignore section added); acts 2/3 deletions partially pending (permission classifier requires the operator to name the untracked duplicate); cleanup commit not yet made.",
+      "created_at": "2026-07-20T22:51:56.161318Z",
+      "kind": "intervention",
+      "trigger_type": "redirect",
+      "intervention_context": "Agent was executing Layer 0 acts 2/3 (stray-duplicate and empty-dir deletions) and had just filed #654/#655"
+    },
+    {
+      "uuid": "fd70678f-361c-4eaa-9b18-092e207ba3c2",
+      "author": "xqjG",
+      "content": "Committed: layer 0: chassis-config reconciliation, ignore-policy restore, stray-artifact cleanup (3fe10ac) | Files: 3 files changed, 98 insertions(+), 229 deletions(-). Layer 0 acts closed by this commit: act 4 (chassis-config review — .gitignore carve-outs restored per operator ruling, project-owned ignore section added, hook-config repair diff + tracker_remote accepted), act 2 (both stray contract duplicates removed — tracked '2.md' in this commit, untracked '3.md' operator-confirmed tree removal), act 3 (empty 'review-log 2/' directory removed). Tree verification: .design/ holds only the contract; status clean of target/ and chassis-state noise; tracker_remote warning absent. Remaining Layer 0 acts: 1 (bulk-close 124 audit records — awaiting disposition wording), 5/6 (URL sweep + portfolio README — awaiting historical-records policy), 7 (vsdd-cli-wip retirement — awaiting harvest destination), 8 (operator substrate setup), 9 (hollow-shell repair close — gated on the manifest instance from #598's package).",
+      "created_at": "2026-07-20T22:53:57.168073Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "f7c61117-8773-4c21-a26a-33df699e5193",
+      "author": "xqjG",
+      "content": "OPERATOR RULINGS (relay from the mdatron session, 2026-07-20; evidence record mdatron tracker #59) — recorded as frozen decisions: (1) UPSTREAM RE-POINT: crosslink's canonical home is https://github.com/dollspace-gay/crosslink; forecast-bio/crosslink is abandoned (dollspace main 812+ commits ahead), magnificentlycursed/crosslink is a stale fork with issues disabled. All vsdd-cli records/links referencing either old home repoint to dollspace-gay/crosslink. Local mirror already tracks the new home (origin=dollspace-gay, main 85691369). (2) NO-GO on v0.9.0-beta.1 for v2 hubs: host binary ~/.cargo/bin/crosslink stays at 0.8.0 (backup: crosslink-0.8.0); do NOT upgrade and do NOT run 'crosslink migrate hub-v3' on the vsdd-cli hub until dollspace-gay/crosslink #4/#5/#7/#8/#11/#12 close (the retest trigger). Beta on unmigrated v2 hub = fail-closed read-only with side-effectful refusals; migrated v3 hub silently loses issues/comments, lock ops disagree, sync hard-fails constraint-1555. (3) Posture implication for the ratified attended/autonomous amendment: at every RELEASED version the autonomous container posture cannot complete fix-lane verification for Rust lanes (no C toolchain in agent image = dollspace-gay/crosslink#9; entrypoint env-sourcing defect = #10; worktree .git dangle fixed only in beta per old-home GH#584/e2758d2c). Working postures: attended tmux kickoff, host-side driver-lane verification. This binds the Layer 0 substrate-setup act and the preflight-member data authoring in #598 — the container-runtime preflight member would correctly fail-closed today. (4) Directed workflow replacing the upstream-filing block: evaluate the 10 local upstream-finding records (#237, #430-#433, #475, #476, #653-#655) against new main; file still-live ones at dollspace-gay/crosslink; close local records with result comments referencing the new-home issue; already-fixed ones close citing the fixing commit. Old-home GitHub check: our only authored issue there (forecast-bio #544, the /design zsh-glob bug) is already closed — no old-home GitHub acts needed.",
+      "created_at": "2026-07-20T23:13:41.432472Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "1b35a8e0-b0ef-45b5-9ea0-1893551a840b",
+      "author": "xqjG",
+      "content": "Upstream-migration round closed at full disposition, 10/10. Filed at dollspace-gay/crosslink and closed locally with the upstream issue as successor: #237->13, #430->14, #431->15, #432->16, #433->17, #475->18, #476->19, #654->20. Closed as fixed-upstream with the fixing commit cited: #653 (980130f8, PR #754), #655 (f391886f, PRs #778/#779). Old-home GitHub surface required no acts (our only authored issue there, forecast-bio #544, was already closed). One parked candidate, not filed: the v3 locks/work-pointer remap residual (recorded on #653's closing comment). The upstream-filing block of the earlier intervention is discharged by this round; the standing rules (re-point + NO-GO) remain in force per the decision comment above.",
+      "created_at": "2026-07-20T23:33:18.187999Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "8b249787-d378-4dd1-9f27-c263f2810051",
+      "author": "xqjG",
+      "content": "Dollspace 2026-05-20 review evaluation vs upstream main 85691369 (operator-directed; scout evidence in session record). 7 CLI papercuts: milestone --quiet STILL-LIVE (main.rs:3055 never forwards cli.quiet; contrast create.rs:462); milestone numeric-only raw error STILL-LIVE (bare i64 args main.rs:1143-1169, no parse_issue_id_clap analog); swarm gate discoverability FIXED-OR-NOT-REPRODUCIBLE (guidance 'Run swarm init --doc first' present since swarm's March intro, types.rs:329, io.rs:120); swarm review --doc rename STILL-LIVE (help text mitigates, field literally doc_output); issue list -l STILL-LIVE and repeated -l silently last-wins (scalar Option<String> main.rs:648); knowledge import auto-init FIXED (ensure_initialized in import path since feature intro, operations.rs:464-467 — reported error string absent from source); import JSON-only STILL-LIVE but documented in help (the either/or ask's document-half satisfied). Label-schema proposal: nothing exists (labels opaque strings, zero schema/axis concept). Absorbability: no red-gate/TDD or refactor skill among the 18 init-shipped skills; swarm review ships 4 global mandates, no domain library, no per-agent domain differentiation (partition-by-files only); rules remain flat per-language, no domain composition; cold dispatch behavior confirmed real (fresh worktree + session, no shared memory) but unnamed in any doc. INTEL for the swarm-fallback open question: swarm review() does NOT itself launch agents — it writes swarm/review-plan.json and prints reviewer assignments; actual isolation rides the kickoff path (review.rs:99-155) — strengthens the confirmed fallback shape (vsdd injects manifest+composition into the dispatch vehicle's prompt). Forward-only-doctrine borrow: doc-level, unevaluated by source inspection. Filing recommendations pending operator triage this session.",
+      "created_at": "2026-07-20T23:44:09.629638Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "b4eca3e4-5112-4cf4-b231-56f2366041a4",
+      "author": "xqjG",
+      "content": "Dollspace-review filing round closed: all six triaged items published at the canonical upstream — milestone --quiet dollspace-gay/crosslink#21, milestone ID parse error #22, issue list -l single/last-wins #23, swarm review --doc rename #24, import YAML ask #25, label-schema proposal #26. Absorbability concepts (5) disposed held-for-direct-conversation per operator ruling, bundled with the contract's cost-ledger absorption proposal when that conversation happens. Fixed-or-not-reproducible items not filed: swarm gate discoverability (guidance shipped since March intro), knowledge import auto-init (present at HEAD lineage since feature intro).",
+      "created_at": "2026-07-21T00:03:20.517745Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "f7aeb461-793a-45fb-bc8b-03eb9339c439",
+      "author": "xqjG",
+      "content": "OPERATOR DECISION: the identity-leak FM2 local remediation (tracked .crosslink/driver-key.pub carrying a sourced key with a cross-context comment, public on main since the substrate deploy commit b3d6e50; deferral standing since the 2026-05-28 security review in vsdd-cli-wip, preserved in this repo at 76ab1eb) remains DEFERRED by operator ruling 2026-07-20 and folds into Layer 0: it joins the wip-retirement and estate acts as an explicit tracked decision, resolved after the operator's cross-persona key-publication audit. Options on the table when it resolves: swap-key-and-untrack-forward, or full history rewrite. Sensitive strings stay out of tracker records per the incident report's own discipline.",
+      "created_at": "2026-07-21T00:03:24.143626Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "a005a846-c664-48a9-be19-29e5489a80b2",
+      "author": "xqjG",
+      "content": "Register correction (operator-caught, 2026-07-20): this session coined 'FM1/FM2' for the 2026-05-28 incident's two failure modes — the letter-cluster anti-pattern the contract's register checks name, already on its evidence list as a repeat class. Canonical plain names, from the incident report itself: THE AGENT-KEY LEAK (hostname-derived comment on the generated agent key) and THE DRIVER-KEY LEAK (sourced ambient key with original comment in tracked driver-key.pub). The coinage is corrected in #656's title and the staged draft filenames; the decision comment above carries one immutable 'FM2' occurrence — read it as the driver-key leak. Feedback memory written so future sessions load the correction; the durable mechanization is the contracted mdatron coinage check (Layer 7).",
+      "created_at": "2026-07-21T00:06:29.895281Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "deb68e12-e305-4764-8ce4-f1a6f56077cf",
+      "author": "xqjG",
+      "content": "OPERATOR RULINGS on the phantom-author surface (2026-07-20): (1) Going forward — the Claude model-attribution trailer STAYS on commits (Co-Authored-By: Claude Fable 5); domain co-author trailers are settled dead: never added again, attribution for domain reviewers lives in signed tracker records per the ratified contract. (2) Retroactive — the June-era trailer cleanup BUNDLES with the #656 rewrite decision: one public-history-hygiene decision covers the driver-key blob and the domain trailers, resolved after the operator's cross-persona key-publication audit. No push-forward mitigation requested at this time. Tracked as #657 (child of this issue) beside #656.",
+      "created_at": "2026-07-21T00:16:04.260568Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "3a18b702-df11-4188-9b13-87070bc0da6c",
+      "author": "xqjG",
+      "content": "Identity-thread filing round closed: the agent-key leak filed as dollspace-gay/crosslink#27 (hostname-derived key comments and machine_id in pushed records, no consent surface) and the driver-key leak as dollspace-gay/crosslink#28 (silent ambient-key sourcing with original comment into a tracked file no ignore template covers; upstream's own b0078867 precedent cited). Both sanitized — mechanisms and the macOS-default-format pattern only, no operator strings. Source record: review-log/2026-05-28-security.md (vsdd-cli-wip; preserved at 76ab1eb), located this session from the operator's recollection. Local remediation remains parked as #656 (bundled rewrite decision with #657). Upstream total today: dollspace-gay/crosslink #13-#28, sixteen filings from this session plus the four from the mdatron session.",
+      "created_at": "2026-07-21T00:21:28.350382Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "54fdb8a4-255e-4e73-961f-e9f988dba3f3",
+      "author": "xqjG",
+      "content": "Layer 0 act 1 result: the June-cycle audit-record bulk-close executed under the operator-adopted disposition template. 124/124 children of #12/#13 closed with per-record result comments — durable, verified across multiple sync cycles; zero open children remain. Repo-side record: commit 02408b0e (chassis changelog entries). BLOCKED RESIDUE, chassis defect (crosslink 0.8.0): (a) parents #12/#13 — 'issue close' reports success and writes the changelog entry, but the issue row reverts to open; reproduced five times with no daemon and no intervening sync; the contract's own 'thrice-closed-still-open' evidence for #13 now reads as this mechanical defect, not only process failure; (b) 'archive add' reports success but archive membership does not survive the next crosslink invocation — 126 adds performed, archive list returns empty; the enumerated act's archive half is blocked. Both queued as upstream-filing candidates pending operator go (the local/hub reconciliation family of dollspace-gay/crosslink#12). #12/#13 remain open: blocked, not abandoned.",
+      "created_at": "2026-07-21T00:54:37.167170Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "a15e4595-b4a4-48f9-8529-b9a630fd9c2c",
+      "author": "xqjG",
+      "content": "Layer 0 acts 5+6 result: stale crosslink-URL sweep executed under the living-docs-only ruling — methodology.md (5 sites) and README.md (4 sites) repointed to dollspace-gay/crosslink, commit 975f277, mdatron verify clean; knowledge pages verified clean; historical records (June review-log entry, the vsdd-suite corpus) deliberately untouched per the ruling. Portfolio README corrected in its own repo: the bookmark-cli-crosslink reference-example claim (never built, absent from disk) now states that plainly with a dated correction note, plus 3 URL sites repointed — commit 6d8c3c0 on branch estate-cleanup-crosslink-repoint, all suite pre-commit hooks passing; push and PR are the operator's acts per that repo's convention.",
+      "created_at": "2026-07-21T00:54:40.169531Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5cdb3a18-4ef9-4d9f-a2c6-8c2f3e7ecc0b",
+      "author": "xqjG",
+      "content": "Layer 0 act 7 result: vsdd-cli-wip retired and deleted (operator-executed rm, 2026-07-20). Pre-deletion verification: wip HEAD (2f2f7c27) an ancestor of the pushed origin/wip-archive branch; working tree clean; wip archive/ byte-identical to this repo's archive/ (zero unique files); the 2026-05-28 review-logs preserved at 76ab1eb on that branch. Operator ruled the tracker-DB export unnecessary (lessons distilled into the preserved review-logs). Loose key material (agent private key, driver-key.pub copy) destroyed with the tree — positive hygiene. The contract's harvest intent was satisfied by facts on the ground; nothing unique was lost.",
+      "created_at": "2026-07-21T00:54:43.280580Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "0921b57c-5efb-47f6-869b-d3c5dc18882d",
+      "author": "xqjG",
+      "content": "Filing round: the two 0.8.0 persistence defects published — the close-revert as dollspace-gay/crosslink#29 and the archive-membership wipe as dollspace-gay/crosslink#30 — both carrying the triage note that the v2 write path is deleted at main, so these are stable-release records ('fixed by v3' an expected disposition). Register correction, second occurrence today (operator-caught): 'NO-GO' was a coined all-caps token reified from the operator's relay — plain form: THE UPGRADE HOLD (do not upgrade past 0.8.0; do not run migrate hub-v3 until the retest trigger — dollspace-gay/crosslink #4/#5/#7/#8/#11/#12 closing). Corrected in the public #29 body (edited), the session memory (slug and body rewritten), and this record; earlier immutable comments on this trail and #655/#656 carrying the token read as the upgrade hold. Second-occurrence mechanization duty now triggered: proposal pending with the operator — add the plain-names register rule to .crosslink/rules/project.md, which the chassis injects into every session's context, as the interim mechanical guard until mdatron's contracted register check lands at Layer 7.",
+      "created_at": "2026-07-21T01:01:29.916700Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "7533cb94-d44f-46d4-8287-ff0f306b7335",
+      "author": "xqjG",
+      "content": "Mechanization landed (operator-approved): .crosslink/rules/project.md now carries the substrate-injected guards — plain-names register rule, the 0.8.0 upgrade hold with retest trigger and known persistence defects, identity/privacy discipline, commit-trailer rulings, governing-doc pointers. Commit on main (see changelog trail); every future session in this repo receives these in injected context. Each rule retires into a mechanical check as mdatron's Layer 7 families land. Layer 0 execution now rests at: operator substrate-setup acts, the manifest-gated repair close (act 9), the #656/#657 rewrite bundle, and the blocked #12/#13 closes — the phase's active work moves to the data-authoring package, #598.",
+      "created_at": "2026-07-21T01:08:39.370413Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "b1239549-ee67-4497-929a-c4566f770382",
+      "author": "xqjG",
+      "content": "OPERATOR ADOPTION 2026-07-21: the attended-review-round-fan-out entry joins the act-to-affordance map (kind: session-surface — a new kind value, schema enum extended in the same commit per the recorded-pair rule). The design session's own dispatch surface is the sanctioned vehicle for attended review rounds: the plain fan-out, or the Workflow orchestration surface when a round needs per-lens dials or structured capture. Distinct from phase-3-review-round (the installed process's autonomous rounds, crosslink swarm, conditional on the live fire) — in addition to, not instead of; the runtime-capture clause already names both layers' telemetry as ledger sources. DIAL CONDUCT (part of the adoption): every Workflow dispatch sets model and effort explicitly, never inherited — the two surfaces default differently (plain fan-out: agent-type model, observed Opus-tier; Workflow: the session model at a documented 2x per-token weight), so an unset dial silently changes cost when the vehicle changes; manifests record chosen values plus post-hoc telemetry confirmation. ROUND-1 SCALING BASELINE, recorded for observability: vehicle was the plain fan-out; model was NOT specified (agent-type default, observed claude-opus-4-8 via telemetry); effort was NOT specifiable on that surface and NOT observed (harness default; thinking blocks present in all five transcripts, level unrecorded). Round 2+ on the Workflow surface with explicit dials makes both chosen-vs-observed comparisons mechanical.",
+      "created_at": "2026-07-21T03:34:34.208370Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "a5f2b945-755c-459d-bc20-d8181e9b5a01",
+      "author": "xqjG",
+      "content": "SPEC-REVIEW LOOP CONVERGED (2026-07-21): the terminal verify round's second execution holds the stop signal five-for-five (#712 trail; rounds #673, #699, #708, #712). All nine data-set pairs stand reviewed, fixed, and terminally verified; the contract carries the loop's two ratified amendment batches (#698 seven touches, #706+#711 the round-2 touches). Remaining to close phase 1c: the documentation-reviewer cold pass, operator sign-off, boundary commit closing this issue and the milestone. One open operator item: the statusline-wiring host observation on the #712 nit collector.",
+      "created_at": "2026-07-21T16:28:55.780383Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "99a59b6d-aae9-4ed0-a2db-f11d1d7b7331",
+      "author": "xqjG",
+      "content": "OPERATOR SIGN-OFF (2026-07-21): the operator ratifies the phase-1c data-authoring package and its converged spec-review loop — the loop exit act per the loop definition. The record: nine data-set pairs authored (#598, set issues #658/#665-#672), reviewed across two rounds (#673: 24 findings; #699: 9), terminally verified across two executions (#708 correctly failing the stop on 2; #712 holding it five-for-five), and cold-read by the external reader's slot (#714, ready = true), with two ratified amendment batches on the contract (#698 seven touches, 27d9421b; #706+#711, d3b19c02 and 883bb54a) and every fix commit cited on its finding issue. Carried items, recorded not lost: #713 (statusline re-wire, operator act), #715 items 2-3 (discretionary nits), #664 (registration candidates, parked), and the standing parked bundle (#656/#657). The boundary commit follows this decision.",
+      "created_at": "2026-07-21T16:47:01.947681Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "25dae308-2c05-44f1-818e-c40742b3e9e8",
+      "author": "xqjG",
+      "content": "PHASE 1C CLOSED. Boundary evidence: the sign-off decision above; milestone #3 (phase-1c: decomposition and data authoring) closed; the boundary commit lands immediately after this comment and its hash joins this trail via the commit skill's result convention. Phase pointer: 1c complete — the next phase act is phase-2a entry at Layer 1 (state artifact and versioned data; the data sets land as Layer 1 artifacts per the decomposition), which owes its operator-authored manual-test checklist and red-gate seed at entry. Recovery path unchanged: memory, session breadcrumb, this trail, the contract.",
+      "created_at": "2026-07-21T16:47:11.263171Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d479fde3-24a5-4f9d-ab7c-bb61764b7c22",
+      "author": "xqjG",
+      "content": "BOUNDARY COMMIT HASH, joining the trail post-close: 6ced649d — the phase-1c exit record.",
+      "created_at": "2026-07-21T16:48:32.229825Z",
+      "kind": "result"
+    }
+  ]
+}

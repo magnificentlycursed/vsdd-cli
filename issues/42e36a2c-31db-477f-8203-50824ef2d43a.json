@@ -1,0 +1,48 @@
+{
+  "uuid": "42e36a2c-31db-477f-8203-50824ef2d43a",
+  "display_id": 849,
+  "title": "Upstream crosslink observation: kickoff run --container omits the no-prompt permissions flag the docs promise (only 'container start' passes it)",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T19:52:21.823141Z",
+  "updated_at": "2026-08-02T00:51:09.838574Z",
+  "closed_at": "2026-08-02T00:51:09.838568Z",
+  "labels": [
+    "upstream"
+  ],
+  "comments": [
+    {
+      "uuid": "00f0a2e2-8dcd-4ba4-b161-468a7138c2ce",
+      "display_id": 1315,
+      "author": "xqjG",
+      "content": "SOURCE (attended-design knowledge page, 2026-07-20): 'crosslink kickoff run --container' does not pass --dangerously-skip-permissions — only 'crosslink container start' does — so the documented no-prompt container path holds for one of the two entry points. A container agent launched via kickoff run can hang waiting on permission prompts nobody will answer. NOTE: plausibly a contributor to #837's stall signature (launched-then-never-progresses); if #837 reproduces via kickoff run --container, test this first.",
+      "created_at": "2026-08-01T19:54:26.875364Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d467cac1-19fd-4301-a7cf-c6bda91d0a95",
+      "display_id": 1324,
+      "author": "xqjG",
+      "content": "Rolled into the kickoff epic: https://github.com/magnificentlycursed/crosslink/issues/2 (tracks the full vsdd kickoff bundle with upstream dollspace-gay/crosslink links; check-off happens there as upstream fixes land).",
+      "created_at": "2026-08-01T20:02:42.282380Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "c9967cc2-c603-47b7-81b8-45f810295fea",
+      "display_id": 1332,
+      "author": "xqjG",
+      "content": "Filed upstream: https://github.com/dollspace-gay/crosslink/issues/59",
+      "created_at": "2026-08-01T20:06:52.883814Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "2c496a78-a69d-49a3-9749-cf99a6658d92",
+      "display_id": 1373,
+      "author": "xqjG",
+      "content": "CLOSED (tracked upstream + registry-carried): filed as dollspace-gay/crosslink#59, fix in flight (their PR #63); the local posture is deviation-registry entry container-kickoff-blocked-posture (retest: upstream #9 or #10 closed — their PR #64 in flight). Future dispositions may comment here or on the active work issue; the registry entry is the living record.",
+      "created_at": "2026-08-02T00:51:03.922623Z",
+      "kind": "result"
+    }
+  ]
+}

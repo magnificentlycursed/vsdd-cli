@@ -1,0 +1,30 @@
+{
+  "uuid": "5868af21-6bf3-4811-ac0e-207ad5f7d52f",
+  "display_id": 714,
+  "title": "data-sets review: documentation-reviewer cold pass — the external cold reader's slot",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T16:34:40.091503Z",
+  "updated_at": "2026-07-21T16:44:29.380934Z",
+  "closed_at": "2026-07-21T16:44:29.380934Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "bfe1df15-d516-473a-9226-9a180a44fa0e",
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). dispatch_id: DR cold pass workflow run under this issue. invoked_by: the operator's 2026-07-21 dispatch directive. vehicle: the Workflow orchestration surface, attended side. domains: documentation-reviewer alone — the single-lens closing pass the review-budget rule shapes (prose artifacts get the operator's read and external cold readers). STAGE: the loop's closing cold read ahead of operator sign-off; this reader arrives with zero session history by construction. MODEL TIER, CHOSEN: claude-fable-5 — the adopted cold-review-round tier default (session-model), set explicitly. EFFORT, CHOSEN: high — a DECLARED DEVIATION from the cold-review-round medium default, reason recorded: the cold pass's core duty is resolution-chasing (every handle, every count, every cross-reference), and the round-2/terminal evidence shows exactly that duty is what the medium dial missed and the high dial caught (#710). expected_cost_band: single-lens verification-shaped floor; prior single-lens actuals at fable/high ran 20k-52k tokens. TASKS: full cold read of all nine data-set pairs (artifacts and schemas), chasing every reference to resolution; the two carried notes — the composition instruction's two-shape actionability (#696) and the adopted-versus-draft-proposal term overload check (#697 item 5); a sign-off recommendation with reasons. coverage: all other domains do not run — the composition for this stage is the single cold reader; declared. returned + telemetry: recorded here after the run.",
+      "created_at": "2026-07-21T16:34:54.525920Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "44e54dc1-4748-4088-86aa-d5a29d3d97f7",
+      "author": "xqjG",
+      "content": "DR COLD PASS COMPLETE (workflow run wf_6712d0d7-f23) — SIGN-OFF RECOMMENDED: ready = true. The cold reader chased roughly forty references across the nine artifacts — tracker handles, contract sections, cross-artifact ids, file citations, plus on-disk verification of lifetime claims, counts, and the worded absence — and every one resolved with a title matching the citing claim. Both carried notes closed: the two-shape composition instruction reads actionably on both branches (#696 note), and the adopted-versus-draft-proposal overload was judged genuinely confusing, firing #697 item 5 — the clarifying line landed in all nine artifacts (1cfe09aa). Register clean: no coined labels or invented acronyms found in the package. THREE NITS filed as #715 (item 1 executed; items 2-3 open at operator discretion, both graded acceptable as recorded residue). TELEMETRY CONFIRMATION: model CHOSEN claude-fable-5 (adopted cold-round tier default), OBSERVED claude-fable-5; effort CHOSEN high, a DECLARED deviation from the medium default with the #710 resolution-chasing reason recorded in this issue's manifest. Actuals: 101,462 downstream tokens, 41 tool uses, ~7.3 minutes — single lens. The loop's external-cold-reader slot is discharged; remaining phase-1c path: operator sign-off (ratification as the loop exit), then the boundary commit closing #597 and the milestone. Closing this pass issue.",
+      "created_at": "2026-07-21T16:44:26.049414Z",
+      "kind": "result"
+    }
+  ]
+}

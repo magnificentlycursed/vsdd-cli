@@ -1,0 +1,21 @@
+{
+  "uuid": "420cba5a-7b63-477c-a904-220517d5207e",
+  "display_id": 427,
+  "title": "lane r2 QE: flaky detection and isolation unmechanized",
+  "description": "Lane round 2. Lens: quality-engineer (validator: SE). Owner: SO session. Defect: single checkout-and-run cannot detect flakiness; isolation ('gates on the defect's test in isolation') has no verifying fixture. Citations verified: contract:64, :166, :173. Proposed: resolved-candidate, partially foldable (the gate runs the defect's named tests, not the whole suite — isolation by construction, recorded in the gate record; flake-resistance repetition policy set at phase-1c data authoring with the other numbers, same as the statusline timing instrument).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:49.684453Z",
+  "updated_at": "2026-07-20T00:17:04.797441Z",
+  "closed_at": "2026-07-20T00:17:04.797441Z",
+  "comments": [
+    {
+      "uuid": "b5c9d0ec-3acd-479a-adb7-d0224e39662d",
+      "author": "xqjG",
+      "content": "Fixed: the gate runs the defect's named tests, not the whole suite — isolation by construction, in the gate record; flake-resistance repetition policy set at phase-1c data authoring with the other numbers. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-20T00:16:39.076355Z",
+      "kind": "resolution"
+    }
+  ]
+}

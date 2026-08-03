@@ -1,0 +1,25 @@
+{
+  "uuid": "8f12246f-d782-4ee0-8286-b6511ae416fb",
+  "display_id": 703,
+  "title": "r2 minor SA: plugin-set lifetime per-clone-wiring mislabels a host-scoped enablement",
+  "description": "Evidence: installed-artifact-manifest.md:79 vs its own note :84 — enablement lives at user scope (host granularity: a second clone on the same host inherits it), but the lifetime axis only offers tracked-or-per-clone. Disposition: extend the lifetime axis with a host-scope value, or state in the note why per-clone-wiring is the deliberate approximation. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "426d87e4-d8cf-4272-9c1d-e21e675de848",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T06:54:29.970852Z",
+  "updated_at": "2026-07-21T07:01:18.751047Z",
+  "closed_at": "2026-07-21T07:01:18.751047Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "240d3bd0-2694-43e9-ad27-aaba5afce80d",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit 026564ee, installed-artifact-manifest 0.3.0): the lifetime axis extends with host-wiring — wiring in host-scoped config that every clone on the host inherits — and the plugin-set entry takes it; prose states the axis addition. Terminal round re-verifies (validator: solution-architect).",
+      "created_at": "2026-07-21T07:01:15.658802Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "uuid": "5f140f3c-b592-4c27-a038-3af0abd67366",
+  "display_id": 560,
+  "title": "statusline amendment cold round 16",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 16 (post round-15: absent-settings offer path restored at the boundary; three settings read-failure fixtures; kind-to-action mapping authoring home). Series 15-16-11-6-8-2-2-2-1-2-1-2-2-3-3.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:12:34.528464Z",
+  "updated_at": "2026-07-20T02:55:38.832857Z",
+  "closed_at": "2026-07-20T02:55:38.832857Z",
+  "comments": [
+    {
+      "uuid": "fb74d104-6daa-4db8-9509-e970ea83e7ac",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 16. Subject: revision 16 statusline anchors (round-15 set plus: the plainly-absent-settings offer-path clause at the trust boundary; the three-member settings read-failure fixture set; the kind-to-action mapping's 1c authoring clause). Out of scope: lane and effort amendments. Known-deliberate unchanged. Lens: UX, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T02:12:48.401651Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "76ddfce9-edce-4e06-87a9-1f96767caa48",
+      "author": "xqjG",
+      "content": "Round 16 complete (UX). 2 filed: L237 settings write-failure contract; L238 human broken-state per-kind structure. Series ...-3-3-2. Not clean; round 17 after disposition.",
+      "created_at": "2026-07-20T02:53:11.252429Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "c4b992c0-f737-421c-899a-96ac567c0858",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed. mdatron verify clean on revision 17. Closing; round 17 dispatches (UX).",
+      "created_at": "2026-07-20T02:55:34.166658Z",
+      "kind": "result"
+    }
+  ]
+}

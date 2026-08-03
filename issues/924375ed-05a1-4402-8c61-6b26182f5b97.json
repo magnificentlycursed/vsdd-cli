@@ -1,0 +1,28 @@
+{
+  "uuid": "924375ed-05a1-4402-8c61-6b26182f5b97",
+  "display_id": 190,
+  "title": "SEC/F3: reserved-code lint suffix-slice fragility",
+  "description": "Source: mdatron/review-log/2026-06-02-security-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:06.794360Z",
+  "updated_at": "2026-06-08T01:48:35.466846Z",
+  "closed_at": "2026-06-08T01:48:35.466846Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:security",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "235254a6-0b13-49fa-a936-04da9523f227",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@422c2dc (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:34.743499Z",
+      "kind": "resolution"
+    }
+  ]
+}

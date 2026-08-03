@@ -1,0 +1,28 @@
+{
+  "uuid": "a66ad066-ede8-44d9-8141-9331f34f725a",
+  "display_id": 227,
+  "title": "VM/F4: single-milestone decomposition (Phase 1c) self-authorized",
+  "description": "Source: mdatron/review-log/2026-06-02-vsdd-methodology-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:25:17.066682Z",
+  "updated_at": "2026-06-08T02:23:40.239679Z",
+  "closed_at": "2026-06-08T02:23:40.239679Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:vsdd-methodology",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "09004e1a-b10e-4f87-9c56-c2686947b3cd",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@5d02683 (Wave 7).",
+      "created_at": "2026-06-08T02:23:39.237172Z",
+      "kind": "resolution"
+    }
+  ]
+}

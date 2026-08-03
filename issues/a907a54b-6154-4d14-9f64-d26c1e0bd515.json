@@ -1,0 +1,21 @@
+{
+  "uuid": "a907a54b-6154-4d14-9f64-d26c1e0bd515",
+  "display_id": 349,
+  "title": "statusline r2 AIE: wall-clock budget has no verification instrument",
+  "description": "Round: statusline amendment cold round 2. Lens: ai-engineer (validator: platform-engineer). Owner: SO session. Defect: the declared wall-clock budget (number at 1c) names no criterion, gate, or fixture that checks a render stays within it — every other deferred number in the contract names its instrument (mutation floor gate, token budget CI gate); byte-identity does not bound latency. Citations verified: contract:160, :185, :170. Proposed: resolved-candidate. Failure: cheap-by-contract unfalsifiable; event-frequency-multiplied latency regression uncaught.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:11.161281Z",
+  "updated_at": "2026-07-19T23:18:37.214872Z",
+  "closed_at": "2026-07-19T23:18:37.214872Z",
+  "comments": [
+    {
+      "uuid": "110715d8-75df-49e2-b6e3-f9c5eea7cb45",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Status detection criterion now carries the timing instrument: each fixture's segment render completes within the declared wall-clock budget; the number arrives with 1c data authoring and the check ships with it — instrument, not just existence. Revision: Status detection criterion.",
+      "created_at": "2026-07-19T23:17:39.731932Z",
+      "kind": "resolution"
+    }
+  ]
+}

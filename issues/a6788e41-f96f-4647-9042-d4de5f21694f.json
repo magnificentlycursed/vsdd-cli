@@ -1,0 +1,21 @@
+{
+  "uuid": "a6788e41-f96f-4647-9042-d4de5f21694f",
+  "display_id": 627,
+  "title": "1c-DR-r4: L7 gated-set enumeration omits its conformance fixture slice",
+  "description": "Minor, check e. The free-slug and underivable-name fixtures ride the mdatron families but the cross-repo gated-set sentence names only Drift pin and the backstop check. Fix: name the slice. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:43.388776Z",
+  "updated_at": "2026-07-20T18:13:22.487795Z",
+  "closed_at": "2026-07-20T18:13:22.487795Z",
+  "comments": [
+    {
+      "uuid": "c65da075-2c7d-41d9-b392-d7762dd9cc9b",
+      "author": "xqjG",
+      "content": "Fixed: the gated-set sentence now names 'the conformance fixtures of its Red-gate cheat blocked slice (free-slug, underivable-name)' beside Drift pin and the backstop check.",
+      "created_at": "2026-07-20T18:13:20.971414Z",
+      "kind": "resolution"
+    }
+  ]
+}

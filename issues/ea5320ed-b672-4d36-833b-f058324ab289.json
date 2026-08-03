@@ -1,0 +1,21 @@
+{
+  "uuid": "ea5320ed-b672-4d36-833b-f058324ab289",
+  "display_id": 515,
+  "title": "effort r1 Meth+AIE: finder/fixer/verifier reified unregistered; fixer and verifier collide",
+  "description": "Effort round 1. Lenses: methodology + AIE corroborating (validators: SO, PE). Defect: three stage names became schema keys without registration — the exact utterance-to-schema drift the design stops; 'fixer' collides with the generalized Thermite role vocabulary and 'verifier' sits confusably beside 'validator'; AIE adds the names do not map to how dispatches actually run. Citations verified: contract:91, :123-124, :243, :268-273. Proposed: resolved-candidate (no new coinage: the loop's established stage vocabulary — the cold round, the fix pass, the gate run — replaces all three).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:34.091824Z",
+  "updated_at": "2026-07-20T01:30:11.768119Z",
+  "closed_at": "2026-07-20T01:30:11.768119Z",
+  "comments": [
+    {
+      "uuid": "49c4992a-f4bd-4320-9135-e183744d8553",
+      "author": "xqjG",
+      "content": "Fixed: no new coinage — the loop's established stage names (the cold round, the fix pass, the gate run) replace finder/fixer/verifier; the Thermite-role and validator collisions dissolve. Revision: config fields sentence.",
+      "created_at": "2026-07-20T01:29:48.142795Z",
+      "kind": "resolution"
+    }
+  ]
+}

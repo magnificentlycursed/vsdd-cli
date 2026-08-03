@@ -1,0 +1,21 @@
+{
+  "uuid": "def8566c-5e44-41ec-abd6-af255cc2ba66",
+  "display_id": 334,
+  "title": "statusline r1 SA: renderer signature cannot produce declared field set",
+  "description": "Round: statusline amendment cold round 1. Lens: solution-architect (validator pair: solution-owner). Owner: SO session. Defect: renderer specified pure over (structured phase answer, width budgets) but must emit repo, session, work item, open count, milestone — none in the structured phase answer as the convergence test enumerates it (phase/layer, next action, composition, degraded flag). Citations verified: contract:197 vs :160 vs :176, :196. Anchors: Status, renderer. Proposed: resolved-candidate. Failure: renderer unbuildable from declared inputs; 'never a second computation' unverifiable; Phase 5 purity audit has nothing to check. Fix direction: widen renderer input to carry corroboration-derived display fields, or define the display answer as a named superset, aligning :176/:196.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:50.494998Z",
+  "updated_at": "2026-07-19T23:08:10.581016Z",
+  "closed_at": "2026-07-19T23:08:10.581016Z",
+  "comments": [
+    {
+      "uuid": "a61b7f08-e1b2-464e-97dc-a462844f1112",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Renderer signature widened to (structured phase answer; display fields from the corroboration snapshot — session, work item, active milestone with open-finding count; width budgets); Status bullet states one acquisition, one derivation, one rendering; pure-core entry states the shell supplies inputs from the one snapshot acquisition. Convergence-test enumeration untouched — segment fields beyond the phase answer are snapshot display fields, not phase-answer claims. Revision: Status bullet + Verification architecture renderer entry.",
+      "created_at": "2026-07-19T23:07:46.174349Z",
+      "kind": "resolution"
+    }
+  ]
+}

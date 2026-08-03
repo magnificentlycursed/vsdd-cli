@@ -1,0 +1,34 @@
+{
+  "uuid": "2538c31c-31fb-429e-b6e4-02dac0721c93",
+  "display_id": 754,
+  "title": "Layer 2 round 1 minor collector: shell trust posture and diagnostics",
+  "description": "(1) security: glob match fail-open on overlapping prefix/suffix (substrate.rs:89). (2) security: tilde expansion trusts HOME and mis-falls-back to repo-root when HOME unset, turning ~/ entries into misleading absent-artifact failures (substrate.rs:117-118) — SE converges. (3) security: chassis stdout flows unsanitized into terminal-destined display fields (acquire.rs:93). (4) security+SE: the git failure Diagnostic ships empty recovery members and a hardcoded token against the vocabulary discipline, renders an empty machine-form file field, and leaks absolute paths via message — the #730 clause applies to refs.rs's Diagnostic construction (refs.rs:95,100). (5) security: PATH-resolution trust posture undeclared for both subprocess sites — state it (a malicious crosslink/git on PATH is the operator's environment, likely out of model — but say so). (6) security nit: binding-failure detail embeds both absolute roots in Status-destined prose (substrate.rs:47) — the #730 clause. (7) QE: local_refs origin-stripping/HEAD-filter/dedup has no test. Owner: security/software-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:03:48.807537Z",
+  "updated_at": "2026-07-22T17:37:28.628638Z",
+  "closed_at": "2026-07-22T17:35:26.000996Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "6184727c-7129-412a-9190-f7916d73ddd7",
+      "display_id": 976,
+      "author": "xqjG",
+      "content": "Directive classification (operator, 2026-07-22, mid fix pass): 'hit substrate and chassis vocabulary if not logged' — scope: conduct-rule reaffirmation plus estate sweep, no contract amendment needed. Reading: the 2026-07-20 concrete-referents ruling named 'substrate' as the example layer-word; the operator now names 'chassis' alongside it. Contract constructs stay citations ('the crosslink chassis' title clause, the chassis-affordance closure, the session-substrate check). Applied: (1) .crosslink/rules/project.md bullet extended to name both words with the citation carve-out; (2) code sweep in the fix-pass files — snapshot acquisition and integrity-shell doc comments now say 'crosslink' where crosslink is meant; the init error message 'substrate is not a git repository' (adopter-facing) is now 'not a git repository' and its error variant renamed NotGitRepository; (3) one coined label caught in the same sweep: 'l2r1' in the subprocess module doc, replaced with 'the Layer 2 round-1 security lens' per the no-coined-labels rule.",
+      "created_at": "2026-07-22T17:26:48.707978Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "8ce680db-e605-41bf-a9c2-b3c28ecadeb9",
+      "display_id": 985,
+      "author": "xqjG",
+      "content": "Fixed in d84109f5: git diagnostics name what actually happened per outcome (not-on-PATH, failed-to-start, deadline, nonzero-exit with truncated stderr, oversize), the diagnostic file renders as repo-relative .git, child stderr is sanitized of the absolute root, and the empty recovery action stays as the deliberate signal. The substrate binding-failure detail uses leaf names only per the ratified #730 clause. The PATH posture is documented in subprocess.rs. Rider from the operator's mid-pass directive (classification recorded above): the substrate/chassis vocabulary sweep — crosslink named where crosslink is meant across the shell-tier docs, the adopter-facing init error now reads 'not a git repository' (variant renamed NotGitRepository), and the coined label 'l2r1' removed from the subprocess module doc.",
+      "created_at": "2026-07-22T17:35:19.878970Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "display_id": 13,
+  "title": "Phase 2: mdatron --json + cross-process emission + README + CLI integration tests",
+  "description": "v0.1.0 blocker.\n\nScope (per SO disposition 2026-06-02, amended 2026-06-07 to reverse earlier DR-F2 \"strip the line\" finding):\n(1) Implement mdatron verify --json: emit Phase 0 output object on stdout.\n(2) Keep stderr emission as rustc-shaped diagnostics (operator-readable when --json absent).\n(3) Implement mdatron explain CODE against an embedded per-code catalog (MDATRON-E0001/E0002/E0050/E0070/E0080 baseline) and RETAIN the = explain: diagnostic line.\n(4) Author mdatron README per DR-F1 - install + first run + schema/pattern example + relationship to vsdd.\n(5) Add tests/cli_integration.rs (SE finding from same review).\n(6) Add --quiet / --json / --log-level global args wired through clap.\n\nAcceptance: mdatron verify --json emits parseable output; README covers three audiences; CLI integration tests cover clean run + finding emission + pipeline failure + missing schema directory; mdatron explain CODE returns the embedded catalog page for the v0.1.0 baseline codes.\n\nPer docs/refactor/binary-first-plan.md Phase 2 (row 14 amended 2026-06-07 via crosslink #13 Phase 4 to reflect SO disposition reversal). Blocked by Phase 0 + Phase 1.\n\nPhase 3 cluster-batched cold-session: 18 reviews filed 2026-06-07 under mdatron/review-log/2026-06-07-*-phase-2-bundle.md; 129 per-domain findings filed as subissues of this issue.\n\nPhase 4 + Phase 4-take-2 (2026-06-08): 91 of 215 review findings closed via 14 commits; remaining 124 open are correctly classified audit records (96 dismissed + 8 hallucinated + 20 blocked-by future-phase/umbrella with explicit DAG rationale).",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T19:06:03.015866Z",
+  "updated_at": "2026-07-21T00:50:00.902663Z",
+  "closed_at": "2026-07-21T00:50:00.902663Z",
+  "blockers": [
+    "4ecacc91-ffe1-4689-ade4-b158f4e50c93",
+    "89424e77-4971-47b0-8d44-093cd04eff53"
+  ],
+  "comments": [
+    {
+      "uuid": "3fa51b17-c2d7-4c7a-91a1-1128c1b4d9dd",
+      "author": "xqjG",
+      "content": "Closing per operator direction 2026-06-08.\n\nAcceptance criteria met:\n- mdatron verify --json emits the Phase 0 output object (mdatron-cli/tests/output_format.rs covers BC-1..BC-8)\n- README authored covering 3 audiences (VSDD user, mdatron-only adopter, tool-author)\n- CLI integration tests (mdatron-cli/tests/cli_integration.rs, 22 tests) cover clean run + finding emission + pipeline failure + missing schema directory + --quiet/--json combos + explain --json + explain --compact\n- mdatron explain CODE returns embedded catalog pages for the 5 baseline codes (MDATRON-E0001/E0002/E0050/E0070/E0080), with --json (structured ExplainPage) + --compact (one-liner) variants\n\nCycle commits: implementation a000ebd; review-log moves 419dc9c; Phase 4-take-2 sweep 14 commits across mdatron + vsdd-cli (mdatron@883eaaf/ba61527/422c2dc/f45200b/28e9794/6a0fe22/f59c9f4/cea00ab/19d04d7 + vsdd-cli@91689e5/fc98fa4/3aad175/5d02683/b9ac1ee/f7633de).\n\nPhase 3 cluster-batched review (129 findings) routed via crosslink subissues; 91 closed via code/disposition, 20 open with explicit block-by routing to future-phase issues (#15 collapse, #17 publish, L1 Phase 5, L2 events.jsonl, L3 vsdd-cli overlay), 104 open as audit records (96 dismissed + 8 hallucinated).\n\nL4 (Raise-to-SO umbrella) closed after 2026-06-08 operator-disposition pass; remaining umbrella issues L1/L2/L3 stay open as planning anchors for future phases.\n\nPhase 2 of binary-first refactor: done.",
+      "created_at": "2026-06-08T04:00:41.369323Z",
+      "kind": "resolution"
+    },
+    {
+      "uuid": "ea932304-b807-4fd4-b35b-f00078d0a80d",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle plan issue closed with its audit-record children (bulk disposition recorded per child). This issue remains the contract's cited evidence record for the June cycles — closure regularizes the state; git and tracker history are the archive. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail. The contract's own evidence names this issue's thrice-closed-still-open state; this result closure is the regularizing act.",
+      "created_at": "2026-07-21T00:48:07.718069Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "f00b271a-0b8f-4a5a-82db-4b8c80b1b398",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle plan issue closed with its audit-record children (bulk disposition recorded per child). This issue remains the contract's cited evidence record for the June cycles — closure regularizes the state; git and tracker history are the archive. The contract's own evidence names this issue's thrice-closed-still-open state; this result closure is the regularizing act. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:49:54.468117Z",
+      "kind": "result"
+    }
+  ]
+}

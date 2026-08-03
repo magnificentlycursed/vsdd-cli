@@ -1,0 +1,21 @@
+{
+  "uuid": "b3d2d570-cc90-45a5-8708-bd8b6ed3a63d",
+  "display_id": 798,
+  "title": "Layer 3 round 5 major security: default-ignorable UNASSIGNED code points (U+E0000, U+2065, U+FFF0-FFF8, unassigned tag block) pass the Cc/Cf/Zl/Zp category filter and reach the terminal — the category proxy covers assigned invisibles only",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T10:58:33.597138Z",
+  "updated_at": "2026-07-26T11:11:30.359165Z",
+  "closed_at": "2026-07-26T11:11:30.359152Z",
+  "comments": [
+    {
+      "uuid": "74e2f224-0536-44f8-b1fe-62c60e9392a2",
+      "display_id": 1063,
+      "author": "xqjG",
+      "content": "Fixed in 52f94321: is_terminal_unsafe now also strips UNASSIGNED default-ignorable code points in the reserved ranges (U+2065, U+FFF0-FFF8, U+E0000-E0FFF), gated on GeneralCategory::Unassigned so the assigned invisibles stay category-caught and the variation selectors (U+E0100-E01EF, Mn) in the same block survive. U+E0000 no longer reaches the terminal. Unit-pinned both ways: the unassigned ignorables strip, a variation selector survives. This closes the last edge of the char class — the category proxy plus the reserved-range gate cover assigned AND unassigned invisibles.",
+      "created_at": "2026-07-26T11:11:24.061748Z",
+      "kind": "result"
+    }
+  ]
+}

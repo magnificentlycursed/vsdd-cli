@@ -1,0 +1,29 @@
+{
+  "uuid": "87952b40-0e03-4cd7-8729-3c343839eff1",
+  "display_id": 773,
+  "title": "Phase 2b execution, Layer 3: implement the renderings to green against the red gate",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T00:20:31.132776Z",
+  "updated_at": "2026-07-26T01:22:17.014324Z",
+  "closed_at": "2026-07-26T01:22:17.014305Z",
+  "comments": [
+    {
+      "uuid": "6a279bdc-f6aa-4f44-b586-185cfac9d7ce",
+      "display_id": 1023,
+      "author": "xqjG",
+      "content": "GREEN GATE RECORDED (gate: green-gate, phase: phase-2b, layer: 3, result: PASS; evidence: commit 09d1a433, executed run). The 18-test red gate turned green FIRST PASS after one type fix (the composition mode renders through its serde name — the enum carries no Display by design), with the standing suite untouched: 116 workspace tests pass, clippy zero after fmt (one needless-borrow caught by the post-fmt recount — the count-ordering lesson holding), mdatron verify clean. Everything the adopted map named is real: the four renderers, the composition root with its three counted seams, the #740 core seam (last_boundary_subject over the bounded runner, a declared bootstrap heuristic until Layer 6 registers the boundary grammar), the repo-set config with its parse-and-refuse pair, the wiring script at its registered template home, and the vsdd status command wiring all three forms with the broken branch exiting nonzero while every surface speaks. Scope note, declared: command-level conduct (exit codes, stdout/stderr routing, the multi-repo composition through the real binary) is exercised by the module suite plus parse tests today — the command-in-a-shell fixtures belong to this layer's phase-3 rounds and the Install criterion's end-to-end members at Layer 4. Next: 2c refactor under the green suite, then the phase-3 rounds.",
+      "created_at": "2026-07-26T01:15:49.351049Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "c9d28af4-a3a1-42db-958d-e22f4026fa3a",
+      "display_id": 1026,
+      "author": "xqjG",
+      "content": "Phase 2b closed complete: green gate 09d1a433 (18/18 first pass after one type fix; 116 workspace), the #740 seam landed, the wiring script authored, the command wired. 2c followed on #774 (e8b33617, phase-exit-gate pass). The layer proceeds to phase 3.",
+      "created_at": "2026-07-26T01:22:06.603626Z",
+      "kind": "result"
+    }
+  ]
+}

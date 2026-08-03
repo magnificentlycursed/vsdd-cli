@@ -1,0 +1,21 @@
+{
+  "uuid": "0349edd4-f6ad-4e04-8285-02069ec4bf9b",
+  "display_id": 360,
+  "title": "statusline r2 SA: segment spans two registered compounds",
+  "description": "Round: statusline amendment cold round 2. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: statusline segment and swarm segment give bare 'segment' two live referents. Citations verified: contract:269 vs :263. Proposed: dismissed-candidate (reviewer's own assessment: both are registered two-word compounds; bare use unambiguous in context; draft vocabulary carries no compatibility obligation). Recorded to show the vocabulary-governance dimension was applied.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:22.308733Z",
+  "updated_at": "2026-07-19T23:18:52.876947Z",
+  "closed_at": "2026-07-19T23:18:52.876947Z",
+  "comments": [
+    {
+      "uuid": "735a7ba4-fa21-4a98-afd9-8f3f457b2f0a",
+      "author": "xqjG",
+      "content": "Dismissed at operator triage (round 2, per reviewer's own weighing): statusline segment and swarm segment are both registered two-word compounds; bare 'segment' unambiguous in context; draft vocabulary carries no compatibility obligation. Recorded that the vocabulary-governance dimension was applied.",
+      "created_at": "2026-07-19T23:17:53.620810Z",
+      "kind": "resolution"
+    }
+  ]
+}

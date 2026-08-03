@@ -1,0 +1,28 @@
+{
+  "uuid": "392d2d5f-05f9-449b-898a-3d2139c9986e",
+  "display_id": 197,
+  "title": "SE/F4: lint false-positive surface (doc-comments + format!-evasion)",
+  "description": "Source: mdatron/review-log/2026-06-02-software-engineer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@bc83588 (stricter extractor reduces FP surface; explicit allowlist comment pending)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:20.408569Z",
+  "updated_at": "2026-06-08T02:34:09.957326Z",
+  "closed_at": "2026-06-08T02:34:09.957326Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:software-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "7ce89b47-0bcb-4b5b-a196-bc04c66c324a",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@bc83588 (stricter extractor reduces FP surface; explicit allowlist comment pending)).",
+      "created_at": "2026-06-08T02:34:09.201698Z",
+      "kind": "resolution"
+    }
+  ]
+}

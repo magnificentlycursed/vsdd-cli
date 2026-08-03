@@ -1,0 +1,21 @@
+{
+  "uuid": "ce37bc13-5d63-4a34-99fd-000bad82c684",
+  "display_id": 526,
+  "title": "statusline r13 UX: state-unreadable scope exceeds malformed-only coverage",
+  "description": "Round 13. Lens: ux (validator: DR). Defect: absent or permission-denied state files have no parse location, no fixture, and sit outside the never-panic guarantee scoped to malformed input — the branch that promises to speak on every surface can fall mute or panic. Citations verified: contract:163, :188, :173, :217. Proposed: resolved-candidate (read-failure kinds enumerated — malformed, absent, permission/IO; diagnostic names the kind with parse location when parse; never-panic widened to any read failure; fixtures for all kinds).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:17.856590Z",
+  "updated_at": "2026-07-20T01:45:49.316445Z",
+  "closed_at": "2026-07-20T01:45:49.316445Z",
+  "comments": [
+    {
+      "uuid": "349844d0-8cc7-44e6-8d0e-3854f63e8a3b",
+      "author": "xqjG",
+      "content": "Fixed: read-failure kinds enumerated (malformed, absent, permission/IO); every kind takes the broken-state branch; the diagnostic names the kind with parse location when parse; never-panic widened to any read failure at the trust boundary; fixtures for all kinds in corpus and criterion. Revision: Status bullet + criterion + corpus + trust boundary.",
+      "created_at": "2026-07-20T01:45:34.581235Z",
+      "kind": "resolution"
+    }
+  ]
+}

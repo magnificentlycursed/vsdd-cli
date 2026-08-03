@@ -1,0 +1,21 @@
+{
+  "uuid": "b2f0d727-16c0-495c-ab2b-7866c78a459d",
+  "display_id": 570,
+  "title": "statusline r17 UX: withdrawn-offer-overrides-flag unfixtured",
+  "description": "Round 17. Lens: ux (validator: DR). Defect: the guard's two conditions (flag set, probe failed) are never combined in any fixture — a regression forcing the write against a failed probe ships uncaught. Citations verified: contract:162, :187, :173. Proposed: resolved-candidate (read-failure-with-accept-flag member; criterion: no write, the withdrawal overrides the flag, falsified).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T03:21:45.411539Z",
+  "updated_at": "2026-07-20T03:23:34.352159Z",
+  "closed_at": "2026-07-20T03:23:34.352159Z",
+  "comments": [
+    {
+      "uuid": "67118a33-91b9-4437-b7e2-658fa476d9fe",
+      "author": "xqjG",
+      "content": "Fixed: read-failure-with-accept-flag member added; criterion asserts no write — the withdrawal overrides the flag, falsified. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T03:23:09.643325Z",
+      "kind": "resolution"
+    }
+  ]
+}

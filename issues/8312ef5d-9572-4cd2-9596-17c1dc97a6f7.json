@@ -1,0 +1,28 @@
+{
+  "uuid": "8312ef5d-9572-4cd2-9596-17c1dc97a6f7",
+  "display_id": 172,
+  "title": "QE/F3: Field-symmetry has no nested-missing test",
+  "description": "Source: mdatron/review-log/2026-06-02-quality-engineer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@8dc0392 (added field_on_nested_missing_returns_null)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:30.575288Z",
+  "updated_at": "2026-06-08T02:34:01.680105Z",
+  "closed_at": "2026-06-08T02:34:01.680105Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:quality-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "05d0a8a2-a93c-4940-ba4e-c1973d34896a",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@8dc0392 (added field_on_nested_missing_returns_null)).",
+      "created_at": "2026-06-08T02:34:00.983738Z",
+      "kind": "resolution"
+    }
+  ]
+}

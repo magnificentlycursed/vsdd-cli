@@ -1,0 +1,22 @@
+{
+  "uuid": "a06e6722-1b4e-40b1-91d7-f22590a18d89",
+  "display_id": 684,
+  "title": "r1 major DR+SA convergent: narration counts wrong against disk — 18 domain prompts exist, artifacts claim 17; 'seven core' is six by tier field",
+  "description": "Evidence: installed-artifact-manifest.md:83 (27 members / 17 domain prompts; disk: 28 / 18), economics-data.md:35 (17: 15 role + 2 meta; disk: 18: 16 role + 2 meta), economics-data.md:41 ('seven core role domains'; tier field yields six). Two lenses converged independently — the count-claimed-in-narration class the parity discipline distrusts, in the data sets' own prose. Disposition: correct all three sites + sweep every numeric member claim across the nine artifacts. Data-side. Owner: data-engineer. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:18:57.030798Z",
+  "updated_at": "2026-07-21T04:12:04.976253Z",
+  "closed_at": "2026-07-21T04:12:04.976253Z",
+  "comments": [
+    {
+      "uuid": "c819f011-4f68-4eac-9a21-73e4fe28d17d",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5): all three sites corrected against disk — manifest note now 28 members / 18 domain prompts + 10 primers; economics thorough preset 18 (16 role + 2 meta); standard preset six core role domains (the tier field's own count); each carries the verified-against-disk citation. Numeric-claim sweep run across all nine artifacts: gate-data valid-red/neither counts updated with the new kinds (6/5); dispatch-data five preflight members, statusline fixed six wiring outcomes, snapshot four renderer fields all verified true. Round 2 re-verifies (validator: documentation-reviewer).",
+      "created_at": "2026-07-21T04:11:58.580737Z",
+      "kind": "result"
+    }
+  ]
+}

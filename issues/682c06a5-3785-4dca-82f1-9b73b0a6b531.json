@@ -1,0 +1,13 @@
+{
+  "uuid": "682c06a5-3785-4dca-82f1-9b73b0a6b531",
+  "display_id": 863,
+  "title": "Recover session after Source → Source.nosync rename + symlink",
+  "status": "open",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-08-03T15:11:13.081511Z",
+  "updated_at": "2026-08-03T15:11:19.821612Z",
+  "labels": [
+    "maintenance"
+  ]
+}

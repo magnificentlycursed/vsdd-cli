@@ -1,0 +1,35 @@
+{
+  "uuid": "5e37f4b3-7d78-470b-afda-d87cadd64a96",
+  "display_id": 461,
+  "title": "defect-fix lane amendment cold round 5",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 5 (post round-4: executed-pin rule, consolidation disposition closures with survivor label union, workspace-scoped standing suite, published marker in state contents, expanded 14-member fixture set). Series 19-13-9-9.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:38:32.498684Z",
+  "updated_at": "2026-07-20T00:49:30.269349Z",
+  "closed_at": "2026-07-20T00:49:30.269349Z",
+  "comments": [
+    {
+      "uuid": "bdd75d13-039c-483f-af54-51be135945b9",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 5. Subject: lane revision 5 anchors: gate bullet (executed-pin rule — built, collected, ran, failed; diagnostic-kind-agnostic no-demonstration on build/collect failure; declared-compile-defect exception; workspace-scoped standing suite) + falsifier; lifecycle bullet (consolidation disposition closures, survivor label union, published marker in state contents at the Deterministic phase answer bullet; resolved-vs-disposition closure grading) + falsifier; Directive walkthrough symmetric case; composition scope; Gates; Red-gate cheat criterion (14 assertions); fixture corpus (14 fix-lane members). Out of scope: statusline amendment. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:38:45.789757Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "bdd54523-5d0d-4302-a090-cbeead221633",
+      "author": "xqjG",
+      "content": "Lane round 5 complete. QE 5 + SE 4 + methodology 2 (+ 2 QE residual notes, 3 Meth sub-threshold observations folded at disposition) = 11 returned, 8 filed after 3 merges, plus the operator-relayed L137 (fix-scale dispatch mechanics, from mdatron's live incident) = 9 children: L137 dispatch inheritance; L139 compile-acceptance branch (QE+Meth); L140 malformed disposition closure (QE+Meth); L141 skipped-pin both halves (SE+QE); L142 absolute-green deadlock; L143 survivor-handle integrity; L144 validator gate on compile-defect declaration; L145 declared failure-kind field; L146 unapproved-surface-limitation fixture. All resolved-candidates; citations verified. Series 19-13-9-9-9. Not clean; round 6 after disposition.",
+      "created_at": "2026-07-20T00:46:11.377402Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "0ee29b75-1392-45d2-a3de-d604b7ce14e6",
+      "author": "xqjG",
+      "content": "Round fully disposed: 12/12 closed (L137-L146 from the round and mdatron Part 2, L147-L149 from mdatron Part 3 — all fixed; the round absorbed two operator-relayed field reports mid-flight). Upstream nits filed as L150/L151 at creation. mdatron verify clean on lane revision 6. Closing; round 6 dispatches.",
+      "created_at": "2026-07-20T00:49:29.235553Z",
+      "kind": "result"
+    }
+  ]
+}

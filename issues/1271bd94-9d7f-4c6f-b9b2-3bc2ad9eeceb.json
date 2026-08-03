@@ -1,0 +1,29 @@
+{
+  "uuid": "1271bd94-9d7f-4c6f-b9b2-3bc2ad9eeceb",
+  "display_id": 108,
+  "title": "UX/F3: README first-run sample output",
+  "description": "Source: mdatron/review-log/2026-06-07-ux-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:05:40.485140Z",
+  "updated_at": "2026-06-08T01:48:25.332636Z",
+  "closed_at": "2026-06-08T01:48:25.332636Z",
+  "labels": [
+    "classification:accepted",
+    "convergence:readme-first-run-gotcha",
+    "cycle:crosslink-13",
+    "domain:ux",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "2436a78e-415b-46c5-a01e-39b5d0506518",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:24.685335Z",
+      "kind": "resolution"
+    }
+  ]
+}

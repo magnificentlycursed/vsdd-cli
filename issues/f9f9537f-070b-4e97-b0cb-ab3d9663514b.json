@@ -1,0 +1,21 @@
+{
+  "uuid": "f9f9537f-070b-4e97-b0cb-ab3d9663514b",
+  "display_id": 493,
+  "title": "statusline r11 UX: broken-state branch strands the machine form",
+  "description": "Round 11. Lens: ux (validator: DR). Owner: SO session. Defect: the exception defines segment mark and human diagnostic but no machine-form output — the agent surface of an agent-first toolkit gets no parseable state-unreadable signal, and the superset check goes vacuous at exactly this branch. Citations verified: contract:163, :188, :203. Proposed: resolved-candidate (the shell's broken-state composition includes a structured machine output — state-unreadable signal carrying the diagnostic payload and recovery pointer; criterion asserts the machine form parses; the benign-offline vs broken-state word distinction pinned at 1c copy authoring, noted).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:03:43.230512Z",
+  "updated_at": "2026-07-20T01:12:30.488116Z",
+  "closed_at": "2026-07-20T01:12:30.488116Z",
+  "comments": [
+    {
+      "uuid": "7a4323bf-ea2c-4634-90ff-9d626dd1a771",
+      "author": "xqjG",
+      "content": "Fixed: the broken-state branch composes all three outputs — segment mark, human diagnostic, and a structured machine state-unreadable signal carrying the diagnostic payload and recovery pointer; criterion asserts the machine form parses; the benign-offline vs broken-state word distinction noted for 1c copy. Revision: Status bullet + criterion + effectful-shell exception.",
+      "created_at": "2026-07-20T01:12:16.920624Z",
+      "kind": "resolution"
+    }
+  ]
+}

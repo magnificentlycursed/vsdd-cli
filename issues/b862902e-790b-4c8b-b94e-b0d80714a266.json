@@ -1,0 +1,21 @@
+{
+  "uuid": "b862902e-790b-4c8b-b94e-b0d80714a266",
+  "display_id": 381,
+  "title": "statusline r4 AIE note routed: wall-clock CI gate is a flaky-prone class",
+  "description": "Round: statusline amendment cold round 4. Lens: ai-engineer, out-of-lens routing note (not an AIE finding; PE/QE territory). Owner: SO session. Note: the full-invocation timing check is a hard CI gate on wall-clock — a known-flaky test class; the budget number and instrument land at 1c data authoring, where the flake-resistance shape (margin, retry policy, or percentile-over-runs) should be decided with the number. Citations verified: contract:185. Proposed: routed to the 1c wiring-script/data-authoring scope — comment on the 1c work item and close.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:35:31.843291Z",
+  "updated_at": "2026-07-19T23:44:15.612099Z",
+  "closed_at": "2026-07-19T23:44:15.612099Z",
+  "comments": [
+    {
+      "uuid": "e1df0499-fa72-495b-adf2-cf817d16fb69",
+      "author": "xqjG",
+      "content": "Routed: comment added to the 1c work item 'phase-1c work item: statusline wiring script shape' — the wall-clock gate's flake-resistance shape (margin, retry policy, or percentile-over-runs) is decided at 1c data authoring with the number. Closing against that tracked item.",
+      "created_at": "2026-07-19T23:43:57.312182Z",
+      "kind": "resolution"
+    }
+  ]
+}

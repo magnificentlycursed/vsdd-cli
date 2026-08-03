@@ -1,0 +1,21 @@
+{
+  "uuid": "d700c4b5-6bb1-4079-bd62-0c31d5625049",
+  "display_id": 625,
+  "title": "1c-DR-r4: L3 consumes Layer 1 data without declaring it",
+  "description": "Minor, check b. Width budgets and next-step text are Layer 1 artifacts; Layer 3 declares only Layer 2. Fix: declare Layer 1's statusline data artifacts. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:39.790437Z",
+  "updated_at": "2026-07-20T18:13:16.375759Z",
+  "closed_at": "2026-07-20T18:13:16.375759Z",
+  "comments": [
+    {
+      "uuid": "b1246d38-b86f-4c08-b375-d567831b1427",
+      "author": "xqjG",
+      "content": "Fixed: Layer 3 now declares 'Layer 1's statusline data artifacts (width budgets, next-step text)'.",
+      "created_at": "2026-07-20T18:13:14.817128Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "0e594c8d-067f-41ad-8ff8-675cf3f55a78",
+  "display_id": 259,
+  "title": "amend-r5-AI: application-audit instruments overclaim",
+  "description": "Minor. Two of three audit loading, not following. Fix: per-instrument reach stated; cold domain review named as the only catcher of judgment-shaped read-but-ignored. Owner: solution-architect. Validator: ai-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:03:14.485456Z",
+  "updated_at": "2026-07-20T19:11:39.017005Z",
+  "closed_at": "2026-07-20T19:11:39.017005Z",
+  "comments": [
+    {
+      "uuid": "5a2c1b2c-0bb7-4015-b178-486d4ecfbb81",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:11:36.239560Z",
+      "kind": "resolution"
+    }
+  ]
+}

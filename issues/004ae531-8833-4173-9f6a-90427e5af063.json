@@ -1,0 +1,21 @@
+{
+  "uuid": "004ae531-8833-4173-9f6a-90427e5af063",
+  "display_id": 371,
+  "title": "statusline r3 UX: malformed-settings withdrawal has no stated recovery",
+  "description": "Round: statusline amendment cold round 3. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: on malformed settings the offer withdraws with a diagnostic, but nothing requires the diagnostic to name the statusline offer as the casualty or fix-and-re-run-init as the retry — JSON error plus silently absent feature. Citations verified: contract:159, :184, :216. Proposed: deferred-candidate, foldable one-sentence fix.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:45.302354Z",
+  "updated_at": "2026-07-19T23:29:17.683275Z",
+  "closed_at": "2026-07-19T23:29:17.683275Z",
+  "comments": [
+    {
+      "uuid": "d56284c5-519a-4afb-a9fa-b932f7fe61b9",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded). The malformed-settings diagnostic names the statusline offer as the casualty and fix-then-rerun-init as the retry. Revision: Install bullet.",
+      "created_at": "2026-07-19T23:28:55.550242Z",
+      "kind": "resolution"
+    }
+  ]
+}

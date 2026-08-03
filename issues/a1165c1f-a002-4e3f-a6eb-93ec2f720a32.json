@@ -1,0 +1,21 @@
+{
+  "uuid": "a1165c1f-a002-4e3f-a6eb-93ec2f720a32",
+  "display_id": 645,
+  "title": "posture-r4-AI: consent-state member has no observation binding",
+  "description": "Blocking, preflight adequacy. The contract never says how the check learns the answer. Fix: per-member observation bindings are a named 1c data-authoring field. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:55.601040Z",
+  "updated_at": "2026-07-20T18:16:02.925784Z",
+  "closed_at": "2026-07-20T18:16:02.925784Z",
+  "comments": [
+    {
+      "uuid": "7ffe89c1-b83e-4ef6-9cf1-4dc4b58e6c12",
+      "author": "xqjG",
+      "content": "Fixed: every preflight member carries 'its observation binding — how the check learns the answer' as a named 1c data-authoring field.",
+      "created_at": "2026-07-20T18:16:01.392878Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "ed9698a9-c782-48f9-b5ed-a585dae8a90d",
+  "display_id": 508,
+  "title": "lane r8 SE+QE: creation-time validity undecidable; over-firing untested; 2a list stale",
+  "description": "Lane round 8. Lenses: SE+QE merged (validators: SO/SA, SE). Defect: git records no per-branch creation-time sync state so the standing query cannot key on it; the lawful-branch over-firing direction is untested and missing from the contracted 2a list, violating the list's own rule. Citations verified: contract:124, :35, :163, :173, :180. Proposed: resolved-candidate (disjunctive reading adopted: both registered forms perpetually valid, the standing query checks membership in either, the pre-push hook enforces the currently-preferred form at creation where sync state IS knowable; over-firing fixture added — a session-form branch post-sync is not reported).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:26:55.860012Z",
+  "updated_at": "2026-07-20T01:30:02.351191Z",
+  "closed_at": "2026-07-20T01:30:02.351191Z",
+  "comments": [
+    {
+      "uuid": "bf54de9e-bc1c-440e-90e3-d7dc34b74f71",
+      "author": "xqjG",
+      "content": "Fixed: disjunctive reading adopted — both registered forms perpetually valid, the standing query checks membership (decidable from the ref alone), the pre-push hook enforces the preferred form at creation; over-firing fixture added (post-sync session-form branch not reported) — both directions in corpus and criterion, the 2a list no longer stale. Revision: Conformance bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:29:39.422299Z",
+      "kind": "resolution"
+    }
+  ]
+}

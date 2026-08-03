@@ -1,0 +1,36 @@
+{
+  "uuid": "ecaf0e96-b9f5-4b9d-adea-27fb7a788345",
+  "display_id": 209,
+  "title": "SO/F3: schema-tightening revert undoes directive without audit event",
+  "description": "Source: mdatron/review-log/2026-06-02-solution-owner-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:43.788937Z",
+  "updated_at": "2026-06-08T03:52:40.127387Z",
+  "closed_at": "2026-06-08T03:52:40.127387Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:solution-owner",
+    "review-finding"
+  ],
+  "blockers": [
+    "50a37dbe-18dc-460f-8a00-05eea68fcf26"
+  ],
+  "related": [
+    "23723651-af11-421b-a406-a31587174ee4",
+    "35904339-839d-4cab-9953-19c588f938e1",
+    "42b2b83b-8337-45cd-85aa-6acbabee7f0f"
+  ],
+  "comments": [
+    {
+      "uuid": "fd99a7fc-bcaa-4576-8574-b87e35c1cfe6",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@f7633de (Phase 4-take-2 Wave 10 raise-to-SO disposition).",
+      "created_at": "2026-06-08T03:52:39.400875Z",
+      "kind": "resolution"
+    }
+  ]
+}

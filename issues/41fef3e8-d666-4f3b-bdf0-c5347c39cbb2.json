@@ -1,0 +1,21 @@
+{
+  "uuid": "41fef3e8-d666-4f3b-bdf0-c5347c39cbb2",
+  "display_id": 542,
+  "title": "lane r10 SE: mapping approval granularity unstated",
+  "description": "Lane round 10. Lens: SE (validator: SO). Defect: per-pair vs blanket is undefined; at scale a blanket marker rubber-stamps a decoy buried in a bulk table and the guarantee degrades to diligence — convention, not construction. Citations verified: contract:64. Proposed: resolved-candidate (the approval record enumerates every pair; the gate checks approved set equals declared set — one recorded act, per-pair content, mechanical at any scale; bulk-mapping decoy fixture).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:54.846868Z",
+  "updated_at": "2026-07-20T01:58:59.497284Z",
+  "closed_at": "2026-07-20T01:58:59.497284Z",
+  "comments": [
+    {
+      "uuid": "1c08486c-4998-4a2a-9082-0b1e89f33e8b",
+      "author": "xqjG",
+      "content": "Fixed: the approval record enumerates every pair; the gate checks approved set equals declared set — one act, per-pair content, mechanical at any scale; bulk-mapping-decoy seed rejected. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:58:46.266677Z",
+      "kind": "resolution"
+    }
+  ]
+}

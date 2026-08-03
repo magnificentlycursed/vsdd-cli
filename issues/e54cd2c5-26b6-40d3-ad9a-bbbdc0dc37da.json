@@ -1,0 +1,35 @@
+{
+  "uuid": "e54cd2c5-26b6-40d3-ad9a-bbbdc0dc37da",
+  "display_id": 550,
+  "title": "defect-fix lane amendment cold round 11",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 11 (post round-10: one validator bar on all three no-pin forms with the run-attempt as additional check; per-pair approval sets; removal-shaped non-executing rule; pre-push triangle; cannot-run predicate contracted to 1c). Series 19-13-9-9-12-12-6-7-6-5.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:59:28.237384Z",
+  "updated_at": "2026-07-20T02:12:23.317103Z",
+  "closed_at": "2026-07-20T02:12:23.317103Z",
+  "comments": [
+    {
+      "uuid": "a581d44d-c336-49af-9548-40f1baf793a7",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 11. Subject: lane revision 11 anchors: gate bullet (one validator bar on all three no-executed-pin forms with the honestly-stated indistinguishability rationale and the run-attempt as additional check whose cannot-run predicate is a contracted 1c item; per-pair approval sets with approved-equals-declared; no-new-failing with skipped-is-neither; removal-shaped rule for baseline-passing tests non-executing at HEAD; executed-pin; graded retrofit) + four-form falsifier (form 3 validator-approved and gate-verified); lifecycle + falsifier; Conformance (dual-form grammar; warn-not-block pre-push now triangulated); Recorded review dispatch; References; composition scope; Gates; criterion; corpus (~41 members + 2a list). Out of scope: statusline and effort amendments. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:59:45.512772Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "97900f74-6ae2-42b6-834d-cd905de1acbf",
+      "author": "xqjG",
+      "content": "Lane round 11 complete. QE 3 + SE 3 + methodology 1 = 7 returned, 5 filed after the three-lens removal-shaped merge (and methodology's survival analysis downgrading the run-attempt ambiguity to prose): L230 declared-disablement lane (QE+SE, the round's center); L231 run-attempt scoping phrase; L232 unapproved-broken-surface seed; L233 bulk-decoy re-spec; L234 pre-push warn instrument. Series ...-6-7-6-5-5. Not clean; round 12 after disposition.",
+      "created_at": "2026-07-20T02:10:46.501329Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "0480db44-1ad6-4561-90a6-2a69b0fe8311",
+      "author": "xqjG",
+      "content": "Round fully disposed: 5/5 fixed. mdatron verify clean on lane revision 12. Closing; round 12 dispatches.",
+      "created_at": "2026-07-20T02:12:22.114395Z",
+      "kind": "result"
+    }
+  ]
+}

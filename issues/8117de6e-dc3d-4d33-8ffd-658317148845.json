@@ -1,0 +1,35 @@
+{
+  "uuid": "8117de6e-dc3d-4d33-8ffd-658317148845",
+  "display_id": 524,
+  "title": "effort amendment cold round 2",
+  "description": "Round child of: Directive: effort level joins model tier as a managed dial. Cold review of effort revision 2 (post round-1: established stage names replacing the coinages; manifest tier/effort falsifier; two control surfaces and per-auth attribution grain stated; cost-band boundary sentence; header and marker provenance). Series 9.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:30:49.362849Z",
+  "updated_at": "2026-07-20T01:46:13.805347Z",
+  "closed_at": "2026-07-20T01:46:13.805347Z",
+  "comments": [
+    {
+      "uuid": "d7b04507-2325-4313-8fe7-2bf5534216e7",
+      "author": "xqjG",
+      "content": "Dispatch manifest — effort round 2. Subject: effort revision 2, four anchors as amended: config fields (effort per lens and per loop stage — the cold round, the fix pass, the gate run; cost-band boundary sentence); manifest clause with marker and its new falsifier; Cost is knowable advisory (tier-and-effort defaults; six signals with tracker+manifests+git sources and stated joins; per-auth attribution grain; two control surfaces with the dispatch-parameter seam as named upstream capability); methodology-rewrite sentence (both surfaces catalogued by the rewrite). Out of scope: statusline and lane amendments. Lenses: ai-engineer + vsdd-methodology, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:31:07.596577Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "53252885-9dc5-4bbd-b8e2-e826bd8eb8f9",
+      "author": "xqjG",
+      "content": "Effort round 2 complete. AIE 2 + methodology 1 = 3 returned, 2 filed after the convergent gate-run merge: L208 gate-run dial inert/coinage (AIE+Meth); L209 tier/effort falsifier uninstrumented. Series 9-2. Not clean; round 3 after disposition.",
+      "created_at": "2026-07-20T01:43:34.602851Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4aaaf923-e49f-4c99-845b-93234a6c56f7",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed. mdatron verify clean on effort revision 3. Closing; round 3 dispatches.",
+      "created_at": "2026-07-20T01:46:12.368703Z",
+      "kind": "result"
+    }
+  ]
+}

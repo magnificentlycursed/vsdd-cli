@@ -1,0 +1,35 @@
+{
+  "uuid": "e4e5f292-0481-4a38-bc1e-6e4d6ce8c687",
+  "display_id": 17,
+  "title": "Phase 6: Publish mdatron 0.1.0 to crates.io + vsdd CI migration",
+  "description": "v0.1.0 release gate.\n\nScope: (1) crates.io publish for mdatron (after Phases 0-4 land; Phase 5 optional). (2) vsdd-cli/.github/workflows/mdatron-verify.yml migrated: cargo install mdatron --locked --version 0.1.x replaces sibling-checkout. (3) templates/.github/workflows/vsdd-verify.yml similarly updated. (4) vsdd-cli/.githooks/pre-commit install hint switches to cargo install mdatron --locked. (5) README install instructions updated for both repos. (6) CHANGELOG entries for both repos.\n\nAcceptance: cargo install mdatron --locked --version 0.1.0 works in clean environment; vsdd-cli CI passes against published crate (sibling repo no longer required for build); pre-commit hook activates without local cargo install --path.\n\nPer docs/refactor/binary-first-plan.md Phase 6. Blocked by Phases 2 + 3 + 4 (and 5 if shipping in v0.1.0). Supersedes existing issue #9 (path-dep migration).",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T19:06:19.958782Z",
+  "updated_at": "2026-08-02T01:07:58.865955Z",
+  "closed_at": "2026-08-02T00:53:40.784852Z",
+  "blockers": [
+    "440db558-bd72-4bc6-8c3e-c188cc37b16e",
+    "67f6e412-c5f3-4d73-a583-14ffd4127b49",
+    "d61599a3-2977-421d-bb1c-ef3d7b44fa3d"
+  ],
+  "comments": [
+    {
+      "uuid": "874eebd2-4d02-4f0e-a4f3-5807f498f0e3",
+      "display_id": 1379,
+      "author": "xqjG",
+      "content": "CLOSED — all six scope items discharged: (1) crates.io publish done upstream (0.5.0; mdatron GH #1 closed as fulfilled); (2) mdatron-verify.yml on the pinned registry install (PR #21); (3) adopter template likewise (PR #21); (4) pre-commit hint switched (PR #21); (5) README install instruction switched — PR #22 CI-GREEN (verify 10s on the cached binary), MERGE IS THE OPERATOR'S MANUAL STEP per the git-mutation restriction that activated during close-out; (6) CHANGELOG delegated to crosslink, intentional. The version outran the title: 0.1.0 planned, 0.5.0 delivered.",
+      "created_at": "2026-08-02T00:53:33.283251Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "cae6d56b-5651-4b6a-b0e5-9384c8a34df3",
+      "display_id": 1381,
+      "author": "xqjG",
+      "content": "Operator merged PR #22 (confirmed via API). The crates.io migration arc is fully landed on main; #17 closure stands complete with no pending items.",
+      "created_at": "2026-08-02T01:07:58.848106Z",
+      "kind": "result"
+    }
+  ]
+}

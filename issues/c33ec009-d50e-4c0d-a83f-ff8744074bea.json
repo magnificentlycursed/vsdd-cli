@@ -1,0 +1,29 @@
+{
+  "uuid": "c33ec009-d50e-4c0d-a83f-ff8744074bea",
+  "display_id": 683,
+  "title": "r1 major SA: state phase-gate constraint unsatisfiable past 2b entry — single most-recent slot vs 'or later'",
+  "description": "Evidence: state-schema.md:36 requires 'phase-2b or later' states to carry the red-gate fail in last_gate_result, but line 25 defines it as the single most-recent gate run — overwritten the moment the green gate runs; mdatron's family would reject every legitimate late-phase state. Contract line 36 is narrower (a state claiming 2b) and locates gate history in artifact AND tracker. Disposition: re-scope to 2b entry (data-side) or add per-layer gate history (state-format change — SO confirm). Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:18:53.745292Z",
+  "updated_at": "2026-07-21T04:11:53.256391Z",
+  "closed_at": "2026-07-21T04:11:53.256391Z",
+  "comments": [
+    {
+      "uuid": "3d04a2e7-17f4-4487-af82-55fd503ee7b1",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): re-scope to the 2b entry. The constraint text narrows to what the single last_gate_result slot can answer — the gate result AT the 2b entry; the 'or later' historical sweep is named as mdatron's family over tracker history, where the records actually live. Rejected: widening last_gate_result into a history list (state-format growth serving one check with a natural home elsewhere). Data-side text fix at the round-1 fix pass; no state-format change.",
+      "created_at": "2026-07-21T03:53:04.858154Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "e9144eff-f82a-45d6-a5e9-369e9904fd17",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, state-schema): the phase-gate consistency rule re-scoped to the 2b entry — the single last_gate_result slot answers exactly the at-entry question; the historical sweep is named as mdatron's state-consistency family over tracker and git history. No state-format change. Round 2 re-verifies (validator: solution-architect).",
+      "created_at": "2026-07-21T04:11:47.982494Z",
+      "kind": "result"
+    }
+  ]
+}

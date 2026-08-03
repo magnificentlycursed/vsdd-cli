@@ -1,0 +1,21 @@
+{
+  "uuid": "54a89255-1fb3-47c5-951d-f39f5af3ca1c",
+  "display_id": 556,
+  "title": "lane r11 SE: run-attempt scoping prose reads family-wide",
+  "description": "Lane round 11. Lens: SE, downgraded by methodology's survival analysis (validators: SO). Defect: the falsifier correctly scopes gate-verification to form 3, but the bullet's prose ('kept as an additional mechanical check' after 'all three') invites the family-wide reading that would nullify surface-limitation. Citations verified: contract:64 vs :66, :180 (consistent). Proposed: resolved-candidate (one scoping phrase: the check applies to the two suite-cannot-run forms, never the surface-limitation whose suite runs by definition).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:10:38.344900Z",
+  "updated_at": "2026-07-20T02:12:13.478927Z",
+  "closed_at": "2026-07-20T02:12:13.478927Z",
+  "comments": [
+    {
+      "uuid": "488d000a-ba3c-4c72-9c13-0e29373620c7",
+      "author": "xqjG",
+      "content": "Fixed: the run-attempt check scoped in prose to the two suite-cannot-run forms, never the surface-limitation — matching the falsifier the methodology lens showed was already consistent. Revision: gate bullet.",
+      "created_at": "2026-07-20T02:12:01.948950Z",
+      "kind": "resolution"
+    }
+  ]
+}

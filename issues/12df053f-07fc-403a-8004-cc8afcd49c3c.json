@@ -1,0 +1,21 @@
+{
+  "uuid": "12df053f-07fc-403a-8004-cc8afcd49c3c",
+  "display_id": 443,
+  "title": "lane r3 QE: ungated-hotfix assertion demands a firing the gate falsifier cannot produce",
+  "description": "Lane round 3. Lens: QE (validator: SE). Owner: SO session. Defect: the gate falsifier's antecedent is owned-by-a-finding; the ungated-hotfix has no owning issue, so only the lifecycle falsifier fires — assertion 1 ('flagged by both') fails against a faithful implementation. Citations verified: contract:66 vs :180. Proposed: resolved-candidate (criterion split: un-owned variant flagged by the lifecycle falsifier; an owned-but-ungated variant added and flagged by the gate falsifier).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:44.030089Z",
+  "updated_at": "2026-07-20T00:28:44.391802Z",
+  "closed_at": "2026-07-20T00:28:44.391802Z",
+  "comments": [
+    {
+      "uuid": "4dc39784-f98c-4032-b697-e56abd14101a",
+      "author": "xqjG",
+      "content": "Fixed: criterion split by antecedent — un-owned ungated-hotfix flagged by the lifecycle falsifier; owned-but-ungated variant added and flagged by the gate falsifier; each falsifier exercised by the fixture its antecedent reaches. Revision: criterion + fixture corpus.",
+      "created_at": "2026-07-20T00:28:31.465044Z",
+      "kind": "resolution"
+    }
+  ]
+}

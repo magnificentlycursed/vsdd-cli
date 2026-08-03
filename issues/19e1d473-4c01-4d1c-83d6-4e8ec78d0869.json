@@ -1,0 +1,21 @@
+{
+  "uuid": "19e1d473-4c01-4d1c-83d6-4e8ec78d0869",
+  "display_id": 255,
+  "title": "amend-r5-AI: checker-is-payload regress — tracked half must fail loud",
+  "description": "Blocking. Every loudness vehicle is itself a payload; guard shims convert absence to exit 0. Fix: tracked wiring installed fail-closed — a missing hook is a nonzero exit surfacing in the substrate; first-session loudness rests on the tracked half. Owner: solution-architect. Validator: ai-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:02:59.603192Z",
+  "updated_at": "2026-07-20T19:09:08.379971Z",
+  "closed_at": "2026-07-20T19:09:08.379971Z",
+  "comments": [
+    {
+      "uuid": "2d52e6e6-9fcb-46a7-b15f-505d978bddab",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:09:05.279930Z",
+      "kind": "resolution"
+    }
+  ]
+}

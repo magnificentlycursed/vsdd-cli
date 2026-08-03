@@ -1,0 +1,28 @@
+{
+  "uuid": "ca0e0aa6-1031-4386-8c50-40dae9a5e687",
+  "display_id": 18,
+  "title": "SE/F1: cmd_explain print page conditional newline",
+  "description": "Source: mdatron/review-log/2026-06-07-software-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:01:54.670573Z",
+  "updated_at": "2026-06-08T01:47:02.744832Z",
+  "closed_at": "2026-06-08T01:47:02.744832Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:software-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "3a66369d-b151-40c3-b80c-621564746d66",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@883eaaf (Phase 4-take-2 Wave 1).",
+      "created_at": "2026-06-08T01:47:02.018447Z",
+      "kind": "resolution"
+    }
+  ]
+}

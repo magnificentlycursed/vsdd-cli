@@ -1,0 +1,21 @@
+{
+  "uuid": "ed0f4ce2-6405-4b21-b3ab-e4cce28780a4",
+  "display_id": 538,
+  "title": "statusline r14 UX: settings boundary lacks the read-failure widening",
+  "description": "Round 14. Lens: ux (validator: DR). Defect: the state boundary enumerates all read-failure kinds with fixtures; the parallel settings probe names only malformed — permission-denied settings during init is unspecified and unguarded. Citations verified: contract:219 vs :217, :173, :187. Proposed: resolved-candidate (mirror the enumeration; permission-denied settings fixture; criterion covers the kinds).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:47.847866Z",
+  "updated_at": "2026-07-20T01:58:54.471008Z",
+  "closed_at": "2026-07-20T01:58:54.471008Z",
+  "comments": [
+    {
+      "uuid": "400fe2dc-ce31-4213-8e88-b0c270e7bc38",
+      "author": "xqjG",
+      "content": "Fixed: settings boundary widened to the state boundary's read-failure enumeration; settings read-failure fixtures in every kind; criterion names the file and failure kind. Revision: trust boundary + corpus + criterion.",
+      "created_at": "2026-07-20T01:58:41.547489Z",
+      "kind": "resolution"
+    }
+  ]
+}

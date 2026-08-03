@@ -1,0 +1,23 @@
+{
+  "uuid": "05bb6044-7359-4b09-baa4-d59cdfde531a",
+  "display_id": 841,
+  "title": "REQ-18 revisit: Performance Engineer's place in the domain partition",
+  "status": "open",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-31T19:26:04.041589Z",
+  "updated_at": "2026-07-31T19:26:47.362881Z",
+  "labels": [
+    "design"
+  ],
+  "comments": [
+    {
+      "uuid": "b4f6fb58-7eb0-4ee4-9491-fd29ec5d0155",
+      "display_id": 1283,
+      "author": "xqjG",
+      "content": "Context (deferred from #840, operator ruling 2026-07-31 'leave omitted, revisit'): REQ-18's process-governing baseline is SO/SA/SE/QE + AI-Engineer/Platform-Engineer/Red-Team/Security/Data-Engineer/Documentation-Reviewer/Technical-Writer — it OMITS Performance Engineer. But the phase-1a primer's always-on baseline reads 'SE + QE + SA + SO; PE + PerfE if the project ships code.' So PerfE is currently treated as code-shipping-activated, not unconditionally process-governing. To settle: is PerfE (a) product/code-shipping-activated (matches the primer; REQ-18 omission stands), (b) process-governing baseline (inherited by every adopter), or (c) resolved by the composition function treating 'ships code' as an axis that activates PerfE? Blocks nothing; revisit after #840 lands. This project (vsdd-core ships Rust) activates PerfE regardless.",
+      "created_at": "2026-07-31T19:26:47.347898Z",
+      "kind": "note"
+    }
+  ]
+}

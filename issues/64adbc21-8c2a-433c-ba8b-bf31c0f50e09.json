@@ -1,0 +1,21 @@
+{
+  "uuid": "64adbc21-8c2a-433c-ba8b-bf31c0f50e09",
+  "display_id": 358,
+  "title": "statusline r2 UX: degraded marker carries no in-surface recovery pointer",
+  "description": "Round: statusline amendment cold round 2. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: the segment renders the degraded word but not the recovery command; operator must already know vsdd status is the next step. Citations verified: contract:160. Proposed: dismissed-candidate (reviewer's own assessment: a width-budgeted glanceable gauge cannot embed a command; system-level recovery routing is contracted; residual is a doc dependency). Failure if dismissal wrong: first-time operator learns recovery from README.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:20.301530Z",
+  "updated_at": "2026-07-19T23:18:51.079339Z",
+  "closed_at": "2026-07-19T23:18:51.079339Z",
+  "comments": [
+    {
+      "uuid": "404ad628-ebe6-4a85-92e1-e4246952e26c",
+      "author": "xqjG",
+      "content": "Dismissed at operator triage (round 2, per reviewer's own weighing): a width-budgeted glanceable gauge cannot embed a recovery command; system-level recovery routing is contracted (segment marks, vsdd status explains). Residual doc-dependency noted for the README at ship.",
+      "created_at": "2026-07-19T23:17:51.340503Z",
+      "kind": "resolution"
+    }
+  ]
+}

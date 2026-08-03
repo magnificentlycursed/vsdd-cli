@@ -1,0 +1,28 @@
+{
+  "uuid": "d5e2b012-305e-4878-9d19-6abd3cd4f4a8",
+  "display_id": 655,
+  "title": "upstream crosslink: 0.8.0 sync writes .last-hydrated-ref, .promoted-uuids, promotion-log.json with no ignore coverage in its own managed block",
+  "description": "After this repo's first hub sync (crosslink 0.8.0, 2026-07-20), three machine-local state files sat untracked and unignored: .crosslink/.last-hydrated-ref, .crosslink/.promoted-uuids, .crosslink/promotion-log.json. Neither the managed .gitignore block init deploys (src/commands/init/merge.rs in the local mirror) nor the inner .crosslink/.gitignore lists them — the sync/promotion machinery gained state files without the ignore templates keeping up, so every fresh adopter repo shows perpetual untracked noise after first sync. Suggestion: add the three entries to the managed block template (or the inner .crosslink/.gitignore, matching .hub-cache/'s home). Interim in this repo: ignored in a project-owned section outside the managed markers, noted to migrate on upstream absorption. Evidence: git status of this repo post-sync, 2026-07-20; mirror source grep showing no template coverage.",
+  "status": "closed",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T22:50:07.125477Z",
+  "updated_at": "2026-07-20T23:33:15.330562Z",
+  "closed_at": "2026-07-20T23:33:15.330562Z",
+  "comments": [
+    {
+      "uuid": "150f698f-f930-4c5a-9e26-eea9fd907d7f",
+      "author": "xqjG",
+      "content": "HELD: operator directive 2026-07-20 (recorded as an intervention on vsdd-cli #597) — upstream-filing block pending operator information about the upstream project from an mdatron kickoff run. This issue is a local relay record in this repo's tracker only; no upstream communication has occurred. Disposition awaits the operator's information.",
+      "created_at": "2026-07-20T22:52:11.618265Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "4a89bc40-5c8c-4129-b15f-4804d11ee9bf",
+      "author": "xqjG",
+      "content": "Closed as fixed-upstream: commit f391886f (PRs #778/#779) added .last-hydrated-ref, .promoted-uuids, and promotion-log.json to both the managed .gitignore block (merge.rs:23-25) and the inner .crosslink/.gitignore template (mod.rs:1029-1031) at main 85691369. Fix postdates 0.8.0; this repo's project-owned ignore section (commit 3fe10ac) remains the operative cover until the pinned binary (NO-GO, decision on #597) is eventually upgraded and deploys the new block.",
+      "created_at": "2026-07-20T23:33:12.719081Z",
+      "kind": "result"
+    }
+  ]
+}

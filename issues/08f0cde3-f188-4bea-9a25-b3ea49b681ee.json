@@ -1,0 +1,21 @@
+{
+  "uuid": "08f0cde3-f188-4bea-9a25-b3ea49b681ee",
+  "display_id": 603,
+  "title": "1c-DR-r1: branch-grammar pre-push backstop has no build home",
+  "description": "Minor, check e. Citation (Acceptance criteria, Red-gate cheat blocked): 'the registered-form push passes the pre-push hook and the registered-but-non-preferred push draws its warning'. No layer enumerates the pre-push hook. Fix: name it in Layer 7's conformance-integration scope over the registered branch-grammar data (Layer 1 artifact). Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:37.061044Z",
+  "updated_at": "2026-07-20T17:09:55.914122Z",
+  "closed_at": "2026-07-20T17:09:55.914122Z",
+  "comments": [
+    {
+      "uuid": "1490c03c-8c34-459e-8e8b-1237a8e0cdce",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 7 now enumerates 'the branch-grammar pre-push backstop over the registered grammar data (a Layer 1 artifact)' and closes the pre-push-conduct fixtures within its Red-gate cheat blocked slice. mdatron verify clean.",
+      "created_at": "2026-07-20T17:09:54.482192Z",
+      "kind": "resolution"
+    }
+  ]
+}

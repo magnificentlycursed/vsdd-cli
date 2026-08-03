@@ -1,0 +1,21 @@
+{
+  "uuid": "f0cb6455-a3ce-424c-bae0-e331cf531bca",
+  "display_id": 652,
+  "title": "posture-r4-AI: dispatch-failed classification races a slow first write",
+  "description": "Minor, failure coverage. Query-time classification with no fencing; late writes flip state under a possibly-redispatched manifest. Fix: the fencing rule joins the 1c data-authoring items. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:10:07.672313Z",
+  "updated_at": "2026-07-20T18:16:33.000149Z",
+  "closed_at": "2026-07-20T18:16:33.000149Z",
+  "comments": [
+    {
+      "uuid": "f6c5367c-879c-47e9-8aad-a520a3d58589",
+      "author": "xqjG",
+      "content": "Routed: the dispatch-failed classification's fencing rule for a late first write joins the 1c data-authoring items by name.",
+      "created_at": "2026-07-20T18:16:31.023701Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "d50599c9-9156-4ddc-9b7d-fe2b1393261c",
+  "display_id": 784,
+  "title": "Layer 3 round 2 major, three-lens convergent (SE+security+UX): #777 incomplete — the human form's composition line, the broken-state human form, and main.rs diagnostic prints interpolate state-sourced text raw; live ESC/BEL/newline injection through ordinary vsdd status",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T08:52:03.159650Z",
+  "updated_at": "2026-07-26T09:03:49.099467Z",
+  "closed_at": "2026-07-26T09:03:49.099441Z",
+  "comments": [
+    {
+      "uuid": "e73e377c-906c-495e-af0a-916379311401",
+      "display_id": 1041,
+      "author": "xqjG",
+      "content": "Fixed in ff0d3a3f: clean_for_terminal (now pub for the binary crate) reaches every human-form interpolation the round-1 pass missed — the composition line's scope and each domain, the broken-state human form's diagnostic message and kind, and cmd_status's three registry/config diagnostic prints. The hostile-state test seeds a hostile scope and domain; a new broken_state_human_form test seeds a diagnostic whose message and kind carry ESC/BEL/forged-newline and asserts none reach the surface and the message renders one line. Segment and machine forms were already safe (the machine form is serde JSON — escaped by construction). Three-lens convergence honored: SE and UX found the composition line, security the broken form and main.rs prints, all one class.",
+      "created_at": "2026-07-26T09:03:34.878518Z",
+      "kind": "result"
+    }
+  ]
+}

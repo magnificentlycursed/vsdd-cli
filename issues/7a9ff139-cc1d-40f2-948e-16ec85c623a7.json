@@ -1,0 +1,38 @@
+{
+  "uuid": "7a9ff139-cc1d-40f2-948e-16ec85c623a7",
+  "display_id": 718,
+  "title": "Phase 2b execution, Layer 1: implement to green against the red gate",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T18:43:31.287106Z",
+  "updated_at": "2026-07-21T18:55:49.470265Z",
+  "closed_at": "2026-07-21T18:55:49.470265Z",
+  "labels": [
+    "feature"
+  ],
+  "milestone_uuid": "1fbc66a4-8d5e-4a1f-87ab-e7bc95da4259",
+  "comments": [
+    {
+      "uuid": "752d821d-5f8b-4d8f-aed3-61f7356c1cc0",
+      "author": "xqjG",
+      "content": "PHASE 2B ENTRY, LAYER 1 (2026-07-21, session #4; the operator's go directive is the entry act). PRIMER: vsdd-phase-2b.md read this session. Contract-over-primer: the PhaseExited emission line is retired (derived-view ruling); the suite-era dependency ceremony (docs/dependencies files, co-author trailers) is superseded — the governing duties are the engineering-conventions rule and the PE flag on dependency additions, recorded on this trail. COMPOSITION DECLARATION: phase: phase-2b; composed_domains: [software-engineer primary, quality-engineer, technical-writer, documentation-reviewer, platform-engineer]; composition_mode: skill-interactive (attended); operator_confirmation: the go directive; declared_at 2026-07-21. DISCIPLINE: minimal implementation — turn the 25 red tests green, nothing speculative; red-to-green transitions commit-visible; regression check at each commit. DEPENDENCY NOTE (PE flag, recorded): serde_yaml_ng 0.10 — already in-tree as the #717 dev-dependency pinned to mdatron-core's consumed API — promotes to a regular vsdd-core dependency for the registry loaders' schema-pair validation path; no new crate enters the lockfile. Baseline: 48c5584b (red recorded); green target: cargo test --workspace exit zero at HEAD.",
+      "created_at": "2026-07-21T18:44:09.562507Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "171b82b7-0872-4f9f-bd52-1ef035b05d11",
+      "author": "xqjG",
+      "content": "GREEN GATE RECORDED (bootstrap format-carry): commit 358c6d62. The two halves per Phase exit by gate at layer scale — RED at the stamped baseline 48c5584b (0/25 passing, all executed failures, run record on #716) and GREEN at HEAD: cargo test --workspace exit zero, all eight targets ok — state_red_gate 15/15, registry_red_gate 10/10, pre-existing 31/31. Lint: clippy zero warnings, fmt clean. Stub tripwire clear: zero todo! survives into the green tree, closing the phase-2a divergence note's condition. MINIMALITY ACCOUNT: implementation strictly serves the suite plus two spec-backed conducts — the atomic-write cleanup on rename failure (the no-partial discipline's second arm) and the 2b-entry phase-gate-consistency refusal (state-schema declared_constraints). HONEST GAP, recorded: the 2b-entry constraint is spec-backed but not yet test-pinned — authoring its test now would be the tests-after-implementation transition the gate doctrine blocks, so its pin enters through the next lawful lane: the layer's phase-3 review round or the next phase-2a corpus audit, whichever arrives first. PHASE-2B COMPLETION CRITERIA against the primer (contract-governed): suite green ✓; no unasserted behavior beyond the two spec-backed conducts above ✓; dependency conduct ✓ (serde_yaml_ng promotion PE-noted, no new lockfile entry); prose surfaces current ✓ (manual-tests committed and adopted; changelog chassis-managed). Phase-2b exit awaits the operator's gate declaration; phase 2c (refactor under the green suite) follows it.",
+      "created_at": "2026-07-21T18:48:35.134272Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "99ed079f-41f7-467f-85ca-218dcd10a823",
+      "author": "xqjG",
+      "content": "PHASE-2B EXIT DECLARED by operator (2026-07-21, the go directive on the presented green record): suite green at 358c6d62 with both gate halves recorded, completion criteria met, the one spec-backed-but-unpinned constraint noted for the next lawful lane. Phase 2c opens — refactor under the green suite. Closing this execution issue.",
+      "created_at": "2026-07-21T18:55:45.232065Z",
+      "kind": "decision"
+    }
+  ]
+}

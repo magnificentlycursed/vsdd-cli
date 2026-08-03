@@ -1,0 +1,21 @@
+{
+  "uuid": "2f430553-7436-4390-82e2-c1f607e7a866",
+  "display_id": 292,
+  "title": "amend-r7: truncated Finding lifecycle citations in two falsification lines",
+  "description": "Minor. 'the governed set (defined in Finding lifecycle)' in ratified falsification text fails the exact-heading rule. Fix: full heading in both; flagged as a ratified-text mechanical correction for the operator's ratification note. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:34:48.837406Z",
+  "updated_at": "2026-07-20T19:35:25.224563Z",
+  "closed_at": "2026-07-20T19:35:25.224563Z",
+  "comments": [
+    {
+      "uuid": "20e98e57-5c73-4091-bf33-9067ed8c837c",
+      "author": "xqjG",
+      "content": "Fixed in the working tree: concern for axis; both falsification citations carry the full heading (ratified-text mechanical correction, flagged for the ratification note); the reviewer-roles bullet distinguishes operator approval from the validator's approval record. mdatron verify clean.",
+      "created_at": "2026-07-20T19:35:22.492868Z",
+      "kind": "resolution"
+    }
+  ]
+}

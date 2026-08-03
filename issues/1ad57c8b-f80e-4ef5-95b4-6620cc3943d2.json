@@ -1,0 +1,56 @@
+{
+  "uuid": "1ad57c8b-f80e-4ef5-95b4-6620cc3943d2",
+  "display_id": 811,
+  "title": "Layer 2 amendment increment: implement the unrouted-findings process-integrity query — routing field on the snapshot (FindingRecord, deny_unknown_fields today), acquisition extension, snapshot-schema audit-mirror re-pin, convergence-corpus kind-set extension, own fresh red-gate seed under the fix-scale gate — BLOCKED on #810 ratifying",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-27T20:29:39.834420Z",
+  "updated_at": "2026-07-28T00:52:15.810720Z",
+  "closed_at": "2026-07-28T00:52:15.810711Z",
+  "labels": [
+    "feature"
+  ],
+  "comments": [
+    {
+      "uuid": "d0f2a45a-15e9-4a9e-ad6a-2755c0f3dde0",
+      "display_id": 1088,
+      "author": "xqjG",
+      "content": "ROUTING (phase-4 on a cold-review finding): this is the FORWARD WORK the amendment authorizes but does not itself do — the built form of the unrouted-findings query, the Layer-2 detection increment. Routes to phase 2a (own fresh red-gate seed: a fixture whose fix-closed finding lacks a filed routing, red before implementation, green at HEAD) then 2b, run under the fix-scale gate with the standing-suite delta against Layer 2's suite. Footprint (per the SA/SO lenses): snapshot routing field, acquisition extension, snapshot-schema audit-mirror re-pin, convergence-corpus kind-set extension. Blocked on #810 ratifying — filed now so it cannot orphan, which is the exact failure this whole thread is about.",
+      "created_at": "2026-07-27T20:30:52.949902Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "ec3be4c3-82ff-4af9-93b2-3f42b8ae0a05",
+      "display_id": 1096,
+      "author": "xqjG",
+      "content": "UNBLOCKED: #810 ratified and applied (contract commit 8c9aaeda). This Layer-2 build increment — the unrouted-findings query with its snapshot routing field, acquisition extension, snapshot-schema audit-mirror re-pin, convergence-corpus kind-set extension, closure-time universe datum, and own fresh red-gate seed under the fix-scale gate — is now ready for its phase-2a entry when the operator opens it. The contract now specifies it (Status enumeration, Layer 2 entry, fixture corpus).",
+      "created_at": "2026-07-27T21:26:25.844963Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "93474783-f7a8-46f6-a871-1403f27f5596",
+      "display_id": 1100,
+      "author": "xqjG",
+      "content": "Phase-2a/2b build done (unrouted-findings query). Red-gate seed exercised: integrity-unrouted-fix-close expects [unrouted-findings], derivation returned [] before the check (RED), returns [unrouted-findings] after (GREEN); clean-negative pair integrity-routed-fix-close stays []. Footprint landed: FindingRecord gains routing_present + closed_before_ratification (forward-only universe, defaults true so the fixed-baseline fixtures stay outside the universe untouched); the check in snapshot_integrity; snapshot-schema.md mirror re-pinned (per-finding datums + unrouted-findings check); acquisition bootstrap-scope declared for the two new datums (populate at the Layer 6 join); corpus 20->22. Full workspace suite 0 failed, clippy clean, mdatron verify clean. Oracles for the two new fixtures are DRAFT — operator adoption pending as the phase-2a exit act.",
+      "created_at": "2026-07-27T23:08:26.232584Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "1948d154-5590-4e96-bf31-a4665ffa1560",
+      "display_id": 1101,
+      "author": "xqjG",
+      "content": "DECISION (operator, 2026-07-27): the two new corpus oracles adopted — integrity-unrouted-fix-close fires the unrouted-findings kind, integrity-routed-fix-close (clean negative) stays silent. This is the phase-2a exit act for the increment. Oracle headers and the harness doc updated to record the adoption.",
+      "created_at": "2026-07-28T00:50:43.658499Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "80bf6da7-b420-457f-bf69-41066bc1bfb1",
+      "display_id": 1102,
+      "author": "xqjG",
+      "content": "Committed a6bc62bc: unrouted-findings Layer-2 query, phase-2a/2b green. Footprint as planned; parked text.rs (#803/#804) and the #810 .design draft deliberately excluded. Oracles operator-adopted (phase-2a exit). Full workspace suite 0 failed, clippy + mdatron clean.",
+      "created_at": "2026-07-28T00:51:36.914099Z",
+      "kind": "result"
+    }
+  ]
+}

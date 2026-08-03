@@ -1,0 +1,21 @@
+{
+  "uuid": "f011ed8c-e4b8-4a43-b93e-0ac29c98e94e",
+  "display_id": 379,
+  "title": "statusline r4 UX: malformed-settings diagnostic not held to the rustc shape",
+  "description": "Round: statusline amendment cold round 4. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: the malformed-settings diagnostic must name casualty and retry but not the file or parse location, while the sibling drift-refusal in the same criterion sentence is held to a rustc-shaped diagnostic — 'settings malformed; fix and rerun' passes, sending the operator to hand-hunt JSON. Citations verified: contract:159, :184, :216. Proposed: deferred-candidate, foldable one-phrase fix (hold it to the same rustc shape, naming file and location).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:35:29.440604Z",
+  "updated_at": "2026-07-19T23:44:13.692554Z",
+  "closed_at": "2026-07-19T23:44:13.692554Z",
+  "comments": [
+    {
+      "uuid": "4337361e-2f46-4518-83a3-c71aa0074ec0",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded). Malformed-settings diagnostic held to the rustc shape naming file and parse location — the same bar the sibling drift refusal meets. Revision: Install bullet + Install behaviors criterion.",
+      "created_at": "2026-07-19T23:43:55.364601Z",
+      "kind": "resolution"
+    }
+  ]
+}

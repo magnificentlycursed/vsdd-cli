@@ -1,0 +1,21 @@
+{
+  "uuid": "b2f2d785-3bba-48b6-823e-11a421774ab6",
+  "display_id": 361,
+  "title": "statusline r2 SA: wiring-script ownership unassigned against drift-refusal",
+  "description": "Round: statusline amendment cold round 2. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: init installs the wiring script AND the adopter must edit its repo set, but the script's classification (managed file under drift-refusal vs adopter-owned) is unstated — a second vsdd init trips drift-refusal on a file the adopter was told to configure. Citations verified: contract:160 vs :159, :269. Proposed: deferred to the phase-1c wiring-script shape work item. Failure: hard-to-undo friction on the exact file the adopter must touch.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:39.727492Z",
+  "updated_at": "2026-07-19T23:18:54.922744Z",
+  "closed_at": "2026-07-19T23:18:54.922744Z",
+  "comments": [
+    {
+      "uuid": "d7431a62-0b0a-4984-9d3a-30c0e6bdb5d3",
+      "author": "xqjG",
+      "content": "Routed at operator triage: deferred to 'phase-1c work item: statusline wiring script shape' (L37 at creation), scope item 2 — managed-vs-adopter-owned classification against drift-refusal.",
+      "created_at": "2026-07-19T23:17:50.068793Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "0367a61a-42d5-43fc-a721-764025ade4a7",
+  "display_id": 580,
+  "title": "lane r14 SE: mechanism-independence falsified by the cfg-vanished degradation",
+  "description": "Lane round 14. Lens: SE (validator: SA). Defect: a relocation to a cfg-vanished target takes the disablement lane BY MECHANISM — same intent, two lanes, mechanically selected; the universal claim is false for the one case the clause itself creates. Citations verified: contract:64. Proposed: resolved-candidate (the partition keys on intent with one stated mechanical exception — the report is the join's universe).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:02:46.725984Z",
+  "updated_at": "2026-07-20T04:04:32.371361Z",
+  "closed_at": "2026-07-20T04:04:32.371361Z",
+  "comments": [
+    {
+      "uuid": "a6ffa942-69ea-484b-a4fc-cf630edf43f7",
+      "author": "xqjG",
+      "content": "Fixed: the partition keys on intent with one stated mechanical exception — a relocation whose target the runner cannot report takes the disablement lane, the report being the join's universe; the false universal removed. Revision: gate bullet.",
+      "created_at": "2026-07-20T04:04:21.097508Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "260e1a7d-d5f4-4d86-aeba-c5be505fb6d5",
+  "display_id": 734,
+  "title": "c2 nit collector: four items",
+  "description": "(1) mirror fidelity test pins the token id but not the mirrored human text — extend with the text assert. (2) schema-pair failures' recovery_action token points at artifact repair while the text names the pair — a pair-restore member is a NEXT-REGISTRATION candidate (operator act, batched); recorded. (3) invalid-class refusal borrows artifact-repair recovery for a caller fault — switch to the #723 empty-action signal. (4) remaining Value fields in four classes lack per-field deepening-layer annotations — extend. SE observations (double parse for the version gate, empty dev-deps section) recorded as declined-arguable. Owner: software-engineer. Validator: sanity-check.",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "5390175e-d7a4-4e5d-9096-44789ed3120f",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:57:06.929404Z",
+  "updated_at": "2026-07-21T20:01:13.169260Z",
+  "closed_at": "2026-07-21T20:01:13.169260Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "dfa6b6ec-0ff8-4548-b626-de0de5f72266",
+      "author": "xqjG",
+      "content": "FIXES LANDED (commit 8189017a): mirror fidelity test pins the mirrored human text; invalid-class refusals carry the empty-action no-adopter-act signal with the caller-fault message; per-field deepening-layer annotations extended to every remaining Value payload (Layers 2, 6, 8, 9 named). Item 2 (the pair-restore recovery member) stands recorded as a next-registration candidate — an operator act, batched. SE observations recorded declined-arguable. Validator: sanity-check at round 3.",
+      "created_at": "2026-07-21T20:01:09.770439Z",
+      "kind": "result"
+    }
+  ]
+}

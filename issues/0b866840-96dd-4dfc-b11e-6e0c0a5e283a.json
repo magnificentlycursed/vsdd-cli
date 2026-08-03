@@ -1,0 +1,21 @@
+{
+  "uuid": "0b866840-96dd-4dfc-b11e-6e0c0a5e283a",
+  "display_id": 436,
+  "title": "statusline r7 AIE: stdin two-run oracle does not falsify stdin-read",
+  "description": "Round 7. Lens: ai-engineer (validator: PE). Owner: SO session. Defect: byte-identity across populated/absent stdin proves invariance, not non-consumption — a read-with-fallback segment passes whenever fed JSON coincides with snapshot fields (the natural fixture-authoring case); the same passage rejects determinism oracles for fan-out then uses one here; the populated stdin JSON is also an unenumerated corpus input. Citations verified: contract:163, :188, :173. Proposed: resolved-candidate (stdin-bytes-read-equals-zero counter at the effectful-shell seam, matching the acquisition-count pattern; plus the stdin fixture member enumerated with sentinel values disjoint from the snapshot).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:31.950345Z",
+  "updated_at": "2026-07-20T00:28:36.071769Z",
+  "closed_at": "2026-07-20T00:28:36.071769Z",
+  "comments": [
+    {
+      "uuid": "d075748b-d204-44b8-817a-d339c90a51a2",
+      "author": "xqjG",
+      "content": "Fixed: stdin enforced by count — the effectful-shell seam counts stdin bytes read, statusline path reads zero (matching the acquisition-count pattern the reviewer cited); sentinel-stdin fixture (display-field values disjoint from every snapshot field) enumerated as a corpus member backing the count with an output-level check. Revision: Status detection criterion + fixture corpus.",
+      "created_at": "2026-07-20T00:28:23.704181Z",
+      "kind": "resolution"
+    }
+  ]
+}

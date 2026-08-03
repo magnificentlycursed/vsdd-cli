@@ -1,0 +1,21 @@
+{
+  "uuid": "2cd4a8fd-699a-4a0d-841e-9c117583cbdd",
+  "display_id": 347,
+  "title": "statusline r2 SA: effectful-shell phrasing places the pure renderer in the shell",
+  "description": "Round: statusline amendment cold round 2. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: effectful shell lists 'the snapshot acquisition for status and its statusline rendering' — a cold reader parses the rendering itself as effectful, contradicting the renderer's Pure core placement. Citations verified: contract:200 vs :197. Proposed: resolved-candidate. Failure: Phase 5 purity audit receives contradictory guidance. Fix: reword so only the acquisition that serves the rendering is effectful.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:08.925251Z",
+  "updated_at": "2026-07-19T23:18:35.021397Z",
+  "closed_at": "2026-07-19T23:18:35.021397Z",
+  "comments": [
+    {
+      "uuid": "e6eb7f8a-a5f0-4fdd-943d-f89ff04cf48a",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Effectful shell rewords to 'the snapshot acquisition that serves status and its statusline rendering (the rendering itself is pure core)' — only the acquisition is effectful. Revision: effectful shell list.",
+      "created_at": "2026-07-19T23:17:36.820528Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "8ec4ee0c-6a6e-48dd-80e3-995b0a729f25",
+  "display_id": 679,
+  "title": "r1 major UX: five-field segment at 94 chars strains glanceability; width budget misallocated against glance priority",
+  "description": "Evidence: statusline-data.md:37-42; the round-2 density dismissal (#359) leaned on these budgets discharging it. 94 chars data before separators; realistic line 110+. phase-answer — the headline — gets 20 while work-item/milestone get 24. Disposition: field-set question (demote session and/or work-item to the human form) is a contract-enumerated-fields change — Raise to SO; width re-balance is data-side. Owner: solution-owner (field set) with data-engineer (widths). Validator: ux.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:17:56.376431Z",
+  "updated_at": "2026-07-21T04:11:09.735969Z",
+  "closed_at": "2026-07-21T04:11:09.735969Z",
+  "comments": [
+    {
+      "uuid": "460d72c6-1a8c-4552-95dc-006b3b058137",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): demote the session segment only. The session identifier leaves the glance surface (lowest glance value — the operator is IN the session; one 'crosslink session status' away in the human form). Work-item STAYS — the binding cue catches wrong-issue work. Freed width goes to the milestone segment at the fix pass, pairing with #680's width finding. Rejected: keep-all-five and demote-both. Amendment touch on the statusline field set + data-side width re-balance.",
+      "created_at": "2026-07-21T03:52:45.458337Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "7afade06-ff89-427b-80f9-16ff51e19bba",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, statusline-data 0.2.0): session segment removed from display_fields (schema now pins exactly four glance fields); the demotion and its rationale stated in prose — the session renders in the human form, one crosslink session status away; freed width moved to milestone-with-count. Contract touch (statusline field set) rides #698. Round 2 re-verifies (validator: ux).",
+      "created_at": "2026-07-21T04:11:04.781863Z",
+      "kind": "result"
+    }
+  ]
+}

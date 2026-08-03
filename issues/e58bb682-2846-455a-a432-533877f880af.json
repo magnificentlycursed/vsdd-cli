@@ -1,0 +1,21 @@
+{
+  "uuid": "e58bb682-2846-455a-a432-533877f880af",
+  "display_id": 498,
+  "title": "lane r7 QE: postdated-approval falsifier has no fixture or criterion",
+  "description": "Lane round 7. Lens: QE (validator: SE). Owner: SO session. Defect: neither firing direction tested — an implementation checking signedness but never approval-vs-write ordering passes green; the mdatron race survives; fixture-testable (timestamp comparison), so live-fire-only is no defense. Citations verified: contract:112, :106 vs :173, :184. Proposed: resolved-candidate (postdated-approval seed added; Swarm live fire criterion gains the flagged-race clause).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:03:50.910327Z",
+  "updated_at": "2026-07-20T01:12:37.912190Z",
+  "closed_at": "2026-07-20T01:12:37.912190Z",
+  "comments": [
+    {
+      "uuid": "7c2692f6-6e24-42fb-9286-3d7fc5f2b071",
+      "author": "xqjG",
+      "content": "Fixed: postdated-approval seed added; the Swarm live fire criterion asserts the seeded race is flagged — approval ordering exercised, not just signedness. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T01:12:25.293652Z",
+      "kind": "resolution"
+    }
+  ]
+}

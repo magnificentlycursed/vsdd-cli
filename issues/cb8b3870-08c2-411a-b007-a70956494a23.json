@@ -1,0 +1,21 @@
+{
+  "uuid": "cb8b3870-08c2-411a-b007-a70956494a23",
+  "display_id": 602,
+  "title": "1c-DR-r1: Layer 0 header misattributes two acts to the open question",
+  "description": "Minor, check e. Citation (Decomposition, Layer 0): 'The estate-cleanup open question's enumerated acts: ... the stray working-tree contract duplicates ... review the uncommitted chassis-config modifications with the operator' — neither appears in the open question's enumeration; the absorption claim misstates its source. Fix: attribute the two accumulated acts to the amendment cycle explicitly. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:35.428370Z",
+  "updated_at": "2026-07-20T17:09:53.173728Z",
+  "closed_at": "2026-07-20T17:09:53.173728Z",
+  "comments": [
+    {
+      "uuid": "a4915547-a4d5-4118-8be1-5b9700a03301",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 0 now attributes honestly: the open question's acts listed first, then 'Joined by two acts accumulated in the amendment cycle, after the open question was written' for the contract duplicates and chassis-config review. mdatron verify clean.",
+      "created_at": "2026-07-20T17:09:51.858166Z",
+      "kind": "resolution"
+    }
+  ]
+}

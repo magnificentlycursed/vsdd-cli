@@ -1,0 +1,35 @@
+{
+  "uuid": "1dd24df3-9279-4966-bf33-654fe43581b8",
+  "display_id": 502,
+  "title": "defect-fix lane amendment cold round 8",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 8 (post round-7: fail-closed rename join with declared mapping, grandfathered dual-form grammar with scoped refs query completing its triangle, postdated-approval fixture, title-anchored citations). Series 19-13-9-9-12-12-6.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:12:57.142835Z",
+  "updated_at": "2026-07-20T01:30:24.869930Z",
+  "closed_at": "2026-07-20T01:30:24.869930Z",
+  "comments": [
+    {
+      "uuid": "097a1c43-c951-4fbe-ad84-7a7b30a3d3aa",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 8. Subject: lane revision 8 anchors: gate bullet (delta with declared-mapping join and fail-closed vanished paths; executed-pin both halves; validator-gated compile-defect; declared kind; graded retrofit; broken-surface) + falsifier; lifecycle bullet + falsifier; Conformance closed-world (dual-form grammar with creation-time validity, clone-scoped refs query completing its triangle in the Status enumeration and Conformance falsifier) ; Recorded review dispatch (approve-then-dispatch with fixture and live-fire clause); title-anchored evidence cites; composition scope; Gates; criterion; corpus (~24 members + contracted 2a list). Out of scope: statusline and effort amendments. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:13:20.319724Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "41cda13c-8cb1-423d-8e43-65bef4307237",
+      "author": "xqjG",
+      "content": "Lane round 8 complete. SE 3 + QE 3 + methodology 4 = 10 returned, 7 filed after three SE+QE convergent merges: L181 lying mapping; L182 deletion lane; L183 creation-time validity + stale 2a list; L184 Part-3 citation; L185 label-narrowing falsifier (security-weighted, fixtured not deferred); L186 References home for mdatron records; L187 flake-deferral duplicate. Series 19-13-9-9-12-12-6-7. Not clean; round 9 after disposition.",
+      "created_at": "2026-07-20T01:27:45.727314Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "03ad8f32-193d-41de-bfa7-86b5e8d1e0cd",
+      "author": "xqjG",
+      "content": "Round fully disposed: 7/7 fixed (incl. the security-weighted label-narrowing falsifier fixtured immediately). mdatron verify clean on lane revision 9. Closing; round 9 dispatches.",
+      "created_at": "2026-07-20T01:30:23.670919Z",
+      "kind": "result"
+    }
+  ]
+}

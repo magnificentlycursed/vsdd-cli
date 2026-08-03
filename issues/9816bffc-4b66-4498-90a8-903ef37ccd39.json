@@ -1,0 +1,21 @@
+{
+  "uuid": "9816bffc-4b66-4498-90a8-903ef37ccd39",
+  "display_id": 257,
+  "title": "amend-r5-AI: substrate-config reference surfaces unenumerated",
+  "description": "Minor. Fix: the manifest schema's reference-surface enumeration named as a 1c authoring field with the starting list (settings tiers and local overlays, server config and user-level locals, plugin listings, the statusline command path, git config). Owner: solution-architect. Validator: ai-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:03:06.645928Z",
+  "updated_at": "2026-07-20T19:09:19.718933Z",
+  "closed_at": "2026-07-20T19:09:19.718933Z",
+  "comments": [
+    {
+      "uuid": "ac507c9a-a670-4e4d-b754-5250e5e26758",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:09:16.916883Z",
+      "kind": "resolution"
+    }
+  ]
+}

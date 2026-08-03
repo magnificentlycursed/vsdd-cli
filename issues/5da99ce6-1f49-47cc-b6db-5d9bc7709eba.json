@@ -1,0 +1,28 @@
+{
+  "uuid": "5da99ce6-1f49-47cc-b6db-5d9bc7709eba",
+  "display_id": 147,
+  "title": "AIE/F1: Hardcoded MDATRON-E0001/E0002 literals: none found",
+  "description": "Source: mdatron/review-log/2026-06-02-ai-engineer-phase-1-bundle.md\nClassification: hallucinated\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:22:38.977301Z",
+  "updated_at": "2026-07-21T00:44:12.299716Z",
+  "closed_at": "2026-07-21T00:44:12.299716Z",
+  "labels": [
+    "classification:hallucinated",
+    "cycle:crosslink-12",
+    "domain:ai-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "8dd98c39-5fe8-416c-8b0a-7b6e8dd2e083",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:44:09.407114Z",
+      "kind": "result"
+    }
+  ]
+}

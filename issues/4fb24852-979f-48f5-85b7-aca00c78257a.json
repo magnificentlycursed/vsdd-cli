@@ -1,0 +1,35 @@
+{
+  "uuid": "4fb24852-979f-48f5-85b7-aca00c78257a",
+  "display_id": 384,
+  "title": "defect-fix lane amendment cold round 1",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of the lane amendment threaded through Directive reconciliation, Phase exit by gate, and Finding lifecycle in one place.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:44:26.418727Z",
+  "updated_at": "2026-07-19T23:58:55.640584Z",
+  "closed_at": "2026-07-19T23:58:55.640584Z",
+  "comments": [
+    {
+      "uuid": "07bff1fb-5ea3-4e63-9a43-094775605f8f",
+      "author": "xqjG",
+      "content": "Dispatch manifest — defect-fix lane amendment cold round 1. Subject: working-tree .design/agent-first-vsdd-toolkit.md, the lane amendment only: Directive reconciliation's symmetric-classification bullet; Phase exit by gate's fix-scale red-gate bullet + falsification + evidence additions; Finding lifecycle's defect-fixes-are-increments bullet + falsification + evidence additions. NOTE: the working tree also carries the statusline amendment (Status/Install/criteria/fixtures anchors) — OUT OF SCOPE here, reviewed under its own round issue. Lenses: vsdd-methodology (whitepaper fidelity, phase semantics), software-engineer (the lane's practicability at fix scale), quality-engineer (red-gate retrofit semantics, test-first enforceability) — three cold dispatches, fresh contexts. Coverage declared; citations evidence-gated against the working tree; findings filed as children; result comment malformed without handles inline. Stop signal: clean or hallucinated-only round.",
+      "created_at": "2026-07-19T23:44:46.282902Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "75cdd707-4bf4-43b1-a59c-a1981319a61d",
+      "author": "xqjG",
+      "content": "Lane round 1 complete. Three lenses (vsdd-methodology, SE, QE), declared coverage; 23 findings returned deduping to 19 filed (4 cross-lens merges recorded): L68 governed set undefined (SE+QE); L69 classification universe (SE+meth); L70 falsification not extended; L71 surface-allows-one dropped; L72 green half missing; L73 baseline undefined; L74 mechanization not extended (QE+meth); L75 retrofit undefined; L76 pre-publish deadlock; L77 waiver falsifier inconsistency; L78 linkage predicate; L79 no fixture/criterion; L80 mutation floor omitted; L81 labels not a function input; L82 SE-minimum unpaired; L83 rationale gradient (deferred-candidate); L84 single-instance unmarked (deferred-candidate); L85 provenance markers; L86 increment term (dismissed-candidate); L87 flaky/bundled runs. All citations evidence-verified. Proposed: 16 resolved-candidates, 2 deferred-candidates foldable, 1 dismissed-candidate. Not clean; round 2 after disposition. A first-round yield of 19 real findings on a three-contract amendment is the loop working exactly as intended on process prose.",
+      "created_at": "2026-07-19T23:54:48.769449Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "1ef2a7b9-a80a-4a25-9851-9a48c88401c2",
+      "author": "xqjG",
+      "content": "Round fully disposed: 19/19 closed (16 fixed, 2 deferred folded as rationale/provenance, 1 dismissed with recorded confirmation). mdatron verify clean on lane revision 2. Closing per rounds-close-at-full-disposition; round 2 dispatches.",
+      "created_at": "2026-07-19T23:58:53.754371Z",
+      "kind": "result"
+    }
+  ]
+}

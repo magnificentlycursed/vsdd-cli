@@ -1,0 +1,28 @@
+{
+  "uuid": "9f6149cf-f899-41c5-97b9-9c705c71b1a9",
+  "display_id": 38,
+  "title": "SA/F4: README mdatron-examples lacks anchor link",
+  "description": "Source: mdatron/review-log/2026-06-07-solution-architect-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:02:42.287919Z",
+  "updated_at": "2026-06-08T01:48:32.215874Z",
+  "closed_at": "2026-06-08T01:48:32.215874Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:solution-architect",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "d1476637-5c22-4ca8-a5f7-bfde5872259c",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:31.283990Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "uuid": "8774a7e9-29f1-4633-88c9-c0edb3170603",
+  "display_id": 536,
+  "title": "defect-fix lane amendment cold round 10",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 10 (post round-9: approval-parity mappings, no-new-failing restatement, self-verifying broken-surface as fourth exculpatory form with both-direction fixtures, resolvable relay cites, warn-not-block pre-push). Series 19-13-9-9-12-12-6-7-6.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:46:30.898348Z",
+  "updated_at": "2026-07-20T01:59:11.920765Z",
+  "closed_at": "2026-07-20T01:59:11.920765Z",
+  "comments": [
+    {
+      "uuid": "3922af12-33c5-49d2-bdd1-5b3dc139788f",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 10. Subject: lane revision 10 anchors: gate bullet (approval-parity mappings — one bar for both removal-shaped lanes; no-new-failing with skipped-is-neither; self-verifying broken-surface with the no-validator rationale; executed-pin; compile-defect fork; graded retrofit) + falsifier (four exculpatory forms); lifecycle bullet + falsifier; Conformance (dual-form grammar, warn-not-block pre-push, clone-scoped query); Recorded review dispatch; References; resolvable relay cites; composition scope; Gates; criterion (expanded conduct incl. both broken-surface directions, decoy and unapproved seeds, relocated-ignored); corpus (~36 members + 2a list). Out of scope: statusline and effort amendments. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:46:47.523549Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "1fcad07c-75f2-49cf-8f3c-dffe2b0efe37",
+      "author": "xqjG",
+      "content": "Lane round 10 complete. SE 3 + QE 1 + methodology 1 = 5 filed: L216 compile/broken-surface indistinguishable (the round's center — validator bar returns to all three forms); L217 mapping approval granularity; L218 cannot-run predicate to 1c; L219 in-place quarantine; L220 pre-push guarantee contracted. Series ...-6-7-6-5. Not clean; round 11 after disposition.",
+      "created_at": "2026-07-20T01:57:05.863660Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "00a078c9-0c58-41d5-acfa-07ac9f2c8634",
+      "author": "xqjG",
+      "content": "Round fully disposed: 5/5 fixed. mdatron verify clean on lane revision 11. Closing; round 11 dispatches.",
+      "created_at": "2026-07-20T01:59:10.792650Z",
+      "kind": "result"
+    }
+  ]
+}

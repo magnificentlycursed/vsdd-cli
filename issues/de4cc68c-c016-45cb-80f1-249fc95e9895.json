@@ -1,0 +1,28 @@
+{
+  "uuid": "de4cc68c-c016-45cb-80f1-249fc95e9895",
+  "display_id": 219,
+  "title": "UX/F2: rustc-shaped output '=' glyph buries the message",
+  "description": "Source: mdatron/review-log/2026-06-02-ux-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:25:02.508334Z",
+  "updated_at": "2026-06-08T02:23:56.780827Z",
+  "closed_at": "2026-06-08T02:23:56.780827Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:ux",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "1c123c4e-f983-4f1a-ba5f-94f81def63f9",
+      "author": "xqjG",
+      "content": "Addressed by n/a (dismissed: rustc-shape consistency wins over per-tool ergonomic preference).",
+      "created_at": "2026-06-08T02:23:55.983616Z",
+      "kind": "resolution"
+    }
+  ]
+}

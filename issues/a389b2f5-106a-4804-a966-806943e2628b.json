@@ -1,0 +1,24 @@
+{
+  "uuid": "a389b2f5-106a-4804-a966-806943e2628b",
+  "display_id": 812,
+  "title": "Registration act: 'invariant-first' enters as a registered draft term under the vocabulary maturity lifecycle (operator-owned) — carried with the #810 ratification",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-27T20:30:03.684759Z",
+  "updated_at": "2026-07-27T21:26:14.361003Z",
+  "closed_at": "2026-07-27T21:26:14.360994Z",
+  "labels": [
+    "registration"
+  ],
+  "comments": [
+    {
+      "uuid": "a84c6d39-dc77-4879-bad1-5dff9106a447",
+      "display_id": 1095,
+      "author": "xqjG",
+      "content": "DONE: 'invariant-first' registered in templates/registry/vocabulary.yaml (commit above), executing the #810 ratification. Draft maturity tracked here (the vocabulary schema has no per-term status field — a small mechanism gap noted for the lifecycle's own build; the term is canonical-in-contract now, draft in the maturity sense until the lifecycle mechanizes stages). Closing.",
+      "created_at": "2026-07-27T21:26:08.540555Z",
+      "kind": "result"
+    }
+  ]
+}

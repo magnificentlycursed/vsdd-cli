@@ -1,0 +1,21 @@
+{
+  "uuid": "9dbb7460-1c88-4f32-97fb-fe6e1e548093",
+  "display_id": 396,
+  "title": "lane r1: fix-scale gate unconditional; surface-allows-one clause dropped",
+  "description": "Lane round 1. Lens: SE (F2) (validator: SO). Owner: SO session. Defect: the gate requires a failing test unconditionally, contradicting the sibling filing rule's 'where the surface allows one'; race conditions, doc-drift, tooling defects, and build breakage (the suite that cannot run) become ungateable — agents fabricate token failing tests or stall. Citations verified: contract:64, :66 vs :75. Proposed: resolved-candidate — the gate follows the evidence the surface allows, recorded on the finding issue; for a broken verification surface, the recorded failing state IS the red evidence.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:02.878236Z",
+  "updated_at": "2026-07-19T23:58:31.369186Z",
+  "closed_at": "2026-07-19T23:58:31.369186Z",
+  "comments": [
+    {
+      "uuid": "55386c79-fcf9-47f8-a431-c406a810d0bd",
+      "author": "xqjG",
+      "content": "Fixed: the surface-allows-one clause restored at fix scale — the gate follows the evidence the surface allows, recorded on the finding issue; the broken-verification-surface case's recorded failing state is the red evidence with reviews immediately after. Revision: Phase exit by gate bullet.",
+      "created_at": "2026-07-19T23:58:09.830660Z",
+      "kind": "resolution"
+    }
+  ]
+}

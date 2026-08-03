@@ -1,0 +1,26 @@
+{
+  "uuid": "c843dfa9-1afc-423f-8330-fe1e813a0adf",
+  "display_id": 747,
+  "title": "Layer 2 round 1 major SE: every Command spawn error maps to Unreachable, swapping the degraded kind",
+  "description": "acquire.rs:91 — Err(_) => Unreachable => Absent (offline). But PermissionDenied (exec bit lost), spawn-resource failures, a nonexistent current_dir are NOT offline; a chmod-broken chassis reports tracker-absent forever instead of tracker-unusable — defeating degraded-kinds-are-never-swapped upstream of the derivation the fixtures pin. Disposition: match e.kind(): only NotFound is Unreachable, every other spawn error is Failed/unusable. Owner: software-engineer. Validator: security.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "a5f3c2ee-ad1f-47f3-a24e-a04dfa4ce652",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:00:49.430446Z",
+  "updated_at": "2026-07-22T17:36:38.841033Z",
+  "closed_at": "2026-07-22T17:32:32.042413Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "4f3acd3a-ac0e-4e79-9802-201ac88a4acb",
+      "display_id": 978,
+      "author": "xqjG",
+      "content": "Fixed in d84109f5: the acquisition arms classify through the bounded runner — only a binary missing from PATH is the offline shape (Absent); spawn failure, timeout, oversize, refused, and unparseable output are all Unusable. The swap is structurally impossible now: the match arms name the outcomes.",
+      "created_at": "2026-07-22T17:32:25.850379Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "296ce5bf-078a-4768-a2f8-fffdc2a56f0a",
+  "display_id": 613,
+  "title": "1c-DR-r2: 'until the scaffolding ships' has no antecedent",
+  "description": "Minor, check f. Citation (Decomposition intro): 'bootstrap: hand-carried obligations until the scaffolding ships' — no contract requirement delivers such scaffolding; the only scaffolding named anywhere is the primer's superseded hook. Fix: drop the forward reference; hand-carried obligations recorded on this tracker at each layer's phase-2a entry. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:21:06.755904Z",
+  "updated_at": "2026-07-20T17:22:03.489093Z",
+  "closed_at": "2026-07-20T17:22:03.489093Z",
+  "comments": [
+    {
+      "uuid": "e8859f39-3b0b-43dd-a0eb-70f7c8a120f5",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Forward reference dropped: 'bootstrap: hand-carried obligations, recorded on this tracker at each layer's phase-2a entry'. mdatron verify clean.",
+      "created_at": "2026-07-20T17:22:01.983203Z",
+      "kind": "resolution"
+    }
+  ]
+}

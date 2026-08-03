@@ -1,0 +1,28 @@
+{
+  "uuid": "86b45845-7793-4fc5-a754-cf53a0cb39a2",
+  "display_id": 196,
+  "title": "SE/F3: EvalError::FieldNotFound variant dead under all call sites",
+  "description": "Source: mdatron/review-log/2026-06-02-software-engineer-phase-1-bundle.md\nClassification: deferred\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:18.508284Z",
+  "updated_at": "2026-06-08T01:48:37.022712Z",
+  "closed_at": "2026-06-08T01:48:37.022712Z",
+  "labels": [
+    "classification:deferred",
+    "cycle:crosslink-12",
+    "domain:software-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "47c18e0b-e93e-4f54-a5f3-81077c9216d6",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@422c2dc (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:36.221159Z",
+      "kind": "resolution"
+    }
+  ]
+}

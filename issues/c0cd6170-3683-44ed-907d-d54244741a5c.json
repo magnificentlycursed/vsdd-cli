@@ -1,0 +1,21 @@
+{
+  "uuid": "c0cd6170-3683-44ed-907d-d54244741a5c",
+  "display_id": 392,
+  "title": "statusline r5 A11y: human form lacks worded-absence verification",
+  "description": "Round 5. Lens: accessibility (validator: ux). Owner: SO session. Defect: worded-absence is property-tested on the segment (the convenience layer) but not required of the human form — the AT-routed surface can render an empty slot for an absent field and survive every check; never-silent enforced asymmetrically. Citations verified: contract:163, :188, :200. Proposed: resolved-candidate (extend the absence check to the human form for the same fixtures).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:53:08.550229Z",
+  "updated_at": "2026-07-19T23:57:25.259202Z",
+  "closed_at": "2026-07-19T23:57:25.259202Z",
+  "comments": [
+    {
+      "uuid": "964f2843-9705-4a41-89d2-adc0885f65cd",
+      "author": "xqjG",
+      "content": "Fixed: the human form renders worded absences for the same fixtures — never-silent now holds on the AT-routed surface, verified by the same criterion. Revision: Status detection criterion.",
+      "created_at": "2026-07-19T23:57:16.389234Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "6e05bcc5-1814-4bf7-b1d4-cd88bdd35f1a",
+  "display_id": 494,
+  "title": "lane r7 SE+QE: rename join unenforced and uninhabitable for relocation-as-fix",
+  "description": "Lane round 7. Lenses: SE + QE merged (validators: SO, SE). Owner: SO session. Defect: nothing detects a rename inside a fix commit — a vanished-at-HEAD path silently drops from the delta (join degrades open); and relocation-as-fix has no lawful lane since the mechanical-pass exclusion requires unchanged verification (Rust inline cfg(test) makes module-relocating fixes rename test paths by construction). Citations verified: contract:64, :81. Proposed: resolved-candidate (fail closed: an undeclared test path passing at baseline and absent at HEAD fails the delta; relocation-as-fix declares the path mapping in the evidence section and the gate joins through it; rename-in-fix fixture added).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:03:44.634207Z",
+  "updated_at": "2026-07-20T01:12:31.783372Z",
+  "closed_at": "2026-07-20T01:12:31.783372Z",
+  "comments": [
+    {
+      "uuid": "501065f2-a9d2-4bf4-b229-e2dfd96ea2cf",
+      "author": "xqjG",
+      "content": "Fixed: the delta joins through a declared path mapping when the fix relocates tests (evidence-section field — relocation-as-fix lawful, inline-module renames acknowledged); an undeclared vanished path FAILS the delta — join fails closed; rename-in-fix fixture added with both directions asserted. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:12:18.400777Z",
+      "kind": "resolution"
+    }
+  ]
+}

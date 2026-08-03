@@ -1,0 +1,29 @@
+{
+  "uuid": "29c1e7ca-3353-4970-88bd-b603cd220e75",
+  "display_id": 83,
+  "title": "RT/F2: cmd_explain argv reflection ANSI injection",
+  "description": "Source: mdatron/review-log/2026-06-07-red-team-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:04:49.481725Z",
+  "updated_at": "2026-06-08T01:48:01.448291Z",
+  "closed_at": "2026-06-08T01:48:01.448291Z",
+  "labels": [
+    "classification:accepted",
+    "convergence:argv-validation",
+    "cycle:crosslink-13",
+    "domain:red-team",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "b3b074ce-731e-4c94-9a9e-5993d14d61a5",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@883eaaf (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:00.644519Z",
+      "kind": "resolution"
+    }
+  ]
+}

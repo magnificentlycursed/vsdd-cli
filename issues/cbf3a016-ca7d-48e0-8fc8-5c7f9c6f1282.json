@@ -1,0 +1,28 @@
+{
+  "uuid": "cbf3a016-ca7d-48e0-8fc8-5c7f9c6f1282",
+  "display_id": 121,
+  "title": "PERF/F8: Phase 2 has no hot path",
+  "description": "Source: mdatron/review-log/2026-06-07-performance-engineer-phase-2-bundle.md\nClassification: dismissed\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:06:06.196986Z",
+  "updated_at": "2026-07-21T00:41:36.065843Z",
+  "closed_at": "2026-07-21T00:41:36.065843Z",
+  "labels": [
+    "classification:dismissed",
+    "cycle:crosslink-13",
+    "domain:performance-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "7b5a6b80-df60-4fe2-8e49-3564e2163ef8",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:41:32.770551Z",
+      "kind": "result"
+    }
+  ]
+}

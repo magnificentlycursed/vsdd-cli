@@ -1,0 +1,45 @@
+{
+  "uuid": "7490ad19-8b20-4105-970b-6d7dbb41f4bd",
+  "display_id": 765,
+  "title": "Phase 3 execution, Layer 2: round 3 — verify the round-2 fixes, re-decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T18:49:22.232263Z",
+  "updated_at": "2026-07-22T20:21:46.176800Z",
+  "closed_at": "2026-07-22T20:21:46.176778Z",
+  "comments": [
+    {
+      "uuid": "5b0be038-f7b8-4402-84b8-554c2eff01f1",
+      "display_id": 999,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, attended side. round shape: VERIFY — each lens adversarially verifies the round-2 fixes (#756-#763, commit a49206fe) AND the core-removal migration (#764, commit 74b01866) in its scope, tries to refute each fix claim, sweeps the changed surfaces for regressions and new defects; the round's output re-decides the stop. domains, the same four (the change set lands on the same surfaces, plus the new schema shim): software-engineer (the channel-based subprocess collection, the full-refname listing, the schema shim's engine fidelity), security (the whole-run deadline's completeness, sanitize ordering and coverage, the shim's value-free message discipline), quality-engineer (the equality pin's two-directional strength, the stale-gate falsifiers and clean negatives actually falsifying, the unit pins), data-engineer (the five new fixtures as data, the amended gloss against the code, the binary-driven conformance tests' fidelity to what the lib pipeline proved). MODEL, CHOSEN: claude-fable-5 all four. EFFORT, CHOSEN: software-engineer and security HIGH, quality-engineer and data-engineer MEDIUM (unchanged posture). expected_cost_band: 0-10 findings pre-dedup, 150k-350k downstream tokens — recalibrated from round 2's observed 314,456 (the round-2 declaration under-called verify-posture depth by 26%; this band prices reproduction-chasing in). inputs: the tree at the round-2 fix-pass boundary (74b01866 + a49206fe + the changelog mirror), the nine closed children with result records, the #755 trail. returned + telemetry recorded here after.",
+      "created_at": "2026-07-22T18:51:21.637473Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "14115c28-18a8-462e-bfe2-7977d8aaaf28",
+      "display_id": 1000,
+      "author": "xqjG",
+      "content": "ROUND 3 RETURNED (the stop-deciding verify over a49206fe + 74b01866). Verdict grid: 36 verdicts across four lenses — 33 held, 3 incomplete (all three the #763 gauge half, by software-engineer, security, and quality-engineer; data-engineer checked the manifest half and read held); no fix regressed. The migration (#764) held on all four lenses — engine, version, and draft fidelity confirmed against the sibling repo, the binary-driven tests verified on both exit paths. Quality-engineer re-ran executed scratch-copy mutants: the equality pin fails both directions, each stale-gate fixture catches exactly its dropped conjunct, each clean negative catches its over-firing mutant by name. Stop: NOT reached — 3 of 4 lenses continue (data-engineer alone stops). Four findings consolidated to children: #766 (major: the #763 gauge-conflation declaration never landed in acquire.rs while the close record asserts it did — the defect's second half stands and the record overstates; process cause identified: an unasserted text replacement collided with the same-turn vocabulary sweep and silently no-opped), #767 (minor, ALL FOUR lenses convergent: sanitize folds degenerate HOME spellings — a single space turns every space in git stderr into tildes, a bare slash every separator — diverging from the same commit's own trimmed-non-empty rule), #768 (minor QE: a descendant holding only the stderr write-end past a clean exit converts a fully-acquired run into TimedOut, contradicting the declared best-effort stderr posture), #769 (minor security: the migrated cross_references tests kept a hand-rolled predictable temp path with a delete-then-create race — the sibling suite already rides tempfile). TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 on all four; effort chosen=observed (SE and security high, QE and DE medium); cost band DECLARED 150k-350k, OBSERVED 368,192 with 168 tool invocations — over the ceiling by 5% even after the round-2 recalibration; two rounds of under-calling verify depth say the next verify declaration prices at 200k-400k. Fix pass follows; round 4 re-decides the stop on a narrowed scope.",
+      "created_at": "2026-07-22T19:05:30.464818Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5147cc72-a883-4edc-91a3-438f0b37a878",
+      "display_id": 1006,
+      "author": "xqjG",
+      "content": "Round 3 fix pass COMPLETE (870836ce; changelog mirror follows). All four children closed with results, each verified in the tree before its close — the #766 lesson applied in the same pass that closed it. Gates: 97 tests pass / 0 fail, clippy zero, fmt clean, mdatron verify clean. Round 4 dispatches next: the stop-deciding verify, scope narrowed to the four fixes and a regression sweep of their two files' surfaces.",
+      "created_at": "2026-07-22T19:09:32.116106Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d2fd18b7-c7b5-453a-8238-4505d1b4a8be",
+      "display_id": 1015,
+      "author": "xqjG",
+      "content": "Round 3 complete: caught the misreported #763 half (record corrected before code), four children #766-#769 fixed in 870836ce and verified by round 4. Closed at the Layer 2 sign-off (decision on #770).",
+      "created_at": "2026-07-22T20:21:40.320777Z",
+      "kind": "result"
+    }
+  ]
+}

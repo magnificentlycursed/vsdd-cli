@@ -1,0 +1,21 @@
+{
+  "uuid": "09b4a0a5-9087-4376-bc81-5634c0914843",
+  "display_id": 445,
+  "title": "lane r3 QE: isolated green-at-HEAD leaves a whole-suite regression hole",
+  "description": "Lane round 3. Lens: QE (validator: SE). Owner: SO session. Defect: the fix-scale green half runs only the named tests; nothing in the lane gates a sibling-test regression, and CI is not named as the backstop. Citations verified: contract:64 vs :61, :81. Proposed: resolved-candidate (green half is two runs: named tests in isolation for defect attribution, the standing suite for regression — both green at HEAD).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:46.996997Z",
+  "updated_at": "2026-07-20T00:28:46.572358Z",
+  "closed_at": "2026-07-20T00:28:46.572358Z",
+  "comments": [
+    {
+      "uuid": "d7e90101-347d-43f6-8d40-b353111329da",
+      "author": "xqjG",
+      "content": "Fixed: the green half is two runs — named tests in isolation for defect attribution and the standing suite for regression, both green at HEAD. Revision: gate bullet.",
+      "created_at": "2026-07-20T00:28:33.774139Z",
+      "kind": "resolution"
+    }
+  ]
+}

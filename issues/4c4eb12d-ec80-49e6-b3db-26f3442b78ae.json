@@ -1,0 +1,28 @@
+{
+  "uuid": "4c4eb12d-ec80-49e6-b3db-26f3442b78ae",
+  "display_id": 48,
+  "title": "SO/F6: Phase 2 closing-commit work",
+  "description": "Source: mdatron/review-log/2026-06-07-solution-owner-phase-2-bundle.md\nClassification: resolved\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:03:09.067408Z",
+  "updated_at": "2026-06-08T02:33:39.794650Z",
+  "closed_at": "2026-06-08T02:33:39.794650Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-13",
+    "domain:solution-owner",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "9b52197b-8620-441b-b807-16869fe69d66",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (pre-Phase-4-take-2 cycle commit).",
+      "created_at": "2026-06-08T02:33:39.030675Z",
+      "kind": "resolution"
+    }
+  ]
+}

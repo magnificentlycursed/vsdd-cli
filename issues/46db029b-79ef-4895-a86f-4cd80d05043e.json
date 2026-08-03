@@ -1,0 +1,28 @@
+{
+  "uuid": "46db029b-79ef-4895-a86f-4cd80d05043e",
+  "display_id": 152,
+  "title": "DE/F1: absence-vs-empty-array distinction ambiguous",
+  "description": "Source: mdatron/review-log/2026-06-02-data-engineer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:22:51.112517Z",
+  "updated_at": "2026-06-08T03:52:43.739806Z",
+  "closed_at": "2026-06-08T03:52:43.739806Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:data-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "b2352ae4-5a1f-443b-abe3-19699138cef8",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@f7633de (Phase 4-take-2 Wave 10 raise-to-SO disposition).",
+      "created_at": "2026-06-08T03:52:43.035194Z",
+      "kind": "resolution"
+    }
+  ]
+}

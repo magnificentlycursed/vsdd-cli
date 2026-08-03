@@ -1,0 +1,21 @@
+{
+  "uuid": "575a5b09-d3c3-4957-85a9-c48f4dd39dc1",
+  "display_id": 385,
+  "title": "statusline r5 SA+UX: non-interactive criterion verifies one of three printed items",
+  "description": "Round 5. Lenses: SA+UX merged (validators: SO, DR). Owner: SO session. Defect: requirement promises the non-interactive run prints offer-existence, manual invocation, AND interactive path; criterion checks only the manual invocation — dropping the discoverability half ships green. Citations verified: contract:162 vs :187. Proposed: resolved-candidate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:52:59.019254Z",
+  "updated_at": "2026-07-19T23:57:17.408753Z",
+  "closed_at": "2026-07-19T23:57:17.408753Z",
+  "comments": [
+    {
+      "uuid": "00bf88ba-6eb0-4526-a90f-322b10ab6feb",
+      "author": "xqjG",
+      "content": "Fixed: criterion now verifies all three printed items (offer's existence, manual invocation, interactive path). Revision: Install behaviors criterion.",
+      "created_at": "2026-07-19T23:57:08.972955Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "5449138b-c13a-4180-853c-58d4cddcde05",
+  "display_id": 186,
+  "title": "SC/F4: Phase 2a Red Gate -> 2b implementation gap",
+  "description": "Source: mdatron/review-log/2026-06-02-sanity-check-phase-1-bundle.md\nClassification: hallucinated\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:58.092698Z",
+  "updated_at": "2026-07-21T00:46:09.377104Z",
+  "closed_at": "2026-07-21T00:46:09.377104Z",
+  "labels": [
+    "classification:hallucinated",
+    "cycle:crosslink-12",
+    "domain:sanity-check",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "f7f01dba-1caf-4fe2-9769-005a1d8aca44",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:46:06.549934Z",
+      "kind": "result"
+    }
+  ]
+}

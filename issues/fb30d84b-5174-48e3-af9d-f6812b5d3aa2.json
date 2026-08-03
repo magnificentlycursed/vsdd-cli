@@ -1,0 +1,21 @@
+{
+  "uuid": "fb30d84b-5174-48e3-af9d-f6812b5d3aa2",
+  "display_id": 507,
+  "title": "lane r8 SE+QE: legitimate test deletion has no lawful lane",
+  "description": "Lane round 8. Lenses: SE+QE merged (validators: SO, SE). Defect: relocation mapping cannot express deletion; a fix removing an obsolete passing test trips fail-closed with no escape (pre-publish waiver unavailable). Citations verified: contract:64, :81, :173. Proposed: resolved-candidate (declared deletion — path and reason, validator-approved — is the lawful form; undeclared vanishing still fails closed; deletion fixture added).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:26:54.274601Z",
+  "updated_at": "2026-07-20T01:30:00.989479Z",
+  "closed_at": "2026-07-20T01:30:00.989479Z",
+  "comments": [
+    {
+      "uuid": "d41b3b02-c980-4afb-a855-f54a66ea7970",
+      "author": "xqjG",
+      "content": "Fixed: declared deletion (path, reason, validator approval) is the lawful removal form; undeclared vanishing still fails closed; declared-deletion fixture passes. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:29:38.028934Z",
+      "kind": "resolution"
+    }
+  ]
+}

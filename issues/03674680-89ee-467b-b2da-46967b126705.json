@@ -1,0 +1,22 @@
+{
+  "uuid": "03674680-89ee-467b-b2da-46967b126705",
+  "display_id": 686,
+  "title": "r1 minor SO+SA convergent: manifest reference surfaces drop the contract's plugin listings; user settings lack the local overlay",
+  "description": "Evidence: installed-artifact-manifest.md:5-13 vs contract line 131's starting list ('plugin listings' named; command-listing is an addition not a substitute; user-settings carries no local overlay though the contract says settings come with their local overlays). A wired-but-absent plugin goes unchecked. Disposition: add plugin-listings and user-settings-local surfaces, or record the omission rationale. Data-side. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:19:03.515752Z",
+  "updated_at": "2026-07-21T04:12:28.047062Z",
+  "closed_at": "2026-07-21T04:12:28.047062Z",
+  "comments": [
+    {
+      "uuid": "89c9f2df-4620-45de-8f65-a740f21977bf",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, installed-artifact-manifest 0.2.0): plugin-listing reference surface added (settings enabledPlugins map plus the user plugin install directory); plugin-set entry records the OBSERVED state — one enabled plugin, rust-analyzer-lsp@claude-plugins-official 1.0.0 at user scope, previously wired and unlisted (the exact gap this finding named); user-settings local-overlay omission recorded as a stated fact of the vehicle (Claude Code defines settings local overlays at project scope only). Round 2 re-verifies (validators: solution-architect + solution-owner convergent).",
+      "created_at": "2026-07-21T04:12:23.120016Z",
+      "kind": "result"
+    }
+  ]
+}

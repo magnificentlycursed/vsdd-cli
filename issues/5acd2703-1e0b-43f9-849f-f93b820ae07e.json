@@ -1,0 +1,35 @@
+{
+  "uuid": "5acd2703-1e0b-43f9-849f-f93b820ae07e",
+  "display_id": 345,
+  "title": "statusline amendment cold round 2",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 2 (post round-1 fix pass; 12 fixes applied, 3 dismissed).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:08:28.318847Z",
+  "updated_at": "2026-07-19T23:20:34.119864Z",
+  "closed_at": "2026-07-19T23:20:34.119864Z",
+  "comments": [
+    {
+      "uuid": "ad5966db-95d7-4872-a205-c6232b251c43",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline amendment cold round 2. Subject: working-tree .design/agent-first-vsdd-toolkit.md, revision 2 of the statusline amendment (anchors: Status requirement statusline passage; Install requirement statusline-wiring passage; Install behaviors criterion statusline-offer sentences; Status detection criterion statusline sentences; Verification architecture renderer entry + effectful shell additions; Trust boundaries substrate-settings entry; fuzz-scope substrate-settings addition; draft vocabulary statusline segment entry). Lenses: solution-architect, ux, ai-engineer, accessibility — four cold dispatches, fresh contexts, no prior-round knowledge beyond what the contract text itself carries. Coverage declared per reviewer; citations evidence-gated against working tree; findings filed as child issues; result comment malformed without child handles inline. Stop signal: a clean or hallucinated-only round.",
+      "created_at": "2026-07-19T23:08:38.382540Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "87d885d3-10b2-48a7-871c-835ec9b6b6bd",
+      "author": "xqjG",
+      "content": "Round 2 complete. Four cold lenses per the plan manifest, all with declared coverage; 17 findings returned, 16 filed (the SA and UX install-happy-path findings were the same defect, merged at filing with both lenses credited — parity 17 returned = 16 children + 1 recorded merge). Handles and titles: L21 SA snapshot display-field enumeration; L22 SA effectful-shell phrasing; L23 SA+UX install happy path uncriterioned; L24 AIE wall-clock budget instrument; L25 AIE single-acquisition check; L26 A11y equivalence contradicted; L27 A11y repo identity position-only; L28 UX repo-set edit affordance; L29 UX instruction presumes wrapper; L30 UX staleness window; L31 AIE aggregate refresh cost; L32 A11y composed-display criterion; L33 UX degraded no in-surface pointer; L34 A11y field density; L35 SA segment compound collision; L36 SA wiring-script ownership. All citations evidence-verified against working tree before filing. Proposed: 7 resolved-candidates (L21-L27), 6 deferred (L28-L32, L36; L30 and L32 foldable as one-sentence fixes), 3 dismissed-candidates (L33-L35). Not a clean round — round 3 required after disposition. Awaiting operator triage. Phase pointer: 1c awaits operator direction; statusline spec amendment in round-2 triage.",
+      "created_at": "2026-07-19T23:14:40.808008Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "fb4ff1e1-7864-4982-840b-faac7de1c1b5",
+      "author": "xqjG",
+      "content": "Round fully disposed: 16/16 children closed (9 fixed incl. 2 folded deferred, 4 routed with closure to the 1c wiring-script work item, 3 dismissed). Closing the round issue per the rounds-close-at-full-disposition practice.",
+      "created_at": "2026-07-19T23:20:32.456745Z",
+      "kind": "result"
+    }
+  ]
+}

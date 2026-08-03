@@ -1,0 +1,21 @@
+{
+  "uuid": "a985d340-220c-42b7-b7f7-525a09c01440",
+  "display_id": 411,
+  "title": "lane r1: increment unregistered as a term (whitepaper-inherited?)",
+  "description": "Lane round 1. Lens: methodology (F9) (validator: SO). Owner: SO session. Defect (candidate): 'Defect fixes are increments' is load-bearing but 'increment' is absent from Terms defined. Reviewer's own lean: dismissable — whitepaper-inherited vocabulary predating the amendment, not a coinage; flagged only for SO confirmation rather than silent reification. Citations verified: contract:81, :122, :268. Proposed: dismissed-candidate with the confirmation recorded.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:26.755167Z",
+  "updated_at": "2026-07-19T23:58:51.162999Z",
+  "closed_at": "2026-07-19T23:58:51.162999Z",
+  "comments": [
+    {
+      "uuid": "c4674270-792a-415d-b82c-d3524b6c4910",
+      "author": "xqjG",
+      "content": "Dismissed with confirmation recorded: 'increment' is whitepaper-inherited vocabulary in use throughout the pre-existing contract, not a coinage of this amendment; no registration obligation. SO confirmation per the reviewer's request rather than silent reification.",
+      "created_at": "2026-07-19T23:58:25.850611Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "819783c5-caf9-4ea5-aaa6-0af8be1ff7d3",
+  "display_id": 388,
+  "title": "statusline r5 UX: unscoped writes-nothing collides with init's install mandate",
+  "description": "Round 5. Lens: ux (validator: DR). Owner: SO session. Defect: 'a non-interactive invocation... writes nothing' is absolute; a cold reader cannot tell whether non-interactive init still installs the environment minus statusline or is a full no-op — ambiguity the revision introduced. Citations verified: contract:162, :187. Proposed: resolved-candidate (scope to the settings write).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:53:03.418267Z",
+  "updated_at": "2026-07-19T23:57:20.850922Z",
+  "closed_at": "2026-07-19T23:57:20.850922Z",
+  "comments": [
+    {
+      "uuid": "0be4f48b-c67e-4db4-849b-4470105ed6b4",
+      "author": "xqjG",
+      "content": "Fixed: scoped to 'makes no settings write — the rest of init's installation proceeds unchanged' in both requirement and criterion; the ambiguity is gone. Revision: Install bullet + criterion.",
+      "created_at": "2026-07-19T23:57:12.326562Z",
+      "kind": "resolution"
+    }
+  ]
+}

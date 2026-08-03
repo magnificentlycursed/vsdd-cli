@@ -1,0 +1,35 @@
+{
+  "uuid": "71e60828-9333-476d-b94b-c84e18ddb848",
+  "display_id": 503,
+  "title": "effort amendment cold round 1",
+  "description": "Round child of: Directive: effort level joins model tier as a managed dial. Cold review of the effort amendment (review-config effort fields per lens/stage; manifest recording; tier-and-effort advisory with 1c signal catalog; supplement effort surface).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:12:58.648624Z",
+  "updated_at": "2026-07-20T01:30:27.602743Z",
+  "closed_at": "2026-07-20T01:30:27.602743Z",
+  "comments": [
+    {
+      "uuid": "1e60c9af-1c74-4cf7-ab72-8df2724d19df",
+      "author": "xqjG",
+      "content": "Dispatch manifest — effort amendment cold round 1. Subject: the effort amendment only: review-config fields sentence (effort levels per lens and stage); dispatch-manifest recording sentence; Cost is knowable advisory clause (tier-and-effort defaults; the six-signal scaling catalog as 1c versioned data, computable from tracker and manifests); methodology-rewrite supplement effort-surface sentence. Out of scope: statusline and lane amendments (own rounds). Lenses: ai-engineer (the domain that owns the advisory loop) + vsdd-methodology (coherence with Cost is knowable, the maturity of the signal catalog as data, no conflict), cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:13:21.575612Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "45b22f27-3a39-41d2-9e51-d8b7592e144b",
+      "author": "xqjG",
+      "content": "Effort round 1 complete. Methodology 5 + AIE 4 = 9 filed (one cross-corroboration recorded on the coinage finding): L188 header omission; L189 inline marker; L190 stage coinage (Meth+AIE); L191 manifest falsifier; L192 cost-band honesty; L193 control seam; L194 computability; L195 auth grain; L196 supplement cross-reference. Series opens at 9. Not clean; round 2 after disposition.",
+      "created_at": "2026-07-20T01:27:46.989123Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d934c021-3451-4b5b-b59b-d7246a24a21f",
+      "author": "xqjG",
+      "content": "Round fully disposed: 9/9 fixed (coinage dissolved into established stage names; control surfaces and attribution grain stated honestly; manifest falsifier closes the tier gap too). mdatron verify clean on effort revision 2. Closing; round 2 dispatches.",
+      "created_at": "2026-07-20T01:30:26.273527Z",
+      "kind": "result"
+    }
+  ]
+}

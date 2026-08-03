@@ -1,0 +1,53 @@
+{
+  "uuid": "c8cc9331-8003-43e9-ab7d-9a1e37a4be0c",
+  "display_id": 787,
+  "title": "Phase 3 execution, Layer 3: round 3 — verify the round-2 fixes, re-decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T09:06:27.997582Z",
+  "updated_at": "2026-07-28T21:24:11.132988Z",
+  "closed_at": "2026-07-28T21:24:11.132980Z",
+  "comments": [
+    {
+      "uuid": "8466b841-923a-4b9f-b47b-d4216f971c82",
+      "display_id": 1045,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface, SYNCHRONOUS under the live session (run_in_background false) — the conduct correction from three consecutive interruption incidents (#775 four-hour stall, #783's overnight partial and security-lens drop): detached verify rounds on this attended-vehicle host get mauled by sleep and connection drops, so this round blocks the turn rather than risking a fourth. round shape: STOP-DECIDING VERIFY, scope NARROWED to the round-2 change set (ff0d3a3f, ~239 insertions across the injection cleaning and the falsifiers). THREE lenses, not four: security (the #784 cleaning now reaches every surface — composition line, broken form, main.rs prints; any interpolation still raw; the pub helper's exposure), software-engineer (the cleaning's correctness at each site, the registered_absence sharing, the budget-override lever's soundness), quality-engineer (do the #785 falsifiers now kill their named mutants; do the #786 falsifiers actually falsify; any new overfit). UX drops: its only round-2 finding was the convergent #784, now closed, and the change set is display-cleaning plus tests, not new display shapes. MODEL, CHOSEN: claude-fable-5 all three. EFFORT, CHOSEN: security and software-engineer HIGH, quality-engineer MEDIUM. expected_cost_band: 0-6 findings pre-dedup, 120k-240k downstream tokens — priced for a narrowed synchronous round over a small change set. inputs: the tree at ff0d3a3f + the changelog mirror; the three closed children; the #783 trail. returned + telemetry recorded here after.",
+      "created_at": "2026-07-26T09:23:02.746218Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "b09d0614-ec18-4b1e-bf63-f0f8cd7e8c62",
+      "display_id": 1046,
+      "author": "xqjG",
+      "content": "MANIFEST CORRECTION: the Workflow surface has no synchronous mode — it always dispatches to the background — so 'run_in_background false' was not expressible and is withdrawn from the manifest above. The conduct point stands as a recommendation the operator holds, not a tool setting I can enforce: the durable fix for the interruption class is Layer 8's container-backed vehicle. Round 3 launched normally under the live turn; the three completed lenses cache on any resume, so an interruption costs at most the in-flight lens, not the round. Everything else in the manifest holds.",
+      "created_at": "2026-07-26T09:32:12.805488Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "2d30964b-ab43-4579-a75d-1ea650116f57",
+      "display_id": 1047,
+      "author": "xqjG",
+      "content": "ROUND 3 RETURNED — synchronous, no interruptions, IN BAND (242,526 tokens / 117 tools against 120k-240k, a whisker over — the narrowing worked). All three round-2 fix claims verified: #785 held clean on all lenses; #784 and #786 held on their NAMED sites but the round uncovered adjacent misses the narrow claim did not cover. Stop: NOT reached, unanimous (all three lenses). Four children: #788 (major, security+SE convergent, DEMONSTRATED end-to-end on the built binary: clean_for_terminal and acquire.rs's clean_for_display filter only is_control, so bidi overrides U+202E, isolates U+2066-2069, zero-width U+200B/U+FEFF, and format chars pass to every rendered surface — the Trojan-Source/display-spoofing class, reachable through state-sourced scope/domain AND crosslink-sourced work-item/milestone; the project's OWN .crosslink/rules/web.md names exactly this — 'Zero-width chars, RTL overrides: Strip and re-evaluate' — so the toolkit contradicts its own threat list; not a regression, the is_control-only definition predates ff0d3a3f, which widened its reach uniformly), #789 (major SE: the broken-state human form's file-path line — broken.rs shown_path — interpolates raw one line below the #784 message fix; a hostile repo checked out with a control/bidi subdirectory name puts attacker-influenced bytes on cwd, so the path reaches the terminal uncleaned), #790 (major QE+SE: the #786 degenerate-budget falsifier goes VACUOUS — unwrap_or empty turns a failed field-locate into a passing assertion, so a budget-ignoring absence mutant escapes the falsifier written to catch exactly it; and the three main.rs diagnostic prints #784 cleaned have no red test — reverting them to raw passes the whole suite, needing a command-level malformed-artifact fixture), #791 (minor collector: free-form registry strings next_step_text and human_recovery render raw while the schema-pinned enum kind is cleaned — inconsistent trust model; #786's registered_absence read is dead in the live binary because acquire.rs hardcodes the absence words upstream, so the anti-drift purpose is unmet at the operative layer; the empty-fallback can still render the forbidden empty slot and the two renderers disagree on how they fail). TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 all three; effort chosen=observed (security/SE high, QE medium); band 120k-240k declared, 242,526 observed — essentially on the ceiling, the first verify round to land in its declared band because it was narrowed and ran uninterrupted. Fix pass follows.",
+      "created_at": "2026-07-26T09:45:07.965886Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "48c3911a-e34d-4b36-88ec-e877b51a7fd9",
+      "display_id": 1052,
+      "author": "xqjG",
+      "content": "Round 3 fix pass COMPLETE (94d3c2cf; changelog mirror follows). All four children closed with tree-verified results. The headline — the terminal cleaner missing the display-spoofing class — is closed as ONE shared policy across both crates, honoring the project's own hidden-Unicode rule; the adjacent path-line miss and the free-form registry strings are cleaned; the vacuous falsifier is real and the command surface gained a red test. Gates: 136 tests pass / 0 fail (status conduct 30 -> 32 plus the acquire fidelity pin), clippy zero, fmt clean, mdatron verify clean. Round 4 (verify the round-3 fixes, re-decide the stop) dispatches next — narrowed to the change set, and run while the operator is present per the standing interruption conduct.",
+      "created_at": "2026-07-26T09:53:32.926412Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "79f3e296-ed28-4d1e-97ed-c1c80a34c3ed",
+      "display_id": 1121,
+      "author": "xqjG",
+      "content": "Closed as lifecycle cleanup (Layer-3 compliance audit, 2026-07-28). This phase-3 round's findings were fix-closed IN PLACE without phase-4 routing — the recorded deviation (#806/#808), forward-only, standing on that record. The round's terminal-safety fixes landed and were then SUPERSEDED by the Layer-3 rebuild (#813) under the ratified Terminal output safety requirement (#807); their tests became its verification architecture. Round issue left open at the time; closed now.",
+      "created_at": "2026-07-28T21:24:05.130390Z",
+      "kind": "resolution"
+    }
+  ]
+}

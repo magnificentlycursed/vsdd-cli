@@ -1,0 +1,21 @@
+{
+  "uuid": "b0220676-1f4e-40b3-bfdc-1bf721ce4374",
+  "display_id": 521,
+  "title": "effort r1 AIE: supplement cross-reference inaccurate",
+  "description": "Effort round 1. Lens: ai-engineer (validator: PE). Defect: 'beside the model-tier surface it already carries' — the supplement carries no model-tier surface; that discipline lives in the domain prompt. Citations verified: contract:170 vs supplements/claude-code-cli.md:13-20. Proposed: resolved-candidate (the rewrite catalogs both surfaces together — no false present tense).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:42.925657Z",
+  "updated_at": "2026-07-20T01:30:19.726738Z",
+  "closed_at": "2026-07-20T01:30:19.726738Z",
+  "comments": [
+    {
+      "uuid": "5b668299-1015-4798-b07a-6c967bc41dfa",
+      "author": "xqjG",
+      "content": "Fixed: the rewrite catalogs both surfaces together; no false present tense. Revision: methodology-rewrite sentence.",
+      "created_at": "2026-07-20T01:29:55.541413Z",
+      "kind": "resolution"
+    }
+  ]
+}

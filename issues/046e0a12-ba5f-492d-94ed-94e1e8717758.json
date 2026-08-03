@@ -1,0 +1,29 @@
+{
+  "uuid": "046e0a12-ba5f-492d-94ed-94e1e8717758",
+  "display_id": 668,
+  "title": "data set: gate data — failure kinds, flake policy, cannot-run predicate, mapping schema",
+  "description": "Round 4 of #598: contract items 4-7. The failure-kind enumeration completed with abort and not-collected (per-kind validity: which kinds constitute a valid executed red, which are the neither-red-nor-green recorded states); the flake-resistance repetition number and per-test aggregation rule covering pin runs and the suite delta alike; the cannot-run predicate's command binding and exit-and-timeout semantics (the lawful discriminator's mechanical check for the broken-verification-surface form); the mapping schema for relocation-as-fix with the adopted report-set default confirmed or overridden (the contract authored the fixture list against the default; overriding retires the cfg-vanished degradation). All numbers and the default confirmation are operator-owned. Owner: data-engineer. Validator: quality-engineer (gate mechanics are that lens's exact concern).",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T02:13:08.205461Z",
+  "updated_at": "2026-07-21T02:20:38.210304Z",
+  "closed_at": "2026-07-21T02:20:38.210304Z",
+  "comments": [
+    {
+      "uuid": "5d712090-05c2-4708-8354-368e40df4ef0",
+      "author": "xqjG",
+      "content": "OPERATOR ADOPTION 2026-07-20, all four blocks as proposed: the 10-member failure-kind enumeration with the red-validity split (five valid executed reds; compile-failure conditional on the validator-approved declaration; four neither states per the pin doctrine); flake policy 3 runs with same-kind unanimity for red, all-pass for green, mixed as the flaky recorded state; the cannot-run predicate bound to the declared workspace test command with no-report-or-zero-collected semantics and a 600s recorded timeout; and the mapping schema with the report-set default CONFIRMED — the cfg-vanished degradation and its fixtures stand as the ratified contract authored them. Data Engineer pass under the session's loaded lens: no new findings — pair rule followed, all flow-map values with punctuation quoted (the round-2/3 lesson applied at authoring), red-validity fork pinned by schema enum, cross-set constraint declared (none needed beyond kind uniqueness — this set is self-contained). Quality Engineer validator note for the spec-review round: the same-kind unanimity rule's interaction with kind-migrating flakes (a test alternating panic/timeout) lands in the flaky state by construction — flagged as the branch the round should scrutinize.",
+      "created_at": "2026-07-21T02:20:30.043081Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "38c2f932-fb6a-4ba2-823c-a9e71c58d823",
+      "author": "xqjG",
+      "content": "Resolved: the set landed as the pair with all four adoptions applied. Evidence: the round-4 commit, mdatron verify clean at first attempt.",
+      "created_at": "2026-07-21T02:20:35.346870Z",
+      "kind": "result"
+    }
+  ]
+}

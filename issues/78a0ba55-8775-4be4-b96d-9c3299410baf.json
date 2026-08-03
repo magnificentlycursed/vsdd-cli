@@ -1,0 +1,28 @@
+{
+  "uuid": "78a0ba55-8775-4be4-b96d-9c3299410baf",
+  "display_id": 362,
+  "title": "phase-1c work item: statusline wiring script shape",
+  "description": "Routed from statusline amendment cold round 2 (operator triage, deferred cluster). Scope for phase-1c decomposition: (1) repo-set configuration location, format, and edit path for the init-installed wiring script (from: statusline r2 UX repo-set edit affordance); (2) managed-vs-adopter-owned classification of the wiring script against init drift-refusal (from: statusline r2 SA wiring-script ownership); (3) composition-instruction conduct for non-wrapper existing statusLines — inline one-liner or opaque command shapes (from: statusline r2 UX instruction presumes wrapper); (4) aggregate multi-repo refresh cost denominated in native units, N x per-repo budget with N explicit in the same config (from: statusline r2 AIE aggregate refresh cost). Blocks: the four routed findings close against this item; it enters 1c decomposition with the other statusline numbers (width budgets, wall-clock budget).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:17:13.012721Z",
+  "updated_at": "2026-07-21T02:12:07.708296Z",
+  "closed_at": "2026-07-21T02:12:07.708296Z",
+  "comments": [
+    {
+      "uuid": "47aea00c-bc85-4bbc-a551-de940aad814a",
+      "author": "xqjG",
+      "content": "From statusline round 4 (AIE out-of-lens routing note): the full-invocation wall-clock check is a hard CI gate on a wall-clock measurement — a known-flaky test class (PE/QE territory). When the budget number is authored here at 1c, decide the flake-resistance shape with it: margin over the observed baseline, bounded retry, or percentile-over-N-runs.",
+      "created_at": "2026-07-19T23:43:58.184292Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "21f00a69-2714-4382-bb52-29ecf1a4e30c",
+      "author": "xqjG",
+      "content": "Resolved: all four routed items closed by the statusline data set (vsdd-cli #667, operator-adopted 2026-07-20) — repo-set configuration location, format, and edit path (adopter-owned ~/.config/vsdd/statusline.yaml); wiring-script config ownership placed outside init drift-refusal (script managed, config adopter-owned); composition-instruction conduct covering wrapper and opaque-command shapes; aggregate multi-repo refresh cost denominated as explicit repo count times the per-repo wall-clock budget. Evidence: the round-3 commit and #667's decision trail. The wiring script's build itself is Layer 3 work and proceeds against these adopted shapes.",
+      "created_at": "2026-07-21T02:12:04.745238Z",
+      "kind": "result"
+    }
+  ]
+}

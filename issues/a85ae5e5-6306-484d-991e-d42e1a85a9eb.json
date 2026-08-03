@@ -1,0 +1,28 @@
+{
+  "uuid": "a85ae5e5-6306-484d-991e-d42e1a85a9eb",
+  "display_id": 51,
+  "title": "TW/F2: E0080 page voice consistency",
+  "description": "Source: mdatron/review-log/2026-06-07-technical-writer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:03:18.114419Z",
+  "updated_at": "2026-06-08T01:48:10.960174Z",
+  "closed_at": "2026-06-08T01:48:10.960174Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "3d9c0480-be34-4f8c-992f-ba4e24bc8f8d",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:10.298617Z",
+      "kind": "resolution"
+    }
+  ]
+}

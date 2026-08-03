@@ -1,0 +1,21 @@
+{
+  "uuid": "4c1bb873-d852-4a82-abce-c1b2dc2cd273",
+  "display_id": 563,
+  "title": "statusline r16 UX: human broken-state recovery not stated per-kind",
+  "description": "Round 16. Lens: ux, low-medium confidence, structural kernel distinct from the 1c text deferral (validator: DR). Defect: machine broken-state and degraded human are pinned per-kind; the broken-state human recovery is a uniform phrase — the AT-routed surface under-serves the permission kind relative to the machine sibling. Citations verified: contract:163, :188. Proposed: resolved-candidate (structural clause: the human recovery is per-kind from the same 1c-authored data; content stays deferred).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:52:41.607768Z",
+  "updated_at": "2026-07-20T02:55:09.571124Z",
+  "closed_at": "2026-07-20T02:55:09.571124Z",
+  "comments": [
+    {
+      "uuid": "be8e246b-3d27-4ce8-baa9-ef8e14f4781e",
+      "author": "xqjG",
+      "content": "Fixed: the human broken-state recovery is per-kind like its machine sibling, drawn from the same 1c-authored data — structure pinned, content deferred. Revision: Status detection criterion.",
+      "created_at": "2026-07-20T02:54:40.854096Z",
+      "kind": "resolution"
+    }
+  ]
+}

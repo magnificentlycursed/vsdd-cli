@@ -1,0 +1,35 @@
+{
+  "uuid": "1a98d28f-5a42-4f1e-90eb-23f9a979c85c",
+  "display_id": 537,
+  "title": "effort amendment cold round 3",
+  "description": "Round child of: Directive: effort level joins model tier as a managed dial. Cold review of effort revision 3 (post round-2: dial domain = the loop's cold rounds and fix passes with the gate excluded and reasoned; manifest recording falsifier instrumented with seed and live-fire clause). Series 9-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:46:32.514128Z",
+  "updated_at": "2026-07-20T01:59:14.428953Z",
+  "closed_at": "2026-07-20T01:59:14.428953Z",
+  "comments": [
+    {
+      "uuid": "b8dd564b-da09-4015-8a24-260278aed818",
+      "author": "xqjG",
+      "content": "Dispatch manifest — effort round 3. Subject: effort revision 3, four anchors: config fields (dial per lens and per loop stage — the loop's cold rounds and fix passes, gate excluded with reason; cost-band boundary); manifest clause + recording falsifier + its seed and live-fire clause; Cost is knowable advisory (six signals, sources, per-auth grain, two control surfaces); methodology-rewrite sentence; revision header. Out of scope: statusline and lane amendments. Lenses: ai-engineer + vsdd-methodology, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:46:48.915443Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "cc7e772b-c1cc-426d-8bfb-2c592b294d82",
+      "author": "xqjG",
+      "content": "Effort round 3 complete. AIE: NO FINDINGS (both round-2 items verified honestly closed). Methodology 3 filed: L221 stage attribution; L222 applicability cross-ref; L223 marker. Series 9-2-3. Not clean; round 4 after disposition (methodology only, narrowed with declared reason: AIE clean on substance, all three fixes methodology-jurisdiction).",
+      "created_at": "2026-07-20T01:57:06.997469Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "80a46f60-5b34-430d-a4d6-85d4d9ac9d88",
+      "author": "xqjG",
+      "content": "Round fully disposed: 3/3 fixed. mdatron verify clean on effort revision 4. Closing; round 4 dispatches (methodology only, narrowed: AIE clean on substance, all fixes methodology-jurisdiction).",
+      "created_at": "2026-07-20T01:59:13.246940Z",
+      "kind": "result"
+    }
+  ]
+}

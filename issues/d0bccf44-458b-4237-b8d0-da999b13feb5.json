@@ -1,0 +1,21 @@
+{
+  "uuid": "d0bccf44-458b-4237-b8d0-da999b13feb5",
+  "display_id": 355,
+  "title": "statusline r2 UX: staleness window between refresh events unnamed",
+  "description": "Round: statusline amendment cold round 2. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: render-time honesty is contracted but the between-events staleness window is not named — a clean-but-stale segment can misreport a degradation that began after the last substrate event; the lying gauge in its staleness form. Citations verified: contract:160, :167. Proposed: deferred, with option to fold as one sentence (segment is as fresh as the substrate's last event; the human form is the on-demand fresh read). Failure: operator trusts a green gauge through an unrefreshed degradation.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:17.300416Z",
+  "updated_at": "2026-07-19T23:18:04.576662Z",
+  "closed_at": "2026-07-19T23:18:04.576662Z",
+  "comments": [
+    {
+      "uuid": "55ad067e-bf69-42a2-a755-969177f7f546",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded per established pattern). Staleness window named: the segment is as fresh as the substrate's last refresh event — between events it can lag reality; the human form is the on-demand fresh read. Revision: Status bullet.",
+      "created_at": "2026-07-19T23:17:43.661220Z",
+      "kind": "resolution"
+    }
+  ]
+}

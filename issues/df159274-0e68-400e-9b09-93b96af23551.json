@@ -1,0 +1,21 @@
+{
+  "uuid": "df159274-0e68-400e-9b09-93b96af23551",
+  "display_id": 350,
+  "title": "statusline r2 AIE: single-acquisition claim has no check",
+  "description": "Round: statusline amendment cold round 2. Lens: ai-engineer (validator: platform-engineer). Owner: SO session. Defect: one-acquisition-not-fan-out is invisible in the output string — a fan-out implementation is still deterministic and passes every criterion, so the exact defect the amendment cites as motivation (bootstrap three-subprocesses-per-repo) is unfalsifiable; the scoped-count correction is verified, the cost-shape correction is not — asymmetric. Citations verified: contract:160, :197, :200, :185. Proposed: resolved-candidate. Failure: silent regression to the shape the contract exists to correct.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:12.252762Z",
+  "updated_at": "2026-07-19T23:18:38.454001Z",
+  "closed_at": "2026-07-19T23:18:38.454001Z",
+  "comments": [
+    {
+      "uuid": "6aa2380d-c6f4-498d-b1c0-ca26074d6274",
+      "author": "xqjG",
+      "content": "Fixed in working tree. The effectful shell's integration seam counts acquisitions; the statusline path performs exactly one snapshot acquisition per invocation — fan-out regression fails the count rather than passing on determinism. Revision: Status detection criterion.",
+      "created_at": "2026-07-19T23:17:40.749089Z",
+      "kind": "resolution"
+    }
+  ]
+}

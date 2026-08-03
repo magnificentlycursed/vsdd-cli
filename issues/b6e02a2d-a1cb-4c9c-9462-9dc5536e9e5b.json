@@ -1,0 +1,21 @@
+{
+  "uuid": "b6e02a2d-a1cb-4c9c-9462-9dc5536e9e5b",
+  "display_id": 247,
+  "title": "amend-r5-SA: affordance map pre-binds phase-3 to swarm",
+  "description": "Minor. Fix: the binding declared conditional on the Swarm live fire pass, recorded in the map. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:02:08.446971Z",
+  "updated_at": "2026-07-20T19:08:18.776045Z",
+  "closed_at": "2026-07-20T19:08:18.776045Z",
+  "comments": [
+    {
+      "uuid": "551d7dda-390b-4f8e-a78f-29d2d1028c0a",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:08:15.990088Z",
+      "kind": "resolution"
+    }
+  ]
+}

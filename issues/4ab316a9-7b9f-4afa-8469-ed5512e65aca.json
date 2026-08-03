@@ -1,0 +1,21 @@
+{
+  "uuid": "4ab316a9-7b9f-4afa-8469-ed5512e65aca",
+  "display_id": 467,
+  "title": "lane r5 SE: absolute-green standing suite deadlocks on pre-existing failures",
+  "description": "Lane round 5. Lens: SE (validator: SO). Owner: SO session. Defect: no-regression is a delta property implemented as an absolute gate — any unrelated red blocks every fix, and two independent pre-existing failures deadlock each other (bundling forbidden, no pre-publish waiver, broken-surface clause inapplicable to a running-but-failing suite). Citations verified: contract:64 with :81. Proposed: resolved-candidate (delta semantics: the standing suite runs at baseline and HEAD and the gate compares — no test failing at HEAD that passed at baseline; pre-existing failures neither block nor excuse).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:50.233388Z",
+  "updated_at": "2026-07-20T00:49:13.593040Z",
+  "closed_at": "2026-07-20T00:49:13.593040Z",
+  "comments": [
+    {
+      "uuid": "a1711390-56dd-4ee3-b7a9-4f05a5492ad4",
+      "author": "xqjG",
+      "content": "Fixed: the standing suite is a delta — runs at baseline and HEAD, gate compares, no test failing at HEAD that passed at baseline; pre-existing failures neither block nor excuse; the two-standing-failures deadlock dissolves. Revision: gate bullet.",
+      "created_at": "2026-07-20T00:48:57.832778Z",
+      "kind": "resolution"
+    }
+  ]
+}

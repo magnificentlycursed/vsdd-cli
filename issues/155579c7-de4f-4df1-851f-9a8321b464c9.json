@@ -1,0 +1,21 @@
+{
+  "uuid": "155579c7-de4f-4df1-851f-9a8321b464c9",
+  "display_id": 407,
+  "title": "lane r1: SE-minimum unpaired against validator-differs-from-owner",
+  "description": "Lane round 1. Lens: methodology (F4) (validator: SO). Owner: SO session. Defect: software-engineer-at-minimum names an owner only; whether the minimum satisfies pair co-activation and validator-differs-from-owner is unanswerable — a fix could be self-validated, the mdatron class again. Citations verified: contract:81 vs :76, :92. Proposed: resolved-candidate (state the pair: SE plus its cold-reader validator under the existing integrity rules).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:21.929291Z",
+  "updated_at": "2026-07-19T23:58:45.829606Z",
+  "closed_at": "2026-07-19T23:58:45.829606Z",
+  "comments": [
+    {
+      "uuid": "f0583115-357a-4500-952d-f33fdd4b39f4",
+      "author": "xqjG",
+      "content": "Fixed: minimum composition stated as software-engineer with its cold-reader validator, pair co-activation and validator-differs-from-owner holding at any set size. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-19T23:58:21.569243Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "2f520e46-f26f-458c-ac70-b0453ccdf90f",
+  "display_id": 621,
+  "title": "1c-DR-r3: retired term cell used in the phase-1c-added text",
+  "description": "Minor, check e. Citation (Layer 2/Layer 5/audit): 'the state-consistency backstop cell excepted', 'integrity-violating-config cells', 'its state-consistency backstop cell at #332' vs the registry trail: cell retired by operator ruling 2026-07-18. Fix: plain words — check(s) — throughout the phase-1c-added text; the one pre-existing ratified body use is out of this round's subject. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:31:14.747438Z",
+  "updated_at": "2026-07-20T17:32:41.227438Z",
+  "closed_at": "2026-07-20T17:32:41.227438Z",
+  "comments": [
+    {
+      "uuid": "f89c944d-d941-41d0-b371-ef20d0735db8",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Retired term removed from the phase-1c text: backstop cell -> backstop check (L2, L7, audit), integrity-violating-config cells -> checks (L5). The single pre-existing ratified body use is outside this round's subject. mdatron verify clean.",
+      "created_at": "2026-07-20T17:32:39.753985Z",
+      "kind": "resolution"
+    }
+  ]
+}

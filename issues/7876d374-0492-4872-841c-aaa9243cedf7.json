@@ -1,0 +1,21 @@
+{
+  "uuid": "7876d374-0492-4872-841c-aaa9243cedf7",
+  "display_id": 601,
+  "title": "1c-DR-r1: estate-cleanup act truth-reconciliation silently unassigned",
+  "description": "Minor, check e. Citation (Decomposition, Layer 0) vs the estate-cleanup open question: the open question enumerates 'truth-reconcile mdatron's README and DESIGN to the implemented surface'; Layer 0 lists it neither in its acts nor its exclusion clause '(tracker remote, hub sync, signing)'. Fix: name it in the exclusion as mdatron-session-owned and already executed in the mdatron design cycle (truth-cut commits on the mdatron tracker record). Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:33.604263Z",
+  "updated_at": "2026-07-20T17:09:50.427560Z",
+  "closed_at": "2026-07-20T17:09:50.427560Z",
+  "comments": [
+    {
+      "uuid": "ae75a558-26cf-4672-8516-c16d76614806",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 0's exclusion clause now reads '(tracker remote, hub sync, signing, and the README-and-DESIGN truth-reconciliation — the last already executed in the mdatron design cycle, on that tracker's record)'. mdatron verify clean.",
+      "created_at": "2026-07-20T17:09:49.119760Z",
+      "kind": "resolution"
+    }
+  ]
+}

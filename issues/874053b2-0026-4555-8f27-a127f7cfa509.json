@@ -1,0 +1,21 @@
+{
+  "uuid": "874053b2-0026-4555-8f27-a127f7cfa509",
+  "display_id": 258,
+  "title": "amend-r5-AI: Read record outlives content",
+  "description": "Minor. Compaction eviction and partial reads pass the gate. Fix: honesty clause — entry-time guarantee, read ranges recorded, post-compaction re-entry re-reads; the gate converts silent non-loading to auditable record, not retention. Owner: solution-architect. Validator: ai-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:03:10.052941Z",
+  "updated_at": "2026-07-20T19:11:44.556969Z",
+  "closed_at": "2026-07-20T19:11:44.556969Z",
+  "comments": [
+    {
+      "uuid": "6c13b0ff-f2fc-4588-8001-5598d715cac9",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit recorded in the round-5 parity result on the amendment issue, keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:11:41.819368Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "display_id": 307,
+  "title": "Phase 1b: verification architecture (respec cycle)",
+  "description": "Goal: \n\nAcceptance criteria:\n- \n\nPhase 1b of the respec cycle (parent by title: 'Respec: agent-first VSDD toolkit on the crosslink chassis'). Scope per the phase-1b primer's four questions and the recorded phase-1a exit: purity boundaries for the toolkit; automatable-versus-manual classification; phase-5 candidates; trust boundaries; the falsifiability instruments (convergence fixture corpus and isolation mechanics); and the phase-state-location decision against its five recorded criteria. Deliverable: the ratified contract gains its Verification architecture section and the phase-state open question resolves, via the spec-review loop (draft, cold round, operator ratification).",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:46:21.838393Z",
+  "updated_at": "2026-07-19T22:12:09.409187Z",
+  "closed_at": "2026-07-19T22:12:09.409187Z",
+  "labels": [
+    "feature",
+    "phase-1b"
+  ],
+  "comments": [
+    {
+      "uuid": "15824e55-b8c0-4c0f-a3cb-916549009e13",
+      "author": "xqjG",
+      "content": "Phase composition declaration — phase: phase-1b; domains: solution-owner (primary), solution-architect, quality-engineer; mode: skill-interactive; operator confirmation: 'proceed with vsdd-cli phase 1b' 2026-07-19. Evidence carried in: today's chassis behavior is primary evidence for the phase-state decision (tracker offline all day with push failures; local-ID renumbering and stranded-issue episodes on the mdatron tracker; git operating throughout).",
+      "created_at": "2026-07-19T21:46:23.709553Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "d945627b-4e6f-4b21-9f54-3712f3e81577",
+      "author": "xqjG",
+      "content": "Phase-1b draft authored in the working tree (uncommitted pending ratification): sha256:62399ff8d49d42f454ffb86490258cea16586ac593c4246fc24d63a807ce1eb7 (301 lines). The phase-state open question resolved (repo artifact primary, five criteria answered, today's chassis evidence deciding); the Verification architecture section added (pure core with named properties; automatable-versus-manual with owners; phase-5 candidates; trust boundaries; falsifiability instruments including convergence isolation mechanics). Dispatching the spec-review round: quality-engineer and solution-architect per the phase-1b primer's composition; declared coverage — the cold reader and security stand on the ratified base text, and this addition's security surface is the trust-boundary enumeration itself, within SA's structural remit for this round.",
+      "created_at": "2026-07-19T21:47:20.459626Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "533894e4-69ea-4411-a9e0-581580bb8eaf",
+      "author": "xqjG",
+      "content": "Primer audit (canonical vsdd-phase-1b.md read at operator prompt — NOT reloaded at phase entry as discipline requires; third recurrence of working-from-memory, evidence for the session-entry enforcement requirement). Compliance: composition matches; all four questions addressed; properties named per the Exacting Mentor rule; SA+QE concurrence is the in-flight round; PhaseExited emission pending at the closing commit; layer designation not-applicable pre-decomposition. Two self-findings for the round triage: (1) the Phase 5 strategy line at Project declarations names only mdatron's fuzz targets while the 1b section adds vsdd's own config/state/registry parsers — the declaration must update to stay verbatim-consistent with what 1b drives; (2) the phase-answer derivation takes a tracker snapshot as a parameter — exactly the primer's 'pure but takes a clock as parameter' shape requiring explicit named refinement: the derivation is pure over an explicitly-acquired snapshot, acquisition in the effectful shell. Both fold into the post-round fix pass.",
+      "created_at": "2026-07-19T21:48:51.342425Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "0b323f0f-15d6-4552-84c8-7c13950017d3",
+      "author": "xqjG",
+      "content": "Phase-1b spec-review round 1 results: 18 findings reported (QE 9, SA 7, primer-audit self-findings 2), 3 cross-lens dedups, 15 filed as children (parity 15/15; identify by title per the local-handle convention). SA verified the phase-state resolution structurally sound with its deciding evidence confirmed live against the mdatron tracker; QE confirmed no contradiction with the ratified base. Defects concentrate in the pure-core enumeration (pricing-function attribution, mutation scope, derivation inputs) and the degraded-semantics seam. Two fixes touch ratified base text (the bill-of-materials attribution; the Phase 5 strategy line) and are flagged Raise-to-SO for the operator's go.",
+      "created_at": "2026-07-19T21:57:29.682202Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5853999b-8749-416c-8401-5f67100b0072",
+      "author": "xqjG",
+      "content": "[action] Integrity self-check before the phase-1b fix pass: parity 15/15, typed comments in order, session work correct; two dings — this breadcrumb was stale (now current) and milestone #1 holds 0 issues under the local-ID attach limitation (attach-on-sync recorded). Proceeding: fix pass applying 15 findings incl. the two operator-approved base amendments (pricing-function attribution; Phase 5 strategy line), then closures with evidence, then the confirmation round (QE + SA, narrow).",
+      "created_at": "2026-07-19T21:59:45.446745Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "3a166965-cf96-4bca-978d-0098e9609868",
+      "author": "xqjG",
+      "content": "Phase-1b fix pass complete at sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9 (302 lines): all 15 round-1 findings closed with evidence (round-parity 15/15/15; identify by title). Base amendments applied under operator go: the pricing function correctly attributed (with its cost-crate home and mutation-boundary statement) and the Phase 5 strategy line rewritten with the per-repo fuzz-ownership split. The unified degraded rule, corroboration-snapshot refinement, third classification class, full-structured-answer convergence comparison, operator-adopted reference answers, domain-narrowing definition, and the new fixtures all landed. Dispatching the confirmation round: QE + SA, scoped to the fix-pass change set.",
+      "created_at": "2026-07-19T22:01:44.879852Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "0a21e202-520f-4f3b-854a-0053fff73a48",
+      "author": "xqjG",
+      "content": "[action] Phase-1b fix pass at sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9; 15/15/15 closed. Confirmation round (QE+SA, narrow) dispatching.",
+      "created_at": "2026-07-19T22:01:45.944762Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "83b4f25e-2361-4fc9-a643-21a8435df394",
+      "author": "xqjG",
+      "content": "Phase-1b confirmation round results: 5 findings filed (QE 3, SA 2; parity 5/5; identify by title). SA's formal concurrence on the purity-boundary list is on the record (all three pure functions); QE's concurrence follows the pricing-binding fix, its report otherwise confirming the set holds (degraded rule consistent in all three places; the derivation genuinely pure; no new inconsistency). Micro-pass applying all five now.",
+      "created_at": "2026-07-19T22:06:57.334528Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "d0a4974f-7375-4696-9b11-a849770f679c",
+      "author": "xqjG",
+      "content": "Micro-pass complete at sha256:cccfa7da5522125e0cd889f70333e62b11ccb266189f953cd598f4e393ab90e4 (302 lines); round-2 findings closed 5/5/5. Phase-1b completion state: verification architecture complete on the document's face per the primer (pure functions with properties, three-class automatable split, phase-5 candidates, trust boundaries, instruments); Phase 5 strategy line consistent; SA concurrence formal on the record; QE concurrence discharged by the pricing-binding fix its report conditioned on. Pending for the phase exit, both with the operator: the PhaseExited ruling (recommendation standing: retire the emitted record and events store, derive the event view from state-artifact commit history plus tracker — evidence: the store holds one file from June 1 and nothing since) and the phase-1b ratification (one commit for the whole 1b change set, milestone close, phase pointer to 1c).",
+      "created_at": "2026-07-19T22:07:38.692126Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "5af17c26-e9ed-431f-88fa-b10c1c7d320b",
+      "author": "xqjG",
+      "content": "[action] Phase-1b micro-pass at sha256:cccfa7da5522125e0cd889f70333e62b11ccb266189f953cd598f4e393ab90e4; rounds closed 15/15/15 and 5/5/5; completion criteria met on the document's face. Awaiting operator: PhaseExited ruling + 1b ratification.",
+      "created_at": "2026-07-19T22:07:39.964535Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "ee62ed36-1371-4a09-abe2-a36cb5b24979",
+      "author": "xqjG",
+      "content": "PHASE 1b EXITED: operator ratified; change set committed at 3bd5d8c — the boundary commit is the transition record per the derived-view ruling it carries. Completion criteria met with SA+QE concurrence; rounds closed 15/15/15 and 5/5/5. Phase pointer: 1c (decomposition; estate cleanup layer 0; swarm live fire to schedule; snapshot-schema audit and the deferred numbers land in 1c data authoring).",
+      "created_at": "2026-07-19T22:12:08.348279Z",
+      "kind": "result"
+    }
+  ]
+}

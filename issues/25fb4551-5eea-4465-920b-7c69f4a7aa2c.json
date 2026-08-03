@@ -1,0 +1,21 @@
+{
+  "uuid": "25fb4551-5eea-4465-920b-7c69f4a7aa2c",
+  "display_id": 423,
+  "title": "lane r2 SE: fix-discovered-while-implementing has no precedence rule",
+  "description": "Lane round 2. Lens: software-engineer (validator: SO). Owner: SO session. Defect: a defect found and fixed mid-layer is simultaneously layer work and fix-lane work — two gates, two baselines, two compositions, no precedence; 'before implementation' impossible for discovery-during-build. Citations verified: contract:64, :81, :89. Proposed: resolved-candidate (defects in code the current layer is building are layer work — finding filed, routed to the layer issue, layer red gate governs; the fix lane governs code outside the current layer's build scope; filing precedes the fix's implementation in both).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:42.995191Z",
+  "updated_at": "2026-07-20T00:16:57.053639Z",
+  "closed_at": "2026-07-20T00:16:57.053639Z",
+  "comments": [
+    {
+      "uuid": "915c6c48-59db-4fcc-8528-fdd5666aa604",
+      "author": "xqjG",
+      "content": "Fixed: precedence stated — defects in code the current layer is building are layer work (finding files at discovery, routes to the layer issue, layer red gate governs); the fix lane governs code outside the current layer's build scope; filing precedes the fix's implementation in both. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-20T00:16:34.138779Z",
+      "kind": "resolution"
+    }
+  ]
+}

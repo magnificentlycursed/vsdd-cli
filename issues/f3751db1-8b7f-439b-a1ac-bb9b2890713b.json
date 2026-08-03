@@ -1,0 +1,28 @@
+{
+  "uuid": "f3751db1-8b7f-439b-a1ac-bb9b2890713b",
+  "display_id": 169,
+  "title": "PE/F6: is_reserved_mdatron_code crate-private at v0.1",
+  "description": "Source: mdatron/review-log/2026-06-02-platform-engineer-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:24.860886Z",
+  "updated_at": "2026-06-08T02:23:09.128292Z",
+  "closed_at": "2026-06-08T02:23:09.128292Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:platform-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "4e7a1aa7-f4ca-4da5-9847-210a3a76f5c6",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@28e9794 (Wave 5).",
+      "created_at": "2026-06-08T02:23:08.131649Z",
+      "kind": "resolution"
+    }
+  ]
+}

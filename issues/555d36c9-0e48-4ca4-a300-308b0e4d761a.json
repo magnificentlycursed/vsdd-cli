@@ -1,0 +1,21 @@
+{
+  "uuid": "555d36c9-0e48-4ca4-a300-308b0e4d761a",
+  "display_id": 444,
+  "title": "lane r3 QE: no green-at-baseline fixture for the canonical cheat",
+  "description": "Lane round 3. Lens: QE (validator: SE). Owner: SO session. Defect: the cheat this contract descends from — a named test green at baseline, never genuinely red — has no fix-scale fixture; wrong-reason presupposes a red occurred. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (green-at-baseline fixture added; criterion asserts the gate rejects it).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:45.585895Z",
+  "updated_at": "2026-07-20T00:28:45.583337Z",
+  "closed_at": "2026-07-20T00:28:45.583337Z",
+  "comments": [
+    {
+      "uuid": "41437db8-d6ef-4969-955c-391fd177ecb4",
+      "author": "xqjG",
+      "content": "Fixed: green-at-baseline fixture added; criterion asserts the gate rejects a named test that never goes red — the canonical cheat exercised at fix scale. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:28:32.665158Z",
+      "kind": "resolution"
+    }
+  ]
+}

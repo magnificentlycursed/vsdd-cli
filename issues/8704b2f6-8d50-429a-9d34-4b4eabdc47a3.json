@@ -1,0 +1,21 @@
+{
+  "uuid": "8704b2f6-8d50-429a-9d34-4b4eabdc47a3",
+  "display_id": 599,
+  "title": "1c-DR-r1: Red-gate cheat blocked is multi-layer but claimed by L6 alone",
+  "description": "Blocking, check a. Citation (Acceptance criteria, Red-gate cheat blocked): 'the inline-review fixture is flagged by all three falsifiers... dispatch (no manifest), lifecycle (dual-home state), and conformance (free-slug names...)'; also 'the off-grammar-branch fixture is reported by the refs query' and 'the registered-form push passes the pre-push hook'. The criterion exercises instruments built in #307 (refs query), #332 (lifecycle/conformance falsifiers, consolidation), and #333 (dispatch manifest), yet the criteria audit assigns it to #331 alone with no declared split — it cannot close at #331 as decomposed. Fix: split by named slice per the Status detection precedent. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:29.370941Z",
+  "updated_at": "2026-07-20T17:09:45.060521Z",
+  "closed_at": "2026-07-20T17:09:45.060521Z",
+  "comments": [
+    {
+      "uuid": "ba1f96c2-9af2-4b6a-96e9-723c53c6e937",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Split declared: audit now reads 'Red-gate cheat blocked (L6 primary, with named slices at L2, L7, and L8)'; L2 gains the refs-query slice, L6 the gate-mechanics primary slice, L7 the lifecycle-and-conformance slice, L8 the dispatch-flagging slice — each named in its layer entry. mdatron verify clean.",
+      "created_at": "2026-07-20T17:09:43.900692Z",
+      "kind": "resolution"
+    }
+  ]
+}

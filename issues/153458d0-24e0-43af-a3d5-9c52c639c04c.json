@@ -1,0 +1,21 @@
+{
+  "uuid": "153458d0-24e0-43af-a3d5-9c52c639c04c",
+  "display_id": 418,
+  "title": "lane r2 SE: governed-set predicate undecidable at its own edges",
+  "description": "Lane round 2. Lens: software-engineer (validator: SO). Owner: SO session. Defect: semantic headline and syntactic enumeration diverge on doc-test comment edits (comment-only=out vs executable-source=in), test-only changes, manifest metadata edits; 'verified by unchanged tests' grammatically attaches to renames only. Citations verified: contract:81, :51, :53. Proposed: resolved-candidate (enumeration decides membership, headline is rationale; test source explicitly in; every mechanical-pass exclusion claim carries the unchanged-verification check; metadata-only manifest edits with unchanged lockfile/build graph out).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:34.111438Z",
+  "updated_at": "2026-07-20T00:16:49.575092Z",
+  "closed_at": "2026-07-20T00:16:49.575092Z",
+  "comments": [
+    {
+      "uuid": "53e014d1-76cd-4a31-b96e-64734e074ebc",
+      "author": "xqjG",
+      "content": "Fixed: enumeration alone decides membership (headline is rationale); test source explicitly in; every mechanical-pass exclusion is claimed-and-verified (unchanged-verification check on all exclusion claims, not renames only); doc-test-altering comment edits excluded from the comment-only exclusion; unchanged-lockfile manifest edits out when stated. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-20T00:16:27.855345Z",
+      "kind": "resolution"
+    }
+  ]
+}

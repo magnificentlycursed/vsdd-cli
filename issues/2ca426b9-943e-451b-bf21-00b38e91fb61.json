@@ -1,0 +1,21 @@
+{
+  "uuid": "2ca426b9-943e-451b-bf21-00b38e91fb61",
+  "display_id": 650,
+  "title": "posture-r4-AI: attended posture has no contracted check moment",
+  "description": "Minor, preflight adequacy. Disposition: under the structural split, attended sessions have the operator present as the check; no preflight is contracted for the attended side. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:10:04.210406Z",
+  "updated_at": "2026-07-20T18:16:24.824952Z",
+  "closed_at": "2026-07-20T18:16:24.824952Z",
+  "comments": [
+    {
+      "uuid": "a78400e1-e7c3-4680-84c5-5931aadae5b0",
+      "author": "xqjG",
+      "content": "Resolved as disposition: attended sessions carry no preflight — the operator present is the check; the split leaves no attended-execution lane to leave unchecked.",
+      "created_at": "2026-07-20T18:16:23.205030Z",
+      "kind": "resolution"
+    }
+  ]
+}

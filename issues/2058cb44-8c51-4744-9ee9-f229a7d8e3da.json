@@ -1,0 +1,21 @@
+{
+  "uuid": "2058cb44-8c51-4744-9ee9-f229a7d8e3da",
+  "display_id": 463,
+  "title": "statusline r9 UX: segment silent on malformed state artifact",
+  "description": "Round 9. Lens: ux (validator: DR). Owner: SO session. Defect: malformed state yields a multi-line stderr diagnostic but the statusline surface renders stdout — blank gauge, silent exactly where never-silent rules; the renderer has no structured answer to consume and no clause states what the segment emits; the malformed-state fixture is never run against the segment. Citations verified: contract:163, :188, :200, :217. Proposed: resolved-candidate (state-unreadable joins the never-silent enumeration; the shell composes a worded broken-state mark pointing to vsdd status when no structured answer exists; criterion runs the segment against the malformed-state fixture).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:42.647630Z",
+  "updated_at": "2026-07-20T00:49:07.836947Z",
+  "closed_at": "2026-07-20T00:49:07.836947Z",
+  "comments": [
+    {
+      "uuid": "d1de4fb9-9a8d-4e22-b828-c9bebe3ed99b",
+      "author": "xqjG",
+      "content": "Fixed: state-unreadable joins the never-silent enumeration; the shell composes a worded broken-state mark on the segment (stdout, pointing to vsdd status) when no structured answer exists; criterion runs the segment against the malformed-state fixture — the glance surface never blank. Revision: Status bullet + Status detection criterion.",
+      "created_at": "2026-07-20T00:48:51.980751Z",
+      "kind": "resolution"
+    }
+  ]
+}

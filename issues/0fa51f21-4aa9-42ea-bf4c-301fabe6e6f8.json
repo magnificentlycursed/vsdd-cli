@@ -1,0 +1,21 @@
+{
+  "uuid": "0fa51f21-4aa9-42ea-bf4c-301fabe6e6f8",
+  "display_id": 574,
+  "title": "lane r13 SE: composed clause over-generalizes to cfg-vanished targets no mapping can carry",
+  "description": "Lane round 13. Lens: SE (validator: SA). Defect: a cfg-vanished target is absent from the runner report and cannot be new-at-HEAD — the composed clause reaches only reported-skip targets; the cfg-vanished relocation degrades to source-path disablement with the relocation linkage a validator-trust item. Citations verified: contract:64, :173. Proposed: resolved-candidate (clause restricted to reported targets; the degradation stated honestly; the report-set-vs-source-set decision named as a 1c mapping-schema item).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T03:22:10.108023Z",
+  "updated_at": "2026-07-20T03:23:55.847502Z",
+  "closed_at": "2026-07-20T03:23:55.847502Z",
+  "comments": [
+    {
+      "uuid": "b73b962a-d66e-43ca-b200-495767b0bbc5",
+      "author": "xqjG",
+      "content": "Fixed: the composed clause restricted to reported-but-non-executing targets; the cfg-vanished degradation to source-path disablement stated with the relocation linkage as a validator-trust item; the report-set-vs-source-set decision named as a 1c mapping-schema item. Revision: gate bullet.",
+      "created_at": "2026-07-20T03:23:29.829112Z",
+      "kind": "resolution"
+    }
+  ]
+}

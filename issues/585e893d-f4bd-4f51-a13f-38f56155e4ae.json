@@ -1,0 +1,21 @@
+{
+  "uuid": "585e893d-f4bd-4f51-a13f-38f56155e4ae",
+  "display_id": 409,
+  "title": "lane r1: single-instance generalization unmarked as such",
+  "description": "Lane round 1. Lens: methodology (F7) (validator: SO). Owner: SO session. Defect: the full lane apparatus generalizes one incident; earned-by-recurrence ships single-recurrence additions candidate-status — operator direction is a permitted trigger, but the single-instance provenance is unmarked. Citations verified: contract:81, :85. Proposed: deferred-candidate, foldable (provenance marker records operator-direction trigger and single-instance status; the fix-scale red gate itself has two cases and is properly earned).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:24.325620Z",
+  "updated_at": "2026-07-19T23:58:49.036219Z",
+  "closed_at": "2026-07-19T23:58:49.036219Z",
+  "comments": [
+    {
+      "uuid": "0cdf07f2-773d-411e-884e-b1079dcb7d6f",
+      "author": "xqjG",
+      "content": "Fixed (deferred folded): provenance marker records the operator-direction trigger and single-instance generalization, names the fix-scale red gate's two prior cases as properly earned, and sets the second fix-lane case as the review trigger for the rest. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-19T23:58:23.568242Z",
+      "kind": "resolution"
+    }
+  ]
+}

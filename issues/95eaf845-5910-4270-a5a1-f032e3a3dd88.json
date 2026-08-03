@@ -1,0 +1,36 @@
+{
+  "uuid": "95eaf845-5910-4270-a5a1-f032e3a3dd88",
+  "display_id": 658,
+  "title": "data set: installed-artifact manifest schema + vsdd-cli populated instance",
+  "description": "Round 1 of the #598 package (contract: Conformance at action time, the chassis-affordance closure; Decomposition data-authoring item). Deliverables: (a) the manifest schema — versioned data with the lifetime-half field (tracked-wiring / per-clone-payload, plus the inverted git-hook pairing) and the reference-surface enumeration (project and user settings with local overlays, project server config and user-level locals, plugin listings, the statusline command path, git config — the contract's starting list); (b) this repo's populated instance, authored ahead of the Layer 0 repair close (act 9), which verifies both repos against it. Owner: ai-engineer (the substrate-tooling surface, per the domain's directive-reconciliation substrate duty). Validator: platform-engineer. Evidence base: the hollow-shell audit (#622 trail), this session's substrate inspection (guard-shimmed fail-open hook wiring observed live in .claude/settings.json; core.hooksPath=.githooks with tracked payload; per-clone crosslink payloads; three MCP servers wired via .mcp.json + settings.local.json enablement). All schema decisions are proposals until operator adoption per The operator authors the oracle.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:16:38.953456Z",
+  "updated_at": "2026-07-21T03:08:52.900900Z",
+  "closed_at": "2026-07-21T03:08:52.900900Z",
+  "comments": [
+    {
+      "uuid": "575c96f6-021d-4627-8610-46b54572c231",
+      "author": "xqjG",
+      "content": "Data Engineer review round over the draft (operator-directed, 2026-07-20 — the lens this act should have summoned at composition time; the miss is recorded on the #598 trail and feeds the act-to-affordance map, item 17). Findings filed as children: #659 (no mdatron schema pair, artifact silently unvalidated — high), #660 (the carrier decision for all 18 sets, markdown+frontmatter recommended — high, operator adoption), #661 (referential-integrity constraints undeclared — medium), #662 (keys/ entry missing from the instance — medium, security flag), #663 (manifest parser absent from read-time-diagnostic and fuzz enumerations — medium, Raise to SO). Coverage declared per dimension: schema discipline — #659/#660; migration path — no finding, draft status carries zero compatibility obligation and the forward-only governance line lands with adoption; backup/recovery — no finding, git-tracked artifact, git is the recovery; boundary validation — #663; workload — no finding, consumer is a linear entry walk, with the referential check as #661; schema observability — reviewed under the derived-view ruling (the domain prompt's events-store reference is suite-era; contract governs): announcements ride tracker + boundary commits, satisfied by this trail; PII/sensitive — #662's paths-only discipline, no material in the manifest, verified; append-only — not applicable, current-state artifact. Draft revision blocked on the #660 carrier ruling; #659/#661/#662 fixes fold into the revision; #663 awaits the SO reading.",
+      "created_at": "2026-07-21T01:25:33.068664Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "10e2ba3c-ff1d-4f68-8a15-a63721fd1e73",
+      "author": "xqjG",
+      "content": "LATE-RECORDED OPERATOR RULINGS (2026-07-20, recorded 2026-07-21 — the rulings occurred in the attended session's question flow at round 1 and were recorded on #597 and the landing commit fdbc3dc3, but not here on the set issue; the round-1 solution-owner lens caught the gap and this comment closes it, marked late): (1) ignore-policy context: the .gitignore carve-outs restored per the operator's Layer 0 ruling; (2) FAIL-CLOSED REWIRING — operator selected 'fix both now': all six settings.json hook commands exit 2 naming the missing payload; .githooks/pre-commit blocks the commit when mdatron is absent; (3) the manifest instance's content walked and accepted with the round-1 findings folded (#659-#662 dispositions). The manifest's citations at lines 24 and 115 point here and now resolve.",
+      "created_at": "2026-07-21T03:08:45.904958Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "69d4d698-f559-49e5-b768-9a8ab3fc7ad6",
+      "author": "xqjG",
+      "content": "Resolved: the set landed at fdbc3dc3 as the pair, DE findings #659-#662 closed with evidence; adoption record completed by the late-recorded decision above. This close was omitted at landing — caught by the round-1 solution-owner lens (its finding files under #673).",
+      "created_at": "2026-07-21T03:08:49.288804Z",
+      "kind": "result"
+    }
+  ]
+}

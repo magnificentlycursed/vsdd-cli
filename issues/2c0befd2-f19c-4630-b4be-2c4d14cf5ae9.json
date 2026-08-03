@@ -1,0 +1,35 @@
+{
+  "uuid": "2c0befd2-f19c-4630-b4be-2c4d14cf5ae9",
+  "display_id": 414,
+  "title": "defect-fix lane amendment cold round 2",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 2 (post round-1: 16 fixes + 2 folded + 1 dismissed — governed set defined, classification universe extended, gate mechanized red-and-green with baseline and retrofit, waiver harmonized, fixtures and criteria added, composition labels-as-surfaces).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:59:06.332246Z",
+  "updated_at": "2026-07-20T00:17:16.306865Z",
+  "closed_at": "2026-07-20T00:17:16.306865Z",
+  "comments": [
+    {
+      "uuid": "07fcb6b0-4f3a-472a-83bf-607ccd6becbd",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 2. Subject: lane revision 2 anchors: Directive reconciliation (extended classification enumeration incl. increment entry; symmetric bullet with finding-issue statement-target; extended falsification); Phase exit by gate (mechanized fix-scale bullet: baseline recording, red-and-green, failure-reason, isolation, surface-allows-one, broken-surface clause, retrofit form; falsifier with waiver condition); Finding lifecycle (governed-set definition; evidence-section linkage predicate; inheritance list incl. mutation floor and paired SE minimum; bootstrap rationale; provenance markers); Deterministic composition (labels-as-surfaces at fix scale); Gates requirement (both scales + retrofit); Red-gate cheat criterion fix-lane conduct; fixture corpus fix-lane set. Out of scope: statusline amendment (own round). Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-19T23:59:24.040935Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "0acf2960-b0d8-48a8-8c0f-9180057377db",
+      "author": "xqjG",
+      "content": "Lane round 2 complete. QE 4 + SE 6 + methodology 5 (redispatched after an API failure mid-run; fresh dispatch, full report) = 15 returned, 13 filed after 2 merges: L92 single-commit red impossibility (Meth); L93 governed-set edges (SE); L94 over-broad lifecycle falsifier (SE); L95 pre-publish waiver bypass (SE+Meth); L96 existential linkage/squash (SE); L97 retrofit entanglement (SE); L98 mid-implementation precedence (SE); L99 failure-reason representation (QE); L100 surface-limitation fixture (QE+Meth); L101 compliant-fix fixture + retrofit-not-absolution (QE); L102 flaky/isolation (QE); L103 two-prior-cases overclaim (Meth); L104 phase input at fix scale (Meth). All resolved-candidates; citations evidence-verified. Upstream mining (Thermite critic-fixer protocol, slag waiver mechanics; crosslink gate/merge/output mechanics) informs the fix pass — recorded in the resolutions. Series 19-13. Not clean; round 3 after disposition.",
+      "created_at": "2026-07-20T00:14:08.102851Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "07c5f8ae-9fb9-4cfa-a0d4-217639da46a9",
+      "author": "xqjG",
+      "content": "Round fully disposed: 13/13 fixed and closed, with the Thermite mining (test-first critic-fixer protocol, one-divergence-per-dispatch, slag polarity/count-zero bootstrap gate) and crosslink mining (gate recording shape) folded into the fixes. mdatron verify clean on lane revision 3. Closing; round 3 dispatches.",
+      "created_at": "2026-07-20T00:17:15.026967Z",
+      "kind": "result"
+    }
+  ]
+}

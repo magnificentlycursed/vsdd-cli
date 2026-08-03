@@ -1,0 +1,28 @@
+{
+  "uuid": "006b61f2-64d1-4494-8999-668c26701e55",
+  "display_id": 179,
+  "title": "RT/F3: null-propagation laundering via attacker frontmatter",
+  "description": "Source: mdatron/review-log/2026-06-02-red-team-phase-1-bundle.md\nClassification: deferred\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:43.906638Z",
+  "updated_at": "2026-07-21T00:45:40.662661Z",
+  "closed_at": "2026-07-21T00:45:40.662661Z",
+  "labels": [
+    "classification:deferred",
+    "cycle:crosslink-12",
+    "domain:red-team",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "23b66c1d-8b9b-49d8-9cd3-d54f2d518ad6",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:45:37.944291Z",
+      "kind": "result"
+    }
+  ]
+}

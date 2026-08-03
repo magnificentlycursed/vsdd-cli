@@ -1,0 +1,21 @@
+{
+  "uuid": "a45dde90-5a1a-4e98-9ab6-ad6b9051fc78",
+  "display_id": 788,
+  "title": "Layer 3 round 3 major security+SE convergent: the terminal cleaner strips only is_control — bidi overrides, zero-width, and format chars reach every rendered surface (the Trojan-Source class the project's own web.md names); shared with acquire.rs's clean_for_display",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T09:43:54.019075Z",
+  "updated_at": "2026-07-26T09:51:38.010877Z",
+  "closed_at": "2026-07-26T09:51:38.010868Z",
+  "comments": [
+    {
+      "uuid": "15ddad6c-a8bc-4af8-b75d-1c08b54f0639",
+      "display_id": 1048,
+      "author": "xqjG",
+      "content": "Fixed in 94d3c2cf: vsdd-core/src/text.rs is the one terminal-cleaning policy — is_terminal_unsafe drops the C0/C1 control set AND the display-spoofing set (bidi embeddings/overrides U+202A-202E, isolates U+2066-2069, marks U+200E/F and U+061C, zero-width U+200B-200D, BOM U+FEFF, deprecated format U+206A-206F). acquire.rs's clean_for_display and vsdd's clean_for_terminal both delegate to it — one definition, both crates. Combining marks and legitimate non-Latin text are deliberately NOT stripped (they are not on the threat list and stripping them would corrupt real names). Unit-pinned in text.rs (bidi/zero-width stripped, cafe-with-combining and Japanese survive) and end-to-end by a state-sourced U+202E/U+200B falsifier in the render suite. The project's own web.md hidden-Unicode rule is now honored rather than contradicted.",
+      "created_at": "2026-07-26T09:51:31.488823Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "6994e1d3-1b7a-4ec7-b7d4-0751980727d7",
+  "display_id": 488,
+  "title": "lane r6 Meth: display-ID branch naming conflicts with pre-sync provisional IDs",
+  "description": "Lane round 6. Lens: methodology (validator: SO). Owner: SO session. Defect: display IDs exist only after hub sync; the amendment does not say what a generated branch carries pre-sync — the naive local-ID reading resurrects the unstable-handle defect the design forbids. Citations verified: contract:124 vs :80, :264, :289. Proposed: resolved-candidate (the registered grammar declares both forms: the vehicle's session-scoped form pre-sync, the display-ID form once sync has assigned it).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:59.674689Z",
+  "updated_at": "2026-07-20T00:58:03.456037Z",
+  "closed_at": "2026-07-20T00:58:03.456037Z",
+  "comments": [
+    {
+      "uuid": "e4faefce-4452-4f97-b7e8-be44404779e5",
+      "author": "xqjG",
+      "content": "Fixed: the registered grammar declares both forms — session-scoped pre-sync, display-ID post-sync; provisional local IDs never enter branch names. Revision: Conformance closed-world bullet.",
+      "created_at": "2026-07-20T00:57:48.376435Z",
+      "kind": "resolution"
+    }
+  ]
+}

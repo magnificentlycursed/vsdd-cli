@@ -1,0 +1,21 @@
+{
+  "uuid": "0bf75fb2-8b3b-414f-8183-05aeec471d10",
+  "display_id": 426,
+  "title": "lane r2 QE: no compliant-fix fixture; retrofit-does-not-absolve untested",
+  "description": "Lane round 2. Lens: quality-engineer (validator: SE). Owner: SO session. Defect: every fix-lane fixture fails a falsifier or passes via waiver; the ordinary compliant fix never passes both on its merits (over-firing uncaught), and no criterion asserts the retrofit fixture still trips the lifecycle falsifier (under-firing uncaught) — 'retrofit closes verification debt, not the process breach' has no test. Citations verified: contract:64, :83, :53, :180, :173. Proposed: resolved-candidate (compliant-fix fixture added; criterion asserts retrofit still trips the lifecycle falsifier).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:12:48.206662Z",
+  "updated_at": "2026-07-20T00:17:02.492886Z",
+  "closed_at": "2026-07-20T00:17:02.492886Z",
+  "comments": [
+    {
+      "uuid": "e5ef3fa4-ed03-461d-9a06-4af105740bfa",
+      "author": "xqjG",
+      "content": "Fixed: compliant-fix fixture added and the criterion asserts it passes both falsifiers on its merits (over-firing tested); the retrofit fixture is asserted to still trip the lifecycle falsifier — retrofit is not absolution, now falsified. Revision: fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:16:37.636034Z",
+      "kind": "resolution"
+    }
+  ]
+}

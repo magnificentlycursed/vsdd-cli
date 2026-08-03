@@ -1,0 +1,36 @@
+{
+  "uuid": "0ed9da7f-5723-48f8-8491-f6d78da57789",
+  "display_id": 656,
+  "title": "Layer 0: resolve deferred driver-key remediation (the driver-key leak, 2026-05-28 security review)",
+  "description": "The 2026-05-28 identity-leak incident's second failure mode remains unremediated: .crosslink/driver-key.pub is a tracked file on public main (since the substrate deploy commit b3d6e50) carrying an SSH public key sourced by crosslink init from the user's default key without a selection prompt — its comment references a different pseudonymous context, and the key bytes are linkable across any other publication of the same key. Also present in the vsdd-cli-wip sibling tree (Layer 0 retirement act must account for it). Blocked on: operator's cross-persona key-publication audit. Resolution options: (a) swap to the project-intended key + untrack + ignore going forward (history retains the old blob); (b) full history rewrite + force-push (heavy; invalidates clones; needs its own plan). Upstream filings covering the mechanism: FM1/FM2 drafts pending operator review this session. Source records: review-log/2026-05-28-security.md (vsdd-cli-wip; preserved at 76ab1eb), operator decision on #597 2026-07-20. Keep sensitive strings out of this issue per the incident report's discipline.",
+  "status": "open",
+  "priority": "high",
+  "parent_uuid": "aab7eb64-ad2b-4f6b-99c1-885a0fc5258a",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T00:03:27.858367Z",
+  "updated_at": "2026-07-31T23:18:02.573165Z",
+  "comments": [
+    {
+      "uuid": "4e18cbe6-d2a3-41f2-9adf-fb1fd595a114",
+      "author": "xqjG",
+      "content": "Upstream filings now live for the mechanism this issue remediates locally: dollspace-gay/crosslink#28 (the driver-key leak — sourcing, selection, ignore-template asks) and #27 (the agent-key leak sibling). Local remediation here stays blocked on the operator's cross-persona audit; the bundled rewrite decision with #657 is the resolution vehicle.",
+      "created_at": "2026-07-21T00:21:31.669800Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "54c41039-c222-4852-a219-c0281339e66f",
+      "author": "xqjG",
+      "content": "Scope addition for the bundled rewrite decision: origin/wip-archive is a PUBLIC pushed branch of this repo carrying the full wip history — including the driver-key.pub blob this issue remediates. A main-only rewrite would leave the blob reachable via that ref; the bundle (with #657's trailer stripping) must include or delete wip-archive, or the purge is incomplete. Noted during the act-7 retirement verification, 2026-07-20.",
+      "created_at": "2026-07-21T00:54:46.220730Z",
+      "kind": "note"
+    },
+    {
+      "uuid": "d87b1aa1-bf25-45d7-90a0-c6b36a73574a",
+      "display_id": 1302,
+      "author": "xqjG",
+      "content": "RE-HOME (not closing) — this is a real security remediation (driver-key leak, 2026-05-28 review), mislabeled 'Layer 0' under the retired horizontal-layer decomposition. Re-framed off the Layer-0 naming (superseded by the enforcement-spine vertical slices, #819). Remains open as live security debt; route to the Security-hardening lane.",
+      "created_at": "2026-07-31T23:18:02.560009Z",
+      "kind": "note"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "de6db898-2061-44c0-9c5b-33cd921eb835",
+  "display_id": 639,
+  "title": "posture-r4-SA: Gate coverage dispatch-failed cell lands before its inputs",
+  "description": "Minor, layering. Fix: key the cell on chassis launch/session instruments, not #333 manifests; manifest schema joins Layer 1 data. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:24.132631Z",
+  "updated_at": "2026-07-20T18:15:44.479494Z",
+  "closed_at": "2026-07-20T18:15:44.479494Z",
+  "comments": [
+    {
+      "uuid": "2d711e19-86a8-4e0c-bf1b-b18a64c53354",
+      "author": "xqjG",
+      "content": "Fixed: the Gate coverage cell keys on chassis launch/session records, and the dispatch-manifest schema joins Layer 1 data so the parity queries read manifests as data at Layer 6.",
+      "created_at": "2026-07-20T18:15:42.980829Z",
+      "kind": "resolution"
+    }
+  ]
+}

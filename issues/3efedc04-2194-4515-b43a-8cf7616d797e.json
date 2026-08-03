@@ -1,0 +1,21 @@
+{
+  "uuid": "3efedc04-2194-4515-b43a-8cf7616d797e",
+  "display_id": 279,
+  "title": "amend-r6: never-started record-present signature unreached",
+  "description": "Blocking, convergent. Gate coverage names only record-absent. Fix: the cell covers both signatures. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:21:58.610717Z",
+  "updated_at": "2026-07-20T19:23:49.342987Z",
+  "closed_at": "2026-07-20T19:23:49.342987Z",
+  "comments": [
+    {
+      "uuid": "5aa15a49-251c-425a-bee1-e8a82508e674",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:23:44.332200Z",
+      "kind": "resolution"
+    }
+  ]
+}

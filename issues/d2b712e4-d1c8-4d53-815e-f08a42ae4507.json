@@ -1,0 +1,21 @@
+{
+  "uuid": "d2b712e4-d1c8-4d53-815e-f08a42ae4507",
+  "display_id": 557,
+  "title": "lane r11 QE: unapproved-broken-surface reject unfixtured",
+  "description": "Lane round 11. Lens: QE (validator: SE). Defect: form 3's primary discriminator — the approval conjunct — has no rejection fixture; a self-asserted broken-surface with a genuinely unrunnable suite is the untested pre-publish escape. Citations verified: contract:64, :66 vs :173, :180. Proposed: resolved-candidate (unapproved-broken-surface seed, rejected).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:10:39.871703Z",
+  "updated_at": "2026-07-20T02:12:14.991665Z",
+  "closed_at": "2026-07-20T02:12:14.991665Z",
+  "comments": [
+    {
+      "uuid": "cf04ac2c-851c-4b43-9636-5806b9f4edd5",
+      "author": "xqjG",
+      "content": "Fixed: unapproved-broken-surface seed added and rejected at the approval conjunct — the primary discriminator falsified. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T02:12:03.361562Z",
+      "kind": "resolution"
+    }
+  ]
+}

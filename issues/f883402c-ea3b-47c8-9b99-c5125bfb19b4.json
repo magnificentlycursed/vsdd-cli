@@ -1,0 +1,21 @@
+{
+  "uuid": "f883402c-ea3b-47c8-9b99-c5125bfb19b4",
+  "display_id": 440,
+  "title": "lane r3 SE: current layer's build scope undefined",
+  "description": "Lane round 3. Lens: SE (validator: SO). Owner: SO session. Defect: the precedence predicate's decisive term is used once, defined nowhere, and admits four incompatible readings; the only candidate construct (per-task scope manifests, :107) is never bound to it. Citations verified: contract:81 vs :107. Proposed: resolved-candidate (bind: the current layer's build scope is the union of the layer's declared build-dispatch scope manifests).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:38.807225Z",
+  "updated_at": "2026-07-20T00:28:40.799115Z",
+  "closed_at": "2026-07-20T00:28:40.799115Z",
+  "comments": [
+    {
+      "uuid": "e6b5a4c2-e8a1-4ce2-8a0e-a6abb7c94a99",
+      "author": "xqjG",
+      "content": "Fixed: bound — the current layer's build scope is the union of the layer's declared build-dispatch scope manifests (Recorded review dispatch), a recorded file set, not a judgment. Revision: Finding lifecycle bullet.",
+      "created_at": "2026-07-20T00:28:28.155797Z",
+      "kind": "resolution"
+    }
+  ]
+}

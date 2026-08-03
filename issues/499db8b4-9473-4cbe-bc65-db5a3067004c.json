@@ -1,0 +1,30 @@
+{
+  "uuid": "499db8b4-9473-4cbe-bc65-db5a3067004c",
+  "display_id": 712,
+  "title": "data-sets review: terminal verify round, second execution",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T16:20:42.454235Z",
+  "updated_at": "2026-07-21T16:28:44.493554Z",
+  "closed_at": "2026-07-21T16:28:44.493554Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "c6990cfc-806c-4998-b5ae-5d8a9ccf26df",
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). dispatch_id: terminal-verify-round second execution, workflow run under this issue. invoked_by: the operator's 2026-07-21 rulings — #711 adopted and ratified (883bb54a), full five-lens re-run selected over the delta shape. vehicle: the Workflow orchestration surface, attended side. domains: the full round composition — quality-engineer, ux, solution-architect, documentation-reviewer, solution-owner. STAGE: terminal-verify-round, second execution; the first (#708) held two real findings and correctly failed the stop; both fixed (4485116c) plus the #711 chronicle clause (883bb54a). MODEL TIER, CHOSEN: claude-fable-5, the adopted stage default, set explicitly. EFFORT, CHOSEN: high, the adopted stage default, set explicitly. inputs: commits 4485116c and 883bb54a on top of the round's prior inputs, read from the working tree. expected_cost_band: the adopted band, verification-scoped floor; first execution's actuals (189,488 tokens, ~14.8 min) are the best prior. TASKS: verify #709/#710/#711 fixes; full terminal sweep per lens; the stop verdict. coverage: thirteen domains without matching surface, declared. returned + telemetry: recorded here after the run.",
+      "created_at": "2026-07-21T16:21:18.979466Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "fd4b3be9-4fb3-47b1-bcc8-d3089c18cd8e",
+      "author": "xqjG",
+      "content": "TERMINAL VERIFY ROUND, SECOND EXECUTION, COMPLETE (workflow run wf_aad61398-b22) — THE STOP SIGNAL HOLDS, five of five lenses. Verifications: #709, #710, #711 all LANDED. Findings: two, both self-graded nit-and-arguable by their own lenses with explicit does-not-break-the-stop reasoning, filed as the child collector; no real evidence-bearing defect remains in any lens's scope. THE SPEC-REVIEW LOOP OVER THE PHASE-1C DATA SETS HAS CONVERGED: round 1 (24 findings), round 2 (9), terminal execution 1 (2 real, correctly failing the stop), terminal execution 2 (0 real). TELEMETRY CONFIRMATION: model CHOSEN claude-fable-5, OBSERVED claude-fable-5 on all five; effort CHOSEN high; actuals 163,641 downstream tokens, ~5.2 minutes wall-clock, 57 tool uses — capture source workflow task telemetry. LOOP COST LEDGER, all four dispatches (capture sources pinned per round): round 1 480,118 (un-dialed, agent-type default, all-nine reads); round 2 196,238 (opus/medium, excerpt briefs — the 59 percent step); terminal 1 189,488 (fable/high); terminal 2 163,641 (fable/high, verification-scoped) — 1,029,485 downstream tokens for the full loop, with the conduct-driven reduction visible round over round. REMAINING PHASE-1C PATH per the loop definition and the #597 trail: the documentation-reviewer cold pass (the external cold reader's slot), operator sign-off (ratification as the loop exit), and the boundary commit closing #597 and the milestone. Closing this round issue; the nit collector stays open for the operator's statusline-wiring decision.",
+      "created_at": "2026-07-21T16:28:37.783744Z",
+      "kind": "result"
+    }
+  ]
+}

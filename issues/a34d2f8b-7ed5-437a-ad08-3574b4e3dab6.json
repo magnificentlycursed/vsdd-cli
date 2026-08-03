@@ -1,0 +1,28 @@
+{
+  "uuid": "a34d2f8b-7ed5-437a-ad08-3574b4e3dab6",
+  "display_id": 77,
+  "title": "SC/F4: E0080 page common-vs-rare subsection split",
+  "description": "Source: mdatron/review-log/2026-06-07-sanity-check-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:04:32.007417Z",
+  "updated_at": "2026-06-08T01:48:23.742848Z",
+  "closed_at": "2026-06-08T01:48:23.742848Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:sanity-check",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "da68488e-ff39-4ad9-ba6b-09b28a416a1c",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:23.020357Z",
+      "kind": "resolution"
+    }
+  ]
+}

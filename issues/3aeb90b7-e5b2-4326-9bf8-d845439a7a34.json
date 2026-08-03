@@ -1,0 +1,21 @@
+{
+  "uuid": "3aeb90b7-e5b2-4326-9bf8-d845439a7a34",
+  "display_id": 567,
+  "title": "lane r12 SE: relocate-then-ignore substitutes relocation scrutiny for dormancy scrutiny",
+  "description": "Lane round 12. Lens: SE (validator: SA). Defect: mapping tolerates ignored targets, so relocating a baseline-passing catcher and ignoring it at the new path neutralizes it with no dormancy approval — the in-place bar sidestepped; the relocated-ignored fixture asserts the permissive direction only. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (scrutinies compose: a mapped target non-executing at HEAD carries the disablement declaration on the same record; a NEW test added ignored — no baseline history — still blocks nothing; the relocated-ignored fixture becomes the declared/undeclared pair).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:53:05.518269Z",
+  "updated_at": "2026-07-20T02:55:29.248199Z",
+  "closed_at": "2026-07-20T02:55:29.248199Z",
+  "comments": [
+    {
+      "uuid": "4b484e7a-8734-4fef-80e3-c697972627b6",
+      "author": "xqjG",
+      "content": "Fixed: the scrutinies compose — a mapped target arriving non-executing carries the disablement declaration on the mapping's record; genuinely new ignored tests (no baseline history) still block nothing; relocated-dormancy fixtures in both directions. Revision: gate bullet + corpus + criterion. Also folded: the fix-lane draft terms enrolled in the Terms-defined list per the methodology lens's registration note.",
+      "created_at": "2026-07-20T02:54:59.846950Z",
+      "kind": "resolution"
+    }
+  ]
+}

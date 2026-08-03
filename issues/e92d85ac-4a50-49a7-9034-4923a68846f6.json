@@ -1,0 +1,21 @@
+{
+  "uuid": "e92d85ac-4a50-49a7-9034-4923a68846f6",
+  "display_id": 351,
+  "title": "statusline r2 A11y: accessible equivalence asserted, unverified, and contradicted by enumerations",
+  "description": "Round: statusline amendment cold round 2. Lens: accessibility (validator: ux). Owner: SO session. Defect: machine/human forms declared full-information equivalents, but the machine form's enumerated structured answer (phase, layer, next action, composition, degraded flag, integrity findings) excludes session, work item, milestone open-count — the equivalent forms carry strictly LESS than the segment, and no criterion asserts superset equivalence. Citations verified: contract:160 vs :176, :185. Proposed: resolved-candidate. Failure: assistive-tech operator receives less than the sighted glancer — the alternative-present-but-doesnt-function mode. Fix: criterion asserting every segment display field resolves in the machine and human forms.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:13.261921Z",
+  "updated_at": "2026-07-19T23:18:39.958416Z",
+  "closed_at": "2026-07-19T23:18:39.958416Z",
+  "comments": [
+    {
+      "uuid": "2cbb6713-dc2c-4407-bb98-29c3c447c15e",
+      "author": "xqjG",
+      "content": "Fixed in working tree. Superset now verified: every display field the segment renders resolves in the machine and human forms for the same fixture (Status detection criterion); Status bullet states the equivalents carry every field the segment carries, verified as supersets. Revision: Status bullet + Status detection criterion.",
+      "created_at": "2026-07-19T23:17:41.661112Z",
+      "kind": "resolution"
+    }
+  ]
+}

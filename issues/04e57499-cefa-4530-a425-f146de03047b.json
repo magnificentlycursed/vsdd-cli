@@ -1,0 +1,21 @@
+{
+  "uuid": "04e57499-cefa-4530-a425-f146de03047b",
+  "display_id": 528,
+  "title": "lane r9 QE: fresh passing decoy launders a regression through the mapping lane",
+  "description": "Lane round 9. Lens: QE (validator: SE). Defect: the dishonest-mapping constraint rejects pre-existing-or-failing targets; a freshly authored trivially-passing decoy is neither — map the deleted covering test onto it and every delta clause is satisfied while the regression ships; the mapping lane is an unvalidated deletion lane (deletion needs validator approval, mapping does not). Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (approval parity: mappings carry validator approval exactly as deletions do — the two removal-shaped lanes meet one bar; decoy fixture the gate must reject).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:21.258703Z",
+  "updated_at": "2026-07-20T01:45:53.573798Z",
+  "closed_at": "2026-07-20T01:45:53.573798Z",
+  "comments": [
+    {
+      "uuid": "5af4602c-4370-4019-97af-3fea6b3059af",
+      "author": "xqjG",
+      "content": "Fixed: approval parity — mappings carry validator approval exactly as deletions do, the two removal-shaped lanes meet one bar; decoy-mapping fixture rejected at the approval bar. Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T01:45:37.181244Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "a71b44ce-2cf4-4610-89e4-3748530177f5",
+  "display_id": 614,
+  "title": "1c-DR-r2: hyphenated criterion-name variants Drift-pin and Cost-queries",
+  "description": "Minor, check a. Citation (Layer 7): 'its Drift-pin close is gated on their landing'; (Layer 5): 'Layer 9's Cost-queries close' — inexact variants of the leading names 'Drift pin' and 'Cost queries' under the exact-name discipline. Fix: reword to 'its close of Drift pin' / 'Layer 9's close of Cost queries'. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:21:08.451186Z",
+  "updated_at": "2026-07-20T17:22:06.456147Z",
+  "closed_at": "2026-07-20T17:22:06.456147Z",
+  "comments": [
+    {
+      "uuid": "129ba6db-1d69-4f14-807d-015677072aa1",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Reworded to exact leading names: 'its close of Drift pin' and 'Layer 9's close of Cost queries'. mdatron verify clean.",
+      "created_at": "2026-07-20T17:22:04.928705Z",
+      "kind": "resolution"
+    }
+  ]
+}

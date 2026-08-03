@@ -1,0 +1,28 @@
+{
+  "uuid": "737eaf25-a900-4f6b-8e7b-4db72ffde15f",
+  "display_id": 170,
+  "title": "QE/F1: schema_violation_emits_e0050 is tautology (probe constant)",
+  "description": "Source: mdatron/review-log/2026-06-02-quality-engineer-phase-1-bundle.md\nClassification: resolved\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: mdatron@8dc0392 (rewrote tests to spawn real pipeline)",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:26.870591Z",
+  "updated_at": "2026-06-08T02:34:00.042350Z",
+  "closed_at": "2026-06-08T02:34:00.042350Z",
+  "labels": [
+    "classification:resolved",
+    "cycle:crosslink-12",
+    "domain:quality-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "8fadc4ae-26af-4f41-a789-3ca01bd16a53",
+      "author": "xqjG",
+      "content": "Closed: addressed in cycle prior to Phase 4-take-2 (mdatron@8dc0392 (rewrote tests to spawn real pipeline)).",
+      "created_at": "2026-06-08T02:33:59.187606Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "fb83e9be-6225-432c-9cf8-20c4c8c1c122",
+  "display_id": 403,
+  "title": "lane r1: no mechanical commit-to-finding linkage predicate",
+  "description": "Lane round 1. Lens: SE (F5) (validator: SO). Owner: SO session. Defect: the falsifier demands a pre-implementation finding issue but names no mechanism binding a commit to its finding or ordering the two — a prose assertion mdatron cannot execute; narration mimics compliance. Citations verified: contract:83 vs :61. Proposed: resolved-candidate — the structured evidence section of the commit message (already contracted under the upstream-conventions default in Conformance at action time) names the finding issue; the predicate becomes: governed-path commit whose evidence section names no finding and no waiver.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:54:16.908255Z",
+  "updated_at": "2026-07-19T23:58:40.368470Z",
+  "closed_at": "2026-07-19T23:58:40.368470Z",
+  "comments": [
+    {
+      "uuid": "8d16b569-2966-4ce3-ae82-382ddb196588",
+      "author": "xqjG",
+      "content": "Fixed: the commit's structured evidence section (upstream-conventions format already contracted) names the finding issue; the falsifier's predicate is a governed-set commit whose evidence section names no finding and no waiver — mechanical. Revision: Finding lifecycle bullet + falsifier.",
+      "created_at": "2026-07-19T23:58:17.418386Z",
+      "kind": "resolution"
+    }
+  ]
+}

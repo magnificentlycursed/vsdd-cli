@@ -1,0 +1,21 @@
+{
+  "uuid": "d07c8e5e-5801-478e-820f-4a93cef4cf25",
+  "display_id": 354,
+  "title": "statusline r2 UX: composition instruction presumes an editable shell wrapper",
+  "description": "Round: statusline amendment cold round 2. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: 'exact invocation line to add' plus compose-by-concatenation only maps onto a wrapper-script statusLine; an adopter with an inline one-liner or opaque command has no line to add — the no-doc-lookup guarantee fails for the common non-wrapper case; the criterion narrows the test to a seeded wrapper. Citations verified: contract:159, :184. Proposed: deferred to the phase-1c wiring-script shape work item (instruction must handle non-wrapper shapes or emit a shape-appropriate wrapper). Failure: refusal path dead-ends for non-wrapper adopters.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:16.301796Z",
+  "updated_at": "2026-07-19T23:18:45.761291Z",
+  "closed_at": "2026-07-19T23:18:45.761291Z",
+  "comments": [
+    {
+      "uuid": "961b22f6-0f8b-4f46-b4c0-bca4b9f22187",
+      "author": "xqjG",
+      "content": "Routed at operator triage: deferred to 'phase-1c work item: statusline wiring script shape' (L37 at creation), scope item 3 — composition-instruction conduct for non-wrapper statusLine shapes.",
+      "created_at": "2026-07-19T23:17:47.649002Z",
+      "kind": "resolution"
+    }
+  ]
+}

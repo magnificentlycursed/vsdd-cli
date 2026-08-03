@@ -1,0 +1,21 @@
+{
+  "uuid": "1ae5d111-8891-4b6c-b515-24454992fed1",
+  "display_id": 511,
+  "title": "lane r8 Meth: mdatron fix-lane records absent from References",
+  "description": "Lane round 8. Lens: methodology (validator: SO). Defect: the header promises a References home for every cited artifact and the corpus points fixtures at References, but the deviation, retroactive-verification, kickoff live-fire, and Part-3 records appear nowhere there — the amendment's own motivating evidence is inline-only. Citations verified: contract:5, :173 vs :250-:255. Proposed: resolved-candidate (References evidence-records gains the mdatron fix-lane entry).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:00.193092Z",
+  "updated_at": "2026-07-20T01:30:06.450049Z",
+  "closed_at": "2026-07-20T01:30:06.450049Z",
+  "comments": [
+    {
+      "uuid": "00029031-b3d1-431a-87de-a5d61689bb77",
+      "author": "xqjG",
+      "content": "Fixed: References evidence-records gains the mdatron fix-lane entry (deviation, retroactive verification, kickoff live fire, branch-grammar report; tracker-relay noted; exact-title anchors at hub sync). Revision: References.",
+      "created_at": "2026-07-20T01:29:43.111241Z",
+      "kind": "resolution"
+    }
+  ]
+}

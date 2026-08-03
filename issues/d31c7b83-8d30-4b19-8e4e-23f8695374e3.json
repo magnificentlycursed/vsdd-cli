@@ -1,0 +1,40 @@
+{
+  "uuid": "d31c7b83-8d30-4b19-8e4e-23f8695374e3",
+  "display_id": 834,
+  "title": "Slice 3 (Install) phase-1a design — vsdd way: init drift-handling + template deployment (folded from #14; seeded from captured phase-1a B/C)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-30T15:58:22.806676Z",
+  "updated_at": "2026-08-02T00:47:06.600632Z",
+  "closed_at": "2026-08-02T00:47:06.600625Z",
+  "labels": [
+    "design"
+  ],
+  "comments": [
+    {
+      "uuid": "7f6bc7f7-a099-4113-9d81-3821eca1af88",
+      "display_id": 1268,
+      "author": "xqjG",
+      "content": "DRAFT authored the vsdd way: .design/install-slice.md (13 REQ / 13 AC, seeded from captured B/C, re-grounded vs current code). Template set VERIFIED = 16 (2 CI + 1 DESIGN + 1 statusline + 12 registry); ManifestEntry confirmed sha256-only. Re-grounding surfaced 3 open questions for operator resolution: (Q1 load-bearing) registry deploy path — loader reads <cwd>/templates/registry/ but deploy target is .vsdd/registry/ (disagree); (Q2) installed-artifact-manifest.md is vsdd-cli-instance-specific — generate the adopter's, don't template it; (Q3) scaffold-vs-managed — DESIGN template + vocabulary extensions vs whole-file drift (per-file management class). crosslink kickoff plan launched but STALLED (no status file / no file writes in 15min; infra launches, in-agent work stalls) — stopped + cleaned. Proceeding on the re-grounding.",
+      "created_at": "2026-07-30T17:09:50.419212Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "75e8afe9-d2ad-4f2b-8ad2-80aa78c80e5d",
+      "display_id": 1272,
+      "author": "xqjG",
+      "content": "PHASE-1A RATIFIED by operator 2026-07-30. .design/install-slice.md (16 REQ / 16 AC) — all 3 open questions resolved: D1 registry->.vsdd/registry/ + loader repoint; D2 installed-artifact-manifest GENERATED not deployed (15 deployed + 1 generated); D3 per-artifact management class (11 managed / 1 scaffold / 3 section-managed — all 3 .yaml registry files carry the operator-extension anchors). Design ratified; committing via PR. Ready to build (kickoff run --container at build time).",
+      "created_at": "2026-07-30T18:08:22.637161Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "09212c5d-1a46-4b87-9ff7-47e0428e5bb8",
+      "display_id": 1362,
+      "author": "xqjG",
+      "content": "CLOSED — Slice 3 (Install) phase-1a design ratified (c6e1b735), its static half built and merged (#838, PR #17, d899e598), and the design doc absorbed into the build-plan's Completed phases + retired to the install-slice knowledge page under #845's disposition. The generated-members remainder is build-plan Phase 2's obligation (second Provenance: Slice 3 marker).",
+      "created_at": "2026-08-02T00:47:00.584645Z",
+      "kind": "result"
+    }
+  ]
+}

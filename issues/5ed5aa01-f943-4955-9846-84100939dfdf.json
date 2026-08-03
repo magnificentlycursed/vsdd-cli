@@ -1,0 +1,21 @@
+{
+  "uuid": "5ed5aa01-f943-4955-9846-84100939dfdf",
+  "display_id": 376,
+  "title": "statusline r4 SA+A11y+UX: work-item worded absence unverified; renderer property missing",
+  "description": "Round: statusline amendment cold round 4. Lenses: solution-architect, accessibility, ux — three independent cold raises of the same defect, merged at filing (validators: solution-owner, ux, documentation-reviewer). Owner: SO session. Defect: the Status requirement promises worded absence for three fields but the criterion and corpus exercise only sessionless and milestone-less; the renderer's property list omits worded-absence entirely — an empty-slot regression on a live-session-no-work-item state passes every listed check. Citations verified: contract:160 vs :185, :170, :197. Proposed: resolved-candidate (add worded-absence to the renderer properties; add a work-item-absent fixture).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:35:25.752100Z",
+  "updated_at": "2026-07-19T23:44:10.773587Z",
+  "closed_at": "2026-07-19T23:44:10.773587Z",
+  "comments": [
+    {
+      "uuid": "14b0cf6f-2808-4674-83e5-9d33cb966b8a",
+      "author": "xqjG",
+      "content": "Fixed in working tree (round-4 fix pass, standing triage pattern; triple-raised by SA, A11y, UX). Worded-absence added to the renderer's property enumeration; work-item-absent fixture added to the status-detection corpus members and to the worded-absence criterion clause. Revision: renderer entry + fixture corpus + Status detection criterion.",
+      "created_at": "2026-07-19T23:43:52.726939Z",
+      "kind": "resolution"
+    }
+  ]
+}

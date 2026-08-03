@@ -1,0 +1,21 @@
+{
+  "uuid": "b012d138-3637-4562-bedc-e7c3bab75eed",
+  "display_id": 609,
+  "title": "1c-DR-r2: clean-merge-inconsistent cell claimed at L2 but the check is mdatron's",
+  "description": "Minor, check e. Citation (Layer 2 Closes): '(sessionless, milestone-less, disagreement-files-finding, degraded kinds by exact match, clean-merge-inconsistent)' — the phase-state resolution names mdatron's state-consistency check as that cell's instrument, integrated only at Layer 7 under the flagged cross-repo gate. Fix: except the cell from #307's slice; it rides Layer 7's conformance integration; audit line annotated. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:20:59.628659Z",
+  "updated_at": "2026-07-20T17:21:51.641333Z",
+  "closed_at": "2026-07-20T17:21:51.641333Z",
+  "comments": [
+    {
+      "uuid": "20cc4c30-e92e-49da-8212-2fdfee30365b",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 2's slice now excepts the cell: 'the state-consistency backstop cell excepted: that check is mdatron's per the phase-state resolution and rides Layer 7's flagged conformance integration'; audit line annotated with the L7 rider. mdatron verify clean.",
+      "created_at": "2026-07-20T17:21:50.087759Z",
+      "kind": "resolution"
+    }
+  ]
+}

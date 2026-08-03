@@ -1,0 +1,23 @@
+{
+  "uuid": "a5ae2661-9bdf-453d-9fe1-43b47d60bb5c",
+  "display_id": 844,
+  "title": "Doc-freshness guardrail: README into light mdatron jurisdiction + command-surface-match + link-integrity checks (shift-left)",
+  "status": "open",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T18:43:27.009502Z",
+  "updated_at": "2026-08-01T18:44:52.232160Z",
+  "labels": [
+    "feature"
+  ],
+  "comments": [
+    {
+      "uuid": "c6fb0362-033c-44fa-9cbb-3f1f782b38af",
+      "display_id": 1305,
+      "author": "xqjG",
+      "content": "Mechanism (three levels), motivated directly by the #19 cleanup reviews:\n1. STRUCTURAL — keep the README thin on drift-prone facts; describe durable orientation + point at the authoritative source (contract for spec, vsdd --help for commands, Cargo.toml for build). Single-source-of-truth + reference-it. (Already applied in the rewrite.)\n2. MECHANIZED (CI-backed block) — (a) command-surface match: the README's documented commands must match the built clap Command enum / vsdd --help (catches SO-F1-class: README overclaimed 'round-parity' as built when it's dormant, and stale command lists); (b) reference/link integrity: README + governed-corpus body links must resolve — catches DR-F1: the primer/domain-prompt body links to deleted docs that mdatron's cross-references check MISSED (it validates frontmatter slugs only, not markdown-body links — a real gap: extend the cross-ref check to body links, or add a link-checker CI leg). README re-enters light mdatron jurisdiction (it was dropped #830 as transitional prose — that status no longer holds now it's the kept README).\n3. SHIFT-LEFT — bind the freshness check to the trigger: a command-surface change (main.rs clap enum) requires the README command section to update in the same PR (artifact-and-its-record-land-together, the §131/#840 pairing applied to docs).\nRegisters as a control per #840 (README claims = controls with a fire-proof: the claimed thing is real). Grade: convention now → CI-backed block target. NOTE the concrete CI gap this exposes: mdatron cross-references validates frontmatter slugs, not body links — that's why DR-F1's dangling primer links stayed green.",
+      "created_at": "2026-08-01T18:44:52.218835Z",
+      "kind": "plan"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "2938b303-5d26-44a8-aa0c-5aa8a6c6371c",
+  "display_id": 75,
+  "title": "SC/F2: README first-run empty-project gotcha",
+  "description": "Source: mdatron/review-log/2026-06-07-sanity-check-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:04:25.465276Z",
+  "updated_at": "2026-06-08T01:48:22.146420Z",
+  "closed_at": "2026-06-08T01:48:22.146420Z",
+  "labels": [
+    "classification:accepted",
+    "convergence:readme-first-run-gotcha",
+    "cycle:crosslink-13",
+    "domain:sanity-check",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "f114dddd-0086-4607-8754-97ffa816c88c",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:21.381040Z",
+      "kind": "resolution"
+    }
+  ]
+}

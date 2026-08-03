@@ -1,0 +1,36 @@
+{
+  "uuid": "707d2c6f-39d4-42f8-9caa-dd598002a2fe",
+  "display_id": 663,
+  "title": "DE/F5: manifest parser missing from the read-time-diagnostic and fuzz surfaces — Raise to SO",
+  "description": "The manifest becomes an adopter-editable governed artifact consumed by the session-substrate check (Layer 2). The contract's Trust boundaries enumerate read-failure discipline (diagnostic never panic, every kind) for config, state, and the vocabulary registry; the Phase 5 fuzz scope names config, state, registry, substrate-settings, and tracker-payload parsers. The installed-artifact manifest parser is in neither list by name — whether 'registry' is read to cover templates/registry/ artifacts generally or only the vocabulary registry is an SO ruling. Ask: extend both enumerations to name the manifest parser (a small amendment candidate at the next amendment window, or an SO reading recorded on this issue). Owner: data-engineer. Validator: solution-owner (DESIGN change authority routing).",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "95eaf845-5910-4270-a5a1-f032e3a3dd88",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:25:12.293839Z",
+  "updated_at": "2026-07-21T04:15:58.408721Z",
+  "closed_at": "2026-07-21T04:15:58.408721Z",
+  "comments": [
+    {
+      "uuid": "c144e116-0911-4c32-b611-eb327ea7d19a",
+      "author": "xqjG",
+      "content": "Round-1 convergence joins this issue's scope (SO lens 3.1 + 3.2): the statusline repo-set config (~/.config/vsdd/statusline.yaml, statusline-data.md:51-55) is a second adopter-edited parseable surface in the same class as the manifest parser — raised here so one SO ruling covers both: extend the Trust-boundaries read-failure discipline and Phase-5 fuzz scope to name both parsers, or record the reading that 'registry'/'adopter-edited files' covers them generally. The round-1 solution-owner lens flags shipping first-publish with this undecided as front-running (contract line 81).",
+      "created_at": "2026-07-21T03:20:45.150114Z",
+      "kind": "observation"
+    },
+    {
+      "uuid": "1d5e0d5b-0613-49ed-b210-15d86371dfbc",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage — the parked Solution Owner reading, now ruled): the installed-artifact manifest parser and the statusline repo-set config parser join BOTH the read-time-diagnostic enumeration and the fuzz-scope enumeration BY NAME. Explicit naming beats a broad adopter-edited-files reading that would silently widen the fuzz scope. Small amendment; text lands at the round-1 amendment window with the gate rulings.",
+      "created_at": "2026-07-21T03:52:21.423287Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "73867c8c-1f05-4891-b525-76813d40ae5e",
+      "author": "xqjG",
+      "content": "Ruling recorded above (both parsers named into the read-time-diagnostic and fuzz enumerations); the amendment text rides #698 with the other six touches. Closing — the parked Solution Owner reading is done.",
+      "created_at": "2026-07-21T04:15:53.279329Z",
+      "kind": "result"
+    }
+  ]
+}

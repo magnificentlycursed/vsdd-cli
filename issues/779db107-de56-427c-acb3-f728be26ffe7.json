@@ -1,0 +1,21 @@
+{
+  "uuid": "779db107-de56-427c-acb3-f728be26ffe7",
+  "display_id": 626,
+  "title": "1c-DR-r4: L4 consumes the wiring-outcome enumeration without declaring Layer 1",
+  "description": "Minor, check b. Fix: declare Layer 1's data artifacts in #329's dependency line. Owner: SA. Validator: DR.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:08:41.641259Z",
+  "updated_at": "2026-07-20T18:13:19.374756Z",
+  "closed_at": "2026-07-20T18:13:19.374756Z",
+  "comments": [
+    {
+      "uuid": "d782729f-5ca1-4980-8b73-7050d4fcbbde",
+      "author": "xqjG",
+      "content": "Fixed: Layer 4 now declares 'Layer 1's data artifacts (the wiring-outcome enumeration among them)'.",
+      "created_at": "2026-07-20T18:13:17.915165Z",
+      "kind": "resolution"
+    }
+  ]
+}

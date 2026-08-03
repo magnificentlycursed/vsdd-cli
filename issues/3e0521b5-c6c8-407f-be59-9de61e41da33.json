@@ -1,0 +1,21 @@
+{
+  "uuid": "3e0521b5-c6c8-407f-be59-9de61e41da33",
+  "display_id": 540,
+  "title": "statusline r14 UX: machine signal carries no structural read-failure kind",
+  "description": "Round 14. Lens: ux (validator: DR). Defect: the human names the kind; the machine gets a kind-less action and prose payload — the agent cannot select restore vs fix-YAML vs fix-permissions without parsing prose, against the branch's own promise. Citations verified: contract:163, :188, :203. Proposed: resolved-candidate (the signal carries the enumerated read-failure kind with a per-kind action; criterion matches kind to fixture).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:51.989636Z",
+  "updated_at": "2026-07-20T01:58:57.050332Z",
+  "closed_at": "2026-07-20T01:58:57.050332Z",
+  "comments": [
+    {
+      "uuid": "a7463ddc-1310-4880-9e02-6e5d35286f03",
+      "author": "xqjG",
+      "content": "Fixed: the machine signal carries the enumerated read-failure kind and a per-kind action; criterion matches kind to fixture by exact match — three mechanical comparisons. Revision: Status bullet + criterion.",
+      "created_at": "2026-07-20T01:58:43.758763Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "c03a2002-7ed7-44fe-9868-46458ec013d4",
+  "display_id": 741,
+  "title": "Phase 2b execution, Layer 2: implement to green against the convergence corpus",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T15:07:58.816925Z",
+  "updated_at": "2026-07-22T16:46:42.537418Z",
+  "closed_at": "2026-07-22T16:46:42.537407Z",
+  "labels": [
+    "feature"
+  ],
+  "milestone_uuid": "38db2f74-d59c-495d-94c0-e0619d79251b",
+  "comments": [
+    {
+      "uuid": "6adb6950-7517-4372-975c-9719fea6b0a1",
+      "author": "xqjG",
+      "content": "GREEN GATE RECORDED: commit above — RED at the re-stamped baselines (the failing runs on the #738 trail), GREEN at HEAD: cargo test --workspace exit zero, convergence 6/6 reproducing all eleven adopted answers, shell 7/7, 96 tests total, clippy zero, verify clean. Honest corrections and residues on the record: (1) the red run's convergence panics were partly fixture-loader parse failures (a generator bug concatenating empty-collection lines, repaired) rather than todo stubs — executed failures either way, the gate's validity unaffected, the earlier record's 'panic kind against the todo stubs' phrasing imprecise for five tests; (2) acquisition bootstrap scope DECLARED: tracker-join fields (findings, rounds, comments) acquire empty until their query consumers land with Layer 6's parity and lifecycle gates — the corpus supplies those fields for the pure checks; the milestone read is a human-format parse (no JSON surface exists; the chassis gap is an upstream candidate) whose parse failure maps to the unusable outcome, never a guess; (3) no todo survives (the divergence note's tripwire clears); the effectful acquisition and git listing carry no red-gate pins by the shell-integration rule — their conduct instruments land at Layer 3 per the verification architecture. NEXT per the sequence: 2c survey, then the layer's adversarial rounds.",
+      "created_at": "2026-07-22T15:13:23.014482Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "0f9f10ba-f23f-4ff7-871f-f71e65005162",
+      "display_id": 968,
+      "author": "xqjG",
+      "content": "PHASE-2B EXIT, LAYER 2 (2026-07-22): suite green at 159d5a5d with both gate halves recorded on this trail; no unasserted behavior beyond the declared bootstrap scope; the regex dependency PE-noted; prose surfaces current. Exit mechanical under the autonomous-continuation conduct. Closing; 2c opens.",
+      "created_at": "2026-07-22T16:46:34.406435Z",
+      "kind": "decision"
+    }
+  ]
+}

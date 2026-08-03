@@ -1,0 +1,21 @@
+{
+  "uuid": "89c35877-8a8a-4ca6-a3ec-9b4e37f832d0",
+  "display_id": 643,
+  "title": "posture-r4-AI: cold conflates context isolation with attachment",
+  "description": "Blocking, semantics. The ratified cold definition is context isolation; in-session subagent fan-outs are cold-but-attended. Fix: the structural split — cold orthogonal to mode. Owner: SA. Validator: AI-engineer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T18:09:51.862253Z",
+  "updated_at": "2026-07-20T18:15:56.643843Z",
+  "closed_at": "2026-07-20T18:15:56.643843Z",
+  "comments": [
+    {
+      "uuid": "bf01e39e-1a64-413b-8c63-edc8062825ee",
+      "author": "xqjG",
+      "content": "Resolved by the structural redraft: cold is context isolation (ratified definition), orthogonal to the split; design sessions run cold lenses attended, the built process runs them autonomous.",
+      "created_at": "2026-07-20T18:15:54.929733Z",
+      "kind": "resolution"
+    }
+  ]
+}

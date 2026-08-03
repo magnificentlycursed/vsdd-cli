@@ -1,0 +1,27 @@
+{
+  "uuid": "7961cc82-0daf-4b96-946d-3343720e85e8",
+  "display_id": 319,
+  "title": "Config-narrowing property references an undefined order",
+  "description": "QE question: fix by definition — the property becomes domain-narrowing: removing domains from the config never adds domains to the composition output; other config fields are excluded from the monotonicity claim. [owner: quality-engineer; validator: solution-architect]",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "49206861-c7b1-4921-a4ec-3c44a370dbf1",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T21:57:21.576239Z",
+  "updated_at": "2026-07-19T22:01:36.597223Z",
+  "closed_at": "2026-07-19T22:01:36.597223Z",
+  "labels": [
+    "phase-1b-round-1",
+    "quality-engineer",
+    "spec-review"
+  ],
+  "comments": [
+    {
+      "uuid": "427c825f-8184-468c-abab-e9d7d743bec1",
+      "author": "xqjG",
+      "content": "Applied in the phase-1b fix pass (sha256:a88d7dffda36dc491ea9e2f3038b0665f7c5c6f0f3f0271e21354193dea01fd9); the adopted fix in this issue's description is now contract text.",
+      "created_at": "2026-07-19T22:01:35.579751Z",
+      "kind": "result"
+    }
+  ]
+}

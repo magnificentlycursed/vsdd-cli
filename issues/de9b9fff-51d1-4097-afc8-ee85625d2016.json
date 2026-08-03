@@ -1,0 +1,25 @@
+{
+  "uuid": "de9b9fff-51d1-4097-afc8-ee85625d2016",
+  "display_id": 710,
+  "title": "terminal minor DR: standard preset's six-domain set resolves nowhere; verification claim not performable",
+  "description": "Evidence: economics-data.md:41 — 'six core role domains' cites the installed prompts as basis, but that basis verifies only the 18-total; the six-member subset is enumerated nowhere in repo or contract, and the tracker chain is circular (#684 cited the tier field, #705 ruled that dangling). The minimal preset shows the resolvable form by naming members inline. Disposition: name the six inline from the tier: core prompts on disk, making the verified-against-installed-prompts claim performable. Owner: data-engineer. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "12cba19e-0feb-4891-a149-e483c4a92de8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T13:37:34.328078Z",
+  "updated_at": "2026-07-21T13:38:43.072131Z",
+  "closed_at": "2026-07-21T13:38:43.072131Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "021af5f8-0704-4cb9-96af-2891b1a1a2c1",
+      "author": "xqjG",
+      "content": "FIX LANDED (same commit): the six core role domains named inline — software-engineer, security, ux, quality-engineer, solution-owner, solution-architect — with membership and count verifiable against the tier-marked installed prompts; the resolvable form the minimal preset already used. Re-run of the terminal round re-verifies (validator: documentation-reviewer).",
+      "created_at": "2026-07-21T13:38:39.907821Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "21be0cef-45fc-48a6-9c0e-99887f29d9dc",
+  "display_id": 182,
+  "title": "RT/F6: reserved-code rename is supply-chain breakage",
+  "description": "Source: mdatron/review-log/2026-06-02-red-team-phase-1-bundle.md\nClassification: dismissed\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)\nAddressed-by: cluster-batched commit: no-premature-version-bumps discipline",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:23:50.405458Z",
+  "updated_at": "2026-07-21T00:45:51.529547Z",
+  "closed_at": "2026-07-21T00:45:51.529547Z",
+  "labels": [
+    "classification:dismissed",
+    "cycle:crosslink-12",
+    "domain:red-team",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "d38bea70-14c3-45eb-ac0e-c15595713bdd",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle audit record closed in bulk. Disposition: audit-record — superseded by the respec (ratified contract, .design/agent-first-vsdd-toolkit.md; tracking issue vsdd-cli #294). Where this issue's description carries its own classification (dismissed / deferred / consolidated), that classification is the substantive disposition and this closure changes nothing about it. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:45:48.963753Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "e952eaab-44f8-4702-9bfe-8d72ecc90362",
+  "display_id": 687,
+  "title": "r1 minor SO: terminal-verify-round expands the review loop's named stage set — confirm or fold",
+  "description": "Evidence: economics-data.md:19 vs contract line 91 ('the loop's own names': draft, cold rounds, fix passes). Operator-adopted on #671, and the terminal round is a contract concept elsewhere — but the stage-set expansion should be an explicit SO confirmation, not archaeology later. Owner: solution-owner. Validator: vsdd-methodology.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:19:06.770614Z",
+  "updated_at": "2026-07-21T04:15:23.614165Z",
+  "closed_at": "2026-07-21T04:15:23.614165Z",
+  "comments": [
+    {
+      "uuid": "b7a0b1ea-d787-4430-9142-68cee7599c02",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): terminal-verify-round CONFIRMED as the fourth named stage. Contract line 91's stage list gains 'terminal verify round' — reconciliation with prose that already carries the concept, not vocabulary growth; the register check passes (three plain words). The effort table keeps its uniform stage key; the high dial stays mechanical. Rejected: folding into cold rounds (re-keys the effort table into mixed shapes). One-line contract touch at the round-1 amendment window.",
+      "created_at": "2026-07-21T03:52:50.901573Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "84b4b381-78e2-4ab5-9c22-84f2d35df6a8",
+      "author": "xqjG",
+      "content": "OPERATOR RULING recorded above (confirm the fourth stage); no data-side change — economics-data.md already carries the terminal-verify-round row this ruling confirms. The one-line contract touch (line 91's stage list) rides #698. Closing; the amendment window carries the remaining work.",
+      "created_at": "2026-07-21T04:15:18.195343Z",
+      "kind": "result"
+    }
+  ]
+}

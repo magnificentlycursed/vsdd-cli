@@ -1,0 +1,22 @@
+{
+  "uuid": "5363eb98-14dd-424c-a3b3-74fecd36c873",
+  "display_id": 672,
+  "title": "data set: snapshot schema, audited against the Status integrity-query list and renderer display fields",
+  "description": "Package close of #598, item 18. The corroboration snapshot's field enumeration (the explicitly-acquired materialized view the pure phase-answer derivation consumes) with the contracted audit: every snapshot-scoped integrity check's inputs mapped to materialized fields — per-finding owner, validator, and evidence-reference presence included — and the shell-side checks (git-reference resolution, the session-substrate check, chassis compaction counts) enumerated as explicitly out-of-snapshot with their homes, per the Verification architecture's named refinement. Renderer display fields verified present. Owner: data-engineer. Validator: solution-architect (the pure-core boundary is the concern).",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T02:46:43.605755Z",
+  "updated_at": "2026-07-21T02:47:46.061113Z",
+  "closed_at": "2026-07-21T02:47:46.061113Z",
+  "comments": [
+    {
+      "uuid": "254d0187-fedb-4d3e-aac3-06182e7d0d52",
+      "author": "xqjG",
+      "content": "Resolved: landed with the package-close commit, mdatron verify clean; the audit block's materialization claims are pinned by the schema (materialized is const true for snapshot-scoped rows; shell-side rows require a named home).",
+      "created_at": "2026-07-21T02:47:42.812350Z",
+      "kind": "result"
+    }
+  ]
+}

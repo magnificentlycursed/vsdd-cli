@@ -1,0 +1,36 @@
+{
+  "uuid": "c389841b-08ba-46e0-aecd-8525413e007f",
+  "display_id": 832,
+  "title": "Mechanize the deprecated-term prohibition + scrub the slips (chassis/forcing-seam/substrate/platform)",
+  "description": "Memory did not hold — used deprecated terms a day after grounding them (#819). Build a mechanized deprecated-term register check over the enduring corpus (like E0091), and scrub this session's slips. Grounding: chassis->tracker/orchestration; platform->harness; substrate->runtime harness; forcing seam->enforcement point.",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T17:55:47.580199Z",
+  "updated_at": "2026-07-29T18:32:05.048155Z",
+  "closed_at": "2026-07-29T18:32:05.048140Z",
+  "labels": [
+    "guardrail"
+  ],
+  "related": [
+    "13f1a50f-9bef-4d67-afd4-3b2465a947cd"
+  ],
+  "comments": [
+    {
+      "uuid": "2fbac706-c0ef-463d-a357-40f08409d1e6",
+      "display_id": 1253,
+      "author": "xqjG",
+      "content": "Reconciled with #821 (the atomic owned rename cycle). My ad-hoc two-file corpus scrub (chassis->crosslink in act-to-affordance-map + snapshot-schema) was REVERTED — that scrub is #821's owned+reviewed job, not a freelance on this branch. #832 is scoped to the ENFORCEMENT: arm mdatron E0093 (anti_patterns in .mdatron/vocabulary.yaml) so deprecated terms cannot re-enter governed prose. Dependency: arming chassis + substrate requires #821 to clear them from the corpus first (else verify reds on the corpus). 'forcing seam' is armable independently (0 corpus usages; my slip); 'platform' is NOT armable as a bare pattern (collides with 'cross-platform' + the platform-engineer domain) — needs a precise pattern or is out of scope. My session's own durable additions (REQ-13/AC-13/escape-row, the design docs) are terminology-clean; the slips were in chat, not artifacts.",
+      "created_at": "2026-07-29T18:05:16.692775Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "b4d2a110-be92-4535-9fca-978568477996",
+      "display_id": 1256,
+      "author": "xqjG",
+      "content": "Merged to main (PR #13). E0093 'forcing seam' deprecated-term block is live — pre-commit + CI hard-fail on the term in governed prose. chassis + session-substrate arm as #821's rename clears them (linked). The lint half of the linter/tracker migration is now a live gate on main.",
+      "created_at": "2026-07-29T18:31:58.077170Z",
+      "kind": "result"
+    }
+  ]
+}

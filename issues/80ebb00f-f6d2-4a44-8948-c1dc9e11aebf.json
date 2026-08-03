@@ -1,0 +1,28 @@
+{
+  "uuid": "80ebb00f-f6d2-4a44-8948-c1dc9e11aebf",
+  "display_id": 187,
+  "title": "SC/F5: schema-tightening revert corpus pass as regression check",
+  "description": "Source: mdatron/review-log/2026-06-02-sanity-check-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:24:00.913492Z",
+  "updated_at": "2026-06-08T02:23:51.757906Z",
+  "closed_at": "2026-06-08T02:23:51.757906Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:sanity-check",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "e25b880e-de1e-4ca5-95f7-0b6dfeac67bd",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli/.github/workflows/mdatron-verify.yml (addressed by existing CI workflow).",
+      "created_at": "2026-06-08T02:23:50.756876Z",
+      "kind": "resolution"
+    }
+  ]
+}

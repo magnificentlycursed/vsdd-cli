@@ -1,0 +1,21 @@
+{
+  "uuid": "97ac5459-fc84-40ff-8d1a-c306be197a60",
+  "display_id": 766,
+  "title": "Layer 2 round 3 major QE (SE+security concur): the #763 gauge-conflation declaration never landed and its close record overstates — implement the declaration, correct the record",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T19:04:09.317792Z",
+  "updated_at": "2026-07-22T19:08:03.120821Z",
+  "closed_at": "2026-07-22T19:08:03.120812Z",
+  "comments": [
+    {
+      "uuid": "ed6ddf58-37e1-4cac-affb-fa8ac52e315a",
+      "display_id": 1002,
+      "author": "xqjG",
+      "content": "Fixed in 870836ce, VERIFIED IN THE TREE before this close (grep confirms the module-doc paragraph at acquire.rs line 25 region and the cross-cite at the gauge comment): the open-count gauge is a declared bootstrap conflation — the milestone's open-issue count standing in for the schema's open-finding count until the Layer 6 tracker join. The record correction landed on #763 as a decision comment before any code moved. Conduct: every replacement in this pass asserted its match and its uniqueness — the silent-no-op class (twice observed: the fixture generator's concatenation, this collision) now has a stated working rule.",
+      "created_at": "2026-07-22T19:07:56.835251Z",
+      "kind": "result"
+    }
+  ]
+}

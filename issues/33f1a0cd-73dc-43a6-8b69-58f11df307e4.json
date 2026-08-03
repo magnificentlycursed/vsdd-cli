@@ -1,0 +1,28 @@
+{
+  "uuid": "33f1a0cd-73dc-43a6-8b69-58f11df307e4",
+  "display_id": 133,
+  "title": "DE/F1: explain-page format schema",
+  "description": "Source: mdatron/review-log/2026-06-07-data-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:06:28.499331Z",
+  "updated_at": "2026-06-08T02:23:04.117189Z",
+  "closed_at": "2026-06-08T02:23:04.117189Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:data-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "1d6472ff-faf7-487c-b03c-f80e66d9ce4d",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@f45200b (Wave 4).",
+      "created_at": "2026-06-08T02:23:02.885877Z",
+      "kind": "resolution"
+    }
+  ]
+}

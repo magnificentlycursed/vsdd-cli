@@ -1,0 +1,21 @@
+{
+  "uuid": "7bac1271-1802-4b73-b5f6-fe56e7a3886a",
+  "display_id": 284,
+  "title": "amend-r6: tracked-half fail-closed exit uninstrumented",
+  "description": "Minor. Fix: fail-closed-wiring seed added to corpus and roster. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:15.408722Z",
+  "updated_at": "2026-07-20T19:24:22.096305Z",
+  "closed_at": "2026-07-20T19:24:22.096305Z",
+  "comments": [
+    {
+      "uuid": "12bf2251-ef5b-4286-9b20-a2542f38b8ad",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:24:18.814170Z",
+      "kind": "resolution"
+    }
+  ]
+}

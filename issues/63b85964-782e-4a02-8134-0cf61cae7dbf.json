@@ -1,0 +1,21 @@
+{
+  "uuid": "63b85964-782e-4a02-8134-0cf61cae7dbf",
+  "display_id": 796,
+  "title": "Layer 3 round 4 minor: the vsdd init/preflight command surface prints cwd, tool versions, and init errors outside the shared cleaner — a Layer 4 (Install) surface carry, not a Layer 3 status surface",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T10:23:52.874679Z",
+  "updated_at": "2026-07-26T10:34:56.334972Z",
+  "closed_at": "2026-07-26T10:34:56.334963Z",
+  "comments": [
+    {
+      "uuid": "532c2d76-3ea2-4268-8433-ea48aa643229",
+      "display_id": 1058,
+      "author": "xqjG",
+      "content": "Fixed in 800878a5 as a DECLARED scope boundary: the text.rs module doc now states the shared policy covers the STATUS surfaces (segment, human, machine, broken-state) and the registry strings they consume; the vsdd init/preflight command surface (cwd, on-PATH tool versions, init-error paths) is Layer 4's (Install) and routes its own operator-local strings through the same helper when Layer 4 hardens. The content there is operator-environment (the same trust boundary as the PATH posture), not adopter/state data; the cleaner is available and the wiring is Layer 4's act. Recorded so the asymmetry is a deliberate decision, not a silent gap — the finding's own preferred disposition.",
+      "created_at": "2026-07-26T10:34:50.965611Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "ba76a03f-11fd-456c-abb2-08630c34cbd2",
+  "display_id": 468,
+  "title": "lane r5 SE: consolidated closure lacks survivor-handle referential integrity",
+  "description": "Lane round 5. Lens: SE (validator: SO). Owner: SO session. Defect: the falsifier checks only that A disposition is recorded — a consolidated closure pointing at no survivor passes, orphaning its symptom (the 82-orphans class reintroduced); terminal dispositions need no onward reference but consolidated asserts the work moved. Citations verified: contract:83 vs :81. Proposed: resolved-candidate (falsifier adds: a consolidated closure whose survivor reference is absent or resolves to no finding).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:45:52.116733Z",
+  "updated_at": "2026-07-20T00:49:15.363895Z",
+  "closed_at": "2026-07-20T00:49:15.363895Z",
+  "comments": [
+    {
+      "uuid": "22e15b7c-2f12-4f62-a701-185b13917db3",
+      "author": "xqjG",
+      "content": "Fixed: falsifier adds the referential-integrity branch — a consolidated closure whose survivor reference is absent or resolves to no finding; consolidation fixture's closures are survivor-referencing. Revision: lifecycle falsifier + criterion.",
+      "created_at": "2026-07-20T00:48:58.919546Z",
+      "kind": "resolution"
+    }
+  ]
+}

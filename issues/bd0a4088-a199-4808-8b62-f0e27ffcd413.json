@@ -1,0 +1,22 @@
+{
+  "uuid": "bd0a4088-a199-4808-8b62-f0e27ffcd413",
+  "display_id": 694,
+  "title": "r1 minor DR: citation hygiene — fixture-list antecedent, unqualified crosslink source cites, process ordinals, gate-kind enum",
+  "description": "Evidence: gate-data.md:64 ('the fixture list as authored' — no referent in-artifact), dispatch-data.md:9 and act-to-affordance-map.md:9 (launch.rs/review.rs cited without repo qualifier or version pin against a hard-held 0.8.0), five artifacts carrying 'items N-M'/'round N' ordinals with no numbered anchor (the contract never numbers the sets), state-schema.md:25 ('<gate kind>' with no resolvable enumeration). Disposition: qualify, anchor to symbols, cite #598 for authoring provenance or drop ordinals, enumerate gate kinds. Data-side. Owner: data-engineer. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:20:32.559238Z",
+  "updated_at": "2026-07-21T04:14:05.088833Z",
+  "closed_at": "2026-07-21T04:14:05.088833Z",
+  "comments": [
+    {
+      "uuid": "bfcafc22-4b07-4a18-94b6-1fbc193b66be",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5): the fixture-list reference now resolves to the mapping fixtures adopted with the report-set confirmation (#668); launch.rs and review.rs cites qualified with crosslink 0.8.0, the installed and held version; the items-N-M and round-N authoring ordinals replaced with the #598 package citation across gate-data, dispatch-data, economics-data, statusline-data, composition-scope, and state-schema; the gate-kind placeholder replaced with the closed enumeration red-gate|green-gate|fix-scale-gate|phase-exit-gate. Round 2 re-verifies (validator: documentation-reviewer).",
+      "created_at": "2026-07-21T04:14:00.418228Z",
+      "kind": "result"
+    }
+  ]
+}

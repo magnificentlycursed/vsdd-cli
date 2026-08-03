@@ -1,0 +1,21 @@
+{
+  "uuid": "22f3d744-a8df-46a2-9815-e7da76bb1aba",
+  "display_id": 357,
+  "title": "statusline r2 A11y: no criterion exercises the composed multi-repo display",
+  "description": "Round: statusline amendment cold round 2. Lens: accessibility (validator: ux). Owner: SO session. Defect: criteria verify single-line segments; the composed multi-line surface the operator actually sees is tested only as 'working', never for worded marks, color-strippability, degraded rendering, or repo disambiguation. Citations verified: contract:184, :185. Proposed: deferred, with option to fold (extend the criterion to the composed set; resolves alongside the repo-identifier fix). Failure: conformance demonstrated on a component, not the rendered surface.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:19.266958Z",
+  "updated_at": "2026-07-19T23:18:49.524500Z",
+  "closed_at": "2026-07-19T23:18:49.524500Z",
+  "comments": [
+    {
+      "uuid": "e053a7f3-f17b-421d-9e00-835e67299d0a",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded per established pattern). Composed multi-repo display now passes the same conduct checks as the single segment: worded marks, color-strip, degraded rendering, per-line worded repo identity. Revision: Status detection criterion.",
+      "created_at": "2026-07-19T23:17:44.499235Z",
+      "kind": "resolution"
+    }
+  ]
+}

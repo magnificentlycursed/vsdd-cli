@@ -1,0 +1,29 @@
+{
+  "uuid": "b81522b0-ac1a-403a-af2e-a7e8e9219092",
+  "display_id": 66,
+  "title": "PE/F1: README install path precision (monorepo vs standalone)",
+  "description": "Source: mdatron/review-log/2026-06-07-platform-engineer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:04:00.961200Z",
+  "updated_at": "2026-06-08T01:48:28.434716Z",
+  "closed_at": "2026-06-08T01:48:28.434716Z",
+  "labels": [
+    "classification:accepted",
+    "convergence:readme-install-phase-6",
+    "cycle:crosslink-13",
+    "domain:platform-engineer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "29cc738d-8a96-413e-a4fd-9a9f5eb566e7",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:27.565160Z",
+      "kind": "resolution"
+    }
+  ]
+}

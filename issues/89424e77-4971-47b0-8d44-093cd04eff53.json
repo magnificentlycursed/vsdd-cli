@@ -1,0 +1,31 @@
+{
+  "uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "display_id": 12,
+  "title": "Phase 1: Reserved-code drift fix + DSL Field-access symmetry + defined() fix",
+  "description": "v0.1.0 blocker. Internal fixes that change error-emission contracts.\n\nScope: (1) Rename MDATRON-E0001/E0002 per spec at DESIGN-MDATRON.md:116-117/506-514 (currently swapped); reserve E0070, E0080. (2) Amend the reserved-codes table to match implementation. (3) Add code-allocation lint - test that every emission site emits a reserved code. (4) Fix Field-on-Object-missing-key to return Null (symmetric with existing Field-on-Null at mdatron-core/src/dsl/expr.rs:224) - this was M4 PE F1 root-cause finding. (5) Revert the schema-tightening on supplements_in_scope/supplements_applied (was a reactive fix; the DSL change makes optional-field check safe). (6) Drop defined() empty-string carve-out at mdatron-core/src/dsl/expr.rs:322-330 - defined() becomes strict not-Null semantic.\n\nAcceptance: every error code emitted by mdatron resolves to a reserved-codes entry; Field access on missing keys returns Null (test fixture exercises both branches); defined(\"\") returns true; vsdd corpus still passes mdatron verify after schema reverts.\n\nPer docs/refactor/binary-first-plan.md Phase 1.",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-06-02T19:05:47.178547Z",
+  "updated_at": "2026-07-21T00:52:03.586254Z",
+  "closed_at": "2026-07-21T00:52:03.586254Z",
+  "blockers": [
+    "4ecacc91-ffe1-4689-ade4-b158f4e50c93"
+  ],
+  "comments": [
+    {
+      "uuid": "85d730d0-5151-48a7-8fd7-54ca1478288f",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle plan issue closed with its audit-record children (bulk disposition recorded per child). This issue remains the contract's cited evidence record for the June cycles — closure regularizes the state; git and tracker history are the archive. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:48:01.656053Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "957e32b0-1e19-42bb-9f3c-d9d2e9c8411c",
+      "author": "xqjG",
+      "content": "Layer 0 estate cleanup (phase 1c; ruling on vsdd-cli #597): June-cycle plan issue closed with its audit-record children (bulk disposition recorded per child). This issue remains the contract's cited evidence record for the June cycles — closure regularizes the state; git and tracker history are the archive. Evidence: boundary commit 46a71e4 (Decomposition § Layer 0) and the #597 trail.",
+      "created_at": "2026-07-21T00:49:10.380021Z",
+      "kind": "result"
+    }
+  ]
+}

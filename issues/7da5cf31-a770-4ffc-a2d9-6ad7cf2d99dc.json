@@ -1,0 +1,28 @@
+{
+  "uuid": "7da5cf31-a770-4ffc-a2d9-6ad7cf2d99dc",
+  "display_id": 596,
+  "title": "statusline amendment cold round 22",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 22 (post round-21: the outcome summary defined at the Install requirement; the six-member wiring-outcome enumeration in the versioned-data inventory; per-fixture exact-match outcome assertions). Series ...-2-2-1-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:55:05.412783Z",
+  "updated_at": "2026-07-20T05:03:19.828636Z",
+  "closed_at": "2026-07-20T05:03:19.828636Z",
+  "comments": [
+    {
+      "uuid": "02c8037e-d02f-4061-a434-c8073a72a357",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 22. Subject: revision 22 statusline anchors (round-21 set plus: the outcome summary defined as init's structured form at the Install requirement; the six-member wiring-outcome enumeration — installed, refused-existing-entry, declined, not-offered-non-interactive, withdrawn-read-failure, failed-write — in the versioned-data inventory; every install-offer fixture asserting its expected member by exact match). Out of scope: lane and effort amendments. Known-deliberate unchanged. Lens: UX, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T04:55:14.593469Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "dd864969-b674-4ed4-bfdc-ba0bfd12b98a",
+      "author": "xqjG",
+      "content": "Statusline round 22 complete: NO FINDINGS (UX, the narrowed lens per the declared standing reason — SA and A11y clean since round 6, AIE clean rounds 7-8). The completed outcome-summary trace verified: all six wiring outcomes partition the offer-reaching space with no overlap or gap, each backed by an exact-match fixture; the two hardest candidates (aborted-install coverage via the exit/wiring channel decoupling; degraded-vs-broken-state inline-command consistency) probed and cleared with the audit recorded. STOP SIGNAL REACHED: a clean round. Series 15-16-11-6-8-2-2-2-1-2-1-2-2-3-3-2-3-3-2-2-1-2-0. The statusline amendment awaits operator ratification. Closing the round.",
+      "created_at": "2026-07-20T05:03:18.461556Z",
+      "kind": "result"
+    }
+  ]
+}

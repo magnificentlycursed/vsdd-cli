@@ -1,0 +1,21 @@
+{
+  "uuid": "d5f7451a-da84-48c4-ba9b-9b5385005f2f",
+  "display_id": 482,
+  "title": "lane r6 SE: repetition policy's scope over the suite delta unstated",
+  "description": "Lane round 6. Lens: SE (validator: SO). Owner: SO session. Defect: flake policy is introduced beside pin attribution; the delta is one run per end — a flake flip fabricates or masks a regression; aggregation rule unstated. Citations verified: contract:64. Proposed: resolved-candidate (the policy covers pin runs and the delta alike; number and per-test aggregation are the 1c items).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:51.383453Z",
+  "updated_at": "2026-07-20T00:57:55.880784Z",
+  "closed_at": "2026-07-20T00:57:55.880784Z",
+  "comments": [
+    {
+      "uuid": "e05b7d4f-4520-498e-a855-fbacce87c6ce",
+      "author": "xqjG",
+      "content": "Fixed: the repetition policy covers pin runs and the suite delta alike; number and per-test aggregation are the 1c items. Revision: gate bullet.",
+      "created_at": "2026-07-20T00:57:37.523334Z",
+      "kind": "resolution"
+    }
+  ]
+}

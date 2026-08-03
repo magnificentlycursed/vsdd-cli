@@ -1,0 +1,21 @@
+{
+  "uuid": "6f5cea0c-306d-4f15-b0ed-8478291338e6",
+  "display_id": 346,
+  "title": "statusline r2 SA: snapshot does not enumerate the renderer's display fields",
+  "description": "Round: statusline amendment cold round 2. Lens: solution-architect (validator: solution-owner). Owner: SO session. Defect: renderer inputs include session, work item, milestone-scoped open-finding count, but the corroboration snapshot at the phase-answer derivation enumerates only milestone states, round/finding counts, comment handles — and its phase-1c schema audit is scoped to the integrity-query list, which contains no display field; session is doubly stranded since stdin is contractually unconsumed. Citations verified: contract:197 vs :196 vs :160. Proposed: resolved-candidate. Failure: implementer adds a second acquisition (breaking one-acquisition and purity) or silently drops fields. Fix: extend the snapshot enumeration at :196 with the display fields and widen the 1c audit scope to integrity-query list plus renderer display fields.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:07.942552Z",
+  "updated_at": "2026-07-19T23:18:33.982362Z",
+  "closed_at": "2026-07-19T23:18:33.982362Z",
+  "comments": [
+    {
+      "uuid": "3201d86f-21c1-49b4-baa1-f4817ba93f68",
+      "author": "xqjG",
+      "content": "Fixed in working tree (round-2 fix pass, operator triage per established pattern). Snapshot enumeration at the phase-answer derivation now materializes the statusline display fields (repo name, session, work item, active milestone's open-finding count); the phase-1c schema audit scope widened to integrity-query list plus renderer display fields. Revision: Verification architecture derivation entry.",
+      "created_at": "2026-07-19T23:17:35.274244Z",
+      "kind": "resolution"
+    }
+  ]
+}

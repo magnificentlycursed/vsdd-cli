@@ -1,0 +1,21 @@
+{
+  "uuid": "f131c9de-8d5c-4454-ac5b-69ff71058fa3",
+  "display_id": 380,
+  "title": "statusline r4 UX: staleness disclosed only in the README",
+  "description": "Round: statusline amendment cold round 4. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect (low confidence, reviewer-flagged): the lag-between-events disclosure lives in the contract and ship-time README; a fresh operator has no in-session disclosure the gauge can trail reality. Reviewer's own note: the in-band freshness-token mitigation collides with the recorded field-density dismissal, so the residual is doc-only disclosure. Citations verified: contract:160. Proposed: dismissed-candidate per reviewer's accepted-lean, rationale recorded.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:35:30.772594Z",
+  "updated_at": "2026-07-19T23:44:14.625840Z",
+  "closed_at": "2026-07-19T23:44:14.625840Z",
+  "comments": [
+    {
+      "uuid": "ebd0f038-d3d3-4a0b-b57c-cd51d3722215",
+      "author": "xqjG",
+      "content": "Dismissed at triage per the reviewer's own accepted-lean: the in-band freshness-token mitigation collides with the recorded field-density dismissal; the contract-level disclosure plus README onboarding is the accepted residual. Rationale recorded.",
+      "created_at": "2026-07-19T23:43:56.332924Z",
+      "kind": "resolution"
+    }
+  ]
+}

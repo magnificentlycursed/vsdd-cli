@@ -1,0 +1,35 @@
+{
+  "uuid": "b2c809d3-83db-4473-b4cb-99679d67c205",
+  "display_id": 435,
+  "title": "defect-fix lane amendment cold round 3",
+  "description": "Round child of: Directive: defect-fix lane for code-touching work (from mdatron deviation). Cold review of lane revision 3 (post round-2: test-application mechanism, enumeration-decides governed set, owning-issue falsifier, publish-gated waiver, one-defect-per-commit, graded retrofit, reason representation, precedence rule, fixed fix-lane phase input, expanded fixture set). Series 19-13.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:17:28.943691Z",
+  "updated_at": "2026-07-20T00:28:53.225998Z",
+  "closed_at": "2026-07-20T00:28:53.225998Z",
+  "comments": [
+    {
+      "uuid": "8fbb9475-e88f-483a-9551-6b1faed6178a",
+      "author": "xqjG",
+      "content": "Dispatch manifest — lane round 3. Subject: lane revision 3 anchors: Phase exit by gate fix-scale bullet (test-application mechanism, isolation, reason recording, graded retrofit, validator-approved surface-limitation, 1c flake policy) + falsifier (owning-finding scope, publish-gated waiver); Finding lifecycle bullet (enumeration-decides governed set, linkage-defined defect, layer-vs-fix precedence, one-defect-per-commit, publish-gated waiver rationale, honest provenance) + falsifier (owning-issue, cross-check clause); Directive reconciliation (unchanged from revision 2 except context); Deterministic composition + signature (fixed fix-lane phase value); Gates requirement; Red-gate cheat criterion (compliant-fix, both-publish-state waiver, surface-limitation, retrofit-still-trips conduct); fixture corpus fix-lane set (six members). Out of scope: statusline amendment. Lenses: vsdd-methodology, SE, QE, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:17:46.161935Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "924e92df-26ad-4a17-81df-af76da4364ea",
+      "author": "xqjG",
+      "content": "Lane round 3 complete. SE 4 + QE 5 + methodology 2 = 11 returned, 9 filed after 2 convergent merges: L113 forward gate missing-symbols cheat (SE+QE, the round's center); L114 inseparable-retrofit arm (Meth+QE); L115 build scope unbound; L116 shared-root-cause consolidation; L117 publish-state binding; L118 ungated-assertion antecedent; L119 green-at-baseline fixture; L120 regression hole; L121 fix-lane scope value + composition fixture. All resolved-candidates; citations evidence-verified. Series 19-13-9, converging. Not clean; round 4 after disposition.",
+      "created_at": "2026-07-20T00:26:07.227792Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "f1de6f6b-4cd3-4428-b22b-7c5d4483801a",
+      "author": "xqjG",
+      "content": "Round fully disposed: 9/9 fixed and closed. mdatron verify clean on lane revision 4. Closing; round 4 dispatches.",
+      "created_at": "2026-07-20T00:28:51.388511Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "693c4b45-156a-4d16-bf61-87b07c38e772",
+  "display_id": 484,
+  "title": "lane r6 SE: branch grammar has no enforcement seam for hand-created refs",
+  "description": "Lane round 6. Lens: SE (validator: SO). Owner: SO session. Defect: registration is data-consistent but git refs have no file-admission event — the falsifier reaches only generated branches while the cited incident is hand-authored drift. Citations verified: contract:124, :128. Proposed: resolved-candidate (named seam: a process-integrity query over refs in Status with a pre-push hook backstop).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:54.111544Z",
+  "updated_at": "2026-07-20T00:57:58.458693Z",
+  "closed_at": "2026-07-20T00:57:58.458693Z",
+  "comments": [
+    {
+      "uuid": "34491540-b158-42bb-8685-5bbdc64e7233",
+      "author": "xqjG",
+      "content": "Fixed: enforcement seam named — a process-integrity query over refs in Status with a pre-push hook backstop; git refs have no file-admission event. Revision: Conformance closed-world bullet.",
+      "created_at": "2026-07-20T00:57:41.514054Z",
+      "kind": "resolution"
+    }
+  ]
+}

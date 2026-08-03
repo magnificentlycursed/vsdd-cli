@@ -1,0 +1,21 @@
+{
+  "uuid": "0e8d3e96-bcbe-4ff8-935e-1730a7757801",
+  "display_id": 800,
+  "title": "Layer 3 round 5 major SE+QE convergent: the post_load loader wiring is unpinned — deleting value.post_load() leaves all tests green (the unit test pins the logic, nothing pins the call); plus the missing #789 hostile-path falsifier (record corrected on #795)",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T10:59:04.211646Z",
+  "updated_at": "2026-07-26T11:12:02.845182Z",
+  "closed_at": "2026-07-26T11:12:02.845173Z",
+  "comments": [
+    {
+      "uuid": "edfcff55-507e-4754-b364-aba9f872b325",
+      "display_id": 1065,
+      "author": "xqjG",
+      "content": "Fixed in 52f94321: the post_load LOADER WIRING is pinned by load_set_cleans_registry_display_strings_at_load — it doctors a temp statusline-data artifact with a zero-width char in next_step_text (pattern-free, minLength-1, so it passes schema), loads through the real load_set, and asserts the loaded field is clean; deleting value.post_load() now turns it red. The missing #789 hostile-path falsifier is added (the broken-state test seeds a Diagnostic with a bidi/control file path and asserts both surfaces clean). Both gaps the round named are closed.",
+      "created_at": "2026-07-26T11:11:57.377429Z",
+      "kind": "result"
+    }
+  ]
+}

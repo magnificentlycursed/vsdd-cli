@@ -1,0 +1,29 @@
+{
+  "uuid": "732d0c9b-21fe-4a78-9097-c40ff552bb86",
+  "display_id": 678,
+  "title": "r1 major QE: one-to-one mapping rule fails on test splits (dormancy escape) and merges (forced mislabel)",
+  "description": "Evidence: gate-data.md:30; contract line 64. Split: baseline test_foo covering A+B splits to test_foo_a/test_foo_b; one-to-one maps one half, the other becomes 'genuinely new', and leaving it ignored at HEAD silently retires behavior B's baseline catcher — walks around the in-place-quarantine protection. Merge: two baseline tests folding into one HEAD test cannot both map; the second is forced into a deletion mislabel severing the linkage. Disposition: set-valued mappings with dormancy scrutiny inherited by every split target, or explicit split/merge declarations; corpus needs a split-leaving-one-half-ignored fixture. Owner: solution-owner (lane taxonomy). Validator: quality-engineer.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "ec9d5a1d-a482-4366-b000-c5a96a6d336d",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T03:17:47.401398Z",
+  "updated_at": "2026-07-21T04:10:55.502351Z",
+  "closed_at": "2026-07-21T04:10:55.502351Z",
+  "comments": [
+    {
+      "uuid": "f53f426e-4a45-4929-adf1-f6c70f7a0a87",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21, round-1 triage): set-valued mappings. from/to become sets; splits and merges are lawful mappings; EVERY HEAD target of a split inherits the dormancy scrutiny (closing the escape); approval still enumerates every from-to pair; merge stops being a forced deletion mislabel. Rejected: separate split/merge declaration forms (more vocabulary, same coverage). Amendment-class — rides the round-1 amendment window. Data-side: dispatch-data mapping shape generalizes at the fix pass.",
+      "created_at": "2026-07-21T03:52:16.346952Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "504f002c-a508-4444-aa5d-6ef94df965c1",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit e61f28e5, gate-data 0.2.0): mapping entry_fields from/to are non-empty sets; rules rewritten — splits and merges lawful, at-most-one-mapping membership per path per side, every to-set member of a split inherits the dormancy scrutiny, approval enumerates every from-to pair. CORRECTION to the triage decision comment: the mapping lives in gate-data's mapping_schema, not dispatch-data — the ruling's substance is unchanged. Contract touch rides #698. Round 2 re-verifies (validator: quality-engineer).",
+      "created_at": "2026-07-21T04:10:49.982811Z",
+      "kind": "result"
+    }
+  ]
+}

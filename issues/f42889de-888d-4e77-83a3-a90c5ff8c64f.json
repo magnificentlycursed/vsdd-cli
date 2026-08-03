@@ -1,0 +1,21 @@
+{
+  "uuid": "f42889de-888d-4e77-83a3-a90c5ff8c64f",
+  "display_id": 238,
+  "title": "amend-r5-SA: escalate-dont-guess bullet uninstrumented",
+  "description": "Blocking. No falsifier, fixture, or criterion reaches the conduct. Fix: falsification line gains the no-blocker-record condition; corpus gains the unresolved-question pair; audit home declared in the roster. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:01:41.205296Z",
+  "updated_at": "2026-07-20T19:07:25.833320Z",
+  "closed_at": "2026-07-20T19:07:25.833320Z",
+  "comments": [
+    {
+      "uuid": "1c60b78c-a3cc-483a-a718-a1158ced5873",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:07:21.818613Z",
+      "kind": "resolution"
+    }
+  ]
+}

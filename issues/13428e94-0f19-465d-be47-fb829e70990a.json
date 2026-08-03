@@ -1,0 +1,45 @@
+{
+  "uuid": "13428e94-0f19-465d-be47-fb829e70990a",
+  "display_id": 792,
+  "title": "Phase 3 execution, Layer 3: round 4 — verify the round-3 fixes, re-decide the stop",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-26T09:53:58.414441Z",
+  "updated_at": "2026-07-28T21:24:28.079215Z",
+  "closed_at": "2026-07-28T21:24:28.079207Z",
+  "comments": [
+    {
+      "uuid": "935b5833-3af3-4c2e-a3ae-3d078c61b420",
+      "display_id": 1053,
+      "author": "xqjG",
+      "content": "DISPATCH MANIFEST (declared before the spend). invoked_by: the standing continuation conduct. vehicle: the Workflow orchestration surface (background is the only mode the tool offers — the resume net, not a synchronous flag, is the interruption mitigation; the three completed lenses cache on any resume, so an interruption costs at most the in-flight lens). round shape: STOP-DECIDING VERIFY, scope NARROWED to the round-3 change set (94d3c2cf): the shared vsdd-core/src/text.rs policy and its two delegations, the broken.rs path+recovery cleaning, human.rs's next_step+registered_absence, the acquire absence constants and fidelity pin, and the falsifier fixes. THREE lenses: security (does the text.rs set actually cover the threat the project names — is the enumerated code-point set complete against Trojan-Source and the web.md list; any surface still bypassing the shared cleaner; the combining-mark exclusion defensible), software-engineer (delegation correctness — every former is_control site now routes through the shared policy, no missed interpolation, the fidelity test's soundness, the structural field locator), quality-engineer (do the round-3 falsifiers falsify — the bidi state-sourced test, the command-level stderr test, the structural degenerate-budget locate; any new overfit; is the CARGO_BIN_EXE command test hermetic). MODEL, CHOSEN: claude-fable-5 all three. EFFORT, CHOSEN: security and software-engineer HIGH, quality-engineer MEDIUM. expected_cost_band: 0-5 findings pre-dedup, 120k-240k downstream tokens — the round-3 narrowed shape landed in this band uninterrupted, the calibration to keep. inputs: the tree at 94d3c2cf + the changelog mirror; the four closed children; the #787 trail. returned + telemetry recorded here after.",
+      "created_at": "2026-07-26T09:54:31.481234Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "b66d376f-0659-4b5f-aa18-8aa4430407c9",
+      "display_id": 1054,
+      "author": "xqjG",
+      "content": "ROUND 4 RETURNED (narrowed 3 lenses, uninterrupted, IN BAND: 269,534 tokens / 144 tools against 120k-240k — a hair over, the narrowed calibration holding). Verdicts: #789/#790/#791 held on their named sites per the security lens, but SE and QE found the round-3 fix pass under-tested and incomplete-by-enumeration in TWO dimensions. Stop: NOT reached, unanimous. THE LESSON, stated: rounds 3 and 4 both caught the same anti-pattern in my fixes — fixing a CLASS member-by-member at the sinks (the char set enumerated, the registry strings cleaned one at a time) leaves the rest of the class open for the next round. Round 4's fixes go at the class level. Four children: #793 (major, security+QE: is_terminal_unsafe enumerates a fixed list and misses WORD JOINER U+2060, invisible operators U+2061-2064, U+180E, interlinear U+FFF9-FFFB, the tag block U+E0000-E007F, and line/para separators U+2028-2029 — all demonstrated reaching the human form on the built binary; fix by Unicode General_Category, not a hand-list), #794 (major, SE+QE: the registry strings truncation_mark, absence_text, marker_word, broken_state_mark reach the terminal raw — the rest of the class #791 fixed only two members of; fix once at registry load so every surface including the machine form gets clean data), #795 (major, SE+QE: three falsifiers from round 3 do not falsify — the #790 command-level stderr test's malformed-config fixture cannot echo an escape byte so raw-vs-cleaned is indistinguishable, the #789 path-line fix has no hostile-path fixture, and registered_absence's expect is unpinned), #796 (minor: the init/preflight command surface prints cwd/tool-versions/init-errors outside the shared cleaner — a Layer 4 Install surface, carried there with the cleaner available, not a Layer 3 status surface). TELEMETRY, chosen versus observed: model chosen=observed claude-fable-5 all three; effort chosen=observed (security/SE high, QE medium); band 120k-240k, 269,534 observed. Fix pass follows — both class-level fixes plus the real falsifiers; adds one minimal pure-data dependency (unicode-general-category) with a justification doc per the estate's docs/dependencies gate, flagged for operator awareness.",
+      "created_at": "2026-07-26T10:24:27.392074Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "6e55ee9b-ad55-4a52-8c80-d38c1ea1b1e3",
+      "display_id": 1059,
+      "author": "xqjG",
+      "content": "Round 4 fix pass COMPLETE (800878a5; changelog mirror follows). All four children closed with tree-verified results. Both class-level fixes landed — cleaning by Unicode category (ending the enumeration game) and registry-string cleaning at load (ending the per-sink game) — plus the three real falsifiers and the declared Layer 4 scope for the init surface. Gates: 138 tests pass / 0 fail, clippy zero, fmt clean, mdatron verify clean. One new dependency (unicode-general-category) with its justification doc, flagged for operator awareness. Round 5 (verify the round-4 fixes, re-decide the stop) dispatches next.",
+      "created_at": "2026-07-26T10:35:43.080028Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "a8cad882-2d37-411a-ab5c-eea159dd9537",
+      "display_id": 1122,
+      "author": "xqjG",
+      "content": "Closed as lifecycle cleanup (Layer-3 compliance audit, 2026-07-28). This phase-3 round's findings were fix-closed IN PLACE without phase-4 routing — the recorded deviation (#806/#808), forward-only, standing on that record. The round's terminal-safety fixes landed and were then SUPERSEDED by the Layer-3 rebuild (#813) under the ratified Terminal output safety requirement (#807); their tests became its verification architecture. Round issue left open at the time; closed now.",
+      "created_at": "2026-07-28T21:24:22.498065Z",
+      "kind": "resolution"
+    }
+  ]
+}

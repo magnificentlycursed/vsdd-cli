@@ -1,0 +1,35 @@
+{
+  "uuid": "0f0b275f-9f47-4271-a35d-15c659e58c8e",
+  "display_id": 593,
+  "title": "statusline amendment cold round 21",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 21 (post round-20: the wiring-not-installed marker as the defined automation observable, both failure modes detected identically). Series ...-3-2-2-1.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:49:06.915054Z",
+  "updated_at": "2026-07-20T04:55:03.740496Z",
+  "closed_at": "2026-07-20T04:55:03.740496Z",
+  "comments": [
+    {
+      "uuid": "f0ada33b-35bb-435b-8dc0-9b2bdab9620d",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 21. Subject: revision 21 statusline anchors (round-20 set plus the wiring-not-installed marker clause — the defined automation observable with both failure modes detected identically). Out of scope: lane and effort amendments. Known-deliberate unchanged. Lens: UX, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T04:49:14.554139Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "01f0243a-fefa-4eba-b16f-e8fbfca7b356",
+      "author": "xqjG",
+      "content": "Round 21 complete (UX). 2 filed, one root: L269 the undefined outcome surface; L270 the two-of-seven marker. Series ...-2-2-1-2. Not clean; round 22 after disposition.",
+      "created_at": "2026-07-20T04:54:14.794467Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "25ffd13e-33a9-4891-b0ff-9fe4dd7ca296",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed (the outcome surface defined; the wiring outcome enumerated across the full path space with per-fixture exact-match assertions). mdatron verify clean on revision 22. Closing; round 22 dispatches (UX).",
+      "created_at": "2026-07-20T04:55:02.281330Z",
+      "kind": "result"
+    }
+  ]
+}

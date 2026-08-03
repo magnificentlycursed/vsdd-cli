@@ -1,0 +1,21 @@
+{
+  "uuid": "b1e25038-bf58-4bae-9be7-022923da5e7d",
+  "display_id": 281,
+  "title": "amend-r6: late-writer fencing conduct uninstrumented",
+  "description": "Minor. Fix: late-writer seed added to corpus and roster. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:05.401671Z",
+  "updated_at": "2026-07-20T19:24:03.960049Z",
+  "closed_at": "2026-07-20T19:24:03.960049Z",
+  "comments": [
+    {
+      "uuid": "5a030148-964f-46b9-9d49-f14b9855f8f2",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:24:00.880864Z",
+      "kind": "resolution"
+    }
+  ]
+}

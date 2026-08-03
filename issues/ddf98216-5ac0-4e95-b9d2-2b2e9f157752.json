@@ -1,0 +1,32 @@
+{
+  "uuid": "ddf98216-5ac0-4e95-b9d2-2b2e9f157752",
+  "display_id": 711,
+  "title": "terminal nit SO: Revision header omits the round-2 amendment batch",
+  "description": "Evidence: contract line 6 chronicles every prior post-ratification batch through the round-1 window (#698) but carries no entry for the round-2 touch (#706, d3b19c02), whose record is the inline marker at line 180. SO graded arguable, not stop-breaking: inline markers are an accepted recording mode and the tracker holds the authoritative record. Disposition: one-clause header addition at operator discretion — a contract touch, so it takes ratification if adopted. Owner: solution-owner. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "12cba19e-0feb-4891-a149-e483c4a92de8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T13:37:44.307245Z",
+  "updated_at": "2026-07-21T16:20:34.604530Z",
+  "closed_at": "2026-07-21T16:20:34.604530Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "c5fbeca8-c3e3-4aec-9a67-8468605d7c1c",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21): ADOPTED — the one-clause header addition, ratified by the operator's selection on the presented text. The Revision line now chronicles the round-2 batch beside every other; the chronicle stays complete.",
+      "created_at": "2026-07-21T16:20:24.772460Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "1b9b04ba-3c1e-40ee-b908-88d8cfe5257d",
+      "author": "xqjG",
+      "content": "FIX LANDED (boundary commit above on this trail); mdatron clean at pre-commit. Closing.",
+      "created_at": "2026-07-21T16:20:30.518293Z",
+      "kind": "result"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "455a2448-b20f-4e4e-b0bb-d015856b1c3e",
+  "display_id": 432,
+  "title": "upstream crosslink: session status human and JSON paths are independent hand-written renderers",
+  "description": "Upstream finding / absorption proposal for dollspace-gay/crosslink, 2026-07-20. Observation: session status composes its human output line-by-line (session.rs:185-231) and its JSON separately (session.rs:160-182) — duplicated logic, divergence-prone. The vsdd statusline design's one-computation-N-renderings shape (single snapshot acquisition, pure renderers per form, display truncation never in the machine form) is offered as an absorption candidate when the toolkit ships it.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:13:48.984573Z",
+  "updated_at": "2026-07-20T23:32:35.709405Z",
+  "closed_at": "2026-07-20T23:32:35.709405Z",
+  "comments": [
+    {
+      "uuid": "c83af75d-6da1-4729-8413-a849796dd10b",
+      "author": "xqjG",
+      "content": "Migrated to the canonical upstream (operator-directed workflow, decision on #597): re-verified STILL-LIVE at dollspace-gay/crosslink main 85691369 — session.rs:160-181 raw json! object vs 185-231 hand-printed lines; Activity line absent from JSON, agent_id/started_at absent from human — and filed as dollspace-gay/crosslink#16, which supersedes this record. Evidence: the evaluation scout reports and draft bodies on #597's trail, 2026-07-20.",
+      "created_at": "2026-07-20T23:32:31.597500Z",
+      "kind": "result"
+    }
+  ]
+}

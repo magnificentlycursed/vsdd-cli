@@ -1,0 +1,21 @@
+{
+  "uuid": "c6eb1a5e-50a0-4a35-92aa-d7b4e9d3abbf",
+  "display_id": 541,
+  "title": "lane r10 SE: compile-defect and broken-surface mechanically indistinguishable — validator escape reopened",
+  "description": "Lane round 10. Lens: SE (validator: SO/SA). Defect: at workspace scope a compile-defect also makes the baseline suite unable to run, so the self-verification predicate answers identically for both forms — relabeling a compile-defect as broken-surface bypasses the validator and the green demonstration; the no-escape sentence is false, and the false-broken-surface fixture only covers the suite-runs case. Citations verified: contract:64, :66, :173, :180. Proposed: resolved-candidate (collapse the asymmetry: broken-surface carries validator approval like its siblings — one bar on all three no-pin forms; the run-attempt stays as an additional mechanical check; rationale honestly restated — the run attempt cannot distinguish the two at workspace scope, which is why the validator bar returns).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:53.503585Z",
+  "updated_at": "2026-07-20T01:58:58.271165Z",
+  "closed_at": "2026-07-20T01:58:58.271165Z",
+  "comments": [
+    {
+      "uuid": "1450bb7c-2c4e-4746-87a7-fe17951b8dff",
+      "author": "xqjG",
+      "content": "Fixed: the validator bar returns to all three no-pin forms — approval is the discriminator since the run attempt cannot distinguish broken-surface from compile-defect at workspace scope (stated honestly); the run attempt stays as the additional mechanical check; falsifier form 3 is validator-approved and gate-verified. Revision: gate bullet + falsifier + criterion.",
+      "created_at": "2026-07-20T01:58:44.928087Z",
+      "kind": "resolution"
+    }
+  ]
+}

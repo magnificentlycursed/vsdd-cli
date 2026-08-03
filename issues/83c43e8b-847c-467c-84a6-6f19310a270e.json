@@ -1,0 +1,25 @@
+{
+  "uuid": "83c43e8b-847c-467c-84a6-6f19310a270e",
+  "display_id": 713,
+  "title": "terminal-2 nit collector: two nit-and-arguable residue items (stop holds with these recorded)",
+  "description": "(1) gate-data.md:22 delta_rule cites '(same ruling)' with an ambiguous antecedent (the preceding line cites #700; the delta ruling is #675); self-disambiguating via line 26 and the contract; optional cleanup is the explicit citation. (2) installed-artifact-manifest.md:157 'wiring lives at user level today' is not corroborated on the live host: no statusLine key exists in any settings surface — the user settings file was rewritten 2026-07-20 23:47 and likely dropped it; the orphan payload script remains. The record-versus-host divergence is exactly what the session-substrate check exists to flag; the durable fix is Layer 4's installer. OPERATOR ACTION CANDIDATE: re-wire the user-level statusLine, or accept the absence until Layer 4 and reword the note's today claim. Owner: solution-owner (operator-facing). Validator: sanity-check.",
+  "status": "open",
+  "priority": "low",
+  "parent_uuid": "499db8b4-9473-4cbe-bc65-db5a3067004c",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T16:28:19.881515Z",
+  "updated_at": "2026-07-29T10:26:23.349029Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "87a6c863-c542-40e3-bfdf-18d05be3bb96",
+      "display_id": 1235,
+      "author": "xqjG",
+      "content": "KEPT (tracker sweep #826) — not stale. Nit (1) gate-data citation is optional cleanup. Nit (2) is a LIVE record-vs-host divergence (installed-artifact-manifest says statusLine wiring is user-level, but no statusLine key exists on the host) whose durable fix is the installer — re-homed to the install slice (Layer 4). Operator-action candidate stands: re-wire the statusLine, or reword the note until the installer lands.",
+      "created_at": "2026-07-29T10:26:23.321377Z",
+      "kind": "plan"
+    }
+  ]
+}

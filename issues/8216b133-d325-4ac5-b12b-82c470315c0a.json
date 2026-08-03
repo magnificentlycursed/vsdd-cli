@@ -1,0 +1,21 @@
+{
+  "uuid": "8216b133-d325-4ac5-b12b-82c470315c0a",
+  "display_id": 589,
+  "title": "statusline r19 UX: write-failure seeded on the confirmed path only",
+  "description": "Round 19. Lens: ux, lower confidence (validator: DR). Defect: the requirement binds write-failure discipline to confirmed AND accepted writes; the seed covers only the interactive path — the automation audience's failure surface unverified. Citations verified: contract:162, :173, :187. Proposed: resolved-candidate (accept-flag write-failure variant added).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:15:44.510896Z",
+  "updated_at": "2026-07-20T04:16:36.783553Z",
+  "closed_at": "2026-07-20T04:16:36.783553Z",
+  "comments": [
+    {
+      "uuid": "c8d4edd0-a706-47b6-aa3d-480a8cc08044",
+      "author": "xqjG",
+      "content": "Fixed: write-failure seeds on both the confirmed and accept-flag paths, the non-interactive variant signalling failure cleanly for automation. Revision: corpus + criterion.",
+      "created_at": "2026-07-20T04:16:32.228530Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "ca457b51-84d2-45ce-8328-da400d927962",
+  "display_id": 367,
+  "title": "statusline r3 A11y: field absence has no worded-never-silent contract",
+  "description": "Round: statusline amendment cold round 3. Lens: accessibility (validator: ux). Owner: SO session. Defect: degradation and truncation are worded-never-silent but sessionless/milestone-less absence states can render as empty slots — silent position-only absence passes every listed check; the segment's own principle applied unevenly. Citations verified: contract:160, :185. Proposed: deferred-candidate, foldable one-sentence fix (absent fields render as worded absence).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:27:37.839964Z",
+  "updated_at": "2026-07-19T23:29:41.438905Z",
+  "closed_at": "2026-07-19T23:29:41.438905Z",
+  "comments": [
+    {
+      "uuid": "76099a7e-b285-4f6b-a964-e2ac82a602e8",
+      "author": "xqjG",
+      "content": "Fixed in working tree (deferred folded). Worded-absence contract added: a display field whose value is absent renders a worded absence, never an empty slot — never-silent covers absence, degradation, and truncation alike; sessionless and milestone-less fixtures verify it. Revision: Status bullet + Status detection criterion.",
+      "created_at": "2026-07-19T23:28:52.430830Z",
+      "kind": "resolution"
+    }
+  ]
+}

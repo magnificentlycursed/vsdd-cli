@@ -1,0 +1,25 @@
+{
+  "uuid": "a2f64e5e-9bdb-48d9-865a-8ea935d08d85",
+  "display_id": 704,
+  "title": "r2 minor SA: recovery-family gloss excludes reconcile-toward-artifact",
+  "description": "Evidence: composition-scope-and-actions.md:60 glosses recovery as 'the state artifact itself needs repair', but reconcile-toward-artifact (:42) repairs the tracker TOWARD the authoritative artifact — the artifact is precisely what does not need repair. Disposition: broaden the gloss to cover reconciling external corroboration toward the artifact. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "426d87e4-d8cf-4272-9c1d-e21e675de848",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T06:54:39.537575Z",
+  "updated_at": "2026-07-21T07:01:32.740235Z",
+  "closed_at": "2026-07-21T07:01:32.740235Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "498317f6-7b43-4a4e-962f-6beebc976b6f",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit 026564ee): the recovery-family gloss now reads 'the state artifact needs repair, or its corroboration needs reconciling toward it', naming reconcile-toward-artifact's direction explicitly. Terminal round re-verifies (validator: solution-architect).",
+      "created_at": "2026-07-21T07:01:29.587729Z",
+      "kind": "result"
+    }
+  ]
+}

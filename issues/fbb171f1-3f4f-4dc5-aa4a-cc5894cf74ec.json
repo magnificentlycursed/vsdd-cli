@@ -1,0 +1,21 @@
+{
+  "uuid": "fbb171f1-3f4f-4dc5-aa4a-cc5894cf74ec",
+  "display_id": 513,
+  "title": "effort r1 Meth: amendment absent from the revision header",
+  "description": "Effort round 1. Lens: methodology (validator: SO). Defect: the header enumerates the 2026-07-20 clause set and omits effort — invisible in the record that exists to enumerate it. Citations verified: contract:6 vs :91, :141. Proposed: resolved-candidate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:27:31.156752Z",
+  "updated_at": "2026-07-20T01:30:08.994389Z",
+  "closed_at": "2026-07-20T01:30:08.994389Z",
+  "comments": [
+    {
+      "uuid": "893091c8-ee98-4670-ab68-be449239b8ae",
+      "author": "xqjG",
+      "content": "Fixed: effort joins the header's 2026-07-20 clause enumeration. Revision: header.",
+      "created_at": "2026-07-20T01:29:45.672861Z",
+      "kind": "resolution"
+    }
+  ]
+}

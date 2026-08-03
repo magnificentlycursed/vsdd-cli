@@ -1,0 +1,13 @@
+{
+  "uuid": "25eefea7-7c96-468c-9b59-d6642824c412",
+  "display_id": 853,
+  "title": "SO ruling: file home for the adopter-facing lean methodology doc (methodology.md deleted; contract is the governing-spec home)",
+  "status": "open",
+  "priority": "low",
+  "created_by": "xqjG",
+  "created_at": "2026-08-01T20:12:32.473315Z",
+  "updated_at": "2026-08-01T20:12:37.859668Z",
+  "labels": [
+    "design"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "7fc312a1-9459-4aa8-b4d6-1c88612af807",
+  "display_id": 620,
+  "title": "1c-DR-r3: workspace-shape 1c deferral left without disposition",
+  "description": "Minor, check e. Citation (Architecture, Workspace shape): 'deferred to Phase 1c for mdatron as an optional simplification (operator decision 2026-07-18)' — the Decomposition neither decides nor excludes it. Fix: record the disposition — it re-homes to the mdatron session's own cycle per the session-split ruling. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:31:13.122074Z",
+  "updated_at": "2026-07-20T17:32:38.260581Z",
+  "closed_at": "2026-07-20T17:32:38.260581Z",
+  "comments": [
+    {
+      "uuid": "ad7c9e19-2dc5-4a05-93c6-f423ec974cdc",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Deferral disposition recorded at the audit paragraph: the workspace-shape question re-homes to the mdatron session's own cycle per the session-split ruling. mdatron verify clean.",
+      "created_at": "2026-07-20T17:32:36.819830Z",
+      "kind": "resolution"
+    }
+  ]
+}

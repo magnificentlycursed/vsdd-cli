@@ -1,0 +1,35 @@
+{
+  "uuid": "f30e9400-4e86-47f5-9695-2f31f6d06602",
+  "display_id": 447,
+  "title": "statusline amendment cold round 8",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 8 (post round-7: stdin byte-count instrument + sentinel-stdin fixture; degraded-kind with versioned per-kind next-step text; human form placed in effectful shell). Series 15-16-11-6-8-2-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:29:03.544410Z",
+  "updated_at": "2026-07-20T00:38:17.337199Z",
+  "closed_at": "2026-07-20T00:38:17.337199Z",
+  "comments": [
+    {
+      "uuid": "e28ddd38-3143-45a0-ba11-3892fdd9e684",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 8. Subject: revision 8 statusline anchors (round-7 set with: stdin-bytes-read count instrument + sentinel-stdin corpus member; degraded-kind (absent; unusable) output by the derivation with per-kind next-step text as 1c-authored versioned data, tracker-absent contracted as normal offline mode; human form placed in the effectful shell as a rendering over the same inputs). Out of scope: defect-fix lane amendment. Known-deliberate as before. Lenses: AIE + UX (narrowed, declared: SA and A11y clean on revision 6, all deltas in AIE/UX jurisdiction). Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T00:29:19.834716Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "3582107e-42ac-4d2b-9970-2ef7e747ecf5",
+      "author": "xqjG",
+      "content": "Round 8 complete. AIE: NO FINDINGS (instrument set complete; defense-in-depth validated). UX: 2 filed — L124 kind-mapping unpinned; L125 flag-vs-kind wording. Series 15-16-11-6-8-2-2-2. Not clean; round 9 after disposition (both fixes UX-jurisdiction precision items).",
+      "created_at": "2026-07-20T00:36:07.697220Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "519b26c9-06df-4ea6-a9ea-8fb683db0dde",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed and closed. mdatron verify clean on revision 9. Closing; round 9 dispatches (UX only, narrowed with declared reason: AIE clean twice consecutively, both fixes UX-jurisdiction).",
+      "created_at": "2026-07-20T00:38:15.672118Z",
+      "kind": "result"
+    }
+  ]
+}

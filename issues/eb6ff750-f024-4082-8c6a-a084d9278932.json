@@ -1,0 +1,39 @@
+{
+  "uuid": "eb6ff750-f024-4082-8c6a-a084d9278932",
+  "display_id": 706,
+  "title": "r2 minor SO: the loop definition omits the terminal verify round the #687 amendment says it names",
+  "description": "Evidence: contract line 91 (amended) calls the terminal verify round one of 'the loop's own names', but the canonical loop definition at line 180 enumerates draft / cold rounds / triage / fix passes / ratification without it, and frames the stop as 'a tracker query' where line 91 says the terminal verify round decides the stop signal. Disposition: one-line addition to line 180's enumeration (the stage that decides the stop signal, ahead of ratification) — amendment-class, next window. Owner: solution-owner. Validator: vsdd-methodology.",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "426d87e4-d8cf-4272-9c1d-e21e675de848",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T06:54:59.247801Z",
+  "updated_at": "2026-07-21T13:20:20.086246Z",
+  "closed_at": "2026-07-21T13:20:20.086246Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "2fd0fe8d-0b6e-4018-90a3-f300ce9e1206",
+      "author": "xqjG",
+      "content": "AMENDMENT TEXT DRAFTED (2026-07-21), working tree, uncommitted — awaiting operator ratification. One touch: the loop definition's stage enumeration (the Methodology rewrite requirement) now reads '...repeat to the whitepaper's spec-dimension stop signal, with the terminal verify round — the loop's higher-dialed closing stage — deciding the stop signal holds (operator confirmation 2026-07-21, the round-2 consistency finding); operator ratification as the phase exit.' This backs the #687 amendment's loop's-own-names claim with the canonical definition, and reconciles with the same sentence's 'the stop signal is a tracker query' — the round decides, the query reads. Ratification is the operator act; the boundary commit follows it.",
+      "created_at": "2026-07-21T07:02:40.310087Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "ac59e3e5-2ff4-40fa-bd3d-f621a83b778e",
+      "author": "xqjG",
+      "content": "RATIFIED by operator 2026-07-21 (the ratify directive, in-session, on the drafted text). The touch enters the contract; boundary commit follows.",
+      "created_at": "2026-07-21T13:20:12.440524Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "7b56b3b4-e57f-495a-9223-32a279651f63",
+      "author": "xqjG",
+      "content": "BOUNDARY COMMIT landed; mdatron clean at pre-commit. Closing.",
+      "created_at": "2026-07-21T13:20:16.484236Z",
+      "kind": "result"
+    }
+  ]
+}

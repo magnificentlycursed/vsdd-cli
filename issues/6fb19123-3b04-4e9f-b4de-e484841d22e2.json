@@ -1,0 +1,21 @@
+{
+  "uuid": "6fb19123-3b04-4e9f-b4de-e484841d22e2",
+  "display_id": 530,
+  "title": "lane r9 Meth: broken-surface form under-integrated — falsifier, relabel guard, rejection fixture",
+  "description": "Lane round 9. Lens: methodology (validator: SO). Defect: (A1) a lawful broken-surface fix trips its own falsifier — the failing-state record is none of the three exculpatory forms; (A2) the anti-relabel guard counts two no-pin paths but there are three, and broken-surface is the only validator-free land-then-review one — a compile-defect relabels into it to escape the validator; (A3) only the acceptance fixture exists, the false-claim direction absent and unlisted. Citations verified: contract:64, :66, :81, :173, :180. Proposed: resolved-candidate (falsifier gains the gate-verified failing-state record as the fourth form; the claim is mechanically self-verifying — the gate attempts the baseline run itself, a suite that runs falsifies the claim without a validator, stated as the rationale; false-broken-surface fixture rejected).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:43:24.238378Z",
+  "updated_at": "2026-07-20T01:45:58.564558Z",
+  "closed_at": "2026-07-20T01:45:58.564558Z",
+  "comments": [
+    {
+      "uuid": "6f8c13cf-6fde-4371-9c0c-816a715a9d04",
+      "author": "xqjG",
+      "content": "Fixed: the broken-surface record joins the falsifier as its fourth exculpatory form; the no-validator rationale stated — the claim self-verifies by the gate's own baseline run attempt, so relabeling in buys nothing; both-direction fixtures (genuine accepted, false claim rejected). Revision: gate bullet + falsifier + corpus + criterion.",
+      "created_at": "2026-07-20T01:45:40.056275Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "uuid": "ff285fca-9bc6-4567-a6b6-1b134382cf6b",
+  "display_id": 535,
+  "title": "statusline amendment cold round 14",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 14 (post round-13: action-vocabulary recovery referent with membership oracle; enumerated read-failure kinds with fixtures and widened never-panic). Series 15-16-11-6-8-2-2-2-1-2-1-2-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:46:28.865590Z",
+  "updated_at": "2026-07-20T01:59:09.496136Z",
+  "closed_at": "2026-07-20T01:59:09.496136Z",
+  "comments": [
+    {
+      "uuid": "360c4cb8-17b5-4a80-9d4b-d69cc28d4021",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 14. Subject: revision 14 statusline anchors (round-13 set plus: recovery action from the versioned action vocabulary with membership oracle; enumerated read-failure kinds — malformed, absent, permission/IO — with per-kind fixtures, kind-naming diagnostic, widened never-panic). Out of scope: lane and effort amendments. Known-deliberate unchanged. Lens: UX, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:46:46.285699Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "e4a4d8da-6e31-47ff-af6a-24c580bb378e",
+      "author": "xqjG",
+      "content": "Round 14 complete (UX). 3 filed: L213 settings read-failure widening; L214 init completion; L215 machine kind field. Series ...-2-2-3. Not clean; round 15 after disposition.",
+      "created_at": "2026-07-20T01:57:04.676054Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "4bf3f0fc-5a53-4fa8-85f0-b546effb8529",
+      "author": "xqjG",
+      "content": "Round fully disposed: 3/3 fixed. mdatron verify clean on revision 15. Closing; round 15 dispatches (UX).",
+      "created_at": "2026-07-20T01:59:08.289619Z",
+      "kind": "result"
+    }
+  ]
+}

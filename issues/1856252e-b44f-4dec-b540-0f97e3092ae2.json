@@ -1,0 +1,22 @@
+{
+  "uuid": "1856252e-b44f-4dec-b540-0f97e3092ae2",
+  "display_id": 661,
+  "title": "DE/F3: pairs_with and referenced_by referential integrity undeclared — dangling ids would pass",
+  "description": "Evidence: the draft's entries cross-reference by id (pairs_with: [hook-session-start, ...]; referenced_by: [project-settings]) and reference_surfaces by id, but no constraint declares that every referenced id must resolve within the manifest. A typo'd pair id or a deleted entry leaving danglers would validate structurally and break the session-substrate check's both-halves verification semantics silently. Fix: declare referential-integrity constraints in the schema (mdatron's narrowed DSL scope — cross-file and registry validation — covers exactly this class; until that check lands, the vsdd-side read validates). Owner: data-engineer. Validator: sanity-check (DE-internal constraint).",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "95eaf845-5910-4270-a5a1-f032e3a3dd88",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:25:06.264694Z",
+  "updated_at": "2026-07-21T01:34:06.693641Z",
+  "closed_at": "2026-07-21T01:34:06.693641Z",
+  "comments": [
+    {
+      "uuid": "1b1c421e-fd8a-4b3f-9d14-3fb37432f05f",
+      "author": "xqjG",
+      "content": "Resolved: referential-integrity constraints declared in the schema description and the manifest body; execution binds to the session-substrate check at read and mdatron's cross-file family at landing. Evidence: commit fdbc3dc3 (mdatron verify clean at commit time), vsdd-cli #658 trail.",
+      "created_at": "2026-07-21T01:34:03.339583Z",
+      "kind": "result"
+    }
+  ]
+}

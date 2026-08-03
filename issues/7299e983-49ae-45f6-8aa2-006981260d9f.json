@@ -1,0 +1,21 @@
+{
+  "uuid": "7299e983-49ae-45f6-8aa2-006981260d9f",
+  "display_id": 759,
+  "title": "Layer 2 round 2 major QE+DE: the three integrity draft fixtures' sibling controls cannot discriminate at the kind-set grain — rationale overstates; plus the missing-owner fixture's incoherent (0 open) gauge",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-22T17:59:55.092617Z",
+  "updated_at": "2026-07-22T18:45:55.503995Z",
+  "closed_at": "2026-07-22T18:45:55.503986Z",
+  "comments": [
+    {
+      "uuid": "bd8c50ca-85f5-43c0-ba88-c6a4c35eaab0",
+      "display_id": 992,
+      "author": "xqjG",
+      "content": "Fixed in a49206fe: three clean negatives added as DRAFT oracles — integrity-owned-open, integrity-lawful-disposition-closure, integrity-resolving-handles — each pinning its kind's discrimination at the kind-set grain with an empty expected finding set. The three round-1 drafts' rationale comments now cite their paired negatives instead of overstating what the in-fixture siblings prove, and integrity-missing-owner's gauge reads (2 open), coherent with its own two open findings. Corpus at exactly 20.",
+      "created_at": "2026-07-22T18:45:49.586074Z",
+      "kind": "result"
+    }
+  ]
+}

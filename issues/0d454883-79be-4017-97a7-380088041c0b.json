@@ -1,0 +1,21 @@
+{
+  "uuid": "0d454883-79be-4017-97a7-380088041c0b",
+  "display_id": 548,
+  "title": "effort r3 Meth: rewrite effort clause missing its marker",
+  "description": "Effort round 3. Lens: methodology, minor (validator: SO). Defect: the header promises inline markers on all effort-dial clauses; the rewrite sentence's effort content carries none. Citations verified: contract:170 vs :6. Proposed: resolved-candidate.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:57:03.208149Z",
+  "updated_at": "2026-07-20T01:59:06.993804Z",
+  "closed_at": "2026-07-20T01:59:06.993804Z",
+  "comments": [
+    {
+      "uuid": "9e97b8d9-8004-4cf9-b40e-0d909a63bae0",
+      "author": "xqjG",
+      "content": "Fixed: the marker added to the rewrite sentence's effort clause. Revision: methodology-rewrite sentence.",
+      "created_at": "2026-07-20T01:58:53.351155Z",
+      "kind": "resolution"
+    }
+  ]
+}

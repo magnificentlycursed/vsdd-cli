@@ -1,0 +1,28 @@
+{
+  "uuid": "8c6ed0a9-87e4-4429-b3ec-2e87b325e35a",
+  "display_id": 226,
+  "title": "VM/F3: cluster-batched-cold-session-as-default lives in DESIGN not methodology.md",
+  "description": "Source: mdatron/review-log/2026-06-02-vsdd-methodology-phase-1-bundle.md\nClassification: accepted\nCycle: crosslink #12 (binary-first Phase 1; reserved-code drift + DSL Field-access symmetry + defined() carve-out drop)",
+  "status": "closed",
+  "priority": "low",
+  "parent_uuid": "89424e77-4971-47b0-8d44-093cd04eff53",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:25:15.264339Z",
+  "updated_at": "2026-06-08T02:23:37.682526Z",
+  "closed_at": "2026-06-08T02:23:37.682526Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-12",
+    "domain:vsdd-methodology",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "4e0e606a-f414-4e0d-8782-1fa200e2b85b",
+      "author": "xqjG",
+      "content": "Addressed by vsdd-cli@5d02683 (Wave 7).",
+      "created_at": "2026-06-08T02:23:36.491136Z",
+      "kind": "resolution"
+    }
+  ]
+}

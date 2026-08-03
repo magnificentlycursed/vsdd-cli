@@ -1,0 +1,30 @@
+{
+  "uuid": "e2f41522-406f-4dfa-a61c-a4410c94ac7f",
+  "display_id": 737,
+  "title": "render_machine emits user-absolute paths — nonconforming against the ratified #730 clause",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T20:22:41.471975Z",
+  "updated_at": "2026-07-21T20:25:30.722774Z",
+  "closed_at": "2026-07-21T20:25:30.722774Z",
+  "labels": [
+    "bug"
+  ],
+  "comments": [
+    {
+      "uuid": "5c356e0d-eb48-4447-9301-54a1f41a5dec",
+      "author": "xqjG",
+      "content": "CLASSIFICATION at filing (fix lane; the symmetric duty): defect against the just-ratified Trust-boundaries clause — Diagnostic::render_machine emits file as the absolute path (diagnostics.rs render_machine, file.display()), so a machine form quoted into a tracker record carries the user-absolute path the clause bars. Governed set: executable source. Scope: in the lane (the clause's own scheduled follow-up). Baseline: HEAD at filing (d2c4a3d1). Expected kinds: {assertion-failure} — the pin asserts the machine form renders repo-relative for an in-repo artifact and fails against the current absolute rendering. Fix shape: render_machine takes the repo root and strips the prefix where it applies (out-of-repo paths pass through unchanged — the clause governs record-destined in-repo artifacts); call sites are tests only. Split side: attended act ends at this filing; implementation follows. Validator: security (the clause's validator).",
+      "created_at": "2026-07-21T20:23:09.041653Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "ce7e9f7f-574b-4ae4-b3c3-ff55efb318a6",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit above): red recorded executed (assertion-failure at the no-absolute-path assert, baseline d2c4a3d1), green at HEAD with the repo-relative rendering; the API takes the repo root, call sites are tests only, out-of-repo passthrough documented. Validator: security at Layer 2's first round (the next cold pass over shared code). Closing.",
+      "created_at": "2026-07-21T20:25:27.058665Z",
+      "kind": "result"
+    }
+  ]
+}

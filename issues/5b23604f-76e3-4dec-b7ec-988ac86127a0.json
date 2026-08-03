@@ -1,0 +1,21 @@
+{
+  "uuid": "5b23604f-76e3-4dec-b7ec-988ac86127a0",
+  "display_id": 243,
+  "title": "amend-r5-SA: stalled-agent fixture unreached",
+  "description": "Minor. Fix: roster declaration. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:01:56.912387Z",
+  "updated_at": "2026-07-20T19:07:55.682517Z",
+  "closed_at": "2026-07-20T19:07:55.682517Z",
+  "comments": [
+    {
+      "uuid": "fd2778b7-62af-482a-8798-f3c56c89883a",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:07:52.865663Z",
+      "kind": "resolution"
+    }
+  ]
+}

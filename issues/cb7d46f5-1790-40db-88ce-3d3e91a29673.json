@@ -1,0 +1,21 @@
+{
+  "uuid": "cb7d46f5-1790-40db-88ce-3d3e91a29673",
+  "display_id": 240,
+  "title": "amend-r5-SA: hand-rolling falsifier has no detection mechanism",
+  "description": "Blocking. Fix: decidability stated against the act-to-affordance map at audit; seed added; audit home declared in the roster. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:01:48.022252Z",
+  "updated_at": "2026-07-20T19:07:38.265918Z",
+  "closed_at": "2026-07-20T19:07:38.265918Z",
+  "comments": [
+    {
+      "uuid": "1386b611-9b5c-44a2-8782-4b813dcef60b",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-5 fix pass; the specific edit is recorded in the round-5 parity result on the amendment issue (the issue titled 'Spec amendment: the dispatch posture split (attended/autonomous), from mdatron's kickoff live fire'), keyed by this issue's title. mdatron verify clean.",
+      "created_at": "2026-07-20T19:07:35.528465Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "eb24da88-5810-4b54-a800-0fd7df787f3c",
+  "display_id": 545,
+  "title": "lane r10 Meth: pre-push warn-not-block guarantee uncontracted",
+  "description": "Lane round 10. Lens: methodology, low severity (validator: SO). Defect: the never-blocks-a-registered-form negative guarantee has no falsifier, fixture, or deferral while its sibling seam is fully triangulated. Citations verified: contract:124 vs :128, :173, :185. Proposed: resolved-candidate (falsifier: a pre-push hook rejecting a registered form; registered-form-push fixture passes).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:56:59.131255Z",
+  "updated_at": "2026-07-20T01:59:03.249744Z",
+  "closed_at": "2026-07-20T01:59:03.249744Z",
+  "comments": [
+    {
+      "uuid": "1071a20a-7fd9-44e0-ad3a-8ef3963a8447",
+      "author": "xqjG",
+      "content": "Fixed: the pre-push guarantee triangulated — falsifier (a hook rejecting a registered form) plus the registered-form-push fixture passing. Revision: Conformance falsifier + corpus + criterion.",
+      "created_at": "2026-07-20T01:58:49.852326Z",
+      "kind": "resolution"
+    }
+  ]
+}

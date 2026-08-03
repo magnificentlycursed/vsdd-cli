@@ -1,0 +1,21 @@
+{
+  "uuid": "1236eed5-63bb-4129-b2e4-95694d2dfd6c",
+  "display_id": 483,
+  "title": "lane r6 SE: kickoff policy slot bound while the open question holds it unresolved",
+  "description": "Lane round 6. Lens: SE (validator: SO). Owner: SO session. Defect: the contract binds a named affordance the definition of record does not establish and the swarm-fallback open question still carries as unresolved — a ratified guarantee resting on an unconfirmed seam. Citations verified: contract:81 vs :293, :264. Proposed: resolved-candidate (reword to required-capability language: the injection seam is a named upstream capability requirement held with the open question; the routed-plan-comment workaround is the interim and its convention-dependence the requirement's evidence).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:55:52.816241Z",
+  "updated_at": "2026-07-20T00:57:57.133006Z",
+  "closed_at": "2026-07-20T00:57:57.133006Z",
+  "comments": [
+    {
+      "uuid": "52c3928d-d1bb-48f1-b237-a7e292921e9e",
+      "author": "xqjG",
+      "content": "Fixed: reworded to required-capability language — the injection seam is a named upstream capability requirement held with the swarm-fallback open question; the routed-plan-comment interim's convention-dependence is the requirement's evidence. Revision: dispatch clause.",
+      "created_at": "2026-07-20T00:57:39.603523Z",
+      "kind": "resolution"
+    }
+  ]
+}

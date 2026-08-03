@@ -1,0 +1,35 @@
+{
+  "uuid": "9ff3537d-4ab9-479e-a528-583b3ea97465",
+  "display_id": 590,
+  "title": "statusline amendment cold round 20",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 20 (post round-19: create-on-confirm branch fixtured beside the merge branch; write-failure seeds on both paths). Series ...-3-3-2-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T04:16:54.058622Z",
+  "updated_at": "2026-07-20T04:49:04.629641Z",
+  "closed_at": "2026-07-20T04:49:04.629641Z",
+  "comments": [
+    {
+      "uuid": "d7e2e51b-3f9d-4846-8ed6-39112915b9dd",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 20. Subject: revision 20 statusline anchors (round-19 set plus: the split confirmed branch — plainly-absent created, populated merged — and the dual-path write-failure seeds with the non-interactive failure-signal clause). Out of scope: lane and effort amendments (effort now ratified). Known-deliberate unchanged. Lens: UX, cold. Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T04:17:07.112920Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "49656292-3650-44ab-aed1-19696a323539",
+      "author": "xqjG",
+      "content": "Round 20 complete (UX). 1 filed: L267 the failure-signal observable. Everything else in the full walk survived clean. Series ...-3-2-2-1. Not clean; round 21 after disposition.",
+      "created_at": "2026-07-20T04:48:30.877223Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "15716ffb-c360-4096-815d-cdd44b1203e3",
+      "author": "xqjG",
+      "content": "Round fully disposed: 1/1 fixed (the wiring-not-installed marker as the automation observable). mdatron verify clean on revision 21. Closing; round 21 dispatches (UX).",
+      "created_at": "2026-07-20T04:49:02.992345Z",
+      "kind": "result"
+    }
+  ]
+}

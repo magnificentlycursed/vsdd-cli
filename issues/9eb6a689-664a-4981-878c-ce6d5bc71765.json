@@ -1,0 +1,33 @@
+{
+  "uuid": "9eb6a689-664a-4981-878c-ce6d5bc71765",
+  "display_id": 830,
+  "title": "Adopt mdatron 0.4.0 (envelope 2.0.0, breaking) — bump pins + re-verify",
+  "description": "mdatron 0.4.0 shipped (first normal release; envelope mdatron_output_version 1.1.0 -> 2.0.0, breaking). Operator directive: adopt ASAP; also gates mdatron's crates.io publish (held pending vsdd-cli clear-to-publish).\n\nConsumer-facing breaking changes: families reshaped bare-string -> {state, reason}; quoted[] gained required origin/trusted; verify --json no longer re-emits findings on stderr (stdout envelope authoritative). Wins: summary.files_checked now = files VALIDATED (the non-vacuity fix); E0080 -> pipeline_error.kind; new W0045/W0046/W0047; my relayed [see: <label>] interpolation ruling shipped.\n\nvsdd-cli adoption scope (assessed): (1) bump pins v0.3.0 -> v0.4.0 in .github/workflows/{mdatron-verify,vsdd-test}.yml + .githooks/pre-commit MIN_VERSION; (2) re-verify vsdd's own codes (VSDD-E0207/E0208, MDATRON-W0040) still fire under 0.4.0 — cross_references.rs + jurisdiction_nonvacuity.rs parse only findings[].code + pipeline_status (untyped Value, stable fields), so no parse break expected, but empirical re-run required; (3) fix a stale files_checked comment in jurisdiction_nonvacuity.rs.",
+  "status": "closed",
+  "priority": "high",
+  "created_by": "xqjG",
+  "created_at": "2026-07-29T13:43:17.636972Z",
+  "updated_at": "2026-07-29T16:56:31.323324Z",
+  "closed_at": "2026-07-29T16:56:31.323312Z",
+  "labels": [
+    "upgrade"
+  ],
+  "comments": [
+    {
+      "uuid": "9873473d-87a8-4d42-ad0d-ca96f55d3cf0",
+      "display_id": 1247,
+      "author": "xqjG",
+      "content": "mdatron 0.4.0 adopted + committed on branch adopt-mdatron-0.4.0 (off main). Pins bumped (both CI legs + pre-commit); superseded prose (DESIGN-*.md, methodology.md) dropped from jurisdiction in response to the new W0045; verify clean (0 findings, files_checked 79); all workspace tests green. The verification-engine change was absorbed safely — the protections held (non-vacuity canary W0040 fires, positive-controls E0207/E0208 + pipeline_status ok). Feedback + clear-to-publish filed to mdatron GitHub issue #1 (label from:vsdd-cli), covering: the protection-test result, the confirmed files_checked non-vacuity fix, the W0045 catch, consumer-resilience to the 2.0.0 envelope reshape, and answers to the two design calls (item 10 zero-match-sufficient / no recorded-baseline; item 2 empty-schemas gap is real, address as a warning). Awaits operator push + PR.",
+      "created_at": "2026-07-29T13:57:13.935377Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "8eaf900f-9da6-42c6-9d07-dbfc2f2f3822",
+      "display_id": 1250,
+      "author": "xqjG",
+      "content": "Resolved: merged to main via PR #8 (commit c94ba2e3). mdatron 0.4.0 adopted; main green. Adoption feedback + clear-to-publish at mdatron GitHub #1.",
+      "created_at": "2026-07-29T16:56:25.017478Z",
+      "kind": "result"
+    }
+  ]
+}

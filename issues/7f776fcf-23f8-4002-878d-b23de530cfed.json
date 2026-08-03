@@ -1,0 +1,21 @@
+{
+  "uuid": "7f776fcf-23f8-4002-878d-b23de530cfed",
+  "display_id": 604,
+  "title": "1c-DR-r1: wiring-script work item cited without lookup handle",
+  "description": "Minor, check f. Citation (Decomposition, Layer 3): 'resolving the tracked wiring-script-shape work item (...)' — cited by neither exact title nor handle, against the contract's own citation rule. Fix: cite by exact title 'phase-1c work item: statusline wiring script shape' (this tracker). Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:38.766617Z",
+  "updated_at": "2026-07-20T17:09:58.511725Z",
+  "closed_at": "2026-07-20T17:09:58.511725Z",
+  "comments": [
+    {
+      "uuid": "85df19ad-3489-4e59-8450-cad55b693bda",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Layer 3 now cites the exact title: 'phase-1c work item: statusline wiring script shape' (this tracker). mdatron verify clean.",
+      "created_at": "2026-07-20T17:09:57.264025Z",
+      "kind": "resolution"
+    }
+  ]
+}

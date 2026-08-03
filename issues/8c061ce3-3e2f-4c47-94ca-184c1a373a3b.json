@@ -1,0 +1,32 @@
+{
+  "uuid": "8c061ce3-3e2f-4c47-94ca-184c1a373a3b",
+  "display_id": 724,
+  "title": "c1 major DE+QE convergent: emitted recovery tokens exist nowhere in the versioned vocabulary",
+  "description": "Evidence: repair-registry-artifact (registry/mod.rs:54) and correct-the-write (state/write.rs:31) are hardcoded, unregistered in composition-scope-and-actions' recovery family, contradicting the crate's own loaded-not-hardcoded rule; no fidelity test covers the write side. OPERATOR-SHAPED: registering tokens is a registration act under the maturity gate — the triage choice is register both (vocabulary addition, data+schema pair) with a declared bootstrap-mirror exemption for the registry loader, or rule the write/registry surfaces developer-facing and exempt, recorded. Owner: data-engineer. Validator: solution-owner.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "49e2a1f6-9eff-46a5-9d36-46faafa05e75",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T19:09:13.127634Z",
+  "updated_at": "2026-07-21T19:45:39.114250Z",
+  "closed_at": "2026-07-21T19:45:39.114250Z",
+  "labels": [
+    "review"
+  ],
+  "comments": [
+    {
+      "uuid": "956b075e-b8f6-4c5e-b55e-c60c89970f57",
+      "author": "xqjG",
+      "content": "OPERATOR RULING (2026-07-21): REGISTER BOTH. correct-the-write and repair-registry-artifact enter the composition vocabulary's recovery family — this adoption is the registration act under the maturity gate. Conduct: the write path loads its token from the vocabulary like the read path; the registry loader keeps its hardcoded string as a DECLARED BOOTSTRAP MIRROR (the loader cannot load before loading — the permanent chicken-and-egg), with the in-code exemption note and a fidelity test pinning the constant to the registered member at test time. The E0212-class enforcement covers both the moment they land. Fix pass executes.",
+      "created_at": "2026-07-21T19:32:34.339479Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "374a9fc4-c9ab-49b4-995b-4d156f161f2e",
+      "author": "xqjG",
+      "content": "FIX LANDED (commit daacdc84, registration executed per the operator decision): both members in the composition vocabulary with the registering prose note; the write path loads correct-the-write; the loader carries the declared bootstrap mirror; two fidelity tests pin token-to-member on both surfaces. The E0212-class pattern and the vocabulary's schema pair validated the additions at pre-commit. Validator: solution-owner.",
+      "created_at": "2026-07-21T19:45:34.961997Z",
+      "kind": "result"
+    }
+  ]
+}

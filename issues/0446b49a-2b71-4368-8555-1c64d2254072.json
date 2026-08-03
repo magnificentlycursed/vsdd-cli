@@ -1,0 +1,25 @@
+{
+  "uuid": "0446b49a-2b71-4368-8555-1c64d2254072",
+  "display_id": 296,
+  "title": "Spec review round 1: convergence test: structured answers, both parts gated, more draws",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "abeafec1-2f39-4886-8522-3bb2613a7df8",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T02:26:55.972116Z",
+  "updated_at": "2026-07-29T10:23:40.998613Z",
+  "closed_at": "2026-07-29T10:23:40.998602Z",
+  "labels": [
+    "spec-review-round-1"
+  ],
+  "comments": [
+    {
+      "uuid": "b6b9f66e-b927-4c76-aa82-0a82f7babd85",
+      "display_id": 1224,
+      "author": "xqjG",
+      "content": "CLOSED — resolved in the respec ratification (#294), tracker sweep #826. Round-1 review finding of a respec that RATIFIED (the review loop converged: ratified contract + 7 amendments; #819 re-decomposed further). Verified the highest-risk of the cluster (#300 coverage) IS covered by the contract (install/status/config-integrity/conformance/gate/scope criteria present). Reopen if this specific finding resurfaces as a live gap.",
+      "created_at": "2026-07-29T10:23:34.360992Z",
+      "kind": "decision"
+    }
+  ]
+}

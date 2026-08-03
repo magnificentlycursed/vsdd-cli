@@ -1,0 +1,21 @@
+{
+  "uuid": "e1ac6907-5279-45e3-85b5-1dda35aee36c",
+  "display_id": 353,
+  "title": "statusline r2 UX: repo-set edit affordance and location unstated",
+  "description": "Round: statusline amendment cold round 2. Lens: ux (validator: documentation-reviewer). Owner: SO session. Defect: 'explicit adopter configuration, never discovered' names no location, format, or edit path for the repo set; reconfiguration requires reverse-engineering the generated wiring script. Citations verified: contract:160, :269. Proposed: deferred to the phase-1c wiring-script shape work item (with the ownership and instruction-shape siblings). Failure: onboarding or retiring a repo has no documented path.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T23:14:15.278657Z",
+  "updated_at": "2026-07-19T23:18:43.733192Z",
+  "closed_at": "2026-07-19T23:18:43.733192Z",
+  "comments": [
+    {
+      "uuid": "81ee6223-3eb3-4d5a-a3c1-7fa5fe8a65e9",
+      "author": "xqjG",
+      "content": "Routed at operator triage: deferred to the phase-1c work item 'phase-1c work item: statusline wiring script shape' (filed as L37 at creation; title durable), scope item 1 — repo-set configuration location, format, edit path. Closing against that tracked item, not prose.",
+      "created_at": "2026-07-19T23:17:46.126978Z",
+      "kind": "resolution"
+    }
+  ]
+}

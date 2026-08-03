@@ -1,0 +1,21 @@
+{
+  "uuid": "98c6ceba-ca8c-412f-9a52-394fd18230c7",
+  "display_id": 566,
+  "title": "lane r12 SE: disablement scoped surviving-only contradicts its own membership and example",
+  "description": "Lane round 12. Lens: SE (validator: SA). Defect: the removal-shaped set includes not-collected members 'regardless of path surviving' but the only dormancy lane is surviving-only — and the lane's own canonical example (a feature-default flip) typically vanishes from collection via cfg, leaving it homeless: mechanism decides what intent should. Citations verified: contract:64, :173, :180. Proposed: resolved-candidate (the lane keys on intent alone: dormant-but-valid takes the disablement declaration whether the path survives or vanishes from collection; the join treats a declared-disabled vanished path as explained; cfg-vanished disablement fixture added).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T02:52:59.679648Z",
+  "updated_at": "2026-07-20T02:55:24.301936Z",
+  "closed_at": "2026-07-20T02:55:24.301936Z",
+  "comments": [
+    {
+      "uuid": "6e36e2f9-926a-404e-8065-69b79c91962b",
+      "author": "xqjG",
+      "content": "Fixed: the disablement keys on intent alone, covering surviving and vanished-from-collection paths; a declared-disabled vanished path joins as explained; cfg-vanished fixture added; the partition restated (gone-and-obsolete, relocated, dormant-but-valid). Revision: gate bullet + corpus + criterion.",
+      "created_at": "2026-07-20T02:54:55.199093Z",
+      "kind": "resolution"
+    }
+  ]
+}

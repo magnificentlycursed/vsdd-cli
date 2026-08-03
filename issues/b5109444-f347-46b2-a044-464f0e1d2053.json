@@ -1,0 +1,21 @@
+{
+  "uuid": "b5109444-f347-46b2-a044-464f0e1d2053",
+  "display_id": 280,
+  "title": "amend-r6: fencing rule listed twice in data authoring",
+  "description": "Minor, convergent. Fix: duplicate removed. Owner: solution-architect. Validator: documentation-reviewer. Convergent where noted (both round-6 lenses).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T19:22:02.137709Z",
+  "updated_at": "2026-07-20T19:23:57.825985Z",
+  "closed_at": "2026-07-20T19:23:57.825985Z",
+  "comments": [
+    {
+      "uuid": "08558ad3-d913-40be-bf5e-4a7bc6f78eeb",
+      "author": "xqjG",
+      "content": "Fixed in the working tree per the round-6 fix pass; edit keyed by this issue's title in the round-6 parity result on the amendment issue. mdatron verify clean.",
+      "created_at": "2026-07-20T19:23:53.943060Z",
+      "kind": "resolution"
+    }
+  ]
+}

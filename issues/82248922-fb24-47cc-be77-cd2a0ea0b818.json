@@ -1,0 +1,43 @@
+{
+  "uuid": "82248922-fb24-47cc-be77-cd2a0ea0b818",
+  "display_id": 665,
+  "title": "data set: state schema — .vsdd/state.yaml contents enumeration with published marker",
+  "description": "Round 2 of #598. The Deterministic phase answer contract's contents enumeration as versioned data: current phase, current layer, open-findings pointer, last gate result, active composition, and the published marker (the machine-readable publish-state the fix-lane falsifiers consult). Ships as the pair: registry artifact + mdatron schema. Consistency constraints declared (state claiming phase 2b requires a recorded red-gate result; published immutable once present); execution is mdatron's state-consistency family (Layer 7) with vsdd bootstrap self-validation until it lands (the phase-state resolution). Operator walk-through items: initial-state representation, open-findings-pointer shape, whether active_composition records its input hash. Owner: data-engineer. Validator: solution-architect.",
+  "status": "closed",
+  "priority": "high",
+  "parent_uuid": "f309e703-c0e3-4405-adef-9dabf3767719",
+  "created_by": "xqjG",
+  "created_at": "2026-07-21T01:41:43.254964Z",
+  "updated_at": "2026-07-21T01:59:59.135688Z",
+  "closed_at": "2026-07-21T01:59:59.135688Z",
+  "comments": [
+    {
+      "uuid": "db55e73a-3ac4-47b0-931f-b7ab9312f25c",
+      "author": "xqjG",
+      "content": "OPERATOR RULINGS 2026-07-20, all three open notes resolved: (1) pre-entry representation — nullable with pinned semantics: current_phase null means 'not yet entered', current_layer null means 'decomposition not yet authored', the derivation maps each to its enter action; no pseudo-phase token, reserved-word rule intact. (2) open_findings_pointer — {milestone: <exact name>}: the active layer's milestone, open findings are its open children, one crosslink query. (3) active_composition gains config_inputs_hash over the DESIGN.md surfaces + review config, making stale compositions mechanically detectable. Draft revised in place; lands with round 2 once the #666 vocabulary walk concludes.",
+      "created_at": "2026-07-21T01:50:19.648119Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "ed5fb233-1d1d-4851-b954-d9df39ad3917",
+      "author": "xqjG",
+      "content": "Resolved: the set landed with round 2 — registry artifact + mdatron schema pair, operator rulings applied (see the decision trail above). Evidence: the round-2 commit (mdatron verify clean after catching and fixing a real YAML defect in the first attempt — E0050, flow-map comma split, the pair rule's first live catch on its own package).",
+      "created_at": "2026-07-21T01:59:55.704992Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "f01ec576-3be2-4e5c-97b8-c9ef4e041002",
+      "author": "xqjG",
+      "content": "RULING AMENDED by operator (2026-07-22, the Layer 2 oracle review): the null current_phase mapping changes from THE ENTER ACTION to THE FIRST PHASE'S AUTHORING ACTION — 1a-author-behavioral-spec. Rationale, operator's words: name the work, not the ceremony — a fresh project's first answer should say what to do, not that a transition exists. The null-is-pinned meaning (not yet entered) stands unchanged; only the derivation's mapping moves. enter-next-phase remains a registered member for post-exit transitions. Applied to: state-schema.md semantics, the pre-entry convergence fixture's reference answer, and the derivation's draft rule table (vsdd-cli #738 trail).",
+      "created_at": "2026-07-22T14:20:50.231293Z",
+      "kind": "decision"
+    },
+    {
+      "uuid": "2d899968-0eda-4d28-94cb-7971cb337c2c",
+      "author": "xqjG",
+      "content": "AMENDMENT CONSEQUENCE, recorded (2026-07-22, operator's error-state question): removing the ceremony removed the act that wrote the entry. Under the work-not-ceremony mapping, THE FIRST WORK COMMIT CARRIES THE ENTRY — the state advances to phase-1a in the same commit as the first authoring artifact, the boundary-evidence rule applied at entry, so no phase is ever unoccupied and the were-phase answer holds through 1a. Semantics sentence lands data-side with this record.",
+      "created_at": "2026-07-22T14:23:48.448793Z",
+      "kind": "decision"
+    }
+  ]
+}

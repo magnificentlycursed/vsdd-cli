@@ -1,0 +1,28 @@
+{
+  "uuid": "a3d3a8aa-3d32-4014-9e56-b16ec198454c",
+  "display_id": 57,
+  "title": "TW/F8: README Relationship-to-vsdd reorder",
+  "description": "Source: mdatron/review-log/2026-06-07-technical-writer-phase-2-bundle.md\nClassification: accepted\nCycle: crosslink #13 (binary-first Phase 2; mdatron --json + explain + README)",
+  "status": "closed",
+  "priority": "medium",
+  "parent_uuid": "d61599a3-2977-421d-bb1c-ef3d7b44fa3d",
+  "created_by": "xqjG",
+  "created_at": "2026-06-08T01:03:35.876525Z",
+  "updated_at": "2026-06-08T01:48:15.747750Z",
+  "closed_at": "2026-06-08T01:48:15.747750Z",
+  "labels": [
+    "classification:accepted",
+    "cycle:crosslink-13",
+    "domain:technical-writer",
+    "review-finding"
+  ],
+  "comments": [
+    {
+      "uuid": "6949a63a-701b-4d84-b61c-7103e9066b65",
+      "author": "xqjG",
+      "content": "Addressed by mdatron@ba61527 (Phase 4-take-2).",
+      "created_at": "2026-06-08T01:48:15.032197Z",
+      "kind": "resolution"
+    }
+  ]
+}

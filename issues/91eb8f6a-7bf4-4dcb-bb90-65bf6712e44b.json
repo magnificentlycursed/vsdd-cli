@@ -1,0 +1,21 @@
+{
+  "uuid": "91eb8f6a-7bf4-4dcb-bb90-65bf6712e44b",
+  "display_id": 439,
+  "title": "lane r3 Meth+QE: inseparable-retrofit arm unexercised and undecidable",
+  "description": "Lane round 3. Lenses: methodology + QE merged (validator: SO, SE). Owner: SO session. Defect: the honesty clause's own arm has no fixture and no criterion assertion (only the full-record arm is exercised); separable/inseparable collapses into one compile-failure kind with no mechanical determination; whether the retrofit's surface-limitation is validator-approved is undefined against the falsifier's interface. Citations verified: contract:64, :66, :173, :180. Proposed: resolved-candidate (mechanical determination: the compile diagnostic's unresolved symbols exist at HEAD but not at baseline; inseparable-retrofit fixture added; criterion asserts partial-not-full recording; retrofit surface-limitation validator-approved like any other).",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T00:25:36.846088Z",
+  "updated_at": "2026-07-20T00:28:39.653Z",
+  "closed_at": "2026-07-20T00:28:39.653Z",
+  "comments": [
+    {
+      "uuid": "61db89e0-1a08-4aad-a514-90f108141a95",
+      "author": "xqjG",
+      "content": "Fixed: inseparability mechanically determined (compile diagnostic's unresolved symbols exist at HEAD, not baseline); inseparable-retrofit fixture added; criterion asserts it records as the validator-approved surface-limitation, never a full record; retrofit surface-limitation aligned with the falsifier's validator-approved interface. Revision: gate bullet + fixture corpus + criterion.",
+      "created_at": "2026-07-20T00:28:27.023155Z",
+      "kind": "resolution"
+    }
+  ]
+}

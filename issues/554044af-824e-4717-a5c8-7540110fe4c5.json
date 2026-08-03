@@ -1,0 +1,21 @@
+{
+  "uuid": "554044af-824e-4717-a5c8-7540110fe4c5",
+  "display_id": 341,
+  "title": "statusline r1 AIE: Observability deferral respected but unmarked",
+  "description": "Round: statusline amendment cold round 1. Lens: ai-engineer (validator: platform-engineer). Owner: SO session. Defect: context%/rate-limit correctly excluded (no smuggling), but the deferral carries no enumerable marker per the waiver rule (:77), and 'never a second computation' (:160) means those fields cannot later attach to this segment — they arrive as a separate stdin-consuming surface; the seam is implicit. Citations verified: contract:167, :160, :77. Anchor: Methodology rewrite. Proposed: dismissed-candidate (no obligation existed, so nothing was waived; residual is legibility for the future Observability author). Failure if unfixed: seam rediscovered from scratch or wired wrongly into this segment.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-19T22:58:57.287324Z",
+  "updated_at": "2026-07-19T23:08:18.059155Z",
+  "closed_at": "2026-07-19T23:08:18.059155Z",
+  "comments": [
+    {
+      "uuid": "228362ee-bae5-4d53-9902-c5bd15683f98",
+      "author": "xqjG",
+      "content": "Dismissed at operator triage (round 1). No obligation was waived — context% and rate-limit were never contracted, so the waiver-marker rule does not reach. Residual legibility addressed incidentally: the fix pass names the unconsumed stdin session JSON as the seam where deferred observability surfaces arrive as their own rendering (Status bullet), so the future Observability author finds the seam in-spec.",
+      "created_at": "2026-07-19T23:07:56.472460Z",
+      "kind": "resolution"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "uuid": "c0374bd8-bf54-4ae4-9019-401b95b692e9",
+  "display_id": 522,
+  "title": "statusline amendment cold round 13",
+  "description": "Round child of: Spec amendment: statusline rendering of the Status requirement. Cold review of revision 13 (post round-12: machine pointer both-halves falsified; accept flag printed fourth). Series 15-16-11-6-8-2-2-2-1-2-1-2.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T01:30:46.486733Z",
+  "updated_at": "2026-07-20T01:46:07.759714Z",
+  "closed_at": "2026-07-20T01:46:07.759714Z",
+  "comments": [
+    {
+      "uuid": "194d0721-adaf-4201-ab40-18acb286cd8f",
+      "author": "xqjG",
+      "content": "Dispatch manifest — statusline round 13. Subject: revision 13 statusline anchors (round-12 set plus: machine state-unreadable signal with payload and pointer both-halves falsified; four-item non-interactive print incl. the accept flag). Out of scope: lane and effort amendments. Known-deliberate unchanged. Lens: UX only (narrowed as before). Stop signal: clean or hallucinated-only.",
+      "created_at": "2026-07-20T01:31:04.859216Z",
+      "kind": "plan"
+    },
+    {
+      "uuid": "68a2c6cd-93d0-4386-89bb-e69bc0fb659e",
+      "author": "xqjG",
+      "content": "Round 13 complete (UX). 2 filed: L200 recovery-pointer referent; L201 read-failure scope. Series ...-2-1-2-2. Not clean; round 14 after disposition.",
+      "created_at": "2026-07-20T01:43:32.074992Z",
+      "kind": "result"
+    },
+    {
+      "uuid": "8cd6e8a0-d627-4bde-b5ad-6d357654a7b5",
+      "author": "xqjG",
+      "content": "Round fully disposed: 2/2 fixed. mdatron verify clean on revision 14. Closing; round 14 dispatches (UX).",
+      "created_at": "2026-07-20T01:46:06.406111Z",
+      "kind": "result"
+    }
+  ]
+}

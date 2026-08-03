@@ -1,0 +1,21 @@
+{
+  "uuid": "559d9320-2ff2-4c92-a5a6-a947aed8365e",
+  "display_id": 607,
+  "title": "1c-DR-r1: Layers 0 and 10 unreconciled with the primer's per-milestone criteria rule",
+  "description": "Minor, check d. Citation (Decomposition, Layer 0): 'no fixture-based criterion — verified by tracker queries and tree state'; Layer 10: 'Manual by design... no fixture-based criterion'. The primer requires each milestone's acceptance criteria be a non-empty subset of the behavioral contracts plus a red-gate seed; no recorded ruling in the section states the supersession. Fix: state the reconciliation in the Decomposition intro — the per-milestone obligations bind build Layers 1-9; Layer 0 (operational, operator sequencing ruling) and Layer 10 (manual class of the verification architecture's three-class split) sit outside them by ratified contract rulings, the same contract-over-primer precedence as the derived-view ruling. Owner: solution-architect. Validator: documentation-reviewer.",
+  "status": "closed",
+  "priority": "medium",
+  "created_by": "xqjG",
+  "created_at": "2026-07-20T17:08:44.022784Z",
+  "updated_at": "2026-07-20T17:10:06.527336Z",
+  "closed_at": "2026-07-20T17:10:06.527336Z",
+  "comments": [
+    {
+      "uuid": "6a93851b-ca1d-4a6a-891b-0c27b1eeb78f",
+      "author": "xqjG",
+      "content": "Fixed in the working tree of .design/agent-first-vsdd-toolkit.md. Decomposition intro now states the reconciliation: per-milestone obligations bind build Layers 1-9; Layer 0 (operator sequencing ruling) and Layer 10 (manual class of the Verification architecture's split) sit outside them by ratified rulings — the same contract-over-primer precedence as the derived-view ruling. mdatron verify clean.",
+      "created_at": "2026-07-20T17:10:05.266655Z",
+      "kind": "resolution"
+    }
+  ]
+}
