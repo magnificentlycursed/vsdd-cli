@@ -23056,7 +23056,10 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-10T12:57:47.385994Z",
-      "updated_at": "2026-08-10T12:57:47.385994Z"
+      "updated_at": "2026-08-10T12:57:58.800933Z",
+      "labels": [
+        "design"
+      ]
     },
     "d3868580-526b-43ce-8e63-41c7b0372542": {
       "uuid": "d3868580-526b-43ce-8e63-41c7b0372542",
@@ -32717,11 +32720,16 @@
       "agent_id": "xqjG",
       "agent_seq": 21,
       "timestamp": "2026-08-10T12:57:47.385994Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 22,
+      "timestamp": "2026-08-10T12:57:58.800933Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-10T12:57:47.385994Z",
+    "timestamp": "2026-08-10T12:57:58.800933Z",
     "agent_id": "xqjG",
-    "agent_seq": 21
+    "agent_seq": 22
   }
 }
