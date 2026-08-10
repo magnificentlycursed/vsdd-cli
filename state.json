@@ -1,5 +1,5 @@
 {
-  "next_display_id": 867,
+  "next_display_id": 868,
   "next_comment_id": 1428,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -720,6 +720,7 @@
     "d2dd58da-91d5-4bb3-9ea9-6677e8e567d7": 578,
     "d3120875-0c00-44ec-85fe-c61660674198": 606,
     "d31c7b83-8d30-4b19-8e4e-23f8695374e3": 834,
+    "d325b553-4664-49fe-9ec7-144ccac3079b": 867,
     "d3868580-526b-43ce-8e63-41c7b0372542": 758,
     "d3ad54d7-b083-4b22-9c7f-a665964f4b38": 755,
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": 24,
@@ -23047,6 +23048,16 @@
         }
       }
     },
+    "d325b553-4664-49fe-9ec7-144ccac3079b": {
+      "uuid": "d325b553-4664-49fe-9ec7-144ccac3079b",
+      "display_id": 867,
+      "title": "Phase-3 adversarial review of mdatron pre-0.6.0 (cross-estate roast; findings to operator, then GH issue on their repo)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-08-10T12:57:47.385994Z",
+      "updated_at": "2026-08-10T12:57:47.385994Z"
+    },
     "d3868580-526b-43ce-8e63-41c7b0372542": {
       "uuid": "d3868580-526b-43ce-8e63-41c7b0372542",
       "display_id": 758,
@@ -32701,11 +32712,16 @@
       "agent_id": "xqjG",
       "agent_seq": 20,
       "timestamp": "2026-08-03T19:24:14.133668Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 21,
+      "timestamp": "2026-08-10T12:57:47.385994Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-08-03T19:24:14.133668Z",
+    "timestamp": "2026-08-10T12:57:47.385994Z",
     "agent_id": "xqjG",
-    "agent_seq": 20
+    "agent_seq": 21
   }
 }
