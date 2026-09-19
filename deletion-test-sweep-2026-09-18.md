@@ -12,6 +12,7 @@ updated: 2026-09-19
 
 
 
+
 # Deletion-Test sweep of the contract and build-plan (2026-09-18, vsdd-cli #869)
 
 **Method.** Three tests from *Observability Engineering* 2e applied by hand to every contract member, requirement, acceptance criterion, verification-architecture member, decomposition paragraph, open question, and build-plan phase: (1) **the Deletion Test** (Ch32/Fowler) — *if we deleted this, what named failure would we stop catching, and has it ever occurred?*; (2) **activities vs learning** (Ch27) — *can it name the feedback mechanism that turns it into learning, and is that mechanism used?*; (3) **sediment** (Ch32) — *is this prose carrying history that git and the tracker already carry?* Four bins: **DURABLE** (named failure with recorded evidence — keep as contract), **REGISTER** (a named risk whose control cannot be built yet, or whose occurrence has never happened — a deviation/escape-registry entry with retest trigger + expiry, not contract prose), **DELETE** (superseded, stale, duplicated, or evidence-free), **CONSOLIDATE** (one thing stated in several homes). These are proposals; the Solution Owner rules. Anything the contract backs with an *Evidence:* record I binned DURABLE by construction — the sweep does not second-guess recorded incidents.
@@ -134,3 +135,8 @@ Operator rule: no coinages, vocabulary, or labels that obfuscate; this compactio
 | finding, oracle, waiver, drift, vertical slice, unit economics, bill of materials, SLI/SLO | already standard — keep |
 
 **Naming rules for the compaction** (add to the five conventions): every term in the contract either (a) is a standard term from a named lexicon, used in its standard sense, or (b) is a project term registered once in `vocabulary.yaml` with a one-line definition and its nearest standard neighbor named; nicknames for rules (keystone, ruling, remediation, format-carry, tier rule) are retired in favor of the rule's heading. The vocabulary check should be raised to catch multi-word coinages (mdatron generic-primitive raise via the syntactic-vs-semantic boundary procedure). Decision slot 5: adopt the map (with operator edits) as the compaction's naming rule.
+
+
+
+## Rulings log
+- **Decision 1 — RULED 2026-09-18 (SO):** bins ratified. Fix-lane: MIDDLE PATH (principles stay as ~6 bullets; mechanics → regression corpus). Fixture corpus: REGISTER (incident-backed + ratified cheats stay; the rest enter the regression corpus as found). Manual-test checklist: MAKE IT REAL (author now for what is built; obligation then scoped to operator-facing slices). Dependency approval: SIMPLIFY (added dependency → record + three lenses; graded machinery dropped; icu_properties lapse filed as a defect). Recorded as a decision on vsdd-cli #869.
