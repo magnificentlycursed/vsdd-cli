@@ -1,6 +1,6 @@
 {
   "next_display_id": 868,
-  "next_comment_id": 1432,
+  "next_comment_id": 1433,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -23056,7 +23056,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-10T12:57:47.385994Z",
-      "updated_at": "2026-09-18T23:32:33.139280Z",
+      "updated_at": "2026-09-19T00:02:02.327081Z",
       "labels": [
         "design"
       ],
@@ -23078,6 +23078,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEicuYSq6+BJ3mB5idwnPmIuV/oLPD69zuDRJQFDknRJcqyZ7T0qiS56vCDzKL9x8Osx9d6wgXt2rdhaSDlhVAA=="
+        },
+        "a4ef9332-eaed-42ea-820f-68fdf789e951": {
+          "display_id": 1432,
+          "author": "xqjG",
+          "content": "SWARM INVOCATION 1 COMPLETE (workflow wf_3418f46b, 32 agents: 4 cluster reviewers effort=high + 28 verifiers effort=medium, 4/4 clusters reported). RAW: 44 findings; dedup file:line -> 39; verified top 28 (cap declared, 11 minor/nit carried UNVERIFIED); verdicts 26 CONFIRMED / 0 plausible / 2 REFUTED (hallucinated class). HEADLINE: 1 CRITICAL — section-structural rules (E0120/E0121) fail OPEN on a missing/renamed/malformed section heading (empty-set/count-0 semantics, no section-not-found diagnostic; found INDEPENDENTLY by QE, SA, and Red Team) — this hits vsdd's own planned build-plan disjoint rule (our GH#29 spec) on any routine heading rename. DOMINANT CLASS: silent gate neutralization in the new families (section fail-open; marker pattern without capture group = vacuous control; code-catalogs.yaml zero load validation) — the loud-absence discipline the SAME release established for pins (E0063) was not carried to its siblings. OTHER MAJORS: marker target_section misconfig mass-flags healthy references as E0112 (misdirected blame); pin --update byte-slice panic on adopter sha256 = the exact #165-claimed-closed class (init::short() unreachable from bin) + pin command outside the limits/marking discipline; vocab E0091/E0093 scans FENCED blocks as live prose (the #158 false-positive class one masking layer down); E0010/E0011 explain pages stale vs 0.6.0 link semantics (wrong fix advice); atx_heading accepts 4+-space-indented code lines as headings -> section pins hash a TRUNCATED span (edits below an indented '# comment' pass E0061 silently). TELEMETRY (chosen vs observed, recorded honestly): declared band 300-700k downstream; OBSERVED 1,795,085 — 2.56x over. Cause: 28 verifiers at ~40-50k each (verify fan-out priced at ~15k/finding in the band estimate) + 4 high-effort reviewers over 24k LOC. Calibration note for the next roast: price verifiers empirically (~45k) or cap verify fan-out lower. Findings report to operator NEXT; GH issue draft ready, filing awaits operator go.",
+          "created_at": "2026-09-19T00:02:02.277917Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAevp5f+mm3ksTml/6iFTNhmuzC0VMcTbgLClsiOPAT+oaUYvOVvRSoHYMG/ASof5RRA9zYiJNURlOe3BdL4JyAA=="
         },
         "bc44f15c-4543-435b-9629-1fae04e09631": {
           "display_id": 1429,
@@ -32793,11 +32802,16 @@
       "agent_id": "xqjG",
       "agent_seq": 28,
       "timestamp": "2026-09-18T23:32:33.139280Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 29,
+      "timestamp": "2026-09-19T00:02:02.327081Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-18T23:32:33.139280Z",
+    "timestamp": "2026-09-19T00:02:02.327081Z",
     "agent_id": "xqjG",
-    "agent_seq": 28
+    "agent_seq": 29
   }
 }
