@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1465,
+  "next_comment_id": 1466,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -11798,10 +11798,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-03T16:14:35.272186Z",
-      "updated_at": "2026-08-03T16:14:40.348342Z",
+      "updated_at": "2026-09-19T04:24:09.939487Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "8639a256-f098-4566-9d8d-733a0b1d8ff5": {
+          "display_id": 1465,
+          "author": "xqjG",
+          "content": "ANSWERED + CLOSED (operator: 'answer and close', 2026-09-18): posted the methodology position on vsdd-cli GH#33 and closed it — coverage = occasion-predicated recorded actuals per family per output form on the current build (never-ran = could-not-check; representative shapes are a baseline, not evidence); latency = a dimension on the same wide record; staleness = any change to emitting code / output contract / model re-triggers, a completed cycle without refreshed actuals is the falsifier; native units, dollars derived. Grounding: contract Cost is knowable; OE2e Ch21 (knowledge pages o11y-llm-telemetry-evals-and-agent-context, oe2e-impact-analysis-2026-09-18 §D).",
+          "created_at": "2026-09-19T04:24:09.926936Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAzErQq8yUCrl0zdKsNSiJA/DhUxIAfvyUtfcouqfrZT/qSdfPht0KCe4EBRdBsgsFMHAOYUzDD7YGvQHzyslRCg=="
+        }
+      }
     },
     "64adbc21-8c2a-433c-ba8b-bf31c0f50e09": {
       "uuid": "64adbc21-8c2a-433c-ba8b-bf31c0f50e09",
@@ -33528,11 +33539,16 @@
       "agent_id": "xqjG",
       "agent_seq": 87,
       "timestamp": "2026-09-19T04:24:00.257167Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 88,
+      "timestamp": "2026-09-19T04:24:09.939487Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T04:24:00.257167Z",
+    "timestamp": "2026-09-19T04:24:09.939487Z",
     "agent_id": "xqjG",
-    "agent_seq": 87
+    "agent_seq": 88
   }
 }
