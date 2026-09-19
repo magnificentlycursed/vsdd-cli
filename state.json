@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1454,
+  "next_comment_id": 1455,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2288,11 +2288,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:51.964829Z",
-      "updated_at": "2026-09-19T03:15:50.703279Z",
+      "updated_at": "2026-09-19T03:46:59.374934Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "0c6ca0e3-efe4-4478-8306-d2f21c7019e2": {
+          "display_id": 1454,
+          "author": "xqjG",
+          "content": "TERMINAL VERIFY ROUND RETURNED (workflow wf_09523f04: 2 reviewers, verify posture). VERDICTS: cluster B STOP (32/32 prior findings resolved or deferred-with-home; guard holds — every clause the fix pass added exists in main in substance; pin matches; 4 new findings all minor/nit); cluster A CONTINUE on residue — 31/32, one prior PARTIALLY resolved ('no-data grade' survived in the in-diff register entry synced-trace-oracle-unbuilt), 5 new findings all minor/nit. Both clusters independently confirm the two conservative dispositions (refutation rule struck to the primer; naming rule demoted to a References convention) CONFORM to the rulings. Chosen-vs-observed: shape 2 agents (held); estimated ~220k, OBSERVED 357,502 tokens (1.6x). RESIDUE FIXED (commit e46a6e00): could-not-check in the register entry; the duplicated build-plan parenthetical; PR cites qualified by repo (+ one convention line in the handle grammar); two regression-corpus rows for the design-doc residuals (gutted-body-untouched-sidecar; hand-authored-design-doc-and-sidecar); always-on-baseline frontmatter token added to vsdd-cli#874. STOP-SIGNAL STATUS: under the primer's rule (the terminal round reproduces none of the prior round's findings) the signal does NOT yet hold — one prior finding reproduced (partially) and five real-if-minor findings surfaced; strict compliance is one more terminal round over the ~10-line residue diff. Operator decision: strict narrow round vs ratify-on-read.",
+          "created_at": "2026-09-19T03:46:59.361248Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJAUHX1X5Y79vd+v/o6IOy1+yTFiqXaqeoRw1kHOg0l7S6hpmqZydgETrBxj+qebpWYRsEQxvQ4BZuPeHP6eABQ=="
+        },
         "7a0b194f-781d-4425-81a5-f53cd71d5466": {
           "display_id": 1446,
           "author": "xqjG",
@@ -33344,11 +33353,16 @@
       "agent_id": "xqjG",
       "agent_seq": 71,
       "timestamp": "2026-09-19T03:16:02.114071Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 72,
+      "timestamp": "2026-09-19T03:46:59.374934Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T03:16:02.114071Z",
+    "timestamp": "2026-09-19T03:46:59.374934Z",
     "agent_id": "xqjG",
-    "agent_seq": 71
+    "agent_seq": 72
   }
 }
