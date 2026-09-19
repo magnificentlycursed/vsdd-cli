@@ -23052,11 +23052,12 @@
       "uuid": "d325b553-4664-49fe-9ec7-144ccac3079b",
       "display_id": 867,
       "title": "Phase-3 adversarial review of mdatron pre-0.6.0 (cross-estate roast; findings to operator, then GH issue on their repo)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-10T12:57:47.385994Z",
-      "updated_at": "2026-09-19T00:05:39.978350Z",
+      "updated_at": "2026-09-19T00:05:48.487536Z",
+      "closed_at": "2026-09-19T00:05:48.487525Z",
       "labels": [
         "design"
       ],
@@ -32835,11 +32836,16 @@
       "agent_id": "xqjG",
       "agent_seq": 31,
       "timestamp": "2026-09-19T00:05:39.978350Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 32,
+      "timestamp": "2026-09-19T00:05:48.487536Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T00:05:39.978350Z",
+    "timestamp": "2026-09-19T00:05:48.487536Z",
     "agent_id": "xqjG",
-    "agent_seq": 31
+    "agent_seq": 32
   }
 }
