@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1451,
+  "next_comment_id": 1452,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2288,7 +2288,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:51.964829Z",
-      "updated_at": "2026-09-19T02:58:16.958563Z",
+      "updated_at": "2026-09-19T03:15:50.703279Z",
       "labels": [
         "feature"
       ],
@@ -2301,6 +2301,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXuNU9+6tV+JlWE0jTABSegoXd+jMUhZ+wzUbfc7HstVUYyFDXsFnVCS5y0MixJjdn/uT40u2OKMwY49K0EMLCA=="
+        },
+        "95428c23-56bd-4e51-aefe-5571a9e442e9": {
+          "display_id": 1451,
+          "author": "xqjG",
+          "content": "ROUND-1 COLD REVIEW RETURNED (workflow wf_bf54ed9b: 2 reviewers, 32 findings, both 'revise'). Chosen-vs-observed: shape 2 agents as declared; cost estimated ~2x100k, OBSERVED 564,180 tokens (2.8x) — both reviewers read the full old and new contracts; the next round is briefed on the diff since da4b370d + the finding list, expected ~40% of that. DISPOSITIONS (fix pass commit 7453e194): FIXED — M1 refutation rule in the contract (3 places; struck, kept in the primer — the conservative reading of decision 2; the SO may instead declare it a third contract statement); M2 naming rule + nickname-as-term falsifier (demoted to References convention); M3 REQ-6/8/20 (regression corpus section E, 6 rows); M4 Generated context requirement (restored); M5 stop-signal decidability (terminal verify round = the resurfacing check, contract + primer); M6 false registry-alias claim (corrected; MVR definition fixed); M7 build-plan contradictions + dead cites + nicknames + bare handles (re-projected, re-pinned aa09e246); M8 'Pilot criterion' (Swarm live fire); M9 dial control surface (supplement) ; minors: offline-git clause, design-doc lifecycle grades + spec-type-exemption falsifier, three dropped falsifiers, could-not-check term, native-spawn register pointer (entry widened + renamed native-spawn-interceptor-unbuilt), harness name out of the tier, fix-lane scope + tolerance, schema tokens kept (won't-fix dropped, no Slice-5 obligation introduced), memory isolation (supplement), editorial sentence removed, review-window reason on the register entries, primer dials per stage, 'layer' kept as a sequence word. DEFERRED with a home — registered data + file names still carrying renamed terms (act-to-affordance-map.md, dispatch-data.md 'inconclusive', state-schema 'surfaces'): vsdd-cli#874; primers/domain skills citing section numbers and retired terms: vsdd-cli#874; unauthored data sets: vsdd-cli#875. Findings vsdd-cli#870 and #871 are fixed on the branch; they close with the merge. NEXT: the terminal verify round (the resurfacing check) — awaiting operator go on shape/cost.",
+          "created_at": "2026-09-19T03:15:50.690464Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1HwKPg3cmJZhZdF5Pf4iOKNsPIgWfjvLJcrkSgVnVIc0EFT1MK+9swrNpCLhciivhLBuYhTTEjH2gWhP8tegDg=="
         },
         "b7da261f-703f-4122-8e33-251070a1e455": {
           "display_id": 1450,
@@ -33302,11 +33311,16 @@
       "agent_id": "xqjG",
       "agent_seq": 68,
       "timestamp": "2026-09-19T03:14:16.511216Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 69,
+      "timestamp": "2026-09-19T03:15:50.703279Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T03:14:16.511216Z",
+    "timestamp": "2026-09-19T03:15:50.703279Z",
     "agent_id": "xqjG",
-    "agent_seq": 68
+    "agent_seq": 69
   }
 }
