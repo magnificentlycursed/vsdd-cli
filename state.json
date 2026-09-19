@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1457,
+  "next_comment_id": 1458,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2288,7 +2288,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:51.964829Z",
-      "updated_at": "2026-09-19T03:46:59.374934Z",
+      "updated_at": "2026-09-19T03:56:07.425924Z",
       "labels": [
         "feature"
       ],
@@ -2301,6 +2301,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJAUHX1X5Y79vd+v/o6IOy1+yTFiqXaqeoRw1kHOg0l7S6hpmqZydgETrBxj+qebpWYRsEQxvQ4BZuPeHP6eABQ=="
+        },
+        "1d8e2561-6c75-471c-b4d3-32a1ec210418": {
+          "display_id": 1457,
+          "author": "xqjG",
+          "content": "[action] PhaseExited{phase: phase-3 (cold review of the contract-compaction amendment, vsdd-cli#873), exit_status: stop-signal-held, round_count: 3, closing_commit: e46a6e00}",
+          "created_at": "2026-09-19T03:56:07.412996Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAeyzyhf3aKmt7kz5HHmGxnyd5E8lLtHAL2VpY/MgW/ONj4RUIxedmWBxycofvl2WKS7bNvATXiJybWg69sIZKAA=="
         },
         "7a0b194f-781d-4425-81a5-f53cd71d5466": {
           "display_id": 1446,
@@ -33388,11 +33397,16 @@
       "agent_id": "xqjG",
       "agent_seq": 74,
       "timestamp": "2026-09-19T03:47:38.253184Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 75,
+      "timestamp": "2026-09-19T03:56:07.425924Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T03:47:38.253184Z",
+    "timestamp": "2026-09-19T03:56:07.425924Z",
     "agent_id": "xqjG",
-    "agent_seq": 74
+    "agent_seq": 75
   }
 }
