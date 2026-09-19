@@ -14,6 +14,7 @@ updated: 2026-09-19
 
 
 
+
 # Deletion-Test sweep of the contract and build-plan (2026-09-18, vsdd-cli #869)
 
 **Method.** Three tests from *Observability Engineering* 2e applied by hand to every contract member, requirement, acceptance criterion, verification-architecture member, decomposition paragraph, open question, and build-plan phase: (1) **the Deletion Test** (Ch32/Fowler) — *if we deleted this, what named failure would we stop catching, and has it ever occurred?*; (2) **activities vs learning** (Ch27) — *can it name the feedback mechanism that turns it into learning, and is that mechanism used?*; (3) **sediment** (Ch32) — *is this prose carrying history that git and the tracker already carry?* Four bins: **DURABLE** (named failure with recorded evidence — keep as contract), **REGISTER** (a named risk whose control cannot be built yet, or whose occurrence has never happened — a deviation/escape-registry entry with retest trigger + expiry, not contract prose), **DELETE** (superseded, stale, duplicated, or evidence-free), **CONSOLIDATE** (one thing stated in several homes). These are proposals; the Solution Owner rules. Anything the contract backs with an *Evidence:* record I binned DURABLE by construction — the sweep does not second-guess recorded incidents.
@@ -144,3 +145,6 @@ Operator rule: no coinages, vocabulary, or labels that obfuscate; this compactio
 
 
 - **Decision 2 — RULED 2026-09-18 (SO): compaction cycle AUTHORIZED**, scoped as recorded on #869; anti-accretion guard = deletions/moves/renames/revision-history + exactly two new sentences; author in-session hand-audited, 2 pair-separated cold reviewers under the fallback exception (container vehicle down), 200k hard ceiling; operator ratifies a change map; sequenced before #839's phase-1a.
+
+
+- **Decisions 3/4/5 — RULED 2026-09-18 (SO):** file exactly three findings (build-plan crate contradiction; REQ-21 leg 2; icu_properties dependency-approval lapse); all five reference conventions ADOPTED with the handle grammar vsdd-cli#NNN / mdatron#NNN / crosslink#NNN (upstream) / crosslink-fork#N (mirror) + named non-tracker records; naming map ADOPTED, with 'surfaces' → 'project declarations' + 'activation criteria' and 'affordance' → 'paved path' (map → paved-path map). Recorded on vsdd-cli #869.
