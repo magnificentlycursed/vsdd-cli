@@ -5155,11 +5155,12 @@
       "display_id": 870,
       "title": "Build-plan Phase 2 recommends a separate cost crate for the pricing function, contradicting the ratified no-separate-crate ruling (contract, Cost-engine packaging, resolved under #860)",
       "description": "Defect found by the 2026-09-18 Deletion-Test sweep (knowledge page deletion-test-sweep-2026-09-18, #869). .design/build-plan.md Phase 2 'Entry decisions' says: 'pricing-function home (a minimal cost crate now versus provisional in vsdd-core — recommendation: the crate, avoiding relocation of a mutation-covered pure function)'. The contract's resolved open question 'Cost-engine packaging' rules: engine in vsdd-core, NO separate crate (vsdd-cli#840 Q1, ratified 2026-08-02 under vsdd-cli#860); the Verification architecture and Slice 7 member say the same. Contract-over-derived precedence: the projection is wrong and would mislead #839's phase-1a. Fix: delete the crate recommendation from the Phase-2 entry decisions; pricing function homes in vsdd-core. One of the two permitted new normative sentences of the compaction cycle.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:34:37.918456Z",
-      "updated_at": "2026-09-19T04:08:15.915662Z",
+      "updated_at": "2026-09-19T04:08:22.408416Z",
+      "closed_at": "2026-09-19T04:08:22.408406Z",
       "labels": [
         "design"
       ],
@@ -33472,11 +33473,16 @@
       "agent_id": "xqjG",
       "agent_seq": 80,
       "timestamp": "2026-09-19T04:08:15.915662Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 81,
+      "timestamp": "2026-09-19T04:08:22.408416Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T04:08:15.915662Z",
+    "timestamp": "2026-09-19T04:08:22.408416Z",
     "agent_id": "xqjG",
-    "agent_seq": 80
+    "agent_seq": 81
   }
 }
