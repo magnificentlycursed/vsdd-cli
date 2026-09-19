@@ -1,5 +1,5 @@
 {
-  "next_display_id": 872,
+  "next_display_id": 873,
   "next_comment_id": 1445,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -668,6 +668,7 @@
     "c33ec009-d50e-4c0d-a83f-ff8744074bea": 683,
     "c357c153-26c1-414d-9cab-d22e466819b9": 126,
     "c376bd9d-18d6-4098-94aa-868ee4d21c63": 782,
+    "c379d167-ddfa-4d7d-8e94-6b798ad1bbf9": 872,
     "c389841b-08ba-46e0-aecd-8525413e007f": 832,
     "c39e677d-2aa0-41eb-803b-35cab288c6cc": 208,
     "c3e32b4c-f54c-40e5-adbb-b8388cae827e": 605,
@@ -21227,6 +21228,17 @@
         }
       }
     },
+    "c379d167-ddfa-4d7d-8e94-6b798ad1bbf9": {
+      "uuid": "c379d167-ddfa-4d7d-8e94-6b798ad1bbf9",
+      "display_id": 872,
+      "title": "Dependency-approval lapse: icu_properties (commit 24e76e2e, #813) landed with no docs/dependencies record, no three-lens review, no trailers — the standing VSDD-E0100 condition the contract itself records",
+      "description": "Fix-lane finding under the SIMPLIFIED Dependency approval rule (SO ruling 2026-09-18, #869 decision 1d: an added dependency needs its docs/dependencies/<crate>.md record and the three-lens review — Solution Owner scope, Platform Engineer supply chain, Security CVE/license/threat). The contract's Dependency approval requirement records this lapse verbatim ('the most recent manifest addition (icu_properties, commit 24e76e2e, vsdd-cli #813) landed with no approval section, no trailers, and no record, the exact VSDD-E0100 condition, undetected') and no remediation issue existed (searched 2026-09-18). Remediation (retrofit form): author docs/dependencies/icu_properties.md with the three-lens review recorded retroactively; the deviation record stands (retrofit closes verification debt, not the process breach). Also audit the remaining direct dependencies (~9-12 in the manifests vs 2 records) and list the undischarged delta on this issue.",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-09-19T02:35:03.809136Z",
+      "updated_at": "2026-09-19T02:35:03.809136Z"
+    },
     "c389841b-08ba-46e0-aecd-8525413e007f": {
       "uuid": "c389841b-08ba-46e0-aecd-8525413e007f",
       "display_id": 832,
@@ -33102,11 +33114,16 @@
       "agent_id": "xqjG",
       "agent_seq": 53,
       "timestamp": "2026-09-19T02:34:56.149209Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 54,
+      "timestamp": "2026-09-19T02:35:03.809136Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T02:34:56.149209Z",
+    "timestamp": "2026-09-19T02:35:03.809136Z",
     "agent_id": "xqjG",
-    "agent_seq": 53
+    "agent_seq": 54
   }
 }
