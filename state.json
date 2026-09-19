@@ -1,6 +1,6 @@
 {
   "next_display_id": 870,
-  "next_comment_id": 1439,
+  "next_comment_id": 1440,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4420,10 +4420,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-19T01:51:46.792222Z",
-      "updated_at": "2026-09-19T01:51:52.145305Z",
+      "updated_at": "2026-09-19T01:56:37.103419Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "38122df7-96ad-416c-9c93-a41aaaa5e985": {
+          "display_id": 1439,
+          "author": "xqjG",
+          "content": "IMPACT ANALYSIS COMPLETE — knowledge page oe2e-impact-analysis-2026-09-18 (design-input). HEADLINE: the contract already anticipates most of the book and is STRICTER in three places (could-not-check provenance class; agent-writable-oracle rejection REQ-10; the falsifiable exercise law) — those are grounding, no change. REAL YIELD: (1) one missing noun — the per-dispatch PLAN validated before launch (Ch17 ActionPlan): predicted agents/band/wall-clock rendered to the operator, checked against the ratified ceiling + calibration band at preflight, plan_id on the manifest, plan-vs-actual as a Slice-7 engine verdict with rejection_reason (routes B1/B2); (2) two ratified controls found AUTHORED-NOT-EXERCISED: C1 the 2026-08-10 roast (#867) violated REQ-21 — band not shape+ceiling, and a synchronous per-finding verifier fan-out which AC-23 names as the caught bypass; same escape as the recorded mdatron#11 precedent (39 agents/2.27M) — escape-corpus entry; C2 the phase-3 primer's pre-session template never received REQ-21's fields (band only) — governed-corpus edit owed under the Part-2 process; C3 REQ-21 leg 2's 'no runtime admission control exists' is inaccurate on the Workflow path (hard token ceiling exists via the budget directive; agent-count interceptor still unbuilt) — small amendment. OTHER ROUTED INPUTS: B3 plan-rejection rate + operator-override rate as effort-scaling down-signals (advisory data); B4 operator workload as a recorded dimension (§144 names operator time as binding; nothing records it — Ch22 Rasmussen 3rd boundary); B5 SO DECISION: materialized regenerable dispatch rows (native units, versioned data) vs pure reader — recommend rows (signal parity), not the retired dollar ledger; B6 REQ->home carried in findings; B7 question for #839 (inject registry+incident layer); B8 Ch18 SLI shape for the deferred per-commit wall-clock budget; B9 a learning-loop indicator in Slice 7's ACs. GH#33 (#865): answer READY from contract+book (coverage = occasion-predicated actuals per family per form on the current build; latency same record; staleness = completed cycle without refreshed actuals, re-triggered by any model/prompt/harness/contract change; native units, dollars derived) — outward post awaits go. UPSTREAM: E1 transcript-sync + corroboration channel (REQ-10/REQ-23 dependency) is UNFILED upstream (searched) — file + add to fork #3 Epic 2, awaits go. REGISTRY: no change. DECISION SLOTS batched on the page (5).",
+          "created_at": "2026-09-19T01:56:37.091193Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAsoZYw61DeCjJ8zcDs6Po+u29sHxVAi+HNBYZ1dDBAl9AeUsh8dS85qhGL7tT5P1ciIWu6iTBNysejqDaXoHKAQ=="
+        }
+      }
     },
     "1f8df8bd-893c-44cd-bd47-bf6d864c1de5": {
       "uuid": "1f8df8bd-893c-44cd-bd47-bf6d864c1de5",
@@ -32966,11 +32977,16 @@
       "agent_id": "xqjG",
       "agent_seq": 43,
       "timestamp": "2026-09-19T01:52:00.511846Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 44,
+      "timestamp": "2026-09-19T01:56:37.103419Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T01:52:00.511846Z",
+    "timestamp": "2026-09-19T01:56:37.103419Z",
     "agent_id": "xqjG",
-    "agent_seq": 43
+    "agent_seq": 44
   }
 }
