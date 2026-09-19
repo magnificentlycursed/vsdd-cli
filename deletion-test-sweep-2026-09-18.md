@@ -11,6 +11,7 @@ updated: 2026-09-19
 ---
 
 
+
 # Deletion-Test sweep of the contract and build-plan (2026-09-18, vsdd-cli #869)
 
 **Method.** Three tests from *Observability Engineering* 2e applied by hand to every contract member, requirement, acceptance criterion, verification-architecture member, decomposition paragraph, open question, and build-plan phase: (1) **the Deletion Test** (Ch32/Fowler) — *if we deleted this, what named failure would we stop catching, and has it ever occurred?*; (2) **activities vs learning** (Ch27) — *can it name the feedback mechanism that turns it into learning, and is that mechanism used?*; (3) **sediment** (Ch32) — *is this prose carrying history that git and the tracker already carry?* Four bins: **DURABLE** (named failure with recorded evidence — keep as contract), **REGISTER** (a named risk whose control cannot be built yet, or whose occurrence has never happened — a deviation/escape-registry entry with retest trigger + expiry, not contract prose), **DELETE** (superseded, stale, duplicated, or evidence-free), **CONSOLIDATE** (one thing stated in several homes). These are proposals; the Solution Owner rules. Anything the contract backs with an *Evidence:* record I binned DURABLE by construction — the sweep does not second-guess recorded incidents.
@@ -84,3 +85,52 @@ This is the largest spec amendment the contract has had; it is Solution-Owner-ow
 7. **Ch25 noisy labels**: 'the landscape feels noisy because the labels are noisy… start with the feedback loops you need to strengthen.' Organize the contract by invariant and loop, not by the history of how each rule arrived.
 
 **Proposed conventions for the compaction cycle** (its organizing principle, not additional doctrine): (i) one registered handle grammar for cross-repo references; (ii) prose cites rules by heading name, never bare handles — handles in Evidence lines + revision history; (iii) every doctrine nickname becomes a heading (and is thereby defined) or is retired; the name map lists surviving aliases; (iv) precedents move to Evidence lines; (v) harness-specific fields move to the runtime-harness supplement. Decision slot 4 added: adopt these five conventions as the compaction's rules.
+
+
+
+## Addendum 2 (operator, 2026-09-18): align to a common body of knowledge — the coinage → standard-term map
+
+Operator rule: no coinages, vocabulary, or labels that obfuscate; this compaction is the chance to align to a common body of knowledge. Reference lexicons, in the estate's grounding order (AI-Eng > Platform-Eng > SWE/QE): **OpenTelemetry semantic conventions** (incl. the GenAI conventions), **SRE** (SLI/SLO/baseline/error budget), **FinOps** (unit economics, rightsizing, allocation), **internal-controls audit** (design vs operating effectiveness, detective/preventive/compensating controls, risk register, exception), **QE/testing** (expected/actual, oracle, characterization test, red-green, false positive, regression corpus, reconciliation), **ITIL change management** (change classification, documented exception), **ADRs** (decision records), **QMS document control** (controlled documents, deviation/nonconformance), **SWE** (walking skeleton, vertical slice, drift, bill of materials). Each row is a proposal; where no standard term exists the project term stays and is defined once in the registry. Rows marked ★ change the reader's model the most.
+
+| vsdd coinage / nickname | Common term (lexicon) |
+|---|---|
+| run record / run transcript / harness transcript ★ | **trace** — a run is a trace, each agent a span, usage as span attributes (OTel; GenAI semconv `gen_ai.usage.*`) |
+| WAS ⊇ SHOULD ★ | **actual ⊇ expected** — observed context set vs expected context set (QE) |
+| capture-source provenance: recorded / measured / judgment / could-not-check ★ | **provenance: observed / derived / estimated / no-data** (data lineage; SRE 'no data ≠ pass') |
+| phases-dispatched keystone ★ | the **delegation policy**: all phase work runs in dispatched agents; the operator session only orchestrates (no nickname) |
+| authored is not exercised; exercise registry ★ | **design effectiveness vs operating effectiveness**; **control effectiveness testing** (internal-controls audit) |
+| format-carry (bootstrap discipline carried as a comment format) ★ | **compensating control** (audit) |
+| deviation registry; retest trigger + expiry ★ | **risk / exception register** with **review date** and **exit criteria** (GRC) |
+| escape corpus | **regression corpus** built from real escapes (QE; Ch17/21 'production failures become the next tests') |
+| disposition: hallucinated / dismissed / accepted / deferred / resolved ★ | **false positive / won't fix / accepted risk / deferred / fixed** (bug triage) |
+| guardrail grades: detection / friction / CI-backed block / harness-level capability restriction ★ | **detective control / bypassable preventive control / enforced preventive control (required status check) / least privilege** (security controls) |
+| self-governance guardrail vs adopter guardrail | **dogfooded control** vs **shipped control** |
+| invariant-first; enforcement-spine-first | **walking skeleton** (build the enforcement path end-to-end first — Cockburn); ordering principles, not terms |
+| the engine | **core library** (vsdd-core) |
+| red gate / red-gate seed / pin test / executed pin | **red-green** (TDD); **characterization test** (Feathers; Ch32); 'the test ran, not skipped' |
+| round-parity | **reconciliation** (counts agree between two systems) |
+| dispatch preflight: pass / fail / inconclusive | **preflight check: pass / fail / unknown**, fail-closed |
+| dispatch-failed: never-started / started-then-stalled | **launch failure / heartbeat timeout** (liveness) |
+| dispatch manifest; expected band | **dispatch plan** (plain) with a **budget** and **baseline** (SRE baseline window) |
+| static price / priced bill of materials | **token budget / cost estimate**; bill of materials is already standard |
+| efficiency insight engine; efficiency advisories; effort-scaling signals | **cost and efficiency report**; **rightsizing signals** (FinOps); **unit economics** (already standard) |
+| calibration band | **baseline** (SRE) |
+| the derived-view ruling | 'events are **derived at query time**; no separate event store' (Ch25 unified storage) — a policy sentence, no nickname |
+| the tier rule (schema pass = shape fact) | **syntactic validation vs semantic verification** (QE) |
+| corroboration keystone / tamper-evidence-by-corroboration | **tamper-evident audit log** + **independent verification** (security) |
+| directive reconciliation; recorded override; increment entry | **change classification** (ITIL); **documented exception**; **new work item** |
+| SO disposition / operator ruling | **decision record** (ADR) |
+| governed corpus / governed files; route table | **controlled documents** (QMS document control); **document classification / allowlist** |
+| maturity lifecycle: draft / established; first publish | **stability guarantee: unstable / stable** (SemVer; Rust stable/unstable) |
+| swarm live fire | **pilot / production acceptance trial** |
+| cold review; sycophancy compensation | **independent review** (fresh context; reviewer independence) |
+| phase answer | **pipeline stage / current phase** (plain) |
+| terminal output safety | **output sanitization** (security) |
+| installed-artifact manifest; hollow shell | **install manifest** (SBOM-shaped); **broken install** |
+| act-to-affordance map | **tool map / workflow bindings** ('affordance' is HCI jargon) |
+| retrieval-shaped artifacts | **retrieval-friendly** (plain) |
+| composition / composed domains | keep — plain English; 'composed context' → **injected context** (Ch10) |
+| surfaces (project declarations) | candidate: **project attributes / declared capabilities**; genuinely project-specific — define once if kept |
+| finding, oracle, waiver, drift, vertical slice, unit economics, bill of materials, SLI/SLO | already standard — keep |
+
+**Naming rules for the compaction** (add to the five conventions): every term in the contract either (a) is a standard term from a named lexicon, used in its standard sense, or (b) is a project term registered once in `vocabulary.yaml` with a one-line definition and its nearest standard neighbor named; nicknames for rules (keystone, ruling, remediation, format-carry, tier rule) are retired in favor of the rule's heading. The vocabulary check should be raised to catch multi-word coinages (mdatron generic-primitive raise via the syntactic-vs-semantic boundary procedure). Decision slot 5: adopt the map (with operator edits) as the compaction's naming rule.
