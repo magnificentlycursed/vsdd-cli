@@ -9,6 +9,7 @@ updated: 2026-09-19
 
 
 
+
 # Contract compaction — change map (vsdd-cli#873, for Solution Owner ratification)
 
 **What you ratify:** this map plus the sentences marked NEW. The cold reviewers read the whole diff; you read this. Rulings applied: vsdd-cli#869 decisions 1–5 and B5. Size: contract 255,839 → 103,243 bytes (429 → 380 lines; long paragraph-lines split into bullets). `mdatron verify` clean; `vsdd gate --ci` exit 0.
@@ -71,3 +72,11 @@ Two pair-separated reviewers (clusters A and B), both 'revise', 32 findings; eve
 
 ## Terminal verify round — result (2026-09-18)
 Cluster B: **stop** (32/32 resolved or homed; guard holds; pin matches; 4 minor/nit new). Cluster A: **continue** on residue (31/32; one prior partially resolved — 'no-data' survived in a register entry; 5 minor/nit new). Both clusters confirm the two conservative dispositions conform to the rulings. Residue fixed in a third commit on the branch: could-not-check in the register entry; the duplicated build-plan clause; PR cites qualified by repo (a one-line convention added to the handle grammar); two regression-corpus rows for the design-doc residuals; the always-on-baseline frontmatter token added to vsdd-cli#874. **Telemetry:** declared 2 agents (held), estimated ~220k, observed 357,502 (1.6×). **Stop signal:** not yet held under the primer's own rule — one prior finding reproduced and five real-if-minor findings surfaced; strict compliance is one more narrow terminal round over the ~10-line residue diff. Operator decision recorded on vsdd-cli#873.
+
+
+
+## Narrow terminal round — STOP (2026-09-18)
+Both clusters **stop**: the five distinct residue defects are resolved (four) or homed (one, vsdd-cli#874); the five-line fix introduced nothing above a nit (bare 'PR #64/#76' cites in the register now off-grammar — homed in #874). Phase exit recorded on the session breadcrumb (3 rounds, closing commit e46a6e00). **Cycle telemetry:** round 1 564k (est. 200k), round 2 358k (est. 220k), round 3 167k (est. 120k, worst 200k — inside band once priced from actuals); 6 reviewer agents, 1.09M tokens; authoring in-session, hand-audited.
+
+## Ratification handoff
+PR #34, branch feature/contract-compaction, three commits (da4b370d compaction; 7453e194 round-1 fix pass; e46a6e00 residue). Read: (1) this page's 'Per section' table and 'The guard, audited'; (2) the two new normative sentences — contract, Verifiable conformance and efficiency, the spend-shape bullet's leg 2; build-plan Phase 2 entry decisions; (3) the Revision history table at the end of the contract; (4) the two conservative calls (refutation rule struck to the primer; naming rule demoted to convention) — overrule at ratification if wanted. Ratification = a decision comment on vsdd-cli#873 + your merge. Then: #870/#871 close on merge; #874 (corpus rename) and #875 (data sets) are the follow-ons; #872 (icu_properties) is the fix-lane item.
