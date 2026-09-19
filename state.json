@@ -1,5 +1,5 @@
 {
-  "next_display_id": 870,
+  "next_display_id": 871,
   "next_comment_id": 1445,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -140,6 +140,7 @@
     "22407099-fe26-4cae-b079-f62b2dca0027": 228,
     "22f3d744-a8df-46a2-9815-e7da76bb1aba": 357,
     "2341945f-522c-4cf9-a6b3-28bb753afa07": 654,
+    "235a4b6a-b394-48c1-82c0-5f681eaf29e3": 870,
     "23723651-af11-421b-a406-a31587174ee4": 140,
     "23ab3613-4e27-45ee-a433-3e75045e2991": 211,
     "23fdf764-5971-4fcf-89fd-ad580cb42914": 49,
@@ -5043,6 +5044,17 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAfLPCY3H/1hhlNvIp94cnhkYJ4880m+akwkW97SRpZV+ko2TSGIODpRVLXrGo7tquzq42JssxBrp3LhHjl/W1BQ=="
         }
       }
+    },
+    "235a4b6a-b394-48c1-82c0-5f681eaf29e3": {
+      "uuid": "235a4b6a-b394-48c1-82c0-5f681eaf29e3",
+      "display_id": 870,
+      "title": "Build-plan Phase 2 recommends a separate cost crate for the pricing function, contradicting the ratified no-separate-crate ruling (contract, Cost-engine packaging, resolved under #860)",
+      "description": "Defect found by the 2026-09-18 Deletion-Test sweep (knowledge page deletion-test-sweep-2026-09-18, #869). .design/build-plan.md Phase 2 'Entry decisions' says: 'pricing-function home (a minimal cost crate now versus provisional in vsdd-core — recommendation: the crate, avoiding relocation of a mutation-covered pure function)'. The contract's resolved open question 'Cost-engine packaging' rules: engine in vsdd-core, NO separate crate (vsdd-cli#840 Q1, ratified 2026-08-02 under vsdd-cli#860); the Verification architecture and Slice 7 member say the same. Contract-over-derived precedence: the projection is wrong and would mislead #839's phase-1a. Fix: delete the crate recommendation from the Phase-2 entry decisions; pricing function homes in vsdd-core. One of the two permitted new normative sentences of the compaction cycle.",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-09-19T02:34:37.918456Z",
+      "updated_at": "2026-09-19T02:34:37.918456Z"
     },
     "23723651-af11-421b-a406-a31587174ee4": {
       "uuid": "23723651-af11-421b-a406-a31587174ee4",
@@ -33052,11 +33064,16 @@
       "agent_id": "xqjG",
       "agent_seq": 49,
       "timestamp": "2026-09-19T02:34:25.175471Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 50,
+      "timestamp": "2026-09-19T02:34:37.918456Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T02:34:25.175471Z",
+    "timestamp": "2026-09-19T02:34:37.918456Z",
     "agent_id": "xqjG",
-    "agent_seq": 49
+    "agent_seq": 50
   }
 }
