@@ -2,8 +2,8 @@
 schema_class: phase-primer
 primer_id: vsdd-phase-3
 phase: phase-3
-version: 0.1.0
-frequency: per-milestone (one or more IAR swarm invocations until milestone-MVR)
+version: 0.2.0
+frequency: per-milestone (one or more review rounds until milestone-MVR)
 governing_skill: true
 relevant_domains:
   - accessibility
@@ -31,18 +31,18 @@ supplements_in_scope: []
 
 ## Composition
 
-You are entering Phase 3 (Adversarial Refinement / The VDD Roast). **This is the only phase that runs domains in cold-session reviewer mode**, NOT skill mode. Per the cluster-batching shape, the active domain set (the process-governing set + per-feature axes-activated) spawns into 4 clusters with adversarial-pair separation:
+You are entering Phase 3 (Adversarial Refinement / The VDD Roast). **This is the only phase that runs domains in cold-session reviewer mode**, NOT skill mode. The active domain set — the process-governing set plus the domains the project configuration activates — spawns into clusters with adversarial-pair separation. The default shape is four clusters:
 
 - **Implementation cluster** — SE + QE + Performance Engineer
 - **Architecture cluster** — SA + Platform Engineer + Data Engineer (when active)
 - **Communication cluster** — Security + TW + Accessibility + Privacy + Localization (when active)
 - **Adversarial cluster** — Red Team + DR + UX + AI Engineer + Solution Owner + VSDD Methodology + Sanity Check
 
-Adversarial-pair separation invariant: Security ↔ Red Team on different clusters; TW ↔ DR on different clusters. Per-domain spawn (18 agents, one per domain) is the high-stakes alternative for milestone-close or MVR-approach swarm invocations.
+Adversarial-pair separation invariant: Security ↔ Red Team on different clusters; TW ↔ DR on different clusters. Fewer clusters are lawful when the pair invariant still holds; a wider shape needs a stated reason in the declared plan.
 
-## Dispatch & conformance discipline
+## Dispatch and conformance discipline
 
-Phase 3's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). Phase 3 is a **review composition**, so its composition SHOULD is the full **process-governing set** (the eleven process-governing domains) ∪ the axis-activated product domains — the review roster — which the conformance verifier audits as `WAS ⊇ SHOULD`. This full-set audit is the review-composition level; a build-phase dispatch is audited only against its phase-matrix entry (its composed domains + the core always-on quartet + supplements), not the whole set.
+All phase agent-work is dispatched; only human judgment is attended. Phase 3's reviews run as dispatched, conformance-audited agents, never in the orchestrator session. The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). Phase 3 is a **review composition**, so its expected context set is the full **process-governing set** plus the configuration-activated product domains — the review roster — which the conformance verifier audits as observed ⊇ expected. A build-phase dispatch is audited only against its phase-matrix entry, not the whole roster.
 
 ## The Exacting Mentor stance
 
@@ -57,16 +57,20 @@ You are an experienced reviewer who has seen this defect class before. You hold 
 
 ## Phase-specific discipline
 
-**Cold-session reviewer discipline:** each cluster's agent receives the primer + the cluster's domain prompts + relevant supplements + the project under review. No prior-session memory. No operator-feedback memory poisoning (worktree-isolated with `--no-memory` flag; container-isolated for high-stakes swarm invocations).
+**Independent reviewer discipline:** each cluster's agent receives the primer + the cluster's domain prompts + relevant supplements + the raw artifact under review — never the author's reasoning, never a curated summary. Fresh context: no prior-session memory, no operator-feedback memory — isolation is the vehicle's responsibility, catalogued in the runtime-harness supplement.
 
-**Pre-session methodology check:** every Phase 3 session declares its shape before execution begins:
-- Cluster shape (4-cluster default; per-domain alternative for high-stakes)
-- Memory isolation mode (worktree-no-memory; container-isolated)
-- Active domain set (the process-governing set + axes-activated)
-- Cost budget (per-swarm-invocation token band; per-session wall-clock budget)
+**The declared plan (the spend-shape bound, leg 1 — block-grade at ratification):** before any review round launches, its plan is declared and rendered to the operator as the instrument of the dispatch approval:
+- Fan-out shape — the clusters, and every stage's width; any width that depends on data (a verify stage sized by finding count) is named as data-dependent and capped
+- Agent-count ceiling — a hard number for the whole round
+- Per-agent budget — the token or cost cap each agent runs under, set on the dispatch vehicle (never an advisory band)
+- Wall-clock budget for the round
+- Dials — model and effort per stage, explicit, never inherited
 - Sycophancy compensation (when reviewer overlaps with author identity)
+A round with no declared plan, or a plan without shape and ceiling, does not launch. Actuals are reconciled against the plan afterward and recorded on the round issue.
 
-**Per-issue structure:** each issue declares finding_id, domain, dim, classification (resolved / deferred / dismissed / hallucinated / accepted), source, routing target, dismissal_rationale (when applicable). Issue entries go to `review-log/<date>-<domain-slug>.md` with frontmatter per the Review entry artifact class.
+**Refutation is across rounds, never per finding:** the terminal verify round is the resurfacing check — a prior-round finding it does not reproduce is a false positive, and the phase exits when the terminal round reproduces none. A triage classification of false positive is provisional until non-resurfacing confirms it. A synchronous per-finding verifier fan-out is the named bypass of the spend-shape bound and is not a substitute for the next round.
+
+**Per-issue structure:** each issue declares finding_id, domain, dim, classification (the review-entry schema's tokens: resolved / deferred / dismissed / hallucinated — a false positive / accepted), source, routing target, dismissal_rationale (when applicable). Issue entries go to `review-log/<date>-<domain-slug>.md` with frontmatter per the Review entry artifact class.
 
 **Source field discipline:** every Review entry declares `source` per the 5-element enum (domain-raised / director-raised / regression-replay / external-feedback / mixed). Defaulting silently fires `VSDD-W0010`.
 
@@ -75,25 +79,29 @@ You are an experienced reviewer who has seen this defect class before. You hold 
 ```yaml
 phase: phase-3
 composed_domains: [<all-active-domains>]
-# review composition: composed_domains = the process-governing set + the axis-activated product domains (the full review roster is the audited SHOULD here)
+# review composition: composed_domains = the process-governing set + the configuration-activated product domains (the full review roster is the audited expected set)
 invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
-always_on_supplements: [claude-code-cli, bash, rust]
+always_on_supplements: [<runtime-harness supplement>, bash, <project-language supplements>]
 composition_mode: reviewer-cold-session
-memory_isolation: worktree-no-memory   # OR container-isolated
+cluster_shape: <clusters and per-stage widths; data-dependent widths named and capped>
+agent_count_ceiling: <hard number>
+per_agent_budget: <token or cost cap per agent, set on the vehicle>
+wall_clock_budget: <duration>
+dials: {reviewers: {model: <m>, effort: <e>}, fix_pass: {model: <m>, effort: <e>}, terminal_verify: {model: <m>, effort: <e>}}
+refutation: across-round
 operator_confirmation: confirmed
-cluster_shape: 4-cluster-default       # OR per-domain
 declared_at: <ISO 8601 timestamp>
 ```
 
 ## Phase-completion criteria
 
-Phase 3 reaches **implementation-MVR for the milestone** when the final swarm invocation produces only Hallucinated findings (or no findings) across all active domains, with cold-session isolation preserved. Per-swarm-invocation dispositions are recorded; MVR is the swarm-invocation-level signal that no more cold-batch findings surface.
+Phase 3 reaches **implementation-MVR for the milestone** when the final review round produces only false positives (or no findings) across all active domains, with reviewer independence preserved. Per-round dispositions are recorded; MVR is the round-level signal that no more cold findings surface.
 
-Swarm-invocation triggers:
-- **Continue if:** any active domain produced real findings (Resolved-pending / Deferred / Accepted with remediation)
-- **Stop if:** all active domains produced only Hallucinated findings on the swarm invocation AND no domain raised "out of session" concerns AND cold-session-isolation discipline held throughout
+Round triggers:
+- **Continue if:** any active domain produced real findings (resolved-pending / deferred / accepted with remediation)
+- **Stop if:** the terminal verify round reproduces none of the prior round's findings AND no domain raised "out of session" concerns AND reviewer independence held throughout
 
-Record the phase transition (`PhaseExited{phase: phase-3, exit_status: implementation-mvr-reached, layer: <N>, round_count: <N>}`) in the crosslink session breadcrumb and the harness run record at the closing swarm-invocation commit. Opens Phase 4 routing (or directly Phase 5 if no findings to route + project intent declares Phase 5).
+Record the phase transition (`PhaseExited{phase: phase-3, exit_status: implementation-mvr-reached, layer: <N>, round_count: <N>}`) in the crosslink session breadcrumb and the trace at the closing round's commit. Opens Phase 4 routing (or directly Phase 5 if no findings to route + project intent declares Phase 5).
 
 ## Cross-references
 
