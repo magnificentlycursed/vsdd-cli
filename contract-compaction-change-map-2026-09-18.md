@@ -1,0 +1,59 @@
+---
+title: "Contract compaction change map (vsdd-cli#873) — the Solution Owner's ratification instrument"
+tags: ["design-input"]
+sources: []
+contributors: ["xqjG"]
+created: 2026-09-19
+updated: 2026-09-19
+---
+
+# Contract compaction — change map (vsdd-cli#873, for Solution Owner ratification)
+
+**What you ratify:** this map plus the sentences marked NEW. The cold reviewers read the whole diff; you read this. Rulings applied: vsdd-cli#869 decisions 1–5 and B5. Size: contract 255,839 → 103,243 bytes (429 → 380 lines; long paragraph-lines split into bullets). `mdatron verify` clean; `vsdd gate --ci` exit 0.
+
+## The guard, audited
+The diff is deletions, moves, renames per the naming map, closed criteria collapsed to records, and a revision-history section. **NEW normative text is exactly:** (1) the spend-shape bound's runtime leg — "per-agent token or cost admission control exists on the target vehicle and on the fallback path; an agent-count interceptor exists on neither and remains the unbuilt leg" (vsdd-cli#871); (2) the build-plan Phase-2 entry decisions lose the separate-cost-crate recommendation (vsdd-cli#870). **Ruled normative changes from decision 1:** the fix-lane middle path (principles kept, mechanics to the regression corpus); the fixture corpus reduced to recorded incidents and ratified cheats; manual-test checklists scoped to slices shipping operator-facing behavior; Dependency approval simplified to record + three lenses. Nothing else new. Items B1–B5 of the impact analysis (dispatch plan, plan-versus-actual verdicts, new rightsizing signals, operator-time dimension, dispatch-record rows) were deliberately kept OUT — they enter at Slices 6/7 phase-1a; a draft that had let them in was stripped before this map.
+
+## Per section
+| Section | Kept (durable) | Moved | Deleted | Renamed |
+|---|---|---|---|---|
+| Header | tracking handle, phase | the 1,700-word "Revision:" paragraph → Revision history table | supersedes-list, evidence-base paragraph (in References) | — |
+| Summary | division of labor | — | ratification markers | "run records" → traces; the runtime harness added as a named party (its surfaces live in the supplement) |
+| Project declarations → **Project configuration** | review config, Phase 5/6 strategies | — | tier-retirement narrative; markers | "surfaces"/"axes" gone: configuration options are attributes, not concepts |
+| Deterministic phase answer | all normative bullets | open-question cross-refs folded in (phase-state location was resolved) | — | — |
+| Directive reconciliation | all four bullets | — | amendment-history parentheticals | classifications → change classification / documented exception / new work item |
+| Phase exit by gate | red-green, executed test, the three no-executed-test forms, removal-shaped declaration, wrong-reason, flake policy, retrofit, no bypass pre-publish | the ~1,500-word evasion mechanics (set-valued mappings, decoy targets, bulk set-equality, cfg-vanished, relocated dormancy, split invocation) → `regression-corpus` §B | inline operator-ruling annotations | pin test → characterization test; "hallucinated" → false positive (schema token cited once) |
+| Finding lifecycle in one place | all lifecycle rules, governed set, consolidation, fix-lane inheritance, no-bypass rule | tracker-relay provenance ("mdatron-side numbering is annotation…") → name map note | the Agent-tool-path injection sentence (harness detail) | dispositions renamed; handle grammar |
+| Deterministic composition | roster partition (one home now), review config fields, integrity rules, two timescales | — | the #840/#860 marker cluster; the PerfE placement archaeology | surfaces → project configuration; WAS/SHOULD → observed/expected |
+| Recorded review dispatch | manifests, roles, signing, approve-then-dispatch, phases-dispatched rule, container vehicle, independent review, preflight, launch failure, blocker records, scope manifests, coverage, stop rules, review budget | — | the superseded attended/autonomous bullet and its 300-word gloss; Claude Code flag names | consent grant → dispatch approval; inconclusive → unknown; refutation-across-rounds sentence carried from REQ-21 (existing) |
+| Conformance at action time | drift pins, session entry, vocabulary/register, stability lifecycle, closed-world artifacts, branch grammar, thin hooks, paved path, exception register, install manifest, repo-rooted sessions, availability-is-not-activation, retrieval-friendly | evidence narratives → Evidence line | the #845/REQ-n clause citations; the design-flow guide line citations | affordance → paved path; deviation registry → exception register (file name kept); maturity lifecycle → stability guarantee; retrieval-shaped → retrieval-friendly; "nickname-as-term" added to the falsifier (per decision 4, a naming-rule instance) |
+| Verifiable conformance and efficiency | the law + every DURABLE REQ (1, 2/3/4, 5, 7, 9, 10, 12, 13-as-conduct, 14→Cost, 15, 16, 17, 19, 21, 22, 23) | REQ-6/8 → advisory dimensions (Cost is knowable); REQ-11 (executed amendment) → revision history; REQ-18 → Deterministic composition; REQ-20's mechanism list → dropped (hand-roll rule lives in Conformance at action time); unbuilt-dependency REQs → exception register entries `synced-trace-oracle-unbuilt`, `agent-count-interceptor-unbuilt` | Claude Code field names (`attributionSkill`, transcript paths, Task/Agent, PreToolUse) → supplement | exercise registry → control-effectiveness registry; escape corpus → regression corpus; WAS ⊇ SHOULD → observed ⊇ expected; NEW sentence (1) |
+| Cost is knowable | native units, token budget, records-based capture, unit economics, optimization loop, advisories, no viewer | — | OTel/DESIGN-OBSERVABILITY retirement catalogue; markers ×6 | static price → token budget; efficiency insight engine → cost-and-efficiency report; calibration band → baseline; effort-scaling → rightsizing |
+| The operator authors the oracle | all | — | — | "per layer" → per slice shipping operator-facing behavior (decision 1c) |
+| Solution Owner change authority | all + the design-doc lifecycle rule (moved in from Trust boundaries, compacted to its three-sentence substance) | — | the "migrated here from…" provenance; the crosslink source-line citations | dispositions → decision records |
+| Per-milestone PR discipline | single PR, early opening, PE-tooling-with-change, description fields, the enforced ruleset leg | unexercised legs (E0090 gate, bypass-marker gate, trailers) → `regression-corpus` §D | retired-source code archaeology; trailer-by-phase table | — |
+| Requirements | Install, Status, Terminal output safety (compacted to their properties; built), Composition function, Conformance checks, Gates, Dependency approval (simplified), Cost | Reviewer roles / Generated context / Directive flow / Waiver enumeration → their contracts (already stated there) | **Methodology rewrite** (a requirement for a deleted file; surviving asks → vsdd-cli#853); the ~90-member Fixture corpus enumeration → `regression-corpus` §C | — |
+| Acceptance criteria | all 13 names; open ones in full (compacted) | — | closed ones collapsed to name + record: Convergence test; Install behaviors static half; Status detection's closed members; Red-gate cheat blocked's git-refs members | — |
+| Verification architecture | pure core, shell, automatable/manual, Phase-5 candidates, trust boundaries (each member kept), instruments | design-doc lifecycle member → SO change authority | crosslink source-line archaeology; mirror commit hashes | tier rule → syntactic-vs-semantic rule |
+| Architecture (sketch) | crates, hooks, events-derived-at-query-time, conventions, workspace | — | events-store retirement narrative; the bracketed superseded cost-crate justification | — |
+| Decomposition | ordering doctrine, the engine, guardrail grades, slices 1–7, projection + pin rule, cross-repo cadence | the "Slice obligations" paragraph (stated once; the build-plan references it); data-authoring and cleanup bookends → tracker | superseded-ordering rationale; the stale "what is built" paragraph (acquire hardcodes empty — false since Slice 1); the stale mdatron cadence ("v0.2.0 ready"); the estate-cleanup task list; the contract-integration path and criteria-audit prose | invariant-first/enforcement-spine-first → walking skeleton; detection/friction/CI-backed block → detective / bypassable preventive / enforced preventive |
+| References and name map | external authorities, evidence records, estate map, reserved word, project terms | — | the DR-pending/registry-trail commentary | NEW subsections: handle grammar; reference lexicons; retired-terms list |
+| Open questions | DSL scope; Swarm fallback | — | Phase-state location, Cost-engine packaging (both resolved → history); Estate cleanup mechanics (→ tracker) | — |
+| Revision history | NEW section (a table; absorbs every inline marker) | | | |
+
+## Companion edits
+- **build-plan.md**: Phase-2 crate recommendation removed (NEW (2)); "surfaces" → project configuration; per-phase "Owes at 2a…" boilerplate → one reference to the contract's Slice obligations; register naming; Decomposition **re-pinned** — the old pin `acfb5010…` had already drifted (no boundary variant matched; the drift signal was silent since #860) — new pin `d331f4aa…` with the boundary stated explicitly. The build-plan's own sidecar `doc_hash` is left untouched (nothing gates on it; recomputing by hand is the violation signature).
+- **vsdd-phase-3.md → v0.2.0**: the declared plan replaces "cost budget (token band)" — fan-out shape with data-dependent widths named and capped, agent-count ceiling, per-agent budget on the vehicle, wall-clock, dials; refutation across rounds (per-finding verifier fan-out named as the bypass); template fields added; "swarm invocation" → review round; the per-domain 18-agent alternative and the container-isolated variant deleted (never exercised); harness flag names removed.
+- **vocabulary.yaml → 0.3.0**: retired `always-on baseline` and `invariant-first` (zero governed uses); added `paved path`, `exception register`, `control-effectiveness registry`, `regression corpus`, `compensating control`, `walking skeleton`, each with its standard neighbor. **No deprecated aliases added this cycle** (see deferred renames).
+- **deviation-registry.yaml**: two `capability-gap` entries with date predicates and the #869 decision reference; the gate evaluates them locally (not fired).
+- **claude-code-cli.md**: the moved harness detail (native spawn bypass, PreToolUse dependency, folder-trust dialog, journal.jsonl, budget directive).
+- **Knowledge**: `regression-corpus` created (interim home; Slice 4 materializes it as versioned data); `verifiable-conformance-and-efficiency` carries the REQ-21 correction note.
+
+## Deferred renames (corpus-wide follow-on; would red CI if flipped now)
+`surfaces` (31 governed files), `hallucinated` (21; a review-entry schema enum), `run record` (19), `keystone` (12), `affordance` (5), `swarm invocation` (4), `could-not-check` (4; a registered term with code-facing values — observed/derived/estimated/no-data named as neighbors only). Deprecated aliases for all of these land with that pass, in one PR, so the register check fires on nothing mid-flight.
+
+## Defects fixed here vs filed
+Fixed here: vsdd-cli#870 (crate contradiction), vsdd-cli#871 (REQ-21 leg 2), the stale Decomposition pin, the stale acquire/cadence claims, the rotting source-line citations. Filed, not fixed here: vsdd-cli#872 (icu_properties record — fix lane).
+
+## What to read, in order
+1. This map. 2. The two NEW sentences (contract, Verifiable conformance and efficiency, the spend-shape bullet; build-plan Phase 2 entry decisions). 3. The Revision history table. 4. If you want one full section: Phase exit by gate — the largest structural change.
