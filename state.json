@@ -1,5 +1,5 @@
 {
-  "next_display_id": 871,
+  "next_display_id": 872,
   "next_comment_id": 1445,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -332,6 +332,7 @@
     "5f140f3c-b592-4c27-a038-3af0abd67366": 560,
     "5f54f71c-89fb-4425-bbd0-b264f6d6d3cd": 82,
     "5fad9a96-e24f-45a9-b35e-fdf94643cceb": 586,
+    "5fe20ddb-c2c9-4d2e-b4a7-8802ee722a9a": 871,
     "60206849-695c-440a-9b1f-d02cf8b7e0fb": 63,
     "611dfc25-83e2-4270-b049-7e3fa9d3441f": 499,
     "6125a95c-b141-486b-8f83-40bb2f684777": 471,
@@ -10879,6 +10880,17 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArs4MCf2TH5lgTlDlk13/eCcXENqYZNqhW9jXV2x1VG1KRoXc3oG9JwrHcInuItjAN442txMdZFqlXKCHzUC8Cg=="
         }
       }
+    },
+    "5fe20ddb-c2c9-4d2e-b4a7-8802ee722a9a": {
+      "uuid": "5fe20ddb-c2c9-4d2e-b4a7-8802ee722a9a",
+      "display_id": 871,
+      "title": "REQ-21 leg 2 states no runtime admission control exists; the target vehicle (crosslink) has per-agent --budget-usd and the fallback path has a hard token ceiling — only the agent-count interceptor is unbuilt",
+      "description": "Defect found by the 2026-09-18 impact analysis (C3; knowledge page oe2e-impact-analysis-2026-09-18) and confirmed by the Deletion-Test sweep (#869). The conformance subsystem's REQ-21 leg 2 ('runtime admission control — the only leg that PREVENTS the spend — UNBUILT/advisory ... does not exist today') and the contract's folded sentence at line 151 ('an unbuilt runtime spawn interceptor that alone can prevent the spend') are inaccurate: on the target vehicle, crosslink kickoff/swarm carries per-agent --budget-usd (a fail-closed cap, upstream PR #77 merged to develop) and --effort; on the fallback path a hard token ceiling exists (the harness budget directive). What exists on NEITHER is an agent-COUNT interceptor. Fix (vehicle-agnostic wording in the contract; per-vehicle bindings in the paved-path map / dispatch-data): 'per-agent token/cost admission control exists on the target vehicle and the fallback path; an agent-count interceptor exists on neither and remains the unbuilt leg.' One of the two permitted new normative sentences of the compaction cycle.",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-09-19T02:34:50.874688Z",
+      "updated_at": "2026-09-19T02:34:50.874688Z"
     },
     "60206849-695c-440a-9b1f-d02cf8b7e0fb": {
       "uuid": "60206849-695c-440a-9b1f-d02cf8b7e0fb",
@@ -33077,11 +33089,16 @@
       "agent_id": "xqjG",
       "agent_seq": 51,
       "timestamp": "2026-09-19T02:34:42.985294Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 52,
+      "timestamp": "2026-09-19T02:34:50.874688Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T02:34:42.985294Z",
+    "timestamp": "2026-09-19T02:34:50.874688Z",
     "agent_id": "xqjG",
-    "agent_seq": 51
+    "agent_seq": 52
   }
 }
