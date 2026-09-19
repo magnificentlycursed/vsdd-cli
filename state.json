@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1463,
+  "next_comment_id": 1464,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -11024,11 +11024,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:34:50.874688Z",
-      "updated_at": "2026-09-19T03:16:02.114071Z",
+      "updated_at": "2026-09-19T04:08:29.292820Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "4e03896b-3bef-4779-9278-41ba9e3b2841": {
+          "display_id": 1463,
+          "author": "xqjG",
+          "content": "Landed on main at e38a044c (PR #34): the spend-shape bound's runtime leg corrected in the contract; register entry native-spawn-interceptor-unbuilt; design page correction appended.",
+          "created_at": "2026-09-19T04:08:29.280117Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAx/ahk/ps5uUbcOebqSvnfxOy2LEowOkPOk2x/7h+JSuI+mmUxKwHivN39afpOpA2xiZKURjdnTsB/fweXrugCw=="
+        },
         "7b36da10-6e77-4dac-a827-77a8926bc766": {
           "display_id": 1448,
           "author": "xqjG",
@@ -33478,11 +33487,16 @@
       "agent_id": "xqjG",
       "agent_seq": 81,
       "timestamp": "2026-09-19T04:08:22.408416Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 82,
+      "timestamp": "2026-09-19T04:08:29.292820Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T04:08:22.408416Z",
+    "timestamp": "2026-09-19T04:08:29.292820Z",
     "agent_id": "xqjG",
-    "agent_seq": 81
+    "agent_seq": 82
   }
 }
