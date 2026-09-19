@@ -1,6 +1,6 @@
 {
   "next_display_id": 868,
-  "next_comment_id": 1433,
+  "next_comment_id": 1434,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -23056,7 +23056,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-10T12:57:47.385994Z",
-      "updated_at": "2026-09-19T00:02:02.327081Z",
+      "updated_at": "2026-09-19T00:03:36.347944Z",
       "labels": [
         "design"
       ],
@@ -23105,6 +23105,15 @@
           "kind": "handoff",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAgYUJM9anX4Q9IwhKdCbHdtuGgN7GGM6a/V12DdFrRcSyO47x62SG+LK+O6IqDPRt5g0MNAmeOQ/A87HG1ewODA=="
+        },
+        "fd658b36-f8fc-4e0b-a375-9e78c6eb3592": {
+          "display_id": 1433,
+          "author": "xqjG",
+          "content": "TERMINOLOGY CLARIFICATION (operator asked): 'swarm invocation' in the prior comment is the PHASE-3 PRIMER'S term — one round of the adversarial loop (a single batch dispatch of the cold reviewer set + its verify pass; rounds continue until a round yields only hallucinated/no findings = MVR). It is NOT the crosslink swarm subcommand, which was NOT used. The dispatch vehicle was the Claude Code Workflow orchestration surface (run wf_3418f46b: 4 cluster reviewers + 28 verifiers as fresh-context subagents) — the estate's standing surface for ATTENDED rounds per the #597 decision; crosslink swarm/kickoff is the autonomous build-dispatch vehicle (container posture, #859) and would have been wrong here (the roast needed read-only cold reviewers with no tracker writes). Future comments will say 'review round (workflow dispatch)' to avoid overloading crosslink's term.",
+          "created_at": "2026-09-19T00:03:36.317007Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABATj53Y6WymooekHMjFIXyocHpMYabaBP6fh37u5ev1vnG0imEXqOEmGoi/bHHqr1CtiY2XxLajJtZUroQWUqFAA=="
         }
       }
     },
@@ -32807,11 +32816,16 @@
       "agent_id": "xqjG",
       "agent_seq": 29,
       "timestamp": "2026-09-19T00:02:02.327081Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 30,
+      "timestamp": "2026-09-19T00:03:36.347944Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T00:02:02.327081Z",
+    "timestamp": "2026-09-19T00:03:36.347944Z",
     "agent_id": "xqjG",
-    "agent_seq": 29
+    "agent_seq": 30
   }
 }
