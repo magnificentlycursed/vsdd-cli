@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1459,
+  "next_comment_id": 1460,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -23925,7 +23925,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:00.490156Z",
-      "updated_at": "2026-09-19T03:47:38.253184Z",
+      "updated_at": "2026-09-19T03:56:20.250828Z",
       "labels": [
         "design"
       ],
@@ -23947,6 +23947,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABADdSYqk1q8m+exwdhxppABsRKFkMdtWTvFO26ozxyCH/kxRRCnogtpCWiAqrsEkdOjsqgbHy6wkKrxM62TlDHAg=="
+        },
+        "ea78e5c6-e74d-4e5b-85d8-a52c577743b7": {
+          "display_id": 1459,
+          "author": "xqjG",
+          "content": "From the narrow terminal round (vsdd-cli#873): registering the pull-request cite form (<repo> PR #N) leaves four bare cites in .vsdd/registry/deviation-registry.yaml nonconforming — 'PR #64' / 'PR #76' at the container-kickoff-blocked-posture entry (lines ~85/86/93/97) -> 'crosslink PR #64' / 'crosslink PR #76'; in the same pass 'dollspace-gay/crosslink #9, #10' -> crosslink#9 / crosslink#10. Registry-data narrative fields only; no predicate changes.",
+          "created_at": "2026-09-19T03:56:20.238450Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAeXq5VKsDBrtt/vI6B6Ph0XnmPFb2nMIoB4FSr+71zrwibmVjbxEgMOvrsJpde4QHez9nRK6koeIyiXShHgghAQ=="
         }
       }
     },
@@ -33416,11 +33425,16 @@
       "agent_id": "xqjG",
       "agent_seq": 76,
       "timestamp": "2026-09-19T03:56:13.971017Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 77,
+      "timestamp": "2026-09-19T03:56:20.250828Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T03:56:13.971017Z",
+    "timestamp": "2026-09-19T03:56:20.250828Z",
     "agent_id": "xqjG",
-    "agent_seq": 76
+    "agent_seq": 77
   }
 }
