@@ -57,7 +57,7 @@ You are an experienced reviewer who has seen this defect class before. You hold 
 
 ## Phase-specific discipline
 
-**Independent reviewer discipline:** each cluster's agent receives the primer + the cluster's domain prompts + relevant supplements + the raw artifact under review — never the author's reasoning, never a curated summary. Fresh context: no prior-session memory, no operator-feedback memory.
+**Independent reviewer discipline:** each cluster's agent receives the primer + the cluster's domain prompts + relevant supplements + the raw artifact under review — never the author's reasoning, never a curated summary. Fresh context: no prior-session memory, no operator-feedback memory — isolation is the vehicle's responsibility, catalogued in the runtime-harness supplement.
 
 **The declared plan (the spend-shape bound, leg 1 — block-grade at ratification):** before any review round launches, its plan is declared and rendered to the operator as the instrument of the dispatch approval:
 - Fan-out shape — the clusters, and every stage's width; any width that depends on data (a verify stage sized by finding count) is named as data-dependent and capped
@@ -68,7 +68,7 @@ You are an experienced reviewer who has seen this defect class before. You hold 
 - Sycophancy compensation (when reviewer overlaps with author identity)
 A round with no declared plan, or a plan without shape and ceiling, does not launch. Actuals are reconciled against the plan afterward and recorded on the round issue.
 
-**Refutation is across rounds, never per finding:** a finding is a false positive when it does not resurface in the next round. A synchronous per-finding verifier fan-out is the named bypass of the spend-shape bound and is not a substitute for the next round.
+**Refutation is across rounds, never per finding:** the terminal verify round is the resurfacing check — a prior-round finding it does not reproduce is a false positive, and the phase exits when the terminal round reproduces none. A triage classification of false positive is provisional until non-resurfacing confirms it. A synchronous per-finding verifier fan-out is the named bypass of the spend-shape bound and is not a substitute for the next round.
 
 **Per-issue structure:** each issue declares finding_id, domain, dim, classification (the review-entry schema's tokens: resolved / deferred / dismissed / hallucinated — a false positive / accepted), source, routing target, dismissal_rationale (when applicable). Issue entries go to `review-log/<date>-<domain-slug>.md` with frontmatter per the Review entry artifact class.
 
@@ -81,13 +81,13 @@ phase: phase-3
 composed_domains: [<all-active-domains>]
 # review composition: composed_domains = the process-governing set + the configuration-activated product domains (the full review roster is the audited expected set)
 invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
-always_on_supplements: [claude-code-cli, bash, rust]
+always_on_supplements: [<runtime-harness supplement>, bash, <project-language supplements>]
 composition_mode: reviewer-cold-session
 cluster_shape: <clusters and per-stage widths; data-dependent widths named and capped>
 agent_count_ceiling: <hard number>
 per_agent_budget: <token or cost cap per agent, set on the vehicle>
 wall_clock_budget: <duration>
-dials: {reviewers: {model: <m>, effort: <e>}}
+dials: {reviewers: {model: <m>, effort: <e>}, fix_pass: {model: <m>, effort: <e>}, terminal_verify: {model: <m>, effort: <e>}}
 refutation: across-round
 operator_confirmation: confirmed
 declared_at: <ISO 8601 timestamp>
@@ -99,7 +99,7 @@ Phase 3 reaches **implementation-MVR for the milestone** when the final review r
 
 Round triggers:
 - **Continue if:** any active domain produced real findings (resolved-pending / deferred / accepted with remediation)
-- **Stop if:** all active domains produced only false positives on the round AND no domain raised "out of session" concerns AND reviewer independence held throughout
+- **Stop if:** the terminal verify round reproduces none of the prior round's findings AND no domain raised "out of session" concerns AND reviewer independence held throughout
 
 Record the phase transition (`PhaseExited{phase: phase-3, exit_status: implementation-mvr-reached, layer: <N>, round_count: <N>}`) in the crosslink session breadcrumb and the trace at the closing round's commit. Opens Phase 4 routing (or directly Phase 5 if no findings to route + project intent declares Phase 5).
 

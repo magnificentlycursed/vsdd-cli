@@ -23,7 +23,7 @@ terms:
     domain_scope: [methodology]
 
   - term: MVR
-    definition: Maximum Viable Refinement; the per-swarm-invocation closure signal when all active domains produce only Hallucinated findings
+    definition: Maximum Viable Refinement; the per-review-round closure signal when the terminal verify round reproduces none of the prior round's findings (all false positives)
     first_introduced_in: 0.1.0
     deprecated_aliases: []
     abbreviation: MVR
@@ -87,7 +87,7 @@ terms:
     domain_scope: [methodology]
 
   - term: paved path
-    definition: The supported vehicle for a methodology act (a crosslink workflow, skill, tool, or session dispatch surface); going off it needs a stated reason. The paved-path map (templates/registry/act-to-affordance-map.md) binds acts to vehicles. Standard platform-engineering term.
+    definition: The supported vehicle for a methodology act (a crosslink workflow, skill, tool, or session dispatch surface); going off it needs a stated reason. The paved-path map binds acts to vehicles (versioned data; its file still carries the retired name act-to-affordance-map.md — rename deferred to the data follow-on, vsdd-cli#874). Standard platform-engineering term.
     first_introduced_in: 0.3.0
     deprecated_aliases: []
     abbreviation: ""

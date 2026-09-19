@@ -154,7 +154,7 @@ entries:
   retest_trigger:
     type: date
     predicate: '2026-11-30'
-  trigger_context: 'Re-arm on the upstream filing: replace the date predicate with an issue-state predicate on the filed crosslink issue; resolve when the channel lands and the verifier reads the synced copy.'
+  trigger_context: 'Re-arm on the upstream filing: replace the date predicate with an issue-state predicate on the filed crosslink issue; resolve when the channel lands and the verifier reads the synced copy. Review window set to 2026-11-30 (beyond the 30-day default) to align with the standing entries'' horizon and the pending filing.'
   entry_date: 2026-09-18
   expiry: 2026-11-30
   owning_issue: vsdd-cli#873
@@ -162,15 +162,15 @@ entries:
   disposition_ref:
     issue: vsdd-cli#869
     comment_timestamp: 2026-09-19 02:28
-- id: agent-count-interceptor-unbuilt
-  deviation: Runtime admission control over a dispatch's agent COUNT exists on no vehicle; only per-agent token or cost caps exist (crosslink's per-agent budget cap; the fallback path's per-run token ceiling). The spend-shape bound's runtime leg is advisory for count.
+- id: native-spawn-interceptor-unbuilt
+  deviation: No outer-harness interception of the runtime's native spawn primitive exists — neither to force the golden-path injection (a sub-agent can be spawned off the paved path) nor to cap a dispatch's agent COUNT; only per-agent token or cost caps exist (crosslink's per-agent budget cap; the fallback path's per-run token ceiling). Preventive claims for both are withheld; the spend-shape bound's runtime leg is advisory for count.
   deviates_from: null
   deviation_class: capability-gap
   stated_reason: 'An agent-count interceptor needs an outer-harness hook on the spawn primitive the checked agent cannot reach — a dependency outside vsdd (Verifiable conformance and efficiency, the spend-shape bound). Until it exists the ceiling is declared at ratification (block-grade) and breaches are detected post-hoc (advisory); no preventive claim is made for count. Recorded correction vsdd-cli#871.'
   retest_trigger:
     type: date
     predicate: '2026-11-30'
-  trigger_context: 'Re-arm on a filed upstream or harness issue with an issue-state predicate; resolve when a count interceptor exists on the target vehicle.'
+  trigger_context: 'Re-arm on a filed upstream or harness issue with an issue-state predicate; resolve when the interceptor exists on the target vehicle. Review window set to 2026-11-30 (beyond the 30-day default) to align with the standing entries'' 2026-10-31 / 2026-11-29 horizon and the pending upstream filing.'
   entry_date: 2026-09-18
   expiry: 2026-11-30
   owning_issue: vsdd-cli#873
