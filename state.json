@@ -1,5 +1,5 @@
 {
-  "next_display_id": 873,
+  "next_display_id": 874,
   "next_comment_id": 1446,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -51,6 +51,7 @@
     "09e48a34-771e-49ea-9e9a-557901642f61": 642,
     "0a7380fb-8843-4622-9c15-b6925c7eb260": 539,
     "0aceb01f-b39b-48d6-8f56-1b82944fa749": 750,
+    "0b6dcb87-f773-4b96-8b7a-e29b4d953027": 873,
     "0b866840-96dd-4dfc-b11e-6e0c0a5e283a": 436,
     "0be3246f-4d2d-4190-95b7-4251dafb61eb": 565,
     "0bf75fb2-8b3b-414f-8183-05aeec471d10": 426,
@@ -2272,6 +2273,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmAenTkaaLFzqWsGheHtpLZNWof7s6JOqp7bTkWUCxZaP1wYgV+6dAnQiDeGl9fS7W7DwbJY9V8KMPkMOaLrfBQ=="
         }
       }
+    },
+    "0b6dcb87-f773-4b96-8b7a-e29b4d953027": {
+      "uuid": "0b6dcb87-f773-4b96-8b7a-e29b4d953027",
+      "display_id": 873,
+      "title": "contract compaction: deletion-test sweep bins, reference conventions, naming map, primer REQ-21, build-plan re-pin",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-09-19T02:35:51.964829Z",
+      "updated_at": "2026-09-19T02:35:51.964829Z"
     },
     "0b866840-96dd-4dfc-b11e-6e0c0a5e283a": {
       "uuid": "0b866840-96dd-4dfc-b11e-6e0c0a5e283a",
@@ -33141,11 +33152,16 @@
       "agent_id": "xqjG",
       "agent_seq": 56,
       "timestamp": "2026-09-19T02:35:29.676714Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 57,
+      "timestamp": "2026-09-19T02:35:51.964829Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T02:35:29.676714Z",
+    "timestamp": "2026-09-19T02:35:51.964829Z",
     "agent_id": "xqjG",
-    "agent_seq": 56
+    "agent_seq": 57
   }
 }
