@@ -1,6 +1,6 @@
 {
   "next_display_id": 877,
-  "next_comment_id": 1466,
+  "next_comment_id": 1467,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21526,10 +21526,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-19T04:25:11.146109Z",
-      "updated_at": "2026-09-19T04:25:16.868859Z",
+      "updated_at": "2026-09-19T04:25:52.814271Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "5e8dcfd9-7dc9-44a0-bbfd-ffb8d663f449": {
+          "display_id": 1466,
+          "author": "xqjG",
+          "content": "ROUTING (plan): spec-amendment classification — Raise to SO; enters Slice 4's phase-1a (the conformance verifier's oracle placement), owner Solution Architect, validator Security. THE DEFECT (operator, 2026-09-18: 'there isn't a centralized crosslink server'): the contract's Verifiable conformance and efficiency member states the oracle is 'the trace as synced to the crosslink server and made tamper-evident by corroboration' and names 'the sync channel' as an upstream crosslink dependency. crosslink has no server: its hub is a git branch synced to the git remote, and the contract's own server-synced authorship basis member already defines 'server-synced state' as exactly that — hub-event signatures verified against the trust store plus the driver-key fingerprint on the intervene path. A transcript-sync feature cannot be filed upstream against a server that does not exist; the impact-analysis item E1 is WITHDRAWN. WHAT THE ORACLE CAN BE (design inputs, not a ruling): (a) the trace leaves the agent's reach BEFORE the agent can touch it — a harness-level write restriction on the transcript directory (the outer-harness rung; same dependency class as the native-spawn interceptor); (b) the trace is committed to a hub/data branch and pushed by a non-agent actor — the CI runner or the operator's own act — and signed with the driver key, so the remote copy under the ruleset + signatures is the independent copy (this is what 'server-synced' has always meant for tracker events); (c) no single independent trace copy: the composite oracle is corroboration across records the agent cannot forge together — signed hub events, git history, CI run records — with every trace-based verdict permanently could-not-check-grade and the honest grade stated. Each option carries a different enforcement grade; the amendment must name it. REGISTER: entry synced-trace-oracle-unbuilt (owning issue vsdd-cli#873, closed) carries a stated_reason that presumes the server — re-scope its deviation/reason to 'the oracle's independence mechanism is unspecified' with this issue as the home, on the same branch as the amendment; its 2026-11-30 review date stands. The knowledge page verifiable-conformance-and-efficiency (REQ-10, REQ-23 leg 2) inherits the same correction as archived rationale.",
+          "created_at": "2026-09-19T04:25:52.800418Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALLXJkdhaH/au4E4w3Sim+xC+XKBirjc4+Gez/MaBNsnPzCFJQZ45Uy4ueYXOAlVTporWY7JSaW58TF4O5JV2DA=="
+        }
+      }
     },
     "c3e32b4c-f54c-40e5-adbb-b8388cae827e": {
       "uuid": "c3e32b4c-f54c-40e5-adbb-b8388cae827e",
@@ -33584,11 +33595,16 @@
       "agent_id": "xqjG",
       "agent_seq": 93,
       "timestamp": "2026-09-19T04:25:24.678628Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 94,
+      "timestamp": "2026-09-19T04:25:52.814271Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T04:25:24.678628Z",
+    "timestamp": "2026-09-19T04:25:52.814271Z",
     "agent_id": "xqjG",
-    "agent_seq": 93
+    "agent_seq": 94
   }
 }
