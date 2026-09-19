@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1453,
+  "next_comment_id": 1454,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -10969,7 +10969,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:34:50.874688Z",
-      "updated_at": "2026-09-19T02:37:04.215153Z",
+      "updated_at": "2026-09-19T03:16:02.114071Z",
       "labels": [
         "design"
       ],
@@ -10982,6 +10982,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArPPmRp+BPaiJCh18c8Uct7rPCqIjdXwWkSINU1ComvO+2CeKVfqZq1eXLIlAHtjjGvd7fS+UCRdwGikGujyQDg=="
+        },
+        "d9b8455d-7d25-416c-82fc-0f12ad9e507f": {
+          "display_id": 1453,
+          "author": "xqjG",
+          "content": "Fixed on feature/contract-compaction (commit 7453e194, PR #34): the spend-shape bound's runtime leg reads 'per-agent token or cost admission control exists on the target vehicle and on the fallback path; an agent-count interceptor exists on neither' (contract, Verifiable conformance and efficiency); register entry native-spawn-interceptor-unbuilt; design page correction appended. Closes on merge.",
+          "created_at": "2026-09-19T03:16:02.102151Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAPuWUhz2yv4T4VH3tR33Ek6s4pHYUh4ecfEmKz2aOlo8JckzdEP3zNctX6AJBgz4EbZuRPbFcBK1/L5pf+L9mDw=="
         }
       }
     },
@@ -33330,11 +33339,16 @@
       "agent_id": "xqjG",
       "agent_seq": 70,
       "timestamp": "2026-09-19T03:15:56.343137Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 71,
+      "timestamp": "2026-09-19T03:16:02.114071Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T03:15:56.343137Z",
+    "timestamp": "2026-09-19T03:16:02.114071Z",
     "agent_id": "xqjG",
-    "agent_seq": 70
+    "agent_seq": 71
   }
 }
