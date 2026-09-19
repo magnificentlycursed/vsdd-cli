@@ -1,6 +1,6 @@
 {
   "next_display_id": 873,
-  "next_comment_id": 1445,
+  "next_comment_id": 1446,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4423,7 +4423,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-19T01:51:46.792222Z",
-      "updated_at": "2026-09-19T02:34:25.175471Z",
+      "updated_at": "2026-09-19T02:35:29.676714Z",
       "labels": [
         "design"
       ],
@@ -4472,6 +4472,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAzmWqwfUbxMHZc4mH/9d8hAkwPvKthXkrNqi3kezOC7O2nLjOjSe8X2WkqGnh3FTLYoicIbJsD33NS7XNh694Ag=="
+        },
+        "c56b978a-b949-4a5b-aa88-52a1a3035914": {
+          "display_id": 1445,
+          "author": "xqjG",
+          "content": "SO RULING refinement (operator, 2026-09-18): 'surfaces' is DROPPED outright — it is just PROJECT CONFIGURATION and needs no special name. The compaction uses 'project configuration' (the DESIGN.md declarations + .vsdd/config.yaml) as the plain term: 'domains activated by the project configuration'; 'activation criteria' stays only as the existing frontmatter field name. Findings filed per decision 3: #870 (build-plan cost-crate contradiction -> compaction cycle), #871 (REQ-21 leg 2 -> compaction cycle), #872 (icu_properties dependency-approval lapse -> fix lane).",
+          "created_at": "2026-09-19T02:35:29.663215Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAtBWKQdI1dOuTW1lucmMdtmY73aR0r/WTbpyxvHS/smlclgG8XbnIKlHJoYNbSA8AeuSLuElKP/ZlV8OD6J89CQ=="
         },
         "ccdce70f-8fed-453e-a0e9-64924f0b4c19": {
           "display_id": 1442,
@@ -33127,11 +33136,16 @@
       "agent_id": "xqjG",
       "agent_seq": 55,
       "timestamp": "2026-09-19T02:35:08.980070Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 56,
+      "timestamp": "2026-09-19T02:35:29.676714Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T02:35:08.980070Z",
+    "timestamp": "2026-09-19T02:35:29.676714Z",
     "agent_id": "xqjG",
-    "agent_seq": 55
+    "agent_seq": 56
   }
 }
