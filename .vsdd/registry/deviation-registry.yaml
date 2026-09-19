@@ -147,7 +147,7 @@ entries:
     issue: vsdd-cli#845
     comment_timestamp: 2026-08-01 21:59
 - id: synced-trace-oracle-unbuilt
-  deviation: The conformance oracle — the trace synced to the crosslink server and made tamper-evident by corroboration — does not exist; conformance verdicts rest on local, agent-writable traces and are no-data grade.
+  deviation: The conformance oracle — the trace synced to the crosslink server and made tamper-evident by corroboration — does not exist; conformance verdicts rest on local, agent-writable traces and are could-not-check grade.
   deviates_from: null
   deviation_class: capability-gap
   stated_reason: 'The sync-and-corroboration channel is an upstream crosslink capability not yet built, named as a dependency by the Verifiable conformance and efficiency member (the oracle leg and the trace-redaction leg). The upstream filing is pending (vsdd-cli#869 impact analysis, item E1); the date predicate stands in until an issue-state predicate can name the filed issue.'
