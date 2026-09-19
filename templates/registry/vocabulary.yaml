@@ -10,7 +10,7 @@
 ---
 schema_class: vocabulary-registry
 schema_version: 1.0.0
-registry_version: 0.2.0
+registry_version: 0.3.0
 ---
 
 # === vsdd managed ===
@@ -86,18 +86,47 @@ terms:
     abbreviation: ""
     domain_scope: [methodology]
 
-  - term: always-on baseline
-    definition: SE + QE + SA + SO activate regardless of axes; PE + PerfE activate when project ships code. Per-feature axes additive over this baseline.
-    first_introduced_in: 0.1.0
+  - term: paved path
+    definition: The supported vehicle for a methodology act (a crosslink workflow, skill, tool, or session dispatch surface); going off it needs a stated reason. The paved-path map (templates/registry/act-to-affordance-map.md) binds acts to vehicles. Standard platform-engineering term.
+    first_introduced_in: 0.3.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology, ai-engineer, platform-engineer]
+
+  - term: exception register
+    definition: The plain name of the deviation-registry file (.vsdd/registry/deviation-registry.yaml) — standing departures from the paved path, each with a stated reason, one machine-decidable retest trigger, a review date, and a Solution Owner decision reference. Standard internal-controls term (risk / exception register).
+    first_introduced_in: 0.3.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology, ai-engineer]
+
+  - term: control-effectiveness registry
+    definition: The roster of authored controls paired with their expected-fire proof (a committed negative-case fixture and an occasion predicate), keyed to an independent census; proves a mechanism fired, as the install manifest proves it is installed. Standard neighbor - design effectiveness versus operating effectiveness (internal-controls audit).
+    first_introduced_in: 0.3.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology, quality-engineer, solution-architect]
+
+  - term: regression corpus
+    definition: The enumerated escape paths agents have taken (or reviewers have named) against the implemented system, each with its control, its non-forgeable trace, and an enforcement-versus-advisory mark; a probe-found escape is added as found, and a fixture is authored when the escape's occasion first arises. Standard quality-engineering term.
+    first_introduced_in: 0.3.0
+    deprecated_aliases: []
+    abbreviation: ""
+    domain_scope: [methodology, red-team, quality-engineer]
+
+  - term: compensating control
+    definition: A manual or format-carried discipline standing in for an unbuilt mechanized control during bootstrap (a round result comment citing its child handles; a commit evidence section citing the ratified decision record); held until the gate mechanizes. Standard internal-controls term.
+    first_introduced_in: 0.3.0
     deprecated_aliases: []
     abbreviation: ""
     domain_scope: [methodology]
-  - term: invariant-first
-    definition: Decomposition ordering that places a mission-critical process invariant's cheapest form (detection, or a bootstrap format-carry where its mechanized gate is downstream) as early as its own true dependencies allow, minimizing the layers built before the tool can enforce its own construction
-    first_introduced_in: 0.1.0
+
+  - term: walking skeleton
+    definition: The decomposition ordering that builds the enforcement path end to end first — data through detection to a live self-governance guardrail and a CI backstop — as one thin vertical slice, then adds capability slices each binding its own guardrail. Standard software-engineering term (Cockburn).
+    first_introduced_in: 0.3.0
     deprecated_aliases: []
     abbreviation: ""
-    domain_scope: [methodology, decomposition]
+    domain_scope: [methodology, decomposition, solution-architect]
 # === End vsdd managed ===
 
 # Operator extensions land below this marker.

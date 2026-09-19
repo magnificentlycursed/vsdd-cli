@@ -146,6 +146,38 @@ entries:
   disposition_ref:
     issue: vsdd-cli#845
     comment_timestamp: 2026-08-01 21:59
+- id: synced-trace-oracle-unbuilt
+  deviation: The conformance oracle — the trace synced to the crosslink server and made tamper-evident by corroboration — does not exist; conformance verdicts rest on local, agent-writable traces and are no-data grade.
+  deviates_from: null
+  deviation_class: capability-gap
+  stated_reason: 'The sync-and-corroboration channel is an upstream crosslink capability not yet built, named as a dependency by the Verifiable conformance and efficiency member (the oracle leg and the trace-redaction leg). The upstream filing is pending (vsdd-cli#869 impact analysis, item E1); the date predicate stands in until an issue-state predicate can name the filed issue.'
+  retest_trigger:
+    type: date
+    predicate: '2026-11-30'
+  trigger_context: 'Re-arm on the upstream filing: replace the date predicate with an issue-state predicate on the filed crosslink issue; resolve when the channel lands and the verifier reads the synced copy.'
+  entry_date: 2026-09-18
+  expiry: 2026-11-30
+  owning_issue: vsdd-cli#873
+  status: standing
+  disposition_ref:
+    issue: vsdd-cli#869
+    comment_timestamp: 2026-09-19 02:28
+- id: agent-count-interceptor-unbuilt
+  deviation: Runtime admission control over a dispatch's agent COUNT exists on no vehicle; only per-agent token or cost caps exist (crosslink's per-agent budget cap; the fallback path's per-run token ceiling). The spend-shape bound's runtime leg is advisory for count.
+  deviates_from: null
+  deviation_class: capability-gap
+  stated_reason: 'An agent-count interceptor needs an outer-harness hook on the spawn primitive the checked agent cannot reach — a dependency outside vsdd (Verifiable conformance and efficiency, the spend-shape bound). Until it exists the ceiling is declared at ratification (block-grade) and breaches are detected post-hoc (advisory); no preventive claim is made for count. Recorded correction vsdd-cli#871.'
+  retest_trigger:
+    type: date
+    predicate: '2026-11-30'
+  trigger_context: 'Re-arm on a filed upstream or harness issue with an issue-state predicate; resolve when a count interceptor exists on the target vehicle.'
+  entry_date: 2026-09-18
+  expiry: 2026-11-30
+  owning_issue: vsdd-cli#873
+  status: standing
+  disposition_ref:
+    issue: vsdd-cli#869
+    comment_timestamp: 2026-09-19 02:28
 initial_population_sweep:
   date: 2026-08-01
   surfaces_swept:
