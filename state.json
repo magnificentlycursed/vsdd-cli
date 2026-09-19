@@ -11794,11 +11794,12 @@
       "display_id": 865,
       "title": "Answer GH#33: methodology cost-ledger evidence bar (coverage per family/shape/form, latency scope, staleness triggers) — mdatron roast DEF7 relay",
       "description": "Incoming methodology question, vsdd-cli GH#33 (raised 2026-08-03 from the mdatron estate per the DEF7 relay ruling, mdatron #131/#133). The methodology must define: (1) minimum cost-ledger coverage for the cost contract to count as evidenced (per check family / finding shape / output form — mdatron ships 9 families, ledger covers 1); (2) whether latency actuals belong in the same ledger (first actual exists: 0.65s / 178 files / 0.1.0, unrecorded for lack of a row shape); (3) staleness/re-measurement triggers (release? family addition? output-contract change?). Until answered each estate invents its own bar. Relates to Slice 7 (efficiency insight engine) and milestone #14's rename. Answer routes back on GH#33 per the sibling-feedback-channels convention.",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-03T16:14:35.272186Z",
-      "updated_at": "2026-09-19T04:24:09.939487Z",
+      "updated_at": "2026-09-19T04:24:16.263952Z",
+      "closed_at": "2026-09-19T04:24:16.263944Z",
       "labels": [
         "design"
       ],
@@ -33544,11 +33545,16 @@
       "agent_id": "xqjG",
       "agent_seq": 88,
       "timestamp": "2026-09-19T04:24:09.939487Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 89,
+      "timestamp": "2026-09-19T04:24:16.263952Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T04:24:09.939487Z",
+    "timestamp": "2026-09-19T04:24:16.263952Z",
     "agent_id": "xqjG",
-    "agent_seq": 88
+    "agent_seq": 89
   }
 }
