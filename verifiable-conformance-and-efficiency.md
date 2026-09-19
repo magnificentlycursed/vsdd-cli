@@ -4,8 +4,9 @@ tags: ["design-doc"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-07-31
-updated: 2026-07-31
+updated: 2026-09-19
 ---
+
 
 # Feature: Verifiable-conformance + efficiency subsystem
 
@@ -187,3 +188,8 @@ The **presence/specification** of the model + effort dials is a **hard gate**: u
 - **Usage-window and rate-limit-window figures** — the §144 binding constraints — are **not in the run transcript**, so they are tagged **could-not-check** (REQ-14), never fabricated. (This corrects the earlier "wall-clock-per-op deferred" framing: **per-entry `durationMs` (wall-clock) IS a recorded transcript field** surfaced by the efficiency engine — the transcript covers token / read / tool / cache / **`durationMs`**; only the usage-window / rate-limit-window figures remain out of the record.)
 - mdatron's config-integrity rules (cross-repo dependency, per Slice 2).
 - Authoring the Part 2 governed-corpus edits (domain personas, primers, supplements) and the Part 3 contract re-scopes — dispatched + cold-reviewed separately (see Amendment scope); this doc only references them.
+
+
+
+## Correction 2026-09-18 (vsdd-cli#871, applied in the contract by the compaction cycle vsdd-cli#873)
+REQ-21 leg 2 stated that runtime admission control 'does not exist today'. Inaccurate on the target vehicle: crosslink kickoff/swarm carries per-agent `--budget-usd` (a fail-closed cap, upstream PR #77 merged) and `--effort`; the fallback path carries a per-run token ceiling. What exists on neither vehicle is an **agent-count** interceptor — that remains the unbuilt leg (exception register: `agent-count-interceptor-unbuilt`). The contract's member now reads: per-agent token or cost admission control exists on the target vehicle and on the fallback path; an agent-count interceptor exists on neither and remains the unbuilt leg; preventive claims are made only for what exists. This page is the archived design rationale; the contract governs.
