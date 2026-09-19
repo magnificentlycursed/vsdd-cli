@@ -1,6 +1,6 @@
 {
   "next_display_id": 868,
-  "next_comment_id": 1434,
+  "next_comment_id": 1435,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -23056,7 +23056,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-10T12:57:47.385994Z",
-      "updated_at": "2026-09-19T00:03:36.347944Z",
+      "updated_at": "2026-09-19T00:05:39.978350Z",
       "labels": [
         "design"
       ],
@@ -23069,6 +23069,15 @@
           "kind": "handoff",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArhcmAx/ZyhlIMiY85HGKK6bgKvSkuZpwGZb21qrXKp1ze8jGCOvPQGLGj56fGZkadl4Nl8z+BbKJiGRuB5PiCQ=="
+        },
+        "53ceddea-2471-4a43-ad62-0cb6c38140c6": {
+          "display_id": 1434,
+          "author": "xqjG",
+          "content": "FILED (operator approved as-is): magnificentlycursed/mdatron#48 — the pre-0.6.0 roast findings. Content: 1 critical (section-rules fail-open, the class that would kill our GH#29 build-plan disjoint rule on a heading rename) + 8 distinct majors with fix shapes (release-gating recommendation: items 1-4 block the cut) + 15 confirmed minors + 11 unverified flagged honestly + 2 refuted excluded. Attribution line carried. DOWNSTREAM WATCH ITEMS FOR US: (1) our planned section-rules adoption (mechanizing #845 AC-1, gating the Phase-2 generator output) should WAIT for or defend against the fail-open defect — if mdatron ships 0.6.0 without the fix, our adoption config needs a compensating control (e.g. a >= 1 count rule per named section as a heading-exists canary, which fails loudly); (2) the vocab fenced-block finding means our .design/ vocab scope could false-positive on fenced examples quoting retired terms — check before adopting 0.6.0; (3) re-check the E0113 catalog adoption (#854) against the detector findings when triaging their response. Roast round 1 complete; per phase-3 the loop is THEIRS to continue (cross-estate feedback delivered per sibling-feedback-channels); #867 closes.",
+          "created_at": "2026-09-19T00:05:39.949359Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZ/tVSslwzKDRbAHg5X/+gitk4gc6Oahub2F/P4NiLzxF7DUD+sNulTg1pxY/pY9tZjAw4/IYtYeWKIoOvRU8CA=="
         },
         "a485dadf-f59a-4992-a629-25bf82946dfa": {
           "display_id": 1431,
@@ -32821,11 +32830,16 @@
       "agent_id": "xqjG",
       "agent_seq": 30,
       "timestamp": "2026-09-19T00:03:36.347944Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 31,
+      "timestamp": "2026-09-19T00:05:39.978350Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T00:03:36.347944Z",
+    "timestamp": "2026-09-19T00:05:39.978350Z",
     "agent_id": "xqjG",
-    "agent_seq": 30
+    "agent_seq": 31
   }
 }
