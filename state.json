@@ -1,6 +1,6 @@
 {
   "next_display_id": 876,
-  "next_comment_id": 1460,
+  "next_comment_id": 1461,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2288,7 +2288,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:51.964829Z",
-      "updated_at": "2026-09-19T03:56:13.971017Z",
+      "updated_at": "2026-09-19T04:04:12.350596Z",
       "labels": [
         "feature"
       ],
@@ -2328,6 +2328,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1HwKPg3cmJZhZdF5Pf4iOKNsPIgWfjvLJcrkSgVnVIc0EFT1MK+9swrNpCLhciivhLBuYhTTEjH2gWhP8tegDg=="
+        },
+        "a32aca48-a39c-4ee5-aafa-9373c00f0d1a": {
+          "display_id": 1460,
+          "author": "xqjG",
+          "content": "SO RATIFICATION (operator, 2026-09-18): OperatorDirectiveApplied{directive: spec-contract-amended} — the contract compaction (PR #34: da4b370d + 7453e194 + e46a6e00) is RATIFIED from the change map (contract-compaction-change-map-2026-09-18) after the cold-review stop signal held at round 3. The two conservative calls stand as ratified (refutation rule lives in the phase-3 primer; the naming rule is a References convention). Directive 'merge it' classified: a documented exception to the 2026-08-02 git-posture ruling (human merges) scoped to this pull request only; the standing ruling is unchanged.",
+          "created_at": "2026-09-19T04:04:12.336978Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAI3myG0Uw2GZaMwLCnqEUEhP5lySVU0iGxvzuGKgy0kKbUkzqHp462Cc2YupqPJB/LkiHRtUrNwWkMVrMt0PtBA=="
         },
         "b7da261f-703f-4122-8e33-251070a1e455": {
           "display_id": 1450,
@@ -33430,11 +33439,16 @@
       "agent_id": "xqjG",
       "agent_seq": 77,
       "timestamp": "2026-09-19T03:56:20.250828Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 78,
+      "timestamp": "2026-09-19T04:04:12.350596Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T03:56:20.250828Z",
+    "timestamp": "2026-09-19T04:04:12.350596Z",
     "agent_id": "xqjG",
-    "agent_seq": 77
+    "agent_seq": 78
   }
 }
