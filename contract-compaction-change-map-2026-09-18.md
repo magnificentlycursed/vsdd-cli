@@ -7,6 +7,7 @@ created: 2026-09-19
 updated: 2026-09-19
 ---
 
+
 # Contract compaction — change map (vsdd-cli#873, for Solution Owner ratification)
 
 **What you ratify:** this map plus the sentences marked NEW. The cold reviewers read the whole diff; you read this. Rulings applied: vsdd-cli#869 decisions 1–5 and B5. Size: contract 255,839 → 103,243 bytes (429 → 380 lines; long paragraph-lines split into bullets). `mdatron verify` clean; `vsdd gate --ci` exit 0.
@@ -57,3 +58,10 @@ Fixed here: vsdd-cli#870 (crate contradiction), vsdd-cli#871 (REQ-21 leg 2), the
 
 ## What to read, in order
 1. This map. 2. The two NEW sentences (contract, Verifiable conformance and efficiency, the spend-shape bullet; build-plan Phase 2 entry decisions). 3. The Revision history table. 4. If you want one full section: Phase exit by gate — the largest structural change.
+
+
+
+## Round-1 cold review — dispositions (2026-09-18)
+Two pair-separated reviewers (clusters A and B), both 'revise', 32 findings; every major fixed in the fix-pass commit on the branch; none reopened a ruling. **Two conservative calls the Solution Owner may overrule at ratification:** (1) the across-round refutation rule was STRUCK from the contract (three places) and kept in the primer, because decision 2 authorized it for the primer only — declare it a third contract statement if you want it in the contract; (2) the term/nickname rule was DEMOTED to an editorial convention in References with no falsifier — promote it to Conformance at action time if you want it enforced. Restored after the review flagged them as lost: the Generated context requirement, the fix-lane scope (union of scope manifests) and tolerance rule, the per-commit hook's fail-open offline conduct, the design-doc lifecycle grades and residuals, and three falsifiers. Corrected: the invented 'Pilot criterion' (Swarm live fire), the false claim that retired words live as registry aliases (they land with vsdd-cli#874), 'no-data' where could-not-check is the registered term, the stop signal's decidability (the terminal verify round is the resurfacing check), the schema disposition tokens (kept; 'won't-fix' dropped). Registered: REQ-6/8/20 as regression-corpus section E. Moved to the supplement: the dial control surface per vehicle and the reviewer memory-isolation mechanism. Build-plan re-projected and re-pinned (aa09e246…). Follow-ons: vsdd-cli#874 (governed-corpus rename incl. data file names), vsdd-cli#875 (unauthored data sets).
+
+**Telemetry, honestly:** round 1 was declared as 2 agents (held) at an estimated ~200k; observed 564,180 tokens — both reviewers read the full old and new contracts. Per-agent review of a 255KB→104KB diff runs ~280k; the next round is briefed on the fix diff plus the finding list.
