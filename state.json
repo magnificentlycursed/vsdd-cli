@@ -2284,11 +2284,12 @@
       "uuid": "0b6dcb87-f773-4b96-8b7a-e29b4d953027",
       "display_id": 873,
       "title": "contract compaction: deletion-test sweep bins, reference conventions, naming map, primer REQ-21, build-plan re-pin",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:51.964829Z",
-      "updated_at": "2026-09-19T04:08:42.619655Z",
+      "updated_at": "2026-09-19T04:08:50.143478Z",
+      "closed_at": "2026-09-19T04:08:50.143467Z",
       "labels": [
         "feature"
       ],
@@ -33512,11 +33513,16 @@
       "agent_id": "xqjG",
       "agent_seq": 84,
       "timestamp": "2026-09-19T04:08:42.619655Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 85,
+      "timestamp": "2026-09-19T04:08:50.143478Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T04:08:42.619655Z",
+    "timestamp": "2026-09-19T04:08:50.143478Z",
     "agent_id": "xqjG",
-    "agent_seq": 84
+    "agent_seq": 85
   }
 }
