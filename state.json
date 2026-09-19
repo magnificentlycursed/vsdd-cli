@@ -1,6 +1,6 @@
 {
   "next_display_id": 870,
-  "next_comment_id": 1444,
+  "next_comment_id": 1445,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -4420,7 +4420,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-19T01:51:46.792222Z",
-      "updated_at": "2026-09-19T02:28:27.564278Z",
+      "updated_at": "2026-09-19T02:34:25.175471Z",
       "labels": [
         "design"
       ],
@@ -4451,6 +4451,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAtEadJxy/3NU7T1lbQ0mtAyaXXFaUezKJ+QRPsWMx+1UOKZ3f557VxQkx0g5h1CasTZBwqLo/KA0UFF3/WC4uDQ=="
+        },
+        "acc6a6a9-9046-4d00-8a5c-13d40189ffdb": {
+          "display_id": 1444,
+          "author": "xqjG",
+          "content": "SO RULINGS (operator, 2026-09-18) — decisions 3/4/5. (3) DEFECTS: file exactly three findings — build-plan Phase-2 cost-crate contradiction (routed to the compaction cycle); REQ-21 leg-2 inaccuracy on the target vehicle (routed to the cycle); the icu_properties dependency-approval lapse (#813) as its own fix-lane finding under the simplified rule. Sediment items are deletions inside the cycle, no per-item issues. (4) REFERENCE CONVENTIONS ADOPTED, all five: one registered handle grammar (vsdd-cli#NNN, mdatron#NNN, crosslink#NNN = upstream dollspace-gay, crosslink-fork#N = magnificentlycursed mirror; named records thermite / suite / issue-tracker-cli for non-tracker sources); prose cites rules by heading, never a bare handle — handles in Evidence lines + the revision history; doctrine nicknames become headings or retire, surviving aliases in the name map; precedents move to Evidence lines; harness-specific fields move to the claude-code-cli supplement. (5) NAMING MAP ADOPTED as the compaction's naming rule (page deletion-test-sweep-2026-09-18, Addendum 2), with two row rulings: 'surfaces' DROPPED -> 'project declarations' (the existing section name) and 'activation criteria' (the existing frontmatter field) — 'domains activated by the project declarations'; 'affordance' DROPPED -> 'paved path' (Platform Engineering; OE2e Ch28/31), 'act-to-affordance map' -> 'paved-path map', 'hand-rolling an equivalent' -> 'going off the paved path without a stated reason'. Operator leaning recorded as the working ruling; confirmed at change-map ratification.",
+          "created_at": "2026-09-19T02:34:25.162516Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAdT1xMGP+hPoB4gM4EFl4XnbvZiUQkMmlwWV+m8uCb5pYudxob6XyczYosU/WXlj9/atuc3yfnIrMROSAJCRuCg=="
         },
         "bd179c86-7efe-4518-afa0-8ab3c2d06186": {
           "display_id": 1440,
@@ -33038,11 +33047,16 @@
       "agent_id": "xqjG",
       "agent_seq": 48,
       "timestamp": "2026-09-19T02:28:27.564278Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 49,
+      "timestamp": "2026-09-19T02:34:25.175471Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T02:28:27.564278Z",
+    "timestamp": "2026-09-19T02:34:25.175471Z",
     "agent_id": "xqjG",
-    "agent_seq": 48
+    "agent_seq": 49
   }
 }
