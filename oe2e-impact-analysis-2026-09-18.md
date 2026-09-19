@@ -11,6 +11,7 @@ updated: 2026-09-19
 ---
 
 
+
 # Impact analysis: Observability Engineering 2e → vsdd (2026-09-18, vsdd-cli #869)
 
 **Method.** Each book claim (the four `o11y-*` pages + [[observability-engineering-2e-reading-map]]) was checked against vsdd's actual state: the contract (`.design/agent-first-vsdd-toolkit.md` §Recorded review dispatch, §Cost is knowable), the ratified conformance+efficiency subsystem ([[verifiable-conformance-and-efficiency]], REQ-1..23), the Slice 2 design ([[composition-slice]]), build-plan Phases 5/6 (Slices 6/7), the deviation registry, and the Phase-3 primer. Verdicts: **ahead/satisfied**, **gap → design input**, **conduct escape**, **decision needed**. Nothing here edits a governed artifact; every route names its owned process (spec amendments re-enter under the owning domain + cold review; SO ratifies).
@@ -69,3 +70,9 @@ No predicate changes, no new entries: Workflow-path dispatch is already covered 
 
 ## Rulings log
 - **B5 — RULED 2026-09-18 (SO): Option B, regenerable dispatch rows** under four falsifiers (reproducible-from-records determinism check; engine-written only; could-not-check per unavailable field; no dollars). Amendment routed to Slice 7 phase-1a (contract §Cost is knowable / REQ-11 + build-plan Phase 6 retirement sentence). Recorded as a decision on vsdd-cli #869.
+
+
+
+## Rulings log (continued)
+- **E1 — WITHDRAWN 2026-09-18 (operator):** there is no centralized crosslink server to file a transcript-sync ask against; the hub is a git branch. The conformance oracle's independence mechanism is re-specified under vsdd-cli#876 (Raise to SO; Slice 4 phase-1a), with the register entry synced-trace-oracle-unbuilt re-scoped there.
+- **D — DONE 2026-09-18:** the GH#33 answer posted and the issue closed; vsdd-cli#865 closed.
