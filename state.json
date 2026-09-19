@@ -1,5 +1,5 @@
 {
-  "next_display_id": 868,
+  "next_display_id": 869,
   "next_comment_id": 1435,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -408,6 +408,7 @@
     "73f4ca4e-35f1-4623-854c-253d5f2ad9ab": 459,
     "73f85363-1d6d-4340-af21-14c21367383c": 512,
     "744057cf-3ed9-45e4-b560-81e9733986fd": 60,
+    "745c7d7d-45f4-4cd0-a98d-474a1eac682f": 868,
     "7490ad19-8b20-4105-970b-6d7dbb41f4bd": 765,
     "74c556c9-fc41-42a0-be10-433b40209255": 774,
     "7558fcd4-7681-4edf-aefb-5599d1a55e50": 487,
@@ -13295,6 +13296,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKo+iiIPt5bKq1GHZdBY4RWm7YP1/RJEKnaCi8MIPeFLLxkHYbBycKv5r8oJ/ah3W1RFt4lDTb3JDGKbwIooTAg=="
         }
       }
+    },
+    "745c7d7d-45f4-4cd0-a98d-474a1eac682f": {
+      "uuid": "745c7d7d-45f4-4cd0-a98d-474a1eac682f",
+      "display_id": 868,
+      "title": "Observability Engineering 2nd Ed review: staged PDF read (map -> priced menu -> targeted chapters) for harness observability grounding",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-09-19T00:45:12.732123Z",
+      "updated_at": "2026-09-19T00:45:12.732123Z"
     },
     "7490ad19-8b20-4105-970b-6d7dbb41f4bd": {
       "uuid": "7490ad19-8b20-4105-970b-6d7dbb41f4bd",
@@ -32841,11 +32852,16 @@
       "agent_id": "xqjG",
       "agent_seq": 32,
       "timestamp": "2026-09-19T00:05:48.487536Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 33,
+      "timestamp": "2026-09-19T00:45:12.732123Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T00:05:48.487536Z",
+    "timestamp": "2026-09-19T00:45:12.732123Z",
     "agent_id": "xqjG",
-    "agent_seq": 32
+    "agent_seq": 33
   }
 }
