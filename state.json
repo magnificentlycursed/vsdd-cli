@@ -1,5 +1,5 @@
 {
-  "next_display_id": 874,
+  "next_display_id": 875,
   "next_comment_id": 1451,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -744,6 +744,7 @@
     "d6b8f6ad-3189-4053-8cb6-2494f5986c85": 193,
     "d700c4b5-6bb1-4079-bd62-0c31d5625049": 625,
     "d77904e3-6848-4e58-8fa7-8c2750b45f38": 789,
+    "d80e83bd-c7d1-43f2-b6c5-bc1d2194be87": 874,
     "d81e051b-f217-4351-aa5b-ce86f8cb07cc": 74,
     "d8275115-170b-42b8-9e51-fea74cc2afc0": 527,
     "d85fe164-adcc-434c-a3f4-89ea119ae778": 365,
@@ -23860,6 +23861,17 @@
         }
       }
     },
+    "d80e83bd-c7d1-43f2-b6c5-bc1d2194be87": {
+      "uuid": "d80e83bd-c7d1-43f2-b6c5-bc1d2194be87",
+      "display_id": 874,
+      "title": "Governed-corpus rename (Part 2 follow-on to the compaction): apply the ratified naming map + handle grammar across primers, domain skills, supplements, registry data, and file names",
+      "description": "Deferred by the compaction cycle (vsdd-cli#873; change map contract-compaction-change-map-2026-09-18). One change, so the register check fires on nothing mid-flight. Terms: surfaces (31 governed files) -> project configuration / configuration-activated; hallucinated (21; also the review-entry schema enum) -> false positive (schema pair rename); run record (19) -> trace; keystone (12) -> the phases-dispatched rule; affordance (5) -> paved path, incl. the data file act-to-affordance-map.md -> paved-path-map.md and the exception-register template header; swarm invocation (4) -> review round; could-not-check values -> observed/derived/estimated/no-data named as neighbors (code-facing; decide at Slice 7); inconclusive -> unknown in dispatch-data.md; consent grant -> dispatch approval; exercise-registry -> control-effectiveness registry; axis/axes-activated -> configuration-activated; manual-tests/layer-N.md -> per operator-facing slice. Dangling section-number cites (§133, §144, §264 etc.) in vsdd-domain-security/quality-engineer/solution-architect/solution-owner and the phase primers 1a/1b/1c/2a/2b/2c/4/5/6 -> heading names. Then add deprecated_aliases to vocabulary.yaml for every retired coinage. Owned by the Part-2 governed-corpus process (owning domains + cold review; SO ratifies).",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-09-19T03:14:00.490156Z",
+      "updated_at": "2026-09-19T03:14:00.490156Z"
+    },
     "d81e051b-f217-4351-aa5b-ce86f8cb07cc": {
       "uuid": "d81e051b-f217-4351-aa5b-ce86f8cb07cc",
       "display_id": 74,
@@ -33252,11 +33264,16 @@
       "agent_id": "xqjG",
       "agent_seq": 64,
       "timestamp": "2026-09-19T02:58:16.958563Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 65,
+      "timestamp": "2026-09-19T03:14:00.490156Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-19T02:58:16.958563Z",
+    "timestamp": "2026-09-19T03:14:00.490156Z",
     "agent_id": "xqjG",
-    "agent_seq": 64
+    "agent_seq": 65
   }
 }
