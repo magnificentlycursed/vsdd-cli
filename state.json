@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1500,
+  "next_comment_id": 1501,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5452,7 +5452,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:11:50.754315Z",
-      "updated_at": "2026-09-24T23:19:12.631880Z",
+      "updated_at": "2026-09-24T23:50:53.635917Z",
       "labels": [
         "maintenance"
       ],
@@ -5465,6 +5465,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA0pF0H34xGKUG2artzLvY2ZQGXcGdWLb9Icn82e/+fQSAV3dBz4k0m4HrY5RQxg+4gjv7wQ21pvPQCCD9sE4+BA=="
+        },
+        "50c93d05-795d-4aef-a8e7-afdfb6ee242c": {
+          "display_id": 1500,
+          "author": "xqjG",
+          "content": "Run-2 cause fixed on the fork side: magnificentlycursed/crosslink PR #5 (branch fix/container-auth-image-override @ f37147f05) adds --image / CROSSLINK_CONTAINER_IMAGE to 'container auth login|status|refresh', because the new login flow hard-coded the upstream image path, which is not pullable from the fork. OPERATOR ACTS, in order, before run 3: (1) merge fork PR #5; (2) install a binary built from the merged develop (cargo build --release in crosslink/crosslink, then replace ~/.cargo/bin/crosslink) — note the host binary is still 0.9.0-beta.1+fe653b40, and the synced develop carries reconciliation/storage-migration commits, so read the fork's release notes before the swap; (3) crosslink container auth login --provider claude --image ghcr.io/magnificentlycursed/crosslink-agent:nightly (interactive; persists to the per-user docker volume); (4) relaunch with the same kickoff command. Also: the run-2 worktree .worktrees/E00r-UCyB-… and branch feature/E00r-UCyB-… plus the run-1 pair are the operator's to remove (crosslink kickoff cleanup). Retest trigger unchanged.",
+          "created_at": "2026-09-24T23:50:53.622484Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1klEZxLknxR/qQRWMMh2tmnSYStze0dt+MP0xaeKENtsM4Mf8ZymqwSKCWZ/OxHHQo9t81xb0kRM6Jnm1o3uCg=="
         },
         "8d6c4eb9-7c75-4945-938d-809dc5e9f7b3": {
           "display_id": 1497,
@@ -34357,11 +34366,16 @@
       "agent_id": "xqjG",
       "agent_seq": 167,
       "timestamp": "2026-09-24T23:29:50.453171Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 168,
+      "timestamp": "2026-09-24T23:50:53.635917Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T23:29:50.453171Z",
+    "timestamp": "2026-09-24T23:50:53.635917Z",
     "agent_id": "xqjG",
-    "agent_seq": 167
+    "agent_seq": 168
   }
 }
