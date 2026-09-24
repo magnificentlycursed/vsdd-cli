@@ -23,7 +23,7 @@ Plus the core always-on quartet. Skill mode for tool runs + bounded-disposition 
 
 ## Dispatch & conformance discipline
 
-Phase 5's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the axis-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
+Phase 5's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched rule; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the configuration-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
 
 ## Phase-specific discipline
 
@@ -67,12 +67,12 @@ declared_at: <ISO 8601 timestamp>
 Phase 5 closes for a milestone when (per DESIGN.md § Project intent `**Phase 5 strategy:**` declaration):
 
 1. Purity Boundary Audit preamble verified for the milestone
-2. Each declared-active surface has a recorded swarm invocation in the appropriate per-domain log (SA log for A/A.0/D; QE log for B/C — with `**Phase 5 surface:**` preamble tag)
+2. Each declared-active surface has a recorded review round in the appropriate per-domain log (SA log for A/A.0/D; QE log for B/C — with `**Phase 5 surface:**` preamble tag)
 3. Every surviving mutant within evaluation scope has a per-mutant disposition (no aggregate-only reporting)
 4. Every Phase 5 finding routed to Phase 4 has either been Resolved or Deferred-with-named-trigger
 5. The project's `**Phase 5 strategy:**` declaration's named scope is complete
 
-Record the phase transition (`PhaseExited{phase: phase-5, exit_status: phase-5-mvr, layer: <N>, surfaces_completed: [<list>]}`) in the crosslink session breadcrumb and the harness run record at the closing commit.
+Record the phase transition (`PhaseExited{phase: phase-5, exit_status: phase-5-mvr, layer: <N>, surfaces_completed: [<list>]}`) in the crosslink session breadcrumb and the trace at the closing commit.
 
 ## Cross-references
 

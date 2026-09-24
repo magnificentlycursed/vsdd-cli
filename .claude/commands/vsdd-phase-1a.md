@@ -25,7 +25,7 @@ Plus the core always-on quartet (SO + SA + SE + QE; PE + PerfE join when the pro
 
 ## Dispatch & conformance discipline
 
-Phase 1a's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the axis-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
+Phase 1a's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched rule; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the configuration-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
 
 ## Phase-specific discipline
 
@@ -41,7 +41,7 @@ Record at phase-entry commit:
 
 ```yaml
 phase: phase-1a
-composed_domains: [solution-owner, ...axes-activated]
+composed_domains: [solution-owner, ...configuration-activated]
 # audited SHOULD for this build dispatch = the phase-matrix entry (these composed_domains + the core always-on quartet + the supplements in scope); the full process-governing set is the audited SHOULD only for review compositions (Phase 3)
 invoked_skills: [<the skills actually invoked — the skill-invocation-audit manifest>]
 always_on_supplements: [claude-code-cli, bash, rust]
@@ -50,7 +50,7 @@ operator_confirmation: confirmed
 declared_at: <ISO 8601 timestamp>
 ```
 
-The declaration is recorded in the crosslink session breadcrumb and the harness run record as the `PhaseCompositionDeclared` fact — not in the retired `.vsdd/events.jsonl` events store, which is decommissioned. With the events store retired, the methodology lifecycle facts (phase transitions, composition declarations, finding routings, exit signals) all live in those surviving homes. `VSDD-E0050: phase-composition-not-declared` checks the declaration's presence in that surviving home and fires when it is absent at the phase-boundary commit.
+The declaration is recorded in the crosslink session breadcrumb and the trace as the `PhaseCompositionDeclared` fact — not in the retired `.vsdd/events.jsonl` events store, which is decommissioned. With the events store retired, the methodology lifecycle facts (phase transitions, composition declarations, finding routings, exit signals) all live in those surviving homes. `VSDD-E0050: phase-composition-not-declared` checks the declaration's presence in that surviving home and fires when it is absent at the phase-boundary commit.
 
 ## Phase-completion criteria
 
@@ -58,10 +58,10 @@ Phase 1a closes when:
 
 - DESIGN.md § Behavioral contracts is non-empty for the layer
 - Every behavior is specific + testable + has named edge cases
-- Per-feature-axes-activated domains have surfaced their lens on the spec (UX, A11y, Privacy, L10n as applicable)
+- Per-feature-configuration-activated domains have surfaced their lens on the spec (UX, A11y, Privacy, L10n as applicable)
 - The cold-reader (DR) can produce a falsifying example for any vague behavior; iterate until they cannot
 
-Record the phase transition (`PhaseExited{phase: phase-1a, exit_status: complete, layer: <N>}`) in the crosslink session breadcrumb and the harness run record at the closing commit.
+Record the phase transition (`PhaseExited{phase: phase-1a, exit_status: complete, layer: <N>}`) in the crosslink session breadcrumb and the trace at the closing commit.
 
 ## Cross-references
 

@@ -5,7 +5,7 @@ status: draft-proposal
 entries:
   - {act: design-authoring, affordance: crosslink design, kind: crosslink-workflow, condition: ""}
   - {act: spec-to-build-gap-analysis, affordance: "crosslink kickoff plan <doc> / kickoff launch --plan / kickoff show-plan (the read-only gap analysis)", kind: crosslink-workflow, condition: "re-pointed 2026-08-02 by the recorded pair: the prior binding named crosslink design --gap-analysis, which exists on no released surface; the built surface is the kickoff plan family (help-surface-verified at the installed version). Adopting decision handle: the #857 triage disposition (2026-08-02, design-impact audit, phantom-gap-analysis-map-entry)"}
-  - {act: autonomous-execution, affordance: crosslink kickoff --container, kind: crosslink-workflow, condition: "blocked at released versions for Rust fix-lane verification (dollspace-gay/crosslink#9, #10; recorded on vsdd-cli #597); attended tmux kickoff, with gate verification run host-side by the attended session, is the working posture until the retest trigger"}
+  - {act: autonomous-execution, affordance: crosslink kickoff --container, kind: crosslink-workflow, condition: "ADOPTED as the execution vehicle (SO ruling 2026-08-02, vsdd-cli#859): non-interactive by construction, no gate-disabling; runs on the interim fork-published agent image until a usable image is confirmed upstream (crosslink#75 — exception-register entry container-kickoff-blocked-posture); the attended local path stalls headless and is not the vehicle"}
   - {act: phase-3-review-round, affordance: crosslink swarm review, kind: crosslink-workflow, condition: "conditional — activates at the Swarm live fire criterion's pass (Layer 8 exit act); until then the swarm-fallback open question holds the alternative (kickoff-carried dispatch with vsdd injecting manifest and composition into the vehicle's prompt); source reading 2026-07-20: swarm review emits a plan and does not itself launch agents (crosslink 0.8.0 review.rs:99-155, the installed and held version), strengthening the fallback shape"}
   - {act: phase-exit-gate, affordance: crosslink swarm gate, kind: crosslink-workflow, condition: ""}
   - {act: run-monitoring, affordance: "crosslink kickoff list / check surface / mission control", kind: crosslink-workflow, condition: "kickoff status covers pipeline-sidecar runs only (dollspace-gay/crosslink#18); list is the all-modes surface"}
@@ -18,13 +18,13 @@ entries:
   - {act: schema-bearing-artifact-authoring, affordance: "the pair rule — data artifact plus .mdatron/schemas/<class>.json, validated at pre-commit", kind: skill, condition: "operator-adopted 2026-07-20 (vsdd-cli #660)"}
   - {act: attended-review-round-fan-out, affordance: "the design session's own dispatch surface — the plain fan-out, or the Workflow orchestration surface when the round needs per-lens model and effort dials or structured capture", kind: session-surface, condition: "operator-adopted 2026-07-21 (decision on vsdd-cli #597); distinct from phase-3-review-round, which governs the installed process's autonomous rounds and stays conditional on the live fire. Dial conduct is part of the adoption: every Workflow dispatch sets model and effort explicitly — never inherited (the two surfaces default differently: the plain fan-out to the agent-type model, Workflow to the session model at twice the per-token weight) — and the round manifest records chosen values plus post-hoc telemetry confirmation, closing the assumed-tier class caught at round 1 (#673 correction)"}
 rules:
-  - "every methodology act with a mapped affordance rides it; hand-rolling an equivalent while the affordance exists carries a stated reason recorded as a directive classification or a decision comment, or is nonconformant"
+  - "every methodology act with a mapped affordance rides it; hand-rolling an equivalent while the paved path exists carries a stated reason recorded as a directive classification or a decision comment, or is nonconformant"
   - "where a ridden workflow's conduct conflicts with the contract's discipline, the contract governs — the ride adapts the vehicle, never the methodology"
   - "divergence is decidable at audit against this map and the session records"
-  - "additions enter by the recorded pair: a new act-affordance binding lands here with its adopting decision handle"
+  - "additions enter by the recorded pair: a new act-to-vehicle binding lands here with its adopting decision handle"
 ---
 
-# Act-to-affordance map
+# Paved-path map (the file keeps its `act-to-affordance-map.md` name until the schema-pair rename)
 
 The default-vehicle map (contract: Conformance at action time, the
 crosslink-affordance closure; owned by the AI Engineer domain — the
