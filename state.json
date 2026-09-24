@@ -1,6 +1,6 @@
 {
   "next_display_id": 878,
-  "next_comment_id": 1472,
+  "next_comment_id": 1473,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -6846,7 +6846,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T00:55:33.016715Z",
-      "updated_at": "2026-09-24T21:55:31.664259Z",
+      "updated_at": "2026-09-24T22:00:08.631655Z",
       "labels": [
         "maintenance"
       ],
@@ -6859,6 +6859,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALkl07RLaVgwH2I47w73Yi0E+PV0hshqdLdZjmBUJrbfjTAYBl62rUSKr7RnHboSuZkvr4zrDv76BkX6IcNarCg=="
+        },
+        "4c184d17-855d-4522-be31-b6004d2d066c": {
+          "display_id": 1472,
+          "author": "xqjG",
+          "content": "GATES LANDED + PR OPEN: https://github.com/magnificentlycursed/vsdd-cli/pull/36 (commits 2cd68b90 pins/envelope; 3a3ea79a routes + section rules + VSDD- catalog + review archive retired; CI asserts route/section/code_catalog active). Non-vacuity proven pre-commit: E0121 (slice both open+complete), E0122 (renamed ## Completed phases — the mdatron#48 fail-open, now loud), E0113 (unlisted VSDD-E9999) each fire; clean tree clean, 53 files walked; suite green. #854 closes on merge (catalog is its mechanization; a defining-home reconstruction for code semantics stays open as a design question). ADOPTION REVIEW COMPLETE (workflow wf_fb8744d9: 2 reviewers UX+TW / DR, effort medium; est. ~250k, OBSERVED 224,934 — inside band): 22 findings (7 major, collapsing to 3 distinct: routes closed-world + required governed_by + gateway to four families undocumented; empty routes list activates the closed world; code-catalog scope corpus-wide with no scope control), 6 worked-well items. BOTH SO decisions (route the corpus; retire the archive) are the adopter consequences of the two major gaps — recorded as the data behind findings 1 and 3. Draft feedback issue for mdatron written (8 sections + what-worked + method; init-seed proposal with its two conditions in section 4); SHOWN TO OPERATOR, NOT POSTED — awaiting go.",
+          "created_at": "2026-09-24T22:00:08.619941Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA30rN3HQcrJAhx5O7BmodKg9vjABH7fxbhjSDznO6CkCow7b0OZNQYlwzOjBdb5jCrmr81MzC3ZTwEMSLTs+tBg=="
         },
         "caac4944-2960-4565-a271-459d268603fd": {
           "display_id": 1470,
@@ -33719,11 +33728,16 @@
       "agent_id": "xqjG",
       "agent_seq": 106,
       "timestamp": "2026-09-24T21:55:31.664259Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 107,
+      "timestamp": "2026-09-24T22:00:08.631655Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T21:55:31.664259Z",
+    "timestamp": "2026-09-24T22:00:08.631655Z",
     "agent_id": "xqjG",
-    "agent_seq": 106
+    "agent_seq": 107
   }
 }
