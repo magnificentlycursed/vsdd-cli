@@ -1,6 +1,6 @@
 {
   "next_display_id": 879,
-  "next_comment_id": 1482,
+  "next_comment_id": 1483,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26559,7 +26559,18 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-06-08T01:51:05.543315Z",
-      "updated_at": "2026-06-08T01:51:05.543315Z"
+      "updated_at": "2026-09-24T22:16:58.717014Z",
+      "comments": {
+        "57008282-4b55-42ee-9bc3-cabbc71a00ae": {
+          "display_id": 1482,
+          "author": "xqjG",
+          "content": "SUPERSEDED — June-era; mdatron's formal-hardening surface is mdatron's own DESIGN (its Phase 5 strategy), not this tracker's; vsdd's own Phase 5 is Slice 4 + the Verification architecture. Closing in the 2026-09-24 sweep.",
+          "created_at": "2026-09-24T22:16:58.702133Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAq8CQi/U1pT7IXcAyY4t1VMkCMdH25OTi8zzZXD4Qz6622FzlV5sjJEuuzf+QdmIs73EArij5Ejr51g74/X4MBw=="
+        }
+      }
     },
     "f1b7c0a7-b5d1-4295-b2b5-3441e9ddcb50": {
       "uuid": "f1b7c0a7-b5d1-4295-b2b5-3441e9ddcb50",
@@ -33932,11 +33943,16 @@
       "agent_id": "xqjG",
       "agent_seq": 132,
       "timestamp": "2026-09-24T22:16:51.657632Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 133,
+      "timestamp": "2026-09-24T22:16:58.717014Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:16:51.657632Z",
+    "timestamp": "2026-09-24T22:16:58.717014Z",
     "agent_id": "xqjG",
-    "agent_seq": 132
+    "agent_seq": 133
   }
 }
