@@ -1,6 +1,6 @@
 {
   "next_display_id": 879,
-  "next_comment_id": 1480,
+  "next_comment_id": 1481,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -1675,7 +1675,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-07-31T19:26:04.041589Z",
-      "updated_at": "2026-07-31T19:26:47.362881Z",
+      "updated_at": "2026-09-24T22:16:18.512506Z",
       "labels": [
         "design"
       ],
@@ -1688,6 +1688,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAfgna42NO5jcUM12++2SDaSlV6MvbB4bbwRMOD8ztPWtMUQDuduf7siAM2B3UPt/phNSqaaBW4ByJnjvmAVZVCw=="
+        },
+        "bb30222b-0aca-4a64-9885-e03cd98077d9": {
+          "display_id": 1480,
+          "author": "xqjG",
+          "content": "RESOLVED by the #860 ratification: Performance Engineer is process-governing, code-shipping-activated (contract, Deterministic composition); the net review set for a code-shipping adopter is unchanged. Closing in the 2026-09-24 sweep.",
+          "created_at": "2026-09-24T22:16:18.498715Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+IqpwjxkZGYRJeFDwA9ipjKiYCrws0lTiQQCjD3JqT4tH/rpKu7avVK1/kuweg0OF4OcvQPS6WhNu6ixG+oPAw=="
         }
       }
     },
@@ -33890,11 +33899,16 @@
       "agent_id": "xqjG",
       "agent_seq": 126,
       "timestamp": "2026-09-24T22:16:12.490668Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 127,
+      "timestamp": "2026-09-24T22:16:18.512506Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:16:12.490668Z",
+    "timestamp": "2026-09-24T22:16:18.512506Z",
     "agent_id": "xqjG",
-    "agent_seq": 126
+    "agent_seq": 127
   }
 }
