@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1490,
+  "next_comment_id": 1491,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20213,7 +20213,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:09:50.691294Z",
-      "updated_at": "2026-08-02T02:04:31.758509Z",
+      "updated_at": "2026-09-24T22:44:51.477187Z",
       "labels": [
         "feature"
       ],
@@ -20244,6 +20244,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3OzYLBRJJdXKwtbH+I52GKuXbR0xTl3DGAfkp4fLACOWDxnVh/w+gG5jauH6bSudqRY6mJOHboz7Fm7y/7gvDA=="
+        },
+        "5df337f6-d91b-4f60-a47b-6baeebfeaea4": {
+          "display_id": 1490,
+          "author": "xqjG",
+          "content": "Ontological review 2026-09-24 (SE): the false-assurance shape this issue fixed for finding checks recurs for round-parity and unresolvable-handles — acquire.rs never populates their inputs and integrity.rs reports checked-clean with no could-not-check marker. Filed as #880 (b); noted here as the sibling.",
+          "created_at": "2026-09-24T22:44:51.465454Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYkYxElK3XPYZZB28QUgvnYqQPvJxycX2ocdmYJhx0qtDm47ru3RaMJA5hxH/aVJFHM4a/G1FvwEzppkw/0rWAg=="
         },
         "cc9c52c2-f724-4d79-9a0a-d98048e5aedc": {
           "display_id": 1387,
@@ -34206,11 +34215,16 @@
       "agent_id": "xqjG",
       "agent_seq": 156,
       "timestamp": "2026-09-24T22:44:45.633671Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 157,
+      "timestamp": "2026-09-24T22:44:51.477187Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:44:45.633671Z",
+    "timestamp": "2026-09-24T22:44:51.477187Z",
     "agent_id": "xqjG",
-    "agent_seq": 156
+    "agent_seq": 157
   }
 }
