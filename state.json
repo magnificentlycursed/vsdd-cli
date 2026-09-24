@@ -1994,11 +1994,12 @@
       "uuid": "08f99aec-f175-4b22-8233-1655f00e0c30",
       "display_id": 814,
       "title": "Phase 5, Layer 3: mutation + property testing over the pure core (per-layer cadence ruling 2026-07-28)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-28T21:23:02.924622Z",
-      "updated_at": "2026-09-24T22:16:37.544486Z",
+      "updated_at": "2026-09-24T22:16:44.183084Z",
+      "closed_at": "2026-09-24T22:16:44.183076Z",
       "labels": [
         "feature"
       ],
@@ -33925,11 +33926,16 @@
       "agent_id": "xqjG",
       "agent_seq": 130,
       "timestamp": "2026-09-24T22:16:37.544486Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 131,
+      "timestamp": "2026-09-24T22:16:44.183084Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:16:37.544486Z",
+    "timestamp": "2026-09-24T22:16:44.183084Z",
     "agent_id": "xqjG",
-    "agent_seq": 130
+    "agent_seq": 131
   }
 }
