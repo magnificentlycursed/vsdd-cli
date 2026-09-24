@@ -1,5 +1,5 @@
 {
-  "next_display_id": 882,
+  "next_display_id": 883,
   "next_comment_id": 1486,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -812,6 +812,7 @@
     "eb48a379-dcc7-44df-88e4-84432a5eb3f7": 55,
     "eb6ff750-f024-4082-8c6a-a084d9278932": 706,
     "eb957827-6327-47e1-a5b6-8a28e216fbca": 302,
+    "ebaf9ae2-5a5f-45f3-8cbc-37f619b120c0": 882,
     "ec454cb3-fd4e-4a45-bd50-fd202518238a": 123,
     "ec55fb5d-ece0-45ee-aa4e-79dc3c26d7c6": 836,
     "ec70a531-79f7-47e7-a340-43f41e98ab7a": 203,
@@ -25873,6 +25874,16 @@
         }
       }
     },
+    "ebaf9ae2-5a5f-45f3-8cbc-37f619b120c0": {
+      "uuid": "ebaf9ae2-5a5f-45f3-8cbc-37f619b120c0",
+      "display_id": 882,
+      "title": "Data plumbing: adopters receive data sets without schema pairs/routes/config; the retired-term prohibition has two hand-mirrored homes; the VSDD- catalog claims comprehensive but omits emitted codes; four versioning conventions; bundled schemas diverge from live",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-09-24T22:42:03.074318Z",
+      "updated_at": "2026-09-24T22:42:03.074318Z"
+    },
     "ec454cb3-fd4e-4a45-bd50-fd202518238a": {
       "uuid": "ec454cb3-fd4e-4a45-bd50-fd202518238a",
       "display_id": 123,
@@ -34111,11 +34122,16 @@
       "agent_id": "xqjG",
       "agent_seq": 149,
       "timestamp": "2026-09-24T22:41:55.104434Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 150,
+      "timestamp": "2026-09-24T22:42:03.074318Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:41:55.104434Z",
+    "timestamp": "2026-09-24T22:42:03.074318Z",
     "agent_id": "xqjG",
-    "agent_seq": 149
+    "agent_seq": 150
   }
 }
