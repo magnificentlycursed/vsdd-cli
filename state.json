@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1486,
+  "next_comment_id": 1487,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9442,14 +9442,25 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-08-02T03:04:47.818996Z",
+      "updated_at": "2026-09-24T22:44:27.870236Z",
       "labels": [
         "design"
       ],
       "blockers": [
         "ccced380-4c00-4475-bd76-75a386e41968"
       ],
-      "milestone_uuid": "45984aa0-de21-439f-b54c-985c1206e60a"
+      "milestone_uuid": "45984aa0-de21-439f-b54c-985c1206e60a",
+      "comments": {
+        "3b43ae16-2067-4ea3-ac1a-436e206b5858": {
+          "display_id": 1486,
+          "author": "xqjG",
+          "content": "Ontological review 2026-09-24 (phase-1a inputs for Slice 2, home #879 item 2): presets standard/minimal omit the process-governing set the contract's verifier makes mandatory; 'core' names three different sets (contract quartet vs six tier:core prompts vs the standard preset); active_domains is prose not a slug list; composition_mode enumerations differ between state-schema/CompositionMode and the primers' declarations; the composition function's 'dispatch shape' output has no ceiling field. Resolve in this slice's phase 1a before the composition function is built.",
+          "created_at": "2026-09-24T22:44:27.858767Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAafaQP4T4b1uWMftrXj0ruelj4/6bdKcmdpjuRY+8E69KdRdIX0GZIbqqBOTNdhpi/ThY/7irtm01R5BfzA/JBw=="
+        }
+      }
     },
     "51b59359-c0e9-481d-9c1d-ca2ee813b0d2": {
       "uuid": "51b59359-c0e9-481d-9c1d-ca2ee813b0d2",
@@ -34144,11 +34155,16 @@
       "agent_id": "xqjG",
       "agent_seq": 152,
       "timestamp": "2026-09-24T22:42:19.029290Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 153,
+      "timestamp": "2026-09-24T22:44:27.870236Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:42:19.029290Z",
+    "timestamp": "2026-09-24T22:44:27.870236Z",
     "agent_id": "xqjG",
-    "agent_seq": 152
+    "agent_seq": 153
   }
 }
