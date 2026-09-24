@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1492,
+  "next_comment_id": 1493,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25466,10 +25466,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:01.857683Z",
-      "updated_at": "2026-09-24T22:41:08.076461Z",
+      "updated_at": "2026-09-24T22:45:40.697767Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "8f87f04b-f7d0-49de-8429-a4fa9d9ff18d": {
+          "display_id": 1492,
+          "author": "xqjG",
+          "content": "ROUTING (plan): spec/data amendments — each item re-enters phase 1a of its owning slice under Spec amendments are owned and reviewed; SO routes. Items (reviewer, severity): (1) SA major — the Phase-3 stop signal has three rules: contract Phase exit by gate ('a round whose findings are all false positives'), vocabulary 'review round' ('reproduces none of the prior round's findings'), economics presets stop_sensitivity (free prose); the zero-finding round is covered by none. Owner Slice 4 (#836). (2) SA+SE+DE major — presets standard/minimal omit process-governing domains the contract makes mandatory (verifier blocks observed not-superset-of process-governing set); 'core' means three sets (contract quartet; six tier:core prompts incl. UX+Security; standard preset); active_domains is prose, not a set; composition_mode enum differs between state-schema (skill-interactive|cold-dispatch) and primers (operator-orchestrated, reviewer-cold-session). Owner Slice 2 (#839) phase-1a. (3) SA major — the superseded attended/autonomous split still carries meaning in state-schema mode, dispatch-data vehicle, the map's attended-review-round-fan-out act, build-plan Phase 5. (4) SA major + DE minor — agent-count ceiling / fan-out shape is 'block-grade at ratification' but has no field in review-config, dispatch-data manifest_fields, presets, or a named gate; Slice 4/7 enforcement points cannot be built. (5) SA major — build-plan Phases 3/5/6 omit the Verifiable-conformance legs the contract's Decomposition assigns to Slices 4/6/7 and count twelve criteria of thirteen; the pin does not catch projection drift. Build-plan fix on a design branch after SO confirms. (6) DE+QE major — mutation floor: economics-data says 80, build-plan/#875 say 65-into-gate-data, gate-data has no field; enforcement grade none. Owner Slice 4 (#836); needs the SO number+home ruling. Minors: preflight third value unknown vs inconclusive; baseline vs calibration band; launch failure has three names; hook trace log bound to nothing; exception-register expiry vs 'review date' and entry kinds; 'phase' reserved word used for swarm segments; retired Layer N in data sets; build-plan cites a retired commit-msg hook obligation; 'static price' / 'efficiency insight engine' headings vs the contract's member names; stability vocab draft-proposal/adopted/established vs unstable/stable; Slice 6 'will author' preflight members that dispatch-data already carries. Full register: knowledge page ontological-review-2026-09-24.",
+          "created_at": "2026-09-24T22:45:40.686317Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhBBiXKSG3aVJ2XMOe16jQLD3mEVtpToH8mSW/f0+YaoZjIw5lQn7YY+EEwTpjPengtaOfemknwaXYy7INp7GDA=="
+        }
+      }
     },
     "e7199b14-572f-4ca2-b7ff-f0d353284bad": {
       "uuid": "e7199b14-572f-4ca2-b7ff-f0d353284bad",
@@ -34234,11 +34245,16 @@
       "agent_id": "xqjG",
       "agent_seq": 158,
       "timestamp": "2026-09-24T22:44:57.527503Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 159,
+      "timestamp": "2026-09-24T22:45:40.697767Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:44:57.527503Z",
+    "timestamp": "2026-09-24T22:45:40.697767Z",
     "agent_id": "xqjG",
-    "agent_seq": 158
+    "agent_seq": 159
   }
 }
