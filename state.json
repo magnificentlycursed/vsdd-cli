@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1493,
+  "next_comment_id": 1494,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12118,10 +12118,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:23.520180Z",
-      "updated_at": "2026-09-24T22:41:28.555219Z",
+      "updated_at": "2026-09-24T22:45:46.535754Z",
       "labels": [
         "bug"
-      ]
+      ],
+      "comments": {
+        "9ee27d10-e80e-4944-8297-5c38bd84a4d9": {
+          "display_id": 1493,
+          "author": "xqjG",
+          "content": "ROUTING (plan): defect fix, fix lane. Owner Software Engineer; validator Quality Engineer. (a) vsdd-core/src/integrity_shell (installed-artifact integrity, off-grammar refs) is called only from tests; vsdd/src/main.rs cmd_status never joins its findings, so a hollow install is a quiet no-op — the falsifier Conformance at action time names — while build-plan Completed phases records the Status slices CLOSED. (b) acquire.rs sets round_manifests/round_children/comment_handles to empty on every live run; integrity.rs then reports round-parity and unresolvable-handles as checked-clean with no could-not-check marker (the #818 false-assurance defect recurring for two sibling checks). Fix: wire the three shell checks into cmd_status/run_statusline (unsigned-event count could-not-check until consumed); extend the readiness marker so finding_checks_not_run lists round-parity and unresolvable-handles as Dormant until acquired. If Status wiring is instead deferred, the build-plan Completed phases line and the Status detection criterion must say library-bound, fixture-closed, wiring open. Related minors: three three-valued verdict enums (one shared type); vsdd gate's legs have no GateKind variant and record nothing; two date/version conventions.",
+          "created_at": "2026-09-24T22:45:46.524248Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7xdt6ofdtQthmhSHhpE/kl+i2cLtpyWgVuH4Sb2jMTv3AtLXrsM33IlTZaewiT1W2hMJqzcdEUrSi8/5AZgWCA=="
+        }
+      }
     },
     "65fd0732-7595-40e7-a920-57688f4271b1": {
       "uuid": "65fd0732-7595-40e7-a920-57688f4271b1",
@@ -34250,11 +34261,16 @@
       "agent_id": "xqjG",
       "agent_seq": 159,
       "timestamp": "2026-09-24T22:45:40.697767Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 160,
+      "timestamp": "2026-09-24T22:45:46.535754Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:45:40.697767Z",
+    "timestamp": "2026-09-24T22:45:46.535754Z",
     "agent_id": "xqjG",
-    "agent_seq": 159
+    "agent_seq": 160
   }
 }
