@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1497,
+  "next_comment_id": 1498,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5456,10 +5456,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:11:50.754315Z",
-      "updated_at": "2026-09-24T22:11:56.173826Z",
+      "updated_at": "2026-09-24T22:54:06.257974Z",
       "labels": [
         "maintenance"
-      ]
+      ],
+      "comments": {
+        "8d6c4eb9-7c75-4945-938d-809dc5e9f7b3": {
+          "display_id": 1497,
+          "author": "xqjG",
+          "content": "PILOT RESULT (operator launched 2026-09-24T22:51Z; container 63cffba75660, agent E00r-V2sm-…, image ghcr.io/magnificentlycursed/crosslink-agent:nightly, --effort low --budget-usd 2). Outcome: FAILED at the first prompt; the container exited 0 after 32 s with no session, no plan/result comment, no .kickoff-status. PROVEN end to end (preflight members): image pull + start; trust approval (agent already approved, signing enabled); auth via kickoff.env; worktree + feature branch creation; UID remap; Rust toolchain install; crosslink hook init ('Already initialized'). FALSIFIED: the hook payload presence. The tracked .claude/settings.json wires UserPromptSubmit/PreToolUse to $(git rev-parse --show-toplevel)/.claude/hooks/*.py, but .claude/hooks/* is gitignored (crosslink-managed payload), so a fresh worktree carries the wiring and not the scripts; the entrypoint's init step saw the workspace as already initialized and did not redeploy them; the wiring failed closed exactly as designed (vsdd-cli #658 message: 'crosslink hook payload missing … restore the crosslink install before proceeding'), blocking every prompt. Secondary, non-fatal: 'this workspace has not been trusted' dropped the two permissions.allow entries (the folder-trust dialog recorded in supplements/claude-code-cli.md); the --allowedTools list on the CLI carried the run past it. Also noted: the worktree branched from chore/874-corpus-rename (HEAD at launch), not main — harmless for a read-only task, worth knowing for real runs. FIX LANE: (1) fork entrypoint should run 'crosslink init --update' (deploys hook payloads) when the workspace's tracked wiring references missing scripts — a magnificentlycursed/crosslink change, draft in chat for the operator; (2) until then the exception-register entry for the container vehicle keeps its precondition and gains this as the retest trigger: a headless run that reaches 'crosslink session work' and posts a result comment. The vehicle's status stays ADOPTED-with-precondition (#859); the paved-path map condition already says so. Cleanup: worktree .worktrees/E00r-V2sm-… and branch feature/E00r-V2sm-… are the operator's to remove.",
+          "created_at": "2026-09-24T22:54:06.241644Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAU5MqB1JclAiALxlXG1rkRb2TxZhYkzGSqcZPpsGjCK49buIp+Bqie86om4nhdwu8np5HQJ4d3sC0F8+c3zj7BQ=="
+        }
+      }
     },
     "25c6d4b5-4833-4e46-93e5-9f0fd903aa20": {
       "uuid": "25c6d4b5-4833-4e46-93e5-9f0fd903aa20",
@@ -34312,11 +34323,16 @@
       "agent_id": "xqjG",
       "agent_seq": 163,
       "timestamp": "2026-09-24T22:48:04.053052Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 164,
+      "timestamp": "2026-09-24T22:54:06.257974Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:48:04.053052Z",
+    "timestamp": "2026-09-24T22:54:06.257974Z",
     "agent_id": "xqjG",
-    "agent_seq": 163
+    "agent_seq": 164
   }
 }
