@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1494,
+  "next_comment_id": 1495,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5710,10 +5710,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:42.322439Z",
-      "updated_at": "2026-09-24T22:41:47.840052Z",
+      "updated_at": "2026-09-24T22:45:52.350014Z",
       "labels": [
         "bug"
-      ]
+      ],
+      "comments": {
+        "2f84dc87-6cac-4a6e-a81f-5521e7841a17": {
+          "display_id": 1494,
+          "author": "xqjG",
+          "content": "ROUTING (plan): verification-record integrity — closures the contract's own rule (fixtures are the durable statement; agent-only oracles are a falsification) does not support. Needs SO rulings: (1) Install behaviors 'static half CLOSED … install-offer conduct fixtures in every enumerated direction' — install_slice_red_gate.rs AC-1..16 has no offer test; only a data-count assertion exists. Ruling: re-open the offer members (to Slice 2 or the generated split) or build the six-direction fixtures before calling it closed. (2) Install count: contract + build-plan Slice 3 say 15/62, build-plan Slice 1 + AC-11 say 16/63, slice-3-static.md said fifteen (fixed on #874 to cite the assertion). Ruling: cite the field, never the value — replace the literals in the contract criterion and build-plan. (3) convergence_red_gate.rs counts 24 fixtures including 2b-green-recorded and 2c-exit-recorded whose expected.yaml says 'redline for operator adoption' — a closed criterion carrying agent-only oracles. Ruling: adopt the two redlines on the tracker (then fix the headers) or move them out of the exact-count corpus. (4) This repo carries no .vsdd/state.yaml; vsdd status here always takes the broken-state branch while the contract header says Phase: build. Ruling: write the artifact in the next boundary commit, or record a bootstrap exemption on the exception register with a retest trigger (#855 residuals). Also: pre-commit and CI run different check sets (no signal parity; --deny-warnings and clippy args differ) — Slice 4's pre-commit wrapper is the named home.",
+          "created_at": "2026-09-24T22:45:52.338025Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAN2SPV0plp3arDQCqMc3mnB5H9v7To5tVsL63Cu8kw9eb1G8ayuFK4PnrW4ZduAJW+oFTR5WHBBN9jeObq93hBQ=="
+        }
+      }
     },
     "292d8fd5-debe-45da-84e1-1c2d0b941605": {
       "uuid": "292d8fd5-debe-45da-84e1-1c2d0b941605",
@@ -34266,11 +34277,16 @@
       "agent_id": "xqjG",
       "agent_seq": 160,
       "timestamp": "2026-09-24T22:45:46.535754Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 161,
+      "timestamp": "2026-09-24T22:45:52.350014Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:45:46.535754Z",
+    "timestamp": "2026-09-24T22:45:52.350014Z",
     "agent_id": "xqjG",
-    "agent_seq": 160
+    "agent_seq": 161
   }
 }
