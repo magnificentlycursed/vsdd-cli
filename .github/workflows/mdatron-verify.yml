@@ -63,10 +63,13 @@ jobs:
         working-directory: vsdd-cli
         run: |
           mdatron verify --json --quiet --project-root . > /tmp/mdatron-envelope.json || true
-          jq '{envelope: .mdatron_output_version, envelope_schema, schema: .families.schema.state, vocabulary: .families.vocabulary.state, families: (.families | keys), files_checked: .summary.files_checked}' /tmp/mdatron-envelope.json
+          jq '{envelope: .mdatron_output_version, envelope_schema, schema: .families.schema.state, vocabulary: .families.vocabulary.state, families: (.families | to_entries | map("\(.key)=\(.value.state)")), files_checked: .summary.files_checked}' /tmp/mdatron-envelope.json
           jq -e '.mdatron_output_version == "3.0.0"
                  and .envelope_schema == "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.0.0"
                  and .families.schema.state == "active"
                  and .families.vocabulary.state == "active"
+                 and .families.route.state == "active"
+                 and .families.section.state == "active"
+                 and .families.code_catalog.state == "active"
                  and (.inputs | type) == "object"
                  and .summary.files_checked > 0' /tmp/mdatron-envelope.json > /dev/null

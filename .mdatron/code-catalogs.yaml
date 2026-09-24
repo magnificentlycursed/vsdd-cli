@@ -1,0 +1,22 @@
+# Adopter code catalog for the VSDD- namespace (vsdd-cli#854, mechanized by
+# mdatron 0.6.0's code_catalog family; SO-ratified on vsdd-cli GH#27:
+# comprehensive + error). The legal set is exactly the codes the live governed
+# corpus cites; an unlisted VSDD- token anywhere in the walked corpus blocks
+# (MDATRON-E0113) — declare-or-block. Grammar: one uppercase class letter
+# (E error, W warning) + four digits. Retired schemes cited by the June-cycle
+# review archive live in git history, not here.
+mdatron_format_version: 1
+catalogs:
+  - namespace: "VSDD-"
+    comprehensive: true
+    codes:
+      - E0010   # (dispatch-injected files) — defining home reconstruction owed, #854
+      - E0016
+      - E0018
+      - E0050   # phase-composition-not-declared (phase primers)
+      - E0100   # dependency-approval-missing (contract, Dependency approval)
+      - W0010   # source-field defaulted silently (phase-3 primer)
+      - W0030   # stale-claim-suspicion (technical-writer prompt)
+      - W0070
+      - W0080
+      - W0180
