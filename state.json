@@ -1,6 +1,6 @@
 {
   "next_display_id": 878,
-  "next_comment_id": 1470,
+  "next_comment_id": 1471,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -6846,10 +6846,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T00:55:33.016715Z",
-      "updated_at": "2026-09-24T00:55:39.720308Z",
+      "updated_at": "2026-09-24T01:04:17.804114Z",
       "labels": [
         "maintenance"
-      ]
+      ],
+      "comments": {
+        "caac4944-2960-4565-a271-459d268603fd": {
+          "display_id": 1470,
+          "author": "xqjG",
+          "content": "PIN WORK LANDED on chore/877-mdatron-0.6.0-adoption: 0.6.0 installed locally; tree verifies clean under 0.6.0 (deny-warnings exit 0); full workspace tests green; pins moved (pre-commit 0.6.x window; both CI workflows 0.6.0); envelope re-pinned 3.0.0 + CI assertion on envelope_schema (validated locally); 18 shipped schemas audited 2020-12; pattern files strict-clean; CHANGELOG entry; capability-surface page refreshed with the 0.6.0 delta + 47-code table (recovered after an empty-content republish slip — old body was saved first). mdatron#48: our roast's Lane A (fail-open E0122/E0114), B (indentation), C (pin panic), vocab fence masking, per-run target parsing all shipped in 0.6.0; %2F claim refuted by them with a live probe. TWO DECISIONS PENDING (operator): (1) routes.yaml is a closed-world allowlist (E0030 on any unclaimed walked file; governed_by is a REQUIRED field, E0031 if absent) — the build-plan section rules (our GH#29 spec, mechanizing #845 AC-1) REQUIRE a route, so adopting them means authoring routes for all 5 file_globs (81 files) now — a Slice-5 member (routes family) pulled forward; (2) code-catalogs.yaml for #854: the SO-ratified comprehensive:true would fire E0113 on the 27 archival VSDD- codes in the walked-but-frozen review-log (12 files) because the code-catalog scan runs over every walked file with no scope glob of its own (verify.rs:2448/2521) — options: comprehensive:false with the 10 live codes declared + a generic-primitive raise to mdatron for a code_catalog_globs (mirror of vocabulary_globs; mdatron's own #97 review-log exclusion is the precedent), retest = the raise landing; or drop review-log from file_globs (loses its schema validation); or list all 37 (legalizes dead codes — rejected).",
+          "created_at": "2026-09-24T01:04:17.788903Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArkclkE790OSv5NAdGnbm4Z5vjTTrPL9V2MNaHFMnhk0YEr4mBcQjp/SdfO6IFTX2oAsIqa+5LUsncV5LTFe7BQ=="
+        }
+      }
     },
     "348dac44-7950-4c6e-aa07-62958b34e58d": {
       "uuid": "348dac44-7950-4c6e-aa07-62958b34e58d",
@@ -33689,11 +33700,16 @@
       "agent_id": "xqjG",
       "agent_seq": 104,
       "timestamp": "2026-09-24T00:55:47.109914Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 105,
+      "timestamp": "2026-09-24T01:04:17.804114Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T00:55:47.109914Z",
+    "timestamp": "2026-09-24T01:04:17.804114Z",
     "agent_id": "xqjG",
-    "agent_seq": 104
+    "agent_seq": 105
   }
 }
