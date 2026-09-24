@@ -41,6 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- mdatron 0.6.0 adoption (vsdd-cli#877): the CLI pin moves to 0.6.x (pre-commit window, both CI workflows); the consumed `verify --json` envelope re-pinned at 3.0.0 (`.mdatron/envelope-3.0.0.schema.json`, asserted on the envelope's own `envelope_schema` field; nine families, forward-extensible); the shipped JSON schemas verified draft 2020-12 (the new E0040 dialect refusal fires on none) and the pattern files verified strict-clean; tree verifies clean and the test suite passes under 0.6.0 — no behavior change for adopters
 - Design unification: consolidate the contract — fold #840 subsystem + retire #845 doc, apply Section-A amendments (effort-seam, injection-seam, corroboration-substrate) + #859 dispatch posture (#860)
 - Upstream crosslink observation: issue show --json 'subissues' is never populated (#828)
 - Upstream crosslink request: structured close-reason / disposition field on issue close (#827)
