@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1491,
+  "next_comment_id": 1492,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26395,7 +26395,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-02T00:45:11.800282Z",
-      "updated_at": "2026-08-02T00:45:31.811097Z",
+      "updated_at": "2026-09-24T22:44:57.527503Z",
       "labels": [
         "feature"
       ],
@@ -26408,6 +26408,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAyxF7UTrj6d2tG+kQO0+weuUebjEBzISp7TOhUkRbS1OJV0ffYe7f6uaMPs/soFLxQX7v5iTDAn4kr7eTnut0BQ=="
+        },
+        "668d0002-a0c4-4d13-a9fc-2be85c6d1cc9": {
+          "display_id": 1491,
+          "author": "xqjG",
+          "content": "Ontological review 2026-09-24 (QE, SA, SE): the governed repo carries no .vsdd/state.yaml, so vsdd status on the estate always takes the broken-state branch and every tracker-corroboration check is dormant for the dogfood; no recorded exemption found. Ruling requested on #881 item 4 (write it, or register a bootstrap exemption with a retest trigger here).",
+          "created_at": "2026-09-24T22:44:57.515827Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIjQ2UWtG6jvsye4MMu/Ja8Q/v0FpZOr0KnTkYkXK0ZvZHIen8E/+BFClQOuHbrp+z0wfk2v9M/h2cpkXRLNbBA=="
         }
       }
     },
@@ -34220,11 +34229,16 @@
       "agent_id": "xqjG",
       "agent_seq": 157,
       "timestamp": "2026-09-24T22:44:51.477187Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 158,
+      "timestamp": "2026-09-24T22:44:57.527503Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:44:51.477187Z",
+    "timestamp": "2026-09-24T22:44:57.527503Z",
     "agent_id": "xqjG",
-    "agent_seq": 157
+    "agent_seq": 158
   }
 }
