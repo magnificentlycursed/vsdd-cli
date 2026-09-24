@@ -1,6 +1,6 @@
 {
   "next_display_id": 879,
-  "next_comment_id": 1485,
+  "next_comment_id": 1486,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -8970,7 +8970,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T04:24:08.582323Z",
-      "updated_at": "2026-08-03T16:29:10.291792Z",
+      "updated_at": "2026-09-24T22:26:36.195369Z",
       "labels": [
         "design"
       ],
@@ -8983,6 +8983,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZypT+3MID0lhIAsiiI3/iQpYw3qPKfUGgy3CFWDan7xbY47fBDZwRqFbmxsUEaRKPxUvAQ6KqU93S0iVTHnCDQ=="
+        },
+        "4d1391b9-1a19-4a34-b58b-c21f2c5c2e23": {
+          "display_id": 1485,
+          "author": "xqjG",
+          "content": "Last downstream edit landed: templates/registry/act-to-affordance-map.md autonomous-execution binding flipped container-BLOCKED -> container-ADOPTED (condition cites this ruling; usable-image precondition stays on the exception-register entry). Ships in vsdd-cli PR #37 (#874); this issue closes on merge.",
+          "created_at": "2026-09-24T22:26:36.183486Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAm84pGDJk0NgE52joX+S8yq+Fr68L0jojZFFH+8AIKUWnTNYlk5i8AFsiW+9iTo1x0AB+WqOo0KdGZJ4dWrwSDA=="
         },
         "5aec0ec6-930b-48e3-9034-e292f0bd1a10": {
           "display_id": 1425,
@@ -33998,11 +34007,16 @@
       "agent_id": "xqjG",
       "agent_seq": 139,
       "timestamp": "2026-09-24T22:26:29.768600Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 140,
+      "timestamp": "2026-09-24T22:26:36.195369Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:26:29.768600Z",
+    "timestamp": "2026-09-24T22:26:36.195369Z",
     "agent_id": "xqjG",
-    "agent_seq": 139
+    "agent_seq": 140
   }
 }
