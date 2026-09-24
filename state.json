@@ -1,6 +1,6 @@
 {
   "next_display_id": 878,
-  "next_comment_id": 1471,
+  "next_comment_id": 1472,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -6846,11 +6846,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T00:55:33.016715Z",
-      "updated_at": "2026-09-24T01:04:17.804114Z",
+      "updated_at": "2026-09-24T21:55:31.664259Z",
       "labels": [
         "maintenance"
       ],
       "comments": {
+        "2ec35149-3012-4929-848b-485538674472": {
+          "display_id": 1471,
+          "author": "xqjG",
+          "content": "SO RULINGS (operator, 2026-09-24): (1) YES — route the walked corpus now: routes.yaml claiming the four remaining globs + the two .design/ files, all governed by the contract, with the two section rules (count >= 1 open-phase H3 under ## Requirements; Slice-id disjointness between ## Requirements H3 headings and ## Completed phases bullet leads) attached to the build-plan route — the Slice-5 routes member landing early under this adoption. (2) OPTION D — retire review-log/ (28 frozen June-cycle files, newest 2026-06-02) from the working tree to git history (mdatron's own 0.6.0 precedent, crosslink#187), keep the catalog comprehensive: true as ratified on GH#27; the one test that read an archive file as a fixture gets a fixture copy; the review-log globs leave .mdatron/config.yaml; the Phase-3 primer's stale review-log entry line rides #874. code_catalog_globs still raised to mdatron as a courtesy generic primitive (in the adoption-feedback issue).",
+          "created_at": "2026-09-24T21:55:31.650683Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALkl07RLaVgwH2I47w73Yi0E+PV0hshqdLdZjmBUJrbfjTAYBl62rUSKr7RnHboSuZkvr4zrDv76BkX6IcNarCg=="
+        },
         "caac4944-2960-4565-a271-459d268603fd": {
           "display_id": 1470,
           "author": "xqjG",
@@ -33705,11 +33714,16 @@
       "agent_id": "xqjG",
       "agent_seq": 105,
       "timestamp": "2026-09-24T01:04:17.804114Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 106,
+      "timestamp": "2026-09-24T21:55:31.664259Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T01:04:17.804114Z",
+    "timestamp": "2026-09-24T21:55:31.664259Z",
     "agent_id": "xqjG",
-    "agent_seq": 105
+    "agent_seq": 106
   }
 }
