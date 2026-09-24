@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.0.0",
+  "title": "mdatron verify --json output envelope",
+  "description": "The machine interface of `mdatron verify --json`. Versioned: mdatron_output_version tracks THIS schema (currently 3.0.0). A published contract (DESIGN.md § Diagnostics are a versioned contract) — consumers pin and validate against it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mdatron_output_version",
+    "envelope_schema",
+    "mdatron_version",
+    "pipeline_status",
+    "summary",
+    "families",
+    "inputs",
+    "findings"
+  ],
+  "properties": {
+    "mdatron_output_version": {
+      "type": "string",
+      "const": "3.0.0",
+      "description": "Semver of this envelope schema. Moves with the schema; a change here signals a contract change."
+    },
+    "envelope_schema": {
+      "type": "string",
+      "const": "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.0.0",
+      "description": "The $id of the published schema this envelope was produced under, so a consumer can pin the exact contract without joining the version onto a URL template. An identifier, not a fetch target; the resolvable copy ships in the repo and via `mdatron schema`."
+    },
+    "mdatron_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+",
+      "description": "The running mdatron crate version (distinct from the envelope version)."
+    },
+    "pipeline_status": {
+      "enum": ["ok", "failed"],
+      "description": "Whether the verification pipeline ran to completion. \"failed\" means orchestration broke before a verdict (see pipeline_error) — distinct from a completed run that found errors."
+    },
+    "pipeline_error": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Present only when pipeline_status is \"failed\" (omitted on success). Carries the failure reason IN the envelope so a --json --quiet consumer receives it (the stderr note is suppressed by --quiet). `kind` disambiguates the senses the single MDATRON-E0080 code conflates.",
+      "required": ["code", "kind", "message"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The pipeline-failure namespace code, stable across kinds (MDATRON-E0080)."
+        },
+        "kind": {
+          "enum": ["config", "io", "schema_load", "pattern_load", "glob", "frontmatter", "index_build", "expr_parse", "eval", "bound_exceeded"],
+          "description": "The failure class, so a consumer can branch without parsing prose."
+        },
+        "message": {
+          "type": "string",
+          "description": "The rendered failure reason, project-root-relativized (no host-layout leak)."
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Per-severity finding counts plus the count of files this run validated.",
+      "required": ["error_count", "warning_count", "lint_count", "files_checked"],
+      "properties": {
+        "error_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of error-severity findings (drives exit code 1)."
+        },
+        "warning_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of warning-severity findings (exit 0 unless --deny-warnings escalates)."
+        },
+        "lint_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of lint-severity findings (standing informational signals, e.g. governance-weakening records)."
+        },
+        "files_checked": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "the number of files this run VALIDATED (ran the per-file schema and rule checks on), not a count of files that produced findings; a clean run over N files reports N, an empty jurisdiction reports 0"
+        }
+      }
+    },
+    "families": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/activity" },
+      "description": "Per-verify activity of the check families as a tri-state plus a reason: active = data supplied and the check ran this pass; inert = configured but did no work (e.g. scoped to no file); inactive = not configured. The reason makes the audit signal falsifiable. Forward-extensible (3.0.0, #145/#147): the named families below are always present; new families appear over time as additional members of the same shape, so a consumer must tolerate unknown family keys.",
+      "required": ["schema", "route", "pin", "vocabulary", "citation", "link", "marker", "code_catalog", "section"],
+      "properties": {
+        "schema": { "$ref": "#/$defs/activity", "description": "Frontmatter JSON-Schema conformance per declared schema_class." },
+        "route": { "$ref": "#/$defs/activity", "description": "The route table: the closed-world allowlist over the governed tree." },
+        "pin": { "$ref": "#/$defs/activity", "description": "Content pins: sha256 attestations by governing documents over governed files." },
+        "vocabulary": { "$ref": "#/$defs/activity", "description": "The naming register: prose scanned against the supplied term/label/anti-pattern registry." },
+        "citation": { "$ref": "#/$defs/activity", "description": "file:line citation verification against the run snapshot." },
+        "link": { "$ref": "#/$defs/activity", "description": "Body markdown link and #anchor resolution." },
+        "marker": { "$ref": "#/$defs/activity", "description": "Marker-line references: declared-pattern lines resolving by name into a target document." },
+        "code_catalog": { "$ref": "#/$defs/activity", "description": "Adopter code-token resolution against declared code catalogs." },
+        "section": { "$ref": "#/$defs/activity", "description": "Section-structural count/disjointness assertions over body sections." }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^sha256:[0-9a-f]{64}$"
+      },
+      "description": "Governance-input lineage: each input this run consumed, mapped to a sha256 digest of the exact bytes it read. Keys are the governance files found and read (config.yaml, routes.yaml, vocabulary.yaml, pins.yaml, code-catalogs.yaml — each present only when loaded) plus one aggregate digest each for the schemas and patterns directories (sorted filenames + per-file content digests; omitted when the directory is absent or empty). Lets a consumer attest WHICH configuration produced a verdict and detect config drift between runs. Deterministic across platforms; always empty on a failed pipeline (partial lineage is deliberately not attested)."
+    },
+    "timings": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Run-phase wall-clock timings in milliseconds. Present ONLY under `verify --timings`: timings are the envelope's sole non-deterministic zone, so the default envelope stays byte-identical across runs on an unchanged tree.",
+      "required": ["total_ms", "load_ms", "capture_ms", "check_ms"],
+      "properties": {
+        "total_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Wall-clock of the whole verification run."
+        },
+        "load_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Loading configuration inputs: config, schemas, patterns, routes, pins, vocabulary, code catalogs."
+        },
+        "capture_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The governed walk plus the immutable snapshot build, through the capture-complete seam."
+        },
+        "check_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The per-file loop and cross-file checks, through result ordering."
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "description": "The run's findings, sorted by root-relative file path then code (deterministic across platforms).",
+      "items": { "$ref": "#/$defs/finding" }
+    }
+  },
+  "$defs": {
+    "activity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reason"],
+      "properties": {
+        "state": {
+          "enum": ["active", "inert", "inactive"],
+          "description": "active = data supplied and the check ran; inert = configured but did no work this pass; inactive = not configured."
+        },
+        "reason": {
+          "type": "string",
+          "description": "Engine-authored explanation of the state, making the activity signal falsifiable."
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "severity", "summary", "message", "help", "location", "explain_ref", "fingerprint"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The namespaced diagnostic code (MDATRON-Ennnn/Wnnnn/Lnnnn, or an adopter-defined code for DSL-rule findings)."
+        },
+        "severity": {
+          "enum": ["error", "warning", "lint"],
+          "description": "error gates (exit 1); warning reports (escalatable via --deny-warnings); lint is a standing informational signal."
+        },
+        "summary": {
+          "type": "string",
+          "description": "The short kebab-case headline (e.g. dead-link-target). For DSL-rule findings this is the adopter's rule id."
+        },
+        "message": {
+          "type": "string",
+          "description": "The engine-authored explanation. Adopter-derived values never ride inline here — they are carried in quoted[] (the marking discipline)."
+        },
+        "help": {
+          "type": ["string", "null"],
+          "description": "Engine-authored remediation guidance, or null when the message suffices."
+        },
+        "explain_ref": {
+          "type": ["string", "null"],
+          "description": "The code to pass to `mdatron explain`, or null when no explain page resolves (e.g. adopter-defined codes)."
+        },
+        "location": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Where the finding points: a project-root-relative, forward-slashed file path plus a 1-based line (0 = no location applicable) and column (0 = whole line).",
+          "required": ["file", "line", "column"],
+          "properties": {
+            "file": {
+              "type": "string",
+              "description": "Project-root-relative path with forward slashes — byte-identical across Unix and Windows (DEF4)."
+            },
+            "line": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "1-based line; 0 means no location applies (e.g. a pipeline-level finding)."
+            },
+            "column": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "1-based column; 0 means the whole line."
+            }
+          }
+        },
+        "fingerprint": {
+          "type": "string",
+          "pattern": "^v1:[0-9a-f]{32}$",
+          "description": "A line-churn-stable identity for cross-run trending: v1 = sha256 (truncated to 16 bytes) over the finding's code, root-relative forward-slashed path, summary, each identity-bearing quoted region's label and content in order — a region quoting platform-variant engine prose (e.g. an OS error message) is excluded, so the same defect fingerprints identically across platforms — and a 0-based occurrence ordinal that distinguishes otherwise-identical findings in one run. Line/column are deliberately excluded so the fingerprint survives document churn; removing the first of two identical findings transfers its identity to the survivor (the SARIF partialFingerprints tradeoff). A future algorithm change mints a v2 prefix."
+        },
+        "quoted": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Adopter-derived text carried out-of-line (absent when empty — the emitter never produces an empty array, and minItems pins that: an emitted `quoted: []` would be a shape regression). Each region is untrusted adopter content, marked as such so a consumer need not infer it from the presence of the field.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "content", "origin", "trusted"],
+            "properties": {
+              "label": {
+                "type": "string",
+                "description": "Engine-authored name for what the quoted content is (e.g. \"found\", \"section\")."
+              },
+              "content": {
+                "type": "string",
+                "description": "The raw adopter-derived text, verbatim (JSON-escaped by serialization only)."
+              },
+              "origin": {
+                "const": "adopter",
+                "description": "Provenance of the content. Always \"adopter\": quoted content is adopter-derived by construction."
+              },
+              "trusted": {
+                "const": false,
+                "description": "Always false: adopter content must never be treated as engine-authored instruction. The machine-readable form of the TTY `> ` prefix marking."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+# mdatron route table — the closed-world governance allowlist (vsdd-cli#877,
+# SO ruling 2026-09-24; the contract's Conformance at action time member).
+# Every walked file must be claimed by exactly one route (E0030 unclaimed,
+# E0032 double-claimed); every route names its governing document (E0031 if
+# absent). All governed artifacts are governed by the contract; the contract
+# governs itself under Solution Owner change authority.
+mdatron_format_version: 1
+routes:
+  - files: ".claude/commands/vsdd-*.md"        # domain prompts + phase primers
+    governed_by: .design/agent-first-vsdd-toolkit.md
+  - files: "supplements/*.md"                  # language/interface supplements
+    governed_by: .design/agent-first-vsdd-toolkit.md
+  - files: "templates/registry/*.md"           # the versioned data sets
+    governed_by: .design/agent-first-vsdd-toolkit.md
+  - files: ".design/agent-first-vsdd-toolkit.md"
+    governed_by: .design/agent-first-vsdd-toolkit.md
+  - files: ".design/build-plan.md"             # the Decomposition's swarm projection
+    governed_by: .design/agent-first-vsdd-toolkit.md
+    # The build-plan's structural invariant (contract Acceptance criteria /
+    # the former #845 AC-1), mechanized per the vsdd GH#29 consultation:
+    section_rules:
+      # (a) at least one open phase while the program is open — an empty
+      #     ## Requirements is the retire trigger, never a passing state
+      - section: "## Requirements"
+        element: h3
+        match: '^### Phase \d+: .*\((parallel|sequential)\)$'
+        count: ">= 1"
+      # (b) a slice is open XOR complete — ids from the declared element only
+      #     (H3 heading text / bullet bold lead), never a full-span scan
+      - disjoint:
+          - section: "## Requirements"
+            id_from: h3-heading
+            id_pattern: 'Slice (\d+)'
+          - section: "## Completed phases"
+            id_from: bullet-lead
+            id_pattern: 'Slice (\d+)'

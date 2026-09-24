@@ -33,10 +33,10 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             ~/.cargo/bin/mdatron
-          key: cargo-mdatron-0.5.0-${{ runner.os }}
+          key: cargo-mdatron-0.6.0-${{ runner.os }}
 
       - name: Install mdatron CLI (crates.io, pinned)
-        run: command -v mdatron >/dev/null && mdatron --version | grep -q '0\.5\.0' || cargo install mdatron --version 0.5.0 --locked
+        run: command -v mdatron >/dev/null && mdatron --version | grep -q '0\.6\.0' || cargo install mdatron --version 0.6.0 --locked
 
       # --deny-warnings escalates a warnings-only run to a failing exit
       # (mdatron #121, shipped at vsdd's own request; verified clean on the
@@ -51,18 +51,25 @@ jobs:
       # families are active (not skipped/errored) and that the run checked a
       # non-zero file set (checked-N versus checked-nothing).
       #
-      # The consumed envelope is pinned at .mdatron/envelope-2.1.0.schema.json
+      # The consumed envelope is pinned at .mdatron/envelope-3.0.0.schema.json
       # (printed by `mdatron schema`; JSON carries no comment syntax, so the
-      # pin's provenance lives here): the mdatron_output_version assertion
-      # below fails loud when the announced envelope 3.0.0 major lands
-      # (mdatron #145, the links family) — that failure IS the retest
-      # trigger to re-derive the pin and this consumer.
+      # pin's provenance lives here). The pin is the envelope's own
+      # `envelope_schema` field (the schema `$id`, carried verbatim since
+      # 3.0.0) — asserted below, so the next envelope MAJOR fails loud here
+      # and that failure IS the retest trigger to re-derive the pin and this
+      # consumer (vsdd-cli#877). `families` is forward-extensible: unknown
+      # family keys are tolerated; only the named ones are asserted.
       - name: Assert required families fired (tri-state + non-vacuity, #855)
         working-directory: vsdd-cli
         run: |
           mdatron verify --json --quiet --project-root . > /tmp/mdatron-envelope.json || true
-          jq '{envelope: .mdatron_output_version, schema: .families.schema.state, vocabulary: .families.vocabulary.state, files_checked: .summary.files_checked}' /tmp/mdatron-envelope.json
-          jq -e '.mdatron_output_version == "2.1.0"
+          jq '{envelope: .mdatron_output_version, envelope_schema, schema: .families.schema.state, vocabulary: .families.vocabulary.state, families: (.families | to_entries | map("\(.key)=\(.value.state)")), files_checked: .summary.files_checked}' /tmp/mdatron-envelope.json
+          jq -e '.mdatron_output_version == "3.0.0"
+                 and .envelope_schema == "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.0.0"
                  and .families.schema.state == "active"
                  and .families.vocabulary.state == "active"
+                 and .families.route.state == "active"
+                 and .families.section.state == "active"
+                 and .families.code_catalog.state == "active"
+                 and (.inputs | type) == "object"
                  and .summary.files_checked > 0' /tmp/mdatron-envelope.json > /dev/null

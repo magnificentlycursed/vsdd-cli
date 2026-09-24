@@ -99,9 +99,9 @@ fn supplement_schema_validates_json() {
 }
 
 #[test]
-fn review_entry_schema_validates_recent_ai_engineer_review() {
+fn review_entry_schema_validates_archived_ai_engineer_review() {
     let schema = load_schema(vsdd_core::schemas::REVIEW_ENTRY);
-    let entry = frontmatter_of("review-log/2026-06-01-ai-engineer-naming.md");
+    let entry = frontmatter_of("vsdd-core/tests/fixtures/review-entry/2026-06-01-ai-engineer-naming.md");
     let errors = schema.validate(&entry);
     assert!(
         errors.is_empty(),
