@@ -6838,11 +6838,12 @@
       "uuid": "342e316c-48f1-47c4-8014-5a752944655f",
       "display_id": 877,
       "title": "mdatron 0.6.0 adoption cycle: pins (pre-commit, CI, local), envelope 3.0.0 re-pin + consumer, schema dialect audit, pattern strictness audit, section rules on the build-plan route, VSDD code catalog (#854), capability-surface page refresh",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T00:55:33.016715Z",
-      "updated_at": "2026-09-24T22:04:23.257171Z",
+      "updated_at": "2026-09-24T22:04:29.169811Z",
+      "closed_at": "2026-09-24T22:04:29.169802Z",
       "labels": [
         "maintenance"
       ],
@@ -33796,11 +33797,16 @@
       "agent_id": "xqjG",
       "agent_seq": 113,
       "timestamp": "2026-09-24T22:04:23.257171Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 114,
+      "timestamp": "2026-09-24T22:04:29.169811Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:04:23.257171Z",
+    "timestamp": "2026-09-24T22:04:29.169811Z",
     "agent_id": "xqjG",
-    "agent_seq": 113
+    "agent_seq": 114
   }
 }
