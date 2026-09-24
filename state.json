@@ -1,6 +1,6 @@
 {
   "next_display_id": 883,
-  "next_comment_id": 1495,
+  "next_comment_id": 1496,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25950,10 +25950,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:42:03.074318Z",
-      "updated_at": "2026-09-24T22:42:09.889037Z",
+      "updated_at": "2026-09-24T22:45:58.072050Z",
       "labels": [
         "maintenance"
-      ]
+      ],
+      "comments": {
+        "b1c84554-c274-46a7-864d-7eff81deb0ef": {
+          "display_id": 1495,
+          "author": "xqjG",
+          "content": "ROUTING (plan): maintenance, data plumbing; owner Platform Engineer, validator Data Engineer. (1) vsdd-core/src/init.rs deploys eight data sets + four yaml registries to adopters with no schema pairs, no registry-integrity pattern, no routes.yaml/config.yaml — the pair rule and closed world hold only in this repo; add them to the init payload and the install manifest. (2) Retired-term prohibition has two hand-mirrored homes: templates/registry/vocabulary.yaml deprecated_aliases (the shape mdatron cannot read; deployed to adopters with a false 'CI-armed' header) and .mdatron/vocabulary.yaml anti_patterns (the one that fires); membership differs (provenance's eight aliases, four-dimensional convergence have no anti-pattern). Fix: a mirror-pin test (the #724 pattern) that every deprecated alias has an anti-pattern, and correct the header. (3) .mdatron/code-catalogs.yaml says comprehensive: true with 11 codes while canonical-patterns/the binary emit VSDD-E0201..E0212/E0230 — list them or drop the claim. (4) Four versioning conventions; the .md data sets have no data-version field so binding changes ship at an unchanged version. (5) Bundled phase-primer.json/review-entry.json (deployed, tested) diverge from the live .mdatron copies and keep phase-0; add a byte-identity test. (6) canonical-patterns.yaml letter-cluster denylist is read by nothing (the allowlist in .mdatron/vocabulary.yaml fires) — retire or point. (7) review-entry.json + its fixture test carry the retired review-log design; retire under a decision or route it; the contract cites the hallucinated token to the wrong schema (it is in domain-prompt.json).",
+          "created_at": "2026-09-24T22:45:58.059566Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAR8whmWmIo2TVLI9wuEhUOskpz/cJE/wF/MZgQ2L79ulvIdQKnew1JV4rfVnr9z225+dxhqzIy03iQAKVlU2lDg=="
+        }
+      }
     },
     "ec454cb3-fd4e-4a45-bd50-fd202518238a": {
       "uuid": "ec454cb3-fd4e-4a45-bd50-fd202518238a",
@@ -34282,11 +34293,16 @@
       "agent_id": "xqjG",
       "agent_seq": 161,
       "timestamp": "2026-09-24T22:45:52.350014Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 162,
+      "timestamp": "2026-09-24T22:45:58.072050Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T22:45:52.350014Z",
+    "timestamp": "2026-09-24T22:45:58.072050Z",
     "agent_id": "xqjG",
-    "agent_seq": 161
+    "agent_seq": 162
   }
 }
