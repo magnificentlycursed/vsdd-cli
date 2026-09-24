@@ -30,7 +30,7 @@ Phase 1b's agent-work — authoring **and** implementation — runs as a **dispa
 Phase 1b authors the **verification architecture** for the layer in `DESIGN.md`. The verification architecture answers four questions:
 
 1. **Which functions are pure?** (deterministic, no I/O, formally verifiable in principle) — these are the purity-boundary candidates for Phase 5 property-based testing + Proof Execution
-2. **Which behaviors are automatable?** (testable via standard test infrastructure) vs. **manual-test-only** (requires human + environment-specific verification) — drives the Phase 2a Red Gate test surface vs. the the slice's manual-test checklist (`manual-tests/`) checklist
+2. **Which behaviors are automatable?** (testable via standard test infrastructure) vs. **manual-test-only** (requires human + environment-specific verification) — drives the Phase 2a Red Gate test surface vs. the slice's manual-test checklist (`manual-tests/`)
 3. **Which behaviors are Phase 5 candidates?** (mutation-testing scope; fuzz-testing scope; proof-execution scope) — drives the project's `**Phase 5 strategy:**` declaration
 4. **Where are the trust boundaries?** (input from outside the process: file parsers, network protocol decoders, CLI argument parsers, deserialization entrypoints) — drives Phase 5 Fuzz Testing + Security review scope
 

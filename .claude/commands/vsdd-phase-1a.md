@@ -58,7 +58,7 @@ Phase 1a closes when:
 
 - DESIGN.md § Behavioral contracts is non-empty for the layer
 - Every behavior is specific + testable + has named edge cases
-- Per-feature-configuration-activated domains have surfaced their lens on the spec (UX, A11y, Privacy, L10n as applicable)
+- Configuration-activated domains have surfaced their lens on the spec (UX, A11y, Privacy, L10n as applicable)
 - The cold-reader (DR) can produce a falsifying example for any vague behavior; iterate until they cannot
 
 Record the phase transition (`PhaseExited{phase: phase-1a, exit_status: complete, layer: <N>}`) in the crosslink session breadcrumb and the trace at the closing commit.

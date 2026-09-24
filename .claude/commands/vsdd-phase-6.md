@@ -37,11 +37,11 @@ Phase 6 evaluates **four independent MVR signals** and the **cross-dimension con
 
 **Verification step (required):** open each cited Mutation Testing review round + confirm a per-mutant disposition table exists (rows: mutant location, mutation kind, disposition, rationale). Aggregate-only kill rate fails Dimension 2 regardless of the rate.
 
-**Not-applicable alternative:** when DESIGN.md declares `**Phase 5 strategy:** not applicable — <rationale>`, Dimension 2's signal is QE's final-swarm-invocation attestation against Dim 2 (test falsifiability) without mutation-tool evidence — explicitly weaker; named in the convergence record as such.
+**Not-applicable alternative:** when DESIGN.md declares `**Phase 5 strategy:** not applicable — <rationale>`, Dimension 2's signal is QE's final-review-round attestation against Dim 2 (test falsifiability) without mutation-tool evidence — explicitly weaker; named in the convergence record as such.
 
 ### Dimension 3: Implementation MVR
 
-**Established by:** Phase 3 final-swarm-invocation summaries per active domain across the final 2+ milestones all read "only false positives" or "no findings" — and cold-session-isolation discipline was preserved across the active domain set.
+**Established by:** Phase 3 final-review-round summaries per active domain across the final 2+ milestones all read "only false positives" or "no findings" — and cold-session-isolation discipline was preserved across the active domain set.
 
 **Anti-signal:** Review round closed with "no findings" but cold-session isolation relaxed (one fresh chat reused for multiple domains; context bleed).
 

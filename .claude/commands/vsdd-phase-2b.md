@@ -21,7 +21,7 @@ You are entering Phase 2b (Minimal Implementation). Per the phase-domain composi
 - **Documentation Reviewer** — cold-reader pass on prose updates
 - **Platform Engineer** — when Phase 2b adds a dependency, PE artifact (lockfile, audit gate, env pin) lands in the same commit
 
-Plus the core always-on quartet + per-feature-configuration-activated domains (DE / AI Engineer / etc. per project axes). Skill mode.
+Plus the core always-on quartet + configuration-activated domains (DE / AI Engineer / etc. per the project configuration). Skill mode.
 
 ## Dispatch & conformance discipline
 

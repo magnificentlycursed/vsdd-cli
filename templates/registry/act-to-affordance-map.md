@@ -27,7 +27,7 @@ rules:
 # Paved-path map (the file keeps its `act-to-affordance-map.md` name until the schema-pair rename)
 
 The default-vehicle map (contract: Conformance at action time, the
-crosslink-affordance closure; owned by the AI Engineer domain — the
+paved-path closure; owned by the AI Engineer domain — the
 directive-reconciliation mechanization step's duty at act scale). Proposals
 until operator adoption is recorded (vsdd-cli #670).
 
@@ -40,7 +40,7 @@ live fire's pass, the container posture carries its upstream blockage
 with the retest trigger, and each condition names its evidence handle.
 
 Evidence: across two repos and the whole respec's sessions, no crosslink
-workflow was ever self-summoned — every affordance use traced to an
+workflow was ever self-summoned — every paved-path use traced to an
 operator instruction. This map plus the availability-is-not-activation
 delivery paths are the closure.
 

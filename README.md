@@ -127,7 +127,7 @@ one answer any cold agent can derive from the repo and tracker.
 | 5 | Formal Hardening | Mutation, fuzz, property, and security hardening |
 | 6 | Convergence (the Exit Signal) | Terminal attestation that spec, tests, code, and verification agree |
 
-**Enforcement-spine-first vertical slices.** Rather than building the whole
+**Walking-skeleton vertical slices.** Rather than building the whole
 apparatus layer by layer, vsdd is decomposed into vertical slices, each carrying
 its own guardrail so the discipline it enforces is live as soon as the slice
 lands. Guardrails are named by their honest **enforcement grade** — *detection*

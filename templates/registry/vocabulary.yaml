@@ -58,7 +58,7 @@ terms:
     domain_scope: [phase-2a, phase-2b, quality-engineer]
 
   - term: provenance
-    definition: The provenance tag carried by every cost-relevant figure; one of recorded (read verbatim from the harness run-record usage/tool events, which the checked agent cannot author) / measured (computed deterministically over recorded values or over an actual file) / judgment (a labeled right-sizing assessment) / could-not-check (a figure the record cannot establish; reported honestly, never fabricated, never dropped, never shown as a real metric). A figure with no provenance tag is rejected. Distinct from capture-source, which names only which record field a datum was captured from.
+    definition: The provenance tag carried by every cost-relevant figure; one of recorded (read verbatim from the trace's usage/tool events, which the checked agent cannot author) / measured (computed deterministically over recorded values or over an actual file) / judgment (a labeled right-sizing assessment) / could-not-check (a figure the record cannot establish; reported honestly, never fabricated, never dropped, never shown as a real metric). A figure with no provenance tag is rejected. Distinct from capture-source, which names only which record field a datum was captured from.
     version: 1.0.0
     first_introduced_in: 0.1.0
     deprecated_aliases: ["cost-tally tier", "otel-metric", "otel-log-event", "otel-trace-attribute", "vsdd-custom-event", "sdk-result-message", "usage-api-reconciled", "unmeasurable"]
@@ -66,7 +66,7 @@ terms:
     domain_scope: [ai-engineer]
 
   - term: capture-source
-    definition: Which record field a datum was captured from (e.g. token counts from the run-record usage events; effort from the dispatch manifest, with the transcript a sometimes-available backstop). Names the source field only, not the provenance tag (the recorded/measured/judgment/could-not-check assessment).
+    definition: Which record field a datum was captured from (e.g. token counts from the trace's usage events; effort from the dispatch manifest, with the transcript a sometimes-available backstop). Names the source field only, not the provenance tag (the recorded/measured/judgment/could-not-check assessment).
     first_introduced_in: 0.1.0
     deprecated_aliases: []
     abbreviation: ""
@@ -129,38 +129,45 @@ terms:
     domain_scope: [methodology, decomposition, solution-architect]
   - term: trace
     definition: The runtime harness's record of a dispatched agent's run — usage by cache class, tool-use events, dials where recorded — read by the conformance verifier and the cost-and-efficiency report; the checked agent cannot author the synced copy. Standard OpenTelemetry term (a run is a trace; each agent a span).
-    first_introduced_in: 0.3.0
+    first_introduced_in: 0.4.0
     deprecated_aliases: ["run record", "run-record", "harness run record", "harness transcript", "run transcript"]
     abbreviation: ""
     domain_scope: [ai-engineer, quality-engineer, security]
 
   - term: review round
     definition: One dispatch of the Phase-3 reviewer set plus its dispositions; rounds continue until the terminal verify round reproduces none of the prior round's findings.
-    first_introduced_in: 0.3.0
+    first_introduced_in: 0.4.0
     deprecated_aliases: ["swarm invocation", "swarm invocations"]
     abbreviation: ""
     domain_scope: [methodology, phase-3]
 
   - term: phases-dispatched rule
     definition: All phase agent-work — design authoring as much as implementation — runs as a dispatched, conformance-audited agent; only the operator's irreducible judgment slots are attended (contract, Recorded review dispatch).
-    first_introduced_in: 0.3.0
+    first_introduced_in: 0.4.0
     deprecated_aliases: ["phases-dispatched keystone", "keystone"]
     abbreviation: ""
     domain_scope: [methodology]
 
   - term: project configuration
     definition: The declared characteristics of the project (DESIGN.md declarations + .vsdd/config.yaml) that the domain prompts' activation_criteria read to switch review domains on; configuration options are attributes of the project, never headline concepts.
-    first_introduced_in: 0.3.0
+    first_introduced_in: 0.4.0
     deprecated_aliases: ["declared surfaces", "per-feature axes", "axis-activated", "axes-activated", "surfaces-activated"]
     abbreviation: ""
     domain_scope: [methodology, solution-owner]
 
   - term: dispatch approval
     definition: The operator's dispatch act itself — the invocation — which is the approval that launches execution; never a config state an orchestrator could arrange. Plain term for the runtime harness's consent surfaces.
-    first_introduced_in: 0.3.0
+    first_introduced_in: 0.4.0
     deprecated_aliases: ["consent grant", "the consent grant"]
     abbreviation: ""
     domain_scope: [methodology, security]
+  - term: server-synced authorship basis
+    definition: The basis on which a tracker record counts as authored independently of the checked agent — hub-event signatures verified against the trust store plus the driver-key fingerprint on the intervene path, as recorded on the crosslink branch pushed to the git remote (there is no crosslink server). Cited by the conformance verifier and the Security domain for trust-boundary questions.
+    first_introduced_in: 0.4.0
+    deprecated_aliases: ["tamper-evidence keystone", "corroboration keystone"]
+    abbreviation: ""
+    domain_scope: [methodology, security]
+
 # === End vsdd managed ===
 
 # Operator extensions land below this marker.

@@ -44,7 +44,7 @@ DR findings route to Technical Writer (validator pair) — DR cold-reads, TW co-
 - Co-validates with **Technical Writer** on every prose surface
 - Flags to **Solution Owner** when prose surfaces a spec gap (Raise to SO)
 - Flags to **UX** when discoverability gap surfaces operator-experience gap
-- Cold-reads cross-domain findings for cross-domain coherence at Phase 3 swarm-invocation close
+- Cold-reads cross-domain findings for cross-domain coherence at Phase 3 review-round close
 
 ## DESIGN.md change authority
 

@@ -58,7 +58,7 @@ Phase 1c closes when:
 - Each milestone's acceptance criteria are a non-empty subset of DESIGN.md § Behavioral contracts
 - DR's cold-reader pass produces no Open findings on decomposition completeness
 - SO has signed off on the spec-gate close (per the "Raise to SO" routing discipline at the spec contract § Solution Owner change authority)
-- Each milestone names its the slice's manual-test checklist (`manual-tests/`) checklist obligation (the checklist itself is operator-authored at Phase 2a entry — the operator authors the oracle)
+- Each milestone names its manual-test checklist obligation (`manual-tests/`) (the checklist itself is operator-authored at Phase 2a entry — the operator authors the oracle)
 
 Record the phase transition (`PhaseExited{phase: phase-1c, exit_status: complete}`) in the crosslink session breadcrumb and the trace at the closing commit. The decomposition opens Phase 2a per-milestone sessions.
 

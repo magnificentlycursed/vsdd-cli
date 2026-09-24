@@ -5,7 +5,7 @@ operator's act per The operator authors the oracle — record the decision on th
 tracker and replace this line with the adoption record). Director tests for the
 part of Install that is built: the per-file classification, drift refusal, the
 `--check` / `--dry-run` / `--update` / `--force` / `--no-prompt` / `--ci-mode`
-conduct, and the fifteen deployed templates. The statusline-offer conduct is
+conduct, and the deployed template set (its count lives in the install manifest and the AC-11 assertion of `vsdd-core/tests/install_slice_red_gate.rs`, never restated here). The statusline-offer conduct is
 pinned by the install-offer fixtures and is not repeated here beyond item 7. The
 generated members (skills and domain prompts) are Slice 2's and are out of scope.
 Surfaces: `vsdd init` in a scratch clone of this repo. Outcomes are recorded on
