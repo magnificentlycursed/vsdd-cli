@@ -23,14 +23,14 @@ Plus the core always-on quartet. Skill mode.
 
 ## Dispatch & conformance discipline
 
-Phase 1b's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched keystone; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the axis-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
+Phase 1b's agent-work — authoring **and** implementation — runs as a **dispatched, conformance-audited agent**, never in the orchestrator session (the phases-dispatched rule; supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all phase agent-work is dispatched). The composed governing context — this primer, the composed domains, and the supplements in scope — is delivered by **injection** at dispatch and **audited as skill invocations** (the skill-invocation audit: invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance). For a build-phase dispatch the composition SHOULD is this phase's matrix entry — the phase primer, its composed domains, the **core always-on quartet** (SO + SA + SE + QE; PE + PerfE when the project ships code), and the configuration-activated product domains — which the conformance verifier audits as `WAS ⊇ SHOULD`. The full **process-governing set** (the eleven process-governing domains) is the audited SHOULD for **review compositions** (Phase 3), not for every build dispatch: wiring the whole set into a per-build gate would force every build dispatch to load all of it, against the efficiency thesis and cold-review independence.
 
 ## Phase-specific discipline
 
 Phase 1b authors the **verification architecture** for the layer in `DESIGN.md`. The verification architecture answers four questions:
 
 1. **Which functions are pure?** (deterministic, no I/O, formally verifiable in principle) — these are the purity-boundary candidates for Phase 5 property-based testing + Proof Execution
-2. **Which behaviors are automatable?** (testable via standard test infrastructure) vs. **manual-test-only** (requires human + environment-specific verification) — drives the Phase 2a Red Gate test surface vs. the `manual-tests/layer-N.md` checklist
+2. **Which behaviors are automatable?** (testable via standard test infrastructure) vs. **manual-test-only** (requires human + environment-specific verification) — drives the Phase 2a Red Gate test surface vs. the slice's manual-test checklist (`manual-tests/`)
 3. **Which behaviors are Phase 5 candidates?** (mutation-testing scope; fuzz-testing scope; proof-execution scope) — drives the project's `**Phase 5 strategy:**` declaration
 4. **Where are the trust boundaries?** (input from outside the process: file parsers, network protocol decoders, CLI argument parsers, deserialization entrypoints) — drives Phase 5 Fuzz Testing + Security review scope
 
@@ -57,7 +57,7 @@ Phase 1b closes when:
 - `**Phase 5 strategy:**` line is committed at DESIGN.md § Project intent (verbatim per the project's intent calibration)
 - SA + QE concur on the purity-boundary list (no silent "pure but takes a clock as parameter" exceptions without explicit named-refinement)
 
-Record the phase transition (`PhaseExited{phase: phase-1b, exit_status: complete, layer: <N>}`) in the crosslink session breadcrumb and the harness run record at the closing commit.
+Record the phase transition (`PhaseExited{phase: phase-1b, exit_status: complete, layer: <N>}`) in the crosslink session breadcrumb and the trace at the closing commit.
 
 ## Cross-references
 
