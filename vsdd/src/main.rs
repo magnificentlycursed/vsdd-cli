@@ -179,17 +179,26 @@ fn cmd_status(args: StatusArgs) -> ExitCode {
     match vsdd_core::state::read_state(&cwd.join(".vsdd/state.yaml"), &data) {
         Ok(state) => {
             let snapshot = vsdd_core::snapshot::acquire::acquire_snapshot(&cwd);
-            let answer =
+            let mut answer =
                 vsdd_core::answer::derive::derive_phase_answer(&state, &snapshot, &actions);
+            // The effectful shell's checks join the report here (vsdd-cli
+            // #880): the derivation stays pure; a failing shell check's id
+            // joins the integrity kind-set so consumers of the kinds see it.
+            let shell = vsdd_core::integrity_shell::run_shell_checks(&cwd);
+            for kind in shell.failing_kinds() {
+                if !answer.integrity_findings.contains(&kind) {
+                    answer.integrity_findings.push(kind);
+                }
+            }
             if args.machine {
                 println!(
                     "{}",
-                    vsdd::status::machine::render_machine(&answer, &snapshot, &data)
+                    vsdd::status::machine::render_machine(&answer, &snapshot, &data, Some(&shell))
                 );
             } else {
                 print!(
                     "{}",
-                    vsdd::status::human::render_human(&answer, &snapshot, &data)
+                    vsdd::status::human::render_human(&answer, &snapshot, &data, Some(&shell))
                 );
             }
             ExitCode::SUCCESS
@@ -285,7 +294,11 @@ fn cmd_gate(args: GateArgs) -> ExitCode {
     // the worst verdict (highest exit class, 0/1/2) wins the exit code.
     // The clock and the issue-state oracle live HERE at the CLI layer —
     // the core stays pure (caller-supplied today, injected oracle).
-    let mode = if args.ci { GateMode::Ci } else { GateMode::Local };
+    let mode = if args.ci {
+        GateMode::Ci
+    } else {
+        GateMode::Local
+    };
     let today = {
         let days = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
