@@ -7,8 +7,10 @@ use std::collections::BTreeSet;
 use std::fs;
 use std::path::{Path, PathBuf};
 
+use vsdd_core::integrity_shell::installed_artifact::{
+    installed_artifact_integrity_check, CheckResult,
+};
 use vsdd_core::integrity_shell::refs::{normalize_ref_lines, off_grammar_refs};
-use vsdd_core::integrity_shell::installed_artifact::{installed_artifact_integrity_check, CheckResult};
 use vsdd_core::registry::{
     self,
     sets::{BranchForm, BranchGrammar, DispatchData, InstalledArtifactManifest},
@@ -258,4 +260,76 @@ fn worded_absence_passes_by_declaration() {
             .any(|f| f.entry_id == "statusline-wiring" && f.result != CheckResult::Pass),
         "the worded absence is a pass, not a probe failure"
     );
+}
+
+// --- the effectful join over this repo (vsdd-cli #880) -----------------------
+
+#[test]
+fn run_shell_checks_reports_every_registered_check_three_valued() {
+    use vsdd_core::integrity_shell::{
+        run_shell_checks, ShellResult, CHECK_INSTALLED_ARTIFACT_INTEGRITY,
+        CHECK_OFF_GRAMMAR_BRANCH_NAMES, CHECK_UNSIGNED_EVENT_COUNT,
+    };
+    let report = run_shell_checks(&repo_root());
+    let ids: Vec<&str> = report.checks.iter().map(|c| c.check.as_str()).collect();
+    assert_eq!(
+        ids,
+        vec![
+            CHECK_OFF_GRAMMAR_BRANCH_NAMES,
+            CHECK_INSTALLED_ARTIFACT_INTEGRITY,
+            CHECK_UNSIGNED_EVENT_COUNT
+        ],
+        "the report never omits a registered member"
+    );
+    for check in &report.checks {
+        assert!(
+            !check.detail.is_empty(),
+            "{}: every result is worded",
+            check.check
+        );
+    }
+    // The registry and git are present in this repo, so the two runnable
+    // checks RAN: the refs query answers pass or fail, and the manifest walk
+    // examined every entry — on the toolkit repo itself many entries are
+    // inconclusive (the manifest describes an adopter's install), which the
+    // check reports as could-not-check WITH the counts, never as clean.
+    let refs = report
+        .checks
+        .iter()
+        .find(|c| c.check == CHECK_OFF_GRAMMAR_BRANCH_NAMES)
+        .unwrap();
+    assert_ne!(
+        refs.result,
+        ShellResult::CouldNotCheck,
+        "the refs query ran over this clone: {}",
+        refs.detail
+    );
+    assert!(refs.detail.contains("refs"), "{}", refs.detail);
+    let install = report
+        .checks
+        .iter()
+        .find(|c| c.check == CHECK_INSTALLED_ARTIFACT_INTEGRITY)
+        .unwrap();
+    assert!(
+        install.detail.contains("manifest entries examined"),
+        "the manifest walk ran (not a load failure): {}",
+        install.detail
+    );
+    if install.result == ShellResult::CouldNotCheck {
+        assert!(
+            install.detail.contains("inconclusive") && !install.items.is_empty(),
+            "could-not-check names the inconclusive entries: {}",
+            install.detail
+        );
+    }
+    // No unsigned-event count exists on crosslink's read surface: reported
+    // could-not-check with the reason, never clean.
+    let unsigned = report
+        .checks
+        .iter()
+        .find(|c| c.check == CHECK_UNSIGNED_EVENT_COUNT)
+        .unwrap();
+    assert_eq!(unsigned.result, ShellResult::CouldNotCheck);
+    assert!(unsigned.detail.contains("read surface"));
+    assert!(!report.is_checked_clean());
 }

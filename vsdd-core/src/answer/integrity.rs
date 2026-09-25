@@ -20,6 +20,8 @@ use crate::state::State;
 pub const CHECK_UNROUTED_FINDINGS: &str = "unrouted-findings";
 pub const CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR: &str = "findings-missing-owner-or-validator";
 pub const CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE: &str = "closed-findings-missing-evidence";
+pub const CHECK_ROUND_PARITY: &str = "round-parity";
+pub const CHECK_UNRESOLVABLE_HANDLES: &str = "unresolvable-handles-in-result-comments";
 
 /// Run the snapshot-scoped checks; returns finding kinds, deduplicated,
 /// order stable. Pure; the derivation calls it only when the snapshot
@@ -33,22 +35,29 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
     };
 
     // round-parity: a manifest's declared count reconciles with its
-    // round's tracked children.
-    for manifest in &snapshot.round_manifests {
-        let tracked = snapshot
-            .round_children
-            .iter()
-            .find(|c| c.handle == manifest.handle)
-            .map(|c| c.child_count)
-            .unwrap_or(0);
-        if tracked != manifest.declared_finding_count {
-            push("round-parity", &mut kinds);
+    // round's tracked children. Field-readiness gate (vsdd-cli #880): the
+    // live join does not acquire the round vectors yet, so the check runs
+    // only when they were acquired — an empty pair never reads as parity.
+    if snapshot.finding_fields_acquired.rounds {
+        for manifest in &snapshot.round_manifests {
+            let tracked = snapshot
+                .round_children
+                .iter()
+                .find(|c| c.handle == manifest.handle)
+                .map(|c| c.child_count)
+                .unwrap_or(0);
+            if tracked != manifest.declared_finding_count {
+                push(CHECK_ROUND_PARITY, &mut kinds);
+            }
         }
     }
 
-    // unresolvable handles cited in result comments.
-    if snapshot.comment_handles.iter().any(|h| !h.resolves) {
-        push("unresolvable-handles-in-result-comments", &mut kinds);
+    // unresolvable handles cited in result comments — same readiness rule
+    // (vsdd-cli #880).
+    if snapshot.finding_fields_acquired.comment_handles
+        && snapshot.comment_handles.iter().any(|h| !h.resolves)
+    {
+        push(CHECK_UNRESOLVABLE_HANDLES, &mut kinds);
     }
 
     // an open finding without an owner or a validator (the contract's
@@ -69,10 +78,9 @@ pub fn snapshot_integrity(state: &State, snapshot: &Snapshot) -> Vec<String> {
     // a closed finding with neither an evidence reference nor a recorded
     // disposition (disposition closures close lawfully without evidence).
     if snapshot.finding_fields_acquired.evidence
-        && snapshot
-            .findings
-            .iter()
-            .any(|f| f.status == "closed" && !f.evidence_reference_present && f.disposition.is_none())
+        && snapshot.findings.iter().any(|f| {
+            f.status == "closed" && !f.evidence_reference_present && f.disposition.is_none()
+        })
     {
         push(CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE, &mut kinds);
     }
@@ -197,10 +205,15 @@ pub fn finding_checks_not_run(snapshot: &Snapshot) -> Vec<super::CheckNotRun> {
         reason,
     };
     if !acquired.spine {
+        // The failed leg: nothing tracker-sourced was acquired, so every
+        // snapshot-scoped check over tracker records is could-not-check —
+        // the round and comment-handle checks included (vsdd-cli #880).
         return [
             CHECK_UNROUTED_FINDINGS,
             CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
             CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE,
+            CHECK_ROUND_PARITY,
+            CHECK_UNRESOLVABLE_HANDLES,
         ]
         .into_iter()
         .map(|check| entry(check, CheckNotRunReason::CouldNotCheck))
@@ -219,6 +232,17 @@ pub fn finding_checks_not_run(snapshot: &Snapshot) -> Vec<super::CheckNotRun> {
             CheckNotRunReason::Dormant,
         ));
     }
+    // The round query and the comment-handle walk are not acquired by the
+    // live join yet (vsdd-cli #880): dormant by scope, named, never silent.
+    if !acquired.rounds {
+        out.push(entry(CHECK_ROUND_PARITY, CheckNotRunReason::Dormant));
+    }
+    if !acquired.comment_handles {
+        out.push(entry(
+            CHECK_UNRESOLVABLE_HANDLES,
+            CheckNotRunReason::Dormant,
+        ));
+    }
     out
 }
 
@@ -227,7 +251,7 @@ mod tests {
     use super::{
         finding_checks_not_run, gate_verdict, snapshot_integrity, unrouted_findings, GateVerdict,
         CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE, CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
-        CHECK_UNROUTED_FINDINGS,
+        CHECK_ROUND_PARITY, CHECK_UNRESOLVABLE_HANDLES, CHECK_UNROUTED_FINDINGS,
     };
     use crate::answer::CheckNotRunReason;
     use crate::snapshot::{AcquisitionOutcome, FindingFieldsAcquired, FindingRecord, Snapshot};
@@ -289,10 +313,15 @@ mod tests {
         // Field-readiness gate (vsdd-cli #820, REQ-7): a live spine-only join
         // leaves owner/validator unacquired, so the check must stay dormant —
         // an unowned open finding is NOT flagged when its inputs were not read.
-        let snap = snapshot_with(vec![unowned_open_finding()], FindingFieldsAcquired::SPINE_ONLY);
+        let snap = snapshot_with(
+            vec![unowned_open_finding()],
+            FindingFieldsAcquired::SPINE_ONLY,
+        );
         let kinds = snapshot_integrity(&minimal_state(), &snap);
         assert!(
-            !kinds.iter().any(|k| k == "findings-missing-owner-or-validator"),
+            !kinds
+                .iter()
+                .any(|k| k == "findings-missing-owner-or-validator"),
             "lifecycle-role check stays dormant when its fields were not acquired"
         );
     }
@@ -308,7 +337,9 @@ mod tests {
         );
         let kinds = snapshot_integrity(&minimal_state(), &snap);
         assert!(
-            kinds.iter().any(|k| k == "findings-missing-owner-or-validator"),
+            kinds
+                .iter()
+                .any(|k| k == "findings-missing-owner-or-validator"),
             "lifecycle-role check fires when its fields were acquired"
         );
     }
@@ -378,7 +409,10 @@ mod tests {
         // Fail-closed: an unverifiable acquisition blocks, never passes.
         let mut absent = snapshot_with(Vec::new(), FindingFieldsAcquired::SPINE_ONLY);
         absent.acquisition_outcome = AcquisitionOutcome::Absent;
-        assert!(matches!(gate_verdict(&absent), GateVerdict::Unverifiable(_)));
+        assert!(matches!(
+            gate_verdict(&absent),
+            GateVerdict::Unverifiable(_)
+        ));
         let mut unusable = snapshot_with(Vec::new(), FindingFieldsAcquired::SPINE_ONLY);
         unusable.acquisition_outcome = AcquisitionOutcome::Unusable;
         assert!(matches!(
@@ -426,11 +460,16 @@ mod tests {
             named,
             vec![
                 CHECK_FINDINGS_MISSING_OWNER_OR_VALIDATOR,
-                CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE
-            ]
+                CHECK_CLOSED_FINDINGS_MISSING_EVIDENCE,
+                CHECK_ROUND_PARITY,
+                CHECK_UNRESOLVABLE_HANDLES,
+            ],
+            "the round and comment-handle checks are dormant on the live join (vsdd-cli #880)"
         );
         assert!(
-            dormant.iter().all(|c| c.reason == CheckNotRunReason::Dormant),
+            dormant
+                .iter()
+                .all(|c| c.reason == CheckNotRunReason::Dormant),
             "deferred-by-scope groups read dormant, never could-not-check"
         );
 
@@ -439,7 +478,11 @@ mod tests {
         // dormant-by-scope on the reason member.
         let failed = snapshot_with(Vec::new(), FindingFieldsAcquired::NONE);
         let unavailable = finding_checks_not_run(&failed);
-        assert_eq!(unavailable.len(), 3);
+        assert_eq!(
+            unavailable.len(),
+            5,
+            "every tracker-sourced check, rounds and handles included"
+        );
         assert!(
             unavailable
                 .iter()
@@ -447,7 +490,9 @@ mod tests {
             "a failed leg reads could-not-check on every finding-reading check"
         );
         assert!(
-            unavailable.iter().any(|c| c.check == CHECK_UNROUTED_FINDINGS),
+            unavailable
+                .iter()
+                .any(|c| c.check == CHECK_UNROUTED_FINDINGS),
             "the gate's own query is named among the unavailable checks"
         );
     }

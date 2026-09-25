@@ -28,6 +28,7 @@ use vsdd::status::segment::render_segment;
 
 use vsdd_core::answer::derive::derive_phase_answer;
 use vsdd_core::answer::PhaseAnswer;
+use vsdd_core::integrity_shell::{ShellCheck, ShellCheckItem, ShellReport, ShellResult};
 use vsdd_core::registry::{
     self,
     sets::{CompositionScopeAndActions, StatuslineData},
@@ -283,7 +284,7 @@ fn control_characters_never_reach_the_terminal() {
     let answer = derive_phase_answer(&state, &snapshot, &actions());
     let d = data();
     let segment = render_segment(&answer, &snapshot, &d);
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     for (name, text) in [("segment", &segment), ("human form", &human)] {
         assert!(
             !text.contains('\u{1b}'),
@@ -317,7 +318,7 @@ fn display_spoofing_characters_never_reach_the_terminal() {
     )
     .unwrap();
     let answer = derive_phase_answer(&state, &snapshot, &actions());
-    let human = render_human(&answer, &snapshot, &data());
+    let human = render_human(&answer, &snapshot, &data(), None);
     for spoof in ['\u{202e}', '\u{200b}'] {
         assert!(
             !human.contains(spoof),
@@ -388,7 +389,10 @@ fn broken_state_bounds_and_marks_untrusted_quoted_content() {
         "the echoed quote is length-bounded (got {} chars)",
         msg.chars().count()
     );
-    assert!(msg.contains("quote truncated"), "the bound is marked in words");
+    assert!(
+        msg.contains("quote truncated"),
+        "the bound is marked in words"
+    );
     assert_eq!(
         surfaces.machine["state_unreadable"]["quoted_content_untrusted"],
         serde_json::Value::Bool(true),
@@ -426,7 +430,7 @@ fn the_machine_form_cleans_state_and_diagnostic_strings() {
     )
     .unwrap();
     let answer = derive_phase_answer(&state, &snapshot, &actions());
-    let machine = render_machine(&answer, &snapshot, &d).to_string();
+    let machine = render_machine(&answer, &snapshot, &d, None).to_string();
     for spoof in ['\u{202e}', '\u{200b}'] {
         assert!(
             !machine.contains(spoof),
@@ -570,7 +574,7 @@ fn human_form_names_the_degraded_kind_and_its_full_next_step() {
         ("degraded-tracker-unusable", "tracker-unusable"),
     ] {
         let (answer, snapshot) = load(&corpus().join(fixture));
-        let human = render_human(&answer, &snapshot, &d);
+        let human = render_human(&answer, &snapshot, &d, None);
         let k = degraded_kind(&d, kind);
         assert!(human.contains(kind), "{fixture}: the kind is named");
         assert!(
@@ -591,7 +595,7 @@ fn human_form_is_a_superset_of_the_segment_and_renders_the_session() {
         "degraded-tracker-unusable",
     ] {
         let (answer, snapshot) = load(&corpus().join(fixture));
-        let human = render_human(&answer, &snapshot, &d);
+        let human = render_human(&answer, &snapshot, &d, None);
         for value in [
             snapshot.display_repo_name.as_str(),
             snapshot.display_work_item.as_str(),
@@ -605,7 +609,7 @@ fn human_form_is_a_superset_of_the_segment_and_renders_the_session() {
         }
     }
     let (answer, snapshot) = load(&corpus().join("3-reviewing"));
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     for value in [
         snapshot.display_repo_name.as_str(),
         answer.phase.as_deref().expect("phase present"),
@@ -633,7 +637,7 @@ fn human_form_words_its_absences_never_empty_slots() {
     // technology is routed to words what is absent.
     scrub_model_credentials();
     let (answer, snapshot) = load(&fixtures().join("absences"));
-    let human = render_human(&answer, &snapshot, &data());
+    let human = render_human(&answer, &snapshot, &data(), None);
     for wording in ["no session", "no work item", "no milestone"] {
         assert!(
             human.contains(wording),
@@ -655,7 +659,7 @@ fn machine_form_reports_the_degraded_kind_and_next_step_exactly() {
         ("degraded-tracker-unusable", "tracker-unusable"),
     ] {
         let (answer, snapshot) = load(&corpus().join(fixture));
-        let machine = render_machine(&answer, &snapshot, &d);
+        let machine = render_machine(&answer, &snapshot, &d, None);
         let degraded = &machine["report"]["degraded"];
         assert_eq!(
             degraded["kind"].as_str(),
@@ -674,7 +678,7 @@ fn machine_form_reports_the_degraded_kind_and_next_step_exactly() {
 fn human_form_carries_the_two_sections_of_the_facets_note() {
     scrub_model_credentials();
     let (answer, snapshot) = load(&corpus().join("disagreement-files-finding"));
-    let human = render_human(&answer, &snapshot, &data());
+    let human = render_human(&answer, &snapshot, &data(), None);
     let answer_at = human.find("answer").expect("the position section is named");
     let report_at = human.find("report").expect("the health section is named");
     assert!(answer_at < report_at, "position before health");
@@ -690,7 +694,7 @@ fn human_form_carries_the_two_sections_of_the_facets_note() {
 fn machine_form_carries_the_named_blocks_and_is_a_superset() {
     scrub_model_credentials();
     let (answer, snapshot) = load(&corpus().join("3-reviewing"));
-    let machine = render_machine(&answer, &snapshot, &data());
+    let machine = render_machine(&answer, &snapshot, &data(), None);
     let answer_block = machine.get("answer").expect("the `answer` block is named");
     let report_block = machine.get("report").expect("the `report` block is named");
     assert_eq!(
@@ -735,14 +739,14 @@ fn a_gate_driven_next_action_is_marked_unverified_on_both_agent_surfaces() {
         "precondition: the fixture drives a gate advancement"
     );
     // Machine surface: the enumerated provenance value, exact (kebab).
-    let machine = render_machine(&answer, &snapshot, &d);
+    let machine = render_machine(&answer, &snapshot, &d, None);
     assert_eq!(
         machine["answer"]["gate_provenance"].as_str(),
         Some("unverified-self-report"),
         "the machine envelope marks the gate-driven advancement unverified: {machine}"
     );
     // Human surface: the worded self-report line.
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     assert!(
         human.contains("unverified self-report"),
         "the human form words the self-report provenance: {human:?}"
@@ -760,15 +764,18 @@ fn a_non_gate_driven_action_carries_no_provenance_on_either_surface() {
     let d = data();
     // 3-reviewing: phase-3 dispatch — no gate in the derivation.
     let (answer, snapshot) = load(&corpus().join("3-reviewing"));
-    assert_eq!(answer.gate_provenance, None, "precondition: no gate drove it");
+    assert_eq!(
+        answer.gate_provenance, None,
+        "precondition: no gate drove it"
+    );
     // Machine form (manual json!): the key is present but null.
-    let machine = render_machine(&answer, &snapshot, &d);
+    let machine = render_machine(&answer, &snapshot, &d, None);
     assert!(
         machine["answer"]["gate_provenance"].is_null(),
         "no gate-driven action carries a null provenance, never a value: {machine}"
     );
     // Human form: no self-report line at all.
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     assert!(
         !human.contains("unverified self-report"),
         "the human form carries no provenance line for an authoring action: {human:?}"
@@ -779,18 +786,19 @@ fn a_non_gate_driven_action_carries_no_provenance_on_either_surface() {
 fn the_machine_form_pins_the_status_version_security_signal() {
     // Cold-review finding on the version-bump discipline (the Fix-1
     // recurrence): `vsdd_status_version` is itself a security surface —
-    // 0.1.1 added `gate_provenance` and 0.1.2 added `report.checks_not_run`
-    // plus `report.finding_acquisition_note`, and consumers key their
+    // 0.1.1 added `gate_provenance`, 0.1.2 added `report.checks_not_run`
+    // plus `report.finding_acquisition_note`, and 0.1.3 added
+    // `report.shell_checks` (vsdd-cli #880); consumers key their
     // handling of those signals on this value. Pinning it exactly means a
     // bump (or a revision-worthy field change without one) must fail HERE
     // and force the documented one-line bump discipline, instead of
     // drifting silently as it did before this pin.
     scrub_model_credentials();
     let (answer, snapshot) = load(&corpus().join("4-routing"));
-    let machine = render_machine(&answer, &snapshot, &data());
+    let machine = render_machine(&answer, &snapshot, &data(), None);
     assert_eq!(
         machine["vsdd_status_version"].as_str(),
-        Some("0.1.2"),
+        Some("0.1.3"),
         "the machine envelope carries exactly the documented status version: {machine}"
     );
 }
@@ -830,7 +838,7 @@ fn a_failed_finding_leg_reads_could_not_check_on_both_agent_surfaces() {
     let answer = derive_phase_answer(&state, &snapshot, &actions());
 
     // Machine surface: the manifest entry, enumerated members exact (kebab).
-    let machine = render_machine(&answer, &snapshot, &d);
+    let machine = render_machine(&answer, &snapshot, &d, None);
     let manifest = machine["report"]["checks_not_run"]
         .as_array()
         .expect("the machine report carries the checks_not_run manifest")
@@ -850,7 +858,7 @@ fn a_failed_finding_leg_reads_could_not_check_on_both_agent_surfaces() {
         "the machine report words the failed step beside the manifest: {machine}"
     );
     // Human surface: the worded could-not-check line plus the note line.
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     assert!(
         human.contains("could not check"),
         "the human form words the could-not-check condition: {human:?}"
@@ -873,13 +881,13 @@ fn a_full_acquisition_reads_an_empty_manifest_and_a_deferred_group_reads_dormant
     let d = data();
     let (state, snapshot) = load_parts(&corpus().join("4-routing"));
     let answer = derive_phase_answer(&state, &snapshot, &actions());
-    let machine = render_machine(&answer, &snapshot, &d);
+    let machine = render_machine(&answer, &snapshot, &d, None);
     assert_eq!(
         machine["report"]["checks_not_run"],
         serde_json::json!([]),
         "full acquisition: an explicitly empty manifest, never a missing key"
     );
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     assert!(
         !human.contains("checks not run"),
         "full acquisition carries no checks-not-run section: {human:?}"
@@ -899,7 +907,7 @@ fn a_full_acquisition_reads_an_empty_manifest_and_a_deferred_group_reads_dormant
     let mut spine_only = snapshot;
     spine_only.finding_fields_acquired = FindingFieldsAcquired::SPINE_ONLY;
     let answer = derive_phase_answer(&state, &spine_only, &actions());
-    let machine = render_machine(&answer, &spine_only, &d);
+    let machine = render_machine(&answer, &spine_only, &d, None);
     let manifest = machine["report"]["checks_not_run"]
         .as_array()
         .expect("spine-only: the manifest is present")
@@ -908,7 +916,7 @@ fn a_full_acquisition_reads_an_empty_manifest_and_a_deferred_group_reads_dormant
         !manifest.is_empty() && manifest.iter().all(|c| c["reason"] == "dormant"),
         "deferred-by-scope groups read dormant, never could-not-check: {machine}"
     );
-    let human = render_human(&answer, &spine_only, &d);
+    let human = render_human(&answer, &spine_only, &d, None);
     assert!(
         human.contains("dormant"),
         "the human form words the dormant condition: {human:?}"
@@ -1142,7 +1150,7 @@ fn stripping_color_loses_no_information() {
     }
     let (answer, snapshot) = load(&corpus().join("degraded-tracker-absent"));
     let segment = render_segment(&answer, &snapshot, &d);
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     for (name, text) in [("segment", &segment), ("human form", &human)] {
         let stripped = strip_ansi(text);
         for value in [
@@ -1317,7 +1325,7 @@ fn the_degraded_report_line_leads_with_the_next_step() {
     scrub_model_credentials();
     let (answer, snapshot) = load(&corpus().join("degraded-tracker-absent"));
     let d = data();
-    let human = render_human(&answer, &snapshot, &d);
+    let human = render_human(&answer, &snapshot, &d, None);
     let line = human
         .lines()
         .find(|l| l.contains("corroboration: degraded"))
@@ -1470,5 +1478,112 @@ fn the_wiring_script_template_exists_and_names_its_config() {
     assert!(
         content.contains("vsdd status --statusline"),
         "the script carries the exact invocation line"
+    );
+}
+
+// --- the shell-side join (vsdd-cli #880) -------------------------------------
+
+fn shell_report(result: ShellResult) -> ShellReport {
+    ShellReport {
+        checks: vec![
+            ShellCheck {
+                check: "off-grammar-branch-names".to_string(),
+                result: ShellResult::Pass,
+                detail: "3 refs examined; every ref matches a registered form or the exemption set"
+                    .to_string(),
+                items: Vec::new(),
+            },
+            ShellCheck {
+                check: "installed-artifact-integrity-check".to_string(),
+                result,
+                detail: "2 manifest entries examined; 1 failed, 0 inconclusive".to_string(),
+                items: vec![ShellCheckItem {
+                    id: "domain-prompts".to_string(),
+                    detail: "fail: the artifact is absent".to_string(),
+                }],
+            },
+            ShellCheck {
+                check: "unsigned-event-count".to_string(),
+                result: ShellResult::CouldNotCheck,
+                detail: "crosslink's read surface exposes no unsigned-event count".to_string(),
+                items: Vec::new(),
+            },
+        ],
+    }
+}
+
+#[test]
+fn the_machine_and_human_forms_carry_the_shell_checks_three_valued() {
+    // A hollow install is a loud finding, never a quiet no-op (contract:
+    // Conformance at action time; vsdd-cli #880): the machine form carries
+    // every shell-side check with its enumerated result, and the human form
+    // words each one — could-not-check named with why.
+    scrub_model_credentials();
+    let d = data();
+    let (answer, snapshot) = load(&corpus().join("4-routing"));
+    let report = shell_report(ShellResult::Fail);
+
+    let machine = render_machine(&answer, &snapshot, &d, Some(&report));
+    let checks = machine["report"]["shell_checks"]["checks"]
+        .as_array()
+        .expect("the shell block is present when the shell ran")
+        .clone();
+    let results: Vec<(&str, &str)> = checks
+        .iter()
+        .map(|c| (c["check"].as_str().unwrap(), c["result"].as_str().unwrap()))
+        .collect();
+    assert_eq!(
+        results,
+        vec![
+            ("off-grammar-branch-names", "pass"),
+            ("installed-artifact-integrity-check", "fail"),
+            ("unsigned-event-count", "could-not-check"),
+        ],
+        "every registered shell-side check, each with its enumerated result: {machine}"
+    );
+    assert_eq!(
+        checks[1]["items"][0]["id"].as_str(),
+        Some("domain-prompts"),
+        "the failing entry is named"
+    );
+
+    let human = render_human(&answer, &snapshot, &d, Some(&report));
+    assert!(
+        human.contains("installed-artifact-integrity-check: FAIL")
+            && human.contains("domain-prompts: fail: the artifact is absent")
+            && human.contains("unsigned-event-count: could not check — crosslink's read surface"),
+        "the human form words each check and names the failing entry: {human:?}"
+    );
+
+    // The shell that did not run is said, never silent (the glance and the
+    // test-only renderings).
+    let machine = render_machine(&answer, &snapshot, &d, None);
+    assert!(
+        machine["report"]["shell_checks"].is_null(),
+        "null means the shell did not run: {machine}"
+    );
+    let human = render_human(&answer, &snapshot, &d, None);
+    assert!(
+        human.contains("shell checks: not run this rendering (not checked-clean)"),
+        "{human:?}"
+    );
+}
+
+#[test]
+fn a_failing_shell_check_joins_the_integrity_kind_set() {
+    // The shell joins its failing check ids into the kind-set the way
+    // `vsdd status` does (vsdd-cli #880), so a consumer branching on
+    // `integrity_findings` sees the hollow install.
+    let failing = shell_report(ShellResult::Fail);
+    assert_eq!(
+        failing.failing_kinds(),
+        vec!["installed-artifact-integrity-check".to_string()]
+    );
+    assert!(!failing.is_checked_clean());
+    let passing = shell_report(ShellResult::Pass);
+    assert!(passing.failing_kinds().is_empty());
+    assert!(
+        !passing.is_checked_clean(),
+        "a could-not-check member (the unsigned-event count) is never checked-clean"
     );
 }
