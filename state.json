@@ -1,5 +1,5 @@
 {
-  "next_display_id": 883,
+  "next_display_id": 884,
   "next_comment_id": 1501,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -367,6 +367,7 @@
     "663a0501-aeca-4a84-91a4-c75855fe22aa": 306,
     "665c5513-27bf-4e0a-adb7-d511dcf57091": 551,
     "6696334f-0917-4278-9a75-4bbe1f23c4d0": 460,
+    "66a6a3d0-ff13-41e1-be1c-bf24efe04eaf": 883,
     "66e2b6a6-7b62-4118-9179-8ae6bf42d5e1": 254,
     "671ea862-379b-4134-a3fc-a45ceebed5f8": 188,
     "67f6e412-c5f3-4d73-a583-14ffd4127b49": 14,
@@ -12301,6 +12302,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAgtjcZw2wDljlmQkvUi4ZZDndjWCu8ZVcRE5oBkj1zJC9fa1ZUY+p5nwqmRdgVT46F2cVAf80o37lDo3IcwQ2Cw=="
         }
       }
+    },
+    "66a6a3d0-ff13-41e1-be1c-bf24efe04eaf": {
+      "uuid": "66a6a3d0-ff13-41e1-be1c-bf24efe04eaf",
+      "display_id": 883,
+      "title": "The finding acquisition rejects the whole bulk issue list when one record carries a non-positive id (the intentional ghost id -1, #858): serde id: u64 fails on '-1', so vsdd gate is permanently UNVERIFIABLE on this estate and Status reports could-not-check for every finding check",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-09-25T00:38:38.110226Z",
+      "updated_at": "2026-09-25T00:38:38.110226Z"
     },
     "66e2b6a6-7b62-4118-9179-8ae6bf42d5e1": {
       "uuid": "66e2b6a6-7b62-4118-9179-8ae6bf42d5e1",
@@ -34371,11 +34382,16 @@
       "agent_id": "xqjG",
       "agent_seq": 168,
       "timestamp": "2026-09-24T23:50:53.635917Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 169,
+      "timestamp": "2026-09-25T00:38:38.110226Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-24T23:50:53.635917Z",
+    "timestamp": "2026-09-25T00:38:38.110226Z",
     "agent_id": "xqjG",
-    "agent_seq": 168
+    "agent_seq": 169
   }
 }
