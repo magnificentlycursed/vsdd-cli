@@ -32,6 +32,28 @@ label_schemes:
 # 'session-substrate' — so name the concrete referent. 'platform' is deliberately NOT armed as
 # a bare pattern — it collides with 'cross-platform' and the platform-engineer domain.
 anti_patterns:
+  # Retired coinages from the contract compaction + governed-corpus rename
+  # (vsdd-cli#873 / vsdd-cli#874, SO rulings 2026-09-18/24): the successors are
+  # registered in templates/registry/vocabulary.yaml (0.4.0) with these as
+  # deprecated_aliases; arming here makes the rename hold without a linter.
+  - pattern: "(?i)phases-dispatched keystone|\\bkeystone\\b"
+    register: "retired nickname (vsdd-cli#874) — say 'the phases-dispatched rule' (all phase agent-work is dispatched; only human judgment is attended) or, for the tamper-evidence sense, 'the server-synced authorship basis' (contract, Trust boundaries)"
+  - pattern: "(?i)swarm[ -]invocations?"
+    register: "retired coinage (vsdd-cli#874) — 'review round' (one dispatch of the Phase-3 reviewer set plus its dispositions)"
+  - pattern: "(?i)format-carr(y|ied|ies)"
+    register: "retired coinage (vsdd-cli#874) — 'compensating control' (internal-controls audit: a manual/format-carried discipline standing in for an unbuilt mechanized control)"
+  - pattern: "(?i)exercise[ -]registry"
+    register: "retired coinage (vsdd-cli#874) — 'control-effectiveness registry' (design vs operating effectiveness)"
+  - pattern: "(?i)\\bharness run records?\\b|\\brun[ -]records?\\b|harness transcript|run transcript"
+    register: "retired coinage (vsdd-cli#874) — 'trace' (OpenTelemetry: a run is a trace, each agent a span); 'the transcript' only when naming the runtime harness's file"
+  - pattern: "(?i)consent grant"
+    register: "retired harness-word (vsdd-cli#874) — 'dispatch approval' (the operator's dispatch act itself)"
+  - pattern: "(?i)act-to-affordance map|affordance map\\b|crosslink-affordance closure"
+    register: "retired coinage (vsdd-cli#874) — 'paved-path map' (platform engineering: the supported vehicle for an act); the data file keeps its filename until the schema-pair rename"
+  - pattern: "(?i)ax[ie]s-activated|per-feature axes|declared surfaces?|surfaces-activated"
+    register: "retired coinage (vsdd-cli#874) — 'project configuration' / 'configuration-activated' (configuration options are attributes of the project, not headline concepts)"
+  - pattern: "(?i)invariant-first|enforcement-spine-first"
+    register: "retired ordering nickname (vsdd-cli#874) — 'walking skeleton' (build the enforcement path end to end first)"
   - pattern: "(?i)forcing[ -]seam"
     register: "deprecated coinage (vsdd-cli #819/#832) — use 'enforcement point' (the site, PEP) or 'guardrail' (the mechanism), not the opaque metaphor"
   - pattern: "(?i)\\bchassis\\b"
