@@ -7,8 +7,8 @@ entries:
   stated_reason: 'Upstream kickoff-plan stall plus the missing vsdd-layer injection seam into swarm-dispatched
     agents (vsdd-cli #837/#851; upstream dollspace-gay/crosslink #55/#62).'
   retest_trigger:
-    type: issue-state
-    predicate: dollspace-gay/crosslink#62 state == closed
+    type: date
+    predicate: '2026-10-31'
   trigger_context: 'Re-armed 2026-08-02 (SO, vsdd-cli #859 container adoption + audit deviation-registry-retest-material-live).
     #859 adopts container kickoff as THE headless vehicle; the tmux/plan path stalls at claude''s folder-trust
     dialog (TTY-gated, fires on ANY untrusted fresh-worktree path — NOT the .claude/settings.json pre-approval
@@ -18,14 +18,15 @@ entries:
     swarm/container-dispatched agents cannot carry the process (primer, composed domains, supplements)
     until it lands, so the runtime-harness Agent/Workflow fallback rides until then. Operational precondition
     alongside #62: a pullable agent image — interim fork-published image now, durable via dollspace-gay/crosslink#76
-    (tracked on entry container-kickoff-blocked-posture).'
+    (tracked on entry container-kickoff-blocked-posture).
+    Re-armed 2026-09-25 (Solution Owner ruling, in-session, ''as proposed''): the #62 predicate fired (injection seam shipped upstream, fork branch feat/62-injection-seam contained in develop 29d01852; closed 2026-09-25) but the fallback still rides because the container vehicle is not yet proven end to end: the vsdd-cli#878 pilot reached the agent (run 5) and was stopped by two upstream defects now fixed on fork PR #6 (kickoff worktree readiness; hub-cache mount). Exit condition: a pilot run on #878 that posts its result comment from inside the container. #878 is a crosslink-tracker issue the gate''s GitHub oracle cannot read, so the trigger is the entry''s own review date, 2026-10-31.'
   entry_date: 2026-08-01
   expiry: 2026-10-31
   owning_issue: vsdd-cli#845
   status: standing
   disposition_ref:
-    issue: vsdd-cli#858
-    comment_timestamp: 2026-08-02 05:35
+    issue: vsdd-cli#878
+    comment_timestamp: 2026-09-24 23:50
 - id: mdatron-sibling-pin-lag
   deviation: The CI sibling checkout is tag-pinned to mdatron v0.4.0 (mdatron-verify.yml) while the sibling's
     latest release is v0.5.0, with the pre-commit window at 0.4.x — a persisted toolchain-pin lag.
@@ -66,16 +67,12 @@ entries:
   stated_reason: The dial conduct bound to the dispatch act — every dispatch sets model and effort explicitly,
     never inherited — cannot be ridden on a surface that lacks the dials; blocked upstream until the effort-parameter
     issue lands.
-  retest_trigger:
-    type: issue-state
-    predicate: dollspace-gay/crosslink#61 state == closed
   entry_date: 2026-08-01
-  expiry: 2026-10-30
   owning_issue: vsdd-cli#852
-  status: standing
+  status: resolved
   disposition_ref:
-    issue: vsdd-cli#845
-    comment_timestamp: 2026-08-01 21:59
+    issue: vsdd-cli#878
+    comment_timestamp: 2026-09-24 23:19
 - id: container-kickoff-blocked-posture
   deviation: Container kickoff (the adopted autonomous vehicle) runs on an interim fork-published agent
     image; the durable fork-publishable image build has landed (dollspace-gay/crosslink#76 merged) but a
@@ -85,10 +82,8 @@ entries:
     blocker (dollspace-gay/crosslink #9, #10; recorded on vsdd-cli #597) was fixed by PR #64, and the durable
     fork-publishable image build landed with PR #76 (both merged 2026-08-02) — but dollspace-gay/crosslink#75
     ("kickoff --container has no usable agent image") stays open until a usable image is confirmed. An interim
-    fork-published image (magnificentlycursed) is usable meanwhile.'
-  retest_trigger:
-    type: issue-state
-    predicate: dollspace-gay/crosslink#75 state == closed
+    fork-published image (magnificentlycursed) is usable meanwhile.
+    RESOLVED 2026-09-25 (Solution Owner ruling, in-session, ''as proposed''): dollspace-gay/crosslink#75 closed (container build fixed; fork PR #75 contained in upstream develop 29d01852); a usable agent image exists (ghcr.io/magnificentlycursed/crosslink-agent:nightly, pulled and run by the vsdd-cli#878 pilot from run 2); the posture flip to container-ADOPTED landed in the paved-path map (vsdd-cli#859, PR #37 merged 2026-09-25). The residual — the vehicle not yet proven end to end — is carried by manual-dispatch-fallback, not here.'
   trigger_context: 'Re-armed 2026-08-02 (SO, vsdd-cli #859 container adoption + audit deviation-registry-retest-material-live),
     then CORRECTED 2026-08-02 06:29: the prior predicate "#76 state == closed" born-fired — PR #76 merged
     at 05:39, four minutes before the routing-gate run at 05:43, blocking CI (a fast-moving PR is a fragile
@@ -98,12 +93,11 @@ entries:
     image build; #859 adopts container as THE autonomous vehicle. Standing until #75 closes; #9/#10 stay
     open but are not the predicate (their substance is fixed).'
   entry_date: 2026-08-01
-  expiry: 2026-10-31
   owning_issue: vsdd-cli#849
-  status: standing
+  status: resolved
   disposition_ref:
-    issue: vsdd-cli#858
-    comment_timestamp: 2026-08-02 06:29
+    issue: vsdd-cli#878
+    comment_timestamp: 2026-09-24 23:19
 - id: crosslink-develop-consumption
   deviation: routing-gate.yml consumes crosslink from the fork's develop branch (its lines 9-12 record
     the posture) pending the sibling's develop-to-main merge, with a re-pin to a main release tag owed
