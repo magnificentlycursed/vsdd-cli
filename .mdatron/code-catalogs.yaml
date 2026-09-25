@@ -1,10 +1,12 @@
 # Adopter code catalog for the VSDD- namespace (vsdd-cli#854, mechanized by
 # mdatron 0.6.0's code_catalog family; SO-ratified on vsdd-cli GH#27:
-# comprehensive + error). The legal set is exactly the codes the live governed
-# corpus cites; an unlisted VSDD- token anywhere in the walked corpus blocks
-# (MDATRON-E0113) — declare-or-block. Grammar: one uppercase class letter
-# (E error, W warning) + four digits. Retired schemes cited by the June-cycle
-# review archive live in git history, not here.
+# comprehensive + error). The single roster of the namespace (vsdd-cli#882):
+# the codes the governed corpus cites AND the codes the shipped patterns and
+# the binary emit, each with its emitting home. An unlisted VSDD- token
+# anywhere in the walked corpus blocks (MDATRON-E0113) — declare-or-block.
+# Grammar: one uppercase class letter (E error, W warning) + four digits.
+# Retired schemes cited by the June-cycle review archive live in git history,
+# not here.
 mdatron_format_version: 1
 catalogs:
   - namespace: "VSDD-"
@@ -20,3 +22,18 @@ catalogs:
       - W0070
       - W0080
       - W0180
+      # Emitted by .mdatron/patterns/cross-references.yaml (the cross-file family)
+      - E0201   # domain validator_pair does not resolve to a known domain
+      - E0202   # domain supplements_applied slug does not resolve to a supplement
+      - E0203   # supplement domains_in_scope slug does not resolve to a domain
+      - E0204   # phase primer relevant_domains slug does not resolve to a domain
+      - E0205   # phase primer supplements_in_scope slug does not resolve to a supplement
+      - E0206   # review entry phase has no corresponding phase primer
+      - E0207   # phase primer primer_id and phase disagree
+      - E0208   # domain validator_pair refers to itself
+      # Emitted by .mdatron/patterns/registry-integrity.yaml (vsdd-cli #729)
+      - E0210   # install manifest pairs_with names no entry
+      - E0211   # install manifest referenced_by names no reference surface
+      - E0212   # statusline read-failure recovery_action names no recovery family member
+      # Emitted by the vsdd binary
+      - E0230   # vsdd init failed (vsdd/src/main.rs)
