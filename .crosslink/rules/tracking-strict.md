@@ -1,3 +1,4 @@
+<!-- # crosslink:custom — tracked vsdd-cli policy rules; crosslink ships no bundled rules since upstream 62e637ab7, so every tracked rule is custom by definition (vsdd-cli PR #42) -->
 ## Crosslink Task Management (MANDATORY — ABSOLUTE RULE)
 
 **You MUST use crosslink to track ALL work. This is NOT optional. This is NOT a suggestion. This is an ABSOLUTE REQUIREMENT.**
