@@ -160,7 +160,7 @@ entries:
 # Installed-artifact manifest — vsdd-cli instance
 
 The installed environment is a closed world (contract: Conformance at action
-time, the crosslink-affordance closure, ratified 2026-07-20). The frontmatter
+time, the paved-path closure, ratified 2026-07-20). The frontmatter
 above is the versioned data: every artifact the environment expects, each
 with its source, its lifetime, its pairing, and its observed fail mode.
 The lifetime axis is tracked-or-per-clone crossed with wiring-or-payload

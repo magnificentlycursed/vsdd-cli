@@ -5,7 +5,7 @@
 # redeploy (a managed whole-file class would clobber adopter entries).
 #
 # Contract control: Conformance at action time — the deviation-registry
-# control beside the act-to-affordance map, in the AI-Engineer-owned
+# control beside the paved-path map, in the AI-Engineer-owned
 # versioned-data-set family (ratified design
 # the decomposition-topology-remediation knowledge page, REQ-4 and REQ-5; registered
 # in the contract by the REQ-7 clause (a) amendment). The map records what
@@ -16,7 +16,7 @@
 # disposition_ref.
 #
 # Entry schema (REQ-4): id (plain kebab name), deviation, deviates_from (an
-# act-to-affordance map `act` key, or null with deviation_class),
+# paved-path map `act` key, or null with deviation_class),
 # stated_reason, retest_trigger (typed: date | issue-state | version-compare
 # carry a single `predicate` — exactly one machine-decidable predicate, a
 # fully-machine boolean compound within one class counting as one; the

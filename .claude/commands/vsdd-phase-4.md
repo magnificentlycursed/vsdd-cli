@@ -3,7 +3,7 @@ schema_class: phase-primer
 primer_id: vsdd-phase-4
 phase: phase-4
 version: 0.1.0
-frequency: per Phase 3 swarm invocation
+frequency: per Phase 3 review round
 governing_skill: true
 relevant_domains: []
 supplements_in_scope: []
@@ -19,7 +19,7 @@ The core always-on quartet still applies for routing-coordination but no domain 
 
 ## Dispatch & conformance discipline
 
-Phase 4 is **operator-orchestrated**: the routing judgment is the human's irreducible triage slot and runs in the operator session, not as a dispatched agent. The phases-dispatched keystone (which supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all *agent*-work is dispatched) therefore governs the **agent-work Phase 4 spawns** — a routed fix re-entering an earlier phase — rather than the routing pass itself. Any such dispatched agent-work carries its composed governing context — the target phase's primer, its composed domains, and the supplements in scope — delivered by **injection** at dispatch and **audited as skill invocations** (invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance), and the conformance verifier audits it as `WAS ⊇ SHOULD` against that phase's matrix entry. The full **process-governing set** is the audited SHOULD for review compositions (Phase 3), not for this operator-orchestrated routing pass.
+Phase 4 is **operator-orchestrated**: the routing judgment is the human's irreducible triage slot and runs in the operator session, not as a dispatched agent. The phases-dispatched rule (which supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all *agent*-work is dispatched) therefore governs the **agent-work Phase 4 spawns** — a routed fix re-entering an earlier phase — rather than the routing pass itself. Any such dispatched agent-work carries its composed governing context — the target phase's primer, its composed domains, and the supplements in scope — delivered by **injection** at dispatch and **audited as skill invocations** (invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance), and the conformance verifier audits it as `WAS ⊇ SHOULD` against that phase's matrix entry. The full **process-governing set** is the audited SHOULD for review compositions (Phase 3), not for this operator-orchestrated routing pass.
 
 ## Phase-specific discipline
 
@@ -41,7 +41,7 @@ Phase 4 closes the loop from Phase 3 back to earlier phases. Per the routing tab
 
 ## The Exacting Mentor stance applied to routing
 
-**Primary failure mode:** Routing every finding to Phase 2b ("the implementation is what's wrong"). This collapses the VSDD pipeline into a single phase. Signal: spec hasn't changed in N swarm invocations; test plan hasn't changed in N swarm invocations; codebase keeps churning. Fix: re-examine the finding set + ask "of these findings, which are *actually* implementation defects, and which are spec or test defects misclassified as implementation?"
+**Primary failure mode:** Routing every finding to Phase 2b ("the implementation is what's wrong"). This collapses the VSDD pipeline into a single phase. Signal: spec hasn't changed in N review rounds; test plan hasn't changed in N review rounds; codebase keeps churning. Fix: re-examine the finding set + ask "of these findings, which are *actually* implementation defects, and which are spec or test defects misclassified as implementation?"
 
 **Routing question for each finding:** "What artifact, had it been correct, would have prevented this finding?" That artifact's owning phase is the route. If the answer is "the implementation" — verify, because that's the easy answer + the failure mode. Ask one level up: "what artifact would have caused the implementation to be correct?" If the answer is "a more complete spec" or "a test that asserted this" — route up.
 
@@ -69,7 +69,7 @@ For each routed finding, record:
 - **Gate** — what must be true before the routed work is done at that phase
 - **Sequencing** — does this route block the next milestone? Block merge? Defer to named future milestone?
 
-Record each routing (`FindingRouted{finding_id, target_phase, target_artifact}`) in the crosslink session breadcrumb and the harness run record, per finding.
+Record each routing (`FindingRouted{finding_id, target_phase, target_artifact}`) in the crosslink session breadcrumb and the trace, per finding.
 
 ## Phase-completion criteria
 
@@ -80,7 +80,7 @@ Phase 4 closes when:
 - Suite findings filed at `suite-development/FINDINGS-INDEX.md`, not collapsed into project-phase routes
 - Proportion routed to Phase 2b matches reality (if every finding routes to 2b, re-run the routing pass with spec-defect bias check)
 
-Record the phase transition (`PhaseExited{phase: phase-4, exit_status: complete, layer: <N>, routed_count: <N>}`) in the crosslink session breadcrumb and the harness run record. The next pass begins (re-enter the routed phase's primer).
+Record the phase transition (`PhaseExited{phase: phase-4, exit_status: complete, layer: <N>, routed_count: <N>}`) in the crosslink session breadcrumb and the trace. The next pass begins (re-enter the routed phase's primer).
 
 ## Cross-references
 

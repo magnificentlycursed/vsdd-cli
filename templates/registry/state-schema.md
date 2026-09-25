@@ -26,7 +26,7 @@ state_fields:
   - name: active_composition
     type: object
     required: true
-    semantics: "the computed domain set in force: {scope: <scope-member-id>, domains: [<domain slugs>], mode: skill-interactive|cold-dispatch, config_inputs_hash: <hash over the DESIGN.md surfaces and review config the composition was computed from>} — the mode values are the attended and autonomous sides of the contract's dispatch split, respectively (vsdd-cli #697); the hash makes a stale composition mechanically detectable: state hash vs recomputed hash (operator ruling 2026-07-20, vsdd-cli #665)"
+    semantics: "the computed domain set in force: {scope: <scope-member-id>, domains: [<domain slugs>], mode: skill-interactive|cold-dispatch, config_inputs_hash: <hash over the DESIGN.md project configuration and review config the composition was computed from>} — the mode values are the attended and autonomous sides of the contract's dispatch split, respectively (vsdd-cli #697); the hash makes a stale composition mechanically detectable: state hash vs recomputed hash (operator ruling 2026-07-20, vsdd-cli #665)"
   - name: published
     type: object
     required: false
