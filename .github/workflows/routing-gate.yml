@@ -59,6 +59,27 @@ jobs:
         working-directory: crosslink/crosslink
         run: cargo install --path . --locked
 
+      # Repository readiness is per checkout since crosslink develop 0a2ac7013:
+      # every mutating command (sync included) refuses to run until this
+      # checkout's daemon has written a ready record. The daemon's own
+      # `ensure --wait-ready` gives up after 120 s while the daemon keeps
+      # working (a first reconciliation verifies every hub event signature),
+      # so poll the status until ready instead of trusting that exit code.
+      - name: Establish repository readiness (per-checkout daemon)
+        working-directory: vsdd-cli
+        run: |
+          crosslink daemon ensure --wait-ready --json || true
+          for attempt in $(seq 1 40); do
+            if crosslink daemon status --json 2>/dev/null | jq -e '.ready == true' >/dev/null; then
+              echo "readiness established after ${attempt} poll(s)"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "::error::repository readiness not established within 10 minutes"
+          crosslink daemon status --json || true
+          exit 1
+
       - name: Hydrate the tracker from the hub
         working-directory: vsdd-cli
         run: crosslink sync
