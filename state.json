@@ -16,6 +16,11 @@
         "sequence": 1169,
         "tip_oid": "b646e301ea408871e778e1d7ed18759fc9325614",
         "prefix_sha256": "ea46db4f6e584da9cc445ddc2ca8aae2ad7db60ef76556a4624addd3e075a991"
+      },
+      "y2SI": {
+        "sequence": 1,
+        "tip_oid": "d45350f9002434d29bc711f2972d118a37957f96",
+        "prefix_sha256": "84752b8839d7e8fd8b04a23225059f395b761ab0d7f7a8fc4c786c80b6dc47c3"
       }
     }
   },
@@ -967,6 +972,10 @@
     "872": {
       "agent_id": "xqjG",
       "claimed_at": "2026-09-25T00:53:26.525354Z"
+    },
+    "878": {
+      "agent_id": "y2SI",
+      "claimed_at": "2026-09-25T02:35:32.855161Z"
     },
     "879": {
       "agent_id": "xqjG",
@@ -35118,6 +35127,11 @@
       "agent_id": "6yVo",
       "agent_seq": 2,
       "timestamp": "2026-09-25T02:32:40.064860Z"
+    },
+    {
+      "agent_id": "y2SI",
+      "agent_seq": 1,
+      "timestamp": "2026-09-25T02:35:32.855161Z"
     }
   ],
   "watermark": {
