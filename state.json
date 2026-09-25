@@ -3,9 +3,9 @@
   "frontier": {
     "agents": {
       "6yVo": {
-        "sequence": 1,
-        "tip_oid": "b9ab3247b5c36901b878e28ec203abbeba047eee",
-        "prefix_sha256": "c2aa9e8abd8a9ddcbbaaf260d0a87d66934c3ab50a8f6c10c783aab7ce08f505"
+        "sequence": 2,
+        "tip_oid": "67ac0270c6a2707362cc9ec0f0db6d572774ac8a",
+        "prefix_sha256": "51cdb6e20fcf9c8c8fc35daecbd27c47c5f487b005b14c0404b0dc0ec92e9a44"
       },
       "CT8i": {
         "sequence": 2,
@@ -967,10 +967,6 @@
     "872": {
       "agent_id": "xqjG",
       "claimed_at": "2026-09-25T00:53:26.525354Z"
-    },
-    "878": {
-      "agent_id": "6yVo",
-      "claimed_at": "2026-09-25T02:10:13.207599Z"
     },
     "879": {
       "agent_id": "xqjG",
@@ -35117,6 +35113,11 @@
       "agent_id": "6yVo",
       "agent_seq": 1,
       "timestamp": "2026-09-25T02:10:13.207599Z"
+    },
+    {
+      "agent_id": "6yVo",
+      "agent_seq": 2,
+      "timestamp": "2026-09-25T02:32:40.064860Z"
     }
   ],
   "watermark": {
