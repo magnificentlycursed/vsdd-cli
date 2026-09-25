@@ -19,7 +19,7 @@ The core always-on quartet applies for coordination but no domain owns Phase 6 w
 
 ## Dispatch & conformance discipline
 
-Phase 6 is **operator-orchestrated attestation**: signing the four-dimensional convergence record is the human's irreducible ratification slot and runs in the operator session, not as a dispatched agent. The phases-dispatched keystone (which supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all *agent*-work is dispatched) therefore governs the **agent-work the attestation spawns** — a convergence-check helper, or a routed inconsistency fix re-entering an earlier phase — rather than the attestation itself. Any such dispatched agent-work carries its composed governing context — the target phase's primer, its composed domains, and the supplements in scope — delivered by **injection** at dispatch and **audited as skill invocations** (invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance), and the conformance verifier audits it as `WAS ⊇ SHOULD` against that phase's matrix entry. The full **process-governing set** is the audited SHOULD for review compositions (Phase 3), not for this operator-orchestrated attestation.
+Phase 6 is **operator-orchestrated attestation**: signing the four-dimensional convergence record is the human's irreducible ratification slot and runs in the operator session, not as a dispatched agent. The phases-dispatched rule (which supersedes the 2026-07-20 attended/autonomous split: human-judgment work is attended, all *agent*-work is dispatched) therefore governs the **agent-work the attestation spawns** — a convergence-check helper, or a routed inconsistency fix re-entering an earlier phase — rather than the attestation itself. Any such dispatched agent-work carries its composed governing context — the target phase's primer, its composed domains, and the supplements in scope — delivered by **injection** at dispatch and **audited as skill invocations** (invocation is the activation signal; a recorded Read is the weaker signal; a paraphrase in the prompt is nonconformance), and the conformance verifier audits it as `WAS ⊇ SHOULD` against that phase's matrix entry. The full **process-governing set** is the audited SHOULD for review compositions (Phase 3), not for this operator-orchestrated attestation.
 
 ## Phase-specific discipline
 
@@ -27,27 +27,27 @@ Phase 6 evaluates **four independent MVR signals** and the **cross-dimension con
 
 ### Dimension 1: Spec MVR
 
-**Established by:** Solution Owner cold-batch reviews across final 2+ milestones produced only Hallucinated findings, AND Phase 4 routing across final 2+ milestones produced no `route:phase-1a+1b` destinations.
+**Established by:** Solution Owner cold-batch reviews across final 2+ milestones produced only false positives, AND Phase 4 routing across final 2+ milestones produced no `route:phase-1a+1b` destinations.
 
-**Anti-signal:** SO final-milestone review closed cleanly but earlier swarm invocations surfaced spec gaps that were Resolved by silent DESIGN.md amendments (no subsequent SO re-pass verified the amendment).
+**Anti-signal:** SO final-milestone review closed cleanly but earlier review rounds surfaced spec gaps that were Resolved by silent DESIGN.md amendments (no subsequent SO re-pass verified the amendment).
 
 ### Dimension 2: Test MVR
 
-**Established by:** Phase 5 Mutation Testing produced per-milestone kill rates with **every surviving mutant having a recorded disposition** in the QE log's per-milestone Mutation Testing swarm invocation.
+**Established by:** Phase 5 Mutation Testing produced per-milestone kill rates with **every surviving mutant having a recorded disposition** in the QE log's per-milestone Mutation Testing review round.
 
-**Verification step (required):** open each cited Mutation Testing swarm invocation + confirm a per-mutant disposition table exists (rows: mutant location, mutation kind, disposition, rationale). Aggregate-only kill rate fails Dimension 2 regardless of the rate.
+**Verification step (required):** open each cited Mutation Testing review round + confirm a per-mutant disposition table exists (rows: mutant location, mutation kind, disposition, rationale). Aggregate-only kill rate fails Dimension 2 regardless of the rate.
 
-**Not-applicable alternative:** when DESIGN.md declares `**Phase 5 strategy:** not applicable — <rationale>`, Dimension 2's signal is QE's final-swarm-invocation attestation against Dim 2 (test falsifiability) without mutation-tool evidence — explicitly weaker; named in the convergence record as such.
+**Not-applicable alternative:** when DESIGN.md declares `**Phase 5 strategy:** not applicable — <rationale>`, Dimension 2's signal is QE's final-review-round attestation against Dim 2 (test falsifiability) without mutation-tool evidence — explicitly weaker; named in the convergence record as such.
 
 ### Dimension 3: Implementation MVR
 
-**Established by:** Phase 3 final-swarm-invocation summaries per active domain across the final 2+ milestones all read "only Hallucinated findings" or "no findings" — and cold-session-isolation discipline was preserved across the active domain set.
+**Established by:** Phase 3 final-review-round summaries per active domain across the final 2+ milestones all read "only false positives" or "no findings" — and cold-session-isolation discipline was preserved across the active domain set.
 
-**Anti-signal:** Swarm invocation closed with "no findings" but cold-session isolation relaxed (one fresh chat reused for multiple domains; context bleed).
+**Anti-signal:** Review round closed with "no findings" but cold-session isolation relaxed (one fresh chat reused for multiple domains; context bleed).
 
 ### Dimension 4: Formal-verification MVR
 
-**Established by:** Phase 5 Proof Execution harnesses each have recorded outcomes in the SA log's per-milestone Proof Execution swarm invocation.
+**Established by:** Phase 5 Proof Execution harnesses each have recorded outcomes in the SA log's per-milestone Proof Execution review round.
 
 **Not-applicable alternative:** `**Phase 5 strategy:** Proof Execution not applicable — <rationale>` — convergence closes on three of four dimensions; formal-verification dimension explicitly out of scope; named in convergence record.
 
@@ -83,13 +83,13 @@ declared_at: <ISO 8601 timestamp>
 
 Phase 6 closes when:
 
-1. New swarm invocation titled `Phase 6 four-dimensional convergence (project-terminal)` exists in `vsdd-suite/review-log/<close-date>-vdd-iar-alignment.md` with all four dimensions populated (or three populated + the fourth explicitly declared out of scope)
+1. New review round titled `Phase 6 four-dimensional convergence (project-terminal)` exists in `vsdd-suite/review-log/<close-date>-vdd-iar-alignment.md` with all four dimensions populated (or three populated + the fourth explicitly declared out of scope)
 2. Cross-dimension consistency check table has zero inconsistent rows
 3. Every inconsistency surfaced during the check has been routed via Phase 4 + the routed work has landed
 4. Convergence attestation is signed and dated in the round's closing block (anonymized-project posture uses commit-sha as the signature)
 5. CHANGELOG.md final entry references the Phase 6 convergence round by link
 
-Record the Exit Signal (`ExitSignaled{project: <name>, attestation_commit: <sha>, attested_by: <fingerprint-or-handle>, per_dimension: {...}, cross_dimension_consistency_check: pass}`) in the crosslink session breadcrumb and the harness run record at the closing commit. The project is at the Exit Signal — converged.
+Record the Exit Signal (`ExitSignaled{project: <name>, attestation_commit: <sha>, attested_by: <fingerprint-or-handle>, per_dimension: {...}, cross_dimension_consistency_check: pass}`) in the crosslink session breadcrumb and the trace at the closing commit. The project is at the Exit Signal — converged.
 
 ## Cross-references
 

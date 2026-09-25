@@ -96,9 +96,9 @@ and are **not yet built**:
 
 | Command | What it will do |
 |---|---|
-| `vsdd gate conformance` | The conformance verifier: read the harness-produced run record (the transcript the checked agent cannot author), recompute the composition the dispatch *should* have loaded, and gate on `was ⊇ should` — proving the methodology's disciplines actually fired for each dispatched agent. |
+| `vsdd gate conformance` | The conformance verifier: read the harness-produced trace (the transcript the checked agent cannot author), recompute the composition the dispatch *should* have loaded, and gate on `was ⊇ should` — proving the methodology's disciplines actually fired for each dispatched agent. |
 | `vsdd dispatch` | The golden-path composer: assemble a dispatch's composed context and inject it by construction, so the correct, methodology-conformant dispatch is the easy one to run. |
-| `vsdd insight` | The efficiency insight engine: a reader over the run records that surfaces right-sizing (model/effort provisioning, prompt-cache reuse, targeted reads), with a provenance tag on every figure — recorded, measured, judgment, or could-not-check. |
+| `vsdd insight` | The efficiency insight engine: a reader over the traces that surfaces right-sizing (model/effort provisioning, prompt-cache reuse, targeted reads), with a provenance tag on every figure — recorded, measured, judgment, or could-not-check. |
 
 Verification of markdown artifacts is **not** a vsdd command — that is mdatron's
 job (`mdatron verify`). Earlier telemetry-style commands (`vsdd observe`,
@@ -127,7 +127,7 @@ one answer any cold agent can derive from the repo and tracker.
 | 5 | Formal Hardening | Mutation, fuzz, property, and security hardening |
 | 6 | Convergence (the Exit Signal) | Terminal attestation that spec, tests, code, and verification agree |
 
-**Enforcement-spine-first vertical slices.** Rather than building the whole
+**Walking-skeleton vertical slices.** Rather than building the whole
 apparatus layer by layer, vsdd is decomposed into vertical slices, each carrying
 its own guardrail so the discipline it enforces is live as soon as the slice
 lands. Guardrails are named by their honest **enforcement grade** — *detection*
@@ -138,13 +138,13 @@ a control is never described at a stronger grade than it has.
 **Domains and composition.** Reviews are performed by named review *domains*
 (Solution Owner, Software Engineer, Quality Engineer, Security, and the rest —
 sixteen role domains plus two meta-domains). Given the phase, the project's
-declared surfaces, and the review config, the active domains and their dispatch
+project configuration, and the review config, the active domains and their dispatch
 shape are computed by a deterministic function: identical inputs produce
 identical compositions. An author-side domain and its cold-reader validator
 never share a reviewer session.
 
 **The conformance subsystem.** The center of gravity is *verifiable
-conformance*: proving from the run record that the harness's own disciplines
+conformance*: proving from the trace that the harness's own disciplines
 fired — that each dispatched agent loaded its composed context and ran
 right-sized. The guiding principle is that **availability is not activation**:
 authoring a discipline as a file nobody loads is not the same as running it, and

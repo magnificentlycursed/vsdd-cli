@@ -4,7 +4,7 @@
 # These patterns feed TWO redaction stages. They are NOT applied at the local transcript-recording
 # boundary "before any value is recorded": the local `agent-<id>.jsonl` is agent-writable and NOT
 # authoritative (the unforgeable-oracle control — the oracle is only the server-synced, tamper-evident
-# copy; §264/#815), so that boundary is neither trustworthy nor the one vsdd/CI controls.
+# copy; the server-synced authorship basis, contract Verification architecture), so that boundary is neither trustworthy nor the one vsdd/CI controls.
 #   (1) the check-anonymization pre-commit hook — over COMMITTED text (corpus / code / docs);
 #   (2) the sync-side redaction stage — over the TRANSCRIPT (not git-tracked), applied server/CI-side
 #       as the corroborated copy is formed (before the corroboration copy; reconciled with its
