@@ -1,6 +1,6 @@
 {
   "next_display_id": 884,
-  "next_comment_id": 1504,
+  "next_comment_id": 1505,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5753,7 +5753,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:42.322439Z",
-      "updated_at": "2026-09-24T22:45:52.350014Z",
+      "updated_at": "2026-09-25T00:55:50.070323Z",
       "labels": [
         "bug"
       ],
@@ -5766,6 +5766,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAN2SPV0plp3arDQCqMc3mnB5H9v7To5tVsL63Cu8kw9eb1G8ayuFK4PnrW4ZduAJW+oFTR5WHBBN9jeObq93hBQ=="
+        },
+        "68d2f79d-6ce9-4490-9881-fd29e8104be8": {
+          "display_id": 1504,
+          "author": "xqjG",
+          "content": "Two could-not-check items from the ontological review closed by direct check (2026-09-24): (1) GitHub ruleset 19991782 'main' (active, target=branch, ~DEFAULT_BRANCH) enforces deletion, non_fast_forward, pull_request, and required_status_checks = verify | test | routing-gate — the contract's Per-milestone PR discipline statement about the three required checks is TRUE as recorded; no classic branch protection is set (ruleset only). (2) The live vsdd gate on this estate: it was UNVERIFIABLE (exit 2) on every local run — not because the hub holds a fix-closed finding without a plan comment, but because the bulk issue list carries the intentional ghost id -1 and the acquisition typed ids as u64 (filed #883, fixed on PR #39). With that fix the gate PASSES on the live hub: no unrouted findings in the forward-only universe. The deviation leg still reports the four standing entries as retest-undecidable locally (issue state needs GH_TOKEN on the CI leg) — that is the designed warn-grade local behaviour, not a defect.",
+          "created_at": "2026-09-25T00:55:50.057530Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA96vfZ0N3Ub/gPI+m7e8kMF5Nx6txzoq7qP/H+UAuzgHaki+gyNpWjJW3in9oE4Fb/r9EOH3+/U2jhk8Kp6ZkBg=="
         }
       }
     },
@@ -34457,11 +34466,16 @@
       "agent_id": "xqjG",
       "agent_seq": 175,
       "timestamp": "2026-09-25T00:55:16.404915Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 176,
+      "timestamp": "2026-09-25T00:55:50.070323Z"
     }
   ],
   "watermark": {
-    "timestamp": "2026-09-25T00:55:16.404915Z",
+    "timestamp": "2026-09-25T00:55:50.070323Z",
     "agent_id": "xqjG",
-    "agent_seq": 175
+    "agent_seq": 176
   }
 }
