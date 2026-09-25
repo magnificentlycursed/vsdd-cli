@@ -64,9 +64,10 @@ entries:
     crosslink/src/commands/swarm/lifecycle.rs:728-744) — a dispatch that cannot set both provisioning
     dials explicitly.'
   deviates_from: attended-review-round-fan-out
-  stated_reason: The dial conduct bound to the dispatch act — every dispatch sets model and effort explicitly,
+  stated_reason: 'The dial conduct bound to the dispatch act — every dispatch sets model and effort explicitly,
     never inherited — cannot be ridden on a surface that lacks the dials; blocked upstream until the effort-parameter
     issue lands.
+    RESOLVED 2026-09-25 (Solution Owner ruling, in-session, ''as proposed''): upstream dollspace-gay/crosslink#61 shipped the dials (--effort / --budget-usd on kickoff run/plan and swarm, recorded in .kickoff-metadata.json) and the container pilot dispatches with them (vsdd-cli#878, run 2 onward, --effort low --budget-usd 2); the dial-less surface this entry recorded no longer exists. Trigger retired with the entry.'
   entry_date: 2026-08-01
   owning_issue: vsdd-cli#852
   status: resolved
