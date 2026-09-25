@@ -358,11 +358,17 @@ const FINDING_QUERY_CAP: usize = 500;
 
 /// A `crosslink issue list --json` item — the fields the walk reads. Labels and
 /// comments are NOT on the list surface (verified), only on `issue show`.
+///
+/// `id` is signed (vsdd-cli #883): the hub keeps an intentional ghost record
+/// with id -1 (vsdd-cli #858), and a list is a whole document — one record
+/// the type cannot hold sank the entire finding query, leaving the routing
+/// gate permanently unverifiable on the estate. Non-positive ids are not
+/// findings and never enter the universe, as items or as parents.
 #[derive(Deserialize)]
 struct IssueListItem {
-    id: u64,
+    id: i64,
     #[serde(default)]
-    parent_id: Option<u64>,
+    parent_id: Option<i64>,
     status: String,
     #[serde(default)]
     closed_at: Option<String>,
@@ -407,12 +413,15 @@ fn disposition_from_labels(labels: &[String]) -> Option<String> {
 /// ratification boundary (REQ-5). Ordered by id for a deterministic snapshot and
 /// cap; capped at [`FINDING_QUERY_CAP`], the bool reporting truncation (REQ-4).
 fn findings_in_universe<'a>(
-    review_ids: &[u64],
+    review_ids: &[i64],
     all_issues: &'a [IssueListItem],
 ) -> (Vec<&'a IssueListItem>, bool) {
     let mut findings: Vec<&IssueListItem> = all_issues
         .iter()
-        .filter(|it| it.parent_id.is_some_and(|p| review_ids.contains(&p)))
+        // A non-positive id is a hub artifact (the #858 ghost), not a finding
+        // and not a review round (vsdd-cli #883).
+        .filter(|it| it.id > 0)
+        .filter(|it| it.parent_id.is_some_and(|p| p > 0 && review_ids.contains(&p)))
         .filter(|it| !closed_before_ratification(it.closed_at.as_deref(), RATIFICATION_BOUNDARY))
         .collect();
     findings.sort_by_key(|it| it.id);
@@ -463,7 +472,7 @@ fn acquire_findings(repo_root: &Path) -> Result<(Vec<FindingRecord>, bool), &'st
         Subprocess::Completed { stdout } => stdout,
         _ => return Err("the review-round list query failed"),
     };
-    let review_ids: Vec<u64> = parse_issue_list(&review_json)
+    let review_ids: Vec<i64> = parse_issue_list(&review_json)
         .ok_or("the review-round list output did not parse")?
         .iter()
         .map(|it| it.id)
@@ -504,6 +513,7 @@ mod tests {
         is_finding, parse_milestones, routing_present, split_count_suffix, IssueComment, IssueDetail,
         IssueListItem, ABSENT_MILESTONE, ABSENT_WORK_ITEM, FINDING_QUERY_CAP,
     };
+    use super::parse_issue_list;
 
     #[test]
     fn the_absence_wordings_mirror_the_registered_set() {
@@ -646,9 +656,27 @@ mod tests {
 
     // ── Finding-query join pure seam (Slice 1, vsdd-cli #820) ────────────────
 
+    #[test]
+    fn a_ghost_record_with_a_negative_id_does_not_sink_the_list_or_enter_the_universe() {
+        // vsdd-cli #883: the hub's intentional ghost (id -1, #858) sits in
+        // the bulk list; the list must still parse whole, and the ghost is
+        // never a finding nor a review round.
+        let json = r#"[
+            {"id": -1, "parent_id": null, "status": "open", "closed_at": null},
+            {"id": 7, "parent_id": 100, "status": "open", "closed_at": null},
+            {"id": 8, "parent_id": -1, "status": "open", "closed_at": null}
+        ]"#;
+        let all = parse_issue_list(json).expect("a negative id parses (vsdd-cli #883)");
+        assert_eq!(all.len(), 3);
+        let (universe, truncated) = findings_in_universe(&[100i64, -1], &all);
+        let ids: Vec<i64> = universe.iter().map(|it| it.id).collect();
+        assert_eq!(ids, vec![7], "the ghost is excluded even when named as a parent");
+        assert!(!truncated);
+    }
+
     fn list_item(
-        id: u64,
-        parent_id: Option<u64>,
+        id: i64,
+        parent_id: Option<i64>,
         status: &str,
         closed_at: Option<&str>,
     ) -> IssueListItem {
@@ -693,7 +721,7 @@ mod tests {
 
     #[test]
     fn the_universe_is_review_children_at_or_after_the_boundary() {
-        let review_ids = [100u64];
+        let review_ids = [100i64];
         let all = vec![
             list_item(1, Some(100), "open", None), // review child, open -> in
             list_item(2, Some(100), "closed", Some("2026-07-29T00:00:00Z")), // closed after -> in
@@ -702,7 +730,7 @@ mod tests {
             list_item(5, None, "open", None),      // no parent -> out
         ];
         let (universe, truncated) = findings_in_universe(&review_ids, &all);
-        let ids: Vec<u64> = universe.iter().map(|it| it.id).collect();
+        let ids: Vec<i64> = universe.iter().map(|it| it.id).collect();
         assert_eq!(ids, vec![1, 2], "only in-universe review children, id-ordered");
         assert!(!truncated);
     }
@@ -710,8 +738,8 @@ mod tests {
     #[test]
     fn the_universe_caps_and_reports_truncation() {
         // REQ-4: exceeding the cap truncates AND reports it — never a silent drop.
-        let review_ids = [100u64];
-        let all: Vec<IssueListItem> = (1..=(FINDING_QUERY_CAP as u64 + 5))
+        let review_ids = [100i64];
+        let all: Vec<IssueListItem> = (1..=(FINDING_QUERY_CAP as i64 + 5))
             .map(|id| list_item(id, Some(100), "open", None))
             .collect();
         let (universe, truncated) = findings_in_universe(&review_ids, &all);
