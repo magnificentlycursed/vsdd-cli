@@ -1,0 +1,9 @@
+{
+  "hub_version": 3,
+  "migrated_from_commit": "1d3551a247babc48d16bff0de8599778eb790f5d",
+  "migrated_at": "2026-09-25T01:10:34.819087Z",
+  "genesis_checkpoint_commit": "e75a36f0a801fadbf6265cabe458547d180d7c67",
+  "seed_agent_tips": {
+    "xqjG": "b646e301ea408871e778e1d7ed18759fc9325614"
+  }
+}
