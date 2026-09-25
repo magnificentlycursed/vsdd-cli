@@ -2,6 +2,11 @@
   "checkpoint_schema_version": 2,
   "frontier": {
     "agents": {
+      "CT8i": {
+        "sequence": 1,
+        "tip_oid": "901ec1967d8e565252fc4a715164c283def00022",
+        "prefix_sha256": "c867374cdf3167be6cba0fb0b0ade63de216f15c9ee805b078c36528ba2c91f6"
+      },
       "xqjG": {
         "sequence": 1169,
         "tip_oid": "b646e301ea408871e778e1d7ed18759fc9325614",
@@ -957,6 +962,10 @@
     "872": {
       "agent_id": "xqjG",
       "claimed_at": "2026-09-25T00:53:26.525354Z"
+    },
+    "878": {
+      "agent_id": "CT8i",
+      "claimed_at": "2026-09-25T01:42:09.186626Z"
     },
     "879": {
       "agent_id": "xqjG",
@@ -35088,6 +35097,11 @@
       "agent_id": "xqjG",
       "agent_seq": 177,
       "timestamp": "2026-09-25T00:58:35.168322Z"
+    },
+    {
+      "agent_id": "CT8i",
+      "agent_seq": 1,
+      "timestamp": "2026-09-25T01:42:09.186626Z"
     }
   ],
   "watermark": {
