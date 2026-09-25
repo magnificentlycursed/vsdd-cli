@@ -1,3 +1,4 @@
+<!-- # crosslink:custom — tracked vsdd-cli policy rules; crosslink ships no bundled rules since upstream 62e637ab7, so every tracked rule is custom by definition (vsdd-cli PR #42) -->
 ### Ruby Best Practices
 
 #### Code Style
