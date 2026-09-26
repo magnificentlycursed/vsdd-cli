@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1169,
-        "tip_oid": "b646e301ea408871e778e1d7ed18759fc9325614",
-        "prefix_sha256": "ea46db4f6e584da9cc445ddc2ca8aae2ad7db60ef76556a4624addd3e075a991"
+        "sequence": 1170,
+        "tip_oid": "97a2b46ad4c6a2d2625480450e3d44c8c9a83bda",
+        "prefix_sha256": "70d8e3fe73ee8fadc5b98423e7d40a7af2845f165742bec6b42fc42f6731afed"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1509,
+  "next_comment_id": 1510,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5517,7 +5517,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:11:50.754315Z",
-      "updated_at": "2026-09-25T15:30:59.416475936Z",
+      "updated_at": "2026-09-26T01:13:10.086427Z",
       "labels": [
         "maintenance"
       ],
@@ -5528,6 +5528,15 @@
           "content": "Plan: Run 'cargo run -p vsdd -- status --machine' from repo root (read-only) and post its complete output as a --kind result comment. No file changes or commits.",
           "created_at": "2026-09-25T15:08:13.157873036Z",
           "kind": "plan"
+        },
+        "37eba1ad-0e49-4632-8cab-5f72fa42eddc": {
+          "display_id": 1509,
+          "author": "xqjG",
+          "content": "PILOT PASSED — run 8 (2026-09-25 14:17–15:57 UTC, container 4b0568df0db6, agent E00r-ysOk, image ghcr.io/magnificentlycursed/crosslink-agent:nightly, --effort low --budget-usd 2, USD 0.66): the container vehicle ran end to end. In-container: readiness established, lock held, login honoured, hooks passed, 'cargo run -p vsdd -- status --machine' built and ran, and the agent published three events to the hub from inside the container — plan (15:08), result (15:23: the machine form, state-absent because this repo carries no .vsdd/state.yaml, #881 item 4), handoff (15:30). Fixes that made it pass, all on fork PR magnificentlycursed/crosslink#6 (5 commits): worktree readiness (daemon::ensure_and_wait after init), lock-confirmation bound 30->120 s, host hub/knowledge-cache mounts, GH_TOKEN passthrough for hub publication, writer agent_seq ceiling over the checkpoint's causal frontier; host-side, the hub-cache registry repair and the hub migration. Residuals for the upstream report: in-container session end > 120 s (cold write path) so no .kickoff-status DONE and the container ran to its timeout; the image's older binary times out its own daemon ensure at 120 s; a transient ls-remote SSL timeout at bootstrap is recorded blocked_corrupt; daemons self-terminate shortly after publishing ready. Register: manual-dispatch-fallback's stated exit condition is met — resolution proposed to the Solution Owner. This comment is the live test of the frontier-based writer fix (the driver identity's first accepted event since the defect).",
+          "created_at": "2026-09-26T01:13:10.043244Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA8DSh62Z3exQJmGcLgEio9Ysif/V+5VgidBkYOkaMPypPfTKN0Np7Fz7Y0ayj/+nwMb6ZCEwZK1o2BW/vIwW+CA=="
         },
         "3ed0f04a-56f7-453b-a47a-254cbe1f241d": {
           "display_id": 1499,
@@ -35214,6 +35223,11 @@
       "agent_id": "qNkE",
       "agent_seq": 5,
       "timestamp": "2026-09-25T15:30:59.416475936Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1170,
+      "timestamp": "2026-09-26T01:13:10.086427Z"
     }
   ],
   "watermark": {
