@@ -1,3 +1,4 @@
+<!-- # crosslink:custom — tracked vsdd-cli policy rules; crosslink ships no bundled rules since upstream 62e637ab7, so every tracked rule is custom by definition (vsdd-cli PR #42) -->
 ## Safe Web Fetching
 
 **IMPORTANT**: When fetching web content, prefer `mcp__crosslink-safe-fetch__safe_fetch` over the built-in `WebFetch` tool when available.

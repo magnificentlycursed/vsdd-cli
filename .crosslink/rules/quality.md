@@ -1,3 +1,4 @@
+<!-- # crosslink:custom — tracked vsdd-cli policy rules; crosslink ships no bundled rules since upstream 62e637ab7, so every tracked rule is custom by definition (vsdd-cli PR #42) -->
 ---
 name: code-quality
 description: Universal code quality and architecture standards that all generated code must follow. Inject this skill on ANY code generation, refactoring, debugging, or review task — regardless of language, framework, or domain. Triggers on requests to write code, build features, create scripts, fix bugs, refactor, review PRs, scaffold projects, or any task where source code is the output. If the deliverable contains code, this skill applies.
