@@ -33,4 +33,4 @@ Per-domain extensions for GitHub Actions CI/CD workflows. Per the methodology's 
 - **CI auth method.** API key (Anthropic's recommended for automation); Plan auth structurally rejected by the methodology's cross-field validation. `ANTHROPIC_API_KEY` via GitHub Secrets.
 - **Cost-band per workflow.** Per workflow's typical token consumption tracked; budget breach alerts via `PushNotification` events.
 - **Scheduled cron sweeps.** `schedule:` triggers for methodology drift sweeps + dependency audit + CHANGELOG discipline check; per-cron cost tracked.
-- **CI vs operator-local cost split.** Per the methodology's auth_method.operator_local + auth_method.ci separation; CI-side usage is read from its own run records, tagged separately from operator-local (no separate dollar ledger).
+- **CI vs operator-local cost split.** Per the methodology's auth_method.operator_local + auth_method.ci separation; CI-side usage is read from its own traces, tagged separately from operator-local (no separate dollar ledger).
