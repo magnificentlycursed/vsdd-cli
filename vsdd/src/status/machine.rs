@@ -6,14 +6,18 @@
 use serde_json::json;
 
 use vsdd_core::answer::PhaseAnswer;
+use vsdd_core::integrity_shell::ShellReport;
 use vsdd_core::registry::sets::StatuslineData;
 use vsdd_core::snapshot::Snapshot;
 
-/// Render the machine form. Pure.
+/// Render the machine form. Pure. `shell` is the effectful shell's report
+/// (vsdd-cli #880) — `Some` on the `vsdd status` machine path, `None` where
+/// the shell did not run (the report then says so, never silently).
 pub fn render_machine(
     answer: &PhaseAnswer,
     snapshot: &Snapshot,
     data: &StatuslineData,
+    shell: Option<&ShellReport>,
 ) -> serde_json::Value {
     let degraded = answer.degraded.as_ref().map(|kind| {
         // The same fallback its sibling surfaces word — the machine
@@ -37,7 +41,14 @@ pub fn render_machine(
         // `report.finding_acquisition_note` (the cold-review revise round):
         // the acquisition's worded degradation note — the failed step, or
         // the cap marker — or null when the finding query ran whole.
-        "vsdd_status_version": "0.1.2",
+        // Bumped 0.1.2 -> 0.1.3 for the additive `report.shell_checks`
+        // block (vsdd-cli #880): the three shell-side checks (off-grammar
+        // branch names, installed-artifact integrity, unsigned-event
+        // count), each three-valued — pass | fail | could-not-check — with
+        // a worded detail; a failing check's id also joins
+        // `integrity_findings`. `null` means the shell did not run this
+        // rendering, which is never checked-clean.
+        "vsdd_status_version": "0.1.3",
         "answer": {
             "phase": answer.phase,
             "layer": answer.layer,
@@ -73,6 +84,12 @@ pub fn render_machine(
             // could-not-check condition, or the finding-query cap marker;
             // null when the finding query ran whole.
             "finding_acquisition_note": snapshot.finding_acquisition_note,
+            // The effectful shell's checks (vsdd-cli #880): every registered
+            // shell-side check with its three-valued result and detail;
+            // null when the shell did not run — not checked-clean.
+            "shell_checks": shell
+                .map(|s| serde_json::to_value(s).unwrap_or(serde_json::Value::Null))
+                .unwrap_or(serde_json::Value::Null),
         },
     });
     // The whole-of-output machine-form pass (contract: Terminal output
