@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1206,
-        "tip_oid": "666f722ef5be8d9f2013e40d348426ec1c77603d",
-        "prefix_sha256": "96b39e2e325011f30fc43cfce93ed4904f68837571209e97f8d30bfdfa8735db"
+        "sequence": 1207,
+        "tip_oid": "f55d049a520bf4075bfa224d291a84fbd323c695",
+        "prefix_sha256": "9c44f21027c85eac787fb8330d70a1da52c5eb8694ae79b8b05a85700197bc4c"
       },
       "y2SI": {
         "sequence": 2,
@@ -5437,11 +5437,12 @@
       "uuid": "25a225df-1907-40db-baa0-7f1086e67d40",
       "display_id": 878,
       "title": "Container vehicle pilot: first headless run of kickoff run --container on this repo — read-only task (report vsdd status --machine + mdatron verify --json families), proves the preflight members end to end",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:11:50.754315Z",
-      "updated_at": "2026-09-27T02:40:23.463365Z",
+      "updated_at": "2026-09-27T02:40:53.852289Z",
+      "closed_at": "2026-09-27T02:40:53.796999Z",
       "labels": [
         "maintenance"
       ],
@@ -35409,6 +35410,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1206,
       "timestamp": "2026-09-27T02:40:23.463365Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1207,
+      "timestamp": "2026-09-27T02:40:53.852289Z"
     }
   ],
   "watermark": {
