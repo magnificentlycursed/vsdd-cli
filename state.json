@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1199,
-        "tip_oid": "0dd15bc8f41f4a4772f20e3ed81cf58b5f5edcea",
-        "prefix_sha256": "a97426a79ccf003d1af230cc7679c0913197c49a274eda3d7cf6e8ee13daa96f"
+        "sequence": 1200,
+        "tip_oid": "a85fd54b483ecbfd9c191a03cf211554fcec41fa",
+        "prefix_sha256": "88f7bea137787ee851a720dd301493ecab32533820a62f08b31ff0d437bc07e8"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1514,
+  "next_comment_id": 1515,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12392,7 +12392,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-25T00:38:38.110226Z",
-      "updated_at": "2026-09-25T00:38:43.524295Z",
+      "updated_at": "2026-09-27T01:30:27.622932Z",
       "labels": [
         "bug"
       ],
@@ -12405,6 +12405,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAGQawiSe6t+KQsTZqxugRap6S6w202d/zJ+61Pw5P14UDatqZbo4i9evS0jfBzXH6lD47CkEYmDCNAGNYipXtDw=="
+        },
+        "8f3abbae-05f7-4a4d-9daf-89b3351d99d7": {
+          "display_id": 1514,
+          "author": "xqjG",
+          "content": "Closed by PR #39, merged as d9285702: finding acquisition tolerates the hub ghost record (id -1); i64 ids, universe filters.",
+          "created_at": "2026-09-27T01:30:27.533742Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAvgqbjozjGXLtVreW+fCdQ/0Ip3ssgUlCwcmn4XMgrcfP7+zdRRpAIS/Qe7lfW2q8ccNcYt4axnwtf0Xqi+hcCg=="
         }
       }
     },
@@ -35331,6 +35340,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1199,
       "timestamp": "2026-09-27T01:29:51.980033Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1200,
+      "timestamp": "2026-09-27T01:30:27.622932Z"
     }
   ],
   "watermark": {
