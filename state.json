@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1211,
-        "tip_oid": "0d1c34c552fa5014f60676350a9b2f88c5b9a129",
-        "prefix_sha256": "30c425eb21bf64ff5608cd71580ea38005529f8aa11a5560fe732b7ea2c343ff"
+        "sequence": 1212,
+        "tip_oid": "fce1018fa89c1e4aa7b787b5ab46f6b577d57116",
+        "prefix_sha256": "6ec9f8c4bbc9a6a398da8828b422fea1668e96b385d3d27e403227b08634eb23"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1519,
+  "next_comment_id": 1520,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21876,7 +21876,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:03.809136Z",
-      "updated_at": "2026-09-27T02:49:45.839023Z",
+      "updated_at": "2026-09-27T02:51:36.708296Z",
       "labels": [
         "bug"
       ],
@@ -21889,6 +21889,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAWm/hVNJ7kz/f72BkO5Jzv6+JOfQdVf7N5BFzgR6jF2A2nfs/spmOhnbe1yMqLNc1MwqVEA7bI65ettCgizG+CQ=="
+        },
+        "930f0adc-09fe-43e9-94ef-6d8db71c00ce": {
+          "display_id": 1519,
+          "author": "xqjG",
+          "content": "Session #7 close 2026-09-27. DELIVERED: container pilot passed (run 8) and closed out (#878 closed; knowledge page container-vehicle-pilot-2026-09); five upstream defects fixed on fork develop (fork PRs #5/#6/#7 merged) and offered as Corvidae-Coding-Projects/crosslink PR #103 with RCA (+ issues #100/#101/#102; 16 stale upstream issues closed); hub frontier defect fixed (lineage-gated writer seed), driver ref verifies (seq 1193, integrity 5/5), binary 0.9.0-beta.1+4f984fd1c installed; vsdd-cli PRs #37–#43 merged (rename, status wiring, ghost-id tolerance, icu record, catalog parity, routing-gate readiness, register dispositions); tracker #859/#874/#880/#882/#883 closed; 21 driver locks released; 11 pilot worktrees cleaned. OPEN PRs: #44 register fallback → resolved + CHANGELOG carry (green, merge); #45 eight dependency records + sha2 drift + dead serde_yaml removal (gates running; the removal is flagged as the one non-record change). NEXT SESSION: merge #44/#45 → close #872 (two SO calls left: unicode consolidation, serde_yaml_ng → workspace table); six ontological rulings still owed (#879 mutation floor, presets, install-offer closure #881, convergence redlines, state.yaml, #876 oracle); #875 data authoring; #884 audit triage; then Slice 2 phase-1a #839. HOUSEKEEPING: main checkout is on chore/874-corpus-rename with a dirty CHANGELOG.md (same six lines as PR #44) — discard after #44 merges; .worktrees/reg and .worktrees/deps can be removed after their PRs merge; daemon self-exits every few minutes (upstream #102) — always daemon ensure --wait-ready before hub writes.",
+          "created_at": "2026-09-27T02:51:36.666331Z",
+          "kind": "handoff",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA9PaQ/lbfVwerldVJf5vLaqQQ6EAHRADG+xzpHG4R3ASP4aRXNB1NyDSpWHol/L61pDJGgmjqDALAfNCbzJxSDQ=="
         },
         "b54ea5d7-43ad-4781-af0c-b2a2e5d25764": {
           "display_id": 1503,
@@ -35439,6 +35448,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1211,
       "timestamp": "2026-09-27T02:51:08.421260Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1212,
+      "timestamp": "2026-09-27T02:51:36.708296Z"
     }
   ],
   "watermark": {
