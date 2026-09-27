@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1200,
-        "tip_oid": "a85fd54b483ecbfd9c191a03cf211554fcec41fa",
-        "prefix_sha256": "88f7bea137787ee851a720dd301493ecab32533820a62f08b31ff0d437bc07e8"
+        "sequence": 1201,
+        "tip_oid": "741a11e5a12678cd9381997a209ad0f296aff4b4",
+        "prefix_sha256": "25395ea1010dcf62086bdb3fc0b6efe9283e2b26458696bd71b20d800fb9dbd1"
       },
       "y2SI": {
         "sequence": 2,
@@ -12388,11 +12388,12 @@
       "uuid": "66a6a3d0-ff13-41e1-be1c-bf24efe04eaf",
       "display_id": 883,
       "title": "The finding acquisition rejects the whole bulk issue list when one record carries a non-positive id (the intentional ghost id -1, #858): serde id: u64 fails on '-1', so vsdd gate is permanently UNVERIFIABLE on this estate and Status reports could-not-check for every finding check",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-25T00:38:38.110226Z",
-      "updated_at": "2026-09-27T01:30:27.622932Z",
+      "updated_at": "2026-09-27T01:31:19.839369Z",
+      "closed_at": "2026-09-27T01:31:19.807229Z",
       "labels": [
         "bug"
       ],
@@ -35345,6 +35346,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1200,
       "timestamp": "2026-09-27T01:30:27.622932Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1201,
+      "timestamp": "2026-09-27T01:31:19.839369Z"
     }
   ],
   "watermark": {
