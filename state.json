@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1209,
-        "tip_oid": "cb88295d680b119ff3e9c47cb2ce6f8afa3ca1a3",
-        "prefix_sha256": "437088649e00fa7eb70ab7b1323de1298a19c42dd66ee6c92712a8f872821371"
+        "sequence": 1210,
+        "tip_oid": "3fe44792e4f19685971c78301fb25f60e25402b4",
+        "prefix_sha256": "8b3ad559a0f0b2fd8edd48b9ebac3e6f35afd82cf70bcea76e4910b0796015dd"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1518,
+  "next_comment_id": 1519,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21881,7 +21881,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:03.809136Z",
-      "updated_at": "2026-09-19T02:35:08.980070Z",
+      "updated_at": "2026-09-27T02:49:45.839023Z",
       "labels": [
         "bug"
       ],
@@ -21903,6 +21903,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAGWvx1JKM9/qpY9htwkR3VX3Wr1yMFgR4eSDgFQATXa+OmeG06blf/ep5jjrdd+ozaPOGNLHoWUFtGCv1ODoOCA=="
+        },
+        "f3a4f2d7-21d1-43e4-bdca-c2cf29ee70af": {
+          "display_id": 1518,
+          "author": "xqjG",
+          "content": "Records landed on PR #45 (fix/872-dependency-records, 0783882d): jsonschema, serde, serde_json, serde_yaml_ng, thiserror, clap, regex, tempfile — three lenses each from the current lockfile, cargo tree, cargo audit 2026-09-27 (clean; allowed RUSTSEC-2026-0190 on transitive anyhow) and per-crate unsafe grep. sha2.md scope drift fixed (runtime dependency, vsdd_core::init). The ninth crate, deprecated serde_yaml 0.9, had NO consumer in the source; both declarations removed and Cargo.lock drops it (workspace tests pass) — flagged on the PR as the one change beyond records. Remaining SO calls, not taken: unicode-general-category → icu_properties consolidation; lift the twice-declared serde_yaml_ng into the workspace table. Close #872 on PR #45's merge; the two SO calls can ride a follow-up or be declined.",
+          "created_at": "2026-09-27T02:49:45.791133Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAc9rWKRETw9zgvZKVaKT/bAVc2pZ8uDgqY/Mz80Eu5HbsYxNlb6DsQqsE9V8xKSJVrtnAgcRPconxtFswT3QEDA=="
         }
       }
     },
@@ -35425,6 +35434,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1209,
       "timestamp": "2026-09-27T02:46:44.234781Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1210,
+      "timestamp": "2026-09-27T02:49:45.839023Z"
     }
   ],
   "watermark": {
