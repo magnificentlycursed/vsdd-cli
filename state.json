@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1197,
-        "tip_oid": "b8f7a2a6ea6a4d3c1aff92921dfdcaec6a84756b",
-        "prefix_sha256": "41b439a8f6e5229d112ba741f48074ddf9c94d9e7d326ee16b9cfbdcf4a4e0ef"
+        "sequence": 1198,
+        "tip_oid": "0e88eb86cd41399493b31a16f9b99b96720c5142",
+        "prefix_sha256": "e9c260c126905e34c268f21822b52e554fe833548bde40acdb794e110b589eb0"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1513,
+  "next_comment_id": 1514,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12226,11 +12226,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:23.520180Z",
-      "updated_at": "2026-09-24T22:41:28.555219Z",
+      "updated_at": "2026-09-27T01:29:22.535694Z",
       "labels": [
         "bug"
       ],
       "comments": {
+        "58e53129-bc40-4db0-90ba-8234ac1be0e6": {
+          "display_id": 1513,
+          "author": "xqjG",
+          "content": "Closed by PR #38, merged as cc15f7a3: shell-side integrity checks wired into vsdd status (machine 0.1.3), round-parity and unresolvable-handles named could-not-check.",
+          "created_at": "2026-09-27T01:29:22.493108Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABABhyqtHK4QZNSWm99qPrYNxfw9DI5foKlHbfY3Ax2CgZQCZhmMkk5cxuNDrEbg29k/YnB1KNilJhCndeXeFgEAw=="
+        },
         "6b9f74dd-3d14-49a1-a4e0-b1b3be58f9a6": {
           "display_id": 1501,
           "author": "xqjG",
@@ -35311,6 +35320,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1197,
       "timestamp": "2026-09-27T01:28:52.914126Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1198,
+      "timestamp": "2026-09-27T01:29:22.535694Z"
     }
   ],
   "watermark": {
