@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1214,
-        "tip_oid": "234b621a6989297b8aea8ea9502127cbd0e74ee3",
-        "prefix_sha256": "594e7e0a627c582e7c4f3a0991ab7cbe94f891f7c187fe70dc4552b97edddf7e"
+        "sequence": 1215,
+        "tip_oid": "051b3bcd61672618bffc08e60ff4537c34a64601",
+        "prefix_sha256": "ffff77d8d84a610b2237b2a0fef6a5fa1eb71bddd7155d139a37d8fa5c583dec"
       },
       "y2SI": {
         "sequence": 2,
@@ -21877,11 +21877,12 @@
       "display_id": 872,
       "title": "Dependency-approval lapse: icu_properties (commit 24e76e2e, #813) landed with no docs/dependencies record, no three-lens review, no trailers — the standing VSDD-E0100 condition the contract itself records",
       "description": "Fix-lane finding under the SIMPLIFIED Dependency approval rule (SO ruling 2026-09-18, #869 decision 1d: an added dependency needs its docs/dependencies/<crate>.md record and the three-lens review — Solution Owner scope, Platform Engineer supply chain, Security CVE/license/threat). The contract's Dependency approval requirement records this lapse verbatim ('the most recent manifest addition (icu_properties, commit 24e76e2e, vsdd-cli #813) landed with no approval section, no trailers, and no record, the exact VSDD-E0100 condition, undetected') and no remediation issue existed (searched 2026-09-18). Remediation (retrofit form): author docs/dependencies/icu_properties.md with the three-lens review recorded retroactively; the deviation record stands (retrofit closes verification debt, not the process breach). Also audit the remaining direct dependencies (~9-12 in the manifests vs 2 records) and list the undischarged delta on this issue.",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:03.809136Z",
-      "updated_at": "2026-09-27T03:02:58.730666Z",
+      "updated_at": "2026-09-27T03:03:30.980826Z",
+      "closed_at": "2026-09-27T03:03:30.952529Z",
       "labels": [
         "bug"
       ],
@@ -35477,6 +35478,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1214,
       "timestamp": "2026-09-27T03:02:58.730666Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1215,
+      "timestamp": "2026-09-27T03:03:30.980826Z"
     }
   ],
   "watermark": {
