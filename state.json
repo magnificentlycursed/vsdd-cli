@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1198,
-        "tip_oid": "0e88eb86cd41399493b31a16f9b99b96720c5142",
-        "prefix_sha256": "e9c260c126905e34c268f21822b52e554fe833548bde40acdb794e110b589eb0"
+        "sequence": 1199,
+        "tip_oid": "0dd15bc8f41f4a4772f20e3ed81cf58b5f5edcea",
+        "prefix_sha256": "a97426a79ccf003d1af230cc7679c0913197c49a274eda3d7cf6e8ee13daa96f"
       },
       "y2SI": {
         "sequence": 2,
@@ -12222,11 +12222,12 @@
       "uuid": "65b5349c-6130-4c6a-90cb-de961dd2b190",
       "display_id": 880,
       "title": "Status process-integrity checks are built but never wired into vsdd status, and round-parity / unresolvable-handles report checked-clean over never-acquired inputs — both recorded CLOSED",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:23.520180Z",
-      "updated_at": "2026-09-27T01:29:22.535694Z",
+      "updated_at": "2026-09-27T01:29:51.980033Z",
+      "closed_at": "2026-09-27T01:29:51.951431Z",
       "labels": [
         "bug"
       ],
@@ -35325,6 +35326,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1198,
       "timestamp": "2026-09-27T01:29:22.535694Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1199,
+      "timestamp": "2026-09-27T01:29:51.980033Z"
     }
   ],
   "watermark": {
