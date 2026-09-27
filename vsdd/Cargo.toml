@@ -15,7 +15,6 @@ path = "src/main.rs"
 [dependencies]
 vsdd-core = { path = "../vsdd-core" }
 clap = { workspace = true }
-serde_yaml = { workspace = true }
 # The machine form is JSON; the repo-set config is YAML with the same
 # type the core loaders use (Layer 3, vsdd-cli #772, #773).
 serde_json = { workspace = true }
