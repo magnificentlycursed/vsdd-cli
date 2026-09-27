@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1201,
-        "tip_oid": "741a11e5a12678cd9381997a209ad0f296aff4b4",
-        "prefix_sha256": "25395ea1010dcf62086bdb3fc0b6efe9283e2b26458696bd71b20d800fb9dbd1"
+        "sequence": 1202,
+        "tip_oid": "79d1d3566e0f47cbee0b253a65d3d7a16f5bc685",
+        "prefix_sha256": "a110c51c7f3e71e43759536f217a05b4af94d76701366b6ecb1d3a21b37b673d"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1515,
+  "next_comment_id": 1516,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26180,7 +26180,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:42:03.074318Z",
-      "updated_at": "2026-09-24T22:42:09.889037Z",
+      "updated_at": "2026-09-27T01:31:51.771912Z",
       "labels": [
         "maintenance"
       ],
@@ -26193,6 +26193,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAo4RdudmcPgYYeJv5+wMLZarhUni/txh8oZD0q+bvqKKrmkc+vzPZ4YjN1bfJESb7/2dbMtl1NQ16r0cdFI4gAg=="
+        },
+        "86beb576-9bb0-4692-8bec-5fb25c661236": {
+          "display_id": 1515,
+          "author": "xqjG",
+          "content": "Closed by PR #41, merged as fb8cce50: bundled phase-primer schema synced to the live copy with a byte-identity test; code catalog parity.",
+          "created_at": "2026-09-27T01:31:51.731403Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAtep9Mmv4AgJAFe62A3MDsuYxrM+r16Td5PV84eIn4Crc4IIwSjB/mpICyrFshhy7hRUIJuMkRBYUxU4ZFM/qDw=="
         },
         "b1c84554-c274-46a7-864d-7eff81deb0ef": {
           "display_id": 1495,
@@ -35351,6 +35360,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1201,
       "timestamp": "2026-09-27T01:31:19.839369Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1202,
+      "timestamp": "2026-09-27T01:31:51.771912Z"
     }
   ],
   "watermark": {
