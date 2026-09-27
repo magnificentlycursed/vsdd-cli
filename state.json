@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1195,
-        "tip_oid": "4d0d4b954ac18a9f39a8a0899828a56677cf6c40",
-        "prefix_sha256": "2764118be06d58f4b45e481c62493647054ec8b8946e1b2bdd4b0fc6712c97c8"
+        "sequence": 1196,
+        "tip_oid": "b0e1decf4c5e6093e4379bbf067b6c34c24a4798",
+        "prefix_sha256": "c76753b4f6a60acd783bfaa51a1380385b0d76b4c0d89789cdf49f2189220a0b"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1512,
+  "next_comment_id": 1513,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9103,11 +9103,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T04:24:08.582323Z",
-      "updated_at": "2026-08-02T04:24:13.927828Z",
+      "updated_at": "2026-09-27T01:28:23.880061Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "1f31d2e4-a650-4225-97e2-f52a36de59fc": {
+          "display_id": 1512,
+          "author": "xqjG",
+          "content": "Closed by PR #37 (47350316): the paved-path map flipped to the container vehicle as part of the corpus rename.",
+          "created_at": "2026-09-27T01:28:23.838209Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqIGMTG9Ywthnk2Mxg4VJr1W5tvTIIpciIAWXq9hX6Ixji92BMWRzFA58uNCde+dlShySdtSUHfsqMZM7rQIDCQ=="
+        },
         "3ea9d803-7cb9-4ed6-93db-3c490fc2a70d": {
           "display_id": 1401,
           "author": "xqjG",
@@ -35291,6 +35300,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1195,
       "timestamp": "2026-09-27T01:27:54.778743Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1196,
+      "timestamp": "2026-09-27T01:28:23.880061Z"
     }
   ],
   "watermark": {
