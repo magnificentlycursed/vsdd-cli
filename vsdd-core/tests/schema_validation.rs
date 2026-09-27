@@ -145,3 +145,30 @@ fn phase_primer_schema_rejects_missing_required_field() {
         "missing required fields should produce errors"
     );
 }
+
+// --- bundled == live (vsdd-cli #882) -----------------------------------------
+
+/// The four schemas `vsdd init` deploys to adopters are the same bytes
+/// `mdatron verify` reads in this repo; a divergence (the retired `phase-0`
+/// member survived in the bundled phase-primer copy for two months) ships
+/// adopters a schema this repo no longer governs by.
+#[test]
+fn bundled_schemas_are_byte_identical_to_the_live_mdatron_copies() {
+    let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .unwrap()
+        .to_path_buf();
+    for (name, bundled) in [
+        ("phase-primer", vsdd_core::schemas::PHASE_PRIMER),
+        ("domain-prompt", vsdd_core::schemas::DOMAIN_PROMPT),
+        ("supplement", vsdd_core::schemas::SUPPLEMENT),
+        ("review-entry", vsdd_core::schemas::REVIEW_ENTRY),
+    ] {
+        let live = std::fs::read_to_string(root.join(format!(".mdatron/schemas/{name}.json")))
+            .expect("the live schema copy is present");
+        assert_eq!(
+            bundled, live,
+            "{name}: the bundled schema (vsdd-core/schemas/{name}.json) must be byte-identical to .mdatron/schemas/{name}.json"
+        );
+    }
+}
