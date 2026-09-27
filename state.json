@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1205,
-        "tip_oid": "e52f46082e88000694c7b4c1968cf35041061de9",
-        "prefix_sha256": "66f4970b6fae145a3fd4ac0c0ce5b766c5a07bcf7a09e39383dd2743eb5530d5"
+        "sequence": 1206,
+        "tip_oid": "666f722ef5be8d9f2013e40d348426ec1c77603d",
+        "prefix_sha256": "96b39e2e325011f30fc43cfce93ed4904f68837571209e97f8d30bfdfa8735db"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1517,
+  "next_comment_id": 1518,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5441,7 +5441,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:11:50.754315Z",
-      "updated_at": "2026-09-27T02:31:09.495106Z",
+      "updated_at": "2026-09-27T02:40:23.463365Z",
       "labels": [
         "maintenance"
       ],
@@ -5513,6 +5513,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZio0VzaMNLniseN8IugRf+PHiA2CvYmQl3vJBls7Kw7L39EizXsfQu0NSvizT9RRai4qXi43/NlH7R6dx46pBg=="
+        },
+        "ca978052-7281-4139-ac72-ba61b2d017f1": {
+          "display_id": 1517,
+          "author": "xqjG",
+          "content": "Closed: pilot passed (run 8, 2026-09-25) and closed out — fork PR #7 and upstream PR #103 carry the five defect fixes; register entry manual-dispatch-fallback resolved per the 2026-09-27 ruling in PR #44 (fix/878-register-fallback-resolved); knowledge page container-vehicle-pilot-2026-09 holds the run record; 11 pilot worktrees cleaned, driver locks released, integrity 5/5.",
+          "created_at": "2026-09-27T02:40:23.421831Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAK1ksuw9eXFbu2yLyCkEL6IQoaloaaoaCifUIzU6Z5jQdrUzXbI/6WsN81NOqtoFQCI3ArVdZ/k0rbHgLTzGCDA=="
         },
         "d163009d-7c98-4132-9d68-35a866814498": {
           "display_id": 1498,
@@ -35395,6 +35404,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1205,
       "timestamp": "2026-09-27T02:31:09.495106Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1206,
+      "timestamp": "2026-09-27T02:40:23.463365Z"
     }
   ],
   "watermark": {
