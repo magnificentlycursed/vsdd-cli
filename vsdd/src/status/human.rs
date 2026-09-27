@@ -7,6 +7,7 @@
 //! must strip losslessly.
 
 use vsdd_core::answer::{CheckNotRunReason, GateProvenance, PhaseAnswer};
+use vsdd_core::integrity_shell::{ShellReport, ShellResult};
 use vsdd_core::registry::sets::StatuslineData;
 use vsdd_core::snapshot::Snapshot;
 
@@ -40,7 +41,15 @@ fn registered_absence<'a>(data: &'a StatuslineData, field: &str) -> &'a str {
 }
 
 /// Render the human terminal form. Pure.
-pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &StatuslineData) -> String {
+/// Render the human form. Pure. `shell` is the effectful shell's report
+/// (vsdd-cli #880) — `Some` on the `vsdd status` path, `None` where the
+/// shell did not run (said in the output, never silent).
+pub fn render_human(
+    answer: &PhaseAnswer,
+    snapshot: &Snapshot,
+    data: &StatuslineData,
+    shell: Option<&ShellReport>,
+) -> String {
     let mut out = String::new();
     out.push_str("answer\n");
     out.push_str(&format!(
@@ -169,6 +178,34 @@ pub fn render_human(answer: &PhaseAnswer, snapshot: &Snapshot, data: &Statusline
             "  finding acquisition note: {}\n",
             clean_for_terminal(note)
         ));
+    }
+    // The effectful shell's checks (vsdd-cli #880): each three-valued with
+    // its worded detail; a could-not-check member is named with WHY, and
+    // an absent report says so — never silence read as clean.
+    match shell {
+        Some(report) => {
+            out.push_str("  shell checks:\n");
+            for check in &report.checks {
+                let result = match check.result {
+                    ShellResult::Pass => "pass",
+                    ShellResult::Fail => "FAIL",
+                    ShellResult::CouldNotCheck => "could not check",
+                };
+                out.push_str(&format!(
+                    "    - {}: {result} — {}\n",
+                    clean_for_terminal(&check.check),
+                    clean_for_terminal(&check.detail)
+                ));
+                for item in &check.items {
+                    out.push_str(&format!(
+                        "        {}: {}\n",
+                        clean_for_terminal(&item.id),
+                        clean_for_terminal(&item.detail)
+                    ));
+                }
+            }
+        }
+        None => out.push_str("  shell checks: not run this rendering (not checked-clean)\n"),
     }
     out
 }
