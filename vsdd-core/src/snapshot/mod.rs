@@ -96,6 +96,20 @@ pub struct FindingFieldsAcquired {
     pub lifecycle_roles: bool,
     /// evidence_reference_present (Slice 5).
     pub evidence: bool,
+    /// round_manifests + round_children — the round-parity check's inputs
+    /// (vsdd-cli #880). Absent from the record means acquired, so the
+    /// convergence fixtures, which carry the vectors whole, keep running the
+    /// check; the live join sets it false until the round query lands.
+    #[serde(default = "acquired_by_default")]
+    pub rounds: bool,
+    /// comment_handles — the unresolvable-handles check's input (vsdd-cli
+    /// #880); same default rule as `rounds`.
+    #[serde(default = "acquired_by_default")]
+    pub comment_handles: bool,
+}
+
+const fn acquired_by_default() -> bool {
+    true
 }
 
 impl Default for FindingFieldsAcquired {
@@ -104,6 +118,8 @@ impl Default for FindingFieldsAcquired {
             spine: true,
             lifecycle_roles: true,
             evidence: true,
+            rounds: true,
+            comment_handles: true,
         }
     }
 }
@@ -115,6 +131,8 @@ impl FindingFieldsAcquired {
         spine: true,
         lifecycle_roles: false,
         evidence: false,
+        rounds: false,
+        comment_handles: false,
     };
 
     /// A FAILED finding-query leg: NO group acquired (vsdd-cli #818 Fix 2).
@@ -129,6 +147,8 @@ impl FindingFieldsAcquired {
         spine: false,
         lifecycle_roles: false,
         evidence: false,
+        rounds: false,
+        comment_handles: false,
     };
 }
 
