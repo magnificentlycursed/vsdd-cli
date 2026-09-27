@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1204,
-        "tip_oid": "0398591cc9d7a0bd971471d91b475cb2da623dc7",
-        "prefix_sha256": "ed1afda1529073158593260b45d2112093bb59eced69605a1ac1ea9dfe19ff84"
+        "sequence": 1205,
+        "tip_oid": "e52f46082e88000694c7b4c1968cf35041061de9",
+        "prefix_sha256": "66f4970b6fae145a3fd4ac0c0ce5b766c5a07bcf7a09e39383dd2743eb5530d5"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1516,
+  "next_comment_id": 1517,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5441,7 +5441,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:11:50.754315Z",
-      "updated_at": "2026-09-27T00:34:21.212630Z",
+      "updated_at": "2026-09-27T02:31:09.495106Z",
       "labels": [
         "maintenance"
       ],
@@ -5504,6 +5504,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAU5MqB1JclAiALxlXG1rkRb2TxZhYkzGSqcZPpsGjCK49buIp+Bqie86om4nhdwu8np5HQJ4d3sC0F8+c3zj7BQ=="
+        },
+        "99daa33b-99f3-4f96-a054-33e41fade57c": {
+          "display_id": 1516,
+          "author": "xqjG",
+          "content": "Solution Owner ruling 2026-09-27 (in-session, 'Resolve'): register entry manual-dispatch-fallback moves standing → resolved. Exit condition met by pilot run 8 (2026-09-25 14:17–15:57 UTC, container 4b0568df0db6, agent E00r-ysOk): the agent posted its plan, result and handoff to the hub from inside the container, so the container vehicle is proven end to end and the runtime-harness Agent/Workflow fallback no longer rides. Knowledge page container-vehicle-pilot-2026-09 holds the run record. This comment is the entry's disposition_ref.",
+          "created_at": "2026-09-27T02:31:09.455342Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZio0VzaMNLniseN8IugRf+PHiA2CvYmQl3vJBls7Kw7L39EizXsfQu0NSvizT9RRai4qXi43/NlH7R6dx46pBg=="
         },
         "d163009d-7c98-4132-9d68-35a866814498": {
           "display_id": 1498,
@@ -35381,6 +35390,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1204,
       "timestamp": "2026-09-27T02:30:08.333386Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1205,
+      "timestamp": "2026-09-27T02:31:09.495106Z"
     }
   ],
   "watermark": {
