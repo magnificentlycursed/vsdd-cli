@@ -1,3 +1,4 @@
+<!-- # crosslink:custom — tracked vsdd-cli policy rules; crosslink ships no bundled rules since upstream 62e637ab7, so every tracked rule is custom by definition (vsdd-cli PR #42) -->
 ## Crosslink Task Management
 
 Create issues before starting work to keep things organized and enable context handoff between sessions.
