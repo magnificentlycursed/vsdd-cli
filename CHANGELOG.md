@@ -27,6 +27,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Phase 1b: verification architecture (respec cycle) (L2)
 
 ### Fixed
+- The finding acquisition rejects the whole bulk issue list when one record carries a non-positive id (the intentional ghost id -1, #858): serde id: u64 fails on '-1', so vsdd gate is permanently UNVERIFIABLE on this estate and Status reports could-not-check for every finding check (#883)
+- Status process-integrity checks are built but never wired into vsdd status, and round-parity / unresolvable-handles report checked-clean over never-acquired inputs — both recorded CLOSED (#880)
 - parse_milestones treats crosslink 'No milestones found.' as Unusable, not an empty list (#829)
 - M1 amendment extension: attribution honesty for inline composition (#6)
 - Layer 3 round-5 fix pass: the cleaner also strips unassigned default-ignorable code points (preserving variation selectors); state-sourced strings cleaned at read so the machine form is covered; the post_load wiring, machine form, and the previously-misreported #789 path-line all given real falsifiers; composition-set human strings cleaned at load (#798, #799, #800, #801). Corrects the 800878a5 record: the #789 hostile-path falsifier claimed there did not land — added here
@@ -41,6 +43,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Container vehicle pilot: first headless run of kickoff run --container on this repo — read-only task (report vsdd status --machine + mdatron verify --json families), proves the preflight members end to end (#878)
+- Data plumbing: adopters receive data sets without schema pairs/routes/config; the retired-term prohibition has two hand-mirrored homes; the VSDD- catalog claims comprehensive but omits emitted codes; four versioning conventions; bundled schemas diverge from live (#882)
+- Consent-posture adoption: container kickoff as the autonomous dispatch vehicle, no gate-disabling (SO ruling 2026-08-02) + downstream edits (#859)
+- Governed-corpus rename (Part 2 follow-on to the compaction): apply the ratified naming map + handle grammar across primers, domain skills, supplements, registry data, and file names (#874)
 - mdatron 0.6.0 adoption (vsdd-cli#877): the CLI pin moves to 0.6.x (pre-commit window, both CI workflows); the consumed `verify --json` envelope re-pinned at 3.0.0 (`.mdatron/envelope-3.0.0.schema.json`, asserted on the envelope's own `envelope_schema` field; nine families, forward-extensible); the shipped JSON schemas verified draft 2020-12 (the new E0040 dialect refusal fires on none) and the pattern files verified strict-clean; tree verifies clean and the test suite passes under 0.6.0. Three new families go live (SO rulings 2026-09-24): `.mdatron/routes.yaml` — the closed-world route table claiming every walked file, governed by the contract, carrying the build-plan's two section rules (≥ 1 open-phase H3 under `## Requirements`; Slice ids disjoint between open headings and completed bullets — the former #845 AC-1, mechanized; a renamed section heading now blocks E0122 instead of passing silently); `.mdatron/code-catalogs.yaml` — the comprehensive `VSDD-` catalog (#854): any unlisted adopter code blocks E0113; the frozen June-cycle `review-log/` archive retired from the tree to git history (its retired code schemes would otherwise collide with the catalog; one archived entry kept as a test fixture). CI now asserts route, section, and code_catalog active alongside schema and vocabulary
 - Design unification: consolidate the contract — fold #840 subsystem + retire #845 doc, apply Section-A amendments (effort-seam, injection-seam, corroboration-substrate) + #859 dispatch posture (#860)
 - Upstream crosslink observation: issue show --json 'subissues' is never populated (#828)

@@ -5,10 +5,7 @@ entries:
     execution.
   deviates_from: autonomous-execution
   stated_reason: 'Upstream kickoff-plan stall plus the missing vsdd-layer injection seam into swarm-dispatched
-    agents (vsdd-cli #837/#851; upstream dollspace-gay/crosslink #55/#62).'
-  retest_trigger:
-    type: date
-    predicate: '2026-10-31'
+    agents (vsdd-cli #837/#851; upstream dollspace-gay/crosslink #55/#62). RESOLVED 2026-09-27 (Solution Owner ruling, in-session, ''Resolve''): the exit condition fired — vsdd-cli#878 pilot run 8 (2026-09-25 14:17–15:57 UTC, container 4b0568df0db6, agent E00r-ysOk) posted its plan, result and handoff to the hub from inside the container, so the container vehicle (crosslink kickoff run --container) is proven end to end and the runtime-harness Agent/Workflow fallback no longer rides. Run record: knowledge page container-vehicle-pilot-2026-09; the five upstream defects the pilot surfaced are fixed on fork develop and offered upstream as Corvidae-Coding-Projects/crosslink PR #103.'
   trigger_context: 'Re-armed 2026-08-02 (SO, vsdd-cli #859 container adoption + audit deviation-registry-retest-material-live).
     #859 adopts container kickoff as THE headless vehicle; the tmux/plan path stalls at claude''s folder-trust
     dialog (TTY-gated, fires on ANY untrusted fresh-worktree path — NOT the .claude/settings.json pre-approval
@@ -23,10 +20,10 @@ entries:
   entry_date: 2026-08-01
   expiry: 2026-10-31
   owning_issue: vsdd-cli#845
-  status: standing
+  status: resolved
   disposition_ref:
     issue: vsdd-cli#878
-    comment_timestamp: 2026-09-24 23:50
+    comment_timestamp: 2026-09-27 02:31
 - id: mdatron-sibling-pin-lag
   deviation: The CI sibling checkout is tag-pinned to mdatron v0.4.0 (mdatron-verify.yml) while the sibling's
     latest release is v0.5.0, with the pre-commit window at 0.4.x — a persisted toolchain-pin lag.
