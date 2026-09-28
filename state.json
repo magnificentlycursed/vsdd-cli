@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1225,
-        "tip_oid": "e6ed888bd8931180111ec9930261f150f12e9b6e",
-        "prefix_sha256": "21084b80cdbb4f3d8967ab76d15a647e977d1e100c37dd39c117525204491def"
+        "sequence": 1226,
+        "tip_oid": "8083cf5d14a3d39e3a01e1c56ce85ac387fc7a65",
+        "prefix_sha256": "f811ea192a3c7d84e195c87b3f4149f432c08dc75960bba5bb30596251002744"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1529,
+  "next_comment_id": 1530,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9582,7 +9582,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-08-02T03:04:47.818996Z",
+      "updated_at": "2026-09-28T23:23:00.207787Z",
       "labels": [
         "design"
       ],
@@ -9591,6 +9591,15 @@
       ],
       "milestone_uuid": "45984aa0-de21-439f-b54c-985c1206e60a",
       "comments": {
+        "2ef04aa1-ed8d-497a-ae80-d6448c300b7e": {
+          "display_id": 1529,
+          "author": "xqjG",
+          "content": "Solution Owner ruling 2026-09-28 (in-session) — for Slice 2 phase-1a: (1) PRESETS: the contract wins. Every review composition carries the process-governing set (12 with Performance for code-shipping adopters); presets vary round budget, stop sensitivity, product domains and the mutation-floor declaration, never the process-governing floor. The standard and minimal presets in economics-data are corrected in this slice, and 'core' is defined as one set. (2) INSTALL OFFER: re-open the install-offer members the contract marks closed; the six-direction offer fixtures are built in this slice before they close again.",
+          "created_at": "2026-09-28T23:23:00.167269Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABARqG9NsQn6tj/H5xdkj0EJNKObr402wLXso6JmRTaUsl+jBrgVrIzopNeKxFLkrQUEig63hopB+tQDe4MiFbLDw=="
+        },
         "3b43ae16-2067-4ea3-ac1a-436e206b5858": {
           "display_id": 1486,
           "author": "xqjG",
@@ -35605,6 +35614,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1225,
       "timestamp": "2026-09-28T23:22:24.478600Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1226,
+      "timestamp": "2026-09-28T23:23:00.207787Z"
     }
   ],
   "watermark": {
