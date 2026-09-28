@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1228,
-        "tip_oid": "915a95a2a7d6dd973a73c5586ea254dd51c4aa4a",
-        "prefix_sha256": "6b5337657d80358996beda2315e1a47b1e0fd356ab583458c707e887e2540356"
+        "sequence": 1229,
+        "tip_oid": "bf0ab9c2f7ece2b2a8ce1650642f6bb4a838156a",
+        "prefix_sha256": "93f6f2796ee6f2c291020e60583a68ea5823ae1a8cca4e3a59a000f5fac586d7"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1532,
+  "next_comment_id": 1533,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25806,11 +25806,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:01.857683Z",
-      "updated_at": "2026-09-28T23:07:02.307168Z",
+      "updated_at": "2026-09-28T23:29:55.011736Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "065ff2a2-924f-4c09-813c-e324af555e63": {
+          "display_id": 1532,
+          "author": "xqjG",
+          "content": "[action] Daemon reproduction: this write is paused mid-flight for 100 s to test readiness recovery",
+          "created_at": "2026-09-28T23:29:54.971858Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAkLIu/palhThFOCEmOJrHxHfEm83u1/4PbofIJX5vz7jpIOAgTf9FpJGYqg6KjJoKDCrOsewmK5nDlpZoLoQ/Aw=="
+        },
         "6239a676-f948-4728-964e-a6b4890ef2e4": {
           "display_id": 1524,
           "author": "xqjG",
@@ -35647,6 +35656,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1228,
       "timestamp": "2026-09-28T23:24:16.286746Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1229,
+      "timestamp": "2026-09-28T23:29:55.011736Z"
     }
   ],
   "watermark": {
