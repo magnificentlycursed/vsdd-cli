@@ -11,68 +11,79 @@
     "command": "ROOT=\"$(git rev-parse --show-toplevel 2>/dev/null)\"; PATH=\"$ROOT/target/debug:$ROOT/target/release:$PATH\" sh \"$ROOT/templates/statusline/vsdd-statusline.sh\""
   },
   "hooks": {
-    "PostToolUse": [
-      {
-        "hooks": [
-          {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/post-edit-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
-            "timeout": 5,
-            "type": "command"
-          }
-        ],
-        "matcher": "Write|Edit"
-      },
-      {
-        "hooks": [
-          {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/heartbeat.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
-            "timeout": 3,
-            "type": "command"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
+        "matcher": "WebFetch|WebSearch",
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/pre-web-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
-            "timeout": 5,
-            "type": "command"
+            "type": "command",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.crosslink/integrations/hooks/pre-web-check.py\"; if [ -f \"$HOOK\" ]; then CROSSLINK_HOOK_PROVIDER=claude python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK \u2014 the tracked wiring references a script this clone does not have; run crosslink init --update --agent-integration claude before proceeding (vsdd-cli #658, #885)\" >&2; exit 2; fi",
+            "timeout": 5
           }
-        ],
-        "matcher": "WebFetch|WebSearch"
+        ]
       },
       {
+        "matcher": "Write|Edit|Bash",
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/work-check.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
-            "timeout": 3,
-            "type": "command"
+            "type": "command",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.crosslink/integrations/hooks/work-check.py\"; if [ -f \"$HOOK\" ]; then CROSSLINK_HOOK_PROVIDER=claude python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK \u2014 the tracked wiring references a script this clone does not have; run crosslink init --update --agent-integration claude before proceeding (vsdd-cli #658, #885)\" >&2; exit 2; fi",
+            "timeout": 7
           }
-        ],
-        "matcher": "Write|Edit|Bash"
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/session-start.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
-            "timeout": 10,
-            "type": "command"
-          }
-        ],
-        "matcher": "startup|resume"
+        ]
       }
     ],
     "UserPromptSubmit": [
       {
         "hooks": [
           {
-            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.claude/hooks/prompt-guard.py\"; if [ -f \"$HOOK\" ]; then python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK — the tracked wiring references a script this clone does not have; restore the crosslink install before proceeding (vsdd-cli #658)\" >&2; exit 2; fi",
-            "timeout": 5,
-            "type": "command"
+            "type": "command",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.crosslink/integrations/hooks/prompt-guard.py\"; if [ -f \"$HOOK\" ]; then CROSSLINK_HOOK_PROVIDER=claude python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK \u2014 the tracked wiring references a script this clone does not have; run crosslink init --update --agent-integration claude before proceeding (vsdd-cli #658, #885)\" >&2; exit 2; fi",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.crosslink/integrations/hooks/post-edit-check.py\"; if [ -f \"$HOOK\" ]; then CROSSLINK_HOOK_PROVIDER=claude python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK \u2014 the tracked wiring references a script this clone does not have; run crosslink init --update --agent-integration claude before proceeding (vsdd-cli #658, #885)\" >&2; exit 2; fi",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.crosslink/integrations/hooks/heartbeat.py\"; if [ -f \"$HOOK\" ]; then CROSSLINK_HOOK_PROVIDER=claude python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK \u2014 the tracked wiring references a script this clone does not have; run crosslink init --update --agent-integration claude before proceeding (vsdd-cli #658, #885)\" >&2; exit 2; fi",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.crosslink/integrations/hooks/session-start.py\"; if [ -f \"$HOOK\" ]; then CROSSLINK_HOOK_PROVIDER=claude python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK \u2014 the tracked wiring references a script this clone does not have; run crosslink init --update --agent-integration claude before proceeding (vsdd-cli #658, #885)\" >&2; exit 2; fi",
+            "timeout": 131
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "HOOK=\"$(git rev-parse --show-toplevel 2>/dev/null)/.crosslink/integrations/hooks/prompt-guard.py\"; if [ -f \"$HOOK\" ]; then CROSSLINK_HOOK_PROVIDER=claude python3 \"$HOOK\"; else echo \"crosslink hook payload missing: $HOOK \u2014 the tracked wiring references a script this clone does not have; run crosslink init --update --agent-integration claude before proceeding (vsdd-cli #658, #885)\" >&2; exit 2; fi",
+            "timeout": 5
           }
         ]
       }
