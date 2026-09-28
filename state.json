@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1223,
-        "tip_oid": "e7852d0e52c594031657a02dfcb5ff834c271ebe",
-        "prefix_sha256": "0cb3bf3119d44d5bd6bee3881ef7c218a7cbc008dba1792f2a93fc27d4f5fca9"
+        "sequence": 1224,
+        "tip_oid": "2e04a2e4e5f0986294c9676213309e18f8d5bad1",
+        "prefix_sha256": "4eff90218351e8661a99f0e3155f8b6f306978d221583169fd64d97f98ed410d"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1527,
+  "next_comment_id": 1528,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26349,7 +26349,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T16:06:11.888099Z",
-      "updated_at": "2026-09-28T22:51:00.956092Z",
+      "updated_at": "2026-09-28T23:21:46.607260Z",
       "labels": [
         "design"
       ],
@@ -26375,6 +26375,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAkyqOLkUkamrTOBQpQcpWSoZ4h0nN8g8Ov7ebKIMBP0+0E9B9xHswQr1nEwYc7eY/3necKDJx+KoWogVqUZzCBA=="
+        },
+        "a4d43d86-fda3-45d1-9b53-5953d30835b7": {
+          "display_id": 1527,
+          "author": "xqjG",
+          "content": "Solution Owner ruling 2026-09-28 (in-session) — MUTATION FLOOR: 80% kill ratio on changed code, superseding the 65% starting calibration ratified here 2026-07-30. Home unchanged from the build plan: the number is authored into gate-data.md as Slice 4's data item; economics-data's mutation_floor (already 80) is to point there rather than hold a second copy. build-plan Phase 3's '65% … ratified vsdd-cli#836' literal is stale and is corrected. CONFORMANCE ORACLE (#876): option (b) — the trace is committed to a hub/data branch by a non-agent actor (CI runner or the operator) and signed with the driver key; the remote copy under the ruleset + signatures is the independent copy, the same trust basis tracker events already have. Until built, every trace-based verdict reports could-not-check. Enters Slice 4 phase-1a as a contract amendment (owner Solution Architect, validator Security).",
+          "created_at": "2026-09-28T23:21:46.561495Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYkojWbnsoJfyCIhZsX+MsaxiYQAKFfEX/JP7ceesDiladTQg2NDJ/c+2VU0DsIVBVPPj1hKBqbIDlX+xW2M5BQ=="
         },
         "a780c382-9315-41ef-973c-6329c8f472d2": {
           "display_id": 1269,
@@ -35577,6 +35586,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1223,
       "timestamp": "2026-09-28T23:07:02.307168Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1224,
+      "timestamp": "2026-09-28T23:21:46.607260Z"
     }
   ],
   "watermark": {
