@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1233,
-        "tip_oid": "5e5956dd2697e013e963e597de88e602fd797aaf",
-        "prefix_sha256": "cb761227521e28a39814ae95d37571853504edf5868a133519f8e3e356ced673"
+        "sequence": 1234,
+        "tip_oid": "46132a618acecea35f974ec97d5491c2c8ae6cd7",
+        "prefix_sha256": "e63f126b854c60af2cb9fdeb1f7eaf5a8660728b811325a2f3d5a92b5201b48d"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1534,
+  "next_comment_id": 1535,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13146,11 +13146,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-28T23:37:08.151324Z",
-      "updated_at": "2026-09-28T23:44:14.443909Z",
+      "updated_at": "2026-09-28T23:52:43.068018Z",
       "labels": [
         "chore"
       ],
       "comments": {
+        "44546f88-5c8a-41cf-bb4b-f6c793677010": {
+          "display_id": 1534,
+          "author": "xqjG",
+          "content": "PLAN (operator-approved 2026-09-28, sequenced AFTER PR #46 merges and a fresh Claude Code session proves the new session-start hook establishes readiness on its own): (1) stop the hand-started supervised daemon and remove the retired .claude/hooks files locally; (2) follow-up PR on routing-gate.yml — replace the ensure-with-|| true + 10-minute status poll (readiness coercion added in PR #42) with a plain 'crosslink daemon ensure --wait-ready --json' allowed to fail the job; (3) record the floating 'ref: develop' crosslink checkout (fork, unpinned) on the exception register with a retest trigger to re-pin at the first upstream release; (4) full re-check of every daemon/readiness record against the corrected setup — fork PRs #5-#7, upstream #100-#103 (incl. scoping the 1800 s ensure wait back to kickoff, withdrawing the self-exit mechanism, adding the hook-staleness/new-hook findings), vsdd-cli PR #42, knowledge page container-vehicle-pilot-2026-09, memory — plus which open issues outside upstream PR #103 change disposition. NOTE: the new upstream work-check refuses Write/Edit outside the repo, so memory updates this session go through the tracker instead.",
+          "created_at": "2026-09-28T23:52:43.026739Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA5AOuxX1oBThFcfQ9KyKuUDNQUFQgiluKllPFgDfKOtRJk1z5RLR+QvCeykQzndH0EbeoSPf8X46f5NXwzWySCA=="
+        },
         "b0045031-b9ce-49bf-acd7-f736500259f6": {
           "display_id": 1533,
           "author": "xqjG",
@@ -35710,6 +35719,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1233,
       "timestamp": "2026-09-28T23:44:14.443909Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1234,
+      "timestamp": "2026-09-28T23:52:43.068018Z"
     }
   ],
   "watermark": {
