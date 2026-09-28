@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1224,
-        "tip_oid": "2e04a2e4e5f0986294c9676213309e18f8d5bad1",
-        "prefix_sha256": "4eff90218351e8661a99f0e3155f8b6f306978d221583169fd64d97f98ed410d"
+        "sequence": 1225,
+        "tip_oid": "e6ed888bd8931180111ec9930261f150f12e9b6e",
+        "prefix_sha256": "21084b80cdbb4f3d8967ab76d15a647e977d1e100c37dd39c117525204491def"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1528,
+  "next_comment_id": 1529,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -22021,7 +22021,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-19T04:25:11.146109Z",
-      "updated_at": "2026-09-19T04:25:16.868859Z",
+      "updated_at": "2026-09-28T23:22:24.478600Z",
       "labels": [
         "design"
       ],
@@ -22043,6 +22043,15 @@
           "kind": "handoff",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAm5hH6ZjsPBifbM5LUusrJ18DHYn56EfagwN1Qdkcv77hj3ByCQqLFwOAsscriG3cdv+phiXeBdRgf20P5hFDCQ=="
+        },
+        "e7e87381-eba3-4057-abaa-c0a0cc31ebb8": {
+          "display_id": 1528,
+          "author": "xqjG",
+          "content": "Solution Owner ruling 2026-09-28 (in-session): oracle independence = option (b), commit-and-sign by a non-agent actor (CI runner or operator) to a hub/data branch; could-not-check grade until built. Recorded in full on #836 (Slice 4 phase-1a home). Register entry synced-trace-oracle-unbuilt to be re-scoped on the amendment branch as planned.",
+          "created_at": "2026-09-28T23:22:24.435122Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcs2rkQ2WAD+sReRNbf7jlFtvTResPzdxqTnaHmTL09C3a8D47uJ54R/4xmJbyb8n9t9Q7g5eoffHlRj+apCoCQ=="
         }
       }
     },
@@ -35591,6 +35600,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1224,
       "timestamp": "2026-09-28T23:21:46.607260Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1225,
+      "timestamp": "2026-09-28T23:22:24.478600Z"
     }
   ],
   "watermark": {
