@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1232,
-        "tip_oid": "98494e489bce1b1aeda82ff9c45c2891df1d9506",
-        "prefix_sha256": "6d933a483417d35a6bd774e3a2a610f2a5046c08e5c0fa45a36d9f79e735fd7d"
+        "sequence": 1233,
+        "tip_oid": "5e5956dd2697e013e963e597de88e602fd797aaf",
+        "prefix_sha256": "cb761227521e28a39814ae95d37571853504edf5868a133519f8e3e356ced673"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1533,
+  "next_comment_id": 1534,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13146,10 +13146,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-28T23:37:08.151324Z",
-      "updated_at": "2026-09-28T23:37:28.453878Z",
+      "updated_at": "2026-09-28T23:44:14.443909Z",
       "labels": [
         "chore"
-      ]
+      ],
+      "comments": {
+        "b0045031-b9ce-49bf-acd7-f736500259f6": {
+          "display_id": 1533,
+          "author": "xqjG",
+          "content": "PLAN: vsdd-cli's deployed hooks predated the readiness model (deployed 2026-07-22 by 0.9.0-beta.1; upstream moved hooks to .crosslink/integrations/hooks and its session-start now establishes readiness). Ran crosslink init --update --agent-integration claude (ignored payload refreshed/created); rewire tracked .claude/settings.json to the new path keeping the fail-closed guard (#658) with the template's timeouts (session-start 131 s, work-check 7 s), matcher and SubagentStart; accept .mcp.json (stdlib-only servers under python3; safe-fetch retired upstream dd0b71737) and the sanitize-patterns.txt retirement; drop safe-fetch instructions from global.md/web.md; adopt crosslink's empty external-content.md (it exists only for context check's presence test — our 3-line pointer duplicated web.md). Old .claude/hooks files stay until a fresh session runs on the new wiring. Verified: synthetic events through new work-check/prompt-guard (build passes; force-push, PR merge blocked; feature push allowed); workflow diff --check and the CI-gated context-check sections pass.",
+          "created_at": "2026-09-28T23:44:14.399631Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAR4wYV+CuYimadjm6/Evg3mcXcxYNYmAUeuXEuaW6NpspPeOXeYCxTjBw9tNEarCTSiF2Q4n4Xt2SvhGHoqT2Dg=="
+        }
+      }
     },
     "6d0960c3-7212-4f5b-bf1b-dd16d14da699": {
       "uuid": "6d0960c3-7212-4f5b-bf1b-dd16d14da699",
@@ -35694,6 +35705,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1232,
       "timestamp": "2026-09-28T23:37:48.288089Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1233,
+      "timestamp": "2026-09-28T23:44:14.443909Z"
     }
   ],
   "watermark": {
