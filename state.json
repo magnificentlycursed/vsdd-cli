@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1219,
-        "tip_oid": "5e5506a9e57f5139a4b234f5ec0b6b524a2d59a6",
-        "prefix_sha256": "3f0099bddc6f6ecbb556754c01d04f28eada9364e96c707fb789953d46728561"
+        "sequence": 1220,
+        "tip_oid": "671b0f8241ff30803460791c756a87c3da7aa39d",
+        "prefix_sha256": "b255896bc2e5f3651c83b2207aca86e0dc386b1492e0b31bf8587cda141f57d3"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 885,
-  "next_comment_id": 1523,
+  "next_comment_id": 1524,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25770,7 +25770,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:01.857683Z",
-      "updated_at": "2026-09-28T23:01:48.917094Z",
+      "updated_at": "2026-09-28T23:05:04.227923Z",
       "labels": [
         "design"
       ],
@@ -25792,6 +25792,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmjP4UIUwnxj+L+4E5H+ZAwIZViPOtKPYBFsxkcETkC0h5VDsdl+7Fi2NCeOib7EWR3hMi/5Qm0b1QEMagaG8AA=="
+        },
+        "da634b35-9e22-4b10-91f6-cb036a440667": {
+          "display_id": 1523,
+          "author": "xqjG",
+          "content": "[action] Daemon self-exit reproduction: back-to-back write 1 of 4",
+          "created_at": "2026-09-28T23:05:04.188360Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAvLVqSVAyJFPYfmyHGCl4l/kfoC7K40M6v7OUR/vxt53itmhBAihdU3kIwKWPykIkDOypubKsRHWLtziDYqX9DA=="
         }
       }
     },
@@ -35521,6 +35530,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1219,
       "timestamp": "2026-09-28T23:01:48.917094Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1220,
+      "timestamp": "2026-09-28T23:05:04.227923Z"
     }
   ],
   "watermark": {
