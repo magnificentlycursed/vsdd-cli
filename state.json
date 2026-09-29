@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1236,
-        "tip_oid": "edd4b5b3fe731b76db399903647994129607f74c",
-        "prefix_sha256": "cba67f36ed440b49d81bbb768f38bd762f5f8b0a1dc971e6453719eb52af0da0"
+        "sequence": 1237,
+        "tip_oid": "621117cd180e4593ef9be42f516b0e49b2d0bb85",
+        "prefix_sha256": "9e31fa51390bcd5bdc8ad5c0fe35476bca21adcb32960ad4bcf7b882e54a2cc0"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1537,
+  "next_comment_id": 1538,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13146,7 +13146,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-28T23:37:08.151324Z",
-      "updated_at": "2026-09-29T00:03:02.979598Z",
+      "updated_at": "2026-09-29T00:03:52.875424Z",
       "labels": [
         "chore"
       ],
@@ -13189,6 +13189,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAR4wYV+CuYimadjm6/Evg3mcXcxYNYmAUeuXEuaW6NpspPeOXeYCxTjBw9tNEarCTSiF2Q4n4Xt2SvhGHoqT2Dg=="
+        },
+        "e3fbd8a5-4ade-4518-bdc8-c17e3608e4c3": {
+          "display_id": 1537,
+          "author": "xqjG",
+          "content": "Fresh-session readiness test PASSED 2026-09-28: the hand-started daemon was stopped at 23:55:21 UTC; the next Claude Code session's session-start hook brought a detached daemon up (PID 50300, 23:56:23 UTC, parent launchd, no manual step); daemon status reports ready_current. Step 1 remainder: the retired .claude/hooks and .claude/mcp files are still on disk — deletion was refused by the auto-mode permission classifier, so it is the operator's to run (nothing references them; backup in session 7e8a2dda scratchpad). The merged local branch chore/885-crosslink-payload-update also awaits the operator's delete (#856 posture).",
+          "created_at": "2026-09-29T00:03:52.833690Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAl+g/eCoyepWNZtwCp7OOmlNCUM00I6eiDWCkjY1Crae11Ab+tkY/8uOch4rpuUGsBqp7iENKbJ9/V3ShI5NtCA=="
         }
       }
     },
@@ -35755,6 +35764,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1236,
       "timestamp": "2026-09-29T00:03:02.979598Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1237,
+      "timestamp": "2026-09-29T00:03:52.875424Z"
     }
   ],
   "watermark": {
