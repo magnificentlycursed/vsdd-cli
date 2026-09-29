@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1237,
-        "tip_oid": "621117cd180e4593ef9be42f516b0e49b2d0bb85",
-        "prefix_sha256": "9e31fa51390bcd5bdc8ad5c0fe35476bca21adcb32960ad4bcf7b882e54a2cc0"
+        "sequence": 1238,
+        "tip_oid": "3e921bd4eb0e0f2d1a31ba175e85386c035b1e8e",
+        "prefix_sha256": "58dae9b72d822bc67eaf8be2994432bd7eac75cea700cbe0493da1b792cc9867"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1538,
+  "next_comment_id": 1539,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26462,7 +26462,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T16:06:11.888099Z",
-      "updated_at": "2026-09-28T23:21:46.607260Z",
+      "updated_at": "2026-09-29T00:04:38.892332Z",
       "labels": [
         "design"
       ],
@@ -26471,6 +26471,15 @@
       ],
       "milestone_uuid": "d2b062d8-f2e2-45b9-9df3-686847ef1e83",
       "comments": {
+        "2486c8e6-901d-42d6-8a60-7ab7b963a0e9": {
+          "display_id": 1538,
+          "author": "xqjG",
+          "content": "SO RULING (operator, given in session 2026-09-28; posted late because tracker writes were failing that day) — mutation floor: 80% kill ratio on changed code, SUPERSEDING the 65% ratified here 2026-07-30. Home stays gate-data.md (Slice 4 data item); economics-data points there. The build-plan Phase 3 literal '65% … ratified #836' is now stale and must be updated with the Slice 4 work.",
+          "created_at": "2026-09-29T00:04:38.850270Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAUDSd3++tFbTvuX70Xyob/A4yV6oNK+/6kuDXjpzrhNORLw+L09ABPq2t9xBnjfyIo8Lc5AX+CsAzjLg1xCMFBQ=="
+        },
         "538bac5b-062d-466d-8d03-ba7883252b5b": {
           "display_id": 1487,
           "author": "xqjG",
@@ -35769,6 +35778,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1237,
       "timestamp": "2026-09-29T00:03:52.875424Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1238,
+      "timestamp": "2026-09-29T00:04:38.892332Z"
     }
   ],
   "watermark": {
