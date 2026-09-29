@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1249,
-        "tip_oid": "c086a1051f3e7e00f9baaa37523b10f5a7edbfe1",
-        "prefix_sha256": "691cc10f36c8a0801bfebf768e7c05393b9dab773e99c927459f91a1938c7997"
+        "sequence": 1250,
+        "tip_oid": "6d159f70843d1663ead2a94dccae557f12fee3c1",
+        "prefix_sha256": "d0879c1791d889e76e100672c5499b2a78cf743e151ff810f78545951f833f79"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1547,
+  "next_comment_id": 1548,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5560,10 +5560,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-29T00:11:05.697555Z",
-      "updated_at": "2026-09-29T00:11:30.818843Z",
+      "updated_at": "2026-09-29T00:13:20.052157Z",
       "labels": [
         "chore"
-      ]
+      ],
+      "comments": {
+        "b6dc3fb8-6b7d-497b-93c6-9ce87584ba34": {
+          "display_id": 1547,
+          "author": "xqjG",
+          "content": "PLAN (operator-approved 2026-09-28 as steps 2+3 of the #885 follow-up): (1) routing-gate.yml — replace the readiness coercion added in PR #42 (ensure '|| true' plus a 10-minute daemon-status poll) with a plain 'crosslink daemon ensure --wait-ready --json' that may fail the job; if CI cannot become ready within crosslink's own budget, the failure is a finding. (2) The floating fork-develop checkout is ALREADY registered (standing entry crosslink-develop-consumption, predicate magnificentlycursed/crosslink#1 closed, expiry 2026-10-30) — the #885 plan's 'undocumented' claim was wrong. Its reason is stale: the fork's develop now carries the seven fixes offered upstream as Corvidae-Coding-Projects/crosslink PR #103, and the re-pin target is the first upstream release. Re-arm the predicate to Corvidae-Coding-Projects/crosslink#103 state == closed (the register has no release-presence trigger type; #103 closing is when the fork stops carrying unmerged fixes), with the retest re-pinning to the first upstream release tag.",
+          "created_at": "2026-09-29T00:13:20.012137Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAtJ/NFolOInBoFv/ku+TM1J4TVw2WKNTmreja91g1mBWY3DKC828bshCqFbZ33B3Lzy1A31AzCBzoAaULIMztBQ=="
+        }
+      }
     },
     "25c6d4b5-4833-4e46-93e5-9f0fd903aa20": {
       "uuid": "25c6d4b5-4833-4e46-93e5-9f0fd903aa20",
@@ -35928,6 +35939,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1249,
       "timestamp": "2026-09-29T00:11:50.523331Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1250,
+      "timestamp": "2026-09-29T00:13:20.052157Z"
     }
   ],
   "watermark": {
