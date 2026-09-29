@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1245,
-        "tip_oid": "ade5b8930beacf5453ab0b604e34f22b9c2055f3",
-        "prefix_sha256": "6b15335041bb46d4f7de3285cb122ec5746774d3bf34bde6fed22a510ee9c20f"
+        "sequence": 1246,
+        "tip_oid": "cc3d66e7342656566a07ad49031fe47fa9272867",
+        "prefix_sha256": "1b48b88f4847eeddce7f6d0fa3681ec49658b1984abf53b1fd2596bd38c0b380"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1546,
+  "next_comment_id": 1547,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26525,7 +26525,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T16:06:11.888099Z",
-      "updated_at": "2026-09-29T00:04:38.892332Z",
+      "updated_at": "2026-09-29T00:09:52.056392Z",
       "labels": [
         "design"
       ],
@@ -26560,6 +26560,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAkyqOLkUkamrTOBQpQcpWSoZ4h0nN8g8Ov7ebKIMBP0+0E9B9xHswQr1nEwYc7eY/3necKDJx+KoWogVqUZzCBA=="
+        },
+        "9e4f4287-e374-4ad4-be37-1f082abbbedb": {
+          "display_id": 1546,
+          "author": "xqjG",
+          "content": "SO RULING (operator, given in session 2026-09-28; posted late because tracker writes were failing that day) — conformance oracle (#876): option (b), signed trace committed by a non-agent actor; Slice 4 phase-1a contract amendment. Full text on #876.",
+          "created_at": "2026-09-29T00:09:51.979409Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoHb3yJKvad7a1Kw5h4OyMApT4QRFCMufXNH+d/FIXvkHVSP7BdoJgF/zmMc+ErGhPy7RIjSNKCWLjQlb8yRLAw=="
         },
         "a4d43d86-fda3-45d1-9b53-5953d30835b7": {
           "display_id": 1527,
@@ -35881,6 +35890,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1245,
       "timestamp": "2026-09-29T00:09:08.905451Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1246,
+      "timestamp": "2026-09-29T00:09:52.056392Z"
     }
   ],
   "watermark": {
