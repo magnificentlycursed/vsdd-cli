@@ -1,6 +1,6 @@
 ---
 schema_class: economics-data
-schema_version: 0.1.0
+schema_version: 0.2.0
 status: draft-proposal
 effort_signals:
   up_signals:
@@ -17,9 +17,7 @@ tier_effort_defaults:
   - {stage: cold-review-round, tier: session-model, effort: medium, note: "per-lens model and effort are settable at dispatch on the Workflow orchestration surface (operator-adopted 2026-07-21, vsdd-cli #597) and every dispatch sets both explicitly — this row is the declared default the dispatch names, never a silent inheritance; round-1 actuals (observed claude-opus-4-8 at half the session model's per-token weight, vsdd-cli #674) feed the advisory loop's first tier revision"}
   - {stage: fix-pass, tier: session-model, effort: medium, note: ""}
   - {stage: terminal-verify-round, tier: session-model, effort: high, note: "the round that decides the stop signal gets the higher dial"}
-mutation_floor:
-  kill_ratio_percent: 80
-  scope: "changed code, when the review config declares the floor; the thorough preset declares it"
+# mutation_floor: the kill-ratio number lives in gate-data.md (vsdd-cli#836 ruling, 2026-09-28); presets declare only whether it is in force.
 token_budgets:
   - {artifact_class: session-skill, budget_tokens: 5000}
   - {artifact_class: domain-prompt, budget_tokens: 3000}

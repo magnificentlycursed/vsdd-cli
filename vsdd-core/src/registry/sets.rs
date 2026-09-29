@@ -36,6 +36,9 @@ pub struct GateData {
     /// Deepens at Layer 6 (the gate commands' consumer).
     pub pin_kind_declaration: Value,
     pub flake_policy: FlakePolicy,
+    /// The mutation kill-ratio floor (vsdd-cli#836 ruling, 2026-09-28);
+    /// deepens at Slice 4 (the gate commands' consumer).
+    pub mutation_floor: Value,
     /// Deepens at Layer 6 (the gate commands' consumer).
     pub cannot_run_predicate: Value,
     /// Deepens at Layer 6 (the gate commands' consumer).
@@ -192,11 +195,10 @@ pub struct EconomicsData {
     pub schema_class: String,
     pub schema_version: String,
     pub status: String,
-    /// Deepens at Layer 9 (the cost crate's consumer), as do the four
+    /// Deepens at Layer 9 (the cost crate's consumer), as do the three
     /// Value payloads below.
     pub effort_signals: Value,
     pub tier_effort_defaults: Vec<Value>,
-    pub mutation_floor: Value,
     pub token_budgets: Vec<Value>,
     pub calibration_bands: Vec<Value>,
     pub presets: Vec<Preset>,

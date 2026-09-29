@@ -11,6 +11,7 @@
     "failure_kinds",
     "pin_kind_declaration",
     "flake_policy",
+    "mutation_floor",
     "cannot_run_predicate",
     "mapping_schema"
   ],
@@ -18,6 +19,16 @@
     "schema_class": {
       "type": "string",
       "const": "gate-data"
+    },
+    "mutation_floor": {
+      "type": "object",
+      "required": ["kill_ratio_percent", "scope", "provenance"],
+      "properties": {
+        "kill_ratio_percent": {"type": "integer", "minimum": 1, "maximum": 100},
+        "scope": {"type": "string", "minLength": 1},
+        "provenance": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
     },
     "schema_version": {
       "type": "string",
