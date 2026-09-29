@@ -97,23 +97,29 @@ entries:
     issue: vsdd-cli#878
     comment_timestamp: 2026-09-24 23:19
 - id: crosslink-develop-consumption
-  deviation: routing-gate.yml consumes crosslink from the fork's develop branch (its lines 9-12 record
-    the posture) pending the sibling's develop-to-main merge, with a re-pin to a main release tag owed
-    when it lands.
+  deviation: routing-gate.yml consumes crosslink unpinned from the fork's develop branch (the workflow's
+    header comment records the posture), with a re-pin to the first upstream release tag owed.
   deviates_from: null
   deviation_class: toolchain-pin
-  stated_reason: The fork's develop carries what the gate leg depends on ahead of the develop-to-main
-    merge (operator ruling; the consumption posture and the read surface depended on are logged at magnificentlycursed/crosslink#1).
+  stated_reason: 'The fork''s develop carries what the gate leg depends on ahead of upstream (operator
+    ruling; the consumption posture and the read surface depended on are logged at magnificentlycursed/crosslink#1).
+    Re-armed 2026-09-28 (Solution Owner ruling, in-session, vsdd-cli#886): upstream moved to Corvidae-Coding-Projects/crosslink,
+    and the fork''s develop now carries the seven fixes offered there as PR #103 (worktree readiness,
+    hub-cache mounts, the writer sequence ceiling among them), so CI runs the same crosslink as the local
+    binary. Upstream has cut no release yet.'
   retest_trigger:
     type: issue-state
-    predicate: magnificentlycursed/crosslink#1 state == closed
+    predicate: Corvidae-Coding-Projects/crosslink#103 state == closed
+  trigger_context: 'The register has no release-presence trigger, so the predicate tracks the upstream
+    PR: once #103 closes the fork stops carrying unmerged fixes and the pin is retested — re-pin ref:
+    to the first upstream release tag, or re-arm against upstream''s develop if no release exists yet.'
   entry_date: 2026-08-01
   expiry: 2026-10-30
-  owning_issue: vsdd-cli#845
+  owning_issue: vsdd-cli#886
   status: standing
   disposition_ref:
-    issue: vsdd-cli#845
-    comment_timestamp: 2026-08-01 21:59
+    issue: vsdd-cli#886
+    comment_timestamp: 2026-09-29 00:14
 - id: hand-authored-build-plan
   deviation: The build-plan document (.design/build-plan.md) is hand-authored — a persisted bootstrap
     fallback pending Slice 2's generated-context machinery producing it from the contract's Decomposition.
