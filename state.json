@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1259,
-        "tip_oid": "4fc92f0b52f346e715bbf4ffb9acd3af19436449",
-        "prefix_sha256": "e588089fc966e856781b5b2d5083d706fa823199cb5f146aca39165dbbabe017"
+        "sequence": 1260,
+        "tip_oid": "a6e185889e141bd55deb768fc44fc8271edc183b",
+        "prefix_sha256": "2f15a1a801190745a9a16411b76fed53d1fb17f3e32a833972bb3d54287164ad"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1555,
+  "next_comment_id": 1556,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13244,7 +13244,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-28T23:37:08.151324Z",
-      "updated_at": "2026-09-29T01:17:44.621690Z",
+      "updated_at": "2026-09-29T01:19:22.571058Z",
       "labels": [
         "chore"
       ],
@@ -13296,6 +13296,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYcJowSRRyOlEJ5PUfn0XzY9wadxl+f9WR4ZH4ySZVLQttHi9dPPspJT3W8/jG7Z+54ZQdx1uRdxOuahOiceNCw=="
+        },
+        "cabab1bd-cbe6-4795-a79b-e61fb76a9fd6": {
+          "display_id": 1555,
+          "author": "xqjG",
+          "content": "SO RULING 2026-09-29: do NOT re-port the #856 git-posture messaging into the new work-check, and do NOT file an upstream ask for configurable block messages. The stock upstream wording stands; enforcement is unaffected (the hook-config.json blocked and gated lists carried over).",
+          "created_at": "2026-09-29T01:19:22.501566Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA30RtgQnZC/mh2jfPHhQppacpVXVb4B902V+fZv9PlQOiW4vOz7YLlrHHvCy/i/nW69MYCYkNwMu+Vr49GixGBQ=="
         },
         "e3fbd8a5-4ade-4518-bdc8-c17e3608e4c3": {
           "display_id": 1537,
@@ -36049,6 +36058,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1259,
       "timestamp": "2026-09-29T01:17:44.621690Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1260,
+      "timestamp": "2026-09-29T01:19:22.571058Z"
     }
   ],
   "watermark": {
