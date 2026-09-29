@@ -6,10 +6,12 @@ name: routing gate
 # so it installs crosslink and hydrates the tracker (crosslink sync from the hub
 # branch) before running the gate.
 #
-# crosslink is consumed from the mirror's `develop` branch until crosslink
-# merges develop -> main (operator ruling; the consumption posture + the read
-# surface we depend on are logged at magnificentlycursed/crosslink#1). When
-# develop -> main lands, re-pin `ref:` to a main release tag.
+# crosslink is consumed unpinned from the fork's `develop` branch, which
+# carries the fixes offered upstream as Corvidae-Coding-Projects/crosslink
+# PR #103 (operator ruling; the consumption posture + the read surface we
+# depend on are logged at magnificentlycursed/crosslink#1). Registered as the
+# `crosslink-develop-consumption` exception; when #103 closes, re-pin `ref:`
+# to the first upstream release tag.
 #
 # To make this a hard block, mark "routing gate" a required status check in the
 # branch-protection settings (the CI-backed-block grade; branch protection is
@@ -53,7 +55,7 @@ jobs:
             vsdd-cli/target
           key: cargo-routing-gate-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock') }}
 
-      - name: Install crosslink CLI (@ develop, until develop -> main)
+      - name: Install crosslink CLI (fork @ develop, until the first upstream release)
         # crosslink's Rust crate is nested at <repo>/crosslink/ — the repo root
         # is docs + tooling; the installable binary crate is the crosslink/ subdir.
         working-directory: crosslink/crosslink
@@ -61,24 +63,13 @@ jobs:
 
       # Repository readiness is per checkout since crosslink develop 0a2ac7013:
       # every mutating command (sync included) refuses to run until this
-      # checkout's daemon has written a ready record. The daemon's own
-      # `ensure --wait-ready` gives up after 120 s while the daemon keeps
-      # working (a first reconciliation verifies every hub event signature),
-      # so poll the status until ready instead of trusting that exit code.
+      # checkout's daemon has written a ready record. CI is a hookless client,
+      # so it runs the same step crosslink's session-start hook runs. Readiness
+      # is crosslink's to establish within its own budget: a failure here is a
+      # finding to report, not something to poll past (vsdd-cli #886).
       - name: Establish repository readiness (per-checkout daemon)
         working-directory: vsdd-cli
-        run: |
-          crosslink daemon ensure --wait-ready --json || true
-          for attempt in $(seq 1 40); do
-            if crosslink daemon status --json 2>/dev/null | jq -e '.ready == true' >/dev/null; then
-              echo "readiness established after ${attempt} poll(s)"
-              exit 0
-            fi
-            sleep 15
-          done
-          echo "::error::repository readiness not established within 10 minutes"
-          crosslink daemon status --json || true
-          exit 1
+        run: crosslink daemon ensure --wait-ready --json
 
       - name: Hydrate the tracker from the hub
         working-directory: vsdd-cli
