@@ -4,8 +4,9 @@ tags: ["reference", "dispatch", "crosslink"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-29
 ---
+
 
 # Container vehicle pilot — 2026-09-24/25 (vsdd-cli #878)
 
@@ -34,10 +35,15 @@ The new binary required reconciling the hub to the per-checkout readiness model 
 
 ## Daemon behaviour worth knowing
 
-- Per-checkout daemons (main, each kickoff worktree, CI) exit on their own shortly after publishing ready, logging `readiness record is stale`; `MAX_RECORD_AGE_SECONDS = 90` against a refresh deferred behind active mutation permits. Every command then fails the same way until `crosslink daemon ensure --wait-ready --json`.
-- The commit hook's 3-second `crosslink session status` probe fails when the daemon is dead, so `git commit` from the agent is refused intermittently; the operator's terminal has no such hook.
+## Daemon behaviour worth knowing
+
+Corrected 2026-09-28 (vsdd-cli#885; upstream correction on Corvidae-Coding-Projects/crosslink#102).
+
+- **Readiness is crosslink's job, not the agent's.** Current crosslink's session-start hook runs `daemon ensure --wait-ready --json`, and its work-check blocks with the real readiness reason. This estate's hooks predated that model until PR #46, so nothing established readiness, and agents filled the gap by hand. Never drive readiness by hand (no ensure/restart/poll loops, no kills, no lock-file deletion). A readiness failure is a finding to report.
+- **Daemon exits.** On 2026-09-25 daemons did exit on their own. Their logs show `readiness record is stale` and `hydrating current authority during daemon housekeeping`. The mechanism once given for this ("refresh deferred behind active mutation permits") is **disproved**: a write paused for 100 s did not kill the daemon. The trigger is still unexplained. Deaths from 2026-09-26 to 09-28 were a sibling session's `pkill -9 -f "crosslink daemon"`, which kills every checkout's daemon on the machine. When a daemon dies, check for concurrent sessions first.
+- **Commit gate timeout.** The work-check gives `crosslink session status` 3 s and reads a timeout as "no active issue", so `git commit` can be refused while the daemon is busy (27.7 s observed). Reported upstream as #104.
 - A daemon started from a `target/release` path dies when `cargo build` rewrites that binary; start daemons from `~/.cargo/bin`.
-- Later reconciles of a small hub took ~20 min idle; a transient `git ls-remote` SSL timeout at bootstrap is recorded `blocked_corrupt` (terminal) and a 30-minute wait was spent on it.
+- **Slow reconciles.** The ~20-minute reconciles of a small hub are most likely a hung `git fetch` of `refs/heads/crosslink/reconciliation/*`, which has no timeout. A hung fetch holds the reconciliation transition, and there is no supported way to recover it. A transient `git ls-remote` SSL timeout at bootstrap is recorded `blocked_corrupt` (terminal).
 
 ## Where the record lives
 
