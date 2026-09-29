@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1243,
-        "tip_oid": "b218e77ca84a447b2f7afef6297fdf6c6ac9a94e",
-        "prefix_sha256": "b306ca38cb2b68957ddb422a7fae56126c3c750bdb00a219679b6a2424336ec0"
+        "sequence": 1244,
+        "tip_oid": "6144116d65f54aa90922063b634cec1956bb2a04",
+        "prefix_sha256": "1541449079acafad04f1df8adadd03769db04a29c648e075ed95513c5f24eb92"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1544,
+  "next_comment_id": 1545,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5799,7 +5799,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:42.322439Z",
-      "updated_at": "2026-09-29T00:07:08.999371Z",
+      "updated_at": "2026-09-29T00:08:25.803146Z",
       "labels": [
         "bug"
       ],
@@ -5848,6 +5848,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA53Mtl5M6STZjeXNb2SJvufQwygi8/DRfOdb1Uur9IIuNiMPP+Uj7e9QcFryxhH7vqO6Ly8s2R3/8UWTHhSQ8BQ=="
+        },
+        "d74a6ffa-9f89-4c20-bc50-cdebb0d2d9ff": {
+          "display_id": 1544,
+          "author": "xqjG",
+          "content": "SO RULING (operator, given in session 2026-09-28; posted late because tracker writes were failing that day) — item 4 (state file): write .vsdd/state.yaml in the next boundary PR (not an exemption). OPEN SNAG found after the ruling, needs operator follow-up before writing: active_composition.config_inputs_hash must be computed by the composition function Slice 2 has not built, and there is no .vsdd/config.yaml — a hand-written value would be a fabrication. Item 2 (cite the field, not the install-count literal) was NOT ruled.",
+          "created_at": "2026-09-29T00:08:25.727065Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAzA6Dw28VGAqEKLmlMyPA1tEFaQhvGt9S2fhTLZCVPB3zxMrrLAjFWLj0bRiLRQaXq1JBnjKL6Ndf0W4cztdQBQ=="
         }
       }
     },
@@ -35853,6 +35862,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1243,
       "timestamp": "2026-09-29T00:07:48.297170Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1244,
+      "timestamp": "2026-09-29T00:08:25.803146Z"
     }
   ],
   "watermark": {
