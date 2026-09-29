@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1241,
-        "tip_oid": "75508fb4a30ed677c0dd077b10bc5276af03e504",
-        "prefix_sha256": "2bfdcee9f21a0c8e5d4071688ab3bec47fcb1eec829400ca5d11d6a1b672209a"
+        "sequence": 1242,
+        "tip_oid": "ad4b0b66670cd626b6bb3ddb5f0bbedf11bdec44",
+        "prefix_sha256": "95fa02ee52343a727fdfd32371b9314871e45cee0cba24922f35f1d4694c79ea"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1542,
+  "next_comment_id": 1543,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5799,7 +5799,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:42.322439Z",
-      "updated_at": "2026-09-29T00:06:30.500307Z",
+      "updated_at": "2026-09-29T00:07:08.999371Z",
       "labels": [
         "bug"
       ],
@@ -5839,6 +5839,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA9wcv7aWsm3S1MZzriwZj7/7U67sDts1bi/rGPzgZp2cnQGp3V1cqQjV4BAG5vMP6WpJKoujqp5n47Hcl2EDYAQ=="
+        },
+        "c17d87f1-a2b4-4c56-9625-8946f0f93e91": {
+          "display_id": 1542,
+          "author": "xqjG",
+          "content": "SO RULING (operator, given in session 2026-09-28; posted late because tracker writes were failing that day) — item 3 (convergence redlines): ADOPTED, all three — 2a-red-recorded, 2b-green-recorded, 2c-exit-recorded (2a also carried 'awaiting operator adoption'; this issue counted only two). Rule: advance on a recorded pass, always labelled unverified-self-report. Remove the adoption notes from the fixture headers.",
+          "created_at": "2026-09-29T00:07:08.958788Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA53Mtl5M6STZjeXNb2SJvufQwygi8/DRfOdb1Uur9IIuNiMPP+Uj7e9QcFryxhH7vqO6Ly8s2R3/8UWTHhSQ8BQ=="
         }
       }
     },
@@ -35825,6 +35834,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1241,
       "timestamp": "2026-09-29T00:06:30.500307Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1242,
+      "timestamp": "2026-09-29T00:07:08.999371Z"
     }
   ],
   "watermark": {
