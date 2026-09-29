@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1260,
-        "tip_oid": "a6e185889e141bd55deb768fc44fc8271edc183b",
-        "prefix_sha256": "2f15a1a801190745a9a16411b76fed53d1fb17f3e32a833972bb3d54287164ad"
+        "sequence": 1261,
+        "tip_oid": "8dc3195c8d8de931820964157d082d7bbce71726",
+        "prefix_sha256": "883562342eea81693236a0ecfb99aadb9a25c8c6511434c0ce359234bedfee2c"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1556,
+  "next_comment_id": 1557,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -17669,11 +17669,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-08-02T02:59:19.316370Z",
-      "updated_at": "2026-08-02T02:59:19.316370Z",
+      "updated_at": "2026-09-29T01:49:57.719638Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "3f4a9de6-2ac8-4701-aeb4-c0dbf8e49b42": {
+          "display_id": 1556,
+          "author": "xqjG",
+          "content": "Closing as done under #858. This issue is the original from the 2026-08-02 hub outage: it came back as a real issue when the hub was migrated on 2026-09-25, and was the ghost record id -1 before that. Its work was redone and landed under #858, which closed on 2026-09-24 with 'every act on this trail landed' (PR #28 registry re-arms, upstream filings, the dispatch-fallback retest; milestones and dependency edges attached). Its only comment, the command-adoption sweep, is covered there. Nothing is left to execute. The ghost record id -1 itself stays untouched (#858).",
+          "created_at": "2026-09-29T01:49:57.678474Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABABbXdyrYkqAoBmY2ejQk9sBWt7RmiStqpwZiEY6/xssPXqh79KjYFU6gijcK4Toe0loODVvLAmTe1aVUtSBNpDQ=="
+        },
         "81b2d24e-1944-1f13-8115-697b3075ae8c": {
           "display_id": -965,
           "author": "xqjG",
@@ -36063,6 +36072,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1260,
       "timestamp": "2026-09-29T01:19:22.571058Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1261,
+      "timestamp": "2026-09-29T01:49:57.719638Z"
     }
   ],
   "watermark": {
