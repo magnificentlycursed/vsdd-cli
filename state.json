@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1253,
-        "tip_oid": "9b7e1907eb9b9cf5067e17664a377446a5267c7b",
-        "prefix_sha256": "61c4afb4650c89afca7e9a68e389d7e757b9db3d90c4763496a1da8129b27951"
+        "sequence": 1254,
+        "tip_oid": "a5a8d996d5f4e50ac5158d489a2d2d0910c4487b",
+        "prefix_sha256": "6a6cf9af28c620e97d592b554fbf19f9f77d69d5f64a0c67a57a1fc82ea662b0"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1551,
+  "next_comment_id": 1552,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13238,7 +13238,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-28T23:37:08.151324Z",
-      "updated_at": "2026-09-29T00:03:52.875424Z",
+      "updated_at": "2026-09-29T00:24:07.019356Z",
       "labels": [
         "chore"
       ],
@@ -13281,6 +13281,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAR4wYV+CuYimadjm6/Evg3mcXcxYNYmAUeuXEuaW6NpspPeOXeYCxTjBw9tNEarCTSiF2Q4n4Xt2SvhGHoqT2Dg=="
+        },
+        "c2461265-562c-4bf2-b86c-0bda7cf548ad": {
+          "display_id": 1551,
+          "author": "xqjG",
+          "content": "Step 4 re-check DONE 2026-09-29 (operator-approved). (a) Upstream: correction posted on Corvidae-Coding-Projects/crosslink#102 (issuecomment-5881225704) — self-exits kept as observed 09-25 evidence, the permit-deferral mechanism withdrawn (paused-write test), the 7x count said to include my own rebuild deaths, 09-26..28 deaths attributed to the sibling pkill, the ~20-min reconcile reclassified as a suspected hung reconciliation fetch (no timeout; no recovery for a transition held by a live but hung daemon); PR #103 gets a pointer comment. (b) New upstream #104: deployed hooks can predate the readiness model unnoticed; work-check's 3 s session-status timeout falsely blocks commits (observed 27.7 s); an out-of-root path is mislabelled 'failed to parse stdin'. (c) Fork PRs #5-#7 stand. One change is owed: a1fe1bb20 routed CLI 'daemon ensure --wait-ready' onto the 30-min bound, which outlives the shipped session-start hook's 130 s budget. Narrow it to kickoff's bootstrap (main.rs Ensure arm -> daemon::ensure(dir, wait_ready); doc comments on ENSURE_WAIT_READY_DEADLINE_SECS / ensure_and_wait). Branch fix/scope-wait-ready-to-kickoff was created on the fork from origin/develop, but the edit is BLOCKED from this session: the new work-check refuses Edit outside vsdd-cli. It needs a session opened in the crosslink checkout. CI is unaffected: readiness took ~31 s in the last three routing-gate runs. (d) vsdd-cli PR #42's poll loop is superseded by PR #47 (#886). (e) The container-vehicle-pilot-2026-09 knowledge page's daemon section is rewritten. (f) Open issues changing disposition: none. Only #879 carried daemon breadcrumbs (annotated as test writes). (g) Memory is outside the working root, so it is also blocked by the new work-check; memory updates are owed to a session that can write there.",
+          "created_at": "2026-09-29T00:24:06.961013Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYcJowSRRyOlEJ5PUfn0XzY9wadxl+f9WR4ZH4ySZVLQttHi9dPPspJT3W8/jG7Z+54ZQdx1uRdxOuahOiceNCw=="
         },
         "e3fbd8a5-4ade-4518-bdc8-c17e3608e4c3": {
           "display_id": 1537,
@@ -35986,6 +35995,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1253,
       "timestamp": "2026-09-29T00:23:30.485929Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1254,
+      "timestamp": "2026-09-29T00:24:07.019356Z"
     }
   ],
   "watermark": {
