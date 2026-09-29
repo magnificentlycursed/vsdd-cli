@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1263,
-        "tip_oid": "634800a9d211fb691274cf6572783ab81b9cd5b6",
-        "prefix_sha256": "bc15dfa4b38c18da6ac1dc931aec86de06e6ce3a45c6b9c6f47c82bc312bf1f5"
+        "sequence": 1264,
+        "tip_oid": "32179f998abf6187e5e0b4c6b5285f3ec2ce6da3",
+        "prefix_sha256": "732198cfacb5c47df461bcdf8f5f824be70db6b7234c938899de00d7f8997b67"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1557,
+  "next_comment_id": 1558,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27313,11 +27313,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:11.234260Z",
-      "updated_at": "2026-09-19T03:14:16.511216Z",
+      "updated_at": "2026-09-29T01:56:43.739620Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "28abe31e-2a55-4252-a462-3064f7710309": {
+          "display_id": 1557,
+          "author": "xqjG",
+          "content": "PLAN (operator 'do those', 2026-09-29): land the ruled data item now, the mutation floor. It moves from economics-data to gate-data per the SO ruling on #836 (2026-09-28: 80%, home gate-data, economics points there). Changes: gate-data 0.3.0->0.4.0 gains mutation_floor {kill_ratio_percent: 80, scope, provenance}; economics-data 0.1.0->0.2.0 drops it and leaves a pointer comment; both schema pairs updated; GateData/EconomicsData structs follow; a new test pins 80; the build-plan's stale '65% ... ratified #836' is corrected. The other unauthored sets (rightsizing signal catalog + tier/effort defaults, branch grammar, agent-count ceiling / fan-out field, control-effectiveness registry, regression corpus) need design + review and are NOT authored in this PR.",
+          "created_at": "2026-09-29T01:56:43.697787Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwjQKRaxM8aetF9SOeFzHbrkQmIRuXN8Pf550KAldCoCxASIyLOBUSbUufY98pwZHjAtXEnzfb5iGgxQVQnRfAg=="
+        },
         "c772c9bf-23a6-4937-8e22-0da7fc4a12d5": {
           "display_id": 1488,
           "author": "xqjG",
@@ -36092,6 +36101,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1263,
       "timestamp": "2026-09-29T01:52:01.115603Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1264,
+      "timestamp": "2026-09-29T01:56:43.739620Z"
     }
   ],
   "watermark": {
