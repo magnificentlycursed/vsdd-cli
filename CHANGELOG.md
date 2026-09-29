@@ -44,6 +44,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Fail the routing gate on crosslink's own readiness budget and re-arm the crosslink-consumption register entry on upstream PR #103 (#886)
 - Container vehicle pilot: first headless run of kickoff run --container on this repo — read-only task (report vsdd status --machine + mdatron verify --json families), proves the preflight members end to end (#878)
 - Data plumbing: adopters receive data sets without schema pairs/routes/config; the retired-term prohibition has two hand-mirrored homes; the VSDD- catalog claims comprehensive but omits emitted codes; four versioning conventions; bundled schemas diverge from live (#882)
 - Consent-posture adoption: container kickoff as the autonomous dispatch vehicle, no gate-disabling (SO ruling 2026-08-02) + downstream edits (#859)

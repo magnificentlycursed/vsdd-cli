@@ -1,6 +1,6 @@
 ---
 schema_class: gate-data
-schema_version: 0.3.0
+schema_version: 0.4.0
 status: draft-proposal
 failure_kinds:
   - {kind: assertion-failure, red_validity: valid-red, scope: per-test, meaning: "an executed test's assertion failed"}
@@ -15,6 +15,10 @@ failure_kinds:
   - {kind: skipped, red_validity: neither, scope: per-test, meaning: "the test was collected and reported skipped at runtime; neither half"}
   - {kind: ignored, red_validity: neither, scope: per-test, meaning: "the test carries an ignore attribute; reported but not executed; neither half"}
   - {kind: filtered, red_validity: neither, scope: per-test, meaning: "the test was excluded by runner filtering; neither half"}
+mutation_floor:
+  kill_ratio_percent: 80
+  scope: "changed code, when the review config declares the floor; the thorough preset declares it"
+  provenance: "Solution Owner ruling 2026-09-28 on vsdd-cli#836: 80% supersedes the 65% ratified 2026-07-30; home moved here from economics-data (vsdd-cli#875)"
 pin_kind_declaration:
   declared_shape: "the finding issue declares expected_kinds — a non-empty set drawn from the valid-red kinds, or compile-failure under its approved compile-defect declaration"
   red_rule: "valid red: the named test fails in every run with each run's observed kind a member of the declared set; an observed kind outside the set is wrong-reason, decided by set membership with no approval lane (operator ruling 2026-07-21, vsdd-cli #675)"

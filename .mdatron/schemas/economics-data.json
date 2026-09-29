@@ -4,7 +4,7 @@
   "title": "Economics data set frontmatter",
   "description": "Frontmatter contract for the economics data set. Declared cross-field constraints: signal ids unique across both signal lists; stage names unique; artifact classes unique; preset ids unique; every band carries provenance text.",
   "type": "object",
-  "required": ["schema_class", "schema_version", "status", "effort_signals", "tier_effort_defaults", "mutation_floor", "token_budgets", "calibration_bands", "presets"],
+  "required": ["schema_class", "schema_version", "status", "effort_signals", "tier_effort_defaults", "token_budgets", "calibration_bands", "presets"],
   "properties": {
     "schema_class": {"type": "string", "const": "economics-data"},
     "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
@@ -33,15 +33,6 @@
         },
         "additionalProperties": false
       }
-    },
-    "mutation_floor": {
-      "type": "object",
-      "required": ["kill_ratio_percent", "scope"],
-      "properties": {
-        "kill_ratio_percent": {"type": "integer", "minimum": 1, "maximum": 100},
-        "scope": {"type": "string", "minLength": 1}
-      },
-      "additionalProperties": false
     },
     "token_budgets": {
       "type": "array",

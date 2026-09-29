@@ -241,6 +241,14 @@ fn affordance_map_carries_the_adopted_bindings() {
 }
 
 #[test]
+fn gate_data_carries_the_ruled_mutation_floor() {
+    // vsdd-cli#836 ruling 2026-09-28: 80% on changed code, homed in
+    // gate-data (moved from economics-data, vsdd-cli#875).
+    let gate: GateData = registry::load_set(&repo_root(), "gate-data").expect("gate data loads");
+    assert_eq!(gate.mutation_floor["kill_ratio_percent"], 80);
+}
+
+#[test]
 fn economics_presets_hold_the_verified_counts() {
     let e: EconomicsData =
         registry::load_set(&repo_root(), "economics-data").expect("economics loads");
