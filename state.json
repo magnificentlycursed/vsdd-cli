@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1242,
-        "tip_oid": "ad4b0b66670cd626b6bb3ddb5f0bbedf11bdec44",
-        "prefix_sha256": "95fa02ee52343a727fdfd32371b9314871e45cee0cba24922f35f1d4694c79ea"
+        "sequence": 1243,
+        "tip_oid": "b218e77ca84a447b2f7afef6297fdf6c6ac9a94e",
+        "prefix_sha256": "b306ca38cb2b68957ddb422a7fae56126c3c750bdb00a219679b6a2424336ec0"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 886,
-  "next_comment_id": 1543,
+  "next_comment_id": 1544,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20568,7 +20568,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-29T01:09:50.691294Z",
-      "updated_at": "2026-09-28T23:24:16.286746Z",
+      "updated_at": "2026-09-29T00:07:48.297170Z",
       "labels": [
         "feature"
       ],
@@ -20608,6 +20608,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAYkYxElK3XPYZZB28QUgvnYqQPvJxycX2ocdmYJhx0qtDm47ru3RaMJA5hxH/aVJFHM4a/G1FvwEzppkw/0rWAg=="
+        },
+        "755983a6-7b1e-43a8-a15b-f730ea18c4ce": {
+          "display_id": 1543,
+          "author": "xqjG",
+          "content": "SO RULING (operator, given in session 2026-09-28; posted late because tracker writes were failing that day) — convergence redlines ADOPTED, all three (2a-red-recorded, 2b-green-recorded, 2c-exit-recorded): advance on a recorded pass, always labelled unverified-self-report. Recorded in full on #881 item 3.",
+          "created_at": "2026-09-29T00:07:48.256273Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANFkyL8VFUckLWRmQbmmm33Cbwf+7iYyWTH1eiIRc1NJoaITimPaWLT5c7FKxGDwclP5MOKpB/9lFfi9OIQjbBQ=="
         },
         "7b673b93-7cdb-4338-879b-b22bda5337e6": {
           "display_id": 1531,
@@ -35839,6 +35848,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1242,
       "timestamp": "2026-09-29T00:07:08.999371Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1243,
+      "timestamp": "2026-09-29T00:07:48.297170Z"
     }
   ],
   "watermark": {
