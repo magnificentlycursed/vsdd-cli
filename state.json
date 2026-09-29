@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1255,
-        "tip_oid": "6bd0e99223f566b219803db26ae5010141e550b0",
-        "prefix_sha256": "499211a07d7b1ced52818c007566c3f6c0c0567d1392085e63c4da39e6d5c42d"
+        "sequence": 1256,
+        "tip_oid": "207bbca82691c2e614ce5e89102840790e0bcb98",
+        "prefix_sha256": "d0dc678ad577ec2c9224cd331daaabc93c9ec3d01908d7c7acff6bdadcad4e72"
       },
       "y2SI": {
         "sequence": 2,
@@ -5556,11 +5556,12 @@
       "uuid": "25b1b070-9c9b-4806-8412-e7f357aa5531",
       "display_id": 886,
       "title": "Fail the routing gate on crosslink's own readiness budget and re-arm the crosslink-consumption register entry on upstream PR #103",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-29T00:11:05.697555Z",
-      "updated_at": "2026-09-29T00:55:17.055693Z",
+      "updated_at": "2026-09-29T00:56:09.288529Z",
+      "closed_at": "2026-09-29T00:56:09.233117Z",
       "labels": [
         "chore"
       ],
@@ -36014,6 +36015,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1255,
       "timestamp": "2026-09-29T00:55:17.055693Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1256,
+      "timestamp": "2026-09-29T00:56:09.288529Z"
     }
   ],
   "watermark": {
