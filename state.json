@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1246,
-        "tip_oid": "cc3d66e7342656566a07ad49031fe47fa9272867",
-        "prefix_sha256": "1b48b88f4847eeddce7f6d0fa3681ec49658b1984abf53b1fd2596bd38c0b380"
+        "sequence": 1247,
+        "tip_oid": "afb52ec498bffdef320ee9a2c33bf7afedfc7143",
+        "prefix_sha256": "d9916a3dbaec367f328648d8bacc9fee7fe11fa252a9dfec38a15d0974492e30"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 886,
+  "next_display_id": 887,
   "next_comment_id": 1547,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -190,6 +190,7 @@
     "2538c31c-31fb-429e-b6e4-02dac0721c93": 754,
     "258e1a57-227d-443f-b62f-5c4c86546567": 343,
     "25a225df-1907-40db-baa0-7f1086e67d40": 878,
+    "25b1b070-9c9b-4806-8412-e7f357aa5531": 886,
     "25c6d4b5-4833-4e46-93e5-9f0fd903aa20": 615,
     "25eefea7-7c96-468c-9b59-d6642824c412": 853,
     "25fb4551-5eea-4465-920b-7c69f4a7aa2c": 423,
@@ -5546,6 +5547,16 @@
           "kind": "result"
         }
       }
+    },
+    "25b1b070-9c9b-4806-8412-e7f357aa5531": {
+      "uuid": "25b1b070-9c9b-4806-8412-e7f357aa5531",
+      "display_id": 886,
+      "title": "Fail the routing gate on crosslink's own readiness budget and re-arm the crosslink-consumption register entry on upstream PR #103",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-09-29T00:11:05.697555Z",
+      "updated_at": "2026-09-29T00:11:05.697555Z"
     },
     "25c6d4b5-4833-4e46-93e5-9f0fd903aa20": {
       "uuid": "25c6d4b5-4833-4e46-93e5-9f0fd903aa20",
@@ -35895,6 +35906,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1246,
       "timestamp": "2026-09-29T00:09:52.056392Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1247,
+      "timestamp": "2026-09-29T00:11:05.697555Z"
     }
   ],
   "watermark": {
