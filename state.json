@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1252,
-        "tip_oid": "0ae804c708c45d0e31cfd225b37e809ea047c579",
-        "prefix_sha256": "a66a33dc069d58e1d55ca66cfb50fe103240d438d1ea4300f190a4b94810d128"
+        "sequence": 1253,
+        "tip_oid": "9b7e1907eb9b9cf5067e17664a377446a5267c7b",
+        "prefix_sha256": "61c4afb4650c89afca7e9a68e389d7e757b9db3d90c4763496a1da8129b27951"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1550,
+  "next_comment_id": 1551,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25984,7 +25984,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:01.857683Z",
-      "updated_at": "2026-09-28T23:29:55.011736Z",
+      "updated_at": "2026-09-29T00:23:30.485929Z",
       "labels": [
         "design"
       ],
@@ -26015,6 +26015,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhBBiXKSG3aVJ2XMOe16jQLD3mEVtpToH8mSW/f0+YaoZjIw5lQn7YY+EEwTpjPengtaOfemknwaXYy7INp7GDA=="
+        },
+        "95872285-aba4-4f70-a65d-d71c7aaf4d39": {
+          "display_id": 1550,
+          "author": "xqjG",
+          "content": "Note: the five [action] comments of 2026-09-28 23:01–23:29 ('Daemon self-exit reproduction …') are test writes from the #885 daemon investigation that used this issue as the target. They are not #879 work. The six SO rulings this review owed were posted 2026-09-29 as decision comments on their homes: #836 (mutation floor 80%; oracle), #839 (presets; install offer), #881 (items 1, 3, 4 — the state.yaml snag is still open), #818 (redlines), #876 (oracle option b).",
+          "created_at": "2026-09-29T00:23:30.447153Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA7gtE4CVNjhwvNXcQOglzFDC2A3BqZKp923e78gR0aVl1jOQ+Nni93A1nReiiEaxIlzrqWVOCfUCYiWgJyxAYAg=="
         },
         "970849d1-8d30-4911-b609-d01b2e437d57": {
           "display_id": 1525,
@@ -35972,6 +35981,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1252,
       "timestamp": "2026-09-29T00:17:55.468754Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1253,
+      "timestamp": "2026-09-29T00:23:30.485929Z"
     }
   ],
   "watermark": {
