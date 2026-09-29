@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1251,
-        "tip_oid": "e2ef2d41917852d611116361adb9c7bb8f06cfd7",
-        "prefix_sha256": "adf932be53232afc4d10a7e1822b61579b7285547d05d80324cf269782dfece7"
+        "sequence": 1252,
+        "tip_oid": "0ae804c708c45d0e31cfd225b37e809ea047c579",
+        "prefix_sha256": "a66a33dc069d58e1d55ca66cfb50fe103240d438d1ea4300f190a4b94810d128"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1549,
+  "next_comment_id": 1550,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5560,7 +5560,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-29T00:11:05.697555Z",
-      "updated_at": "2026-09-29T00:14:03.764248Z",
+      "updated_at": "2026-09-29T00:17:55.468754Z",
       "labels": [
         "chore"
       ],
@@ -5573,6 +5573,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABApif+LCC0MSxwy3ySxzbXaIXVq1DIA5ij8leKJdYOrS/CjgShJ0/dLVQDMeZG/6s99n/QBt1BMFlAJJF+5+AfAQ=="
+        },
+        "7a0fbbef-6a60-4f34-ad56-e04b3ca4d145": {
+          "display_id": 1549,
+          "author": "xqjG",
+          "content": "PR #47 opened (commit 404c3b35): routing-gate readiness step is a single 'crosslink daemon ensure --wait-ready --json'; crosslink-develop-consumption re-armed on Corvidae-Coding-Projects/crosslink#103 (disposition_ref = this issue's 2026-09-29 00:14 decision; entry id is crosslink-develop-consumption — the decision comment misspelled it). Local: vsdd gate --ci pass (both legs), mdatron verify clean. Finding for the #885 re-check: the new work-check gives 'crosslink session status' a 3 s timeout and reads a timeout as 'no active issue' — one commit was falsely blocked when that call took 27.7 s under daemon contention (2.6 s on retry).",
+          "created_at": "2026-09-29T00:17:55.424427Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAB+pqFFYXGJIt4WKqjdkLwzMGR598J0+v75YmwyGypf3p2QYmdkqAmuR+d/ra83saf1Wvj5BVikvmybOW/9iuDw=="
         },
         "b6dc3fb8-6b7d-497b-93c6-9ce87584ba34": {
           "display_id": 1547,
@@ -35958,6 +35967,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1251,
       "timestamp": "2026-09-29T00:14:03.764248Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1252,
+      "timestamp": "2026-09-29T00:17:55.468754Z"
     }
   ],
   "watermark": {
