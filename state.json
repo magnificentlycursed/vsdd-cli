@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1271,
-        "tip_oid": "6f28479d415e000431cbe8214aa11461bf891e3f",
-        "prefix_sha256": "f7bb75ae9ec7271402ae6f023470bc8fe1c2906dda965f323b1efc9f871e5353"
+        "sequence": 1272,
+        "tip_oid": "2e0a2d00044e9659ac17382d46eb4d218f3b9afa",
+        "prefix_sha256": "a0291c532a133711b77dc4e0db92e2eea387753a89a84c695307b2651f3b5de8"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1563,
+  "next_comment_id": 1564,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26064,7 +26064,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:01.857683Z",
-      "updated_at": "2026-09-29T00:23:30.485929Z",
+      "updated_at": "2026-10-01T21:44:16.179154Z",
       "labels": [
         "design"
       ],
@@ -26086,6 +26086,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAlV6bXsRExC+x0VzqxcKNqPlJJ7DzN417bPb0rG3aH9LniEBiN/egfWIEwgCC8S5dE7ME6K82rUwlAXwbYOVmDg=="
+        },
+        "7212923a-9f82-43f4-b52e-bb28d93ec58e": {
+          "display_id": 1563,
+          "author": "xqjG",
+          "content": "SO ROUTING 2026-10-01 (operator, route-by-owner). Item 1 (three stop rules) -> #836 Slice 4 phase-1a. Item 3 (attended/autonomous leftovers in state-schema, dispatch-data, the map and build-plan Phase 5) -> #839 Slice 2 phase-1a. Item 4 (agent-count ceiling has no field) -> #839 for the field (this takes it out of the #875 parked set: Slice 2 needs it), and #836 for enforcement. Item 5 (the build-plan omits Slices 4/6/7 conformance legs and counts 12 of 13 criteria) -> CONFIRMED; fix the build-plan now on a design branch. Minor wording drifts -> folded into each owning slice's amendment. Items 2 and 6 were ruled 2026-09-28 (presets on #839; mutation floor on #836, landed in PR #49). This issue closes once the item-5 build-plan fix merges.",
+          "created_at": "2026-10-01T21:44:16.138458Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABACerAtn6cH6gmd4NXXxHCcKDeR2UcA5GwACvJD1AsGduxg2hA/Fxh9/3Ov3s1lZHa6aPqzUcVf4k81egwHHbnCg=="
         },
         "8f87f04b-f7d0-49de-8429-a4fa9d9ff18d": {
           "display_id": 1492,
@@ -36183,6 +36192,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1271,
       "timestamp": "2026-10-01T21:37:56.657388Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1272,
+      "timestamp": "2026-10-01T21:44:16.179154Z"
     }
   ],
   "watermark": {
