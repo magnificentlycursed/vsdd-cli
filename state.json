@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1270,
-        "tip_oid": "913adbb92da35938f92bbe65c7a0229490a65cec",
-        "prefix_sha256": "7ae76deedc52826fccd1638d55a8c846576bded7ce3a946b2cac16460dafb2e6"
+        "sequence": 1271,
+        "tip_oid": "6f28479d415e000431cbe8214aa11461bf891e3f",
+        "prefix_sha256": "f7bb75ae9ec7271402ae6f023470bc8fe1c2906dda965f323b1efc9f871e5353"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1562,
+  "next_comment_id": 1563,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5852,7 +5852,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:42.322439Z",
-      "updated_at": "2026-09-29T00:08:25.803146Z",
+      "updated_at": "2026-10-01T21:37:56.657388Z",
       "labels": [
         "bug"
       ],
@@ -5865,6 +5865,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcnsSGpJ4l4Xp2ftfdm7gqquIhKIehqk/CIbKqhvbIG+qAFZ+1QfA2OGfWoA0jks95d5v7qt+Y2H0ZM6ma+WJAQ=="
+        },
+        "17041411-8985-4372-a7cf-bcf7b10ec782": {
+          "display_id": 1562,
+          "author": "xqjG",
+          "content": "SO RULING 2026-10-01 (operator), item 4 REVISED: .vsdd/state.yaml lands with Slice 2 (#839), when the composition function can compute active_composition.config_inputs_hash. Until then, register a bootstrap exemption on the exception register with the retest trigger 'Slice 2 composition function ships'. This supersedes the 2026-09-28 'write it in the next boundary PR (not an exemption)'. It was premised on the artifact being writable, and a hand-written hash would be fabricated. Item 2 is still open: the operator asked whether mdatron is the tool for this class of drift (answer pending).",
+          "created_at": "2026-10-01T21:37:56.613147Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAaaNzvjd2Prl7qhsTWBiO6pI94Z5kN5ynja1SMM6H//6KPDOGTzwYGHtKg+3hhj8AWCskIpa2PbUhPfM9AFGxBA=="
         },
         "2f84dc87-6cac-4a6e-a81f-5521e7841a17": {
           "display_id": 1494,
@@ -36169,6 +36178,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1270,
       "timestamp": "2026-10-01T21:19:34.236446Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1271,
+      "timestamp": "2026-10-01T21:37:56.657388Z"
     }
   ],
   "watermark": {
