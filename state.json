@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1266,
-        "tip_oid": "75a77a63fe3db6286901530d435dd433a5da3abf",
-        "prefix_sha256": "2e42537dc01d80480fc44c8c025b545c5fb0b2d4bb04a179c0f63a6cb362dbb9"
+        "sequence": 1267,
+        "tip_oid": "500d0d8a7adfee2dd746ed6ce0173c4530de199a",
+        "prefix_sha256": "415b4b862f5ef868114d11a49651054df24f97d11b643e02e18d71a0b904f554"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1560,
+  "next_comment_id": 1561,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -13248,7 +13248,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-28T23:37:08.151324Z",
-      "updated_at": "2026-09-29T01:19:22.571058Z",
+      "updated_at": "2026-10-01T21:10:57.421845Z",
       "labels": [
         "chore"
       ],
@@ -13309,6 +13309,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA30RtgQnZC/mh2jfPHhQppacpVXVb4B902V+fZv9PlQOiW4vOz7YLlrHHvCy/i/nW69MYCYkNwMu+Vr49GixGBQ=="
+        },
+        "e267b2b2-e17c-411d-a586-e9bd3de3ff63": {
+          "display_id": 1560,
+          "author": "xqjG",
+          "content": "Step 1 is complete as of 2026-10-01: the operator deleted the retired .claude/hooks and .claude/mcp. Nothing was tracked in either folder, and nothing referenced them: settings.json and .mcp.json point only at .crosslink/integrations/. All four plan steps are now done. The fork change to narrow 'daemon ensure --wait-ready' back to kickoff is a crosslink defect, not part of the vsdd-cli payload. It is tracked on upstream Corvidae-Coding-Projects/crosslink#102/#103 and handled in a separate session, so it does not gate this issue. A related finding was filed upstream as #105: init --update never reconciles either .gitignore, which is why .crosslink/readiness, integrity, hydrated-frontiers and daemon.run.lock show untracked here.",
+          "created_at": "2026-10-01T21:10:57.375914Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA4+oAU8QJn7MUyzMDcXX7qj1fr88ZvZgFBY885iDXFk7W8OdLZYbXTewlYqaoGPbmp8EGvBG02w8RaM/bd9kUCw=="
         },
         "e3fbd8a5-4ade-4518-bdc8-c17e3608e4c3": {
           "display_id": 1537,
@@ -36134,6 +36143,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1266,
       "timestamp": "2026-09-29T02:05:09.432334Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1267,
+      "timestamp": "2026-10-01T21:10:57.421845Z"
     }
   ],
   "watermark": {
