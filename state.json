@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1272,
-        "tip_oid": "2e0a2d00044e9659ac17382d46eb4d218f3b9afa",
-        "prefix_sha256": "a0291c532a133711b77dc4e0db92e2eea387753a89a84c695307b2651f3b5de8"
+        "sequence": 1273,
+        "tip_oid": "be76562580c333476c949e798c4ae5630b8fdc3e",
+        "prefix_sha256": "87133f6893265806e51087d8666c9d59e83f9868594f388cacf3f18b988d3316"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 887,
-  "next_comment_id": 1564,
+  "next_comment_id": 1565,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -5630,10 +5630,21 @@
       "priority": "low",
       "created_by": "xqjG",
       "created_at": "2026-08-01T20:12:32.473315Z",
-      "updated_at": "2026-08-01T20:12:37.859668Z",
+      "updated_at": "2026-10-01T21:44:54.398094Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "e2f68fe7-67e3-4c59-a3c9-b7089d76060b": {
+          "display_id": 1564,
+          "author": "xqjG",
+          "content": "SO RULING 2026-10-01 (operator): no separate adopter-facing methodology doc. The contract (.design/agent-first-vsdd-toolkit.md) is the home, and the README orients readers and points at it (rewrite in #826 / PR #19, which deleted methodology.md). If adopters later need a lean doc, it comes back as a generated install member derived from the contract, never as hand-written prose. Closing.",
+          "created_at": "2026-10-01T21:44:54.355222Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAu9mp8mBQSTdB26FQLi2NRwQnvUGSagzMM7qohaNmkvHm0qxnhiHRJmCfo4X7Sq5CoellKNZpSkwRqm3fy7v8CA=="
+        }
+      }
     },
     "25fb4551-5eea-4465-920b-7c69f4a7aa2c": {
       "uuid": "25fb4551-5eea-4465-920b-7c69f4a7aa2c",
@@ -36197,6 +36208,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1272,
       "timestamp": "2026-10-01T21:44:16.179154Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1273,
+      "timestamp": "2026-10-01T21:44:54.398094Z"
     }
   ],
   "watermark": {
