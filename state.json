@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1305,
-        "tip_oid": "3ae6a24373b8b8c1a6ce077104a941a349aa6a02",
-        "prefix_sha256": "889e4474488736faa1cfcaaaa12dd19de4a0cb5d2c318dd0a395042669f3b539"
+        "sequence": 1306,
+        "tip_oid": "c78624b9e2b3b92bcb3eb0c75a48433ac3c376e2",
+        "prefix_sha256": "9e924c5f2e8be7c338f4a1bb3e156d0970c44db7c1e5ff2d329217ece1d6ae44"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 891,
+  "next_display_id": 892,
   "next_comment_id": 1580,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -547,6 +547,7 @@
     "8c201b2f-b0a2-4912-9fe7-f7b6e0203a27": 73,
     "8c638845-2717-4b8f-88aa-38210ddae026": 676,
     "8c6ed0a9-87e4-4429-b3ec-2e87b325e35a": 226,
+    "8c8c4fb5-f0c6-43be-9c47-754eb3ac6fb1": 891,
     "8cbafcb7-3158-4dd5-b95c-fbc1a6b709a9": 824,
     "8cbfac57-6551-472d-abbf-fda9516ba3fa": 260,
     "8da01c68-3b15-42ef-baff-0d479c2a5501": 8,
@@ -16792,6 +16793,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAAZW7HzYR8lUyw0lp23UDBoa/tawgZqB9DzcvjP7/eRzcNFH8ZuNZJdDraDKPsL/Gq63o1ttxEPW7vzdZx5CwCQ=="
         }
       }
+    },
+    "8c8c4fb5-f0c6-43be-9c47-754eb3ac6fb1": {
+      "uuid": "8c8c4fb5-f0c6-43be-9c47-754eb3ac6fb1",
+      "display_id": 891,
+      "title": "Amend the contract: crosslink kickoff is the dispatch vehicle and the swarm bindings come out (phase-3 rounds, the gate runner, the live-fire criterion, the paved-path map)",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-10-02T21:30:47.797840Z",
+      "updated_at": "2026-10-02T21:30:47.797840Z"
     },
     "8cbafcb7-3158-4dd5-b95c-fbc1a6b709a9": {
       "uuid": "8cbafcb7-3158-4dd5-b95c-fbc1a6b709a9",
@@ -36586,6 +36597,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1305,
       "timestamp": "2026-10-02T21:30:19.835215Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1306,
+      "timestamp": "2026-10-02T21:30:47.797840Z"
     }
   ],
   "watermark": {
