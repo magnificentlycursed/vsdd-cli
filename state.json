@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1296,
-        "tip_oid": "20c71c033c4be425fde5994b741ba65b163211a2",
-        "prefix_sha256": "41e05bd8de405f54f465c42ac2f81529b39678b7edd1818d2f9e3c5e07e606f8"
+        "sequence": 1297,
+        "tip_oid": "1f21de6522d44c1a6920a64949e2b43971b2aa76",
+        "prefix_sha256": "3101a244050a22365639a6f314977737e5060185a1369a5501445c75324bfb89"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 890,
+  "next_display_id": 891,
   "next_comment_id": 1576,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -453,6 +453,7 @@
     "7227584d-6863-45c6-9848-0bcd97225c98": 465,
     "724594c2-b517-411f-8db9-5203002832a4": 220,
     "726f2b0c-480e-4dc1-891b-9d3513ce5830": 59,
+    "7275cf21-3815-4f89-8041-b8704dbe9c8e": 890,
     "7299e983-49ae-45f6-8aa2-006981260d9f": 759,
     "732d0c9b-21fe-4a78-9097-c40ff552bb86": 678,
     "7355c1e3-03fa-44c3-b189-b647fffc2524": 479,
@@ -14141,6 +14142,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAowOvsEjkkM6w3XJvXfxfjPvMzyQiW3Ho+NcC2v89RrTie5jjnJjirB6qGfTC1G1pWBxz27g98hvhvz+PJ9qwDA=="
         }
       }
+    },
+    "7275cf21-3815-4f89-8041-b8704dbe9c8e": {
+      "uuid": "7275cf21-3815-4f89-8041-b8704dbe9c8e",
+      "display_id": 890,
+      "title": "Verify three delivery assumptions by live test: path-scoped rules and skills, hooks in headless runs, and the settings rewrite in a kickoff worktree",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-10-02T20:51:41.339519Z",
+      "updated_at": "2026-10-02T20:51:41.339519Z"
     },
     "7299e983-49ae-45f6-8aa2-006981260d9f": {
       "uuid": "7299e983-49ae-45f6-8aa2-006981260d9f",
@@ -36488,6 +36499,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1296,
       "timestamp": "2026-10-02T20:50:59.229329Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1297,
+      "timestamp": "2026-10-02T20:51:41.339519Z"
     }
   ],
   "watermark": {
