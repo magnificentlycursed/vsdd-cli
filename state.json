@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1291,
-        "tip_oid": "91ad3e828d4dc73e40bc9e176664a0ff5d625dc9",
-        "prefix_sha256": "dd4f10ef4e6d069b6a3e0690fe023a2a60d21603115e07e7713df00dc7b3ae27"
+        "sequence": 1292,
+        "tip_oid": "cd0a42eb3c5f879e4aaea2b3e507f1bcfcd20c98",
+        "prefix_sha256": "7003693dfde464423574cfa79973f9a02e9f79e08cd1234d5d0db47e8b7771c5"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 889,
+  "next_display_id": 890,
   "next_comment_id": 1574,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -217,6 +217,7 @@
     "2cbde495-e7fd-4d41-b1ee-8391dfd5ee96": 826,
     "2cd4a8fd-699a-4a0d-841e-9c117583cbdd": 347,
     "2d7f0fdc-4f0f-4626-93a4-37f3a285ced2": 185,
+    "2da23dee-95b8-4209-bf14-da95ea47533d": 889,
     "2e509da4-ee26-487f-9108-2d958dc96e26": 324,
     "2e55ad2f-3fa0-4676-96b4-45191e2e3312": 682,
     "2ebb1e48-8546-47f6-97d7-af065b8e7579": 756,
@@ -6497,6 +6498,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAc1KRLmiEBBctktN2KWy0B5zp0sK6fSPi5NeXA6RYMCy8JY3EVZ/JBJQfVUPl/GsfERp7mFtonpe6ZspGZMxsAA=="
         }
       }
+    },
+    "2da23dee-95b8-4209-bf14-da95ea47533d": {
+      "uuid": "2da23dee-95b8-4209-bf14-da95ea47533d",
+      "display_id": 889,
+      "title": "Fix agent-context hook enforcement: block merges and history rewrites and gate commits for agents, as crosslink's shipped default does",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-10-02T20:45:16.889723Z",
+      "updated_at": "2026-10-02T20:45:16.889723Z"
     },
     "2e509da4-ee26-487f-9108-2d958dc96e26": {
       "uuid": "2e509da4-ee26-487f-9108-2d958dc96e26",
@@ -36422,6 +36433,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1291,
       "timestamp": "2026-10-02T20:40:37.379314Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1292,
+      "timestamp": "2026-10-02T20:45:16.889723Z"
     }
   ],
   "watermark": {
