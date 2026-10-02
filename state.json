@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1287,
-        "tip_oid": "47178882ea182cb2ffc07a665b510ba500e68a22",
-        "prefix_sha256": "6a18725901d72011ff1c4efa6a30c37fd2f796e007398bcf9a20acc74f59471a"
+        "sequence": 1288,
+        "tip_oid": "bbb18028288fdb231cb77adfaa4b131edf873b26",
+        "prefix_sha256": "6e5ef05af70f2e185b3cabe3dc4e69e56b55dafb9fbf9fb0ab58cf4616aa2d99"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 889,
-  "next_comment_id": 1572,
+  "next_comment_id": 1573,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27258,7 +27258,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-02T00:45:11.800282Z",
-      "updated_at": "2026-08-02T00:45:16.788605Z",
+      "updated_at": "2026-10-02T20:37:38.935424Z",
       "labels": [
         "feature"
       ],
@@ -27271,6 +27271,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAyxF7UTrj6d2tG+kQO0+weuUebjEBzISp7TOhUkRbS1OJV0ffYe7f6uaMPs/soFLxQX7v5iTDAn4kr7eTnut0BQ=="
+        },
+        "5cd360cb-6f01-40ed-9f58-80de84492df8": {
+          "display_id": 1572,
+          "author": "xqjG",
+          "content": "FINDING 2026-10-02 (raised by the Red Team review of the delivery proposal; confirmed by the orchestrating session against the deployed hooks and the tracked config; not exercised). Agent-context hook enforcement in this repo is looser than the git posture assumes. (1) work-check decides 'agent context' from .crosslink/agent.json carrying role 'agent', OR from the working directory containing /.claude/worktrees/ or /.codex/worktrees/ (crosslink_config.py, is_agent_context). Claude Code's own worktree isolation puts sessions and subagents under .claude/worktrees/. (2) In agent context work-check replaces the block and gate lists with hook-config.json agent_overrides (work-check.py load_config). Our tracked agent_overrides block only: git push --force/-f, git reset --hard, git clean -f/-fd/-fdx, git checkout ., git restore . — and gate nothing, with tracking 'relaxed'. So in agent context the hook neither blocks gh pr merge, git merge, git rebase, git cherry-pick, git stash, git tag or branch deletion, nor gates git commit on an active issue. The main list blocks all of those. (3) Upstream's shipped default is stricter since crosslink PR #65 (crosslink#58, this estate's own fix): its agent_overrides also block merge, rebase, cherry-pick, reset, stash, tag, am, apply and branch -d/-D/-m, and gate git commit. Our tracked config predates that and did not pick it up; neither list blocks gh pr merge for agents. (4) A gitignored .crosslink/hook-config.local.json is merged over the tracked config (a '+key' appends to a list), so it can change tracking mode and block lists invisibly; none exists in this checkout today. Grade today: the PR-merge block (#856 posture) is friction that a session in a worktree, or any kickoff agent, does not meet; the server-side ruleset (PR required, three checks, zero approving reviews) is the only leg that holds there. Needs an operator decision: bring agent_overrides up to at least upstream's default plus gh pr merge, and decide whether the worktree-path trigger is acceptable. Not fixed here (routing before fixing). Also recorded on the knowledge pages content-delivery-assessment-2026-10-02 and crosslink-integration-surfaces.",
+          "created_at": "2026-10-02T20:37:38.892575Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoTGeb+6dQUNZAiVxITBfYyHAUP1Dz7927TZkIG79LgmrezHXYDGY20DU4z2YzJcHWxK8KuzAccXBJCY8et0RAQ=="
         },
         "668d0002-a0c4-4d13-a9fc-2be85c6d1cc9": {
           "display_id": 1491,
@@ -36387,6 +36396,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1287,
       "timestamp": "2026-10-02T20:32:40.864528Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1288,
+      "timestamp": "2026-10-02T20:37:38.935424Z"
     }
   ],
   "watermark": {
