@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1310,
-        "tip_oid": "993711c8f7115d9b90b664edb0e73970b9852259",
-        "prefix_sha256": "4580aa843d2b56b14e6b840a17f9800c07840f0f2ca09361cfd3d5fe55cd7023"
+        "sequence": 1311,
+        "tip_oid": "119640cbdfd80204a378493639f71c5ea1070e45",
+        "prefix_sha256": "3e7a22d0cc430ee91d0002aa32e3d5d7fe8720532787dfadf545795ed5800bf3"
       },
       "y2SI": {
         "sequence": 2,
@@ -946,6 +946,10 @@
     "889": {
       "agent_id": "xqjG",
       "claimed_at": "2026-10-02T20:46:55.904810Z"
+    },
+    "891": {
+      "agent_id": "xqjG",
+      "claimed_at": "2026-10-02T21:35:32.199950Z"
     }
   },
   "issues": {
@@ -36631,6 +36635,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1310,
       "timestamp": "2026-10-02T21:34:08.246692Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1311,
+      "timestamp": "2026-10-02T21:35:32.199950Z"
     }
   ],
   "watermark": {
