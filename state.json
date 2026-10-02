@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1313,
-        "tip_oid": "39bb88840594cf09b8dfd21fcfb54d13f152a479",
-        "prefix_sha256": "1bcbbb6e2d72c40f0ed3f11929e38f318bc88f42e5d169a71d8f76554c331601"
+        "sequence": 1314,
+        "tip_oid": "69aca2dfc02d9cd254f078dad81c3ac5fc8ed119",
+        "prefix_sha256": "b954ec2516a33c31106fae48d79cd54230f1614979f41562b304ba5851ca1fe0"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 892,
-  "next_comment_id": 1583,
+  "next_comment_id": 1584,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -16812,7 +16812,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-02T21:30:47.797840Z",
-      "updated_at": "2026-10-02T21:59:16.525292Z",
+      "updated_at": "2026-10-02T22:22:29.278573Z",
       "labels": [
         "design"
       ],
@@ -16825,6 +16825,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEcwYEJYUwomGiNoqrH6BIdeRWlEYVAElX7S2h8o0oXYQzjHSjjgNPdsinIO2T0gxt97S6jw8mquDFA55e2edDA=="
+        },
+        "cfe7332b-0674-4005-8664-3975dd6ecc61": {
+          "display_id": 1583,
+          "author": "xqjG",
+          "content": "SOLUTION OWNER DECISION 2026-10-02 (operator, in chat: 'Ratified'). The amendment is ratified as revised after the four-domain cold review, including the five choices put to the operator: (1) the review stage is homed in Slice 6; (2) the critic no-diff check stands as a detective control now, with kickoff's plan permission mode recorded as the untested read-only posture to test at the live fire; (3) each reviewer runs on its own child issue; (4) crosslink swarm init is off-path, not an interim splitter; (5) the dispatch grain is left to Slice 6, the build-plan's bullets being units of work. Rationale: crosslink's swarm review, fix and pipeline launch no agents, its gate runs only the detected test command, and its launch carries neither the design doc nor a container (verified in source by five independent readers); kickoff is the only launcher and the maintained path; the contract's own Swarm fallback question named this fallback. This comment is the decision record the amendment commit's evidence section cites.",
+          "created_at": "2026-10-02T22:22:29.234618Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAAfc+DIv9VY7xg0BS0yM60M6vbrjV6DcqKQar4kBkdUzunTMXJPZsssrOyLDiFtcGZRHKyb26kQ65g3clPCreCg=="
         },
         "e27ca70c-898b-4f0f-af2e-a24403d82226": {
           "display_id": 1581,
@@ -36670,6 +36679,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1313,
       "timestamp": "2026-10-02T21:59:16.525292Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1314,
+      "timestamp": "2026-10-02T22:22:29.278573Z"
     }
   ],
   "watermark": {
