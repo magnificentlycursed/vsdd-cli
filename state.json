@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1308,
-        "tip_oid": "0ab251db342a3d7a7b780f2b7a04d8d0f35d81b0",
-        "prefix_sha256": "38fbd27bf4bc272b1a648523eaa43f2cd001174539ffb76d4b7f6fdcf8b8b68c"
+        "sequence": 1309,
+        "tip_oid": "50d6e5216b944494d24f9a9627ddf5854f9877cf",
+        "prefix_sha256": "aa552e0d1fa587c368b4602f02d5178caa2f59a239a910528a681778e6f8e6a8"
       },
       "y2SI": {
         "sequence": 2,
@@ -12742,11 +12742,12 @@
       "uuid": "67d8d34c-12f9-4835-a386-e5d53d29cb29",
       "display_id": 887,
       "title": "Update the installed-artifact manifest and the Claude Code supplement to crosslink's readiness-era hook layout",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-02T18:44:12.481964Z",
-      "updated_at": "2026-10-02T21:32:46.408163Z",
+      "updated_at": "2026-10-02T21:33:40.631449Z",
+      "closed_at": "2026-10-02T21:33:40.601372Z",
       "labels": [
         "chore"
       ],
@@ -36624,6 +36625,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1308,
       "timestamp": "2026-10-02T21:32:46.408163Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1309,
+      "timestamp": "2026-10-02T21:33:40.631449Z"
     }
   ],
   "watermark": {
