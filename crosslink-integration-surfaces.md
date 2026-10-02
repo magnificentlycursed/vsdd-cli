@@ -4,40 +4,46 @@ tags: ["reference", "design-doc"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-08-02
-updated: 2026-08-02
+updated: 2026-10-02
 ---
-
 
 ## Design Specification
 
+### currency (read this first; 2026-10-02)
+
+Updated under vsdd-cli#888 against the crosslink fork tree at `ddc0cbe57` (installed binary `0.9.0-beta.1+973e395dc`), read from source and not executed. Paths in the re-verified sections are relative to the crate (`crosslink/` in the crosslink repo).
+
+- **Re-verified and rewritten on 2026-10-02:** section 1 (MCP servers), section 3 (the rules-injection surface), and the new sections 8 (the hook payload) and 9 (what a project can ship, and what init does to it).
+- **Not re-verified; still the 2026-08-02 text:** sections 2, 4, 5, 6, 7 and the two closing lists. Treat their file paths and line numbers as stale. Known-wrong statements in them:
+  - Section 2: the kickoff files and the status state machine are now covered, current, on `kickoff-swarm-dispatch-pipeline`. The "missing TIMEOUT" gap (crosslink#60) is fixed: a timeout now writes `TIMEOUT`. The launch is headless, not an interactive `claude … "$(cat KICKOFF.md)"`.
+  - Section 4: the daemon is no longer only a 30-second hydrator. Since the readiness model it establishes per-checkout repository readiness, and the session-start hook runs `daemon ensure --wait-ready`. The statement that no daemon runs in vsdd-cli is false since vsdd-cli PR #46. See `container-vehicle-pilot-2026-09`.
+  - Section 6: the shared hook library is at `.crosslink/integrations/hooks/crosslink_config.py`, not `.claude/hooks/`. `init` no longer deploys rule content (every bundled rule file is zero bytes). The hook-config keys the hooks actually read are listed in section 8.
+  - Section 7: the upstream agent image is private (crosslink#101); this estate uses the fork's mirror.
+  - "The most design-relevant unwired surfaces": `rules.local/` is not a channel a project can ship (it is gitignored), and the swarm trust-model file feeds a review command that launches nothing.
+
+---
+
 ### 1. mcp servers
 
-Crosslink ships **three MCP servers**, each a single-file Python script (PEP-723 inline metadata, run under `uv`, stdio JSON-RPC, MCP protocol `2024-11-05`, hand-rolled loop — no SDK dependency). The scripts are **embedded in the crosslink binary** via `include_str!` (`crosslink/src/commands/init/mod.rs:41-47`) from `crosslink/resources/claude/mcp/`, and `crosslink init` deploys them to the project's `.claude/mcp/` and registers them in `.mcp.json` via a **preserving merge** (`write_mcp_json_merged`: embedded keys are managed, custom server entries survive `init --force`). The embedded registration template is `crosslink/resources/mcp.json` — it lists exactly these three; there are **no shipped-but-unregistered servers**.
+Re-verified 2026-10-02.
 
-| Server | Tool(s) | Resources | Backend |
+Crosslink ships **two MCP servers**, each a single-file, standard-library-only Python script. The sources are `resources/agent/mcp/`; `crosslink init` regenerates them from the binary into the project's **`.crosslink/integrations/mcp/`** (machine-local, gitignored) and registers them in the tracked `.mcp.json`, run under `python3`. The merge preserves a project's own server entries, overwrites crosslink's two, and removes the retired `crosslink-safe-fetch` key (`src/commands/init/merge.rs:95-153`).
+
+| Server | Tool | Resources | Backend |
 |---|---|---|---|
-| `crosslink-safe-fetch` | `safe_fetch` | — | direct `httpx` |
-| `crosslink-knowledge` | `search_knowledge` | `crosslink://knowledge/<slug>` | shells to `crosslink` CLI |
-| `crosslink-agent-prompt` | `agent_prompt` | — | shells to `crosslink agent prompt` |
+| `crosslink-knowledge` | `search_knowledge(query, tag?, since?)` | `crosslink://knowledge/<slug>` (list and read) | shells to the `crosslink` CLI, 10 s timeout; read-only |
+| `crosslink-agent-prompt` | `agent_prompt(session, prompt, submit=true)` | none | shells to `crosslink agent prompt`, which pastes text into a running tmux agent session |
 
-### crosslink-safe-fetch (`resources/claude/mcp/safe-fetch-server.py`, 286 lines)
-- **Tool `safe_fetch`** — schema: `url` (string, required), `prompt` (string, optional, default "Extract the main content"; advisory only — the server does not use it for extraction, it returns the full sanitized body).
-- Behavior: validates scheme (http/https only, host required); `httpx` GET with redirects, 30 s timeout, UA `Mozilla/5.0 (compatible; CrosslinkSafeFetch/1.0)`; then applies regex sanitization patterns loaded from **`.crosslink/rules/sanitize-patterns.txt`** (`pattern|||replacement` lines; found by walking up ≤10 dirs for `.crosslink/`) plus one hardcoded always-on pattern redacting `ANTHROPIC_MAGIC_STRING_TRIGGER_REFUSAL_*` → `[REDACTED_TRIGGER]`. Prepends a note with the sanitization count when >0.
-- **Enforcement linkage** (the behavioral-guard mandate): `rules/global.md` line 80 — "Use `mcp__crosslink-safe-fetch__safe_fetch` for all web requests. Never use raw `WebFetch`" — and `rules/web.md` ("prefer safe_fetch over WebFetch when available") are injected by the UserPromptSubmit guard; separately the PreToolUse hook on `WebFetch|WebSearch` (`pre-web-check.py`) injects the RFIP external-content framing (from `web.md`, `rules.local` override honored) rather than denying the call, and blocks only fail-closed on unparseable stdin. Enforcement grade, honestly named: **injected convention/friction, not a block** — raw `WebFetch` still executes.
-
-### crosslink-knowledge (`resources/claude/mcp/knowledge-server.py`, 302 lines)
-- **Tool `search_knowledge`** — schema: `query` (string, required; case-insensitive substring), `tag` (string, optional), `since` (string, optional, YYYY-MM-DD). Runs `crosslink knowledge search <query> --json [--tag] [--since]`.
-- **MCP resources** (the only server exposing them): `resources/list` maps `crosslink knowledge list --json` to `crosslink://knowledge/<slug>` URIs (`text/markdown`); `resources/read` serves `crosslink knowledge show <slug>`.
-- Pure CLI adapter — 10 s subprocess timeout, no direct data access; the knowledge data model belongs to the sibling inventory.
-
-### crosslink-agent-prompt (`resources/claude/mcp/agent-prompt-server.py`, 220 lines)
-- **Tool `agent_prompt`** — schema: `session` (string, required; agent slug or tmux session name), `prompt` (string, required, multiline/any length), `submit` (boolean, default true). Wraps `crosslink agent prompt <session> <prompt> [--no-submit]` (tmux `load-buffer` + `paste-buffer` — no newline mangling, no length limits), 10 s timeout. This is the agent-to-agent prompt-delivery surface for tmux kickoff sessions.
-
-**vsdd-cli binding**: all three are live — deployed at `.claude/mcp/`, registered in `.mcp.json`, and visible as `mcp__crosslink-*` tools in sessions. `sanitize-patterns.txt` is deployed under `.crosslink/rules/`. vsdd's contract consumes these as-is; nothing vsdd-specific extends them.
+- **The knowledge server delivers nothing by itself.** An agent has to call it. It is retrieval by the agent's judgment.
+- **The agent-prompt server is a driver-to-agent channel** for local tmux agents. Whether a headless agent reads pasted keystrokes was not determined; kickoff now launches headless.
+- **The safe-fetch server is retired upstream.** Web requests use the built-in tools; the `pre-web-check.py` hook prints a fixed provenance notice before `WebFetch` and `WebSearch` and does not block. `sanitize-patterns.txt` has no consumer.
+- **vsdd-cli binding:** both servers are live and appear as `mcp__crosslink-*` tools. Nothing vsdd-specific extends them. The per-developer `.claude/settings.local.json` in the main checkout still enables the retired safe-fetch server (noted on vsdd-cli PR #51).
 
 ---
 
 ### 2. file-protocol surfaces (the kickoff/worktree contract)
+
+> Not re-verified on 2026-10-02; see the currency note at the top.
 
 The autonomous-execution loop communicates through **files in the agent worktree** (`<repo-root>/.worktrees/<slug>`, created by `kickoff run`; `mission control` and the swarm/status readers scan this directory). All nine kickoff files are added to the worktree's git exclude (`KICKOFF_EXCLUDE_PATTERNS`, `src/commands/kickoff/helpers.rs:400-410`). Documented upstream in `docs_src/reference/state-files.qmd` and `docs_src/reference/kickoff-report.qmd`.
 
@@ -71,17 +77,34 @@ The autonomous-execution loop communicates through **files in the agent worktree
 
 ### 3. the rules-injection surface
 
-`.crosslink/rules/` is the policy-as-context store; `crosslink init` deploys ~30 files from `resources/crosslink/rules/`: `global.md`, `project.md`, `knowledge.md`, `quality.md`, `rigor.md`, `web.md`, `tracking-{strict,normal,relaxed}.md`, `sanitize-patterns.txt`, and per-language files (c, cpp, csharp, elixir(+phoenix), go, java, javascript(+react), kotlin, odin, php, python, ruby, rust, scala, shell, swift, typescript(+react), zig).
+Re-verified 2026-10-02 against the deployed `prompt-guard.py`, which is byte-identical to `resources/agent/hooks/prompt-guard.py`.
 
-- **`rules.local/`**: same-named files override `rules/` (checked first in every loader); survives `init --force`; the per-machine customization channel.
-- **Assembly/injection** (`prompt-guard.py`, UserPromptSubmit): first prompt (or marker older than 4 h — marker at `.crosslink/.cache/guard-full-sent`) gets the **full `<crosslink-behavioral-guard>` block**: global + project + knowledge + quality rules, language sections selected by manifest detection, a project tree (depth 3, ≤50 entries), dependency list (≤30), and the active `tracking-<mode>.md`. Subsequent prompts get a short condensed reminder every **`reminder_drift_threshold`** prompts (hook-config key, default 3; 0 = every prompt) — this is the `reminder_drift` mechanism. A context-budget estimator can force full-guard **reinjection** plus a compression directive. Agent contexts (agent.json present) always get condensed-only.
-- **Cross-surface links**: `sanitize-patterns.txt` feeds the safe-fetch MCP server's sanitizer; `web.md` is the RFIP text `pre-web-check.py` injects before raw WebFetch/WebSearch.
-- **Configurable**: every file is plain hand-editable Markdown (or via `crosslink workflow`); tracking mode and drift threshold via `hook-config.json`. Reference: `docs_src/reference/rules.qmd`, `docs_src/guides/tracking-modes.qmd`.
-- **vsdd binding**: this is the "rules" seam the vsdd contract names as an install target ("installed into crosslink's seams — rules, skills, hook config, house style"). vsdd-cli live state: the full default rule set is deployed; `rules.local/` exists but is **empty** — vsdd has not yet placed methodology context in this seam.
+`.crosslink/rules/` is a tracked folder of Markdown files that crosslink's prompt hook reads and prints into the session's context. It is the one mechanical delivery slot crosslink gives a project for interactive sessions.
+
+- **Only a fixed set of filenames is emitted.**
+  - Always: `global.md` (with `external-content.md` appended), `project.md` (under "Project-Specific Rules"), `knowledge.md`, `quality.md` (`prompt-guard.py:75-78`).
+  - The active `tracking-<mode>.md`, chosen by `tracking_mode` (`:532-553`).
+  - The file for each detected language, from a fixed map of 22 filenames such as `rust.md` (`:86-98`).
+- **Any other file is read and never emitted.** A file with another name is stored under a "language" derived from its filename and then filtered against the detected languages, so it never matches (`:136-140, 232-237`). This applies to a new file such as `vsdd-rust.md`, and to the deployed `rigor.md` and `web.md`, which are dead content today.
+- **Language detection is per project, not per file being edited.** It looks for marker files (`Cargo.toml` and similar) in the root and first-level subdirectories, and for file extensions in the root, `src/` and `*/src/` (`:146-229`).
+- **`rules.local/<same name>` replaces the tracked file; it does not extend it** (`:37-50`). It is gitignored, so it is machine-local and absent in kickoff worktrees.
+- **There is no size limit and no truncation.**
+- **Cadence in the main checkout:**
+  - the full block (project tree, dependencies, all rules) when the marker `.crosslink/.cache/guard-full-sent` is missing or older than 4 hours (`:501-515`); the marker is per checkout, not per session;
+  - otherwise only when the prompt counter is a multiple of `reminder_drift_threshold` (3 in vsdd-cli; 0 means every prompt) (`:657-664`). This "condensed" block drops the tree and dependencies but **still carries every rule in full** (`:557-577`): about 23 KB, roughly 5.8k tokens, in vsdd-cli today;
+  - a full re-injection when an estimated `context_budget_chars` is reached (default 1,000,000) (`:597-612`). That key is a re-injection trigger, not a cap.
+- **In an agent context the condensed block is sent on every call** (`:634-637`). Agent context means `agent.json` with the role "agent", or a working directory under `/.claude/worktrees/` or `/.codex/worktrees/`.
+- **The block is named `<crosslink-project-context>`.** The hook never blocks.
+- **Subagents:** the same hook is wired to subagent start with no event-specific branch, so it follows the same counter and usually emits nothing. One research agent, itself a subagent in this checkout, found no rules block in its own context. Whether Claude Code feeds that hook's plain output to a subagent was not determined.
+- **Upstream ships every rule file empty** (commit `62e637ab7`, 2026-08-16, "zero bundled rules", no explanation given). Crosslink's `preflight` skill says to confirm the rule files "remain zero bytes". Crosslink's own Rust guidance now ships as two skills. vsdd-cli's 30 rule files are customised and carry the `# crosslink:custom` marker.
+- **What the custom marker does and does not do.** `crosslink workflow diff --check` does not report a marked file as drift (`src/commands/workflow.rs:43`), and `crosslink style sync` skips a marked file (`src/commands/style.rs:150-176`). `init --update` ignores the marker and classifies by manifest hash: vsdd-cli's files count as conflicts, which a non-interactive update keeps and an interactive "yes" blanks. `init --force` rewrites every managed rule name with the empty template (`src/commands/init/mod.rs:1200-1208`).
+- **vsdd binding:** the rules carry crosslink-usage and project policy. They do not carry the supplements, and the 2026-10-02 review advised against adding supplements here. See `content-delivery-assessment-2026-10-02`.
 
 ---
 
 ### 4. daemon + http/websocket server
+
+> Not re-verified on 2026-10-02; see the currency note at the top.
 
 Two distinct long-running components:
 
@@ -100,6 +123,8 @@ Related autonomous component: the **sentinel loop** (`src/commands/sentinel/`, P
 
 ### 5. signing / trust material
 
+> Not re-verified on 2026-10-02; see the currency note at the top.
+
 The substrate the #815 corroboration keystone would build on:
 
 - **`agent.json`** (`.crosslink/`, gitignored, per machine/worktree): agent identity — `agent_id` (`driver--<name>` or `<parent>--<slug>` for kickoff children), `machine_id`, `role` (`driver` owns a key; `agent` inherits the driver's), `ssh_key_path`, `ssh_fingerprint`, `ssh_public_key`. Written by `agent init` / `kickoff run`. vsdd-cli live: driver agent `xqjG` plus per-kickoff keypairs.
@@ -115,6 +140,8 @@ The substrate the #815 corroboration keystone would build on:
 ---
 
 ### 6. environment variables + config knobs + non-hook init deployments
+
+> Not re-verified on 2026-10-02; see the currency note at the top.
 
 **Env vars read by the binary** (source sweep):
 
@@ -139,19 +166,73 @@ The substrate the #815 corroboration keystone would build on:
 
 ### 7. container surface (one line, by design)
 
+> Not re-verified on 2026-10-02; see the currency note at the top.
+
 Agent containers run the GHCR image `ghcr.io/dollspace-gay/crosslink-agent:latest` (`src/commands/container.rs:43`) with a root entrypoint (`resources/container/entrypoint.sh`) that remaps the agent user to `HOST_UID`/`HOST_GID`, resolves Claude auth (Keychain-less macOS token handoff), and gosu-drops to the agent user to execute `claude` over the bind-mounted worktree's `KICKOFF.md` — full details live in the knowledge page **`attended-design-autonomous-execution`** and `docs_src/guides/container-agents.qmd`.
+
+---
+
+### 8. the hook payload (readiness-era layout)
+
+Verified 2026-10-02. The deployed scripts in `.crosslink/integrations/hooks/` are byte-identical to `resources/agent/hooks/`. They are machine-local, gitignored, hash-tracked in the init manifest, and overwritten by `init --update` when unmodified. **A project cannot ship edits to them.** The wiring is in the tracked `.claude/settings.json`.
+
+| Hook | Claude Code event | What it does | Can it block |
+|---|---|---|---|
+| `session-start.py` | Session start: startup, resume, clear, compact | Runs `crosslink daemon ensure --wait-ready`; prints one `<crosslink-session-context>` block: the provenance notice and `external-content.md`, a stale-session warning, the last handoff, session status and last action, agent identity, sync output and locks, the knowledge page count, open issues, a workflow reminder; and, **when the active issue carries `design-doc:<slug>` labels, up to 3 knowledge pages of at most 8,000 characters each** (`session-start.py:194-255`) | Exits 2 when readiness fails |
+| `prompt-guard.py` | Each user prompt; subagent start | Prints the rules block (section 3) | No |
+| `work-check.py` | Before `Write`, `Edit`, `Bash` | Blocks on: repository not ready; kill or pause flags; blocked git commands; `git commit` without an active issue; a missing plan or result comment when `comment_discipline` is "required"; strict tracking with no active issue | Yes |
+| `post-edit-check.py` | After `Write`, `Edit` | Stub-pattern findings, linter output and a test reminder, capped at 12,000 characters. The extension-to-linter table is hard-coded; other extensions exit silently | No |
+| `pre-web-check.py` | Before `WebFetch`, `WebSearch` | A fixed provenance notice | No |
+| `heartbeat.py` | After every tool call | Runs `crosslink heartbeat` at most every 120 s | No |
+
+- **No hook has a per-file-type or per-path trigger a project can configure, and none gates an edit on a file having been read.**
+- **The only project-controlled additions to session start** are `external-content.md` and the `design-doc:<slug>` label. Nothing applies that label automatically; `knowledge add --from-doc` adds a `design-doc` *tag*, which is a different thing.
+- **Keys the hooks read from `hook-config.json`:** `tracking_mode`; `blocked_git_commands`, `gated_git_commands`, `allowed_bash_prefixes`, `comment_discipline`; `agent_overrides` (its own tracking mode, block list, gate list, comment discipline, and lint and test commands that only extend the allowed-command list); `reminder_drift_threshold`, `context_budget_chars`; `crosslink_binary`. No key adds context files, injected text or commands to run.
+- **`hook-config.local.json` is merged over the tracked file**; a key prefixed with `+` appends to a list. It is gitignored, so it can change the tracking mode and the block lists invisibly.
+- **In agent context the hook takes `agent_overrides`.** vsdd-cli's tracked `agent_overrides` are looser than upstream's shipped default (recorded on vsdd-cli#855 and on `content-delivery-assessment-2026-10-02`).
+- **`CROSSLINK_HOOK_PROVIDER`** (`claude` or `codex`) is the only environment variable the hooks read. It selects the output format.
+- **Not determined:** what Claude Code does with the session-start hook's exit 2; whether repeat prompts within 600 s are suppressed by the hooks' event de-duplication when the payload carries no turn id (inferred from `hook_protocol.py:293-326`; the tests always supply one).
+
+---
+
+### 9. what a project can ship through crosslink, and what init does to it
+
+Verified 2026-10-02.
+
+| Slot | What the project controls | How it reaches the agent | Limits |
+|---|---|---|---|
+| Fixed-name rule files (section 3) | File content | Mechanical: the prompt hook | Fixed names; upstream expects them empty |
+| `design-doc:<slug>` label | Which knowledge pages | Mechanical: session start | 3 pages, 8,000 characters each |
+| Kickoff prompt template | The dispatched agent's prompt | Mechanical, dispatched agents only | See `kickoff-swarm-dispatch-pipeline` |
+| `hook-config.json` | Block and gate lists, tracking mode, cadence | Mechanical: the hooks | No content or path keys |
+| Hook entries in `.claude/settings.json` | The project's own hooks | Mechanical, where the entries survive | Replaced by any plain `crosslink init` that is not skipped; always replaced in a kickoff worktree |
+| Extra servers in `.mcp.json` | The project's own entries | Tool availability | Preserved on merge |
+| Knowledge pages | Content and tags | By the agent's judgment | Substring search |
+| The project's own folders under `.claude/skills/` and `.claude/commands/` | Everything | Claude Code's own discovery | Crosslink ignores them; its managed ignore block ignores both directories wholesale |
+
+- **Crosslink has no way to register a downstream skill.** Its 18 skills are compiled in from `resources/agent/skills/` (`build.rs:138-251`), deployed to `.claude/skills/` for Claude and `.agents/skills/` for Codex. Their frontmatter is `name` and `description` only. They load by description match or explicit invocation; no hook references them. The 14 files in `.claude/commands/` are thin wrappers that say "use the `<name>` skill"; a fresh init writes both sets.
+- **Crosslink does not manage `.claude/agents/` or `.claude/rules/`.**
+- **The init manifest** (`.crosslink/init-manifest.json`) maps each managed path to the hash of its template and the writing version. It lists only crosslink's files.
+- **`init --update`** walks template paths and old manifest paths only (`src/commands/init/mod.rs:757-801`). A missing file is "deleted by user" and not recreated. A file the user changed is left alone when the template is unchanged, and is a conflict when both changed: prompted on a terminal, kept otherwise. Unknown files are left alone and not flagged. It never touches either ignore file (crosslink#105).
+- **A plain `crosslink init`** skips only when every managed file is already present (`mod.rs:1011-1029`); otherwise it always rewrites the merge-aware files (`mod.rs:1225-1235`). For `.claude/settings.json` that means **the whole `hooks` object is replaced with crosslink's template** (`src/commands/init/merge.rs:216-218`); other top-level keys survive. It also rewrites the managed block of the root `.gitignore`, converting the legacy markers vsdd-cli uses and replacing everything between them (`merge.rs:10-12, 61-74`), which would drop vsdd-cli's keep-lines for `.claude/commands/vsdd-*` (crosslink#20). Kickoff runs a plain init in every worktree.
+- **`init --force`** overwrites every managed file, rewrites all rule files empty, and resets `hook-config.json`.
+- **`crosslink context check`** verifies presence only (rules, hooks, commands, provider files, valid hook-config JSON) and recommends `init --force` on failure. **`crosslink context measure`** prints bytes divided by four per rule file and records nothing. Neither enforces a budget or takes a project-defined file list.
+- **`crosslink style sync`** (the `house_style` key) copies rules, hooks and commands from a git repo on a manual command and skips marked files. It was only skimmed.
 
 ---
 
 ### upstream doc index (docs_src/)
 
+> Not re-verified on 2026-10-02; see the currency note at the top.
+
 Guides: `hooks`, `kickoff`, `knowledge`, `multi-agent`, `swarm`, `session-workflow`, `tracking-modes`, `tui`, `web-dashboard`, `container-agents`, `design-workflow`, `maintenance`. Reference: `commands`, `hook-config`, `kickoff-report`, `rules`, `state-files`.
 
 ### the most design-relevant unwired surfaces (vsdd-cli, at basis)
+
+> Not re-verified on 2026-10-02; see the currency note at the top.
 
 1. **The localhost REST/WS server + orchestrator API** — stage-lifecycle transitions, `agents/poll`, decompose/execute, WebSocket progress events; nothing in vsdd consumes it (the daemon isn't even running here), yet it is the only machine-readable *push* channel for exactly the run-state vsdd's Status/gate designs re-derive from files.
 2. **The sentinel loop** (`sentinel.enabled: false`) — issue-sourced autonomous dispatch with an escalation ladder; the closest existing mechanism to the phases-dispatched keystone (#840) and never evaluated for it.
 3. **`swarm.toml` trust-model config** (absent) — the triage-prior surface `swarm review` consumes; Slice 6 binds `crosslink swarm review` as the phase-3 exit act, so its priors file is a direct, currently-unauthored vsdd input. (Runner-up: the `house_style` seam, named in the vsdd contract as an install target, unset.)
 
 Known gaps carried into vsdd designs: upstream **#60** (timeout kill never writes a terminal sentinel — RUNNING lies) and **#61** (swarm launch surface lacks the effort dial).
-
