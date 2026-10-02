@@ -4,9 +4,8 @@ tags: ["reference", "design-doc"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-08-02
-updated: 2026-08-02
+updated: 2026-10-02
 ---
-
 
 ## Design Specification
 
@@ -38,7 +37,7 @@ updated: 2026-08-02
 
 Every event: `timestamp` (ms — wall-clock + per-op latency), `uuid` + `parentUuid` (turn tree), `sessionId`, `agentId`, `cwd`, `gitBranch`, `version`, `entrypoint`, `isSidechain`, `userType`, `slug`, `durationMs` (real per-entry wall-clock). Request-bearing events add: **`effort`**, **`attributionSkill`** (the skill-invocation signal REQ-16 audits), `attributionAgent`, `requestId`, `promptId`, `sourceToolAssistantUUID`.
 
-**Dispatch-primitive dependence (verified both directions):** `effort` is present in runtime-harness Agent-tool subagent transcripts (a5e20d9b: `effort: high` ×24) and **absent from crosslink-kickoff records** — on that path the dial is neither settable (upstream #61) nor recorded, so **the dispatch manifest is the only reliable dial source across primitives**.
+**Dispatch-primitive dependence (verified both directions):** `effort` is present in runtime-harness Agent-tool subagent transcripts (a5e20d9b: `effort: high` ×24) and was **absent from crosslink-kickoff records** when this page was written. *Corrected 2026-10-02 (vsdd-cli#888):* on the kickoff path the dial is now settable (`--effort`, crosslink PR #77) and is recorded in `.kickoff-metadata.json` beside the resolved model and the budget. That file sits in the agent-writable worktree, unsigned, so **the dispatch manifest remains the only dial record outside the agent's reach**. Whether the kickoff transcript itself carries `effort` was not determined.
 
 Each assistant message: `model`, `content[]`, `stop_reason`, `stop_details`, `usage`. `usage` verbatim: `input_tokens`, `output_tokens`, `cache_creation_input_tokens`, `cache_read_input_tokens`, `cache_creation.{ephemeral_5m,ephemeral_1h}`, `service_tier`, `inference_geo`. `content[]` carries every `tool_use` with FULL input (Read `file_path` + `offset`/`limit`; Bash `command`) and, in user events, `tool_result` content + sizes.
 
@@ -54,11 +53,21 @@ Each assistant message: `model`, `content[]`, `stop_reason`, `stop_details`, `us
 
 Every figure carries a source tag: **recorded** (verbatim from usage/tool events) · **measured** (deterministic over an actual file) · **judgment** (a labeled assessment, never a fake metric) · **could-not-check** (the oracle was unreachable or agent-writable-only). The local `agent-<id>.jsonl` is agent-writable — evidentiary only when server-synced (the #815 corroboration keystone); un-synced transcripts ground could-not-check, never verified claims.
 
+### crosslink-kickoff run records (added 2026-10-02)
+
+Read from the crosslink source at fork tree `ddc0cbe57`, not executed. The full table is on `kickoff-swarm-dispatch-pipeline`.
+
+- **Transcript:** `.crosslink/runtime/agent-events.jsonl` in the agent's worktree. Kickoff launches the agent headless with JSON-lines output and pipes it through `tee` into that file, so it holds the full event stream, tool-use events included. It is unsigned and the agent can rewrite it.
+- **Usage harvest:** crosslink writes `token_usage` rows into the driver's local database, but only at `kickoff stop` or `kickoff cleanup`. It parses only lines with a top-level `usage`, which for Claude is the final `result` line. Classes captured: input, output, cache-read, reasoning. **The cache-creation class is hard-coded to none**, so "usage by cache class" cannot come from this table; read the transcript. Cost is a pricing-table estimate. A run killed by timeout probably yields no rows (inferred).
+- **Read-back:** the dashboard API `/api/v1/usage` or the SQLite file. No CLI subcommand was found.
+- **Other files in the worktree:** `KICKOFF.md` (the assembled prompt), `.kickoff-metadata.json` (start time, timeout, provider, resolved model, effort, budget), `.kickoff-criteria.json`, `.kickoff-doc.json` (the design doc's hash), `.kickoff-status`, and the agent's self-reported `.kickoff-report.json`. None is signed.
+- **Out of the agent's reach:** only its signed hub events once synced, which it authors itself, and in container mode the pipeline file beside the design doc.
+- **Not parsed by crosslink:** skill invocations. Only usage, status and the last message are extracted from the transcript.
+
 ### known traps (each caught live in this estate)
 
 - `spawnDepth` — fabricated; does not exist (see above).
-- `effort` claimed from kickoff-path records — absent there; manifest is the source.
+- `effort` claimed from kickoff-path records — since crosslink PR #77 it is in `.kickoff-metadata.json`, an agent-writable file; cite it as could-not-check, and the manifest as the source (corrected 2026-10-02).
 - "the journal" referenced without its schema — it is `journal.jsonl` as documented above, nothing more.
 - Read-count as a waste metric — see token semantics.
 - An agent-writable record cited as verification — the four-valued provenance rule exists precisely for this.
-
