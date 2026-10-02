@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1311,
-        "tip_oid": "119640cbdfd80204a378493639f71c5ea1070e45",
-        "prefix_sha256": "3e7a22d0cc430ee91d0002aa32e3d5d7fe8720532787dfadf545795ed5800bf3"
+        "sequence": 1312,
+        "tip_oid": "c76ed705e8aca9256c384083a68a9a769cf2b5d4",
+        "prefix_sha256": "14402af1dd62a2ef2e2c231077d1fc27c828eba1a007bcc6fddc41fe3df3ba13"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 892,
-  "next_comment_id": 1581,
+  "next_comment_id": 1582,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -16812,10 +16812,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-02T21:30:47.797840Z",
-      "updated_at": "2026-10-02T21:31:18.883882Z",
+      "updated_at": "2026-10-02T21:45:43.964620Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "e27ca70c-898b-4f0f-af2e-a24403d82226": {
+          "display_id": 1581,
+          "author": "xqjG",
+          "content": "PLAN + AUTHORING RECORD 2026-10-02. Operator decision (chat, 2026-10-02; recorded on #836 and #839): crosslink kickoff is the dispatch vehicle and the swarm bindings come out. Evidence: knowledge pages kickoff-swarm-dispatch-pipeline and content-delivery-assessment-2026-10-02 (swarm review/fix/pipeline launch nothing; swarm gate runs only the detected test command; swarm launch carries neither doc nor container). AUTHORED in-session on branch design/891-kickoff-vehicle-swarm-out, hand-audited under the bootstrap interim (no composition could be loaded by injection; the orchestrating session read the affected passages and the evidence pages): 13 enumerated contract changes (division of labour; Phase exit by gate; Recorded review dispatch x2 incl. the critic no-diff check; Conformance at action time paved path + build entry; Verifiable conformance preflight phrase; Requirements Gates; the Swarm live fire criterion renamed Dispatch live fire and re-scoped to one kickoff per reviewer; Verification architecture; Decomposition Slice 6 and closing paragraph; the Swarm fallback open question resolved in favour of its fallback; a Revision history row), the build-plan (summary, Phase 5 exit act, obligations, Phase 6 note, Decomposition hash re-pinned ecd6b714), the paved-path map (0.1.1: phase-3-review-round and phase-exit-gate re-bound; new kind vsdd-command, schema pair updated), one supplement line, one routes comment. Left alone: the attended-review-round-fan-out map entry (attended rounds in a design session, adopted 2026-07-21), the reserved-word note, retired terms, resolved register entries. mdatron verify clean; cargo test 226 passed. NOT committed, NOT ratified: next is the cold review (Solution Architect, AI Engineer as the map's owner, Quality Engineer for the criterion, Documentation Reviewer for the prose), then the Solution Owner's decision on this issue is the exit gate, then the PR.",
+          "created_at": "2026-10-02T21:45:43.923769Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAiUawcsNiEBJv196fnhanctEA7z+jzyp1gVBw20dGaVVwVrcUhUDaTjNIJajmm2tS9MEv4kD5oLP5qWwBdfEOCQ=="
+        }
+      }
     },
     "8cbafcb7-3158-4dd5-b95c-fbc1a6b709a9": {
       "uuid": "8cbafcb7-3158-4dd5-b95c-fbc1a6b709a9",
@@ -36640,6 +36651,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1311,
       "timestamp": "2026-10-02T21:35:32.199950Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1312,
+      "timestamp": "2026-10-02T21:45:43.964620Z"
     }
   ],
   "watermark": {
