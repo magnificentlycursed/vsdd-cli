@@ -28,8 +28,8 @@ The current supplement frontmatter gates only by `languages_or_interfaces`; ther
 
 ## Software Engineer extensions
 
-- **`.claude/` runtime-harness directory.** Hooks at `.claude/hooks/`; slash commands at `.claude/commands/`; MCP servers at the repo-root `.mcp.json`; settings at `.claude/settings.json`.
-- **Hook architecture.** Pure-Python hooks at `.claude/hooks/*.py`; vsdd-cli's Rust mirror subprocess from Python wrapper. One source; two enforcement surfaces.
+- **`.claude/` runtime-harness directory.** Hook wiring in `.claude/settings.json`; crosslink-deployed hook scripts at `.crosslink/integrations/hooks/`; slash commands at `.claude/commands/`; MCP servers at the repo-root `.mcp.json`; settings at `.claude/settings.json`.
+- **Hook architecture.** Pure-Python hooks at `.crosslink/integrations/hooks/*.py`; vsdd-cli's Rust mirror subprocess from Python wrapper. One source; two enforcement surfaces.
 - **Slash command discipline.** `.claude/commands/<name>.md` defines slash commands. VSDD-prefix discipline (`/vsdd-phase-3`, `/vsdd-domain-quality-engineer`) ensures no collision with crosslink's 14 commands.
 - **MCP server integration.** The repo-root `.mcp.json` registers MCP servers — crosslink's knowledge server (`search_knowledge`) among them. vsdd ships **no** docs-server: `vsdd mcp-serve` is **cut** (superseded). Knowledge-surfacing rides crosslink's knowledge surface plus the agent's own `WebFetch` / `WebSearch` and the sibling tools' own docs surfaces (Claude Code docs, the Anthropic API docs), not a vsdd-hosted tool set.
 

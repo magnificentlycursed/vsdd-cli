@@ -31,16 +31,13 @@ archive/
 # vsdd-cli's OWN vsdd-prefixed artifacts ARE source-of-truth and tracked
 # (they're what `vsdd init` deploys to adopting projects).
 # Deliberate divergence from the canonical block, restored after the
-# 2026-07-20 init --update clobber (operator ruling on vsdd-cli #597).
-.claude/hooks/*
-!.claude/hooks/vsdd-*
-!.claude/hooks/vsdd-*.py
+# 2026-07-20 init --update clobber (operator decision, vsdd-cli #597).
+# The matching hooks and mcp lines were dropped 2026-10-02 (vsdd-cli #887):
+# crosslink now deploys those under .crosslink/integrations/, and no
+# vsdd-prefixed hook or mcp file exists.
 .claude/commands/*
 !.claude/commands/vsdd-*
 !.claude/commands/vsdd-*.md
-.claude/mcp/*
-!.claude/mcp/vsdd-*
-!.claude/mcp/vsdd-*.json
 
 # .claude/ — DO track these (if manually configured):
 #   .claude/settings.json         — Claude Code project settings
