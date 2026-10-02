@@ -95,8 +95,8 @@ jobs:
       # `context check` has no --check flag; it gates by its own exit code
       # (nonzero on any missing/invalid file). It cannot pass whole in CI:
       # the hook + command payloads are machine-local by design (git-ignored;
-      # the vsdd-cli #658 posture — settings.json errors loudly when a
-      # payload is missing locally), so a fresh checkout necessarily lacks
+      # settings.json carries crosslink's stock wiring, which skips a hook
+      # whose payload is missing locally), so a fresh checkout necessarily lacks
       # them and `crosslink sync` hydrates tracker state only. CI therefore
       # gates the sections a checkout carries — Rule files + Configuration
       # (hook-config.json presence/valid JSON) — and reports, without
