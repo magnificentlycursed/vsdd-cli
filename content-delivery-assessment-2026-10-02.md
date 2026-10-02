@@ -65,8 +65,8 @@ Recorded under vsdd-cli#888. The review dispatch is recorded on vsdd-cli#839.
 
 From `runtime-harness-surface` (2026-08-02), not re-verified. Crosslink manages none of these folders.
 
-- **`.claude/rules/*.md`:** Claude Code's own rules folder, with optional `paths:` scoping. Unscoped rules are re-injected after compaction; path-scoped ones are lost until a matching file is read again.
-- **Skill frontmatter:** `paths:` ("glob-triggered automatic activation"), skill-scoped `hooks:`, `model`, `effort`, and embedding a shell command's output in the skill body. **Disputed:** the AI Engineer reviewer's own understanding is that `paths:` only makes a skill eligible, with loading still left to the model's judgment. Nobody has tested it.
+- **`.claude/rules/*.md`:** Claude Code's own rules folder, with optional `paths:` scoping. Unscoped rules are re-injected after compaction; path-scoped ones are lost until a matching file is read again. **Tested 2026-10-02:** a path-scoped rule is injected mechanically when a matching file is read, and not when a new matching file is created with Write.
+- **Skill frontmatter:** `paths:` ("glob-triggered automatic activation"), skill-scoped `hooks:`, `model`, `effort`, and embedding a shell command's output in the skill body. **Tested 2026-10-02:** `paths:` on a skill only controls when the skill appears in the skill list; its body never loads on its own. The AI Engineer reviewer's reading was right. See "Live tests" below.
 - **Agent types in `.claude/agents/*.md`:** a tool allow-list or deny-list, `model`, `effort`, `skills:` (the full skill content preloaded at start), and agent-scoped hooks. Per-agent transcripts record the agent type, the attributed skill, effort, and usage by cache class.
 - **Hooks:** a pre-tool hook can deny with a reason; session start has a `compact` matcher; a pre-compaction hook is blockable; subagent start and stop match on agent type; a config-change hook is blockable; an `InstructionsLoaded` event records which rule files loaded and why.
 
@@ -195,7 +195,7 @@ The three changes that would most raise the cost of bypass:
 
 ## A finding about the current hook configuration
 
-Raised by the Red Team and confirmed by the orchestrating session against the deployed hooks and the tracked config on 2026-10-02. Recorded on vsdd-cli#855. Not exercised.
+Raised by the Red Team and confirmed by the orchestrating session against the deployed hooks and the tracked config on 2026-10-02. Recorded on vsdd-cli#855. Exercised the same day with synthetic events from a directory under `.claude/worktrees/`, and addressed in vsdd-cli PR #52 (vsdd-cli#889), which adopts crosslink's shipped agent default and adds the PR-merge block; open pending the operator's merge. The local-override residual stays on vsdd-cli#855.
 
 - **Agent context is decided by `agent.json` carrying the role "agent", or by the working directory containing `/.claude/worktrees/` or `/.codex/worktrees/`** (`crosslink_config.py`, the agent-context check).
 - **In agent context the hook takes `agent_overrides` from `hook-config.json`.** vsdd-cli's tracked `agent_overrides` block only forced pushes, hard resets, cleans and wholesale checkouts or restores, gate nothing, and set tracking to relaxed. So in agent context the hook neither blocks `gh pr merge`, `git merge` or `git rebase` nor gates `git commit`.
@@ -206,7 +206,7 @@ Raised by the Red Team and confirmed by the orchestrating session against the de
 
 1. **Review vehicle:** one kickoff per reviewer, interactive agent types, or hold until a spike? Does the 2026-09-27 "fallback no longer rides" decision stand, or do attended review rounds on the Agent tool remain legitimate under the 2026-07-21 adoption?
 2. **Swarm:** drop it from the contract entirely, including `swarm gate` and the build-plan's swarm entry, or only for review dispatch?
-3. **Supplements:** deliver them through `.claude/rules/` rather than as skills, subject to the live test?
+3. **Supplements:** deliver them through `.claude/rules/` rather than as skills? The live test supports it: a scoped rule loads on the first Read of a matching file, a scoped skill only gets listed.
 4. **"Become skills":** must the 28 files move into the skills folder, or is skill behaviour from the tracked command files enough?
 5. **Rust guidance:** always-on, or loaded when a matching file is first read? Must it be in place before the first edit (which needs a read gate)?
 6. **Dispatched agents:** is an inlined prompt plus a hash acceptable evidence in place of skill invocation?
@@ -215,17 +215,53 @@ Raised by the Red Team and confirmed by the orchestrating session against the de
 9. **Standing cost:** is roughly 5.8k tokens every third prompt from crosslink's prompt hook accepted?
 10. **Upstream:** raise that plain init replaces a project's hooks (crosslink#15 is open) and ask for an agent-type or system-prompt passthrough on kickoff, or accept detection only?
 
-## Unverified, and the three live tests proposed
+## Live tests (run 2026-10-02, vsdd-cli#890)
 
-- How `paths:` behaves on a skill versus on a file in `.claude/rules/`: mechanical load, or eligibility only.
-- Whether Claude Code hooks fire in a headless kickoff run.
-- Whether kickoff's init strips a project's hook entries in a worktree, and whether it leaves the tracked settings file dirty.
+All three ran on Claude Code 2.1.284 with the Sonnet model, headless, in scratch projects outside any crosslink-managed repo, with the Claude Code environment variable unset as kickoff does. Evidence is the session transcripts and hook log files, not only the model's answers. Total cost about USD 0.30.
 
-Also unverified: the Claude Code facts as a whole (two months old); whether a pre-tool hook on the Agent tool can enforce a count ceiling; whether subagents receive crosslink's rules (one research agent found no rules block in its own context); which spawn primitive the two overspends used.
+**Test 1: `paths:` on a rule versus on a skill.** Fixtures: an unscoped rule, a rule scoped to `**/*.rs`, a skill scoped to `**/*.rs`, and an unscoped skill, each carrying a unique marker string in its body (and, for skills, in its description). Four fresh sessions, each asked to list every marker it could see.
+
+| Session | Unscoped rule body | Scoped rule body | Scoped skill: description in the skill list | Scoped skill body | Unscoped skill: description / body |
+|---|---|---|---|---|---|
+| No tool use | present | absent | absent | absent | present / absent |
+| Read a matching `.rs` file | present | **present**, as a `nested_memory` attachment after the Read | **present**, in a second skill listing after the Read | absent | present / absent |
+| Write a new matching `.rs` file | present | **absent** | present, after the Write | absent | present / absent |
+| Read a non-matching file | present | absent | absent | absent | present / absent |
+
+- A path-scoped rule is delivered mechanically on the first Read of a matching file. It is not delivered when a brand-new matching file is created, so an edit gate or a read gate is still needed for that case.
+- `paths:` on a skill controls listing only. The body never loaded in any session. A skill is therefore not a delivery mechanism for supplements, as the AI Engineer reviewer said.
+- The `InstructionsLoaded` hook fires and records each rule load with its reason: `session_start` for the unscoped rule, `path_glob_match` with the glob and the triggering file for the scoped rule. That is a usable audit signal for rules-delivered supplements.
+
+**Test 2: do hooks fire in a headless run with kickoff's flags?** A scratch project with four hooks (session start, prompt submit, pre-tool on Bash, post-tool on Read), run as `claude -p --output-format stream-json --verbose --model … --allowedTools … -- "$(cat KICKOFF.md)"`.
+
+- All four hooks fired, each logging its payload.
+- The session-start and prompt-submit hooks' standard output reached the model's context: it listed both marker strings.
+- The pre-tool hook blocked the targeted command with exit 2, and the model saw the block message.
+- The headless transcript records `hook_started` and `hook_response` events with the hook's output, so a kickoff transcript carries evidence that hooks fired and what they injected.
+- The final result line carries `total_cost_usd` and usage including `cache_creation_input_tokens`. Crosslink's harvest drops that class; the transcript has it.
+- Hook payloads carry `effort`, `permission_mode`, `prompt_id` and, for tool events, `tool_use_id`. **The prompt-submit payload carries no `turn_id`.** Crosslink's hooks de-duplicate on `turn_id` and `tool_use_id` with a 600-second window (`hook_protocol.py`, `claim_event`), so for the claude provider every prompt in a session hashes to the same key: **crosslink's prompt hook emits at most once per ten minutes per session**, and its "every third prompt" counter counts only the prompts that get through. The same applies to subagent start. This explains why research agents saw no rules block. Read from the hook code against the observed payload; not run end to end. A candidate upstream issue, not filed.
+- Not a real `crosslink kickoff run`: no worktree, no crosslink hooks, no tracker writes. The container pilot (`container-vehicle-pilot-2026-09`) is the record of crosslink's own hooks acting inside real headless runs.
+
+**Test 3: what kickoff's worktree init does to the settings file.** An isolated clone of vsdd-cli with its remote removed, a probe hook entry and a probe top-level key added to `.claude/settings.json` and committed, then kickoff's exact command `crosslink init --skip-signing --defaults`.
+
+- **The whole `hooks` object was replaced** with crosslink's template. The probe entry was gone, and the session-start entry count went from two to one. Other top-level keys survived (`permissions`, `statusLine`, the probe key); `allowedTools` was added.
+- **Our fail-closed wrapper was replaced by a fail-open one.** vsdd-cli's tracked wiring exits 2 with a message when a hook script is missing (vsdd-cli#658); the template's wrapper is `else exit 0`. So in a kickoff worktree a missing hook payload is a silent no-op.
+- **Three tracked files were left dirty:** `.claude/settings.json`, `.gitignore` and `.crosslink/.gitignore`. Two untracked files were added: `AGENTS.md` and `.codex/`. A blanket `git add` would stage all five. The Red Team's inference is now observed.
+- **The root `.gitignore` lost vsdd-cli's keep-lines for `.claude/commands/vsdd-*`.** The 28 tracked command files stay tracked, but a new file under `.claude/commands/` is ignored in the worktree.
+- Tracked rules and `hook-config.json` were not touched.
+- This was an isolated clone, not a linked worktree, so that an agent key would not be written into the main checkout's `.crosslink/keys/`. The settings-merge code path does not depend on the difference.
+
+## Still unverified
+
+- Whether a pre-tool hook on the Agent tool can enforce an agent-count ceiling.
+- Which spawn primitive the two overspends used.
+- The rest of the Claude Code facts on `runtime-harness-surface` (two months old), beyond what the tests above touched.
+- Whether a plan-permission-mode kickoff agent can still write its status file and post comments.
 
 ## How the work was run
 
 - **Research:** five read-only agents on the interactive Agent-tool path: three on crosslink's delivery, install and dispatch surfaces (about 564k tokens), then one each on kickoff and swarm (about 473k tokens).
+- **Live tests:** six headless sessions and one init in an isolated clone, run by the orchestrating session on 2026-10-02 (vsdd-cli#890).
 - **Review:** four independent reviewers on the same path, about 486k tokens. Each was told to read its own domain prompt file in full, the contract and the proposal, and to check the proposal's claims against the raw sources. None saw another's review. No verifier agents were added.
 - **Model and effort:** the session default for every agent. This was a hand-run dispatch under the contract's bootstrap interim, recorded as such on vsdd-cli#839. It is the same interactive path that question 1 is about.
 
