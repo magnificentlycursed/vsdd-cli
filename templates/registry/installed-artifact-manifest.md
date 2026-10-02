@@ -1,6 +1,6 @@
 ---
 schema_class: installed-artifact-manifest
-schema_version: 0.3.1
+schema_version: 0.3.2
 status: draft-proposal
 reference_surfaces:
   - {id: project-settings, path: .claude/settings.json, scope: repo}
@@ -22,15 +22,15 @@ entries:
     pairs_with: [hook-session-start, hook-work-check, hook-post-edit-check, hook-prompt-guard, hook-pre-web-check, hook-heartbeat]
     resolution: exists
     fail_mode: fail-closed
-    note: rewired fail-closed 2026-07-20 (operator ruling, vsdd-cli #658); a future crosslink init settings merge may clobber this — dollspace-gay/crosslink#15 — and this manifest's check is the catcher
-  - {id: hook-session-start, path: .claude/hooks/session-start.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
-  - {id: hook-work-check, path: .claude/hooks/work-check.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
-  - {id: hook-post-edit-check, path: .claude/hooks/post-edit-check.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
-  - {id: hook-prompt-guard, path: .claude/hooks/prompt-guard.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
-  - {id: hook-pre-web-check, path: .claude/hooks/pre-web-check.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
-  - {id: hook-heartbeat, path: .claude/hooks/heartbeat.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
+    note: rewired fail-closed 2026-07-20 (operator ruling, vsdd-cli #658); a future crosslink init settings merge may clobber this — dollspace-gay/crosslink#15 — and this manifest's check is the catcher; re-pointed at .crosslink/integrations/hooks 2026-09-28 when crosslink moved its payload (vsdd-cli #885)
+  - {id: hook-session-start, path: .crosslink/integrations/hooks/session-start.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
+  - {id: hook-work-check, path: .crosslink/integrations/hooks/work-check.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
+  - {id: hook-post-edit-check, path: .crosslink/integrations/hooks/post-edit-check.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
+  - {id: hook-prompt-guard, path: .crosslink/integrations/hooks/prompt-guard.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
+  - {id: hook-pre-web-check, path: .crosslink/integrations/hooks/pre-web-check.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
+  - {id: hook-heartbeat, path: .crosslink/integrations/hooks/heartbeat.py, class: hook-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-settings], pairs_with: [settings-hook-wiring], resolution: exists-and-referenced, fail_mode: fail-closed}
   - id: hook-crosslink-config
-    path: .claude/hooks/crosslink_config.py
+    path: .crosslink/integrations/hooks/crosslink_config.py
     class: hook-support
     source: crosslink-init
     lifetime: per-clone-payload
@@ -39,29 +39,38 @@ entries:
     resolution: exists
     fail_mode: undefined
     note: imported by hook payloads, not wired directly
+  - id: hook-protocol
+    path: .crosslink/integrations/hooks/hook_protocol.py
+    class: hook-support
+    source: crosslink-init
+    lifetime: per-clone-payload
+    referenced_by: []
+    pairs_with: []
+    resolution: exists
+    fail_mode: undefined
+    note: imported by every hook payload, not wired directly; arrived with crosslink's readiness-era layout (vsdd-cli #885)
   - id: mcp-wiring
     path: .mcp.json
     class: server-wiring
     source: crosslink-init
     lifetime: tracked-wiring
     referenced_by: []
-    pairs_with: [mcp-agent-prompt, mcp-knowledge, mcp-safe-fetch]
+    pairs_with: [mcp-agent-prompt, mcp-knowledge]
     resolution: exists
     fail_mode: undefined
     note: Claude Code reports a failed server load, but silent non-load in headless runs is the named degradation the preflight data binds a check to
-  - {id: mcp-agent-prompt, path: .claude/mcp/agent-prompt-server.py, class: server-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-server-config], pairs_with: [mcp-wiring, mcp-enablement], resolution: exists-and-referenced, fail_mode: undefined}
-  - {id: mcp-knowledge, path: .claude/mcp/knowledge-server.py, class: server-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-server-config], pairs_with: [mcp-wiring, mcp-enablement], resolution: exists-and-referenced, fail_mode: undefined}
-  - {id: mcp-safe-fetch, path: .claude/mcp/safe-fetch-server.py, class: server-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-server-config], pairs_with: [mcp-wiring, mcp-enablement], resolution: exists-and-referenced, fail_mode: undefined}
+  - {id: mcp-agent-prompt, path: .crosslink/integrations/mcp/agent-prompt-server.py, class: server-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-server-config], pairs_with: [mcp-wiring, mcp-enablement], resolution: exists-and-referenced, fail_mode: undefined}
+  - {id: mcp-knowledge, path: .crosslink/integrations/mcp/knowledge-server.py, class: server-payload, source: crosslink-init, lifetime: per-clone-payload, referenced_by: [project-server-config], pairs_with: [mcp-wiring, mcp-enablement], resolution: exists-and-referenced, fail_mode: undefined}
   - id: mcp-enablement
     path: .claude/settings.local.json
     class: server-enablement
     source: operator
     lifetime: per-clone-wiring
     referenced_by: []
-    pairs_with: [mcp-agent-prompt, mcp-knowledge, mcp-safe-fetch]
+    pairs_with: [mcp-agent-prompt, mcp-knowledge]
     resolution: exists
     fail_mode: undefined
-    note: per-developer overlay enabling the three project servers
+    note: per-developer overlay enabling the two project servers
   - id: commands-crosslink
     path: .claude/commands/
     class: command-listing
