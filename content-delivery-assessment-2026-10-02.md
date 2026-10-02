@@ -11,7 +11,7 @@ updated: 2026-10-02
 
 ## Status
 
-**Design input. Nothing here is ratified and nothing has been amended into the contract.** This page records an investigation, a proposal written by the orchestrating session, and an independent review of that proposal by four domains. None of the four supported the proposal as written. The questions at the end are the operator's to answer; the answers then enter the owning slices' designs through the normal amendment route.
+**Design input, with one outcome now ratified.** The swarm-removal amendment (vsdd-cli#891, 2026-10-02) was authored from this page's findings, cold-reviewed by four domains, ratified by the Solution Owner and committed (pull request open at the time of writing); it makes kickoff the dispatch vehicle, takes every swarm binding out of the contract, and adds the critic no-diff check as a detective control. The other decisions are recorded on vsdd-cli#839 and #836 for the Slice 2 and Slice 4 designs; nothing else is amended. This page records an investigation, a proposal written by the orchestrating session, and an independent review of that proposal by four domains. None of the four supported the proposal as written. The questions at the end are the operator's to answer; the answers then enter the owning slices' designs through the normal amendment route.
 
 Recorded under vsdd-cli#888. The review dispatch is recorded on vsdd-cli#839.
 
