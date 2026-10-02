@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1286,
-        "tip_oid": "a4456fe3247219ba24dd09b05b9295a9c1575bf1",
-        "prefix_sha256": "e9feb6703215a09933ea54311c5fc415e571cd3ed6a7696e32c8f0b4c5a692ef"
+        "sequence": 1287,
+        "tip_oid": "47178882ea182cb2ffc07a665b510ba500e68a22",
+        "prefix_sha256": "6a18725901d72011ff1c4efa6a30c37fd2f796e007398bcf9a20acc74f59471a"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 889,
-  "next_comment_id": 1571,
+  "next_comment_id": 1572,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -20554,10 +20554,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-02T20:27:47.936327Z",
-      "updated_at": "2026-10-02T20:28:13.149729Z",
+      "updated_at": "2026-10-02T20:32:40.864528Z",
       "labels": [
         "docs"
-      ]
+      ],
+      "comments": {
+        "52b40ec0-5427-406d-b320-847ab0b8b1d8": {
+          "display_id": 1571,
+          "author": "xqjG",
+          "content": "PLAN (operator-directed 2026-10-02: 'Write the knowledge pages'). Four writes to the knowledge store: (1) rewrite kickoff-swarm-dispatch-pipeline from the two read-only investigations (kickoff; swarm) — the 2026-08-02 text mostly describes work since merged; (2) update crosslink-integration-surfaces: MCP servers and rules-injection sections re-verified against the readiness-era layout, a new section on what a project can ship through crosslink, and a currency note marking the sections not re-verified; (3) dated corrections on attended-design-autonomous-execution, run-record-capability-inventory and container-vehicle-pilot-2026-09; (4) a new page, content-delivery-assessment-2026-10-02, holding the delivery-and-audit findings, the proposal as reviewed, the four-domain review (Solution Owner, Solution Architect, AI Engineer, Red Team; dispatch recorded on #839) and the open operator questions. Basis: crosslink fork tree ddc0cbe57, installed binary 0.9.0-beta.1+973e395dc; read from code and docs, not executed; load-bearing citations re-checked by the orchestrating session before writing. No repo files change.",
+          "created_at": "2026-10-02T20:32:40.812050Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAaLIpXYCXHiIi9PziFGuhqDvO5MWh0OPARIKnT1TSstmk/ulOO8ezXg3vSwfc4cgY4CR1ffac6hvv1lyELPUPDg=="
+        }
+      }
     },
     "b012d138-3637-4562-bedc-e7c3bab75eed": {
       "uuid": "b012d138-3637-4562-bedc-e7c3bab75eed",
@@ -36371,6 +36382,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1286,
       "timestamp": "2026-10-02T20:31:08.605811Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1287,
+      "timestamp": "2026-10-02T20:32:40.864528Z"
     }
   ],
   "watermark": {
