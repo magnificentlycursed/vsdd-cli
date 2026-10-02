@@ -4,9 +4,8 @@ tags: ["reference", "dispatch", "crosslink"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-09-26
-updated: 2026-09-29
+updated: 2026-10-02
 ---
-
 
 # Container vehicle pilot — 2026-09-24/25 (vsdd-cli #878)
 
@@ -35,8 +34,6 @@ The new binary required reconciling the hub to the per-checkout readiness model 
 
 ## Daemon behaviour worth knowing
 
-## Daemon behaviour worth knowing
-
 Corrected 2026-09-28 (vsdd-cli#885; upstream correction on Corvidae-Coding-Projects/crosslink#102).
 
 - **Readiness is crosslink's job, not the agent's.** Current crosslink's session-start hook runs `daemon ensure --wait-ready --json`, and its work-check blocks with the real readiness reason. This estate's hooks predated that model until PR #46, so nothing established readiness, and agents filled the gap by hand. Never drive readiness by hand (no ensure/restart/poll loops, no kills, no lock-file deletion). A readiness failure is a finding to report.
@@ -48,3 +45,13 @@ Corrected 2026-09-28 (vsdd-cli#885; upstream correction on Corvidae-Coding-Proje
 ## Where the record lives
 
 Fork: magnificentlycursed/crosslink PR #5 (merged), PR #6 (merged; five commits + the lineage fix), tracker #62–#64. Upstream: Corvidae-Coding-Projects/crosslink #100 (CI), #101 (private image), #102 (umbrella with RCA), PR #103 (seven fixes from fork develop). vsdd-cli: #878 (pilot), #880/#883 (Status wiring, ghost-id gate), PR #42 (routing-gate readiness), PR #43 (register dispositions), memory `upstream-pr-ledger-2026-09`.
+
+## Currency notes (2026-10-02)
+
+Added under vsdd-cli#888 from the kickoff investigation recorded on `kickoff-swarm-dispatch-pipeline`.
+
+- **The worktree readiness call has changed since run 3's fix.** The table above names `daemon::ensure_and_wait` (crosslink-fork PR #6). After crosslink-fork PR #8 removed the 30-minute readiness bound (merged 2026-10-02), the code calls `daemon::ensure(&wt, true)` at `src/commands/kickoff/launch.rs:617-624`.
+- **The installed binary is `0.9.0-beta.1+973e395dc`,** which is fork develop at crosslink-fork PR #7. It does not include PR #8.
+- **crosslink PR #103 is still open** (head `cc756de92`, checked 2026-10-02). It carries fork PRs #5 to #8.
+- **The provenance of run 8's "USD 0.66" is not recorded here.** Crosslink's own usage harvest stores a pricing-table estimate, not a billed amount; if the figure came from there it is an estimate.
+- **Kickoff's stall watchdog does not run in containers,** and an agent that crashes without timing out leaves the status at "running" until the wall clock expires.
