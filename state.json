@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1299,
-        "tip_oid": "e009c2766913823d398120cdf08c9de8fd1d4625",
-        "prefix_sha256": "02bbf1fe361dd4967549f677e012c193b45c890050eff1b5ed6ebb6e55f61e80"
+        "sequence": 1300,
+        "tip_oid": "25702fcacd6ec06e19923a3c37ff18bb70464a2c",
+        "prefix_sha256": "56f8cedeaaaed0e4b7555e934ca3acebbd538fb17afd8888071b330a03b66ecb"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 891,
-  "next_comment_id": 1576,
+  "next_comment_id": 1577,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -14155,10 +14155,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-02T20:51:41.339519Z",
-      "updated_at": "2026-10-02T20:52:04.476553Z",
+      "updated_at": "2026-10-02T21:00:50.039251Z",
       "labels": [
         "docs"
-      ]
+      ],
+      "comments": {
+        "fa290e4d-f596-4443-9e8d-de093c96bfa2": {
+          "display_id": 1576,
+          "author": "xqjG",
+          "content": "RESULT 2026-10-02 (operator-directed: 'run the three live tests'). Claude Code 2.1.284, Sonnet, headless, scratch projects; evidence from transcripts and hook logs, about USD 0.30. TEST 1 (paths on a rule vs a skill): a .claude/rules file scoped to **/*.rs is injected mechanically on the first Read of a matching file (a nested_memory attachment) and NOT when a new matching file is created with Write; a skill with the same paths only gets its description added to the skill list after a matching file is touched — its body never loaded in any of four sessions. The InstructionsLoaded hook fires and logs each rule load with load_reason session_start or path_glob_match plus the glob and triggering file. TEST 2 (hooks headless, kickoff's exact flags): session-start, prompt-submit, pre-tool and post-tool hooks all fired; session-start and prompt-submit stdout reached the model; a pre-tool exit 2 blocked the call; the stream-json transcript records hook_started/hook_response with the hook output; the result line carries total_cost_usd and cache_creation_input_tokens. Not a real crosslink kickoff run. Side finding: the prompt-submit payload has prompt_id and no turn_id, and crosslink's claim_event de-duplicates on turn_id with a 600 s window, so crosslink's prompt hook emits at most once per ten minutes per session (read from code against the observed payload; candidate upstream issue, not filed). TEST 3 (kickoff's init in an isolated clone with a probe hook entry): the whole hooks object was replaced — probe entry gone, session-start entries 2 to 1, our fail-closed wrapper replaced by the template's fail-open 'else exit 0'; permissions, statusLine and a probe top-level key survived; .claude/settings.json, .gitignore and .crosslink/.gitignore left modified, AGENTS.md and .codex/ added; the root .gitignore lost the .claude/commands/vsdd-* keep-lines. Results recorded on the knowledge pages content-delivery-assessment-2026-10-02 (new 'Live tests' section), kickoff-swarm-dispatch-pipeline and crosslink-integration-surfaces (branch head b3d21e5a). Scratch fixtures live in the session scratchpad only.",
+          "created_at": "2026-10-02T21:00:49.909776Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxNAU5HsSyQA6gc3OwOVtogkX+3CpB+b9G3hak6IAkhcz+1yzNc5kAjAvUyS5ePSlnH+1CulpeAxyKuc27GJpDg=="
+        }
+      }
     },
     "7299e983-49ae-45f6-8aa2-006981260d9f": {
       "uuid": "7299e983-49ae-45f6-8aa2-006981260d9f",
@@ -36521,6 +36532,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1299,
       "timestamp": "2026-10-02T20:53:28.267301Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1300,
+      "timestamp": "2026-10-02T21:00:50.039251Z"
     }
   ],
   "watermark": {
