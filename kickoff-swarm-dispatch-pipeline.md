@@ -15,7 +15,7 @@ Rewritten 2026-10-02 under vsdd-cli#888. This replaces the 2026-08-02 text of th
 
 - **Tree read:** the crosslink fork's working tree at `ddc0cbe57` (fork develop `cc756de92` plus one daemon commit). The fork is 12 commits ahead of upstream develop as known locally (`29d018525`, 2026-09-12). None of the 12 touch swarm; the kickoff differences are the container-readiness fixes listed under "This estate's contributions". Nothing later than 2026-09-12 was fetched from upstream.
 - **Installed binary:** `0.9.0-beta.1+973e395dc`, which is fork develop before crosslink-fork PR #8.
-- **Method:** two read-only research agents read the source, crosslink's own docs (`docs_src/`), the git history and both issue trackers on 2026-10-02. **Nothing was executed** except `--help`. Every behaviour below is read from code, not observed.
+- **Method:** two read-only research agents read the source, crosslink's own docs (`docs_src/`), the git history and both issue trackers on 2026-10-02. **Nothing was executed** except `--help`. Every behaviour below is read from code, not observed, except the two items marked "observed" or "verified", which come from the live tests run later the same day (vsdd-cli#890).
 - **Re-checked by the orchestrating session the same day:** the swarm launch options (`src/commands/swarm/lifecycle.rs:686-720`), the per-phase template lookup (`:632-637`), the gate command (`:809-810`), the review and fix plan writers and their printed messages (`src/commands/swarm/review.rs:118, 278, 547, 567, 574`), the pipeline stub (`src/pipeline.rs:293-339`), template resolution (`src/utils.rs:13-41`), template use in `run` (`src/commands/kickoff/run.rs:107-128`), the base tool list (`src/commands/kickoff/prompt.rs:417-444`), the worktree init call (`src/commands/kickoff/launch.rs:596-599`) and the missing cache-creation class (`src/token_usage.rs:219`).
 - **Paths** are relative to the Rust crate (`crosslink/` inside the crosslink repo) unless they start with `docs_src/`. Line numbers are for the tree above and will drift.
 - **Handles:** `crosslink#N` and `crosslink PR #N` are the upstream tracker (Corvidae-Coding-Projects/crosslink); `crosslink-fork PR #N` is the fork (magnificentlycursed/crosslink).
@@ -100,6 +100,7 @@ From `src/main.rs:1412-1622`. The installed binary's `--help` prints no descript
 
 - **Tracked files at HEAD,** then `crosslink init --skip-signing --defaults` (`launch.rs:596-599`).
 - **The init replaces the `hooks` object of `.claude/settings.json` with crosslink's template.** `write_settings_json_merged` unions `allowedTools`, then inserts the template's hooks over whatever was there (`src/commands/init/merge.rs:201-219`). Other top-level keys survive. Init skips only when every managed file already exists (`src/commands/init/mod.rs:1011-1029`); `.crosslink/integrations/` is gitignored, so a fresh worktree is never complete and the replacement always happens. **No init flag or config key preserves a project's hooks.** crosslink#15 is open on this.
+- **Observed 2026-10-02** (kickoff's init command run in an isolated clone of vsdd-cli, vsdd-cli#890): the probe hook entry added to the settings file was gone afterwards and the session-start entries went from two to one; `permissions`, `statusLine` and a probe top-level key survived; `allowedTools` was added. The template's wrapper is fail-open (`else exit 0`) where vsdd-cli's tracked wiring is fail-closed (vsdd-cli#658). The init left `.claude/settings.json`, `.gitignore` and `.crosslink/.gitignore` modified and added `AGENTS.md` and `.codex/`, so a blanket `git add` in the worktree would stage all five. The root `.gitignore` lost vsdd-cli's keep-lines for `.claude/commands/vsdd-*`.
 - **The gitignored payload is regenerated from the binary,** not copied from the host: `.crosslink/integrations/`, crosslink's skills and commands (`init/mod.rs:617-692`).
 - **`.mcp.json` is merged:** a project's own servers survive; crosslink's two entries are overwritten (`merge.rs:95-153`).
 - **Tracked rules and `hook-config.json` survive.** Rules deploy only when `.crosslink/rules/` is absent. `rules.local/` and `hook-config.local.json` are gitignored, so they are absent.
@@ -131,6 +132,7 @@ From `src/main.rs:1412-1622`. The installed binary's `--help` prints no descript
 - **Usage harvest** parses only lines with a top-level `usage`, which for Claude is the final `result` line (`src/agents/events.rs:163-182`). Classes captured: input, output, cache-read, reasoning. **The cache-creation class is hard-coded to none** (`src/token_usage.rs:219`). Cost is a pricing-table estimate. A run killed by timeout probably yields no usage rows (inferred: no `result` line).
 - **Reading it back:** the dashboard API `/api/v1/usage`, or the SQLite file directly. No CLI subcommand was found.
 - **No crosslink code parses the transcript for skill invocations.** Only usage, status and the last message are extracted.
+- **Observed 2026-10-02 in a headless run with kickoff's flags:** the stream-json transcript also carries `hook_started` and `hook_response` events with each hook's output, and the final result line carries `total_cost_usd` and usage including `cache_creation_input_tokens`. Crosslink's harvest drops that class; the transcript has it.
 - **Net:** the only records an agent cannot quietly rewrite are its signed hub events, and it authors those itself. The prompt, the transcript and the dial record all sit where the agent can write.
 
 ## Kickoff: failure handling
@@ -255,7 +257,7 @@ The contract's "Swarm fallback" open question names a fallback of "swarm primiti
 ## Not determined or inferred
 
 - **Nothing was run live.** In particular `swarm launch` under the readiness-era daemon is unverified.
-- **Whether Claude Code hooks fire in headless `-p` runs** was not verified; the rules injection and session injection inside dispatched agents depend on it.
+- **Hooks in headless `-p` runs: verified 2026-10-02.** With kickoff's exact flags, session-start, prompt-submit, pre-tool and post-tool hooks all fire, their standard output reaches the model, and a pre-tool exit 2 blocks the call; the transcript records `hook_started` and `hook_response` events. Run in a scratch project, not through `crosslink kickoff run` (vsdd-cli#890; details on `content-delivery-assessment-2026-10-02`).
 - **Maintainer intent for the review pipeline** is inferred from the March source comment and the old help text.
 - **Upstream state after 2026-09-12** is unknown.
 - **Agent identity (inferred):** `crosslink init` in the worktree may create an identity with a random id before kickoff's own check, in which case kickoff's named identity and automatic trust approval are skipped.
