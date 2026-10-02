@@ -4,7 +4,18 @@ tags: ["methodology", "dispatch"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-07-20
-updated: 2026-07-20
+updated: 2026-10-02
+---
+
+CORRECTIONS 2026-10-02 (vsdd-cli#888). This page is kept as the 2026-07-20 record. Read against crosslink at fork tree `ddc0cbe57`, the statements below no longer hold or need the clarification given; the current account is on `kickoff-swarm-dispatch-pipeline`.
+
+1. **Kickoff no longer launches an interactive session.** Local and container runs are both headless. The description of watchdog nudges (a typed "continue working") belongs to the old interactive launch; against a headless process the nudge is probably inert (inferred).
+2. **"Rules injection every prompt"** is true only in an agent worktree. In the main checkout the rules arrive on the first prompt, after 4 hours, and then every third prompt.
+3. **"Missing status = failed"** is not what `kickoff status` does; it prints "running (no status file yet)". An agent that crashes without timing out stays "running" until the wall clock expires.
+4. **The three upstream doc-versus-code mismatches at the end are all changed.** (2) Permission flags are now passed into containers (crosslink PR #63). (3) A timeout now writes `TIMEOUT` (crosslink PR #65, crosslink#60). (1) Upstream aligned its shipped agent block list with its docs (crosslink PR #65, crosslink#58): the default `agent_overrides` now block merge, rebase and cherry-pick and gate commit. **But vsdd-cli's own tracked `hook-config.json` still carries the older, looser agent list,** so in this estate the looser hook enforcement still applies in agent context (recorded on vsdd-cli#855).
+5. **`resources/claude/commands/design.md` is now a thin wrapper.** The design skill's canonical text is `resources/agent/skills/design/SKILL.md`.
+6. **Clarification on per-run allowed-tools lists:** they cannot make a reviewer read-only: kickoff's base list always includes Write and Edit, and config can only add tools.
+
 ---
 
 Deep read of both repos, commissioned by the operator before redrafting the dispatch amendment. Finding: both implement the operator's structural split literally — design is attended and highly interactive; execution is autonomous; the human acts between runs, not attached to them.
