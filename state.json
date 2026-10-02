@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1317,
-        "tip_oid": "b139433cc78b95f3a0ff35faf26cd0c24ddc3baa",
-        "prefix_sha256": "edc01638c789b0daf701cd13b6c9153fb272e768241ff6c4db0cc796e3b303eb"
+        "sequence": 1318,
+        "tip_oid": "8af61863feaf09e8e0a90411da9d9640f10dcd9c",
+        "prefix_sha256": "4bd6779aac789c045eeaa3dc38aef0e4f5dfc675c3d7eb1bf36aad6615ecf88d"
       },
       "y2SI": {
         "sequence": 2,
@@ -6509,11 +6509,12 @@
       "uuid": "2da23dee-95b8-4209-bf14-da95ea47533d",
       "display_id": 889,
       "title": "Fix agent-context hook enforcement: block merges and history rewrites and gate commits for agents, as crosslink's shipped default does",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-02T20:45:16.889723Z",
-      "updated_at": "2026-10-02T23:38:26.943946Z",
+      "updated_at": "2026-10-02T23:39:11.612410Z",
+      "closed_at": "2026-10-02T23:39:11.577538Z",
       "labels": [
         "fix"
       ],
@@ -36729,6 +36730,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1317,
       "timestamp": "2026-10-02T23:38:26.943946Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1318,
+      "timestamp": "2026-10-02T23:39:11.612410Z"
     }
   ],
   "watermark": {
