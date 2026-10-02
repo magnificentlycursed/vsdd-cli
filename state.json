@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1300,
-        "tip_oid": "25702fcacd6ec06e19923a3c37ff18bb70464a2c",
-        "prefix_sha256": "56f8cedeaaaed0e4b7555e934ca3acebbd538fb17afd8888071b330a03b66ecb"
+        "sequence": 1301,
+        "tip_oid": "0e2cc0375bf71050d5c759e0ffa7b51d8ab2637a",
+        "prefix_sha256": "78f026b22335830243f060a68634ba916e14f48354b43294dc76e040546ae22b"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 891,
-  "next_comment_id": 1577,
+  "next_comment_id": 1578,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9758,7 +9758,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-02T19:59:40.030998Z",
+      "updated_at": "2026-10-02T21:02:12.040055Z",
       "labels": [
         "design"
       ],
@@ -9802,6 +9802,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3X0+Umswb8JZQyyXB6ymK8CT4Mt/QWoD+N4CydA+Qbf8t09f+AjYT/h7M/G+1nz3dEoMkSH8NOO/7YhaeZt/BQ=="
+        },
+        "9e832960-cf1c-4b29-90d4-d2120eddae84": {
+          "display_id": 1577,
+          "author": "xqjG",
+          "content": "DESIGN INPUT 2026-10-02 (from the live tests, vsdd-cli#890): (1) supplements can ride Claude Code's .claude/rules/ with paths: — mechanical on the first Read of a matching file, with InstructionsLoaded as the audit event; creating a brand-new matching file does not trigger it, so the edit gate is still needed for that case; (2) skills with paths: are listing-only, so the operator's 'prompts become skills' decision is about packaging and invocation, not delivery; (3) hooks do fire in headless runs with kickoff's flags and inject context, so a kickoff worktree's hooks are live — but kickoff's init replaces the settings hooks object with crosslink's fail-open template and leaves three tracked files dirty; vsdd's own hook entries will not exist in dispatched agents; (4) crosslink's prompt hook reaches a session at most once per ten minutes (turn-id de-duplication), so its rules are not a per-prompt carrier either. Full record: knowledge page content-delivery-assessment-2026-10-02.",
+          "created_at": "2026-10-02T21:02:11.944695Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA2pM7C/bY3XUyUBmLaIH162kUDQQkKQmosaxjPATnGZFDD2TQRcUA0UlSkova0qZ5UHfvOFOklPDX261CVJUTAQ=="
         },
         "a8c61ac6-4b0d-463f-b78e-f5497e2fff18": {
           "display_id": 1569,
@@ -36537,6 +36546,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1300,
       "timestamp": "2026-10-02T21:00:50.039251Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1301,
+      "timestamp": "2026-10-02T21:02:12.040055Z"
     }
   ],
   "watermark": {
