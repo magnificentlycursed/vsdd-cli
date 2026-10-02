@@ -14,7 +14,7 @@ routes:
     governed_by: .design/agent-first-vsdd-toolkit.md
   - files: ".design/agent-first-vsdd-toolkit.md"
     governed_by: .design/agent-first-vsdd-toolkit.md
-  - files: ".design/build-plan.md"             # the Decomposition's swarm projection
+  - files: ".design/build-plan.md"             # the Decomposition's dispatcher projection
     governed_by: .design/agent-first-vsdd-toolkit.md
     # The build-plan's structural invariant (contract Acceptance criteria /
     # the former #845 AC-1), mechanized per the vsdd GH#29 consultation:
