@@ -4,8 +4,9 @@ tags: ["reference", "design-doc"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-10-02
 ---
+
 
 # Regression corpus (interim home)
 
@@ -44,6 +45,9 @@ Legend — trace: the harness-produced record that proves the escape or the cont
 
 ## C. Deferred fixture classes (from the former Fixture corpus enumeration; one-sided until their occasion arises)
 directive-reconciliation violation seeds; the delta's tolerance case (a pre-existing failure neither blocking nor excusing); the dangling survivor reference; the unapproved compile-defect declaration; the missing declared-kind seed; the free-slug-only and zero-finding inline-review variants; the preflight fail and unknown directions; the stalled-agent fixture; the execution-on-attended-vehicle seed; the unresolved-question pair; the unmanifested-artifact fixture; the hand-rolled-paved-path seed; the agent-invoked-dispatch seed; the late-writer seed; the fail-closed-wiring seed; the post-compaction stale-read seed; the label-narrowing consolidation seed; the genuinely-new-ignored-test fixture; the two-repo composed-display fixture; the tracker-corroboration fixtures; the oracle-provenance seeds; the completed cost cycle with baselines.
+
+
+Added 2026-10-02 with the ratified amendment vsdd-cli#891 (Recorded review dispatch, the critic no-diff check): the critic worktree diff — a reviewer's worktree carrying a diff or a commit against the post-init, pre-launch tree the dispatcher records, and its clean twin; the Dispatch live fire criterion carries the seeded case; the named evasion it does not catch is edit, cite, revert (no diff, no commit), for which the synced trace's tool-use events are the oracle once the sync channel lands.
 
 ## D. Unexercised legs of Per-milestone PR discipline (carried here, not claimed as controls)
 | id | leg | status |
