@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1277,
-        "tip_oid": "2f910428c9656bf843a2df1125e183805c133b84",
-        "prefix_sha256": "1dc00b4b1155c8dfbcac8725072b8b44e6b3865f5e8b1c9dbff80027c710f9f5"
+        "sequence": 1278,
+        "tip_oid": "d32734dfa9c8cf1efbf4d4434e01619101f109c5",
+        "prefix_sha256": "4e94ceee37417667f7a6db75aeee3a9761bc637b1c88d6087b33c6f2decc4e65"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 888,
-  "next_comment_id": 1566,
+  "next_comment_id": 1567,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -12653,10 +12653,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-02T18:44:12.481964Z",
-      "updated_at": "2026-10-02T18:44:36.315603Z",
+      "updated_at": "2026-10-02T18:45:34.028378Z",
       "labels": [
         "chore"
-      ]
+      ],
+      "comments": {
+        "3c20c39a-f8df-455c-9ce9-dfe3288b5d64": {
+          "display_id": 1566,
+          "author": "xqjG",
+          "content": "PLAN / finding (2026-10-02). #885 (PR #46) moved the crosslink-deployed hooks and MCP servers to .crosslink/integrations/ and rewired .claude/settings.json and .mcp.json, but left three records describing the old layout. The manifest's own rule — 'additions enter by the recorded pair: artifact plus manifest entry together' — was not followed for the move. (1) templates/registry/installed-artifact-manifest.md: ten entries point at paths that no longer exist — seven under .claude/hooks/ (session-start, work-check, post-edit-check, prompt-guard, pre-web-check, heartbeat, crosslink_config) and three under .claude/mcp/ (agent-prompt-server, knowledge-server, safe-fetch-server). safe-fetch was retired upstream and should leave the manifest, including mcp-wiring's pairs_with. hook_protocol.py is a new support file with no entry. The settings-hook-wiring note needs a re-check. (2) supplements/claude-code-cli.md lines 31-32 state hooks live at .claude/hooks/. (3) .gitignore keeps negations for .claude/hooks/vsdd-* and .claude/mcp/vsdd-* inside the crosslink-managed block (#597 ruling); both folders are gone. Leave these for the gitignore work tied to upstream crosslink#105. NOT VERIFIED: whether the installed-artifact-integrity check reports the ten absent artifacts — vsdd status stops earlier at the absent .vsdd/state.yaml (#881 item 4), so the check never runs on this repo. The operator deleted .claude/hooks and .claude/mcp on 2026-10-01.",
+          "created_at": "2026-10-02T18:45:33.984799Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1fAzBaepFyTDdPXYwmnTYRxza6zbnA88z4EFjkFr+rdocgAq+3tkN6r9VWCFGpOyhg/EPj+pFpdGsAaOFHCkBw=="
+        }
+      }
     },
     "67f6e412-c5f3-4d73-a583-14ffd4127b49": {
       "uuid": "67f6e412-c5f3-4d73-a583-14ffd4127b49",
@@ -36257,6 +36268,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1277,
       "timestamp": "2026-10-02T18:44:36.315603Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1278,
+      "timestamp": "2026-10-02T18:45:34.028378Z"
     }
   ],
   "watermark": {
