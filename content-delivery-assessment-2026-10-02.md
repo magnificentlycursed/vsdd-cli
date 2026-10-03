@@ -4,7 +4,7 @@ tags: ["design-input", "review", "dispatch"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Content delivery and audit on crosslink and Claude Code: investigation, proposal and four-domain review (2026-10-02)
@@ -16,6 +16,8 @@ updated: 2026-10-02
 Recorded under vsdd-cli#888. The review dispatch is recorded on vsdd-cli#839.
 
 ## Basis and provenance
+
+**Correction 2026-10-02, evening.** Statements on this page about vsdd-cli's own rule files and hook wiring were read from a checkout that was behind main. vsdd-cli PR #50 (merged 2026-10-01, operator decision "no custom crosslink setup") returned `.claude/settings.json` to crosslink's stock wrapper (fail-open; the #658 fail-closed guard is gone) and emptied 29 of the 30 rule files, keeping only `project.md` (about 4 KB). So on main today: the only rule content crosslink's prompt hook delivers here is `project.md`; nothing in `.crosslink/rules/` carries Rust guidance; the hook's block is a few KB, not 23 KB; and a kickoff worktree's init replaces stock wiring with stock wiring. The live-test and mechanism findings stand; the vsdd-cli-specific sizes and the "fail-closed replaced by fail-open" observation do not.
 
 - **Crosslink:** the fork's working tree at `ddc0cbe57`; installed binary `0.9.0-beta.1+973e395dc`. Read from source and docs by read-only research agents on 2026-10-02. **Nothing was executed.** Paths are relative to the crate (`crosslink/` in the crosslink repo). The detailed kickoff and swarm findings are on `kickoff-swarm-dispatch-pipeline`; the rules and hook findings are on `crosslink-integration-surfaces`.
 - **Claude Code:** from the knowledge page `runtime-harness-surface`, verified 2026-08-02 at Claude Code v2.1.212 and **not re-verified** for this work. Reviewer statements from their own knowledge of Claude Code are marked as such.
@@ -34,7 +36,7 @@ Recorded under vsdd-cli#888. The review dispatch is recorded on vsdd-cli#839.
 - **The supplement schema has no activation-trigger field,** although the contract's Deterministic composition member requires every supplement to declare one.
 - **`.claude/agents/` and `.claude/rules/` do not exist** in vsdd-cli.
 - **`.claude/skills/` is ignored** by the repo's `.gitignore` and by crosslink's managed block, with no tracked files in it. A tracked `vsdd-*` skill cannot exist there today without a carve-out.
-- **Rust guidance already has three hand-kept homes:** `supplements/rust.md`, `.crosslink/rules/rust.md`, and crosslink's `rust-quality` and `rust-fix-discipline` skills.
+- **Rust guidance had three hand-kept homes when this was written:** `supplements/rust.md`, `.crosslink/rules/rust.md`, and crosslink's `rust-quality` and `rust-fix-discipline` skills. Since vsdd-cli PR #50 the rules file is empty; two remain.
 - **No composition function exists** in `vsdd-core`; `init.rs` deploys the 28 prompts as static command files. Slice 2 owns the generator; Slice 6 owns the dispatcher.
 
 ## What crosslink offers: the delivery slots
@@ -245,7 +247,7 @@ All three ran on Claude Code 2.1.284 with the Sonnet model, headless, in scratch
 **Test 3: what kickoff's worktree init does to the settings file.** An isolated clone of vsdd-cli with its remote removed, a probe hook entry and a probe top-level key added to `.claude/settings.json` and committed, then kickoff's exact command `crosslink init --skip-signing --defaults`.
 
 - **The whole `hooks` object was replaced** with crosslink's template. The probe entry was gone, and the session-start entry count went from two to one. Other top-level keys survived (`permissions`, `statusLine`, the probe key); `allowedTools` was added.
-- **Our fail-closed wrapper was replaced by a fail-open one.** vsdd-cli's tracked wiring exits 2 with a message when a hook script is missing (vsdd-cli#658); the template's wrapper is `else exit 0`. So in a kickoff worktree a missing hook payload is a silent no-op.
+- **The wrapper in the clone was fail-closed and came back fail-open.** The clone was cut from a checkout behind main; main itself has carried crosslink's stock fail-open wrapper (`else exit 0`) since vsdd-cli PR #50, so on main this is stock replacing stock. Either way, in a kickoff worktree a missing hook payload is a silent no-op.
 - **Three tracked files were left dirty:** `.claude/settings.json`, `.gitignore` and `.crosslink/.gitignore`. Two untracked files were added: `AGENTS.md` and `.codex/`. A blanket `git add` would stage all five. The Red Team's inference is now observed.
 - **The root `.gitignore` lost vsdd-cli's keep-lines for `.claude/commands/vsdd-*`.** The 28 tracked command files stay tracked, but a new file under `.claude/commands/` is ignored in the worktree.
 - Tracked rules and `hook-config.json` were not touched.
