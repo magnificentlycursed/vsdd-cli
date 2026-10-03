@@ -4,7 +4,7 @@ tags: ["reference", "design-doc", "dispatch"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-08-02
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 # Kickoff and swarm: intended use, actual capability, and fit for vsdd
@@ -100,7 +100,7 @@ From `src/main.rs:1412-1622`. The installed binary's `--help` prints no descript
 
 - **Tracked files at HEAD,** then `crosslink init --skip-signing --defaults` (`launch.rs:596-599`).
 - **The init replaces the `hooks` object of `.claude/settings.json` with crosslink's template.** `write_settings_json_merged` unions `allowedTools`, then inserts the template's hooks over whatever was there (`src/commands/init/merge.rs:201-219`). Other top-level keys survive. Init skips only when every managed file already exists (`src/commands/init/mod.rs:1011-1029`); `.crosslink/integrations/` is gitignored, so a fresh worktree is never complete and the replacement always happens. **No init flag or config key preserves a project's hooks.** crosslink#15 is open on this.
-- **Observed 2026-10-02** (kickoff's init command run in an isolated clone of vsdd-cli, vsdd-cli#890): the probe hook entry added to the settings file was gone afterwards and the session-start entries went from two to one; `permissions`, `statusLine` and a probe top-level key survived; `allowedTools` was added. The template's wrapper is fail-open (`else exit 0`) where vsdd-cli's tracked wiring is fail-closed (vsdd-cli#658). The init left `.claude/settings.json`, `.gitignore` and `.crosslink/.gitignore` modified and added `AGENTS.md` and `.codex/`, so a blanket `git add` in the worktree would stage all five. The root `.gitignore` lost vsdd-cli's keep-lines for `.claude/commands/vsdd-*`.
+- **Observed 2026-10-02** (kickoff's init command run in an isolated clone of vsdd-cli, vsdd-cli#890): the probe hook entry added to the settings file was gone afterwards and the session-start entries went from two to one; `permissions`, `statusLine` and a probe top-level key survived; `allowedTools` was added. The template's wrapper is fail-open (`else exit 0`); vsdd-cli's tracked wiring was fail-closed (vsdd-cli#658) until PR #50 returned it to the stock wrapper on 2026-10-01, so on main this is stock replacing stock. The init left `.claude/settings.json`, `.gitignore` and `.crosslink/.gitignore` modified and added `AGENTS.md` and `.codex/`, so a blanket `git add` in the worktree would stage all five. The root `.gitignore` lost vsdd-cli's keep-lines for `.claude/commands/vsdd-*`.
 - **The gitignored payload is regenerated from the binary,** not copied from the host: `.crosslink/integrations/`, crosslink's skills and commands (`init/mod.rs:617-692`).
 - **`.mcp.json` is merged:** a project's own servers survive; crosslink's two entries are overwritten (`merge.rs:95-153`).
 - **Tracked rules and `hook-config.json` survive.** Rules deploy only when `.crosslink/rules/` is absent. `rules.local/` and `hook-config.local.json` are gitignored, so they are absent.
