@@ -4,7 +4,7 @@ tags: ["reference", "design-doc"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-08-02
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 
 ## Design Specification
@@ -24,6 +24,9 @@ Updated under vsdd-cli#888 against the crosslink fork tree at `ddc0cbe57` (insta
 ---
 
 ### 1. mcp servers
+
+**Correction 2026-10-02, evening.** Statements on this page about vsdd-cli's own rule files and hook wiring were read from a checkout that was behind main. vsdd-cli PR #50 (merged 2026-10-01, operator decision "no custom crosslink setup") returned `.claude/settings.json` to crosslink's stock wrapper (fail-open; the #658 fail-closed guard is gone) and emptied 29 of the 30 rule files, keeping only `project.md` (about 4 KB). So on main today: the only rule content crosslink's prompt hook delivers here is `project.md`; nothing in `.crosslink/rules/` carries Rust guidance; the hook's block is a few KB, not 23 KB; and a kickoff worktree's init replaces stock wiring with stock wiring. The live-test and mechanism findings stand; the vsdd-cli-specific sizes and the "fail-closed replaced by fail-open" observation do not.
+
 
 Re-verified 2026-10-02.
 
@@ -91,12 +94,12 @@ Re-verified 2026-10-02 against the deployed `prompt-guard.py`, which is byte-ide
 - **There is no size limit and no truncation.**
 - **Cadence in the main checkout:**
   - the full block (project tree, dependencies, all rules) when the marker `.crosslink/.cache/guard-full-sent` is missing or older than 4 hours (`:501-515`); the marker is per checkout, not per session;
-  - otherwise only when the prompt counter is a multiple of `reminder_drift_threshold` (3 in vsdd-cli; 0 means every prompt) (`:657-664`). This "condensed" block drops the tree and dependencies but **still carries every rule in full** (`:557-577`): about 23 KB, roughly 5.8k tokens, in vsdd-cli today;
+  - otherwise only when the prompt counter is a multiple of `reminder_drift_threshold` (3 in vsdd-cli; 0 means every prompt) (`:657-664`). This "condensed" block drops the tree and dependencies but **still carries every rule in full** (`:557-577`): about 23 KB, roughly 5.8k tokens, on the pre-PR-#50 tree this was read from; a few KB on main today;
   - a full re-injection when an estimated `context_budget_chars` is reached (default 1,000,000) (`:597-612`). That key is a re-injection trigger, not a cap.
 - **In an agent context the condensed block is sent on every call** (`:634-637`). Agent context means `agent.json` with the role "agent", or a working directory under `/.claude/worktrees/` or `/.codex/worktrees/`.
 - **The block is named `<crosslink-project-context>`.** The hook never blocks.
 - **Subagents:** the same hook is wired to subagent start with no event-specific branch, so it follows the same counter and usually emits nothing. One research agent, itself a subagent in this checkout, found no rules block in its own context. Whether Claude Code feeds that hook's plain output to a subagent was not determined.
-- **Upstream ships every rule file empty** (commit `62e637ab7`, 2026-08-16, "zero bundled rules", no explanation given). Crosslink's `preflight` skill says to confirm the rule files "remain zero bytes". Crosslink's own Rust guidance now ships as two skills. vsdd-cli's 30 rule files are customised and carry the `# crosslink:custom` marker.
+- **Upstream ships every rule file empty** (commit `62e637ab7`, 2026-08-16, "zero bundled rules", no explanation given). Crosslink's `preflight` skill says to confirm the rule files "remain zero bytes". Crosslink's own Rust guidance now ships as two skills. vsdd-cli kept 30 customised rule files until PR #50 (2026-10-01) emptied 29 of them; only `project.md` carries content now.
 - **What the custom marker does and does not do.** `crosslink workflow diff --check` does not report a marked file as drift (`src/commands/workflow.rs:43`), and `crosslink style sync` skips a marked file (`src/commands/style.rs:150-176`). `init --update` ignores the marker and classifies by manifest hash: vsdd-cli's files count as conflicts, which a non-interactive update keeps and an interactive "yes" blanks. `init --force` rewrites every managed rule name with the empty template (`src/commands/init/mod.rs:1200-1208`).
 - **vsdd binding:** the rules carry crosslink-usage and project policy. They do not carry the supplements, and the 2026-10-02 review advised against adding supplements here. See `content-delivery-assessment-2026-10-02`.
 
