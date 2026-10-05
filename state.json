@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1325,
-        "tip_oid": "a1f9c5035271415326ec2b4cc11d97e29614ac2b",
-        "prefix_sha256": "eefb78b9420b5ff6a299e2aeedceb0a0716ce6aeb6dc56fcc12680722acde1bc"
+        "sequence": 1326,
+        "tip_oid": "e227031f4e2f7a92734052b9d90262cf757447e1",
+        "prefix_sha256": "62b622d6536e485869d28301cfe77ca7a1e912a995e111e1d1bb35fa6b45f5ab"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 893,
-  "next_comment_id": 1590,
+  "next_comment_id": 1591,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18497,7 +18497,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-05T20:05:19.927825Z",
-      "updated_at": "2026-10-05T20:21:37.793786Z",
+      "updated_at": "2026-10-05T20:43:20.848696Z",
       "labels": [
         "chore"
       ],
@@ -18510,6 +18510,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAVcZGa0Qt1syn5J1+JpFbraZQQNcef/alEJWubh2SiGlmsI4TMZxGXp2QYh1Te1DMNZlMRzoqwx1ORu5YaqABDA=="
+        },
+        "77dfac5f-8ef6-406e-9aa0-68342d0fbb36": {
+          "display_id": 1590,
+          "author": "xqjG",
+          "content": "RESULT 2026-10-05: PR #54 merged by the operator. CI now installs crosslink from upstream at the #108 merge commit; the entry stands with its 2026-11-30 date retest. Closing.",
+          "created_at": "2026-10-05T20:43:20.807545Z",
+          "kind": "result",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABADtAVmvVxuT0OVh/+LNa1TYCmEO/HStorqK8rOl4V/Npp8pUY05GvkwjuK8yb0i8fmGmKxcDsAlXxspD1O86EAQ=="
         },
         "a7fb666f-c198-41db-ab29-ebb8ec5397a4": {
           "display_id": 1587,
@@ -36816,6 +36825,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1325,
       "timestamp": "2026-10-05T20:21:37.793786Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1326,
+      "timestamp": "2026-10-05T20:43:20.848696Z"
     }
   ],
   "watermark": {
