@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1319,
-        "tip_oid": "a17fdb88f3aa99c45298636a55f1b0818bc9a0dc",
-        "prefix_sha256": "5016a494efa583c4fcd118b8d4ccf9784970387b5aecd530e49e9f0139acf1a1"
+        "sequence": 1320,
+        "tip_oid": "353413f39f543fc5c6b21b9b1b460f0fc7feec87",
+        "prefix_sha256": "7711c5ee7ed79be7a5b5275cd18f232343da5a659d614b5e5e4b2fa2cff4a284"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 892,
+  "next_display_id": 893,
   "next_comment_id": 1587,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -598,6 +598,7 @@
     "9d1ab02d-8679-49f8-8f60-80bcb6f98cf2": 87,
     "9d29287a-07e5-43b1-8dae-10840cd99f3e": 491,
     "9d610152-b904-43e8-a1b5-d8cbf9256929": 72,
+    "9d66e3b9-d019-41fa-9767-83744a91f755": 892,
     "9dbb7460-1c88-4f32-97fb-fe6e1e548093": 396,
     "9e541c67-10fe-4008-8c85-0a7487ba5f3a": 433,
     "9e6b6b60-1b03-4c5b-a412-1885c4759e2e": 268,
@@ -18483,6 +18484,16 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQFvq/cFYgzYXBGpzxAelR0e+41uuCy4F1Wm9pjO8eKWAAa+vJJuIjmPrQcWQcAyhnP4we+Lq6P9JLk3BMpKECQ=="
         }
       }
+    },
+    "9d66e3b9-d019-41fa-9767-83744a91f755": {
+      "uuid": "9d66e3b9-d019-41fa-9767-83744a91f755",
+      "display_id": 892,
+      "title": "Re-arm the crosslink consumption exception: CI installs crosslink from upstream pinned at the PR 108 merge commit, with a date retest",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-10-05T20:05:19.927825Z",
+      "updated_at": "2026-10-05T20:05:19.927825Z"
     },
     "9dbb7460-1c88-4f32-97fb-fe6e1e548093": {
       "uuid": "9dbb7460-1c88-4f32-97fb-fe6e1e548093",
@@ -36736,6 +36747,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1319,
       "timestamp": "2026-10-02T23:39:38.338746Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1320,
+      "timestamp": "2026-10-05T20:05:19.927825Z"
     }
   ],
   "watermark": {
