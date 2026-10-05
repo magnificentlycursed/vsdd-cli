@@ -6,12 +6,12 @@ name: routing gate
 # so it installs crosslink and hydrates the tracker (crosslink sync from the hub
 # branch) before running the gate.
 #
-# crosslink is consumed unpinned from the fork's `develop` branch, which
-# carries the fixes offered upstream as Corvidae-Coding-Projects/crosslink
-# PR #103 (operator ruling; the consumption posture + the read surface we
-# depend on are logged at magnificentlycursed/crosslink#1). Registered as the
-# `crosslink-develop-consumption` exception; when #103 closes, re-pin `ref:`
-# to the first upstream release tag.
+# crosslink is installed from upstream (Corvidae-Coding-Projects/crosslink),
+# pinned to the commit that merged PR #108 — the last of the fixes this gate
+# depends on (operator decision 2026-10-05, vsdd-cli#892; the read surface we
+# depend on is logged at magnificentlycursed/crosslink#1). Registered as the
+# `crosslink-develop-consumption` exception until upstream cuts a release;
+# then re-pin `ref:` to that release tag.
 #
 # To make this a hard block, mark "routing gate" a required status check in the
 # branch-protection settings (the CI-backed-block grade; branch protection is
@@ -35,11 +35,11 @@ jobs:
           # Full history so the crosslink hub branch is fetchable for `sync`.
           fetch-depth: 0
 
-      - name: Checkout crosslink (develop)
+      - name: Checkout crosslink (upstream, pinned at the PR 108 merge commit)
         uses: actions/checkout@v5
         with:
-          repository: magnificentlycursed/crosslink
-          ref: develop
+          repository: Corvidae-Coding-Projects/crosslink
+          ref: 875066ad66b868c63cfde09d1b0de6f6d8228f05
           path: crosslink
 
       - name: Install Rust toolchain
@@ -55,7 +55,7 @@ jobs:
             vsdd-cli/target
           key: cargo-routing-gate-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock') }}
 
-      - name: Install crosslink CLI (fork @ develop, until the first upstream release)
+      - name: Install crosslink CLI (upstream @ pinned commit, until the first upstream release)
         # crosslink's Rust crate is nested at <repo>/crosslink/ — the repo root
         # is docs + tooling; the installable binary crate is the crosslink/ subdir.
         working-directory: crosslink/crosslink
