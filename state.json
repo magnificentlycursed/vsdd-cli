@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1322,
-        "tip_oid": "0522dabae6a00a12e9593e49f27dfed6c56dd361",
-        "prefix_sha256": "432966a448d8aab07ea29602f8feca1c8ef06cd1398eb16bda943d3a84b4c46e"
+        "sequence": 1323,
+        "tip_oid": "b6f88fad2ed87b7b36291c8a657e8ceee22c5ae4",
+        "prefix_sha256": "d4000ec41d5cb0087313cbd861c199f252e7dbda45d812782e0059eb72919270"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 893,
-  "next_comment_id": 1587,
+  "next_comment_id": 1588,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -18497,10 +18497,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-05T20:05:19.927825Z",
-      "updated_at": "2026-10-05T20:05:42.168658Z",
+      "updated_at": "2026-10-05T20:07:47.054863Z",
       "labels": [
         "chore"
-      ]
+      ],
+      "comments": {
+        "a7fb666f-c198-41db-ab29-ebb8ec5397a4": {
+          "display_id": 1587,
+          "author": "xqjG",
+          "content": "SOLUTION OWNER DECISION 2026-10-05 (operator, in chat). The crosslink-develop-consumption entry's retest trigger fired: upstream PR #103 was closed 2026-10-02, superseded by upstream PRs #107 (merged 2026-10-02) and #108 (merged 2026-10-05), so the fork's fixes CI depends on are now in upstream develop, while no upstream release exists (newest tag v0.9.0-beta.1). Decision: (1) CI installs crosslink from upstream (Corvidae-Coding-Projects/crosslink), pinned to the commit that merged #108, 875066ad66b868c63cfde09d1b0de6f6d8228f05, instead of the fork's floating develop; (2) the entry stays standing because a release tag is still owed, re-armed with a date trigger of 2026-11-30 and the same expiry; the context says to re-pin to the first upstream release tag when one exists, else re-arm again. Noted: the installed local binary is still the fork's build, so CI and the local binary diverge until the local binary is rebuilt from upstream; two fork items were dropped upstream (the lock-confirmation bound raise, the token passthrough) and CI does not depend on them. This comment is the disposition reference.",
+          "created_at": "2026-10-05T20:07:47.017815Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAl6vS/oG4h9QrAsLCQ3E73pDFAo9onxhGfOT36CoL8wtgR4WpAzWZnOP/lLTPIVt6ycNH8DlXYXv6zIls0/enBg=="
+        }
+      }
     },
     "9dbb7460-1c88-4f32-97fb-fe6e1e548093": {
       "uuid": "9dbb7460-1c88-4f32-97fb-fe6e1e548093",
@@ -36769,6 +36780,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1322,
       "timestamp": "2026-10-05T20:06:42.664955Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1323,
+      "timestamp": "2026-10-05T20:07:47.054863Z"
     }
   ],
   "watermark": {
