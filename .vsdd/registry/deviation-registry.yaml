@@ -97,8 +97,9 @@ entries:
     issue: vsdd-cli#878
     comment_timestamp: 2026-09-24 23:19
 - id: crosslink-develop-consumption
-  deviation: routing-gate.yml consumes crosslink unpinned from the fork's develop branch (the workflow's
-    header comment records the posture), with a re-pin to the first upstream release tag owed.
+  deviation: routing-gate.yml installs crosslink from a pinned upstream commit rather than a release
+    tag (the workflow's header comment records the posture), with a re-pin to the first upstream
+    release tag owed.
   deviates_from: null
   deviation_class: toolchain-pin
   stated_reason: 'The fork''s develop carries what the gate leg depends on ahead of upstream (operator
@@ -106,20 +107,26 @@ entries:
     Re-armed 2026-09-28 (Solution Owner ruling, in-session, vsdd-cli#886): upstream moved to Corvidae-Coding-Projects/crosslink,
     and the fork''s develop now carries the seven fixes offered there as PR #103 (worktree readiness,
     hub-cache mounts, the writer sequence ceiling among them), so CI runs the same crosslink as the local
-    binary. Upstream has cut no release yet.'
+    binary. Upstream has cut no release yet.
+    Re-armed 2026-10-05 (Solution Owner decision, in-session, vsdd-cli#892): the #103 trigger fired —
+    upstream closed PR #103 on 2026-10-02, superseded by upstream PRs #107 (merged 2026-10-02) and
+    #108 (merged 2026-10-05), so the fixes CI depends on are in upstream develop; CI now installs
+    crosslink from upstream pinned at the #108 merge commit 875066ad66b868c63cfde09d1b0de6f6d8228f05.
+    Still no upstream release (newest tag v0.9.0-beta.1), so the re-pin to a release tag stays owed.
+    The local binary is still the fork''s build until rebuilt from upstream.'
   retest_trigger:
-    type: issue-state
-    predicate: Corvidae-Coding-Projects/crosslink#103 state == closed
-  trigger_context: 'The register has no release-presence trigger, so the predicate tracks the upstream
-    PR: once #103 closes the fork stops carrying unmerged fixes and the pin is retested — re-pin ref:
-    to the first upstream release tag, or re-arm against upstream''s develop if no release exists yet.'
+    type: date
+    predicate: '2026-11-30'
+  trigger_context: 'The register has no release-presence trigger, so the retest is a date: on 2026-11-30
+    check upstream for a release tag that includes #107 and #108 — re-pin ref: to that tag if one
+    exists, else re-arm with a later date. An earlier release may be acted on before the date fires.'
   entry_date: 2026-08-01
-  expiry: 2026-10-30
-  owning_issue: vsdd-cli#886
+  expiry: 2026-11-30
+  owning_issue: vsdd-cli#892
   status: standing
   disposition_ref:
-    issue: vsdd-cli#886
-    comment_timestamp: 2026-09-29 00:14
+    issue: vsdd-cli#892
+    comment_timestamp: 2026-10-05 20:07
 - id: hand-authored-build-plan
   deviation: The build-plan document (.design/build-plan.md) is hand-authored — a persisted bootstrap
     fallback pending Slice 2's generated-context machinery producing it from the contract's Decomposition.

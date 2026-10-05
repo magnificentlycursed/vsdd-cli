@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Phase 1b: verification architecture (respec cycle) (L2)
 
 ### Fixed
+- Fix agent-context hook enforcement: block merges and history rewrites and gate commits for agents, as crosslink's shipped default does (#889)
 - Dependency-approval lapse: icu_properties (commit 24e76e2e, #813) landed with no docs/dependencies record, no three-lens review, no trailers — the standing VSDD-E0100 condition the contract itself records (#872)
 - The finding acquisition rejects the whole bulk issue list when one record carries a non-positive id (the intentional ghost id -1, #858): serde id: u64 fails on '-1', so vsdd gate is permanently UNVERIFIABLE on this estate and Status reports could-not-check for every finding check (#883)
 - Status process-integrity checks are built but never wired into vsdd status, and round-parity / unresolvable-handles report checked-clean over never-acquired inputs — both recorded CLOSED (#880)
