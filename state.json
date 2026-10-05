@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1326,
-        "tip_oid": "e227031f4e2f7a92734052b9d90262cf757447e1",
-        "prefix_sha256": "62b622d6536e485869d28301cfe77ca7a1e912a995e111e1d1bb35fa6b45f5ab"
+        "sequence": 1327,
+        "tip_oid": "37a01f80f7dddfff413fbd5f3e1038c590e2e115",
+        "prefix_sha256": "74f47d762cb05dd0e48182e4297763c5b1091db2ff0b17e52eb0264394260884"
       },
       "y2SI": {
         "sequence": 2,
@@ -18493,11 +18493,12 @@
       "uuid": "9d66e3b9-d019-41fa-9767-83744a91f755",
       "display_id": 892,
       "title": "Re-arm the crosslink consumption exception: CI installs crosslink from upstream pinned at the PR 108 merge commit, with a date retest",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-05T20:05:19.927825Z",
-      "updated_at": "2026-10-05T20:43:20.848696Z",
+      "updated_at": "2026-10-05T20:44:03.209007Z",
+      "closed_at": "2026-10-05T20:44:03.182936Z",
       "labels": [
         "chore"
       ],
@@ -36830,6 +36831,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1326,
       "timestamp": "2026-10-05T20:43:20.848696Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1327,
+      "timestamp": "2026-10-05T20:44:03.209007Z"
     }
   ],
   "watermark": {
