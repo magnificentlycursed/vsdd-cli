@@ -12,7 +12,7 @@ vsdd does not run agents and does not track work itself. It is the methodology
 layer that composes against tools that do:
 
 - **[crosslink](https://github.com/dollspace-gay/crosslink)** — the tracker and
-  orchestration layer: issues, dispatch (swarm), worktrees, gates, sessions, and
+  launch layer: issues, dispatch (kickoff), worktrees, sessions, and
   knowledge. The project's audit trail lives here.
 - **Claude Code** — the **runtime harness**: the agent runtime that executes the
   agent and provides the hooks and tool restrictions the methodology's guardrails

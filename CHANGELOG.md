@@ -45,6 +45,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pre-existing suite cannot compile: schema_validation.rs passes serde_yaml::Value into mdatron-core's serde_yaml_ng API (#717)
 
 ### Changed
+- Update the installed-artifact manifest and the Claude Code supplement to crosslink's readiness-era hook layout (#887)
 - SO ruling: file home for the adopter-facing lean methodology doc (methodology.md deleted; contract is the governing-spec home) (#853)
 - Crosslink payload update: redeploy hooks to the readiness-era layout (.crosslink/integrations/hooks), rewire settings.json, port the work-check customization (#885)
 - Fail the routing gate on crosslink's own readiness budget and re-arm the crosslink-consumption register entry on upstream PR #103 (#886)
