@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1347,
-        "tip_oid": "f5283a25f2809bc0f97cfc5e606fed1cb2eecad5",
-        "prefix_sha256": "bbdee18d00658869e9422bafcc242a8ef3e9fb013394791e5a8370ec8c5504d1"
+        "sequence": 1348,
+        "tip_oid": "a428f8ef0602afb8d4fb8ea88bf8cc67c34688fc",
+        "prefix_sha256": "68d3ce3f0275940e45029b42895f69f1b104f7679aae9b6047b698ae43b36daa"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1606,
+  "next_comment_id": 1607,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27667,7 +27667,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T20:47:24.318372Z",
+      "updated_at": "2026-10-06T20:58:44.702104Z",
       "comments": {
         "2cb92d5b-22c7-4681-a52b-7b2e8f549435": {
           "display_id": 1598,
@@ -27737,6 +27737,18 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANBSQVkgcpcWXuxHHvgmZ1ucGAVMscLw4aT5IEwhkRvBe+2lYoTBrg+sZt671xAhbpnIqX6ABd+XyET/jPsJMCw=="
+        },
+        "c2f71f08-8485-4222-af7c-add0da3eb6c6": {
+          "display_id": 1606,
+          "author": "xqjG",
+          "content": "Attempted: commit of the review-fix batch on chore/893-review-fixes — refused by work-check ('requires an active crosslink issue') with the session bound to #893 and the daemon ready_current after the operator's ensure",
+          "created_at": "2026-10-06T20:58:44.664964Z",
+          "kind": "intervention",
+          "trigger_type": "tool_blocked",
+          "intervention_context": "Third refusal today; same cause (status call over the hook's 3 s budget, upstream crosslink#104 item 2). Handed to the operator; not retried.",
+          "driver_key_fingerprint": "SHA256:/HhRo+IBEKhfgSJCbPvUcmHnZdeNIdxAH0CHW5Hpl4Y",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcH5ybRDzOkVdxK5DuzTtAw4+sWRUhPOLHxLRHM1/EeOTBUyN0EAkp7W/2pULhvIpD1j78M15ExelbwiZxvuhBg=="
         },
         "e4922e94-1a8f-4629-8063-f577add20faa": {
           "display_id": 1602,
@@ -37088,6 +37100,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1347,
       "timestamp": "2026-10-06T20:50:27.943623Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1348,
+      "timestamp": "2026-10-06T20:58:44.702104Z"
     }
   ],
   "watermark": {
