@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1351,
-        "tip_oid": "992d270642899d129c61514dbb2fcf3e57a30143",
-        "prefix_sha256": "2e2d6c30be37db2f985970a4d766662b830d71d09cc367754344541bc630523c"
+        "sequence": 1352,
+        "tip_oid": "c7381a5aa02b2e7410abde19ab7a77ea6517e770",
+        "prefix_sha256": "e3b21032dc5b9499b71920a0e7a214be1db660898295dd69a1a0463c69a9c898"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1610,
+  "next_comment_id": 1611,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27667,7 +27667,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T21:08:57.749857Z",
+      "updated_at": "2026-10-06T21:13:17.250548Z",
       "comments": {
         "034f8ceb-7c72-4817-a5f4-c18572f9e64c": {
           "display_id": 1607,
@@ -27677,6 +27677,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxT4o7utvMyUF33k6HEz0MLPcbHZuiMiQP+G7x6a5BC4ulv7JwarrdgFAZcVWD/1FLO64opt5ZsDG8BolK8gSCw=="
+        },
+        "0c0e49a0-175d-40bf-ab30-fe14f8039dd4": {
+          "display_id": 1610,
+          "author": "xqjG",
+          "content": "[result] CI on pull request #58 at 675ad95d: verify PASS (the new engine-managed-partition step — mdatron init against the pinned binary, git diff --exit-code -- .mdatron/ — and the pipeline_status-first assertion both held), test PASS, routing-gate PASS. The adoption and its review fixes are both green; #893 closes on the merge of #58, with the eight Solution Owner rulings and the routed follow-ups living on their owning issues.",
+          "created_at": "2026-10-06T21:13:17.212916Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQQpUQw3SQJk+ydo7YrPPQDOzWDEgN88PXd1wvrVjguvM5lSHUzqrqpvXjI/u/rznfDdrpv9xOJU80BO29wpzAw=="
         },
         "0f77692e-77d7-4d2c-821d-be9d52d4ee39": {
           "display_id": 1609,
@@ -37147,6 +37156,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1351,
       "timestamp": "2026-10-06T21:08:57.749857Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1352,
+      "timestamp": "2026-10-06T21:13:17.250548Z"
     }
   ],
   "watermark": {
