@@ -8,7 +8,7 @@ if ! command -v mdatron >/dev/null 2>&1; then
   # conformance checker blocks the commit rather than silently skipping —
   # a guarded no-op hides the absence until something depends on it.
   echo "pre-commit: mdatron not on PATH — commit blocked (fail-closed)" >&2
-  echo "pre-commit: install with  cargo install --path ../mdatron --locked" >&2
+  echo "pre-commit: install with  cargo install mdatron --version 0.7.0 --locked" >&2
   echo "pre-commit: (bypass for a genuine emergency: git commit --no-verify — the deviation is yours to record)" >&2
   exit 2
 fi

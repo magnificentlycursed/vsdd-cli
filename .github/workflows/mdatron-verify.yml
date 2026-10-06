@@ -36,7 +36,20 @@ jobs:
           key: cargo-mdatron-0.7.0-${{ runner.os }}
 
       - name: Install mdatron CLI (crates.io, pinned)
-        run: command -v mdatron >/dev/null && mdatron --version | grep -q '0\.7\.0' || cargo install mdatron --version 0.7.0 --locked
+        run: command -v mdatron >/dev/null && mdatron --version | grep -qx 'mdatron 0\.7\.0' || cargo install mdatron --version 0.7.0 --locked --force
+
+      # The engine-managed partition (.mdatron/*.example + manifest.yaml) is
+      # committed, and only `mdatron init` checks it: verify reads the
+      # manifest for lineage, never for drift. Re-run init against the pinned
+      # binary and fail on any resulting diff — a stale template is rewritten
+      # (diff), an edited one is refused (E0060, exit 1), a foreign collision
+      # exits 2. Turns the committed templates from inert files into an
+      # exercised CI-backed check (vsdd-cli#893, Platform Engineer review).
+      - name: Engine-managed partition matches the pinned binary
+        working-directory: vsdd-cli
+        run: |
+          mdatron init --project-root .
+          git diff --exit-code -- .mdatron/
 
       # --deny-warnings escalates a warnings-only run to a failing exit
       # (mdatron #121, shipped at vsdd's own request; verified clean on the
@@ -62,14 +75,21 @@ jobs:
       # vsdd-cli#893). `families` is forward-extensible: unknown family keys
       # are tolerated; only the named ones are asserted. 3.1.0 adds the
       # `rule_dsl` family's own tri-state (the pattern-rule lane, asserted
-      # active below — the #855 non-vacuity gap the 3.0.0 envelope could not
-      # express) and `manifest.yaml` in the `inputs` lineage.
+      # active below: at least one rule's context matched at least one walked
+      # file, so the lane ran — lane-level evidence, the pattern-lane leg of
+      # the #855 non-vacuity option, NOT a per-pattern fire proof, which stays
+      # the test suite's) and `manifest.yaml` in the `inputs` lineage. Also
+      # since 3.1.0 a family opted in but claiming no file reports `inert`,
+      # not `active`, so each `== "active"` below also proves the family
+      # claimed something. `pipeline_status` is asserted first: a failed
+      # pipeline reports every family inactive with `inputs: {}`.
       - name: Assert required families fired (tri-state + non-vacuity, #855)
         working-directory: vsdd-cli
         run: |
           mdatron verify --json --quiet --project-root . > /tmp/mdatron-envelope.json || true
           jq '{envelope: .mdatron_output_version, envelope_schema, schema: .families.schema.state, vocabulary: .families.vocabulary.state, families: (.families | to_entries | map("\(.key)=\(.value.state)")), files_checked: .summary.files_checked}' /tmp/mdatron-envelope.json
-          jq -e '.mdatron_output_version == "3.1.0"
+          jq -e '.pipeline_status == "ok"
+                 and .mdatron_output_version == "3.1.0"
                  and .envelope_schema == "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.1.0"
                  and .families.schema.state == "active"
                  and .families.vocabulary.state == "active"
