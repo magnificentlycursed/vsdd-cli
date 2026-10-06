@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1334,
-        "tip_oid": "4171b9dcc0a5e4e7555c21d78dd9c18fe9cc4b01",
-        "prefix_sha256": "ffb6446f39fb47d4d9a71add5a3b5b82d50e8e9ca2e092f2670478c2ca9d72ac"
+        "sequence": 1335,
+        "tip_oid": "69c1fd5e028d8e1545141d36c904f1db07710c06",
+        "prefix_sha256": "f9da6eb1e382fbb9ce8ce2957037ad7bbc70cef9647327cd2a36635662a0f32e"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1593,
+  "next_comment_id": 1594,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27631,7 +27631,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T20:08:36.799933Z",
+      "updated_at": "2026-10-06T20:15:03.842359Z",
       "comments": {
         "30a3b2c6-ac9b-4b8f-8e6d-97f09281783b": {
           "display_id": 1592,
@@ -27644,6 +27644,15 @@
           "driver_key_fingerprint": "SHA256:/HhRo+IBEKhfgSJCbPvUcmHnZdeNIdxAH0CHW5Hpl4Y",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAq2rLw82eSxZMeRcyED8bVs8+XCSI2x74xY7Ng+6k/zI5LFw/T2FOR3VjR2P+afoFQ+PUvaM2xd19Q/V3c6EgCA=="
+        },
+        "6f62d291-d452-44e4-8608-83828d965603": {
+          "display_id": 1593,
+          "author": "xqjG",
+          "content": "[result] Adoption done on branch chore/893-mdatron-0.7.0 (commit pending). mdatron init deployed routes.yaml.example, pins.yaml.example, vocabulary.yaml.example, code-catalogs.yaml.example and recorded their four hashes in .mdatron/manifest.yaml. Envelope: .mdatron/envelope-3.1.0.schema.json (mdatron envelope-schema) replaces 3.0.0; mdatron-verify.yml pin/grep/cache key → 0.7.0, assertion → 3.1.0 on both mdatron_output_version and envelope_schema, plus families.rule_dsl.state == active; the comment now says the exact-equality pin fires on ANY version change (it fired on this MINOR, as designed). vsdd-test.yml pin and cache key → 0.7.0 (the guide named only mdatron-verify.yml). templates/.github/workflows/vsdd-verify.yml (the adopter workflow) 0.5.0 → 0.7.0 — it had lagged since the 0.6.0 adoption. .githooks/pre-commit MIN_VERSION 0.7.0, window ^0\\.7\\.[0-9]+, reinstall hint, rationale comment. Alias migrations: routes.yaml disjoint id_from: h3-heading → element: h3, id_from: bullet-lead → element: list-item-bold-name; vocabulary.yaml 12× anti_patterns[].register → guidance; config.yaml W0045 headline comment. VERIFICATION under 0.7.0: mdatron verify --deny-warnings clean, 53 files; the CI jq assertion run locally PASSES (active: schema, route, vocabulary, code_catalog, section, rule_dsl; inactive: pin, citation, link, marker; inputs now carry manifest.yaml); cargo test --workspace --locked exit 0; cargo clippy --all-targets -D warnings exit 0. Rust code parses no envelope version or stderr headline (grep clean); the two binary-invoking test files assert on codes and pipeline_status only.",
+          "created_at": "2026-10-06T20:15:03.808946Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoi9ux5h32mK6feA+WGtXPDiefnlJUjZUzmgjodzzIol9fu5ygN4+AioDZh+YkyUYT37tPLMltCTRYHLFLcFBBw=="
         }
       }
     },
@@ -36903,6 +36912,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1334,
       "timestamp": "2026-10-06T20:08:36.799933Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1335,
+      "timestamp": "2026-10-06T20:15:03.842359Z"
     }
   ],
   "watermark": {
