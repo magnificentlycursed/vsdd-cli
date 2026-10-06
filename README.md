@@ -67,7 +67,7 @@ is a separate binary** that vsdd consumes over a tool-to-tool boundary — vsdd
 never links it as a library. Install it alongside vsdd:
 
 ```sh
-cargo install mdatron --locked   # published on crates.io (0.5.0+)
+cargo install mdatron --version 0.7.0 --locked   # the version this repo targets; on crates.io since 0.5.0
 ```
 
 crosslink and mdatron must be present before `vsdd init` deploys a toolkit into a

@@ -46,7 +46,7 @@ jobs:
           key: cargo-vsdd-test-mdatron-0.7.0-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock') }}
 
       - name: Install mdatron CLI (the toolkit tests invoke the binary)
-        run: command -v mdatron >/dev/null && mdatron --version | grep -q '0\.7\.0' || cargo install mdatron --version 0.7.0 --locked
+        run: command -v mdatron >/dev/null && mdatron --version | grep -qx 'mdatron 0\.7\.0' || cargo install mdatron --version 0.7.0 --locked --force
 
       - name: cargo test --workspace
         working-directory: vsdd-cli

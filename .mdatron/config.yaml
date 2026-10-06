@@ -36,8 +36,9 @@ require_frontmatter:
 # The naming register applies to the forward-looking governance prose. The
 # frozen June-cycle review archive was retired to git history 2026-09-24
 # (vsdd-cli#877, option D: mdatron's own crosslink#187 precedent) — it is no
-# longer walked, so the code-catalog scan (which has no scope glob of its own)
-# sees only live adopter codes.
+# longer walked, so the code-catalog scan sees only live adopter codes. (Its
+# own scope key, `code_catalog_globs`, exists since mdatron 0.7.0 and is
+# deliberately unset here: every walked file is scanned.)
 #
 # ARMED (vsdd-cli #823): .mdatron/vocabulary.yaml drives MDATRON-E0091 (the
 # letter-cluster prohibition) over the ENDURING governed artifacts — the domain
