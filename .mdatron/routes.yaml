@@ -25,12 +25,21 @@ routes:
         element: h3
         match: '^### Phase \d+: .*\((parallel|sequential)\)$'
         count: ">= 1"
+      # (a') and every H3 under ## Requirements has the phase shape — the
+      #     count rule says at least one does; this says all of them do, one
+      #     E0123 per malformed heading at its own line, so a heading that
+      #     drifts out of the shape is loud instead of silently uncounted
+      #     (mdatron 0.7.0 `every` rule, vsdd-cli#893; three-question decision
+      #     recorded there: in scope, supported today, wired)
+      - section: "## Requirements"
+        element: h3
+        every: '^### Phase \d+: .*\((parallel|sequential)\)$'
       # (b) a slice is open XOR complete — ids from the declared element only
       #     (H3 heading text / bullet bold lead), never a full-span scan
       - disjoint:
           - section: "## Requirements"
-            id_from: h3-heading
+            element: h3
             id_pattern: 'Slice (\d+)'
           - section: "## Completed phases"
-            id_from: bullet-lead
+            element: list-item-bold-name
             id_pattern: 'Slice (\d+)'
