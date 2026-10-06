@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1346,
-        "tip_oid": "2e3032440cb406c87e5a83c64d51615ceb279cfb",
-        "prefix_sha256": "c8779d2d942bec7964a8adee3d7b4414c54a387c49a412256eb10f91b44e4b02"
+        "sequence": 1347,
+        "tip_oid": "f5283a25f2809bc0f97cfc5e606fed1cb2eecad5",
+        "prefix_sha256": "bbdee18d00658869e9422bafcc242a8ef3e9fb013394791e5a8370ec8c5504d1"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1605,
+  "next_comment_id": 1606,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26435,7 +26435,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:01.857683Z",
-      "updated_at": "2026-10-01T21:44:16.179154Z",
+      "updated_at": "2026-10-06T20:50:27.943623Z",
       "labels": [
         "design"
       ],
@@ -26502,6 +26502,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmjP4UIUwnxj+L+4E5H+ZAwIZViPOtKPYBFsxkcETkC0h5VDsdl+7Fi2NCeOib7EWR3hMi/5Qm0b1QEMagaG8AA=="
+        },
+        "bf3193d6-b592-45d5-8c90-0cb62a44ac24": {
+          "display_id": 1605,
+          "author": "xqjG",
+          "content": "[observation] From the mdatron 0.7.0 impact review (#893; Methodology F3): a marker rule on the build-plan route (pattern '^Provenance: (.+)$', target the contract's '## Decomposition (phase 1c)' section) yields exactly two E0112 dead-marker-reference findings on a scratch copy: build-plan.md:11 ('Slice 2 — Composition, generated context, and static price'; the contract says 'token budget') and build-plan.md:71 ('Slice 7 — The efficiency insight engine'; the contract says 'The cost-and-efficiency report'). The other three Provenance lines resolve. These are the two minors this review found by hand and item 5's 'the pin does not catch projection drift'. The marker family shipped in mdatron 0.6.0. Suggested: land the marker rule in the same design-branch pull request that fixes the two names, so it goes red then green, under a Solution Owner ruling for the early landing (batched on #893 as item (d)); the build-plan Phase 4 family list gains marker under that ruling.",
+          "created_at": "2026-10-06T20:50:27.884683Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA/dUybvyQpYzeUYMVHLGvnqe2Hj1smtqIZvysEuevRiQl5gZSLbZbnVuupG8nGJ7vhveGoaF3QvFgkrR1wD+TCA=="
         },
         "da634b35-9e22-4b10-91f6-cb036a440667": {
           "display_id": 1523,
@@ -37074,6 +37083,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1346,
       "timestamp": "2026-10-06T20:49:34.978629Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1347,
+      "timestamp": "2026-10-06T20:50:27.943623Z"
     }
   ],
   "watermark": {
