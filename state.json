@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1342,
-        "tip_oid": "8ea9bf860f5468629c57f069fd984750769b74c5",
-        "prefix_sha256": "9435290bc7bc2e4b7c2551402cc9cfcc5175455e07bdc3ad3d878c124bc782bb"
+        "sequence": 1343,
+        "tip_oid": "4e737939d8805178783144fc1fdf5589c414498d",
+        "prefix_sha256": "8da36c7906e966528a9f276e9e2d6f7517ca8b0fef6133bc6792153649e3c57b"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1601,
+  "next_comment_id": 1602,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27640,7 +27640,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T20:43:59.910827Z",
+      "updated_at": "2026-10-06T20:45:20.850868Z",
       "comments": {
         "2cb92d5b-22c7-4681-a52b-7b2e8f549435": {
           "display_id": 1598,
@@ -27692,6 +27692,15 @@
           "driver_key_fingerprint": "SHA256:/HhRo+IBEKhfgSJCbPvUcmHnZdeNIdxAH0CHW5Hpl4Y",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIX2kKm9zDh9mhv77y6Uwn37teussjTznitzramCUaNZSXwiH4h1F5nxMUsiWgJRVvANfOXg2h4c9ZZWm14wBBg=="
+        },
+        "7e23647e-77bb-4a53-a33e-a54cad5d3bcd": {
+          "display_id": 1601,
+          "author": "xqjG",
+          "content": "[result] ROUTING (phase 4, before fixing). Verdicts: all four domains find the adoption adequate and correctly scoped as a version re-pin; none finds a contract amendment forced by 0.7.0; three of four find the record overclaims what rule_dsl=active proves. IN THIS PULL REQUEST (follow-up commit): (1) rule_dsl is lane-level, not per-pattern — reproduced: every rule context in registry-integrity.yaml pointed at a class no file declares still reports active with 0 findings (Quality Engineer F1, Platform Engineer F3, Methodology F5) → CHANGELOG, workflow comment, PR body reworded to 'the pattern-lane leg of the #855 non-vacuity option'; (2) CHANGELOG trailing handle and the adopter-template caveat that its workflow still cannot run verify (Methodology F11, Platform Engineer F7); (3) pre-commit:11 absence-branch install hint still named the retired sibling checkout (all four); (4) config.yaml 'no scope glob of its own' false since code_catalog_globs (Solution Architect F4); (5) vocabulary.yaml REQ- carve-out comment: the mdatron#28 raise shipped as the 0.6.0 default exemption, mdatron#159 (Methodology F7); (6) README install line pinned (Platform Engineer F6, Methodology F12); (7) --force on both install fallbacks and anchored version greps (Platform Engineer F4); (8) new CI step: mdatron init against the pinned binary + git diff --exit-code -- .mdatron/, so the committed templates are exercised (Platform Engineer F5); (9) .pipeline_status == ok first in the jq assertion (Solution Architect F11); (10) every rule widened to element: heading and tightened to require 'Slice N —' (Quality Engineer F3, mutants MC/ME; decision addendum below). FOLLOW-UPS by home: #855 — validate the real envelope against the committed 3.1.0 schema in a vsdd-core test, jsonschema already a dependency (Platform Engineer F2); seeded-defect proof through the real pattern files and pin inputs.patterns (Platform Engineer F3, Quality Engineer F1); strengthen jurisdiction_nonvacuity.rs with the inputs digests, its docstring stale at 0.4.0/79 files (Quality Engineer F5); W0054+W0051 under --deny-warnings as the bar on residual 1, a consistent narrowing still silent (Methodology F5). cross_references.rs — one fire-and-sentinel pair per code E0201–E0206, E0210–E0212; E0206 has no subject on this tree and no test (Quality Engineer F2). #839 — route-bound schema with the skill profile works, with the vsdd class aborts the run (Solution Architect F1, reproduced); no skill class in the install manifest or init (F2); generator is the one home for rules binding, not imports (F3); name_equals_dir (F6); standards-pack profile reuse (F9); W0054 as the forcing function for the prompts-to-skills move (Platform Engineer F9, Quality Engineer F8). #882 / Slice 3 — the adopter workflow cannot run verify (no jurisdiction) and calls a nonexistent 'vsdd verify check' (Quality Engineer F10, Platform Engineer F7, Solution Architect F8); the two-manager partition over .mdatron/ to declare (Solution Architect F8). #844 — body-link gap supported since 0.6.0; links: true on all five routes is clean today (Methodology F1, Solution Architect F7). #879 — a marker rule on the Provenance lines fires on exactly the two drifts found by hand (Methodology F3). Maintenance — a mirror-pin test across every pin site (Platform Engineer F6). Slice 5 — coinage_globs enables arming new-coinage detection (Solution Architect F5); summary-first order rule undecided (Methodology F13). SOLUTION OWNER RULINGS OWED (batched to the operator in chat): (a) fail-closed pre-commit version guard, #855 residual 2 (Platform Engineer F8); (b) arm links: true now or at Phase 4 (#844); (c) land the pin family early for the build-plan Decomposition hash, which a one-entry section pin reproduces byte for byte (Methodology F2); (d) land the marker rule early with the #879 fix (Methodology F3); (e) a closed H2 set rule and a no-H3-under-Completed-phases rule on the build-plan (Quality Engineer F3); (f) a handle-grammar form for GitHub-side issues, third recurrence (Methodology F6); (g) whether Dependency approval covers CI-installed binaries, mdatron and crosslink (Platform Engineer F10); (h) the build-plan Phase 4 family list amendment (Solution Architect F10, Methodology P2/P3). DISMISSED OR CONFIRMED: fingerprints unstored; E0080/E0081 split neutral; glob change no effect (every glob single-segment, 53 files both versions); exact-equality pin kept (Platform Engineer F1, Methodology F10); order rule not adopted, with the recorded reason corrected — the falsifier exists (E0124 fires under a section swap), what is absent is any consumer of H2 order (Quality Engineer F4); W0052/W0053/W0055 cannot fire here, W0054 is a desired future true positive (Platform Engineer F9, Quality Engineer F8).",
+          "created_at": "2026-10-06T20:45:20.788249Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABArpxmrEuYe/Fzt48S1pmJ9erNJJx5yYIvmC/7HDbLwr54+BzCWyjmIz62rjMF+QgMTFoTMMAYbezQ6lwmWDZGAA=="
         },
         "b177c8f8-c800-49eb-94d9-87c8085d3417": {
           "display_id": 1596,
@@ -37018,6 +37027,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1342,
       "timestamp": "2026-10-06T20:43:59.910827Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1343,
+      "timestamp": "2026-10-06T20:45:20.850868Z"
     }
   ],
   "watermark": {
