@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1339,
-        "tip_oid": "215327f6ed744c9f557b83288b1fe6aa74854943",
-        "prefix_sha256": "8ec5d6710183c159b163e7035bb7127dd2cdd0d18de45c73f80b8632f147418c"
+        "sequence": 1340,
+        "tip_oid": "7ee3825c9c5b8cd06b87b86ec48383b64711bda1",
+        "prefix_sha256": "fa7978fa1640084bbc9b11042575762a4f1511d5978fcbebf487b94f93e5e78c"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1598,
+  "next_comment_id": 1599,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27640,8 +27640,17 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T20:21:54.675621Z",
+      "updated_at": "2026-10-06T20:30:40.357449Z",
       "comments": {
+        "2cb92d5b-22c7-4681-a52b-7b2e8f549435": {
+          "display_id": 1598,
+          "author": "xqjG",
+          "content": "[result] Committed by the operator by hand (the work-check 3 s status timeout, upstream crosslink#104 item 2, refused both agent attempts): 4368cfb2 on chore/893-mdatron-0.7.0, 14 files, pre-commit mdatron verify clean. Branch pushed to origin. Pull request opening against main with the verification table; CI runs mdatron verify (0.7.0) and the 3.1.0 envelope assertion including rule_dsl, plus the test workflow under 0.7.0. The two uncommitted CHANGELOG lines from the previous session (#891, #892 closes) ride in this commit. Recurrence brief for upstream #104 handed to the operator (sentinel honoured by the strict gate, ignored by the commit gate; block fires at routine 4-5 s latency).",
+          "created_at": "2026-10-06T20:30:40.308790Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAR+DT16OhChJIbvM7cZ7LXRWkxkrCO8Sh4xaNoqbWdHguxVI/eQXmJZmIIuvmt+gb5nKf4p1jTha/rM0Tuoq0AA=="
+        },
         "30a3b2c6-ac9b-4b8f-8e6d-97f09281783b": {
           "display_id": 1592,
           "author": "xqjG",
@@ -36976,6 +36985,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1339,
       "timestamp": "2026-10-06T20:21:54.675621Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1340,
+      "timestamp": "2026-10-06T20:30:40.357449Z"
     }
   ],
   "watermark": {
