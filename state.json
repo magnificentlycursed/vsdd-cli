@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1344,
-        "tip_oid": "e8820b64de8234ee523cd338ead312717c8941f5",
-        "prefix_sha256": "2f417a5b3c73f1af4377bac5b53a48960e97ea95bf3629fab45a4490fccd1480"
+        "sequence": 1345,
+        "tip_oid": "a07b0e2ac616da60db1402a4ef7b87c687a80e12",
+        "prefix_sha256": "419d806d60eee59561c29f1fe5d2698487ec57869187f6f06e1ff8dc6c0c8a5f"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1603,
+  "next_comment_id": 1604,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9763,7 +9763,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-02T21:29:36.559696Z",
+      "updated_at": "2026-10-06T20:48:27.413897Z",
       "labels": [
         "design"
       ],
@@ -9780,6 +9780,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxU/2yKIosvFRJcVDfDBJLZSvX20FCSwbmlwZqqz5STfpZLpXS9XbaaDa+KJEYBzhgdjXcDVMJ5+JxIxcIhwCBg=="
+        },
+        "21dea17a-1880-4ca0-ac31-56a669c43624": {
+          "display_id": 1603,
+          "author": "xqjG",
+          "content": "[observation] From the mdatron 0.7.0 impact review (#893; Solution Architect, Platform Engineer, Methodology): (1) Route-bound schemas answer design question (1). A route 'files: .claude/skills/vsdd-*/SKILL.md', 'schema: skill-claude-code' (mdatron's standards-pack profile, docs/cookbook/skill-md.md), 'name_equals_dir: name' verifies clean over the estate plus one skill-shaped file (54 files) and catches a name/directory mismatch (E0035). Binding the vsdd class 'domain-prompt' instead ABORTS THE WHOLE RUN: pipeline_status failed, 0 files checked, every family inactive, E0080 kind eval 'rule domain-validator-pair-resolves: type mismatch: expected string (index key), got null' — the cross-references keys select frontmatter fields a skill file lacks. Reproduced by the orchestrating session on the reviewer's fixture; defect raised to mdatron. Consequence for the design: vsdd metadata and the cross-reference keys stay on a source corpus distinct from the skill output (which the byte-check generator already implies); the skill route binds the vendor profile. (2) The installed-artifact manifest's class enumeration and vsdd-core/src/init.rs have no skill class (command-listing only; .claude/commands/ hardcoded); .gitignore ignores .claude/skills/ wholesale. (3) 'imports: true' is an existence check on @path references, not the rules-file binding — the generator's byte-check is the one home; mdatron's role on a rules route is a route-bound schema over the 'paths:' frontmatter plus links: true. (4) W0054 route-glob-matches-nothing fails --deny-warnings the moment .claude/commands/vsdd-*.md empties, so the mdatron configuration (routes, file_globs, require_frontmatter, vocabulary_globs, pattern key sources) must move with the files in the same change — a forcing function, desired. (5) Standards pack: reuse skill-claude-code.json with its provenance recorded rather than a hand-kept copy (the #882 drift class); the pack has no recipe for .claude/rules/ — raised to mdatron. (6) max_bytes is bytes per file, not the token budget; do not conflate (the budget is vsdd's pricing function). Full reports on the knowledge page mdatron-0.7.0-adoption-review-2026-10-06.",
+          "created_at": "2026-10-06T20:48:27.358196Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANp29ivtk5DBaKMwk69InIYwMXKaMSSmII7uNdlgAyYTLXhiIkLh36Ir1A8n2ykHUKNgnFjNtb2/BqkNMdDAPCg=="
         },
         "235805a8-590a-40fe-9927-5e6a22e86c32": {
           "display_id": 1540,
@@ -37046,6 +37055,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1344,
       "timestamp": "2026-10-06T20:47:24.318372Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1345,
+      "timestamp": "2026-10-06T20:48:27.413897Z"
     }
   ],
   "watermark": {
