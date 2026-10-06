@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1335,
-        "tip_oid": "69c1fd5e028d8e1545141d36c904f1db07710c06",
-        "prefix_sha256": "f9da6eb1e382fbb9ce8ce2957037ad7bbc70cef9647327cd2a36635662a0f32e"
+        "sequence": 1336,
+        "tip_oid": "2fab6a26c8679ad99b93049f84e5f072c6b9cf06",
+        "prefix_sha256": "d2bc0bea1ec488427b4fdd1e11c17c43f96f241ada231e4fd3797ffa7cdefc0b"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1594,
+  "next_comment_id": 1595,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27631,7 +27631,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T20:15:03.842359Z",
+      "updated_at": "2026-10-06T20:15:52.740773Z",
       "comments": {
         "30a3b2c6-ac9b-4b8f-8e6d-97f09281783b": {
           "display_id": 1592,
@@ -27653,6 +27653,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAoi9ux5h32mK6feA+WGtXPDiefnlJUjZUzmgjodzzIol9fu5ygN4+AioDZh+YkyUYT37tPLMltCTRYHLFLcFBBw=="
+        },
+        "e91439fd-36f6-408e-a489-46086da4239f": {
+          "display_id": 1594,
+          "author": "xqjG",
+          "content": "[decision] THREE-QUESTION DECISION (contract, Verification architecture: the syntactic-versus-semantic rule) for the new every rule on the build-plan route. Scope test: markdown subject (.design/build-plan.md); document-anchored rule suppliable as data (section_rules on the route); shape-tier verdict (every H3 under ## Requirements matches the phase-heading shape — a shape fact, nothing about the program's truth) → in scope. Support test: mdatron 0.7.0 ships every (E0123, one finding per failing element at its own line) → wire it. Raise: none. Wired as rule (a') beside the count rule (a): the count rule says at least one heading has the shape; the every rule says all of them do, so a heading drifting out of the shape is loud instead of silently uncounted. MUTANT EVIDENCE on a scratch copy of the governed tree (the .mdatron, .design, .claude/commands, supplements, templates/registry trees; baseline clean under --deny-warnings): (1) one phase heading missing its closing paren → 1× E0123; (2) all five phase headings renamed 'Step' → 1× E0120 + 5× E0123; (3) the completed bullet 'Slice 1' renamed 'Slice 2' → E0121 (the migrated disjoint operands keep their verdict); (4) '## Requirements' renamed → 3× E0122 (count rule, every rule, disjoint operand: loud absence). Copy restored clean after each. ORDER RULE NOT ADOPTED: no build-plan invariant depends on section order; both section rules anchor by heading name and E0122 covers absence — an order rule here would be an oracle without a falsifier. Re-openable if the domain review finds a dependency.",
+          "created_at": "2026-10-06T20:15:52.707483Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA/fX7UIJZt/0vqs6xQqEVorEUjZDPHdZ3tywnVJABOX3B9g+vi4qPB1xiYfI4IEbAtGCwsYuDs+xZT+KAtwyPAg=="
         }
       }
     },
@@ -36917,6 +36926,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1335,
       "timestamp": "2026-10-06T20:15:03.842359Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1336,
+      "timestamp": "2026-10-06T20:15:52.740773Z"
     }
   ],
   "watermark": {
