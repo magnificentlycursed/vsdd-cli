@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1343,
-        "tip_oid": "4e737939d8805178783144fc1fdf5589c414498d",
-        "prefix_sha256": "8da36c7906e966528a9f276e9e2d6f7517ca8b0fef6133bc6792153649e3c57b"
+        "sequence": 1344,
+        "tip_oid": "e8820b64de8234ee523cd338ead312717c8941f5",
+        "prefix_sha256": "2f417a5b3c73f1af4377bac5b53a48960e97ea95bf3629fab45a4490fccd1480"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1602,
+  "next_comment_id": 1603,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27640,7 +27640,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T20:45:20.850868Z",
+      "updated_at": "2026-10-06T20:47:24.318372Z",
       "comments": {
         "2cb92d5b-22c7-4681-a52b-7b2e8f549435": {
           "display_id": 1598,
@@ -27710,6 +27710,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANBSQVkgcpcWXuxHHvgmZ1ucGAVMscLw4aT5IEwhkRvBe+2lYoTBrg+sZt671xAhbpnIqX6ABd+XyET/jPsJMCw=="
+        },
+        "e4922e94-1a8f-4629-8063-f577add20faa": {
+          "display_id": 1602,
+          "author": "xqjG",
+          "content": "[decision] EXACT-EQUALITY ENVELOPE PIN RETAINED DELIBERATELY (Platform Engineer F1, Methodology F10): with an exact binary pin the envelope version is a function of the binary, so exact equality only asserts the two pins agree; a MINOR can add assertable members (3.1.0 did: rule_dsl) and the committed schema is top-level closed (additionalProperties false), so tolerating MINOR would skip exactly the retest that produced the gain. Fire pair as operating-effectiveness evidence: negative — the 3.0.0 assertion fails under 0.7.0 (the mdatron side's dry run, GitHub issue #55); positive — the 3.1.0 assertion passes on pull request #57 CI (verify 1m24s). Candidate control-effectiveness registry entry when Slice 4 builds the registry. The pre-#893 workflow comment under-described the trigger as 'MAJOR'; the control fired as implemented and the comment is corrected. EVERY-RULE ADDENDUM (Quality Engineer F3): element widened h3 → heading — an H4 phase heading under ## Requirements was silently outside both the count and the XOR (mutant MC clean under the committed rule, E0123 under the widened one; clean tree stays clean); pattern tightened to require 'Slice N —' — rule (b)'s XOR depends on the slice id appearing in the heading text and nothing required it (mutant ME: a heading renamed without its slice while a completed bullet claims the slice was clean; E0123 under the tightened rule; clean tree clean). Both shape-tier, data-supplied, supported today, encoding what every heading in the file already does: scope pass, support pass, no raise. The count rule keeps its pattern (at least one H3 with the phase shape). PER-FAMILY RECORD on this tree under mdatron 0.7.0 (contract, Cross-repo cadence 'verified per family'): schema active (asserted in CI since #855) · route active (0.6.0; landed early by Solution Owner ruling, #877) · section active (0.6.0; #877) · code_catalog active (0.6.0; #877, #854) · vocabulary active (#823) · rule_dsl active (3.1.0 reporting; lane-level; asserted since #893) · pin inactive (section pins since 0.6.0; home Phase 4 Slice 5 by the #877 ruling; ruling (c) pending) · link inactive (0.6.0; home #844; ruling (b) pending) · marker inactive (0.6.0; no home yet; ruling (d) pending) · citation inactive (0.6.0; home Slice 5 evidence-gated filing). Since 3.1.0 a family opted in but claiming nothing reports inert, so each active assertion also proves the family claimed a file. RAISE LOOP CLOSED: mdatron 0.7.0 ships vsdd-cli's own raises from the 0.6.0 adoption (mdatron's notes cite them as 'GH #56 findings 1–6': W0053/W0054 route-table loudness, code_catalog_globs, the *.example templates and docs inputs) — consumed here: W0054 live under --deny-warnings, code_catalog_globs deliberately unset (the archive is already retired), templates committed and now exercised in CI.",
+          "created_at": "2026-10-06T20:47:23.702130Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAOPe/uIbPE34UFUM+oHC2ExA/gPjbvSua6JGVHS0OXWWvNgLVxVmElytojIqWtcFT2umqlrROFfywwgoAsddACQ=="
         },
         "e91439fd-36f6-408e-a489-46086da4239f": {
           "display_id": 1594,
@@ -37032,6 +37041,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1343,
       "timestamp": "2026-10-06T20:45:20.850868Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1344,
+      "timestamp": "2026-10-06T20:47:24.318372Z"
     }
   ],
   "watermark": {
