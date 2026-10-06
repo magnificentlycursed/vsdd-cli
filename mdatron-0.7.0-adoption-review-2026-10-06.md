@@ -7,14 +7,13 @@ created: 2026-10-06
 updated: 2026-10-06
 ---
 
+# mdatron 0.7.0 adoption and four-domain impact review (2026-10-06)
 
-## Design Specification
+## Status
 
-### status
+**Adoption merged; review fixes in pull request #58; feedback posted to mdatron; eight Solution Owner rulings owed.** Tracker: vsdd-cli#893. Pull request #57 (the adoption) merged 2026-10-06 as d7fd4eee with all three CI checks green. The ten review fixes are committed as 675ad95d on `chore/893-review-fixes` and open as pull request #58. The feedback to mdatron was posted on the operator's instruction as mdatron GitHub issue #73. The upgrade guide is vsdd-cli GitHub issue #55, written from the mdatron side's dry run; this page records what the adoption changed, what four domains found, where each finding went, and what was sent back to mdatron.
 
-**Adoption merged; review fixes in a follow-up pull request; eight Solution Owner rulings owed.** Tracker: vsdd-cli#893. Pull request #57 (the adoption) merged 2026-10-06 as d7fd4eee with all three CI checks green. The ten review fixes are on branch `chore/893-review-fixes` for a second pull request. The upgrade guide is vsdd-cli GitHub issue #55, written from the mdatron side's dry run; this page records what the adoption changed, what four domains found, where each finding went, and the feedback owed to mdatron.
-
-### what changed
+## What changed
 
 The corpus needed no change: 53 files, verify clean, identical findings and families under 0.6.0 and 0.7.0, plus `rule_dsl=active`. The consumer side moved:
 
@@ -27,13 +26,13 @@ The corpus needed no change: 53 files, verify clean, identical findings and fami
 
 Verification under 0.7.0, local and on CI: `verify --deny-warnings` clean; the jq assertion passes; `cargo test --workspace --locked` and clippy exit 0; mutants on a scratch copy fire E0120, E0121, E0122 and E0123 as expected (stray H4, heading without slice id, missing paren, completed bullet claiming an open slice, section renamed).
 
-### the review
+## The review
 
 Four domains, one batch, read-only, no verifier fan-out, each reading its own domain prompt file in full: Platform Engineer, Quality Engineer, Solution Architect, VSDD Methodology meta-domain. Hand-run through the interactive Agent tool as a bootstrap interim, model Fable 5.1 at default effort. Stated budget 200k tokens each; actual 253k, 304k, 367k, 333k. Coverage declared: the release changes no corpus verdict, so the impact is confined to tooling, oracles, estate architecture, and the methodology's boundary, deferrals and record. Absent with reasons: AI Engineer (Slice 2's delivery decisions are #839's own round), Red Team (#855 residual 1 routed, not re-assessed), Documentation Reviewer (the guide's prose is mdatron's). The dispatch record is on #893.
 
 **Verdicts.** All four: adequate and correctly scoped as a version re-pin; no contract amendment forced by 0.7.0. Three of four: the record overclaimed what `rule_dsl=active` proves.
 
-### findings and where they went
+## Findings and where they went
 
 **Fixed in the follow-up pull request.** The `rule_dsl` wording (lane-level evidence, reproduced: every context in one pattern file pointed at a class no file declares still reports active with zero findings); `pipeline_status` asserted first; `--force` and anchored greps; the `init` drift step; the `every` rule widened and tightened; the pre-commit hint; the `config.yaml` code-catalog scope comment (false since `code_catalog_globs`); the `vocabulary.yaml` carve-out comment (the mdatron#28 raise shipped as the 0.6.0 default exemption, mdatron#159); the README pin; the CHANGELOG handle and adopter-template caveat.
 
@@ -51,26 +50,25 @@ Four domains, one batch, read-only, no verifier fan-out, each reading its own do
 
 **Other follow-ups.** A mirror-pin test across every pin site (ten literals in four files plus the README). `coinage_globs` makes arming new-coinage detection possible (Slice 5). A summary-first `order` rule for `.design/` documents has no three-question decision yet.
 
-### decisions recorded on #893
+## Decisions recorded on #893
 
 - Exact-equality envelope pin retained deliberately: with an exact binary pin the envelope version is a function of the binary; a MINOR can add assertable members (3.1.0 did); the committed schema is top-level closed. Fire pair recorded as operating-effectiveness evidence (negative: the 3.0.0 assertion fails under 0.7.0; positive: the 3.1.0 assertion passes on CI), a candidate control-effectiveness registry entry.
 - The `every` rule: three-question decision (in scope, supported, no raise) with the review addendum (widen to any heading; require the slice id). The `order` rule not adopted; the recorded reason corrected: the falsifier exists (E0124 fires under a section swap), what is absent is any consumer of H2 order.
 - Per-family record under 0.7.0: schema, route, section, code_catalog, vocabulary, rule_dsl active; pin, link, marker, citation inactive with their homes named. Since 3.1.0 a family opted in but claiming nothing reports `inert`, so each active assertion also proves the family claimed a file.
 - Raise loop closed: 0.7.0 ships vsdd-cli's own raises from the 0.6.0 adoption (route-table loudness W0053/W0054, `code_catalog_globs`, the `*.example` templates, `docs inputs`).
 
-### solution owner rulings owed
+## Solution Owner rulings owed
 
 (a) Fail-closed pre-commit version guard (#855 residual 2). (b) Arm `links: true` now or at Phase 4 (#844). (c) Land the pin family early for the build-plan Decomposition hash, which a one-entry section pin reproduces byte for byte. (d) Land the marker rule early with the #879 fix. (e) A closed H2 set rule and a no-H3-under-Completed-phases rule on the build-plan. (f) A handle-grammar form for GitHub-side issues (third recurrence). (g) Whether Dependency approval covers CI-installed binaries (mdatron, crosslink). (h) The build-plan Phase 4 family-list amendment.
 
-### feedback for mdatron
+## Feedback for mdatron
 
-Compiled from the four reports and the orchestrating session's own log; the operator sends it. Headlines: the guide omitted the test workflow's pin; `rule_dsl=active` is lane-level and unconditionally active under `--changed`; a `key()` lookup with a null index aborts the whole run instead of yielding a per-file finding; `verify` never checks managed-template drift; template refresh is bidirectional; the 3.1.0 schema still says "via `mdatron schema`"; the E0060 explain page claims a per-file version the manifest does not record; `requires_sibling` cannot express a stem-derived sibling; no release attestation; raises for per-pattern activity, standards-pack schemas as managed deployables, and a Claude Code rules-file recipe. Positives: the section-pin span reproduced a hand-stated hash byte for byte; the marker family found exactly the drift a human review recorded; `docs inputs` was accurate for every key exercised.
+Posted 2026-10-06 as mdatron GitHub issue #73 ("vsdd-cli adoption notes and feedback on 0.7.0: guide accuracy, eight defects with reproductions, seven raises"), compiled from the four reports and the orchestrating session's own log; closes the reciprocal loop with vsdd-cli GitHub issue #55. Headlines: the guide omitted the test workflow's pin; `rule_dsl=active` is lane-level and unconditionally active under `--changed`; a `key()` lookup with a null index aborts the whole run instead of yielding a per-file finding; `verify` never checks managed-template drift; template refresh is bidirectional; the 3.1.0 schema still says "via `mdatron schema`"; the E0060 explain page claims a per-file version the manifest does not record; one E0122 per rule on a renamed section; the host-path leak's Fixed entry. Raises: stem-derived `requires_sibling`, standards-pack schemas as managed deployables, a Claude Code rules-file recipe, a shared pattern for count plus every, release attestation, a jurisdiction-shrinking FAQ entry, a shared GitHub-issue handle form. Positives: the section-pin span reproduced a hand-stated hash byte for byte; the marker family found exactly the drift a human review recorded; `docs inputs` was accurate for every key exercised; `inert` made every existing active assertion stronger for free.
 
-### process notes
+## Process notes
 
 Two agent commits were refused by the work-check gate although the session had an active issue: the hook's status call has a three-second budget and routine hub latency here is four to five seconds (upstream crosslink#104 item 2; the commit gate also ignores the `.active-issue` sentinel that `session work` writes, which the strict gate honours). The operator committed by hand. Readiness blocked several read-only commands intermittently for the reviewers and once for the session; nobody drove readiness and it cleared on its own. The reviewers wrote their reports through the shell because the Write tool was refused by the same hook.
 
-### sources
+## Sources
 
 vsdd-cli#893 (dispatch record, routing, decisions, interventions); vsdd-cli GitHub issue #55 (the guide); pull request #57; mdatron at tag v0.7.0 (CHANGELOG, DESIGN, docs/cookbook, src/verify.rs); the four reports in the session scratchpad (platform-engineer, quality-engineer, solution-architect, vsdd-methodology).
-
