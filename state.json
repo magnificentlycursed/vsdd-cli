@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1353,
-        "tip_oid": "da3f1d853861d966c3f2d65118e20647880c2e98",
-        "prefix_sha256": "bbb94aba1c10c1ea5be64d4ee569cf2c416cdb2e7f11419e47b451d6f976c5a2"
+        "sequence": 1354,
+        "tip_oid": "48c7b437cd47e518ce726de871482687fff21f5d",
+        "prefix_sha256": "1c56fd4c6223f3fea3c975d57bdb8a14ccf0684917a33942cdc9dfabee96643f"
       },
       "y2SI": {
         "sequence": 2,
@@ -27663,11 +27663,12 @@
       "display_id": 893,
       "title": "Adopt mdatron 0.7.0 (envelope 3.1.0): re-pin CI and the pre-commit window, commit what init deploys, and have the domains evaluate the release's impact on the design",
       "description": "mdatron 0.7.0 is on crates.io (2026-10-06; envelope 3.1.0). Upgrade guide: GitHub issue #55 on magnificentlycursed/vsdd-cli (a GitHub issue, not this tracker), written from a dry run against main 618ae400: verify clean on both versions, 53 files, the same findings and families plus rule_dsl=active; the CI exact-equality envelope pin (3.0.0) fails under 0.7.0, which is the retest trigger the workflow comment describes.\n\nConsumer-side changes (the corpus itself needs none):\n1. mdatron init deploys four inert *.example templates and records their hashes in .mdatron/manifest.yaml — commit all five.\n2. Envelope pin: .mdatron/envelope-3.1.0.schema.json replaces 3.0.0; the CI assertion moves to 3.1.0 and the envelope_schema URL to .../3.1.0; add .families.rule_dsl.state == \"active\" (closes the #855 non-vacuity gap for the pattern rules the 3.0.0 envelope could not express).\n3. CI install pin, version grep and cache key to 0.7.0 — in BOTH workflows (mdatron-verify.yml and vsdd-test.yml; the guide names only the first).\n4. .githooks/pre-commit: MIN_VERSION 0.7.0, window ^0\\.7\\.[0-9]+, reinstall hint, rationale comment.\n5. Optional alias migrations (routes.yaml disjoint id_from -> element; vocabulary.yaml register -> guidance; config.yaml comment W0045 headline) and an every rule beside the build-plan count rule (three-question decision recorded here).\n\nThen: the domains evaluate the release's impact on the design (the contract's mdatron-touching members: Conformance at action time, the syntactic-versus-semantic rule, vocabulary and register governance, the Slice 2 decisions on supplements as .claude/rules/ and prompts as skills, the #855 gate). Findings route per phase 4 before any fix.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T21:31:47.478592Z",
+      "updated_at": "2026-10-06T21:32:40.336866Z",
+      "closed_at": "2026-10-06T21:32:40.309159Z",
       "comments": {
         "034f8ceb-7c72-4817-a5f4-c18572f9e64c": {
           "display_id": 1607,
@@ -37175,6 +37176,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1353,
       "timestamp": "2026-10-06T21:31:47.478592Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1354,
+      "timestamp": "2026-10-06T21:32:40.336866Z"
     }
   ],
   "watermark": {
