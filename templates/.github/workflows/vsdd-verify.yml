@@ -36,7 +36,7 @@ jobs:
       # primer/domain/supplement/review-entry structural + cross-file checks.
       # mdatron is published on crates.io (0.5.0+); install the pinned release.
       - name: Install mdatron
-        run: cargo install mdatron --version 0.5.0 --locked
+        run: cargo install mdatron --version 0.7.0 --locked
       - name: Bootstrap toolkit artifacts
         run: vsdd init --ci-mode
       - name: Run mdatron verify

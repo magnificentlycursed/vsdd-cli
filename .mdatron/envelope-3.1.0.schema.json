@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.0.0",
+  "$id": "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.1.0",
   "title": "mdatron verify --json output envelope",
-  "description": "The machine interface of `mdatron verify --json`. Versioned: mdatron_output_version tracks THIS schema (currently 3.0.0). A published contract (DESIGN.md § Diagnostics are a versioned contract) — consumers pin and validate against it.",
+  "description": "The machine interface of `mdatron verify --json`. Versioned: mdatron_output_version tracks THIS schema. A published contract (DESIGN.md § Diagnostics are a versioned contract) — consumers pin and validate against it.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -18,12 +18,12 @@
   "properties": {
     "mdatron_output_version": {
       "type": "string",
-      "const": "3.0.0",
+      "const": "3.1.0",
       "description": "Semver of this envelope schema. Moves with the schema; a change here signals a contract change."
     },
     "envelope_schema": {
       "type": "string",
-      "const": "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.0.0",
+      "const": "https://github.com/magnificentlycursed/mdatron/schema/mdatron-output/3.1.0",
       "description": "The $id of the published schema this envelope was produced under, so a consumer can pin the exact contract without joining the version onto a URL template. An identifier, not a fetch target; the resolvable copy ships in the repo and via `mdatron schema`."
     },
     "mdatron_version": {
@@ -86,8 +86,8 @@
     "families": {
       "type": "object",
       "additionalProperties": { "$ref": "#/$defs/activity" },
-      "description": "Per-verify activity of the check families as a tri-state plus a reason: active = data supplied and the check ran this pass; inert = configured but did no work (e.g. scoped to no file); inactive = not configured. The reason makes the audit signal falsifiable. Forward-extensible (3.0.0, #145/#147): the named families below are always present; new families appear over time as additional members of the same shape, so a consumer must tolerate unknown family keys.",
-      "required": ["schema", "route", "pin", "vocabulary", "citation", "link", "marker", "code_catalog", "section"],
+      "description": "Per-verify activity of the check families as a tri-state plus a reason: active = data supplied and the check ran this pass; inert = configured but did no work (e.g. scoped to no file); inactive = not configured. The reason makes the audit signal falsifiable. Forward-extensible (since 3.0.0): the named families below are always present; new families appear over time as additional members of the same shape, so a consumer must tolerate unknown family keys.",
+      "required": ["schema", "route", "pin", "vocabulary", "citation", "link", "marker", "code_catalog", "section", "rule_dsl"],
       "properties": {
         "schema": { "$ref": "#/$defs/activity", "description": "Frontmatter JSON-Schema conformance per declared schema_class." },
         "route": { "$ref": "#/$defs/activity", "description": "The route table: the closed-world allowlist over the governed tree." },
@@ -97,7 +97,8 @@
         "link": { "$ref": "#/$defs/activity", "description": "Body markdown link and #anchor resolution." },
         "marker": { "$ref": "#/$defs/activity", "description": "Marker-line references: declared-pattern lines resolving by name into a target document." },
         "code_catalog": { "$ref": "#/$defs/activity", "description": "Adopter code-token resolution against declared code catalogs." },
-        "section": { "$ref": "#/$defs/activity", "description": "Section-structural count/disjointness assertions over body sections." }
+        "section": { "$ref": "#/$defs/activity", "description": "Section-structural count, every, order and disjointness assertions over body sections." },
+        "rule_dsl": { "$ref": "#/$defs/activity", "description": "The rule-DSL lane (3.1.0): pattern rules over frontmatter. Not a check family, reported here so the envelope can say whether any rule ran — inactive = no pattern file; inert = patterns supplied but no rule context matched a walked file; active = rules ran." }
       }
     },
     "inputs": {
@@ -106,7 +107,7 @@
         "type": "string",
         "pattern": "^sha256:[0-9a-f]{64}$"
       },
-      "description": "Governance-input lineage: each input this run consumed, mapped to a sha256 digest of the exact bytes it read. Keys are the governance files found and read (config.yaml, routes.yaml, vocabulary.yaml, pins.yaml, code-catalogs.yaml — each present only when loaded) plus one aggregate digest each for the schemas and patterns directories (sorted filenames + per-file content digests; omitted when the directory is absent or empty). Lets a consumer attest WHICH configuration produced a verdict and detect config drift between runs. Deterministic across platforms; always empty on a failed pipeline (partial lineage is deliberately not attested)."
+      "description": "Governance-input lineage: each input this run consumed, mapped to a sha256 digest of the exact bytes it read. Keys are the governance files found and read (config.yaml, routes.yaml, vocabulary.yaml, pins.yaml, code-catalogs.yaml, and from 3.1.0 manifest.yaml — each present only when loaded) plus one aggregate digest each for the schemas and patterns directories (sorted filenames + per-file content digests; omitted when the directory is absent or empty). Lets a consumer attest WHICH configuration produced a verdict and detect config drift between runs. Deterministic across platforms; always empty on a failed pipeline (partial lineage is deliberately not attested)."
     },
     "timings": {
       "type": "object",
@@ -195,7 +196,7 @@
           "properties": {
             "file": {
               "type": "string",
-              "description": "Project-root-relative path with forward slashes — byte-identical across Unix and Windows (DEF4)."
+              "description": "Project-root-relative path with forward slashes — byte-identical across Unix and Windows."
             },
             "line": {
               "type": "integer",

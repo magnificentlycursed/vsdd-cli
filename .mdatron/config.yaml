@@ -20,7 +20,7 @@ file_globs:
 # superseded transitional prose (the ratified contract
 # .design/agent-first-vsdd-toolkit.md replaced them) whose schema_class
 # (design-doc / methodology-spec) had no schema, so mdatron 0.4.0 rightly flagged
-# them MDATRON-W0045 (schema-class-unrouted). They were out of vocab scope and
+# them MDATRON-W0045 (then headlined schema-class-unrouted; schema-class-unvalidated since 0.7.0). They were out of vocab scope and
 # their doc-sunset (#821) completed under #826; walking them only produced W0045
 # noise, never validation.
 # CHANGELOG.md is intentionally excluded: crosslink-generated, no schema_class

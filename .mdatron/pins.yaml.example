@@ -1,0 +1,31 @@
+# pins.yaml.example — the pin family. Copy to pins.yaml to activate.
+#
+# ACTIVATION  the file exists. Each pin attests a governed file's sha256 (or
+#             one heading's span) on behalf of a governing document; a stale
+#             hash blocks (E0061) until `mdatron pin --update` re-pins after
+#             the governing document is re-read. `unpinned:` tombstones are
+#             the standing record of a removed pin (L0001 every whole-tree
+#             run; W0042 when reason or owner is missing).
+# SCOPE       the pinned files themselves — any file inside the project
+#             root, walked or not.
+# KEYS        per pin      — required: governed_by, file, sha256
+#                            optional: section
+#             per unpinned — required: file, governed_by, reason, owner
+#             file-level   — optional: mdatron_format_version (absent = 1;
+#                            `pin --update` stamps it)
+# CODES       E0061 E0062 E0063 E0081 L0001 W0042; E0010 E0011 E0012 on paths.
+# (example: uncomment the lines below)
+# mdatron_format_version: 1
+# pins:
+# - governed_by: DESIGN.md
+#   file: src/lib.rs
+#   sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+# - governed_by: DESIGN.md
+#   file: docs/plan.md
+#   section: "## Decomposition"
+#   sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+# unpinned:
+# - file: docs/old-plan.md
+#   governed_by: DESIGN.md
+#   reason: "superseded by docs/plan.md"
+#   owner: operator

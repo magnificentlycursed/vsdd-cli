@@ -1,0 +1,35 @@
+# vocabulary.yaml.example — the vocabulary family (the naming register).
+# Copy to vocabulary.yaml to activate.
+#
+# ACTIVATION  the file exists.
+# SCOPE       every walked file, or config.yaml vocabulary_globs when set
+#             (W0043 if that scope matches nothing); the bold-means-coinage
+#             check (E0090) is further narrowed by coinage_globs when set.
+# KEYS        all optional — terms[] {term, status, sense} with status one of
+#             registered | draft | reserved; coinage_globs[]; label_schemes
+#             {allow[]}; anti_patterns[] {pattern, guidance}; numeric_claims[]
+#             {field}; mdatron_format_version (absent = 1).
+# CODES       E0090 E0091 E0092 E0093 E0094 W0043 W0044.
+# The body below activates cleanly on any tree; the optional addition scopes
+# the coinage check to files that must exist in YOUR tree (a scope matching
+# nothing is W0043).
+# (example: uncomment the lines below)
+# mdatron_format_version: 1
+# terms:
+# - term: "jurisdiction"
+#   status: registered
+#   sense: "the file set the declared file_globs walk"
+# - term: "spend shape"
+#   status: draft
+#   sense: "how a review round's agent budget is declared"
+# label_schemes:
+#   allow:
+#   - "^ADR-[0-9]+$"
+# anti_patterns:
+# - pattern: "very unique"
+#   guidance: "say 'unique' — uniqueness does not grade"
+# numeric_claims:
+# - field: items
+# (optional additions: uncomment what you need)
+# coinage_globs:
+# - "docs/spec/**/*.md"

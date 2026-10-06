@@ -13,20 +13,22 @@ if ! command -v mdatron >/dev/null 2>&1; then
   exit 2
 fi
 
-# Minimum-version sanity check (per crosslink #12 PE/F2). mdatron 0.6.0
-# adoption (vsdd-cli#877): mdatron must be 0.6.x — envelope 3.0.0 (a MAJOR:
-# required envelope_schema + inputs, per-finding fingerprints, nine families),
-# load-time refusal of non-2020-12 schema dialects (E0040), strict pattern
-# files, array-only `in`/`not_in`, and the loud-absence section/marker codes
-# (E0122/E0114). A 0.5.x binary emits the retired 2.1.0 envelope and fails the
-# CI envelope assertion, so warn early.
-MIN_VERSION="0.6.0"
+# Minimum-version sanity check (per crosslink #12 PE/F2). mdatron 0.7.0
+# adoption (vsdd-cli#893, after the 0.6.0 adoption vsdd-cli#877): mdatron must
+# be 0.7.x — envelope 3.1.0 (a MINOR: the `rule_dsl` family's own tri-state,
+# `manifest.yaml` in the `inputs` lineage), the unverifiable-reference finding
+# split out of the pipeline-failure code (E0081 vs E0080), `*` no longer
+# crossing `/` in route and scope globs, the `every`/`order` section rules
+# (E0123/E0124), and `init` refreshing its unedited templates. A 0.6.x binary
+# emits the 3.0.0 envelope and fails the CI envelope assertion's exact-equality
+# pin, so warn early.
+MIN_VERSION="0.7.0"
 mdatron_version=$(mdatron --version 2>/dev/null | awk '{print $2}' || true)
 if [ -z "$mdatron_version" ]; then
   echo "pre-commit: could not determine mdatron version (got empty output) — proceeding" >&2
-elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.6\.[0-9]+'; then
-  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.6.x supported window" >&2
-  echo "pre-commit:   reinstall with  cargo install mdatron --version 0.6.0 --locked --force" >&2
+elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.7\.[0-9]+'; then
+  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.7.x supported window" >&2
+  echo "pre-commit:   reinstall with  cargo install mdatron --version 0.7.0 --locked --force" >&2
   echo "pre-commit:   minimum required for vsdd-cli compatibility: ${MIN_VERSION}" >&2
 fi
 

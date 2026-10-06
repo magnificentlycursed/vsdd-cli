@@ -1,3 +1,11 @@
-# mdatron managed-partition manifest — do not edit by hand.
+# mdatron init manifest (the engine-managed partition) — do not edit by hand.
 version: 2
-managed: []
+managed:
+- path: routes.yaml.example
+  sha256: 3b9112768d61b61b358ce49ea279581691a663488826c359f67ca3dbf64dcdba
+- path: pins.yaml.example
+  sha256: d896b9c74b219041bea8670303654ad67db8b29e4736ffbde82d7bd25a3a5c6f
+- path: vocabulary.yaml.example
+  sha256: c7d0a0d3f13018322f8b8b585c3b123c1f87f85fd3f1f0d26a2ef93571f93b25
+- path: code-catalogs.yaml.example
+  sha256: b4083b0aa957019cf7397747032deb38292aab8384e68923ecf6d043bab5be6f

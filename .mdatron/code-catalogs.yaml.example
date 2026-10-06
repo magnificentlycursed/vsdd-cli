@@ -1,0 +1,20 @@
+# code-catalogs.yaml.example — the code-catalog family. Copy to
+# code-catalogs.yaml to activate.
+#
+# ACTIVATION  the file exists.
+# SCOPE       every walked file, or config.yaml code_catalog_globs when set
+#             (W0055 if that scope matches nothing). Inline code spans ARE
+#             scanned (a backticked code is a citation); fenced blocks are
+#             examples and are not.
+# KEYS        per catalog — required: namespace, codes[]
+#                           optional: comprehensive (default false; only a
+#                                     comprehensive catalog can orphan a
+#                                     token)
+#             file-level  — required: mdatron_format_version
+# CODES       E0113 W0055.
+# (example: uncomment the lines below)
+# mdatron_format_version: 1
+# catalogs:
+# - namespace: "ADOPTER-"
+#   comprehensive: true
+#   codes: ["E0001", "W0100"]
