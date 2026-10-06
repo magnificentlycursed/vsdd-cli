@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1352,
-        "tip_oid": "c7381a5aa02b2e7410abde19ab7a77ea6517e770",
-        "prefix_sha256": "e3b21032dc5b9499b71920a0e7a214be1db660898295dd69a1a0463c69a9c898"
+        "sequence": 1353,
+        "tip_oid": "da3f1d853861d966c3f2d65118e20647880c2e98",
+        "prefix_sha256": "bbb94aba1c10c1ea5be64d4ee569cf2c416cdb2e7f11419e47b451d6f976c5a2"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1611,
+  "next_comment_id": 1612,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27667,7 +27667,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T21:13:17.250548Z",
+      "updated_at": "2026-10-06T21:31:47.478592Z",
       "comments": {
         "034f8ceb-7c72-4817-a5f4-c18572f9e64c": {
           "display_id": 1607,
@@ -27725,6 +27725,15 @@
           "driver_key_fingerprint": "SHA256:/HhRo+IBEKhfgSJCbPvUcmHnZdeNIdxAH0CHW5Hpl4Y",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAq2rLw82eSxZMeRcyED8bVs8+XCSI2x74xY7Ng+6k/zI5LFw/T2FOR3VjR2P+afoFQ+PUvaM2xd19Q/V3c6EgCA=="
+        },
+        "699c445d-f3f2-495b-8d3a-63c6b4ca2bc0": {
+          "display_id": 1611,
+          "author": "xqjG",
+          "content": "[result] CLOSING. Both pull requests merged: #57 (the adoption, d7fd4eee) and #58 (the review fixes, 93095bed); CI green on each; main carries the mdatron 0.7.0 pin, the 3.1.0 envelope assertion with pipeline_status and rule_dsl, the exercised engine-managed partition, and the widened every rule. Feedback to mdatron posted as mdatron GitHub issue #73; the crosslink#104 recurrence brief routed by the operator. Open follow-ups live on their owning issues (#855, #839, #844, #879, #882 and the cross-references test file) and the eight Solution Owner rulings are listed in the routing comment above; the knowledge page mdatron-0.7.0-adoption-review-2026-10-06 is the condensed record.",
+          "created_at": "2026-10-06T21:31:47.440502Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAo+68My+P+noI0jyqSjf9NjNv6LqqsJ6hOYuJo4FfXGNOwi2v/3cO0fd3kn1oPftpNVz7lx7v/hv5VI2hfvTXBg=="
         },
         "69ee4576-5ad5-47d7-a21a-1e8629a30220": {
           "display_id": 1600,
@@ -37161,6 +37170,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1352,
       "timestamp": "2026-10-06T21:13:17.250548Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1353,
+      "timestamp": "2026-10-06T21:31:47.478592Z"
     }
   ],
   "watermark": {
