@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1345,
-        "tip_oid": "a07b0e2ac616da60db1402a4ef7b87c687a80e12",
-        "prefix_sha256": "419d806d60eee59561c29f1fe5d2698487ec57869187f6f06e1ff8dc6c0c8a5f"
+        "sequence": 1346,
+        "tip_oid": "2e3032440cb406c87e5a83c64d51615ceb279cfb",
+        "prefix_sha256": "c8779d2d942bec7964a8adee3d7b4414c54a387c49a412256eb10f91b44e4b02"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1604,
+  "next_comment_id": 1605,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19394,11 +19394,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-01T18:43:27.009502Z",
-      "updated_at": "2026-08-01T18:43:32.398181Z",
+      "updated_at": "2026-10-06T20:49:34.978629Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "0291ced0-4363-4407-9d87-9710adaadc0b": {
+          "display_id": 1604,
+          "author": "xqjG",
+          "content": "[observation] From the mdatron 0.7.0 impact review (#893; Methodology F1, Solution Architect F7): the body-link gap recorded here has been 'supported today' since mdatron 0.6.0 — the link family (E0110/E0111; 0.7.0 adds Claude Code @path imports under it) activates per route with 'links: true', and no route opts in, so link=inactive on this tree under both versions. Experiment on a scratch copy: links: true on all five routes → family active, ZERO link findings, exit 0. The dangling primer and domain-prompt links this issue found are fixed or gone, so arming costs nothing today. Solution Owner ruling asked (batched on #893 as item (b)): arm now, the #877 precedent that landed routes early, or at Phase 4 Slice 5. Either way the raise is retired and only the activation decision stands; this answers level 2(b), body links in the governed corpus. README stays outside jurisdiction; its mdatron install line is now pinned at 0.7.0 under #893.",
+          "created_at": "2026-10-06T20:49:34.929562Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA2MVJIWjIOiXDWxtcKawbl3cUTl7iEakYoRbzTlRKqlKscEhdTVDaK4Vgj14Y+jG2YVloI3qLSel/u/WRQRIWBA=="
+        },
         "c6fb0362-033c-44fa-9cbb-3f1f782b38af": {
           "display_id": 1305,
           "author": "xqjG",
@@ -37060,6 +37069,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1345,
       "timestamp": "2026-10-06T20:48:27.413897Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1346,
+      "timestamp": "2026-10-06T20:49:34.978629Z"
     }
   ],
   "watermark": {
