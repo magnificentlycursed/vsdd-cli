@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1336,
-        "tip_oid": "2fab6a26c8679ad99b93049f84e5f072c6b9cf06",
-        "prefix_sha256": "d2bc0bea1ec488427b4fdd1e11c17c43f96f241ada231e4fd3797ffa7cdefc0b"
+        "sequence": 1337,
+        "tip_oid": "36048d40f8376e5bbec34ce03975ab8fb94438a8",
+        "prefix_sha256": "67d3a794d008960a9cdcdc6a1c8b9d533c13a45aed5c103d0da27b99ca871331"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1595,
+  "next_comment_id": 1596,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27505,11 +27505,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-08-02T00:45:11.800282Z",
-      "updated_at": "2026-10-02T20:37:38.935424Z",
+      "updated_at": "2026-10-06T20:16:50.010957Z",
       "labels": [
         "feature"
       ],
       "comments": {
+        "0ecc25f2-511f-4ddc-8c8a-afb0e0971d63": {
+          "display_id": 1595,
+          "author": "xqjG",
+          "content": "[observation] mdatron 0.7.0 adoption (#893): the CI envelope assertion now also requires families.rule_dsl.state == active — the 3.1.0 envelope's own tri-state for the pattern-rule lane (inactive = no pattern file; inert = patterns supplied but no rule context matched a walked file; active = rules ran). This realises the NEW OPTION this issue recorded, for the two pattern files (vsdd-cross-references, vsdd-registry-integrity) that the 3.0.0 envelope's nine check families could not express. Residual (1) jurisdiction self-audit bypass is unchanged. Residual (2) the fail-open pre-commit version guard is unchanged in kind (warns-then-proceeds), now at the 0.7.x window; the 0.7.0 domain review on #893 is asked to assess it. Whether rule_dsl=active is per-lane or per-pattern evidence is also under that review.",
+          "created_at": "2026-10-06T20:16:49.961100Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAiJs8RzzXiMHek1TLRQhbr4m2NAJr4BLoOtP9c11Y7rtC5xVqmGP7YmbhdQO5MAkv5PCWqEJ7CK243JQk2OmuBw=="
+        },
         "12a8d55f-c954-4962-bb17-c3cedf70331f": {
           "display_id": 1358,
           "author": "xqjG",
@@ -36931,6 +36940,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1336,
       "timestamp": "2026-10-06T20:15:52.740773Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1337,
+      "timestamp": "2026-10-06T20:16:50.010957Z"
     }
   ],
   "watermark": {
