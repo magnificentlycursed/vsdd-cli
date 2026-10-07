@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1378,
-        "tip_oid": "a4c2e55e749995981f930a39d3b7f6de4f571bdf",
-        "prefix_sha256": "351107e21c41f7bcc4e863f1038dd6f7b4080d265144598355de22ad2bfe4bbf"
+        "sequence": 1379,
+        "tip_oid": "6da06050c6e3e16ea25a78defa86a7f8ffb0ee8a",
+        "prefix_sha256": "3f8016b8c9155874e7b66052c847f8970e1ac607f0ad940041908c2258638933"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 896,
-  "next_comment_id": 1625,
+  "next_comment_id": 1626,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24785,7 +24785,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:57:19.928315Z",
-      "updated_at": "2026-10-07T02:26:49.829524Z",
+      "updated_at": "2026-10-07T02:45:54.978837Z",
       "labels": [
         "design"
       ],
@@ -24798,6 +24798,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAs3I/qXQwHQmw04ipQ48GEA5loyVxRt9syzvATL937bHHjmv00aPxf7qlOUlA2dX0Wyukt4ndo521xjkbMsLIDA=="
+        },
+        "6bba7707-7548-45d9-9470-398e9f5424dc": {
+          "display_id": 1625,
+          "author": "xqjG",
+          "content": "[plan] DISPATCH RECORD, cold review of the #894 contract amendment (hand-run, bootstrap interim; interactive Agent-tool path, not kickoff; reviewers instructed read-only, tree checked unchanged afterwards). Composition, hand-loaded from the domain prompt files, each read in full: VSDD Methodology (handle grammar, amendment process, vocabulary), Platform Engineer (dependency clause; supply chain on both records), Security (CVEs, license and threat on both records; the secret-redaction placement), Solution Architect (the five legs' slice placement against the Decomposition and the operator-authored criterion). Vehicle: one general-purpose agent per domain, one batch, no verifier fan-out. Model: session default (Opus 5.5); effort: default. Budget: 300k tokens each as a cap, about 1.2M worst case. Inputs: the branch diff (contract, build-plan, pins, vocabulary, the two sweeps, nine retitled records, two new records), the rulings on this issue, the cold read on #879. Coverage: the amendment touches References, Requirements (Dependency approval) and Decomposition; no gate, code or schema changes. Absent with reasons: AI Engineer (no composition or dispatch mechanics change), Red Team (the process-red-teaming leg is placed, not exercised), Technical Writer (the wording is reviewed by Methodology under the vocabulary rule). Authoring notes: all five legs placed in Slices 4 and 6, not split with Slice 2, so the operator-authored Verifiable conformance criterion ('its checks land with the Slice-4 ..., the Slice-6 ..., and the Slice-7 report') stays true without an agent editing an oracle; the pin re-pinned in this change (2150156b to ca6cac90) as the pin ruling requires; mdatron pin --update dropped the pin file's comments, restored by hand and noted for mdatron.",
+          "created_at": "2026-10-07T02:45:54.942941Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAS6K4oNcbgvj8akLO4YQuX+3gtdURmEkf+MxNSnJbaI+iMwYhL5f5Bs/mAe4yDhOEhLmputr7ZF+ldYtmPZpwCA=="
         },
         "7292ea8c-0b8e-4334-9c1c-298d2a97a5ee": {
           "display_id": 1620,
@@ -37450,6 +37459,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1378,
       "timestamp": "2026-10-07T02:41:38.374076Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1379,
+      "timestamp": "2026-10-07T02:45:54.978837Z"
     }
   ],
   "watermark": {
