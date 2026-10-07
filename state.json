@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1358,
-        "tip_oid": "f9da1d66388a6f76df7d0eab60e234da791e618e",
-        "prefix_sha256": "2de82f71ab21bc9178f9fa9eec22e3c22e0d24ecddefef18ca869ecfdf0c7553"
+        "sequence": 1359,
+        "tip_oid": "2dd885b0544fd3b36c02b26bbddd18b90aeb6409",
+        "prefix_sha256": "2e62ee414f46bbace4b4b2ab5fb5efa430df3227209f34773ac5c69b0cf1622c"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 895,
+  "next_display_id": 896,
   "next_comment_id": 1613,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -851,6 +851,7 @@
     "e7862db5-fd2f-419a-bbe2-969154e7e297": 150,
     "e78e96c0-91cd-4915-b03c-2c81e3679ec8": 417,
     "e84838a3-03d8-42b0-b088-af5a14a45235": 835,
+    "e8c1b5d6-d3a4-4ad7-9697-1261950eddc6": 895,
     "e925db46-8bfe-410a-8756-45b4f8cddac9": 571,
     "e92d6041-aa82-457a-9729-619b240dd2dd": 122,
     "e92d85ac-4a50-49a7-9034-4923a68846f6": 351,
@@ -26663,6 +26664,17 @@
         }
       }
     },
+    "e8c1b5d6-d3a4-4ad7-9697-1261950eddc6": {
+      "uuid": "e8c1b5d6-d3a4-4ad7-9697-1261950eddc6",
+      "display_id": 895,
+      "title": "Land the link, pin and marker families and two build-plan structure rules early, with the build-plan Phase 4 family-list amendment and the two Provenance name fixes (Solution Owner rulings 2026-10-06)",
+      "description": "Solution Owner rulings (b), (c), (d), (e) and (h) of 2026-10-06, recorded on #893; one pull request, because each early landing needs its build-plan clause. (b) links: true on the five routes in .mdatron/routes.yaml, conditional on a clean run on the real tree (#844's body-link gap; the raise is retired). (c) .mdatron/pins.yaml with one section pin: the contract's '## Decomposition (phase 1c)' span, governed by .design/build-plan.md, carrying the build-plan's current hash; re-pin only in the same pull request as a ratified Decomposition amendment; the build-plan's Contract pin section points at the pin. (d) A marker rule on the build-plan route resolving each 'Provenance:' line against the contract's Decomposition slice names, landed red then green with the two name fixes (#879 minors: 'static price' should be 'token budget'; 'The efficiency insight engine' should be 'The cost-and-efficiency report'). (e) Two section rules on the build-plan: no heading under ## Completed phases; the closed set of H2 headings (Summary, Requirements, Completed phases, Contract pin). (h) The build-plan Phase 4 mdatron item takes the contract's own wording ('mdatron's conformance families behind the hooks') with a landed-early clause per family; the per-release, per-family record lives on the adoption issues (#877, #893) and the Phase 4 note points at them. Not in scope: #879 item 5 (the build-plan's missing Verifiable-conformance legs for Slices 4, 6 and 7 and the thirteen-criteria count), which keeps its own design-branch fix.",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-10-07T00:58:16.997972Z",
+      "updated_at": "2026-10-07T00:58:16.997972Z"
+    },
     "e925db46-8bfe-410a-8756-45b4f8cddac9": {
       "uuid": "e925db46-8bfe-410a-8756-45b4f8cddac9",
       "display_id": 571,
@@ -37221,6 +37233,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1358,
       "timestamp": "2026-10-07T00:57:43.583476Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1359,
+      "timestamp": "2026-10-07T00:58:16.997972Z"
     }
   ],
   "watermark": {
