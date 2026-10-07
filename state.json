@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1382,
-        "tip_oid": "d61a26d4c54248f1f7fed35a8106ffa7226d60e2",
-        "prefix_sha256": "bfb696ebeebad0daabf8ff7713859ad0208e89bcbaf1669ff40dab80134e8c6d"
+        "sequence": 1383,
+        "tip_oid": "f59cd8af05cdc1761400b4b3114102cbef3554e3",
+        "prefix_sha256": "020217bdef395018d3bc8ceb59942efabc9e29b6eb7be490c031445a17085b76"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1627,
+  "next_comment_id": 1628,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24800,7 +24800,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:57:19.928315Z",
-      "updated_at": "2026-10-07T07:04:13.008909Z",
+      "updated_at": "2026-10-07T07:08:28.050352Z",
       "labels": [
         "design"
       ],
@@ -24813,6 +24813,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAs3I/qXQwHQmw04ipQ48GEA5loyVxRt9syzvATL937bHHjmv00aPxf7qlOUlA2dX0Wyukt4ndo521xjkbMsLIDA=="
+        },
+        "4ff6000c-2695-4418-b8e8-8aec4835104e": {
+          "display_id": 1627,
+          "author": "xqjG",
+          "content": "[result] AUTHORING RECORD (hand-run, bootstrap interim, in the orchestrating session; the contract amendment authored on branch design/894-handles-dependencies-unassigned-legs from the rulings on this issue, then cold-reviewed by four domains, then fixed under the operator's ten rulings of 2026-10-07). Changes: contract — the handle grammar (GitHub-side issues spelled out; crosslink# and crosslink-fork# stated as GitHub issues; the upstream address corrected there and in External authorities); Dependency approval (covered binaries include CI and the deployed workflow templates; actions and toolchain pinned not reviewed; cadence: first registration, semver-incompatible move, every re-pin of a commit pin; crate-only exemption clause; target grade reads the workflow install lines; the coinage replaced by plain naming); the secret-redaction member (the hook is unbuilt; the operator session's exposure stated as accepted); Decomposition — Slice 4 (verifier role from manifest fields that are engine data, intended-tools check over the paved-path map, persona and supplement checks, the anonymization hook built and run in CI), Slice 6 (recorded phase and dials, least privilege riding kickoff's restrictions, the process's own dispatches under every control built by then), the sync-side leg and the manifest fields stated; Revision history row citing #893, #879, #894. Build-plan re-projected (Phases 3, 5, 6; the Phase 5 data note routes the phase field to #875). Pin re-pinned 2150156b → 3efb133e in this change, header comments restored by hand after mdatron pin --update dropped them. Vocabulary: two anti-patterns (hyphenated coinage; case-insensitive abbreviated handle) with their grade stated; one mis-cited handle fixed; two config-comment handles swept. Nine dependency records retitled. Two new records, mdatron and crosslink, with the Platform Engineer and Security reviews recorded. README crosslink links corrected. Verified: verify --deny-warnings clean; pin dry run 0 entries; the anti-patterns fire on seeded abbreviated handles and the coinage, and no longer on 'three lenses'. Follow-ups: #896 (CI hardening); #875 (the manifest phase field); the sync-side trace redaction still to be filed upstream (#873). Ratification is the operator's merge of the pull request.",
+          "created_at": "2026-10-07T07:08:28.014034Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAMshLm51IMJ0xtH2FpIAF/2t21JdMM5EgQeaXIaVuyDLXopvr1FqxumLOm+lisv9mE/EdIv8QxN+yPVQyA9P8Ag=="
         },
         "6bba7707-7548-45d9-9470-398e9f5424dc": {
           "display_id": 1625,
@@ -37503,6 +37512,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1382,
       "timestamp": "2026-10-07T07:07:25.836444Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1383,
+      "timestamp": "2026-10-07T07:08:28.050352Z"
     }
   ],
   "watermark": {
