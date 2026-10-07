@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1356,
-        "tip_oid": "ea8b68a4edf7a28b0a2f4194ae32fd5c04c0d91d",
-        "prefix_sha256": "86b15ccd625262277e810b8e4c7e13057537278d57639ad80d4db54a302784f7"
+        "sequence": 1357,
+        "tip_oid": "bf04b0f17bb38224708b442bf929f051eefa2568",
+        "prefix_sha256": "92fd38fed05c5be50be12673dcff1ffce03626ec77a44b9c5925612a1dc3a98e"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 894,
+  "next_display_id": 895,
   "next_comment_id": 1613,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -784,6 +784,7 @@
     "d325b553-4664-49fe-9ec7-144ccac3079b": 867,
     "d3868580-526b-43ce-8e63-41c7b0372542": 758,
     "d3ad54d7-b083-4b22-9c7f-a665964f4b38": 755,
+    "d495de88-1b25-4ef5-a5c1-a753ab031a88": 894,
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": 24,
     "d4e2836b-aa4a-4599-a0b0-84509a848b26": 771,
     "d4ec7994-809e-4d32-9016-cb544ea6028a": 213,
@@ -24765,6 +24766,17 @@
         }
       }
     },
+    "d495de88-1b25-4ef5-a5c1-a753ab031a88": {
+      "uuid": "d495de88-1b25-4ef5-a5c1-a753ab031a88",
+      "display_id": 894,
+      "title": "Register spelled-out handle forms for GitHub-side issues and record mdatron and crosslink as approved CI-installed dependencies (Solution Owner rulings 2026-10-06)",
+      "description": "Solution Owner rulings (f) and (g) of 2026-10-06, recorded on #893; deferred to the next design-flow round by the same ruling. (f) The contract's handle grammar (References and name map) has no form for a GitHub-side issue, so 'vsdd-cli#N' would resolve to the crosslink tracker; ad-hoc forms recur ('vsdd GH#29' in routes.yaml, 'vsdd-cli GH#27' in code-catalogs.yaml, mdatron's 'GH #56'). Ruling: register 'vsdd-cli GitHub issue #N' and 'mdatron GitHub issue #N', never an abbreviation, as a References amendment through the design flow (phase 1a/1b under the owning composition and a cold review; never a hand-edit); sweep the ad-hoc forms afterwards; mdatron GitHub issue #73 asks mdatron to converge. (g) Dependency approval covers CI-installed binaries: one record each for mdatron and crosslink in docs/dependencies (pin, registry, checksum source, the tool-to-tool boundary, retest trigger at the next release), crosslink's record pointing at its existing deviation-register entry rather than duplicating it; three-lens review (Solution Owner, Platform Engineer, Security) on first registration and on a MAJOR, not on every minor bump. Whether the contract's 'Cargo.toml or its equivalents' wording needs a clarifying amendment is decided in the same round. Evidence: Platform Engineer F10 and Methodology F6 of the mdatron 0.7.0 impact review (knowledge page mdatron-0.7.0-adoption-review-2026-10-06).",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-10-07T00:57:19.928315Z",
+      "updated_at": "2026-10-07T00:57:19.928315Z"
+    },
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": {
       "uuid": "d4aa93ed-6d27-477b-9d9a-0f45f5309bff",
       "display_id": 24,
@@ -37196,6 +37208,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1356,
       "timestamp": "2026-10-07T00:56:47.931283Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1357,
+      "timestamp": "2026-10-07T00:57:19.928315Z"
     }
   ],
   "watermark": {
