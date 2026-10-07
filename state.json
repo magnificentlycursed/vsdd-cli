@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1375,
-        "tip_oid": "95e4ee2b763ecda00ce362c6efb4af2ea3135622",
-        "prefix_sha256": "3feeabf1977d3e4ff307f4aa6654666ca083123860ade3c070095e8115c21857"
+        "sequence": 1376,
+        "tip_oid": "cb8fb0ee83d1ded29f8a447a4bb99f0798c52103",
+        "prefix_sha256": "eab682d305eccefbd9465857d07ea4254299fd5ac44ea21ba0c6e2b8d1f9cf98"
       },
       "y2SI": {
         "sequence": 2,
@@ -26481,11 +26481,12 @@
       "uuid": "e6d18b11-3bbf-4311-a72b-03e776ca9a59",
       "display_id": 879,
       "title": "Ontological review 2026-09-24 — design-side semantic failures: the same concept under different rules across the contract, the registry data, and the build-plan (spec/data amendments awaiting SO routing)",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-24T22:41:01.857683Z",
-      "updated_at": "2026-10-07T02:35:30.108311Z",
+      "updated_at": "2026-10-07T02:36:25.990485Z",
+      "closed_at": "2026-10-07T02:36:25.957494Z",
       "labels": [
         "design"
       ],
@@ -37434,6 +37435,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1375,
       "timestamp": "2026-10-07T02:35:30.108311Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1376,
+      "timestamp": "2026-10-07T02:36:25.990485Z"
     }
   ],
   "watermark": {
