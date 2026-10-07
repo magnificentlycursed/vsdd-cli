@@ -21,15 +21,28 @@ fi
 # crossing `/` in route and scope globs, the `every`/`order` section rules
 # (E0123/E0124), and `init` refreshing its unedited templates. A 0.6.x binary
 # emits the 3.0.0 envelope and fails the CI envelope assertion's exact-equality
-# pin, so warn early.
+# pin.
+#
+# Fail-closed on both branches (Solution Owner ruling (a), 2026-10-06,
+# vsdd-cli#855 residual 2), like the absence branch above: a binary outside
+# the window may parse this tree's configuration and judge it differently
+# (the 0.7.0 glob change is the model), so a warning that proceeds would let
+# an out-of-window verdict gate the commit. Grade: friction, not a block —
+# `git commit --no-verify` remains the documented bypass, and the deviation
+# is the committer's to record. CI pins the exact version and is the block.
 MIN_VERSION="0.7.0"
 mdatron_version=$(mdatron --version 2>/dev/null | awk '{print $2}' || true)
 if [ -z "$mdatron_version" ]; then
-  echo "pre-commit: could not determine mdatron version (got empty output) — proceeding" >&2
-elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.7\.[0-9]+'; then
-  echo "pre-commit: mdatron version ${mdatron_version} is outside the 0.7.x supported window" >&2
+  echo "pre-commit: could not determine the mdatron version (empty output) — commit blocked (fail-closed)" >&2
+  echo "pre-commit:   reinstall with  cargo install mdatron --version 0.7.0 --locked --force" >&2
+  echo "pre-commit: (bypass for a genuine emergency: git commit --no-verify — the deviation is yours to record)" >&2
+  exit 2
+elif ! printf '%s\n' "$mdatron_version" | grep -qE '^0\.7\.[0-9]+$'; then
+  echo "pre-commit: mdatron ${mdatron_version} is outside the 0.7.x supported window — commit blocked (fail-closed)" >&2
   echo "pre-commit:   reinstall with  cargo install mdatron --version 0.7.0 --locked --force" >&2
   echo "pre-commit:   minimum required for vsdd-cli compatibility: ${MIN_VERSION}" >&2
+  echo "pre-commit: (bypass for a genuine emergency: git commit --no-verify — the deviation is yours to record)" >&2
+  exit 2
 fi
 
 staged=$(git diff --cached --name-only --diff-filter=ACMR)
