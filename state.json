@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1373,
-        "tip_oid": "b65b318c0f7d6ce973108fbbb7b22c74873818bb",
-        "prefix_sha256": "b0b4ae6bf5055b4af6b0f762ec9f58051bf72f444a22f1fb1b4ee1d8d346d53a"
+        "sequence": 1374,
+        "tip_oid": "a8e434a94465694fd461390ea28f37614185bf52",
+        "prefix_sha256": "444c30e5fab94b41967dbd641dc1eef547198d24bf537f7229f21d47127e9b30"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 896,
-  "next_comment_id": 1623,
+  "next_comment_id": 1624,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24785,7 +24785,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:57:19.928315Z",
-      "updated_at": "2026-10-07T02:20:09.835080Z",
+      "updated_at": "2026-10-07T02:26:49.829524Z",
       "labels": [
         "design"
       ],
@@ -24807,6 +24807,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAY21tiBHGFm+05cj0I4c4nU/BVZTNnY9MpvBjPjjxs9jh52fMMZekeryN3qYNUkCHeZbl2jgDOcmbhR6NFqHZAQ=="
+        },
+        "fd50ab16-9076-4187-bb32-490c3b51dfdc": {
+          "display_id": 1623,
+          "author": "xqjG",
+          "content": "[decision] SOLUTION OWNER RULING 2026-10-07 (operator, in chat: 'fold it into #894'). Scope widened again: (7) the contract gap found by the Solution Architect cold read on #879 — five legs of the Verifiable conformance and efficiency member that the Decomposition assigns to no slice (phase is recorded; model and effort are specified; personas and supplements as controls; the process red-teamed; the secret-redaction ladder including wiring check-anonymization) — gets a slice per leg in this amendment, with the build-plan re-projected in the same change; because the Decomposition changes, the build-plan's section pin is re-pinned in that same pull request, as the pin ruling requires. Review batch grows to four read-only domains: VSDD Methodology, Platform Engineer, Security, and Solution Architect; worst case about 1.2M tokens. The operator ratifies as the Solution Owner.",
+          "created_at": "2026-10-07T02:26:49.778148Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1iEYgNMGZm1k1jCeCOmO2MS/e4N6xrv7Ygr9jLnxdCGqlIAWxYLK8aaWrnTzRuvpe0hAJ3pfyeVLZrp929UvAA=="
         }
       }
     },
@@ -37406,6 +37415,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1373,
       "timestamp": "2026-10-07T02:21:32.180896Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1374,
+      "timestamp": "2026-10-07T02:26:49.829524Z"
     }
   ],
   "watermark": {
