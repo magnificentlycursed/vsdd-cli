@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1366,
-        "tip_oid": "fac7fe60d8e4b8d5543334198c2f80832427638f",
-        "prefix_sha256": "446b4ab0f7d668e87c36896281067be87f0e28e83b0c11e324a24161d68088df"
+        "sequence": 1367,
+        "tip_oid": "8ff9024b1e960e2461ce10ccfcfa4eb2b23d76d1",
+        "prefix_sha256": "a6e32a472bb91473515d71b50cbc8cfb8cf1654d91bb46bd2918f9077a9a16dd"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 896,
-  "next_comment_id": 1618,
+  "next_comment_id": 1619,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26695,11 +26695,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:58:16.997972Z",
-      "updated_at": "2026-10-07T01:40:32.102659Z",
+      "updated_at": "2026-10-07T01:52:55.678064Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "48763b8b-7442-4cea-99ba-5a62a8c11740": {
+          "display_id": 1618,
+          "author": "xqjG",
+          "content": "[result] CLOSING: pull request #59 merged by the operator. Main now carries links on every route, the build-plan's contract pin in .mdatron/pins.yaml, the Provenance marker rule, the two build-plan structure rules, CI assertions on link, pin and marker, the amended Phase 4 item, and the fail-closed version guard (#855 residual 2).",
+          "created_at": "2026-10-07T01:52:55.638686Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA+0HfPIpWbik55TAwHycfwtqbElPXxjhTi2FTFDXev9iThFQ89rNeyYYOmhIw/SYFuKtKAqnEUnLVWsnO4KcACA=="
+        },
         "90db1dde-9e59-41fc-96a1-4f35887bca2d": {
           "display_id": 1617,
           "author": "xqjG",
@@ -37327,6 +37336,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1366,
       "timestamp": "2026-10-07T01:40:32.102659Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1367,
+      "timestamp": "2026-10-07T01:52:55.678064Z"
     }
   ],
   "watermark": {
