@@ -132,7 +132,7 @@ entries:
     pairs_with: [githook-wiring]
     resolution: exists-and-referenced
     fail_mode: fail-closed
-    note: blocks the commit when mdatron is absent (operator ruling 2026-07-20, vsdd-cli #658)
+    note: blocks the commit when mdatron is absent (operator ruling 2026-07-20, vsdd-cli #658) or its version is empty or outside the supported window (Solution Owner ruling 2026-10-06, vsdd-cli #855); friction grade, since git commit --no-verify bypasses every git hook
   - {id: identity-agent, path: .crosslink/agent.json, class: identity-state, source: crosslink-runtime, lifetime: per-clone-payload, referenced_by: [], pairs_with: [identity-keys], resolution: exists, fail_mode: undefined}
   - id: identity-keys
     path: .crosslink/keys/

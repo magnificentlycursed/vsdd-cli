@@ -1,0 +1,17 @@
+# mdatron pin table — the build-plan's contract pin, mechanized (Solution
+# Owner ruling (c), 2026-10-06, vsdd-cli#895; landed early from build-plan
+# Phase 4 under that ruling, the routes precedent of vsdd-cli#877).
+#
+# One section pin: the contract's `## Decomposition (phase 1c)` span — the
+# heading line through the newline before the next `## ` heading — attested
+# on behalf of the build-plan, the Decomposition's dispatcher projection. A
+# change to that span without a re-pin blocks (MDATRON-E0061). Re-pin ONLY
+# with `mdatron pin --update`, and only in the same pull request as a
+# ratified Decomposition amendment that the build-plan has been re-projected
+# against; a re-pin anywhere else silences the drift signal this exists for.
+mdatron_format_version: 1
+pins:
+  - governed_by: .design/build-plan.md
+    file: .design/agent-first-vsdd-toolkit.md
+    section: "## Decomposition (phase 1c)"
+    sha256: "2150156b36975af47a1d4d90719983912257c82b39ad2c06b5fa2e84e6e69c83"

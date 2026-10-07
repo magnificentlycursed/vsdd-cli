@@ -8,14 +8,19 @@ mdatron_format_version: 1
 routes:
   - files: ".claude/commands/vsdd-*.md"        # domain prompts + phase primers
     governed_by: .design/agent-first-vsdd-toolkit.md
+    links: true
   - files: "supplements/*.md"                  # language/interface supplements
     governed_by: .design/agent-first-vsdd-toolkit.md
+    links: true
   - files: "templates/registry/*.md"           # the versioned data sets
     governed_by: .design/agent-first-vsdd-toolkit.md
+    links: true
   - files: ".design/agent-first-vsdd-toolkit.md"
     governed_by: .design/agent-first-vsdd-toolkit.md
+    links: true
   - files: ".design/build-plan.md"             # the Decomposition's dispatcher projection
     governed_by: .design/agent-first-vsdd-toolkit.md
+    links: true
     # The build-plan's structural invariant (contract Acceptance criteria /
     # the former #845 AC-1), mechanized per the vsdd GH#29 consultation:
     section_rules:
@@ -46,3 +51,27 @@ routes:
           - section: "## Completed phases"
             element: list-item-bold-name
             id_pattern: 'Slice (\d+)'
+      # (c) a completed slice is a bullet, never a heading — a phase heading
+      #     moved under ## Completed phases while the slice is also a bullet
+      #     escapes the open-XOR-complete check (b); the section holds no
+      #     heading of any level (Solution Owner ruling (e), 2026-10-06,
+      #     vsdd-cli#895; the Quality Engineer's mutant on vsdd-cli#893)
+      - section: "## Completed phases"
+        element: heading
+        match: '.'
+        count: "== 0"
+      # (d) the closed set of top-level sections — an H3 promoted to H2
+      #     silently leaves the ## Requirements span and its slice leaves the
+      #     XOR; a new section is a deliberate Solution Owner act that edits
+      #     this list (Solution Owner ruling (e), 2026-10-06, vsdd-cli#895)
+      - element: h2
+        every: '^## (Summary|Requirements|Completed phases|Contract pin)$'
+    # Each Provenance line names its contract slice by the exact bold name in
+    # the contract's Decomposition list, so the projection cannot drift from
+    # the slice it projects (Solution Owner ruling (d), 2026-10-06,
+    # vsdd-cli#895; the two drifts it found are vsdd-cli#879's minors)
+    marker_rules:
+      - pattern: '^Provenance: (.+)$'
+        element: list-item-bold-name
+        target_doc: .design/agent-first-vsdd-toolkit.md
+        target_section: "## Decomposition (phase 1c)"
