@@ -22,7 +22,7 @@ routes:
     governed_by: .design/agent-first-vsdd-toolkit.md
     links: true
     # The build-plan's structural invariant (contract Acceptance criteria /
-    # the former #845 AC-1), mechanized per the vsdd GH#29 consultation:
+    # the former #845 AC-1), mechanized per the vsdd-cli GitHub issue #29 consultation:
     section_rules:
       # (a) at least one open phase while the program is open — an empty
       #     ## Requirements is the retire trigger, never a passing state

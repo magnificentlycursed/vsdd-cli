@@ -1,8 +1,8 @@
 # thiserror
 
 **Status:** approved (runtime dependency, vsdd-core) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the first typed error enum in `vsdd_core::init` (workspace pin `1`); no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the first typed error enum in `vsdd_core::init` (workspace pin `1`); no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -23,7 +23,7 @@ The toolkit's diagnostics are typed: `vsdd_core::init`, `vsdd_core::diagnostics`
 - Consumers: `vsdd-core/src/init.rs`, `vsdd-core/src/diagnostics.rs`, `vsdd-core/src/answer/deviations.rs`.
 - `thiserror 2.x` exists (and is already in the lockfile transitively). Moving the direct edge to `2` is a major-version bump and re-enters review; the `1.x` line still receives releases.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: the contract's diagnostics requirements call for stable codes and messages; a derive that ties message to variant is the narrowest way to keep them in one place.
 

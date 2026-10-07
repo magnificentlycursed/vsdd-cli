@@ -1,5 +1,5 @@
 # Adopter code catalog for the VSDD- namespace (vsdd-cli#854, mechanized by
-# mdatron 0.6.0's code_catalog family; SO-ratified on vsdd-cli GH#27:
+# mdatron 0.6.0's code_catalog family; SO-ratified on vsdd-cli GitHub issue #27:
 # comprehensive + error). The single roster of the namespace (vsdd-cli#882):
 # the codes the governed corpus cites AND the codes the shipped patterns and
 # the binary emit, each with its emitting home. An unlisted VSDD- token

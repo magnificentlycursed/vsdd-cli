@@ -1,8 +1,8 @@
 # serde_json
 
 **Status:** approved (runtime dependency, vsdd-core and vsdd) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the first JSON surface (workspace pin `1`); no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the first JSON surface (workspace pin `1`); no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -22,7 +22,7 @@ The machine forms are JSON: `vsdd status --machine`, the snapshot, the init mani
 - Runtime dependency of `vsdd-core` and `vsdd`, workspace requirement `1`, locked at 1.0.150.
 - Consumers: six modules in `vsdd-core/src` (`text`, `schema_check`, `diagnostics`, `init`, `snapshot/acquire`, `registry`), four in `vsdd/src`, and the integration tests of both crates.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: the contract fixes JSON as the machine form and JSON Schema as the data-set schema language; this is their implementation.
 

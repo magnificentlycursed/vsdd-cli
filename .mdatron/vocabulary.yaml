@@ -16,7 +16,7 @@ label_schemes:
     - "^H[1-6]$"                 # markdown/HTML heading levels (H1..H6)
     - "^OSC-[0-9]+$"            # terminal OSC escape sequences (OSC-8)
     - "^JSON[0-9]+$"            # versioned JSON formats (JSON5)
-    - "^REQ-[0-9]+$"            # requirement identifiers (design-doc convention; the mdatron#28 raise shipped as a default exemption in 0.6.0, mdatron#159 — kept explicit here)
+    - "^REQ-[0-9]+$"            # requirement identifiers (design-doc convention; the vsdd-cli GitHub issue #28 raise shipped as a default exemption in 0.6.0, mdatron#159 — kept explicit here)
     - "^AC-[0-9]+$"             # acceptance-criteria identifiers (design-doc convention)
     - "^Q[0-9]+$"               # open-question identifiers (design-doc convention)
     - "^CVE-[0-9]{4}(-[0-9]+)?$" # CVE vulnerability records (e.g., CVE-2021-42574, Trojan Source)
@@ -60,3 +60,11 @@ anti_patterns:
     guidance: "deprecated layer-word (vsdd-cli #821) — use 'crosslink' (the tracker + orchestration tool); drop the metaphor where it sits beside 'crosslink'"
   - pattern: "(?i)\\bsubstrate\\b"
     guidance: "deprecated layer-word (vsdd-cli #821) — name the concrete referent: 'crosslink', 'installed-artifact integrity' (the manifest check), 'the runtime harness' (Claude Code), or 'ecosystem conventions' (cargo/git)"
+  # Retired by the vsdd-cli#894 amendment (Solution Owner rulings 2026-10-07).
+  # Grade: these fire in vocabulary scope only (vocabulary_globs in config.yaml);
+  # .mdatron/ comments and docs/dependencies/ records stay convention grade —
+  # extending scope to the records needs a route and a RUSTSEC id scheme (deferred).
+  - pattern: "(?i)\\bthree-lens\\b"
+    guidance: "unregistered coinage (vsdd-cli#894) — name the review: 'reviewed by the Solution Owner for scope, the Platform Engineer for supply chain, and Security for CVEs, license and threat' (the contract's Dependency approval member)"
+  - pattern: "(?i)\\b(gh|github) ?#[0-9]+"
+    guidance: "abbreviated handle (vsdd-cli#894) — cite 'vsdd-cli GitHub issue #N' or 'mdatron GitHub issue #N'; vsdd-cli#N and mdatron#N name the crosslink trackers (the contract's handle grammar)"

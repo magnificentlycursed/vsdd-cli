@@ -11,7 +11,7 @@ feedback.
 vsdd does not run agents and does not track work itself. It is the methodology
 layer that composes against tools that do:
 
-- **[crosslink](https://github.com/dollspace-gay/crosslink)** — the tracker and
+- **[crosslink](https://github.com/Corvidae-Coding-Projects/crosslink)** — the tracker and
   launch layer: issues, dispatch (kickoff), worktrees, sessions, and
   knowledge. The project's audit trail lives here.
 - **Claude Code** — the **runtime harness**: the agent runtime that executes the
@@ -195,7 +195,7 @@ dollspace's.
 - [VDD whitepaper](https://gist.github.com/dollspace-gay/45c95ebfb5a3a3bae84d8bebd662cc25)
   — the predecessor that introduced the adversarial-review discipline VSDD
   extends.
-- [crosslink](https://github.com/dollspace-gay/crosslink) — the tracker and
+- [crosslink](https://github.com/Corvidae-Coding-Projects/crosslink) — the tracker and
   orchestration layer vsdd composes against.
 
 ## License

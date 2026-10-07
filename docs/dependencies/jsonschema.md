@@ -1,8 +1,8 @@
 # jsonschema
 
 **Status:** approved (runtime dependency, vsdd-core) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the schema validation surface was built (workspace pin `0.18`, `default-features = false`, feature `draft202012`); no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the schema validation surface was built (workspace pin `0.18`, `default-features = false`, feature `draft202012`); no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -24,7 +24,7 @@ The toolkit ships its data sets with JSON Schema pairs (`vsdd-core/schemas/*.jso
 - One consumer: `vsdd_core::schema_check` (`vsdd-core/src/schema_check.rs`). A second consumer re-enters review.
 - The `0.18` line is superseded upstream (the crate's API was reworked from 0.20 onward: `Validator`, new options builder). Moving off `0.18` is a major-version bump and re-enters review on its own.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: data sets carry schema pairs by contract (the Data plumbing requirement), and validating them at load is the narrowest correct implementation. The crate is the largest single subtree in the workspace, which is the cost accepted for a standards-complete validator; a Solution Owner call is owed only if `boon` or a slimmer feature set can hold the same guarantee.
 

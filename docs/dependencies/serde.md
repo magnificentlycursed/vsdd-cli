@@ -1,8 +1,8 @@
 # serde
 
 **Status:** approved (runtime dependency, vsdd-core and vsdd) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the first data structure was serialised (workspace pin `1`, feature `derive`); no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate has been a runtime dependency since the first data structure was serialised (workspace pin `1`, feature `derive`); no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -22,7 +22,7 @@ Every structured artefact the toolkit reads or writes — the registry data sets
 - Runtime dependency of `vsdd-core` and `vsdd`, workspace requirement `1`, locked at 1.0.228.
 - Consumers: eight modules in `vsdd-core/src` (`init`, `snapshot/*`, `answer/*`, `state/schema`, `registry/*`, `diagnostics`) and two in `vsdd/src`; tests throughout.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope by construction: the contract's data plumbing and machine-form requirements presume typed (de)serialisation, and the derive macros are the narrowest way to keep the type and its wire form in one place.
 

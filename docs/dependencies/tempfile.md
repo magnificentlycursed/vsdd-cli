@@ -1,8 +1,8 @@
 # tempfile
 
 **Status:** approved (runtime dependency, vsdd-core; dev-dependency, vsdd) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate entered as a test fixture crate and became a runtime dependency when `state/write.rs` adopted write-then-rename; no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate entered as a test fixture crate and became a runtime dependency when `state/write.rs` adopted write-then-rename; no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -22,7 +22,7 @@ Two uses. At run time, `vsdd_core::state::write` writes `state.yaml` atomically:
 - Runtime dependency of `vsdd-core`, requirement `3`, locked at 3.27.0; dev-dependency of `vsdd` (integration test fixtures).
 - Runtime consumer: `vsdd-core/src/state/write.rs` (`NamedTempFile::new_in` + `persist`). A second runtime consumer re-enters review.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: the contract requires state writes that a failed run cannot corrupt; write-then-rename is the narrowest correct mechanism and `tempfile` is its idiomatic carrier.
 

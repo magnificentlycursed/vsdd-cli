@@ -1,8 +1,8 @@
 # clap
 
 **Status:** approved (runtime dependency, vsdd binary) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate has been the CLI parser since the `vsdd` binary's first subcommand (workspace pin `4.5`, feature `derive`); no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate has been the CLI parser since the `vsdd` binary's first subcommand (workspace pin `4.5`, feature `derive`); no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -22,7 +22,7 @@
 - Runtime dependency of the `vsdd` binary only (not `vsdd-core`), workspace requirement `4.5`, locked at 4.6.1.
 - One consumer: `vsdd/src/main.rs` (`Parser`/`Subcommand` derives).
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: the contract specifies the `vsdd` command surface; this is its parser. Terminal output from `clap` (help, errors) goes through `clap`'s own escaping, not the toolkit's terminal cleaner — acceptable because that text is authored in the source, never sourced from the tracker.
 
