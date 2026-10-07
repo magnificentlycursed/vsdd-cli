@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1367,
-        "tip_oid": "8ff9024b1e960e2461ce10ccfcfa4eb2b23d76d1",
-        "prefix_sha256": "a6e32a472bb91473515d71b50cbc8cfb8cf1654d91bb46bd2918f9077a9a16dd"
+        "sequence": 1368,
+        "tip_oid": "b5ddafeac9e0d73011ec65541457db6867e55b4e",
+        "prefix_sha256": "4f3cb0dbe80051aa92c2b1a880578d911ff795181212c3b0b4fa753f78d8fd2c"
       },
       "y2SI": {
         "sequence": 2,
@@ -26691,11 +26691,12 @@
       "display_id": 895,
       "title": "Land the link, pin and marker families and two build-plan structure rules early, with the build-plan Phase 4 family-list amendment and the two Provenance name fixes (Solution Owner rulings 2026-10-06)",
       "description": "Solution Owner rulings (b), (c), (d), (e) and (h) of 2026-10-06, recorded on #893; one pull request, because each early landing needs its build-plan clause. (b) links: true on the five routes in .mdatron/routes.yaml, conditional on a clean run on the real tree (#844's body-link gap; the raise is retired). (c) .mdatron/pins.yaml with one section pin: the contract's '## Decomposition (phase 1c)' span, governed by .design/build-plan.md, carrying the build-plan's current hash; re-pin only in the same pull request as a ratified Decomposition amendment; the build-plan's Contract pin section points at the pin. (d) A marker rule on the build-plan route resolving each 'Provenance:' line against the contract's Decomposition slice names, landed red then green with the two name fixes (#879 minors: 'static price' should be 'token budget'; 'The efficiency insight engine' should be 'The cost-and-efficiency report'). (e) Two section rules on the build-plan: no heading under ## Completed phases; the closed set of H2 headings (Summary, Requirements, Completed phases, Contract pin). (h) The build-plan Phase 4 mdatron item takes the contract's own wording ('mdatron's conformance families behind the hooks') with a landed-early clause per family; the per-release, per-family record lives on the adoption issues (#877, #893) and the Phase 4 note points at them. Not in scope: #879 item 5 (the build-plan's missing Verifiable-conformance legs for Slices 4, 6 and 7 and the thirteen-criteria count), which keeps its own design-branch fix.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:58:16.997972Z",
-      "updated_at": "2026-10-07T01:52:55.678064Z",
+      "updated_at": "2026-10-07T01:53:47.091550Z",
+      "closed_at": "2026-10-07T01:53:47.066507Z",
       "labels": [
         "design"
       ],
@@ -37341,6 +37342,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1367,
       "timestamp": "2026-10-07T01:52:55.678064Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1368,
+      "timestamp": "2026-10-07T01:53:47.091550Z"
     }
   ],
   "watermark": {
