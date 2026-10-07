@@ -6,9 +6,9 @@ The dispatcher-consumable projection of the remaining build program, derived fro
 
 ## Requirements
 
-### Phase 2: Slice 2 — composition, generated context, and static price (sequential)
+### Phase 2: Slice 2 — composition, generated context, and token budget (sequential)
 
-Provenance: Slice 2 — Composition, generated context, and static price
+Provenance: Slice 2 — Composition, generated context, and token budget
 
 Depends on: the engine's data (composition-scope, economics-data, domain-prompt frontmatter — all present under `templates/registry/` and `.claude/commands/`). Entry decisions carried from the ratified slice design, resolved at this phase's 1b or by Solution Owner ruling: the DESIGN.md project-configuration reader and its closed vocabulary bound to the `activation_criteria` tokens (may route to the data-authoring package); the review-config loader shape (bespoke loader reusing `schema_check`/`bounded_read` primitives — recommendation — versus a registry-set class); and the token-count stamping method (which tokenizer, its determinism, stamp placement).
 
@@ -45,7 +45,7 @@ Depends on: the engine's data (the registered branch grammar among them), Phase 
 - **Phase-1a/1b design authoring**: author this slice's design the vsdd way (a `.design/` doc via the design flow, sidecar at birth) from the contract's Slice 5 member, then carry it through review to ratification before build.
 - **Evidence-gated filing and closure**: finding filing gated on evidence against the working tree; closure grading with disposition closures; the commit evidence-section linkage. The disposition label-carry's promotion from build convention to a contract-level bootstrap compensating control re-enters the spec-amendment loop under review — never hand-edited into the contract.
 - **Consolidation machinery and waiver enumeration**: the consolidation path (label-union, survivor pins — the gate side lands in Phase 3), and the waiver enumeration surface.
-- **mdatron conformance-family integration**: the routes, pins, and vocabulary/register families (the routes family landed early under the mdatron 0.6.0 adoption, vsdd-cli#877, SO ruling 2026-09-24 — `.mdatron/routes.yaml` with the build-plan's section rules; pins remain this phase's) (the markdown estate per the boundary ruling, vsdd-cli#739) integrated behind the hooks — a flagged cross-repo dependency: each family gates on the mdatron release that ships it, verified per family.
+- **mdatron's conformance families behind the hooks**: the families mdatron ships, over the markdown estate per the boundary ruling (vsdd-cli#739), integrated behind the hooks — a flagged cross-repo dependency: each family gates on the mdatron release that ships it, verified per family. The per-release, per-family record lives on each mdatron adoption issue (vsdd-cli#877 for 0.6.0, vsdd-cli#893 for 0.7.0). Landed early by Solution Owner ruling: the route table, the code catalog and the build-plan's section rules under the 0.6.0 adoption (vsdd-cli#877, ruling 2026-09-24); body-link checks on every route, the build-plan's contract pin, the Provenance marker rule and the build-plan's closed-sections and completed-phases rules (vsdd-cli#895, rulings 2026-10-06). This phase's: the families behind the hooks at action time, content-hash pins for the other design-doc pairings, citations under evidence-gated filing, and the coinage and register checks the contract's Conformance at action time names.
 - **The branch-grammar pre-push backstop**: push-time (not per-commit) enforcement over the registered grammar data (an engine data set).
 
 Obligations: closes **Lifecycle in the tracker**; closes **Drift pin** (gating on the mdatron release per family); closes the lifecycle-and-conformance slice of **Red-gate cheat blocked** (the lifecycle-falsifier, consolidation, free-slug, underivable-name, and pre-push-conduct fixtures — free-slug and underivable-name ride the mdatron dependency); closes the markdown-families backstop slice of **Status detection**. Owns the lifecycle-side flags on the shared un-owned fixtures (ungated-hotfix, malformed-disposition-closure, multi-finding-commit, inline-review), whose gate sides land in Phase 3. Owes the standing slice obligations (contract Decomposition, Slice obligations).
@@ -66,9 +66,9 @@ Depends on: Phase 2's generated context and Phase 4's lifecycle behavior. No aut
 
 Obligations: closes **Directive walkthrough**; closes **Dispatch live fire** (the exit act above); closes **Oracle provenance**; closes the round-parity fixture of **Gate coverage** (named split with Phase 3); closes the dispatch-flagging slice of **Red-gate cheat blocked** (the inline-review fixture's no-manifest falsifier). Signing/identity verification binds to the server-synced authorship basis (vsdd-cli#815) and the postdated-approval falsifier family. Owes the standing slice obligations (contract Decomposition, Slice obligations).
 
-### Phase 6: Slice 7 — the efficiency insight engine (sequential)
+### Phase 6: Slice 7 — the cost-and-efficiency report (sequential)
 
-Provenance: Slice 7 — The efficiency insight engine
+Provenance: Slice 7 — The cost-and-efficiency report
 
 Depends on: Phase 2's static price, the harness-produced traces (the transcripts and Phase 5's dispatch manifests as recorded sources), and the engine's calibration-band and token-budget data. No authored slice design exists — the contract member (as amended by the ratified vsdd-cli#840 subsystem design) is the source; design-first is this phase's opening act. The vsdd-cli#840 subsystem's other behavioral contracts (the conformance verifier, golden-path dispatcher, control-effectiveness registry, escape corpus, and the milestone- and tracker-enforcement points) enter the contract via its named phase-1c follow-on amendment and are not decomposed here.
 
@@ -88,6 +88,4 @@ Obligations: closes **Cost queries** — the twelfth and final open criterion; a
 
 ## Contract pin
 
-Decomposition-hash: sha256:2150156b36975af47a1d4d90719983912257c82b39ad2c06b5fa2e84e6e69c83
-
-The hash covers the bytes of `.design/agent-first-vsdd-toolkit.md` from the `## Decomposition (phase 1c)` heading line through the newline that precedes the next `## ` heading (that heading excluded). A change to the contract's Decomposition section without a matching re-pin here is the loud drift signal — convention grade until the doc-drift check mechanizes, per the contract's design-docs-pin-content-hash rule in Conformance at action time.
+This document is pinned to the contract's `## Decomposition (phase 1c)` section by a section pin in `.mdatron/pins.yaml`, governed by this document: the hash covers the bytes from that heading line through the newline that precedes the next `## ` heading (that heading excluded). A change to the contract's Decomposition section without a re-pin blocks in CI (`MDATRON-E0061`), a CI-backed block in place of the former hand-kept hash (Solution Owner ruling, vsdd-cli#895). The pin file is the hash's one home. A re-pin (`mdatron pin --update`) rides only the pull request that carries a ratified Decomposition amendment, with this document re-projected against it in the same change. The pin attests the contract span, not this projection: a drifted slice name is caught by the Provenance marker rule in `.mdatron/routes.yaml`, not by the pin.

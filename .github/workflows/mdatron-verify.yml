@@ -83,6 +83,11 @@ jobs:
       # not `active`, so each `== "active"` below also proves the family
       # claimed something. `pipeline_status` is asserted first: a failed
       # pipeline reports every family inactive with `inputs: {}`.
+      # link, pin and marker are asserted since vsdd-cli#895 (Solution Owner
+      # rulings 2026-10-06: body links on every route, the build-plan's
+      # contract pin, the Provenance marker rule), so disarming any of them
+      # is a loud CI failure, not a quiet configuration edit. citation is the
+      # one family still inactive (Slice 5, evidence-gated filing).
       - name: Assert required families fired (tri-state + non-vacuity, #855)
         working-directory: vsdd-cli
         run: |
@@ -97,5 +102,8 @@ jobs:
                  and .families.section.state == "active"
                  and .families.code_catalog.state == "active"
                  and .families.rule_dsl.state == "active"
+                 and .families.link.state == "active"
+                 and .families.pin.state == "active"
+                 and .families.marker.state == "active"
                  and (.inputs | type) == "object"
                  and .summary.files_checked > 0' /tmp/mdatron-envelope.json > /dev/null
