@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1370,
-        "tip_oid": "90aea888d3d45c3c3e13e15769813769ee7025bc",
-        "prefix_sha256": "10e440bc78477b236b3535f9fbdda10b59ceb180d6bb03c1bf616233278b0439"
+        "sequence": 1371,
+        "tip_oid": "2f32ae3be4da93ce35b43205986198d817f39c40",
+        "prefix_sha256": "76b2c350c22ac289b066897658593de3056a7ad3e554f22a3141f30bca63b77d"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 896,
-  "next_comment_id": 1620,
+  "next_comment_id": 1621,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24785,10 +24785,21 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:57:19.928315Z",
-      "updated_at": "2026-10-07T00:57:43.583476Z",
+      "updated_at": "2026-10-07T02:15:47.398987Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "7292ea8c-0b8e-4334-9c1c-298d2a97a5ee": {
+          "display_id": 1620,
+          "author": "xqjG",
+          "content": "[decision] SOLUTION OWNER RULING 2026-10-07 (operator, in chat): scope echo, exactly as recommended. ONE contract amendment: (1) the handle grammar gains spelled-out GitHub-issue forms, 'vsdd-cli GitHub issue #N' and 'mdatron GitHub issue #N', never abbreviated, and its stale upstream name is corrected (dollspace-gay/crosslink now redirects to Corvidae-Coding-Projects/crosslink); (2) Dependency approval's 'Cargo.toml or its equivalents' gains 'including the tool binaries CI installs', reviewed on first registration and on a MAJOR, not every minor; (3) a vocabulary anti-pattern mechanizes the handle rule, and the two existing ad-hoc forms are swept. With it, two records in docs/dependencies, mdatron and crosslink (crosslink's pointing at its register entry). Review: one batch of three read-only domains, VSDD Methodology, Platform Engineer and Security, no verifier fan-out, about 300k tokens each as a cap; the operator ratifies as the Solution Owner lens. Sequenced after #879 item 5.",
+          "created_at": "2026-10-07T02:15:47.359559Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAY21tiBHGFm+05cj0I4c4nU/BVZTNnY9MpvBjPjjxs9jh52fMMZekeryN3qYNUkCHeZbl2jgDOcmbhR6NFqHZAQ=="
+        }
+      }
     },
     "d4aa93ed-6d27-477b-9d9a-0f45f5309bff": {
       "uuid": "d4aa93ed-6d27-477b-9d9a-0f45f5309bff",
@@ -37362,6 +37373,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1370,
       "timestamp": "2026-10-07T02:14:49.904349Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1371,
+      "timestamp": "2026-10-07T02:15:47.398987Z"
     }
   ],
   "watermark": {
