@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1365,
-        "tip_oid": "21e2d835f8682f6858f8bd1c096dd7ecf263ec07",
-        "prefix_sha256": "a89f68fffee3f868e09e9c615ef34bdea6f6a86bcf7ec55d63fead8788ff4a79"
+        "sequence": 1366,
+        "tip_oid": "fac7fe60d8e4b8d5543334198c2f80832427638f",
+        "prefix_sha256": "446b4ab0f7d668e87c36896281067be87f0e28e83b0c11e324a24161d68088df"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 896,
-  "next_comment_id": 1617,
+  "next_comment_id": 1618,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26695,11 +26695,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:58:16.997972Z",
-      "updated_at": "2026-10-07T01:04:52.870771Z",
+      "updated_at": "2026-10-07T01:40:32.102659Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "90db1dde-9e59-41fc-96a1-4f35887bca2d": {
+          "display_id": 1617,
+          "author": "xqjG",
+          "content": "[result] Pull request #59 (commits 4800a74b for #895 and 736bf1eb for #855): CI green — verify PASS (link, pin and marker asserted active on GitHub), test PASS, routing-gate PASS. Ready for the operator's merge; this issue closes on it.",
+          "created_at": "2026-10-07T01:40:32.068815Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAAqqK7/FHQl80CrZDIo5Z4ePLBuiTnZ3VG+dKM0dfaFMXRab52pqjmeDf4qnqfkhFqbn3+rSilhfGGML0BgDRBw=="
+        },
         "c68345fd-516c-4352-b1c3-0fa9cd72e40f": {
           "display_id": 1613,
           "author": "xqjG",
@@ -37313,6 +37322,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1365,
       "timestamp": "2026-10-07T01:35:58.488704Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1366,
+      "timestamp": "2026-10-07T01:40:32.102659Z"
     }
   ],
   "watermark": {
