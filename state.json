@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1380,
-        "tip_oid": "76a8346e79fdc170c605193f51af961f3f284b0c",
-        "prefix_sha256": "3eec2fbc181a64df80269e75cda99bf034e917e131c2edd8c1359a9f3ebac41b"
+        "sequence": 1381,
+        "tip_oid": "9d5f07b547f4051dc8aa274ded5719e213e025fe",
+        "prefix_sha256": "5daa121befccfa14d7b3b8ae6e455076f96bec4ea93015c1359a794ecf29e881"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 896,
+  "next_display_id": 897,
   "next_comment_id": 1627,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -617,6 +617,7 @@
     "a1165c1f-a002-4e3f-a6eb-93ec2f720a32": 645,
     "a1a065f5-c405-4bf6-9888-e12537677009": 369,
     "a1cf260b-b864-481e-a9db-08b649b315f7": 854,
+    "a1df91c6-5f84-4d76-81a7-4726ea00a3b6": 896,
     "a29d3f3c-8c6b-407a-a468-10ace32e1a58": 506,
     "a2f64e5e-9bdb-48d9-865a-8ea935d08d85": 704,
     "a34d2f8b-7ed5-437a-ad08-3574b4e3dab6": 77,
@@ -19059,6 +19060,17 @@
         }
       }
     },
+    "a1df91c6-5f84-4d76-81a7-4726ea00a3b6": {
+      "uuid": "a1df91c6-5f84-4d76-81a7-4726ea00a3b6",
+      "display_id": 896,
+      "title": "CI supply-chain hardening: declare token permissions, stop persisting the checkout token into third-party builds, pin the toolchain for installed binaries, check the cached mdatron by hash, scope the adopter template's secrets",
+      "description": "Owed by the Platform Engineer and Security reviews of the vsdd-cli#894 amendment (2026-10-07), recorded in docs/dependencies/mdatron.md and crosslink.md. (1) None of mdatron-verify.yml, routing-gate.yml, vsdd-test.yml declares permissions: — add 'contents: read' (routing-gate also 'issues: read'). (2) actions/checkout persists the job token into .git/config while crosslink's build script, daemon and sync and mdatron's init and verify run with it readable; set persist-credentials: false where a job does not push. (3) rustup show runs at the workspace root, so mdatron and crosslink build with the runner's default Rust, not the 1.88 each declares; pin the toolchain for those installs. (4) On a cache hit both mdatron install steps trust ~/.cargo/bin/mdatron on its --version string; record and check its hash at install time. (5) The adopter template templates/.github/workflows/vsdd-verify.yml puts ANTHROPIC_API_KEY and the OpenTelemetry collector token (the collector is retired) in the job-level environment with pull-requests and security-events write, readable by every cargo install build script, and installs vsdd unpinned; scope secrets to the steps that need them, run mdatron and the installs without them, pin vsdd, and drop the retired collector variables. (6) Third-party actions are pinned by movable tags (checkout@v5, cache@v5; the template's checkout@v4, upload-sarif@v3, github-script@v7); pin by commit. Severity for this repository depends on the repository's default token permission, not checkable offline.",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-10-07T07:07:00.744931Z",
+      "updated_at": "2026-10-07T07:07:00.744931Z"
+    },
     "a29d3f3c-8c6b-407a-a468-10ace32e1a58": {
       "uuid": "a29d3f3c-8c6b-407a-a468-10ace32e1a58",
       "display_id": 506,
@@ -37478,6 +37490,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1380,
       "timestamp": "2026-10-07T07:04:13.008909Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1381,
+      "timestamp": "2026-10-07T07:07:00.744931Z"
     }
   ],
   "watermark": {
