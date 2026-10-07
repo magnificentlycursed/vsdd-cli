@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1355,
-        "tip_oid": "fe9c8a0796c68c509e1500267f1040bc3e26458c",
-        "prefix_sha256": "43840e46911ad760e47b1b069ea3c0a8e93a5f9d717c369f582658a9414e5cc4"
+        "sequence": 1356,
+        "tip_oid": "ea8b68a4edf7a28b0a2f4194ae32fd5c04c0d91d",
+        "prefix_sha256": "86b15ccd625262277e810b8e4c7e13057537278d57639ad80d4db54a302784f7"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 894,
-  "next_comment_id": 1612,
+  "next_comment_id": 1613,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27663,7 +27663,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-06T20:00:51.675284Z",
-      "updated_at": "2026-10-06T21:32:40.336866Z",
+      "updated_at": "2026-10-07T00:56:47.931283Z",
       "closed_at": "2026-10-06T21:32:40.309159Z",
       "comments": {
         "034f8ceb-7c72-4817-a5f4-c18572f9e64c": {
@@ -27818,6 +27818,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABANLipwkhHDzZINRyori3oeg2Z4rGE/FwD6o2bT2uQgiGqLCK83LhtY+BWHbukwmxl+OyOqNwxNMpiost175lkBw=="
+        },
+        "f797722a-8ba2-4091-876b-d3b57dc1ccf3": {
+          "display_id": 1612,
+          "author": "xqjG",
+          "content": "[decision] SOLUTION OWNER RULINGS 2026-10-06 (operator, in chat: 'accept all recommendations'). Directive classification: Solution Owner ruling on the eight items batched in the routing comment above; scope echo: all eight exactly as recommended in chat, no additions. (a) The pre-commit version guard fails closed on both the out-of-window and the empty-version branches; grade stays friction (the documented --no-verify path remains); the hook comment and the installed-artifact manifest note say so. Home: #855. (b) Arm links: true on the five routes now, conditional on a clean run on the real tree, not a scratch copy. (c) Land the pin family now for the build-plan's Decomposition hash: one section pin, governed by the build-plan; a re-pin happens only in the same pull request as a ratified Decomposition amendment; the build-plan's Contract pin section points at the pin as the mechanized home. (d) Land the marker rule on the build-plan's Provenance lines in the same pull request that fixes the two drifted slice names (#879 minors), red then green. (e) Add both build-plan structure rules: no heading under ## Completed phases, and the closed set of H2 headings. (h) Amend the build-plan Phase 4 family list to the contract's own wording, with a landed-early clause per family; the per-release, per-family record lives on the adoption issues and the Phase 4 note points at them. (f) Register spelled-out forms for GitHub-side issues ('vsdd-cli GitHub issue #N', 'mdatron GitHub issue #N'), never an abbreviation, as a References amendment through the design flow. (g) Dependency approval covers CI-installed binaries: one record each for mdatron and crosslink in docs/dependencies (pin, registry, checksum source, boundary, retest trigger at the next release), crosslink's pointing at its existing register entry; the three-lens review on first registration and on a MAJOR, not on every minor bump. SEQUENCING: (b)(c)(d)(e)(h) travel together in one pull request (each early landing needs its build-plan clause); (a) is independent and small; (f)(g) wait for the next design-flow round.",
+          "created_at": "2026-10-07T00:56:47.895869Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASpW+6ZQybQjUfZea8AniWO3WGybaTRBl1bVJlY7BM8FjOFV8meZ5Iuau3Dpfh0TbXbzmkirOGF/GUzdtOiYGAw=="
         }
       }
     },
@@ -37182,6 +37191,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1355,
       "timestamp": "2026-10-06T21:33:05.915219Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1356,
+      "timestamp": "2026-10-07T00:56:47.931283Z"
     }
   ],
   "watermark": {
