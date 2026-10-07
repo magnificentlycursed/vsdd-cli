@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1361,
-        "tip_oid": "9ae60d7f78e90cc99e8b8f1cf144f3b9cc8cabfc",
-        "prefix_sha256": "2aad7ca193b156c2c699ee7cc3f9ab50fd709d6d032b5be292adaeb3820e6b72"
+        "sequence": 1362,
+        "tip_oid": "d4f9a432c7a81d988e8d7d476ccb222a6f63a6d9",
+        "prefix_sha256": "2c5e3905e47f713e0b89c70aa7a175d509e437ce3798bf925b1de35afa5a51fe"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 896,
-  "next_comment_id": 1613,
+  "next_comment_id": 1614,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -26677,10 +26677,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:58:16.997972Z",
-      "updated_at": "2026-10-07T00:58:40.443228Z",
+      "updated_at": "2026-10-07T01:04:52.870771Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "c68345fd-516c-4352-b1c3-0fa9cd72e40f": {
+          "display_id": 1613,
+          "author": "xqjG",
+          "content": "[result] Built on design/895-conformance-families-early; commits handed to the operator (the work-check commit gate, upstream crosslink#104 item 2). (b) links: true on all five routes — clean on the REAL tree (53 files), the ruling's condition; proven live on a copy: a dead path fires E0110, a dead anchor E0111. (c) .mdatron/pins.yaml: one section pin on the contract's '## Decomposition (phase 1c)' span, governed by the build-plan, at its existing hash (re-pin dry run: 0 entries); a Decomposition edit without a re-pin fires E0061, an edit outside the span stays clean; the build-plan's hand-kept hash line removed — the pin file is the one home (nothing in the repo parsed the line; two test fixtures use only the section names). (d) Marker rule on the Provenance lines: RED first, exactly two E0112 at build-plan lines 11 and 71; GREEN after fixing the two headings and two Provenance lines to the contract's names ('token budget'; 'The cost-and-efficiency report'); body uses of the old terms left to each slice's amendment per the 2026-10-01 routing on #879; a further drifted Provenance line fires E0112. (e) No heading under '## Completed phases' (a stray H3 there fires E0120) and the closed H2 set (an H3 promoted to H2 fires E0123). (h) Phase 4 item reworded to the contract's 'mdatron's conformance families behind the hooks' with a landed-early clause per family; the per-release, per-family record points at #877 and #893. CI now asserts link, pin and marker active; citation is the one inactive family. Verified: verify --deny-warnings clean, CI jq assertion passes locally, init no-op with no template drift, cargo test 226 passed 0 failed, clippy clean.",
+          "created_at": "2026-10-07T01:04:52.833646Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1TEeHXByp1gkoft7dlSO5Zpxq+sveTBulGL3MElL8ze0Zm4C3EZSSkfLooj2sH+zkI9ydoezqDHBTyELHtxrAw=="
+        }
+      }
     },
     "e925db46-8bfe-410a-8756-45b4f8cddac9": {
       "uuid": "e925db46-8bfe-410a-8756-45b4f8cddac9",
@@ -37255,6 +37266,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1361,
       "timestamp": "2026-10-07T00:59:03.387478Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1362,
+      "timestamp": "2026-10-07T01:04:52.870771Z"
     }
   ],
   "watermark": {
