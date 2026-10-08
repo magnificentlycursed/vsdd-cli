@@ -60,3 +60,5 @@ updated: 2026-10-08
 - `cross-reference-2026-10-08-findings-vs-prior-knowledge` — the day's findings read against the observability engineering pages, the earlier Thermite assessments, the domain value scorecard, the memory rules and the clarity skill, with adoption candidates and their homes.
 - `proptest-with-agent-swarms-recursion-wtf-2026-10-08`, `exomonad-recursion-wtf-2026-10-08`, `tidepool-recursion-wtf-2026-10-08` — three articles by one practitioner on agent-built property-test machinery, a tree of worktrees with hooks as code, and effect-sequenced tooling with suspension and free pagination.
 - `cross-reference-recursion-wtf-2026-10-08` — those three read against the contract and the day's findings, with adoption candidates and homes.
+- `agent-skills-write-plans-and-prompts-2026-10-08` — the same practitioner's authoring disciplines for prompts to capable peers and for resumable plans; direct input for the primers and the handoff.
+- `knowledge-page-conventions-proposal-2026-10-08` — a proposal for the operator: the split rule and which pages it applies to, six surfacing mechanisms, and the provenance form that stops pages from appending.
