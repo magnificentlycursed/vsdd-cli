@@ -11,7 +11,15 @@ updated: 2026-10-08
 
 ## Status
 
-**Index and summary. Design input for the phase-primer rewrite and the Slice 2 design.** On 2026-10-08 four read-only research agents reconstructed how the method is actually practised in the repositories of the organization that publishes the VSDD whitepaper (Corvidae-Coding-Projects): Thermite, Peritus, OpenClaudia and crosslink. The orchestrating session read ferrotorch, Palimpsest, crucible, LNP and rookery-nest itself. Nothing was executed in any checkout; hub refs were fetched read-only. This page carries the ten cross-repository facts, a comparison table, and the links. Each topic has its own page so that a question resolves with one search and one page, and so that a page attached to an issue is injected whole at session start (crosslink injects at most three pages of 8,000 characters).
+**Index and summary. Design input for the phase-skill rewrite and the composition milestone design.** On 2026-10-08 four read-only research agents reconstructed how the method is actually practised in the repositories of the organization that publishes the VSDD whitepaper (Corvidae-Coding-Projects): Thermite, Peritus, OpenClaudia and crosslink. The orchestrating session read ferrotorch, Palimpsest, crucible, LNP and rookery-nest itself. Nothing was executed in any checkout; hub refs were fetched read-only. This page carries the ten cross-repository facts, a comparison table, and the links. Each topic has its own page so that a question resolves with one search and one page, and so that a page attached to an issue is injected whole at session start (crosslink injects at most three pages of 8,000 characters).
+
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
+
+Phase names on this page are the contract's: 1a behavioral specification, 1b verification architecture, 1c the spec review gate, 2a test-suite generation (the red gate), 2b minimal implementation, 2c refactor, 3 adversarial refinement, 4 the feedback integration loop, 5 formal hardening, 6 convergence. The whitepaper has six phases; the a, b and c splits are this repository's.
+
+Milestones are named by feature. On the tracker (`crosslink milestone list`) they are: the live self-governance milestone, #8 "Slice 1 — Live self-governance"; the composition milestone, #9 "Slice 2 — Composition, generated context, and static price"; the install milestone, #10 "Slice 3 — Install"; the gate-execution milestone, #11 "Slice 4 — Gate execution and the mutation floor"; the finding-lifecycle milestone, #12 "Slice 5 — Finding lifecycle and conformance"; the recorded-dispatch milestone, #13 "Slice 6 — Recorded dispatch and directive flow"; the cost milestone, #14 "Slice 7 — The cost crate".
+
+"This estate" means vsdd-cli together with crosslink and mdatron, the two sibling tools it runs on.
 
 **Exclusions.** mdatron was excluded as a design reference (it was designed under this estate's own contract). Everything this estate contributed to crosslink was excluded from the crosslink evidence. Thermite's RFC-as-file process is recorded but not generalized: it is a language-project convention no other repository uses.
 
@@ -53,14 +61,14 @@ updated: 2026-10-08
 - `reference-practice-other-organization-repositories` — ferrotorch, crucible, Palimpsest, LNP, rookery-nest.
 - `standard-comparison-estate-vs-references-2026-10-08` — where this estate's standard exceeds the references and where it falls short.
 - `append-accumulation-retrospective-2026-10-08` — why decisions accumulated as appends instead of integrating; the mechanism and the prior fixes.
-- `reconciliation-ledger-2026-10-08` — the 39 divergences between recorded decisions and the contract, build-plan, data and register, across Slices 1 to 7.
+- `reconciliation-ledger-2026-10-08` — the 39 divergences between recorded decisions and the contract, build-plan, data and register, across all seven milestones.
 - Evidence: `practice-report-thermite-2026-10-08`, `practice-report-peritus-2026-10-08`, `practice-report-openclaudia-2026-10-08`, `practice-report-crosslink-2026-10-08` — the four agent reports with citations at commit, pull-request and hub-issue level.
 - `portable-memory-rules-gist-2026-10-08` — a practitioner's published feedback memories (the author of Observability Engineering, 2nd edition): the six habits, the eighteen rules, the three instruction-file layers.
 - `clarity-review-skill-2026-10-08` — the same author's pre-flight lint for AI-authored code and prose: seven pattern classes with litmus tests, corpus-calibrated, invoked only explicitly.
 - `cross-reference-2026-10-08-findings-vs-prior-knowledge` — the day's findings read against the observability engineering pages, the earlier Thermite assessments, the domain value scorecard, the memory rules and the clarity skill, with adoption candidates and their homes.
 - `proptest-with-agent-swarms-recursion-wtf-2026-10-08`, `exomonad-recursion-wtf-2026-10-08`, `tidepool-recursion-wtf-2026-10-08` — three articles by one practitioner on agent-built property-test machinery, a tree of worktrees with hooks as code, and effect-sequenced tooling with suspension and free pagination.
 - `cross-reference-recursion-wtf-2026-10-08` — those three read against the contract and the day's findings, with adoption candidates and homes.
-- `agent-skills-write-plans-and-prompts-2026-10-08` — the same practitioner's authoring disciplines for prompts to capable peers and for resumable plans; direct input for the primers and the handoff.
+- `agent-skills-write-plans-and-prompts-2026-10-08` — the same practitioner's authoring disciplines for prompts to capable peers and for resumable plans; direct input for the phase skills and the handoff.
 - `knowledge-page-conventions-proposal-2026-10-08` — a proposal for the operator: the split rule and which pages it applies to, six surfacing mechanisms, and the provenance form that stops pages from appending.
 - `vero-formally-verified-repositories-2026-10-08`, `proof-carrying-cognition-2026-10-08` — the two papers the Peritus maintainer pointed at on 2026-09-11: a repository-scale verification benchmark with an independent grader and an audit route, and a study of judges losing soundness under selection pressure.
 - `cross-reference-verification-papers-2026-10-08` — the maintainer's six embodied ideas and five frontier items checked against the papers and this estate, with three further insights and adoption candidates.
@@ -68,3 +76,9 @@ updated: 2026-10-08
 - `cross-reference-context-management-2026-10-08` — that work read against the append problem and crosslink knowledge management, with a forgetting policy for records and feature requests for the knowledge feature.
 - `terminology-grounding-2026-10-08` — the day's informal phrases mapped to standard terms and sibling self-words; two registration candidates after source weighting (increment, attestation).
 - `big-picture-and-decisions-2026-10-08` — the whole day in one page for a maintainer who was not there: the nine decisions with why, goals served, recommendation, sources and what to weigh, and a citation key that resolves every handle, page, file and link.
+
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
