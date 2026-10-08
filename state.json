@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1387,
-        "tip_oid": "fe105ad79ac990f955daedba561e1bf18245e935",
-        "prefix_sha256": "050395e0d894efdbe22fac839113c1e25a97bc50c9fa374583fdcae46ac46e19"
+        "sequence": 1388,
+        "tip_oid": "5b1fe25887f514c05c447b32456d0f69fd5996a1",
+        "prefix_sha256": "d6d3d72502de719a9b1045ef571f84a36daba62c6fdf45921c0f1e4fa0894c79"
       },
       "y2SI": {
         "sequence": 2,
@@ -24805,11 +24805,12 @@
       "display_id": 894,
       "title": "Register spelled-out handle forms for GitHub-side issues and record mdatron and crosslink as approved CI-installed dependencies (Solution Owner rulings 2026-10-06)",
       "description": "Solution Owner rulings (f) and (g) of 2026-10-06, recorded on #893; deferred to the next design-flow round by the same ruling. (f) The contract's handle grammar (References and name map) has no form for a GitHub-side issue, so 'vsdd-cli#N' would resolve to the crosslink tracker; ad-hoc forms recur ('vsdd GH#29' in routes.yaml, 'vsdd-cli GH#27' in code-catalogs.yaml, mdatron's 'GH #56'). Ruling: register 'vsdd-cli GitHub issue #N' and 'mdatron GitHub issue #N', never an abbreviation, as a References amendment through the design flow (phase 1a/1b under the owning composition and a cold review; never a hand-edit); sweep the ad-hoc forms afterwards; mdatron GitHub issue #73 asks mdatron to converge. (g) Dependency approval covers CI-installed binaries: one record each for mdatron and crosslink in docs/dependencies (pin, registry, checksum source, the tool-to-tool boundary, retest trigger at the next release), crosslink's record pointing at its existing deviation-register entry rather than duplicating it; three-lens review (Solution Owner, Platform Engineer, Security) on first registration and on a MAJOR, not on every minor bump. Whether the contract's 'Cargo.toml or its equivalents' wording needs a clarifying amendment is decided in the same round. Evidence: Platform Engineer F10 and Methodology F6 of the mdatron 0.7.0 impact review (knowledge page mdatron-0.7.0-adoption-review-2026-10-06).",
-      "status": "open",
+      "status": "closed",
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:57:19.928315Z",
-      "updated_at": "2026-10-08T02:04:33.014337Z",
+      "updated_at": "2026-10-08T02:05:23.552564Z",
+      "closed_at": "2026-10-08T02:05:23.529569Z",
       "labels": [
         "design"
       ],
@@ -37573,6 +37574,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1387,
       "timestamp": "2026-10-08T02:04:33.014337Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1388,
+      "timestamp": "2026-10-08T02:05:23.552564Z"
     }
   ],
   "watermark": {
