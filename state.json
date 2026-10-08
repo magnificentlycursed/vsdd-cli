@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1433,
-        "tip_oid": "74452e5b1ff641b40fc1d3e2db7f6e961f9c1219",
-        "prefix_sha256": "79a7a6fe34719d9e138474847321c2379e1a1a6cf11b51d00b407a2d91c4f343"
+        "sequence": 1434,
+        "tip_oid": "fcdfe1658eac51f8ce3b36d6bfea8e14ac4096f4",
+        "prefix_sha256": "d376363cfe057461782ac246388f1211d8fd315286c89361bc7b1416c5469e62"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 900,
-  "next_comment_id": 1666,
+  "next_comment_id": 1667,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9797,7 +9797,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-08T21:36:46.893681Z",
+      "updated_at": "2026-10-08T21:58:12.916413Z",
       "labels": [
         "design"
       ],
@@ -9886,6 +9886,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIdjBb15Rl1V8+1p8y6ko466Z1+kRGN0fdyNGEkbvbFyuvAJ1EHtHDgwYegVZSkoodCCUXvM45//6e2lplvgQAQ=="
+        },
+        "6eb53d91-03a8-4aac-9a95-da5ce29489e4": {
+          "display_id": 1666,
+          "author": "xqjG",
+          "content": "Solution Owner decisions, 2026-10-08 (in chat, session #11): the nine decisions on big-picture-and-decisions-2026-10-08 are accepted as recommended. (1) The member Verifiable conformance and efficiency keeps its text; its build legs (the trace-based verifier, the skill-invocation and operator-session audits, the spend-shape report) move to a second program after the composition, install, gate-execution and finding-lifecycle milestones ship; this program keeps the installed-artifact integrity check, the negative-case fixture pairs and the dispatch manifest's recorded phase and dials. (2) Cadence: a work-in-progress limit (while a ratified milestone design awaits its build, no amendment or tooling-adoption cycle opens unless it blocks that build; crosslink and mdatron releases land as pins and data); the composition milestone splits into two increments, first the composition function with its config loader and the state artifact, second the generator with its three outputs and the install members, each starting from a scaffold commit (types, failing tests, stubs, the milestone document); the increment issues open when this design exits phase 1c. (3) One owned amendment, vsdd-cli#897, the last cycle before the build window. (4) The 39 items on reconciliation-ledger-2026-10-08 route as inline resolutions in milestone documents under #897, one routed comment per owning issue; the four register expiries are re-armed now under #897. (5) Change classification, an attended decision superseding the 2026-09-28 review-shape ruling recorded on this issue: the twelve-domain process-governing set is the audit-level expectation, not the per-round dispatch; a round is one read-only reviewer with typed findings, CI as the second reviewer, a mechanical gold wherever one exists, and a written stop rule. Not a contract change (Recorded review dispatch already says the review budget follows the evidence); the review config data lands under the gate-execution and recorded-dispatch milestones. (6) The verdict record takes the shape Peritus implements: a content-addressed verdict that must already exist unchanged on the protected branch before a transition counts, with authorize-then-apply and no transcript sync; supersession recorded on vsdd-cli#876 and vsdd-cli#836, a pointer on vsdd-cli#873. (7) The phase-skill rewrite is vsdd-cli#898, sequenced after #897. (8) Records hygiene is vsdd-cli#899; knowledge-page-conventions-proposal-2026-10-08 is in force as convention from today. (9) The crate collapse (vsdd-cli#15) is the composition milestone's first scaffold commit; its contract sentence rides #897.",
+          "created_at": "2026-10-08T21:58:12.879327Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIiAICHzQK219P5zREJvTQCpIznDX0lf4DWWGywEUx/v9hzFuWgX7DXmkwopRsvNt6b22PICNMbdBfjjV+cYCDw=="
         },
         "7bbb3a96-065b-482c-a21c-ec671898c703": {
           "display_id": 1662,
@@ -38151,6 +38160,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1433,
       "timestamp": "2026-10-08T21:55:00.725566Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1434,
+      "timestamp": "2026-10-08T21:58:12.916413Z"
     }
   ],
   "watermark": {
