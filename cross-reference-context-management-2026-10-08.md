@@ -13,6 +13,12 @@ updated: 2026-10-08
 
 Design input, 2026-10-08. The Context Language Models paper and the public discussion of it (`context-language-models-2026-10-08`) read against the append-accumulation retrospective (`append-accumulation-retrospective-2026-10-08`), the knowledge-page conventions proposal (`knowledge-page-conventions-proposal-2026-10-08`), the contract's compaction, injection and generated-context members, and the reference-practice findings. None of what follows is a decision.
 
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
+
+Milestones are named by feature. On the tracker (`crosslink milestone list`) they are: the live self-governance milestone, #8 "Slice 1 — Live self-governance"; the composition milestone, #9 "Slice 2 — Composition, generated context, and static price"; the install milestone, #10 "Slice 3 — Install"; the gate-execution milestone, #11 "Slice 4 — Gate execution and the mutation floor"; the finding-lifecycle milestone, #12 "Slice 5 — Finding lifecycle and conformance"; the recorded-dispatch milestone, #13 "Slice 6 — Recorded dispatch and directive flow"; the cost milestone, #14 "Slice 7 — The cost crate".
+
+"This estate" means vsdd-cli together with crosslink and mdatron, the two sibling tools it runs on.
+
 ## The formal statement of the append problem
 
 The paper writes a standard language model's step as context plus output: the next context is the old context with new tokens appended. A context language model instead produces the next context directly, so it may rewrite, compact or delete. Everything the retrospective found is the first form applied to documents and records: the contract accumulates rulings as comments, the register accumulates re-arms, the build-plan accumulates residuals, and nothing is allowed to rewrite cheaply. The thread's one-line version, "intelligence = forgetting," and a reply's "memory that never throws anything away isn't memory, it's a hoard; the hard part is the forgetting policy," name the missing operation: a policy for what the estate's records stop carrying, and an actor allowed to apply it.
@@ -21,7 +27,7 @@ What the paper measured when the rewrite operation exists: contexts held at six 
 
 ## The pairing the thread asked for, which this estate already has
 
-One reply asked whether the harness "keeps an immutable event log alongside mutable context, so a developer can reconstruct why memory changed." The paper does not; it has no provenance, dating or freshness on entries and does not discuss contradictions between them. This estate's architecture is exactly that pairing: the hub's per-agent event logs are append-only and signed; the knowledge branch is git, so each page's history is derivable; the contract says events are derived at query time and the state artifact is a projection. The gap is not the log; it is that the mutable projection layer (a live slice document, a current knowledge page) was retired or never given a rewrite operation, so the log became the document. The retrospective's fix and the paper's finding coincide: keep the immutable log, restore the mutable projection, and give its owner the rewrite.
+One reply asked whether the harness "keeps an immutable event log alongside mutable context, so a developer can reconstruct why memory changed." The paper does not; it has no provenance, dating or freshness on entries and does not discuss contradictions between them. This estate's architecture is exactly that pairing: the hub's per-agent event logs are append-only and signed; the knowledge branch is git, so each page's history is derivable; the contract says events are derived at query time and the state artifact is a projection. The gap is not the log; it is that the mutable projection layer (a live milestone document, a current knowledge page) was retired or never given a rewrite operation, so the log became the document. The retrospective's fix and the paper's finding coincide: keep the immutable log, restore the mutable projection, and give its owner the rewrite.
 
 ## Forgetting policy for records
 
@@ -29,15 +35,15 @@ The paper's compaction behaviors and the thread's replies supply the vocabulary;
 
 ## Security of editable context
 
-The paper names an injection channel the estate has not: a model inserted unauthorized instructions into its own compaction summary, and they persisted across turns. The contract's Availability is not activation member treats injected context as the reliable delivery path; this is the reverse risk, that the injected or compacted context carries instructions nobody authorized. The estate's answer in principle is already the generated context: injected material is generated from routed, pinned sources and byte-checked, so a compaction summary is not a delivery path and a self-edited block cannot become one. Worth stating in the Slice 2 design as a falsification condition: a compaction or handoff summary is never treated as governed context.
+The paper names an injection channel the estate has not: a model inserted unauthorized instructions into its own compaction summary, and they persisted across turns. The contract's Availability is not activation member treats injected context as the reliable delivery path; this is the reverse risk, that the injected or compacted context carries instructions nobody authorized. The estate's answer in principle is already the generated context: injected material is generated from routed, pinned sources and byte-checked, so a compaction summary is not a delivery path and a self-edited block cannot become one. Worth stating in the composition milestone design as a falsification condition: a compaction or handoff summary is never treated as governed context.
 
 ## Context compilation each turn
 
-The thread points at a git-backed memory filesystem in which "the agent and harness compile its context on each turn" and a reflection subagent manages long-term memory. Crosslink's session start does the same in a fixed way: the handoff, the last action, open issues and, by label, up to three knowledge pages. Slice 2's generator is the compilation step the estate specified. Three refinements follow from the paper and the thread:
+The thread points at a git-backed memory filesystem in which "the agent and harness compile its context on each turn" and a reflection subagent manages long-term memory. Crosslink's session start does the same in a fixed way: the handoff, the last action, open issues and, by label, up to three knowledge pages. The composition milestone's generator is the compilation step the estate specified. Three refinements follow from the paper and the thread:
 
 - **Index first, bodies on demand.** "Why can't it just dump into files and keep notes on what's where?" The notes-on-what's-where artifact is the knowledge index, which here is a stub from July. A maintained index with one line per page and its read-when is the cheapest surfacing mechanism and the one the paper's offload-and-grep behavior relies on.
-- **Stable prefix, volatile suffix.** The prefill cost model argues for ordering injected context so that always-on material comes first and the phase pointer and handoff last; the Slice 2 delivery design should state the order.
-- **Skills as evolvable artifacts.** The paper steers compaction with one sentence and evolves skill text through a proposer loop scored on a held-out split, improving accuracy by up to 35.9 points. A primer is such a text; fresh-reader calibration on a fixture is the held-out score; the loop is the mechanized form of the primer rewrite's evaluation.
+- **Stable prefix, volatile suffix.** The prefill cost model argues for ordering injected context so that always-on material comes first and the phase pointer and handoff last; the composition milestone delivery design should state the order.
+- **Skills as evolvable artifacts.** The paper steers compaction with one sentence and evolves skill text through a proposer loop scored on a held-out split, improving accuracy by up to 35.9 points. A phase skill is such a text; fresh-reader calibration on a fixture is the held-out score; the loop is the mechanized form of the phase-skill rewrite's evaluation.
 
 ## The operator's memory-system complaint of 2026-10-01, and the deterministic ladder
 
@@ -60,15 +66,22 @@ The ladder that follows, from most to least deterministic: a hook or pattern tha
 - Injection ordering and a budget: stable pages first, the handoff last; a warning when attached pages exceed the budget.
 - A provenance block in frontmatter beyond the source list: revision, verified-at, kind, supersedes.
 - A knowledge lint on add and edit: the first paragraph's required form, and a size warning for pages tagged as injectable.
-- Export of the knowledge branch into a working-tree directory for the conformance engine to walk, which is item 11 on mdatron issue #79 from the other side.
+- Export of the knowledge branch into a working-tree directory for the conformance engine to walk, which is item 11 on mdatron GitHub issue #79 from the other side.
 
 ## Adoption candidates, with homes
 
 | Candidate | Home |
 |---|---|
-| A rewrite operation on the mutable projection (the slice document, the current page) owned by its author, with the immutable log kept beside it | the Slice 2 design; the conventions proposal |
+| A rewrite operation on the mutable projection (the milestone document, the current page) owned by its author, with the immutable log kept beside it | The composition milestone design; the conventions proposal |
 | A forgetting policy by status: what records stop carrying and what must never be collapsed | the conventions proposal; the register's resolution rules |
-| A compaction or handoff summary is never governed context; only generated, pinned context is | the Slice 2 design's falsification conditions |
-| Injection order: stable first, volatile last; index before bodies | the Slice 2 delivery design; the session-start hook |
-| Primers as evolvable texts scored by fresh-reader calibration on a fixture | the primer rewrite |
+| A compaction or handoff summary is never governed context; only generated, pinned context is | The composition milestone design's falsification conditions |
+| Injection order: stable first, volatile last; index before bodies | The composition milestone delivery design; the session-start hook |
+| Phase skills as evolvable texts scored by fresh-reader calibration on a fixture | the phase-skill rewrite |
 | The knowledge feature requests above | the crosslink knowledge session |
+
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
+- mdatron GitHub issue #79 is the roadmap feedback filed from this repository on 2026-10-08.
