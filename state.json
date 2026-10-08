@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1437,
-        "tip_oid": "2bcdab49f6fe33db482ef6e5341c021a1113e54e",
-        "prefix_sha256": "e4349b7c37565c201cec6d9b865b4a9735be6c861ffe75fbafb6358296021a4e"
+        "sequence": 1438,
+        "tip_oid": "69e5bcf972a59bf8f58218ce30c6b2166fc6b4d2",
+        "prefix_sha256": "d67fb91ba8d52065270d2291c420aad3102fd7bcadf3d119811d0e1fd925449c"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 900,
-  "next_comment_id": 1670,
+  "next_comment_id": 1671,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9806,7 +9806,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-08T21:58:12.916413Z",
+      "updated_at": "2026-10-08T22:03:29.789675Z",
       "labels": [
         "design"
       ],
@@ -9823,6 +9823,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxU/2yKIosvFRJcVDfDBJLZSvX20FCSwbmlwZqqz5STfpZLpXS9XbaaDa+KJEYBzhgdjXcDVMJ5+JxIxcIhwCBg=="
+        },
+        "17cb7e87-dfdd-42fc-9150-dd7825479466": {
+          "display_id": 1670,
+          "author": "xqjG",
+          "content": "[action] Operator accepted all nine decisions (2026-10-08). Recorded as a decision comment on vsdd-cli#839 (with the change classification superseding the 2026-09-28 review-shape ruling); supersession on #876 and #836, pointer on #873; opened vsdd-cli#897 (the one owned amendment), #898 (phase-skill rewrite), #899 (records hygiene); re-armed the four register entries to 2027-01-31 under #897 on branch data/897-register-rearm (gate passes; commit handed to the operator after the work-check refusal); pages flipped to decided/in force. Next: the amendment cycle on #897 through the design flow.",
+          "created_at": "2026-10-08T22:03:29.750544Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZ2Z2L9AO790Du2Ge2BxuTHlwXpOFmMfI5Etz9z6cQANQYn8e2wAigyolw3s5fH6FZjJDjurWdKWLLZXC/cDWDQ=="
         },
         "21dea17a-1880-4ca0-ac31-56a669c43624": {
           "display_id": 1603,
@@ -38207,6 +38216,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1437,
       "timestamp": "2026-10-08T22:01:28.512623Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1438,
+      "timestamp": "2026-10-08T22:03:29.789675Z"
     }
   ],
   "watermark": {
