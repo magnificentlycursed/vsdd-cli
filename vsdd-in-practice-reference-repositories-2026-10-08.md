@@ -62,3 +62,5 @@ updated: 2026-10-08
 - `cross-reference-recursion-wtf-2026-10-08` — those three read against the contract and the day's findings, with adoption candidates and homes.
 - `agent-skills-write-plans-and-prompts-2026-10-08` — the same practitioner's authoring disciplines for prompts to capable peers and for resumable plans; direct input for the primers and the handoff.
 - `knowledge-page-conventions-proposal-2026-10-08` — a proposal for the operator: the split rule and which pages it applies to, six surfacing mechanisms, and the provenance form that stops pages from appending.
+- `vero-formally-verified-repositories-2026-10-08`, `proof-carrying-cognition-2026-10-08` — the two papers the Peritus maintainer pointed at on 2026-09-11: a repository-scale verification benchmark with an independent grader and an audit route, and a study of judges losing soundness under selection pressure.
+- `cross-reference-verification-papers-2026-10-08` — the maintainer's six embodied ideas and five frontier items checked against the papers and this estate, with three further insights and adoption candidates.
