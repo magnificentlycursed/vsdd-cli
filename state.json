@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1444,
-        "tip_oid": "420713eb03250bb7c2b6c95eb0f4457a432dfcd1",
-        "prefix_sha256": "900c06d9467c450781d502c878cf9d4918c3601b54f366c25acf5052dd0fc433"
+        "sequence": 1445,
+        "tip_oid": "2eabb6b0072d5df8d2b29879f88b7218c5f3c8f1",
+        "prefix_sha256": "8439c3170c98ff4b1a91b1a0d7ac11425f81fa5295ac09be2867763d04267f81"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 900,
-  "next_comment_id": 1676,
+  "next_comment_id": 1677,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24804,11 +24804,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-08T21:52:54.880884Z",
-      "updated_at": "2026-10-08T22:29:15.791003Z",
+      "updated_at": "2026-10-08T22:32:38.082025Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "3d8abcc2-2320-4122-87c9-012379325446": {
+          "display_id": 1676,
+          "author": "xqjG",
+          "content": "Operator choices at the design interview, 2026-10-08 (in chat): (a) rename the four vocabulary families in this cycle, including every Rust identifier, comment and test name that carries an old word; (b) create the composition milestone document only, the gate-execution document when its design re-enters; (c) keep the build-plan as the hand-authored program projection, so the register entry hand-authored-build-plan resolves with the amendment; (d) design pull requests merge with a merge commit; (e) the second program's standing issue opens at ratification and owns the two trace-leg register entries; (f) the execution rides a container kickoff run over the proposal with explicit dials, the cold review is one reviewer plus CI, and the operator's approval comment here is the exit gate. The proposal is updated accordingly (no open questions remain); it is staged on design/897-contract-amendment with the proposals route, for the operator's commit (the work-check gate refuses agent commits on this host).",
+          "created_at": "2026-10-08T22:32:37.972203Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1KgCqKn6oQXFEOYWv+rfDi9GmEmwpbKi1jyNKcyRrLGpLhk/u2Gj+63IQICSnLsdsxwZCVA3hC39ikYrQLtlAg=="
+        },
         "9103d596-e0c3-4548-88f9-bec6fc6ecd90": {
           "display_id": 1674,
           "author": "xqjG",
@@ -38302,6 +38311,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1444,
       "timestamp": "2026-10-08T22:29:15.791003Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1445,
+      "timestamp": "2026-10-08T22:32:38.082025Z"
     }
   ],
   "watermark": {
