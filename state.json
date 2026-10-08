@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1399,
-        "tip_oid": "fd6fac63822b4d2c043e67e31cc434595e17e80e",
-        "prefix_sha256": "2379fe53c516e33353ef4084669023765459740e00693bc2c591c87f07a0c00f"
+        "sequence": 1400,
+        "tip_oid": "c6d245bcd36bdd74b2f770e3dae945b13bc19d20",
+        "prefix_sha256": "08cc532532c1a01235ef72280dd279120142ea207ede5217cef7411f9f641b86"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1641,
+  "next_comment_id": 1642,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -28222,7 +28222,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:11.234260Z",
-      "updated_at": "2026-10-08T03:26:25.814237Z",
+      "updated_at": "2026-10-08T03:40:41.739441Z",
       "labels": [
         "design"
       ],
@@ -28271,6 +28271,15 @@
           "kind": "result",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqBu+nTmdsmU20d4pAT0nUDeuDD/YmkkGcawdVWsB8bHpPXYLIxv3WgVGWXCkrhhcrmHF0g9PMpkdoKbFDS7dDQ=="
+        },
+        "cdea9da0-a6ee-48b6-b4a4-d453b2bd6262": {
+          "display_id": 1641,
+          "author": "xqjG",
+          "content": "[result] Phase field authored (branch data/875-manifest-phase-field, staged, commit handed to the operator). Data Engineer cold read: commit with fixes — applied: the row now states its value domain (a phase-kind member id of the composition-scope enumeration, the same domain as state-schema's current_phase, never the lane member — bound to the source's declared type, not invented); 'the thinner expected set' restored to the contract's exact phrase; the engine-data clause kept to one home (the body paragraph); the test also pins schema_version 0.3.0. Bump 0.2.0 → 0.3.0 follows the only convention this estate has, precedent (a structural change takes a minor; #882 item 4's versioning problem remains open). RAISED TO THE SOLUTION OWNER for Slice 6's design-first opening, not written into the data: (1) an unresolvable phase at dispatch — the source current_phase is nullable ('not yet entered'); the contract's 'Phase is recorded' states the requirement without a preflight consequence, and 'dial' covers only model and effort, so 'no resolvable phase fails closed at preflight' would be a new requirement; (2) precedence when the state artifact and the session breadcrumb disagree (a stale breadcrumb after compaction is the obvious case), and whether disagreement is itself fail-closed. FOLLOW-UPS homed here: pin the three engine-data field names (phase, model_tier, effort_level) in the schema pair when Slice 4's fixtures first name them — today the only name pin is the Rust test, which runs under cargo test, not under mdatron verify, so a rename would ship green through verify at an unchanged version (the #882 item 4 shape); the schema description's 'manifest field names unique ... executed by consumers at read' is authored but unexercised — no uniqueness check exists in the loader, a duplicate row would load silently; add the one-line set check or hand it to mdatron's cross-file family.",
+          "created_at": "2026-10-08T03:40:41.694895Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXXJT5SrPbSW1VLA+2fLduE1Wq+FkjuGlLMasvSPKUzURPaVHhVNK+OALUy/diwwkDzLbTQzbnnyfqOZxf4yPAQ=="
         }
       }
     },
@@ -37717,6 +37726,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1399,
       "timestamp": "2026-10-08T03:31:30.324848Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1400,
+      "timestamp": "2026-10-08T03:40:41.739441Z"
     }
   ],
   "watermark": {
