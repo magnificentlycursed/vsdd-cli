@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1427,
-        "tip_oid": "cbd510d8bda63f9563e579ecae343fd438ec2a4a",
-        "prefix_sha256": "3e3a0f332ee55c8b7ccbfbfa37ba63a0a4f63a5a4d634d0e6024e978032d44d5"
+        "sequence": 1428,
+        "tip_oid": "93b3ca556a712e57184e0b387188163054ee2fc0",
+        "prefix_sha256": "7530b0b7cf6a0f7254254e3a5b6602060365d983cc6e0358c904b1c0c2da117a"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1665,
+  "next_comment_id": 1666,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9794,7 +9794,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-08T21:11:27.609917Z",
+      "updated_at": "2026-10-08T21:36:46.893681Z",
       "labels": [
         "design"
       ],
@@ -9982,6 +9982,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA8ir8P60MyWer/uBruzagA1l/is9sisdEWCBQ9kqi4iAfX8RUZy4ejhRwX8bQAh5Z6fYfbkbaK5js1G7qWMAiAw=="
+        },
+        "e24fe310-f89b-4b2d-b862-2d392bc14f9f": {
+          "display_id": 1665,
+          "author": "xqjG",
+          "content": "Correction to the decision comment above: 27 pages were revised, not 28. Today's publications were 31 pages; the four practice-report pages (Thermite, Peritus, OpenClaudia, crosslink) were left as published because they contain none of the replaced words, and the only 'oracle' in them is Thermite's own use in the quality-engineering sense.",
+          "created_at": "2026-10-08T21:36:46.741220Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAgJ9/zn4S8R42MM2cHIFcTMXWchrdix2jcNcK2Nd8pYuLfvnE/LM/P8cEaVW1W5RKe8OcLLZCyDMogDaxp/eGBA=="
         },
         "eee80992-d0f1-49e1-adee-feb28b11cb34": {
           "display_id": 1657,
@@ -38070,6 +38079,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1427,
       "timestamp": "2026-10-08T21:11:27.609917Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1428,
+      "timestamp": "2026-10-08T21:36:46.893681Z"
     }
   ],
   "watermark": {
