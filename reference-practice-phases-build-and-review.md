@@ -7,14 +7,17 @@ created: 2026-10-08
 updated: 2026-10-08
 ---
 
+# Reference practice: the build and review phases (2a to 6)
 
-## Design Specification
+## Status
 
-### status
+Design input for the phase-skill rewrite. How the whitepaper's build, review, hardening and convergence phases are practised in Thermite, Peritus, OpenClaudia and crosslink, reconstructed read-only on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`; evidence: the four `practice-report-*` pages). The repositories do not use the phase names.
 
-Design input for the phase-primer rewrite. How the whitepaper's build, review, hardening and convergence phases are practised in Thermite, Peritus, OpenClaudia and crosslink, reconstructed read-only on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`; evidence: the four `practice-report-*` pages). The repositories do not use the phase names.
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
 
-### 2a test suite generation (the red gate)
+Phase names on this page are the contract's: 1a behavioral specification, 1b verification architecture, 1c the spec review gate, 2a test-suite generation (the red gate), 2b minimal implementation, 2c refactor, 3 adversarial refinement, 4 the feedback integration loop, 5 formal hardening, 6 convergence. The whitepaper has six phases; the a, b and c splits are this repository's.
+
+## 2a Test suite generation (the red gate)
 
 **Not practised as a phase in any repository.** Tests, proofs and implementation land in one commit per increment: Thermite's builder step is "tests plus production in the same commit"; Peritus B2 shipped 67 files at once; OpenClaudia's first slice landed source, end-to-end tests and data in one commit; crosslink's large commits touch source and tests together. Four hits for "failing test" in crosslink's 1,503 comments; two in Peritus's 3,300.
 
@@ -24,7 +27,7 @@ Design input for the phase-primer rewrite. How the whitepaper's build, review, h
 2. **Critic pins** (Thermite). A divergence is a committed failing test with a header stating the class, the authority, the expected value ("authority, not forge's own output") and the commit it fails against, marked ignore with the tracking issue while open. The critic's step five: "verify the test actually fails; if it passes, the candidate is not a divergence, drop it." The pin closes only when the fix lands and the marker is removed, never by a skip. Bootstrap sequence on one day: pin three parser divergences as failing tests, fix, re-pin, fix.
 3. **Mutation testing** as the mechanical check for tests that would pass anyway: Peritus's weekly campaigns ("32 receipt and 23 cancellation mutants, 18 caught, 5 unviable, 0 missed"); Thermite's mutation scoring with a kill-ratio floor inside the product. Peritus also requires at least one negative executable test per proof invariant "that would fail if the guard disappeared", and tautological tests are themselves divergences in Thermite.
 
-### 2b implementation
+## 2b Implementation
 
 **Complete, not minimal.** "No stage is an MVP" (Peritus umbrella); "placeholder success paths and todo!() in reachable production code are prohibited"; "Every function body must contain a working implementation" (Peritus rules); a pre-edit gate blocks stubs, unwraps, panics and root-level lint suppressions outside tests (Thermite, ferrotorch); a new public API needs a non-test consumer in the same commit (Thermite).
 
@@ -34,7 +37,7 @@ Design input for the phase-primer rewrite. How the whitepaper's build, review, h
 
 **Records.** A signed commit with a verification paragraph carrying integer counts; a result comment with the commit hash, file count, signature verification and gate outcomes; in Thermite's June, a commit template with design sources, requirement status and verification sections.
 
-### 2c refactor
+## 2c Refactor
 
 **Absent as a phase.** Thermite's fixer forbids "renames, restructuring, 'while I'm here' cleanup". What replaces it:
 
@@ -43,7 +46,7 @@ Design input for the phase-primer rewrite. How the whitepaper's build, review, h
 - **Mechanical lint fixes recorded inside the verification record** (OpenClaudia: "strict Clippy initial FAIL exactly 3, mechanical corrections applied, strict rerun PASS").
 - A planned refactor sequence as its own design document (crosslink's architecture overhead map, executed as three pull requests with a progress table).
 
-### 3 adversarial refinement
+## 3 Adversarial refinement
 
 **Shape, common to all four:** a separate dispatch, read-only, over the exact tree, returning typed findings; scoped repair by the owning worker; a bounded re-check by the same reviewer; CI as the second reviewer.
 
@@ -56,24 +59,24 @@ Design input for the phase-primer rewrite. How the whitepaper's build, review, h
 
 **Not observed anywhere:** a persona, negative prompting, a judgment-based exit, a multi-lens roster, refutation fan-out per finding, or an adversary that proposes fixes (the whitepaper requires a proposed fix; Thermite forbids it).
 
-### 4 feedback integration
+## 4 Feedback integration
 
 - **Findings become tracker issues**, fixed in their own commits, closed with a result comment and a machine-generated changelog line committed unchanged (OpenClaudia: 260 closes in 13 days).
 - **Specification-level feedback** returns as a dated amendment paragraph appended to the governing document (Thermite: twelve on one re-audit day; "recorded as an Amendment", with requirement and criterion IDs unchanged) or an amendment commit tied to the slice issue (Peritus: five in nine days, then the umbrella froze). OpenClaudia's audit was never reopened; feedback became new slices and issues.
 - **Scope held constant** during repair ("no B2 scope expansion"); exceptions carried explicitly across slices ("the six #1055 failures were a worktree fixture defect, so this slice did not edit worktree or sandbox code").
 - **External loops:** benchmark failure journal to a remediation design to pull requests (Peritus); an external trust audit to a reconciliation table to stage increments (Thermite); a live human audit to a 196-comment issue to a 60-commit pull request (Peritus).
 
-### 5 formal hardening
+## 5 Formal hardening
 
 **Continuous and early, not fifth.** Peritus verifies Verus proofs per slice from the first slice under a no-cheating flag, with an empty trusted-computing-base baseline, and gates every pull request on them; proof coverage closure is tracked as gap issues with 917 evidence files. Thermite gates CI on a Lean axiom probe with an allowlist from the start, with correspondence drift tripwires and negative pin lemmas per increment. Fuzzing, mutation and chaos arrive later as campaigns with their own design document (Peritus's proactive bug discovery; Thermite's rotating-seed generated corpus). crosslink hardens continuously through audit, strict lints, property tests and nightly fuzzing; no proofs.
 
-### 6 convergence
+## 6 Convergence
 
 - **Slice level:** gate green locally, hosted on the pull request, and again on the merged commit on fresh main; independent review with no blocking findings; signed merge; changelog; issue closed with a result comment ("Closure complete").
 - **Program level:** stage gates with checklists and pinned gate comments, the public headline flipping only at gate time (Thermite's rule R-GATE-1); a verified release policy reducing 25 criteria and 44 evidence requirements to Ready or NotReadyForProduction, never yet reached, while five releases shipped labelled pre-qualification (Peritus); an administrative merge of 191 commits while the backlog's own vocabulary says nothing is Verified (OpenClaudia); a closing result comment plus merge (crosslink).
 - **Mechanical, never judgment-based.** Thermite: "never declare the goal complete until the mechanical check says so" (routed count equals status-table count, gauntlet green, corpus passing). Peritus: "no implicit success" everywhere; timeouts never accept; exhausting a budget never converts an incomplete run into success.
 
-### divergences from the whitepaper in these phases
+## Divergences from the whitepaper in these phases
 
 - No red gate for features; failing-first for fixes and pins; mutation as the substitute.
 - Implementation complete, not minimal.
@@ -82,7 +85,7 @@ Design input for the phase-primer rewrite. How the whitepaper's build, review, h
 - Hardening early and continuous.
 - Convergence by checklist and registry, with headlines at gate time; releases ship before the policy is met, labelled.
 
-### what to take for the primers (candidates)
+## What to take for the phase skills (candidates)
 
 - 2a splits: red-first mandatory for fixes and pins; for new increments, negative tests per invariant plus a mutation floor, with tests and code landing together.
 - 2b: complete under anti-stub gates, a manifest, a consumer rule for new public API, and an issue body that is the dispatch prompt with predecessors, loop discipline, self-verify commands and a stop rule.
@@ -92,3 +95,8 @@ Design input for the phase-primer rewrite. How the whitepaper's build, review, h
 - 5: continuous from the first slice.
 - 6: a mechanical checklist, headline at gate time, three evidence classes kept distinct, no implicit success.
 
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
