@@ -7,11 +7,25 @@ name: routing gate
 # branch) before running the gate.
 #
 # crosslink is installed from upstream (Corvidae-Coding-Projects/crosslink),
-# pinned to the commit that merged PR #108 — the last of the fixes this gate
-# depends on (operator decision 2026-10-05, vsdd-cli#892; the read surface we
-# depend on is logged at magnificentlycursed/crosslink#1). Registered as the
+# pinned to the commit that merged PR #115 — upstream develop's tip on
+# 2026-10-07, carrying the transport-failure classification fix (PR #112)
+# that ended the blocked_corrupt readiness latch (operator decision
+# 2026-10-08, vsdd-cli#896; before it, the PR #108 merge, vsdd-cli#892; the
+# read surface we depend on is logged at crosslink-fork#1). Registered as the
 # `crosslink-develop-consumption` exception until upstream cuts a release;
-# then re-pin `ref:` to that release tag.
+# then re-pin `ref:` to that release tag. Every re-pin of this commit pin
+# re-enters the Platform Engineer and Security review (Dependency approval).
+#
+# The token is read-only and neither checkout keeps a credential on disk:
+# this job builds and runs a third-party binary with a build script, and
+# the tracker data the gate reads lives on a branch of this repository, so
+# a writable token here would let a compromised build forge the gate's own
+# oracle (vsdd-cli#896). The gate's `gh api` issue reads need only
+# `issues: read`; the hub branch is fetched anonymously (public repository).
+# Consequence: CI can read the hub but never repair it — a hub left
+# mid-convergence makes `daemon ensure` park as blocked_corrupt and this job
+# fails loudly; the remedy is `crosslink daemon ensure` on an operator machine,
+# then a re-run. That is the intended posture, not a defect.
 #
 # To make this a hard block, mark "routing gate" a required status check in the
 # branch-protection settings (the CI-backed-block grade; branch protection is
@@ -24,42 +38,55 @@ concurrency:
   group: routing-gate-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  issues: read
+
 jobs:
   routing-gate:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout vsdd-cli
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           path: vsdd-cli
           # Full history so the crosslink hub branch is fetchable for `sync`.
           fetch-depth: 0
+          persist-credentials: false
 
-      - name: Checkout crosslink (upstream, pinned at the PR 108 merge commit)
-        uses: actions/checkout@v5
+      - name: Checkout crosslink (upstream, pinned at the PR 115 merge commit)
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: Corvidae-Coding-Projects/crosslink
-          ref: 875066ad66b868c63cfde09d1b0de6f6d8228f05
+          ref: 388bed89f4f026406637670d44d6e8eccbe517a6
           path: crosslink
+          persist-credentials: false
 
-      - name: Install Rust toolchain
-        run: rustup show
+      - name: Install Rust toolchain (1.88 from rust-toolchain.toml)
+        # `rustup toolchain install` with no argument installs the toolchain the
+        # directory's rust-toolchain.toml names (documented); `show active-toolchain`
+        # prints the fired-evidence line into the log.
+        working-directory: vsdd-cli
+        run: rustup toolchain install && rustup show active-toolchain
 
       - name: Cache cargo
-        uses: actions/cache@v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: |
             ~/.cargo/registry
             ~/.cargo/git
             crosslink/target
             vsdd-cli/target
-          key: cargo-routing-gate-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock') }}
+          # The key carries the crosslink pin so a target/ built at an earlier pin
+          # is never restored into a new pin's build.
+          key: cargo-routing-gate-rust1.88-crosslink-388bed89-${{ runner.os }}-${{ hashFiles('vsdd-cli/Cargo.lock', 'crosslink/crosslink/Cargo.lock') }}
 
       - name: Install crosslink CLI (upstream @ pinned commit, until the first upstream release)
         # crosslink's Rust crate is nested at <repo>/crosslink/ — the repo root
         # is docs + tooling; the installable binary crate is the crosslink/ subdir.
-        working-directory: crosslink/crosslink
-        run: cargo install --path . --locked
+        # Runs inside vsdd-cli so rust-toolchain.toml (1.88) governs the build.
+        working-directory: vsdd-cli
+        run: cargo install --path ../crosslink/crosslink --locked
 
       # Repository readiness is per checkout since crosslink develop 0a2ac7013:
       # every mutating command (sync included) refuses to run until this
@@ -108,10 +135,16 @@ jobs:
           cat /tmp/context-check.out
           awk '/^## /{sec=$0} /MISSING|INVALID|ERROR/ && (sec ~ /Rule files|Configuration/) {bad=1; print "GATING problem in " sec ": " $0} END {exit bad}' /tmp/context-check.out
 
+      # Build first with no token in the environment, so no build script in the
+      # dependency tree sees it; the gate needs the token only at run time.
+      - name: Build the gate binary
+        working-directory: vsdd-cli
+        run: cargo build -p vsdd --locked
+
       - name: Run the gate (routing-before-fix + deviations, CI strictness)
         working-directory: vsdd-cli
         env:
           # The deviations leg's issue-state oracle rides `gh api`; the
-          # default token suffices for public-repo issue reads (REQ-6).
+          # read-only default token suffices for public-repo issue reads (REQ-6).
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: cargo run -p vsdd -- gate --ci
+        run: ./target/debug/vsdd gate --ci

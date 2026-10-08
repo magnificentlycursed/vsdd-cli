@@ -1,9 +1,9 @@
 # crosslink
 
-**Status:** approved (CI-installed tool binary) for the pinned commit, with items owed — the Platform Engineer and Security reviews are recorded below; Solution Owner approval is the operator's ratification of the vsdd-cli#894 amendment
+**Status:** re-pinned 2026-10-08 to upstream develop's tip (vsdd-cli#896) — a re-pin of a commit pin re-enters the Platform Engineer and Security review, recorded below under 'Re-pin review'; the first registration's reviews for the previous pin are kept beneath it
 **Registered:** 2026-10-07, first registration under the Dependency approval member as amended by vsdd-cli#894 (tool binaries CI installs are covered).
 **Reviewed on:** first registration and **every re-pin** — the pin is a commit, which has no version component to move, so any re-pin pulls new upstream code; the owed move to a release tag re-enters the review too. The pin's posture, an upstream commit rather than a release, is carried in the deviation register; this record points there rather than repeating it.
-**Reviewed at:** commit 875066ad66b868c63cfde09d1b0de6f6d8228f05
+**Reviewed at:** commit 388bed89f4f026406637670d44d6e8eccbe517a6 (the crosslink PR #115 merge, 2026-10-07); previously commit 875066ad66b868c63cfde09d1b0de6f6d8228f05 (the crosslink PR #108 merge)
 
 ## What it is
 
@@ -19,23 +19,32 @@ vsdd consumes the crosslink **binary** and its tracker data, never a library; cr
 
 ## Pin and install sites
 
-- CI: `.github/workflows/routing-gate.yml` checks out `Corvidae-Coding-Projects/crosslink` at commit `875066ad66b868c63cfde09d1b0de6f6d8228f05` (the merge of crosslink PR #108) and builds the nested `crosslink/crosslink` crate with `cargo install --path . --locked`.
+- CI: `.github/workflows/routing-gate.yml` checks out `Corvidae-Coding-Projects/crosslink` at commit `388bed89f4f026406637670d44d6e8eccbe517a6` (the merge of crosslink PR #115, upstream develop's tip on 2026-10-07) and builds the nested `crosslink/crosslink` crate with `cargo install --locked` from inside the vsdd-cli checkout, so `rust-toolchain.toml` (1.88) governs the build. The job's token is read-only and neither checkout persists a credential (vsdd-cli#896).
+- Why this commit: it carries the transport-failure classification fix (crosslink PR #112; commit 1ba67eb71) that ended the readiness latch observed on 2026-10-07, plus crosslink PR #114 (container GitHub login) and PR #115 (daemon housekeeping reconciles); it is the build the operator's local binary runs.
 - The pin posture — a commit, because no upstream release tag carries the fixes the gate depends on — is the `crosslink-develop-consumption` entry in `.vsdd/registry/deviation-registry.yaml` (vsdd-cli#892), with a date retest of 2026-11-30.
-- Toolchain: the job builds crosslink with the runner image's default Rust, not the 1.88 that crosslink declares (owed below).
+- Toolchain: pinned to 1.88 by running the install from inside the vsdd-cli checkout (vsdd-cli#896); before that the job used the runner image's default Rust.
 - Locally: the developer's installed binary, which may differ from the CI pin; the handoff records note when it does.
 
 ## Supply chain
 
 - Source: built from a pinned git commit of the upstream repository, not a registry. The commit hash fixes the source exactly; `--locked` fixes the transitive set to the nested crate's committed `Cargo.lock`.
 - Release state: upstream tags exist (the newest, v0.9.0-beta.1, predates the pin), but none carries the pinned commit. No release signature or provenance attestation is published. The pinned merge commit carries a GitHub signature header, not verified here.
-- The crate has a build script; at the pin it runs only local `git rev-parse` and `git status` and generates rule files.
+- The crate has a build script; at the pin it runs local `git rev-parse` and `git status`, generates the rule files and the command and skill constants from `resources/` (read into the binary), panics on a malformed `SKILL.md`, and writes a placeholder `dashboard/dist/index.html` into the checkout when the dashboard is not built. Unchanged across the 875066ad..388bed89f range; the next re-pin review compares against this list.
 - License: MIT.
 
 ## Retest trigger
 
 The register entry's: on 2026-11-30, or earlier on an upstream release that carries the pinned fixes, re-pin to the release tag — which re-enters the review below, as every re-pin does.
 
-## Solution Owner, Platform Engineer and Security review
+## Re-pin review (2026-10-08, commit 388bed89)
+
+**Solution Owner (scope):** the re-pin to upstream develop's tip was the operator's decision of 2026-10-08 (vsdd-cli#896); approval is the merge of its pull request.
+
+**Platform Engineer (supply chain):** approved for the new pin, with items owed (vsdd-cli#896 cold review). The pulled-in range 875066ad..388bed89f is fifteen commits across Rust source, container resources, upstream CI and docs: crosslink PR #112 (the transport-failure classifier, with the sync cache sharing one predicate and HTTP 429 and 5xx retried while 4xx stays terminal), PR #114 (GitHub as a container login: `gh` installed into the container image, a login volume mounted read-only, preflight checks; none of it on CI's path, which runs no container) and PR #115 (the daemon survives a hub that moves under its readiness write, budgets its retries, and parks persistent faults as blocked_corrupt with the cause). Risks checked: `crosslink/build.rs`, `crosslink/Cargo.toml` and `crosslink/Cargo.lock` are byte-identical across the range, so no new dependency, no new build-time code and the same 417-package transitive set the first registration audited; the merge commit carries a GitHub signature header like its predecessor, not verified here; the license is unchanged (MIT); the crate declares `rust-version = "1.88"` and the job now builds it under 1.88 from inside the vsdd-cli checkout, which cargo's rust-version check makes fail-closed should a future lockfile need a newer compiler (upstream's own CI builds on stable only, so 1.88 is exercised nowhere but here; 339 of the 416 locked registry crates' manifests declare no minimum above 1.88, the rest being Windows, wasm and Android targets); the register entry is re-armed to the new commit with the owning issue and disposition reference matching the #896 decision. Behaviour change on CI's path: with a read-only token and no persisted credential, the daemon can read the hub but never repair it; a hub left mid-convergence fails the routing gate with a blocked_corrupt reason, and the remedy is `crosslink daemon ensure` on an operator machine. Owed: the first CI run on the branch as proof the 1.88 build succeeds and the new steps fire; every re-pin, including the owed move to a release tag, re-enters this review.
+
+**Security (CVEs, license, threat):** approved for the re-pin, with one item raised and one owed (vsdd-cli#896 cold review). CVEs and license: the pinned commit's lockfile, manifest and build script are byte-identical to the previous pin's (lockfile sha256 418402dd30d478ccc107ba50b00d023e35eb53896e9ad813b74153003f17be06), so the range adds no crate and no license; an offline `cargo audit` (cargo-audit 0.22.1, no fetch) against the local RustSec database dated 2026-10-03 reports no vulnerabilities and no warnings across 417 crates, delta against the previous pin none; crosslink stays MIT; the one new third-party component in the range is the `gh` CLI (MIT) installed into the agent container image from GitHub's apt repository, outside the Rust tree and outside CI. Threat: PR #112 only chooses between waiting-for-remote and blocked-corrupt, neither grants mutations, and both make `daemon ensure --wait-ready` exit non-zero, so the routing gate still fails closed at its readiness step; PR #115 parks after five consecutive hub moves, no fail-open; PR #114 is reached only from kickoff preflight and launch and from `container start`, never from the gate's commands, and handles no token value. In the routing gate the token is read-only by declaration and persisted into neither checkout, and the repository's default workflow token permission is read, so the hub-forgery path named at first registration is closed independent of that setting; a compromised crosslink build still controls everything the gate reads in-job (the gate acquires the tracker through the installed binary's own output), the writable cache paths and an anonymous read of this public repository's hub branches, and the commit pin confines that to the reviewed range. RAISED to the Solution Owner (with the Solution Architect and Red Team): under this pin a container kickoff on this estate refuses to launch unless a GitHub login is stored for the container, and that login is a write token to this repository readable by the agent, while the hub refs `crosslink/*` are unprotected branches of the governed repository; a container agent so equipped could rewrite the gate's oracle. Until the ruling, container kickoff on this estate stays in local mode, or runs only behind a protection on `refs/heads/crosslink/**` whose compatibility with crosslink's lease pushes has been verified. Owed: re-run the audit with a refreshed database when network is allowed.
+
+## Solution Owner, Platform Engineer and Security review (first registration, commit 875066ad)
 
 **Solution Owner (scope):** approved by the operator's ratification of the vsdd-cli#894 amendment.
 

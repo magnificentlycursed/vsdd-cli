@@ -113,20 +113,28 @@ entries:
     #108 (merged 2026-10-05), so the fixes CI depends on are in upstream develop; CI now installs
     crosslink from upstream pinned at the #108 merge commit 875066ad66b868c63cfde09d1b0de6f6d8228f05.
     Still no upstream release (newest tag v0.9.0-beta.1), so the re-pin to a release tag stays owed.
-    The local binary is still the fork''s build until rebuilt from upstream.'
+    The local binary is still the fork''s build until rebuilt from upstream.
+    Re-pinned 2026-10-08 (Solution Owner decision, in-session, vsdd-cli#896): CI now installs crosslink
+    from upstream pinned at the PR #115 merge commit 388bed89f, upstream develop''s tip on 2026-10-07,
+    which carries the transport-failure classification fix (PR #112) that ended the blocked_corrupt
+    readiness latch of 2026-10-07; the local binary runs the same build. A re-pin of a commit pin
+    re-enters the Platform Engineer and Security review (Dependency approval, vsdd-cli#894), recorded
+    in docs/dependencies/crosslink.md. Still no upstream release tag carries the pin, so the re-pin to
+    a release tag stays owed.'
   retest_trigger:
     type: date
     predicate: '2026-11-30'
   trigger_context: 'The register has no release-presence trigger, so the retest is a date: on 2026-11-30
-    check upstream for a release tag that includes #107 and #108 — re-pin ref: to that tag if one
-    exists, else re-arm with a later date. An earlier release may be acted on before the date fires.'
+    check upstream for a release tag that carries the pinned commit 388bed89f (crosslink PRs #112, #114 and
+    #115 included) — re-pin ref: to that tag if one exists, else re-arm with a later date. An earlier release
+    may be acted on before the date fires. Every re-pin re-enters the Platform Engineer and Security review.'
   entry_date: 2026-08-01
   expiry: 2026-11-30
-  owning_issue: vsdd-cli#892
+  owning_issue: vsdd-cli#896
   status: standing
   disposition_ref:
-    issue: vsdd-cli#892
-    comment_timestamp: 2026-10-05 20:07
+    issue: vsdd-cli#896
+    comment_timestamp: 2026-10-08 02:18
 - id: hand-authored-build-plan
   deviation: The build-plan document (.design/build-plan.md) is hand-authored — a persisted bootstrap
     fallback pending Slice 2's generated-context machinery producing it from the contract's Decomposition.
@@ -155,11 +163,25 @@ entries:
   deviation: The conformance oracle — the trace synced to the crosslink server and made tamper-evident by corroboration — does not exist; conformance verdicts rest on local, agent-writable traces and are could-not-check grade.
   deviates_from: null
   deviation_class: capability-gap
-  stated_reason: 'The sync-and-corroboration channel is an upstream crosslink capability not yet built, named as a dependency by the Verifiable conformance and efficiency member (the oracle leg and the trace-redaction leg). The upstream filing is pending (vsdd-cli#869 impact analysis, item E1); the date predicate stands in until an issue-state predicate can name the filed issue.'
+  stated_reason: 'The sync-and-corroboration channel the Verifiable conformance and efficiency member names (the oracle
+    leg and the trace-redaction leg) is an upstream crosslink capability that does not exist and is not planned:
+    crosslink publishes tracker events to the hub and leaves the agent transcript in the worktree, agent-writable.
+    The upstream filing once planned (vsdd-cli#869 impact analysis, item E1) was withdrawn on 2026-09-19 for that
+    reason; this entry kept saying ''pending'' until 2026-10-08, when a filing made on that stale text
+    (Corvidae-Coding-Projects/crosslink issue #119) was closed the same day as premature. Direction (operator,
+    2026-10-08, vsdd-cli#873): re-home the oracle by contract amendment to a record the dispatcher writes on the
+    operator''s side — a signed tracker comment carrying the transcript digest and usage, redacted with vsdd''s
+    own patterns before hashing — so the agent cannot rewrite it and no upstream channel is needed; the
+    amendment enters Slice 6''s design-first step. Until it lands, every conformance verdict resting on the
+    trace stays could-not-check.'
   retest_trigger:
     type: date
     predicate: '2026-11-30'
-  trigger_context: 'Re-arm on the upstream filing: replace the date predicate with an issue-state predicate on the filed crosslink issue; resolve when the channel lands and the verifier reads the synced copy. Review window set to 2026-11-30 (beyond the 30-day default) to align with the standing entries'' horizon and the pending filing.'
+  trigger_context: 'The retest is the oracle re-home amendment (Slice 6 design-first, recorded on vsdd-cli#873): when
+    it is ratified, resolve this entry or narrow it to what the dispatcher-written record still cannot attest.
+    No issue-state predicate fits (the owning issue is a crosslink tracker issue, which the gate''s issue oracle
+    does not read), so the date stands in; on 2026-11-30, if the amendment has not landed, re-arm with a later
+    date and say why.'
   entry_date: 2026-09-18
   expiry: 2026-11-30
   owning_issue: vsdd-cli#873

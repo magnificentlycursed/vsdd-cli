@@ -9,34 +9,60 @@ concurrency:
   group: mdatron-verify-${{ github.ref }}
   cancel-in-progress: true
 
+# Read-only token: this job installs and runs a third-party binary (mdatron),
+# so it holds no write scope and the checkout keeps no credential on disk
+# (vsdd-cli#896; the Platform Engineer and Security reviews on vsdd-cli#894).
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout vsdd-cli
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           path: vsdd-cli
+          persist-credentials: false
 
       # mdatron is published on crates.io as of 0.5.0 (upstream #48), so CI
       # installs the pinned release from the registry — no sibling checkout,
       # no floating branch (vsdd-cli #816; supersedes the #824/#830 tag-pin
       # posture, and retires the sibling-checkout surface the deviation
       # registry's mdatron-sibling-pin-lag entry tracked).
-      - name: Install Rust toolchain
-        run: rustup show
+      - name: Install Rust toolchain (1.88 from rust-toolchain.toml)
+        # `rustup toolchain install` with no argument installs the toolchain the
+        # directory's rust-toolchain.toml names (documented); `show active-toolchain`
+        # prints the fired-evidence line into the log.
+        working-directory: vsdd-cli
+        run: rustup toolchain install && rustup show active-toolchain
 
       - name: Cache cargo
-        uses: actions/cache@v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: |
             ~/.cargo/registry
             ~/.cargo/git
             ~/.cargo/bin/mdatron
-          key: cargo-mdatron-0.7.0-${{ runner.os }}
+            ~/.cargo/bin/mdatron.sha256
+          key: cargo-mdatron-0.7.0-rust1.88-${{ runner.os }}
 
       - name: Install mdatron CLI (crates.io, pinned)
-        run: command -v mdatron >/dev/null && mdatron --version | grep -qx 'mdatron 0\.7\.0' || cargo install mdatron --version 0.7.0 --locked --force
+        # Runs inside vsdd-cli so rust-toolchain.toml (1.88) governs the build,
+        # not the runner image's default toolchain. On a cache hit the restored
+        # binary is checked against the sha256 recorded when it was built, not
+        # only its version string (vsdd-cli#896). A mismatch fails the job: the
+        # cache entry is corrupt or tampered — bump the cache key to discard it.
+        # This is an integrity check on the restored blob, not provenance: the
+        # digest travels in the same cache entry as the binary.
+        working-directory: vsdd-cli
+        run: |
+          if command -v mdatron >/dev/null && mdatron --version | grep -qx 'mdatron 0\.7\.0' && [ -f ~/.cargo/bin/mdatron.sha256 ]; then
+            (cd ~/.cargo/bin && sha256sum -c mdatron.sha256)
+          else
+            cargo install mdatron --version 0.7.0 --locked --force
+            (cd ~/.cargo/bin && sha256sum mdatron > mdatron.sha256 && cat mdatron.sha256)
+          fi
 
       # The engine-managed partition (.mdatron/*.example + manifest.yaml) is
       # committed, and only `mdatron init` checks it: verify reads the
