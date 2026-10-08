@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1432,
-        "tip_oid": "83df536123504005c6afaf054eac8b6a7d06c420",
-        "prefix_sha256": "fd9b1b720483a754cc6b33826c7856ac6a0e1db63d254edaf535b1114e7e2ee0"
+        "sequence": 1433,
+        "tip_oid": "74452e5b1ff641b40fc1d3e2db7f6e961f9c1219",
+        "prefix_sha256": "79a7a6fe34719d9e138474847321c2379e1a1a6cf11b51d00b407a2d91c4f343"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 899,
+  "next_display_id": 900,
   "next_comment_id": 1666,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -894,6 +894,7 @@
     "f0cb6455-a3ce-424c-bae0-e331cf531bca": 652,
     "f0f8f463-9f34-4b38-8114-d9eadd106d31": 875,
     "f11601e7-06c1-4b98-bbeb-9cb18c3c4f6e": 852,
+    "f1204374-eef4-438a-8972-b7a97e8c1281": 899,
     "f131c9de-8d5c-4454-ac5b-69ff71058fa3": 380,
     "f1481b82-3a0e-4a76-afa1-bb55909afa34": 618,
     "f1b0f475-840b-4191-b715-2a7fb2de2051": 233,
@@ -28578,6 +28579,17 @@
         }
       }
     },
+    "f1204374-eef4-438a-8972-b7a97e8c1281": {
+      "uuid": "f1204374-eef4-438a-8972-b7a97e8c1281",
+      "display_id": 899,
+      "title": "Records hygiene: knowledge-page conventions in force, the four legacy pages split, milestone input pages attached, the agent-memory ladder applied, the work-in-progress limit as a project rule",
+      "description": "Operator decision 8 of 2026-10-08 (records hygiene), accepted as recommended on big-picture-and-decisions-2026-10-08, plus the work-in-progress limit from decision 2 as a checked-in rule.\n\nWork:\n1. knowledge-page-conventions-proposal-2026-10-08 is in force as convention from 2026-10-08: the split rule, the kind stated in the first line, the provenance form, supersession instead of corrections, and the citation form of its section 4. Grade: convention, until a check over the knowledge branch exists (item 11 on mdatron GitHub issue #79 and the crosslink feature requests on cross-reference-context-management-2026-10-08 are the two paths that would raise it).\n2. Split the four large legacy pages first (content-delivery-assessment-2026-10-02; crosslink-integration-surfaces; kickoff-swarm-dispatch-pipeline; verifiable-conformance-and-efficiency), each part with the provenance form and a superseded-by line on the original.\n3. Attach each milestone's input pages to its issue with the design-doc label, at most three pages of 8,000 characters each, starting with the composition milestone (vsdd-cli#839).\n4. The agent-memory ladder: hook or pattern first; a checked-in rules file (or a path-scoped one) second; a knowledge page attached to the issue third; agent memory last and for judgment only. Move the process rules now held in the agent's memory into the project rules file, the contract or a hook; keep hard-to-rediscover facts and the why behind confirmed or corrected conduct; the agent writes no memory unprompted. The operator's complaint of 2026-10-01 (recorded on cross-reference-context-management-2026-10-08) is the acceptance test: the next session must find the rules by the deterministic channel, not by recall.\n5. The work-in-progress limit as a project rule: while a ratified milestone design awaits its build, no amendment or tooling-adoption cycle opens unless it blocks that build; crosslink and mdatron releases land as pins and data.\n\nInputs: knowledge-page-conventions-proposal-2026-10-08; cross-reference-context-management-2026-10-08; portable-memory-rules-gist-2026-10-08; terminology-grounding-2026-10-08.",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-10-08T21:55:00.725566Z",
+      "updated_at": "2026-10-08T21:55:00.725566Z"
+    },
     "f131c9de-8d5c-4454-ac5b-69ff71058fa3": {
       "uuid": "f131c9de-8d5c-4454-ac5b-69ff71058fa3",
       "display_id": 380,
@@ -38134,6 +38146,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1432,
       "timestamp": "2026-10-08T21:54:25.782937Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1433,
+      "timestamp": "2026-10-08T21:55:00.725566Z"
     }
   ],
   "watermark": {
