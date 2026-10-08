@@ -1,8 +1,8 @@
 # regex
 
 **Status:** approved (runtime dependency, vsdd-core) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate entered with the shell-side integrity checks (`integrity_shell`), requirement `1`; no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate entered with the shell-side integrity checks (`integrity_shell`), requirement `1`; no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -24,7 +24,7 @@ The shell-side integrity checks (`vsdd status`, vsdd-cli #880) verify that refer
 - One consumer: `vsdd-core/src/integrity_shell/refs.rs`. A second consumer re-enters review.
 - `regex` is also in the lockfile transitively through `jsonschema`; the direct edge added no crate.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: the Status process-integrity requirement (#880) needs the handle forms checked against their declared grammar; compiling the data set's own pattern is the narrowest implementation and keeps grammar and check in one place.
 

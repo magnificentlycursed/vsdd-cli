@@ -9,9 +9,13 @@
 # with `mdatron pin --update`, and only in the same pull request as a
 # ratified Decomposition amendment that the build-plan has been re-projected
 # against; a re-pin anywhere else silences the drift signal this exists for.
+# Re-pinned 2026-10-07 with the vsdd-cli#894 amendment.
+#
+# `mdatron pin --update` rewrites this file and drops these comments (mdatron
+# 0.7.0); restore them after a re-pin.
 mdatron_format_version: 1
 pins:
   - governed_by: .design/build-plan.md
     file: .design/agent-first-vsdd-toolkit.md
     section: "## Decomposition (phase 1c)"
-    sha256: "2150156b36975af47a1d4d90719983912257c82b39ad2c06b5fa2e84e6e69c83"
+    sha256: "3efb133e60dd463ed6e9cf76e777dc92207f3bd014106fe944da93a19d2e83b9"

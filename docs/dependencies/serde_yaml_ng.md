@@ -1,8 +1,8 @@
 # serde_yaml_ng
 
 **Status:** approved (runtime dependency, vsdd-core and vsdd; dev-dependency, vsdd) — retrofit record
-**Approved:** 2026-09-27 (retrofit). The crate entered when the YAML surface moved off the deprecated `serde_yaml` (requirement `0.10`, declared directly in both crates rather than through the workspace table); no record and no three-lens review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-27 (retrofit). The crate entered when the YAML surface moved off the deprecated `serde_yaml` (requirement `0.10`, declared directly in both crates rather than through the workspace table); no record and no Solution Owner, Platform Engineer and Security review accompanied it — the `VSDD-E0100` condition the contract's Dependency approval member names. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -24,7 +24,7 @@ The governed data lives in YAML: the registry data sets, the deviation register,
 - The declaration is repeated in both `Cargo.toml` files instead of living in `[workspace.dependencies]`; lifting it to the workspace table is a hygiene follow-up, not a condition of approval.
 - The deprecated `serde_yaml` (0.9) was still declared in the workspace table and in `vsdd/Cargo.toml` with no consumer; this record's PR removes both declarations.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: the contract fixes YAML for the governed data. The crate choice was the migration the deprecation forced; consolidating the two direct declarations into the workspace table is the only open hygiene item.
 

@@ -1,8 +1,8 @@
 # icu_properties
 
 **Status:** approved (runtime dependency, vsdd-core) — retrofit record
-**Approved:** 2026-09-24 (retrofit); the addition landed 2026-07-28 (commit 24e76e2e, vsdd-cli #813) with no record, no three-lens review, and no trailers — the `VSDD-E0100` condition the contract's Dependency approval member records verbatim. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
-**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three lenses recorded below
+**Approved:** 2026-09-24 (retrofit); the addition landed 2026-07-28 (commit 24e76e2e, vsdd-cli #813) with no record, no Solution Owner, Platform Engineer and Security review, and no trailers — the `VSDD-E0100` condition the contract's Dependency approval member records verbatim. This record closes the verification debt; the process breach stands as recorded on vsdd-cli #872.
+**Approved by:** retrofit under vsdd-cli #872 (Platform Engineer owner, Security validator), the three reviews recorded below
 
 ## What it is
 
@@ -23,7 +23,7 @@ The Terminal output safety requirement (vsdd-cli #807) strips every code point t
 - Runtime dependency of `vsdd-core`, version requirement `2`, locked at 2.2.0.
 - One consumer: `vsdd_core::text` (`DefaultIgnorableCodePoint` via `CodePointSetData`). Any second consumer widens the surface this record covers and re-enters review.
 
-## Three-lens review (retrofit)
+## Solution Owner, Platform Engineer and Security review (retrofit)
 
 **Solution Owner — scope.** In scope: the requirement (#807) is ratified and the crate is its narrowest correct implementation. Overlap noted: `unicode-general-category` (its own record) provides General_Category, which `icu_properties` also provides; consolidating onto one Unicode source is a candidate follow-up, not a condition of this approval.
 
