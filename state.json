@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1435,
-        "tip_oid": "ef6d173d07227c1b3df4a288d9f1eadcdf8dc5d1",
-        "prefix_sha256": "513feec6b206a29372aeaf94d4b8af063d0a0a913019ea12740d3994a66912fa"
+        "sequence": 1436,
+        "tip_oid": "de26d4a378822b0c22f7fd7c4161cf6a0e7972c5",
+        "prefix_sha256": "ad73b81da26d7f4c81e8325258a4afeed5d2e6cb862cc042dec6a6d4e04820d4"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 900,
-  "next_comment_id": 1668,
+  "next_comment_id": 1669,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -27524,7 +27524,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-30T16:06:11.888099Z",
-      "updated_at": "2026-10-02T21:30:19.835215Z",
+      "updated_at": "2026-10-08T22:00:21.134980Z",
       "labels": [
         "design"
       ],
@@ -27568,6 +27568,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAkyqOLkUkamrTOBQpQcpWSoZ4h0nN8g8Ov7ebKIMBP0+0E9B9xHswQr1nEwYc7eY/3necKDJx+KoWogVqUZzCBA=="
+        },
+        "85fe555e-fe9b-44e8-a507-d6c77e366a32": {
+          "display_id": 1668,
+          "author": "xqjG",
+          "content": "Superseded 2026-10-08 (Solution Owner decision, in chat; ruling on vsdd-cli#839): the option (b) contract amendment this issue was to carry (a signed trace to a hub or data branch) no longer stands; the verdict-record shape and its home are recorded on vsdd-cli#876, the wording change rides vsdd-cli#897, and the design lands in the recorded-dispatch milestone. The gate-execution design on this issue is unaffected except that its verifier leg reads no trace: it waits for the verdict record or moves with the other build legs to the second program (decision 1 on big-picture-and-decisions-2026-10-08).",
+          "created_at": "2026-10-08T22:00:21.100024Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAzzt0E2PlQUYE0pXiWDkVQBxxcIviKjlZk80oNZgUCbfEnyzEAb6yWLAJNdSJm8IhRZMDXXkkApfE6AHJ2+OTBA=="
         },
         "9e4f4287-e374-4ad4-be37-1f082abbbedb": {
           "display_id": 1546,
@@ -38179,6 +38188,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1435,
       "timestamp": "2026-10-08T21:59:23.805244Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1436,
+      "timestamp": "2026-10-08T22:00:21.134980Z"
     }
   ],
   "watermark": {
