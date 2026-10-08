@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1413,
-        "tip_oid": "43e5e3c757016e283b23d5192fdfc9fcb9a29e23",
-        "prefix_sha256": "3cbd4a3d942c073a6cd6c423ef52f4d4ad66124fa97d5043bfe36546a0870d7f"
+        "sequence": 1414,
+        "tip_oid": "83fa5623e397504b81b4a2fe83c0bcac9041f88f",
+        "prefix_sha256": "9cb817654afcfe8adfaae2810fd31c1fb8a7582c98581f4fa5dc76d0cb05a605"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1652,
+  "next_comment_id": 1653,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -28241,7 +28241,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:11.234260Z",
-      "updated_at": "2026-10-08T16:22:32.583817Z",
+      "updated_at": "2026-10-08T16:29:17.875916Z",
       "labels": [
         "design"
       ],
@@ -28290,6 +28290,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAUSv2TcyRn7jaN44IimoR/hoxXHDwt1JunRNsA+zXo0KytR9Hlwmqe5Pxa8BQbNtxIPOF17V57vYnFC8sEsvUCQ=="
+        },
+        "7facd135-7fc4-4503-8ef9-4fd094a2da3f": {
+          "display_id": 1652,
+          "author": "xqjG",
+          "content": "HANDOFF 2026-10-08 (session #10, 2026-10-06 to 2026-10-08). NEXT SESSION: start Slice 2 phase-1a on #839 (the operator's standing instruction at this session's end). Bind work to #839 first; read #839's decisions of 2026-10-02 (28 prompts become Claude Code skills as packaging; supplements become .claude/rules/ files generated from supplements/; one generator with three byte-checked outputs) and the design input routed there 2026-10-06 (route-bound schema: binding the standards-pack skill profile works, binding the vsdd class aborts the run; no skill class in the install manifest or init; imports: true is not the rules-file binding; W0054 forces the mdatron config to move with the files); knowledge pages content-delivery-assessment-2026-10-02 and mdatron-0.7.0-adoption-review-2026-10-06. Slice 2's design goes through the design flow (.design/ via the design skill), not hand-authored prose. STATE OF MAIN (609f9132): mdatron 0.7.0 adopted (#893 closed; PRs #57, #58); link, pin and marker families live with two build-plan structure rules (#895 closed; PR #59); build-plan projects every Verifiable conformance leg (#879 closed; PR #60); the #894 contract amendment ratified (PR #61: GitHub-issue handle forms, Dependency approval over CI-installed binaries with its cadence, the 'three-lens' coinage removed and blocked, five legs assigned to Slices 4 and 6, pin re-pinned to 3efb133e, mdatron and crosslink dependency records); CI hardening and crosslink re-pinned to upstream develop 388bed89f (#896 closed; PR #64); dispatch-data 0.3.0 with the phase field (#875, PR #67). Checkout on main, tree clean. OPEN: #875 (remaining unauthored sets; two Slice 6 questions: unresolvable phase at dispatch, state-artifact vs breadcrumb precedence; follow-ups: schema name pin for the engine-data fields, loader field-uniqueness check); #873 (operator ruling 2026-10-08: re-home the conformance oracle to a dispatcher-written, operator-signed transcript digest with redaction as vsdd's own leg, a Slice 6 design-first amendment; plus the hub-ref protection question from the crosslink re-pin — container kickoff now needs a GitHub login that can write the unprotected crosslink/* refs; fails safe today since no login is stored); #664 (reserve the vsdd crate name on crates.io — operator's act; the adopter templates fail closed until the crate exists); #855 residual 1 (jurisdiction self-audit) and follow-ups (validate the envelope against the committed 3.1.0 schema in a test; seeded-defect proof through the real pattern files; strengthen jurisdiction_nonvacuity.rs); #844 levels 1, 2a, 3; #839, #836 as before. Dependabot for actions: operator's call, no issue. LOCK: #875 held by this agent (open work). CAUTIONS: (a) agent commits are refused by work-check whenever 'crosslink session status' exceeds 3 s, routine here (upstream crosslink#104 item 2) — stage, write the message to a file, hand the operator 'git commit -F <file>' immediately, log one intervention, never retry or create the sentinel; (b) the hook pattern-matches gated command words even inside heredoc TEXT — keep 'git commit', 'git tag' etc. out of file content written via the shell; (c) readiness blocks ('projection frontier is stale', 'blocked_corrupt') clear on their own or by the operator's ensure; never drive it; the blocked_corrupt latch on a transient network failure is fixed in the crosslink build now on main and locally (388bed89f); (d) 'mdatron pin --update' drops pins.yaml's comments — restore the header by hand (reported on mdatron GitHub issue #73); (e) a register entry's 'pending/owed' sentence is a pointer, not a fact — read the owning issue's latest decision before acting (crosslink#119 was filed on a withdrawn ask and closed the same day); (f) closing an issue appends a CHANGELOG line (and sometimes an empty heading) — drop it when the merged entry already covers the issue; (g) file upstream issues directly when the operator asks to work through them, after check (e); (h) the disk filled once (cargo target + scratch fixture copies) — copy only the governed directories for mutant fixtures and delete them. FEEDBACK SENT: mdatron GitHub issue #73 (adoption notes, eight defects, seven raises, plus the pin comment-drop); crosslink #104 recurrence brief handed to the operator; crosslink#119 closed as premature.",
+          "created_at": "2026-10-08T16:29:17.836068Z",
+          "kind": "handoff",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAar0nUHoqlB82LUxENn3/G2cktjdKHrybQYVlPdxtUhrUgn413SwzabTEJeUFCVSQKobvj3WSts5TnMb60ctZDw=="
         },
         "859b30ba-b54a-4390-b5b5-ffb55b15269a": {
           "display_id": 1559,
@@ -37878,6 +37887,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1413,
       "timestamp": "2026-10-08T16:28:20.713374Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1414,
+      "timestamp": "2026-10-08T16:29:17.875916Z"
     }
   ],
   "watermark": {
