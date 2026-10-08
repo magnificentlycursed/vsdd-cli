@@ -11,7 +11,7 @@ updated: 2026-10-08
 
 ## How to read this page
 
-**Kind:** a record and a decision request, written 2026-10-08 in vsdd-cli session #11. **Status:** current; the decisions are requests to the Solution Owner (the operator) and none is taken. **Sources:** this repository at main commit 609f9132, its crosslink tracker, and thirty knowledge pages published the same day; every citation resolves through the key at the end.
+**Kind:** a record and a decision request, written 2026-10-08 in vsdd-cli session #11. **Status:** decided. All nine were accepted as recommended by the operator on 2026-10-08 (recorded on `vsdd-cli#839`). The work is on `vsdd-cli#897` (the one owned amendment), `vsdd-cli#898` (the phase-skill rewrite) and `vsdd-cli#899` (records hygiene); the composition milestone's two increment issues open when its design exits phase 1c. **Sources:** this repository at main commit 609f9132, its crosslink tracker, and thirty knowledge pages published the same day; every citation resolves through the key at the end.
 
 Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
 
@@ -131,6 +131,9 @@ Each is the operator's under Solution Owner change authority. For each: why, whi
 - `vsdd-cli#881` — Closure claims without their oracles. Open; carries the 2026-10-01 ruling on the state artifact and the 2026-10-02 ruling on install-count literals, both assigned to the composition milestone.
 - `vsdd-cli#890` — Three delivery assumptions verified by live test. Closed 2026-10-02.
 - `vsdd-cli#891` — Amend the contract: crosslink kickoff is the dispatch vehicle and the swarm bindings come out. Closed 2026-10-05.
+- `vsdd-cli#897` — Amend the contract in one owned cycle, the last before the build window. Open 2026-10-08; owns the four re-armed register entries.
+- `vsdd-cli#898` — Phase-skill rewrite (design-first). Open 2026-10-08; sequenced after #897.
+- `vsdd-cli#899` — Records hygiene: knowledge-page conventions in force, the legacy pages split, input pages attached, the agent-memory ladder, the work-in-progress limit as a project rule. Open 2026-10-08.
 - Milestones (`crosslink milestone list`): #8 "Slice 1 — Live self-governance" (the live self-governance milestone); #9 "Slice 2 — Composition, generated context, and static price" (the composition milestone); #10 "Slice 3 — Install"; #11 "Slice 4 — Gate execution and the mutation floor"; #12 "Slice 5 — Finding lifecycle and conformance"; #13 "Slice 6 — Recorded dispatch and directive flow"; #14 "Slice 7 — The cost crate" (the title predates the no-separate-crate ruling).
 
 **GitHub-side records.** mdatron GitHub issue #79, "Roadmap feedback from vsdd-cli: eleven shape-tier capabilities observed in practice elsewhere": `https://github.com/magnificentlycursed/mdatron/issues/79`.
