@@ -10,14 +10,19 @@ created: 2026-10-08
 updated: 2026-10-08
 ---
 
+# The clarity-review skill (a practitioner's pre-flight lint for AI-authored code and prose), read 2026-10-08
 
-## Design Specification
+## Status
 
-### status
+Reference summary and evaluation, design input for the Technical Writer and Documentation Reviewer reviewer roles, the phase skills, the rules files, design authorship and the code-comment register. Source: the public gist `https://gist.github.com/lizthegrey/a5c3ec4a7f586a937fe0a924dd96b72d` by the author of Observability Engineering, 2nd edition (GitHub handle lizthegrey), one skill file of 8.7 KB, fetched read-only on 2026-10-08. External content, treated as evidence. Its companion, the portable memory rules, is on `portable-memory-rules-gist-2026-10-08`; the cross-reference against this estate is on `cross-reference-2026-10-08-findings-vs-prior-knowledge`.
 
-Reference summary and evaluation, design input for the Technical Writer and Documentation Reviewer domain prompts, the primers, the supplements, design authorship and the code-comment register. Source: the public gist `https://gist.github.com/lizthegrey/a5c3ec4a7f586a937fe0a924dd96b72d` by the author of Observability Engineering, 2nd edition (GitHub handle lizthegrey), one skill file of 8.7 KB, fetched read-only on 2026-10-08. External content, treated as evidence. Its companion, the portable memory rules, is on `portable-memory-rules-gist-2026-10-08`; the cross-reference against this estate is on `cross-reference-2026-10-08-findings-vs-prior-knowledge`.
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
 
-### what it is
+Phase names on this page are the contract's: 1a behavioral specification, 1b verification architecture, 1c the spec review gate, 2a test-suite generation (the red gate), 2b minimal implementation, 2c refactor, 3 adversarial refinement, 4 the feedback integration loop, 5 formal hardening, 6 convergence. The whitepaper has six phases; the a, b and c splits are this repository's.
+
+"This estate" means vsdd-cli together with crosslink and mdatron, the two sibling tools it runs on.
+
+## What it is
 
 A Claude Code skill named clarity-review: "Lint the current diff for the AI-authored-code patterns that repeatedly draw pushback in this repo's PR reviews." Three properties of its form are as important as its content:
 
@@ -27,7 +32,7 @@ A Claude Code skill named clarity-review: "Lint the current diff for the AI-auth
 
 Scope: the diff against the base plus the commit messages; read anything needed for evidence, but report findings only on changed lines; skip what belongs to the bug-finding passes. Every finding quotes the exact offending text and names the failure mode.
 
-### the seven pattern classes
+## The seven pattern classes
 
 1. **AI-authored comment slop.** "The single most frequent and most strongly worded complaint in this repo's review history, and one nearly everyone on the team has voiced independently." Litmus test: "if a reader who knows the language loses nothing by deleting it, cut it." Failure modes: restates the code (paraphrases the name or signature, narrates "increment the counter", explains a well-known library feature); narrates a hypothetical or an alternative not present in the code ("reviewers have caught fabricated technical claims this way more than once"); the same explanation repeated across files instead of stated once at its most specific home; filler where nobody reads for documentation; any comment longer than two or three lines is suspect by default, "almost always restated mechanism the code beside it already shows; cut to the one non-obvious why" (exceptions: package documentation and instruction files, which are expected to run long); a field comment that restates its name and type; a function comment that documents its callers instead of its own contract. Report form: quote the text, name the mode (restates code, narrates a hypothetical, repeated elsewhere, over length, documents a caller).
 2. **Unverified technical claims, including your own.** "Reviewers repeatedly reject claims of faster, confirmed working, no impact, or descriptions of why something behaves a certain way when there's no benchmark, profile, or test backing it up. The default posture is to distrust AI-generated technical claims until checked." Check whether a benchmark or test demonstrates the claim and whether it reflects the real workload; verify a claim about other code against the referenced source before repeating it; watch for assumptions that an extra pass or allocation is free.
@@ -37,13 +42,13 @@ Scope: the diff against the base plus the commit messages; read anything needed 
 6. **Naming and terminology.** Single-character names beyond a loop index or receiver; "metaphor-borrowed jargon that doesn't match this codebase's existing vocabulary"; generic names on non-trivial functions; unexplained abbreviations not expanded inline.
 7. **Complexity for its own sake.** Two-phase or lazy-init patterns, extra boolean flags, wrapper structs that do not reduce complexity ("why not just do X directly"); edge-case handling added without explanation, flagged as a clarity gap rather than judged for correctness; any construction where a simpler formulation is available in the same diff.
 
-### evaluation against this estate
+## Evaluation against this estate
 
-**Where it maps onto existing members and rules.** Pattern 2 is the plain-language form of the provenance tags (recorded, measured, judgment, could-not-check) and of evidence-gated filing; pattern 4 is the executed-test discipline, the no-self-oracle rule and the mutation floor seen from the review side; pattern 6's "metaphor-borrowed jargon that doesn't match the codebase's vocabulary" and "unexplained abbreviations" are the concrete-referent and no-coinage rules applied to code; pattern 3's "brand-new exported symbol with no caller" is Thermite's consumer rule for new public API; pattern 1's "stated once at its most specific home" is the contract's "stated once" obligation; the two-or-three-line suspicion and the "one non-obvious why" are the register standard's "say it once" and Thermite's comment pass.
+**Where it maps onto existing members and rules.** Pattern 2 is the plain-language form of the provenance tags (recorded, measured, judgment, could-not-check) and of evidence-gated filing; pattern 4 is the executed-test discipline, the rule that no agent authors the oracle it is judged against and the mutation floor seen from the review side; pattern 6's "metaphor-borrowed jargon that doesn't match the codebase's vocabulary" and "unexplained abbreviations" are the concrete-referent and no-coinage rules applied to code; pattern 3's "brand-new exported symbol with no caller" is Thermite's consumer rule for new public API; pattern 1's "stated once at its most specific home" is the contract's "stated once" obligation; the two-or-three-line suspicion and the "one non-obvious why" are the register standard's "say it once" and Thermite's comment pass.
 
 **What it adds.**
 
-- **Derivation from a review corpus.** This estate's domain prompts were authored from principles and then reviewed; this skill was authored from two hundred recorded pushbacks and states, per pattern, how often and how strongly reviewers rejected it. The estate holds the raw material for the same derivation: the review rounds of the respec, the domain value scorecard's five datasets, the hallucinated-finding series, and the register corrections in the operator's rulings. The Technical Writer and Documentation Reviewer domains' enforceable content could be derived the same way, with a litmus test and a report form per pattern.
+- **Derivation from a review corpus.** This estate's reviewer roles were authored from principles and then reviewed; this skill was authored from two hundred recorded pushbacks and states, per pattern, how often and how strongly reviewers rejected it. The estate holds the raw material for the same derivation: the review rounds of the respec, the domain value scorecard's five datasets, the hallucinated-finding series, and the register corrections in the operator's rulings. The Technical Writer and Documentation Reviewer domains' enforceable content could be derived the same way, with a litmus test and a report form per pattern.
 - **The litmus test as the unit of a rule.** "If a reader who knows the language loses nothing by deleting it, cut it" is checkable by a cold reader and by an author alike. The estate's register rules are mostly prohibitions; a litmus per rule is what makes a prohibition falsifiable from the inside.
 - **A report form.** Quote the offending text; name the failure mode from a closed list. This is the finding shape of Palimpsest's tickets and Thermite's divergence issues applied to prose: diagnosis separate from prescription, the class named.
 - **Pre-flight, author-run, one concern.** The author lints before the pull request exists; the bug-finding reviews stay separate; the description-quality skill stays separate. This is the division the estate's phase-3 roster collapses: one composed round does everything. A clarity pass before dispatch is cheaper than a domain in the round.
@@ -52,13 +57,18 @@ Scope: the diff against the base plus the commit messages; read anything needed 
 
 **Where it applies, by artifact.**
 
-- *Primers:* a primer that narrates what the contract already says is comment slop at document scale; a primer should carry what the contract does not: the exact commands, the litmus tests, the report form.
-- *Domain prompts (Technical Writer, Documentation Reviewer, Software Engineer):* the seven classes, each with its litmus and report form, are a candidate for the domains' enforceable content; the pre-flight form belongs to the author's own pass, the same content to the cold reader's.
-- *Supplements:* the Rust supplement's Software Engineer extensions already carry error-as-value and type-driven rules; pattern 3 (dead code, speculative surface, fallback kept "just in case") and pattern 7 belong beside them as yes-or-no rules.
+- *Phase skills:* a phase skill that narrates what the contract already says is comment slop at document scale; a phase skill should carry what the contract does not: the exact commands, the litmus tests, the report form.
+- *Reviewer roles (Technical Writer, Documentation Reviewer, Software Engineer):* the seven classes, each with its litmus and report form, are a candidate for the domains' enforceable content; the pre-flight form belongs to the author's own pass, the same content to the cold reader's.
+- *Rules files:* the Rust rules file's Software Engineer extensions already carry error-as-value and type-driven rules; pattern 3 (dead code, speculative surface, fallback kept "just in case") and pattern 7 belong beside them as yes-or-no rules.
 - *Design authorship:* patterns 1, 2 and 7 transfer directly: a design section longer than it needs to be restates mechanism; a design claim about another tool's behavior is verified against that tool's source (the 2026-10-02 assessment's corrections were exactly this class); complexity without a stated reason is a clarity gap.
 - *Code comments:* pattern 1 verbatim; the register standard's comment pass is its execution form.
 
-### caveats
+## Caveats
 
 The flag-discipline pattern is specific to the author's service architecture; only its shape (gate a read-path behavior change; treat write paths differently) transfers. The corpus is one team's; the author's companion gist says such lists diverge within weeks of adoption. The estate's own corpus should drive its own list.
 
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
