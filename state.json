@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1434,
-        "tip_oid": "fcdfe1658eac51f8ce3b36d6bfea8e14ac4096f4",
-        "prefix_sha256": "d376363cfe057461782ac246388f1211d8fd315286c89361bc7b1416c5469e62"
+        "sequence": 1435,
+        "tip_oid": "ef6d173d07227c1b3df4a288d9f1eadcdf8dc5d1",
+        "prefix_sha256": "513feec6b206a29372aeaf94d4b8af063d0a0a913019ea12740d3994a66912fa"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 900,
-  "next_comment_id": 1667,
+  "next_comment_id": 1668,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -22926,7 +22926,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-09-19T04:25:11.146109Z",
-      "updated_at": "2026-09-29T00:09:08.905451Z",
+      "updated_at": "2026-10-08T21:59:23.805244Z",
       "labels": [
         "design"
       ],
@@ -22948,6 +22948,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAcNN/RwfaCsmtDC6U2qK92lJILRPw8aTkbUvXYsRmwQVR8Dbf8B7nHeOE6QS0+TxFUjn/AwzucD3usPpACMi4Cw=="
+        },
+        "ada58d9e-adcc-4ce8-acc0-304a5edf5252": {
+          "display_id": 1667,
+          "author": "xqjG",
+          "content": "Superseded 2026-10-08 (Solution Owner decision, in chat; the ruling comment is on vsdd-cli#839): the option (b) ruling of 2026-09-28 (a signed trace to a hub or data branch by a non-agent actor, landing as a gate-execution contract amendment on vsdd-cli#836) no longer stands. Direction: the verdict record takes the shape Peritus implements, a content-addressed verdict that must already exist unchanged on the protected branch before a transition counts, with authorize-then-apply, so a source edit cannot approve its own review; no transcript sync. The trace-based verifier leg moves to a second program after the composition, install, gate-execution and finding-lifecycle milestones ship. The contract wording change rides vsdd-cli#897; the design lands in the recorded-dispatch milestone. The register entry synced-trace-oracle-unbuilt is re-owned to #897 (pull request pending). Record: cross-reference-verification-papers-2026-10-08; the reconciliation ledger row 'the evidence home conflict'.",
+          "created_at": "2026-10-08T21:59:23.768915Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAi4pumSG0glSKLM9u0O3axlRkIryc9eL8eMA9gDE/hWpnG73cKHktixb7JFKFnqAsbr1HQnDWjozwH46gh+2+Aw=="
         },
         "b8afa353-4ecf-4112-b906-2f615e29b794": {
           "display_id": 1469,
@@ -38165,6 +38174,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1434,
       "timestamp": "2026-10-08T21:58:12.916413Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1435,
+      "timestamp": "2026-10-08T21:59:23.805244Z"
     }
   ],
   "watermark": {
