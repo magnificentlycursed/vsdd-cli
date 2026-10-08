@@ -7,18 +7,21 @@ created: 2026-10-08
 updated: 2026-10-08
 ---
 
+# Reference practice: roles, dispatch shape and review conduct
 
-## Design Specification
+## Status
 
-### status
+Design input for the phase-skill rewrite and the recorded-dispatch milestone design. Who does what, how work is dispatched, and what review means in Thermite, Peritus, OpenClaudia and crosslink, reconstructed read-only on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`; evidence: the four `practice-report-*` pages).
 
-Design input for the phase-primer rewrite and the Slice 6 design. Who does what, how work is dispatched, and what review means in Thermite, Peritus, OpenClaudia and crosslink, reconstructed read-only on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`; evidence: the four `practice-report-*` pages).
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
 
-### the common shape
+Milestones are named by feature. On the tracker (`crosslink milestone list`) they are: the live self-governance milestone, #8 "Slice 1 — Live self-governance"; the composition milestone, #9 "Slice 2 — Composition, generated context, and static price"; the install milestone, #10 "Slice 3 — Install"; the gate-execution milestone, #11 "Slice 4 — Gate execution and the mutation floor"; the finding-lifecycle milestone, #12 "Slice 5 — Finding lifecycle and conformance"; the recorded-dispatch milestone, #13 "Slice 6 — Recorded dispatch and directive flow"; the cost milestone, #14 "Slice 7 — The cost crate".
+
+## The common shape
 
 A root session writes or freezes the design, creates one tracker issue per increment with the dispatch prompt in its body, dispatches a worker into an isolated worktree, runs the gates itself, commits with a signature, and hands the push to the human. Review is a separate read-only dispatch over the exact tree. CI is the second reviewer. The human approves, pushes, merges, provisions secrets and redirects.
 
-### the roles, by repository
+## The roles, by repository
 
 **Thermite.** Four Claude Code agent types in the repository, each with a tool allowlist and a report word cap:
 
@@ -34,7 +37,7 @@ A root session writes or freezes the design, creates one tracker issue per incre
 
 **crosslink.** One implementer per issue; a root architect session that writes the pre-flight comment and later runs the independent audit "and will not monitor CI"; a driver identity that signs hub commits with the human's key; the human owns the final push. The tool's own swarm, sentinel and kickoff-report loop were not used on the tool itself.
 
-### dispatch mechanics that recur
+## Dispatch mechanics that recur
 
 - **The issue body is the prompt.** Authoritative spec by requirement and criterion; sequencing document; predecessors by pull request; loop discipline; self-verify commands; stop rule on budget.
 - **Ceilings are explicit and recorded:** three workers; serialized builds with one build job and one test thread; swap reset before dispatch; manifests of about ten files; locks per issue with stale-lock stealing off.
@@ -43,7 +46,7 @@ A root session writes or freezes the design, creates one tracker issue per incre
 - **Parallelization rule:** independent units are dispatched in one message; fixers serialize per blocker; critics parallelize; a critic runs only after substantive builds, not after cite refreshes or fixture bumps.
 - **The dispatch record** is the hub event log (issue created, label, lock claimed, plan, result, lock released, handoff); no manifest files survive in Thermite or crosslink; Peritus's formal records are the exception.
 
-### what "adversarial" meant
+## What "adversarial" meant
 
 | | Reviewer | Freshness | Output | Stop rule |
 |---|---|---|---|---|
@@ -54,7 +57,7 @@ A root session writes or freezes the design, creates one tracker issue per incre
 
 Review dimensions are enumerated in the receipt (OpenClaudia's first slice: final-environment graders, success and failure coverage, multi-trial design, trace assertions, effect-observation assertions, artifact bounds and isolation). The reviewer is forbidden to edit in every repository.
 
-### findings, filing and closure
+## Findings, filing and closure
 
 - A finding becomes a tracker issue immediately: title an imperative sentence or "Divergence: <symbol> <claim>"; label blocker or remediation; linked to the parent.
 - Fixed in a dedicated commit by the owning worker; closed with a result comment; the changelog line generated on close and committed unchanged.
@@ -62,14 +65,19 @@ Review dimensions are enumerated in the receipt (OpenClaudia's first slice: fina
 - Waiver policies exist (Peritus release policy: only non-release-blocking findings, approved by an authority other than the reporter); no granted waiver was observed in any repository.
 - Genuinely cold reviews are rare and external: a trust audit of Thermite at a named revision with a reconciliation table; an ontological review of Peritus after months of code; two outside-filed issues.
 
-### divergences from the whitepaper
+## Divergences from the whitepaper
 
 The whitepaper's roles (human architect, builder, tracker, adversary) map loosely: human as user, driver or operator; builder as the kickoff implementer or path-scoped worker; the hub as tracker; the adversary as a critic agent type or a second session. No Solution Owner, no domain-reviewer roster, no pair separation, no validator-differs-from-owner rule, no refutation fan-out, no persona exist in any repository.
 
-### what to take (candidates)
+## What to take (candidates)
 
 - Four roles with tool allowlists and report caps, carried as agent definitions in the repository, are the attested packaging of the method's disciplines.
 - The dispatch prompt lives in the issue body and names the spec, the predecessors, the loop, the self-verify commands and the stop rule.
 - One read-only reviewer per round, a different model family where available, typed findings, a bounded re-check, CI as the second reviewer, a written stop rule.
 - Ceilings in the record: worker count, build concurrency, manifest size.
 
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
