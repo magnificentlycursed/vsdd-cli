@@ -66,4 +66,4 @@ updated: 2026-10-08
 - `cross-reference-verification-papers-2026-10-08` — the maintainer's six embodied ideas and five frontier items checked against the papers and this estate, with three further insights and adoption candidates.
 - `context-language-models-2026-10-08` — a model that rewrites its own context as a file, the measured gains and costs, the emergent compaction behaviors, the named failure modes, and the public discussion's questions about immutable logs and forgetting policy.
 - `cross-reference-context-management-2026-10-08` — that work read against the append problem and crosslink knowledge management, with a forgetting policy for records and feature requests for the knowledge feature.
-- `terminology-grounding-2026-10-08` — the day's informal phrases mapped to standard terms and sibling self-words; three registration candidates (increment, wave, receipt).
+- `terminology-grounding-2026-10-08` — the day's informal phrases mapped to standard terms and sibling self-words; two registration candidates after source weighting (increment, attestation).
