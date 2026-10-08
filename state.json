@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1397,
-        "tip_oid": "13882a366eaa5b9181ab5b8ed7132a5eef8f4ba9",
-        "prefix_sha256": "6fbf6d78eba70815d6611fdf2bb62f21eca2995fb786aef46d5f114fdf763d64"
+        "sequence": 1398,
+        "tip_oid": "f7da4e64aa0f2a38b6421a1f8d7c9dc838876974",
+        "prefix_sha256": "98e1ac1accd065d7779e0ef434909df038312a653d20bf5ba93d7eb677909cc7"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1639,
+  "next_comment_id": 1640,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -28213,7 +28213,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:11.234260Z",
-      "updated_at": "2026-09-29T02:05:09.432334Z",
+      "updated_at": "2026-10-08T03:26:25.814237Z",
       "labels": [
         "design"
       ],
@@ -28226,6 +28226,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAwjQKRaxM8aetF9SOeFzHbrkQmIRuXN8Pf550KAldCoCxASIyLOBUSbUufY98pwZHjAtXEnzfb5iGgxQVQnRfAg=="
+        },
+        "38bbcf96-7868-4579-9b93-7d9e71ebe633": {
+          "display_id": 1639,
+          "author": "xqjG",
+          "content": "[plan] PLAN (operator 'let's work through those', 2026-10-08; Solution Owner ruling (3) of 2026-10-07 on vsdd-cli#894 routed the field here): author the dispatch manifest's phase field as engine data. Changes on branch data/875-manifest-phase-field: templates/registry/dispatch-data.md 0.2.0 → 0.3.0 (additive) gains manifest field 'phase' — the phase the dispatched run executes, sourced by the dispatcher from the state artifact and the crosslink session breadcrumb, never agent-declared; the verifier derives the run's role and expected context set from it (contract: Verifiable conformance and efficiency, 'Phase is recorded', 'Expected and observed'); the body states that phase, model_tier and effort_level are engine data read by Slices 4, 6 and 7 and authored before Phase 3's 2a; the registry red-gate test pins sixteen fields and the presence of 'phase'. No schema change: dispatch-data.json constrains field shape, not names. The other unauthored sets stay listed here per the 2026-09-29 decision. One Data Engineer cold read before the commit.",
+          "created_at": "2026-10-08T03:26:25.756200Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhOaoWn8G0P588Rx6h8x4YGRMnEj2bqjXGVFBNLVB64mva/32jdIowz5InBbLh9PCbowlhLBDxy1AaTWIaQjfAg=="
         },
         "859b30ba-b54a-4390-b5b5-ffb55b15269a": {
           "display_id": 1559,
@@ -37689,6 +37698,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1397,
       "timestamp": "2026-10-08T03:24:18.093696Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1398,
+      "timestamp": "2026-10-08T03:26:25.814237Z"
     }
   ],
   "watermark": {
