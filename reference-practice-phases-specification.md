@@ -7,14 +7,21 @@ created: 2026-10-08
 updated: 2026-10-08
 ---
 
+# Reference practice: the specification phases (1a, 1b, 1c)
 
-## Design Specification
+## Status
 
-### status
+Design input for the phase-skill rewrite. How the whitepaper's specification phases are actually practised in Thermite, Peritus, OpenClaudia and crosslink, reconstructed read-only on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`; evidence: the four `practice-report-*` pages). None of the repositories uses the phase names; the mapping is ours.
 
-Design input for the phase-primer rewrite. How the whitepaper's specification phases are actually practised in Thermite, Peritus, OpenClaudia and crosslink, reconstructed read-only on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`; evidence: the four `practice-report-*` pages). None of the repositories uses the phase names; the mapping is ours.
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
 
-### 1a behavioral specification
+Phase names on this page are the contract's: 1a behavioral specification, 1b verification architecture, 1c the spec review gate, 2a test-suite generation (the red gate), 2b minimal implementation, 2c refactor, 3 adversarial refinement, 4 the feedback integration loop, 5 formal hardening, 6 convergence. The whitepaper has six phases; the a, b and c splits are this repository's.
+
+Milestones are named by feature. On the tracker (`crosslink milestone list`) they are: the live self-governance milestone, #8 "Slice 1 — Live self-governance"; the composition milestone, #9 "Slice 2 — Composition, generated context, and static price"; the install milestone, #10 "Slice 3 — Install"; the gate-execution milestone, #11 "Slice 4 — Gate execution and the mutation floor"; the finding-lifecycle milestone, #12 "Slice 5 — Finding lifecycle and conformance"; the recorded-dispatch milestone, #13 "Slice 6 — Recorded dispatch and directive flow"; the cost milestone, #14 "Slice 7 — The cost crate".
+
+"This estate" means vsdd-cli together with crosslink and mdatron, the two sibling tools it runs on.
+
+## 1a Behavioral specification
 
 **The artifact is a per-slice document.** Not a program-wide contract. Its attested shape:
 
@@ -31,7 +38,7 @@ Design input for the phase-primer rewrite. How the whitepaper's specification ph
 
 **Grounding.** Against the tree at a named revision ("grounded against the tree at c46da3ac"; "Revision: 35255a17"), with a kickoff gap analysis before dispatch.
 
-### 1b verification architecture
+## 1b Verification architecture
 
 **Not a separate document anywhere.** It is:
 
@@ -45,7 +52,7 @@ Design input for the phase-primer rewrite. How the whitepaper's specification ph
 
 **Amended on first contact.** Thermite amended a verification strategy the same day as the document ("verify emitted output, don't byte-match goldens").
 
-### 1c specification review gate
+## 1c Specification review gate
 
 **Not a gate anywhere.** No status flips; Thermite's component documents never leave draft. What exists instead:
 
@@ -58,15 +65,20 @@ Design input for the phase-primer rewrite. How the whitepaper's specification ph
 
 **Not observed:** a routine fresh-context adversary over every specification before tests; a multi-domain review; any Solution Owner or domain-reviewer role.
 
-### divergences from the whitepaper in these phases
+## Divergences from the whitepaper in these phases
 
 - 1a: no named edge-case catalogue or non-functional section; the design skill's failure-handling and security headings are the nearest.
 - 1b: no provable-properties catalogue as a phase artifact outside Thermite; purity boundaries are product features, not maps.
 - 1c: the whitepaper's adversary "can't find legitimate holes" exit is replaced by a freeze, a verdict, a gap analysis and backlog invariants. The heavy review is of code.
 
-### what to take for the primers (candidates)
+## What to take for the phase skills (candidates)
 
-- 1a produces one slice document in the attested shape, written at build time against a named revision, decisions inline, an architecture verdict, frozen by its own commit.
+- 1a produces one milestone document in the attested shape, written at build time against a named revision, decisions inline, an architecture verdict, frozen by its own commit.
 - 1b is the verification section plus the authority per requirement and a registry entry with typed evidence; expected values never copied from the system under test.
-- 1c is light: freeze, verdict, gap analysis against the tree, backlog integrity. A multi-domain cold review of a specification is this estate's own addition; if kept, the primer should say so and state its cost.
+- 1c is light: freeze, verdict, gap analysis against the tree, backlog integrity. A multi-domain cold review of a specification is this estate's own addition; if kept, the phase skill should say so and state its cost.
 
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
