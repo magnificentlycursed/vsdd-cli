@@ -67,3 +67,4 @@ updated: 2026-10-08
 - `context-language-models-2026-10-08` — a model that rewrites its own context as a file, the measured gains and costs, the emergent compaction behaviors, the named failure modes, and the public discussion's questions about immutable logs and forgetting policy.
 - `cross-reference-context-management-2026-10-08` — that work read against the append problem and crosslink knowledge management, with a forgetting policy for records and feature requests for the knowledge feature.
 - `terminology-grounding-2026-10-08` — the day's informal phrases mapped to standard terms and sibling self-words; two registration candidates after source weighting (increment, attestation).
+- `big-picture-and-decisions-2026-10-08` — the whole day in one page for a maintainer who was not there: the nine decisions with why, goals served, recommendation, sources and what to weigh, and a citation key that resolves every handle, page, file and link.
