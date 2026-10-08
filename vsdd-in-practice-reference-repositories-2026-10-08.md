@@ -69,13 +69,13 @@ Milestones are named by feature. On the tracker (`crosslink milestone list`) the
 - `proptest-with-agent-swarms-recursion-wtf-2026-10-08`, `exomonad-recursion-wtf-2026-10-08`, `tidepool-recursion-wtf-2026-10-08` — three articles by one practitioner on agent-built property-test machinery, a tree of worktrees with hooks as code, and effect-sequenced tooling with suspension and free pagination.
 - `cross-reference-recursion-wtf-2026-10-08` — those three read against the contract and the day's findings, with adoption candidates and homes.
 - `agent-skills-write-plans-and-prompts-2026-10-08` — the same practitioner's authoring disciplines for prompts to capable peers and for resumable plans; direct input for the phase skills and the handoff.
-- `knowledge-page-conventions-proposal-2026-10-08` — a proposal for the operator: the split rule and which pages it applies to, six surfacing mechanisms, and the provenance form that stops pages from appending.
+- `knowledge-page-conventions-proposal-2026-10-08` — in force as convention from 2026-10-08 (decision 8; the work is `vsdd-cli#899`): the split rule and which pages it applies to, six surfacing mechanisms, and the provenance form that stops pages from appending.
 - `vero-formally-verified-repositories-2026-10-08`, `proof-carrying-cognition-2026-10-08` — the two papers the Peritus maintainer pointed at on 2026-09-11: a repository-scale verification benchmark with an independent grader and an audit route, and a study of judges losing soundness under selection pressure.
 - `cross-reference-verification-papers-2026-10-08` — the maintainer's six embodied ideas and five frontier items checked against the papers and this estate, with three further insights and adoption candidates.
 - `context-language-models-2026-10-08` — a model that rewrites its own context as a file, the measured gains and costs, the emergent compaction behaviors, the named failure modes, and the public discussion's questions about immutable logs and forgetting policy.
 - `cross-reference-context-management-2026-10-08` — that work read against the append problem and crosslink knowledge management, with a forgetting policy for records and feature requests for the knowledge feature.
 - `terminology-grounding-2026-10-08` — the day's informal phrases mapped to standard terms and sibling self-words; two registration candidates after source weighting (increment, attestation).
-- `big-picture-and-decisions-2026-10-08` — the whole day in one page for a maintainer who was not there: the nine decisions with why, goals served, recommendation, sources and what to weigh, and a citation key that resolves every handle, page, file and link.
+- `big-picture-and-decisions-2026-10-08` — the whole day in one page for a maintainer who was not there: the nine decisions, all accepted by the operator on 2026-10-08 (work on `vsdd-cli#897`, `vsdd-cli#898` and `vsdd-cli#899`), with why, goals served, recommendation, sources and what to weigh, and a citation key that resolves every handle, page, file and link.
 
 ## Handles cited on this page
 
