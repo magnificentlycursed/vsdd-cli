@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1410,
-        "tip_oid": "e2635f5cac5d1f5828a6688e1de743c1ec7491a0",
-        "prefix_sha256": "668e440c1829a95e42c3a61e7e0623f41d11b177d1b3c8f9b3d9c8f615df8703"
+        "sequence": 1411,
+        "tip_oid": "20742ff6f0826718a970f62bff1792686af44b42",
+        "prefix_sha256": "3fc518d948979db07c851689548752da9a76b97364da4c182216223f57f85f9b"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1650,
+  "next_comment_id": 1651,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -28246,11 +28246,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:11.234260Z",
-      "updated_at": "2026-10-08T16:17:21.886540Z",
+      "updated_at": "2026-10-08T16:21:12.092076Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "0656b778-39c2-4e47-af7c-5494bda79ae5": {
+          "display_id": 1650,
+          "author": "xqjG",
+          "content": "[result] Pull request #67 merged by the operator; the dispatch data set is at 0.3.0 on main with the phase field. This issue stays open for the remaining unauthored sets (operator 2026-09-29), the two Slice 6 questions (unresolvable phase at dispatch; state-artifact versus breadcrumb precedence) and the two follow-ups (schema name pin for the engine-data fields; the loader's field-uniqueness check).",
+          "created_at": "2026-10-08T16:21:11.575101Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAHwFnNWU6V8WfDuzxutLcgPrGINlwXOxaMFADG0Elr7olXdka6JHmv11cIv0Brr2HSsgaQ24KTq07wjHJg+DrCA=="
+        },
         "28abe31e-2a55-4252-a462-3064f7710309": {
           "display_id": 1557,
           "author": "xqjG",
@@ -37850,6 +37859,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1410,
       "timestamp": "2026-10-08T16:17:21.886540Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1411,
+      "timestamp": "2026-10-08T16:21:12.092076Z"
     }
   ],
   "watermark": {
