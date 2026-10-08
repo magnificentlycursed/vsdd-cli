@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1395,
-        "tip_oid": "c654218cf709a5b1adee00eba7c39d99a5c228f6",
-        "prefix_sha256": "9da7755597db0e84a7da3ffd02aea915b2767421f9fef6b81d1a90e65dd25a1c"
+        "sequence": 1396,
+        "tip_oid": "3eb8dbc611460bf89816b1a8af929bb7d79960e4",
+        "prefix_sha256": "7bd03ca7f13e1b5ac092663983302d2436ebc6b531c2d83f1c9756bcc7abfeac"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1637,
+  "next_comment_id": 1638,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19096,11 +19096,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T07:07:00.744931Z",
-      "updated_at": "2026-10-08T02:43:08.210042Z",
+      "updated_at": "2026-10-08T03:18:34.353415Z",
       "labels": [
         "security"
       ],
       "comments": {
+        "1e391cd1-697d-46d4-afcb-d72da7aca48c": {
+          "display_id": 1637,
+          "author": "xqjG",
+          "content": "[result] All eleven fixes from the routing comment applied and the records filled (both re-pin review paragraphs in docs/dependencies/crosslink.md; the mdatron record's three owed items marked met with the cache check graded as integrity on the restored blob). Also riding this branch: the synced-trace-oracle-unbuilt register correction and the #873 ruling text. Verified: every edited YAML parses; mdatron verify --deny-warnings clean; cargo test 226 passed earlier on this branch, the register-reading tests re-run after the text edits. Staged, ten files; commit handed to the operator. The first CI run on the pull request is the owed proof that the 1.88 builds succeed and the new steps fire (toolchain line in the log, the sha256 write on the first miss, the anonymous hub fetch, the gate built before the token).",
+          "created_at": "2026-10-08T03:18:34.309273Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABASAFuLH6H7wfQ7iO58rbLIERvO2/QYhpve/+1hp3P4vmceQrdF6qlMrL26kKUEz3/peUsxia1sSN7/VazrzN2Cg=="
+        },
         "3085d9d9-75e8-4a90-b957-063c3d634d74": {
           "display_id": 1632,
           "author": "xqjG",
@@ -37661,6 +37670,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1395,
       "timestamp": "2026-10-08T03:15:14.046112Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1396,
+      "timestamp": "2026-10-08T03:18:34.353415Z"
     }
   ],
   "watermark": {
