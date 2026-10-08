@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1415,
-        "tip_oid": "194da9d9980d31ffcb41c1aa19d4e6417cfc4539",
-        "prefix_sha256": "8827d669cbb25fe99b971a91ee063736d84b26baf2bf3165d40b313b397fc44f"
+        "sequence": 1416,
+        "tip_oid": "39fed5a65daa05ac86139b3a7190ea7259fb195f",
+        "prefix_sha256": "3662af49a77db5220764285f10380871f5d345db43a7d5281bd605981715c7db"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1653,
+  "next_comment_id": 1654,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9794,7 +9794,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-06T20:48:27.413897Z",
+      "updated_at": "2026-10-08T16:56:20.491802Z",
       "labels": [
         "design"
       ],
@@ -9847,6 +9847,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAafaQP4T4b1uWMftrXj0ruelj4/6bdKcmdpjuRY+8E69KdRdIX0GZIbqqBOTNdhpi/ThY/7irtm01R5BfzA/JBw=="
+        },
+        "6a5d4c18-8510-4db9-99d6-a56a2c4bc34e": {
+          "display_id": 1653,
+          "author": "xqjG",
+          "content": "[action] Reconciliation ledger across Slices 1-7 written to the session scratchpad (reconciliation-ledger-2026-10-08.md): 26 unflagged + 13 misplaced divergences between recorded decisions and the contract/build-plan/data, beyond the operator's two (session-start hook home; vsdd-core collapse). Not yet published or routed; operator to decide the home.",
+          "created_at": "2026-10-08T16:56:20.453639Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIdjBb15Rl1V8+1p8y6ko466Z1+kRGN0fdyNGEkbvbFyuvAJ1EHtHDgwYegVZSkoodCCUXvM45//6e2lplvgQAQ=="
         },
         "7d9338ac-6558-40b5-9a75-8daea70b024b": {
           "display_id": 1568,
@@ -37902,6 +37911,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1415,
       "timestamp": "2026-10-08T16:33:20.467909Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1416,
+      "timestamp": "2026-10-08T16:56:20.491802Z"
     }
   ],
   "watermark": {
