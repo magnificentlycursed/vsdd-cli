@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1394,
-        "tip_oid": "a8074d7b51e47c95c0a29c0ed6a18d627e847f2e",
-        "prefix_sha256": "da3c5dbb69d16c3551ba59a4f96171cae8b6077043a6071fc94a51c38178bd86"
+        "sequence": 1395,
+        "tip_oid": "c654218cf709a5b1adee00eba7c39d99a5c228f6",
+        "prefix_sha256": "9da7755597db0e84a7da3ffd02aea915b2767421f9fef6b81d1a90e65dd25a1c"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1636,
+  "next_comment_id": 1637,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -2298,7 +2298,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T02:35:51.964829Z",
-      "updated_at": "2026-10-08T02:36:54.851739Z",
+      "updated_at": "2026-10-08T03:15:14.046112Z",
       "closed_at": "2026-09-19T04:08:50.143467Z",
       "labels": [
         "feature"
@@ -2384,6 +2384,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAXto1srePT9xzXnIxHGAW51yQ7ydgnG8xcpEjp5PDeUvqB2kpIjF2j5m4dwLf7NweE9nRDcGkzaEwNnOzpwBgCw=="
+        },
+        "e780cf66-51d2-44ce-a76d-1246c58f5683": {
+          "display_id": 1636,
+          "author": "xqjG",
+          "content": "[decision] CORRECTION AND RULING 2026-10-08 (operator, in chat: 'Agreed'). The 'upstream filing pending' text this entry carried since 2026-09-18 was stale: #869's closing comment (2026-09-19) withdrew item E1 because there is no crosslink server — crosslink publishes tracker events to the hub (checkpoint, per-agent event logs, knowledge, reconciliation) and nothing else; the agent transcript stays in the worktree, agent-writable, integrity none; upstream has no issue or plan for trace sync. The filing made today on that stale text, Corvidae-Coding-Projects/crosslink issue #119, is closed as premature. RULING: the conformance oracle is re-homed by contract amendment from 'the trace, synced and tamper-evident' (unbuildable as written) to a record the Slice 6 dispatcher writes on the operator's side — at run end it hashes the transcript, redacts it with vsdd's own anonymization patterns before hashing, and records the digest and usage figures as a signed tracker comment under the operator's driver identity, which the agent cannot rewrite; redaction becomes vsdd's own leg and the upstream dependency disappears. The amendment (the oracle member, the redaction ladder's second leg, this entry's retirement) enters Slice 6's design-first step under Solution Owner change authority; never a hand-edit. The register entry synced-trace-oracle-unbuilt now states this and carries a date retest (2026-11-30) with the amendment as its trigger; the correction rides the open #896 branch. Documented occurrences of a trace leak in this estate: none (checked the contract's evidence lines, the incident corpus, the knowledge base); the leg is design-derived, preventive.",
+          "created_at": "2026-10-08T03:15:14.013029Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAfB1dd4lMuxBXQ9LRgvShBCRJo5UhDoStVJO7U/slZsitEXdK430NgWL2vANw7NjlpYiZJF9NQrbmI3xNoqxYAw=="
         },
         "f338e3c6-0302-4223-82aa-d3429ec30d3e": {
           "display_id": 1461,
@@ -37647,6 +37656,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1394,
       "timestamp": "2026-10-08T02:43:08.210042Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1395,
+      "timestamp": "2026-10-08T03:15:14.046112Z"
     }
   ],
   "watermark": {
