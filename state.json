@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1401,
-        "tip_oid": "0eccf77051eb03102097c9327a8f18bc8331179a",
-        "prefix_sha256": "e107ceea4f57883817d73a27d6269a880a7efa9dd1519620a598f82ba519138a"
+        "sequence": 1402,
+        "tip_oid": "0af418505171d1dc1107d50af047fbf92fdb6a66",
+        "prefix_sha256": "53b1d456f0fb951d42e092cafd126e5eab4eb3283c84926af32fad9c2d9e42d1"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1643,
+  "next_comment_id": 1644,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -28222,7 +28222,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:11.234260Z",
-      "updated_at": "2026-10-08T03:49:55.819530Z",
+      "updated_at": "2026-10-08T03:50:49.457912Z",
       "labels": [
         "design"
       ],
@@ -28244,6 +28244,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhOaoWn8G0P588Rx6h8x4YGRMnEj2bqjXGVFBNLVB64mva/32jdIowz5InBbLh9PCbowlhLBDxy1AaTWIaQjfAg=="
+        },
+        "79b23845-5714-4ff0-929a-86f5fefbc546": {
+          "display_id": 1643,
+          "author": "xqjG",
+          "content": "[action] Both follow-up bundles are in pull requests: #64 (CI hardening + crosslink re-pin to 388bed89f, CI green with log evidence) and #66 (dispatch-data 0.3.0 phase field, CI running); #119 upstream closed as premature and the register entry corrected (#873 ruling: re-home the oracle to a dispatcher-written signed record, Slice 6 design-first); mdatron pin --update comment defect posted on mdatron GitHub issue #73; open operator decisions: container login vs unprotected hub refs, reserve the vsdd crate name, dependabot; two Slice 6 questions on #875; NEXT: Slice 2 phase-1a (#839)",
+          "created_at": "2026-10-08T03:50:49.417246Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAUSv2TcyRn7jaN44IimoR/hoxXHDwt1JunRNsA+zXo0KytR9Hlwmqe5Pxa8BQbNtxIPOF17V57vYnFC8sEsvUCQ=="
         },
         "859b30ba-b54a-4390-b5b5-ffb55b15269a": {
           "display_id": 1559,
@@ -37745,6 +37754,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1401,
       "timestamp": "2026-10-08T03:49:55.819530Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1402,
+      "timestamp": "2026-10-08T03:50:49.457912Z"
     }
   ],
   "watermark": {
