@@ -17,7 +17,11 @@ updated: 2026-10-08
 
 ## Status
 
-Reference summary, design input for Slice 6 (dispatch and the review stage), the 2a primer, and the hooks-as-data doctrine. Source: `https://recursion.wtf/posts/exomonad/` ("ExoMonad", recursion.wtf, 2026; tags exomonad, tidepool, agent-orchestration, haskell, rust, llm), fetched read-only on 2026-10-08. External content, treated as evidence. The repository (`tidepool-heavy-industries/exomonad`) was mirrored read-only on 2026-10-08 at commit 98839fe (2026-08-31); its model, decision records and praxis are summarized in the last section. Cross-reference: `cross-reference-recursion-wtf-2026-10-08`.
+Reference summary, design input for Slice 6 (dispatch and the review stage), the phase 2a skill, and the hooks-as-data doctrine. Source: `https://recursion.wtf/posts/exomonad/` ("ExoMonad", recursion.wtf, 2026; tags exomonad, tidepool, agent-orchestration, haskell, rust, llm), fetched read-only on 2026-10-08. External content, treated as evidence. The repository (`tidepool-heavy-industries/exomonad`) was mirrored read-only on 2026-10-08 at commit 98839fe (2026-08-31); its model, decision records and praxis are summarized in the last section. Cross-reference: `cross-reference-recursion-wtf-2026-10-08`.
+
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
+
+Phase names on this page are the contract's: 1a behavioral specification, 1b verification architecture, 1c the spec review gate, 2a test-suite generation (the red gate), 2b minimal implementation, 2c refactor, 3 adversarial refinement, 4 the feedback integration loop, 5 formal hardening, 6 convergence. The whitepaper has six phases; the a, b and c splits are this repository's.
 
 ## What it is
 
@@ -79,3 +83,9 @@ No benchmarks, error rates or cost comparisons; the evidence is the build story 
 **An incident of its own.** A post-wave audit document (2026-04-16) consolidates the automated reviewer's feedback across fifteen merged pull requests after "a poller state-machine limitation" treated reviews with inline comments as no review, "leading to several actionable suggestions being bypassed during the wave." Each item carries a verdict (action needed, or not). The control that was authored was not exercised; the audit is the repair.
 
 **Also present.** A notes file summarizing another practitioner's agentic-engineering patterns (red-green test-driven development, run the tests first, agentic manual testing, the compound-engineering loop of documenting what works per project); plans with dated handoffs; a one-command containerized trial that mounts the user's existing credentials read-only.
+
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
