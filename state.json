@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1390,
-        "tip_oid": "c9d98d036a8248e3409c0f59eb923e65878dffe7",
-        "prefix_sha256": "67dba8352c7df456fc6176670cac8e819a498eadcfd07a62d852e96c96ee5bd4"
+        "sequence": 1391,
+        "tip_oid": "11651163da94ffc208f5738eb7e8bef9d2b9eabc",
+        "prefix_sha256": "1b0c0d05f4705e461b032516b89d231a1945ce21f34e3a4340dc44328ddde817"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1632,
+  "next_comment_id": 1633,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19078,10 +19078,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T07:07:00.744931Z",
-      "updated_at": "2026-10-07T07:07:25.836444Z",
+      "updated_at": "2026-10-08T02:18:33.626470Z",
       "labels": [
         "security"
-      ]
+      ],
+      "comments": {
+        "3085d9d9-75e8-4a90-b957-063c3d634d74": {
+          "display_id": 1632,
+          "author": "xqjG",
+          "content": "[decision] Operator directive 2026-10-08 (in chat): 'I think that's resolved by upgrading to upstream develop's current build' and 'let's work through those' — classified as a Solution Owner decision to move CI's crosslink pin from 875066ad (the PR #108 merge) to upstream develop's tip 388bed89f (the PR #115 merge, 2026-10-07), the build the operator's local binary already runs (0.9.0-beta.1+388bed89f). It carries the transport-failure classification fix (1ba67eb71; crosslink PR #112) that ends the blocked_corrupt latch seen on 2026-10-07/08, plus PR #114 (container GitHub login) and PR #115 (daemon housekeeping reconciles). Under the Dependency approval cadence ratified in #894, a re-pin of a commit pin re-enters the Platform Engineer and Security review; that review runs together with this issue's hardening on one branch (chore/896-ci-hardening-crosslink-repin). The crosslink-develop-consumption register entry is re-armed to the new commit; the release-tag re-pin stays owed, date retest 2026-11-30 unchanged.",
+          "created_at": "2026-10-08T02:18:33.586143Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAGJaj5z1tbcmKnfMOI9r4a1f6JYoLEHJY8FhcQ5J9UmKzOxZjK2K23hy7xyrjWCwDlxRXdPAgA5UeJnPMTlkpDQ=="
+        }
+      }
     },
     "a29d3f3c-8c6b-407a-a468-10ace32e1a58": {
       "uuid": "a29d3f3c-8c6b-407a-a468-10ace32e1a58",
@@ -37589,6 +37600,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1390,
       "timestamp": "2026-10-08T02:15:09.695435Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1391,
+      "timestamp": "2026-10-08T02:18:33.626470Z"
     }
   ],
   "watermark": {
