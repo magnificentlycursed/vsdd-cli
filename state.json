@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1424,
-        "tip_oid": "bff89148856ab16b1f4ba1c97a667cd1ad730472",
-        "prefix_sha256": "e75ee765d66450d95e02a46252efce031954c2c4d034e73f7072cc5e00a02695"
+        "sequence": 1425,
+        "tip_oid": "c9b36bf7be1d78c96bb5663a09af535d1d229800",
+        "prefix_sha256": "a77da36594126bf8f7ddba512571bfa503bf15fa60a6428cc65f0e668b4e9352"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1662,
+  "next_comment_id": 1663,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9794,7 +9794,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-08T19:38:48.606538Z",
+      "updated_at": "2026-10-08T20:42:15.450627Z",
       "labels": [
         "design"
       ],
@@ -9874,6 +9874,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAIdjBb15Rl1V8+1p8y6ko466Z1+kRGN0fdyNGEkbvbFyuvAJ1EHtHDgwYegVZSkoodCCUXvM45//6e2lplvgQAQ=="
+        },
+        "7bbb3a96-065b-482c-a21c-ec671898c703": {
+          "display_id": 1662,
+          "author": "xqjG",
+          "content": "[action] Published big-picture-and-decisions-2026-10-08 (the big picture and nine decisions rewritten under the register, clarity and terminology corrections: skill for primer, rules file for supplement, reviewer role for domain prompt, milestones by feature name, increment as the unit; every citation resolvable through a key). Awaiting the operator's rulings.",
+          "created_at": "2026-10-08T20:42:15.415147Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAqKz9nCFe7xhXyTPbDv8qT+WFip58xRB6zsc/pLoe0z3cU6k3cO959qVl6Zp4FCn16jaNER7BYCIe4cgp8eg3Dg=="
         },
         "7d9338ac-6558-40b5-9a75-8daea70b024b": {
           "display_id": 1568,
@@ -38028,6 +38037,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1424,
       "timestamp": "2026-10-08T19:38:48.606538Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1425,
+      "timestamp": "2026-10-08T20:42:15.450627Z"
     }
   ],
   "watermark": {
