@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1385,
-        "tip_oid": "bb3ad56d5ceb29d84c1fdb8018e08e5ce9a19402",
-        "prefix_sha256": "39259f8664633a87757478d4c36b9af47b768988b6172417b7e74a56020d9dfc"
+        "sequence": 1386,
+        "tip_oid": "9f8fa9e57df1999b94f49fd498228eb92a8a1a29",
+        "prefix_sha256": "7cc365a55c150e7d32571f648b6cae04c632f394a1745566c70b137aa12e57b6"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1630,
+  "next_comment_id": 1631,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24809,11 +24809,20 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:57:19.928315Z",
-      "updated_at": "2026-10-08T01:56:13.219804Z",
+      "updated_at": "2026-10-08T02:03:24.083525Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "1b848f16-e24c-4867-870d-b9441bf1c0a6": {
+          "display_id": 1630,
+          "author": "xqjG",
+          "content": "[observation] Correction to the previous comment: the readiness latch is already fixed upstream, not a new defect. Upstream develop carries 1ba67eb71 'fix(reconcile): classify git transport failures as the remote being unavailable, not as corruption' and crosslink PR #112 (transport errors wait for the remote). The latched daemon predated them; the operator's local binary is now 0.9.0-beta.1+388bed89f, the upstream develop tip (crosslink PR #115 merge, 2026-10-07). CI still pins 875066ad, which predates both fixes; moving that commit pin re-enters the Platform Engineer and Security review under this amendment's own cadence rule (every re-pin of a commit pin).",
+          "created_at": "2026-10-08T02:03:24.052860Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAxBe5jM/qmWUKcw16HeiO0dBTozi+6Mq9c8tEVgjqtNo3DnSLdRufz0EKaZdDlrWSp5blr+i3U5ICSM7QmsULDA=="
+        },
         "2f939dd3-902a-42ff-b54c-d09a1293e9a7": {
           "display_id": 1621,
           "author": "xqjG",
@@ -37545,6 +37554,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1385,
       "timestamp": "2026-10-08T01:56:13.219804Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1386,
+      "timestamp": "2026-10-08T02:03:24.083525Z"
     }
   ],
   "watermark": {
