@@ -16,6 +16,12 @@ Design input for the vocabulary registry's next update; registration is the oper
 
 Operator stance recorded 2026-10-08: term changes are welcome where they make things more understandable, even when the change is annoying; no proliferation of small rules by accident; no coinages. This page is a map for choosing words, not a rulebook; the three candidates (increment, wave, receipt) remain unregistered until the operator registers them.
 
+## Source weighting for naming (operator stance, 2026-10-08)
+
+Three tiers, applied to every row below. (1) Standard lexicons and academic or lab papers ground a concept and supply the term when one exists. (2) A published author or speaker's phrasing is the likeliest to be adopted widely; where tiers 1 and 2 agree, use that phrasing (today: the author of Observability Engineering, 2nd edition, through the book pages, the memory-rules gist and the clarity skill). (3) Cutting-edge practitioners' words (the Corvidae-Coding-Projects repositories; recursion.wtf) are evidence that a practice exists and the proper name of their tool's feature; they are not a source for general names, and their coinages are cited only as theirs (hylomorphism over context windows, devswarm, gauntlet in Thermite's sense, slag, praxis, burn receipt, spec commit). The operator's assessment behind tier 3, marked by the operator as unsupported: these practitioners are often ahead of the papers and the labs, implementing before the labs write about it.
+
+**Re-weighted candidates.** Increment stands: standard agile vocabulary (iterative and incremental development) and the whitepaper's "unit of work"; Thermite's use confirms rather than sources it. Wave drops to a practitioner word: the grounded description is fork-join, a parallel batch forked from one base commit and merged back; three tier-3 repositories say "wave" and no tier-1 or tier-2 source read today does. Receipt yields to attestation, the supply-chain term (SLSA, in-toto) for a signed statement binding an artifact digest to a claim, which is what the two repositories' receipts are and a family the contract already cites; "receipt" stays as the practitioner synonym. Slop gains standing: its source is the published author's corpus-calibrated skill (tier 2), with Palimpsest's "default-model voice" as tier-3 corroboration. Palimpsest's coinages become descriptions of practices named with standard terms where they exist: protected intent as design intent and rationale; canon level as document status in the decision-record vocabulary; reader contract as audience in the technical-communication sense; promise ledger as an obligations register.
+
 ## The map
 
 | Said today | Grounded term | Source | Standing in this estate |
@@ -49,5 +55,5 @@ Operator stance recorded 2026-10-08: term changes are welcome where they make th
 ## Three notes
 
 - The one phrase for which no standard term was found is the append problem itself; event sourcing's log-versus-projection split, which the contract already uses, is its best vocabulary, and "unintegrated decisions" is the plain description.
-- Three words are registration candidates because two or more references use them with one meaning and this estate has none: increment (Thermite; the whitepaper's "unit of work"), wave (ExoMonad, OpenClaudia, Peritus), receipt (OpenClaudia, Peritus; Thermite's "burn receipt" is a different sense).
+- Registration candidates after source weighting: increment (standard agile; the whitepaper; Thermite confirms) and attestation (SLSA and in-toto; the repositories' "receipt" is the practitioner synonym). "Wave" is a practitioner word for a fork-join batch and is not proposed.
 - "Slop" is used as a named category by two practitioner sources read today (a corpus-calibrated lint named for it; a failure catalogue naming default-model voice). Whether it is used more widely was not checked; cite those two sources, not usage in general.
