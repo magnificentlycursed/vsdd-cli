@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1384,
-        "tip_oid": "fcd78efae61cf0eb56aa98b3d96eff9756c5d5e5",
-        "prefix_sha256": "433735a56215b26122801f8f8627c4cc6199b654fa4cf8565fea997929a1b2db"
+        "sequence": 1385,
+        "tip_oid": "bb3ad56d5ceb29d84c1fdb8018e08e5ce9a19402",
+        "prefix_sha256": "39259f8664633a87757478d4c36b9af47b768988b6172417b7e74a56020d9dfc"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1629,
+  "next_comment_id": 1630,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24809,7 +24809,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-07T00:57:19.928315Z",
-      "updated_at": "2026-10-07T07:08:28.050352Z",
+      "updated_at": "2026-10-08T01:56:13.219804Z",
       "labels": [
         "design"
       ],
@@ -24831,6 +24831,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAMshLm51IMJ0xtH2FpIAF/2t21JdMM5EgQeaXIaVuyDLXopvr1FqxumLOm+lisv9mE/EdIv8QxN+yPVQyA9P8Ag=="
+        },
+        "5ca376f1-3013-40f9-97d9-5aacad18c74a": {
+          "display_id": 1629,
+          "author": "xqjG",
+          "content": "[result] Committed by the operator as 25f5c19e (19 files; pre-commit verify clean) and pushed; pull request #61 open — its merge is the ratification. The push and the pull request were delayed by a GitHub outage (a connection timed out after about 27 minutes); crosslink's readiness latched as blocked_corrupt on that one failed remote check and stayed latched after the network recovered, until a fresh daemon came up — worth adding to the upstream readiness reports alongside crosslink#104.",
+          "created_at": "2026-10-08T01:56:13.187964Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA/KhdgoVkUJTHe3pG1sY1SAR7O5Uav5ujNFIoOJ9tUmNniGBQO4ANdRfBy0xN6GZ8/SJ1YQVlr4Kw/xHQazjHDw=="
         },
         "6bba7707-7548-45d9-9470-398e9f5424dc": {
           "display_id": 1625,
@@ -37531,6 +37540,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1384,
       "timestamp": "2026-10-07T07:09:15.086362Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1385,
+      "timestamp": "2026-10-08T01:56:13.219804Z"
     }
   ],
   "watermark": {
