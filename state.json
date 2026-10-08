@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1418,
-        "tip_oid": "cebcc9502b00fa5649b876c237edae6430e4c303",
-        "prefix_sha256": "adea3b7568e799e86ea77deb1e1c459cc1dc733b53f8be1b7a8ec1fb49c6f336"
+        "sequence": 1419,
+        "tip_oid": "359a2d1806de3217f06520d5eabe8ef380c50721",
+        "prefix_sha256": "dd26a21aa25800b56bd50a93ad08e8aea84bea25ff990be5ddbf93b92e8e06af"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1656,
+  "next_comment_id": 1657,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -9794,7 +9794,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-07-31T01:44:58.019134Z",
-      "updated_at": "2026-10-08T18:34:12.034318Z",
+      "updated_at": "2026-10-08T19:05:24.115167Z",
       "labels": [
         "design"
       ],
@@ -9847,6 +9847,15 @@
           "kind": "plan",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAafaQP4T4b1uWMftrXj0ruelj4/6bdKcmdpjuRY+8E69KdRdIX0GZIbqqBOTNdhpi/ThY/7irtm01R5BfzA/JBw=="
+        },
+        "60126be2-2a1d-4cd4-a5a3-bc4a55fc2b87": {
+          "display_id": 1656,
+          "author": "xqjG",
+          "content": "DESIGN INPUT 2026-10-08 (second batch): the reference-practice synthesis is now split into topic pages under the index vsdd-in-practice-reference-repositories-2026-10-08 (phases, roles, records and gates, design documents, prose control, other repositories, four evidence reports), plus reconciliation-ledger-2026-10-08, append-accumulation-retrospective-2026-10-08, standard-comparison-estate-vs-references-2026-10-08, two practitioner sources (portable-memory-rules-gist-2026-10-08, clarity-review-skill-2026-10-08) and cross-reference-2026-10-08-findings-vs-prior-knowledge. Items bearing on this slice's phase-1a: the plan as a reviewed document before any engine object; the kickoff plan as the layer between the stage document and increment issues; the protected ref as the oracle with a content-addressed verdict (for the Slice 6 re-home); 'minimal' retired in favor of comprehensibility of the end state. No decision taken.",
+          "created_at": "2026-10-08T19:05:24.011177Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAmRAPxEdfMwnMVdAqMBL6S3zxoDFMifHju7ub/K3zU/OpIGGiUz31kfFlZXOWyzV1VRFIAkg5Pg9eIA5yU0wnCA=="
         },
         "6a5d4c18-8510-4db9-99d6-a56a2c4bc34e": {
           "display_id": 1653,
@@ -37944,6 +37953,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1418,
       "timestamp": "2026-10-08T18:34:12.034318Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1419,
+      "timestamp": "2026-10-08T19:05:24.115167Z"
     }
   ],
   "watermark": {
