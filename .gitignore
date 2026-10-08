@@ -57,3 +57,9 @@ archive/
 # crosslink 0.9 migration arrivals: crosslink-deployed skills; the pre-v3 backup store
 .claude/skills/
 .crosslink/pre-v3-backup-*.db
+# crosslink readiness-era runtime state (vsdd-cli#896; upstream candidate for the managed block)
+.crosslink/daemon.run.lock
+.crosslink/hydrated-frontiers/
+.crosslink/integrity/
+.crosslink/readiness/
+.crosslink/pre-v18-backup-issues-*.db

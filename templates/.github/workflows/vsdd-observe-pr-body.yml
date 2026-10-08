@@ -22,16 +22,28 @@ permissions:
 jobs:
   generate-pr-body:
     runs-on: ubuntu-22.04
-    env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    # The API key is scoped to the generating step, not the job: the install
+    # builds third-party code with no secret in reach (vsdd-cli#896).
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      # vsdd is not yet published to crates.io (the registry has no crate of that
+      # name; vsdd-cli#664 tracks the first publish). Installing an unclaimed
+      # name by bare `cargo install vsdd` would build and run whatever anyone
+      # publishes under it, so this step fails closed until the crate exists.
+      # At first publish, replace the guard with the pinned install line below.
       - name: Install vsdd
-        run: cargo install vsdd --locked
+        run: |
+          echo "vsdd is not yet published to crates.io (vsdd-cli#664); this workflow cannot run until it is" >&2
+          exit 1
+          # cargo install vsdd --version <first published version> --locked
       - name: Bootstrap
         run: vsdd init --ci-mode
       - name: Generate PR body
         id: prbody
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           BODY=$(vsdd observe pr-body --layer $(vsdd observe metrics --current-layer))
           {
@@ -40,7 +52,7 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
       - name: Update PR description
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         env:
           PR_BODY: ${{ steps.prbody.outputs.body }}
         with:
