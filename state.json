@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1430,
-        "tip_oid": "60e4ec460aacba5cfaf5fed5c69925f9e3285a04",
-        "prefix_sha256": "7e997da1cb00a209a0e77a4e0dc4b42d83b3759ada27e39b8b45c14d57b7624d"
+        "sequence": 1431,
+        "tip_oid": "d4635d592408304b401f199819ce95655700cc7d",
+        "prefix_sha256": "6b205abfe395b5957487cfefc3765b0fd5936a94c47eab1796e5fb0697cb88a1"
       },
       "y2SI": {
         "sequence": 2,
@@ -39,7 +39,7 @@
       }
     }
   },
-  "next_display_id": 898,
+  "next_display_id": 899,
   "next_comment_id": 1666,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -802,6 +802,7 @@
     "d6b8f6ad-3189-4053-8cb6-2494f5986c85": 193,
     "d700c4b5-6bb1-4079-bd62-0c31d5625049": 625,
     "d77904e3-6848-4e58-8fa7-8c2750b45f38": 789,
+    "d7b31597-3b91-4e3b-89a5-1613f2f990ae": 898,
     "d80e83bd-c7d1-43f2-b6c5-bc1d2194be87": 874,
     "d81e051b-f217-4351-aa5b-ce86f8cb07cc": 74,
     "d8275115-170b-42b8-9e51-fea74cc2afc0": 527,
@@ -25542,6 +25543,17 @@
         }
       }
     },
+    "d7b31597-3b91-4e3b-89a5-1613f2f990ae": {
+      "uuid": "d7b31597-3b91-4e3b-89a5-1613f2f990ae",
+      "display_id": 898,
+      "title": "Phase-skill rewrite (design-first): the ten phase skills, the prose reviewer roles and the register standard, rewritten from the 2026-10-08 reference practice",
+      "description": "Operator decision 7 of 2026-10-08, accepted as recommended on big-picture-and-decisions-2026-10-08. Design-first through the design flow; sequenced after the contract amendment cycle. The phase skills today assume a program-wide contract, use a phase vocabulary no reference repository uses, and give phase 2a (test-suite generation, the red gate) no attested form for feature increments; the reviewer roles for prose were written from principles, where a published author derived the equivalent from about two hundred review comments.\n\nShape to design:\n- Grounded vocabulary where attested (increment, attestation, scaffold, freeze, gate), with the phase names as the index; \"phase skill\", \"rules file\", \"reviewer role\" and milestones by feature name per terminology-grounding-2026-10-08.\n- Phase 1a produces one milestone document in the attested shape (umbrella frozen; milestone document written at build time against a named revision; decisions at the question; amended as the code lands; pinned to the code it governs).\n- Phase 1c light: freeze, verdict, gap analysis.\n- Phase 2a split: failing-first for fixes and for a critic's tests; for increments, test machinery (reference models, generators of interacting operations, assertions) with a seeded-removal coverage proof.\n- Phase 2b complete, not minimal. Phase 3 as the review-shape decision (decision 5). Phase 5 continuous. Phase 6 mechanical.\n- Every skill carries a reader contract, intent tags on deliberate choices and a status, and is tested by fresh-reader calibration on a fixture.\n- The Technical Writer and Documentation Reviewer roles derived from this repository's own review corpus, with a litmus test and a report form per pattern (the clarity-review skill's form).\n- A register standard bound by one rule and carried in every role (Thermite's form).\n- Ideas enter as proposal documents through the design flow, never as contract amendments.\n- Register \"increment\" and \"attestation\" when this rewrite first needs them (decision 8).\n\nInputs: reference-practice-phases-specification; reference-practice-phases-build-and-review; reference-practice-prose-control; clarity-review-skill-2026-10-08; portable-memory-rules-gist-2026-10-08; agent-skills-write-plans-and-prompts-2026-10-08; proptest-with-agent-swarms-recursion-wtf-2026-10-08; context-language-models-2026-10-08; terminology-grounding-2026-10-08.",
+      "status": "open",
+      "priority": "medium",
+      "created_by": "xqjG",
+      "created_at": "2026-10-08T21:53:57.116992Z",
+      "updated_at": "2026-10-08T21:53:57.116992Z"
+    },
     "d80e83bd-c7d1-43f2-b6c5-bc1d2194be87": {
       "uuid": "d80e83bd-c7d1-43f2-b6c5-bc1d2194be87",
       "display_id": 874,
@@ -38109,6 +38121,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1430,
       "timestamp": "2026-10-08T21:53:23.024871Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1431,
+      "timestamp": "2026-10-08T21:53:57.116992Z"
     }
   ],
   "watermark": {
