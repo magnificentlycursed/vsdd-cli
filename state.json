@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1438,
-        "tip_oid": "69e5bcf972a59bf8f58218ce30c6b2166fc6b4d2",
-        "prefix_sha256": "d67fb91ba8d52065270d2291c420aad3102fd7bcadf3d119811d0e1fd925449c"
+        "sequence": 1439,
+        "tip_oid": "1d1511946da9a6cf0daef10281fe88b98e09e589",
+        "prefix_sha256": "db671f8267c561ec597946f6cab4c5d3948d08c2f175ff5a5c134aae66765597"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 900,
-  "next_comment_id": 1671,
+  "next_comment_id": 1672,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24782,10 +24782,21 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-08T21:52:54.880884Z",
-      "updated_at": "2026-10-08T21:53:23.024871Z",
+      "updated_at": "2026-10-08T22:07:25.934743Z",
       "labels": [
         "design"
-      ]
+      ],
+      "comments": {
+        "c5d1d223-6c90-4b7a-8346-5e3d8f7962b1": {
+          "display_id": 1671,
+          "author": "xqjG",
+          "content": "Register re-arm landed as PR #68 (branch data/897-register-rearm, commit a04f8855): the four standing entries move to 2027-01-31 and are owned here; the local gate passes in CI mode. Merge is the operator's. The amendment cycle itself starts next through the design flow (a proposal document under the design folder, the owning domain's composition, one cold review, operator approval as the exit gate).",
+          "created_at": "2026-10-08T22:07:25.895651Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALyZ1V7HCP2+/f8Z5Oa+mbct4yzw6IsT1/EkuJrFV4YPTTXi3Kp79cHWR+C55EY2O6PE9eHVzolSomDjcsfV0Cg=="
+        }
+      }
     },
     "d2b712e4-d1c8-4d53-815e-f08a42ae4507": {
       "uuid": "d2b712e4-d1c8-4d53-815e-f08a42ae4507",
@@ -38221,6 +38232,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1438,
       "timestamp": "2026-10-08T22:03:29.789675Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1439,
+      "timestamp": "2026-10-08T22:07:25.934743Z"
     }
   ],
   "watermark": {
