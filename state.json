@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1393,
-        "tip_oid": "ff7c6a779199299d71ba4b6c70ffe7300fb422eb",
-        "prefix_sha256": "3dc0b01f48e29ea181277f8ef08008284816d337d9a0df0ed86199994784b837"
+        "sequence": 1394,
+        "tip_oid": "a8074d7b51e47c95c0a29c0ed6a18d627e847f2e",
+        "prefix_sha256": "da3c5dbb69d16c3551ba59a4f96171cae8b6077043a6071fc94a51c38178bd86"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1635,
+  "next_comment_id": 1636,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19087,7 +19087,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T07:07:00.744931Z",
-      "updated_at": "2026-10-08T02:26:23.427215Z",
+      "updated_at": "2026-10-08T02:43:08.210042Z",
       "labels": [
         "security"
       ],
@@ -19109,6 +19109,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAj/NACa7kGqwQpPDkf+xNn9fj8J/mZJkSYjp5T3wuHByoSRmAfeQM2V4nn1gGJdYNW3aHC+XSQujnu4pqcpiDBw=="
+        },
+        "dbb5a07e-b118-4638-8be5-2aae270383e8": {
+          "display_id": 1635,
+          "author": "xqjG",
+          "content": "[result] ROUTING of the two cold reviews (Platform Engineer, Security; both 'mergeable with the listed fixes'; 448k tokens total, under the 600k cap; both report files refused by the work-check hook, text held by the orchestrating session). Converging findings: the re-pin range 875066ad..388bed89f leaves crosslink's Cargo.toml, Cargo.lock and build.rs byte-identical, so no new crate, no new build-time code, the same 417-package set the first registration audited; offline cargo audit (database 2026-10-03) clean, delta none; all five action pins resolve to their tags; the toolchain selection by working directory is confirmed (rustup resolves the override from the current directory); the hub-forgery path is closed by declaration independent of the repository's default token permission (which is read today). IN THIS CHANGE: (1) the adopter templates' 'installs nothing' note was wrong — cargo install of an unclaimed crate name fails the job, and the bare name is a squat exposure (whoever publishes 'vsdd' first runs in every adopter's job with the API key): the install step becomes an explicit fail-closed guard naming vsdd-cli#664, with the pinned install line kept as a comment to enable at first publish (both reviewers); (2) 'rustup show' installs only by an undocumented side effect — use 'rustup toolchain install && rustup show active-toolchain', the second line being the fired-evidence in the log (Platform Engineer F2); (3) the register entry's retest text still named PRs #107/#108 — now the pinned commit (Platform Engineer F3); (4) the crosslink record's build-script sentence understated what build.rs does (Platform Engineer F4); (5) the adopter verify template's unused pull-requests: write removed; security-events: write scoped to the verify job (Platform Engineer F5, Security F2); (6) the hash-mismatch remedy written into the step comment: bump the cache key (Platform Engineer F6); (7) the gate binary built before the token is set, so no build script sees GH_TOKEN (Security F5); (8) the routing-gate cache key gains the crosslink pin (Security F6); (9) the five untracked runtime paths under .crosslink/ added to .gitignore's local tail (Platform Engineer F7; upstream candidate for the managed block); (10) the routing-gate header records that CI can read but never repair the hub — a hub left mid-convergence fails the gate loudly and the remedy is an operator-side daemon ensure (Platform Engineer F8); (11) both records updated with the review paragraphs; the mdatron record's three owed items marked met and the cache check graded as integrity on the restored blob, not provenance. RAISED TO THE SOLUTION OWNER (Security F1; flag Solution Architect and Red Team): under the new pin a container kickoff on this estate refuses to launch unless a GitHub login is stored for the container, and that login is a write token to this repository readable by the agent, while the hub refs crosslink/* are unprotected branches of the governed repository — a container agent could rewrite the gate's oracle. Options: (i) container kickoff stays in local mode until the hub's tamper-evidence lands (#873, crosslink#119); (ii) a machine account or repository-limited token plus a ruleset on refs/heads/crosslink/** blocking deletions and non-fast-forward updates, after verifying crosslink's lease pushes survive it; (iii) move the hub to a repository the agent cannot write. Not reachable from CI; does not block the re-pin. DEFERRED: reserving the 'vsdd' crate name on crates.io is the operator's act (#664); dependabot for the github-actions ecosystem as the staleness answer for commit pins (operator's call); the first CI run on the branch is the proof the 1.88 build of crosslink succeeds and the new steps fire. DISCLOSURE: the Platform Engineer reviewer's rustup probe inadvertently auto-installed toolchain 1.86 on the operator's machine (outside the repository); removal is 'rustup toolchain uninstall 1.86'.",
+          "created_at": "2026-10-08T02:43:08.178399Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAx+153ASjkf13Xsf4yVUmmk7+29ui9LrRVgkU/wd7LzZUWtClyAtetIhRfzPR62DEmxMYcd+kD8Vto5zpnhzUBw=="
         }
       }
     },
@@ -37633,6 +37642,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1393,
       "timestamp": "2026-10-08T02:36:54.851739Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1394,
+      "timestamp": "2026-10-08T02:43:08.210042Z"
     }
   ],
   "watermark": {
