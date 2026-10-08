@@ -1,6 +1,6 @@
 ---
 schema_class: dispatch-data
-schema_version: 0.2.0
+schema_version: 0.3.0
 status: draft-proposal
 branch_grammar:
   forms:
@@ -46,6 +46,7 @@ manifest_fields:
   - {field: domains, meaning: "the domain prompts sent, per the computed composition"}
   - {field: inputs, meaning: "what was sent, by content hash per input artifact"}
   - {field: composition_ref, meaning: "the composition in force, with its config_inputs_hash"}
+  - {field: phase, meaning: "the phase the dispatched run executes, sourced by the dispatcher from the state artifact and the crosslink session breadcrumb at dispatch — never an agent-declared value; its value is a phase-kind member id of the composition-scope enumeration — the same domain as the state artifact's current_phase (state-schema), never the lane member; the conformance verifier derives the run's role (review or build) and so its expected context set from this field, so a run cannot self-label build to earn the thinner expected set (contract: Verifiable conformance and efficiency, 'Phase is recorded' and 'Expected and observed'; Solution Owner ruling 2026-10-07 on vsdd-cli#894, authored under vsdd-cli#875)"}
   - {field: model_tier, meaning: "the model tier — the value chosen explicitly at dispatch and the value observed in telemetry after the run, both recorded, never assumed (the round-1 correction on vsdd-cli #673)"}
   - {field: effort_level, meaning: "the effort level, chosen explicitly at dispatch — the Workflow orchestration surface exposes it per agent (operator-adopted 2026-07-21, vsdd-cli #597) — and confirmed post-hoc where telemetry exposes it; never inherited silently"}
   - {field: expected_cost_band, meaning: "the calibration band declared before the spend"}
@@ -77,7 +78,18 @@ acts are the operator's, performed once before dispatch.
 `manifest_fields`: the dispatch record as data, so the round-parity and
 provenance queries read manifests mechanically. The falsifiers this
 feeds: unsigned manifests, postdated approvals, missing tier or effort,
-dispatches tracing to no operator act, coverage gaps.
+dispatches tracing to no operator act, coverage gaps, and a review run
+self-labeled build (the `phase` field is the dispatcher's, sourced from
+the state artifact and the session breadcrumb, never the agent's).
+
+`phase`, `model_tier` and `effort_level` are engine data (Solution Owner
+ruling 2026-10-07, vsdd-cli#894): Slice 4's conformance verifier reads
+them to derive the run's role and expected context set, Slice 6 writes
+them onto the manifest and fails a dispatch closed at preflight when a
+dial is unspecified, and Slice 7's report reads them for the dispatch
+rows. They are authored here before Phase 3's 2a opens (vsdd-cli#875),
+so the verifier's fixtures can name the record shape without depending
+on a later slice's internals. 0.3.0 adds `phase` (additive).
 
 Authored under phase-1c data authoring (vsdd-cli #598, set issue #669).
 Draft vocabulary under the maturity lifecycle until first publish.
