@@ -55,3 +55,6 @@ updated: 2026-10-08
 - `append-accumulation-retrospective-2026-10-08` — why decisions accumulated as appends instead of integrating; the mechanism and the prior fixes.
 - `reconciliation-ledger-2026-10-08` — the 39 divergences between recorded decisions and the contract, build-plan, data and register, across Slices 1 to 7.
 - Evidence: `practice-report-thermite-2026-10-08`, `practice-report-peritus-2026-10-08`, `practice-report-openclaudia-2026-10-08`, `practice-report-crosslink-2026-10-08` — the four agent reports with citations at commit, pull-request and hub-issue level.
+- `portable-memory-rules-gist-2026-10-08` — a practitioner's published feedback memories (the author of Observability Engineering, 2nd edition): the six habits, the eighteen rules, the three instruction-file layers.
+- `clarity-review-skill-2026-10-08` — the same author's pre-flight lint for AI-authored code and prose: seven pattern classes with litmus tests, corpus-calibrated, invoked only explicitly.
+- `cross-reference-2026-10-08-findings-vs-prior-knowledge` — the day's findings read against the observability engineering pages, the earlier Thermite assessments, the domain value scorecard, the memory rules and the clarity skill, with adoption candidates and their homes.
