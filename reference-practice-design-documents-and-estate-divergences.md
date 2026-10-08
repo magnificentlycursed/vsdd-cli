@@ -7,14 +7,19 @@ created: 2026-10-08
 updated: 2026-10-08
 ---
 
+# Reference practice: design documents, flow control, and this estate's divergences
 
-## Design Specification
+## Status
 
-### status
+Design input for the composition milestone design and the phase-skill rewrite. How the reference repositories keep design documents, how design flows into implementation, and where this estate's practice diverges; from the orchestrating session's own reads of crosslink's design workflow and documents, Thermite, Peritus, OpenClaudia, ferrotorch and the VSDD whitepaper, plus the four `practice-report-*` pages, on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`).
 
-Design input for the Slice 2 design and the phase-primer rewrite. How the reference repositories keep design documents, how design flows into implementation, and where this estate's practice diverges; from the orchestrating session's own reads of crosslink's design workflow and documents, Thermite, Peritus, OpenClaudia, ferrotorch and the VSDD whitepaper, plus the four `practice-report-*` pages, on 2026-10-08 (index: `vsdd-in-practice-reference-repositories-2026-10-08`).
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
 
-### the reference shape
+Milestones are named by feature. On the tracker (`crosslink milestone list`) they are: the live self-governance milestone, #8 "Slice 1 — Live self-governance"; the composition milestone, #9 "Slice 2 — Composition, generated context, and static price"; the install milestone, #10 "Slice 3 — Install"; the gate-execution milestone, #11 "Slice 4 — Gate execution and the mutation floor"; the finding-lifecycle milestone, #12 "Slice 5 — Finding lifecycle and conformance"; the recorded-dispatch milestone, #13 "Slice 6 — Recorded dispatch and directive flow"; the cost milestone, #14 "Slice 7 — The cost crate".
+
+"This estate" means vsdd-cli together with crosslink and mdatron, the two sibling tools it runs on.
+
+## The reference shape
 
 **One stable umbrella plus many per-slice or per-component documents.**
 
@@ -29,7 +34,7 @@ Design input for the Slice 2 design and the phase-primer rewrite. How the refere
 
 **Drift is pinned to code.** Thermite's routed documents carry a content digest over their governed files; CI fails when the code moves under the document. Peritus does not hash design Markdown; it keeps documents honest by the freeze commit and review, and governs code by the architecture policy file.
 
-### flow control: write one, build one
+## Flow control: write one, build one
 
 The observed pattern is neither one document for everything nor all slice documents up front.
 
@@ -41,29 +46,35 @@ The observed pattern is neither one document for everything nor all slice docume
 
 The kickoff plan is the instrument between the stage document and the increments (Thermite): it does not restate requirements; it sequences them into committable increments with primary files and self-verify commands, states the per-increment gauntlet, lists what is out of scope, dates its groundings, and ends with a done-when checklist and a "context already landed, do not redo" section.
 
-### idea cycles without rfcs
+## Idea cycles without RFCs
 
 Peritus keeps thirteen topic-named design documents beside its twenty-five lettered slice documents (benchmark failure remediation, external benchmark qualification, proactive bug discovery, local working memory, plain-folder workspaces, and others). Each is its own document under the same template, references the umbrella rather than amending it, and hands its requirements to the owning slice. OpenClaudia does the same through findings in the audit that become workstreams and then slices. This is what crosslink's design flow is built for: one idea, one document, one kickoff. Thermite's RFC files are the language-project form of the same thing.
 
-### this estate's divergences
+## This estate's divergences
 
-Recorded as findings for the Slice 2 design and the primer rewrite, not as decisions.
+Recorded as findings for the composition milestone design and the phase-skill rewrite, not as decisions.
 
 1. **The constitution absorbs proposals.** Each idea cycle amended the single contract in place through the owned amendment route. There is no proposal or idea document, so rejected reasoning lives in tracker comments.
 2. **The issue became the document.** The contract's rule, "provenance lives here, not in the sentences; the record carries the narrative", chose the tracker comment as the home of decisions. Thermite's RFC-5 diagnoses the failure exactly: an issue is a report, "amendments become comments, so the document a reader sees first is the stalest version of it."
-3. **The integration layer was removed.** The 2026-08-02 unification retired the slice designs to knowledge pages, leaving rulings with nowhere to land but the tracker. The 39-item reconciliation ledger of 2026-10-08 is the measured result.
+3. **The integration layer was removed.** The 2026-08-02 unification retired the milestone designs to knowledge pages, leaving rulings with nowhere to land but the tracker. The 39-item reconciliation ledger of 2026-10-08 is the measured result.
 4. **Three unresolvable reference systems** (heading-name prose, tracker handles, knowledge-page names) instead of stable identifiers backed by a registry that CI checks. The rule against invented labels was satisfied by prose citations, which is the same accumulation in another form.
 5. **Closure without evidence binding.** Criteria are prose; status is a sentence ("CLOSED (boundary sha)"); no typed evidence per requirement; "closure claims without their oracles" (vsdd-cli#881) is the predictable failure.
-6. **Designs retired at ratification** instead of amended during the build and pinned to the code. Both retired slice designs predate every October decision; the build-plan calls each phase "its projection".
+6. **Designs retired at ratification** instead of amended during the build and pinned to the code. Both retired milestone designs predate every October decision; the build-plan calls each phase "its projection".
 
-Measured context: since Slice 1 merged on 2026-08-02, 30 commits landed on main, none of type feature; 452 production lines changed against 1,326 governed-text lines; five contract amendments reached the revision history while dozens of rulings waited as comments. Of those weeks, six were a break; the three active weeks were re-entry.
+Measured context: since the live self-governance milestone merged on 2026-08-02, 30 commits landed on main, none of type feature; 452 production lines changed against 1,326 governed-text lines; five contract amendments reached the revision history while dozens of rulings waited as comments. Of those weeks, six were a break; the three active weeks were re-entry.
 
-### what adopting the practice looks like here (candidates)
+## What adopting the practice looks like here (candidates)
 
-- The contract becomes the thesis and umbrella, cited by section, frozen except through an owned amendment that a slice or idea document forces.
-- Each open slice keeps one live design document in `.design/`, written at build time against a named revision, with decisions at the question, amended during its build, pinned to the code it governs.
-- An idea cycle becomes its own design document through the design flow, never a contract amendment; its requirements land in a slice document or a requirements record with typed evidence.
+- The contract becomes the thesis and umbrella, cited by section, frozen except through an owned amendment that a milestone or idea document forces.
+- Each open milestone keeps one live design document in `.design/`, written at build time against a named revision, with decisions at the question, amended during its build, pinned to the code it governs.
+- An idea cycle becomes its own design document through the design flow, never a contract amendment; its requirements land in a milestone document or a requirements record with typed evidence.
 - A requirements record with typed evidence replaces prose closure and generates the status view CI checks.
 - Design pull requests are not squash-merged.
-- The reconciliation ledger's items become inline resolutions in slice documents, not tracker comments.
+- The reconciliation ledger's items become inline resolutions in milestone documents, not tracker comments.
 
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
+- `vsdd-cli#881`: Closure claims without their oracles: install-offer members closed with no fixtures, install ... [open]
