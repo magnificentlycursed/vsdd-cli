@@ -44,6 +44,8 @@ Operator stance recorded 2026-10-08: term changes are welcome where they make th
 | "depth over breadth", "28 verifiers" | fan-out limit; agent-count ceiling | ExoMonad; the contract's spend-shape bound | registered as the ceiling |
 | "the ledger" | the reconciliation; a promise record | quality engineering ("reconciliation"); Palimpsest ("promise ledger") | collides with the retired cost ledger; prefer "reconciliation" |
 
+| "swarm" | swarm (general usage: many agents dispatched together) versus "crosslink swarm" (the command); "wave" is the narrower case of one parallel batch forked from one base | the general sense is common usage in today's sources (the property-testing article, the context paper's "agent-swarm task", ExoMonad's "devswarm", ferrotorch's swarm work breakdown); the contract's reserved-word note for "phase" is the disambiguation precedent | what was retired is narrower than the word: "swarm invocation" as the name of a review round, and the contract's bindings to the crosslink swarm command (2026-10-02). The general sense stays usable with the tool name as the disambiguator; if crosslink extends the command, re-binding the review act to it is a paved-path-map entry under the three-question rule, not a contract change (operator, 2026-10-08) |
+
 ## Three notes
 
 - The one phrase with no standard term is the append problem itself; event sourcing's log-versus-projection split, which the contract already uses, is its best vocabulary, and "unintegrated decisions" is the plain description.
