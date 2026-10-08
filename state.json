@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1403,
-        "tip_oid": "3f673f602f65deabcb71854d9b70648c620de5f7",
-        "prefix_sha256": "1dd37c0abe8caf79f8029ef32c89fea8975fad0fa13704b3ba5862d6c1d90e23"
+        "sequence": 1404,
+        "tip_oid": "3e59a01f4b30d9d74a47774698a259030a0b0697",
+        "prefix_sha256": "6736cbc2035be0fc72925e06d065aace090778ce003943c6469a63bf7f4f690f"
       },
       "y2SI": {
         "sequence": 2,
@@ -19092,11 +19092,12 @@
       "display_id": 896,
       "title": "CI supply-chain hardening: declare token permissions, stop persisting the checkout token into third-party builds, pin the toolchain for installed binaries, check the cached mdatron by hash, scope the adopter template's secrets",
       "description": "Owed by the Platform Engineer and Security reviews of the vsdd-cli#894 amendment (2026-10-07), recorded in docs/dependencies/mdatron.md and crosslink.md. (1) None of mdatron-verify.yml, routing-gate.yml, vsdd-test.yml declares permissions: — add 'contents: read' (routing-gate also 'issues: read'). (2) actions/checkout persists the job token into .git/config while crosslink's build script, daemon and sync and mdatron's init and verify run with it readable; set persist-credentials: false where a job does not push. (3) rustup show runs at the workspace root, so mdatron and crosslink build with the runner's default Rust, not the 1.88 each declares; pin the toolchain for those installs. (4) On a cache hit both mdatron install steps trust ~/.cargo/bin/mdatron on its --version string; record and check its hash at install time. (5) The adopter template templates/.github/workflows/vsdd-verify.yml puts ANTHROPIC_API_KEY and the OpenTelemetry collector token (the collector is retired) in the job-level environment with pull-requests and security-events write, readable by every cargo install build script, and installs vsdd unpinned; scope secrets to the steps that need them, run mdatron and the installs without them, pin vsdd, and drop the retired collector variables. (6) Third-party actions are pinned by movable tags (checkout@v5, cache@v5; the template's checkout@v4, upload-sarif@v3, github-script@v7); pin by commit. Severity for this repository depends on the repository's default token permission, not checkable offline.",
-      "status": "open",
+      "status": "closed",
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T07:07:00.744931Z",
-      "updated_at": "2026-10-08T03:52:31.842654Z",
+      "updated_at": "2026-10-08T03:53:48.406826Z",
+      "closed_at": "2026-10-08T03:53:48.378929Z",
       "labels": [
         "security"
       ],
@@ -37773,6 +37774,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1403,
       "timestamp": "2026-10-08T03:52:31.842654Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1404,
+      "timestamp": "2026-10-08T03:53:48.406826Z"
     }
   ],
   "watermark": {
