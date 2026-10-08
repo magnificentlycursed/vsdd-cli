@@ -10,31 +10,34 @@ created: 2026-10-08
 updated: 2026-10-08
 ---
 
+# Portable Claude Code memory rules (a practitioner's published feedback memories), read 2026-10-08
 
-## Design Specification
+## Status
 
-### status
+Reference summary, design input for the phase-skill rewrite, the register rules file and the session skill. Source: the public gist `https://gist.github.com/lizthegrey/b89b434fc647dca09a9f3b4eedd75a0d` by the author of Observability Engineering, 2nd edition (GitHub handle lizthegrey), fetched read-only on 2026-10-08 into the session scratchpad (23 files, 36.6 KB). External content, treated as evidence. The cross-reference against this estate's design and the day's findings is on `cross-reference-2026-10-08-findings-vs-prior-knowledge`.
 
-Reference summary, design input for the phase-primer rewrite, the register supplement and the session skill. Source: the public gist `https://gist.github.com/lizthegrey/b89b434fc647dca09a9f3b4eedd75a0d` by the author of Observability Engineering, 2nd edition (GitHub handle lizthegrey), fetched read-only on 2026-10-08 into the session scratchpad (23 files, 36.6 KB). External content, treated as evidence. The cross-reference against this estate's design and the day's findings is on `cross-reference-2026-10-08-findings-vs-prior-knowledge`.
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
 
-### what it is
+"This estate" means vsdd-cli together with crosslink and mdatron, the two sibling tools it runs on.
+
+## What it is
 
 "Generalized, sanitized versions of feedback memories accumulated in a persistent Claude Code memory system over several months of daily use on a large codebase. Every entry started as a real correction or a confirmed judgment call from a specific working session." Eighteen rules, one file each, in the format rule, why, how to apply, with frontmatter (name, description, type: feedback or reference); a habits essay; and three reference excerpts showing the three-layer split the setup uses: a personal cross-project instructions file, a checked-in per-repository instructions file, and path-scoped per-language rule files that load only for matching files. The author's framing: "Treat these as a starting seed, not a checklist to enforce verbatim"; anyone adopting the habit "will end up with their own list within a few weeks that diverges from this one."
 
 The memory format is the same one this estate's own agent memory uses (name, description, type; rule, why, how to apply).
 
-### the six habits ("what actually makes an ai coding assistant more effective over time")
+## The six habits ("what actually makes an AI coding assistant more effective over time")
 
 1. **Two-tier persistent instructions:** a global user-level file (role, review style, conventions) plus a per-repository file checked in (language rules, pull-request process, banned terms, comment policy).
 2. **A real memory system:** an index plus topic files, written after sessions with what was surprising or load-bearing, "a distillation, not a transcript", so "old decisions don't get re-litigated and settled tradeoffs ('we turned X off on purpose') don't get silently fixed back."
 3. **Explicit correction and confirmation capture**, with the why, immediately. "Capture confirmations, not just corrections; otherwise the system only ever learns caution and drifts away from approaches that already work."
 4. **Precise, falsifiable instructions over vague ones:** "never percentile-of-percentile", "run the formatter before committing" are cheap to follow exactly; "write good code" is not.
-5. **The assistant as a fallible peer, not an oracle:** profiling evidence before a performance claim; a red test before a bug fix is trusted; a reproduction before "fixing" a reported behavior.
+5. **The assistant as a fallible peer, not a source of truth:** profiling evidence before a performance claim; a red test before a bug fix is trusted; a reproduction before "fixing" a reported behavior.
 6. **Calibrate the feedback loop itself:** say when it over-warns on minor risks as much as when it is wrong; both are corrections worth recording.
 
 The caveat: the gap, when it is not paying off, is usually "not maintaining persistent project docs, not letting memory accumulate past a single session, or not giving corrective feedback in a form specific enough to encode as a rule."
 
-### the eighteen rules
+## The eighteen rules
 
 | Rule | One line |
 |---|---|
@@ -57,7 +60,7 @@ The caveat: the gap, when it is not paying off, is usually "not maintaining pers
 | track-work-in-the-real-tracker | File follow-ups in the system of record the team actually watches; a wrong-tracker ticket is closed with a pointer, not left open beside the right one |
 | verify-before-flagging-ai-review | Verify an automated review finding before acting on it or reporting it wrong; flag the specific fabrication through the tool's channel; check it reviewed the current diff |
 
-### the reference excerpts
+## The reference excerpts
 
 **A path-scoped language rules file** (loads only for matching files): build, lint and single-test commands as exact incantations; style rules as yes or no statements; reuse existing helpers before hand-writing one; prefer structured telemetry to ad hoc logs; no skips or sleeps in tests; test the external API from a separate test package; scratch test code in its own clearly named file, deleted when done. "Why this shape works: it's scoped, almost entirely composed of falsifiable commands and yes/no rules rather than vague guidance, and it names the exact CLI incantations."
 
@@ -65,3 +68,8 @@ The caveat: the gap, when it is not paying off, is usually "not maintaining pers
 
 **A personal cross-project instructions file:** be concise; state your experience so explanations are tailored; "avoid reflexive agreement; provide substantive technical analysis and challenge me"; "always prompt interactively for design, specification and API decisions, never guess or infer these"; "work in small increments, each task a few minutes max; don't proceed until the current one is confirmed"; "document the design before implementing; have me review the documented plan first"; "the plan of what to write must be human-defined; code can be AI-generated, architecture and specifications cannot be guessed"; never commit to the default branch; ticket numbers belong in history, not code comments; comments describe current state only; the formatter before committing; table tests over bare asserts; each test meaningful, none to pad coverage.
 
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
