@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1411,
-        "tip_oid": "20742ff6f0826718a970f62bff1792686af44b42",
-        "prefix_sha256": "3fc518d948979db07c851689548752da9a76b97364da4c182216223f57f85f9b"
+        "sequence": 1412,
+        "tip_oid": "3b41d111092b68cfbb8e42108d3fec1fa6ae408f",
+        "prefix_sha256": "b0160a819a6546223b40c6b160d511b1b8ff770208ed7d8fba47a65660fbbe72"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1651,
+  "next_comment_id": 1652,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -28246,7 +28246,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-09-19T03:14:11.234260Z",
-      "updated_at": "2026-10-08T16:21:12.092076Z",
+      "updated_at": "2026-10-08T16:22:32.583817Z",
       "labels": [
         "design"
       ],
@@ -28331,6 +28331,15 @@
           "kind": "decision",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA3OqWgqYy3ucpT7s7Gyfo7dvhzue4mDV9e2AoZ55a0N6RGvyO5KvTdZViZg3FhmcRgxt7YKsch9t653Yi3A/SCw=="
+        },
+        "ba4ff2b9-3553-4a70-a214-8b58d9337c7d": {
+          "display_id": 1651,
+          "author": "xqjG",
+          "content": "[action] Follow-up arc complete: PRs #64 (#896 CI hardening + crosslink re-pin, closed) and #67 (#875 phase field) merged; main at 609f9132; checkout on main, tree clean. Open: #875 (remaining sets + Slice 6 questions), #873 (oracle re-home ruling + hub-ref protection), #664 (reserve the vsdd crate name), dependabot = operator's call. NEXT: Slice 2 phase-1a (#839) when the operator says so.",
+          "created_at": "2026-10-08T16:22:32.491197Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAEcA51KARKxjkpQAVaUGt35ttmaQcUrKcS4B4vwsgzKktRt+dpVHVVHUlzNx+ztNHZUOHGG6T65ceFiu0+/JzCA=="
         },
         "c772c9bf-23a6-4937-8e22-0da7fc4a12d5": {
           "display_id": 1488,
@@ -37864,6 +37873,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1411,
       "timestamp": "2026-10-08T16:21:12.092076Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1412,
+      "timestamp": "2026-10-08T16:22:32.583817Z"
     }
   ],
   "watermark": {
