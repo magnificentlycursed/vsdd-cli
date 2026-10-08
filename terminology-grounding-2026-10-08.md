@@ -7,14 +7,16 @@ created: 2026-10-08
 updated: 2026-10-08
 ---
 
+# Terminology grounding for the 2026-10-08 findings: informal phrases mapped to standard terms and sibling self-words
 
-## Design Specification
-
-### status
+## Status
 
 Design input for the vocabulary registry's next update; registration is the operator's act and nothing here is registered. Source: the day's chat, read against the contract's reference lexicons (OpenTelemetry, site reliability engineering, FinOps, internal-controls audit, quality engineering, change management, decision records, document control, software engineering), the reference repositories' own words, and the practitioner sources read today. Rule applied: a nickname may live in chat; governed text carries the grounded term or a plain description; no coined compounds.
 
-### the map
+
+Operator stance recorded 2026-10-08: term changes are welcome where they make things more understandable, even when the change is annoying; no proliferation of small rules by accident; no coinages. This page is a map for choosing words, not a rulebook; the three candidates (increment, wave, receipt) remain unregistered until the operator registers them.
+
+## The map
 
 | Said today | Grounded term | Source | Standing in this estate |
 |---|---|---|---|
@@ -42,9 +44,8 @@ Design input for the vocabulary registry's next update; registration is the oper
 | "depth over breadth", "28 verifiers" | fan-out limit; agent-count ceiling | ExoMonad; the contract's spend-shape bound | registered as the ceiling |
 | "the ledger" | the reconciliation; a promise record | quality engineering ("reconciliation"); Palimpsest ("promise ledger") | collides with the retired cost ledger; prefer "reconciliation" |
 
-### three notes
+## Three notes
 
 - The one phrase with no standard term is the append problem itself; event sourcing's log-versus-projection split, which the contract already uses, is its best vocabulary, and "unintegrated decisions" is the plain description.
 - Three words earn registration because every reference uses them and this estate has none: increment, wave, receipt.
 - "Slop" crossed from slang to a term of art in two independent practitioner sources (a corpus-calibrated lint named for it; a failure catalogue naming default-model voice), so it can be cited rather than avoided.
-
