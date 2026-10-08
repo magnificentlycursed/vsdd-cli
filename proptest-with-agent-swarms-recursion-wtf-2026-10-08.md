@@ -17,7 +17,13 @@ updated: 2026-10-08
 
 ## Status
 
-Reference summary, design input for the 2a and 5 primers, the fix-lane discipline, Slice 2's verification and Slice 4's fixture corpus. Source: `https://recursion.wtf/posts/agents-and-property-tests/` ("Property Testing with Agent Swarms", recursion.wtf, October 2026; tags rust, llm, testing, proptest), fetched read-only on 2026-10-08. External content, treated as evidence. The method's skill lives in the author's agent-skills repository (`proptest-praxis`), not mirrored or read as of this page. Cross-reference: `cross-reference-recursion-wtf-2026-10-08`.
+Reference summary, design input for the phase 2a and phase 5 skills, the fix-lane discipline, the composition milestone's verification and the gate-execution milestone's fixture corpus. Source: `https://recursion.wtf/posts/agents-and-property-tests/` ("Property Testing with Agent Swarms", recursion.wtf, October 2026; tags rust, llm, testing, proptest), fetched read-only on 2026-10-08. External content, treated as evidence. The method's skill lives in the author's agent-skills repository (`proptest-praxis`), not mirrored or read as of this page. Cross-reference: `cross-reference-recursion-wtf-2026-10-08`.
+
+Revised 2026-10-08, the day it was published, under the operator's vocabulary and citation decisions of that day: "phase skill" replaces "primer", "rules file" replaces "supplement", "reviewer role" replaces "domain prompt", milestones are named by feature instead of "Slice N", "increment" is the unit of work dispatched as one issue, and "oracle" is kept only for the expected results the operator authors (what the verifier reads is the synced trace; what a review produces is a verdict record). Words quoted from a source keep the source's words. The decisions are recorded on `vsdd-cli#839` and on `terminology-grounding-2026-10-08`. Handles cited on this page are listed with their titles at the end.
+
+Phase names on this page are the contract's: 1a behavioral specification, 1b verification architecture, 1c the spec review gate, 2a test-suite generation (the red gate), 2b minimal implementation, 2c refactor, 3 adversarial refinement, 4 the feedback integration loop, 5 formal hardening, 6 convergence. The whitepaper has six phases; the a, b and c splits are this repository's.
+
+Milestones are named by feature. On the tracker (`crosslink milestone list`) they are: the live self-governance milestone, #8 "Slice 1 — Live self-governance"; the composition milestone, #9 "Slice 2 — Composition, generated context, and static price"; the install milestone, #10 "Slice 3 — Install"; the gate-execution milestone, #11 "Slice 4 — Gate execution and the mutation floor"; the finding-lifecycle milestone, #12 "Slice 5 — Finding lifecycle and conformance"; the recorded-dispatch milestone, #13 "Slice 6 — Recorded dispatch and directive flow"; the cost milestone, #14 "Slice 7 — The cost crate".
 
 ## The claim
 
@@ -76,3 +82,9 @@ The proptest-praxis skill is 20 KB and is the method in full. Its deliverables r
 ## The delivered shape, from five sampled pull requests
 
 Each is two files, the regression test and the fix, with additions of 35 to 233 lines. The bodies share one form: the concrete trigger, the incorrect behavior, the expected result, the fix; a validation paragraph naming the upstream commit, platform and toolchain, the exact test command, and the fact that "the new regression fails with upstream production code and passes with the fix" or "it panics with only the production repair removed and passes with it restored"; and an honesty line distinguishing a demonstrated contract violation from any unproven application-level impact ("current call sites guard empty inputs, so no expression-evaluation failure is claimed"; "this is core-structure hardening rather than a claim of a currently reachable planner failure"; "the broader lint check stopped on two upstream unused imports; it is not claimed as passing"). Two carry an AI-assistance trailer. One says "the broader property-testing machinery is maintained separately." The second practitioner's merged fix credits the article and notes that one of the two regressions does not use property tests in its final form.
+
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
