@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1398,
-        "tip_oid": "f7da4e64aa0f2a38b6421a1f8d7c9dc838876974",
-        "prefix_sha256": "98e1ac1accd065d7779e0ef434909df038312a653d20bf5ba93d7eb677909cc7"
+        "sequence": 1399,
+        "tip_oid": "fd6fac63822b4d2c043e67e31cc434595e17e80e",
+        "prefix_sha256": "2379fe53c516e33353ef4084669023765459740e00693bc2c591c87f07a0c00f"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 897,
-  "next_comment_id": 1640,
+  "next_comment_id": 1641,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -19096,7 +19096,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-07T07:07:00.744931Z",
-      "updated_at": "2026-10-08T03:24:18.093696Z",
+      "updated_at": "2026-10-08T03:31:30.324848Z",
       "labels": [
         "security"
       ],
@@ -19127,6 +19127,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAJcQXIXIsIwdKy/2k3qGO4aoYLkASB9JbK1hgNaazZ7MIPUI3rRpyNP/57mIPTJep+mUJlxHfXIHkR3GXpzOuAA=="
+        },
+        "94756061-c72e-490c-b02b-346e9dc26484": {
+          "display_id": 1640,
+          "author": "xqjG",
+          "content": "[result] CI on pull request #64 at 6409d2fa: verify PASS 1m35s, test PASS 2m04s, routing-gate PASS 5m33s — and the fired evidence the two reviews asked for is in the job logs, not inferred from the green checks. Toolchain: each job's toolchain step prints 'the active toolchain 1.88-x86_64-unknown-linux-gnu has been installed' and 'it's active because: overridden by .../vsdd-cli/rust-toolchain.toml', then '1.88-x86_64-unknown-linux-gnu (overridden by ...)' — the documented install form fired, under the directory override. Cache keys: the new keys (cargo-mdatron-0.7.0-rust1.88-Linux; cargo-vsdd-test-mdatron-0.7.0-rust1.88-...; cargo-routing-gate-rust1.88-crosslink-388bed89-...) reported 'Cache not found', so the old entries were invalidated as intended; mdatron 0.7.0 was compiled and installed fresh on this first miss and its digest recorded — the cache-hit verification path runs on the next job with the same key (the push to main after merge). Routing gate: crosslink checked out at 388bed89f4f026406637670d44d6e8eccbe517a6 with persist-credentials: false on both checkouts, compiled under 1.88; 'Build the gate binary' started 03:28:33 with no token in its environment, 'Run the gate' started 03:28:56 and is the only step whose environment shows GH_TOKEN; the gate output: 'vsdd gate: pass — no unrouted findings' and 'deviations pass — no standing entry lapsed or fired unre-armed', so both re-armed register entries parse and evaluate. Ready for the operator's merge.",
+          "created_at": "2026-10-08T03:31:30.280447Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA30YTgIPjhKbxXqUBIpPttD96HxpPMZJNub2qFZ1asPCc0GodP5+pA2le27bDozxmO/wj54FtnJACfAPVT75rCw=="
         },
         "b08be643-2ab9-493e-84bb-dfe6420e3e49": {
           "display_id": 1633,
@@ -37703,6 +37712,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1398,
       "timestamp": "2026-10-08T03:26:25.814237Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1399,
+      "timestamp": "2026-10-08T03:31:30.324848Z"
     }
   ],
   "watermark": {
