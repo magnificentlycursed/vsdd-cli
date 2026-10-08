@@ -58,3 +58,5 @@ updated: 2026-10-08
 - `portable-memory-rules-gist-2026-10-08` — a practitioner's published feedback memories (the author of Observability Engineering, 2nd edition): the six habits, the eighteen rules, the three instruction-file layers.
 - `clarity-review-skill-2026-10-08` — the same author's pre-flight lint for AI-authored code and prose: seven pattern classes with litmus tests, corpus-calibrated, invoked only explicitly.
 - `cross-reference-2026-10-08-findings-vs-prior-knowledge` — the day's findings read against the observability engineering pages, the earlier Thermite assessments, the domain value scorecard, the memory rules and the clarity skill, with adoption candidates and their homes.
+- `proptest-with-agent-swarms-recursion-wtf-2026-10-08`, `exomonad-recursion-wtf-2026-10-08`, `tidepool-recursion-wtf-2026-10-08` — three articles by one practitioner on agent-built property-test machinery, a tree of worktrees with hooks as code, and effect-sequenced tooling with suspension and free pagination.
+- `cross-reference-recursion-wtf-2026-10-08` — those three read against the contract and the day's findings, with adoption candidates and homes.
