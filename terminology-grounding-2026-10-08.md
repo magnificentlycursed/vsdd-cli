@@ -74,7 +74,7 @@ Three tiers, applied to every row below. (1) Standard lexicons and academic or l
 ## Three notes
 
 - The one phrase for which no standard term was found is the append problem itself; event sourcing's log-versus-projection split, which the contract already uses, is its best vocabulary, and "unintegrated decisions" is the plain description.
-- Registration candidates after source weighting: increment (standard agile; the whitepaper; Thermite confirms) and attestation (SLSA and in-toto; the repositories' "receipt" is the practitioner synonym). "Wave" is a practitioner word for a fork-join batch and is not proposed.
+- Registration candidates after source weighting: increment (standard agile; the whitepaper; Thermite confirms) and attestation (SLSA and in-toto; the repositories' "receipt" is the practitioner synonym); the operator decided on 2026-10-08 that they are registered when the phase-skill rewrite (`vsdd-cli#898`) first needs them. "Wave" is a practitioner word for a fork-join batch and is not proposed.
 - "Slop" is used as a named category by two practitioner sources read today (a corpus-calibrated lint named for it; a failure catalogue naming default-model voice). Whether it is used more widely was not checked; cite those two sources, not usage in general.
 
 ## Handles cited on this page
