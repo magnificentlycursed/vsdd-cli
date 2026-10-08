@@ -28,9 +28,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1446,
-        "tip_oid": "e326b6eb73aafd51ffcdf39bc84e63c22ba7a41b",
-        "prefix_sha256": "d57bcf7945dce3d29022f04cf374b90bd9a5fce5e839302372095ad978318c1f"
+        "sequence": 1447,
+        "tip_oid": "cb360bfda221f79b4654ad0e7c78db8228f32037",
+        "prefix_sha256": "a9118ad017d8308a5d4bbefec8745a2dc501c194bd11edaa9f564158d057ad58"
       },
       "y2SI": {
         "sequence": 2,
@@ -40,7 +40,7 @@
     }
   },
   "next_display_id": 900,
-  "next_comment_id": 1678,
+  "next_comment_id": 1679,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24804,11 +24804,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-08T21:52:54.880884Z",
-      "updated_at": "2026-10-08T22:33:36.596097Z",
+      "updated_at": "2026-10-08T22:36:38.737249Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "1a4b1141-3f2b-473b-8021-b89240ee9330": {
+          "display_id": 1678,
+          "author": "xqjG",
+          "content": "Draft PR #69 opened at the first commit (13f2d45a on design/897-contract-amendment): the proposal record and the proposals route. Next on this branch: crosslink kickoff plan over the proposal, then one container kickoff run with the operator's effort and budget dials performing the remaining five commits; then the cold review on a child issue and the operator's approval comment here; merge with a merge commit.",
+          "created_at": "2026-10-08T22:36:38.702962Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhtoxgo41serA10UKcKs1ETBtzX97gbNfRwzTbceRuN72IHqFRR0cdZ5fXAa/E8WQOJW8L6ffIDu2fnXRTsJVCw=="
+        },
         "3d8abcc2-2320-4122-87c9-012379325446": {
           "display_id": 1676,
           "author": "xqjG",
@@ -38330,6 +38339,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1446,
       "timestamp": "2026-10-08T22:33:36.596097Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1447,
+      "timestamp": "2026-10-08T22:36:38.737249Z"
     }
   ],
   "watermark": {
