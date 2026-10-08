@@ -369,7 +369,12 @@ fn dispatch_data_pins_its_adopted_values() {
     let d: DispatchData =
         registry::load_set(&repo_root(), "dispatch-data").expect("dispatch data loads");
     assert_eq!(d.preflight_members.len(), 5, "the five preflight members");
-    assert_eq!(d.manifest_fields.len(), 15, "the fifteen manifest fields");
+    assert_eq!(d.schema_version, "0.3.0", "the bump that added the phase field (vsdd-cli#875)");
+    assert_eq!(d.manifest_fields.len(), 16, "the sixteen manifest fields (phase added at 0.3.0, vsdd-cli#875)");
+    assert!(
+        d.manifest_fields.iter().any(|f| f.get("field").and_then(|v| v.as_str()) == Some("phase")),
+        "the manifest carries the dispatcher-sourced phase field (engine data, vsdd-cli#894 ruling)"
+    );
     assert!(!d.fencing_rule.is_empty());
     let result_values = d
         .preflight_semantics
