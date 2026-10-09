@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1454,
-        "tip_oid": "2d37343ba1b6f81e825bd73e72399a52729555aa",
-        "prefix_sha256": "1d4fc76f8dc53504d2f5c52ff5293b638c45ffdeee94b24aba258c339e6f258d"
+        "sequence": 1455,
+        "tip_oid": "19b69366d185ac00bd26c2c952d9100e67878a34",
+        "prefix_sha256": "c3f56b60bd8ead46f8af32e801e0fab9bbb4608427835e6e89328584016c402a"
       },
       "y2SI": {
         "sequence": 2,
@@ -50,7 +50,7 @@
     }
   },
   "next_display_id": 901,
-  "next_comment_id": 1685,
+  "next_comment_id": 1686,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21982,7 +21982,7 @@
       "parent_uuid": "d21d47a0-9ad8-4b57-8e6f-7240e738cbaf",
       "created_by": "xqjG",
       "created_at": "2026-10-08T22:45:17.226644Z",
-      "updated_at": "2026-10-09T00:40:27.609469Z",
+      "updated_at": "2026-10-09T20:34:34.713051Z",
       "comments": {
         "6a8b0d12-0fe8-4dd5-8384-92efe04d2524": {
           "display_id": 1681,
@@ -21992,6 +21992,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAB9VLeV8ek5CW3LZ8Rlu+Jz0YL1D5c6QHGvJ+NdmD6tMW6chgF53WzLH3IW+pcIajTSBvfXXEYPGbXAZVorzAAA=="
+        },
+        "efc191e8-0eb0-4b50-91f9-e17eff65c8e2": {
+          "display_id": 1685,
+          "author": "xqjG",
+          "content": "Incident chain 2026-10-08 to 2026-10-09, recorded for the amendment's vehicle: the failed plan activations left three timed-out plan worktrees (agents CvgC, JXEu, 1cXa); JXEu's worktree daemon held the shared hub write lock for twenty hours, which put this repository into blocked_corrupt and had every hook-gated command refused; kickoff cleanup refused to run while blocked; the operator stopped that daemon from inside its worktree, then had to stop and restart the main daemon because its blocked_corrupt verdict outlived the dead holder; the restart's readiness bootstrap exceeded the 120 s wait before reporting ready_current. Posted upstream as comments on crosslink#110 (the orphan blocks the parent; cleanup circularity; no per-agent cleanup) and crosslink#118 (bootstrap over two minutes); the cached-verdict shape is being checked for an existing upstream record before filing. CvgC's stale lock on this issue and the three worktree branches remain until cleanup runs.",
+          "created_at": "2026-10-09T20:34:34.677054Z",
+          "kind": "observation",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAol6rkXnV/hADcQaP7om5djvta7KYTbYjU24T4Y+SFcSU/LrtmFbhqnmiR2ChAxo8zDCuqecS6gLmnRngijTBDg=="
         }
       }
     },
@@ -38472,6 +38481,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1454,
       "timestamp": "2026-10-09T01:04:13.175610Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1455,
+      "timestamp": "2026-10-09T20:34:34.713051Z"
     }
   ],
   "watermark": {
