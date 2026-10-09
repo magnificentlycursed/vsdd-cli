@@ -4,7 +4,7 @@ tags: ["design-input", "review", "dispatch", "process", "design-doc"]
 sources: []
 contributors: ["xqjG"]
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-10-09
 ---
 
 # VSDD in practice across the methodology author's repositories (2026-10-08)
@@ -82,3 +82,5 @@ Milestones are named by feature. On the tracker (`crosslink milestone list`) the
 Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
 
 - `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
+- `agent-generated-tests-study-arxiv-2602-07900-2026-10-09` — read 2026-10-09: six coding agents on SWE-bench Verified write tests on most tasks, mostly prints (four to six per assertion), half the assertions constrain nothing, and moving test volume moves cost by a third and outcomes by two or three points.
+- `cross-reference-agent-generated-tests-2026-10-09` — the paper against the red gate, the phase 2a skill, the property-testing discipline and the accepted decisions: the paper measures the default the gate exists to block; take an assertion-kind census as a gate leg and "at least one test that fires on a seeded violation" as the 2a criterion.
