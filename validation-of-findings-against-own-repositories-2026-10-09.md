@@ -57,15 +57,13 @@ Percentages. The methodology-compliant repositories do not carry stronger assert
 
 **9. Prose control is mechanized here and nowhere else in the set.** vsdd-cli arms 14 register anti-patterns and 12 deprecated aliases; mdatron arms none in its own configuration; the suite era shipped a letter-cluster check among its 13 hooks. Whether the prose got better is not measurable from these records.
 
-**10. Cost is not yet knowable from records.** The hubs hold 5 token-usage rows (vsdd-cli) and 0 (mdatron); the two spend escapes the contract cites are recorded in prose only. The paper's cost finding cannot be checked here.
+**10. Termination.** Mechanical where the terminal verify round ran (vsdd-cli July; mdatron's round 7 with zero children as the stop); by director decision in the manual projects, with the deviations written down (Layer 2 and 3 closed without the cold-session second pass; Layer 6's manual checklist deferred to round 3).
 
-**11. Termination.** Mechanical where the terminal verify round ran (vsdd-cli July; mdatron's round 7 with zero children as the stop); by director decision in the manual projects, with the deviations written down (Layer 2 and 3 closed without the cold-session second pass; Layer 6's manual checklist deferred to round 3).
-
-**12. Increment size.** The shipped units: a layer in about four days (issue-tracker-cli), two days (bookmark-cli-manual), a feature in a day (mdatron), a layer in two to three days and one slice in four (vsdd-cli). The unit that did not ship was a seven-slice design amended for ten weeks.
+**11. Increment size.** The shipped units: a layer in about four days (issue-tracker-cli), two days (bookmark-cli-manual), a feature in a day (mdatron), a layer in two to three days and one slice in four (vsdd-cli). The unit that did not ship was a seven-slice design amended for ten weeks.
 
 ### what this changes
 
-Three findings from 2026-10-08 are confirmed on this estate's own evidence rather than only on the references': latency and append accumulation (3 and 4) and early hardening (7); the round decay (5) is observed but confounded and carries little weight. Two are refined: the red gate as practised here is a within-session ordering with the failing run recorded, not a separate authoring phase, and its effect on outcomes is unmeasured (2); assertion strength is not where the methodology shows, test granularity is (1). One is a gap in the records themselves (10). The operator's most recent work on the crosslink fork follows the umbrella, scaffold, increment and review-round form the decisions of 2026-10-08 adopt; the agent that did that work had read this estate's knowledge pages (operator, 2026-10-09), so this is evidence that the pages transfer the practice, not independent evidence for it.
+Three findings from 2026-10-08 are confirmed on this estate's own evidence rather than only on the references': latency and append accumulation (3 and 4) and early hardening (7); the round decay (5) is observed but confounded and carries little weight. Two are refined: the red gate as practised here is a within-session ordering with the failing run recorded, not a separate authoring phase, and its effect on outcomes is unmeasured (2); assertion strength is not where the methodology shows, test granularity is (1). The operator's most recent work on the crosslink fork follows the umbrella, scaffold, increment and review-round form the decisions of 2026-10-08 adopt; the agent that did that work had read this estate's knowledge pages (operator, 2026-10-09), so this is evidence that the pages transfer the practice, not independent evidence for it.
 
 ### handles cited on this page
 
