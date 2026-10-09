@@ -7,7 +7,6 @@ created: 2026-10-09
 updated: 2026-10-09
 ---
 
-
 ## Design Specification
 
 ### status
@@ -39,13 +38,12 @@ That is the behavior the contract's gate member names at its last bullet: "Tests
 
 - **The scaffold commit (decision 2) holds, with a condition.** Its failing tests are worth their cost only as asserting tests tied to the increment's criteria; a scaffold of probes would be the paper's default at commit time. The composition milestone's two increments should state which criteria their scaffold tests assert and how each is shown to fire.
 - **The phase 2a split (decision 7) gets its sharpest input.** Fixes and critics' tests: failing-first, unchanged. Increments: machinery whose coverage is proved by seeded removal, unchanged. Added: a census of assertion kinds over the red gate, reported at 2a exit, with a floor the review config may declare the way it declares the mutation floor.
-- **The cost member and the token-budget gate.** The paper prices the default at a third of a run's tokens. A dispatch's bill of materials that cannot see test-writing cannot report it; the recorded-dispatch milestone's manifest and the cost milestone's report should carry test-writing spend as a line, which the paper's cost-benefit monitoring suggestion asks for in other words.
 
 ### what to take, and what not to
 
-Take: the assertion census as a candidate gate leg and as a Quality Engineer report form; "at least one test that fires on a seeded violation" as the phase 2a criterion wording; the paper as the evidence line for the gate member's last bullet; the cost line in the report. Do not take: the paper's magnitudes as this estate's, since it ran one Python scaffold with no gate and no CI, and named enforced CI as a setting where the numbers may differ; nor "a more conservative approach to agent-generated tests" as a rule, since the article's engineered machinery is the counterexample the paper did not study.
+Take: the assertion census as a candidate gate leg and as a Quality Engineer report form; "at least one test that fires on a seeded violation" as the phase 2a criterion wording; the paper as the evidence line for the gate member's last bullet. Do not take: the paper's magnitudes as this estate's, since it ran one Python scaffold with no gate and no CI, and named enforced CI as a setting where the numbers may differ; nor "a more conservative approach to agent-generated tests" as a rule, since the article's engineered machinery is the counterexample the paper did not study.
 
-Feature candidates, for the sessions that own them: an assertion-kind classifier as a vsdd gate leg or an mdatron code-catalog family (the paper's four categories over Rust test bodies); a test-writing spend line in the dispatch manifest's usage.
+Feature candidates, for the sessions that own them: an assertion-kind classifier as a vsdd gate leg or an mdatron code-catalog family (the paper's four categories over Rust test bodies).
 
 ### handles cited on this page
 
