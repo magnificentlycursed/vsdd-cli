@@ -76,12 +76,12 @@ Milestones are named by feature. On the tracker (`crosslink milestone list`) the
 - `cross-reference-context-management-2026-10-08` — that work read against the append problem and crosslink knowledge management, with a forgetting policy for records and feature requests for the knowledge feature.
 - `terminology-grounding-2026-10-08` — the day's informal phrases mapped to standard terms and sibling self-words; two registration candidates after source weighting (increment, attestation).
 - `big-picture-and-decisions-2026-10-08` — the whole day in one page for a maintainer who was not there: the nine decisions, all accepted by the operator on 2026-10-08 (work on `vsdd-cli#897`, `vsdd-cli#898` and `vsdd-cli#899`), with why, goals served, recommendation, sources and what to weigh, and a citation key that resolves every handle, page, file and link.
-
-## Handles cited on this page
-
-Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-08.
-
-- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
 - `agent-generated-tests-study-arxiv-2602-07900-2026-10-09` — read 2026-10-09: six coding agents on SWE-bench Verified write tests on most tasks, mostly prints (four to six per assertion), half the assertions constrain nothing, and moving test volume moves cost by a third and outcomes by two or three points.
 - `cross-reference-agent-generated-tests-2026-10-09` — the paper against the red gate, the phase 2a skill, the property-testing discipline and the accepted decisions: the paper measures the default the gate exists to block; take an assertion-kind census as a gate leg and "at least one test that fires on a seeded violation" as the 2a criterion.
 - `validation-of-findings-against-own-repositories-2026-10-09` — the 2026-10-08 findings and the agent-tests paper checked against five repositories the operator built, with compliance measured from records: latency, append accumulation, round decay and early hardening confirmed on our own evidence; the red gate here is a within-session ordering; assertion strength is not where the methodology shows; cost records are absent.
+
+## Handles cited on this page
+
+Open any `vsdd-cli#N` with `crosslink issue show N`; the title and state are as of 2026-10-09.
+
+- `vsdd-cli#839`: Slice 2 (Composition) phase-1a design — vsdd way: composition function + config-integrity ... [open]
