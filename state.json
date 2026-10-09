@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1455,
-        "tip_oid": "19b69366d185ac00bd26c2c952d9100e67878a34",
-        "prefix_sha256": "c3f56b60bd8ead46f8af32e801e0fab9bbb4608427835e6e89328584016c402a"
+        "sequence": 1456,
+        "tip_oid": "a036bc1942b7765de6dfdf58caa64aee83582e95",
+        "prefix_sha256": "954f591243e6873533f932a1c48eadfbe5ebef410a7527e5689de79b39065243"
       },
       "y2SI": {
         "sequence": 2,
@@ -50,7 +50,7 @@
     }
   },
   "next_display_id": 901,
-  "next_comment_id": 1686,
+  "next_comment_id": 1687,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21982,7 +21982,7 @@
       "parent_uuid": "d21d47a0-9ad8-4b57-8e6f-7240e738cbaf",
       "created_by": "xqjG",
       "created_at": "2026-10-08T22:45:17.226644Z",
-      "updated_at": "2026-10-09T20:34:34.713051Z",
+      "updated_at": "2026-10-09T20:38:10.760826Z",
       "comments": {
         "6a8b0d12-0fe8-4dd5-8384-92efe04d2524": {
           "display_id": 1681,
@@ -21992,6 +21992,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAB9VLeV8ek5CW3LZ8Rlu+Jz0YL1D5c6QHGvJ+NdmD6tMW6chgF53WzLH3IW+pcIajTSBvfXXEYPGbXAZVorzAAA=="
+        },
+        "6ef3f73f-4024-430e-8c1f-7e7961ff82f4": {
+          "display_id": 1686,
+          "author": "xqjG",
+          "content": "Correction to the observation above: the twenty hours is wall-clock elapsed time for the orphaned worktree daemon across a laptop sleep, not run time; it was alive and holding the hub write lock when the machine woke, and how long it actually ran is unknown. The upstream comments on crosslink#110 and #118 were edited the same way.",
+          "created_at": "2026-10-09T20:38:10.570307Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAY+bvEtnq/7ntRUqrSEfzHjJQ58DbNg4wwSnNAhIDx9yKePXHoqWz2VpiYTOm9GRvi+PDf9dBghhj5IVfXxZODQ=="
         },
         "efc191e8-0eb0-4b50-91f9-e17eff65c8e2": {
           "display_id": 1685,
@@ -38486,6 +38495,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1455,
       "timestamp": "2026-10-09T20:34:34.713051Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1456,
+      "timestamp": "2026-10-09T20:38:10.760826Z"
     }
   ],
   "watermark": {
