@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1476,
-        "tip_oid": "7c332b34b60d1268eb36dbfbe3541380d69cb540",
-        "prefix_sha256": "24b0414c1a0db0c1e0ee55495fcb244d07c2a0b1cd389bfb08ef753e64905387"
+        "sequence": 1477,
+        "tip_oid": "5c5d577c30ae8f61508d145731e7de606b28324e",
+        "prefix_sha256": "483c4a6737eade2e165a06f288bd1cd6105af7ae26a830358623fc55ba4ecf1e"
       },
       "y2SI": {
         "sequence": 2,
@@ -50,7 +50,7 @@
     }
   },
   "next_display_id": 904,
-  "next_comment_id": 1701,
+  "next_comment_id": 1702,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24941,7 +24941,7 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-08T21:52:54.880884Z",
-      "updated_at": "2026-10-09T22:21:41.834122Z",
+      "updated_at": "2026-10-09T22:38:39.236694Z",
       "labels": [
         "design"
       ],
@@ -25071,6 +25071,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABALyZ1V7HCP2+/f8Z5Oa+mbct4yzw6IsT1/EkuJrFV4YPTTXi3Kp79cHWR+C55EY2O6PE9eHVzolSomDjcsfV0Cg=="
+        },
+        "e0bb1ec6-db00-413c-87d2-3ad22588b5ec": {
+          "display_id": 1701,
+          "author": "xqjG",
+          "content": "Routed from the review round vsdd-cli#901 (reports on #902 and #903), 2026-10-09, all bearing on this cycle's trust boundary and vehicle. Blockers: the exit gate cannot be told from the author's own writes (AI Engineer 1; Red Team 1: every recorded operator decision is agent-signed, no operator identity exists on the tracker); the register is an agent-writable oracle the gate cannot verify (Red Team 2: deviations.rs treats disposition_ref as an unverified claim; this cycle's executor edits the register in the same change); the agent can merge its own amendment (Red Team 3: the ruleset requires zero approving reviews and the merge is reachable through the allowed gh prefix). Majors: the register still says the container vehicle is proven while it cannot start here (AI Engineer 2, with a standing entry proposed); the cold reviewer is dispatched, briefed, credentialed and relayed by the author (Red Team 11). Minor and observations: the untracked pipeline sidecar lists three plans as running (AI Engineer 8, Red Team 14); the dispatch record names effort and not the model (AI Engineer 11); locks are advisory by construction (Red Team 14). Proposed in both reports: make the merge the exit gate, with a reviewer-signed verdict naming the head hash and an operator-signed approval, both read by the routing gate. Rulings are the operator's; nothing is changed here.",
+          "created_at": "2026-10-09T22:38:39.197066Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAKnZv5wVihvDz+dGflaoRsqGjOvt3Q/cS0P2YDlRos62hRRbt74UGRUfVpoDcyWNw4c/BKX6x9V4mHC9K8N25Aw=="
         }
       }
     },
@@ -38781,6 +38790,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1476,
       "timestamp": "2026-10-09T22:37:33.839656Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1477,
+      "timestamp": "2026-10-09T22:38:39.236694Z"
     }
   ],
   "watermark": {
