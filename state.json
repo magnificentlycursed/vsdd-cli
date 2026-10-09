@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1464,
-        "tip_oid": "ec3343ee4797d4556c2a79ebd83caabaa4d3c837",
-        "prefix_sha256": "96586edd0a356f8b4b856ae9227118a63c8c0a5e6acce1c4e32c88fc3c04f526"
+        "sequence": 1465,
+        "tip_oid": "0aa44866386fb276e8be2f3aac036fe76f657540",
+        "prefix_sha256": "bf1dfe149a6612b4a5250a6541db440e797d129d022f9cd00800a32836c18095"
       },
       "y2SI": {
         "sequence": 2,
@@ -49,7 +49,7 @@
       }
     }
   },
-  "next_display_id": 901,
+  "next_display_id": 902,
   "next_comment_id": 1695,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
@@ -279,6 +279,7 @@
     "3fd478b0-2ebd-4989-8393-70732c1d3db7": 70,
     "4054257b-73d2-45dc-ae79-b076482384cd": 165,
     "40e383d5-e779-4f91-ad07-f6a2355ca0c7": 478,
+    "40fef15c-dc35-4ba1-ba5d-26dae1a39c65": 901,
     "41413cb2-8f5b-45c5-9c76-5aafd70435de": 128,
     "41994f9f-1253-4806-8751-ab0c018f8105": 716,
     "41d37836-e259-4acf-b51e-75de099256ab": 689,
@@ -8209,6 +8210,17 @@
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAt4DmA/lpa+OQMwx2mlEHHqwDRnrwqx3TGfzahBHQ9X7DkM2wUzGAsxoAwo9K5eBuTzN45TRLAYEiLnwzVOA6DQ=="
         }
       }
+    },
+    "40fef15c-dc35-4ba1-ba5d-26dae1a39c65": {
+      "uuid": "40fef15c-dc35-4ba1-ba5d-26dae1a39c65",
+      "display_id": 901,
+      "title": "Review round of 2026-10-09: keeping the agent on the paved path and how it subverts the process (AI Engineer and Red Team, over the 2026-10-08 and 09 records)",
+      "description": "Operator-requested round (chat, 2026-10-09). Two reviewer roles, AI Engineer and Red Team, each in its own cold session, over five areas: the agent's own records as a drift channel; phase 2a as the place the path is most easily faked; the workarounds this session took around controls; the amendment cycle's own trust boundary; an open reading of the 34 pages from both days. The brief is attached to each child issue. Input to vsdd-cli#897, #898 and #899. Vehicle: see the decision comment.",
+      "status": "open",
+      "priority": "high",
+      "created_by": "xqjG",
+      "created_at": "2026-10-09T22:11:54.155274Z",
+      "updated_at": "2026-10-09T22:11:54.155274Z"
     },
     "41413cb2-8f5b-45c5-9c76-5aafd70435de": {
       "uuid": "41413cb2-8f5b-45c5-9c76-5aafd70435de",
@@ -38614,6 +38626,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1464,
       "timestamp": "2026-10-09T21:52:55.600175Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1465,
+      "timestamp": "2026-10-09T22:11:54.155274Z"
     }
   ],
   "watermark": {
