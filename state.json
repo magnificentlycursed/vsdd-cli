@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1457,
-        "tip_oid": "9d7d6a1f0bbf648dd3fde391cfde3bbf374e6634",
-        "prefix_sha256": "794215c918a08a88c1cee3b9f111949d90a257cc3a71548658e9cc6775ec23b2"
+        "sequence": 1458,
+        "tip_oid": "20081d7c003421a96573be7f15b50b2d0555be2c",
+        "prefix_sha256": "522a3b336a6094cc5794a90af0bb83d8955cc5140e9591c5b4e246b93d222bf6"
       },
       "y2SI": {
         "sequence": 2,
@@ -50,7 +50,7 @@
     }
   },
   "next_display_id": 901,
-  "next_comment_id": 1688,
+  "next_comment_id": 1689,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -24869,11 +24869,20 @@
       "priority": "high",
       "created_by": "xqjG",
       "created_at": "2026-10-08T21:52:54.880884Z",
-      "updated_at": "2026-10-09T01:04:13.175610Z",
+      "updated_at": "2026-10-09T20:45:30.328251Z",
       "labels": [
         "design"
       ],
       "comments": {
+        "0030b42e-5260-4fb0-a7f1-e454a16fded7": {
+          "display_id": 1688,
+          "author": "xqjG",
+          "content": "[action] Readiness restored after the operator stopped the orphaned worktree daemon and restarted the main daemon; cleanup removed the three plan worktrees; upstream crosslink#130 filed, comments on #110 and #118 posted and corrected (elapsed time across sleep). Holding the plan retry on vsdd-cli#900 and the arXiv 2602.07900 synthesis for the operator's word.",
+          "created_at": "2026-10-09T20:45:30.289014Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA6Z94Rn9/AdyQtYUIzwlszq8JMkd3+N7ebl5PFFDLSgFhanVgJF+tKWit0tV5x2BahW6/bZeqVDhI+pbR9qhABA=="
+        },
         "1a4b1141-3f2b-473b-8021-b89240ee9330": {
           "display_id": 1678,
           "author": "xqjG",
@@ -38514,6 +38523,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1457,
       "timestamp": "2026-10-09T20:44:15.498533Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1458,
+      "timestamp": "2026-10-09T20:45:30.328251Z"
     }
   ],
   "watermark": {
