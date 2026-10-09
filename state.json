@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1456,
-        "tip_oid": "a036bc1942b7765de6dfdf58caa64aee83582e95",
-        "prefix_sha256": "954f591243e6873533f932a1c48eadfbe5ebef410a7527e5689de79b39065243"
+        "sequence": 1457,
+        "tip_oid": "9d7d6a1f0bbf648dd3fde391cfde3bbf374e6634",
+        "prefix_sha256": "794215c918a08a88c1cee3b9f111949d90a257cc3a71548658e9cc6775ec23b2"
       },
       "y2SI": {
         "sequence": 2,
@@ -50,7 +50,7 @@
     }
   },
   "next_display_id": 901,
-  "next_comment_id": 1687,
+  "next_comment_id": 1688,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -21982,7 +21982,7 @@
       "parent_uuid": "d21d47a0-9ad8-4b57-8e6f-7240e738cbaf",
       "created_by": "xqjG",
       "created_at": "2026-10-08T22:45:17.226644Z",
-      "updated_at": "2026-10-09T20:38:10.760826Z",
+      "updated_at": "2026-10-09T20:44:15.498533Z",
       "comments": {
         "6a8b0d12-0fe8-4dd5-8384-92efe04d2524": {
           "display_id": 1681,
@@ -22001,6 +22001,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAY+bvEtnq/7ntRUqrSEfzHjJQ58DbNg4wwSnNAhIDx9yKePXHoqWz2VpiYTOm9GRvi+PDf9dBghhj5IVfXxZODQ=="
+        },
+        "e8127ea9-59bb-41d1-a99a-3e39aced757e": {
+          "display_id": 1687,
+          "author": "xqjG",
+          "content": "kickoff cleanup --force (2026-10-09): the three timed-out plan worktrees (agents CvgC, JXEu, 1cXa) were removed and their daemons stopped; for each, cleanup reported that the worktree daemon did not become ready and left the agent's locks and session, pointing at the removed worktree directory for their release. CvgC's stale lock on this issue remains; a kickoff activation walks past a stale lock with a warning, so it does not block a retry, and releasing it is a locks steal from the parent, an operator act. The orchestrating session's locks on vsdd-cli#839 and #897 read fresh again after the daemon restart. Upstream: crosslink#130 filed for the sticky verdict; the cleanup result added to crosslink#110.",
+          "created_at": "2026-10-09T20:44:15.435209Z",
+          "kind": "note",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAuiNpGQ3SgI4cAYZjJ6gQZE1IHHQP3wiZj/ALxETyIc/vE6mwBAoKxql22fFOS80DX6PfBg97PC5nr+gsPeH6AA=="
         },
         "efc191e8-0eb0-4b50-91f9-e17eff65c8e2": {
           "display_id": 1685,
@@ -38500,6 +38509,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1456,
       "timestamp": "2026-10-09T20:38:10.760826Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1457,
+      "timestamp": "2026-10-09T20:44:15.498533Z"
     }
   ],
   "watermark": {
