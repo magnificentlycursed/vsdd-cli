@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1461,
-        "tip_oid": "85dd24807866641216dffced40214cee5c1078bb",
-        "prefix_sha256": "9a5c4d40c605a78ed2f326fc1f012674f4aa81ac26e63b04b619165a4ac43f89"
+        "sequence": 1462,
+        "tip_oid": "78e8c6e948f0af7b3e86e02068e995014fd9a4f2",
+        "prefix_sha256": "da78945ed7067ae8f4ed50231a62835ff8f8082e4da0e084c89b74a9d4163d00"
       },
       "y2SI": {
         "sequence": 2,
@@ -50,7 +50,7 @@
     }
   },
   "next_display_id": 901,
-  "next_comment_id": 1692,
+  "next_comment_id": 1693,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25795,7 +25795,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-08T21:53:57.116992Z",
-      "updated_at": "2026-10-09T21:13:02.461627Z",
+      "updated_at": "2026-10-09T21:49:26.123007Z",
       "labels": [
         "design"
       ],
@@ -25808,6 +25808,15 @@
           "kind": "note",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAyNy3qMLudwFxmVcnutXbT0XSu87J9ifeu/CCPyQRmHmN5VhgI3e6lzGdlrWCY/3i9N6xJE0CY9VfrORqeCHqBw=="
+        },
+        "7e6033d4-661a-4f55-a3cf-3e7af8e92667": {
+          "display_id": 1692,
+          "author": "xqjG",
+          "content": "Operator direction for the phase 2a design (chat, 2026-10-09): phase 2a stays a distinct authoring act, and the red gate and assertion strength are one question, not two. The validation (validation-of-findings-against-own-repositories-2026-10-09) shows the ordering was kept in every project (failing run recorded, then the implementation minutes later) while test author and implementer were always the same session, so the effect of an independent author is unmeasured, and assertion kinds did not separate the methodology-compliant projects from the rest. The 2a skill therefore has to say who writes the tests (an author independent of the implementer, given the criteria and the scaffold's interfaces, not the implementation), how to make them good (exact and relational assertions over sanity and property; one behavior per test with a name that states it; no print-based probes counted as red; a seeded-violation check that each test fires), and how the record shows it (a test-only red commit by the 2a author, the gate's recorded failing run, the implementing commit after, the mutation floor at 2b exit as the strength measure; the assertion-kind census as a Quality Engineer report, not a gate). Round decay carries little weight as evidence for the review shape; hardening runs throughout, not as phase 5's business.",
+          "created_at": "2026-10-09T21:49:26.083018Z",
+          "kind": "decision",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA1pseyGUPVkl6qzg7SapW+5n2gCjhXVB0slOaq4ylWfacgHi/IQiHJEW+SnvkrBT+hqTrY01YQYDRULyvM0pjCA=="
         },
         "a77d59e4-0f55-4876-bdf9-cdc0a312ab5e": {
           "display_id": 1691,
@@ -38572,6 +38581,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1461,
       "timestamp": "2026-10-09T21:13:02.461627Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1462,
+      "timestamp": "2026-10-09T21:49:26.123007Z"
     }
   ],
   "watermark": {
