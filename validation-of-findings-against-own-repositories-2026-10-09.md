@@ -7,7 +7,6 @@ created: 2026-10-09
 updated: 2026-10-09
 ---
 
-
 ## Design Specification
 
 ### status
@@ -48,7 +47,7 @@ Percentages. The methodology-compliant repositories do not carry stronger assert
 
 **4. Design documents accumulate when amended apart from code.** Reproduced in both directions. mdatron's DESIGN.md went from 40 to 77 KB over ten weeks in 66 edits, nearly all riding feature commits. issue-tracker-cli's went from 20 to 34 KB in two weeks in 11 edits, each riding a layer's review round. The contract went from 43 KB to 255 KB in fourteen days of July and August 2026 in amendment cycles that carried no code, and needed a compaction to 104 KB in September.
 
-**5. The first round finds; later rounds verify; breadth manufactures findings.** Reproduced three times over. mdatron's spec-review rounds 3 to 7 (2026-07-19) carried 16, 13, 5, 1 and 0 child findings. vsdd-cli's July rounds: round 1 with 24, 9 and 9 children; round 2 with 8 and 3; round 3 with 1; terminal verify rounds with 3 and 1. issue-tracker-cli's PROCESS.md: Layer 4 round 1 with 23 open findings across nine domains, round 2 verification; Layer 7 round 1 with 24 substantive findings and one critical, round 2 closure. The breadth signal: in June 2026 vsdd-cli filed 192 finding-shaped issues in one month, every one now closed, 104 of them (54 percent) with dismissed, hallucinated or consolidated in the closing comment. Dispositions in issue-tracker-cli's logs are narrative sentences, not fields, and were not counted.
+**5. The first round finds; later rounds verify; breadth manufactures findings.** Reproduced three times over. mdatron's spec-review rounds 3 to 7 (2026-07-19) carried 16, 13, 5, 1 and 0 child findings. vsdd-cli's July rounds: round 1 with 24, 9 and 9 children; round 2 with 8 and 3; round 3 with 1; terminal verify rounds with 3 and 1. issue-tracker-cli's PROCESS.md: Layer 4 round 1 with 23 open findings across nine domains, round 2 verification; Layer 7 round 1 with 24 substantive findings and one critical, round 2 closure. The breadth signal: in June 2026 vsdd-cli filed 192 finding-shaped issues in one month, every one now closed, 104 of them (54 percent) with dismissed, hallucinated or consolidated in the closing comment. Dispositions in issue-tracker-cli's logs are narrative sentences, not fields, and were not counted. Weight (operator, 2026-10-09): low. Finding counts vary with the prompts, the reviewer set and the method, all of which were changing quickly across these months, and fix-then-verify produces a decay by construction; the decay therefore does not show that one reviewer would have found what the first round found. The dismissed share of the June filings is the firmer number, and it too comes from an earlier process.
 
 **6. Zero GitHub reviews, review elsewhere.** Reproduced: 184 merged pull requests, zero reviews, median minutes to merge. The reviews live in the hubs' typed comments and the suite's review logs.
 
@@ -66,7 +65,7 @@ Percentages. The methodology-compliant repositories do not carry stronger assert
 
 ### what this changes
 
-Three findings from 2026-10-08 are confirmed on this estate's own evidence rather than only on the references': latency and append accumulation (3 and 4), the round decay and the breadth cost (5), and early hardening (7). Two are refined: the red gate as practised here is a within-session ordering with the failing run recorded, not a separate authoring phase, and its effect on outcomes is unmeasured (2); assertion strength is not where the methodology shows, test granularity is (1). One is a gap in the records themselves (10). The operator's most recent work on the crosslink fork already follows the umbrella, scaffold, increment and review-round form the decisions of 2026-10-08 adopt.
+Three findings from 2026-10-08 are confirmed on this estate's own evidence rather than only on the references': latency and append accumulation (3 and 4) and early hardening (7); the round decay (5) is observed but confounded and carries little weight. Two are refined: the red gate as practised here is a within-session ordering with the failing run recorded, not a separate authoring phase, and its effect on outcomes is unmeasured (2); assertion strength is not where the methodology shows, test granularity is (1). One is a gap in the records themselves (10). The operator's most recent work on the crosslink fork follows the umbrella, scaffold, increment and review-round form the decisions of 2026-10-08 adopt; the agent that did that work had read this estate's knowledge pages (operator, 2026-10-09), so this is evidence that the pages transfer the practice, not independent evidence for it.
 
 ### handles cited on this page
 
