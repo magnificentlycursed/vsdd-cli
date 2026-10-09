@@ -18,6 +18,9 @@ routes:
   - files: ".design/agent-first-vsdd-toolkit.md"
     governed_by: .design/agent-first-vsdd-toolkit.md
     links: true
+  - files: ".design/proposals/*.md"         # proposal records (vsdd-cli#897): amendments and ideas enter here, status line first
+    governed_by: .design/agent-first-vsdd-toolkit.md
+    links: true
   - files: ".design/build-plan.md"             # the Decomposition's dispatcher projection
     governed_by: .design/agent-first-vsdd-toolkit.md
     links: true
