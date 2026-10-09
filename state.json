@@ -38,9 +38,9 @@
         "prefix_sha256": "3c91980ccef9a12ade64e6f621d80eef3ec1b548070db93b5aa40f0d5d305f14"
       },
       "xqjG": {
-        "sequence": 1477,
-        "tip_oid": "5c5d577c30ae8f61508d145731e7de606b28324e",
-        "prefix_sha256": "483c4a6737eade2e165a06f288bd1cd6105af7ae26a830358623fc55ba4ecf1e"
+        "sequence": 1478,
+        "tip_oid": "479a0062e0c8f9f14eea1a000383059a51eecd64",
+        "prefix_sha256": "e3cd47773013de918e0aada83ad56981ba2fd6fb52592c7b0d357d853867ac01"
       },
       "y2SI": {
         "sequence": 2,
@@ -50,7 +50,7 @@
     }
   },
   "next_display_id": 904,
-  "next_comment_id": 1702,
+  "next_comment_id": 1703,
   "display_id_map": {
     "00153e40-9f17-480d-9caa-6bb88d67d128": 76,
     "0019bfe9-e966-4b15-95eb-00dd89e119e2": 118,
@@ -25885,7 +25885,7 @@
       "priority": "medium",
       "created_by": "xqjG",
       "created_at": "2026-10-08T21:53:57.116992Z",
-      "updated_at": "2026-10-09T21:52:55.600175Z",
+      "updated_at": "2026-10-09T22:39:44.864498Z",
       "labels": [
         "design"
       ],
@@ -25934,6 +25934,15 @@
           "kind": "observation",
           "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
           "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAW50oklu2QyIMs/mmPMmWkg28aagnRKaVEwz5W+tT7v67TFIAM56umiXig28Nc97bO6lGrfWtwOZdZIsEzKE4DA=="
+        },
+        "cad03226-296e-448e-b089-c5274b3e2bea": {
+          "display_id": 1702,
+          "author": "xqjG",
+          "content": "Routed from the review round vsdd-cli#901 (reports on #902 and #903), 2026-10-09, for the phase 2a design. The composition declaration proposed on this issue as the separating record is a claim the author writes, which the contract itself says is never the oracle (Red Team 7; AI Engineer 3); the non-forgeable separation available now is identity: the red commit and the implementing commit from different kickoff agents, their signers compared by the gate. At the red state every test fails the same way, so the gate cannot tell a probe from an assertion; walked bypasses include probes, red for the wrong reason, mirror tests, ignored tests and snapshot-against-golden mutation gaming; no mutation tool or config exists (Red Team 8). The 2a skill and the Quality Engineer role set exit criteria a probe suite satisfies and nothing injects them at 2a entry (AI Engineer 4). Controls offered: a test-only red commit checked by path in CI; the failing run as a result comment with command, counts, exit code and hash; the seeded-violation check as a CI gate leg; include-ignored with an ignored-count assertion; the assertion-kind census as a Quality Engineer report; the validation's classifier committed as that instrument (AI Engineer 9); the Write tool made the path of least resistance so heredoc writes stop evading the post-edit scan (AI Engineer 12, Red Team 12).",
+          "created_at": "2026-10-09T22:39:44.825036Z",
+          "kind": "plan",
+          "signed_by": "SHA256:v2ahqtq1cloiYtPHwSJByIfLW+KKRz5ElCE0sStkAow",
+          "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgQ6tbyGxjDfsNHdeOlMQZQaTJX9Ij1ckKVPX/DhibsJAAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAeUR/xsqbtFTU5OQU6OVOmJtAh4EAuFmq+QKPTY4GAw4HzPxR9YYT3m4ZofGMdbTkhTKRvBKCftgzTcRrQnglBw=="
         }
       }
     },
@@ -38795,6 +38804,11 @@
       "agent_id": "xqjG",
       "agent_seq": 1477,
       "timestamp": "2026-10-09T22:38:39.236694Z"
+    },
+    {
+      "agent_id": "xqjG",
+      "agent_seq": 1478,
+      "timestamp": "2026-10-09T22:39:44.864498Z"
     }
   ],
   "watermark": {
